@@ -1,0 +1,369 @@
+namespace = MP
+
+narrative_event = {
+	id = MP.001
+	title = EVTNAMEMUG100
+	desc = EVTDESCMUG100
+	hide_window = yes
+	hide_from = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = crossing_penalty_added }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = crossing_penalty_added
+		c_guines = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_kent = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_dyfed = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_leinster = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_lecce = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_aulon = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_hormuz = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_dhu_zabi = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_gotland = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_tjust = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_cinarca = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_gallura = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_messina = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_reggio = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_algeciras = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_cebta = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_tangiers = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_ulster = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_argyll = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_galloway = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+		c_isle_of_man = {
+			location = {
+				add_province_modifier = {
+					name = crossing_penalty
+					years = -1
+				}
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = MP.002
+	title = EVTNAMEMUG100
+	desc = EVTDESCMUG100
+	hide_window = yes
+	hide_from = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = none_take_archi }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = none_take_archi
+		c_60000006 = {
+			set_character_flag = no_court_invites
+		}
+	}
+}
+
+character_event = {
+	id = MP.003
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = laws_ar_changed }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = laws_ar_changed
+		any_playable_ruler = {
+			limit = {
+				OR = {
+					holder_scope = { government = ar_theocracy_government }
+					holder_scope = { government = ar_republic_government }
+					holder_scope = { has_landed_title = d_papal_guards }
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					OR = {
+						holder_scope = { government = ar_theocracy_government }
+						holder_scope = { government = ar_republic_government }
+						holder_scope = { has_landed_title = d_papal_guards }
+					}
+				}
+				succession = succ_open_elective
+				add_law = {
+					law = succ_open_elective
+					opinion_effect = no
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MP.004
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = laws_ar_changed_2 }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = laws_ar_changed_2
+		any_character = {
+			any_demesne_title = {
+				limit = {
+					holder_scope = { government = theocracy_government }
+				}
+				succession = succ_catholic_bishopric
+				add_law = {
+					law = succ_catholic_bishopric
+					opinion_effect = no
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+    id = MP.005
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        has_landed_title = k_papal_state
+    }
+
+    immediate = {
+	    if = {
+		    limit = { has_landed_title = k_papal_state }
+	    }
+		add_trait = holy_see
+		remove_spouse = spouse
+		set_variable = { which = uncrowned_count value = 0 }
+		add_trait = crowned_by_myself
+    }
+}
+
+character_event = {
+    id = MP.006
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			has_landed_title = k_papal_state
+			has_global_flag = god_kingdom_formed
+		}
+    }
+
+    immediate = {
+	    if = {
+		    limit = {
+				AND = {
+					has_landed_title = k_papal_state
+					has_global_flag = god_kingdom_formed
+				}
+			}
+	    }
+		add_character_modifier = {
+			name = god_kingdom_holder
+			years = -1
+		}
+    }
+}
+
+character_event = {
+	id = MP.007
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		start_date >= 769.1.1
+	}
+	
+	immediate = {
+		any_character = {
+			limit = {
+				holder_scope = { government = ar_theocracy_government }
+				NOT = { has_landed_title = k_papal_state }
+			}
+			set_character_flag = ai_flag_refuse_marriage
+			set_character_flag = cannot_marry
+			add_trait = monk
+		}
+	}
+}

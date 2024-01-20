@@ -1,0 +1,98 @@
+decisions = {
+	form_burgundy_kingdom = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+		
+		potential = {
+			OR = {
+				has_landed_title = k_burgundy
+				has_landed_title = k_lotharingia
+			}
+			OR = {
+				culture = occitan
+				culture = dutch
+				culture = frankish
+			}
+			NOT = { has_global_flag = burgundy_formed }
+			NOT = { has_global_flag = dutch_formed }
+			NOT = { has_landed_title = k_france }
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_germany }
+			NOT = { has_landed_title = e_france }
+		}
+		
+		allow = {
+			has_landed_title = d_flanders
+			has_landed_title = d_burgundy
+			has_landed_title = k_burgundy
+			has_landed_title = k_lotharingia
+			has_landed_title = c_dijon
+			prestige = 2000
+			stewardship = 10
+			diplomacy = 10
+		}
+		
+		effect = {
+			activate_title = { title = k_burgundy_kingdom status = yes }
+			set_character_flag = burgundy_refuses
+			primary_title = {
+				k_burgundy_kingdom = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			set_global_flag = burgundy_formed 
+			destroy_landed_title = k_lotharingia
+			
+			create_bloodline = {
+				type = bloodline_valois_burgundy
+			}
+			
+			k_burgundy_kingdom = {
+				make_primary_title = yes
+			}
+			
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			hidden_effect = {	
+				d_burgundy = { de_jure_liege = k_burgundy_kingdom }
+				d_flanders = { de_jure_liege = k_burgundy_kingdom }
+				d_brabant = { de_jure_liege = k_burgundy_kingdom }
+				d_lower_lorraine = { de_jure_liege = k_burgundy_kingdom }
+				d_upper_lorraine = { de_jure_liege = k_burgundy_kingdom }
+				d_franche_comte = { de_jure_liege = k_burgundy_kingdom }
+				d_holland = { de_jure_liege = k_burgundy_kingdom }
+				d_gelre = { de_jure_liege = k_germany }
+				d_koln = { de_jure_liege = k_germany }
+				d_trier = { de_jure_liege = k_germany }
+			}
+			hidden_tooltip = {
+				ROOT = {
+					narrative_event = { id = Bur.1000 }
+				}
+			}
+			if = {
+				limit = {
+					has_character_flag = destroying_hre
+				}
+				narrative_event = { id = id = Bur.800 } # and myself
+			}
+			hidden_effect = {
+				any_playable_ruler = {
+					limit = { 
+						has_landed_title = k_germany
+					}
+					set_character_flag = destroying_hre
+					set_global_flag = burgundy_formed
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

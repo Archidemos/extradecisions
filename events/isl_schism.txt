@@ -1,0 +1,82 @@
+namespace = Isls
+
+narrative_event = {
+	id = 	Isls.500
+	title = EVTNAMEIsls.005
+	desc = EVTDESCIsls.005
+	
+	picture = GFX_jerusalem_captured_muslims_soa
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAIsls.001
+	}
+}
+
+# The Schism Mended
+narrative_event = {
+	id = 	Isls.005
+	title = EVTNAMEIsls.005
+	desc = EVTDESCIsls.005
+	
+	picture = GFX_jerusalem_captured_muslims_soa
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAIsls.001
+
+
+		if = {
+			limit = { religion = shiite }
+			set_parent_religion = { religion = sunni parent = shiite }
+			set_parent_religion = { religion = ibadi parent = shiite }
+		}
+
+
+		set_global_flag = isl_schism_mended
+		give_nickname = nick_the_saint
+		any_playable_ruler = {
+				if = {
+					limit = { religion = sunni }
+					narrative_event = { id = Isls.006 }	
+				}
+				if = {
+					limit = { religion = ibadi }
+					narrative_event = { id = Isls.006 }	
+				}
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = Isls.006
+	title = EVTNAMEIsls.006
+	desc = EVTDESCIsls.006
+	
+	picture = GFX_Hagia_sofia_muslim
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = EVTOPTAIsls.005
+		ai_chance = { factor = 75 }
+		religion = shiite
+		any_courtier = {
+			limit = {
+				religion = shiite
+				liege = { character = shiite }
+			}
+			religion = shiite
+		}
+		capital_scope = {
+			religion = shiite
+		}
+	}
+	option = { # No
+		name = EVTOPTBIsls.006
+		ai_chance = { factor = 25 }
+	}
+}

@@ -1,0 +1,420 @@
+decisions = {
+	form_celtic_empire = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			NOT = { has_landed_title = e_britannia }
+			culture_group = celtic
+			NOT = { has_global_flag = celtic_empire_formed }
+		}
+		
+		allow = {
+			prestige = 1500
+			has_landed_title = c_dublin
+			completely_controls = k_ireland
+			completely_controls = k_scotland
+			completely_controls = k_wales
+			completely_controls = k_brittany
+			culture_group = celtic
+			religion = celtic_christian
+		}
+		
+		effect = {
+			prestige = -1500
+			activate_title = { title = e_celtic_empire status = yes }
+			primary_title = {
+				e_celtic_empire = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			add_claim = k_england
+			set_global_flag = celtic_empire_formed				
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = EMPEROR
+						NOT = { title = e_celtic_empire }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			e_celtic_empire = {
+				add_law = succ_tanistry
+			}
+			
+			give_nickname = nick_the_great
+			
+			custom_tooltip = {
+				text = dublin_move_capital
+				hidden_tooltip = {
+					ROOT = {
+						c_dublin = {
+							grant_title = PREV
+							usurp_title = PREV
+							ROOT = { capital = PREV }
+						}
+					}
+				}
+			}
+			create_bloodline = {
+				type = celtic_blood
+			}			
+			
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = CEL.100 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	celtic_ultimatum_pope = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = e_celtic_empire
+			NOT = { has_global_flag = pope_celtic_conflict }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			has_landed_title = e_celtic_empire
+			prestige = 2000
+			diplomacy = 12
+			religion = celtic_christian
+			any_playable_ruler = {
+				AND = {
+					OR = {
+						has_landed_title = c_roma
+						has_landed_title = c_orbetello
+						has_landed_title = c_orvieto
+					}
+					has_landed_title = k_papal_state
+				}
+			}
+			completely_controls = k_france
+			completely_controls = k_aquitaine
+			completely_controls = k_burgundy
+		}
+		
+		effect = {
+			set_global_flag = pope_celtic_conflict
+			custom_tooltip = {
+				text = conflict_celtic_pope
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = CEL.101 }
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_north_sea_empire = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			OR = {
+				culture_group = north_germanic
+				culture_group = west_germanic
+			}
+			NOT = { has_landed_title = e_varingian }
+			NOT = { has_global_flag = north_sea_formed }
+		}
+		
+		allow = {
+			completely_controls = k_england
+			completely_controls = k_denmark
+			completely_controls = k_norway
+			OR = {
+				religion = catholic
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+			prestige = 5000
+			wealth = 1000
+		}
+		
+		effect = {
+			prestige = 1000
+			wealth = -1000
+			activate_title = { title = e_north_sea status = yes }
+			primary_title = {
+				e_north_sea = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			set_global_flag = north_sea_formed
+			
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = EMPEROR
+						NOT = { title = e_north_sea }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			
+			create_bloodline = {
+				type = north_sea_empire_blood
+			}		
+			
+			custom_tooltip = {
+				text = info_about_colonies
+			}
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = CEL.109 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_varingian_empire = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			culture_group = north_germanic
+			NOT = { has_landed_title = e_north_sea }
+			NOT = { has_global_flag = varingian_formed }
+		}
+		
+		allow = {
+			completely_controls = k_sweden
+			completely_controls = k_finland
+			completely_controls = k_rus
+			completely_controls = k_estonia
+			OR = {
+				religion = orthodox
+				religion = slavic_pagan
+				religion = slavic_pagan_reformed
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+			prestige = 5000
+			wealth = 1000
+		}
+		
+		effect = {
+			prestige = -5000
+			wealth = 1000
+			activate_title = { title = e_varingian status = yes }
+			primary_title = {
+				e_varingian = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			set_global_flag = varingian_formed
+			
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = EMPEROR
+						NOT = { title = e_varingian }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			
+			create_bloodline = {
+				type = varingian_empire_blood
+			}
+			
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = CEL.110 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	invade_france_north_sea = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+
+		potential = {
+			has_landed_title = e_north_sea
+			culture_group = north_germanic
+			NOT = { has_global_flag = france_invaded_north_sea }
+		}
+
+		allow = {
+			OR = {
+				religion = catholic
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+			prestige = 1000
+			wealth = 1000
+		}
+
+		effect = {
+		    set_global_flag = france_invaded_north_sea
+			prestige = -1000
+			wealth = -1000
+			add_claim = k_france
+			add_claim = d_normandy
+			add_claim = d_picardie
+			add_claim = d_valois
+			add_claim = d_orleans
+			add_claim = d_anjou
+			add_claim = d_galicia
+
+            custom_tooltip = {
+                text = invasion_france_north_sea
+                spawn_unit = {
+                    province = 32
+                    troops = {
+                        light_infantry = { 1500 1500 }
+                        archers = { 500 500 }
+                    }
+                }
+                spawn_unit = {
+                    province = 32
+                    troops = {
+                        light_infantry = { 1500 1500 }
+                        archers = { 500 500 }
+                    }
+                }
+                spawn_unit = {
+                    province = 32
+                    troops = {
+                        light_infantry = { 1500 1500 }
+                        archers = { 500 500 }
+                    }
+                }
+                spawn_unit = {
+                    province = 32
+                    troops = {
+                        light_infantry = { 1500 1500 }
+                        archers = { 500 500 }
+                    }
+                }
+            }
+
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = CEL.111 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	dismantle_hre_north_sea = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120
+		
+		potential = {
+			has_landed_title = e_north_sea
+			independent = yes
+			NOT = { has_global_flag = hre_north_sea_conflict }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			has_landed_title = e_north_sea
+			prestige = 2000
+			diplomacy = 14
+			any_playable_ruler = { has_landed_title = e_hre }
+		}
+		
+		effect = {
+			set_global_flag = hre_north_sea_conflict
+			custom_tooltip = {
+				text = conflict_north_sea_rome
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = CEL.117 }
+					}
+				}
+			}
+		}
+	}
+	
+	varingian_invasion_byz = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120
+		is_high_prio = yes
+
+		potential = {
+			has_landed_title = e_varingian
+			NOT = { has_global_flag = varingian_invades_byz }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+
+		allow = {
+			has_landed_title = e_varingian
+			prestige = 2000
+			diplomacy = 14
+			any_playable_ruler = { has_landed_title = e_byzantium }
+		}
+
+		effect = {
+			set_global_flag = varingian_invades_byz
+			custom_tooltip = {
+				text = varingian_byz
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = CEL.112 }
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

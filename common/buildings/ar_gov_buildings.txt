@@ -1,0 +1,1113 @@
+temple = {
+	ar_theocratic_cathedral_1 = {
+		desc = ar_theocratic_cathedral_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 200
+		build_time = 365
+		
+		monthly_character_piety = 0.05
+		tax_income = 2
+		culture_techpoints = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_theocratic_cathedral_2 = {
+		desc = ar_theocratic_cathedral_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 350
+		build_time = 547
+		
+		upgrades_from = ar_theocratic_cathedral_1
+		
+		monthly_character_piety = 0.075
+		tax_income = 3
+		culture_techpoints = 0.030
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_theocratic_cathedral_3 = {
+		desc = ar_theocratic_cathedral_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 450
+		build_time = 730
+
+		upgrades_from = ar_theocratic_cathedral_2
+		
+		monthly_character_piety = 0.075
+		tax_income = 4
+		culture_techpoints = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_cathedral_4 = {
+		desc = ar_theocratic_cathedral_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 600
+		build_time = 1095
+
+		upgrades_from = ar_theocratic_cathedral_3
+		
+		monthly_character_piety = 0.1
+		tax_income = 5
+		culture_techpoints = 0.040
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_theocratic_pilgrim_stop_1 = {
+		desc = ar_theocratic_pilgrim_stop_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 50
+		build_time = 182
+		
+		levy_size = 0.025
+		pikemen = 45
+		local_tax_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_pilgrim_stop_2 = {
+		desc = ar_theocratic_pilgrim_stop_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 100
+		build_time = 182
+
+		upgrades_from = ar_theocratic_pilgrim_stop_1
+		
+		levy_size = 0.05
+		pikemen = 55
+		local_tax_modifier = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_pilgrim_stop_3 = {
+		desc = ar_theocratic_pilgrim_stop_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 200
+		build_time = 182
+
+		upgrades_from = ar_theocratic_pilgrim_stop_2
+		
+		levy_size = 0.05
+		pikemen = 65
+		local_tax_modifier = 0.055
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_pilgrim_stop_4 = {
+		desc = ar_theocratic_pilgrim_stop_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 350
+		build_time = 182
+
+		upgrades_from = ar_theocratic_pilgrim_stop_3
+		
+		levy_size = 0.075
+		pikemen = 85
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_theocratic_religious_theater_1 = {
+		desc = ar_theocratic_religious_theater_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 100
+		build_time = 182
+		
+		culture_techpoints = 0.02
+		threat_decay_speed = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_religious_theater_2 = {
+		desc = ar_theocratic_religious_theater_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 200
+		build_time = 182
+
+		upgrades_from = ar_theocratic_religious_theater_1
+		
+		culture_techpoints = 0.03
+		threat_decay_speed = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_religious_theater_3 = {
+		desc = ar_theocratic_religious_theater_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 300
+		build_time = 182
+
+		upgrades_from = ar_theocratic_religious_theater_2
+		
+		culture_techpoints = 0.06
+		threat_decay_speed = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_religious_theater_4 = {
+		desc = ar_theocratic_religious_theater_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 400
+		build_time = 182
+
+		upgrades_from = ar_theocratic_religious_theater_3
+		
+		culture_techpoints = 0.08
+		threat_decay_speed = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	ar_theocratic_templar_armory_1 = {
+		desc = ar_theocratic_templar_armory_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 150
+		build_time = 365
+		
+		levy_size = 0.025
+		heavy_infantry = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_templar_armory_2 = {
+		desc = ar_theocratic_templar_armory_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 300
+		build_time = 547
+
+		upgrades_from = ar_theocratic_templar_armory_1
+		
+		levy_size = 0.055
+		heavy_infantry = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_templar_armory_3 = {
+		desc = ar_theocratic_templar_armory_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 450
+		build_time = 730
+
+		upgrades_from = ar_theocratic_templar_armory_2
+		
+		levy_size = 0.075
+		heavy_infantry = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_templar_armory_4 = {
+		desc = ar_theocratic_templar_armory_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_theocratic_templar_armory_3
+		
+		levy_size = 0.1
+		heavy_infantry = 85
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	ar_theocratic_christian_statues_1 = {
+		desc = ar_theocratic_christian_statues_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 150
+		build_time = 365
+		
+		local_revolt_risk = -0.025
+		disease_defence = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_christian_statues_2 = {
+		desc = ar_theocratic_christian_statues_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 300
+		build_time = 365
+
+		upgrades_from = ar_theocratic_christian_statues_1
+		
+		local_revolt_risk = -0.050
+		disease_defence = 0.050
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_christian_statues_3 = {
+		desc = ar_theocratic_christian_statues_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 450
+		build_time = 365
+
+		upgrades_from = ar_theocratic_christian_statues_2
+		
+		local_revolt_risk = -0.075
+		disease_defence = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_theocratic_christian_statues_4 = {
+		desc = ar_theocratic_christian_statues_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_theocracy_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_theocracy_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_theocracy_government }
+		}
+		gold_cost = 500
+		build_time = 365
+
+		upgrades_from = ar_theocratic_christian_statues_3
+		
+		local_revolt_risk = -0.1
+		disease_defence = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+}
+
+city = {
+	ar_republic_city_toll_1 = {
+		desc = ar_republic_city_toll_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 61
+		build_time = 150
+		
+		levy_size = 0.025
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_toll_2 = {
+		desc = ar_republic_city_toll_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 122
+		build_time = 300
+
+		upgrades_from = ar_republic_city_toll_1
+		
+		levy_size = 0.05
+		tech_growth_modifier = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_toll_3 = {
+		desc = ar_republic_city_toll_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 244
+		build_time = 465
+
+		upgrades_from = ar_republic_city_toll_2
+		
+		levy_size = 0.075
+		tech_growth_modifier = 0.055
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_toll_4 = {
+		desc = ar_republic_city_toll_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 488
+		build_time = 665
+
+		upgrades_from = ar_republic_city_toll_3
+		
+		levy_size = 0.1
+		tech_growth_modifier = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_republic_city_guard_headquarters_1 = {
+		desc = ar_republic_city_guard_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 150
+		build_time = 365
+		
+		garrison_size = 0.025
+		levy_size = 0.025
+		pikemen = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_guard_headquarters_2 = {
+		desc = ar_republic_city_guard_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_republic_city_guard_headquarters_1
+		
+		garrison_size = 0.035
+		levy_size = 0.035
+		pikemen = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_guard_headquarters_3 = {
+		desc = ar_republic_city_guard_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_republic_city_guard_headquarters_2
+		
+		garrison_size = 0.045
+		levy_size = 0.045
+		pikemen = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_guard_headquarters_4 = {
+		desc = ar_republic_city_guard_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_city_guard_headquarters_3
+		
+		garrison_size = 0.055
+		levy_size = 0.055
+		pikemen = 75
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_republic_marketplace_1 = {
+		desc = ar_republic_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 100
+		build_time = 365
+		
+		tax_income = 3
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_republic_marketplace_2 = {
+		desc = ar_republic_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 150
+		build_time = 547
+
+		upgrades_from = ar_republic_marketplace_1
+		
+		tax_income = 4
+		tech_growth_modifier = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_marketplace_3 = {
+		desc = ar_republic_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 250
+		build_time = 730
+
+		upgrades_from = ar_republic_marketplace_2
+		
+		tax_income = 5
+		tech_growth_modifier = 0.045
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_marketplace_4 = {
+		desc = ar_republic_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = ar_republic_marketplace_3
+		
+		tax_income = 5
+		tech_growth_modifier = 0.055
+		local_tax_modifier = 0.055
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_republic_caravansary_1 = {
+		desc = ar_republic_caravansary_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 100
+		build_time = 365
+		
+		economy_techpoints = 0.025
+		local_tax_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_caravansary_2 = {
+		desc = ar_republic_caravansary_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 150
+		build_time = 547
+
+		upgrades_from = ar_republic_caravansary_1
+		
+		economy_techpoints = 0.035
+		local_tax_modifier = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_caravansary_3 = {
+		desc = ar_republic_caravansary_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 250
+		build_time = 730
+
+		upgrades_from = ar_republic_caravansary_2
+		
+		economy_techpoints = 0.05
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_caravansary_4 = {
+		desc = ar_republic_caravansary_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = ar_republic_caravansary_3
+		
+		economy_techpoints = 0.075
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	ar_republic_gold_minter_1 = {
+		desc = ar_republic_gold_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 250
+		build_time = 365
+		
+		tax_income = 3
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_gold_minter_2 = {
+		desc = ar_republic_gold_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 350
+		build_time = 547
+
+		upgrades_from = ar_republic_gold_minter_1
+		
+		tax_income = 4
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_gold_minter_3 = {
+		desc = ar_republic_gold_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 500
+		build_time = 730
+
+		upgrades_from = ar_republic_gold_minter_2
+		
+		tax_income = 5
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_gold_minter_4 = {
+		desc = ar_republic_gold_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_republic_government }
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_republic_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_republic_government }
+		}
+		gold_cost = 650
+		build_time = 1095
+
+		upgrades_from = ar_republic_gold_minter_3
+		
+		tax_income = 6
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+}

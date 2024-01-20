@@ -1,0 +1,33 @@
+decisions = {
+	open_mp_menu = {
+		ai = no
+		only_playable = yes
+		
+		potential = {
+			is_playable = yes
+			NOT = { government = merchant_republic_government }
+		}
+		
+		allow = {
+			NOT = { has_character_modifier = mp_shop_cooldown }
+			independent = yes
+			prisoner = no
+			is_playable = yes
+		}
+
+		effect = {
+			custom_tooltip = {
+				text = mp_shop_description
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = MPSHOP.001 }
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

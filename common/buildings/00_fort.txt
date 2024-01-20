@@ -1,0 +1,268 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ # forts do not have any buildings - for modding purposes only
+
+fort = {
+	fort_wall_1 = {
+		desc = fort_wall_1_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		gold_cost = 50
+		build_time = 365
+		fort_level = 0.50
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.0
+	}
+	fort_wall_2 = {
+		desc = fort_wall_2_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = fort_wall_1
+		gold_cost = 50
+		build_time = 365 #1.5y
+		fort_level = 0.50
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.4
+	}
+	fort_wall_3 = {
+		desc = fort_wall_3_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		upgrades_from = fort_wall_2
+		gold_cost = 100
+		build_time = 365 #2y
+		fort_level = 0.50
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+	fort_wall_4 = {
+		desc = fort_wall_4_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+		upgrades_from = fort_wall_3
+		gold_cost = 150
+		build_time = 365 #3y
+		fort_level = 0.50
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.8
+	}
+	fort_wall_5 = {
+		desc = fort_wall_5_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+		upgrades_from = fort_wall_4
+		gold_cost = 150
+		build_time = 365 #4y
+		fort_level = 0.50
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.4
+	}
+	
+	fort_camp_1 = {
+		desc = fort_camp_1_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		gold_cost = 50
+		build_time = 365
+		garrison_size = 1.5
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.0
+	}
+	fort_camp_2 = {
+		desc = fort_camp_2_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = fort_camp_1
+		gold_cost = 50
+		build_time = 365 #1.5y
+		garrison_size = 1.5
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.4
+	}
+	fort_camp_3 = {
+		desc = fort_camp_3_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		upgrades_from = fort_camp_2
+		gold_cost = 100
+		build_time = 365 #2y
+		garrison_size = 1.5
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+	fort_camp_4 = {
+		desc = fort_camp_4_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+		upgrades_from = fort_camp_3
+		gold_cost = 150
+		build_time = 365 #3y
+		garrison_size = 1.5
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.8
+	}
+	fort_camp_5 = {
+		desc = fort_camp_5_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+		upgrades_from = fort_camp_4
+		gold_cost = 150
+		build_time = 365 #4y
+		garrison_size = 1.5
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.4
+	}
+	
+	fort_toll_1 = {
+		desc = fort_toll_1_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		gold_cost = 50
+		build_time = 365
+		tax_income = 2.5
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.0
+	}
+	fort_toll_2 = {
+		desc = fort_toll_2_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = fort_toll_1
+		gold_cost = 50
+		build_time = 365 #1.5y
+		tax_income = 2.5
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.4
+	}
+	fort_toll_3 = {
+		desc = fort_toll_3_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		upgrades_from = fort_toll_2
+		gold_cost = 100
+		build_time = 365 #2y
+		tax_income = 2.5
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+	fort_toll_4 = {
+		desc = fort_toll_4_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+		upgrades_from = fort_toll_3
+		gold_cost = 150
+		build_time = 365 #3y
+		tax_income = 2.5
+		local_tax_modifier = 0.1
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.8
+	}
+	fort_toll_5 = {
+		desc = fort_toll_5_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+		upgrades_from = fort_toll_4
+		gold_cost = 150
+		build_time = 365 #4y
+		tax_income = 2.5
+		local_tax_modifier = 0.2
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.4
+	}
+	
+	#fort_trap_1 = {
+	#	desc = fort_trap_1_desc
+	#	trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+	#	gold_cost = 50
+	#	build_time = 365
+	#	archers_defensive = 0.15
+	#	light_infantry_defensive = 0.10
+	#	pikemen_defensive = 0.05
+	#	light_cavalry_defensive = 0.10
+	#
+	#	archers_offensive = 0.1
+	#	ai_creation_factor = 90
+	#	
+	#	extra_tech_building_start = 1.0
+	#}
+	#fort_trap_2 = {
+	#	desc = fort_trap_2_desc
+	#	trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+	#	upgrades_from = fort_trap_1
+	#	gold_cost = 50
+	#	build_time = 365 #1.5y
+	#	archers_defensive = 0.3
+	#	light_infantry_defensive = 0.15
+	#	pikemen_defensive = 0.1
+	#	heavy_infantry_defensive = 0.1
+	#	horse_archers_defensive = 0.10
+	#	light_cavalry_defensive = 0.10
+	#
+	#	archers_offensive = 0.1
+	#	pikemen_offensive = 0.05
+	#	horse_archers_offensive = 0.5
+	#	ai_creation_factor = 89
+	#	
+	#	extra_tech_building_start = 1.4
+	#}
+	#fort_trap_3 = {
+	#	desc = fort_trap_3_desc
+	#	trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+	#	upgrades_from = fort_trap_2
+	#	gold_cost = 100
+	#	build_time = 365 #2y
+	#	archers_defensive = 0.5
+	#	light_infantry_defensive = 0.3
+	#	pikemen_defensive = 0.2
+	#	heavy_infantry_defensive = 0.2
+	#	horse_archers_defensive = 0.15
+	#	light_cavalry_defensive = 0.15
+	#
+	#	archers_offensive = 0.2
+	#	pikemen_offensive = 0.1
+	#	horse_archers_offensive = 0.10
+	#
+	#	add_number_to_name = yes
+	#
+	#	ai_creation_factor = 88
+	#
+	#	extra_tech_building_start = 1.2
+	#}
+	
+	fort_hq_1 = {
+		desc = fort_hq_1_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		gold_cost = 50
+		build_time = 365
+		military_techpoints = 0.01
+		tech_growth_modifier = 0.025
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.0
+	}
+	fort_hq_2 = {
+		desc = fort_hq_2_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = fort_hq_1
+		gold_cost = 50
+		build_time = 365 #1.5y
+		military_techpoints = 0.02
+		tech_growth_modifier = 0.05
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.4
+	}
+	fort_hq_3 = {
+		desc = fort_hq_3_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		upgrades_from = fort_hq_2
+		gold_cost = 100
+		build_time = 365 #2y
+		military_techpoints = 0.04
+		tech_growth_modifier = 0.1
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+}

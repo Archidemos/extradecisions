@@ -1,0 +1,82 @@
+namespace = CATSCM
+
+narrative_event = {
+	id = CATSCM.100
+	title = EVTNAMECATSCM.100
+	desc = EVTDESCCATSCM.100
+	
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTCATSCM.001
+	}
+}
+
+# The Schism Mended
+narrative_event = {
+	id = CATSCM.001
+	title = EVTNAMECATSCM.001
+	desc = EVTDESCCATSCM.001
+	
+	picture = "GFX_evt_crusaders"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTCATSCM.002
+
+
+		if = {
+			limit = { religion = catholic }
+			set_parent_religion = { religion = orthodox parent = catholic }
+			set_parent_religion = { religion = iconoclast parent = catholic }
+		}
+
+
+		set_global_flag = isl_schism_mended
+		give_nickname = nick_the_saint
+		any_playable_ruler = {
+				if = {
+					limit = { religion = orthodox }
+					narrative_event = { id = CATSCM.002 }	
+				}
+				if = {
+					limit = { religion = iconoclast }
+					narrative_event = { id = CATSCM.002 }	
+				}
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = CATSCM.002
+	title = EVTNAMEIsls.002
+	desc = EVTDESCIsls.002
+	
+	picture = "GFX_evt_crusaders"
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = EVTOPTCATSCM.003
+		ai_chance = { factor = 75 }
+		religion = catholic
+		any_courtier = {
+			limit = {
+				religion = catholic
+				liege = { character = catholic }
+			}
+			religion = catholic
+		}
+		capital_scope = {
+			religion = catholic
+		}
+	}
+	option = { # No
+		name = EVTOPTCATSCM.004
+		ai_chance = { factor = 25 }
+	}
+}

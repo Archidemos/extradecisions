@@ -1,0 +1,3015 @@
+wonder_mosque_cordoba = {
+		picture = GFX_wonder_strip_mosque
+		model = wonder_mosque
+		allow_construction = no
+		show_model = yes
+		background_overrides = {
+			jungle = fields
+			forest = jungle
+			}
+		potential = {
+			religion_group = muslim_group
+		}
+		active = {
+			ROOT = {
+				religion_group = muslim_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.2
+			build_time_modifier = -0.05
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.05
+			global_tax_modifier = 0.05
+			learning = 1
+			stewardship = 1
+			
+		}
+	}
+}
+
+wonder_winter_palace = {
+		picture = GFX_wonder_winter_palace
+		allow_construction = no
+		show_model = yes
+		background_overrides = {
+			fields = snow
+			}
+		potential = {
+			religion = orthodox
+		}
+		active = {
+			ROOT = {
+				religion = orthodox
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.3
+			monthly_character_piety = 0.3
+			diplomacy = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.5
+			monthly_character_piety = 0.5
+			diplomacy = 1
+			
+		}
+	}
+}
+
+wonder_cologne_cathedral = {
+		picture = GFX_wonder_strip_library
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			monthly_character_piety = 0.2
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.3
+			monthly_character_piety = 0.3
+			learning = 3
+			catholic_opinion = 5
+			saintly_monastic_bloodline = 1		
+			health = 0.5
+		}
+	}
+}
+
+
+wonder_florence_cathedral = {
+		picture = GFX_wonder_strip_royalpalace
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.3
+			build_time_modifier = -0.10
+			stewardship = 1
+		}
+	}
+}
+
+wonder_walls_ragusa = {
+		picture = GFX_wonder_strip_grand_walls
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion = orthodox
+		}
+		active = {
+			ROOT = {
+				religion = orthodox
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			global_trade_route_value = 10
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			fort_level = 1
+			global_trade_route_value = 20
+			global_trade_route_wealth = 20
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 1
+			global_trade_route_value = 30
+			global_trade_route_wealth = 30		
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			stewardship = 1
+		}
+	}
+}
+
+wonder_baku_ateshgah = {
+		picture = GFX_wonder_strip_temple
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion = zoroastrian
+		}
+		active = {
+			ROOT = {
+				religion = zoroastrian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			global_revolt_risk = -0.02
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			zoroastrian_opinion = 5
+			martial = 1
+			command_modifier = {
+				morale_defence = 0.05
+			}
+			global_revolt_risk = -0.03
+		}
+	}
+}
+
+wonder_carthage_ruins = {
+		picture = GFX_wonder_strip_undergroundcity
+		allow_construction = no
+		show_model = yes
+		potential = {
+		}
+		active = {
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			global_trade_route_value = 10
+			galleys_perc = 0.10
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			global_tax_modifier = 0.02
+			diplomacy = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			global_trade_route_value = 20
+			galleys_perc = 0.10
+		}
+		owner_modifier = {
+			global_tax_modifier = 0.03
+			monthly_character_prestige = 0.3
+			stewardship = 1
+		}	
+	}
+}
+
+wonder_dutch_polders = {
+		picture = GFX_wonder_strip_harbour
+		allow_construction = no
+		is_in_water = yes
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+				OR = {
+					culture = dutch
+					culture = frisian
+				}
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			local_tax_modifier = 0.02
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+		}
+		owner_modifier = {
+			local_tax_modifier = 0.03
+			build_cost_modifier = -0.02
+			build_time_modifier = -0.02
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			global_trade_route_value = 15
+			global_trade_route_wealth = 15		
+		}
+		owner_modifier = {
+			local_tax_modifier = 0.05
+			build_cost_modifier = -0.03
+			build_time_modifier = -0.03
+			stewardship = 1
+		}	
+	}
+}
+
+wonder_alcazar_segovia = {
+		picture = GFX_wonder_strip_grandfortress
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			land_organisation = 0.025
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			land_organisation = 0.025
+			martial = 1
+		}	
+	}
+}
+
+wonder_hohenzollern_castle = {
+		picture = GFX_wonder_strip_grandfortress
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.50
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.50
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.50
+		}
+		owner_modifier = {
+			general_opinion = 2
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.50
+		}
+		owner_modifier = {
+			diplomacy = 1
+			general_opinion = 3
+		}	
+	}
+}
+
+wonder_brandenburg_gate = {
+		picture = GFX_wonder_strip_horsestatue
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+				culture = german
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			land_organisation = 0.025
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			land_organisation = 0.025
+			martial = 1
+		}	
+	}
+}
+wonder_taj_mahal = {
+		picture = GFX_wonder_strip_mosque
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = muslim
+		}
+		active = {
+			ROOT = {
+				religion_group = muslim
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			fertility  = 0.1
+			threat_decay_speed = 0.1
+			short_reign_length = -1
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			fertility = 0.1
+			threat_decay_speed = 0.1
+			short_reign_length = -2
+			stewardship = 1
+			learning = 1
+		}	
+	}
+}
+wonder_hampi = {
+		picture = GFX_wonder_strip_undergroundcity
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.25
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.25
+		}
+		owner_modifier = {
+			global_tax_modifier = 0.025
+			land_morale = 0.025
+			stewardship = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 0.5
+		}
+		owner_modifier = {
+			local_tax_modifier = 0.05
+			land_morale = 0.025
+			global_tax_modifier = 0.05
+			stewardship = 1
+		}	
+	}
+}
+wonder_konark_sun_temple = {
+		picture = GFX_wonder_strip_hindu_temple
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.25
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.5
+			health = 1
+			learning = 2
+		}	
+	}
+}
+wonder_mahabodhi_temple = {
+		picture = GFX_wonder_strip_hindu_temple
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.25
+			learning = 2
+			short_reign_length = -1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.5
+			short_reign_length = -2
+			buddhist_opinion = 5
+			learning = 2
+		}	
+	}
+}
+wonder_ajanta_ellora_caves = {
+		picture = GFX_wonder_strip_undergroundcity
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}	
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			tech_growth_modifier_culture = 0.10
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			tech_growth_modifier_culture = 0.25
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.25		
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			tech_growth_modifier_culture = 0.5
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.5
+			learning = 2
+			buddhist_opinion = 5
+		}	
+	}
+}
+
+wonder_charminar = {
+		picture = GFX_wonder_strip_mosque
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion = shiite
+		}
+		active = {
+			ROOT = {
+				religion = shiite
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.25
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.5
+			general_opinion = 5
+			stewardship = 1
+			global_tax_modifier = 0.025
+			learning = 2
+		}	
+	}
+}
+wonder_mattancherry_palace = {
+		picture = GFX_wonder_strip_royalpalace
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.10
+		}
+		owner_modifier = {
+			stewardship = 1
+			monthly_character_prestige = 0.25
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.25
+		}
+		owner_modifier = {
+			stewardship = 2
+			monthly_character_prestige = 0.5
+		}	
+	}
+}
+wonder_chruches_goa = {
+		picture = GFX_wonder_strip_cathedral
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			monthly_character_piety = 0.25
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			monthly_character_piety = 0.5
+			learning = 2
+		}	
+	}
+}
+wonder_kalighat_kali_temple = {
+		picture = GFX_wonder_strip_hindu_temple
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = indian_group
+		}
+		active = {
+			ROOT = {
+				religion_group = indian_group
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			combat_rating = 5
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.5
+			martial = 1
+			combat_rating = 10
+			female_opinion = 5
+			learning = 1
+		}	
+	}
+}
+wonder_irminsul = {
+		picture = GFX_wonder_strip_temple
+		allow_construction = no
+		show_model = yes
+		potential = {
+			OR = {
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+		active = {
+			ROOT = {
+				culture = old_saxon
+				OR = {
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+				}
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			land_morale = 0.025
+			martial = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			norse_pagan_opinion = 5
+			martial = 1
+			land_morale = 0.025
+			martial = 1
+		}
+	}
+}
+
+wonder_kronborg = {
+		picture = GFX_wonder_strip_royalpalace
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.3
+			build_time_modifier = -0.10
+			stewardship = 1
+		}
+	}
+}
+
+wonder_stave_chruch = {
+		picture = GFX_wonder_strip_cathedral
+		allow_construction = no
+		is_in_water = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			monthly_character_piety = 0.25
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			land_morale = 0.025
+			monthly_character_piety = 0.5
+			learning = 2
+		}	
+	}
+}
+wonder_falun_mine = {
+		picture = GFX_wonder_strip_undergroundcity
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				OR = {
+					religion_group = christian
+					religion = norse_pagan
+				}
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+		}
+		owner_modifier = {
+			global_tax_modifier = 0.10
+			monthly_character_prestige = 0.2
+			global_revolt_risk = -0.02
+			monthly_character_wealth = 2
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			global_trade_route_value = 30
+			global_trade_route_wealth = 30		
+		}
+		owner_modifier = {
+			global_tax_modifier = 0.20
+			monthly_character_wealth = 3
+			monthly_character_prestige = 0.3
+		}	
+	}
+}
+
+wonder_visby_city = {
+		picture = GFX_wonder_strip_grand_walls
+		allow_construction = no
+		show_model = no
+		potential = {
+			religion = orthodox
+		}
+		active = {
+			ROOT = {
+				OR = {
+					religion_group = christian
+					religion = norse_pagan
+				}
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			global_trade_route_value = 10
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			fort_level = 1
+			global_trade_route_value = 20
+			global_trade_route_wealth = 20
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 1
+			global_trade_route_value = 30
+			global_trade_route_wealth = 30		
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			stewardship = 1
+		}
+	}
+}
+wonder_london_bridge = {
+		picture = GFX_wonder_strip_grand_walls
+		allow_construction = no
+		show_model = yes
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				OR = {
+					religion_group = christian
+					religion = norse_pagan
+				}
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 3000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.10
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 4000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.3
+			build_time_modifier = -0.10
+			stewardship = 1
+		}
+	}
+}

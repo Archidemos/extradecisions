@@ -1,0 +1,255 @@
+decisions = {
+	form_kingdom_god = {
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = k_papal_state
+			NOT = { has_global_flag = god_kingdom_formed }
+		}
+		
+		allow = {
+			piety = 2000
+			has_landed_title = k_papal_state
+			completely_controls = k_sicily
+			completely_controls = k_sardinia
+			OR = {
+				completely_controls = k_romagna
+				completely_controls = k_papacy
+			}
+		}
+		
+		effect = {
+			piety = -2000
+			set_global_flag = god_kingdom_formed
+			set_global_flag = end_schism_enacted
+			
+			k_papal_state = {
+				set_name = "KINGDOM_KINGDOM_OF_GOD"
+				adjective = "KINGDOM_KINGDOM_OF_GOD_ADJ"
+			}
+			
+			add_character_modifier = {
+				name = god_kingdom_holder
+				years = -1
+			}	
+			
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = POPE.8 }
+				}
+			}
+		}
+	}
+	end_orthodox_schism = {
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = k_papal_state
+			has_global_flag = end_schism_enacted
+		}
+		
+		allow = {
+			piety = 2000
+			has_landed_title = k_papal_state
+			completely_controls = c_byzantion
+			c_byzantion = {
+				location = {
+					show_scope_change = no
+					religion = catholic
+				}
+			}
+			completely_controls = c_chalkidike
+			c_chalkidike = {
+				location = {
+					show_scope_change = no
+					religion = catholic
+				}
+			}
+			completely_controls = c_ephesos
+			c_ephesos = {
+				location = {
+					show_scope_change = no
+					religion = catholic
+				}
+			}
+			completely_controls = c_antiocheia			
+			c_antiocheia = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_jerusalem
+			c_jerusalem = {
+				location = {
+					show_scope_change = no
+					religion = catholic
+				}
+			}
+		}
+		
+		effect = {
+			clr_global_flag = end_schism_enacted
+			custom_tooltip = {
+				text = catholic_schism
+				ROOT = {
+					narrative_event = { id = CATSCM.001 } # and myself
+				}
+				
+				any_player = {
+					narrative_event = { id = CATSCM.100 }
+				}
+			}
+		}
+	}
+}
+
+targetted_decisions = {
+
+	pope_ask_investure = {
+		ai = no
+		only_rulers = yes	
+        is_high_prio = yes	
+
+		
+		potential = {
+			is_landed = yes
+			has_law = investiture_law_1
+			FROM = { has_landed_title = k_papal_state }
+			ROOT = { religion = catholic }
+		}
+		
+		allow = {
+			FROM = { piety = 250 }
+			is_adult = yes
+			prisoner = no
+			NOR = {
+				ROOT = { has_character_modifier = displeased_papacy }
+				ROOT = { has_character_modifier = papal_gratitude }	
+			}
+		}
+		
+		effect = {
+			FROM = { piety = -250 }
+			ROOT = {
+				character_event = { id = POPE.1 days = 5 }
+			}
+		}
+	}
+
+	pope_blessing = {
+		ai = no		
+        is_high_prio = yes
+
+		potential = {
+			NOT = { trait = incapable }
+			is_within_diplo_range = FROM
+			religion_group = christian
+			ROOT = { has_landed_title = k_papal_state }
+			FROM = { religion = catholic }
+		}
+		
+		allow = {
+			religion = catholic
+			is_landed = yes
+			FROM = { piety = 100 }
+			FROM = { NOT = { has_character_modifier = already_asked_blessing } }
+			FROM = { NOT = { has_landed_title = k_papal_state } }
+		}
+		
+		effect = {
+			FROM = {
+				save_event_target_as = pope_blessing_client
+			}
+			ROOT = {
+				character_event = { id = POPE.4 days = 5 }
+			}
+		}
+	}
+	
+	appoint_cardinal = {
+		filter = realm
+		ai = no
+		only_rulers = yes	
+		
+		from_potential = {
+			has_landed_title = k_papal_state
+		}
+		
+		potential = {
+			is_theocracy = yes
+			lower_tier_than = COUNT
+			rightful_religious_head = FROM
+		}
+		
+		allow = {
+			religion = FROM
+			rightful_religious_head = FROM
+			is_adult = yes
+			independent = no
+			in_revolt = no
+			custom_tooltip = {
+				text = cardinal_cap_reached
+				NOT = {	has_assigned_minor_title = { title = title_cardinal count = 9 } }
+			}
+			NOT = { has_minor_title = title_cardinal }
+		}
+		
+		effect = {
+			ROOT = { give_minor_title = title_cardinal }
+		}
+	}
+	
+	appoint_cardinal_outside = {
+		ai = no
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		third_party_filter = realm
+        third_party = ROOT
+		
+        third_party_potential = {
+            FROMFROM = {
+				NOT = { has_minor_title = title_cardinal }
+				is_theocracy = yes
+				prisoner = no
+				independent = no
+				is_landed = yes
+				religion = catholic
+				rightful_religious_head = ROOT_FROM
+				vassal_of = ROOT
+			}
+        }
+		
+		from_potential = {
+			has_landed_title = k_papal_state
+		}
+		
+		potential = {
+			is_landed = yes
+		    religion = catholic
+		    rightful_religious_head = ROOT_FROM
+			NOT = { has_minor_title = title_cardinal }
+			NOT = { government = theocracy_government }
+		}
+		
+		allow = {
+			is_landed = yes
+			religion = FROM	
+			rightful_religious_head = FROM
+			custom_tooltip = {
+				text = cardinal_cap_reached
+				NOT = {	has_assigned_minor_title = { title = title_cardinal count = 9 } }
+			}
+			ROOT = {
+			    has_law = investiture_law_0
+			}
+		}
+		effect = {
+			FROMFROM = {
+				give_minor_title = title_cardinal
+			}
+		}	
+	}
+}

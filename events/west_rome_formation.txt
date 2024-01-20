@@ -1,0 +1,535 @@
+namespace = ROM
+
+narrative_event = { #Event for everyone about the formation
+	id = ROM.100
+	title = EVTNAMEROM.100
+	desc = EVTDESCROM.100
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.001
+	}
+}
+
+narrative_event = { #West Rome will send an envoy to the Byzantines
+	id = ROM.101
+	title = EVTNAMEROM.101
+	desc = EVTDESCROM.101
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Sends the Envoy to the Byzantines
+		name = EVTOPTROM.002
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_byzantium
+				}
+				narrative_event = { id = ROM.102 days = 5 }
+			}
+		}
+	}	
+	option = { #Nothing happens
+		name = EVTOPTROM.003
+		ai_chance = { factor = 0 }
+	}
+}
+
+narrative_event = { #the Byzantines will either agree or disagree
+	id = ROM.102
+	title = EVTNAMEROM.102
+	desc = EVTDESCROM.102
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Agree
+		name = EVTOPTROM.004
+		ai_chance = { factor = 25 }
+		hidden_effect = {
+			FROM = {
+				add_trait = augustus
+				add_trait = patient
+				add_character_modifier = {
+					modifier = crowned_byzantines
+					duration = -1
+				}
+			}
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_west_rome
+				}
+				narrative_event = { id = ROM.103 days = 5 }
+			}
+		}
+	}	
+	option = { #Disagree
+		name = EVTOPTROM.005
+		ai_chance = { factor = 75 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_west_rome
+				}
+				narrative_event = { id = ROM.104 days = 5 }
+			}
+		}
+	}	
+}
+
+narrative_event = { #IF AGREE Arangements for the Crowning Ceremony
+	id = ROM.103
+	title = EVTNAMEROM.103
+	desc = EVTDESCROM.103
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Propose a Union between the two
+		name = EVTOPTROM.006
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_byzantium
+				}
+				narrative_event = { id = ROM.108 days = 5 }
+			}
+		}
+	}	
+}
+
+narrative_event = { #Byzantines will make a choise or to reject this proposal
+	id = ROM.108
+	title = EVTNAMEROM.108
+	desc = EVTDESCROM.108
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Agrees to unite fully as in annex Byzantium
+		name = EVTOPTROM.014
+		ai_chance = { factor = 10 }
+		hidden_effect = {
+			FROM = {
+				usurp_title = e_byzantium
+			}
+			any_player = {
+				narrative_event = { id = ROM.109 days = 5 }
+			}
+		}
+	}	
+	option = { #Agrees to unite partly economicly and militairly
+		name = EVTOPTROM.015
+		ai_chance = { factor = 10 }
+		hidden_effect = {
+				FROM = {
+					make_tributary = {
+						who = e_byzantium
+						tributary_type = client
+					}
+				}
+			any_player = {
+				narrative_event = { id = ROM.110 days = 5 }
+			}
+		}
+	}
+	option = { #Rejects this proposal as a whole
+		name = EVTOPTROM.016
+		ai_chance = { factor = 80 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_west_rome
+				}
+				narrative_event = { id = ROM.104 days = 5 }
+			}
+		}
+	}
+}
+
+narrative_event = { #IF DISAGREE West Rome gets to choose what to do to attack the Byzantines
+	id = ROM.104
+	title = EVTNAMEROM.104
+	desc = EVTDESCROM.104
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	is_triggered_only = yes
+	
+	option = { #West Rome gets a claim on the Byzantines
+		name = EVTOPTROM.008
+		ai_chance = { factor = 75 }
+		add_claim = e_byzantium
+		any_player = {
+			narrative_event = { id = ROM.105 }
+		}
+	}	
+	option = { #West Rome will make a permanent tribute of the Byzantines
+		name = EVTOPTROM.009
+		ai_chance = { factor = 15 }
+		custom_tooltip = {
+			text = dec_trib_rome
+			hidden_effect = {
+				unsafe_war = {
+					casus_belli = tributary_client_roman_cb
+					target = FROM
+				}
+				any_player = {
+					narrative_event = { id = ROM.106 }
+				}
+			}
+		}
+	}
+	option = { #West Rome will back down and lose West Rome
+		name = EVTOPTROM.010
+		ai_chance = { factor = 10 }
+		hidden_effect = {
+			e_west_rome = {
+				unsafe_destroy_landed_title = THIS
+			}
+			any_player = {
+				narrative_event = { id = ROM.107 }
+			}
+		}
+	}		
+}
+
+narrative_event = { #Event for everyone about West Rome getting a claim on the Byzantines
+	id = ROM.105
+	title = EVTNAMEROM.105
+	desc = EVTDESCROM.105
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.011
+	}
+}
+
+narrative_event = { #Event for everyone about West Rome fighting the Byzantines to get Tribute
+	id = ROM.106
+	title = EVTNAMEROM.106
+	desc = EVTDESCROM.106
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.012
+	}
+}
+
+narrative_event = { #Event for everyone about West Rome backing down and losing its title
+	id = ROM.107
+	title = EVTNAMEROM.107
+	desc = EVTDESCROM.107
+	
+	picture = GFX_evt_rome_falls
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.013
+	}
+}
+
+narrative_event = { #Event for everyone about West Rome diplomaticly annexing the Byzantines
+	id = ROM.109
+	title = EVTNAMEROM.109
+	desc = EVTDESCROM.109
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.017
+	}
+}
+
+narrative_event = { #Event for everyone about West Rome diplomaticly setting up a client state on the Byzantines
+	id = ROM.110
+	title = EVTNAMEROM.110
+	desc = EVTDESCROM.110
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.018
+	}
+}
+
+narrative_event = { #Event for everyone about the Byzantines losing
+	id = ROM.111
+	title = EVTNAMEROM.111
+	desc = EVTDESCROM.111
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.019
+	}
+}
+
+narrative_event = { #Event for everyone about the Byzantines winning
+	id = ROM.112
+	title = EVTNAMEROM.112
+	desc = EVTDESCROM.112
+	
+	picture = GFX_evt_rome_falls
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTROM.020
+	}
+}
+
+narrative_event = { #Nofities everyone about the creation of the Legion  of Italica
+	id = ROM.113
+	title = EVTNAMEROM.113
+	desc = EVTDESCROM.113
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTROM.021
+	}
+}
+
+
+narrative_event = { #The Western Roman Empire sends an envoy to Germany to destroy the HRE
+	id = ROM.114
+	title = EVTNAMEROM.114
+	desc = EVTDESCROM.114
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = { #Sends the Envoy to the HRE
+		name = EVTOPTROM.022
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_hre
+			}
+			narrative_event = { id = ROM.115 days = 5 }
+		}
+	}
+}
+
+narrative_event = { #The Holy Roman Emperor will either agree or disagree
+	id = ROM.115
+	title = EVTNAMEROM.115
+	desc = EVTDESCROM.115
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = { #Accepts the demands
+		name = EVTOPTROM.023
+		ai_chance = { factor = 10 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = {
+					has_landed_title = e_west_rome
+				}
+				narrative_event = { id = ROM.116 days = 5 }
+			}
+		}
+	}
+	
+	option = { #Refuses the demand
+		name = EVTOPTROM.024
+		ai_chance = { factor = 90 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_west_rome
+				}
+				narrative_event = { id = ROM.117 days = 5 }
+			}
+		}
+	}
+}
+
+narrative_event = { #IF AGREE The Holy Roman Emperor will disolve its title
+	id = ROM.116
+	title = EVTNAMEROM.116
+	desc = EVTDESCROM.116
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = { #Rome destroys the title
+		name = EVTOPTROM.025
+		effect = {
+			e_hre = {
+				show_scope_change = no
+				destroy_landed_title = THIS
+			}
+			any_player = {
+				narrative_event = { id = ROM.120 }
+			}
+		}
+	}
+}
+
+narrative_event = { #Nofities everyone about the HRE shattering its title
+	id = ROM.120
+	title = EVTNAMEROM.120
+	desc = EVTDESCROM.120
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTROM.030
+	}
+}
+
+narrative_event = { #IF DISAGREE The Holy Roman Emperor will not destroy its title
+	id = ROM.117
+	title = EVTNAMEROM.117
+	desc = EVTDESCROM.117
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = { #Rome goes to war against the HRE
+		name = EVTOPTROM.026
+		ai_chance = { factor = 90 }
+		hidden_effect = {
+			unsafe_war = {
+				casus_belli = dismantle_hre_west_rome
+				target = FROM
+			}
+		}
+	}
+	
+	option = { #Rome backs down
+		name = EVTOPTROM.027
+		ai_chance = { factor = 10 }
+	}
+}
+
+narrative_event = { #Nofities everyone about the victory against the HRE
+	id = ROM.118
+	title = EVTNAMEROM.118
+	desc = EVTDESCROM.118
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTROM.028
+	}
+}
+
+narrative_event = { #Nofities everyone about the defeat against the HRE
+	id = ROM.119
+	title = EVTNAMEROM.119
+	desc = EVTDESCROM.119
+	
+	picture = GFX_evt_hellenic_temple
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTROM.029
+	}
+}
+
+narrative_event = { #Reward for beating the HRE
+	id = ROM.121
+	title = EVTNAMEROM.121
+	desc = EVTDESCROM.121
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTROM.031
+		custom_tooltip = {
+			text = reward_against_hre_rome
+		}
+		wealth = 4000
+		prestige = 4000
+		add_character_modifier = {
+			modifier = reward_mod_rome
+			duration = -1
+		}
+		add_artifact = 	crown_wrapped_helmet
+		add_artifact = 	horse_armor_tier_2
+		add_artifact = 	crown_of_majesty
+		add_artifact = 	ruby_scepter
+		add_artifact =	sword_of_heroes
+		add_artifact =	lance_tier_2_new
+	}
+}

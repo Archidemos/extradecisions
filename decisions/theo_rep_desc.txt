@@ -1,0 +1,211 @@
+decisions = {
+
+	become_feudal = {
+		ai = no
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = k_papal_state }
+			OR = {
+				FROM = { government = ar_theocracy_government }
+				FROM = { government = ar_republic_government }
+			}
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 1000
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -1000
+			set_government_type = feudal_government
+			hidden_tooltip = {
+				clr_character_flag = ai_flag_refuse_marriage
+				clr_character_flag = cannot_marry
+				remove_trait = monk
+			}
+		}
+	}
+}
+
+targetted_decisions = {
+	
+	ar_theocracy_bless = {
+		ai = no
+		potential = {
+			NOT = { trait = incapable }
+			NOT = { has_landed_title = k_papal_state }
+			is_within_diplo_range = FROM
+			FROM = { government = ar_theocracy_government }
+			ROOT = { religion = FROM }
+		}
+		
+		from_potential = {
+			is_adult = yes
+			NOT = { trait = incapable }
+			religion = ROOT
+		}
+		
+		allow = {
+			FROM = {
+				prisoner = no
+				in_command = no
+				piety = 100
+			}
+			prisoner = no
+			in_command = no
+			NOT = {
+				has_opinion_modifier = {	###opinion modifier 10yrs cooldown
+					who =  FROM
+					modifier = opinion_teach_virtue
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -100
+			}
+			random_list = {
+				10 = {
+					set_character_flag = teach_virtue_chaste
+					add_trait = chaste
+				}
+				10 = {
+					set_character_flag = teach_virtue_temperate
+					add_trait = temperate
+				}
+				10 = {
+					set_character_flag = teach_virtue_charitable
+					add_trait = charitable
+				}
+				10 = {
+					set_character_flag = teach_virtue_diligent
+					add_trait = diligent
+				}
+				10 = {
+					set_character_flag = teach_virtue_patient
+					add_trait = patient
+				}
+				10 = {
+					set_character_flag = teach_virtue_kind
+					add_trait = kind
+				}
+				10 = {
+					set_character_flag = teach_virtue_humble
+					add_trait = humble
+				}
+			}
+			opinion = {
+				who = FROM
+				modifier = opinion_teach_virtue
+				months = 120
+			}
+			FROM = { character_event = { id = MNM.4960 } }
+			character_event = { id = MNM.4961 }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+title_decisions = {
+
+	ar_theocracy_convert = {
+		ai_check_interval = 3
+		
+		from_potential = {
+			is_ruler = yes
+		}
+		
+		potential = {
+			location = { NOT = { religion = FROM } }
+			FROM = { government = ar_theocracy_government }
+		}
+		
+		allow = {
+			FROM = {
+				piety = 250
+			}
+			location = {
+				NOT = { religion = FROM }
+				owner = { NOT = { religion = PREV } }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				piety = -250
+				hidden_tooltip = { character_event = { id = MNM.4990 } }
+			}
+			location = {
+				religion = FROM
+				add_province_modifier = {
+					name = religious_tension
+					years = 2
+				}
+			}
+			hidden_tooltip = {
+				if = { # Notify county owner
+					limit = {
+						holder_scope = { NOT = { character = FROM } }
+					}
+					holder_scope = { character_event = { id = MNM.4991 } }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+settlement_decisions = {
+	ar_republic_boon = {
+		ai = no
+	
+		potential = {
+			controlled_by = FROM
+			FROM = { government = ar_republic_government }
+		}
+		
+		allow = {
+			FROM = {
+				wealth = 250
+				government = ar_republic_government
+			}
+			NOT = { location = { has_province_modifier = ar_republic_bonus } }
+			controlled_by = FROM
+		}
+		
+		effect = {
+			FROM = {
+				show_scope_change = no
+				wealth = -250
+			}
+			location = {
+				add_province_modifier = {
+					name = ar_republic_bonus
+					years = 5
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

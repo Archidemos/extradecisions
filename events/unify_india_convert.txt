@@ -1,0 +1,81 @@
+namespace = UIN
+
+narrative_event = {
+	id = UIN.001
+	title = EVTNAMEUIN.001
+	desc = EVTDESCUIN.001
+	
+	picture = GFX_evt_battle_indo_aryan_group
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAUIN.003
+	}
+}
+
+narrative_event = {
+	id = UIN.004
+	title = EVTNAMEUIN.004
+	desc = EVTDESCUIN.004
+	
+    picture = GFX_evt_mass_crusade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAUIN.007
+	}
+}
+
+narrative_event = {
+	id = UIN.002
+	title = EVTNAMEUIN.002
+	desc = EVTDESCUIN.002
+	
+	picture = GFX_evt_battle_indo_aryan_group
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAUIN.001
+		any_playable_ruler = {
+			if = {
+				limit = {
+					de_jure_liege = e_india
+				}
+				narrative_event = { id = UIN.003 }	
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = UIN.003
+	title = EVTNAMEUIN.003
+	desc = EVTDESCUIN.003
+	
+	picture = GFX_Hagia_sofia_muslim
+	
+	is_triggered_only = yes
+	
+	option = { # No
+		name = EVTOPTUIN.006
+		ai_chance = { factor = 25 }
+	}
+	option = { # Yes
+		name = EVTOPTUIN.005
+		ai_chance = { factor = 75 }
+		religion = FROM
+		any_courtier = {
+			limit = {
+				religion = FROM
+				liege = { character = { religion = FROM } }
+			}
+			religion = FROM
+		}
+		capital_scope = {
+			religion = FROM
+		}
+	}
+}

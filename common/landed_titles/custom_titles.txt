@@ -1,0 +1,118 @@
+k_burgundy_kingdom = {
+	color={ 105 5 33 }
+
+	short_name = yes
+
+	capital	= 136 # Dijon
+
+	allow = {
+		always = no
+	}
+	
+	culture = occitan
+
+	roman = "Lugdunensis"
+		
+	catholic = 5000 # Crusade target weight
+}
+
+k_dutch_republic = {
+	color={ 235 145 45 }
+
+	short_name = yes
+
+	capital	= 80 # Dijon
+	
+	dignity = 200
+
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				k_dutch_republic = {
+					is_titular = yes
+				}
+			}
+			k_dutch_republic = {
+				is_titular = no
+			}
+		}
+		is_republic = yes
+	}
+	
+	culture = dutch
+
+}
+
+e_mughals = {
+	color = { 43 130 66 }
+	
+	short_name = yes
+	
+	capital = 1362
+
+	landless = yes
+	
+	allow = {
+		always = no
+	}
+	
+	culture = turkish
+	religion = tengri_pagan
+}
+e_west_rome = {
+	color = { 199 12 12 }
+	
+	purple_born_heirs = yes
+	government = roman_imperial_government
+	
+	short_name = yes
+	
+	capital = 333
+	
+	allow = {
+		always = no
+	}
+	culture = roman
+	religion = orthodox
+}
+e_celtic_empire = {
+	color = { 120 217 78 }
+	
+	short_name = yes
+	
+	capital = 11
+	
+	allow = {
+		always = no
+	}
+	culture = celtic
+	religion = catholic
+}
+
+e_varingian = {
+	color = { 182 212 190 }
+
+	short_name = yes
+
+	capital = 409
+
+	allow = {
+		always = no
+	}
+	culture_group = west_germanic
+	religion = norse_pagan
+}
+
+e_north_sea = {
+	color = { 207 245 255 }
+
+	short_name = yes
+
+	capital = 32
+
+	allow = {
+		always = no
+	}
+	culture_group = north_germanic
+	religion = norse_pagan
+}

@@ -1,0 +1,928 @@
+namespace = CEL
+
+narrative_event = { #Event for everyone about the formation
+	id = CEL.100
+	title = EVTNAMECEL.100
+	desc = EVTDESCCEL.100
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTCEL.001
+	}
+}
+
+narrative_event = { #The Celtic Empire will send a diplomat to the Papacy
+	id = CEL.101
+	title = EVTNAMECEL.101
+	desc = EVTDESCCEL.101
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Send an diplomat to the Papacy!
+		name = EVTOPTCEL.002
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = k_papal_state
+				}
+				narrative_event = { id = CEL.102 days = 5 }
+			}
+		}
+	}
+	option = { #Perhaps revenge is not the answer..
+		name = EVTOPTCEL.003
+	}
+}
+
+narrative_event = { #The Pope either gives in or refuses
+	id = CEL.102
+	title = EVTNAMECEL.102
+	desc = EVTDESCCEL.102
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #We refuse!
+		name = EVTOPTCEL.004
+		ai_chance = { factor = 95 }
+		hidden_effect = {
+			any_playable_ruler = {
+				limit = { 
+					has_landed_title = e_celtic_empire
+				}
+				narrative_event = { id = CEL.104 days = 5 }
+			}
+		}
+	}
+	option = { #For the sake of Peace..
+		name = EVTOPTCEL.005
+		ai_chance = { factor = 5 }
+        k_celtic_christian = {
+            holder_scope = {
+                save_event_target_as = recipient
+            }
+        }
+        k_papal_state = {
+            holder_scope = {
+                save_event_target_as = pope_losing_titles
+            }
+        }
+        event_target:pope_losing_titles = {
+            any_title_under = {
+                limit = { NOT = { title = k_papal_state } }
+                usurp_title = event_target:recipient
+            }
+        }
+        any_player = {
+            narrative_event = { id = CEL.103 }
+        }
+	}
+}
+
+narrative_event = { #The Pope accepts
+	id = CEL.103
+	title = EVTNAMECEL.103
+	desc = EVTDESCCEL.103
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Gone with the Holy See!
+		name = EVTOPTCEL.006
+	}
+}
+
+narrative_event = { #The Pope refuses
+	id = CEL.104
+	title = EVTNAMECEL.104
+	desc = EVTDESCCEL.104
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Then we shall march!
+		name = EVTOPTCEL.007
+		ai_chance = { factor = 95 }
+		custom_tooltip = {
+			text = war_celtic_papacy
+			hidden_effect = {
+				unsafe_war = {
+					casus_belli = depose_pope_celtic
+					target = FROM
+				}
+				any_player = {
+					narrative_event = { id = CEL.105 days = 5 }
+				}
+				any_independent_ruler = {
+					limit = {
+						religion = catholic
+					}
+					narrative_event = { id = CEL.106 days = 10 }
+				}
+			}
+		}
+	}
+	option = { #On a seccond tought..
+		ai_chance = { factor = 5 }
+		name = EVTOPTCEL.008
+	}
+}
+
+narrative_event = { #Informs everyone about the big Catholic War
+	id = CEL.105
+	title = EVTNAMECEL.105
+	desc = EVTDESCCEL.105
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Good Grief..
+		name = EVTOPTCEL.009
+	}
+}
+
+narrative_event = { #The call to arms to everyone in the Catholic world
+	id = CEL.106
+	title = EVTNAMECEL.106
+	desc = EVTDESCCEL.106
+	
+    border = GFX_event_narrative_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+	
+    trigger = {
+        FROMFROM = {
+            has_landed_title = k_papal_state
+            any_war = {
+                using_cb = depose_pope_celtic
+                is_primary_war_defender = yes
+            }
+        }
+    }
+	
+
+    option = { #Support the war to depose the Pope
+        name = EVTOPTCEL.010
+        custom_tooltip = { text = join_war_to_despose_pope_CEL }
+		religion = celtic_christian
+        e_celtic_empire = {
+            holder_scope = {
+                save_event_target_as = attacks_against_papacy
+            }
+        }		
+		event_target:attacks_against_papacy = {
+		show_scope_change = no
+			any_war = {
+				limit = {
+					using_cb = depose_pope_celtic
+				}
+				ROOT = {
+					show_scope_change = no
+					join_attacker_wars = PREV
+				}
+			}
+		}
+
+		ai_chance = { factor = 50 }
+    }
+
+    option = { #Support the Pope
+        name = EVTOPTCEL.011
+        custom_tooltip = { text = join_war_to_defend_pope_CEL }
+		
+        k_papal_state = {
+            holder_scope = {
+                save_event_target_as = defends_against_celtics
+            }
+        }	
+		
+		event_target:defends_against_celtics = {
+			any_war = {
+				limit = {
+					using_cb = depose_pope_celtic
+				}
+				ROOT = {
+					show_scope_change = no
+					join_defender_wars = PREV
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+    }
+
+    option = { #Take neither side
+        name = EVTOPTCEL.012
+        custom_tooltip = { text = join_neither_side_CEL }
+		ai_chance = { factor = 10 }
+    }
+}
+
+narrative_event = { #Informs everyone about the Celtics that won
+	id = CEL.107
+	title = EVTNAMECEL.107
+	desc = EVTDESCCEL.107
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Ok
+		name = EVTOPTCEL.012
+	}
+}
+
+narrative_event = { #Informs everyone about the Celtics that lost
+	id = CEL.108
+	title = EVTNAMECEL.108
+	desc = EVTDESCCEL.108
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Good Grief..
+		name = EVTOPTCEL.013
+	}
+}
+
+
+narrative_event = { #Event for everyone about the formation of the North Sea Empire
+	id = CEL.109
+	title = EVTNAMECEL.109
+	desc = EVTDESCCEL.109
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Good Grief..
+		name = EVTOPTCEL.014
+	}
+}
+narrative_event = { #Event for the decision to Invade France (for everyone)
+	id = CEL.111
+	title = EVTNAMECEL.111
+	desc = EVTDESCCEL.111
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Good Grief..
+		name = EVTOPTCEL.016
+	}
+}
+
+narrative_event = { #Event for everyone about the formation of the Varingian Empire
+	id = CEL.110
+	title = EVTNAMECEL.110
+	desc = EVTDESCCEL.110
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Good Grief..
+		name = EVTOPTCEL.015
+	}
+}
+
+narrative_event = { #Event to invade the Byzantines for the Varingians
+	id = CEL.112
+	title = EVTNAMECEL.112
+	desc = EVTDESCCEL.112
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #We will start the invasion
+		name = EVTOPTCEL.017
+		ai_chance = { factor = 70 }
+        e_byzantium = {
+            holder_scope = {
+                save_event_target_as = target_varingian_invasion
+            }
+        }
+        custom_tooltip = {
+            text = spawn_units_varingian_war
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+        }
+        unsafe_war = {
+            casus_belli = varingian_war_disolve_byz
+            target = event_target:target_varingian_invasion
+        }
+	}
+	option = { #Maybe its better to focus on building up the Rus
+		name = EVTOPTCEL.018
+		ai_chance = { factor = 30 }
+		wealth = 2500
+		add_character_modifier = {
+		    name = varingian_boon
+		    duration = -1
+		}
+		409 = {
+			add_holding_slot = 1
+		}
+		409 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1662 = {
+			add_holding_slot = 1
+		}
+		1662 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1652 = {
+			add_holding_slot = 1
+		}
+		1652 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1667 = {
+			add_holding_slot = 1
+		}
+		1667 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1660 = {
+			add_holding_slot = 2
+		}
+		1660 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1664 = {
+			add_holding_slot = 1
+		}
+		1664 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1670 = {
+			add_holding_slot = 1
+		}
+		1670 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+
+		1600 = {
+			add_holding_slot = 1
+		}
+		1600 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1607 = {
+			add_holding_slot = 1
+		}
+		1607 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1601 = {
+			add_holding_slot = 1
+		}
+		1601 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1603 = {
+			add_holding_slot = 2
+		}
+		1603 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1605 = {
+			add_holding_slot = 1
+		}
+		1605 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		1599 = {
+			add_holding_slot = 2
+		}
+		1599 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		404 = {
+			add_holding_slot = 3
+		}
+		404 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		388 = {
+			add_holding_slot = 1
+		}
+		388 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}	
+
+		393 = {
+			add_holding_slot = 2
+		}
+		393 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+		
+		385 = {
+			add_holding_slot = 2
+		}
+		385 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}	
+		
+		412 = {
+			add_holding_slot = 3
+		}
+		412 = {
+			if = {
+				limit = {
+					is_feudal = yes
+				}
+				build_holding = {
+					type = castle
+					holder = root
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #Event to everyone about the Varingians winning
+	id = CEL.113
+	title = EVTNAMECEL.113
+	desc = EVTDESCCEL.113
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Byzantines no more!
+		name = EVTOPTCEL.019
+	}
+}
+
+narrative_event = { #Event to reward the Varingians
+	id = CEL.114
+	title = EVTNAMECEL.114
+	desc = EVTDESCCEL.114
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Wonderfull!
+		name = EVTOPTCEL.020
+        custom_tooltip = {
+            text = reward_against_byz_varingian
+        }
+		wealth = 3000
+		prestige = 2000
+        add_character_modifier = {
+            modifier = reward_varingian
+        }
+        add_artifact = zweihander_sword
+        add_artifact = my_fechtbuch
+        add_artifact = good_cookbook
+        add_artifact = lance_tier_3_piercer
+	}
+}
+
+narrative_event = { #Event to everyone about the Varingians losing
+	id = CEL.115
+	title = EVTNAMECEL.115
+	desc = EVTDESCCEL.115
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Embarrising
+		name = EVTOPTCEL.021
+	}
+}
+
+character_event = { #Event to remove new_administration and recently_conquered when making a Norse Colony
+	id = CEL.116
+    hide_window = yes
+    is_triggered_only = yes
+
+	is_triggered_only = yes
+
+	immediate = { #Removes all negative modifiers when making the colony
+        any_realm_province = {
+            remove_province_modifier = sold_off_land
+            remove_province_modifier = thieves_guild
+            remove_province_modifier = incompetent_rule
+            remove_province_modifier = smugglers_ring
+            remove_province_modifier = highway_robber_band
+            remove_province_modifier = excessive_bureaucracy
+            remove_province_modifier = peasant_unrest
+            any_province_holding = {
+                remove_holding_modifier = new_administration
+                remove_holding_modifier = recently_conquered
+                refill_holding_levy = yes
+            }
+        }
+        capital_scope = {
+            any_province_holding = {
+                remove_holding_modifier = new_administration
+                remove_holding_modifier = recently_conquered
+                refill_holding_levy = yes
+            }
+        }
+        any_demesne_province = {
+            remove_province_modifier = sold_off_land
+            remove_province_modifier = thieves_guild
+            remove_province_modifier = incompetent_rule
+            remove_province_modifier = smugglers_ring
+            remove_province_modifier = highway_robber_band
+            remove_province_modifier = excessive_bureaucracy
+            remove_province_modifier = peasant_unrest
+            any_province_holding = {
+                remove_holding_modifier = new_administration
+                remove_holding_modifier = recently_conquered
+                refill_holding_levy = yes
+            }
+        }
+	}
+}
+
+narrative_event = { #Event to invade the Holy Roman Empire for the North Sea Empire
+	id = CEL.117
+	title = EVTNAMECEL.117
+	desc = EVTDESCCEL.117
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Death to the Holy Roman Empire!
+		name = EVTOPTCEL.019
+		ai_chance = { factor = 70 }
+        e_hre = {
+            holder_scope = {
+                save_event_target_as = target_north_sea_invasion
+            }
+        }
+        custom_tooltip = { 
+            text = spawn_units_north_sea_war
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 409
+                troops = {
+                    light_infantry = { 1500 1500 }
+                    archers = { 500 500 }
+                }
+            }
+        }
+		event_target:target_north_sea_invasion = {
+			narrative_event = { id = CEL.118 days = 5 }
+		}
+        unsafe_war = {
+            casus_belli = north_sea_war_disolve_hre
+            target = event_target:target_north_sea_invasion
+        }
+	}
+	option = { #Perhaps building up is the right choice..
+		name = EVTOPTCEL.020
+		ai_chance = { factor = 30 }
+		wealth = 4000
+		piety = 1000
+		add_character_modifier = {
+		    name = north_sea_boon
+		    duration = -1
+		}
+	}
+}
+
+narrative_event = { #Event for Event Spawned Units for the HRE
+	id = CEL.118
+	title = EVTNAMECEL.118
+	desc = EVTDESCCEL.118
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Reinforcements have arrived!
+		name = EVTOPTCEL.021
+        e_hre = {
+            holder_scope = {
+                save_event_target_as = target_north_sea_invasion
+            }
+        }
+        custom_tooltip = { 
+            spawn_unit = {
+                province = 365
+                troops = {
+                    heavy_infantry = { 1000 1000 }
+                    knights = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 365
+                troops = {
+                    heavy_infantry = { 1000 1000 }
+                    knights = { 500 500 }
+                }
+            }
+            spawn_unit = {
+                province = 365
+                troops = {
+                    heavy_infantry = { 1000 1000 }
+                    knights = { 500 500 }
+                }
+            }
+        }
+	}
+}
+
+narrative_event = { #Event for everyone about the victory of the North Sea Empire
+	id = CEL.119
+	title = EVTNAMECEL.119
+	desc = EVTDESCCEL.119
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #This is bad..
+		name = EVTOPTCEL.022
+	}
+}
+
+narrative_event = { #Event for everyone about the defeat of the North Sea Empire
+	id = CEL.120
+	title = EVTNAMECEL.120
+	desc = EVTDESCCEL.120
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Peace at last..
+		name = EVTOPTCEL.023
+	}
+}
+
+narrative_event = { #Event for everyone about the defeat of the North Sea Empire
+	id = CEL.121
+	title = EVTNAMECEL.121
+	desc = EVTDESCCEL.121
+
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	option = { #Peace at last..
+		name = EVTOPTCEL.024
+		wealth = 1000
+		prestige = 2000
+		add_trait = seaking
+		add_trait = strategist
+		add_artifact = hermetic_plate_armor
+		add_artifact = armor_tier_2
+	}
+}

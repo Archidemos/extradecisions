@@ -1,0 +1,263 @@
+decisions = {
+	borrow_more_money_jews = {
+		only_playable = yes
+		ai_check_interval = 30
+		potential = {
+			is_playable = yes
+			is_nomadic = no
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				religion = taoist
+			}
+			NOT = {	religion_group = jewish_group }
+			NOT = { religion = manichean }
+			NOR = { 
+				secret_religion = jewish
+				secret_religion = karaite
+				secret_religion = samaritan
+			}
+			NOT = { government = order_government }
+		}
+		
+		allow = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				religion = taoist
+			}
+			prisoner = no
+			NOT = {
+				has_character_modifier = borrowed_more_money_from_jews
+				has_character_modifier = expelled_jewish
+			}
+			top_liege = { NOT = { has_character_modifier = expelled_jewish } }
+		}
+		
+		effect = {
+			add_character_modifier = {
+				name = borrowed_more_money_from_jews
+				duration = -1
+				inherit = yes
+			}
+			wealth = 600
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				wealth = 0
+				war = no
+			}
+			modifier = {
+				factor = 0
+				wealth = 500
+				war = yes
+			}			
+			modifier = {
+				factor = 0.1 # Slow it down
+			}
+		}
+	}
+	repay_more_money_jews = {
+		only_playable = yes
+		ai_check_interval = 6
+		potential = {
+			is_playable = yes
+			NOT = { 
+				has_character_modifier = expelled_jewish
+			}
+			has_character_modifier = borrowed_more_money_from_jews
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			conditional_tooltip = {
+				trigger = {
+		    		any_owned_bloodline = {
+	    				has_bloodline_flag = jewish_saintly_bloodline
+	    			}
+	    		}
+    			wealth = 600
+			}
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+			    		any_owned_bloodline = {
+		    				has_bloodline_flag = jewish_saintly_bloodline
+		    			}
+					}
+				}
+				wealth = 650
+			}
+		}
+		
+		effect = {
+			remove_character_modifier = borrowed_more_money_from_jews
+			if = {
+				limit = {
+		    		any_owned_bloodline = {
+	    				has_bloodline_flag = jewish_saintly_bloodline
+	    			}
+	    		}
+	    		wealth = -700
+			}
+			else = {
+				wealth = -750
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 700 }
+			}
+			modifier = {
+				factor = 0.5 # Slow it down
+			}
+		}
+	}
+
+	borrow_alot_money_jews = {
+		only_playable = yes
+		ai_check_interval = 30
+		potential = {
+			is_playable = yes
+			is_nomadic = no
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				religion = taoist
+			}
+			NOT = {	religion_group = jewish_group }
+			NOT = { religion = manichean }
+			NOR = { 
+				secret_religion = jewish
+				secret_religion = karaite
+				secret_religion = samaritan
+			}
+			NOT = { government = order_government }
+		}
+		
+		allow = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				religion = taoist
+			}
+			prisoner = no
+			NOT = {
+				has_character_modifier = borrowed_alot_money_from_jews
+				has_character_modifier = expelled_jewish
+			}
+			top_liege = { NOT = { has_character_modifier = expelled_jewish } }
+		}
+		
+		effect = {
+			add_character_modifier = {
+				name = borrowed_alot_money_from_jews
+				duration = -1
+				inherit = yes
+			}
+			wealth = 800
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				wealth = 0
+				war = no
+			}
+			modifier = {
+				factor = 0
+				wealth = 700
+				war = yes
+			}			
+			modifier = {
+				factor = 0.1 # Slow it down
+			}
+		}
+	}
+	repay_alot_money_jews = {
+		only_playable = yes
+		ai_check_interval = 6
+		potential = {
+			is_playable = yes
+			NOT = { 
+				has_character_modifier = expelled_jewish
+			}
+			has_character_modifier = borrowed_alot_money_from_jews
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			conditional_tooltip = {
+				trigger = {
+		    		any_owned_bloodline = {
+	    				has_bloodline_flag = jewish_saintly_bloodline
+	    			}
+	    		}
+    			wealth = 800
+			}
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+			    		any_owned_bloodline = {
+		    				has_bloodline_flag = jewish_saintly_bloodline
+		    			}
+					}
+				}
+				wealth = 850
+			}
+		}
+		
+		effect = {
+			remove_character_modifier = borrowed_alot_money_from_jews
+			if = {
+				limit = {
+		    		any_owned_bloodline = {
+	    				has_bloodline_flag = jewish_saintly_bloodline
+	    			}
+	    		}
+	    		wealth = -900
+			}
+			else = {
+				wealth = -1000
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 1000 }
+			}
+			modifier = {
+				factor = 0.5 # Slow it down
+			}
+		}
+	}
+}

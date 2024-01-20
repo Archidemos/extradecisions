@@ -1,0 +1,96 @@
+#namespace = FRT
+#
+#character_event = {
+#    id = FRT.1
+#	hide_window = yes
+#	
+#	ai = no
+#	is_triggered_only = yes
+#
+#    trigger = {
+#    }
+#
+#    immediate = {
+#		on_fort_construction_start = {
+#			effect = {
+#				FROM = {
+#					save_event_target_as = fort_defense
+#				}
+#			}
+#		}
+#		on_fort_construction_start = {
+#			effect = {
+#				location = {
+#					save_event_target_as = fort_defense
+#				}
+#			}
+#		}
+#		on_fort_construction_start = {
+#			effect = {
+#				ROOT = {
+#					save_event_target_as = fort_defense
+#				}
+#			}
+#		}
+#    }
+#}
+#
+#character_event = {
+#    id = FRT.2
+#	hide_window = yes
+#	
+#	ai = no
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#	}
+#	
+#    immediate = {
+#		on_fort_construction_completed = {
+#			effect = {
+#				save_event_target_as = fort_defense
+#				FROM = {
+#					save_event_target_as = fort_defense
+#					add_province_modifier = {
+#						name = fort_protection
+#						duration = -1
+#					}
+#				}
+#			}
+#		}
+#    }
+#}
+#
+#character_event = {
+#    id = FRT.3
+#    hide_window = yes
+#    ai = no
+#    is_triggered_only = yes
+#	
+#	trigger = {
+#	}
+#	
+#    immediate = {
+#        on_siege_lost_leader_fort = {
+#            effect = {
+#				location = {
+#					remove_province_modifier = fort_protection 
+#				}
+#				FROM = {
+#					remove_province_modifier = fort_protection 
+#				}
+#				ROOT = {
+#					remove_province_modifier = fort_protection 
+#				}
+#			}
+#        }
+#        on_siege_over_winner_fort = {
+#            effect = {
+#				ROOT = {
+#					remove_province_modifier = fort_protection 
+#				}
+#			}
+#        }
+#    }
+#}
+

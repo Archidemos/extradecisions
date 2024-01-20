@@ -1,0 +1,47 @@
+settlement_decisions = {
+	reinforce_province = {
+		filter = owned
+		ai_target_filter = owned
+		
+		from_potential = {
+			is_playable = yes
+			higher_tier_than = BARON
+			NOT = { has_character_flag = army_reinforcing }
+		}
+		
+		potential = {
+			holder_scope = {
+				character = FROM
+			}
+		}
+		allow = {
+			FROM = {
+				show_scope_change = no
+			}
+			NOT = { holding_total_levy_percent = 1 } #Holding does not have a full garrison or levy
+			NOT = { location = { has_province_modifier = recently_reinforced } }
+		}
+		effect = {
+			save_event_target_as = reinforcing_province
+			FROM = {
+				show_scope_change = no
+				set_character_flag = army_reinforcing
+				character_event = { id = REI.001 }	#handle actual effect		
+			}
+			location = {
+				add_province_modifier = {
+					name = recently_reinforced
+					years = 5
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

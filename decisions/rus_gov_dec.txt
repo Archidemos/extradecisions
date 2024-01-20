@@ -1,0 +1,78 @@
+decisions = {
+	reform_russian_admin = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+		
+		potential = {
+			has_landed_title = e_russian_empire
+			NOT = { has_global_flag = reformed_russia }
+		}
+		
+		allow = {
+			war = no
+			has_landed_title = e_russian_empire
+			culture = russian
+			religion = orthodox
+			prestige = 2500
+			wealth = 1000
+		}
+		
+		effect = {
+			set_global_flag = reformed_russia
+			prestige = -2000
+			wealth = -1000
+			set_government_type = tsardom_government
+			add_artifact = russia_imperial_crown		
+			
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			
+			hidden_tooltip = {
+				any_players = {
+					narrative_event = { id = RUSKI.001 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	russian_ambition = { #give a event to the player only to choose between russian expansion or russian centralization
+		only_playable = yes
+		is_high_prio = yes	
+		ai_check_interval = 24
+		
+		potential = {
+			has_landed_title = e_russian_empire
+			NOT = { has_global_flag = russia_decides }
+		}
+
+		allow = {
+			war = no
+			has_landed_title = e_russian_empire
+			culture = russian
+			religion = orthodox
+			wealth = 5000
+		}
+		
+		effect = {
+			set_global_flag = russia_decides
+			wealth = -5000
+			custom_tooltip = {
+				text = russian_ambition_info
+			}
+			hidden_tooltip = {
+				ROOT = {
+					narrative_event = { id = RUSKI.002 }
+				}
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

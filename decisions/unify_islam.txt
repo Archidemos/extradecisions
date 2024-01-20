@@ -1,0 +1,84 @@
+decisions = {
+	unify_islam = {
+		only_playable = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			OR = {
+				religion = sunni
+				religion = shiite
+			}
+			holy_order = no
+			NOR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+				has_landed_title = e_hre
+			}
+			is_alternate_start = no
+			NOT = { has_global_flag = unified_islam } 
+		}
+		
+		allow = {
+			is_adult = yes
+			independent = yes
+			is_tributary = no
+			war = no
+			tier = EMPEROR
+			
+			OR = {
+				religion = sunni
+				religion = shiite
+			}
+			has_landed_title = c_jerusalem
+			has_landed_title = c_mecca
+			has_landed_title = c_medina
+				
+            completely_controls = k_mauretania
+            completely_controls = k_africa
+            completely_controls = k_egypt
+            completely_controls = k_arabia
+            completely_controls = k_syria
+            completely_controls = k_mesopotamia
+            completely_controls = k_iraq
+            completely_controls = k_persia
+            completely_controls = k_baluchistan
+            completely_controls = k_khorasan
+            completely_controls = k_afghanistan
+            completely_controls = k_andalusia
+			
+		}
+
+		effect = {
+			set_government_type = caliphate_government
+			create_bloodline = {
+				type = islam_unifier
+			}
+			add_character_modifier = {
+				modifier = unify_isl
+				duration = -1
+			}
+			give_nickname = nick_the_lion
+			prestige = 8000
+			piety = 8000		
+			
+			add_claim = d_sicily
+			add_claim = d_castilla
+			add_claim = d_leon		
+			add_claim = d_barcelona
+			add_claim = d_aragon
+			add_claim = d_galicia
+			add_claim = d_porto	
+			set_global_flag = unified_islam
+			
+			hidden_tooltip = {
+				any_players = {
+					narrative_event = { id = Unii.1000 } # notify the world
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

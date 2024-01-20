@@ -1,0 +1,220 @@
+decisions = {
+	unite_india = {
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+
+		potential = {
+			has_dlc = "Rajas of India"
+			NOT = { has_global_flag = india_united }
+			NOT = { religion_group = indian_group }
+			is_playable = yes
+			primary_title = {
+				higher_tier_than = DUKE
+			}
+			capital_scope = {
+				region = world_india
+			}
+			e_india = {
+				has_holder = no
+			}
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			independent = yes
+			is_adult = yes
+			prisoner = no
+			NOT = {	trait = incapable }
+			war = no
+			prestige = 1000
+			wealth = 500
+			OR = {
+				has_landed_title = e_rajastan
+				e_rajastan = { has_holder = no }
+			}
+			OR = {
+				has_landed_title = e_bengal
+				e_bengal = { has_holder = no }
+			}
+			OR = {
+				has_landed_title = e_deccan
+				e_deccan = { has_holder = no }
+			}
+			completely_controls_region = world_india
+		}
+		effect = {
+			wealth = -500
+			prestige = 500
+			activate_title = { title = e_india status = yes }
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						tier = KING
+						region = world_india
+					}
+					de_jure_liege = e_india
+				}
+			}
+			primary_title = {
+				e_india = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			hidden_tooltip = { e_india = { make_primary_title = yes } }
+			if = {
+				limit = {
+					OR = {
+						has_landed_title = e_rajastan
+						e_rajastan = { has_holder = no }
+					}
+				}
+				e_rajastan = { destroy_landed_title = THIS }
+				activate_title = { title = e_rajastan status = no }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_landed_title = e_bengal
+						e_bengal = { has_holder = no }
+					}
+				}
+				e_bengal = { destroy_landed_title = THIS }
+				activate_title = { title = e_bengal status = no }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_landed_title = e_deccan
+						e_deccan = { has_holder = no }
+					}
+				}
+				e_deccan = { destroy_landed_title = THIS }
+				activate_title = { title = e_deccan status = no }
+			}
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_magnificent
+			}
+			create_bloodline = {
+				type = bloodline_unifier_india
+			}
+			set_global_flag = india_united
+			any_player = {
+				narrative_event = { id = UIN.001 }
+			}
+			hidden_tooltip = {
+				ROOT = {
+					narrative_event = { id = UIN.002 days = 5 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	christian_indian_foothold = {
+		only_independent = yes
+		ai_check_interval = 24	
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { religion_group = indian_group }
+			is_playable = yes
+			religion = nestorian
+			primary_title = {
+				higher_tier_than = DUKE
+			}
+			capital_scope = {
+				region = world_india
+			}
+			NOT = { has_global_flag = india_crusade_dec } 
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			religion = nestorian
+			capital_scope = {
+				religion = nestorian
+			}
+			prestige = 1000
+			wealth = 1000
+			completely_controls = k_karnata
+			completely_controls = k_telingana
+			completely_controls = k_tamilakam
+			completely_controls = k_andhra
+		}
+		
+		effect = {
+			add_claim = k_maharastra			
+			cash = -1000
+			give_nickname = nick_the_saint
+			add_trait = crusader_king
+			create_bloodline = {
+				type = bloodline_indian_christ
+			}
+			set_global_flag = india_crusade_dec				
+		
+			custom_tooltip = {
+				text = ind_crusade_units
+				hidden_effect = {
+					spawn_unit = {
+						province = 1114
+						troops =
+						{
+							light_infantry = { 500 500 }
+							archers = { 250 250 }
+							heavy_infantry = { 250 250 }
+							knights = { 250 500 }
+						}
+					}
+					spawn_unit = {
+						province = 1114
+						troops =
+						{
+							light_infantry = { 500 500 }
+							archers = { 250 250 }
+							heavy_infantry = { 250 250 }
+							knights = { 250 500 }
+						}
+					}		
+					spawn_unit = {
+						province = 1114
+						troops =
+						{
+							light_infantry = { 500 500 }
+							archers = { 250 250 }
+							heavy_infantry = { 250 250 }
+							knights = { 250 500 }
+						}
+					}			
+					spawn_unit = {
+						province = 1114
+						troops =
+						{
+							light_infantry = { 500 500 }
+							archers = { 250 250 }
+							heavy_infantry = { 250 250 }
+							knights = { 250 500 }
+						}
+					}
+					any_player = {
+						narrative_event = { id = UIN.004 }
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

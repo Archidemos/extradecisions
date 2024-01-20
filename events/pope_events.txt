@@ -1,0 +1,196 @@
+namespace = POPE
+
+character_event = { #Ruler gets option to add Investiture or not
+	id = POPE.1
+	
+	desc = EVTDESCPOPE.1
+	
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #As the Pope commands..
+        name = EVTOPTPOPE.1
+		ai_chance = { factor = 45 }
+        piety = 250
+        rightful_religious_head_scope = {
+			character_event = { id = POPE.2 days = 5 }
+		}
+        any_demesne_title = {
+		    add_law = {
+                law = investiture_law_0
+            }
+		}
+		add_character_modifier = {
+			name = papal_gratitude
+			years = 10
+		}
+		if = {
+			limit = { trait = excommunicated }
+			remove_trait = excommunicated
+		}
+		ai_chance = {
+			factor = 50
+		}
+    }
+    option = { #This is outragious!
+        name = EVTOPTPOPE.2
+		ai_chance = { factor = 55 }
+        piety = -250
+        rightful_religious_head_scope = {
+			character_event = { id = POPE.3 days = 5 }
+		}
+		add_character_modifier = {
+			name = displeased_papacy
+			years = 10
+		}
+		ai_chance = {
+			factor = 50
+		}		
+    }
+}
+
+character_event = { #If they added Invesititure
+	id = POPE.2
+	desc = EVTDESCPOPE.2
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #God bless them!
+        name = EVTOPTPOPE.3
+    }
+}
+
+character_event = { #If they didnt add Investiture
+	id = POPE.3
+	desc = EVTDESCPOPE.3
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #This defies God!
+        name = EVTOPTPOPE.4
+    }
+}
+
+character_event = { #Ruler asks Pope for Papal Blessing
+	id = POPE.4
+	desc = EVTDESCPOPE.4
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	potrait = event_target:pope_blessing_client	
+	
+	option = { #This request is granted
+        name = EVTOPTPOPE.5
+		ai_chance = { factor = 45 }
+		event_target:pope_blessing_client = {
+			character_event = { id = POPE.5 days = 5 }
+			add_character_modifier = {
+				name = blessing_from_pope
+				years = 10
+			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = already_asked_blessing
+					years = 10
+				}
+			}
+			piety = -300
+		}
+			
+    }
+	
+	option = { #This request is denied
+        name = EVTOPTPOPE.6
+		ai_chance = { factor = 35 }
+		event_target:pope_blessing_client = {
+			character_event = { id = POPE.6 days = 5 }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = already_asked_blessing
+					years = 10
+				}
+			}
+		}
+    }
+
+	option = { #How blasphemous of them to ask!
+        name = EVTOPTPOPE.7
+		ai_chance = { factor = 20 }
+		event_target:pope_blessing_client = {
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = already_asked_blessing
+					years = 10
+				}
+			}
+			add_trait = excommunicated
+			character_event = { id = POPE.7 days = 5 }
+		}
+    }
+}
+
+character_event = { #If the Papal Blessing is granted
+	id = POPE.5
+	desc = EVTDESCPOPE.5
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #Bless be the Pope!
+        name = EVTOPTPOPE.8
+		clr_event_target = pope_blessing_client
+    }
+}
+
+character_event = { #If the Papal Blesssing is denied
+	id = POPE.6
+	desc = EVTDESCPOPE.6
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #Understood..
+        name = EVTOPTPOPE.9
+		clr_event_target = pope_blessing_client
+    }
+}
+
+character_event = { #If the Papal Blesssing is denied and you're Excomunicated
+	id = POPE.7
+	desc = EVTDESCPOPE.7
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	hide_new = yes
+	
+	option = { #Understood..
+        name = EVTOPTPOPE.9
+		clr_event_target = pope_blessing_client
+    }
+}
+
+narrative_event = { #Announcement of the Kingdom of God being formed
+	id = POPE.8
+	title = EVTTITLEPOPE.8
+	desc = EVTDESCPOPE.8
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTPOPE.8"
+	}
+}

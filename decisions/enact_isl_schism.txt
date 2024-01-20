@@ -1,0 +1,91 @@
+decisions = {
+	mend_islamic_schism = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+		
+		potential = {
+			religion = shiite
+			is_playable = yes
+			is_adult = yes
+			prisoner = no
+			independent = yes
+			NOT = { has_global_flag = isl_schism_mended }
+			is_heretic = no
+			
+		}
+		allow = {
+			piety = 5000
+			has_landed_title = d_shiite
+			religion_authority = 0.9
+			completely_controls = c_mecca
+			c_mecca = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_medina
+			c_medina = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_damascus
+			c_damascus = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_karbala			
+			c_karbala = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_al_nadjaf
+			c_al_nadjaf = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			completely_controls = c_jerusalem
+			c_jerusalem = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			c_byzantion = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+			c_herat = {
+				location = {
+					show_scope_change = no
+					religion = shiite
+				}
+			}
+		}
+		effect = {
+			narrative_event = { id = Isls.005 tooltip = EVTTOOLTIPIsls.005 }
+			set_global_flag = isl_schism_mended
+			set_character_flag = mended_schism_isl
+		}
+		if = {
+			limit = {
+				has_character_flag = mended_schism_isl
+			}
+			narrative_event = { id = Isls.500 } # and myself
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

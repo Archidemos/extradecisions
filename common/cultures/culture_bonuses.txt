@@ -1,0 +1,1190 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or cultures, make sure they are unique.
+
+north_germanic = {
+	norse = {
+		modifier = Norse_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			combat_rating = 5
+			light_infantry_offensive = 0.05
+			galleys_perc = 0.2
+		}
+	}
+	swedish = {
+		modifier = Swedish_culture_modifier
+			character_modifier = {
+			short_reign_length = -2
+			local_tax_modifier = 0.1
+			local_revolt_risk = -0.01
+			galleys_perc = 0.2
+		}
+	}
+	norwegian = {
+		modifier = Norwegian_culture_modifier
+			character_modifier = {
+			short_reign_length = -2
+			local_tax_modifier = 0.1
+			local_revolt_risk = -0.01
+			galleys_perc = 0.2
+		}
+	}
+	danish = {
+		modifier = Danish_culture_modifier
+			character_modifier = {
+			short_reign_length = -2
+			local_tax_modifier = 0.1
+			local_revolt_risk = -0.01
+			galleys_perc = 0.2
+		}
+	}
+}
+
+central_germanic = {
+	german = {
+		modifier = German_culture_modifier
+			character_modifier = {
+			global_revolt_risk = -0.05
+			vassal_opinion = 5
+			knights_morale = 0.1
+			diplomacy = 1
+		}
+	}
+	lombard = {
+		modifier = Lombard_culture_modifier
+			character_modifier = {
+			knights_offensive = 0.1
+			global_revolt_risk = -0.05
+			martial = 1
+		}
+	}
+	old_frankish = {
+		modifier = Frankish_culture_modifier
+			character_modifier = {
+			knights_defensive = 0.1
+			vassal_opinion = 5
+			diplomacy = 1
+		}	
+	}
+	suebi = {
+		modifier = Suebi_culture_modifier
+			character_modifier = {
+			pikemen_offensive = 0.1
+			global_tax_modifier = 0.10
+			martial = 1
+		}
+	}
+}
+
+west_germanic = {
+	english = {
+		modifier = English_culture_modifier
+			character_modifier = {
+			archers_offensive = 0.1
+			demesne_size = 1
+			short_reign_length = -3
+		}
+	}
+	saxon = {
+		modifier = Anglo-Saxon_culture_modifier
+			character_modifier = {
+			land_morale = 0.05
+			heavy_infantry_morale = 0.05
+			combat_rating = 5
+			martial = 1
+		}
+	}
+	old_saxon = {
+		modifier = Saxon_culture_modifier
+			character_modifier = {
+			martial = 1
+			siege_speed = 0.1
+			heavy_infantry_morale = 0.1
+			combat_rating = 10
+		}
+	}
+	frisian = {
+		modifier = Frisian_culture_modifier
+		character_modifier = {
+			build_cost_modifier = -0.05
+			combat_rating = 5
+			martial = 1
+		}
+	}
+	dutch = {
+		modifier = Dutch_culture_modifier
+			character_modifier = {
+			build_cost_modifier = -0.05
+			build_time_modifier = -0.05
+			global_tax_modifier = 0.10
+			stewardship = 1
+		}
+	}
+}
+
+latin = {
+	frankish = {
+		modifier = French_culture_modifier
+			character_modifier = {
+			add_prestige_modifier = 0.02
+			castle_vassal_min_levy = 0.05
+			castle_vassal_max_levy = 0.05
+			knights_defensive = 0.1
+			diplomacy = 1
+		}
+	}
+	norman = {
+		modifier = Norman_culture_modifier
+			character_modifier = {
+			add_prestige_modifier = 0.02
+			fertility = 0.1
+			english_opinion = 5
+			martial = 1
+		}
+		seafarer = yes
+	}
+	italian = {
+		modifier = Italian_culture_modifier
+			character_modifier = {
+			retinue_maintenence_cost = -0.2
+			pikemen_defensive = 0.05
+			build_cost_modifier = -0.1
+			stewardship = 1
+		}
+	}
+	occitan = {
+		modifier = Occitan_culture_modifier
+			character_modifier = {
+			build_cost_modifier = -0.1
+			knights_offensive = 0.1
+			knights_defensive = 0.1
+			stewardship = 1
+		}
+	}
+	roman = {
+		modifier = Roman_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.05
+			martial = 2
+			pikemen_offensive = 0.1
+			pikemen_defensive = 0.1
+		}
+	}
+	dalmatian = {		
+		modifier = Dalmatian_culture_modifier
+			character_modifier = {
+			build_cost_modifier = -0.2
+			pikemen_offensive = 0.1
+			global_tax_modifier = 0.05
+			stewardship = 1
+		}
+	}
+	outremer = {
+		modifier = Outremer_culture_modifier
+			character_modifier = {
+			muslim_opinion = -5
+			stewardship = 1
+			land_morale = 0.1
+		}
+	}
+	sardinian = {
+		modifier = Sardinian_culture_modifier
+			character_modifier = {
+			siege_defence = 0.1
+			global_tax_modifier = 0.1
+			build_time_modifier = -0.3
+			stewardship = 1
+			archers_offensive = 0.1
+		}
+	}	
+}
+
+iberian = {
+	basque = {
+		modifier = Basque_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.05
+			martial = 1
+			light_cavalry_offensive = 0.1
+			siege_defence = 0.10
+		}
+	}
+	castillan = {
+		modifier = Castillan_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.05
+			church_opinion = 5
+			light_cavalry_offensive = 0.1
+		}
+	}
+	catalan = {
+		modifier = Catalan_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.05
+			martial = 1
+			light_cavalry_defensive = 0.1
+			siege_defence = 0.1
+		}
+	}
+	portuguese = {
+		modifier = Portuguese_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.1
+			church_opinion = 5
+			light_cavalry_morale = 0.1
+		}
+	}
+	visigothic = {
+		modifier = Visigothic_culture_modifier
+			character_modifier = {
+			combat_rating = 5
+			light_infantry_morale = 0.1
+			galleys_perc = 0.05
+		}
+	}
+}
+
+byzantine = {
+	arberian = {
+		modifier = Albanian_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			knights_defensive = 0.1
+			retinuesize_perc = -0.025
+		}
+	}
+	armenian = {
+		modifier = Armenian_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			knights_defensive = 0.1
+		}
+	}
+	greek = {
+		modifier = Greek_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			retinuesize_perc = -0.05
+		}
+	}
+	alan = {
+		modifier = Alan_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			retinuesize_perc = -0.025
+		}
+	}
+	georgian = {
+		modifier = Georgian_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			knights_offensive = 0.1
+		}
+	}
+	assyrian = {
+		modifier = Assyrian_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			heavy_infantry_offensive = 0.05
+			heavy_infantry_defensive = 0.05
+		}
+	}
+	coptic = {
+		modifier = Coptic_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 1.5
+			global_tax_modifier = 0.05
+			learning = 2
+			retinuesize_perc = -0.025
+		}
+	}
+	crimean_gothic = {
+		modifier = Gothic_culture_modifier
+			character_modifier = {
+			monthly_character_piety = 0.5
+			global_tax_modifier = 0.05
+			learning = 1
+			retinuesize_perc = -0.025
+		}
+	}
+}
+
+celtic = {
+	new_celtic = {
+		modifier = Celtic_culture_modifier
+			character_modifier = {
+			siege_speed = 0.15
+			castle_vassal_min_levy = 0.05
+			castle_vassal_max_levy = 0.05
+			martial = 1
+			land_morale = 0.05
+			light_infantry_offensive = 0.1
+			light_infantry_defensive = 0.1
+		}
+	}
+	irish = {
+		modifier = Irish_culture_modifier
+			character_modifier = {
+			siege_speed = 0.15
+			martial = 1
+			land_morale = 0.05
+			heavy_infantry_offensive = 0.1
+			heavy_infantry_morale = 0.1
+		}
+	}
+	scottish = {
+		modifier = Scottish_culture_modifier
+			character_modifier = {
+			army_reinforce_rate = 0.1
+			siege_defence = 0.15
+			pikemen_offensive = 0.1
+			archers_offensive = 0.1
+		}
+	}
+	pictish = {
+		modifier = Pictish_culture_modifier
+			character_modifier = {
+			levy_size = 0.1
+			siege_speed = 0.15
+			martial = 1
+			archers_offensive = 0.2
+		}
+	}
+	welsh = {
+		modifier = Welsh_culture_modifier
+			character_modifier = {
+			siege_defence = 0.1
+			archers_defensive = 0.2
+			heavy_infantry_defensive = 0.2
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+		}
+	}
+	breton = {
+		modifier = Breton_culture_modifier
+			character_modifier = {
+			castle_vassal_min_levy = 0.05
+			castle_vassal_max_levy = 0.05
+			siege_defence = 0.1
+			knights_offensive = 0.1
+			knights_defensive = 0.1
+		}
+	}
+}
+
+finno_ugric = {
+	finnish = {
+		modifier = Finnish_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			heavy_infantry_defensive = 0.1
+			health = -0.5
+		}
+	}
+	lappish	 = {
+		modifier = Sami_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+			light_infantry_offensive = 0.1
+		}
+	}
+	ugricbaltic = {
+		modifier = Estonian_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			heavy_infantry_offensive = 0.1
+			health = -0.5
+		}
+	}
+	komi = {
+		modifier = Komi_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+		}
+	}
+	khanty = {
+		modifier = Khanty_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+		}
+	}
+	samoyed = {
+		modifier = Samoyed_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+		}
+	}
+	mordvin = {
+		modifier = Mordvin_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+		}
+	}
+	meshchera = {
+		modifier = Meshchera_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.2
+			siege_defence = 0.2
+			global_garrison_size = 0.2
+			health = -0.5
+		}
+	}
+}
+
+baltic = {
+	lettigallish = {
+		modifier = Lettigallish_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.05
+			heavy_infantry_morale = 0.1
+			heavy_infantry_defensive = 0.1
+			martial = 1
+		}
+	}
+	lithuanian = {
+		modifier = Lithuanian_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.05
+			heavy_infantry_defensive = 0.05
+			heavy_infantry_offensive = 0.05
+			martial = 1
+		}
+	}
+	prussian = {
+		modifier = Prussian_culture_modifier
+			character_modifier = {
+			global_levy_size = 0.05
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_morale = 0.1
+			martial = 1
+		}
+	}
+}
+
+altaic = {
+	turkish = {
+		modifier = Turkish_culture_modifier
+			character_modifier = {
+			kurdish_opinion = -10
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			siege_speed = 0.1
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	pecheneg = {
+		modifier = Pecheneg_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	cuman = {
+		modifier = Cuman_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	khazar = {
+		modifier = Khazar_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			siege_speed = 0.1
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	bolghar = {
+		modifier = Bolghar_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	avar = {
+		modifier = Avar_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			siege_speed = 0.1
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	karluk = {
+		modifier = Karluk_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	kirghiz = {
+		modifier = Kirghiz_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	uyghur = {
+		modifier = Uyghur_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	mongol = {
+		modifier = Mongol_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			siege_speed = 0.1
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	khitan = {
+		modifier = Khitan_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+	jurchen = {
+		modifier = Jurchen_culture_modifier
+			character_modifier = {
+			general_opinion = -5
+			combat_rating = 5
+			retinuesize_perc = -0.025
+			light_cavalry_defensive = -0.15
+			horse_archers_defensive = -0.15
+		}
+	}
+}
+
+arabic = {
+	bedouin_arabic = { 
+		modifier = Bedouin_culture_modifier
+			character_modifier = {
+			camel_cavalry_defensive = 0.1
+			learning = 2
+			monthly_character_piety = 1
+		}
+	}
+	maghreb_arabic = {
+		modifier = Berber_culture_modifier
+			character_modifier = {
+			light_cavalry_offensive = 0.1
+			galleys_perc = 0.1
+			retinue_maintenence_cost = -0.075
+			add_prestige_modifier = 0.05
+		}
+	}
+	levantine_arabic = {
+		modifier = Levantine_culture_modifier
+			character_modifier = {
+			camel_cavalry_defensive = 0.1
+			stewardship = 1
+			monthly_character_piety = 1
+		}
+	}
+	egyptian_arabic = {
+		modifier = Egyptian_culture_modifier
+			character_modifier = {
+			camel_cavalry_offensive = 0.1
+			build_cost_modifier = -0.1
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+		}
+	}
+	andalusian_arabic = {
+		modifier = Andalusian_culture_modifier
+			character_modifier = {
+			light_cavalry_defensive = 0.1
+			retinue_maintenence_cost = -0.075
+			siege_speed = 0.1
+			add_prestige_modifier = 0.05
+		}
+	}
+}
+
+east_slavic = {
+	russian = {
+		modifier = Russian_culture_modifier
+			character_modifier = {
+			heavy_infantry_offensive = 0.1
+			demesne_size = 1
+			local_tax_modifier = 0.1
+			general_opinion = 5
+		}
+	}
+	ilmenian = {
+		modifier = Ilmenian_culture_modifier
+			character_modifier = {
+			heavy_infantry_defensive = 0.2
+			demesne_size = 1
+			local_tax_modifier = 0.1
+			general_opinion = 5
+		}
+	}
+	severian = {
+		modifier = Severian_culture_modifier
+			character_modifier = {
+			heavy_infantry_defensive = 0.2
+			demesne_size = 1
+			local_tax_modifier = 0.1
+			general_opinion = 5
+		}
+	}
+	volhynian = {
+		modifier = Volhynian_culture_modifier
+			character_modifier = {
+			heavy_infantry_offensive = 0.1
+			heavy_infantry_defensive = 0.1
+			demesne_size = 1
+			local_tax_modifier = 0.1
+			general_opinion = 5
+		}
+	}
+}
+
+west_slavic = {
+	pommeranian = {
+		modifier = Wend_culture_modifier
+			character_modifier = {
+			light_cavalry_defensive = 0.05
+			light_cavalry_offensive = 0.1
+			monthly_character_prestige = 2
+			general_opinion = 5
+			land_morale = 0.025
+		}
+	}
+	bohemian = {
+		modifier = Czech_culture_modifier
+			character_modifier = {
+			light_cavalry_defensive = 0.1
+			monthly_character_prestige = 2
+			general_opinion = 5
+			retinue_maintenence_cost = 0.075
+		}
+	}
+	polish = {
+		modifier = Polish_culture_modifier
+			character_modifier = {
+			light_cavalry_offensive = 0.2
+			monthly_character_prestige = 2
+			general_opinion = 5
+			land_morale = 0.025
+		}
+	}
+	slovieni = {
+		modifier = Slovieni_culture_modifier
+			character_modifier = {
+			light_cavalry_defensive = 0.1
+			light_cavalry_offensive = 0.05
+			monthly_character_prestige = 2
+			general_opinion = 5
+			retinue_maintenence_cost = 0.075
+		}
+	}
+}
+
+south_slavic = {
+	croatian = {
+		modifier = Croatian_culture_modifier
+			character_modifier = {
+			knights_defensive = 0.1
+			monthly_character_piety = 0.5
+			global_revolt_risk = -0.02
+		}
+	}
+	serbian = {
+		modifier = Serbian_culture_modifier
+			character_modifier = {
+			learning = -5
+			#knights_offensive = 0.1
+			#monthly_character_prestige = 0.5
+			#global_revolt_risk = -0.02
+		}
+	}
+	romanian = {
+		modifier = Vlach_culture_modifier
+			character_modifier = {
+			light_cavalry_offensive = 0.1
+			knights_offensive = 0.1
+			monthly_character_piety = 0.5
+			global_revolt_risk = -0.02
+			global_levy_size = 0.1
+		}
+	}
+	bulgarian = {
+		modifier = Bulgarian_culture_modifier
+			character_modifier = {
+			light_cavalry_offensive = 0.05
+			light_cavalry_defensive = 0.05
+			monthly_character_prestige = 0.5
+			global_revolt_risk = -0.02
+		}
+	}
+	bosnian = {
+		modifier = Bosnian_culture_modifier
+			character_modifier = {
+			light_cavalry_defensive = 0.2
+			martial = 1
+			monthly_character_piety = 0.5
+			siege_defence = 0.05
+			global_levy_size = 0.1
+		}
+	}
+	carantanian = {
+		modifier = Carantanci_culture_modifier
+			character_modifier = {
+			knights_defensive = 0.1
+			knights_offensive = 0.1
+			stewardship = 1
+			monthly_character_prestige = 0.5
+			siege_defence = 0.05
+			global_levy_size = 0.1
+		}
+	}
+}
+
+magyar = {
+	hungarian = {
+		modifier = Hungarian_culture_modifier
+			character_modifier = {
+			horse_archers_offensive = 0.05
+			martial = 1
+			combat_rating = 5
+		}
+	}
+}
+
+iranian = {
+	persian = {
+		modifier = Persian_culture_modifier
+			character_modifier = {
+			land_morale = 0.05
+			stewardship = 1
+			monthly_character_piety = 1
+			horse_archers_offensive = 0.1
+			siege_defence = 0.1
+		}
+	}
+	sogdian = {
+		modifier = Sogdian_culture_modifier
+			character_modifier = {
+			tax_income = 0.5
+			castle_vassal_min_levy = 0.2
+			castle_vassal_max_levy = 0.2
+			build_cost_modifier = -0.1
+			combat_rating = 5
+		}
+	}
+	tocharian = {
+		modifier = Tocharian_culture_modifier
+			character_modifier = {
+			local_revolt_risk = -0.01
+			local_tax_modifier = 0.1
+			church_opinion = 5
+			max_attrition = 0.05
+		}
+	}
+	kurdish = {
+		modifier = Kurdish_culture_modifier
+			character_modifier = {
+			health = 1
+			bloodline_effect_ambition = 1
+			add_prestige_modifier = 0.1
+			build_cost_modifier = -0.1
+			build_time_modifier = -0.1
+			combat_rating = 10
+			max_attrition = -0.1
+			levy_reinforce_rate = 0.1
+			global_tax_modifier = 0.1
+			castle_vassal_min_levy = 0.2
+			castle_vassal_max_levy = 0.2
+			land_morale = 0.1
+			martial = 1
+			stewardship = 1
+			learning = 1
+		}
+	}
+	afghan = {
+		modifier = Afghan_culture_modifier
+			character_modifier = {
+			martial = 1
+			horse_archers_defensive = 0.1
+			combat_rating = 5
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			land_morale = 0.05
+			siege_defence = 0.1
+		}
+
+	}
+	baloch = {
+		modifier = Baloch_culture_modifier
+			character_modifier = {
+			siege_defence = 0.1
+			martial = 1
+			horse_archers_offensive = 0.2
+			horse_archers_defensive = 0.1
+			combat_rating = 5
+		}
+	}
+	saka = {
+		modifier = Saka_culture_modifier
+			character_modifier = {
+			siege_defence = 0.1
+			stewardship = 1
+			light_cavalry_offensive = 0.1
+			light_infantry_defensive = 0.2
+			combat_rating = 10
+		}
+	}
+}
+east_african = {
+	ethiopian = {
+		modifier = Ethiopian_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			light_infantry_defensive = 0.05
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			add_prestige_modifier = 0.1
+			general_opinion = 5
+			short_reign_length = -2
+		}
+	}
+	somali = {
+		modifier = Somali_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			light_infantry_defensive = 0.05
+			add_prestige_modifier = 0.1
+			general_opinion = 5
+			short_reign_length = -2
+		}
+	}
+	nubian = {
+		modifier = Nubian_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			light_infantry_defensive = 0.05
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			add_prestige_modifier = 0.1
+			general_opinion = 5
+			short_reign_length = -2
+		}
+	}
+	daju = {
+		modifier = Daju_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			light_infantry_defensive = 0.05
+			add_prestige_modifier = 0.1
+			general_opinion = 5
+			short_reign_length = -2
+		}
+	}
+}
+
+
+mesoamerican = {
+	nahuatl = {
+		modifier = Nahuatl_culture_modifier
+			character_modifier = {
+			light_infantry_offensive = 0.05
+			light_infantry_defensive = 0.1
+			global_revolt_risk = -0.05
+		}
+	}
+}
+
+israelite = {
+	ashkenazi = {
+		modifier = Ashkenazi_culture_modifier
+			character_modifier = {
+			catholic_opinion = -5
+			muslim_opinion = -5
+			stewardship = 1
+			global_tax_modifier = 0.1
+			build_cost_modifier = -0.2
+		}
+	}
+	sephardi = {
+		modifier = Sephardi_culture_modifier
+			character_modifier = {
+			catholic_opinion = -5
+			muslim_opinion = -5
+			stewardship = 1
+			global_tax_modifier = 0.1
+			build_time_modifier = -0.2
+		}
+	}
+}
+indo_aryan_group = {
+	bengali = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			siege_defence = 0.05
+			war_elephants_defensive = 0.10
+			stewardship = 1
+			command_modifier = {
+				terrain = jungle
+			}
+		}
+	}
+	
+	oriya = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			learning = 1
+			monthly_character_piety = 0.1
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			archers_defensive = 0.1
+			war_elephants_offensive = 0.10
+		}
+	}
+	
+	assamese = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			martial = 1
+			siege_defence = 0.05
+			global_levy_size = 0.1
+			war_elephants_offensive = 0.2
+		}
+	}
+
+	hindustani = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			build_cost_modifier = -0.1
+			stewardship = 1
+			archers_defensive = 0.1
+			war_elephants_offensive = 0.1
+		}
+	}
+	
+	gujurati = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			stewardship = 1
+			land_morale = 0.1		
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			war_elephants_offensive = 0.1
+		}
+	}
+	
+	panjabi = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			martial = 1
+			siege_defence = 0.05
+			war_elephants_defensive = 0.1
+			archers_defensive = 0.1
+		}
+	}
+	
+	rajput = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			global_revolt_risk = -0.02
+			stewardship = 1
+			local_tax_modifier = 0.1
+			archers_defensive = 0.1
+		}
+	}
+
+	sindhi = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			martial = 1
+			war_elephants_morale = 0.1
+			land_morale = 0.05
+			archers_offensive = 0.1
+		}
+	}
+
+	marathi = { # Indo-Aryan
+		modifier = default_culture_modifier
+			character_modifier = {
+			build_time_modifier = -0.1
+			stewardship = 1
+			health = 1
+			war_elephants_defensive = 0.1
+		}
+	}
+
+	sinhala = { # Indo-Aryans who arrived in Sri Lanka ca 600BC
+		modifier = default_culture_modifier
+			character_modifier = {
+			siege_defence = 0.1
+			build_cost_modifier = -0.1
+			build_time_modifier = -0.1
+			stewardship = 1
+		}
+	}
+	
+	nepali = {
+		modifier = default_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.05
+			build_cost_modifier = -0.1
+			siege_defence = 0.05
+			martial = 1
+		}
+	}
+}
+
+dravidian_group = {
+	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
+	graphical_cultures = { southindiangfx indiangfx muslimgfx }
+
+	tamil = { # Dravidian - Southern India except Sri Lanka
+		modifier = default_culture_modifier
+			character_modifier = {
+			war_elephants_offensive = 0.1
+			global_tax_modifier = 0.1
+			stewardship = 1
+		}
+	}
+	
+	telugu = { # Dravidian
+		modifier = default_culture_modifier
+			character_modifier = {
+			global_tax_modifier = 0.1
+			build_time_modifier = -0.1
+			stewardship = 1
+		}
+	}
+	
+	kannada = { # Dravidian
+		modifier = default_culture_modifier
+			character_modifier = {
+			build_cost_modifier = -0.1
+			war_elephants_defensive = 0.1
+			learning = 1
+		}
+	}
+}
+
+tibetan_group = {
+	bodpa = { # Tibetan
+		modifier = default_culture_modifier
+			character_modifier = {
+			combat_rating = 5
+			health = 1
+			light_infantry_defensive = 0.05
+			light_cavalry_morale = 0.05
+		}
+	}
+	
+	tangut = {
+		modifier = default_culture_modifier
+			character_modifier = {
+			combat_rating = 5
+			martial = 1
+			light_cavalry_offensive = 0.1
+			light_infantry_morale = 0.1
+		}
+	}
+	
+	zhangzhung = { # Zhangzhung
+		modifier = default_culture_modifier
+			character_modifier = {
+			combat_rating = 5
+			siege_defence = 0.2
+			stewardship = 1
+			light_cavalry_offensive = 0.1
+			light_infantry_offensive = 0.1			
+		}
+	}
+	sumpa = { # Sumpa
+		modifier = default_culture_modifier
+			character_modifier = {
+			combat_rating = 10
+			stewardship = 1
+			siege_speed = 0.2
+			light_cavalry_morale = 0.1
+			light_cavalry_offensive = 0.1
+		}
+	}
+	
+}
+chinese_group = {
+	han = {
+		modifier = Han_culture_modifier
+			character_modifier = {
+			monthly_grace = 1
+			learning = 1
+			stewardship = 1
+			build_cost_modifier = -0.2
+			health = 1
+			tech_growth_modifier = 0.05
+		}
+	}
+}

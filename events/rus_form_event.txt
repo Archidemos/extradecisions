@@ -1,0 +1,49 @@
+namespace = RUSKI
+
+narrative_event = {
+	id = RUSKI.001
+	title = EVTTITLERUSKI.001
+	desc = EVTDESCRUSKI.001
+	
+	picture = GFX_evt_coronation
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	only_playable = yes
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTRUSKI001
+	}
+}
+
+narrative_event = {
+	id = RUSKI.002
+	title = EVTTITLERUSKI.002
+	desc = EVTDESCRUSKI.002
+	
+	picture = GFX_evt_large_army
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	only_playable = yes
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTRUSKI002
+		k_cuman = { de_jure_liege = e_russian_empire }
+		k_turkestan = { de_jure_liege = e_russian_empire }
+		k_sibir = { de_jure_liege = e_russian_empire }
+		k_mongolia = { de_jure_liege = e_russian_empire }
+		k_khotan = { de_jure_liege = e_russian_empire }
+		k_zhetysu = { de_jure_liege = e_russian_empire }
+		k_khiva = { de_jure_liege = e_russian_empire }
+	}
+	
+}	

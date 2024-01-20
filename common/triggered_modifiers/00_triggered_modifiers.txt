@@ -1,0 +1,26 @@
+##################################################
+#
+# STRATEGIC EFFECTS - A.K.A. "TRIGGERED MODIFIERS"
+#
+##################################################
+
+# Bankruptcy
+negative_money = {
+	potential = {
+		is_ruler = yes
+	}
+	
+	trigger = {
+		NOT = { wealth = 0 }
+	}
+	
+	icon = 24
+	
+	land_morale = -0.25
+	global_tax_modifier = -0.25
+	vassal_opinion = -5
+	stewardship = -1
+	martial = -1
+	
+	active = no
+}

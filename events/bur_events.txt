@@ -1,0 +1,399 @@
+namespace = Bur
+
+narrative_event = { #Burgundy is formed everyone
+	id = Bur.800
+	title = BURNAME1000
+	desc = BURDESC1000
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR001"
+	}
+}
+
+narrative_event = { #Burgundy is formed
+	id = Bur.1000
+	title = BURNAME1000
+	desc = BURDESC1000
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR001"
+		prestige = 1000
+		spawn_unit = {
+			owner = ROOT
+			province = c_verdun
+			home = PREV
+			troops = {
+				heavy_infantry = { 1000 1000 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+				attrition = 0
+			disband_on_peace = yes
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = c_verdun
+			home = PREV
+			troops = {
+				heavy_infantry = { 1000 1000 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+				attrition = 0
+			disband_on_peace = yes
+		}
+		custom_tooltip = {
+			text = warning_bur
+			hidden_effect = {
+				any_playable_ruler = {
+					limit = { 
+						has_landed_title = k_france
+					}
+					narrative_event = { id = Bur.996 days = 5 }
+				}
+				
+			}
+		}
+	}
+}
+
+
+
+narrative_event = { #France is furrious
+	id = Bur.996
+	title = BURNAME996
+	desc = BURDESC996
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR990"
+		ai_chance = { factor = 70 }
+		custom_tooltip = {
+			hidden_effect = {		
+				FROM = {
+					narrative_event = { id = Bur.997 }
+				}
+				war = {
+					casus_belli = french_back_dejure_bur
+					target = FROM
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBUR991"
+		ai_chance = { factor = 20 }
+		custom_tooltip = {
+			hidden_effect = {
+				FROM = {
+					narrative_event = { id = Bur.998 }
+				}
+				war = {
+					casus_belli = tributary_client_cb
+					target = FROM
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBUR992"
+		ai_chance = { factor = 10 }
+		FROM = {
+			narrative_event = { id = Bur.999 }
+		}
+	}
+}
+
+narrative_event = { #French message 1 to Burgundy
+	id = Bur.997
+	title = BURNAME997
+	desc = BURDESC997
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR993"
+	}
+}
+
+narrative_event = { #French message 2 to Burgundy
+	id = Bur.998
+	title = BURNAME998
+	desc = BURDESC998
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR994"
+	}
+}
+
+narrative_event = { #French message 3 to Burgundy
+	id = Bur.999
+	title = BURNAME999
+	desc = BURDESC999
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR995"
+	}
+}
+
+
+narrative_event = { #When Burgundy Won against the HRE
+	id = Bur.1001
+	title = BURNAME1001
+	desc = BURDESC1001
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR002"
+	}
+}
+
+narrative_event = { #When Burgundy Lost against the HRE
+	id = Bur.1002
+	title = BURNAME1002
+	desc = BURDESC1002
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR002"
+		prestige = -1000
+	}
+}
+
+narrative_event = { #Notifies the HRE on their Victory
+	id = Bur.1003
+	title = BURNAME1003
+	desc = BURDESC1003
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR002"
+		prestige = 1000
+		narrative_event = { id = Bur.1004 }
+		custom_tooltip = {
+			text = german_bur_vic
+			hidden_effect = {
+				d_burgundy = { de_jure_liege = k_germany }
+				d_flanders = { de_jure_liege = k_germany }
+				d_brabant = { de_jure_liege = k_germany }
+				d_lower_lorraine = { de_jure_liege = k_germany }
+				d_upper_lorraine = { de_jure_liege = k_germany }
+				d_franche_comte = { de_jure_liege = k_germany }
+				d_holland = { de_jure_liege = k_germany 
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #French Demands De Jure
+	id = Bur.1004
+	title = BURNAME1004
+	desc = BURDESC1004
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR003"
+		set_character_flag = germany_refuses
+		prestige = 1000
+		custom_tooltip = {
+			text = german_no
+			hidden_effect = {
+				any_playable_ruler = {
+					limit = { 
+						has_landed_title = k_france
+					}
+					narrative_event = { id = Bur.1005 }
+				}
+				
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBUR004"
+		prestige = 1000
+		custom_tooltip = {
+			text = german_yes
+			hidden_effect = {
+			}
+		}
+		d_burgundy = { de_jure_liege = k_france }
+		d_flanders = { de_jure_liege = k_france }
+		d_brabant = { de_jure_liege = k_france }
+		d_franche_comte = { de_jure_liege = k_france }
+		d_lower_lorraine = { de_jure_liege = k_lotharingia }
+		d_upper_lorraine = { de_jure_liege = k_lotharingia }
+	}
+}
+
+narrative_event = { #French decide to either fight or not
+	id = Bur.1005
+	title = BURNAME1005
+	desc = BURDESC1005
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR005"
+		ai_chance = { factor = 75 }
+		prestige = 1000
+		spawn_unit = {
+			owner = ROOT
+			province = c_dijon
+			home = PREV
+			troops = {
+				heavy_infantry = { 1000 1000 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+				attrition = 0
+			disband_on_peace = yes
+		}
+
+		custom_tooltip = {
+			hidden_effect = {
+				FROM = {
+					narrative_event = { id = Bur.1006 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTBUR005"
+		ai_chance = { factor = 25 }
+		prestige = 1000
+		custom_tooltip = {
+			hidden_effect = {
+				FROM = {
+					narrative_event = { id = Bur.1007 }
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #French declares for the dejure
+	id = Bur.1006
+	title = BURNAME1006
+	desc = BURDESC1006
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR005"
+		prestige = 1000
+		custom_tooltip = {
+			text = german_no
+			hidden_effect = {
+			}
+		}
+		FROM = {
+			war = {
+				casus_belli = german_back_dejure_bur
+				target = ROOT
+			}
+		}
+	}
+}
+
+narrative_event = { #French backs down
+	id = Bur.1007
+	title = BURNAME1007
+	desc = BURDESC1007
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR006"
+		prestige = 1000
+		custom_tooltip = {
+			hidden_effect = {
+			}
+		}
+	}
+}
+
+narrative_event = { #When France wins against Burgundy
+	id = Bur.1008
+	title = BURNAME1008
+	desc = BURDESC1008
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBUR009"
+		prestige = 1000
+		wealth = 1000
+		
+	}
+}

@@ -1,0 +1,42 @@
+settlement_decisions = {
+	destroy_baron = {
+		filter = realm_owned
+		ai = no
+		only_independent = yes
+		filter = owned
+		is_high_prio = yes
+
+		from_potential = {
+			is_playable = yes
+			is_feudal = yes
+		}
+		
+		potential = {
+		}
+
+		allow = {
+			NOT = { has_holding_modifier = recently_burnt_the_land }
+			controlled_by = FROM
+			has_siege = no
+			custom_tooltip = {
+				text = stop_pillaging_custom_tooltip
+				hidden_tooltip = {
+					NOT = { has_holding_modifier = stop_burning_land }
+				}
+			}
+		}
+		
+		effect = {
+			location = {
+				add_province_modifier = {
+					name = baron_destroyed
+					stacking = yes
+					years = 1
+				}
+			}
+			location = {
+				destroy_settlement = THIS
+			}
+		}
+	}
+}

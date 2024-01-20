@@ -1,0 +1,18 @@
+character_event = {
+    id = REI.001
+    desc = EVTDESC_REI_001
+    picture = GFX_evt_battle
+    border = GFX_event_normal_frame_war
+
+    is_triggered_only = yes
+
+    notification = yes
+
+    option = { #Finally!
+        name = EXCELLENT
+        event_target:reinforcing_province = { 
+			refill_holding_levy = yes 
+		}
+        clr_character_flag = army_reinforcing
+    }
+}

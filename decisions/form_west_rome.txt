@@ -1,0 +1,285 @@
+decisions = {
+	form_west_rome = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			NOT = { has_landed_title = k_papal_state }
+			OR = {
+				culture = greek
+				culture_group = latin
+				culture_group = iberian
+			}
+			OR = {
+				religion_group = christian
+				religion = hellenic
+			}
+			NOT = { has_global_flag = west_rome_formed }
+		}
+		
+		allow = {
+			prestige = 2000
+			has_landed_title = e_italy
+			has_landed_title = c_roma
+			completely_controls = k_italy
+			completely_controls = k_valencia
+			completely_controls = k_aragon
+			completely_controls = k_carinthia
+			completely_controls = d_tunis
+			OR = {
+				completely_controls = k_romagna
+				completely_controls = k_papacy
+			}
+			completely_controls = k_sicily
+			completely_controls = k_sardinia
+			OR = {
+				culture = greek
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+		
+		effect = {
+			prestige = -2000
+			activate_title = { title = e_west_rome status = yes }
+			primary_title = {
+				e_west_rome = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			set_global_flag = west_rome_formed				
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = EMPEROR
+						NOT = { title = e_west_rome }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			e_west_rome = {
+				add_law = succ_byzantine_elective
+			}
+			
+			give_nickname = nick_the_restorer
+			
+			custom_tooltip = {
+				text = rome_move_capital
+				hidden_tooltip = {
+					ROOT = {
+						c_roma = {
+							grant_title = PREV
+							usurp_title = PREV
+							ROOT = { capital = PREV }
+						}
+						
+						b_tusculum = {
+							grant_title = PREV
+							usurp_title = PREV
+						}
+						
+						b_tivoli = {
+							grant_title = PREV
+							usurp_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+			}
+			create_bloodline = {
+				type = west_rome_blood
+			}			
+			
+			hidden_tooltip = {
+				ROOT = {
+					narrative_event = { id = ROM.101 }
+				}
+				any_player = {
+					narrative_event = { id = ROM.100 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	dismantle_hre_rome_west = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120
+		
+		potential = {
+			has_landed_title = e_west_rome
+			independent = yes
+			NOT = { has_global_flag = hre_rome_conflict }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			has_landed_title = e_west_rome
+			prestige = 2000
+			diplomacy = 14
+			any_playable_ruler = { has_landed_title = e_hre }
+		}
+		
+		effect = {
+			set_global_flag = hre_rome_conflict
+			custom_tooltip = {
+				text = conflict_hre_rome
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = ROM.114 }
+					}
+				}
+			}
+		}
+	}
+	
+	create_legion_italia = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120 #check only once every 120 months.
+		
+		potential = {
+			NOT = { is_title_active = d_legion_italia }
+			independent = yes
+			has_landed_title = e_west_rome
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			completely_controls = c_roma
+			piety = 1000
+			has_landed_title = e_west_rome
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = reforming_legion_italia
+				activate_title = { title = d_legion_italia status = yes }
+				hidden_tooltip = {
+					create_character = {
+						random_traits = no
+						dynasty = random
+						religion = ROOT
+						culture = greek
+						female = no
+						age = 33
+						trait = brilliant_strategist
+						trait = zealous
+						trait = humble
+						trait = ambitious
+						trait = strategist
+						trait = holy_warrior
+					}
+					new_character = {
+						wealth = 500
+						d_legion_italia = {
+							grant_title = PREV
+						}
+						set_government_type = feudal_government
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 16
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 18
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 18
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 20
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 25
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 26
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = no
+							age = 28
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = yes
+							age = 16
+						}
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							religion = ROOT
+							culture = greek
+							female = yes
+							age = 17
+						}
+					}
+					any_player = {
+						narrative_event = { id = ROM.113 }
+					}
+					d_legion_italia = {
+						holder_scope = {
+							set_defacto_liege = ROOT
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

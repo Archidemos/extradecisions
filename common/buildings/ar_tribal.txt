@@ -1,0 +1,140 @@
+tribal = {
+	af_gold_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+				has_building = af_gold_mine_1
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		
+		gold_cost = 300
+		build_time = 730
+		
+		tax_income = 25
+		local_tax_modifier = 0.1
+
+		convert_to_castle = eu_gold_mine_1
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 0.3
+	}
+	
+	af_gold_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+				has_building = af_gold_mine_1
+				has_building = af_gold_mine_2
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		upgrades_from = af_gold_mine_1
+		trigger = { TECH_TRADE_PRACTICES = 1 }		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 50
+		local_tax_modifier = 0.2
+
+		convert_to_castle = eu_gold_mine_2
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+	
+	af_silver_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+				has_building = af_silver_mine_1
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		
+		gold_cost = 300
+		build_time = 730
+		
+		tax_income = 13
+		local_tax_modifier = 0.05
+
+		convert_to_castle = eu_silver_mine_1
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 0.3
+	}
+
+	af_silver_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+				has_building = af_silver_mine_1
+				has_building = af_silver_mine_2
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		
+		upgrades_from = af_silver_mine_1
+		trigger = { TECH_TRADE_PRACTICES = 1 }		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 25
+		local_tax_modifier = 0.1
+
+		convert_to_castle = eu_silver_mine_2
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+	
+	woldys_hut = {
+		desc = woldys_hut_desc
+		add_number_to_name = no
+		potential = {
+			ROOT = { province = c_canarias }
+			FROMFROM = { is_capital = yes }
+		}
+		gold_cost = 700
+		build_time = 730
+	
+		tax_income = 20
+		light_infantry = 1000
+		siege_defence = 0.2
+		fort_level = 1
+		attrition = 1
+		global_supply_limit = -2
+		galleys = 150
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 0.3
+	}
+}

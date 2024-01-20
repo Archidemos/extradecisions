@@ -1,0 +1,24 @@
+nomad = {
+	nm_gold_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = nm_gold_mine_1
+				ROOT = { province = c_sakmara }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 50
+		monthly_character_wealth = 10
+		local_tax_modifier = 0.2
+
+		convert_to_castle = eu_gold_mine_1
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 0.3
+	}
+}

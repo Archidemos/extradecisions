@@ -1,0 +1,43 @@
+settlement_decisions = {
+	dutch_improve_province = {
+		filter = owned
+		ai_target_filter = owned
+		
+		from_potential = {
+			is_playable = yes
+			has_landed_title = k_dutch_republic
+		}
+		
+		potential = {
+			controlled_by = FROM
+		}
+		
+		allow = {
+			FROM = {
+				wealth = 1500
+			}
+			NOT = { location = { has_province_modifier = dutch_province_improvement } }
+		}
+		
+		effect = {
+			FROM = {
+				show_scope_change = no
+				wealth = -1500
+			}
+			location = {
+				add_province_modifier = {
+					name = dutch_province_improvement
+					years = 10
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

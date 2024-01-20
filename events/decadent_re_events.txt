@@ -1,0 +1,188 @@
+namespace = isldecadent
+
+character_event = {
+    id = isldecadent.99
+    only_rulers = yes
+    notification = yes
+	hide_window = yes
+
+    trigger = {
+        religion_group = muslim
+        uses_decadence = yes
+    }
+
+    immediate = {
+        primary_title = {
+            save_event_target_as = dec_trigger_now
+        }
+        character_event = {
+            id = isldecadent.102
+            days = 1
+        }
+    }
+}
+
+character_event = {
+    id = isldecadent.90
+    only_rulers = yes
+    notification = yes
+	hide_window = yes
+
+    trigger = {
+        NOT = { religion_group = muslim }
+        uses_decadence = no
+    }
+
+    immediate = {
+		character_event = {
+            id = isldecadent.110
+			days = 1
+        }
+    }
+}
+
+
+# Set the character's modifier based on their decadence
+character_event = {
+    id = isldecadent.102
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+        has_landed_title = event_target:dec_trigger_now
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                uses_decadence = yes
+            }
+            primary_title = {
+                save_event_target_as = decadent_value_title
+            }
+            character_event = {
+                id = isldecadent.103
+                days = 1
+            }
+        }
+    }
+    clear_event_target = dec_trigger_now
+}
+
+character_event = {
+    id = isldecadent.103
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+        has_landed_title = event_target:decadent_value_title
+    }
+
+    immediate = {
+        event_target:decadent_value_title = {
+            if = {
+                limit = { decadence < 15 }
+                add_character_modifier = { name = decadent_value_0 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 15 decadence < 25 }
+                add_character_modifier = { name = decadent_value_15 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 25 decadence < 35 }
+                add_character_modifier = { name = decadent_value_25 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 35 decadence < 55 }
+                add_character_modifier = { name = decadent_value_35 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 55 decadence < 75 }
+                add_character_modifier = { name = decadent_value_55 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 75 decadence < 95 }
+                add_character_modifier = { name = decadent_value_75 duration = -1 }
+            }
+            if = {
+                limit = { decadence >= 95 }
+                add_character_modifier = { name = decadent_value_95 duration = -1 }
+            }
+        }
+        character_event = {
+            id = isldecadent.101
+        }
+        clear_event_target = decadent_value_title
+    }
+}
+
+character_event = {
+    id = isldecadent.101
+    desc = EVTDESCisldecadent.101
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+    notification = yes
+
+    immediate = {
+        # Remove any existing modifiers (optional)
+        remove_character_modifier = decadent_value_0
+        remove_character_modifier = decadent_value_15
+        remove_character_modifier = decadent_value_25
+        remove_character_modifier = decadent_value_35
+        remove_character_modifier = decadent_value_55
+        remove_character_modifier = decadent_value_75
+        remove_character_modifier = decadent_value_95
+
+        if = {
+            limit = { decadence < 15 }
+            add_character_modifier = { name = decadent_value_0 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 15 decadence < 25 }
+            add_character_modifier = { name = decadent_value_15 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 25 decadence < 35 }
+            add_character_modifier = { name = decadent_value_25 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 35 decadence < 55 }
+            add_character_modifier = { name = decadent_value_35 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 55 decadence < 75 }
+            add_character_modifier = { name = decadent_value_55 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 75 decadence < 95 }
+            add_character_modifier = { name = decadent_value_75 duration = -1 }
+        }
+        if = {
+            limit = { decadence >= 95 }
+            add_character_modifier = { name = decadent_value_95 duration = -1 }
+        }
+
+    }
+}
+
+character_event = {
+	id = isldecadent.110
+    desc = EVTDESCisldecadent.102
+    only_rulers = yes
+    is_triggered_only = yes
+    notification = yes
+	hide_window = yes
+
+    immediate = {
+		remove_character_modifier = decadent_value_0
+		remove_character_modifier = decadent_value_15
+		remove_character_modifier = decadent_value_25
+		remove_character_modifier = decadent_value_35
+		remove_character_modifier = decadent_value_55
+		remove_character_modifier = decadent_value_75
+		remove_character_modifier = decadent_value_95
+	}
+}

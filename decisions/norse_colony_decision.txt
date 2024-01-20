@@ -1,0 +1,81 @@
+targetted_decisions = {
+    create_norse_colony = {
+		from_potential = {
+			real_tier = EMPEROR
+			war = no
+			has_landed_title = e_north_sea
+		}
+		
+        potential = {
+			vassal_of = FROM 
+				OR = {
+					tier = COUNT
+					tier = DUKE
+					tier = KING
+				}
+			is_landed = yes
+			war = no
+        }
+		
+        allow = {
+            FROM = { prestige = 1000 }
+        }
+		
+        effect = {
+            set_defacto_liege = THIS
+			ROOT = {
+				narrative_event = { id = CEL.116 }
+			}
+            FROM = {
+                make_tributary = {
+                    who = ROOT
+                    tributary_type = norse_colony
+                }
+				add_character_modifier = {
+					modifier = recently_set_colony
+					years = 5
+				}
+				narrative_event = { id = CEL.116 }
+                prestige = -1000
+            }
+        }
+		
+        revoke_allowed = {
+            always = no
+        }
+    }
+
+    annex_norse_colony = {
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		
+		from_potential = {
+			tier = EMPEROR
+			has_landed_title = e_north_sea
+		}	
+		
+        potential = {
+			is_tributary = {
+				type = norse_colony
+				suzerain = FROM
+			}
+        }
+
+        allow = {
+            FROM = {
+                prestige = 1000
+				has_regent = no
+				NOT = { has_character_modifier = recently_set_colony }
+            }
+        }
+
+        effect = {
+            prestige = -1000
+            set_defacto_liege = FROM
+        }
+
+        revoke_allowed = {
+            always = no
+        }
+    }
+}

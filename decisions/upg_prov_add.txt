@@ -1,0 +1,43 @@
+decisions = {
+	
+	upg_prov_add = {
+		filter = owned
+		ai_target_filter = capital
+		ai_check_interval = 24
+		
+		potential = {
+			location = {
+				num_of_max_settlements < 7
+				has_province_modifier = prosperity_modifier_3
+				NOT = { has_province_modifier = increased_holding }
+			}
+		}
+		
+		allow = {
+			owner = {
+				show_scope_change = no
+				wealth = 15000
+				HIGHER_REAL_TIER_THAN = DUCHY
+			}
+		}
+		
+		effect = {
+			location = {
+				add_holding_slot = 1
+				add_province_modifier = {
+					name = increased_holding
+					years = 50
+					hidden = yes
+				}
+			}
+			owner = {
+				show_scope_change = no
+				wealth = -15000
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
