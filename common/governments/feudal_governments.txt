@@ -729,6 +729,7 @@ feudal_governments = {
 		potential = {
 			NOT = { government = merchant_republic_government }
 			NOT = { is_government_potential = merchant_republic_government }
+			higher_tier_than = BARON
 		}
 	
 		color = { 209 125 130 }
@@ -785,6 +786,8 @@ feudal_governments = {
 			church_opinion = 5
 			fertility = -10
 		}
+
+		vassal_limit = -10
 
 		can_create_empires = no		
 		cannot_marry = yes

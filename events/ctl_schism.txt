@@ -53,8 +53,8 @@ narrative_event = {
 # Convert or Not?
 narrative_event = {
 	id = CATSCM.002
-	title = EVTNAMEIsls.002
-	desc = EVTDESCIsls.002
+	title = EVTNAMECATSCM.002
+	desc = EVTDESCCATSCM.002
 	
 	picture = "GFX_evt_crusaders"
 	
@@ -79,4 +79,198 @@ narrative_event = {
 		name = EVTOPTCATSCM.004
 		ai_chance = { factor = 25 }
 	}
+}
+
+narrative_event = { #The World knows about the Schism
+	id = CATSCM.003
+	title = EVTNAMECATSCM.003
+	desc = EVTDESCCATSCM.003
+	
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Understood..
+		name = EVTOPTCATSCM.005
+    }
+}
+
+narrative_event = { #The World knows about the defeat of the Pope
+	id = CATSCM.004
+	title = EVTNAMECATSCM.004
+	desc = EVTDESCCATSCM.004
+	
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Understood..
+		name = EVTOPTCATSCM.005
+    }
+}
+
+narrative_event = { #The Pope refuses
+	id = CATSCM.005
+	title = EVTNAMECATSCM.005
+	desc = EVTDESCCATSCM.005
+	
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		e_byzantium = {
+			save_event_target_as = orthodox_defender
+		}
+        k_orthodox = {
+			save_event_target_as = orthodox_pope_victim
+        }
+	}
+	
+	option = { #Then we shall march!
+		name = EVTOPTCATSCM.010
+		ai_chance = { factor = 95 }
+		custom_tooltip = {
+			text = war_orthodox_papacy
+			hidden_effect = {
+				unsafe_war = {
+					casus_belli = end_orthodox_schism_war
+					target = event_target:orthodox_defender
+				}
+				any_player = {
+					narrative_event = { id = CATSCM.006 days = 5 }
+				}
+				any_independent_ruler = {
+					limit = {
+						religion = catholic
+					}
+					narrative_event = { id = CATSCM.007 days = 10 }
+				}
+				any_independent_ruler = {
+					limit = {
+						religion = orthodox
+					}
+					narrative_event = { id = CATSCM.008 days = 10 }
+				}
+			}
+		}
+	}
+	option = { #On a seccond tought..
+		ai_chance = { factor = 5 }
+		name = EVTOPTCATSCM.011
+	}
+}
+
+narrative_event = { #The World knows about the defeat of the Pope
+	id = CATSCM.006
+	title = EVTNAMECATSCM.006
+	desc = EVTDESCCATSCM.006
+	
+    picture = GFX_evt_church_council_cm
+    border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Understood..
+		name = EVTOPTCATSCM.006
+    }
+}
+
+narrative_event = { #The call to arms to everyone in the Catholic world
+	id = CATSCM.007
+	title = EVTNAMECATSCM.007
+	desc = EVTDESCCATSCM.007
+	
+    border = GFX_event_narrative_frame_religion
+    is_triggered_only = yes
+	
+    trigger = {
+        FROMFROM = {
+            has_landed_title = k_papal_state
+            any_war = {
+                using_cb = end_orthodox_schism_war
+                is_primary_war_attacker = yes
+            }
+        }
+    }
+	
+
+    option = { #Support the war to depose the Pope
+        name = EVTOPTCATSCM.007
+        custom_tooltip = { text = join_war_to_help_pope_CTLSCHM }
+        k_papal_state = {
+            holder_scope = {
+                save_event_target_as = helping_papacy_orthodox_pope_war
+            }
+        }		
+		event_target:helping_papacy_orthodox_pope_war = {
+		show_scope_change = no
+			any_war = {
+				limit = {
+					using_cb = end_orthodox_schism_war
+				}
+				ROOT = {
+					show_scope_change = no
+					join_attacker_wars = PREV
+				}
+			}
+		}
+		ai_chance = { factor = 30 }
+    }
+
+    option = { #Take neither side
+        name = EVTOPTCATSCM.008
+        custom_tooltip = { text = join_neither_side_CTLSCHM }
+		ai_chance = { factor = 70 }
+    }
+}
+
+narrative_event = { #The call to arms to everyone in the Orthodox world
+	id = CATSCM.008
+	title = EVTNAMECATSCM.008
+	desc = EVTDESCCATSCM.008
+	
+    border = GFX_event_narrative_frame_religion
+    is_triggered_only = yes
+	
+    trigger = {
+        FROMFROM = {
+            has_landed_title = e_byzantium
+            any_war = {
+                using_cb = end_orthodox_schism_war
+                is_primary_war_defender = yes
+            }
+        }
+    }
+	
+    option = { #Join the war against the Pope
+        name = EVTOPTCATSCM.009
+        custom_tooltip = { text = join_war_to_defend_orthodox_CTLSCHM }
+        e_byzantium = {
+            holder_scope = {
+                save_event_target_as = defender_orthodox_pope_war
+            }
+        }		
+		event_target:defender_orthodox_pope_war = {
+			show_scope_change = no
+			any_war = {
+				limit = { using_cb = end_orthodox_schism_war }
+				ROOT = {
+					show_scope_change = no
+					join_defender_wars = PREV
+				}
+			}
+		}
+
+		ai_chance = { factor = 40 }
+    }
+
+    option = { #Take neither side
+        name = EVTOPTCATSCM.008
+        custom_tooltip = { text = join_neither_side_CTLSCHM }
+		ai_chance = { factor = 60 }
+    }
 }

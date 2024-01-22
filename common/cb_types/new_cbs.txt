@@ -2205,6 +2205,79 @@ depose_pope_celtic = {
 	}
 }
 
+end_orthodox_schism_war = {
+	name = CB_NAME_END_ORTHODOX_SCHISM
+	war_name = WAR_NAME_END_ORTHODOX_SCHISM
+	sprite = 29
+	truce_days = 0
+	is_permanent = no
+	allow_whitepeace = no
+	
+	defender_unoccupied_warscore = yes
+	
+	can_use = {
+		ROOT = {
+			religion = catholic 
+			has_landed_title = k_papal_state
+			has_character_flag = preparing_orhodox_schism_war
+		}
+		
+		FROM = {
+			religion = orthodox 
+			has_landed_title = k_orthodox
+		}
+	}
+	
+    on_success = {
+ 		ROOT = {
+			piety = 1500
+			wealth = 1000
+			clr_character_flag = preparing_orhodox_schism_war
+			narrative_event = { id = CATSCM.001 }
+		}
+		FROM = {
+			piety = -1500
+			wealth = -1000
+		}
+		any_player = {
+			narrative_event = { id = CATSCM.003 }
+		}
+    }
+	
+	on_success_title = {
+		unsafe_destroy_landed_title = k_orthodox
+		activate_title = {
+            title = k_orthodox
+            status = no
+        }
+	}
+	
+	on_reverse_demand = {
+ 		ROOT = { 
+			clr_character_flag = preparing_orhodox_schism_war
+		}
+		any_player = {
+			narrative_event = { id = CATSCM.004 }
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 100
+	}
+}
+
 varingian_war_disolve_byz = {
 	name = CB_NAME_VARINGIAN_WAR_DISOLVE_BYZ
 	war_name = WAR_NAME_VARINGIAN_WAR_DISOLVE_BYZ

@@ -1593,6 +1593,8 @@ decisions = {
 		
 		potential = {
 			NOT = { has_global_flag = hre_removed }
+			NOT = { has_landed_title = e_west_rome }
+			NOT = { has_landed_title = k_papal_state }
 			is_playable = yes
 			has_global_flag = charlemagne_hre
 			independent = yes
@@ -1726,6 +1728,7 @@ decisions = {
 		potential = {
 			is_playable = yes
 			NOT = { has_landed_title = e_west_rome }
+			NOT = { has_landed_title = k_papal_state }
 			conditional_tooltip = {
 				trigger = {
 					is_alternate_start = no
@@ -2339,6 +2342,7 @@ decisions = {
 		potential = {
 			is_playable = yes
 			tier = KING
+			NOT = { has_landed_title = k_papal_state }	
 			
 			OR = {
 				has_dlc = "Charlemagne"
@@ -2631,7 +2635,13 @@ decisions = {
 					}
 				}
 			}
-			primary_title = { has_law = tribal_organization_2 }
+			primary_title = { 
+				OR = {
+					has_law = tribal_organization_2
+					has_law = tribal_organization_3
+					has_law = tribal_organization_4
+				}
+			}
 			capital_holding = {
 				OR = {
 					AND = {
