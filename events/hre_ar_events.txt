@@ -1,0 +1,334 @@
+namespace = HREAR
+
+narrative_event = {
+	id = HREAR.1
+	title = HREARNAME1
+	desc = HREDESC1
+
+	picture = "GFX_evt_mass_crusade"
+	
+    is_triggered_only = yes
+
+    trigger = {
+		has_character_flag = is_louis_pious
+		NOT = { has_global_flag = hre_concluded }
+		has_landed_title = e_hre
+		start_date = 867.1.1
+    }
+
+	
+	option = {
+		name = EVTOPTHREAR.1
+		ai_chance = { factor = 100 }
+		unsafe_destroy_landed_title = e_hre
+		set_global_flag = hre_concluded
+		any_player = { 
+			narrative_event = { id = HREAR.3 } 
+		}
+	}
+	
+	option = {
+		name = EVTOPTHREAR.2
+		ai_chance = { factor = 0 }
+		set_global_flag = hre_concluded
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_hre
+			}
+			narrative_event = { id = HREAR.2 }
+		}
+		any_player = { 
+			narrative_event = { id = HREAR.4 }
+		}
+	}
+	
+}
+
+narrative_event = {
+	id = HREAR.2
+	title = HREARNAME2
+	desc = HREDESC2
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_found_hre
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTHREAR.5
+		set_global_flag = hre_crisis_1
+		set_global_flag = hre_crisis_2
+		set_global_flag = hre_crisis_3
+		set_global_flag = hre_crisis_4
+		add_character_modifier = { name = hre_curse_1 years = -1 inherit = yes }
+		add_character_modifier = { name = hre_curse_2 years = -1 inherit = yes }
+		add_character_modifier = { name = hre_curse_3 years = -1 inherit = yes }
+		add_character_modifier = { name = hre_curse_4 years = -1 inherit = yes }
+	}
+	
+}
+
+narrative_event = {
+	id = HREAR.3
+	title = HREARNAME3
+	desc = HREDESC3
+
+    is_triggered_only = yes
+	
+	picture = "GFX_evt_battle_byzantine"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTHREAR.3
+		ai_chance = { factor = 100 }
+	}
+	
+}
+
+narrative_event = {
+	id = HREAR.4
+	title = HREARNAME4
+	desc = HREDESC4
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_found_hre
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTHREAR.4
+		ai_chance = { factor = 100 }
+	}
+	
+}
+
+#character_event = {
+#    id = HREAR.5
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			has_landed_title = e_hre
+#			has_global_flag = hre_crisis_1
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = hre_curse_1
+#		add_character_modifier = { 
+#			name = hre_curse_1 
+#			years = -1 
+#		}
+#    }
+#}
+#
+#character_event = {
+#    id = HREAR.6
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			has_landed_title = e_hre
+#			has_global_flag = hre_crisis_2
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = hre_curse_2
+#		add_character_modifier = { 
+#			name = hre_curse_2 
+#			years = -1 
+#		}
+#    }
+#}
+#
+#character_event = {
+#    id = HREAR.7
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			has_landed_title = e_hre
+#			has_global_flag = hre_crisis_3
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = hre_curse_3
+#		add_character_modifier = { 
+#			name = hre_curse_3 
+#			years = -1 
+#		}
+#    }
+#}
+#
+#character_event = {
+#    id = HREAR.8
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			has_landed_title = e_hre
+#			has_global_flag = hre_crisis_4
+#		}
+#    }
+#    immediate = {
+#		remove_character_modifier = hre_curse_4 
+#		add_character_modifier = { 
+#			name = hre_curse_4 
+#			years = -1 
+#		}
+#    }
+#}
+
+narrative_event = {
+	id = HREAR.10
+	title = HREARNAME10
+	desc = HREDESC10
+    is_triggered_only = yes
+
+	picture = "GFX_evt_crusaders"
+	border = GFX_event_narrative_frame_war
+	
+	option = {
+		name = EVTOPTHREAR.4
+		create_character = {
+			name="Roderick"
+			culture = norse
+			religion = norse_pagan
+			age = 32
+			dynasty = random
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		
+		new_character = {
+			save_event_target_as = hre_invader_mission
+			wealth = 1000
+			prestige = 500
+			piety = 500
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			character_event = { id = HREAR.11 }
+		}
+		
+		259 = {
+			kingdom = {
+				event_target:hre_invader_mission = {
+					unsafe_war = {
+						casus_belli = scripted_invasion
+						target = ROOT
+						thirdparty_title = PREV
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HREAR.11
+	title = HREARNAME11
+	desc = HREDESC11
+    is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			name = "HRE_INVASION_MISSION_ARMY"
+			adventurer = yes
+			tier = DUKE
+			landless = yes
+			culture = ROOT
+			holder = ROOT
+			government = tribal_government
+		}
+		
+		spawn_unit = {
+			province = 259
+			troops =
+			{
+				light_cavalry = { 500 500 }
+				archers = { 2500 2500 }
+				light_infantry = { 2000 2000 }
+			}
+		}
+
+		spawn_unit = {
+			province = 259
+			troops =
+			{
+				light_cavalry = { 500 500 }
+				archers = { 2500 2500 }
+				light_infantry = { 2000 2000 }
+			}
+		}
+		
+		spawn_unit = {
+			province = 259
+			troops =
+			{
+				light_cavalry = { 500 500 }
+				archers = { 2500 2500 }
+				light_infantry = { 2000 2000 }
+			}
+		}
+		
+		spawn_unit = {
+			province = 259
+			troops =
+			{
+				light_cavalry = { 500 500 }
+				archers = { 2500 2500 }
+				light_infantry = { 2000 2000 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HREAR.12
+	title = HREARNAME12
+	desc = HREDESC12
+
+    is_triggered_only = yes
+	
+	picture = "GFX_evt_mass_crusade"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTHREAR.10
+		ai_chance = { factor = 100 }
+	}
+	
+}

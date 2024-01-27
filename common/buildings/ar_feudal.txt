@@ -622,6 +622,73 @@ castle = {
 		ai_creation_factor = 95
 		extra_tech_building_start = 2
 	}
+	
+	eu_saffron_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 2 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		local_tax_modifier = 0.025
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+	
+	eu_saffron_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				has_building = eu_saffron_plantation_2
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 2 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_saffron_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		local_tax_modifier = 0.05
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+	
 	eu_cloth_workshop_1 = {
 		desc = eu_gold_mine_1_desc
 		add_number_to_name = no

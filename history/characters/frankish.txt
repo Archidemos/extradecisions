@@ -26744,6 +26744,8 @@
 	culture="frankish"
 	trait="skilled_tactician"
 	trait="zealous"
+	trait ="hunter"
+	trait ="ill"
 	father=6392
 	mother=167827
 	778.1.1={
@@ -26755,8 +26757,11 @@
 	819.1.1={
 		add_spouse = 7986
 	}
-	840.6.20={
-		death="840.6.20"
+	867.1.1={
+		effect = { set_character_flag = is_louis_pious }
+	}
+	870.1.1 = {
+		death="870.1.1"
 	}
 }
 
@@ -26888,6 +26893,13 @@
 	842.1.1 = {
 		add_spouse = 167830
 		give_nickname=nick_the_bald
+	}
+	866.1.1 = {
+		effect = {
+			add_claim = k_lotharingia
+			add_claim = k_burgundy
+			add_claim = k_aquitaine
+		}
 	}
 	870.1.1 = {
 		add_spouse = 168164
@@ -27181,6 +27193,11 @@
 	862.3.1 = {
 		add_spouse = 91385 # Ansgarde de Bourgogne
 		give_nickname=nick_the_stammerer
+		effect = {
+			add_claim = k_france
+			add_claim = k_italy
+			add_claim = k_burgundy
+		}
 	}
 	866.7.1 = {
 		remove_spouse = 91385 # Ansgarde de Bourgogne
@@ -40568,6 +40585,8 @@
 		add_spouse = 6877 # Teutberga
 		effect = {
 			add_lover = 168314 # Waldrada
+			add_claim = k_france
+			add_claim = k_germany
 		}
 	}
 	869.5.1={

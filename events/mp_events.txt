@@ -238,6 +238,7 @@ character_event = {
 				OR = {
 					holder_scope = { government = ar_theocracy_government }
 					holder_scope = { government = ar_republic_government }
+					holder_scope = { government = republic_government }
 					holder_scope = { has_landed_title = d_papal_guards }
 					holder_scope = { has_landed_title = d_scholae_palatinae }
 					holder_scope = { has_landed_title = d_varangian_guard }
@@ -250,6 +251,7 @@ character_event = {
 					OR = {
 						holder_scope = { government = ar_theocracy_government }
 						holder_scope = { government = ar_republic_government }
+						holder_scope = { government = republic_government }
 						holder_scope = { has_landed_title = d_papal_guards }
 						holder_scope = { has_landed_title = d_scholae_palatinae }
 						holder_scope = { has_landed_title = d_varangian_guard }
@@ -432,4 +434,37 @@ character_event = {
 			years = 2
 		}
     }
+}
+
+character_event = {
+	id = MP.010
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = laws_ar_changed_3 }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = laws_ar_changed_3
+		any_character = {
+			any_demesne_title = {
+				limit = {
+					holder_scope = { government = republic_government }
+				}
+				succession = succ_open_elective
+				add_law = {
+					law = succ_open_elective
+					opinion_effect = no
+				}
+			}
+		}
+	}
 }

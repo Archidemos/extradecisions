@@ -1,9 +1,9 @@
-namespace = MUG
+namespace = BBR
 
 narrative_event = {
-	id = MUG.100
-	title = "EVTNAMEMUG100"
-	desc = "EVTDESCMUG100"
+	id = BBR.100
+	title = "EVTNAMEBBR100"
+	desc = "EVTDESCBBR100"
 	major = yes
 	hide_from = yes
 	
@@ -18,35 +18,35 @@ narrative_event = {
 	
 	trigger = {
 		OR = {
-			year = 1066
+			year = 1067
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = umayyad_invasion
 					value = random
 				}
 				total_years_played = 50
 			}
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = umayyad_invasion
 					value = delayed_random
 				}
-				year = 1066
+				year = 1067
 				total_years_played = 50
 			}
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = umayyad_invasion
 					value = test
 				}
-				year = 769
+				year = 1066
 			}
 		}
-		NOT = { has_global_flag = mughal_invades }
+		NOT = { has_global_flag = umayyads_invades }
 		NOR = {
 			year = 1074
 			has_game_rule = {
-				name = mughal_invasion
+				name = umayyad_invasion
 				value = off
 			}
 		}
@@ -54,17 +54,17 @@ narrative_event = {
 	}
 	
 	immediate = {
-			set_global_flag = mughal_invades
-			activate_title = { title = e_mughals status = yes }
+			set_global_flag = umayyads_invades
+			activate_title = { title = e_cordoba status = yes }
 			
 			if = {
 				limit = {
-					has_global_flag = babur_born
+					has_global_flag = hisham_born
 				}
 				if = {
 					limit = {
 						any_independent_ruler = {
-							has_character_flag = is_babur
+							has_character_flag = is_hisham
 							demesne_size = 1
 							ai = yes
 						}
@@ -72,7 +72,7 @@ narrative_event = {
 					log = "Temujin exists as independent ai"
 					random_independent_ruler = {
 						limit = {
-							has_character_flag = is_babur
+							has_character_flag = is_hisham
 							ai = yes
 						}
 						any_demesne_title = {
@@ -81,9 +81,11 @@ narrative_event = {
 							}
 							set_title_flag = to_be_destroyed
 						}
-						e_mughals = {
+						e_cordoba = {
 							grant_title = PREV
+							set_title_flag = umayyad_aggression
 							add_law = succ_turkish_succession
+							set_title_flag = umayyad_aggression
 						}
 						any_demesne_title = {
 							limit = {
@@ -92,23 +94,23 @@ narrative_event = {
 							activate_title = { title = THIS status = no }
 							destroy_landed_title = THIS
 						}
-						wealth = 12000
-						prestige = 10000
-						set_character_flag = mughal_invader
-						set_character_flag = babur_india
-						character_event = { id = MUG.103 } # Spawn troops
-						character_event = { id = MUG.104 days = 1 } # Spawn population
+						wealth = 10000
+						prestige = 5000
+						piety = 10000
+						set_character_flag = hisham_invader
+						character_event = { id = BBR.103 } # Spawn troops
+						character_event = { id = BBR.104 days = 1 } # Spawn population
 						if = {
 							limit = {
 								has_dlc = "Holy Fury"
 								NOT = {
 									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_mughals_line
+										has_bloodline_flag = bloodline_umayyad_invader
 									}
 								}
 							}
 							create_bloodline = {
-								type = bloodline_mughals
+								type = bloodline_umayyad_invader
 							}
 						}
 					}
@@ -117,7 +119,7 @@ narrative_event = {
 				if = {
 					limit = {
 						NOT = {
-							e_mughals = {
+							e_cordoba = {
 								holder_scope = {
 									always = yes
 								}
@@ -127,9 +129,9 @@ narrative_event = {
 					log = "Real Temujin didn't recieve title"
 					create_character = {
 						random_traits = yes
-						dynasty=1069093
+						dynasty = 597
 						religion = sunni
-						culture = turkish
+						culture = bedouin_arabic
 						female = no
 						age = 24
 						attributes = {
@@ -139,6 +141,7 @@ narrative_event = {
 						trait = ambitious
 						trait = diligent
 						trait = brave
+						trait="paranoid"
 					}
 					new_character = {
 						if = {
@@ -146,19 +149,20 @@ narrative_event = {
 								has_dlc = "Holy Fury"
 								NOT = {
 									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_mughals_line
+										has_bloodline_flag = bloodline_umayyad_invader
 									}
 								}
 							}
 							create_bloodline = {
-								type = bloodline_mughals
+								type = bloodline_umayyad
 							}
 						}
-						e_mughals = {
+						e_cordoba = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
 							grant_title = PREV
 							add_law = succ_turkish_succession
+							set_title_flag = umayyad_aggression
 						}
 						set_defacto_liege = THIS
 						if = {
@@ -167,36 +171,31 @@ narrative_event = {
 							}
 							set_government_type = muslim_government
 						}
-						if = {
-							limit = {
-								NOT = { has_dlc = "Horse Lords" }
-							}
-							set_government_type = tribal_government
-						}
-						wealth = 12000
-						prestige = 10000
-						set_character_flag = mughal_invader
-						character_event = { id = MUG.102 } # Spawn courtiers
-						character_event = { id = MUG.103 } # Spawn troops
-						character_event = { id = MUG.104 days = 1 } # Spawn population
+						wealth = 10000
+						prestige = 5000
+						piety = 10000
+						set_character_flag = hisham_invader
+						character_event = { id = BBR.102 } # Spawn courtiers
+						character_event = { id = BBR.103 } # Spawn troops
+						character_event = { id = BBR.104 days = 1 } # Spawn population
 					}
 				}
 			}
 			if = {
 				limit = {
 					NOT = {
-						e_mughals = {
+						e_cordoba = {
 							holder_scope = { always = yes }
 						}
 					}
 				}
 				log = "Spawning Temujin for invasion"
 				create_character = {
-					name="Babur"
-					dynasty=4000001
-					dna="bfimkolbecc"
-					properties="ge0af0000000"
-					age = 43
+					name="Hisham"
+					dynasty = 597
+					dna="cegih0f0a00"
+					properties="en0fie00000000000000000000000000000000"
+					age = 24
 					attributes = {
 						martial=9
 						diplomacy=8
@@ -206,33 +205,35 @@ narrative_event = {
 					health = 6
 					fertility = 0.7
 					religion="sunni"
-					culture="turkish"
+					culture="bedouin_arabic"
 					trait="brave"
 					trait="ambitious"
 					trait="diligent"
 					trait="cavalry_leader"
+					trait="paranoid"
 					trait="brilliant_strategist"
 				}
 				new_character = {
-					set_character_flag = is_babur
+					set_character_flag = is_hisham
 					if = {
 						limit = {
 							has_dlc = "Holy Fury"
 							NOT = {
 								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_mughals_line
+									has_bloodline_flag = bloodline_umayyad_invader
 								}
 							}
 						}
 						create_bloodline = {
-							type = bloodline_mughals
+							type = bloodline_umayyad
 						}
 					}
-					e_mughals = {
+					e_cordoba = {
 						set_title_landless = { title = THIS status = yes }
-						set_title_flag = mughal_india_invade
+						set_title_flag = umayyad_spain_invades
 						grant_title = PREV
 						add_law = succ_turkish_succession
+						set_title_flag = umayyad_aggression
 					}
 					set_defacto_liege = THIS
 					if = {
@@ -247,21 +248,19 @@ narrative_event = {
 						}
 						set_government_type = tribal_government
 					}
-					wealth = 12000
-					prestige = 10000
-					piety = 5000
-					population = 50000
-					set_character_flag = mughal_invader
-					set_character_flag = babur_india
-					character_event = { id = MUG.101 } # Spawn Temujins generals
-					character_event = { id = MUG.102 } # Spawn courtiers
-					character_event = { id = MUG.103 } # Spawn troops
-					character_event = { id = MUG.104 days = 1 } # Spawn population
+					wealth = 10000
+					prestige = 5000
+					piety = 10000
+					set_character_flag = umayyad_invader
+					character_event = { id = BBR.101 } # Spawn Temujins generals
+					character_event = { id = BBR.102 } # Spawn courtiers
+					character_event = { id = BBR.103 } # Spawn troops
+					character_event = { id = BBR.104 days = 1 } # Spawn population
 				}
 			}			
-			1362 = {
+			182 = {
 				kingdom = {
-					e_mughals = {
+					e_cordoba = {
 						holder_scope = {
 							unsafe_war = {
 								casus_belli = nomad_invasion
@@ -408,17 +407,17 @@ narrative_event = {
 }
 
 character_event = {
-	id = MUG.101
+	id = BBR.101
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		create_character = {
-			name = "Zainab"
-			age = 49
+			name = "Aisha"
+			age = 20
 			dynasty = random
 			religion = sunni
-			culture = turkish
+			culture = bedouin_arabic
 			female = yes
 			random_traits = yes
 		}
@@ -427,11 +426,11 @@ character_event = {
 			add_spouse = ROOT
 		}
 		create_character = {
-			name="Humayun"
+			name="Ali"
 			age = 35
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			attributes = {
 				martial=10
 				diplomacy=4
@@ -448,9 +447,9 @@ character_event = {
 		create_character = {
 			name="Akbar" 
 			age = 27
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			trait="skilled_tactician"
 			trait="wroth"
 			trait="just"
@@ -461,11 +460,11 @@ character_event = {
 			set_mother = event_target:borte
 		}
 		create_character = {
-			name="Jahangir"
+			name="Abdullah"
 			age = 24
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			trait="skilled_tactician"
 			trait="gregarious"
 			trait="just"
@@ -475,11 +474,11 @@ character_event = {
 			set_mother = event_target:borte
 		}
 		create_character = {
-			name="Shah Jahan"
+			name="Ali"
 			age = 29
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			trait="skilled_tactician"
 			trait="hunter"
 			trait="kind"
@@ -490,11 +489,11 @@ character_event = {
 			set_mother = event_target:borte
 		}
 		create_character = {
-			name="Aurangzeb"
+			name="Haydar"
 			age = 18
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			random_traits = yes
 		}
 		new_character = {
@@ -502,12 +501,12 @@ character_event = {
 			set_mother = event_target:borte
 		}
 		create_character = {
-			name="Azam Shah"
+			name="Husseyin"
 			#AKA Chepe
 			age = 50
-			dynasty = 4000001
+			dynasty = 597
 			religion="sunni"
-			culture="turkish"
+			culture="bedouin_arabic"
 			attributes = {
 				martial=10
 				diplomacy=5
@@ -521,7 +520,7 @@ character_event = {
 }
 # Spawn extra courtiers
 character_event = {
-	id = MUG.102
+	id = BBR.102
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -674,13 +673,13 @@ character_event = {
 }
 # Spawn mongol troops
 character_event = {
-	id = MUG.103
+	id = BBR.103
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 182 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -689,7 +688,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 182 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -698,7 +697,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 182 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -707,7 +706,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 182 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -716,79 +715,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1362 # Tuul
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1362 # Tuul
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1362 # Tuul
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1362 # Tuul
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1363 # Khilok
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1363 # Khilok
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1363 # Khilok
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1363 # Khilok
+			province = 182 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -800,7 +727,7 @@ character_event = {
 }
 
 character_event = {
-	id = MUG.104
+	id = BBR.104
 	hide_window = yes
 	
 	is_triggered_only = yes

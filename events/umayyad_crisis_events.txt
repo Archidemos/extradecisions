@@ -1,0 +1,246 @@
+namespace = UMM
+
+character_event = {
+	id = UMM.1
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date <= 936.8.7
+		OR = {
+			has_landed_title = k_andalusia
+			has_landed_title = e_cordoba
+		}
+		religion_group = muslim
+	}
+	
+	immediate = {
+		set_global_flag = umayyad_crisis_1
+		set_global_flag = umayyad_crisis_2
+		set_global_flag = umayyad_crisis_3
+		add_character_modifier = { name = umayyad_curse_1 years = -1 inherit = yes }
+		add_character_modifier = { name = umayyad_curse_2 years = -1 inherit = yes }
+		add_character_modifier = { name = umayyad_curse_3 years = -1 inherit = yes }
+	}
+	
+}
+
+#character_event = {
+#	id = UMM.2
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			OR = {
+#				has_landed_title = k_andalusia
+#				has_landed_title = e_cordoba
+#			}
+#			religion_group = muslim
+#			has_global_flag = umayyad_crisis_1
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = umayyad_curse_1
+#		add_character_modifier = { 
+#			name = umayyad_curse_1 
+#			years = -1 
+#		}
+#    }
+#}
+#
+#character_event = {
+#	id = UMM.3
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			OR = {
+#				has_landed_title = k_andalusia
+#				has_landed_title = e_cordoba
+#			}
+#			religion_group = muslim
+#			has_global_flag = umayyad_crisis_2
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = umayyad_curse_2
+#		add_character_modifier = { 
+#			name = umayyad_curse_2
+#			years = -1 
+#		}
+#    }
+#}
+#
+#character_event = {
+#	id = UMM.4
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		AND = {
+#			OR = {
+#				has_landed_title = k_andalusia
+#				has_landed_title = e_cordoba
+#			}
+#			religion_group = muslim
+#			has_global_flag = umayyad_crisis_3
+#		}
+#    }
+#
+#    immediate = {
+#		remove_character_modifier = umayyad_curse_3
+#		add_character_modifier = { 
+#			name = umayyad_curse_3
+#			years = -1 
+#		}
+#    }
+#}
+
+narrative_event = {
+	id = UMM.5
+	title = UMMNAME5
+	desc = UMMDESC5
+
+    is_triggered_only = yes
+	
+	picture = GFX_jerusalem_captured_muslims_soa
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPUMM.5
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = {
+	id = UMM.6
+	title = UMMNAME6
+	desc = UMMDESC6
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mecca_falls_soa
+	
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date <= 936.8.7
+    }
+	
+	option = {
+		name = EVTOPUMM.6
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = {
+	id = UMM.7
+	title = UMMNAME7
+	desc = UMMDESC7
+	
+	picture = GFX_evt_moors
+	border = GFX_event_narrative_frame_war
+
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPUMM.7
+		create_character = {
+			name="Umar"
+			culture = maghreb_arabic
+			religion = sunni
+			age = 32
+			dynasty = random
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		
+		new_character = {
+			save_event_target_as = umayyad_invader_mission
+			wealth = 1000
+			prestige = 500
+			piety = 500
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			character_event = { id = UMM.8 }
+		}
+		
+		166 = {
+			kingdom = {
+				event_target:umayyad_invader_mission = {
+					unsafe_war = {
+						casus_belli = scripted_invasion_umayyad
+						target = ROOT
+						thirdparty_title = PREV
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = UMM.8
+	title = UMMNAME8
+	desc = UMMDESC8
+    is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			name = "UMAYYAD_INVASION_MISSION_ARMY"
+			adventurer = yes
+			tier = DUKE
+			landless = yes
+			culture = ROOT
+			holder = ROOT
+		}
+		
+		spawn_unit = {
+			province = 166
+			troops =
+			{
+				light_cavalry = { 1000 1000 }
+				horse_archers = { 2500 2500 }
+				light_infantry = { 1500 1500 }
+			}
+		}
+
+		spawn_unit = {
+			province = 166
+			troops =
+			{
+				light_cavalry = { 1000 1000 }
+				horse_archers = { 2500 2500 }
+				light_infantry = { 1500 1500 }
+			}
+		}
+	}
+}

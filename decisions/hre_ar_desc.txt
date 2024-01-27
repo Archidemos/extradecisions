@@ -1,0 +1,143 @@
+decisions = {
+	end_hre_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			has_landed_title = e_hre
+			has_global_flag = hre_crisis_1
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 1000
+			stewardship = 15
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -1000
+			clr_global_flag = hre_crisis_1
+			set_global_flag = hre_crisis_finished_1
+			remove_character_modifier =  hre_curse_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_hre_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			has_landed_title = e_hre
+			has_global_flag = hre_crisis_2
+		}
+		
+		allow = {
+			prestige = 2000
+			wealth = 200
+			diplomacy = 15
+		}
+		
+		effect = {
+			prestige = -2000
+			wealth = -200
+			clr_global_flag = hre_crisis_2
+			set_global_flag = hre_crisis_finished_2
+			remove_character_modifier =  hre_curse_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_hre_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			has_landed_title = e_hre
+			has_global_flag = hre_crisis_3
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 200
+			martial = 15
+		}
+		
+		effect = {
+			wealth = -200
+			custom_tooltip = {
+				text = hre_army_warning
+				ROOT = { narrative_event = { id = HREAR.10 } }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_hre_crisis_4 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			has_landed_title = e_hre
+			has_global_flag = hre_crisis_4
+		}
+		
+		allow = {
+			piety = 1500
+			wealth = 200
+			learning = 15
+		}
+		
+		effect = {
+			clr_global_flag = hre_crisis_4
+			set_global_flag = hre_crisis_finished_4
+			piety = -1500
+			wealth = -200
+			remove_character_modifier =  hre_curse_4
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_hre_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 3
+
+		potential = {
+			NOT = { has_global_flag = hre_crisis_done }
+			AND = {
+				has_global_flag = hre_crisis_finished_1
+				has_global_flag = hre_crisis_finished_2
+				has_global_flag = hre_crisis_finished_3	
+				has_global_flag = hre_crisis_finished_4
+			}
+		}
+
+		allow = {
+		}
+
+		effect = {
+			set_global_flag = hre_crisis_done
+			wealth = 2000
+			prestige = 3000
+			piety = 3000
+			add_character_modifier = { name = hre_crisis_reward inherit = yes years = -1 }
+			clr_global_flag = hre_crisis_finished_1
+			clr_global_flag = hre_crisis_finished_2
+			clr_global_flag = hre_crisis_finished_3	
+			clr_global_flag = hre_crisis_finished_4
+			any_player = { narrative_event = { id = HREAR.12 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

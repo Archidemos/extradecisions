@@ -1,0 +1,144 @@
+decisions = {
+	end_umayyad_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			AND = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+				religion_group = muslim
+				has_global_flag = umayyad_crisis_1
+			}
+		}
+		
+		allow = {
+			wealth = 2000
+			prestige = 1000
+			stewardship = 15
+		}
+		
+		effect = {
+			wealth = -2000
+			prestige = -1000			
+			clr_global_flag = umayyad_crisis_1
+			set_global_flag = umayyad_crisis_finished_1
+			remove_character_modifier = umayyad_curse_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_umayyad_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			AND = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+				religion_group = muslim
+				has_global_flag = umayyad_crisis_2
+			}
+		}
+		
+		allow = {
+			prestige = 1500
+			wealth = 400
+			diplomacy = 15
+		}
+		
+		effect = {
+			prestige = -1500
+			wealth = -400
+			clr_global_flag = umayyad_crisis_2
+			set_global_flag = umayyad_crisis_finished_2
+			remove_character_modifier = umayyad_curse_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_umayyad_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			NOT = { has_global_flag = umayyad_crisis_3_taken }
+			AND = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+				religion_group = muslim
+				has_global_flag = umayyad_crisis_3
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			martial = 15
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			set_global_flag = umayyad_crisis_3_taken
+			clr_global_flag = umayyad_crisis_3
+			ROOT = { narrative_event = { id = UMM.7 } }
+			custom_tooltip = {
+				text = umayyad_army_warning
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_umayyad_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 3
+
+		potential = {
+			NOT = { has_global_flag = umayyad_crisis_done }
+			AND = {
+				has_global_flag = umayyad_crisis_finished_1
+				has_global_flag = umayyad_crisis_finished_2
+				has_global_flag = umayyad_crisis_finished_3
+			}
+		}
+
+		allow = {
+		}
+
+		effect = {
+			set_global_flag = umayyad_crisis_done
+			set_government_type = caliphate_government
+			create_bloodline = {
+				type = bloodline_umayyad_order
+			}
+			wealth = 3000
+			prestige = 4000
+			add_claim = d_aquitaine
+			add_claim = d_gascogne
+			add_claim = d_toulouse
+			clr_global_flag = umayyad_crisis_finished_1
+			clr_global_flag = umayyad_crisis_finished_2
+			clr_global_flag = umayyad_crisis_finished_3			
+			any_player = { narrative_event = { id = UMM.5 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
