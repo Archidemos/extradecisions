@@ -5865,6 +5865,7 @@ religious = {
 			NOT = { religion_group = pagan_group }
 			NOT = { pacifist = yes }
 			NOT = { religion = taoist }
+			NOT = { religion_group = christian }
 			NAND = {
 				OR = {
 					has_landed_title = k_teutonic_state
@@ -6043,15 +6044,11 @@ religious = {
 			NOT = { pacifist = yes }
 			NOT = { same_realm = FROM }
 			OR = {
-				NOT = { religion_group = FROM }
-				is_heresy_of = FROM
-				is_parent_religion = FROM
 				AND = {
 					has_dharmic_religion_trigger = yes
 					FROM = { religion = taoist }
 				}
 				AND = {
-					religion_group = FROM
 					FROM = {
 						has_character_modifier = known_satanist
 					}
@@ -6070,7 +6067,6 @@ religious = {
 				OR = {
 					NOT = { religion = FROM }
 					AND = {
-						religion = FROM
 						FROM = {
 							has_character_modifier = known_satanist
 						}
@@ -11899,7 +11895,6 @@ pagan_holy_war = {
 	}
 	
 	on_add = {
-		ROOT = { piety = -100 }
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
 		if = {
 			limit = { defender = { is_offmap_governor = offmap_china } }
@@ -11913,6 +11908,7 @@ pagan_holy_war = {
 	can_use = {
 		ROOT = {
 			OR = {
+				religion_group = christian
 				religion = bon_reformed
 				religion = hellenic_pagan_reformed
 				religion = norse_pagan_reformed
@@ -11994,6 +11990,7 @@ pagan_holy_war = {
 	is_valid = {
 		ROOT = {
 			OR = {
+				religion_group = christian
 				religion = bon_reformed
 				religion = hellenic_pagan_reformed
 				religion = norse_pagan_reformed
@@ -12072,8 +12069,6 @@ pagan_holy_war = {
 				years = 20
 			}		
 		}
-		FROM = { show_scope_change = no piety = -100 }
-		FROM = { show_scope_change = no prestige = -50 }
 	}
 
 	on_success_title = {

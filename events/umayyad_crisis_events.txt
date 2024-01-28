@@ -1,6 +1,23 @@
 namespace = UMM
 
 character_event = {
+	id = UMM.10
+	is_save_game = no
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date <= 936.8.7
+		NOT = { has_global_flag = umayyad_player_event_fired }
+    }
+	
+	immediate = {
+		set_global_flag = umayyad_player_event_fired
+		any_player = { narrative_event = { id = UMM.6 days = 5 } }
+	}
+}
+
+character_event = {
 	id = UMM.1
     only_playable = yes
     hide_window = yes
@@ -125,12 +142,10 @@ narrative_event = {
 	id = UMM.6
 	title = UMMNAME6
 	desc = UMMDESC6
-
+	is_save_game = no
     is_triggered_only = yes
 	
 	picture = GFX_evt_mecca_falls_soa
-	
-    is_triggered_only = yes
 	
     trigger = {
 		start_date <= 936.8.7
@@ -138,7 +153,6 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPUMM.6
-		ai_chance = { factor = 100 }
 	}
 }
 

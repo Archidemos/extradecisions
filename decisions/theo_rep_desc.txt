@@ -127,8 +127,15 @@ title_decisions = {
 		}
 		
 		potential = {
+			tier = COUNT
 			location = { NOT = { religion = FROM } }
 			FROM = { government = ar_theocracy_government }
+			holder_scope = {
+				OR = {
+					is_liege_or_above = FROM
+					character = FROM
+				}
+			}
 		}
 		
 		allow = {
@@ -138,6 +145,13 @@ title_decisions = {
 			location = {
 				NOT = { religion = FROM }
 				owner = { NOT = { religion = PREV } }
+			}
+			tier = COUNT
+			holder_scope = {
+				OR = {
+					is_liege_or_above = FROM
+					character = FROM
+				}
 			}
 		}
 		

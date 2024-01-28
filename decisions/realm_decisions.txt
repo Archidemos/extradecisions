@@ -3104,8 +3104,6 @@ decisions = {
 		}
 		allow = {
 			war = no
-			is_female = no
-			higher_tier_than = COUNT
 			custom_tooltip = {
 				text = TT_NOT_UNREFORMED_PAGAN
 				hidden_tooltip = {
@@ -3115,19 +3113,24 @@ decisions = {
 					}
 				}
 			}
-			primary_title = { has_law = tribal_organization_2 }
-			capital_scope = {
-				port = yes
+			primary_title = {
+				OR = {
+					has_law = tribal_organization_2
+					has_law = tribal_organization_3
+					has_law = tribal_organization_4
+				}
 			}
 			capital_holding = {
 				OR = {
 					AND = {
 						holding_type = tribal
-						has_building = tb_market_town_4
+						has_building = tb_hillfort_4
 					}
+					holding_type = castle
 					AND = {
 						FROM = { culture_group = celtic }
-						has_building = tb_market_town_1		
+						total_years_played = 10
+						has_building = tb_hillfort_1		
 					}
 				}
 			}
