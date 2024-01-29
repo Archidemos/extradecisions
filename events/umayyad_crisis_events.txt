@@ -8,6 +8,7 @@ character_event = {
 	
     trigger = {
 		start_date <= 936.8.7
+		is_save_game = no
 		NOT = { has_global_flag = umayyad_player_event_fired }
     }
 	
@@ -142,13 +143,13 @@ narrative_event = {
 	id = UMM.6
 	title = UMMNAME6
 	desc = UMMDESC6
-	is_save_game = no
     is_triggered_only = yes
 	
 	picture = GFX_evt_mecca_falls_soa
 	
     trigger = {
 		start_date <= 936.8.7
+		is_save_game = no
     }
 	
 	option = {
