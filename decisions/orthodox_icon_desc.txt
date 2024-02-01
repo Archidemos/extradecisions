@@ -1,0 +1,50 @@
+decisions = {
+
+	choose_orthodox_icon = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			age = 16
+			NOT = { trait = incapable }
+			religion = orthodox
+			NOR = {
+				has_character_modifier = icon_john_climatus
+				has_character_modifier = icon_michel
+				has_character_modifier = icon_nicholas
+				has_character_modifier = icon_gabriel
+				has_character_modifier = icon_jesus
+				has_character_modifier = icon_selaphiel 				
+			}
+			NOT = { has_character_flag = selecting_icon }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			custom_tooltip = {
+				text = custom_tooltip_choose_orthodox_icon
+			}
+			character_event = { id = ORT.100 }
+			set_character_flag = selecting_icon
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+}

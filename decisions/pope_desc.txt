@@ -21,6 +21,7 @@ decisions = {
 		
 		effect = {
 			piety = -2000
+			religion_authority = 0.9
 			set_global_flag = god_kingdom_formed
 			set_global_flag = end_schism_enacted
 			set_character_flag = preparing_orhodox_schism_war
@@ -53,8 +54,19 @@ decisions = {
 		
 		allow = {
 			piety = 2000
+			religion_authority = 0.9
 			has_landed_title = k_papal_state
 			c_jerusalem = {
+				holder_scope = {
+					religion = ROOT
+				}	
+			}
+			c_byzantion = {
+				holder_scope = {
+					religion = ROOT
+				}	
+			}
+			c_antiocheia = {
 				holder_scope = {
 					religion = ROOT
 				}	

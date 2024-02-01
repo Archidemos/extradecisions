@@ -1167,4 +1167,32 @@ temple = {
 		ai_creation_factor = 95
 		extra_tech_building_start = 2
 	}
+
+	iona_abbey = {
+		desc = iona_abbey_desc
+		add_number_to_name = no
+		potential = {
+			AND = {
+				ROOT = { province = c_iona }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { has_landed_title = k_celtic_christian }
+		}
+
+		gold_cost = 700
+		build_time = 730
+		
+		siege_defence = 0.2
+		fort_level = 1
+		tech_growth_modifier = 0.025
+		local_tax_modifier = 0.3
+		tax_income = 5
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
 }

@@ -1,0 +1,78 @@
+namespace = ORT
+
+character_event = {
+	id = ORT.100
+	desc = EVTDESC_ORT_100
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ORT_100
+		add_character_modifier = {
+			name = icon_john_climatus
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTB_ORT_100
+		add_character_modifier = {
+			name = icon_michael
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTC_ORT_100
+		add_character_modifier = {
+			name = icon_nicholas
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTD_ORT_100
+		hidden_tooltip = { character_event = { id = ORT.101 } }
+	}
+}
+
+# Choose patron deity 2
+character_event = {
+	id = ORT.101
+	desc = EVTDESC_ORT_101
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ORT_101
+		add_character_modifier = {
+			name = icon_gabriel
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTB_ORT_101
+		add_character_modifier = {
+			name = icon_jesus
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTC_ORT_101
+		add_character_modifier = {
+			name = icon_satan
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTD_ORT_101
+		hidden_tooltip = { character_event = { id = ORT.100 } }
+	}
+}

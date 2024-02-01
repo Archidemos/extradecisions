@@ -2374,9 +2374,17 @@ varingian_war_disolve_byz = {
 				value = 4.0
 			}
 		}
+		ROOT = {
+			has_landed_title = e_varingian
+			e_varingian = {
+				show_scope_change = no
+				destroy_landed_title = THIS
+			}
+		}
 		FROM = {
 			show_scope_change = no
 			prestige = 2000
+			wealth = 1000
 		}
 		any_player = {
 			narrative_event = { id = CEL.115 }

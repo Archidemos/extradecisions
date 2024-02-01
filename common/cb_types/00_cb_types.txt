@@ -11879,7 +11879,7 @@ pagan_holy_war = {
 	name = CB_NAME_RELIGIOUS
 	war_name = WAR_NAME_RELIGIOUS
 	sprite = 9
-	truce_days = 1825
+	truce_days = 3650
 	is_permanent = yes
 	is_holy_war = yes
 	check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
@@ -11887,12 +11887,6 @@ pagan_holy_war = {
     attacker_rel_head_is_ally = yes
 	
 	sort_priority = 800
-	
-	can_use_gui = {
-		ROOT = {
-			piety = 100
-		}
-	}
 	
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
@@ -16009,7 +16003,6 @@ tributary_cb = {
 	can_use_gui = {
 		check_if_crusader_trigger = yes
 		ROOT = {
-			prestige = 1500
 			relative_realm_size = {
 				who = FROM 
 				size > 2
@@ -16126,7 +16119,6 @@ tributary_cb = {
 	}
 
 	on_add = {
-		ROOT = { prestige = -1500 }
 		# Chance to surrender early
 		ROOT = { save_event_target_as = tribute_war_suzerain }
 		FROM = {

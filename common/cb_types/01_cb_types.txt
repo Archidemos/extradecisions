@@ -2765,7 +2765,6 @@ tributary_permanent_cb = { # New8
 						}
 					}
 				}
-				prestige = 500
 				TECH_MAJESTY = 1
 			}
 			conditional_tooltip = {
@@ -2774,7 +2773,6 @@ tributary_permanent_cb = { # New8
 						region = world_europe
 					}
 				}
-				prestige = 500
 				TECH_MAJESTY = 2
 			}
 		}
@@ -2913,7 +2911,6 @@ tributary_permanent_cb = { # New8
 	}
 
 	on_add = {
-		ROOT = { prestige = -500 }
 		# Chance to surrender early
 		ROOT = { save_event_target_as = tribute_war_suzerain }
 		FROM = {
