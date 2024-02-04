@@ -16,7 +16,7 @@ settlement_decisions = {
 
 		allow = {
 			NOT = { has_holding_modifier = recently_burnt_the_land }
-			controlled_by = FROM
+			controlled_by = ROOT
 			has_siege = no
 			custom_tooltip = {
 				text = stop_pillaging_custom_tooltip
@@ -27,6 +27,7 @@ settlement_decisions = {
 		}
 		
 		effect = {
+			save_event_target_as = destroying_baron
 			location = {
 				add_province_modifier = {
 					name = baron_destroyed
@@ -34,9 +35,10 @@ settlement_decisions = {
 					years = 1
 				}
 			}
-			location = {
+			event_target:destroying_baron = {
 				destroy_settlement = THIS
 			}
+			clear_event_target = destroying_baron
 		}
 	}
 }

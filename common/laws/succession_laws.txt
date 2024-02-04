@@ -14,12 +14,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			NOR = {
-				holder_scope = { government = ar_republic_government }
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				OR = {
@@ -31,6 +26,7 @@ succession_laws = {
 					}
 				}
 				NOT = { religion_group = muslim }
+				government = ar_theocracy_government
 				is_merchant_republic = no
 				is_patrician = no
 				OR = {
@@ -55,7 +51,9 @@ succession_laws = {
 				holder_scope = { is_tribal = yes }
 			}
 			is_primary_type_title = no
+			NOT = { holder_scope = { government = ar_republic_government } }
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
 		}
 		allow = {
 			holder_scope = {
@@ -137,12 +135,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			holder_scope = { government = ar_republic_government }			
-			NOR = {
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				is_nomadic = no
@@ -181,6 +174,7 @@ succession_laws = {
 			is_primary_type_title = no
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
 			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
 		}
 		allow = {
 			conditional_tooltip = {
@@ -244,7 +238,6 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
 			}
 			holder_scope = {
@@ -304,6 +297,7 @@ succession_laws = {
 			is_primary_type_title = no
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
 			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
 		}
 		allow = {
 			conditional_tooltip = {
@@ -367,12 +361,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			holder_scope = { government = ar_republic_government }
-			NOT = {
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				OR = {
@@ -440,6 +429,7 @@ succession_laws = {
 			}
 			
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
 		}
 		
 		allow = {
@@ -542,12 +532,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			NOR = {
-				holder_scope = { government = ar_republic_government }
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				NOT = { religion_group = muslim }
@@ -595,6 +580,8 @@ succession_laws = {
 				has_title_flag = alternate_byz
 			}
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOT = { holder_scope = { government = ar_republic_government } }
 		}
 		allow = {
 			conditional_tooltip = {
@@ -709,11 +696,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			NOR = {
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				OR = {
@@ -785,6 +768,7 @@ succession_laws = {
 			}
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
 			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
 			NOR = {  #Special Elective.
 				title = e_hre 
 				has_title_flag = alternate_hre
@@ -820,7 +804,6 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
 			}
 			OR = {
@@ -923,7 +906,6 @@ succession_laws = {
 				OR = {
 					has_landed_title = e_byzantium
 					has_landed_title = e_roman_empire
-					has_landed_title = e_west_rome
 				}
 				NOT = { religion_group = muslim }
 				is_nomadic = no
@@ -985,12 +967,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			NOR = {
-				holder_scope = { government = ar_republic_government }
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				OR = {
@@ -1116,12 +1093,7 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
-			}
-			holder_scope = { government = ar_republic_government }
-			NOT = {
-				holder_scope = { government = ar_theocracy_government }
 			}
 			holder_scope = {
 				OR = {
@@ -1190,6 +1162,8 @@ succession_laws = {
 				}
 			}
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOT = { holder_scope = { government = ar_republic_government } }
 		}
 		allow = {
 			conditional_tooltip = {
@@ -1289,7 +1263,6 @@ succession_laws = {
 				OR = { 
 					title = e_byzantium
 					title = e_roman_empire
-					title = e_west_rome
 				}
 			}
 			holder_scope = {
@@ -1386,7 +1359,6 @@ succession_laws = {
 	
 	succ_open_elective = {
 		potential = {
-			NOT = { title = k_papal_state }
 			NAND = { 
 				has_law = succ_byzantine_elective 
 				OR = { 
@@ -1394,26 +1366,70 @@ succession_laws = {
 					title = e_roman_empire
 				}
 			}
-			
+			NOT = { title = k_papal_state }
+			temporary = no
 			OR = {
-				holder_scope = { government = ar_republic_government }
-				holder_scope = { government = ar_theocracy_government }
-				holder_scope = { government = republic_government }
+				is_primary_type_title = yes
+				holy_order = yes
+				AND = {
+					tier = baron
+					OR = {
+						is_republic = yes
+						AND = {
+							is_theocracy = yes
+							NOT = { holder_scope = { religion_group = muslim } }
+						}
+					}
+				}
+				holder_scope = {
+					OR = {
+						is_republic = yes
+						AND = {
+							is_theocracy = yes
+							NOT = { religion_group = muslim }
+						}
+					}
+				}
 			}
-			
+			OR = {
+				is_landless_type_title = yes
+				holder_scope = { is_theocracy = no }
+				holder_scope = { 
+					NOT = { religion = catholic }
+					NOT = { religion = fraticelli }
+				}
+			}
+			holder_scope = { 
+				is_patrician = no
+				is_merchant_republic = no
+				OR = {
+					independent = yes
+					is_feudal = no
+					NOT = {
+						any_liege = {
+							holy_order = yes
+						}
+					}
+				}
+			}
+			NAND = { 
+				has_law = succession_voting_power_1
+				OR = { 
+					has_law = succ_feudal_elective 
+					has_law = succ_hre_elective
+				}
+			}
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOT = { holder_scope = { government = chinese_imperial_government } }
 		}
+		
 		effect = {
-			succession = {
-				base_type = open_elective
-				voting_rules = feudal_elective
-			}
+			succession = open_elective
 		}
 		revoke_allowed = {
 			always = no
-		}		
+		}
 	}
-	
 	succ_catholic_bishopric = {
 		potential = {
 			is_landless_type_title = no
@@ -1423,7 +1439,6 @@ succession_laws = {
 					is_theocracy = yes
 				}
 				holder_scope = { is_theocracy = yes }
-				holder_scope = { government = ar_theocracy_government }
 			}
 			
 			holder_scope = {
@@ -1443,7 +1458,6 @@ succession_laws = {
 				}
 			}
 			is_primary_type_title = no
-			holder_scope = { government = ar_theocracy_government }
 			NOT = { holder_scope = { government = confucian_bureaucracy } }
 			NOT = { holder_scope = { government = chinese_imperial_government } }
 		}
@@ -1764,4 +1778,80 @@ gender_laws = {
 			}
 		}
 	}
+	
+	enatic_succession = {
+		male_dynasty_opinion = -10
+		female_dynasty_opinion = 10
+		
+		potential = {
+			holder_scope = { has_religion_feature = religion_matriarchal }
+		}
+		allow = {
+			
+		}
+		effect = {
+			gender_succ = enatic
+		}
+		revoke_allowed = {
+			always = no
+		}
+		default_selection = {
+			factor = 1
+			
+		}
+	}
+	
+	enatic_cognatic_succession = {
+		male_dynasty_opinion = -10
+		female_dynasty_opinion = 5
+		
+		potential = {
+			holder_scope = {
+				OR = {
+					has_religion_feature = religion_matriarchal
+					any_owned_bloodline = {
+						has_bloodline_flag = bloodline_enatic_cognatic 
+					}
+				}
+			}
+		}
+		allow = {
+			
+		}
+		effect = {
+			gender_succ = enatic_cognatic
+		}
+		revoke_allowed = {
+			always = no
+		}	
+		default_selection = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					holder_scope = {
+						OR = {
+							has_religion_feature = religion_matriarchal
+							any_owned_bloodline = {
+								has_bloodline_flag = bloodline_enatic_cognatic 
+							}
+						}
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 100
+				holder_scope = {
+					OR = {
+						has_religion_feature = religion_matriarchal
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_enatic_cognatic 
+						}
+					}
+				}
+			}
+		}		
+	}	
 }

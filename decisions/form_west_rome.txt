@@ -96,12 +96,9 @@ decisions = {
 			}
 			create_bloodline = {
 				type = west_rome_blood
-			}			
+			}
 			
 			hidden_tooltip = {
-				ROOT = {
-					narrative_event = { id = ROM.101 }
-				}
 				any_player = {
 					narrative_event = { id = ROM.100 }
 				}
@@ -140,6 +137,40 @@ decisions = {
 				hidden_tooltip = {
 					ROOT = {
 						narrative_event = { id = ROM.114 }
+					}
+				}
+			}
+		}
+	}
+
+	invade_byz_west_rome = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120
+		
+		potential = {
+			has_landed_title = e_west_rome
+			independent = yes
+			NOT = { has_global_flag = byz_rome_conflict }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		
+		allow = {
+			has_landed_title = e_west_rome
+			prestige = 2000
+			diplomacy = 10
+			any_playable_ruler = { has_landed_title = e_byzantium }
+		}
+		
+		effect = {
+			set_global_flag = byz_rome_conflict
+			custom_tooltip = {
+				text = conflict_byz_rome
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = ROM.101 }
 					}
 				}
 			}
@@ -189,6 +220,10 @@ decisions = {
 						wealth = 500
 						d_legion_italia = {
 							grant_title = PREV
+							add_law = {
+								law = succ_open_elective
+								opinion_effect = no
+							}							
 						}
 						set_government_type = feudal_government
 						create_character = {
