@@ -14,6 +14,15 @@ character_event = {
 	immediate = {
 		set_global_flag = umayyad_player_event_fired
 		any_player = { narrative_event = { id = UMM.6 days = 5 } }
+		any_playable_ruler = {
+			limit = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+			}
+			save_event_target_as = character_umayyad_crisis
+		}
 	}
 }
 
@@ -144,12 +153,17 @@ narrative_event = {
 	desc = UMMDESC6
     is_triggered_only = yes
 	
+	portrait = character_umayyad_crisis
 	picture = GFX_evt_mecca_falls_soa
 	
     trigger = {
 		start_date <= 936.8.7
 		is_save_game = no
     }
+	
+	immediate = {
+		clr_event_target = character_umayyad_crisis
+	}	
 	
 	option = {
 		name = EVTOPUMM.6
@@ -221,10 +235,9 @@ narrative_event = {
 	}
 }
 
-narrative_event = {
+character_event = {
 	id = UMM.8
-	title = UMMNAME8
-	desc = UMMDESC8
+	hide_window = yes
     is_triggered_only = yes
 	
 	immediate = {

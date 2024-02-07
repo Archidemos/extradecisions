@@ -21,6 +21,7 @@ narrative_event = {
 		name = EVTOPTHREAR.1
 		ai_chance = { factor = 100 }
 		unsafe_destroy_landed_title = e_hre
+		unsafe_destroy_landed_title = e_france
 		set_global_flag = hre_concluded
 		any_player = { 
 			narrative_event = { id = HREAR.3 } 
@@ -227,6 +228,7 @@ narrative_event = {
 			remove_trait = imbecile
 			remove_trait = weak
 			remove_trait = feeble
+			government = tribal_government
 			character_event = { id = HREAR.11 }
 		}
 		
@@ -256,10 +258,9 @@ narrative_event = {
 	}
 }
 
-narrative_event = {
+character_event = {
 	id = HREAR.11
-	title = HREARNAME11
-	desc = HREDESC11
+	hide_window = yes
     is_triggered_only = yes
 	
 	immediate = {
@@ -270,7 +271,6 @@ narrative_event = {
 			landless = yes
 			culture = ROOT
 			holder = ROOT
-			set_government = tribal_government
 		}
 		
 		spawn_unit = {

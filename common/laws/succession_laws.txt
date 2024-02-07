@@ -26,7 +26,6 @@ succession_laws = {
 					}
 				}
 				NOT = { religion_group = muslim }
-				government = ar_theocracy_government
 				is_merchant_republic = no
 				is_patrician = no
 				OR = {
@@ -51,9 +50,11 @@ succession_laws = {
 				holder_scope = { is_tribal = yes }
 			}
 			is_primary_type_title = no
-			NOT = { holder_scope = { government = ar_republic_government } }
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			holder_scope = {
@@ -172,9 +173,12 @@ succession_laws = {
 				holder_scope = { is_tribal = yes }
 			}
 			is_primary_type_title = no
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			conditional_tooltip = {
@@ -295,9 +299,12 @@ succession_laws = {
 				holder_scope = { is_tribal = yes }
 			}
 			is_primary_type_title = no
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			conditional_tooltip = {
@@ -428,8 +435,10 @@ succession_laws = {
 				holder_scope = { is_patrician = yes }
 			}
 			
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOR = {
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		
 		allow = {
@@ -579,9 +588,11 @@ succession_laws = {
 				}
 				has_title_flag = alternate_byz
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
-			NOT = { holder_scope = { government = ar_republic_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			conditional_tooltip = {
@@ -766,9 +777,11 @@ succession_laws = {
 					}
 				}
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
+			NOR = {
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 			NOR = {  #Special Elective.
 				title = e_hre 
 				has_title_flag = alternate_hre
@@ -874,8 +887,12 @@ succession_laws = {
 					}
 				}
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			custom_tooltip = {
@@ -933,8 +950,12 @@ succession_laws = {
 			#	temporary = yes
 			#}
 			#is_primary_type_title = no
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 
 		}
 		allow = {
@@ -1018,8 +1039,12 @@ succession_laws = {
 				}
 				holder_scope = { is_feudal = yes }
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = chinese_imperial_government }
+				holder_scope = { government = ar_theocracy_government }
+			}
 
 		}
 		allow = {
@@ -1161,9 +1186,11 @@ succession_laws = {
 					}
 				}
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = ar_theocracy_government } }
-			NOT = { holder_scope = { government = ar_republic_government } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		allow = {
 			conditional_tooltip = {
@@ -1313,7 +1340,11 @@ succession_laws = {
 					has_law = succ_hre_elective
 				}
 			}
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
+			NOR = {
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = confucian_bureaucracy }
+				holder_scope = { government = ar_theocracy_government }
+			}
 		}
 		effect = {
 			succession = turkish_succession

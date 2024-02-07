@@ -1167,8 +1167,8 @@ dismantle_hre_burgundy = {
 		ROOT = {
 			narrative_event = { id = Bur.1001 } # notify the world
 		}
-		remove_character_flag = destroying_hre
-		remove_global_flag = formed_burgundy
+		clr_character_flag = destroying_hre
+		clr_global_flag = formed_burgundy
 	}	
 	on_success_title = {
 		FROM = {
@@ -1218,8 +1218,8 @@ dismantle_hre_burgundy = {
 			prestige = 2000
 		}
 		
-		remove_character_flag = destroying_hre
-		remove_global_flag = formed_burgundy
+		clr_character_flag = destroying_hre
+		clr_global_flag = formed_burgundy
 	}
 }
 
@@ -1260,7 +1260,7 @@ german_back_dejure_bur = {
 	}
 	
 	on_success = {
-		remove_character_flag = germany_refuses
+		clr_character_flag = germany_refuses
 		d_burgundy = { de_jure_liege = k_france }
 		d_flanders = { de_jure_liege = k_france }
 		d_brabant = { de_jure_liege = k_france }
@@ -1337,7 +1337,7 @@ french_back_dejure_bur = {
 	
 	
 	on_success = {
-		remove_character_flag = burgundy_refuses
+		clr_character_flag = burgundy_refuses
 		d_burgundy = { de_jure_liege = k_france }
 		d_flanders = { de_jure_liege = k_france }
 		d_brabant = { de_jure_liege = k_france }
@@ -1446,7 +1446,6 @@ unify_india = {
 	}
 	can_use_title = {
 		OR = {
-			is_de_jure_vassal = yes
 			de_jure_liege = e_deccan
 			de_jure_liege = e_bengal
 			de_jure_liege = e_rajastan
@@ -2522,10 +2521,8 @@ scripted_invasion = {
 		ROOT = {
 			mercenary = no
 			NOT = { government = ar_theocracy_government }
-			NOT = { has_government = ar_theocracy_government }
 		}
 		NOT = { government = ar_theocracy_government }
-		NOT = { has_government = ar_theocracy_government }
 	}
 
 	
