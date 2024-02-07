@@ -5,7 +5,6 @@ character_event = {
     only_rulers = yes
     notification = yes
 	hide_window = yes
-	is_triggered_only = yes
 
     trigger = {
         religion_group = muslim
@@ -28,7 +27,6 @@ character_event = {
     only_rulers = yes
     notification = yes
 	hide_window = yes
-	is_triggered_only = yes
 
     trigger = {
         NOT = { religion_group = muslim }
@@ -68,8 +66,8 @@ character_event = {
                 days = 1
             }
         }
-		clr_event_target = dec_trigger_now
     }
+    clear_event_target = dec_trigger_now
 }
 
 character_event = {

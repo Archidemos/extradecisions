@@ -14,13 +14,7 @@ character_event = {
 	immediate = {
 		set_global_flag = umayyad_player_event_fired
 		any_player = { narrative_event = { id = UMM.6 days = 5 } }
-		any_playable_ruler = {
-			limit = {
-				OR = {
-					has_landed_title = k_andalusia
-					has_landed_title = e_cordoba
-				}
-			}
+		k_andalusia = {
 			save_event_target_as = character_umayyad_crisis
 		}
 	}

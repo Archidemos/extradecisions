@@ -16,7 +16,9 @@ settlement_decisions = {
 
 		allow = {
 			NOT = { has_holding_modifier = recently_burnt_the_land }
-			controlled_by = ROOT
+			holder_scope = {
+				character = FROM
+			}
 			has_siege = no
 			custom_tooltip = {
 				text = stop_pillaging_custom_tooltip
