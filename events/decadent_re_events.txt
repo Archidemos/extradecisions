@@ -25,20 +25,23 @@ character_event = {
 character_event = {
     id = isldecadent.90
     only_rulers = yes
-    notification = yes
 	hide_window = yes
-
+    is_triggered_only = yes
+	
     trigger = {
         NOT = { religion_group = muslim }
         uses_decadence = no
     }
 
     immediate = {
-		character_event = {
-            id = isldecadent.110
-			days = 1
-        }
-    }
+		remove_character_modifier = decadent_value_0
+		remove_character_modifier = decadent_value_15
+		remove_character_modifier = decadent_value_25
+		remove_character_modifier = decadent_value_35
+		remove_character_modifier = decadent_value_55
+		remove_character_modifier = decadent_value_75
+		remove_character_modifier = decadent_value_95
+	}
 }
 
 
@@ -166,23 +169,4 @@ character_event = {
         }
 
     }
-}
-
-character_event = {
-	id = isldecadent.110
-    desc = EVTDESCisldecadent.102
-    only_rulers = yes
-    is_triggered_only = yes
-    notification = yes
-	hide_window = yes
-
-    immediate = {
-		remove_character_modifier = decadent_value_0
-		remove_character_modifier = decadent_value_15
-		remove_character_modifier = decadent_value_25
-		remove_character_modifier = decadent_value_35
-		remove_character_modifier = decadent_value_55
-		remove_character_modifier = decadent_value_75
-		remove_character_modifier = decadent_value_95
-	}
 }

@@ -76,3 +76,23 @@ character_event = {
 		hidden_tooltip = { character_event = { id = ORT.100 } }
 	}
 }
+
+character_event = {
+    id = ORT.102
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+        NOT = { religion = orthodox }
+    }
+
+    immediate = {
+		remove_character_modifier = icon_john_climatus
+		remove_character_modifier = icon_michael
+		remove_character_modifier = icon_nicholas
+		remove_character_modifier = icon_gabriel
+		remove_character_modifier = icon_jesus
+		remove_character_modifier = icon_satan
+	}
+}

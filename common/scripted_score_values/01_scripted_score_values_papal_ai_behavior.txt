@@ -1605,8 +1605,8 @@ ask_for_invasion_chance = {
 		localisation_key = NO_THEOCRATS_AND_REPUBLICS
 		ROOT = {
 			OR = {
-				NOT = { has_government = ar_theocracy_government }
-				NOT = { has_government = ar_republic_government }
+				NOT = { holder_scope = { has_government = ar_theocracy_government } }
+				NOT = { holder_scope = { has_government = ar_republic_government } }
 			}
 		}
 	}
