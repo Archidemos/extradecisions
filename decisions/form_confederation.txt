@@ -1,0 +1,38 @@
+decisions = {
+	form_confederation = {
+		only_playable = yes
+		ai = no
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { religion_group = muslim }
+			NOT = { government = ar_confederation_government }
+			NOT = { is_tributary = yes }
+		}
+		
+		allow = {
+			NOT = { tier = EMPEROR }
+			higher_tier_than = COUNT
+			wealth = 1000
+			prestige = 1000
+			diplomacy = 10
+			ROOT = { realm_size <= 100 }
+			NOT = { government = ar_confederation_government }
+		}
+		
+		effect = {
+			set_government_type = ar_confederation_government
+			wealth = -1000
+			prestige = -1000
+			
+			ROOT = {
+				add_law = law_voting_power_1
+				add_law = war_voting_power_1
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

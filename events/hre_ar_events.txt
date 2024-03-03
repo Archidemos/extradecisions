@@ -62,10 +62,27 @@ narrative_event = {
 		set_global_flag = hre_crisis_2
 		set_global_flag = hre_crisis_3
 		set_global_flag = hre_crisis_4
-		add_character_modifier = { name = hre_curse_1 years = -1 inherit = yes }
-		add_character_modifier = { name = hre_curse_2 years = -1 inherit = yes }
-		add_character_modifier = { name = hre_curse_3 years = -1 inherit = yes }
-		add_character_modifier = { name = hre_curse_4 years = -1 inherit = yes }
+		add_character_modifier = { name = hre_curse_1 years = -1 }
+		add_character_modifier = { name = hre_curse_2 years = -1 }
+		add_character_modifier = { name = hre_curse_3 years = -1 }
+		add_character_modifier = { name = hre_curse_4 years = -1 }
+		hidden_tooltip = {
+			c_90104 = {
+				add_claim = e_hre
+			}
+			c_90107 = {
+				add_claim = e_hre
+			}
+			c_42018 = {
+				add_claim = e_hre
+			}
+			c_90123 = {
+				add_claim = e_hre
+			}
+			c_144998 = {
+				add_claim = e_hre
+			}
+		}
 	}
 	
 }
@@ -106,92 +123,124 @@ narrative_event = {
 	
 }
 
-#character_event = {
-#    id = HREAR.5
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			has_landed_title = e_hre
-#			has_global_flag = hre_crisis_1
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = hre_curse_1
-#		add_character_modifier = { 
-#			name = hre_curse_1 
-#			years = -1 
-#		}
-#    }
-#}
-#
-#character_event = {
-#    id = HREAR.6
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			has_landed_title = e_hre
-#			has_global_flag = hre_crisis_2
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = hre_curse_2
-#		add_character_modifier = { 
-#			name = hre_curse_2 
-#			years = -1 
-#		}
-#    }
-#}
-#
-#character_event = {
-#    id = HREAR.7
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			has_landed_title = e_hre
-#			has_global_flag = hre_crisis_3
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = hre_curse_3
-#		add_character_modifier = { 
-#			name = hre_curse_3 
-#			years = -1 
-#		}
-#    }
-#}
-#
-#character_event = {
-#    id = HREAR.8
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			has_landed_title = e_hre
-#			has_global_flag = hre_crisis_4
-#		}
-#    }
-#    immediate = {
-#		remove_character_modifier = hre_curse_4 
-#		add_character_modifier = { 
-#			name = hre_curse_4 
-#			years = -1 
-#		}
-#    }
-#}
+character_event = {
+    id = HREAR.5
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = e_hre
+				has_landed_title = e_france
+			}
+			has_global_flag = hre_crisis_1
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = e_hre
+					has_landed_title = e_france
+				}
+			}
+	    }
+		remove_character_modifier = hre_curse_1
+		add_character_modifier = { name = hre_curse_1 years = -1 }
+    }
+}
+
+character_event = {
+    id = HREAR.6
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = e_hre
+				has_landed_title = e_france
+			}
+			has_global_flag = hre_crisis_2
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = e_hre
+					has_landed_title = e_france
+				}
+			}
+	    }
+		remove_character_modifier = hre_curse_2
+		add_character_modifier = { name = hre_curse_2 years = -1 }
+    }
+}
+
+character_event = {
+    id = HREAR.7
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = e_hre
+				has_landed_title = e_france
+			}
+			has_global_flag = hre_crisis_3
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = e_hre
+					has_landed_title = e_france
+				}
+			}
+	    }
+		remove_character_modifier = hre_curse_3
+		add_character_modifier = { name = hre_curse_3 years = -1 }
+    }
+}
+
+character_event = {
+    id = HREAR.8
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = e_hre
+				has_landed_title = e_france
+			}
+			has_global_flag = hre_crisis_4
+		}
+    }
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = e_hre
+					has_landed_title = e_france
+				}
+			}
+	    }
+		remove_character_modifier = hre_curse_4 
+		add_character_modifier = { name = hre_curse_4 years = -1 }
+    }
+}
 
 narrative_event = {
 	id = HREAR.10
@@ -331,4 +380,29 @@ narrative_event = {
 		ai_chance = { factor = 100 }
 	}
 	
+}
+
+character_event = {
+    id = HREAR.13
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		ROOT = {
+			OR = {
+				NOT = { has_landed_title = e_hre }
+				NOT = { has_landed_title = e_france }
+			}
+		}
+    }
+
+    immediate = {
+		FROMFROM = {
+			remove_character_modifier = hre_curse_1
+			remove_character_modifier = hre_curse_2
+			remove_character_modifier = hre_curse_3
+			remove_character_modifier = hre_curse_4
+		}
+    }
 }

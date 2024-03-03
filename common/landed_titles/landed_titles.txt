@@ -356,7 +356,7 @@ k_antioch = {
 }
 
 k_switzerland = {
-	color={ 255 80 80 }
+	color={ 252 28 28 }
 	color2={ 200 50 50 }
 
 	capital = 244 #Bern
@@ -1014,6 +1014,36 @@ d_legion_italia = {
 	culture = greek
 	
 	religion = orthodox
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	monthly_income = 10
+}
+
+d_swiss_guard = {
+	color={ 207 56 45 }
+
+	graphical_culture = holygfx
+	
+	capital = 244 # Bern
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	mercenary = yes
+	
+	landless = yes
+	
+	allow = {
+		has_landed_title = k_switzerland
+	}
+	
+	mercenary_type = papal_guard_composition
+	
+	culture = german
+	
+	religion = catholic
 
 	# Cannot be held as a secondary title
 	primary = yes
@@ -28938,7 +28968,7 @@ e_carpathia = {
 }
 	
 e_france = {
-	color={ 11 22 170 }
+	color={ 24 31 128 }
 	color2={ 255 255 20 }
 	
 	capital = 112 # Ile de France
@@ -28962,6 +28992,7 @@ e_france = {
 			NOT = { title = k_aquitaine }
 			NOT = { title = k_brittany }
 			NOT = { title = k_burgundy }
+			NOT = { title = e_hre }
 		}
 	}
 
@@ -36112,7 +36143,37 @@ e_maghreb = {
 		muslim = 100 # Crusade target weight
 		west_african_pagan_reformed = 100
 		aztec_reformed = 500
-	
+		
+		d_canarias = {
+			color = { 18 20 18 }
+
+			short_name = yes
+			
+			dynasty_title_names = no
+			
+			capital = 849
+			
+			c_canarias = {
+				dynasty_title_names = no 
+				color={ 18 20 18 }
+				color2={ 255 255 255 }
+
+				b_tenerife = {
+				}
+				b_lagomera = {
+				}
+				b_lanzarote = {
+				}
+				b_fuerteventura = {
+				}
+				b_lagraciosa = {
+				}
+				b_alegranza = {
+				}
+				b_lapalma = {
+				}
+			}
+		}	
 		d_marrakech = {
 			color={ 43 150 32 }
 			color2={ 255 255 255 }
@@ -36167,25 +36228,6 @@ e_maghreb = {
 				b_amerchen = {} # Fictional, for prosperity
 				b_el_bakra = {} # Fictional, for prosperity
 				b_zidania = {} # Fictional, for prosperity
-			}
-			c_canarias = {
-				color={ 60 190 43 }
-				color2={ 255 255 255 }
-		
-				b_tenerife = {
-				}
-				b_lagomera = {
-				}
-				b_lanzarote = {
-				}
-				b_fuerteventura = {
-				}
-				b_lagraciosa = {
-				}
-				b_alegranza = {
-				}
-				b_lapalma = {
-				}
 			}
 			c_tadla = {
 				color={ 60 190 43 }

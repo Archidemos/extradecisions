@@ -61,6 +61,27 @@ christian = {
 			SATAN LUCIFER THE_DEVIL
 		}
 		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.9
+			light_infantry_defensive = 0.8
+			heavy_infantry_defensive = 0.8
+			pikemen_defensive = 0.8
+			light_cavalry_defensive = 0.8
+			knights_defensive = 0.8
+			archers_defensive = 0.8
+			horse_archers_defensive = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		investiture = yes
 		can_have_antipopes = yes
 		can_excommunicate = yes
@@ -122,6 +143,22 @@ christian = {
 			SATAN LUCIFER THE_DEVIL
 		}
 		
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}		
 		investiture = yes
 		can_have_antipopes = yes
 		can_excommunicate = yes
@@ -134,7 +171,7 @@ christian = {
 		rel_head_defense = yes
 		
 		character_modifier = {
-			diplomacy = 2
+			diplomacy = 1
 		}
 		
 		religious_clothing_head = 0
@@ -183,7 +220,29 @@ christian = {
 		intermarry = orthodox
 		intermarry = miaphysite
 		intermarry = nestorian
+		
+		character_modifier = {
+			diplomacy = 1
+			learning = 1
+		}
 
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
+		
 		intermarry = fraticelli
 		intermarry = waldensian
 		intermarry = lollard
@@ -217,6 +276,28 @@ christian = {
 		can_call_crusade = yes
 		can_retire_to_monastery = yes
 		priests_can_inherit = no
+
+		character_modifier = {
+			martial = 1
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.2
+			heavy_infantry_offensive = 0.1
+			light_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
 		
 		religious_clothing_head = 0
 		religious_clothing_priest = 1
@@ -262,7 +343,28 @@ christian = {
 		intermarry = orthodox
 		intermarry = miaphysite
 		intermarry = nestorian
-
+		
+		character_modifier = {
+			stewardship = 1
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
+		
 		intermarry = cathar
 		intermarry = fraticelli
 		intermarry = lollard
@@ -292,6 +394,27 @@ christian = {
 		religious_clothing_priest = 1
 
 		aggression = 1.5
+
+		character_modifier = {
+			learning = 1
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.15
+			levy_size = 0.15
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
 		
 		intermarry = catholic
 		intermarry = orthodox
@@ -347,6 +470,23 @@ christian = {
 		character_modifier = {
 			learning = 2
 		}
+
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.1
+			light_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
 		
 		aggression = 1.5
 		
@@ -377,6 +517,7 @@ christian = {
 		crusade_name = CRUSADE
 		scripture_name = THE_BIBLE
 		priest_title = PRIEST
+		crusade_cb = crusade
 		
 		high_god_name = GOD_GOD
 		
@@ -392,7 +533,7 @@ christian = {
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
-		can_call_crusade = no
+		can_call_crusade = yes
 		can_retire_to_monastery = yes
 		priests_can_inherit = no
 		
@@ -401,6 +542,24 @@ christian = {
 		
 		character_modifier = {
 			stewardship = 2
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_offensive = 0.2
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		aggression = 1.5
@@ -437,12 +596,34 @@ christian = {
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
-		can_call_crusade = no
+		can_call_crusade = yes
 		can_retire_to_monastery = yes
 		priests_can_inherit = no
 		
 		religious_clothing_head = 2
 		religious_clothing_priest = 2
+
+		character_modifier = {
+			stewardship = 1
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 
 		aggression = 1.5
 		
@@ -488,6 +669,29 @@ christian = {
 		intermarry = miaphysite
 		intermarry = nestorian
 
+		character_modifier = {
+			learning = -1
+			diplomacy = -1
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.2
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
 		intermarry = cathar
 		intermarry = fraticelli
 		intermarry = waldensian
@@ -530,6 +734,28 @@ christian = {
 		intermarry = miaphysite
 		intermarry = nestorian
 
+		character_modifier = {
+			stewardship = 1
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.2
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
 		intermarry = cathar
 		intermarry = fraticelli
 		intermarry = waldensian
@@ -558,7 +784,7 @@ christian = {
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
-		can_call_crusade = no
+		can_call_crusade = yes
 		can_retire_to_monastery = yes
 		priests_can_inherit = no
 		
@@ -568,9 +794,27 @@ christian = {
 		aggression = 1.5
 		
 		character_modifier = {
-			learning = 1
+			martial = 1
 			stewardship = 1
 		}		
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.2
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		intermarry = catholic
 		intermarry = orthodox
@@ -621,7 +865,26 @@ christian = {
 		character_modifier = {
 			learning = 1
 			martial = 1
-		}		
+		}	
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		intermarry = catholic
 		intermarry = orthodox
 		intermarry = miaphysite
@@ -649,6 +912,8 @@ christian = {
 		crusade_name = CRUSADE
 		scripture_name = THE_BIBLE
 		priest_title = PRIEST
+		crusade_cb = crusade
+
 		
 		high_god_name = GOD_GOD
 		
@@ -664,7 +929,7 @@ christian = {
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
-		can_call_crusade = no
+		can_call_crusade = yes
 		priests_can_inherit = no
 		
 		can_retire_to_monastery = yes
@@ -676,6 +941,24 @@ christian = {
 			martial = 2
 		}
 		aggression = 1.5
+
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.3
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		intermarry = catholic
 		intermarry = orthodox
@@ -733,6 +1016,28 @@ christian = {
 		religious_clothing_priest = 2
 
 		aggression = 1.5
+
+		character_modifier = {
+			martial = 1
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		intermarry = catholic
 		intermarry = orthodox
@@ -804,6 +1109,27 @@ muslim = {
 			stewardship = 1
 			martial = 1
 		}
+		
+		unit_modifier = {		
+			garrison_size = 0.1
+			levy_size = 0.1
+			camel_cavalry_offensive = 0.1
+			light_cavalry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		can_call_crusade = yes
 		priests_can_marry = yes
 		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
@@ -843,6 +1169,30 @@ muslim = {
 		psc_marriage = no
 		max_wives = 4
 		matrilineal_marriages = no
+
+		character_modifier = {
+			martial = 1
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			camel_cavalry_offensive = 0.2
+			light_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		landed_kin_prestige_bonus = yes
 		attacking_same_religion_piety_loss = yes
@@ -882,6 +1232,26 @@ muslim = {
 		evil_god_names = {
 			THE_DARK_SPIRITS
 		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.2
+			camel_cavalry_offensive = 0.2
+			light_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		parent = sunni
 		priests_can_marry = yes
@@ -896,6 +1266,11 @@ muslim = {
 		uses_jizya_tax = yes
 
 		aggression = 1.5
+
+		character_modifier = {
+			martial = 1
+			diplomacy = -2
+		}
 		
 		intermarry = sunni
 		intermarry = zikri
@@ -915,6 +1290,7 @@ muslim = {
 		crusade_name = JIHAD
 		scripture_name = THE_KORAN
 		priest_title = IMAM_PRIEST
+		crusade_cb = crusade
 		
 		high_god_name = GOD_ALLAH
 		
@@ -926,12 +1302,36 @@ muslim = {
 			IBLIS SHAYTAN
 		}
 
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.2
+			camel_cavalry_offensive = 0.1
+			light_cavalry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
 		color = { 0.3 0.6 0.3 }
 		can_call_crusade = yes
 		priests_can_marry = yes
 		psc_marriage = no # Disallow uncle-nice and aunt-nephew marriages
 		max_wives = 4
 		matrilineal_marriages = no
+
+		character_modifier = {
+			learning = 2
+		}
 		
 		landed_kin_prestige_bonus = yes
 		attacking_same_religion_piety_loss = yes
@@ -957,6 +1357,27 @@ muslim = {
 		heresy_icon = 52
 		
 		crusade_name = JIHAD
+		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.3
+			camel_cavalry_offensive = 0.2
+			light_cavalry_offensive = 0.2
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 
 		color = { 0.4 0.8 0.6 }
 		parent = ibadi
@@ -972,6 +1393,11 @@ muslim = {
 		uses_jizya_tax = yes
 
 		aggression = 1.5
+		
+		character_modifier = {
+			martial = 2
+			diplomacy = -2
+		}		
 		
 		intermarry = sunni
 		intermarry = zikri
@@ -1003,9 +1429,29 @@ muslim = {
 			IBLIS SHAYTAN
 		}
 		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.2
+			camel_cavalry_offensive = 0.2
+			light_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		character_modifier = {
 			martial = -1
-			intrigue = -1
+			intrigue = -2
 		}		
 		can_call_crusade = yes
 		priests_can_marry = yes
@@ -1053,6 +1499,31 @@ muslim = {
 
 		aggression = 1.5
 		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			camel_cavalry_offensive = 0.1
+			light_cavalry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
+		character_modifier = {
+			diplomacy = 1
+		}		
+		
 		intermarry = sunni
 		intermarry = zikri
 		intermarry = yazidi
@@ -1085,6 +1556,32 @@ muslim = {
 		uses_decadence = yes
 		uses_jizya_tax = yes
 
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			camel_cavalry_offensive = 0.1
+			light_cavalry_offensive = 0.1
+			heavy_infantry_offensive = 0.1
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
+		character_modifier = {
+			learning = 1
+			health = 0.5
+		}		
+
 		aggression = 1.5
 		
 		intermarry = sunni
@@ -1106,6 +1603,27 @@ muslim = {
 		color = { 0.2 0.7 0.1 }
 		parent = shiite
 
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.3
+			camel_cavalry_offensive = 0.2
+			light_cavalry_offensive = 0.2
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			heavy_infantry_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			camel_cavalry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		crusade_name = JIHAD
 
 		priests_can_marry = yes
@@ -1114,6 +1632,12 @@ muslim = {
 		max_wives = 4
 		matrilineal_marriages = no
 		allow_looting = yes
+
+		character_modifier = {
+			learning = -1
+			diplomacy = -2
+			martial = 1
+		}	
 
 		landed_kin_prestige_bonus = no
 		attacking_same_religion_piety_loss = yes
@@ -1216,12 +1740,26 @@ pagan_group = {
 			martial = 1
 		}	
 		
-		unit_modifier = {
-			levy_size = 0.3
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
+
+			light_infantry_offensive = 0.1
+			light_infantry_defensive = 0.2
 			
-			key = "OFF_RELIGION"
+			key = "DEF_RELIGION"
 		}
-		
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}		
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_SAGAS
 		priest_title = GODI
@@ -1280,11 +1818,19 @@ pagan_group = {
 		}		
 		
 		unit_modifier = {
-			levy_size = 0.3
+			garrison_size = 0.4
 			
-			retinuesize_perc = 0.5
+			light_infantry_offensive = 0.1
+			light_infantry_defensive = 0.2
+				
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
 			
-			key = "OFF_RELIGION"
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		crusade_name = GREAT_HOLY_WAR
@@ -1346,14 +1892,27 @@ pagan_group = {
 		}	
 		
 		unit_modifier = {
-			levy_size = 0.3
+			garrison_size = 0.2
+			levy_size = 0.2
 			
 			light_cavalry_offensive = 0.3
 			light_cavalry_defensive = 0.3
 			
+			levy_size = 0.3		
+			retinuesize_perc = 0.5
+			
 			key = "tengri_pagan"
 		}
-		
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}		
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
 		priest_title = SHAMAN
@@ -1396,14 +1955,20 @@ pagan_group = {
 		}
 		
 		unit_modifier = {
-			levy_size = 0.3
-			
-			light_cavalry_offensive = 0.3
-			light_cavalry_defensive = 0.3
-			
-			key = "tengri_pagan"
+			garrison_size = 0.4
+
+			light_cavalry_offensive = 0.2
+			light_cavalry_defensive = 0.2
+				
+			key = "DEF_RELIGION"
 		}
-		
+		unit_home_modifier = {
+			land_morale = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			martial = 1
 		}		
@@ -1460,28 +2025,26 @@ pagan_group = {
 			VELNIAS
 		}
 		
-		#unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
-			#garrison_size = 0.2
-			#levy_size = 0.2
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
+
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.1
 			
-			#key = "DEF_RELIGION"
-		#}
-		#unit_home_modifier = {
-			#land_morale = 0.8
-			#light_infantry_defensive = 0.8
-			#heavy_infantry_defensive = 0.8
-			#pikemen_defensive = 0.8
-			#light_cavalry_defensive = 0.8
-			#knights_defensive = 0.8
-			#archers_defensive = 0.8
-			#horse_archers_defensive = 0.8
-			#camel_cavalry_defensive = 0.8
-			#war_elephants_defensive = 0.8
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
 			
-			#garrison_size = 0.4
+			garrison_size = 0.4
 			
-			#key = "DEF_RELIGION_HOME_TERRITORY"
-		#}
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			stewardship = 1
 		}	
@@ -1522,23 +2085,16 @@ pagan_group = {
 			VELNIAS
 		}
 		
-		unit_modifier = {		
-			garrison_size = 0.3
-			levy_size = 0.1
-			
+		unit_modifier = {
+			garrison_size = 0.4
+
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.1
+				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.8
-			heavy_infantry_defensive = 0.8
-			pikemen_defensive = 0.8
-			light_cavalry_defensive = 0.8
-			knights_defensive = 0.8
-			archers_defensive = 0.8
-			horse_archers_defensive = 0.8
-			camel_cavalry_defensive = 0.8
-			war_elephants_defensive = 0.8
 			
 			garrison_size = 0.4
 			
@@ -1596,28 +2152,26 @@ pagan_group = {
 			TUONI TUONETAR
 		}
 		
-		#unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
-			#garrison_size = 0.3
-			#levy_size = 0.1
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.3
+			levy_size = 0.1
+
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
 			
-			#key = "DEF_RELIGION"
-		#}
-		#unit_home_modifier = {
-			#land_morale = 0.8
-			#light_infantry_defensive = 0.8
-			#heavy_infantry_defensive = 0.8
-			#pikemen_defensive = 0.8
-			#light_cavalry_defensive = 0.8
-			#knights_defensive = 0.8
-			#archers_defensive = 0.8
-			#horse_archers_defensive = 0.8
-			#camel_cavalry_defensive = 0.8
-			#war_elephants_defensive = 0.8
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
 			
-			#garrison_size = 0.4
+			garrison_size = 0.4
 			
-			#key = "DEF_RELIGION_HOME_TERRITORY"
-		#}
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			stewardship = 1
 		}			
@@ -1665,22 +2219,16 @@ pagan_group = {
 			TUONI TUONETAR
 		}
 		
-		unit_modifier = {		
+		unit_modifier = {
 			garrison_size = 0.4
 			
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.8
-			heavy_infantry_defensive = 0.8
-			pikemen_defensive = 0.8
-			light_cavalry_defensive = 0.8
-			knights_defensive = 0.8
-			archers_defensive = 0.8
-			horse_archers_defensive = 0.8
-			camel_cavalry_defensive = 0.8
-			war_elephants_defensive = 0.8
 			
 			garrison_size = 0.4
 			
@@ -1735,10 +2283,22 @@ pagan_group = {
 			TLAZOLTEOTL GOD_MICTLANTECUHTLI XOLOTL
 		}
 		
-		unit_modifier = {
-			levy_size = 0.3
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
 			
-			key = "OFF_RELIGION"
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		crusade_name = GREAT_HOLY_WAR
@@ -1777,9 +2337,16 @@ pagan_group = {
 		}
 		
 		unit_modifier = {
-			levy_size = 0.3
+			garrison_size = 0.4
+				
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
 			
-			key = "OFF_RELIGION"
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		crusade_name = GREAT_HOLY_WAR
@@ -1831,28 +2398,27 @@ pagan_group = {
 			martial = 1
 		}	
 		
-		#unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
-			#garrison_size = 0.2
-			#levy_size = 0.2
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
+
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+			light_infantry_morale = 0.1
 			
-			#key = "DEF_RELIGION"
-		#}
-		#unit_home_modifier = {
-			#land_morale = 0.8
-			#light_infantry_defensive = 0.8
-			#heavy_infantry_defensive = 0.8
-			#pikemen_defensive = 0.8
-			#light_cavalry_defensive = 0.8
-			#knights_defensive = 0.8
-			#archers_defensive = 0.8
-			#horse_archers_defensive = 0.8
-			#camel_cavalry_defensive = 0.8
-			#war_elephants_defensive = 0.8
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
 			
-			#garrison_size = 0.4
+			garrison_size = 0.4
 			
-			#key = "DEF_RELIGION_HOME_TERRITORY"
-		#}
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			martial = 1
 		}			
@@ -1900,23 +2466,17 @@ pagan_group = {
 			GOD_VELES CHERNOBOG
 		}
 		
-		unit_modifier = {		
-			garrison_size = 0.3
-			levy_size = 0.1
-			
+		unit_modifier = {
+			garrison_size = 0.4
+
+			light_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
+			light_infantry_morale = 0.1
+				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.8
-			heavy_infantry_defensive = 0.8
-			pikemen_defensive = 0.8
-			light_cavalry_defensive = 0.8
-			knights_defensive = 0.8
-			archers_defensive = 0.8
-			horse_archers_defensive = 0.8
-			camel_cavalry_defensive = 0.8
-			war_elephants_defensive = 0.8
 			
 			garrison_size = 0.4
 			
@@ -1979,27 +2539,25 @@ pagan_group = {
 		can_call_crusade = yes
 		join_crusade_if_bordering_hostile = yes
 		
-		#unit_modifier = {		
-			#garrison_size = 0.4
+		unit_modifier = {		
+			garrison_size = 0.4
+
+			light_infantry_offensive = 0.3
+			light_infantry_defensive = 0.2
 			
-			#key = "DEF_RELIGION"
-		#}
-		#unit_home_modifier = {
-			#land_morale = 0.8
-			#light_infantry_defensive = 0.8
-			#heavy_infantry_defensive = 0.8
-			#pikemen_defensive = 0.8
-			#light_cavalry_defensive = 0.8
-			#knights_defensive = 0.8
-			#archers_defensive = 0.8
-			#horse_archers_defensive = 0.8
-			#camel_cavalry_defensive = 0.8
-			#war_elephants_defensive = 0.8
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
 			
-			#garrison_size = 0.4
-			
-			#key = "DEF_RELIGION_HOME_TERRITORY"
-		#}
+			garrison_size = 0.4
+
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			learning = 1
 			martial = 1
@@ -2046,22 +2604,16 @@ pagan_group = {
 			THE_DARK_SPIRITS
 		}
 		
-		unit_modifier = {		
+		unit_modifier = {
 			garrison_size = 0.4
-			
+
+			light_infantry_offensive = 0.3
+			light_infantry_defensive = 0.2
+				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.8
-			heavy_infantry_defensive = 0.8
-			pikemen_defensive = 0.8
-			light_cavalry_defensive = 0.8
-			knights_defensive = 0.8
-			archers_defensive = 0.8
-			horse_archers_defensive = 0.8
-			camel_cavalry_defensive = 0.8
-			war_elephants_defensive = 0.8
 			
 			garrison_size = 0.4
 			
@@ -2111,15 +2663,27 @@ pagan_group = {
 		evil_god_names = {
 			THE_DARKNESS
 		}
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
+			
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2	
+			
+			key = "OFF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 
-		#unit_modifier = {
-			#levy_size = 0.3
-			
-			#heavy_infantry_offensive = 0.2
-			#heavy_infantry_defensive = 0.2
-			
-			#key = "OFF_RELIGION"
-		#}
 		character_modifier = {
 			learning = 1
 		}					
@@ -2168,12 +2732,19 @@ pagan_group = {
 		}
 
 		unit_modifier = {
-			levy_size = 0.3
-			
+			garrison_size = 0.4
+
 			heavy_infantry_offensive = 0.2
 			heavy_infantry_defensive = 0.2
+				
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
 			
-			key = "OFF_RELIGION"
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		character_modifier = {
 			learning = 1
@@ -2217,6 +2788,28 @@ pagan_group = {
 		evil_god_names = {
 			GOD_SATURN GOD_BACCHUS GOD_PLUTO GOD_MERCURY GOD_TYPHON
 		}
+
+		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
+			garrison_size = 0.2
+			levy_size = 0.2
+
+			light_cavalry_offensive = 0.1
+			heavy_infantry_defensive = 0.1
+			
+			key = "OFF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		character_modifier = {
 			learning = 1
 		}			
@@ -2260,6 +2853,23 @@ pagan_group = {
 		evil_god_names = {
 			GOD_SATURN GOD_BACCHUS GOD_PLUTO GOD_MERCURY GOD_TYPHON
 		}
+		
+		unit_modifier = {
+			garrison_size = 0.4
+
+			light_cavalry_offensive = 0.1
+			heavy_infantry_defensive = 0.1
+				
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		character_modifier = {
 			learning = 1
 		}					
@@ -2310,27 +2920,25 @@ pagan_group = {
 		can_call_crusade = yes
 		join_crusade_if_bordering_hostile = yes
 		
-		#unit_modifier = {
-		#	garrison_size = 0.4
-		#	
-		#	key = "DEF_RELIGION"
-		#}
-		#unit_home_modifier = {
-		#	land_morale = 0.8
-		#	light_infantry_defensive = 0.8
-		#	heavy_infantry_defensive = 0.8
-		#	pikemen_defensive = 0.8
-		#	light_cavalry_defensive = 0.8
-		#	knights_defensive = 0.8
-		#	archers_defensive = 0.8
-		#	horse_archers_defensive = 0.8
-		#	camel_cavalry_defensive = 0.8
-		#	war_elephants_defensive = 0.8
-		#	
-		#	garrison_size = 0.4
-		#	
-		#	key = "DEF_RELIGION_HOME_TERRITORY"
-		#}
+		unit_modifier = {
+			garrison_size = 0.4
+
+			light_cavalry_defensive = 0.1
+			heavy_infantry_offensive = 0.2
+				
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 
 		#has_heir_designation = yes
 		priests_can_inherit = no
@@ -2383,24 +2991,19 @@ pagan_group = {
 		unit_modifier = {
 			garrison_size = 0.4
 			
+			light_cavalry_defensive = 0.1
+			heavy_infantry_offensive = 0.2
+				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.8
-			heavy_infantry_defensive = 0.8
-			pikemen_defensive = 0.8
-			light_cavalry_defensive = 0.8
-			knights_defensive = 0.8
-			archers_defensive = 0.8
-			horse_archers_defensive = 0.8
-			camel_cavalry_defensive = 0.8
-			war_elephants_defensive = 0.8
 			
 			garrison_size = 0.4
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
+
 		character_modifier = {
 			learning = 1
 		}			
@@ -2468,6 +3071,25 @@ zoroastrian_group = {
 		evil_god_names = {
 			AHRIMAN ANGRA_MAINYU
 		}
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			horse_archers_offensive = 0.1
+			camel_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		character_modifier = {
 			stewardship = 1
 		}					
@@ -2521,6 +3143,27 @@ zoroastrian_group = {
 		god_names = {
 			GOD_ZURVAN GOD_AHURA_MAZDA GOD_MANAH PROPHET_MAZDAK
 		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			horse_archers_offensive = 0.1
+			horse_archers_defensive = 0.1
+			camel_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		parent = zoroastrian
 		
@@ -2573,6 +3216,27 @@ zoroastrian_group = {
 		evil_god_names = {
 			THE_DEMIURGE
 		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			knights_defensive = 0.1
+			knights_offensive = 0.1
+			camel_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		can_retire_to_monastery = yes
 		female_temple_holders = yes
@@ -2581,7 +3245,7 @@ zoroastrian_group = {
 		
 		can_grant_divorce = yes
 		priests_can_inherit = no
-		can_call_crusade = no
+		can_call_crusade = yes
 		can_grant_invasion_cb = invasion
 		
 		max_consorts = 0 # Can take concubines
@@ -2626,6 +3290,26 @@ zoroastrian_group = {
 		
 		god_names = {
 			GOD_KHURMAZTA GOD_WESHPARKAR GOD_WISHAGHN GOD_NANAIYA
+		}
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			camel_cavalry_offensive = 0.2
+			camel_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		parent = zoroastrian

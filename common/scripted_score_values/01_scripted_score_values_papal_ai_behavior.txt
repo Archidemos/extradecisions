@@ -1607,6 +1607,7 @@ ask_for_invasion_chance = {
 			OR = {
 				NOT = { holder_scope = { has_government = ar_theocracy_government } }
 				NOT = { holder_scope = { has_government = ar_republic_government } }
+				NOT = { holder_scope = { has_government = ar_confederation_government } }
 			}
 		}
 	}
@@ -8238,6 +8239,13 @@ ask_for_crusade_chance = {
 # AI logic for how the Pope should respond to the hardcoded Ask for Claim action
 # ROOT is the asker, FROM is the Pope, FROMFROM is the target character, FROMFROMFROM is the target title
 ask_for_claim_chance = {
+	additive_modifier = {
+		value = -9999
+		localisation_key = NO_REQUEST_CONFEN
+		ROOT = {
+			NOT = { holder_scope = { has_government = ar_confederation_government } }
+		}
+	}
 	additive_modifier = {
 		value = -9999
 		localisation_key = NO_REQUEST_POPE_LAND

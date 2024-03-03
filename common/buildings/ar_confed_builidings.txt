@@ -1,0 +1,1463 @@
+castle = {
+	ar_confederation_admin_1 = {
+		desc = ar_confederation_admin_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_admin_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+
+		gold_cost = 200
+		build_time = 365
+		
+		tax_income = 0.5
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_confederation_admin_2 = {
+		desc = ar_confederation_admin_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_admin_1
+				has_building = ar_confederation_admin_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 350
+		build_time = 547
+		
+		upgrades_from = ar_confederation_admin_1
+		
+		tax_income = 1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_confederation_admin_3 = {
+		desc = ar_confederation_admin_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_admin_1
+				has_building = ar_confederation_admin_2
+				has_building = ar_confederation_admin_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 450
+		build_time = 730
+
+		upgrades_from = ar_confederation_admin_2
+		
+		tax_income = 2
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_admin_4 = {
+		desc = ar_confederation_admin_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_admin_1
+				has_building = ar_confederation_admin_2
+				has_building = ar_confederation_admin_3
+				has_building = ar_confederation_admin_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 600
+		build_time = 1095
+
+		upgrades_from = ar_confederation_admin_3
+		
+		tax_income = 3
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_inn_1 = {
+		desc = ar_confederation_inn_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_inn_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+
+		gold_cost = 200
+		build_time = 365
+		
+		economy_techpoints = 0.025
+		monthly_character_prestige = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_confederation_inn_2 = {
+		desc = ar_confederation_inn_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_inn_1
+				has_building = ar_confederation_inn_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 350
+		build_time = 547
+		
+		upgrades_from = ar_confederation_inn_1
+		
+		economy_techpoints = 0.030
+		monthly_character_prestige = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_confederation_inn_3 = {
+		desc = ar_confederation_inn_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_inn_1
+				has_building = ar_confederation_inn_2
+				has_building = ar_confederation_inn_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 450
+		build_time = 730
+
+		upgrades_from = ar_confederation_inn_2
+		
+		economy_techpoints = 0.035
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_inn_4 = {
+		desc = ar_confederation_inn_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_inn_1
+				has_building = ar_confederation_inn_2
+				has_building = ar_confederation_inn_3
+				has_building = ar_confederation_inn_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 8
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 600
+		build_time = 1095
+
+		upgrades_from = ar_confederation_inn_3
+		
+		economy_techpoints = 0.040
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}	
+
+	ar_confederation_marketplace_1 = {
+		desc = ar_confederation_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_admin_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 100
+		build_time = 365
+		
+		tax_income = 1.5
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	ar_confederation_marketplace_2 = {
+		desc = ar_confederation_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_marketplace_1
+				has_building = ar_confederation_marketplace_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 150
+		build_time = 547
+
+		upgrades_from = ar_confederation_marketplace_1
+		
+		tax_income = 2
+		tech_growth_modifier = 0.035
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_marketplace_3 = {
+		desc = ar_confederation_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_marketplace_1
+				has_building = ar_confederation_marketplace_2
+				has_building = ar_confederation_marketplace_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 250
+		build_time = 730
+
+		upgrades_from = ar_confederation_marketplace_2
+		
+		tax_income = 2.5
+		tech_growth_modifier = 0.045
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_marketplace_4 = {
+		desc = ar_confederation_marketplace_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_marketplace_1
+				has_building = ar_confederation_marketplace_2
+				has_building = ar_confederation_marketplace_3
+				has_building = ar_confederation_marketplace_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = ar_confederation_marketplace_3
+		
+		tax_income = 4
+		tech_growth_modifier = 0.055
+		local_tax_modifier = 0.055
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_headquarters_1 = {
+		desc = ar_confederation_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_headquarters_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ct_training_grounds_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		garrison_size = 0.025
+		pikemen = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_headquarters_2 = {
+		desc = ar_confederation_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_headquarters_1
+				has_building = ar_confederation_headquarters_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_headquarters_1
+		
+		garrison_size = 0.035
+		pikemen = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_headquarters_3 = {
+		desc = ar_confederation_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_headquarters_1
+				has_building = ar_confederation_headquarters_2
+				has_building = ar_confederation_headquarters_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_headquarters_2
+		
+		garrison_size = 0.045
+		pikemen = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_headquarters_4 = {
+		desc = ar_confederation_headquarters_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_headquarters_1
+				has_building = ar_confederation_headquarters_2
+				has_building = ar_confederation_headquarters_3
+				has_building = ar_confederation_headquarters_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_headquarters_3
+		
+		garrison_size = 0.055
+		pikemen = 75
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_guard_1 = {
+		desc = ar_confederation_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_guard_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ct_training_grounds_3 }
+		gold_cost = 150
+		build_time = 365
+		
+		levy_size = 0.025
+		heavy_infantry = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_guard_2 = {
+		desc = ar_confederation_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_guard_1
+				has_building = ar_confederation_guard_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_guard_1
+		
+		levy_size = 0.035
+		heavy_infantry = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_guard_3 = {
+		desc = ar_confederation_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_guard_1
+				has_building = ar_confederation_guard_2
+				has_building = ar_confederation_guard_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_guard_2
+		
+		levy_size = 0.045
+		heavy_infantry = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_guard_4 = {
+		desc = ar_confederation_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_guard_1
+				has_building = ar_confederation_guard_2
+				has_building = ar_confederation_guard_3
+				has_building = ar_confederation_guard_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_guard_3
+		
+		levy_size = 0.055
+		heavy_infantry = 75
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_watchtower_1 = {
+		desc = ar_confederation_watchtower_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_watchtower_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_wall_3 }
+		gold_cost = 150
+		build_time = 365
+		
+		levy_reinforce_rate = 0.1
+		fort_level = 0.10
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_watchtower_2 = {
+		desc = ar_confederation_watchtower_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_watchtower_1
+				has_building = ar_confederation_watchtower_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_watchtower_1
+		
+		levy_reinforce_rate = 0.15
+		fort_level = 0.10
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_watchtower_3 = {
+		desc = ar_confederation_watchtower_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_watchtower_1
+				has_building = ar_confederation_watchtower_2
+				has_building = ar_confederation_watchtower_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_watchtower_2
+		
+		levy_reinforce_rate = 0.2
+		fort_level = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_watchtower_4 = {
+		desc = ar_confederation_watchtower_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_watchtower_1
+				has_building = ar_confederation_watchtower_2
+				has_building = ar_confederation_watchtower_3
+				has_building = ar_confederation_watchtower_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_watchtower_3
+		
+		levy_reinforce_rate = 0.25
+		fort_level = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_service_1 = {
+		desc = ar_confederation_civil_service_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_service_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_town_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		local_revolt_risk = -0.05
+		disease_defence = 0.05
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_service_2 = {
+		desc = ar_confederation_civil_service_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_service_1
+				has_building = ar_confederation_civil_service_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_civil_service_1
+		
+		local_revolt_risk = -0.05
+		disease_defence = 0.05
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_service_3 = {
+		desc = ar_confederation_civil_service_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_service_1
+				has_building = ar_confederation_civil_service_2
+				has_building = ar_confederation_civil_service_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_civil_service_2
+		
+		local_revolt_risk = -0.05
+		disease_defence = 0.05
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_service_4 = {
+		desc = ar_confederation_civil_service_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_service_1
+				has_building = ar_confederation_civil_service_2
+				has_building = ar_confederation_civil_service_3
+				has_building = ar_confederation_civil_service_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_civil_service_3
+		
+		local_revolt_risk = -0.05
+		disease_defence = 0.05
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_guard_1 = {
+		desc = ar_confederation_civil_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_guard_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 150
+		build_time = 365
+		
+		light_infantry = 45
+		light_infantry_morale = 0.5
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_guard_2 = {
+		desc = ar_confederation_civil_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_guard_1
+				has_building = ar_confederation_civil_guard_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_civil_guard_1
+		
+		light_infantry = 55
+		light_infantry_morale = 0.5
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_guard_3 = {
+		desc = ar_confederation_civil_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_guard_1
+				has_building = ar_confederation_civil_guard_2
+				has_building = ar_confederation_civil_guard_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_civil_guard_2
+		
+		light_infantry = 65
+		light_infantry_morale = 0.5
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_civil_guard_4 = {
+		desc = ar_confederation_civil_guard_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_civil_guard_1
+				has_building = ar_confederation_civil_guard_2
+				has_building = ar_confederation_civil_guard_3
+				has_building = ar_confederation_civil_guard_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_civil_guard_3
+		
+		light_infantry = 75
+		light_infantry_morale = 0.5
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bakery_1 = {
+		desc = ar_confederation_bakery_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bakery_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_town_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		local_revolt_risk = -0.025
+		disease_defence = 0.025
+		tax_income = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bakery_2 = {
+		desc = ar_confederation_bakery_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bakery_1
+				has_building = ar_confederation_bakery_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_confederation_bakery_1
+		
+		local_revolt_risk = -0.025
+		disease_defence = 0.025
+		tax_income = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bakery_3 = {
+		desc = ar_confederation_bakery_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bakery_1
+				has_building = ar_confederation_bakery_2
+				has_building = ar_confederation_bakery_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_confederation_bakery_2
+		
+		local_revolt_risk = -0.025
+		disease_defence = 0.025
+		tax_income = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bakery_4 = {
+		desc = ar_confederation_bakery_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bakery_1
+				has_building = ar_confederation_bakery_2
+				has_building = ar_confederation_bakery_3
+				has_building = ar_confederation_bakery_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_confederation_bakery_3
+		
+		local_revolt_risk = -0.025
+		disease_defence = 0.025
+		tax_income = 0.25
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_silver_minter_1 = {
+		desc = ar_confederation_silver_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_silver_minter_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_keep_2 }
+		prerequisites = { ca_town_3 }
+		gold_cost = 300
+		build_time = 365
+		
+		tax_income = 1
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_silver_minter_2 = {
+		desc = ar_confederation_silver_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_silver_minter_1
+				has_building = ar_confederation_silver_minter_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 450
+		build_time = 547
+
+		upgrades_from = ar_confederation_silver_minter_1
+		
+		tax_income = 1
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_silver_minter_3 = {
+		desc = ar_confederation_silver_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_silver_minter_1
+				has_building = ar_confederation_silver_minter_2
+				has_building = ar_confederation_silver_minter_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 500
+		build_time = 730
+
+		upgrades_from = ar_confederation_silver_minter_2
+		
+		tax_income = 1
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_silver_minter_4 = {
+		desc = ar_confederation_silver_minter_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_silver_minter_1
+				has_building = ar_confederation_silver_minter_2
+				has_building = ar_confederation_silver_minter_3
+				has_building = ar_confederation_silver_minter_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 8
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 650
+		build_time = 1095
+
+		upgrades_from = ar_confederation_silver_minter_3
+		
+		tax_income = 1
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bureau_1 = {
+		desc = ar_confederation_bureau_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bureau_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { ca_wall_q_3 }
+		gold_cost = 300
+		build_time = 365
+		
+		vassal_opinion = 1
+		monthly_character_prestige = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bureau_2 = {
+		desc = ar_confederation_bureau_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bureau_1
+				has_building = ar_confederation_bureau_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 400
+		build_time = 547
+
+		upgrades_from = ar_confederation_bureau_1
+		
+		vassal_opinion = 2
+		monthly_character_prestige = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bureau_3 = {
+		desc = ar_confederation_bureau_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bureau_1
+				has_building = ar_confederation_bureau_2
+				has_building = ar_confederation_bureau_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 500
+		build_time = 730
+
+		upgrades_from = ar_confederation_bureau_2
+		
+		vassal_opinion = 3
+		monthly_character_prestige = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_bureau_4 = {
+		desc = ar_confederation_bureau_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_bureau_1
+				has_building = ar_confederation_bureau_2
+				has_building = ar_confederation_bureau_3
+				has_building = ar_confederation_bureau_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 600
+		build_time = 1095
+
+		upgrades_from = ar_confederation_bureau_3
+		
+		vassal_opinion = 4
+		monthly_character_prestige = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_academy_1 = {
+		desc = ar_confederation_academy_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_academy_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 2
+			FROM = { government = ar_confederation_government }
+		}
+		prerequisites = { library_1 }
+		gold_cost = 250
+		build_time = 365
+
+		culture_techpoints = 0.025		
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_academy_2 = {
+		desc = ar_confederation_academy_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_academy_1
+				has_building = ar_confederation_academy_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 3
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 350
+		build_time = 547
+
+		upgrades_from = ar_confederation_academy_1
+
+		culture_techpoints = 0.025
+		economy_techpoints = 0.05
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_academy_3 = {
+		desc = ar_confederation_academy_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_academy_1
+				has_building = ar_confederation_academy_2
+				has_building = ar_confederation_academy_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 4
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 550
+		build_time = 730
+
+		upgrades_from = ar_confederation_academy_2
+
+		culture_techpoints = 0.025
+		military_techpoints = 0.05
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_confederation_academy_4 = {
+		desc = ar_confederation_academy_desc
+		potential = {
+			OR = { 
+				FROM = { government = ar_confederation_government }
+				has_building = ar_confederation_academy_1
+				has_building = ar_confederation_academy_2
+				has_building = ar_confederation_academy_3
+				has_building = ar_confederation_academy_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = ar_confederation_government }
+		}
+		trigger = {
+			TECH_CONSTRUCTION = 6
+			FROM = { government = ar_confederation_government }
+		}
+		gold_cost = 600
+		build_time = 1095
+
+		upgrades_from = ar_confederation_academy_3
+
+		culture_techpoints = 0.05
+		economy_techpoints = 0.05
+		military_techpoints = 0.05		
+		tech_growth_modifier = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+}

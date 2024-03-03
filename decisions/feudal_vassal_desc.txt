@@ -1,0 +1,108 @@
+targetted_decisions = {
+    release_vassal_confederation = {
+		ai = no
+		
+		from_potential = {
+			higher_tier_than = COUNT
+			war = no
+			ai = no
+			holder_scope = { government = ar_confederation_government }
+		}
+		
+        potential = {
+			vassal_of = FROM 
+				OR = {
+					tier = COUNT
+					tier = DUKE
+					tier = KING
+				}
+			is_landed = yes
+			war = no
+        }
+		
+        allow = {
+            FROM = { prestige = 250 }
+        }
+		
+        effect = {
+            set_defacto_liege = THIS
+			ROOT = {
+				narrative_event = { id = CEL.116 }
+			}
+            FROM = {
+                make_tributary = {
+                    who = ROOT
+                    tributary_type = confederate_state
+                }
+				prestige = -250	
+			}
+			ROOT = {
+				add_character_modifier = {
+					modifier = recently_released_vassal
+					years = 10
+					inherit = yes
+				}
+			}
+        }
+		
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    annex_tributary = {
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		
+		from_potential = {
+			higher_tier_than = COUNT
+			war = no
+		}	
+		
+        potential = {
+			ROOT = {
+				OR = {
+					is_tributary = {
+						type = default
+						suzerain = FROM
+					}
+					is_tributary = {
+						type = permanent 
+						suzerain = FROM
+					}
+					is_tributary = {
+						type = nomadic 
+						suzerain = FROM
+					}
+					is_tributary = {
+						type = confederate_state 
+						suzerain = FROM
+					}					
+				}
+			}
+        }
+
+        allow = {
+            ROOT = {
+                prestige = 1000
+				has_regent = no
+				NOT = { has_character_modifier = recently_released_vassal }
+            }
+        }
+
+        effect = {
+            prestige = -1000
+            set_defacto_liege = FROM
+        }
+
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}

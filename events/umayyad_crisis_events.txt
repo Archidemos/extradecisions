@@ -40,90 +40,114 @@ character_event = {
 		set_global_flag = umayyad_crisis_1
 		set_global_flag = umayyad_crisis_2
 		set_global_flag = umayyad_crisis_3
-		add_character_modifier = { name = umayyad_curse_1 years = -1 inherit = yes }
-		add_character_modifier = { name = umayyad_curse_2 years = -1 inherit = yes }
-		add_character_modifier = { name = umayyad_curse_3 years = -1 inherit = yes }
+		add_character_modifier = { name = umayyad_curse_1 years = -1 }
+		add_character_modifier = { name = umayyad_curse_2 years = -1 }
+		add_character_modifier = { name = umayyad_curse_3 years = -1 }
 	}
 	
 }
 
-#character_event = {
-#	id = UMM.2
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			OR = {
-#				has_landed_title = k_andalusia
-#				has_landed_title = e_cordoba
-#			}
-#			religion_group = muslim
-#			has_global_flag = umayyad_crisis_1
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = umayyad_curse_1
-#		add_character_modifier = { 
-#			name = umayyad_curse_1 
-#			years = -1 
-#		}
-#    }
-#}
-#
-#character_event = {
-#	id = UMM.3
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			OR = {
-#				has_landed_title = k_andalusia
-#				has_landed_title = e_cordoba
-#			}
-#			religion_group = muslim
-#			has_global_flag = umayyad_crisis_2
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = umayyad_curse_2
-#		add_character_modifier = { 
-#			name = umayyad_curse_2
-#			years = -1 
-#		}
-#    }
-#}
-#
-#character_event = {
-#	id = UMM.4
-#    only_playable = yes
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#		AND = {
-#			OR = {
-#				has_landed_title = k_andalusia
-#				has_landed_title = e_cordoba
-#			}
-#			religion_group = muslim
-#			has_global_flag = umayyad_crisis_3
-#		}
-#    }
-#
-#    immediate = {
-#		remove_character_modifier = umayyad_curse_3
-#		add_character_modifier = { 
-#			name = umayyad_curse_3
-#			years = -1 
-#		}
-#    }
-#}
+character_event = {
+	id = UMM.2
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = k_andalusia
+				has_landed_title = e_cordoba
+			}
+			religion_group = muslim
+			has_global_flag = umayyad_crisis_1
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+			}
+	    }
+		remove_character_modifier = umayyad_curse_1
+		add_character_modifier = { 
+			name = umayyad_curse_1 
+			years = -1 
+		}
+    }
+}
+
+character_event = {
+	id = UMM.3
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = k_andalusia
+				has_landed_title = e_cordoba
+			}
+			religion_group = muslim
+			has_global_flag = umayyad_crisis_2
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+			}
+	    }
+		remove_character_modifier = umayyad_curse_2
+		add_character_modifier = { 
+			name = umayyad_curse_2
+			years = -1 
+		}
+    }
+}
+
+character_event = {
+	id = UMM.4
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		AND = {
+			OR = {
+				has_landed_title = k_andalusia
+				has_landed_title = e_cordoba
+			}
+			religion_group = muslim
+			has_global_flag = umayyad_crisis_3
+		}
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				OR = {
+					has_landed_title = k_andalusia
+					has_landed_title = e_cordoba
+				}
+			}
+	    }
+		remove_character_modifier = umayyad_curse_3
+		add_character_modifier = { 
+			name = umayyad_curse_3
+			years = -1 
+		}
+    }
+}
 
 narrative_event = {
 	id = UMM.5
@@ -265,4 +289,28 @@ character_event = {
 			}
 		}
 	}
+}
+
+character_event = {
+    id = UMM.11
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		ROOT = {
+			OR = {
+				NOT = { has_landed_title = k_andalusia }
+				NOT = { has_landed_title = e_cordoba }
+			}
+		}
+    }
+
+    immediate = {
+		FROMFROM = {
+			remove_character_modifier = umayyad_curse_1
+			remove_character_modifier = umayyad_curse_2
+			remove_character_modifier = umayyad_curse_3
+		}
+    }
 }

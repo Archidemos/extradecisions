@@ -1,0 +1,50 @@
+decisions = {
+
+	chinese_commander_trait_pick = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			age = 18
+			culture = han
+			NOT = { trait = incapable }
+			NOT = { trait = logistics_expert }
+			NOT = { trait = master_of_flame }
+			NOT = { trait = sapper }
+			NOT = { trait = levy_coordinator }
+			NOT = { has_character_flag = selecting_trait_china }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			prisoner = no
+			wealth = 500
+			culture = han			
+			NOT = { trait = logistics_expert }
+			NOT = { trait = master_of_flame }
+			NOT = { trait = sapper }
+			NOT = { trait = levy_coordinator }
+			OR = {
+				trait = tough_soldier
+				trait = skilled_tactician
+				trait = brilliant_strategist
+			}
+		}
+		effect = {
+			wealth = -500
+			custom_tooltip = {
+				text = choose_chinese_commander_trait
+			}
+			character_event = { id = CHN.100 }
+			set_character_flag = selecting_trait_china
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

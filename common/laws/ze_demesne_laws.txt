@@ -8,6 +8,15 @@ law_groups = {
 	ze_administration_laws = {
 		law_type = realm
 	}
+	confederation_laws = {
+		law_type = realm	
+	}
+	confederation_vassal_laws = {
+		law_type = realm	
+	}
+	confederation_diplo_laws = {
+		law_type = realm	
+	}
 }
 
 laws = {
@@ -776,5 +785,335 @@ laws = {
 		demesne_size = 2	
 		vassal_limit = 25
 		feudal_opinion = -10
+	}
+	
+	confederation_laws_0 = {
+		group = confederation_laws
+		default = yes
+		allow = {
+			holder_scope = { government = ar_confederation_government }
+			NOT = { has_law = confederation_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_laws_1
+				revoke_law = confederation_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_laws_modifier_1
+				remove_character_modifier = confederation_laws_modifier_2
+			}
+		}
+	}
+	confederation_laws_1 = {
+		group = confederation_laws
+		allow = {
+			holder_scope = { government = ar_confederation_government }
+			NOT = { has_law = confederation_vassal_laws_1 }
+			NOT = { has_law = confederation_vassal_laws_2 }
+			NOT = { has_law = confederation_diplo_laws_1 }
+			NOT = { has_law = confederation_diplo_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = confederation_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_laws_0
+				revoke_law = confederation_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_laws_modifier_2
+				add_character_modifier = { name = confederation_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = 0.05
+		global_tax_modifier = 0.05
+		vassal_opinion = -10
+	}
+	confederation_laws_2 = {
+		group = confederation_laws
+		allow = {
+			NOT = { has_law = confederation_laws_0 }
+			holder_scope = { government = ar_confederation_government }
+			has_law = revoke_title_voting_power_0
+			has_law = imprison_voting_power_0
+			has_law = grant_title_voting_power_0
+			has_law = banish_voting_power_0
+			has_law = execution_voting_power_0
+			NOT = { has_law = confederation_vassal_laws_1 }
+			NOT = { has_law = confederation_vassal_laws_2 }
+			NOT = { has_law = confederation_diplo_laws_1 }
+			NOT = { has_law = confederation_diplo_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = ar_confederation_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_laws_0
+				revoke_law = confederation_laws_1
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_laws_modifier_1
+				add_character_modifier = { name = confederation_laws_modifier_2 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = 0.10		
+		global_tax_modifier = 0.10
+		vassal_opinion = -15
+	}
+
+	confederation_vassal_laws_0 = {
+		group = confederation_vassal_laws
+		default = yes
+		allow = {
+			holder_scope = { government = ar_confederation_government }
+			NOT = { has_law = confederation_vassal_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_vassal_laws_1
+				revoke_law = confederation_vassal_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_vassal_laws_modifier_1
+				remove_character_modifier = confederation_vassal_laws_modifier_2
+			}
+		}
+	}
+	confederation_vassal_laws_1 = {
+		group = confederation_vassal_laws
+		allow = {
+			holder_scope = { government = ar_confederation_government }	
+			NOT = { has_law = confederation_laws_1 }
+			NOT = { has_law = confederation_laws_2 }		
+			NOT = { has_law = confederation_diplo_laws_1 }
+			NOT = { has_law = confederation_diplo_laws_2 }			
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = confederation_vassal_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_vassal_laws_0
+				revoke_law = confederation_vassal_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_vassal_laws_modifier_2
+				add_character_modifier = { name = confederation_vassal_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = -0.05
+		global_tax_modifier = -0.05
+		vassal_opinion = 5
+	}
+	confederation_vassal_laws_2 = {
+		group = confederation_vassal_laws
+		allow = {
+			NOT = { has_law = confederation_vassal_laws_0 }
+			holder_scope = { government = ar_confederation_government }
+			has_law = revoke_title_voting_power_0
+			has_law = imprison_voting_power_0
+			has_law = grant_title_voting_power_0
+			has_law = banish_voting_power_0
+			has_law = execution_voting_power_0
+			NOT = { has_law = confederation_laws_1 }
+			NOT = { has_law = confederation_laws_2 }
+			NOT = { has_law = confederation_diplo_laws_1 }
+			NOT = { has_law = confederation_diplo_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = ar_confederation_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			holder_scope = {
+				remove_character_modifier = confederation_vassal_laws_modifier_1
+				add_character_modifier = { name = confederation_vassal_laws_modifier_2 inherit = yes years = -1 }
+			}
+			hidden_tooltip = {
+				revoke_law = confederation_vassal_laws_0
+				revoke_law = confederation_vassal_laws_1
+			}
+		}
+
+		castle_vassal_max_levy = -0.10		
+		global_tax_modifier = -0.10
+		vassal_opinion = 10
+	}
+
+	confederation_diplo_laws_0 = {
+		group = confederation_diplo_laws
+		default = yes
+		allow = {
+			holder_scope = { government = ar_confederation_government }
+			NOT = { has_law = confederation_diplo_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_diplo_laws_1
+				revoke_law = confederation_diplo_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_diplo_laws_modifier_1
+				remove_character_modifier = confederation_diplo_laws_modifier_2
+			}
+		}
+	}
+	confederation_diplo_laws_1 = {
+		group = confederation_diplo_laws
+		allow = {
+			holder_scope = { government = ar_confederation_government }	
+			NOT = { has_law = confederation_laws_1 }
+			NOT = { has_law = confederation_laws_2 }
+			NOT = { has_law = confederation_vassal_laws_1 }
+			NOT = { has_law = confederation_vassal_laws_2 }			
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = ar_confederation_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = confederation_diplo_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = confederation_diplo_laws_0
+				revoke_law = confederation_diplo_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = confederation_diplo_laws_modifier_2
+				add_character_modifier = { name = confederation_diplo_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		global_tax_modifier = -0.05		
+		castle_vassal_max_levy = 0.05
+		global_revolt_risk
+		demesne_size = 1
+		general_opinion = 5
+	}
+	confederation_diplo_laws_2 = {
+		group = confederation_diplo_laws
+		allow = {
+			NOT = { has_law = confederation_diplo_laws_0 }
+			holder_scope = { government = ar_confederation_government }
+			has_law = revoke_title_voting_power_0
+			has_law = imprison_voting_power_0
+			has_law = grant_title_voting_power_0
+			has_law = banish_voting_power_0
+			has_law = execution_voting_power_0
+			NOT = { has_law = confederation_laws_1 }
+			NOT = { has_law = confederation_laws_2 }
+			NOT = { has_law = confederation_vassal_laws_1 }
+			NOT = { has_law = confederation_vassal_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = ar_confederation_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			holder_scope = {
+				remove_character_modifier = confederation_diplo_laws_modifier_1
+				add_character_modifier = { name = confederation_diplo_laws_modifier_2 inherit = yes years = -1 }
+			}
+			hidden_tooltip = {
+				revoke_law = confederation_diplo_laws_0
+				revoke_law = confederation_diplo_laws_1
+			}
+		}
+
+		castle_vassal_max_levy = -0.10
+		global_revolt_risk
+		global_tax_modifier = -0.10
+		demesne_size = 2
+		general_opinion = 10
 	}
 }

@@ -152,7 +152,8 @@ child_of_consort = {
 
 peasant_leader = {
 	diplomacy = -5
-	combat_rating = 3 #new value!
+	martial = 1
+	combat_rating = 5 #new value!
 	
 	same_opinion = 25
 	
@@ -189,8 +190,14 @@ berserker = {
 			religion = norse_pagan_reformed
 		}
 	}
-	martial = 4
+	command_modifier = {
+		morale_offence = 0.1
+	}
+
+	martial = 1
 	diplomacy = -2
+	learning = -2
+	tribal_opinion = 5
 	combat_rating = 25 #old value: 3
 	
 	same_opinion = 10
@@ -229,11 +236,12 @@ saoshyant = {
 	female_compliment = COMPL_SAOSHYANT
 }
 
-saoshyant_descendant = {
-	
+saoshyant_descendant = {	
 	zoroastrian_opinion = 5
 	
 	customizer = no
+	
+	combat_rating = 10
 }
 
 viking = {
@@ -276,6 +284,7 @@ monk = {
 	
 	monthly_character_piety = 0.3
 	same_religion_opinion = 5
+	learning = 1
 	
 	religious = yes # Lost immediately on religion change
 	cannot_marry = yes
@@ -294,6 +303,7 @@ nun = {
 	
 	monthly_character_piety = 0.3
 	same_religion_opinion = 5
+	learning = 1
 	
 	religious = yes # Lost immediately on religion change
 	cannot_marry = yes
@@ -352,6 +362,7 @@ mutazilite = {
 
 ashari = {
 	monthly_character_piety = 1
+	learning = 1
 	
 	religious = yes # Lost immediately on religion change
 	
@@ -495,6 +506,7 @@ bad_priest_christian = {
 		}
 	}
 
+	learning = -1
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -523,7 +535,8 @@ bad_priest_muslim = {
 			controls_religion = hurufi
 		}
 	}
-	
+
+	learning = -1	
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -551,7 +564,8 @@ bad_priest_norse = {
 			controls_religion = norse_pagan_reformed
 		}
 	}
-	
+
+	learning = -1	
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -578,7 +592,8 @@ bad_priest_tengri = {
 			is_ruler = no
 		}
 	}
-	
+
+	learning = -1	
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -606,6 +621,7 @@ bad_priest_zoroastrian = {
 		}
 	}
 
+	learning = -1
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -633,6 +649,7 @@ bad_priest_aztec = {
 		}
 	}
 
+	learning = -1
 	church_opinion = -10
 	same_opinion_if_same_religion = 25
 
@@ -933,7 +950,8 @@ decadent = {
 	
 	customizer = no
 	random = no
-	
+
+	martial = -1
 	combat_rating = -10 #old value: -1
 	
 	male_insult = INSULT_SYBARITE
@@ -948,6 +966,7 @@ decadent = {
 reincarnation = {
 	customizer = no
 	random = no
+	health = 1
 }
 
 war_elephant_leader = {
@@ -966,6 +985,7 @@ jungle_terrain_leader = {
 	
 	command_modifier = {
 		terrain = jungle
+		terrain = forest
 	}
 
 	male_insult = INSULT_JUNGLE_SNAKE
@@ -1040,7 +1060,7 @@ seductress = {
 	}
 	
 	intrigue = 2
-	diplomacy = 1
+	diplomacy = 2
 	
 	sex_appeal_opinion = 50
 	
@@ -1056,6 +1076,8 @@ administrator = {
 	lifestyle = yes
 	
 	stewardship = 3
+	demesne_size = 2
+	global_tax_modifier = 0.05
 	
 	command_modifier = {
 		speed = 0.1
@@ -1071,8 +1093,8 @@ architect = {
 	
 	stewardship = 2
 	martial = 1
-	wonder_build_cost_modifier = -0.03
-	wonder_build_time_modifier = -0.05
+	build_cost_modifier = -0.05
+	build_time_modifier = -0.05
 	
 	command_modifier = {
 		siege = 0.2
@@ -1102,8 +1124,8 @@ strategist = {
 socializer = {
 	lifestyle = yes
 	
-	same_opinion = 10
 	sex_appeal_opinion = 10
+	general_opinion = 10
 	
 	diplomacy = 3
 	
@@ -1122,7 +1144,7 @@ schemer = {
 	same_opinion = -5
 	
 	intrigue = 3
-	
+	plot_power_modifier = 0.1
 	ruler_designer_cost = 10
 
 	male_insult = INSULT_INSTIGATOR
@@ -1138,6 +1160,7 @@ theologian = {
 	
 	learning = 2
 	intrigue = 1
+	monthly_character_piety = 1
 	
 	ruler_designer_cost = 10
 
@@ -1197,7 +1220,7 @@ erudite = {
 	personality = yes
 	
 	learning = 2
-	combat_rating = -2 #new value!
+	combat_rating = -5 #new value!
 	
 	church_opinion = 5
 	
@@ -1217,6 +1240,7 @@ stubborn = {
 	
 	stewardship = 1
 	diplomacy = -1
+	learning = -1
 	combat_rating = 3 #new value!
 	
 	vassal_opinion = -5
@@ -2145,7 +2169,9 @@ shieldmaiden  = {
 	monthly_character_piety = 0.1
 	pagan_group_opinion = 5
 	same_opinion_if_same_religion = 15
-	
+
+	martial = 2
+	diplomacy = 1
 	combat_rating = 10 #new value!
 
 	ai_zeal = 10
@@ -2619,6 +2645,7 @@ cannibal_trait = {
 
 lovers_pox = {
 	sex_appeal_opinion = -5
+	diplomacy = -1
 	
 	customizer = no
 	
@@ -6458,14 +6485,14 @@ kow_tow_travels = {
 	random = no
 }
 kow_tow_completed_tier_1 = {
-	monthly_grace = 1
+	monthly_grace = 2
 	monthly_character_prestige = -0.1
 	
 	customizer = no
 	random = no
 }
 kow_tow_completed_tier_2 = {
-	monthly_grace = 2
+	monthly_grace = 3
 	monthly_character_prestige = -0.1
 	
 	customizer = no
@@ -6488,7 +6515,8 @@ giant = {
 	
 	fertility = -0.20
 	health = -0.5
-	combat_rating = 10
+	martial = 1
+	combat_rating = 20
 	
 	vassal_opinion = 5
 	tribal_opinion = 10
@@ -6569,6 +6597,8 @@ uncrowned = { #Used to handle portrait appearance
 
 travelling = {
 	pilgrimage = yes # Will need a regent, but can still be guardian to children.
+	monthly_character_wealth = -0.2
+	health = -0.5
 	customizer = no
 }
 
@@ -6662,7 +6692,7 @@ sturdy = {
 	}
 
 	health = 0.25
-	
+	martial = 1
 	combat_rating = 2
 	
 }
@@ -6785,7 +6815,7 @@ norse_leader = {
 	random = no
 	trait_effect_capture_commanders = 1 #Bonus to capturing commanders
 	command_modifier = {
-		heavy_infantry = 0.25
+		heavy_infantry = 0.20
 	}
 }
 tengri_leader = {
@@ -6823,8 +6853,8 @@ slavic_leader = {
 	random = no
 	command_modifier = {
 		terrain = plains
-		morale_defence = 0.2
-		morale_offence = 0.2
+		defence = 0.1
+		morale_defence = 0.1
 	}
 }
 west_african_leader = {
@@ -6840,7 +6870,6 @@ zun_leader = {
 	leader = yes
 	random = no
 	command_modifier = {
-		terrain = desert
 		terrain = mountain
 		siege = 0.2
 		speed = 0.1
@@ -6860,9 +6889,9 @@ hellenic_leader = {
 	leader = yes
 	random = no
 	command_modifier = {
-		speed = 0.1
+		speed = 0.05
+		defence = 0.2
 		morale_defence = 0.2
-		morale_offence = 0.3
 	}
 }
 
@@ -7675,7 +7704,8 @@ groomed = {
 	opposites =  {
 		uncouth
 	}
-
+	
+	diplomacy = 1
 	opposite_opinion = -5
 	
 	female_compliment = COMPL_BEAUTY
@@ -7691,7 +7721,8 @@ uncouth = {
 	opposites =  {
 		groomed
 	}
-	
+
+	diplomacy = -1
 	opposite_opinion = -5
 
 	male_insult = INSULT_FILTHY

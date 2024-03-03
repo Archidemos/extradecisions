@@ -1,4 +1,485 @@
 castle = {
+	medieval_bridge_1 = {
+		desc =  medieval_bridge_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 80
+		build_time = 365
+		
+		local_movement_speed = 0.025
+		tax_income = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	medieval_bridge_2 = {
+		desc =  medieval_bridge_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 60
+		build_time = 547
+		
+		upgrades_from = medieval_bridge_1
+		
+		local_movement_speed = 0.05
+		tax_income = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	medieval_bridge_3 = {
+		desc =  medieval_bridge_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 122
+		build_time = 730
+
+		upgrades_from = medieval_bridge_2
+		
+		local_movement_speed = 0.075
+		tax_income = 0.2
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	medieval_bridge_4 = {
+		desc =  medieval_bridge_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 244
+		build_time = 1095
+
+		upgrades_from = medieval_bridge_3
+		
+		local_movement_speed = 0.1
+		tax_income = 0.2
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	medieval_bridge_5 = {
+		desc =  medieval_bridge_1_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+
+		prerequisites = { ca_wall_2 }
+		gold_cost = 350
+		build_time = 1460
+
+		upgrades_from = medieval_bridge_4
+		
+		local_movement_speed = 0.15
+		tax_income = 0.3
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_marketplace_1 = {
+		desc =  castle_marketplace_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 100
+		build_time = 365
+		
+		local_tax_modifier = 0.02
+		tax_income = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_marketplace_2 = {
+		desc =  castle_marketplace_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 120
+		build_time = 547
+		
+		upgrades_from = castle_marketplace_1
+		
+		local_tax_modifier = 0.02
+		tax_income = 0.1
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_marketplace_3 = {
+		desc =  castle_marketplace_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 200
+		build_time = 730
+
+		upgrades_from = castle_marketplace_2
+		
+		local_tax_modifier = 0.03
+		tax_income = 0.2
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_marketplace_4 = {
+		desc =  castle_marketplace_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 300
+		build_time = 1095
+
+		upgrades_from = castle_marketplace_3
+		
+		local_tax_modifier = 0.03
+		tax_income = 0.2
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_marketplace_5 = {
+		desc =  castle_marketplace_1_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+
+		prerequisites = { ca_town_3 }
+		gold_cost = 400
+		build_time = 1460
+
+		upgrades_from = castle_marketplace_4
+		
+		local_tax_modifier = 0.04
+		tax_income = 0.3
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_tower_1 = {
+		desc = castle_tower_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_wall_q_3 }
+		gold_cost = 150
+		build_time = 365
+		
+		garrison_size = 0.025
+		archers = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_tower_2 = {
+		desc = castle_tower_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = castle_tower_1
+		
+		garrison_size = 0.035
+		archers = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_tower_3 = {
+		desc = castle_tower_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = castle_tower_2
+		
+		garrison_size = 0.045
+		fort_level = 0.25
+		archers = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_tower_4 = {
+		desc = castle_tower_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = castle_tower_3
+		
+		garrison_size = 0.055
+		fort_level = 0.25
+		archers = 75
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_tower_5 = {
+		desc = castle_tower_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 500
+		build_time = 1095
+
+		upgrades_from = castle_tower_4
+		
+		garrison_size = 0.055
+		fort_level = 0.5
+		archers = 75
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_smith_1 = {
+		desc = castle_smith_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_wall_q_3 }
+		gold_cost = 200
+		build_time = 365
+		
+		levy_size = 0.025
+		light_infantry = 45
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_smith_2 = {
+		desc = castle_smith_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 250
+		build_time = 547
+
+		upgrades_from = castle_smith_1
+		
+		levy_size = 0.035
+		light_infantry = 55
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_smith_3 = {
+		desc = castle_smith_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = castle_smith_2
+		
+		levy_size = 0.045
+		light_infantry = 65
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_smith_4 = {
+		desc = castle_smith_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = castle_smith_3
+		
+		levy_size = 0.055
+		light_infantry = 75
+		heavy_infantry = 20
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_smith_5 = {
+		desc = castle_smith_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 775
+		build_time = 1095
+
+		upgrades_from = castle_smith_4
+		
+		levy_size = 0.055
+		light_infantry = 75
+		heavy_infantry = 30
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
 	medieval_road_1 = {
 		desc =  medieval_road_1_desc
 		

@@ -1,0 +1,89 @@
+namespace = CONFED
+
+character_event = {
+    id = CONFED.01
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		ROOT = { NOT = { government = ar_confederation_government } }
+    }
+
+    immediate = {
+		FROMFROM = {
+			remove_character_modifier = confederation_laws_modifier_1
+			remove_character_modifier = confederation_laws_modifier_2
+			remove_character_modifier = confederation_vassal_laws_modifier_1
+			remove_character_modifier = confederation_vassal_laws_modifier_2
+		}
+    }
+}
+
+character_event = {
+    id = CONFED.02
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		holder_scope = { has_law = confederation_vassal_laws_modifier_1 }
+    }
+
+    immediate = {
+		ROOT = {
+			add_character_modifier = { name = confederation_vassal_laws_modifier_1 inherit = yes years = -1 }
+		}
+    }
+}
+
+character_event = {
+    id = CONFED.03
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		holder_scope = { has_law = confederation_vassal_laws_modifier_2 }
+    }
+
+    immediate = {
+		ROOT = {
+			add_character_modifier = { name = confederation_vassal_laws_modifier_2 inherit = yes years = -1 }
+		}
+    }
+}
+
+character_event = {
+    id = CONFED.04
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		holder_scope = { has_law = confederation_vassal_laws_1 }
+    }
+
+    immediate = {
+		ROOT = {
+			add_character_modifier = { name = confederation_laws_modifier_1 inherit = yes years = -1 }
+		}
+    }
+}
+
+character_event = {
+    id = CONFED.05
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		holder_scope = { has_law = confederation_vassal_laws_2 }
+    }
+
+    immediate = {
+		ROOT = {
+			add_character_modifier = { name = confederation_laws_modifier_2 inherit = yes years = -1 }
+		}
+    }
+}
