@@ -7,7 +7,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_wall_2 }
 		gold_cost = 80
@@ -30,7 +30,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		prerequisites = { ca_wall_2 }
 		gold_cost = 60
@@ -55,9 +55,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_3 }
 		gold_cost = 122
 		build_time = 730
 
@@ -80,9 +80,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_3 }
 		gold_cost = 244
 		build_time = 1095
 
@@ -105,10 +105,10 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 6
 		}
 
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_4 }
 		gold_cost = 350
 		build_time = 1460
 
@@ -131,7 +131,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_town_3 }
 		gold_cost = 100
@@ -154,7 +154,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		prerequisites = { ca_town_3 }
 		gold_cost = 120
@@ -179,7 +179,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		prerequisites = { ca_town_3 }
 		gold_cost = 200
@@ -204,9 +204,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_town_3 }
+		prerequisites = { ca_town_4 }
 		gold_cost = 300
 		build_time = 1095
 
@@ -229,10 +229,10 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 6
 		}
 
-		prerequisites = { ca_town_3 }
+		prerequisites = { ca_town_4 }
 		gold_cost = 400
 		build_time = 1460
 
@@ -254,7 +254,7 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_FORTIFICATIONS_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_wall_q_3 }
 		gold_cost = 150
@@ -276,11 +276,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_FORTIFICATIONS_CONSTRUCTION = 4
 		}
 		gold_cost = 225
 		build_time = 547
 
+		prerequisites = { ca_wall_q_3 }
 		upgrades_from = castle_tower_1
 		
 		garrison_size = 0.035
@@ -299,11 +300,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_FORTIFICATIONS_CONSTRUCTION = 5
 		}
 		gold_cost = 300
 		build_time = 730
 
+		prerequisites = { ca_wall_q_4 }
 		upgrades_from = castle_tower_2
 		
 		garrison_size = 0.045
@@ -323,11 +325,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_FORTIFICATIONS_CONSTRUCTION = 5
 		}
 		gold_cost = 400
 		build_time = 1095
 
+		prerequisites = { ca_wall_q_4 }
 		upgrades_from = castle_tower_3
 		
 		garrison_size = 0.055
@@ -347,7 +350,7 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
 		}
 		gold_cost = 500
 		build_time = 1095
@@ -371,7 +374,7 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_wall_q_3 }
 		gold_cost = 200
@@ -393,11 +396,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 250
 		build_time = 547
 
+		prerequisites = { ca_wall_q_3 }
 		upgrades_from = castle_smith_1
 		
 		levy_size = 0.035
@@ -416,11 +420,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 300
 		build_time = 730
 
+		prerequisites = { ca_wall_q_3 }
 		upgrades_from = castle_smith_2
 		
 		levy_size = 0.045
@@ -439,11 +444,12 @@ castle = {
 			is_tribal = no
 		}
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 550
 		build_time = 1095
-
+		
+		prerequisites = { ca_wall_q_4 }
 		upgrades_from = castle_smith_3
 		
 		levy_size = 0.055
@@ -468,6 +474,7 @@ castle = {
 		gold_cost = 775
 		build_time = 1095
 
+		prerequisites = { ca_wall_q_4 }
 		upgrades_from = castle_smith_4
 		
 		levy_size = 0.055
@@ -488,7 +495,7 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_wall_2 }
 		gold_cost = 80
@@ -512,9 +519,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 2
+			TECH_CITY_CONSTRUCTION = 4
 		}
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_3 }
 		gold_cost = 60
 		build_time = 150
 		
@@ -538,9 +545,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_3 }
 		gold_cost = 122
 		build_time = 300
 
@@ -564,9 +571,9 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_4 }
 		gold_cost = 244
 		build_time = 465
 
@@ -590,10 +597,10 @@ castle = {
 		}
 		
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 6
 		}
 
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_wall_4 }
 		gold_cost = 350
 		build_time = 765
 
@@ -638,7 +645,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -679,7 +686,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 		
 		upgrades_from = eu_gold_mine_1
@@ -709,6 +716,9 @@ castle = {
 				ROOT = { province = c_aoudaghost }
 				ROOT = { province = c_kano }
 				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -717,7 +727,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -753,7 +763,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 
 		upgrades_from = eu_silver_mine_1
@@ -799,7 +809,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -843,7 +853,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 
 		upgrades_from = eu_copper_mine_1
@@ -879,7 +889,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -914,7 +924,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 		
 		upgrades_from = eu_glassworks_1
@@ -946,7 +956,7 @@ castle = {
 		}
 		
 		trigger = { 
-			TECH_CASTLE_CONSTRUCTION = 2
+			TECH_TRADE_PRACTICES = 4
 		}
 		prerequisites = { ca_wall_2 }
 		gold_cost = 350
@@ -978,7 +988,7 @@ castle = {
 		}
 		
 		trigger = { 
-			TECH_CASTLE_CONSTRUCTION = 2
+			TECH_TRADE_PRACTICES = 5
 		}
 		prerequisites = { ca_wall_2 }
 		
@@ -1034,7 +1044,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -1088,7 +1098,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 		
 		upgrades_from = eu_paper_mills_1
@@ -1121,7 +1131,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -1153,7 +1163,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 		
 		upgrades_from = eu_saffron_plantation_1
@@ -1165,6 +1175,72 @@ castle = {
 		global_trade_route_wealth = 15
 		local_tax_modifier = 0.05
 		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+
+	eu_silk_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 7.5
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		economy_techpoints = 0.03
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
+	
+	eu_silk_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_2
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_silk_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 95
 		extra_tech_building_start = 2
@@ -1242,7 +1318,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
 		prerequisites = { ca_wall_2 }
 		gold_cost = 700
 		build_time = 730
@@ -1328,7 +1404,7 @@ castle = {
 			is_tribal = no
 		}
 		
-		trigger = { TECH_TRADE_PRACTICES = 2 }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
 		prerequisites = { ca_wall_2 }
 		
 		upgrades_from = eu_cloth_workshop_1
@@ -1448,6 +1524,8 @@ castle = {
 				ROOT = { province = c_mecca }
 				ROOT = { province = c_navarra }
 				ROOT = { province = c_nikaea }
+				ROOT = { province = c_dunhuang }
+				ROOT = { province = c_jiuquan }
 			}
 			FROMFROM = { is_capital = yes }
 			date >= 867.1.1
