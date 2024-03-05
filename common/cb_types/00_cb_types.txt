@@ -20,6 +20,7 @@ claim = {
 	}
 
 	can_use_title = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		OR = {
 			ROOT = { is_female = no }
 			AND = { 
@@ -41,7 +42,7 @@ claim = {
 		}
 		
 		ROOT = {
-			NOT = { government = ar_confederation_government }
+			NOT = { holder_scope = { government = ar_confederation_government } }
 			OR = {
 				is_ruler = no
 				primary_title = {
@@ -311,9 +312,9 @@ other_claim = {
 	sort_priority = 900
 
 	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		ROOT = {
 			mercenary = no
-			NOT = { government = ar_confederation_government }
 		}
 	}
 
@@ -754,6 +755,10 @@ claim_on_liege = {
 	
 	sort_priority = 910
 
+	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
+	}
+
 	can_use_gui = {
 		check_if_crusader_trigger = yes
 	}
@@ -1061,10 +1066,11 @@ claim_on_liege_plot = {
 		check_if_crusader_trigger = yes
 	}
 
+	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
+	}
+
 	can_use_title = {
-		ROOT = {
-			NOT = { government = ar_confederation_government }
-		}
 		OR = {
 			FROM = {
 				has_landed_title = PREV
@@ -1435,14 +1441,15 @@ other_claim_on_liege = {
 	
 	sort_priority = 850
 
+	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
+	}
+
 	can_use_gui = {
 		check_if_crusader_trigger = yes
 	}
 
 	can_use_title = {
-		ROOT = {
-			NOT = { government = ar_confederation_government }
-		}
 		OR = {
 			ROOT = { is_female = no }
 			NOT = { has_law = agnatic_succession }
@@ -1836,8 +1843,8 @@ claim_all = {
 	sort_priority = 1100
 
 	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		ROOT = {
-			NOT = { government = ar_confederation_government }
 			total_claims = {
 				who = FROM
 				strong = yes # Count only strong claims
@@ -2720,9 +2727,7 @@ invasion = {
 			mercenary = no
 			NOT = { government = ar_theocracy_government }
 		}
-		ROOT = {
-			NOT = { government = ar_confederation_government }
-		}
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		NOT = { government = ar_theocracy_government }
 	}
 
@@ -5843,10 +5848,13 @@ religious = {
 	allowed_to_target_tributaries = no
 	
 	sort_priority = 800
+
+	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
+	}
 	
 	can_use_gui = {
 		ROOT = {
-			NOT = { government = ar_confederation_government }
 			OR = {
 				NOT = { religion = buddhist }
 				piety = 250
@@ -10420,13 +10428,13 @@ pagan_subjugation = {
 	sort_priority = 2000
 	
 	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		ROOT = {
 			religion_group = pagan_group
 			is_reformed_religion = no
 			NOT = { religion = hellenic_pagan }
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
-			NOT = { government = ar_confederation_government }
 			mercenary = no
 			OR = {
 				AND = {
@@ -12707,9 +12715,9 @@ pagan_county_conquest = {
 	sort_priority = 700
 	
 	can_use = {
+		NOT = { holder_scope = { government = ar_confederation_government } }
 		ROOT = {
 			mercenary = no
-			NOT = { government = ar_confederation_government }
 		}
 		OR = {
 			ROOT = {

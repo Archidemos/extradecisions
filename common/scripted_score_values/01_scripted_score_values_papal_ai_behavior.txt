@@ -1605,9 +1605,9 @@ ask_for_invasion_chance = {
 		localisation_key = NO_THEOCRATS_AND_REPUBLICS
 		ROOT = {
 			OR = {
-				NOT = { holder_scope = { has_government = ar_theocracy_government } }
-				NOT = { holder_scope = { has_government = ar_republic_government } }
-				NOT = { holder_scope = { has_government = ar_confederation_government } }
+				holder_scope = { government = ar_theocracy_government }
+				holder_scope = { government = ar_republic_government }
+				holder_scope = { government = ar_confederation_government }
 			}
 		}
 	}
@@ -8243,7 +8243,7 @@ ask_for_claim_chance = {
 		value = -9999
 		localisation_key = NO_REQUEST_CONFEN
 		ROOT = {
-			NOT = { holder_scope = { has_government = ar_confederation_government } }
+			holder_scope = { government = ar_confederation_government }
 		}
 	}
 	additive_modifier = {
