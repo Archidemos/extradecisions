@@ -52,6 +52,13 @@ decisions = {
 			ROOT = {
 				add_law = law_voting_power_1
 				add_law = war_voting_power_1
+				any_demesne_title = {
+					limit = { 
+						tier = KING
+						NOT = { title = k_rhine }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
 			}
 			hidden_effect = {
 				k_rhine = { de_jure_liege = e_hre }
