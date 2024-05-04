@@ -1539,9 +1539,8 @@ castle = {
 		gold_cost = 700
 		build_time = 730
 		
-		fort_level = 1
 		local_tax_modifier = 0.10
-		tax_income = 10
+		tax_income = 5
 		levy_size = 0.2
 		tech_growth_modifier = 0.1
 		
@@ -1553,10 +1552,8 @@ castle = {
 		add_number_to_name = no
 		potential = {
 			OR = {
-				ROOT = { province = c_limisol }
 				ROOT = { province = c_famagusta }
 				ROOT = { province = c_malta }
-				ROOT = { province = c_menorca }
 				ROOT = { province = c_mallorca }
 				ROOT = { province = c_isle_of_man }
 				ROOT = { province = c_shetland }
@@ -1568,23 +1565,12 @@ castle = {
 				ROOT = { province = c_kolguyev }
 				ROOT = { province = c_maldives }
 				ROOT = { province = c_kutch }
-				ROOT = { province = c_rugen }
 				ROOT = { province = c_bornholm }
-				ROOT = { province = c_aland }
 				ROOT = { province = c_osel }
 				ROOT = { province = c_orkney }
-				ROOT = { province = c_lesbos }
-				ROOT = { province = c_naxos }
 				ROOT = { province = c_chios }
-				ROOT = { province = c_cephalonia }
-				ROOT = { province = c_corfu }
 				ROOT = { province = c_chandax }
-				ROOT = { province = c_kaneia }
-				ROOT = { province = c_innse_gall }
-				ROOT = { province = c_anglesey }
 				ROOT = { province = c_wight }
-				ROOT = { province = c_uwal }
-				ROOT = { province = c_zakynthos }
 			}
 			FROMFROM = { is_capital = yes }
 			date >= 867.1.1
@@ -1597,18 +1583,17 @@ castle = {
 		gold_cost = 700
 		build_time = 730
 		
-		fort_level = 1
 		heavy_infantry = 250
-		local_tax_modifier = 2
+		local_tax_modifier = 1
 		levy_size = 0.5
 		tech_growth_modifier = 0.1
-		tax_income = 5
+		tax_income = 2.5
 		
 		ai_creation_factor = 95
 		extra_tech_building_start = 2
 	}
-	woldys_hut = {
-		desc = woldys_hut_desc
+	woldys_fort = {
+		desc = woldys_fort_desc
 		add_number_to_name = no
 		potential = {
 			ROOT = { province = c_canarias }
@@ -1617,13 +1602,13 @@ castle = {
 		gold_cost = 700
 		build_time = 730
 	
-		tax_income = 20
-		light_infantry = 1000
-		siege_defence = 0.2
+		tax_income = 5
+		light_infantry = 250
+		siege_defence = 0.1
 		fort_level = 1
-		attrition = 1
-		supply_limit = -2
-		galleys = 150
+		attrition = 0.10
+		global_supply_limit = -0.1
+		galleys = 100
 		
 		ai_creation_factor = 95
 		extra_tech_building_start = 0.3

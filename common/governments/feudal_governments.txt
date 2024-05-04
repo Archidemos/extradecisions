@@ -846,17 +846,16 @@ feudal_governments = {
 	}
 	
 	ar_confederation_government = {
-		preferred_holdings = { CASTLE CITY }
+		preferred_holdings = { CASTLE }
 		allowed_holdings = {
 			CASTLE
-			CITY
 			FORT
 			HOSPITAL
 		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+		allowed_holdings_culture = {
 			TRIBAL
 		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
+		accepts_liege_governments = {
 			feudal_government
 			muslim_government
 			theocratic_feudal_government
@@ -864,7 +863,7 @@ feudal_governments = {
 		free_revoke_on_tiers = {
 			duke
 		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+		free_revoke_on_governments_religion = {
 			tribal_government
 		}
 		vassal_call_to_arms = {
@@ -874,9 +873,6 @@ feudal_governments = {
 		frame_suffix = "_nomadic"
 		title_prefix = "confederate_"
 		potential = {
-			NOT = { tier = EMPEROR }
-			higher_tier_than = COUNT
-			is_patrician = no
 			OR = {
 				controls_religion = no
 				religion_group = muslim
@@ -889,8 +885,6 @@ feudal_governments = {
 			NOT = {	religion_group = muslim	}
 			NOT = { is_government_potential = roman_imperial_government }
 			NOT = { is_government_potential = order_government }
-			NOT = { is_government_potential = merchant_republic_government }
-			NOT = { is_government_potential = feudal_government }
 			NAND = { 
 				culture_group = tibetan_group
 				OR = {
@@ -923,6 +917,8 @@ feudal_governments = {
 					has_character_flag = chinese_imperial_government_preserve
 				}
 			}
+			is_patrician = no
+
 		}
 		
 		color = { 158 112 55 }
