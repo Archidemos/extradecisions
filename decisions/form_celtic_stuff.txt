@@ -37,7 +37,9 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
-			add_claim = k_england
+			add_claim = k_northumbria
+			add_claim = k_wessex
+			add_claim = k_mercia
 			set_global_flag = celtic_empire_formed				
 			ROOT = {
 				any_demesne_title = {
@@ -151,9 +153,24 @@ decisions = {
 		}
 		
 		allow = {
-			completely_controls = k_england
-			completely_controls = k_denmark
-			completely_controls = k_norway
+			OR = {
+				AND = {
+					completely_controls = k_england
+					completely_controls = k_denmark
+					completely_controls = k_norway
+				}
+				AND = {
+					completely_controls = k_northumbria
+					completely_controls = k_wessex
+					completely_controls = k_mercia
+					completely_controls = k_denmark
+					completely_controls = k_norway
+				}
+			}
+			trigger_if = {
+				limit = { k_danelaw = { is_titular = no } }
+				completely_controls = k_danelaw
+			}
 			OR = {
 				religion = catholic
 				religion = norse_pagan
@@ -292,6 +309,11 @@ decisions = {
 				religion = norse_pagan
 				religion = norse_pagan_reformed
 			}
+			completely_controls = k_england
+			trigger_if = {
+				limit = { k_danelaw = { is_titular = no } }
+				completely_controls = k_danelaw
+			}
 			prestige = 1000
 			wealth = 1000
 		}
@@ -369,6 +391,14 @@ decisions = {
 			has_landed_title = e_north_sea
 			prestige = 2000
 			diplomacy = 14
+			OR = {
+				AND = {
+					completely_controls = k_northumbria
+					completely_controls = k_mercia
+					completely_controls = k_wessex
+				}
+				completely_controls = k_england
+			}
 			any_playable_ruler = { has_landed_title = e_hre }
 		}
 		
@@ -403,6 +433,7 @@ decisions = {
 			has_landed_title = e_varingian
 			prestige = 2000
 			diplomacy = 14
+			completely_controls = k_rus
 			any_playable_ruler = { has_landed_title = e_byzantium }
 		}
 

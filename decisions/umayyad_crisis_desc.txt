@@ -1,7 +1,7 @@
 decisions = {
 	end_umayyad_crisis_1 = {
 		is_high_prio = yes
-		ai_check_interval = 6
+		ai_check_interval = 2
 		
 		potential = {
 			AND = {
@@ -35,7 +35,7 @@ decisions = {
 
 	end_umayyad_crisis_2 = {
 		is_high_prio = yes
-		ai_check_interval = 6
+		ai_check_interval = 2
 		
 		potential = {
 			AND = {
@@ -69,7 +69,7 @@ decisions = {
 
 	end_umayyad_crisis_3 = {
 		is_high_prio = yes
-		ai_check_interval = 6
+		ai_check_interval = 2
 		
 		potential = {
 			NOT = { has_global_flag = umayyad_crisis_3_taken }
@@ -107,7 +107,7 @@ decisions = {
 
 	finalize_umayyad_crisis = {
 		is_high_prio = yes
-		ai_check_interval = 3
+		ai_check_interval = 2
 
 		potential = {
 			NOT = { has_global_flag = umayyad_crisis_done }
@@ -115,6 +115,11 @@ decisions = {
 				has_global_flag = umayyad_crisis_finished_1
 				has_global_flag = umayyad_crisis_finished_2
 				has_global_flag = umayyad_crisis_finished_3
+			}
+			OR = {
+				NOT = { has_global_flag = umayyad_crisis_1 }
+				NOT = { has_global_flag = umayyad_crisis_2 }
+				NOT = { has_global_flag = umayyad_crisis_3 }
 			}
 		}
 

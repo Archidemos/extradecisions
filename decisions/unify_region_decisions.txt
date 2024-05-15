@@ -1,0 +1,232 @@
+decisions = {
+	unite_germany = {
+		ai_check_interval = 24
+		is_high_prio = yes
+
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			is_playable = yes
+			primary_title = {
+				higher_tier_than = DUKE
+			}
+			capital_scope = {
+				region = world_europe_west_germania
+			}
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			NOT = { has_character_flag = is_otto }
+			NOT = { has_global_flag = germany_united }
+		}
+		
+		allow = {
+			independent = yes
+			is_adult = yes
+			prisoner = no
+			is_tributary = no
+			war = no
+			NOT = {	trait = incapable }
+			prestige = 1000
+			OR = {
+				has_landed_title = k_wesphalia
+				has_landed_title = k_thuringian
+				has_landed_title = k_swabia
+			}
+			AND = {
+				completely_controls = k_wesphalia
+				completely_controls = k_thuringian
+				completely_controls = k_swabia
+			}
+		}
+
+		effect = {
+			activate_title = { title = k_germany status = yes }
+			piety = 1000
+			prestige = 1000
+			add_claim = k_italy
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = KING
+						NOT = { title = k_germany }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			hidden_effect = {	
+				d_alsace = { de_jure_liege = k_germany }
+				d_angria = { de_jure_liege = k_germany }
+				d_baden	 = { de_jure_liege = k_germany }
+				d_brandenburg = { de_jure_liege = k_germany }
+				d_bremen = { de_jure_liege = k_germany }
+				d_brunswick = { de_jure_liege = k_germany }
+				d_franconia = { de_jure_liege = k_germany }
+				d_hesse = { de_jure_liege = k_germany }
+				d_lausitz = { de_jure_liege = k_germany }
+				d_meissen = { de_jure_liege = k_germany }
+				d_munster_germany = { de_jure_liege = k_germany }
+				d_raetia = { de_jure_liege = k_germany }
+				d_rhine = { de_jure_liege = k_germany }
+				d_saxony = { de_jure_liege = k_germany }
+				d_swabia = { de_jure_liege = k_germany }
+				d_thuringia = { de_jure_liege = k_germany }
+				d_thurgau = { de_jure_liege = k_germany }
+				d_fulda = { de_jure_liege = k_germany }
+				d_hamburg = { de_jure_liege = k_germany }
+				d_mecklemburg = { de_jure_liege = k_wolgast }
+				
+				activate_title = {
+					title = k_germany
+					status = yes
+				}
+				activate_title = {
+					title = k_wesphalia
+					status = no
+				}
+				activate_title = {
+					title = k_thuringian
+					status = no
+				}
+				activate_title = {
+					title = k_swabia
+					status = no
+				}
+				activate_title = {
+					title = k_franconia
+					status = no
+				}
+				primary_title = {
+					k_germany = {
+						grant_title = ROOT
+						copy_title_laws = PREV
+						copy_title_history = PREV
+					}
+				}
+			}
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			create_bloodline = {
+				type = bloodline_unifier_germany
+			}
+			set_global_flag = germany_united
+			any_player = {
+				narrative_event = { id = UINGE.1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unite_england = {
+		ai_check_interval = 24
+		is_high_prio = yes
+
+		potential = {
+			independent = yes
+			capital_scope = { region = world_europe_west_brittania }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			NOT = { has_global_flag = england_united }
+			start_date <= 935.1.1
+		}
+		
+		allow = {
+			independent = yes
+			is_adult = yes
+			prisoner = no
+			is_tributary = no
+			war = no
+			NOT = {	trait = incapable }
+			prestige = 1000
+			OR = {
+				has_landed_title = k_wessex
+				has_landed_title = k_northumbria
+				has_landed_title = k_mercia
+			}
+			AND = {
+				completely_controls = k_wessex
+				completely_controls = k_northumbria
+				completely_controls = k_mercia
+			}
+		}
+
+		effect = {
+			activate_title = { title = k_england status = yes }
+			piety = 1000
+			prestige = 1000
+			add_claim = k_france
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = KING
+						NOT = { title = k_england }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			hidden_effect = {	
+				d_birmingham = { de_jure_liege = k_england }
+				d_york = { de_jure_liege = k_england }
+				d_hampshire	 = { de_jure_liege = k_england }
+				d_somerset = { de_jure_liege = k_england }
+				d_northumberland = { de_jure_liege = k_england }
+				d_hereford = { de_jure_liege = k_england }
+				d_lancaster = { de_jure_liege = k_england }
+				d_canterbury = { de_jure_liege = k_england }
+				d_gloucester = { de_jure_liege = k_england }
+				d_bedford = { de_jure_liege = k_england }
+				d_norfolk = { de_jure_liege = k_england }
+				d_cumbria = { de_jure_liege = k_england }
+				d_cornwall = { de_jure_liege = k_england }
+				
+				activate_title = {
+					title = k_england
+					status = yes
+				}
+				activate_title = {
+					title = k_wessex
+					status = no
+				}
+				activate_title = {
+					title = k_northumbria
+					status = no
+				}
+				activate_title = {
+					title = k_mercia
+					status = no
+				}
+				primary_title = {
+					k_england = {
+						grant_title = ROOT
+						copy_title_laws = PREV
+						copy_title_history = PREV
+					}
+				}
+			}
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_lionheart
+			}
+			create_bloodline = {
+				type = bloodline_unifier_england
+			}
+			set_global_flag = england_united
+			any_player = {
+				narrative_event = { id = UINGE.2 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

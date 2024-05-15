@@ -1,0 +1,54 @@
+venice_route = {
+	wealth = 150			# Total base wealth of silk route
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 356
+			province_id = 350
+			province_id = 929
+			province_id = 468
+			province_id = 347
+			province_id = 472
+			province_id = 474
+			province_id = 2148
+			province_id = 2171
+			province_id = 482
+			province_id = 485
+			province_id = 483
+			province_id = 2169
+			province_id = 775
+		}
+	}
+
+	modifier = {			# How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.01
+		city_tax_modifier = 0.01
+		temple_tax_modifier = 0.01
+		tribal_tax_modifier = 0.01
+		trade_route_value = 1.5
+		local_movement_speed = 0.01
+		tech_growth_modifier = 0.01
+		icon = 4
+	}
+
+	start = {				# Start provinces of trade route
+		356
+	}
+
+	# Northern Silk Route
+	path = {	# Main Road to Ragusa
+		356 1110 350 929 1109 468
+	}
+
+	path = {	# Ragusa to Krete
+		468 347 1038 472 474 1037 1891 2148 1017 2171
+	}
+
+	path = {	# Road to Constantinople
+		2171 482 485 942 1111 947 496
+	}
+
+	path = {	# Road to Alexandria
+		2171 936 483 946 945 2169 775 940 939 802
+	}
+	
+}

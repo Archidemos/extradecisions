@@ -3,16 +3,18 @@ character_event = {
     desc = EVTDESC_REI_001
     picture = GFX_evt_battle
     border = GFX_event_normal_frame_war
-
+	hide_window = yes
+	hide_from = yes
+	
     is_triggered_only = yes
 
-    notification = yes
+    notification = no
 
     option = { #Finally!
         name = EXCELLENT
-        event_target:reinforcing_province = { 
+        event_target:ar_reinforcing_province = { 
 			refill_holding_levy = yes 
 		}
-        clr_character_flag = army_reinforcing
+        clr_character_flag = ar_army_reinforcing
     }
 }

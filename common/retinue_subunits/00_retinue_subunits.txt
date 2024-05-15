@@ -378,6 +378,27 @@ RETTYPE_CUL_ALTAIC =
 	}
 }
 
+RETTYPE_CUL_KUR = 
+{
+	first_type = 6
+	first_amount = 250
+
+	special_troops = camel_cavalry
+	
+	potential = {
+		is_nomadic = no
+		culture = kurdish
+		NOT = {
+			culture = jurchen
+		}
+	}
+	
+	modifier = {
+		camel_cavalry_offensive = 0.2
+		camel_cavalry_morale = 0.2
+	}
+}
+
 RETTYPE_CUL_FRANK_NOR_GER = 
 {
 	first_type = 4

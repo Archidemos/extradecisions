@@ -70,11 +70,6 @@ decisions = {
 				d_koln = { de_jure_liege = k_germany }
 				d_trier = { de_jure_liege = k_germany }
 			}
-			hidden_tooltip = {
-				ROOT = {
-					narrative_event = { id = Bur.1000 }
-				}
-			}
 			if = {
 				limit = {
 					has_character_flag = destroying_hre
@@ -93,6 +88,62 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	
+	bur_invade_france = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+		
+		potential = {
+			has_landed_title = k_burgundy_kingdom
+		}
+	
+		allow = {
+			prestige = 1000
+			martial = 10
+			any_playable_ruler = { has_landed_title = k_france }
+		}
+
+		effect = {
+			prestige = 1000
+			spawn_unit = {
+				owner = ROOT
+				province = c_verdun
+				home = PREV
+				troops = {
+					heavy_infantry = { 1000 1000 }
+					light_cavalry = { 1000 1000 }
+					knights = { 500 500 }
+				}
+					attrition = 0
+				disband_on_peace = yes
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = c_verdun
+				home = PREV
+				troops = {
+					heavy_infantry = { 1000 1000 }
+					light_cavalry = { 1000 1000 }
+					knights = { 500 500 }
+				}
+					attrition = 0
+				disband_on_peace = yes
+			}
+			custom_tooltip = {
+				text = warning_bur
+				hidden_effect = {
+					any_playable_ruler = {
+						limit = { 
+							has_landed_title = k_france
+						}
+						narrative_event = { id = Bur.996 days = 5 }
+					}
+					
+				}
+			}
 		}
 	}
 }

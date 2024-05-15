@@ -16,61 +16,6 @@ narrative_event = { #Burgundy is formed everyone
 	}
 }
 
-narrative_event = { #Burgundy is formed
-	id = Bur.1000
-	title = BURNAME1000
-	desc = BURDESC1000
-	
-	picture = "GFX_evt_crusaders"
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = "EVTOPTBUR001"
-		prestige = 1000
-		spawn_unit = {
-			owner = ROOT
-			province = c_verdun
-			home = PREV
-			troops = {
-				heavy_infantry = { 1000 1000 }
-				light_cavalry = { 1000 1000 }
-				knights = { 500 500 }
-			}
-				attrition = 0
-			disband_on_peace = yes
-		}
-		spawn_unit = {
-			owner = ROOT
-			province = c_verdun
-			home = PREV
-			troops = {
-				heavy_infantry = { 1000 1000 }
-				light_cavalry = { 1000 1000 }
-				knights = { 500 500 }
-			}
-				attrition = 0
-			disband_on_peace = yes
-		}
-		custom_tooltip = {
-			text = warning_bur
-			hidden_effect = {
-				any_playable_ruler = {
-					limit = { 
-						has_landed_title = k_france
-					}
-					narrative_event = { id = Bur.996 days = 5 }
-				}
-				
-			}
-		}
-	}
-}
-
-
-
 narrative_event = { #France is furrious
 	id = Bur.996
 	title = BURNAME996

@@ -1518,21 +1518,19 @@ castle = {
 				ROOT = { province = c_gizeh }
 				ROOT = { province = c_kharibta }
 				ROOT = { province = c_mecca }
-				ROOT = { province = c_mecca }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_epeiros }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_mecca }
 				ROOT = { province = c_navarra }
 				ROOT = { province = c_nikaea }
 				ROOT = { province = c_dunhuang }
 				ROOT = { province = c_jiuquan }
 			}
-			FROMFROM = { is_capital = yes }
 			date >= 867.1.1
 		}
 		
 		is_active_trigger = {
+			FROMFROM = { is_capital = yes }
 			is_tribal = no
 		}
 
@@ -1572,11 +1570,11 @@ castle = {
 				ROOT = { province = c_chandax }
 				ROOT = { province = c_wight }
 			}
-			FROMFROM = { is_capital = yes }
 			date >= 867.1.1
 		}
 		
 		is_active_trigger = {
+			FROMFROM = { is_capital = yes }
 			is_tribal = no
 		}
 
@@ -1603,7 +1601,6 @@ castle = {
 		build_time = 730
 	
 		tax_income = 5
-		light_infantry = 250
 		siege_defence = 0.1
 		fort_level = 1
 		attrition = 0.10
@@ -1625,8 +1622,6 @@ castle = {
 	
 		siege_defence = 0.2
 		fort_level = 1
-		attrition = 0.25
-		global_supply_limit = -0.25
 		archers = 300
 		
 		ai_creation_factor = 95
@@ -1655,7 +1650,6 @@ castle = {
 		
 		siege_defence = 0.2
 		fort_level = 1
-		supply_limit = -4
 		
 		ai_creation_factor = 95
 		extra_tech_building_start = 2

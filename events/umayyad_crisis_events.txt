@@ -74,10 +74,7 @@ character_event = {
 			}
 	    }
 		remove_character_modifier = umayyad_curse_1
-		add_character_modifier = { 
-			name = umayyad_curse_1 
-			years = -1 
-		}
+		add_character_modifier = { name = umayyad_curse_1 years = -1 }
     }
 }
 
@@ -108,10 +105,7 @@ character_event = {
 			}
 	    }
 		remove_character_modifier = umayyad_curse_2
-		add_character_modifier = { 
-			name = umayyad_curse_2
-			years = -1 
-		}
+		add_character_modifier = { name = umayyad_curse_2 years = -1 }
     }
 }
 
@@ -142,10 +136,7 @@ character_event = {
 			}
 	    }
 		remove_character_modifier = umayyad_curse_3
-		add_character_modifier = { 
-			name = umayyad_curse_3
-			years = -1 
-		}
+		add_character_modifier = { name = umayyad_curse_3 years = -1 }
     }
 }
 
@@ -289,28 +280,4 @@ character_event = {
 			}
 		}
 	}
-}
-
-character_event = {
-    id = UMM.11
-    only_playable = yes
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-		ROOT = {
-			OR = {
-				NOT = { has_landed_title = k_andalusia }
-				NOT = { has_landed_title = e_cordoba }
-			}
-		}
-    }
-
-    immediate = {
-		FROMFROM = {
-			remove_character_modifier = umayyad_curse_1
-			remove_character_modifier = umayyad_curse_2
-			remove_character_modifier = umayyad_curse_3
-		}
-    }
 }
