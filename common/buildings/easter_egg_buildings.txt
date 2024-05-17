@@ -1,0 +1,59 @@
+castle = {
+	cabbage_temple_1 = {
+		desc = cabbage_temple_desc
+		potential = {
+			FROMFROM = { title = b_narikala }
+			has_game_rule = { name = meme_game_rule value = enabled }
+		}
+		add_number_to_name = no
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = { culture = georgian }
+		}
+		is_active_trigger = {
+			FROM = { culture = georgian }
+		}
+		prerequisites = { ca_wall_2 }
+		piety_cost = 150
+		build_time = 1000
+		ai_creation_factor = 15
+		extra_tech_building_start = 8
+		
+		liege_piety = 0.5
+		custom_cabbage_temple_modifier = 1
+	}
+	
+	cabbage_temple_2 = {
+		desc = cabbage_temple_desc
+		potential = {
+			FROMFROM = { title = b_narikala }
+			FROM = {
+				any_owned_bloodline = {
+					has_bloodline_flag = cabbage_bloodlineflag
+					bloodline_is_active_for = PREV
+				}
+			}
+		}
+		add_number_to_name = no
+		trigger = {
+			FROM = { culture = georgian }
+		}
+		is_active_trigger = {
+			FROM = { culture = georgian }
+			FROM = {
+				any_owned_bloodline = {
+					has_bloodline_flag = cabbage_bloodlineflag
+					bloodline_is_active_for = PREV
+				}
+			}
+		}
+		piety_cost = 150
+		build_time = 1000
+		ai_creation_factor = 15
+		extra_tech_building_start = 8
+		upgrades_from = cabbage_temple_1
+		
+		liege_piety = 0.5
+		tax_income = 6
+	}
+}

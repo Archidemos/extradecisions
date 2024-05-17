@@ -1,0 +1,782 @@
+decisions = {
+	
+	form_algeria = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			OR = {
+				culture = maghreb_arabic
+				culture = bedouin_arabic
+				culture = andalusian_arabic
+			}
+			LOWER_REAL_TIER_THAN = KING
+			capital_scope = {
+				OR = {
+					de_jure_liege = d_alger
+					de_jure_liege = d_kabylia
+					de_jure_liege = d_mzab
+					de_jure_liege = d_tlemcen
+					de_jure_liege = d_tahert
+				}
+			}
+		}
+		
+		allow = {
+			completely_controls = d_alger
+			completely_controls = d_kabylia
+			OR = {
+				completely_controls = d_tlemcen
+				completely_controls = d_tahert
+				completely_controls = d_mzab
+			}
+			independent = yes
+			wealth = 250
+			prestige = 500
+		}
+		
+		effect = {
+			wealth = -250
+			prestige = 500
+			
+			hidden_effect = {
+				d_alger = { de_jure_liege = k_algeria }
+				d_kabylia = { de_jure_liege = k_algeria }
+				d_mzab = { de_jure_liege = k_algeria }
+				d_tlemcen = { de_jure_liege = k_algeria }
+				d_tahert = { de_jure_liege = k_algeria }
+				k_algeria = { de_jure_liege = e_maghreb }
+			}
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			k_algeria = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+		}
+	}
+	
+	form_rum = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 12
+		
+		potential = {
+			culture = turkish
+			LOWER_REAL_TIER_THAN = KING
+			NOT = { start_date = 1077.1.1 }
+			NOT = { has_global_flag = rum_formed }
+			any_realm_province = {
+				is_capital = yes
+				OR = {
+					de_jure_liege_or_above = k_armenia
+					de_jure_liege_or_above = k_anatolia
+				}
+			}
+		}
+		
+		allow = {
+			wealth = 300
+			num_of_duke_titles = 3
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -300
+			prestige = 500
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_rum
+				status = yes
+			}
+			
+			k_rum = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			set_global_flag = rum_formed
+		}
+	}
+	
+	form_commonwealth = {
+		is_high_prio = yes
+		ai_check_interval = 36
+		only_rulers = yes
+		
+		potential = {
+			OR = {
+				has_landed_title = k_poland
+				has_landed_title = k_lithuania
+			}
+			OR = {
+				culture = polish
+				culture = lithuanian
+			}
+			NOT = { has_global_flag = commonwealth_formed }
+			LOWER_REAL_TIER_THAN = EMPEROR
+		}
+		
+		allow = {
+			prestige = 2500
+			wealth = 500
+			has_landed_title = k_poland
+			has_landed_title = k_lithuania
+			has_landed_title = k_ruthenia
+			has_landed_title = k_galicia-volhynia
+		}
+		
+		effect = {
+			wealth = -500
+			prestige = 1000
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = e_plc
+				status = yes
+			}
+			
+			e_plc = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			e_plc = {
+				show_scope_change = no
+				succession = feudal_elective
+			}
+			
+			set_global_flag = { commonwealth_formed }
+			
+			create_bloodline = {
+				type = plc_bloodline
+				inheritance = patrilineal
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						528 = { num_of_max_settlements = 7 }
+						is_feudal = yes
+					}
+				}
+				528 = {
+					add_holding_slot = 1
+				}
+				528 = {
+					build_holding = {
+						type = castle
+						holder = root
+					}
+				}
+			}
+			
+			else_if = {
+				limit = {
+					NOT = {
+						528 = { num_of_max_settlements = 7 }
+						is_tribal = yes
+					}
+				}
+				528 = {
+					add_holding_slot = 1
+				}
+				prestige = 500
+			}
+			
+			528 = { set_name = "Warsaw" }
+		}
+	}
+	
+	hansa_thankmar_rebellion = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 12
+
+		potential = {
+			religion_group = christian
+			has_global_flag = hre_removed
+			is_republic = yes
+			has_dlc = "The Republic"
+			NOT = {
+				higher_tier_than = KING
+			}
+			OR = {
+				culture = german
+				culture = old_saxon
+				culture = pommeranian
+				culture = dutch
+				culture = danish
+			}
+			has_landed_title = d_holstein
+			k_hansa = {
+				has_holder = no
+			}
+			k_hansa = {
+				is_titular = yes
+			}
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					value = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					value = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					value = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			is_adult = yes
+			independent = yes
+			war = no
+			prestige = 1000
+			wealth = 1000
+			has_landed_title = d_mecklemburg
+			has_landed_title = d_holstein
+			has_landed_title = d_bremen
+			has_landed_title = c_dithmarschen
+		}
+
+		effect = {
+			custom_tooltip = { text = create_the_hansa_tooltip }
+			wealth = -1000
+			hidden_tooltip = {
+				if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_lubeck = {
+							holding_type = city
+						}
+						is_title_active = b_lubeck
+					}
+					ROOT = {
+						b_lubeck = {
+							grant_title = PREV						
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_ratzeburg = {
+							holding_type = city
+						}
+						is_title_active = b_ratzeburg
+					}
+					ROOT = {
+						b_ratzeburg = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_travemunde = {
+							holding_type = city
+						}
+						is_title_active = b_travemunde
+					}
+					ROOT = {
+						b_travemunde = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_schlutup = {
+							holding_type = city
+						}
+						is_title_active = b_schlutup
+					}
+					ROOT = {
+						b_schlutup = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_starigard = {
+							holding_type = city
+						}
+						is_title_active = b_starigard
+					}
+					ROOT = {
+						b_starigard = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_weslo = {
+							holding_type = city
+						}
+						is_title_active = b_weslo
+					}
+					ROOT = {
+						b_weslo = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_bucu = {
+							holding_type = city
+						}
+						is_title_active = b_bucu
+					}
+					ROOT = {
+						b_bucu = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_wulfsdorf = {
+							holding_type = city
+						}
+					}
+					ROOT = {
+						b_wulfsdorf = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						c_dithmarschen = {
+							num_of_max_settlements < 7
+						}
+					}
+					c_dithmarschen = {
+						add_holding_slot = 1
+					}
+				}
+				
+				capital_scope = {
+					build_holding = {
+						type = city
+						holder = ROOT
+					}
+				}
+
+				primary_title = {
+					k_hansa = {
+						copy_title_laws = PREV
+					}
+				}
+				k_hansa = {
+					grant_title_no_opinion = ROOT
+				}
+				k_hansa = {
+					make_primary_title = yes
+				}
+				d_mecklemburg = {
+					de_jure_liege = k_hansa
+				}
+				d_bremen = {
+					de_jure_liege = k_hansa
+				}
+				d_holstein = {
+					de_jure_liege = k_hansa
+				}
+				k_hansa = {
+					de_jure_liege = e_germany
+				}
+				narrative_event = { id = HFP.40000 }
+
+				set_global_flag = hansa_formed
+
+				any_player = {
+					limit = {
+						NOT = {
+							has_landed_title = k_hansa
+						}
+					}
+					narrative_event = { id = HFP.40001 days = 1 }
+				}
+			}
+		}
+	}
+	
+	form_serene_ragusa = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			LOWER_REAL_TIER_THAN = KING
+			has_landed_title = d_ragusa
+			is_republic = yes
+		}
+		
+		allow = {
+			wealth = 300
+			prestige = 500
+			num_of_duke_titles = 2
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -300
+			prestige = 500
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_ragusa
+				status = yes
+			}
+			
+			k_ragusa = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			d_ragusa = { de_jure_liege = k_ragusa }
+			
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_landed_title = d_dalmatia
+					}
+					d_dalmatia = { de_jure_liege = k_ragusa }
+					d_dalmatia = { set_name = "Dalmatia" }
+				}
+				if = {
+					limit = {
+						has_landed_title = d_croatia
+					}
+					d_croatia = { de_jure_liege = k_ragusa }
+				}
+				else_if = {
+					limit = {
+						has_landed_title = d_dioclea
+					}
+					d_dioclea = { de_jure_liege = k_ragusa }
+				}
+			}
+			
+			narrative_event = { id = FORM.1 }
+		}
+	}
+	
+	form_serene_gotland = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			LOWER_REAL_TIER_THAN = KING
+			has_landed_title = d_gotland
+			is_republic = yes
+		}
+		
+		allow = {
+			wealth = 300
+			prestige = 500
+			num_of_duke_titles = 2
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -300
+			prestige = 500
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_gotland
+				status = yes
+			}
+			
+			k_gotland = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			hidden_tooltip = {
+				d_gotland = { de_jure_liege = k_gotland }
+				k_gotland = { de_jure_liege = e_scandinavia }
+			}
+		}
+	}
+	
+	form_serene_pechina = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			LOWER_REAL_TIER_THAN = KING
+			has_landed_title = d_pechina
+			is_republic = yes
+		}
+		
+		allow = {
+			wealth = 300
+			prestige = 500
+			num_of_duke_titles = 2
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -300
+			prestige = 500
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_pechina
+				status = yes
+			}
+			
+			k_gotland = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			hidden_tooltip = {
+				c_almeria = { de_jure_liege = d_pechina }
+				d_pechina = { de_jure_liege = k_pechina }
+				k_pechina = { de_jure_liege = e_spain }
+				if = {
+					limit = {
+						has_landed_title = d_murcia
+					}
+					d_murcia = { de_jure_liege = k_pechina }
+				}
+			}
+		}
+	}
+	
+	form_serene_ancona = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			LOWER_REAL_TIER_THAN = KING
+			has_landed_title = d_ancona
+			is_republic = yes
+		}
+		
+		allow = {
+			wealth = 300
+			prestige = 500
+			num_of_duke_titles = 2
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -300
+			prestige = 500
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_ancona
+				status = yes
+			}
+			
+			k_gotland = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			hidden_tooltip = {
+				d_ancona = { de_jure_liege = k_ancona }
+				k_ancona = { de_jure_liege = e_italy }
+			}
+		}
+	}
+	
+	##Hre/Germania
+	
+	dissolve_hre_inside = { ##Remove Carolingian Influences
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 24
+		
+		potential = {
+			start_date > 769.1.1 ##Gonna cause issues across the board with how 769 HRE works.
+			NOT = { dynasty = 25061 }
+			is_title_active = e_hre
+			OR = {
+				culture = german
+				culture = dutch
+			}
+			trigger_if = {
+				limit = { e_hre = { has_holder = yes } } 
+				has_landed_title = e_hre
+			}
+			trigger_if = {
+				limit = { e_hre = { has_holder = no } }
+				OR = {
+					has_landed_title = k_germany
+					has_landed_title = k_bavaria
+					has_landed_title = k_frisia
+					has_landed_title = k_carinthia
+					has_landed_title = k_lotharingia
+				}
+			}
+		}
+		
+		allow = {
+			prestige = 10000
+			trigger_if = {
+				limit = { e_hre = { has_holder = no } }
+				completely_controls = k_germany
+				completely_controls = k_frisia
+				completely_controls = k_bavaria
+				martial = 16
+				independent = yes
+			}
+			diplomacy = 16
+			trait = ambitious
+		}
+		
+		effect = {
+			old_german_dejure_effect = yes
+			set_global_flag = hre_removed
+			activate_title = {
+				title = e_germany
+				status = yes
+			}
+			activate_title = {
+				title = e_hre
+				status = no
+			}
+			if = { ##If fully centralised/primo allowed to keep empire within region Germania
+				limit = {
+					has_law = centralization_4
+				}
+				e_germany = {
+					show_scope_change = no
+					grant_title_no_opinion = ROOT
+					copy_title_laws = e_hre
+					make_primary_title = yes
+				}
+				custom_tooltip = {
+					text = tt_release_foreign_territories
+					any_vassal = {
+						limit = {
+							primary_title = {
+								NOT = { de_jure_liege_or_above = e_germany }
+							}
+						}
+						set_defacto_liege = THIS
+					}
+				}
+				if = {
+					limit = {
+						has_law = succ_hre_elective
+					}
+					character_event = { id = FORM.5 }
+				}
+				
+			}
+			hidden_effect = {
+				destroy_landed_title = e_hre
+			}
+		}
+	}
+}

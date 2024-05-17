@@ -1,0 +1,76 @@
+decisions = {
+	
+	invite_diplomat = {
+		only_playable = yes
+		ai_check_interval = 24
+		
+		potential = {}
+		
+		allow = {
+			scaled_wealth = 0.25
+		}
+		
+		effect = {
+			scaled_wealth = -0.25
+			create_random_diplomat = {
+				dynasty = random
+				culture = ROOT
+				religion = ROOT
+				female = no
+				random_traits = yes
+				attributes = {
+					diplomacy = 6
+					martial = 2
+					stewardship = 2
+					intrigue = 2
+					learning = 2
+				}
+			}
+			new_character = { save_event_target_as = invited_diplomat }
+			character_event = { id = INV.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	invite_spy = {
+		only_playable = yes
+		ai_check_interval = 24
+		
+		potential = {}
+		
+		allow = {
+			scaled_wealth = 0.25
+		}
+		
+		effect = {
+			scaled_wealth = -0.25
+			create_random_intriguer = {
+				dynasty = random
+				culture = ROOT
+				religion = ROOT
+				female = no
+				random_traits = yes
+				attributes = {
+					diplomacy = 2
+					martial = 2
+					stewardship = 2
+					intrigue = 6
+					learning = 2
+				}
+			}
+			new_character = { save_event_target_as = invited_spy }
+			character_event = { id = INV.2 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,282 @@
+create_random_skilled_jew = {
+	random_list = {
+		20 = {
+			create_random_diplomat = {
+				culture = ashkenazi
+				religion = jewish
+				random_traits = yes
+				dynasty = random
+				female = no
+				attributes = {
+					martial = 2
+					diplomacy = 11
+					stewardship = 2
+					intrigue = 2
+					learning = 2
+				}
+			}
+		}
+		20 = {
+			create_random_soldier = {
+				culture = ashkenazi
+				religion = jewish
+				random_traits = yes
+				dynasty = random
+				female = no
+				attributes = {
+					martial = 10
+					diplomacy = 2
+					stewardship = 2
+					intrigue = 2
+					learning = 2
+				}
+			}
+		}
+		20 = {
+			create_random_steward = {
+				culture = ashkenazi
+				religion = jewish
+				random_traits = yes
+				dynasty = random
+				female = no
+				attributes = {
+					martial = 2
+					diplomacy = 2
+					stewardship = 12
+					intrigue = 2
+					learning = 2
+				}
+			}
+		}
+		20 = {
+			create_random_intriguer = {
+				culture = ashkenazi
+				religion = jewish
+				random_traits = yes
+				dynasty = random
+				female = no
+				attributes = {
+					martial = 2
+					diplomacy = 2
+					stewardship = 2
+					intrigue = 12
+					learning = 2
+				}
+			}
+		}
+		20 = {
+			create_random_priest = {
+				culture = ashkenazi
+				religion = jewish
+				random_traits = yes
+				dynasty = random
+				female = no
+				attributes = {
+					martial = 2
+					diplomacy = 2
+					stewardship = 2
+					intrigue = 2
+					learning = 10
+				}
+				add_trait = physician
+			}
+		}
+	}
+	new_character = { save_event_target_as = invited_jew }
+}
+
+old_german_dejure_effect = {
+	custom_tooltip = {
+		text = tt_old_german_dejure
+		
+		e_hre = {
+			any_direct_de_jure_vassal_title = {
+				de_jure_liege = e_germany
+			}
+		}
+		
+		## Bohemia
+		if = {
+			limit = {
+				is_title_active = e_wendish_empire
+			}
+			k_bohemia = { de_jure_liege = e_wendish_empire }
+		}
+		else_if = {
+			limit = {
+				is_title_active = e_lechczechrus
+			}
+			k_bohemia = { de_jure_liege = e_lechczechrus }
+		}
+		else = {
+			k_bohemia = { de_jure_liege = e_germany }
+		}
+		
+		## Saxony
+		activate_title = { #deactivate the "grand duchy" titles and use ottonian kingdoms instead
+			title = k_saxon
+			status = no
+		}
+		
+		activate_title = {
+			title = k_saxony
+			status = yes
+		}
+		
+		k_saxony = { de_jure_liege = e_germany }
+		
+		d_saxony = { de_jure_liege = k_saxony }
+		d_brunswick = { de_jure_liege = k_saxony }
+		d_angria = { de_jure_liege = k_saxony }
+		d_munster_germany = { de_jure_liege = k_saxony }
+		d_bremen = { de_jure_liege = k_saxony }
+		
+		## Franconia
+		activate_title = { #deactivate the "grand duchy" titles and use ottonian kingdoms instead
+			title = k_franconia
+			status = no
+		}
+		
+		activate_title = {
+			title = k_franconia_otto
+			status = yes
+		}
+		
+		k_franconia_otto = { de_jure_liege = e_germany }
+		
+		d_franconia = { de_jure_liege = k_franconia_otto }
+		d_hesse = { de_jure_liege = k_franconia_otto }
+		d_rhine = { de_jure_liege = k_franconia_otto }
+		
+		##Swabia
+		activate_title = { #deactivate the "grand duchy" titles and use ottonian kingdoms instead
+			title = k_swabia
+			status = no
+		}
+		
+		activate_title = {
+			title = k_swabia_otto
+			status = yes
+		}
+		
+		k_swabia_otto = { de_jure_liege = e_germany }
+		
+		d_swabia = { de_jure_liege = k_swabia_otto }
+		d_thurgau = { de_jure_liege = k_swabia_otto }
+		d_baden = { de_jure_liege = k_swabia_otto }
+		d_alsace = { de_jure_liege = k_swabia_otto }
+		d_raetia = { de_jure_liege = k_swabia_otto }
+		
+		##Thuringia
+		
+		d_thuringia = { de_jure_liege = k_thuringia_otto }
+		
+		activate_title = {
+			title = k_thuringia_otto
+			status = yes
+		}
+		
+		## Austria
+		k_austria = { de_jure_liege = e_germany }
+		
+		activate_title = { #deactivate the "grand duchy" titles and use eastern marches which is a kingdom
+			title = k_austria
+			status = no
+		}
+		
+		##Swiss
+		k_switzerland = { de_jure_liege = e_germany }
+		
+		activate_title = {
+			title = k_switzerland
+			status = yes
+		}
+		
+		d_thurgau = { de_jure_liege = k_switzerland }
+		d_raetia = { de_jure_liege = k_switzerland }
+		d_upper_burgundy = { de_jure_liege = k_switzerland }
+		
+		## Eastern Marches (k. of austria)
+		k_eastern_marches = { de_jure_liege = e_germany }
+		
+		activate_title = {
+			title = k_eastern_marches
+			status = yes
+		}
+		
+		d_carinthia = { de_jure_liege = k_eastern_marches }
+		d_styria = { de_jure_liege = k_eastern_marches }
+		d_osterreich = { de_jure_liege = k_eastern_marches }
+		d_salzburg = { de_jure_liege = k_eastern_marches }
+		
+		## Hansa
+		k_hansa = { de_jure_liege = e_germany }
+		
+		## Leftover duchies
+		d_brandenburg = { de_jure_liege = k_pomerania }
+		d_lausitz = { de_jure_liege = k_pomerania }
+		d_meissen = { de_jure_liege = k_pomerania }
+		
+		##Germany proper
+		
+		activate_title = {
+			title = k_germany
+			status = no
+		}
+		
+		k_germany = {
+			holder_scope = {
+				if  = {
+					limit = {
+						capital_scope = {
+							de_jure_liege_or_above = k_swabia_otto
+						}
+					}
+					k_swabia_otto = {
+						grant_title_no_opinion = THIS
+						copy_title_laws = k_germany
+						make_primary_title = yes
+					}
+				}
+				else_if  = {
+					limit = {
+						capital_scope = {
+							de_jure_liege_or_above = k_franconia_otto
+						}
+					}
+					k_franconia_otto = {
+						grant_title_no_opinion = THIS
+						copy_title_laws = k_germany
+						make_primary_title = yes
+					}
+				}
+				else_if  = {
+					limit = {
+						capital_scope = {
+							de_jure_liege_or_above = k_thuringia_otto
+						}
+					}
+					k_thuringia_otto = {
+						grant_title_no_opinion = THIS
+						copy_title_laws = k_germany
+						make_primary_title = yes
+					}
+				}
+				else_if  = {
+					limit = {
+						capital_scope = {
+							de_jure_liege_or_above = k_saxony
+						}
+					}
+					k_saxony = {
+						grant_title_no_opinion = THIS
+						copy_title_laws = k_germany
+						make_primary_title = yes
+					}
+				}
+			}
+		}
+		
+		destroy_landed_title = k_germany
+	}
+}

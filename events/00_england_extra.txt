@@ -1,0 +1,227 @@
+namespace = HYW #was 100yr war but thats to limited, too lazy to change all mentions of HYW though
+
+character_event = { #force jeanne d'arc if angevin + war with england
+	id = HYW.1
+	hide_window = yes
+	
+	only_independent = yes
+	has_global_flag = angevin_formed
+	only_playable  = yes
+	
+	trigger = {
+		NOT = { has_global_flag = force_spawned_jeanne_darc }
+		
+		OR = {
+			has_landed_title = k_france
+			has_landed_title = e_france
+		}
+		any_current_enemy = {
+			has_landed_title = k_angevin_empire
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_global_flag = force_spawned_jeanne_darc
+		character_event = { id = SoA.5350 }
+	}
+}
+
+character_event = {
+	id = HYW.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			ROOT = { character = c_122 } #Godwinson
+			ROOT = { character = c_140 } #William
+		}
+		FROM = { character = c_102531 } #Hårdråde
+	}
+	
+	immediate = {
+		FROM = { narrative_event = { id = HYW.3 } }
+	}
+}
+
+narrative_event = { #Norway Wins
+	id = HYW.3
+	title = TITLE_HYW3
+	desc = DESC_HYW3
+	picture = GFX_evt_viking_throneroom_oldgods
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {	
+			FROM = { character = c_122 } #Godwinson
+			FROM = { character = c_140 } #William
+		}
+		character = c_102531 #Hårdråde
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = { character = c_140 }
+			}
+			k_england = { succession = feudal_elective }
+		}
+		add_trait = viking
+		if = {
+			limit = { # nicked the code from william's invasion
+				ai = yes
+			}
+			d_bedford = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+			d_hereford = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+			d_cumbria = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+			d_northumberland = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+			d_york = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+			d_norfolk = {
+				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				any_de_jure_vassal_title = {
+					limit = {
+						holder_scope = {
+							culture = saxon
+							ai = yes # But not from players
+							same_realm = ROOT
+						}
+					}
+					usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
+				}
+			}
+		}
+	}
+	
+	option = { #Fullfill Tostig's wish
+		name = A_HYW3
+		prestige = 250
+		
+		c_124 = { #Tostig
+			add_claim = k_england
+			custom_tooltip = {
+				text = TOSTIG_YORK
+				ROOT = {
+					any_demesne_title = {
+						limit = {
+							OR = {
+								de_jure_liege_or_above = d_york
+								de_jure_liege_or_above = d_cumbria
+								de_jure_liege_or_above = d_northumberland
+								de_jure_liege_or_above = c_lincoln
+							}
+						}
+						gain_title = {
+							target = c_124
+							type = claim
+						}
+					}
+				}
+				d_york = {
+					holder_scope = {
+						any_demesne_title = {
+							limit = {
+								NOR = {
+									de_jure_liege_or_above = d_hereford
+									de_jure_liege_or_above = d_lancaster
+								}
+							}
+							gain_title = {
+								target = c_124
+								type = claim
+							}
+						}
+						c_lincoln = { #part of mercia but exlcuded above
+							gain_title = {
+								target = c_124
+								type = claim
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 60 }
+	}
+	
+	option = { #Don't fullfill Tostig's wish
+		name = B_HYW3
+		prestige = 500
+		
+		c_124 = { #Tostig
+			add_claim = k_england
+			add_rival = ROOT
+			k_denmark = {
+				holder_scope = {
+					c_124 = {
+						banish = PREV
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+}

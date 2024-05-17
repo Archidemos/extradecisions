@@ -1,0 +1,26 @@
+plc_bloodline = {
+	picture = GFX_bloodlines_symbol_horse
+	allow_bastards = yes
+	combat_rating = 5
+	polish_opinion = 5
+	lithuanian_opinion = 5
+	religion_flex = -0.2
+	plc_jew_effect = 1
+	inheritance = patrilineal
+	flags = { created_bloodline plc_bloodlineflag }
+}
+
+ibadi_leader_bloodline = {
+	monthly_character_prestige = 0.25
+	ibadi_opinion = 5
+	combat_rating = 5
+	bloodline_effect_great_heroes_appear = 1
+	bloodline_effect_ibadi_leader = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline bloodline_heroes bloodline_ibadi_leader }
+	active = {
+		religion = ibadi
+	}
+}

@@ -1,0 +1,49 @@
+title_decisions = {
+	
+	upgrade_holding = {
+		filter = owned
+		ai_target_filter = capital
+		ai_check_interval = 12
+		
+		potential = {
+			location = {
+				num_of_max_settlements < 7
+				has_province_modifier = prosperity_modifier_3
+				NOT = { has_province_modifier = increased_holding }
+			}
+			holder = FROM
+		}
+		
+		allow = {
+			owner = {
+				show_scope_change = no
+				scaled_wealth = 3.5
+				HIGHER_REAL_TIER_THAN = COUNT
+			}
+		}
+		
+		effect = {
+			location = {
+				add_holding_slot = 1
+				add_province_modifier = {
+					name = increased_holding
+					years = 50
+					hidden = yes
+				}
+			}
+			owner = {
+				show_scope_change = no
+				scaled_wealth = -3.5
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			additive_modifier = {
+				factor = -25
+				is_tribal = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,150 @@
+namespace = FORM
+## Reserving 100-999 for Bloodlines
+#ragusa
+narrative_event= {
+	id = FORM.1
+	title = TITLE_FORM1
+	desc = DESC_FORM1
+	picture = GFX_evt_busy_trading_dock_republic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = A_FORM1
+		k_ragusa = { de_jure_liege = e_italy }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_global_flag = rome_restored }
+		}
+		name = B_FORM1
+		k_ragusa = { de_jure_liege = e_byzantium }
+	}
+	
+	option = {
+		trigger = {
+			has_global_flag = rome_restored
+		}
+		name = C_FORM1
+		k_ragusa = { de_jure_liege = e_roman_empire }
+	}
+}
+
+
+character_event= {
+	id = FORM.5
+	title = TITLE_FORM5
+	desc = DESC_FORM5
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = A_FORM5
+		e_germany = {
+			show_scope_change = no
+			succession_w_cooldown = gavelkind
+		}
+	}
+	
+	option = {
+		name = B_FORM5
+		e_germany = {
+			show_scope_change = no
+			succession_w_cooldown = feudal_elective
+		}
+	}
+	
+	option = {
+		name = C_FORM5
+		e_germany = {
+			show_scope_change = no
+			succession_w_cooldown = seniority
+		}
+	}
+	
+	option = {
+		name = D_FORM5
+		e_germany = {
+			show_scope_change = no
+			succession_w_cooldown = elective_gavelkind
+		}
+	}
+}
+
+narrative_event = {
+	id = FORM.10
+	title = TITLE_FORM10
+	desc = DESC_FORM10
+	picture = GFX_evt_battle_byzantine
+	is_triggered_only = yes
+	
+	option = {
+		name = A_FORM10
+		any_direct_vassal = {
+			opinion = {
+				name = opinion_defending_vs_foreigners
+				who = ROOT
+				years = 5
+				multiplier = 2
+			}
+		}
+	}	
+}
+
+character_event= {
+	id = FORM.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		wealth = 1000
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 500 500 }
+				heavy_infantry = { 2000 2000 }
+				light_cavalry = { 500 500 }
+				knights = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+	}
+}
+
+narrative_event = {
+	id = FORM.12
+	title = TITLE_FORM12
+	desc = DESC_FORM12
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = A_FORM12
+		prestige = 1000
+	}
+	
+	option = {
+		name = B_FORM12
+		old_german_dejure_effect = yes
+	}	
+}
+
+narrative_event = {
+	id = FORM.13
+	title = TITLE_FORM13
+	desc = DESC_FORM13
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = A_FORM13
+	}	
+}

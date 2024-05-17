@@ -1,0 +1,528 @@
+namespace = FORM
+##100-999 Reserved
+## Title Creation Bloodlines
+
+#Norway (Harald Fairhair blood)
+narrative_event = {
+	id = FORM.100
+	title = TITLE_FORM100
+	desc = DESC_FORM100
+	picture = GFX_evt_longships_at_sea_oldgods
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date == 769.1.1
+		k_norway = { is_primary_holder_title = yes }
+		OR = {
+			culture = norse
+			culture = norwegian
+		}
+		NOT = { has_global_flag = norway_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM100
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = harald_fairhair
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = harald_fairhair
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = norway_blood_fired
+	}
+}
+
+#England (Aethelstan blood)
+narrative_event = {
+	id = FORM.101
+	title = TITLE_FORM101
+	desc = DESC_FORM101
+	picture = GFX_evt_coronation
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date < 936.1.1
+		k_england = { is_primary_holder_title = yes }
+		OR = {
+			culture = saxon
+			culture = english
+		}
+		NOT = { has_global_flag = england_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+		trigger_if = {
+			limit = { has_global_flag = danelaw_formed }
+			has_global_flag = danelaw_crushed
+		}
+	}
+	
+	option = {
+		name = A_FORM101
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = athelstan
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = athelstan
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = england_blood_fired
+	}
+}
+
+#Portugal (Alfonso blood)
+narrative_event = {
+	id = FORM.102
+	title = TITLE_FORM102
+	desc = DESC_FORM102
+	picture = GFX_evt_mounted_combat_hf
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date < 1139.1.1
+		k_portugal = { is_primary_holder_title = yes }
+		OR = {
+			culture_group = iberian
+			culture = suebi
+		}
+		NOT = { has_global_flag = portugal_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM102
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = alfonso_portugal
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = alfonso_portugal
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = portugal_blood_fired
+	}
+}
+
+#Arles (Welf blood)
+narrative_event = {
+	id = FORM.103
+	title = TITLE_FORM103
+	desc = DESC_FORM103
+	picture = GFX_evt_joust
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date < 936.1.1
+		k_burgundy = { is_primary_holder_title = yes }
+		OR = {
+			culture_group = central_germanic
+			culture_group = latin
+		}
+		NOT = { has_global_flag = arles_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM103
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = rudolph
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = rudolph
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = arles_blood_fired
+	}
+}
+
+#Hungary (Arpad blood)
+narrative_event = {
+	id = FORM.104
+	title = TITLE_FORM104
+	desc = DESC_FORM104
+	picture = GFX_evt_steppe_mercenaries
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date < 867.1.1
+		k_hungary = { is_primary_holder_title = yes }
+		culture = hungarian
+		NOT = { has_global_flag = hungary_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM104
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = arpad
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = arpad
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = hungary_blood_fired
+	}
+}
+
+character_event = { #on_crusade_failure
+	id = FORM.105
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		uses_new_crusade = yes
+	}
+	
+	immediate = {
+		new_character = {
+			narrative_event = { id = FORM.106 }
+		}
+	}
+}
+
+#Egypt/Syria (Salahdin blood)
+narrative_event = {
+	id = FORM.106
+	title = TITLE_FORM106
+	desc = DESC_FORM106
+	picture = GFX_evt_jerusalem_captured_muslims
+	is_triggered_only = yes 
+	
+	trigger = {
+		start_date < 1187.1.1
+		OR = {
+			culture_group = arabic
+			culture = kurdish
+		}
+		religion_group = muslim
+		has_landed_title = k_egypt
+		has_landed_title = k_syria
+		NOT = { has_global_flag = saladin_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM106
+		show_scope_change = no
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = saladin
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = saladin
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = saladin_blood_fired
+	}
+}
+
+#Poland (Boleslaw blood)
+narrative_event = {
+	id = FORM.107
+	title = TITLE_FORM107
+	desc = DESC_FORM107
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes 
+	
+	trigger = {
+		start_date < 1066.1.1
+		culture = polish
+		k_poland = { is_primary_holder_title = yes }
+		NOT = { has_global_flag = poland_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM107
+		prestige = 500
+		add_trait = brave
+		give_nickname = nick_the_brave
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = boleslaw_the_brave
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = boleslaw_the_brave
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = poland_blood_fired
+	}
+}
+
+##Scotland Brave and Free (William Wallace blood)
+
+## plan: win major battles in def/indepdence/claim scotland as vassal war and win the war --> bloodline
+
+character_event = {
+	id = FORM.108
+	hide_window = yes
+	is_triggered_only = yes
+	in_command = yes
+	war = yes
+	
+	trigger = {
+		start_date < 1271.1.1
+		NOT = { has_global_flag = wallace_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+		has_education_martial_trigger = yes
+		OR = {
+			culture = scottish
+			culture = pictish
+		}
+		trigger_if = {
+			limit = {
+				NOR = {
+					any_war = { using_cb = cb_faction_independence }
+					any_war = { using_cb = bid_for_independence }
+					any_war = { using_cb = free_tributary_cb }
+					any_war = { using_unimportant_cb = yes } # All types of peasant revolts
+					
+					liege = { any_war = { using_cb = cb_faction_independence } }
+					liege = { any_war = { using_cb = bid_for_independence } }
+					liege = { any_war = { using_cb = free_tributary_cb } }
+					liege = { any_war = { using_unimportant_cb = yes } }
+				}
+			}
+			OR = {
+				liege = { is_primary_war_defender = yes }
+				is_primary_war_defender = yes
+			}
+		}
+		trigger_if = {
+			limit = {
+				OR = {
+					any_war = { using_cb = claim }
+					liege = { any_war = { using_cb = claim } }
+				}
+			}
+			OR = {
+				any_war = { war_title = k_scotland }
+				liege = { any_war = { war_title = k_scotland } }
+			}
+		}
+		OR = {
+			has_landed_title = k_scotland
+			de_facto_liege = k_scotland
+			any_war = {
+				OR = {
+					AND = {
+						using_cb = bid_for_independence
+						liege = {
+							culture = scottish
+							HIGHER_REAL_TIER_THAN = COUNT
+							is_primary_war_attacker = yes
+						}
+					}
+					AND = {
+						using_cb = cb_faction_independence
+						liege = {
+							culture = scottish
+							HIGHER_REAL_TIER_THAN = COUNT
+							is_primary_war_attacker = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { ai = yes }
+			change_variable = {
+				which = wallace_blood_var
+				value = 0.75
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = wallace_blood_var
+					value < 6
+				}
+			}
+			change_variable = {
+				which = wallace_blood_var
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = wallace_blood_var
+					value = 6
+				}
+			}
+			narrative_event = { id = FORM.109 }
+		}
+	}
+}
+
+narrative_event = {
+	id = FORM.109
+	title = TITLE_FORM109
+	desc = DESC_FORM109
+	picture = GFX_evt_dueling_knights_hf
+	is_triggered_only = yes 
+	
+	option = {
+		name = A_FORM109
+		prestige = 500
+		
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = william_wallace
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = william_wallace
+				inheritance = patrilineal
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			any_player = {
+				limit = {
+					capital_scope = { region = world_europe_west_brittania }
+				}
+				narrative_event = { id = FORM.110 }
+			}
+		}
+		set_global_flag = wallace_blood_fired
+	}
+}
+
+narrative_event = { #broadcast if bloodline owner is unlanded
+	id = FORM.110
+	title = TITLE_FORM110
+	desc = DESC_FORM110
+	picture = GFX_evt_dueling_knights_hf
+	is_triggered_only = yes 
+	
+	option = {
+		name = A_FORM110
+	}
+}
+
+#Britannia (Boudica blood)
+narrative_event = {
+	id = FORM.111
+	title = TITLE_FORM11
+	desc = DESC_FORM111
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes 
+	
+	trigger = {
+		culture_group = celtic
+		is_female = yes
+		e_britannia = { is_primary_holder_title = yes }
+		NOT = { has_global_flag = boudica_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM111
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = boudica
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = boudica
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = boudica_blood_fired
+	}
+}
+
+narrative_event = {
+	id = FORM.112
+	title = TITLE_FORM112
+	desc = DESC_FORM112
+	picture = GFX_evt_joust
+	is_triggered_only = yes #on_create_title
+	
+	trigger = {
+		start_date < 1066.1.1
+		k_croatia = { is_primary_holder_title = yes }
+		culture = croatian
+		NOT = { has_global_flag = croatia_blood_fired }
+		has_game_rule = { name = title_bloodlines_rule value = enabled }
+	}
+	
+	option = {
+		name = A_FORM112
+		prestige = 500
+		if = {
+			limit = { is_female = yes }
+			create_bloodline = {
+				type = zvonimir
+				inheritance = matrilineal
+			}
+		}
+		else = {
+			create_bloodline = {
+				type = zvonimir
+				inheritance = patrilineal
+			}
+		}
+		set_global_flag = croatia_blood_fired
+	}
+}
+

@@ -1,0 +1,378 @@
+#Joining begins
+character_event = { #secretly shia removed
+	id = MNM.6028
+	picture = GFX_evt_shadow
+	desc = {
+		trigger = {
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		text = EVTDESC_MNM_6028		
+	}
+	desc = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		text = EVTDESC_MNM_6028_ALT		
+	}
+	border = GFX_event_normal_frame_intrigue
+
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			random_society_member = {
+				limit = { 
+					society_rank = {
+						rank == 4
+						society = the_assassins
+					}
+				}
+				save_event_target_as = grand_master
+			}
+		}
+		set_character_flag = assassins_attempted_recruitment
+	}
+
+	#Allahu akbar!
+	option = {
+		trigger = { true_religion_shiite_trigger = yes }
+		name = {
+			trigger = {
+				NOT = {
+					has_alternate_start_parameter = { key = religion_names value = random }
+				}
+			}
+			text = EVTOPTA_6028_B
+		}
+		name = {
+			trigger = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			text = EVTOPTA_6028_ALT
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = { key = religion_names value = random }
+				}
+			}
+			custom_tooltip = { text = EVTOPTA_6028_TOOLTIP }
+		}
+
+		hidden_effect = { character_event = { id = MNM.6029 days = 1 } }
+	}
+
+	#I will convert
+	option = {
+		trigger = { true_religion_shiite_trigger = no }
+		name = {
+			trigger = {
+				NOT = {
+					has_alternate_start_parameter = { key = religion_names value = random }
+				}
+			}
+			text = EVTOPTB_6028
+		}
+		name = {
+			trigger = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			text = EVTOPTB_6028_ALT
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = { key = religion_names value = random }
+				}
+			}
+			custom_tooltip = { text = EVTOPTB_6028_TOOLTIP }
+		}
+
+		religion = shiite
+
+		hidden_effect = { character_event = { id = MNM.6029 days = 1 } }
+		
+		ai_chance = {
+			factor = 20
+
+			modifier = {
+				true_religion_group_muslim_trigger = yes
+				factor = 2
+			}
+			modifier = {
+				independent = yes
+				factor = 2
+			}
+			modifier = {
+				trait = brave
+				factor = 2
+			}
+			modifier = {
+				trait = honest
+				factor = 2
+			}
+		}
+	}
+
+	#Nope!
+	option = {
+		name = EVTOPTD_6028
+		custom_tooltip = { text = EVTOPTD_6028_TOOLTIP }
+
+		hidden_effect = { 
+			FROM = { character_event = { id = MNM.6039 days = 3 } } #Fail
+
+			if = {
+				limit = { event_target:assassins_recruiter = { always = yes } }
+				event_target:assassins_recruiter = { set_character_flag = recruitment_fail }
+				event_target:grand_master = { character_event = { id = MNM.6040 } }
+			}
+		} 
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+### Monastic Order Child Education Power ###
+## 2.8 addition by Matthew Clohessy
+
+character_event = {
+	id = MNM.4300
+
+	is_triggered_only = yes #triggered from on_childhood_pulse
+	hide_window = yes
+
+	trigger = { 
+		educator = {
+			OR = {
+				is_monastic_member_trigger = yes
+				society_member_of = monastic_order_ibadi
+			}
+			NOR = { #Buddhists and Jains have a different power
+				society_member_of = monastic_order_buddhist
+				society_member_of = monastic_order_jain
+			}
+		}
+		NOT = { check_variable = { which = "monastic_order_education_event" value = 3 } }
+	}
+
+	immediate = {
+		change_variable = { which = "monastic_order_education_event" value = 1 }
+		random = {
+			chance = 30
+			educator = { character_event = { id = MNM.4301 days = 5 } }
+		}
+	}
+}
+#Child educated by a MO member reaches adulthood
+character_event = {
+	id = MNM.4302
+
+	is_triggered_only = yes #triggered from some on_adulthood
+	hide_window = yes
+
+	trigger = { 
+		educator = { 
+			OR = {
+				is_monastic_member_trigger = yes
+				society_member_of = monastic_order_ibadi
+			}
+			NOR = { #Buddhists and Jains have a different power
+				society_member_of = monastic_order_buddhist
+				society_member_of = monastic_order_jain
+			}
+		}
+	}
+
+	fail_trigger_effect = {
+		#Clear the variable for students who temporarily were ward to an MO member
+		set_variable = { which = "monastic_order_education_event" value = 0 }
+	}
+
+	immediate = {
+		set_variable = { which = "monastic_order_education_event" value = 0 } #set variable to zero to prune from saves
+		random = {
+			chance = 30
+			educator = { character_event = { id = MNM.4303 days = 5 } }
+		}
+	}
+}
+#Educator can try to sway their former student to be better
+character_event = {
+	id = MNM.4303
+	desc = EVT_DESC_MNM_4303
+	picture = GFX_evt_book_carolingian_script
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			is_monastic_member_trigger = yes
+			society_member_of = monastic_order_ibadi
+		}
+		NOR = { #Buddhists and Jains have a different power
+			society_member_of = monastic_order_buddhist
+			society_member_of = monastic_order_jain
+		}
+	}
+
+	immediate = {
+		FROM = {
+			random_list = {
+				1 = {
+					trigger = { 
+						trait = lustful
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_lustful
+				}
+				1 = {
+					trigger = {  
+						trait = gluttonous 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_gluttonous
+				}
+				1 = {
+					trigger = {  
+						trait = greedy 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_greedy
+				}
+				1 = {
+					trigger = {  
+						trait = slothful 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_slothful
+				}
+				1 = {
+					trigger = {  
+						trait = envious 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_envious
+				}
+				1 = {
+					trigger = {  
+						trait = wroth 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_wroth
+				}
+				1 = {
+					trigger = {  
+						trait = proud 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_proud
+				}
+				1 = {
+					trigger = {  
+						trait = deceitful 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_deceitful
+				}
+				1 = {
+					trigger = {  
+						trait = cruel 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_cruel
+				}
+				1 = {
+					trigger = {  
+						trait = cynical 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_remove_cynical
+				}
+				1 = {
+					trigger = {  
+						trait = ambitious 
+						ROOT = { society_rank = 3 }
+					}
+					set_character_flag = monastic_order_education_remove_ambitious
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = humble } 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_add_humble
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = charitable } 
+						ROOT = { society_rank = 1 }
+					}
+					set_character_flag = monastic_order_education_add_charitable
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = chaste } 
+						ROOT = { society_rank = 2 }
+					}
+					set_character_flag = monastic_order_education_add_chaste
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = kind } 
+						ROOT = { society_rank = 2 }
+					}
+					set_character_flag = monastic_order_education_add_kind
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = temperate } 
+						ROOT = { society_rank = 2 }
+					}
+					set_character_flag = monastic_order_education_add_temperate
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = patient }
+						ROOT = { society_rank = 3 }
+					 }
+					set_character_flag = monastic_order_education_add_patient
+				}
+				1 = {
+					trigger = { 
+						NOT = { trait = diligent } 
+						ROOT = { society_rank = 3 }
+					}
+					set_character_flag = monastic_order_education_add_diligent
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = honest } 
+						ROOT = { society_rank = 2 }
+					}
+					set_character_flag = monastic_order_education_add_honest
+				}
+				1 = {
+					trigger = {  
+						NOT = { trait = content } 
+						ROOT = { society_rank = 3 }
+					}
+					set_character_flag = monastic_order_education_add_content
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVT_OPTA_MNM_43003
+		FROM = { character_event = { id = MNM.4304 days = 1 } }
+	}
+}

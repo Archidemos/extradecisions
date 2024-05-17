@@ -1,0 +1,66 @@
+on_startup = {
+	events = {
+		CREDIT.1
+		CREDIT.3
+		690
+	}
+}
+on_bi_yearly_pulse = {
+	random_events = {
+		90 = 0
+		10 = INV.3
+	}
+}
+on_crusade_creation = {
+	events = {
+		200 # Christian Crusade against Muslims
+ 		201 # Christian Crusade against Pagans
+ 		321 # Christian Crusade against Heretics
+	}
+}
+on_character_ask_to_join_society = {
+	events = {
+		MUSLIM.1
+	}
+}
+on_society_bi_yearly_pulse = {
+	events = {
+		MUSLIM.1000
+	}
+}
+on_create_title = {
+	events = {
+		FORM.100 # Title Bloodlines
+		FORM.101
+		FORM.102
+		FORM.103
+		FORM.104
+		FORM.107
+		FORM.111
+		FORM.112
+	}
+}
+on_crusade_failure = {
+	events = {
+		FORM.105 #Saladin
+	}
+}
+
+on_major_battle_won_leader = {
+	events = {
+		FORM.108 # William Wallace
+	}
+}
+
+on_war_ended_victory = {
+	events = {
+		HA.6 # Rurik
+		HA.10 # Dyre
+		HA.15 # Hauteville
+		HA.18 # Saladin
+		HA.21 # Whiteshirt
+		HA.24 # Ivar Boneless
+		HA.27 # Ubbe
+		HYW.2 # Norway win 1066
+	}
+}

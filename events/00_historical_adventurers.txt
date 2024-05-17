@@ -1,0 +1,1546 @@
+namespace = HA
+
+## Hrolfr of Normandy
+
+character_event = { #check start date
+	id = HA.1
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		NOT = { start_date >= 936.1.1 }
+		NOT = { has_global_flag = normans_spawned }
+		trigger_if = {
+			limit = { start_date == 867.1.1 }
+			character = c_242
+			c_242 = {
+				is_alive = yes
+				is_landed = no
+				age >= 18
+				is_incapable = no
+			}
+		}
+		trigger_if = {
+			limit = { start_date == 769.1.1 }
+			year = 810
+			culture = norse
+			religion = norse_pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = normans_spawned
+		if = {
+			limit = { start_date == 867.1.1 }
+			wealth = 200
+			dynasty = 752
+			any_child_even_if_dead = {
+				dynasty = 752
+			}
+			add_trait = viking
+			k_france = {
+				holder_scope = {
+					narrative_event = { id = HA.2 }
+				}
+			}
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = lunatic
+			remove_trait = dull
+			remove_trait = feeble
+			remove_disease_trait_effect = yes
+			save_event_target_as = rollo
+		}
+		else = {
+			create_character = {
+				random_traits = yes
+				name = "Hrolfr"
+				dynasty = 752
+				religion = norse_pagan
+				culture = norse
+				female = no
+				age = 16
+				health = 6
+				fertility = 0.5
+
+				attributes = {
+					martial = 8
+					diplomacy = 8
+					stewardship = 6
+					intrigue = 2
+					learning = 2
+				}
+			}
+			
+			new_character = {
+				wealth = 200
+				dynasty = 752
+				any_child_even_if_dead = {
+					dynasty = 752
+				}
+				add_trait = viking
+				if = {
+					limit = {
+						has_education_martial_trigger = no
+					}
+					remove_education_effect = yes
+					random_list	= {
+						5 = { add_trait = brilliant_strategist }
+						8 = { add_trait = skilled_tactician }
+						4 = { add_trait = tough_soldier }
+						2 = { add_trait = misguided_warrior }
+					}
+				}
+				add_trait = lunatic
+				remove_trait = dull
+				remove_trait = feeble
+				remove_disease_trait_effect = yes
+				save_event_target_as = rollo
+				k_france = {
+					holder_scope = {
+						narrative_event = { id = HA.2 }
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HA.2
+	title = TITLE_HA2
+	desc = DESC_HA2
+	picture = GFX_evt_longships_at_sea_oldgods
+	is_triggered_only = yes
+	
+	option = { #accept offer
+		name = A_HA2
+		wealth = 300
+		custom_tooltip = {
+			text = WELCOME_NORMANS
+			d_normandy = {
+				holder_scope = {
+					any_demense_title = {
+						limit = {
+							de_jure_liege_or_above = d_normandy
+						}
+						gain_title = {
+							target = event_target:rollo
+							type = grant
+						}
+					}
+				}
+			}
+			any_demense_title = {
+				limit = {
+					de_jure_liege_or_above = d_normandy
+				}
+				gain_title = {
+					target = event_target:rollo
+					type = grant
+				}
+			}
+			d_normandy = {
+				grant_title_no_opinion = {
+					target = event_target:rollo
+					type = grant
+				}
+			}
+			c_arques = { #rouen
+				grant_title_no_opinion = {
+					target = event_target:rollo
+					type = grant
+				}
+			}
+			c_evreux = {
+				grant_title_no_opinion = {
+					target = event_target:rollo
+					type = grant
+				}
+			}
+			event_target:rollo = {
+				set_defacto_liege = k_france
+				culture = norman
+				any_child = {
+					culture = norman
+					any_child = { culture = norman } #possible grandchildren
+				}
+			}
+			hidden_effect = {
+				k_france = {
+					holder_scope = {
+						any_realm_lord = {
+							limit = {
+								de_jure_liege = d_normandy
+								NOT = { has_landed_title = c_vexin }
+							}
+							set_defacto_liege = event_target:rollo
+						}
+					}
+				}
+				any_player = {
+					limit = {
+						capital_scope = {
+							region = world_europe_west
+						}
+					}
+					narrative_event = { id = HA.3 } #simple broadcast
+				}
+			}
+			any_realm_province = {
+        		add_province_modifier = {
+        			name = settled_adventurer
+        			years = 20
+        		}
+        	}
+		}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				any_player = {
+					primary_title = { title = d_normandy }
+					OR = {
+						has_landed_title = c_arques
+						has_landed_title = c_evreux
+					}
+				}
+			}
+		}
+	}
+	
+	option = { #decline offer
+		name = B_HA2
+		custom_tooltip = {
+			text = REJECT_NORMANS
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+narrative_event = {
+	id = HA.3
+	title = TITLE_HA3
+	desc = DESC_HA3
+	picture = GFX_evt_longships_at_sea_oldgods
+	is_triggered_only = yes
+	
+	option = {
+		name = A_HA3
+	}
+}
+
+character_event = { ##Rurik
+	id = HA.4
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date == 769.1.1
+		NOT = { has_global_flag = rurik_spawned }
+		year = 800
+		culture = norse
+		religion = norse_pagan
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = rurik_spawned
+		create_character = {
+			random_traits = yes
+			name = "Rurik"
+			dynasty = 705
+			religion = norse_pagan
+			culture = norse
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 8
+				diplomacy = 4
+				stewardship = 6
+				intrigue = 6
+				learning = 2
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			dynasty = 705
+			add_trait = viking
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = quick
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_rurik_spawn
+			add_claim = d_novgorod
+			character_event = { id = HA.5 } #set up in scope of ROOT
+		}
+	}
+}
+
+character_event = {
+	id = HA.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 300 300 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 300 300 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 40 40 }
+			}
+		}
+		
+		unsafe_war = {
+			target = d_novgorod
+			thirdparty_title = d_novgorod
+			casus_belli = claim
+		}
+	}
+}
+
+character_event = {
+	id = HA.6
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_rurik_spawn
+			NOT = { has_global_flag = rurik_won }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = rurik_won
+		FROM = {
+			create_bloodline = {
+				type = rurik
+			}
+			add_trait = varangian
+			add_claim = d_kiev
+			add_claim = k_novgorod
+			add_claim = k_ruthenia
+			
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_europe_east
+							region = world_europe_north
+						}
+					}
+				}
+				narrative_event = { id = HA.7 } #broadcast
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HA.7
+	title = TITLE_HA7
+	desc = DESC_HA7
+	picture = GFX_evt_longships_at_sea_oldgods
+	is_triggered_only = yes
+	
+	option = {
+		name = A_HA7
+	}
+}
+
+character_event = { ##Dyre
+	id = HA.8
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date == 769.1.1
+		NOT = { has_global_flag = dyre_spawned }
+		year = 800
+		culture = norse
+		religion = norse_pagan
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = dyre_spawned
+		create_character = {
+			random_traits = yes
+			name = "Dyre"
+			dynasty = 7516
+			religion = norse_pagan
+			culture = norse
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 6
+				diplomacy = 6
+				stewardship = 4
+				intrigue = 4
+				learning = 4
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			add_trait = viking
+			if = {
+				limit = {
+					has_education_diplomacy_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					10 = { add_trait = grey_eminence }
+					4 = { add_trait = charismatic_negotiator }
+					4 = { add_trait = underhanded_rogue }
+					3 = { add_trait = naive_appeaser }
+				}
+			}
+			add_trait = genius
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_dyre_spawn
+			add_claim = d_kiev
+			character_event = { id = HA.9 }
+		}
+	}
+}
+		
+character_event = {
+	id = HA.9
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+			owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 300 300 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 250 250 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+			owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 300 300 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 250 250 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 20 20 }
+			}
+		}
+		
+		unsafe_war = {
+			target = d_kiev
+			thirdparty_title = d_kiev
+			casus_belli = claim
+		}
+	}
+}
+	
+character_event = {
+	id = HA.10
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_dyre_spawn
+			NOT = { has_global_flag = dyre_won }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = dyre_won
+		FROM = {
+			create_bloodline = {
+				type = dyre
+			}
+			add_trait = varangian
+			add_claim = d_turov
+			add_claim = d_polotsk
+			add_claim = k_ruthenia
+			
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_europe_east
+							region = world_europe_north
+						}
+					}
+				}
+				narrative_event = { id = HA.11 } #broadcast
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HA.11
+	title = TITLE_HA11
+	desc = DESC_HA11
+	picture = GFX_evt_longships_at_sea_oldgods
+	is_triggered_only = yes
+	
+	option = {
+		name = A_HA11
+	}
+}
+
+character_event = {
+	id = HA.12
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date < 1066.1.1
+		NOT = { has_global_flag = hauteville_spawned }
+		year = 980
+		culture = norman
+		religion = catholic
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = hauteville_spawned
+		create_character = {
+			random_traits = yes
+			name = "Tancred"
+			dynasty = 678
+			religion = catholic
+			culture = norman
+			female = no
+			age = 18
+			health = 6
+			fertility = 0.9
+
+			attributes = {
+				martial = 8
+				diplomacy = 6
+				stewardship = 4
+				intrigue = 4
+				learning = 4
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = quick
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_hauteville_spawn
+			add_claim = d_apulia
+			add_claim = d_benevento
+			add_random_commander_trait_effect = yes
+			add_claim = d_calabria
+			character_event = { id = HA.13 }
+		}
+	}
+}
+
+character_event = {
+	id = HA.13
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+			owner = ROOT
+			province = 100
+			home = 100
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 500 500 }
+				heavy_infantry = { 2000 2000 }
+				light_cavalry = { 500 500 }
+				knights = { 150 150 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 120 120 }
+			}
+		}
+		
+		d_apulia = {
+			holder_scope = {
+				top_liege = {
+					save_event_target_as = hauteville_enemy
+				}
+			}
+		}
+		
+		spawn_good_commander_effect = yes
+		spawn_good_commander_effect = yes
+		
+		unsafe_war = {
+			target = event_target:hauteville_enemy
+			thirdparty_title = d_apulia
+			casus_belli = claim
+		}
+		
+		character_event = { id = HA.14 } #make an army based on the enemie's army size
+	}
+}
+
+character_event = {
+	id = HA.14
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				any_war = {
+					any_defender = {
+						tier = EMPEROR
+					}
+				}
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = 100
+				home = 100
+				
+				match_character = event_target:hauteville_enemy
+				match_mult = 0.8
+
+				attrition = 1.0
+				disband_on_peace = yes
+				maintenance_multiplier = 0.1
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HA.15
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_hauteville_spawn
+			NOT = { has_global_flag = hauteville_won }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = hauteville_won
+		
+		if = {
+			limit = {
+				k_amalfi = { is_titular = no }
+			}
+			k_amalfi = { holder_scope = { set_defacto_liege = THIS } }
+		}
+		
+		else = {
+			d_amalfi = { holder_scope = { set_defacto_liege = THIS } }
+		}
+		
+		if = {
+			limit = {
+				d_capua = {
+					has_holder = yes
+					de_facto_liege = e_byzantium
+				}
+			}
+			d_capua = { holder_scope = { set_defacto_liege = THIS } }
+		}
+		
+		else = {
+			d_capua = {
+				any_direct_de_jure_vassal_title = {
+					limit = { de_facto_liege = e_byzantium }
+					holder_scope = { set_defacto_liege = THIS }
+				}
+			}
+			c_capua = {
+				any_direct_de_jure_vassal_title = {
+					holder_scope = { set_defacto_liege = c_capua }
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				ROOT = {
+					OR = {
+						has_landed_title = e_byzantium
+						has_landed_title = e_roman_empire
+					}
+				}
+			}
+			ROOT = {
+				if = {
+					limit = {
+						OR = {
+							any_vassal = { has_landed_title = k_sicily }
+							has_landed_title = k_sicily
+						}
+					}
+					k_sicily = {
+						gain_title = {
+							target = FROM
+							type = host
+						}
+					}
+				}
+			}
+		}
+		FROM = {
+			prestige = 1000
+			vassalize_or_take_under_title = {
+				title = k_sicily
+				enemy = ROOT
+				type = claim
+			}
+			capital = c_apulia
+		}
+	}
+}
+
+character_event = {
+	id = HA.16
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date < 1080.1.1
+		NOT = { has_global_flag = saladin_spawned }
+		year = 1140
+		culture_group = arabic
+		religion = sunni
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = saladin_spawned
+		create_character = {
+			random_traits = yes
+			name = "Saladin"
+			dynasty = 24000
+			religion = sunni
+			culture = kurdish
+			race = levantine_arabic
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 8
+				diplomacy = 8
+				stewardship = 6
+				intrigue = 6
+				learning = 6
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			dynasty = 24000
+			add_trait = mujahideen
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = quick
+			add_trait = ambitious
+			add_trait = patient
+			add_trait = diligent
+			add_trait = charitable
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_saladin_spawn
+			add_claim = k_syria
+			add_claim = k_egypt
+			
+			c_cairo = {
+				top_liege = {
+					holder_scope = { save_event_target_as = saladin_enemy }
+				}
+			}
+			
+			character_event = { id = HA.17 } #set up in scope of ROOT
+		}
+	}
+}
+
+character_event = {
+	id = HA.17
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 697
+			home = 697
+
+			match_character = event_target:saladin_enemy
+			match_mult = 0.95
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 697
+			home = 697
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1000 1000 }
+				knights = { 100 100 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 120 120 }
+			}
+		}
+		
+		spawn_good_commander_effect = yes
+		spawn_good_commander_effect = yes
+		
+		unsafe_war = {
+			target = event_target:saladin_enemy
+			thirdparty_title = k_egypt
+			casus_belli = claim
+		}
+	}
+}
+
+character_event = {
+	id = HA.18
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_saladin_spawn
+			NOT = { has_global_flag = saladin_won }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = saladin_won
+		FROM = {
+			create_bloodline = {
+				type = saladin
+			}
+			decadence = -15
+		}
+	}
+}
+
+character_event = {
+	id = HA.19
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date == 769.1.1
+		NOT = { has_global_flag = whiteshirt_spawned }
+		year = 820
+		culture = norse
+		religion = norse_pagan
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = whiteshirt_spawned
+		create_character = {
+			random_traits = yes
+			name = "Halfdan"
+			dynasty = 7514
+			religion = norse_pagan
+			culture = norse
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 8
+				diplomacy = 2
+				stewardship = 4
+				intrigue = 2
+				learning = 4
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			dynasty = 7514
+			add_trait = viking
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_whiteshirt_spawn
+			add_claim = d_york
+			add_claim = d_northumbria
+			
+			c_york = {
+				holder_scope = {
+					top_liege = {
+						save_event_target_as = whiteshirt_enemy
+					}
+				}
+			}
+			
+			character_event = { id = HA.20 } #set up in scope of ROOT
+		}
+	}
+}
+
+character_event = {
+	id = HA.20
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1000 1000 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1000 1000 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 120 120 }
+			}
+		}
+		
+		spawn_good_commander_effect = yes
+		
+		unsafe_war = {
+			target = event_target:whiteshirt_enemy
+			thirdparty_title = d_york
+			casus_belli = viking_invasion
+		}
+	}
+}
+
+character_event = {
+	id = HA.21
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_whiteshirt_spawn
+			NOT = { has_global_flag = whiteshirt_won }
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			set_global_flag = whiteshirt_won
+			grant_title_no_opinion = d_york
+			capital = c_york
+			give_nickname = nick_whiteshirt
+			if = {
+				limit = {
+					c_163109 = {
+						is_alive = yes
+						age > 33
+					}
+				}
+				set_father = c_163109
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HA.22
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date == 769.1.1
+		NOT = { has_global_flag = boneless_spawned }
+		year = 820
+		culture = norse
+		religion = norse_pagan
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = boneless_spawned
+		create_character = {
+			random_traits = yes
+			name = "Ivar"
+			dynasty = 20084
+			religion = norse_pagan
+			culture = norse
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 6
+				diplomacy = 6
+				stewardship = 4
+				intrigue = 2
+				learning = 4
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			dynasty = 20084
+			add_trait = viking
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = quick
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_ivar_spawn
+			add_claim = d_western_isles
+			
+			c_innse_gall = {
+				holder_scope = {
+					top_liege = {
+						save_event_target_as = ivar_enemy
+					}
+				}
+			}
+			
+			character_event = { id = HA.23 } #set up in scope of ROOT
+		}
+	}
+}
+
+character_event = {
+	id = HA.23
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 120 120 }
+			}
+		}
+		
+		spawn_good_commander_effect = yes
+		
+		unsafe_war = {
+			target = event_target:ivar_enemy
+			thirdparty_title = d_western_isles
+			casus_belli = viking_invasion
+		}
+	}
+}
+
+character_event = {
+	id = HA.24
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_ivar_spawn
+			NOT = { has_global_flag = ivar_won }
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			set_global_flag = ivar_won
+			grant_title_no_opinion = d_western_isles
+			capital = c_innse_gall
+			give_nickname = nick_the_boneless
+			if = {
+				limit = {
+					c_163109 = {
+						is_alive = yes
+						age > 33
+					}
+				}
+				set_father = c_163109
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HA.25
+	hide_window = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		start_date == 769.1.1
+		NOT = { has_global_flag = ubbe_spawned }
+		year = 820
+		culture = norse
+		religion = norse_pagan
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	immediate = {
+		set_global_flag = ubbe_spawned
+		create_character = {
+			random_traits = yes
+			name = "Ubbe"
+			dynasty = 7515
+			religion = norse_pagan
+			culture = norse
+			female = no
+			age = 16
+			health = 6
+			fertility = 0.5
+
+			attributes = {
+				martial = 6
+				diplomacy = 2
+				stewardship = 6
+				intrigue = 2
+				learning = 4
+			}
+		}
+		
+		new_character = {
+			wealth = 500
+			dynasty = 7515
+			add_trait = viking
+			if = {
+				limit = {
+					has_education_martial_trigger = no
+				}
+				remove_education_effect = yes
+				random_list	= {
+					5 = { add_trait = brilliant_strategist }
+					8 = { add_trait = skilled_tactician }
+					4 = { add_trait = tough_soldier }
+					2 = { add_trait = misguided_warrior }
+				}
+			}
+			add_trait = ambitious
+			remove_trait = dull
+			remove_trait = feeble
+			set_character_flag = is_ubbe_spawn
+			add_claim = d_norfolk
+			
+			c_norfolk = {
+				holder_scope = {
+					top_liege = {
+						save_event_target_as = ubbe_enemy
+					}
+				}
+			}
+			
+			character_event = { id = HA.26 } #set up in scope of ROOT
+		}
+	}
+}
+
+character_event = {
+	id = HA.26
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			temporary = yes
+			holder = ROOT
+			landless = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 250 250 }
+				light_infantry = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = yes
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_unit = {
+		    owner = ROOT
+			province = 290
+			home = 290
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1500 1500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+		
+		spawn_fleet = {
+			province = closest
+			owner = ROOT
+			disband_on_peace = no
+
+			troops = {
+				galleys = { 120 120 }
+			}
+		}
+		
+		spawn_good_commander_effect = yes
+		
+		unsafe_war = {
+			target = event_target:ubbe_enemy
+			thirdparty_title = d_norfolk
+			casus_belli = viking_invasion
+		}
+	}
+}
+
+character_event = {
+	id = HA.27
+	hide_window = yes
+	is_triggered_only = yes #on_war_ended_victory
+	
+	trigger = {
+		FROM = {
+			has_character_flag = is_ubbe_spawn
+			NOT = { has_global_flag = ubbe_won }
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			set_global_flag = ubbe_won
+			grant_title_no_opinion = d_norfolk
+			capital = c_norfolk
+			if = {
+				limit = {
+					c_163109 = {
+						is_alive = yes
+						age > 33
+					}
+				}
+				set_father = c_163109
+			}
+		}
+	}
+}

@@ -1,0 +1,202 @@
+namespace = INV
+
+character_event = {
+	id = INV.1
+	title = TITLE_INV1
+	desc = DESC_INV1
+	picture = GFX_evt_emissary_byzantine
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:invited_diplomat = {
+			random_list = {
+				10 = {
+					change_diplomacy = 4
+				}
+				20 = {
+					change_diplomacy = 3
+				}
+				30 = {
+					change_diplomacy = 2
+				}
+				40 = {
+					change_diplomacy = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OPTA_INV1
+		trigger = {
+			OR = {
+				NOT = {
+					any_courtier_or_vassal = {
+						has_job_title = diplomat
+					}
+				}
+				job_chancellor = {
+					diplomacy <= 10
+				}
+			}
+		}
+		event_target:invited_diplomat = {
+			give_job_title = job_chancellor
+		}
+	}
+	
+	option = {
+		name = OPTB_INV1
+	}
+	
+	option = {
+		name = OPTC_INV1
+		hidden_tooltip = {
+			event_target:invited_diplomat = {
+				death = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = INV.2
+	title = TITLE_INV2
+	desc = DESC_INV2
+	picture = GFX_evt_emissary_byzantine
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:invited_spy = {
+			random_list = {
+				10 = {
+					change_intrigue = 4
+				}
+				20 = {
+					change_intrigue = 3
+				}
+				30 = {
+					change_intrigue = 2
+				}
+				40 = {
+					change_intrigue = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OPTA_INV1
+		trigger = {
+			OR = {
+				NOT = {
+					any_courtier_or_vassal = {
+						has_job_title = spymaster
+					}
+				}
+				job_chancellor = {
+					intrigue <= 10
+				}
+			}
+		}
+		event_target:invited_spy = {
+			give_job_title = job_spymaster
+		}
+	}
+	
+	option = {
+		name = OPTB_INV1
+	}
+	
+	option = {
+		name = OPTC_INV1
+		hidden_tooltip = {
+			event_target:invited_diplomat = {
+				death = yes
+			}
+		}
+	}
+}
+
+#PLC jews
+character_event = {
+	id = INV.3
+	title = TITLE_INV3
+	desc = DESC_INV3
+	picture = GFX_evt_emissary_byzantine
+	is_triggered_only = yes
+	
+	trigger = {
+		HIGHER_REAL_TIER_THAN = BARON
+		any_owned_bloodline = {
+			has_bloodline_flag = plc_bloodlineflag
+		}
+	}
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 5
+			trait = kind
+		}
+		modifier = {
+			factor = 5
+			trait = humble
+		}
+		modifier = {
+			factor = 0.2
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.5
+			trait = proud
+		}
+		modifier = {
+			factor = 3
+			trait = cynical
+		}
+		modifier = {
+			factor = 10
+			trait = sympathy_judaism
+		}
+		modifier = {
+			factor = 0.00001
+			has_character_modifier = no_jews
+		}
+	}
+	
+	immediate = {
+		create_random_skilled_jew = yes
+	}
+	
+	option = {
+		name = OPTA_INV3
+		wealth = 20
+	}
+	
+	option = {
+		name = OPTB_INV3
+		piety = 50
+		random = {
+			chance = 30
+			add_trait = humble
+		}
+	}
+	
+	option = {
+		name = OPTC_INV3
+		piety = -10
+		random = {
+			chance = 15
+			add_trait = zealous
+		}
+		hidden_tooltip = {
+			event_target:invited_jew = {
+				death = yes
+			}
+		}
+	}
+}

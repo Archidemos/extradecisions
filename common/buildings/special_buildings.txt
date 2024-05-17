@@ -1,0 +1,80 @@
+castle = {
+	
+	#Cretan Fort
+#	fort_crete = {
+#		desc = fort_crete_desc
+#		add_number_to_name = no
+#		potential = {
+#			FROMFROM = { title = b_iraklio }
+#		}
+#		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+#		gold_cost = 350
+#		build_time = 785
+#		
+#		tax_income = 2
+#		galleys = 15
+#		light_infantry = 150
+#		heavy_infantry = 150
+#		archers = 100
+#		siege_defence = 0.2
+#		
+#		
+#		ai_creation_factor = 99
+#		extra_tech_building_start = 1.1
+#	}
+	
+	dutch_polder = {
+		desc = dutch_polder_desc
+		add_number_to_name = no
+		potential = {
+			ROOT = { 
+				OR = {
+					culture = dutch
+					has_building = dutch_polder
+				}
+				OR = {
+					province = c_holland
+					province = c_westfriesland
+				}
+			}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 400
+		build_time = 800
+		
+		tax_income = 4
+		siege_defence = 0.1
+		
+		ai_creation_factor = 80
+		extra_tech_building_start = 2
+	}
+
+}
+
+city = {
+	
+	#Gotland/Visby Walls (It even has a 3d model in vanilla so why not)
+	visby_wall = {
+		desc = visby_wall_desc
+		add_number_to_name = no
+		potential = {
+			ROOT = { province = c_gotland }
+			FROMFROM = { is_capital = yes }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = swedish
+					culture = norse
+				}
+				is_republic = yes
+			}
+		}
+		gold_cost = 500
+		build_time = 750
+		galleys = 15
+		levy_size = 0.2
+		tradevalue = 15
+	}
+}

@@ -1,0 +1,310 @@
+namespace = CAB
+
+# Investigations into the temple
+character_event = {
+	id = CAB.1
+	title = CAB_TITLE_1
+	desc = CAB_DESC_1
+	picture = GFX_evt_leaning_tower
+	
+	is_triggered_only = yes # decision
+	
+	option = {
+		name = CAB1OPTA
+		piety = 10
+		wealth = -50
+		character_event = { id = CAB.2 months = 12 }
+	}
+	
+	#nevermind
+	option = {
+		name = CAB1OPTB
+		wealth = 100
+		piety = -50
+		clr_character_flag = cabbage_quest_ongoing
+	}
+}
+
+#Tomb of the great sage
+character_event = {
+	id = CAB.2
+	title = CAB_TITLE_2
+	desc = CAB_DESC_2
+	
+	picture = GFX_evt_pagan_artifacts
+	
+	is_triggered_only = yes
+	
+	#Rotten cabbage found
+	option = {
+		name = CAB2OPTA
+		add_learning = 1
+		piety = 30
+		custom_tooltip = { text = PROGRESS_CABBAGE_QUEST_TT_1 }
+		character_event = { id = CAB.3 months = 3 }
+	}
+}
+
+#Look throughout temple
+character_event = {
+	id = CAB.3
+	title = CAB_TITLE_3
+	desc = CAB_DESC_3
+	
+	picture = GFX_evt_open_book_hf
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = CAB3OPTA
+		wealth = -50
+		add_learning = 1
+		character_event = { id = CAB.4 years = 2 }
+	}
+}
+
+#Find disciple of the sage
+character_event = {
+	id = CAB.4
+	title = CAB_TITLE_4
+	desc = CAB_DESC_4
+	
+	picture = GFX_evt_emissary_indo_aryan_group
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			    random_traits = no
+				name = "Cabbage"
+				dynasty = 0
+				religion = ROOT
+				culture = georgian
+				race = cabbage
+				female = no
+				age = 60
+				health = 8
+				fertility = 0
+
+				attributes = {
+					martial = 0
+					diplomacy = 0
+					stewardship = 15
+					intrigue = 12
+					learning = 15
+				}
+
+				add_trait = mastermind_theologian
+				add_trait = patient
+				add_trait = zealous
+				add_trait = scholar
+				add_trait = chaste
+				add_trait = temperate
+				add_trait = gardener
+				add_trait = eunuch
+				add_trait = strong
+		}
+	}
+	
+	option = {
+		name = CAB4OPTA
+		character_event = { id = CAB.5 years = 1 }
+		custom_tooltip = { text  = PROGRESS_CABBAGE_QUEST_TT_2 }
+		new_character = {
+			give_nickname = nick_cabbage_sage
+			save_event_target_as = cabbage_sage
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = cabbage_sage
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+
+#training to be a cabbage
+character_event = {
+	id = CAB.5
+	title = CAB_TITLE_5
+	desc = CAB_DESC_5
+	
+	picture = GFX_evt_fishing
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:cabbage_sage
+	
+	option = {
+		name = CAB5OPTA
+		random = {
+			chance = 50
+			add_trait = patient
+		}
+		random = {
+			chance = 20
+			add_trait = chaste
+		}
+		event_target:cabbage_sage = {
+			opinion = {
+				name = opinion_swayed_2
+				who = ROOT
+				years = 5
+			}
+		}
+		character_event = { id = CAB.6 years = 2 }
+		piety = 50
+	}
+}
+
+
+#become cabbage
+character_event = {
+	id = CAB.6
+	title = CAB_TITLE_6
+	desc = CAB_DESC_6
+	
+	picture = GFX_evt_danse_macabre
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:cabbage_sage
+	
+	option = {
+		name = CAB6OPTA
+		random_list = {
+			50 = {
+				add_trait = stressed
+			}
+			10 = {
+				add_trait = depressed 
+			}
+		}
+		custom_tooltip = {
+			text = PROGRESS_CABBAGE_QUEST_TT_3
+			set_graphical_culture = cabbage
+		}
+		character_event = { id = CAB.7 years = 2 }
+	}
+	
+	option = {
+		name = CAB6OPTB
+		add_trait = content
+		custom_tooltip = {
+			text = PROGRESS_CABBAGE_QUEST_TT_3
+			set_graphical_culture = cabbage
+		}
+		set_character_flag = cabbage_quest_content
+	}
+}
+
+#more Zzz training
+character_event = {
+	id = CAB.7
+	title = CAB_TITLE_7
+	desc = CAB_DESC_7
+	
+	is_triggered_only = yes
+	
+	picture = GFX_evt_garden
+	
+	portrait = event_target:cabbage_sage
+	
+	option = {
+		name = CAB7OPTA
+		piety = 100
+		random_list = {
+			50 = {
+				change_learning = 1
+			}
+			50 = {
+				change_stewardship = 1
+			}
+		}
+		character_event = { id = CAB.8 months = 10 }
+	}
+}
+
+#strugges
+character_event = {
+	id = CAB.8
+	title = CAB_TITLE_8
+	desc = CAB_DESC_8
+	
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:cabbage_sage
+	
+	option = {
+		name = CAB8OPTA
+		random = {
+			chance = 30
+			add_trait = lunatic
+		}
+		random = {
+			chance = 10
+			add_trait = possessed
+		}
+		custom_tooltip = {
+			text = PROGRESS_CABBAGE_QUEST_TT_4
+		}
+		character_event = { id = CAB.9 months = 2 }
+	}
+}
+
+narrative_event = {
+	id = CAB.9
+	title = CAB_TITLE_9
+	desc = CAB_DESC_9
+	
+	picture = GFX_evt_a_crowning_ceremony
+	
+	is_triggered_only = yes
+	
+	portrait = event_target:cabbage_sage
+	
+	option = {
+		name = CAB9OPTA
+		wealth = 300
+		add_trait = gardener
+		add_character_modifier = {
+			name = cabbage_sage
+			duration = -1
+		}
+		create_bloodline = {
+			type = cabbage_bloodline
+			inheritance = patrilineal
+		}
+		give_nickname = nick_cabbage_sage
+		custom_tooltip = {
+			text = PROGRESS_CABBAGE_QUEST_TT_5
+		}
+		set_global_flag = cabbage_quest_completed_good
+	}
+	
+	#global broadcast
+	after = {
+		any_player = {
+			limit = { NOT = { character = ROOT } } 
+			narrative_event = { id = CAB.10 } 
+		}
+	}
+}
+
+#global broadcast
+narrative_event = {
+	id = CAB.10
+	title = CAB_TITLE_10
+	desc = CAB_DESC_10	
+	
+	picture = GFX_evt_a_crowning_ceremony
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = CAB10OPTA
+	}
+}

@@ -1,0 +1,391 @@
+decisions = {
+## 100 year war
+
+	form_angevin_empire = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 24
+		
+		potential = {
+			has_landed_title = k_england
+			OR = {
+				culture = english
+				culture = norman
+				culture = frankish
+			}
+			NOT = { has_global_flag = angevin_formed }
+		}
+		
+		allow = {
+			has_landed_title = k_england
+			completely_controls = d_normandy
+			completely_controls = d_anjou
+			completely_controls = d_aquitaine
+			completely_controls = d_poitou
+			independent = yes
+			wealth = 500
+			prestige = 2000
+		}
+		
+		effect = {
+			wealth = -500
+			prestige = 1000
+			
+			add_claim = d_valois
+			add_claim = d_berry
+			add_claim = d_champagne
+			add_claim = d_blois
+			add_claim = d_picardie
+			
+			add_character_modifier = {
+				name = angevin_fervor
+				duration = -1
+			}
+			
+			k_england = {
+				set_coa = k_angevin_empire
+			}
+			
+			set_global_flag = angevin_formed
+		}
+	}
+	
+	england_flag = {
+		ai = no
+		ai_check_interval = 1200
+		
+		potential = {
+			has_global_flag = angevin_formed
+			has_landed_title = k_england
+			NOT = { has_global_flag = flag_england }
+		}
+		
+		allow = { war = no }
+		
+		effect = {
+			reset_coa = k_england
+			set_global_flag = flag_england
+		}
+	}
+
+## Viking age
+
+	form_danelaw = {
+		is_high_prio = yes
+		only_rulers = yes
+		ai_check_interval = 12
+		
+		potential = {
+			culture_group = north_germanic
+			LOWER_REAL_TIER_THAN = KING
+			any_realm_province = {
+				is_capital = yes
+				de_jure_liege_or_above = k_england
+			}
+			NOT = { has_global_flag = danelaw_formed }
+		}
+		
+		allow = {
+			wealth = 400
+			completely_controls = d_york
+			completely_controls = d_cumbria
+			completely_controls = d_northumberland
+			completely_controls = c_lancaster
+			completely_controls = c_lincoln
+			religion_group = pagan_group
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -400
+			prestige = 500
+			
+			narrative_event = { id = NOR.1 }
+			
+			primary_title = {
+				save_event_target_as = formable
+			}
+			
+			activate_title = {
+				title = k_danelaw
+				status = yes
+			}
+			
+			k_danelaw = {
+				show_scope_change = no
+				grant_title = ROOT
+				copy_title_laws = event_target:formable
+			}
+			
+			hidden_effect = {	
+				d_york = { de_jure_liege = k_danelaw }
+				d_northumberland = { de_jure_liege = k_danelaw }
+				d_cumbria = { de_jure_liege = k_danelaw }
+				k_danelaw = { de_jure_liege = e_britannia }
+			}
+			set_global_flag = danelaw_formed
+		}
+	}
+	
+		sail_for_england_germanic = { #norway/denmark each get 1 free claim on england respectively
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 120
+		
+		potential = {
+			k_england = { is_titular = no }
+			OR = {
+				religion = reformed_norse_pagan
+				religion = norse_pagan
+			}
+			culture_group = north_germanic
+			OR = {
+				k_norway = { is_primary_holder_title = yes }
+				k_denmark = { is_primary_holder_title = yes }
+			}
+			AND = {
+				has_landed_title = k_norway
+				has_landed_title = k_denmark
+			}
+			NOR = {
+				has_landed_title = k_england
+				has_landed_title = k_danelaw
+				
+				has_dynasty_flag = invaded_england_germanic_dyn
+			}
+			NAND = {
+				k_norway = { has_title_flag = invaded_england_germanic }
+				k_denmark = { has_title_flag = invaded_england_germanic }
+			}
+			NOT = { has_claim = k_england }
+		}
+		
+		allow = {
+			prestige = 1500
+			piety = 500
+		}
+		
+		effect = {
+			primary_title = { set_title_flag = invaded_england_germanic }
+			set_dynasty_flag = invaded_england_germanic_dyn
+			prestige = -1500
+			piety = -500
+			add_claim = k_england
+		}
+	}
+	
+	sail_for_england_christian = { #norway/denmark each get 1 free claim on england respectively
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 120
+		
+		potential = {
+			k_england = { is_titular = no }
+			religion = catholic
+			culture_group = north_germanic
+			has_landed_title = k_norway
+			has_landed_title = k_denmark
+			OR = {
+				k_norway = { is_primary_holder_title = yes }
+				k_denmark = { is_primary_holder_title = yes }
+			}
+			NOR = {
+				has_landed_title = k_england
+				has_landed_title = k_danelaw
+				
+				has_dynasty_flag = invaded_england_christian_dyn
+			}
+			NAND = {
+				k_norway = { has_title_flag = invaded_england_christian }
+				k_denmark = { has_title_flag = invaded_england_christian }
+			}
+			NOT = { has_claim = k_england }
+		}
+		
+		allow = {
+			prestige = 2000
+			piety = 500
+			k_england = {
+				holder_scope = {
+					show_scope_change = no
+					war = yes
+					any_war = {
+						war_title = k_england
+					}
+				}
+			}
+		}
+		
+		effect = {
+			primary_title = { set_title_flag = invaded_england_christian }
+			set_dynasty_flag = invaded_england_christian_dyn
+			prestige = -1500
+			piety = -500
+			add_claim = k_england
+		}
+	}
+}
+
+title_decisions = {
+
+	integrate_to_danelaw = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 12
+		
+		filter = owned
+		ai_target_filter = owned
+		
+		potential = {
+			ROOT = {
+				region = custom_england
+				de_jure_liege = k_england
+				tier == DUKE
+				holder = FROM
+			}
+			FROM = {
+				OR = {
+					has_landed_title = k_danelaw
+					AND = {
+						tier = DUKE
+						defacto_liege_title = { title = k_danelaw }
+					}
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				show_scope_change = no
+				wealth = 100
+				piety = 50
+				prestige = 200
+				war = no
+				trigger_if = {
+					limit = { has_landed_title = k_danelaw }
+					independent = yes
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					k_england = { is_titular = yes }
+				}
+				prestige = 1000
+			}
+			FROM = {
+				wealth = -100
+				piety = -50
+				prestige = -200
+			}
+			ROOT = {
+				show_scope_change = no
+				de_jure_liege = k_danelaw
+			}
+		}
+	}
+	
+	integrate_to_england = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 12
+		
+		filter = owned
+		ai_target_filter = owned
+		
+		potential = {
+			ROOT = {
+				region = custom_england
+				de_jure_liege = k_danelaw
+				tier == DUKE
+				holder = FROM
+			}
+			FROM = {
+				tier >= DUKE
+				OR = {
+					de_jure_liege = k_england
+					has_landed_title = k_england
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				show_scope_change = no
+				wealth = 50
+				war = no
+				trigger_if = {
+					limit = { has_landed_title = k_england }
+					independent = yes
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				wealth = -50
+				piety = 50
+				prestige = 50
+			}
+			ROOT = {
+				show_scope_change = no
+				de_jure_liege = k_england
+			}
+			if = {
+				limit = {
+					k_danelaw = { is_titular = yes }
+				}
+				if = {
+					limit = { k_danelaw = { has_holder = yes } }
+					destroy_landed_title = k_danelaw
+				}
+				activate_title = {
+					title = k_danelaw
+					status = no
+				}
+				if = {
+					limit = {
+						has_game_rule = { name = title_bloodlines_rule value = enabled }
+						start_date < 936.1.1
+					}
+					narrative_event = { id = FORM.101 days = 5 }
+				}
+				set_global_flag = danelaw_crushed
+			}
+		}
+	}
+}
+
+
+targetted_decisions = {
+
+	embrace_anglo_norse = {
+		ai_check_interval = 12
+		filter = self
+		
+		potential = {
+			has_global_flag = anglo_norse_enabled
+			culture = norse
+			liege = { culture = anglo_norse }
+			NOT = { culture = anglo_norse }
+			capital_scope = {
+				region = custom_england
+			}
+		}
+		
+		allow = {
+			prestige = 150
+			war = no
+		}
+		
+		effect = {
+			prestige = -150
+			culture = anglo_norse
+			any_child = {
+				culture = anglo_norse
+			}
+		}
+	}
+}

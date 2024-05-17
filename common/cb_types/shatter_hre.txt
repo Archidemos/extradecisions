@@ -1,0 +1,155 @@
+shatter_hre_cb = { #too many triggers my ass!
+	name = CB_NAME_SHATTER_HRE
+	war_name = WAR_NAME_SHATTER_HRE
+	sprite = 1 #temp gonna add new
+	diplo_view_region = world_europe_west_germania
+	sort_priority = 100000
+	truce_days = 10950
+	is_permanent = yes
+	is_independence = no
+	hostile_against_others = no
+	allow_whitepeace = no
+	allowed_to_target_suzerains = no
+	allowed_to_target_tributaries = no
+	allow_distant = no
+	display_on_map = no
+	infamy_modifier = 3
+	
+	check_de_jure_tier = EMPEROR
+	check_all_titles = no
+	
+	attacker_ai_victory_worth = { factor = -1 }
+	attacker_ai_defeat_worth = { factor = 100 } 
+	defender_ai_victory_worth = { factor = -1 }
+	defender_ai_defeat_worth = { factor = 100 }
+	
+	battle_warscore_mult = 1.2
+	att_ticking_war_score_multiplier = 0.7
+	def_ticking_war_score_multiplier = 3.0
+	max_attacker_occupation_score = 50
+	max_attacker_battle_score = 75
+	defender_unoccupied_warscore = yes
+	
+	can_use = {
+		ROOT = {
+			trait = ambitious
+			start_date > 769.1.1 ##Gonna cause issues across the board with how 769 HRE works.
+			NOT = { dynasty = 25061 }
+		}
+		
+		
+		ROOT = {
+			tier = EMPEROR
+			NOT = { has_landed_title = e_hre }
+		}
+		
+		FROM = {
+			has_landed_title = e_hre
+		}
+	}
+	
+	can_use_title = {
+		title = e_hre
+	}
+	
+	can_use_gui = {
+		ROOT = {
+			prestige = 10000
+			realm_size > 300
+			martial = 15
+			trigger_if = {
+				limit = {
+					NOT = { religion = FROM }
+				}
+				piety = 1000
+			}
+			religion_group = christian
+		}
+		FROM = { 
+			wealth > 0
+			prestige < 10000
+			realm_size > 300
+		}
+	}
+	
+	is_valid = {
+		ROOT = {
+			NOT = { has_landed_title = e_hre }
+		}
+	}
+	
+	on_add = {
+		ROOT = {
+			prestige = -5000
+			if = {
+				limit = {
+					NOT = { religion = FROM }
+				}
+				piety = -1000
+			}
+		}
+		FROM = {
+			narrative_event = { id = FORM.10 } #Ask princes for support
+			if = {
+				limit = { FROM = { ai = yes } }
+				character_event = { id = FORM.11 } #cause it need they dough
+			}
+		}
+	}
+	
+	on_success = {
+		ROOT = {
+			prestige = 5000
+		}
+		FROM = {
+			prestige = -5000
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 2
+				min = 500
+			}
+			random_artifact = {
+				limit = {
+					artifact_type = crown_hre
+				}
+				transfer_artifact = {
+					from = PREV
+					to = ROOT
+				}
+			}
+			narrative_event = { id = FORM.12 } #ask to revert to germania dejure
+		}
+		any_player = {
+			narrative_event = { id = FORM.13 }
+		}
+	}
+	
+	on_success_title = {
+		FROM = {
+			any_demesne_title = {
+				limit = { tier = EMPEROR }
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+	}
+	
+	on_reverse_demand = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -2500
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 5
+				min = 1000
+			}
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 2500
+		}
+	}
+	
+	on_attacker_leader_death = { end_war = invalid } 
+	
+	ai_will_do = { factor = 15 }
+}

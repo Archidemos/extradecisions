@@ -1,0 +1,174 @@
+decisions = {
+	
+	study_quran = {
+		ai_check_interval = 120
+		is_high_prio = yes
+		is_in_society = yes
+		
+		potential = {
+			society_member_of = monastic_order_ibadi
+			society_rank = 2
+			NOT = { has_character_modifier = studying_quran_cooldown }
+		}
+		
+		allow = {
+			is_incapable = no
+			in_command = no
+			is_abroad = no
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+			trigger_if = {
+				limit = {
+					ai = no
+				}
+				wealth = 25
+			}
+		}
+		
+		effect = {
+			wealth = -25
+			set_character_flag = do_not_disturb
+			add_character_modifier = {
+				name = studying_quran
+				duration = -1
+			}
+			add_character_modifier = {
+				name = studying_quran_cooldown
+				years = 5
+				hidden = yes
+			}
+			character_event = { id = MUSLIM.10 }
+		}
+	}
+	
+	invite_imam = {
+		ai_check_interval = 240
+		is_in_society = yes
+		
+		potential = {
+			society_member_of = monastic_order_ibadi
+			society_rank = 3
+		}
+		
+		allow = {
+			society_currency = 300
+			in_seclusion = no
+		}
+		
+		effect = {
+			change_society_currency = -300
+			create_character = {
+				random_traits = no
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+
+				attributes = {
+					martial = 3
+					diplomacy = 3
+					stewardship = 3
+					intrigue = 3
+					learning = 8
+				}
+			}
+			
+			new_character = { save_event_target_as = invited_imam }
+			character_event = { id = MUSLIM.500 }
+		}
+	}
+}
+
+targeted_decisions = {
+	
+	monastic_order_learn_lifestyle = {
+		filter = self
+		ai_check_interval = 120
+		is_in_society = yes
+		
+		potential = {
+			society_rank = 4
+			society_member_of = monastic_order_ibadi
+		}
+		
+		allow = {
+			is_incapable = no
+			in_command = no
+			trigger_if = {
+				limit = { has_lifestyle_learning_trigger = yes }
+				society_currency = 150
+			}
+			trigger_if = {
+				limit = { has_lifestyle_learning_trigger = no }
+				society_currency = 500
+			}
+			trigger_if = {
+				limit = {
+					has_any_lifestyle_trait = yes
+					has_lifestyle_learning_trigger = no
+				}
+				NOT = { custom_tooltip = { text = has_non_learning_lifestyle } }
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					has_lifestyle_learning_trigger = yes
+				}
+				change_society_currency = -150
+				character_event = { id = MUSLIM.200 }
+			}
+			else = {
+				change_society_currency = -500
+				character_event = { id = MUSLIM.100 }
+			}
+		}
+	}
+	
+	negotiate_decadence = {
+		filter = dynasty
+		ai_check_interval = 120
+		is_in_society = yes
+		
+		from_potential = {
+			society_member_of = monastic_order_ibadi
+			society_rank = 2
+		}
+		
+		potential = {
+			trait = decadent
+			NOT = { has_character_modifier = decadence_negotiation_cooldown }
+		}
+		
+		allow = {
+			FROM = {
+				show_scope_change = no
+				piety = 100
+				society_currency = 200
+				in_seclusion = no
+				is_incapable = no
+				trigger_if = {
+					limit = { trait = decadent }
+					NOT = { trait = decadent }
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				show_scope_change = no
+				piety = -100
+				change_society_currency = -200
+				character_event = { id = MUSLIM.400 }
+			}
+			add_character_modifier = {
+				name = decadence_negotiation_cooldown
+				years = 3
+				hidden = yes
+			}
+		}
+	}
+}
