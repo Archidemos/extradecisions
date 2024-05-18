@@ -2544,6 +2544,8 @@ pagan_group = {
 
 			light_infantry_offensive = 0.3
 			light_infantry_defensive = 0.2
+			archers_offensive = 0.2
+			archers_defensive = 0.2
 			
 			key = "DEF_RELIGION"
 		}
@@ -2668,7 +2670,8 @@ pagan_group = {
 			levy_size = 0.2
 			
 			heavy_infantry_offensive = 0.2
-			heavy_infantry_defensive = 0.2	
+			heavy_infantry_defensive = 0.2
+			heavy_infantry_morale = 0.1
 			
 			key = "OFF_RELIGION"
 		}
@@ -2734,7 +2737,7 @@ pagan_group = {
 		unit_modifier = {
 			garrison_size = 0.4
 
-			heavy_infantry_offensive = 0.2
+			light_infantry_defensive = 0.2
 			heavy_infantry_defensive = 0.2
 				
 			key = "DEF_RELIGION"
@@ -2793,8 +2796,10 @@ pagan_group = {
 			garrison_size = 0.2
 			levy_size = 0.2
 
-			light_cavalry_offensive = 0.1
-			heavy_infantry_defensive = 0.1
+			heavy_infantry_offensive = 0.1
+			heavy_infantry_morale = 0.1
+			light_infantry_offensive = 0.1
+			light_infantry_morale = 0.1
 			
 			key = "OFF_RELIGION"
 		}
@@ -2857,14 +2862,15 @@ pagan_group = {
 		unit_modifier = {
 			garrison_size = 0.4
 
-			light_cavalry_offensive = 0.1
-			heavy_infantry_defensive = 0.1
+			heavy_infantry_offensive = 0.1
+			light_infantry_offensive = 0.1
 				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			
+			heavy_infantry_defensive = 0.5
+			heavy_infantry_morale = 0.5	
 			garrison_size = 0.4
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
@@ -2923,14 +2929,17 @@ pagan_group = {
 		unit_modifier = {
 			garrison_size = 0.4
 
-			light_cavalry_defensive = 0.1
+			light_infantry_offensive = 0.1
+			light_infantry_defensive = 0.2
 			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
 				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			light_infantry_defensive = 0.4
+			light_infantry_defensive = 0.5
+			light_infantry_morale = 0.5
 			pikemen_defensive = 0.4
 			light_cavalry_defensive = 0.5
 			knights_defensive = 0.5
@@ -2991,14 +3000,15 @@ pagan_group = {
 		unit_modifier = {
 			garrison_size = 0.4
 			
-			light_cavalry_defensive = 0.1
-			heavy_infantry_offensive = 0.2
+			light_infantry_offensive = 0.1
+			light_infantry_defensive = 0.2
 				
 			key = "DEF_RELIGION"
 		}
 		unit_home_modifier = {
 			land_morale = 0.8
-			
+			light_infantry_defensive = 0.5
+			light_infantry_morale = 0.5		
 			garrison_size = 0.4
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
@@ -3389,6 +3399,24 @@ jewish_group = {
 		join_crusade_if_bordering_hostile = yes
 		can_grant_invasion_cb = invasion
 		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_defensive = 0.2
+			heavy_infantry_defensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.5
+			heavy_infantry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}	
+		
 		priests_can_marry = yes
 		
 		religious_clothing_head = 7
@@ -3419,7 +3447,26 @@ jewish_group = {
 		
 		character_modifier = {
 			stewardship = 4
-		}				
+		}
+		
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_defensive = 0.2
+			heavy_infantry_defensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.5
+			heavy_infantry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+		
 		priests_can_marry = yes
 		
 		religious_clothing_head = 7
@@ -3451,6 +3498,24 @@ jewish_group = {
 		character_modifier = {
 			stewardship = 4
 		}			
+
+		unit_modifier = {		
+			garrison_size = 0.2
+			levy_size = 0.1
+			light_infantry_defensive = 0.2
+			heavy_infantry_defensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			land_morale = 0.8
+			light_infantry_defensive = 0.5
+			heavy_infantry_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		priests_can_marry = yes
 		
@@ -3515,10 +3580,24 @@ indian_group = {
 		caste_opinions = yes
 		castes = yes
 		
-		unit_modifier = {
+		unit_modifier = {		
 			land_morale = 0.3
-
-			key = "OFF_RELIGION"
+			garrison_size = 0.2
+			levy_size = 0.1
+			horse_archers_offensive = 0.1
+			camel_cavalry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		
 		religious_clothing_head = 8
@@ -3567,6 +3646,27 @@ indian_group = {
 		female_temple_holders = yes
 		max_consorts = 3
 		castes = yes
+
+		unit_modifier = {		
+			land_morale = 0.3
+			garrison_size = 0.2
+			levy_size = 0.1
+			war_elephants_offensive = 0.10
+			heavy_infantry_offensive = 0.10
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			war_elephants_offensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 
 		short_reign_opinion_year_mult = 0 # No short reign penalty
 		
@@ -3623,6 +3723,27 @@ indian_group = {
 		max_consorts = 3
 		castes = yes
 
+		unit_modifier = {		
+			land_morale = 0.3
+			garrison_size = 0.2
+			levy_size = 0.1
+			war_elephants_offensive = 0.10
+			war_elephants_defensive = 0.10
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			light_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_cavalry_defensive = 0.5
+			knights_defensive = 0.5
+			war_elephants_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
+
 		short_reign_opinion_year_mult = 0 # No short reign penalty
 		
 		religious_clothing_head = 9
@@ -3674,6 +3795,28 @@ indian_group = {
 		max_consorts = 3
 		
 		short_reign_opinion_year_mult = 0 # No short reign penalty
+
+		unit_modifier = {		
+			land_morale = 0.3
+			garrison_size = 0.3
+			levy_size = 0.1
+			light_infantry_offensive = 0.1
+			pikemen_offensive = 0.1
+			heavy_infantry_offensive = 0.2
+			
+			key = "DEF_RELIGION"
+		}
+		unit_home_modifier = {
+			heavy_infantry_defensive = 0.4
+			pikemen_defensive = 0.4
+			light_infantry_offensive = 0.5
+			light_infantry_morale = 0.5
+			knights_defensive = 0.5
+			
+			garrison_size = 0.4
+			
+			key = "DEF_RELIGION_HOME_TERRITORY"
+		}
 		
 		religious_clothing_head = 10
 		religious_clothing_priest = 10
