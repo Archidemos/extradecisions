@@ -1,33 +1,80 @@
-decisions = {
-	open_mp_menu = {
+targetted_decisions = {
+	convert_piety_prestige = {
+		filter = self
+		ai_target_filter = self
 		ai = no
-		only_playable = yes
+	    diplomacy_icon = GFX_stable_prestige_icon_decision
 		
 		potential = {
+			character = FROM
 			is_playable = yes
-			NOT = { government = merchant_republic_government }
-		}
-		
-		allow = {
-			NOT = { has_character_modifier = mp_shop_cooldown }
-			independent = yes
-			prisoner = no
-			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			higher_tier_than = BARON
 		}
 
-		effect = {
-			custom_tooltip = {
-				text = mp_shop_description
-				hidden_tooltip = {
-					ROOT = {
-						narrative_event = { id = MPSHOP.001 }
-					}
-				}
-			}
+		allow = {
+			prestige = 60
 		}
 		
-		ai_will_do = {
-			factor = 0
+		effect = {
+			FROM = {
+				prestige = -60
+				piety = 50
+			}
+		}
+	}
+	
+	convert_prestige_piety = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+	    diplomacy_icon = GFX_stable_prestige_icon_decision
+		
+		potential = {
+			character = FROM
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			higher_tier_than = BARON
+		}
+
+		allow = {
+			piety = 60
+		}
+		
+		effect = {
+			FROM = {
+				piety = -60
+				prestige = 50
+			}
+		}
+	}
+	study_character = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+	    diplomacy_icon = GFX_stable_prestige_icon_decision
+		
+		potential = {
+			character = FROM
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			higher_tier_than = BARON
+		}
+
+		allow = {
+			prestige = 500
+		}
+		
+		effect = {
+			prestige = -500
+			FROM = {
+				military_techpoints = 100
+				culture_techpoints = 100
+				economy_techpoints = 100
+			}
 		}
 	}
 }

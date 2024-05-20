@@ -458,6 +458,7 @@ christian = {
 		pentarchy = yes
 		can_excommunicate = yes
 		can_grant_divorce = yes
+		can_grant_claim = yes
 		can_grant_invasion_cb = invasion
 		can_call_crusade = yes
 		priests_can_inherit = no
@@ -1695,6 +1696,11 @@ pagan_group = {
 		evil_god_names = {
 			THE_DARK_SPIRITS
 		}
+
+		character_modifier = {
+			martial = 1
+		}	
+		
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
 		priest_title = PRIEST
@@ -1737,7 +1743,7 @@ pagan_group = {
 		} 
 		
 		character_modifier = {
-			martial = 1
+			martial = 2
 		}	
 		
 		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
@@ -1889,6 +1895,7 @@ pagan_group = {
 		
 		character_modifier = {
 			martial = 1
+			intrigue = 1
 		}	
 		
 		unit_modifier = {
@@ -1971,6 +1978,7 @@ pagan_group = {
 		}
 		character_modifier = {
 			martial = 1
+			intrigue = 1
 		}		
 		
 		crusade_name = GREAT_HOLY_WAR
@@ -2047,6 +2055,7 @@ pagan_group = {
 		}
 		character_modifier = {
 			stewardship = 1
+			martial = 1
 		}	
 		priests_can_marry = yes
 		female_temple_holders = yes
@@ -2102,6 +2111,7 @@ pagan_group = {
 		}
 		character_modifier = {
 			stewardship = 1
+			martial = 1
 		}		
 		priests_can_marry = yes
 		female_temple_holders = yes
@@ -2173,7 +2183,8 @@ pagan_group = {
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		character_modifier = {
-			stewardship = 1
+			martial = 1
+			learning = 1
 		}			
 		priests_can_marry = yes
 		female_temple_holders = yes
@@ -2235,8 +2246,9 @@ pagan_group = {
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 		character_modifier = {
-			stewardship = 1
-		}			
+			martial = 1
+			learning = 1
+		}		
 		priests_can_marry = yes
 		female_temple_holders = yes
 		defensive_attrition = yes
@@ -2304,6 +2316,10 @@ pagan_group = {
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
 		priest_title = PRIEST
+
+		character_modifier = {
+			martial = 1
+		}
 		
 		priests_can_marry = yes
 		max_consorts = 3
@@ -2352,6 +2368,10 @@ pagan_group = {
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
 		priest_title = PRIEST
+
+		character_modifier = {
+			martial = 1
+		}
 		
 		priests_can_marry = yes
 		peace_prestige_loss = yes # Lose Prestige while at peace
@@ -2394,10 +2414,6 @@ pagan_group = {
 			GOD_VELES CHERNOBOG
 		}
 		
-		character_modifier = {
-			martial = 1
-		}	
-		
 		unit_modifier = {		 		#Special features are added via reformation. If HF is not installed, default features are applied on reformed religion by event.
 			garrison_size = 0.2
 			levy_size = 0.2
@@ -2419,9 +2435,12 @@ pagan_group = {
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
+		
 		character_modifier = {
 			martial = 1
+			diplomacy = 1
 		}			
+		
 		priests_can_marry = yes
 		female_temple_holders = yes
 		can_call_crusade = yes
@@ -2482,9 +2501,12 @@ pagan_group = {
 			
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
+		
 		character_modifier = {
 			martial = 1
-		}			
+			diplomacy = 1
+		}	
+		
 		priests_can_marry = yes
 		female_temple_holders = yes
 		defensive_attrition = yes
@@ -2689,6 +2711,7 @@ pagan_group = {
 
 		character_modifier = {
 			learning = 1
+			martial = 1
 		}					
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
@@ -3102,6 +3125,7 @@ zoroastrian_group = {
 		}
 		character_modifier = {
 			stewardship = 1
+			diplomacy = 1
 		}					
 		can_grant_divorce = yes
 		can_call_crusade = yes
@@ -3176,6 +3200,11 @@ zoroastrian_group = {
 		}
 		
 		parent = zoroastrian
+
+		character_modifier = {
+			learning = 1
+			diplomacy = 1
+		}
 		
 		can_grant_divorce = yes
 		can_call_crusade = yes
@@ -3252,6 +3281,11 @@ zoroastrian_group = {
 		female_temple_holders = yes
 		
 		parent = zoroastrian
+
+		character_modifier = {
+			martial = 1
+			diplomacy = 1
+		}	
 		
 		can_grant_divorce = yes
 		priests_can_inherit = no
@@ -3323,6 +3357,10 @@ zoroastrian_group = {
 		}
 		
 		parent = zoroastrian
+
+		character_modifier = {
+			diplomacy = 2
+		}	
 		
 		can_grant_divorce = yes
 		can_call_crusade = yes

@@ -1,7 +1,9 @@
 carolingian = {
+	martial = 1
+	diplomacy = 1
 	combat_rating = 10
 	catholic_opinion = 5
-	monthly_character_prestige = 0.2
+	bloodline_effect_castellan = 1 
 	bloodline_effect_great_heroes_appear = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -10,13 +12,9 @@ carolingian = {
 }
 
 ragnarr_lodbrok = {
+	martial = 1
 	combat_rating = 10
-	norse_opinion = 5
-	viking_opinion = 5
-	pirate_opinion = 5
-	ravager_opinion = 5
-	seaking_opinion = 5
-	sea_queen_opinion = 5
+	general_opinion = -5
 	bloodline_effect_always_viking = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -25,10 +23,12 @@ ragnarr_lodbrok = {
 }
 
 seljuk = {
+	martial = 1
+	stewardship = 1
 	combat_rating = 5
 	turkish_opinion = 5
 	persian_opinion = 5
-	strategist_opinion = 5
+	bloodline_effect_peace_prosperity = 1
 	monthly_character_prestige = 0.1
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
@@ -51,10 +51,9 @@ william_the_conqueror = {
 
 genghis_khan = {
 	combat_rating = 10
-	mongol_opinion = 10
-	hunter_opinion = 5
+	general_opinion = -5
 	monthly_character_prestige = 0.2
-	bloodline_effect_sky_burial = 1
+	bloodline_effect_bloodline_mercenary_traditions = 1
 	bloodline_effect_ambition = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -66,8 +65,10 @@ el_cid = {
 	combat_rating = 5
 	iberian_opinion = 5
 	muslim_opinion = 5
-	martial = 1
+	martial = 2
+	diplomacy = 1
 	bloodline_effect_ambition = 1
+	bloodline_effect_cheap_reconquista = 1
 	command_modifier = {
 		morale_defence = 0.05
 	}
@@ -78,13 +79,15 @@ el_cid = {
 }
 
 timur = {
+	martial = 1
 	combat_rating = 5
-	mongol_opinion = 5
+	general_opinion = -5
 	clubfooted_opinion = 5
 	monthly_character_prestige = 0.1
 	command_modifier = {
 		morale_offence = 0.05
 	}
+	bloodline_effect_murder_burn = 1
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -93,10 +96,12 @@ timur = {
 }
 
 ghaznavid = {
+	martial = 1
+	stewardship
 	combat_rating = 5
 	turkish_opinion = 5
-	afghan_opinion = 10
 	monthly_character_prestige = 0.1
+	bloodline_effect_murder_burn = 1
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -107,8 +112,9 @@ ghaznavid = {
 pala = {
 	indo_aryan_group_opinion = 5
 	monthly_character_prestige = 0.1
+	martial = 1
 	diplomacy = 1
-	learning = 1
+	bloodline_effect_peace_prosperity = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_buddhist
@@ -120,6 +126,7 @@ chola = {
 	war_elephants_morale = 0.05
 	monthly_character_prestige = 0.1
 	bloodline_effect_faster_hindu = 1
+	martial = 1
 	learning = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -129,8 +136,9 @@ chola = {
 
 saladin = {
 	muslim_opinion = 5
-	martial = 1
+	martial = 2
 	bloodline_effect_ambition = 1
+	bloodline_effect_peace_prosperity = 1
 	command_modifier = {
 		morale_defence = 0.05
 	}
@@ -144,6 +152,9 @@ saladin = {
 rurik = {
 	east_slavic_opinion = 5
 	monthly_character_prestige = 0.1
+	diplomacy = 2
+	martial = 1
+	bloodline_effect_prestige_sacrifice = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_norse
@@ -154,6 +165,7 @@ boleslaw_the_brave = {
 	combat_rating = 5
 	polish_opinion = 5
 	brave_opinion = 5
+	diplomacy = 2
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -165,6 +177,8 @@ boleslaw_the_brave = {
 
 richard_lionheart = {
 	combat_rating = 5
+	martial = 1
+	diplomacy = 1
 	catholic_opinion = 5
 	monthly_character_piety = 0.1
 	inheritance = patrilineal
@@ -175,6 +189,8 @@ richard_lionheart = {
 }
 
 alienor_of_aquitaine = {
+	martial = 1
+	intrigue = 1
 	combat_rating = 5
 	general_opinion = 5
 	bloodline_effect_great_heroes_appear = 1
@@ -189,6 +205,7 @@ alexander_nevsky = {
 	russian_opinion = 5
 	orthodox_opinion = 5
 	build_time_modifier = -0.1
+	bloodline_effect_castellan = 1 
 	stewardship = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -197,9 +214,9 @@ alexander_nevsky = {
 }
 
 william_wallace = {
-	combat_rating = 8
+	combat_rating = 10
 	scottish_opinion = 5
-	martial = 1
+	martial = 2
 	command_modifier = {
 		morale_defence = 0.05
 		morale_offence = 0.05
@@ -214,7 +231,7 @@ harald_fairhair = {
 	norwegian_opinion = 5
 	norse_opinion = 5
 	fair_opinion = 5
-	diplomacy = 1
+	diplomacy = 2
 	martial = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -223,9 +240,10 @@ harald_fairhair = {
 }
 
 arpad = {
+	martial = 1
 	combat_rating = 5
 	hungarian_opinion = 5
-	ambitious_opinion = 5
+	bloodline_effect_murder_burn = 1
 	bloodline_effect_ambition = 1
 	monthly_character_prestige = 0.1
 	inheritance = patrilineal
@@ -235,10 +253,10 @@ arpad = {
 }
 
 basil = {
-	greek_opinion = 5
 	orthodox_opinion = 5
 	monthly_character_prestige = 0.1
 	diplomacy = 2
+	bloodline_effect_peace_prosperity = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_roman
@@ -250,6 +268,7 @@ alexios_komnenos = {
 	greek_opinion = 5
 	learning = 1
 	monthly_character_prestige = 0.1
+	bloodline_effect_castellan = 1 
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_roman
@@ -257,6 +276,7 @@ alexios_komnenos = {
 }
 
 dyre = {
+	martial = 1
 	combat_rating = 5
 	slavic_pagan_opinion = 5
 	slavic_pagan_reformed_opinion = 5
@@ -273,6 +293,8 @@ zvonimir = {
 	monthly_character_prestige = 0.1
 	diplomacy = 1
 	general_opinion = 5
+	bloodline_effect_castellan = 1 
+	bloodline_effect_peace_prosperity = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol_2
@@ -282,7 +304,8 @@ zvonimir = {
 brian_boru = {
 	combat_rating = 5
 	irish_opinion = 5
-	martial = 1
+	martial = 2
+	health = 1
 	monthly_character_prestige = 0.1
 	bloodline_effect_tanistry = 1
 	inheritance = patrilineal
@@ -306,6 +329,7 @@ songtsen_gampo = {
 }
 
 merovingian = {
+	martial = 2
 	old_frankish_opinion = 5
 	frankish_opinion = 5
 	monthly_character_prestige = 0.1
@@ -320,11 +344,11 @@ merovingian = {
 }
 
 solomon = {
-	east_african_opinion = 5
 	jewish_group_opinion = 5
-	miaphysite_opinion = 5
+	bloodline_effect_castellan = 1
 	monthly_character_prestige = 0.1
 	stewardship = 1
+	learning = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_jewish
@@ -332,10 +356,10 @@ solomon = {
 }
 
 attila = {
+	martial = 1
 	combat_rating = 10
-	bolghar_opinion = 5
 	bulgarian_opinion = 5
-	monthly_character_prestige = 0.1
+	bloodline_effect_murder_burn = 1
 	horse_archers_morale = 0.1
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
@@ -345,12 +369,12 @@ attila = {
 }
 
 ashina = {
+	martial = 1
 	combat_rating = 5
 	monthly_character_prestige = 0.2
 	tengri_pagan_opinion = 5
-	tengri_pagan_reformed_opinion = 5
 	horse_archers_offensive = 0.1
-	altaic_opinion = 5
+	bloodline_effect_murder_burn = 1
 	bloodline_effect_bloodline_mercenary_traditions = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -362,7 +386,8 @@ bagratid = {
 	armenian_opinion = 5
 	georgian_opinion = 5
 	bloodline_effect_ambition = 1
-	learning = 1
+	learning = 2
+	bloodline_effect_peace_prosperity = 1
 	monthly_character_prestige = 0.1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -376,6 +401,7 @@ parthian = {
 	monthly_character_prestige = 0.2
 	martial = 1
 	bloodline_effect_great_heroes_appear = 1
+	bloodline_effect_prestige_sacrifice = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_zoroastrian
@@ -415,6 +441,7 @@ vortigern = {
 		morale_defence = 0.05
 	}
 	levy_reinforce_rate = 0.05
+	bloodline_effect_murder_burn = 1
 	cruel_opinion = 5
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -441,6 +468,7 @@ alfonso_portugal = {
 	portuguese_opinion = 5
 	stewardship = 2
 	build_cost_modifier = -0.1
+	bloodline_effect_cheap_reconquista = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol
@@ -454,6 +482,7 @@ alfonso_spain = {
 	command_modifier = {
 		morale_offence = 0.05
 	}
+	bloodline_effect_cheap_reconquista = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol_2
@@ -465,6 +494,8 @@ james = {
 	monthly_character_prestige = 0.1
 	catalan_opinion = 5
 	occitan_opinion = 5
+	bloodline_effect_cheap_reconquista = 1
+	bloodline_effect_castellan = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol_2
@@ -475,6 +506,8 @@ garcia = {
 	combat_rating = 5
 	monthly_character_prestige = 0.1
 	basque_opinion = 5
+	bloodline_effect_cheap_reconquista = 1
+	bloodline_effect_peace_prosperity = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol_2
@@ -484,6 +517,7 @@ garcia = {
 muhammad_the_victorious = {
 	monthly_character_prestige = 0.1
 	andalusian_arabic_opinion = 5
+	martial = 2
 	command_modifier = {
 		religious_enemy = 0.05
 	}
@@ -495,7 +529,7 @@ muhammad_the_victorious = {
 }
 
 mansa_musa = {
-	monthly_character_prestige = 0.2
+	bloodline_effect_peace_prosperity = 1
 	manden_opinion = 5
 	build_time_modifier = -0.1
 	build_cost_modifier = -0.1
@@ -507,6 +541,7 @@ mansa_musa = {
 }
 
 bohemond = {
+	martial = 1
 	combat_rating = 5
 	monthly_character_prestige = 0.1
 	command_modifier = {
@@ -562,7 +597,8 @@ ottoman = {
 	combat_rating = 10
 	martial = 2
 	monthly_character_prestige = 0.2
-	turkish_opinion = 10
+	general_opinion = -5
+	bloodline_effect_murder_burn = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_sunni
@@ -572,6 +608,7 @@ ottoman = {
 dandolo = {
 	town_opinion = 10
 	stewardship = 2
+	bloodline_effect_castellan = 1
 	byzantine_opinion = -5
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -581,6 +618,8 @@ dandolo = {
 
 almohad = {
 	combat_rating = 5
+	martial = 1
+	learning = 1
 	bloodline_effect_ambition = 1
 	monthly_character_prestige = 0.1
 	maghreb_arabic_opinion = 5
@@ -594,6 +633,7 @@ baibars = {
 	combat_rating = 5
 	monthly_character_prestige = 0.1
 	egyptian_arabic_opinion = 5
+	bloodline_effect_castellan = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_sunni
@@ -603,6 +643,7 @@ baibars = {
 arwa = {
 	monthly_character_piety = 0.1
 	bedouin_arabic_opinion = 5
+	bloodline_effect_peace_prosperity = 1
 	inheritance = matrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_sunni
@@ -611,7 +652,9 @@ arwa = {
 
 philippe_capet = {
 	combat_rating = 5
+	stewardship = 1
 	monthly_character_piety = 0.1
+	bloodline_effect_peace_prosperity = 1
 	command_modifier = {
 		religious_enemy = 0.05
 	}
@@ -622,10 +665,13 @@ philippe_capet = {
 }
 
 barbarossa = {
-	combat_rating = 5
 	diplomacy = 1
 	martial = 1
 	monthly_character_prestige = 0.2
+	command_modifier = {
+		religious_enemy = 0.05
+	}
+	bloodline_effect_grand_crusader = 1
 	german_opinion = 5
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -634,6 +680,7 @@ barbarossa = {
 }
 
 premyslid = {
+	martial = 1
 	combat_rating = 5
 	monthly_character_prestige = 0.1
 	bohemian_opinion = 5
@@ -653,6 +700,7 @@ almoravid = {
 	bloodline_effect_ambition = 1
 	command_modifier = {
 		cavalry_leader = 0.1
+		religious_enemy = 0.1
 	}
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -661,6 +709,7 @@ almoravid = {
 }
 
 bayajidda_and_magajiva = {
+	martial = 1
 	combat_rating = 5
 	hausa_opinion = 5
 	bloodline_effect_enatic_cognatic = 1
@@ -674,9 +723,11 @@ bayajidda_and_magajiva = {
 }
 
 great_conqueror_male = {
+	martial = 1
 	combat_rating = 10
 	monthly_character_prestige = 0.25
 	vassal_opinion = 5
+	health = 1
 	bloodline_effect_great_heroes_appear = 1
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -685,9 +736,12 @@ great_conqueror_male = {
 }
 
 great_conqueror_female = {
+	martial = 1
+	intrigue = 1
 	combat_rating = 10
 	monthly_character_prestige = 0.25
 	vassal_opinion = 5
+	health = 2
 	bloodline_effect_great_heroes_appear = 1
 	inheritance = matrilineal
 	allow_bastards = yes
@@ -783,6 +837,7 @@ rudolph = {
 	german_opinion = 5
 	bloodline_effect_great_heroes_appear = 1
 	martial = 1
+	diplomacy = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_lion
@@ -797,6 +852,8 @@ rudolph = {
 
 fatimid = {
 	monthly_character_prestige = 0.25
+	martial = 1
+	stewardship = 1
 	shiite_opinion = 5
 	combat_rating = 5
 	bloodline_effect_great_heroes_appear = 1
@@ -826,11 +883,11 @@ otto = {
 
 jannabid = {
 	monthly_character_prestige = 0.25
-	qarmatian_opinion = 5
 	general_opinion = -5
 	combat_rating = 10
-	martial = 1
+	martial = 2
 	bloodline_effect_qarmatian_leader = 1
+	bloodline_effect_murder_burn = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_lion
