@@ -8927,13 +8927,13 @@ muslim_invasion = {
 
 	can_use_gui = {
 		ROOT = {
-			piety = 1000
+			piety = 2500
 		}
 	}
 	
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		ROOT = { piety = -1000 }
+		ROOT = { piety = -2500 }
 		if = {
 			limit = { defender = { is_offmap_governor = offmap_china } }
 			attacker = {  
@@ -9166,7 +9166,7 @@ muslim_invasion = {
 	on_invalidation = {
 		ROOT = {
 			show_scope_change = no
-			piety = 1000
+			piety = 2500
 		}
 	}
 

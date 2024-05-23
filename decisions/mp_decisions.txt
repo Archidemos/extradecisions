@@ -14,13 +14,13 @@ targetted_decisions = {
 		}
 
 		allow = {
-			prestige = 60
+			piety = 60
 		}
 		
 		effect = {
 			FROM = {
-				prestige = -60
-				piety = 50
+				piety = -60
+				prestige = 50
 			}
 		}
 	}
@@ -40,13 +40,13 @@ targetted_decisions = {
 		}
 
 		allow = {
-			piety = 60
+			prestige = 60
 		}
 		
 		effect = {
 			FROM = {
-				piety = -60
-				prestige = 50
+				prestige = -60
+				piety = 50
 			}
 		}
 	}
@@ -66,6 +66,7 @@ targetted_decisions = {
 
 		allow = {
 			prestige = 500
+			NOT = { has_character_modifier = cooldown_library }
 		}
 		
 		effect = {
@@ -74,6 +75,10 @@ targetted_decisions = {
 				military_techpoints = 100
 				culture_techpoints = 100
 				economy_techpoints = 100
+				add_character_modifier = {
+					modifier = cooldown_library
+					months = 2
+				}
 			}
 		}
 	}

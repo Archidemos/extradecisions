@@ -2509,6 +2509,7 @@ scripted_invasion = {
 	sprite = 7
 	truce_days = 3650
 	hostile_against_others = yes
+	check_de_jure_tier = KING
 	can_ask_to_join_war = no
 	allow_whitepeace = no
 	is_permanent = no
@@ -2517,46 +2518,8 @@ scripted_invasion = {
 	
 	sort_priority = 2000
 
-	can_use = {
-		ROOT = {
-			mercenary = no
-			NOT = { government = ar_theocracy_government }
-		}
-		NOT = { government = ar_theocracy_government }
-	}
-
-	
-	can_use_title = {
-		OR = {
-			FROM = {
-				has_landed_title = PREV
-			}
-			holder_scope = {
-				is_liege_or_above = FROM
-			}
-		}
-	}
-	
-	is_valid_title = {
-		OR = {
-			FROM = {
-				has_landed_title = PREV
-			}
-			holder_scope = {
-				is_liege_or_above = FROM
-			}
-		}
-	}
-
-	on_add = {
-		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		if = {
-			limit = { defender = { is_offmap_governor = offmap_china } }
-			attacker = {  
-				sound_effect = china_angered_emperor
-				detract_grace_super_huge_effect = yes 
-			}
-		}
+	is_valid = {
+		always = yes
 	}
 
 	on_success = {
@@ -2627,40 +2590,57 @@ scripted_invasion = {
 	}
 
 	on_success_title = {
-		custom_tooltip = {
-			text = invasion_succ_tip
+		custom_tooltip = { 
+			text = tribal_invasion_succ_tip
 			hidden_tooltip = {
-				usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-				FROM = { set_defacto_liege = ROOT }
+				FROM = {
+					random_realm_province = {
+						limit = {
+							de_jure_liege_or_above = PREVPREV
+							OR = {
+								NOT = { culture = ROOT }
+								NOT = { religion = ROOT }
+							}
+						}
+						culture = ROOT
+						religion = ROOT
+					}
+				}
+				FROM = {
+					usurp_title = { target = ROOT type = host }
+				}
+				ROOT = {
+					occupy_minors_of_occupied_settlements = FROM
+					gain_all_occupied_titles = { who = FROM type = invasion }
+					vassalize_or_take_under_title_destroy_duchies = {
+						title = PREV
+						enemy = FROM
+						type = invasion
+					}
+					
+					# Settle the special invasion forces
+					disband_event_forces = prepared_invasion
+					grant_title_no_opinion = PREV
+					any_demesne_title = {
+						limit = { tier = BARON }
+						remove_holding_modifier = recently_conquered
+						refill_holding_levy = yes
+					}
+				}
+				
 				if = {
 					limit = {
 						FROM = { is_liege_or_above = ROOT }
 					}
 					FROM = { imprison = ROOT }
 				}
-				if = {
-					limit = {
-						any_independent_ruler = {
-							has_character_flag = preserve_vassal_structure_@ROOT
-						}
-					}
-					any_independent_ruler = {
-						limit = {
-							has_character_flag = preserve_vassal_structure_@ROOT
-						}
-						set_defacto_liege = ROOT
-					}
-				}
-				ROOT = {
-					any_vassal = {
-						clr_character_flag = preserve_vassal_structure_@ROOT
-					}
-				}
 			}
 		}
+		
 		FROM = {
 			unsafe_destroy_landed_title = e_hre
 		}
+		
 		if = {
 			limit = {
 				higher_tier_than = BARON
@@ -2669,131 +2649,16 @@ scripted_invasion = {
 			hidden_tooltip = { conquest_culture = ROOT }
 		}
 		
-		if = {
-			limit = { ROOT = { character = 140 } }
+		hidden_tooltip = {
+			add_law = succ_primogeniture
 			ROOT = {
-				if = {
+				any_vassal = {
 					limit = {
-						has_dlc = "Holy Fury"
-						NOT = {
-							any_owned_bloodline = {
-								has_bloodline_flag = william_the_conqueror_bloodline
-							}
-						}
+						culture = saxon
 					}
-					create_bloodline = {
-						type = william_the_conqueror
-					}
-				}
-			}
-			hidden_tooltip = {
-				add_law = succ_primogeniture
-				ROOT = {
-					any_vassal = {
-						limit = {
-							culture = saxon
-						}
-						opinion = {
-							modifier = opinion_subjugated 
-							who = ROOT
-						}
-					}
-					if = {
-						limit = { # Help AI William by usurping extra land
-							ai = yes
-						}
-						d_bedford = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_canterbury = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_cornwall = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_somerset = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_gloucester = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_norfolk = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-					}
-					if = {
-						limit = {
-							c_middlesex = {
-								holder_scope = {
-									character = ROOT
-								}
-							}
-						}
-						c_middlesex = {
-							capital_holding = {
-								ROOT = { capital = PREV }
-							}
-						}
+					opinion = {
+						modifier = opinion_subjugated 
+						who = ROOT
 					}
 				}
 			}
@@ -2840,7 +2705,7 @@ scripted_invasion = {
 
 
 	attacker_ai_victory_worth = {
-		factor = 150
+		factor = -1
 	}
 	
 	attacker_ai_defeat_worth = {
@@ -3261,136 +3126,6 @@ scripted_invasion_umayyad = {
 			}
 			hidden_tooltip = { conquest_culture = ROOT }
 		}
-		
-		if = {
-			limit = { ROOT = { character = 140 } }
-			ROOT = {
-				if = {
-					limit = {
-						has_dlc = "Holy Fury"
-						NOT = {
-							any_owned_bloodline = {
-								has_bloodline_flag = william_the_conqueror_bloodline
-							}
-						}
-					}
-					create_bloodline = {
-						type = william_the_conqueror
-					}
-				}
-			}
-			hidden_tooltip = {
-				add_law = succ_primogeniture
-				ROOT = {
-					any_vassal = {
-						limit = {
-							culture = saxon
-						}
-						opinion = {
-							modifier = opinion_subjugated 
-							who = ROOT
-						}
-					}
-					if = {
-						limit = { # Help AI William by usurping extra land
-							ai = yes
-						}
-						d_bedford = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_canterbury = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_cornwall = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_somerset = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_gloucester = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-						d_norfolk = {
-							usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							any_de_jure_vassal_title = {
-								limit = {
-									holder_scope = {
-										culture = saxon
-										ai = yes # But not from players
-										same_realm = ROOT
-									}
-								}
-								usurp_title_plus_barony_if_unlanded = { target = ROOT type = invasion }
-							}
-						}
-					}
-					if = {
-						limit = {
-							c_middlesex = {
-								holder_scope = {
-									character = ROOT
-								}
-							}
-						}
-						c_middlesex = {
-							capital_holding = {
-								ROOT = { capital = PREV }
-							}
-						}
-					}
-				}
-			}
-		}
 
 		hidden_tooltip = {
 			check_if_reconquista_finished_effect = yes
@@ -3433,7 +3168,7 @@ scripted_invasion_umayyad = {
 
 
 	attacker_ai_victory_worth = {
-		factor = 150
+		factor = -1 # always accept
 	}
 	
 	attacker_ai_defeat_worth = {

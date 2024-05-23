@@ -66,6 +66,7 @@ narrative_event = {
 		add_character_modifier = { name = hre_curse_2 duration = -1 }
 		add_character_modifier = { name = hre_curse_3 duration = -1 }
 		add_character_modifier = { name = hre_curse_4 duration = -1 }
+		save_event_target_as = is_hre_emperor_crisis
 		hidden_tooltip = {
 			c_90104 = {
 				add_claim = e_hre
@@ -270,18 +271,17 @@ narrative_event = {
 		
 		new_character = {
 			save_event_target_as = hre_invader_mission
-			wealth = 1000
+			wealth = 1500
 			prestige = 500
 			piety = 500
 			remove_trait = slow
 			remove_trait = imbecile
 			remove_trait = weak
 			remove_trait = feeble
-			government = tribal_government
 			character_event = { id = HREAR.11 }
 		}
 		
-		259 = {
+		848 = {
 			kingdom = {
 				event_target:hre_invader_mission = {
 					unsafe_war = {
@@ -291,7 +291,8 @@ narrative_event = {
 					}
 				}
 			}
-		}
+		}		
+		
 		any_playable_ruler = {
 			limit = { ai = no }
 			if = {
@@ -315,17 +316,16 @@ character_event = {
 	immediate = {
 		create_title = {
 			name = "HRE_INVASION_MISSION_ARMY"
-			adventurer = yes
 			tier = DUKE
 			landless = yes
 			culture = ROOT
 			holder = ROOT
+			temporary = yes
 		}
 		
 		spawn_unit = {
-			province = 259
-			troops =
-			{
+			province = 848
+			troops = {
 				light_cavalry = { 500 500 }
 				archers = { 2500 2500 }
 				light_infantry = { 2000 2000 }
@@ -333,9 +333,8 @@ character_event = {
 		}
 
 		spawn_unit = {
-			province = 259
-			troops =
-			{
+			province = 848
+			troops = {
 				light_cavalry = { 500 500 }
 				archers = { 2500 2500 }
 				light_infantry = { 2000 2000 }
@@ -343,9 +342,8 @@ character_event = {
 		}
 		
 		spawn_unit = {
-			province = 259
-			troops =
-			{
+			province = 848
+			troops = {
 				light_cavalry = { 500 500 }
 				archers = { 2500 2500 }
 				light_infantry = { 2000 2000 }
@@ -353,9 +351,8 @@ character_event = {
 		}
 		
 		spawn_unit = {
-			province = 259
-			troops =
-			{
+			province = 848
+			troops = {
 				light_cavalry = { 500 500 }
 				archers = { 2500 2500 }
 				light_infantry = { 2000 2000 }
