@@ -234,6 +234,22 @@ narrative_event = {
             }
             narrative_event = { id = LT.40007 }
         }
+		if = {
+			limit = { ai = yes }
+			add_random_commander_trait_effect = yes
+			spawn_unit = {
+				owner = ROOT
+				province = capital_scope
+				home = ROOT
+				match_character = 1282
+				match_mult = 0.5
+				
+				attrition = 1.0
+				disband_on_peace = yes
+				maintenance = no
+			}
+		}
+		ai_chance = { factor = 80 }
     }
 
     option = {
@@ -246,6 +262,7 @@ narrative_event = {
                 }
             }
         }
+		ai_chance = { factor = 20 }
     }
 }
 
@@ -467,6 +484,98 @@ narrative_event = {
                 unsafe_destroy_landed_title = THIS
             }
             ## Grant titles ##
+			# Frisia #
+			if = {
+				limit = {
+					any_vassal = {
+						has_landed_title = d_holland
+					}
+				}
+				d_holland = {
+                    holder_scope = {
+                        grant_title_no_opinion = k_frisia
+                        save_event_target_as = frisia_king
+                    }
+                }
+                any_vassal = {
+                    limit = {
+						OR = {
+							de_jure_liege_or_above = k_frisia
+							capital_scope = { region = custom_frisia }
+						}
+                    }
+                    set_defacto_liege = event_target:frisia_king
+                }
+            }
+			else_if = {
+                limit = {
+                    any_vassal = {
+                        has_landed_title = c_holland
+                    }
+                }
+                c_holland = {
+                    holder_scope = {
+                        grant_title_no_opinion = k_frisia
+                        save_event_target_as = frisia_king
+                    }
+                }
+                any_vassal = {
+                    OR = {
+						de_jure_liege_or_above = k_frisia
+						capital_scope = { region = custom_frisia }
+					}
+                    set_defacto_liege = event_target:frisia_king
+                }
+            }
+			#Transfer Zeeland
+			if = {
+				limit = {
+					has_landed_title = c_zeeland
+					NOT = { de_facto_liege = event_target:frisia_king }
+				}
+				event_target:frisia_king = {
+					grant_title_no_opinion = c_zeeland
+				}
+			}
+            # Franconia #
+            if = {
+                limit = {
+                    any_vassal = {
+                        has_landed_title = d_franconia
+                    }
+                }
+                d_franconia = {
+                    holder_scope = {
+                        grant_title_no_opinion = k_franconia_otto
+                        save_event_target_as = franconia_king
+                    }
+                }
+                any_vassal = {
+                    limit = {
+                        de_jure_liege = k_franconia_otto
+                    }
+                    set_defacto_liege = event_target:franconia_king
+                }
+            }
+            else_if = {
+                limit = {
+                    any_vassal = {
+                        has_landed_title = c_wurzburg
+                    }
+                }
+                c_wurzburg = {
+                    holder_scope = {
+                        grant_title_no_opinion = k_franconia_otto
+                        save_event_target_as = franconia_king
+                    }
+                }
+                any_vassal = {
+                    limit = {
+                        de_jure_liege = k_franconia_otto
+                    }
+                    set_defacto_liege = event_target:franconia_king
+                }
+            }
             # Franconia #
             if = {
                 limit = {
@@ -637,6 +746,58 @@ narrative_event = {
                 }
                 set_defacto_liege = THIS
             }
+			# Buff Dithmarschen
+			if = {
+				limit = {
+					d_holstein = { holder_scope = { is_republic = yes } }
+				}
+				d_holstein = {
+					holder_scope = {
+						save_event_target_as = dithmarschen_mayor
+					}
+				}
+				d_holstein = { set_name = "Dithmarschen" }
+			}
+			event_target:dithmarschen_mayor = {
+				wealth = 500
+				spawn_unit = {
+					owner = event_target:dithmarschen_mayor
+					province = capital_scope
+
+					troops = {
+						archers = { 350 350 }
+						light_infantry = { 1500 1500 }
+						heavy_infantry = { 500 500 }
+						light_cavalry = { 125 125 }
+						knights = { 25 25 }
+					}
+
+					attrition = 1.0
+					disband_on_peace = no
+					cannot_inherit = no
+					earmark = dithmarschen_free_army
+					maintenance_multiplier = 0
+				}
+				capital_holding = {
+					add_building = ct_wall_q_1
+					add_building = ct_wall_q_2
+					add_building = ct_wall_1
+					add_building = ct_wall_2
+					add_building = ct_rep_arsenal_1
+					add_building = ct_rep_arsenal_2
+					add_building = ct_training_grounds_1
+					add_building = ct_training_grounds_2
+					add_building = ct_training_grounds_3
+					add_building = ct_barracks_1
+					add_building = ct_barracks_2
+					add_building = ct_barracks_3
+					add_building = ct_wall_3
+				}
+				grant_title_no_opinion = b_itzehoe
+				capital_scope = {
+					add_holding_slot = 1
+				}
+			}
             # Deactivate Titles
             activate_title = {
                 title = k_germany
@@ -875,6 +1036,7 @@ narrative_event = {
     title = EVTTITLE_LT_40013
     picture = GFX_evt_large_army
     border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
     is_triggered_only = yes
 
     trigger = {
@@ -918,6 +1080,7 @@ narrative_event = {
     only_playable = yes
     prisoner = no
     war = no
+	sound = ar_papal_hymn
 
     trigger = {
         NOT = {
@@ -1044,6 +1207,7 @@ narrative_event = {
     border = GFX_event_narrative_frame_war
     is_triggered_only = yes
     portrait = event_target:sultan_egypt
+	sound = ar_army_marching
 
     min_age = 16
     only_playable = yes

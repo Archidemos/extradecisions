@@ -3030,7 +3030,14 @@ scripted_invasion_umayyad = {
 			limit = { NOT = { character = ROOT } }
 			hidden_tooltip = { participation_scaled_prestige = 200 }
 		}
-		
+		clr_global_flag = umayyad_crisis_1
+		clr_global_flag = umayyad_crisis_2
+		clr_global_flag = umayyad_crisis_3
+		FROM = {
+			remove_character_modifier = umayyad_curse_1
+			remove_character_modifier = umayyad_curse_2
+			remove_character_modifier = umayyad_curse_3
+		}		
 		hidden_tooltip = {
 			FROM = {
 				any_vassal = {

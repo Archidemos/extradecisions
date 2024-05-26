@@ -381,25 +381,20 @@ narrative_event = {
 
 character_event = {
     id = HREAR.13
-    only_playable = yes
     hide_window = yes
     is_triggered_only = yes
 
     trigger = {
-		ROOT = {
-			OR = {
-				NOT = { has_landed_title = e_hre }
-				NOT = { has_landed_title = e_france }
-			}
+		NOR = {
+			has_landed_title = e_hre
+			has_landed_title = e_france
 		}
     }
 
     immediate = {
-		FROMFROM = {
-			remove_character_modifier = hre_curse_1
-			remove_character_modifier = hre_curse_2
-			remove_character_modifier = hre_curse_3
-			remove_character_modifier = hre_curse_4
-		}
+		remove_character_modifier = hre_curse_1
+		remove_character_modifier = hre_curse_2
+		remove_character_modifier = hre_curse_3
+		remove_character_modifier = hre_curse_4
     }
 }

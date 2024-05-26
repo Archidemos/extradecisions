@@ -61,6 +61,7 @@ character_event = {
 			}
 			religion_group = muslim
 			has_global_flag = umayyad_crisis_1
+			independent = yes
 		}
     }
 
@@ -92,6 +93,7 @@ character_event = {
 			}
 			religion_group = muslim
 			has_global_flag = umayyad_crisis_2
+			independent = yes
 		}
     }
 
@@ -123,6 +125,7 @@ character_event = {
 			}
 			religion_group = muslim
 			has_global_flag = umayyad_crisis_3
+			independent = yes
 		}
     }
 
@@ -165,6 +168,7 @@ narrative_event = {
 	
 	portrait = character_umayyad_crisis
 	picture = GFX_evt_mecca_falls_soa
+	sound = ar_arabs_lose
 	
     trigger = {
 		start_date <= 936.8.7
@@ -185,17 +189,18 @@ narrative_event = {
 	title = UMMNAME7
 	desc = UMMDESC7
 	
-	picture = GFX_evt_moors
+	picture = "GFX_evt_mass_crusade"
 	border = GFX_event_narrative_frame_war
+	sound = ar_crusade_shout
 
     is_triggered_only = yes
 	
 	option = {
 		name = EVTOPUMM.7
 		create_character = {
-			name="Umar"
-			culture = maghreb_arabic
-			religion = sunni
+			name="Rodrigo"
+			culture = castillan
+			religion = catholic
 			age = 32
 			dynasty = random
 			random_traits = yes
@@ -266,8 +271,8 @@ character_event = {
 			troops =
 			{
 				light_cavalry = { 1000 1000 }
-				horse_archers = { 2500 2500 }
-				light_infantry = { 1500 1500 }
+				light_infantry = { 2500 2500 }
+				knights = { 1500 1500 }
 			}
 		}
 
@@ -276,9 +281,34 @@ character_event = {
 			troops =
 			{
 				light_cavalry = { 1000 1000 }
-				horse_archers = { 2500 2500 }
-				light_infantry = { 1500 1500 }
+				light_infantry = { 2500 2500 }
+				knights = { 1500 1500 }
 			}
 		}
+	}
+}
+
+character_event = {
+	id = UMM.100
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			NOR = {
+				has_landed_title = k_andalusia
+				has_landed_title = e_cordoba
+			}
+			OR = {
+				has_landed_title = k_andalusia
+				independent = no
+			}
+		}
+	}
+	
+	immediate = {
+		remove_character_modifier = umayyad_curse_1
+		remove_character_modifier = umayyad_curse_2
+		remove_character_modifier = umayyad_curse_3
 	}
 }
