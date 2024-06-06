@@ -1,9 +1,9 @@
-namespace = MUG
+namespace = ILKH
 
 narrative_event = {
-	id = MUG.100
-	title = "EVTNAMEMUG100"
-	desc = "EVTDESCMUG100"
+	id = ILKH.100
+	title = "EVTNAME60001"
+	desc = "EVTDESC60001"
 	major = yes
 	hide_from = yes
 	is_triggered_only = yes
@@ -21,14 +21,14 @@ narrative_event = {
 		OR = {
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = ilkhanate_invasion
 					value = random
 				}
 				total_years_played = 50
 			}
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = ilkhanate_invasion
 					value = delayed_random
 				}
 				year = 1066
@@ -36,35 +36,35 @@ narrative_event = {
 			}
 			AND = {
 				has_game_rule = {
-					name = mughal_invasion
+					name = ilkhanate_invasion
 					value = test
 				}
 				year = 769
 			}
 		}
-		NOT = { has_global_flag = mughal_invades }
+		NOT = { has_global_flag = ilkhanate_arrival }
 		NOR = {
 			year = 1074
 			has_game_rule = {
-				name = mughal_invasion
+				name = ilkhanate_invasion
 				value = off
 			}
 		}
-		controls_religion = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
 	}
 	
 	immediate = {
-			set_global_flag = mughal_invades
-			activate_title = { title = e_mughals status = yes }
+			set_global_flag = ilkhanate_arrival
+			activate_title = { title = e_il-khanate status = yes }
 			
 			if = {
 				limit = {
-					has_global_flag = babur_born
+					has_global_flag = ilkhanate_born
 				}
 				if = {
 					limit = {
 						any_independent_ruler = {
-							has_character_flag = is_babur
+							has_character_flag = ilkhanate_himself
 							demesne_size = 1
 							ai = yes
 						}
@@ -72,7 +72,7 @@ narrative_event = {
 					log = "Temujin exists as independent ai"
 					random_independent_ruler = {
 						limit = {
-							has_character_flag = is_babur
+							has_character_flag = ilkhanate_himself
 							ai = yes
 						}
 						any_demesne_title = {
@@ -81,9 +81,9 @@ narrative_event = {
 							}
 							set_title_flag = to_be_destroyed
 						}
-						e_mughals = {
+						e_il-khanate = {
 							grant_title = PREV
-							add_law = succ_turkish_succession
+							add_law = succ_mongol_succession
 						}
 						any_demesne_title = {
 							limit = {
@@ -95,20 +95,20 @@ narrative_event = {
 						wealth = 12000
 						prestige = 10000
 						set_character_flag = is_special_character
-						set_character_flag = babur_invader
-						character_event = { id = MUG.103 } # Spawn troops
-						character_event = { id = MUG.104 days = 1 } # Spawn population
+						set_character_flag = ilkhanate_invader
+						character_event = { id = ILKH.103 } # Spawn troops
+						character_event = { id = ILKH.104 days = 1 } # Spawn population
 						if = {
 							limit = {
 								has_dlc = "Holy Fury"
 								NOT = {
 									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_mughals_line
+										has_bloodline_flag = genghis_khan_line
 									}
 								}
 							}
 							create_bloodline = {
-								type = bloodline_mughals
+								type = genghis_khan
 							}
 						}
 					}
@@ -117,7 +117,7 @@ narrative_event = {
 				if = {
 					limit = {
 						NOT = {
-							e_mughals = {
+							e_il-khanate = {
 								holder_scope = {
 									always = yes
 								}
@@ -127,11 +127,11 @@ narrative_event = {
 					log = "Real Temujin didn't recieve title"
 					create_character = {
 						random_traits = yes
-						dynasty=1069093
-						religion = sunni
-						culture = turkish
+						dynasty=101916
+						religion = tengri_pagan
+						culture = mongol
 						female = no
-						age = 24
+						age = 30
 						attributes = {
 							martial = 12
 						}
@@ -146,26 +146,26 @@ narrative_event = {
 								has_dlc = "Holy Fury"
 								NOT = {
 									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_mughals_line
+										has_bloodline_flag = genghis_khan_line
 									}
 								}
 							}
 							create_bloodline = {
-								type = bloodline_mughals
+								type = genghis_khan
 							}
 						}
-						e_mughals = {
+						e_il-khanate = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
 							grant_title = PREV
-							add_law = succ_turkish_succession
+							add_law = succ_mongol_succession
 						}
 						set_defacto_liege = THIS
 						if = {
 							limit = {
 								has_dlc = "Horse Lords"
 							}
-							set_government_type = muslim_government
+							set_government_type = nomadic_government
 						}
 						if = {
 							limit = {
@@ -175,28 +175,26 @@ narrative_event = {
 						}
 						wealth = 12000
 						prestige = 10000
-						set_character_flag = babur_invader
-						character_event = { id = MUG.102 } # Spawn courtiers
-						character_event = { id = MUG.103 } # Spawn troops
-						character_event = { id = MUG.104 days = 1 } # Spawn population
+						set_character_flag = ilkhanate_invader
+						character_event = { id = ILKH.102 } # Spawn courtiers
+						character_event = { id = ILKH.103 } # Spawn troops
+						character_event = { id = ILKH.104 days = 1 } # Spawn population
 					}
 				}
 			}
 			if = {
 				limit = {
 					NOT = {
-						e_mughals = {
+						e_il-khanate = {
 							holder_scope = { always = yes }
 						}
 					}
 				}
 				log = "Spawning Temujin for invasion"
 				create_character = {
-					name="Babur"
-					dynasty=4000001
-					dna="bfimkolbecc"
-					properties="ge0af0000000"
-					age = 43
+					name="Hulegu"
+					dynasty=101916
+					age = 30
 					attributes = {
 						martial=9
 						diplomacy=8
@@ -205,41 +203,41 @@ narrative_event = {
 					}
 					health = 6
 					fertility = 0.7
-					religion="sunni"
-					culture="turkish"
-					trait="brave"
-					trait="ambitious"
-					trait="diligent"
-					trait="cavalry_leader"
-					trait="brilliant_strategist"
+					religion="tengri_pagan"
+					culture=mongol
+					trait = brilliant_strategist
+					trait = wroth
+					trait = cruel
+					trait = proud
+					trait = zealous
 				}
 				new_character = {
-					set_character_flag = is_babur
+					set_character_flag = ilkhanate_himself
+					set_character_flag = is_special_character
 					if = {
 						limit = {
 							has_dlc = "Holy Fury"
 							NOT = {
 								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_mughals_line
+									has_bloodline_flag = genghis_khan_line
 								}
 							}
 						}
 						create_bloodline = {
-							type = bloodline_mughals
+							type = genghis_khan
 						}
 					}
-					e_mughals = {
+					e_il-khanate = {
 						set_title_landless = { title = THIS status = yes }
-						set_title_flag = mughal_india_invade
 						grant_title = PREV
-						add_law = succ_turkish_succession
+						add_law = succ_mongol_succession
 					}
 					set_defacto_liege = THIS
 					if = {
 						limit = {
 							has_dlc = "Horse Lords"
 						}
-						set_government_type = muslim_government
+						set_government_type = nomadic_government
 					}
 					if = {
 						limit = {
@@ -251,16 +249,16 @@ narrative_event = {
 					prestige = 10000
 					piety = 5000
 					population = 50000
-					set_character_flag = babur_invader
-					character_event = { id = MUG.101 } # Spawn Temujins generals
-					character_event = { id = MUG.102 } # Spawn courtiers
-					character_event = { id = MUG.103 } # Spawn troops
-					character_event = { id = MUG.104 days = 1 } # Spawn population
+					set_character_flag = ilkhanate_invader
+					character_event = { id = ILKH.101 } # Spawn Temujins generals
+					character_event = { id = ILKH.102 } # Spawn courtiers
+					character_event = { id = ILKH.103 } # Spawn troops
+					character_event = { id = ILKH.104 days = 1 } # Spawn population
 				}
 			}			
-			1362 = {
+			659 = {
 				kingdom = {
-					e_mughals = {
+					e_il-khanate = {
 						holder_scope = {
 							unsafe_war = {
 								casus_belli = nomad_invasion
@@ -407,30 +405,30 @@ narrative_event = {
 }
 
 character_event = {
-	id = MUG.101
+	id = ILKH.101
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		create_character = {
-			name = "Zainab"
-			age = 49
+			name = "Doquz"
+			age = 18
 			dynasty = random
-			religion = sunni
-			culture = turkish
+			religion = tengri_pagan
+			culture = mongol
 			female = yes
 			random_traits = yes
 		}
 		new_character = {
-			save_event_target_as = zainab
+			save_event_target_as = doquz
 			add_spouse = ROOT
 		}
 		create_character = {
-			name="Humayun"
+			name="Abaqa"
 			age = 35
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture=mongol
 			attributes = {
 				martial=10
 				diplomacy=4
@@ -444,12 +442,39 @@ character_event = {
 			trait="brilliant_strategist"
 			trait="trickster"
 		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:doquz
+		}
 		create_character = {
-			name="Akbar" 
+			name="Sultan Ahmed Tekuder"
+			age = 35
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				martial=10
+				diplomacy=4
+				intrigue=6
+				stewardship=6
+			}
+			trait="brave"
+			trait="strong"
+			trait="quick"
+			trait="diligent"
+			trait="brilliant_strategist"
+			trait="trickster"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:doquz
+		}
+		create_character = {
+			name="Mongke Temur" 
 			age = 27
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture="mongol"
 			trait="skilled_tactician"
 			trait="wroth"
 			trait="just"
@@ -457,28 +482,28 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:zainab
+			set_mother = event_target:doquz
 		}
 		create_character = {
-			name="Jahangir"
+			name="Yoshmut"
 			age = 24
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture="mongol"
 			trait="skilled_tactician"
 			trait="gregarious"
 			trait="just"
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:zainab
+			set_mother = event_target:doquz
 		}
 		create_character = {
-			name="Shah Jahan"
+			name="Taraqai"
 			age = 29
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture="mongol"
 			trait="skilled_tactician"
 			trait="hunter"
 			trait="kind"
@@ -486,41 +511,25 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:zainab
+			set_mother = event_target:doquz
 		}
 		create_character = {
-			name="Aurangzeb"
+			name="Mongke"
 			age = 18
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
+			dynasty = 101916
+			religion="tengri_pagan"
+			culture="mongol"
 			random_traits = yes
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:zainab
-		}
-		create_character = {
-			name="Azam Shah"
-			#AKA Chepe
-			age = 50
-			dynasty = 4000001
-			religion="sunni"
-			culture="turkish"
-			attributes = {
-				martial=10
-				diplomacy=5
-				intrigue=5
-				stewardship=4
-			}
-			trait="skilled_tactician"
-			trait="brave"
+			set_mother = event_target:doquz
 		}
 	}
 }
 # Spawn extra courtiers
 character_event = {
-	id = MUG.102
+	id = ILKH.102
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -528,7 +537,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 16
@@ -536,7 +545,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 18
@@ -544,7 +553,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 18
@@ -552,7 +561,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 20
@@ -560,7 +569,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 25
@@ -568,7 +577,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 26
@@ -576,7 +585,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 28
@@ -584,7 +593,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = yes
 			age = 16
@@ -592,7 +601,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = yes
 			age = 17
@@ -600,7 +609,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = yes
 			age = 18
@@ -608,7 +617,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = yes
 			age = 18
@@ -616,7 +625,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = yes
 			age = 20
@@ -624,7 +633,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 27
@@ -636,7 +645,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 51
@@ -648,7 +657,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 44
@@ -660,7 +669,7 @@ character_event = {
 		create_character = {
 			random_traits = yes
 			dynasty = none
-			religion = sunni
+			religion = tengri_pagan
 			culture = ROOT
 			female = no
 			age = 24
@@ -673,13 +682,13 @@ character_event = {
 }
 # Spawn mongol troops
 character_event = {
-	id = MUG.103
+	id = ILKH.103
 	hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -688,7 +697,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -697,7 +706,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -706,7 +715,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -715,7 +724,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -724,7 +733,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -733,7 +742,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -742,7 +751,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -751,7 +760,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1362 # Tuul
+			province = 663 # Tuul
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -760,7 +769,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1363 # Khilok
+			province = 636 # Khilok
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -769,7 +778,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1363 # Khilok
+			province = 636 # Khilok
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -778,7 +787,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1363 # Khilok
+			province = 636 # Khilok
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -787,7 +796,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1363 # Khilok
+			province = 636 # Khilok
 			troops =
 			{
 				light_cavalry = { 2750 2750 }
@@ -799,7 +808,7 @@ character_event = {
 }
 
 character_event = {
-	id = MUG.104
+	id = ILKH.104
 	hide_window = yes
 	
 	is_triggered_only = yes

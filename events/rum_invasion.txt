@@ -411,8 +411,8 @@ character_event = {
 	
 	immediate = {
 		create_character = {
-			name = "Chulpan"
-			age = 49
+			name = "Hatice"
+			age = 18
 			dynasty = random
 			religion = sunni
 			culture = turkish
@@ -420,6 +420,7 @@ character_event = {
 			random_traits = yes
 		}
 		new_character = {
+			save_event_target_as = hatice
 			add_spouse = ROOT
 		}
 		create_character = {
@@ -441,6 +442,10 @@ character_event = {
 			trait="brilliant_strategist"
 			trait="trickster"
 		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:hatice
+		}
 		create_character = {
 			age = 27
 			dynasty = 613
@@ -453,7 +458,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:hatice
 		}
 		create_character = {
 			age = 24
@@ -466,7 +471,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:hatice
 		}
 		create_character = {
 			age = 29
@@ -480,7 +485,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:hatice
 		}
 	}
 }

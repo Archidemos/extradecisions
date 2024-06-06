@@ -819,7 +819,6 @@ narrative_event = { #Event to make the Golden Horde a tributary of the Mongol Em
 	id = MP.030
 	title = MOGGOLDCLASH.100
 	desc = MOGGOLDCLASHDESC.100
-	sound = ar_army_marching
 	
 	picture = "GFX_evt_mongols"
 	border = "GFX_event_narrative_frame_war"
@@ -855,7 +854,143 @@ narrative_event = { #Event for everyone about the formation
 	id = MP.031
 	title = MOGGOLDCLASH.101
 	desc = MOGGOLDCLASHDESC.101
-	sound = ar_army_marching
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = MOGGOLDOPT3
+	}
+}
+
+##Instantly Ilkhanate Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Ilkhanate Invasion for Instant Game rule
+	id = MP.032
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = ilkhanate_invasion
+			value = test
+		}
+		NOT = { has_global_flag = ilkhanate_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.033 days = 14 }
+		}
+		set_global_flag = ilkhanate_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Ilkhanate Invasion
+	id = MP.033
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = ilkhanate_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = ilkhanate_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = ILKH.100 } } }
+	}
+}
+
+##Events for the Ilkhanate and the Mongol Empire to not clash with eachother
+
+character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
+	id = MP.034
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		e_mongol_empire = { holder_scope = { is_landed = yes } }
+		e_il-khanate = { holder_scope = { is_landed = yes } }
+		
+		AND = {
+			has_game_rule = {
+				name = ilkhanate_invasion
+				value = test
+			}
+			has_game_rule = {
+				name = mongol_invasion
+				value = test
+			}
+		}
+		
+		has_global_flag = mongol_empire_arrival
+		has_global_flag = ilkhanate_arrival
+		is_save_game = no
+		controls_religion = yes
+		NOT = { has_global_flag = anti_ilkhanate_mongol_clash_1 }
+	}
+
+	
+	immediate = {
+		set_global_flag = anti_ilkhanate_mongol_clash_1
+		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.035 } } }
+	}
+}
+
+narrative_event = { #Event to make the Ilkhanate a tributary of the Mongol Empire to avoid a clash between them
+	id = MP.035
+	title = MOGILLCLASH.100
+	desc = MOGILLCLASHDESC.100
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = anti_ilkhanate_mongol_clash_2 }
+	}
+	
+	option = { #We will tributise the Golden Horde
+		name = MOGGOLDOPT1
+		ai_chance = { factor = 100 }
+		if = {
+			any_playable_ruler = {
+				limit = { has_landed_title = e_mongol_empire  } 
+			} 
+			make_tributary = { who = e_il-khanate tributary_type = nomadic }
+		}
+		set_global_flag = anti_ilkhanate_mongol_clash_2
+		hidden_effect = {
+			any_player = { narrative_event = { id = MP.036 days = 5 } }
+		}
+	}
+	
+	option = { #We refuse
+		name = MOGGOLDOPT2
+		ai_chance = { factor = 0 }
+	}
+}
+
+narrative_event = { #Event for everyone about the formation
+	id = MP.036
+	title = MOGILLCLASH.101
+	desc = MOGILLCLASHDESC.101
 
 	is_triggered_only = yes
 	

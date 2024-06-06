@@ -136,9 +136,10 @@ narrative_event = {
 							martial = 12
 						}
 						trait = brilliant_strategist
-						trait = ambitious
 						trait = diligent
-						trait = brave
+						trait = humble
+						trait = gregarious
+						trait = just
 					}
 					new_character = {
 						if = {
@@ -205,11 +206,11 @@ narrative_event = {
 					fertility = 0.7
 					religion="tengri_pagan"
 					culture=mongol
-					trait="brave"
-					trait="ambitious"
-					trait="diligent"
-					trait="cavalry_leader"
-					trait="brilliant_strategist"
+					trait = brilliant_strategist
+					trait = diligent
+					trait = humble
+					trait = gregarious
+					trait = just
 				}
 				new_character = {
 					set_character_flag = golden_horde_himself
@@ -411,6 +412,7 @@ character_event = {
 	
 	immediate = {
 		create_character = {
+			name = "Bayarmaa"
 			age = 49
 			dynasty = random
 			religion = tengri_pagan
@@ -419,6 +421,7 @@ character_event = {
 			random_traits = yes
 		}
 		new_character = {
+			save_event_target_as = bayarmaa
 			add_spouse = ROOT
 		}
 		create_character = {
@@ -440,6 +443,10 @@ character_event = {
 			trait="brilliant_strategist"
 			trait="trickster"
 		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:bayarmaa
+		}
 		create_character = {
 			age = 27
 			dynasty = 7379
@@ -452,7 +459,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:bayarmaa
 		}
 		create_character = {
 			age = 24
@@ -465,7 +472,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:bayarmaa
 		}
 		create_character = {
 			age = 29
@@ -479,7 +486,7 @@ character_event = {
 		}
 		new_character = {
 			set_father = ROOT
-			set_mother = event_target:borte
+			set_mother = event_target:bayarmaa
 		}
 	}
 }
