@@ -6,15 +6,23 @@ genoa_route = {
 			province_id = 221
 			province_id = 204
 			province_id = 171
-			province_id = 2207
-			province_id = 167
-			province_id = 165
-			province_id = 160
 			province_id = 827
 			province_id = 326
 			province_id = 935
 			province_id = 340
 			province_id = 817
+			province_id = 235
+			province_id = 327
+			province_id = 323
+			province_id = 334
+			province_id = 214
+			province_id = 112
+			province_id = 136
+			province_id = 1611
+			province_id = 237
+			province_id = 146
+			province_id = 211
+			province_id = 217
 		}
 	}
 
@@ -33,15 +41,55 @@ genoa_route = {
 	}
 
 	# Northern Silk Route
-	path = {	# Main Road to Mallorca
-		233 1028 1027 221 1025 204 1021 1022 826 827
+	path = {	# Main Road to Narbonne
+		233 1714 230 2197 221 220 212
 	}
 	
-	path = {	# Mallorca to Lisabon
-		827 171 170 1020 2207 954 167 166 165 981 160
+	path = { #Narbonne to Toulouse connection
+		212 214	211
+	}
+
+	path = { #Narbonne to Malorca
+		212 211 205 204 1021 1022 827
 	}
 	
-	path = {	# Road to Greece
-		233 1028 1030 326 1894 1031 935 1032 340 1033 817
+	path = {	# Road to Ogliastra
+		233 323 327 1028 1574 1560
+	}
+	
+	path = { #Ogliastra to Caligari
+		1560 326
+	}
+
+	path = {	# Dijon to Paris
+		136 132 131 112
+	}
+	
+	path = {	# Genoa to Dijon
+		233 232 236 237 239 1611 135 1615 240 136
+	}
+	
+	path = {	# Dijon to Toulouse
+		136 226 146 217 147 2201 214
+	}
+	
+	path = { #Ogliastra to Amalfi
+		1560 1030 1894 1031 935
+	}
+	
+	path = {
+		214 213 211
+	}
+	
+	path = { #Amalfi to Napoli
+		935 334
+	}
+	
+	path = { #Napoli to Rome
+		334 2143 851 2136 333
+	}
+	
+	path = { #Amalfi to Tunis
+		935 336 2142 337 1712 338 339 2175 340 341 1033 817
 	}
 }

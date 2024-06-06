@@ -15,12 +15,17 @@ targetted_decisions = {
 
 		allow = {
 			piety = 60
+			NOT = { has_character_modifier = cooldown_convertion_pp }
 		}
 		
 		effect = {
 			FROM = {
 				piety = -60
 				prestige = 50
+				add_character_modifier = {
+					modifier = cooldown_convertion_pp
+					months = 2
+				}
 			}
 		}
 	}
@@ -41,12 +46,17 @@ targetted_decisions = {
 
 		allow = {
 			prestige = 60
+			NOT = { has_character_modifier = cooldown_convertion_pp }
 		}
 		
 		effect = {
 			FROM = {
 				prestige = -60
 				piety = 50
+				add_character_modifier = {
+					modifier = cooldown_convertion_pp
+					months = 2
+				}
 			}
 		}
 	}
@@ -77,7 +87,7 @@ targetted_decisions = {
 				economy_techpoints = 100
 				add_character_modifier = {
 					modifier = cooldown_library
-					months = 2
+					years = 5
 				}
 			}
 		}

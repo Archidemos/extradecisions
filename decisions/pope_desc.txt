@@ -25,10 +25,17 @@ decisions = {
 			set_global_flag = god_kingdom_formed
 			set_global_flag = end_schism_enacted
 			set_character_flag = preparing_orhodox_schism_war
-			
-			k_papal_state = {
-				set_name = "KINGDOM_KINGDOM_OF_GOD"
-				adjective = "KINGDOM_KINGDOM_OF_GOD_ADJ"
+
+			primary_title = {
+				e_god_kingdom = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+
+			e_god_kingdom = {
+				add_law = succ_papal_succession
 			}
 			
 			add_character_modifier = {

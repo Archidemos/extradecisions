@@ -152,6 +152,7 @@ narrative_event = {
 		c_almeria = { location = { add_province_modifier = { name = sierra_nevada_pass years = -1 } } }
 		c_almansa = { location = { add_province_modifier = { name = sierra_nevada_pass years = -1 } } }
 		c_valencia = { location = { add_province_modifier = { name = sierra_nevada_pass years = -1 } } }
+		c_dariya = { location = { add_province_modifier = { name = badiyat_ash_sham_desert years = -1 } } }
 	}
 }
 
@@ -442,5 +443,426 @@ character_event = {
 				}
 			}
 		}
+	}
+}
+
+##Instant Mughal Invasion Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Mughal Invasion for Instant Game rule
+	id = MP.011
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = mughal_invasion
+			value = test
+		}
+		NOT = { has_global_flag = instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.012 days = 5 }
+		}
+		set_global_flag = instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Mughal Invasion
+	id = MP.012
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = MUG.100 } } }
+	}
+}
+
+##Instant Umayyad Invasion Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Berber Invasion for Instant Game rule
+	id = MP.013
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = umayyad_invasion
+			value = test
+		}
+		NOT = { has_global_flag = berber_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.014 days = 6 }
+		}
+		set_global_flag = berber_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Berber Invasion
+	id = MP.014
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = berber_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = berber_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = BBR.100 } } }
+	}
+}
+
+##Instantly Mongol Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Mongol Invasion for Instant Game rule
+	id = MP.015
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = mongol_invasion
+			value = test
+		}
+		NOT = { has_global_flag = mongol_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.016 days = 7 }
+		}
+		set_global_flag = mongol_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Mongol Invasion
+	id = MP.016
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = mongol_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = mongol_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = 60500 } } }
+	}
+}
+
+##Instantly Timurid Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Timurid Invasion for Instant Game rule
+	id = MP.017
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = timur_invasion
+			value = test
+		}
+		NOT = { has_global_flag = timur_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.018 days = 8 }
+		}
+		set_global_flag = timur_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Timurid Invasion
+	id = MP.018
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = timur_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = timur_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = TIME.100 } } }
+	}
+}
+
+##Instantly Seljuk Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Seljuk Invasion for Instant Game rule
+	id = MP.019
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = seljuk_invasions
+			value = test
+		}
+		NOT = { has_global_flag = seljuk_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.020 days = 9 }
+		}
+		set_global_flag = seljuk_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Seljuk Invasion
+	id = MP.020
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = seljuk_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = seljuk_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = SELJ.100 } } }
+	}
+}
+
+##Instantly Rum Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Rum Invasion for Instant Game rule
+	id = MP.021
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = rum_invasion
+			value = test
+		}
+		NOT = { has_global_flag = rum_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.022 days = 10 }
+		}
+		set_global_flag = rum_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Rum Invasion
+	id = MP.022
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = rum_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = rum_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = RUME.100 } } }
+	}
+}
+
+##Instantly Golden_Horde Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Golden_Horde Invasion for Instant Game rule
+	id = MP.027
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = gold_horde_invasion
+			value = test
+		}
+		NOT = { has_global_flag = golden_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.028 days = 13 }
+		}
+		set_global_flag = golden_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Golden_Horde Invasion
+	id = MP.028
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = golden_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = golden_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = GOL.100 } } }
+	}
+}
+
+##Events for the Golden Horde and the Mongol Empire to not clash with eachother
+
+character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
+	id = MP.029
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		e_mongol_empire = { holder_scope = { is_landed = yes } }
+		e_golden_horde = { holder_scope = { is_landed = yes } }
+		
+		AND = {
+			has_game_rule = {
+				name = gold_horde_invasion
+				value = test
+			}
+			has_game_rule = {
+				name = mongol_invasion
+				value = test
+			}
+		}
+		
+		has_global_flag = mongol_empire_arrival
+		has_global_flag = golden_horde_arrival
+		is_save_game = no
+		controls_religion = yes
+		NOT = { has_global_flag = anti_golden_mongol_clash_1 }
+	}
+
+	
+	immediate = {
+		set_global_flag = anti_golden_mongol_clash_1
+		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.030 } } }
+	}
+}
+
+narrative_event = { #Event to make the Golden Horde a tributary of the Mongol Empire to avoid a clash between them
+	id = MP.030
+	title = MOGGOLDCLASH.100
+	desc = MOGGOLDCLASHDESC.100
+	sound = ar_army_marching
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = anti_golden_mongol_clash_2 }
+	}
+	
+	option = { #We will tributise the Golden Horde
+		name = MOGGOLDOPT1
+		ai_chance = { factor = 100 }
+		if = {
+			any_playable_ruler = {
+				limit = { has_landed_title = e_mongol_empire  } 
+			} 
+			make_tributary = { who = e_golden_horde tributary_type = nomadic }
+		}
+		set_global_flag = anti_golden_mongol_clash_2
+		hidden_effect = {
+			any_player = { narrative_event = { id = MP.031 days = 5 } }
+		}
+	}
+	
+	option = { #We refuse
+		name = MOGGOLDOPT2
+		ai_chance = { factor = 0 }
+	}
+}
+
+narrative_event = { #Event for everyone about the formation
+	id = MP.031
+	title = MOGGOLDCLASH.101
+	desc = MOGGOLDCLASHDESC.101
+	sound = ar_army_marching
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = MOGGOLDOPT3
 	}
 }

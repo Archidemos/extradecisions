@@ -9,6 +9,12 @@ england_route = {
 			province_id = 57
 			province_id = 1940
 			province_id = 29
+			province_id = 15
+			province_id = 11
+			province_id = 43
+			province_id = 29
+			province_id = 19
+			
 		}
 	}
 
@@ -28,15 +34,28 @@ england_route = {
 	}
 
 	# Northern Silk Route
-	path = {	# Main English Route
-		32 69 22 2208 21 30 66 59 63 1942 57 2209 56 52 1940
+	path = {	# London to Gloucester
+		32 69 22 2208 21
 	}
 
-	path = {	# Wales
-		66 1947 64
+	path = { #Gloucester to Scotland
+		21 30 66 59 63 1942 57 2209 56 52 1940 51 48 46 43 41
 	}
 
-	path = {	# Jiuquan-Anxi-Dunhuang
-		2208 23 1944 28	29
+	path = {	# Gloucester to Gwent
+		21 20 19 1946 1948
 	}
+	
+	path = { #Gwent to Dublin
+		1948 64 1019 11
+	}
+	
+	path = {	# Gloucester to Devon
+		21 1944 27 29
+	}
+
+	path = { #Gwent to Ormond
+		1946 18	968 15
+	}
+	
 }

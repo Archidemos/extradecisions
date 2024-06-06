@@ -56,6 +56,22 @@ silk_road = {
 			province_id = 496
 			province_id = 561
 			province_id = 560
+			province_id = 2146
+			province_id = 564
+			province_id = 547
+			province_id = 575
+			province_id = 592
+			province_id = 762
+			province_id = 747
+			province_id = 745
+			province_id = 742
+			province_id = 740
+			province_id = 808
+			province_id = 668
+			province_id = 1808
+			province_id = 600
+			province_id = 572
+			province_id = 414
 		}
 	}
 
@@ -108,7 +124,15 @@ silk_road = {
 		632 634 906 636
 	}
 	path = {	# Tus-Dailam
-		632 633 661 662 664 665
+		632 633 661 662
+	}
+	
+	path = { #Alamut to Dailam
+		662 664 665
+	}
+	
+	path = { #Alamut to Georgia
+		662 666 668 669 673 676 1808 601 1806 600
 	}
 	path = {	# Lut-Ahvaz
 		636 638 646 647
@@ -120,16 +144,51 @@ silk_road = {
 		903 1181 1186 1431
 	}
 	path = {	# Otrar-Turkestan-Itil-Tana
-		1431 900 1794 622 623 1793 621 618 620 619 605 1811 607 599 598 562 561 560
+		1431 900 1794 622 623 1793 621 618 620
 	}
+	
+	path = { #Itil to Orek
+		620 1815 1814 592 579 580 1678
+	}
+
+	path = { #Orek to Moskva
+		1678 575
+	}
+
+	path = { #Orek to Novgorod
+		1678 1680 574 572 571 1664 1652 414
+	}
+
+	path = { #Road to Itil
+		620 619 605 1811 607
+	}
+	
+	path = { #Sarpa to Cherson
+		607 599 598 562 561 560
+	}
+	
+	path = { #Sarpa to Kiev
+		607 596 564 565 1675 555 547
+	}
+	
 	path = {	# Bagdad-Palmyra
 		693 696 695 712 729 730
 	}
-	path = {	# Palmyra-Antioch
-		730 732 733 764
-	}
+
 	path = {	# Palmyra-Jerusalem
 		730 731 768 769 728 725 773 774 775
+	}
+	
+	path = { #Palmyra to Aleppo
+		730 732 733	
+	}
+	
+	path = {	# Aleppo to Smyrna
+		733 763 735 762 761 758 755 747 746 745
+	}
+	
+	path = { #Aleppo to Lefkara
+		733 764 945 2169
 	}
 
 	# Southern Silk Route
@@ -182,9 +241,17 @@ silk_road = {
 		641 642 644 645 647
 	}
 	path = {	# Banbhore-Muscat-Aden-Mecca-Cairo-Alexandria
-		1297 1412 1391 868 1390 866 1389 1369 1388 871 1387 1386 858 859 1532 1385 1384 716 719 718 1536 1383 1320 794 791 2002 796 797 2004 802
+		1297 1412 1391 868 1390 866 1389 1369 1388 871 1387 1386 858 859 1532 1385 1384 716 719 718 1536 1383 1320 794 791 2002 796 797 2004
 	}
-
+	
+	path = { #Akhmim to Barqa
+		2004 2005 804 805 806 808
+	}
+	
+	path = { #Akhmim to Alexandria
+		2004 802
+	}
+	
 	# Asia Minor Silk Route
 	path = {	# Lut-Dailam
 		636 663 715 665
@@ -192,7 +259,13 @@ silk_road = {
 	path = {	# Dailam-Tabriz-Karin-Trebizond
 		665 667 671 672 681 703 704 678
 	}
-	path = {	# Trebizond-Constantinople Route
-		678 705 738 739 1929 1928 740 741 496
+	path = {	# Trebizond to Heraklea
+		678 705 738 739 1929 1928 740
+	}
+	path = { #Heraklea to Constantinople
+		740 741 496
+	}
+	path = { #Heraklea to Pursa
+		740 750 742 
 	}
 }

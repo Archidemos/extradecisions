@@ -1,14 +1,11 @@
 title_decisions = {
 	
 	upgrade_holding = {
-		filter = owned
-		ai_target_filter = capital
 		ai_check_interval = 12
 		
 		potential = {
 			location = {
 				num_of_max_settlements < 7
-				has_province_modifier = prosperity_modifier_3
 				NOT = { has_province_modifier = increased_holding }
 			}
 			holder = FROM
@@ -19,6 +16,9 @@ title_decisions = {
 				show_scope_change = no
 				scaled_wealth = 3.5
 				HIGHER_REAL_TIER_THAN = COUNT
+			}
+			location = {
+				has_province_modifier = prosperity_modifier_3
 			}
 		}
 		

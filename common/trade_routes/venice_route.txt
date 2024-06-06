@@ -16,6 +16,13 @@ venice_route = {
 			province_id = 483
 			province_id = 2169
 			province_id = 775
+			province_id = 353
+			province_id = 461
+			province_id = 470
+			province_id = 2153
+			province_id = 347
+			province_id = 935
+			province_id = 472
 		}
 	}
 
@@ -35,20 +42,52 @@ venice_route = {
 	}
 
 	# Northern Silk Route
-	path = {	# Main Road to Ragusa
-		356 1110 350 929 1109 468
+	path = {	# Main Road to Aquilla
+		356 357 355 353 351 1711 350 929 
 	}
 
-	path = {	# Ragusa to Krete
-		468 347 1038 472 474 1037 1891 2148 1017 2171
+	path = { #Aquilla to Apullia
+		929 1707 348 347
+	}
+	
+	path = { #Aquilla to Epirus
+		347 346 345	1038 472
 	}
 
-	path = {	# Road to Constantinople
-		2171 482 485 942 1111 947 496
+	path = { #Apullia to Amalfi
+		347 2144 935
+	}
+	
+	path = { # Venice to Ragusa to Acahia
+		356 358 458 459 464
+	}
+	
+	path = { #Senj to Achaia
+		464 465 467 466 468 1972 469 470 1886 472 473 474 476
+	}
+	
+	path = { #Achaia to Messini
+		476 477 2148
 	}
 
-	path = {	# Road to Alexandria
-		2171 936 483 946 945 2169 775 940 939 802
+	path = {	# Achaia to Korintios
+		476 2145 2146 481
+	}
+	
+	path = { #Korintios to Krete
+		481 478 2147 1017 479 2171
+	}	
+	
+	path = { #Korintios to Aigino
+		481 2150 482 475 2149 488 2153
+	}
+	
+	path = {	# Road to Lefkara
+		2171 936 483 946 2168 2170 2169
+	}
+	
+	path = { #Lefkara to Alexandria
+		2169 945 775 780 781 787 788 789 798 802
 	}
 	
 }

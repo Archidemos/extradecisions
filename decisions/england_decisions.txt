@@ -80,7 +80,11 @@ decisions = {
 			LOWER_REAL_TIER_THAN = KING
 			any_realm_province = {
 				is_capital = yes
-				de_jure_liege_or_above = k_england
+				OR = {
+					de_jure_liege_or_above = k_northumbria
+					de_jure_liege_or_above = k_mercia
+					de_jure_liege_or_above = k_wessex
+				}
 			}
 			NOT = { has_global_flag = danelaw_formed }
 		}

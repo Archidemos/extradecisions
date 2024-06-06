@@ -32,8 +32,12 @@ decisions = {
 			completely_controls = k_aragon
 			completely_controls = k_carinthia
 			completely_controls = d_tunis
-			OR = {
+			if = {
+				limit = { k_romagna = { is_titular = no } }
 				completely_controls = k_romagna
+			}
+			if = {
+				limit = { k_papacy = { is_titular = no } }
 				completely_controls = k_papacy
 			}
 			completely_controls = k_sicily

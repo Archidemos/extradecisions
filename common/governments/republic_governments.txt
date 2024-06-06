@@ -95,48 +95,6 @@ republic_governments = {
 		vassal_limit = -10
 	}
 	
-	republic_government = {
-		preferred_holdings = { CITY }
-		allowed_holdings = { 
-			CITY
-			CASTLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Accepts other republics
-			merchant_republic_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		frame_suffix = "_republic"
-		title_prefix = "city_"
-		potential = {
-			NAND = {
-				controls_religion = yes
-				NOT = { religion_group = muslim }
-			}
-			NOT = { is_government_potential = merchant_republic_government }
-			holy_order = no
-		}
-		
-		color = { 209 125 130 }
-		
-		can_imprison_without_reason = no
-		can_revoke_without_reason = no
-		
-		can_build_tribal = no
-		
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 5
-		vassal_limit = -5
-	}
-	
 	confucian_bureaucracy = {
 		offmap_power = offmap_china
 		preferred_holdings = { CASTLE CITY }

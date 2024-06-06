@@ -343,7 +343,6 @@ feudal_governments = {
 						holy_order = yes
 						religion = ROOT
 					}
-					ai = yes
 					NAND = { 
 						is_government_potential = merchant_republic_government 
 						OR = {
@@ -731,6 +730,7 @@ feudal_governments = {
 			NOT = { government = merchant_republic_government }
 			NOT = { is_government_potential = merchant_republic_government }
 			higher_tier_than = BARON
+			is_landed = yes
 		}
 	
 		color = { 209 125 130 }
@@ -775,7 +775,6 @@ feudal_governments = {
 		potential = {
 			NOT = {	religion_group = muslim }
 			is_patrician = no
-			higher_tier_than = BARON
 		}
 		
 		color = { 220 220 220 }

@@ -7,7 +7,6 @@ narrative_event = {
 	major = yes
 	hide_from = yes
 	is_triggered_only = yes
-	sound = ar_army_marching
 	
 	picture = "GFX_evt_mongols"
 	border = "GFX_event_narrative_frame_war"
@@ -20,7 +19,6 @@ narrative_event = {
 	
 	trigger = {
 		OR = {
-			year = 1066
 			AND = {
 				has_game_rule = {
 					name = mughal_invasion
@@ -52,7 +50,7 @@ narrative_event = {
 				value = off
 			}
 		}
-		controls_religion = yes # Let it happen for the Pope. He's always around.
+		controls_religion = yes
 	}
 	
 	immediate = {
@@ -96,8 +94,8 @@ narrative_event = {
 						}
 						wealth = 12000
 						prestige = 10000
-						set_character_flag = mughal_invader
-						set_character_flag = babur_india
+						set_character_flag = is_special_character
+						set_character_flag = babur_invader
 						character_event = { id = MUG.103 } # Spawn troops
 						character_event = { id = MUG.104 days = 1 } # Spawn population
 						if = {
@@ -177,7 +175,7 @@ narrative_event = {
 						}
 						wealth = 12000
 						prestige = 10000
-						set_character_flag = mughal_invader
+						set_character_flag = babur_invader
 						character_event = { id = MUG.102 } # Spawn courtiers
 						character_event = { id = MUG.103 } # Spawn troops
 						character_event = { id = MUG.104 days = 1 } # Spawn population
@@ -253,8 +251,7 @@ narrative_event = {
 					prestige = 10000
 					piety = 5000
 					population = 50000
-					set_character_flag = mughal_invader
-					set_character_flag = babur_india
+					set_character_flag = babur_invader
 					character_event = { id = MUG.101 } # Spawn Temujins generals
 					character_event = { id = MUG.102 } # Spawn courtiers
 					character_event = { id = MUG.103 } # Spawn troops

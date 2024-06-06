@@ -1,0 +1,35 @@
+varingian_route = {
+	wealth = 7.0			# Total base wealth of trade route
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 290
+			province_id = 414
+			province_id = 419
+			province_id = 551
+			province_id = 554
+			province_id = 547
+			province_id = 496
+			province_id = 381
+			province_id = 498
+		}
+	}
+
+	modifier = {			# How the trade route modifies the provinces it passes
+		castle_tax_modifier = 0.05
+		city_tax_modifier = 0.05
+		temple_tax_modifier = 0.05
+		tribal_tax_modifier = 0.30
+		trade_route_value = 15
+		local_movement_speed = 0.30
+		tech_growth_modifier = 0.10
+		icon = 4
+	}
+
+	start = {
+		290
+	}
+
+	path = {	# Bure-Timbuktu
+		290 291 382 1606 381 392 409 414 1662 415 419 417 551 553 554 547 544 543 949 948 498 497 496
+	}
+}

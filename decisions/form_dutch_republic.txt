@@ -48,7 +48,23 @@ decisions = {
 					unsafe_destroy_landed_title = THIS
 				}
 			}
-
+			hidden_effect = {
+				d_holland = { de_jure_liege = k_dutch_republic }
+				d_gelre = { de_jure_liege = k_dutch_republic }
+				d_flanders = { de_jure_liege = k_dutch_republic }
+				d_brabant = { de_jure_liege = k_dutch_republic }
+				if = {
+					limit = { is_title_active = e_hre }
+					k_dutch_republic = { de_jure_liege = e_hre }
+				}
+				if = {
+					limit = { is_title_active = e_germany }
+					k_dutch_republic = { de_jure_liege = e_germany }
+				}
+				any_player = {
+						narrative_event = { id = DTCH.100 }
+				}
+			}
 			hidden_tooltip = {
 				ROOT = {
 					c_holland = {
@@ -90,10 +106,6 @@ decisions = {
 						make_capital_holding = yes
 					}
 				}
-				
-				d_holland = { de_jure_liege = k_dutch_republic }
-				d_gelre = { de_jure_liege = k_dutch_republic }
-				k_dutch_republic = { de_jure_liege = e_hre }
 				
 				if = {
 					limit = {
@@ -182,9 +194,6 @@ decisions = {
 						}
 					}
 				}
-			}
-			any_player = {
-					narrative_event = { id = DTCH.100 }
 			}
 		}
 		ai_will_do = {

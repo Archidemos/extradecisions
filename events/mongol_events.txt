@@ -4522,6 +4522,12 @@ character_event = {
 				value = off
 			}
 		}
+		NOT = {
+			has_game_rule = {
+				name = seljuk_invasions
+				value = test
+			}
+		}
 		OR = {
 			AND = {
 				NOT = {
@@ -5483,6 +5489,12 @@ character_event = {
 			has_game_rule = {
 				name = turkic_invasions
 				value = off
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				name = timur_invasion
+				value = test
 			}
 		}
 		OR = {
@@ -7659,6 +7671,13 @@ narrative_event = {
 				year = 1000
 				total_years_played = 50
 			}
+			AND = {
+				has_game_rule = {
+					name = mongol_invasion
+					value = test
+				}
+				year = 769
+			}
 		}
 		NOR = { 
 			year = 1218
@@ -7772,7 +7791,7 @@ narrative_event = {
 							destroy_landed_title = THIS
 						}
 						wealth = 12000
-						prestige = 10000
+						prestige = 20000
 						set_character_flag = horde_invader
 						character_event = { id = 60510 } # Spawn troops
 						character_event = { id = 60515 days = 1 } # Spawn population
@@ -7852,7 +7871,7 @@ narrative_event = {
 							set_government_type = tribal_government
 						}
 						wealth = 12000
-						prestige = 10000
+						prestige = 20000
 						set_character_flag = horde_invader
 						character_event = { id = 60509 } # Spawn courtiers
 						character_event = { id = 60510 } # Spawn troops
@@ -7929,7 +7948,7 @@ narrative_event = {
 						set_government_type = tribal_government
 					}
 					wealth = 12000
-					prestige = 10000
+					prestige = 20000
 					set_character_flag = horde_invader
 					character_event = { id = 60505 } # Spawn Temujins generals
 					character_event = { id = 60509 } # Spawn courtiers
@@ -9163,6 +9182,12 @@ character_event = {
 			has_game_rule = {
 				name = turkic_invasions
 				value = off
+			}
+		}
+		NOT = {
+			has_game_rule = {
+				name = rum_invasion
+				value = test
 			}
 		}
 		OR = {

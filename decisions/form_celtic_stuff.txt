@@ -149,13 +149,14 @@ decisions = {
 				culture_group = west_germanic
 			}
 			NOT = { has_landed_title = e_varingian }
+			NOT = { has_landed_title = k_dutch_republic }
 			NOT = { has_global_flag = north_sea_formed }
 		}
 		
 		allow = {
 			OR = {
 				AND = {
-					completely_controls = k_england
+					has_landed_title = k_england
 					completely_controls = k_denmark
 					completely_controls = k_norway
 				}
@@ -235,6 +236,7 @@ decisions = {
 			culture_group = north_germanic
 			NOT = { has_landed_title = e_north_sea }
 			NOT = { has_global_flag = varingian_formed }
+			NOT = { has_landed_title = k_dutch_republic }
 		}
 		
 		allow = {
