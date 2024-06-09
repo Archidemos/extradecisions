@@ -6545,7 +6545,12 @@ silk_road_trade_post_trigger = {
 				province_id = 1365
 				province_id = 1448
 				province_id = 1440
-				province_id = 1439
+				province_id = 1423
+				province_id = 687
+				province_id = 697
+				province_id = 686
+				province_id = 684
+				province_id = 733
 				province_id = 678
 				province_id = 764
 				province_id = 802
@@ -9122,6 +9127,88 @@ ere_elective_politician_titles_trigger = { #Used in Imperial Elective to determi
 		has_minor_title = title_anthypatos
 	} 
 }
+
+can_still_be_commander_pope_trigger = { 
+	NOT = { 
+		primary_title = { temporary = yes } 
+	}
+	liege = { 
+		character = FROMFROM 
+		has_law = succ_papal_succession
+		has_landed_title = k_papal_state
+	}
+	OR = {
+		AND = {
+			OR = {
+				male_can_hold_minor_title_trigger = yes
+				female_can_hold_minor_commander_title_trigger = yes
+			}
+			OR = {
+				NOT = { religion = hindu }
+				trait = kshatriya
+			}
+			is_adult = yes
+		}
+		has_character_flag = special_marshal
+	}
+	
+	prisoner = no
+	NOT = { trait = incapable }
+ 	NOT = { trait = sick_incapable }
+	NOT = { is_inaccessible_trigger = yes }
+	NOT = { has_character_flag = guru }
+	NOT = { has_character_modifier = refusing_to_lead }
+	NOR = { 
+		war_with = FROMFROM
+		any_liege = {  
+			war_with = FROMFROM
+		}
+	}
+	OR = { 
+		higher_real_tier_than = BARON #Either potential commander is vassal...
+		NOT = { #...Or there are no valid vassal candidates that can be commanders.
+			custom_tooltip = { 
+				text = tooltip_byzantine_empire_can_appoint_commanders
+				liege = { 
+					any_vassal = { 
+						higher_real_tier_than = BARON
+						NOT = { 
+							primary_title = { temporary = yes } 
+						}
+						OR = {
+							AND = {
+								OR = {
+									male_can_hold_minor_title_trigger = yes
+									female_can_hold_minor_commander_title_trigger = yes
+								}
+								OR = {
+									NOT = { religion = hindu }
+									trait = kshatriya
+								}
+								is_adult = yes
+							}
+							has_character_flag = special_marshal
+						}
+						
+						prisoner = no
+						NOT = { trait = incapable }
+						NOT = { is_inaccessible_trigger = yes }
+						NOT = { has_character_flag = guru }
+						NOT = { has_character_modifier = refusing_to_lead }
+						NOR = {
+							has_job_title = job_chancellor
+							has_job_title = job_marshal
+							has_job_title = job_treasurer
+							has_job_title = job_spymaster
+							has_job_title = job_spiritual
+							has_minor_title = title_commander
+						}
+					} 
+				} 
+			} 
+		}
+	}
+
 
 can_still_be_commander_byzantine_trigger = { 
 	NOT = { 

@@ -37,6 +37,10 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
+			trigger_if = {
+				has_landed_title = k_celtic_christian
+				e_celtic_empire = { add_law = succ_open_elective }
+			}
 			add_claim = k_northumbria
 			add_claim = k_wessex
 			add_claim = k_mercia
@@ -92,6 +96,7 @@ decisions = {
 		potential = {
 			has_landed_title = e_celtic_empire
 			NOT = { has_global_flag = pope_celtic_conflict }
+			NOT = { has_landed_title = k_celtic_christian }
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}
@@ -154,23 +159,14 @@ decisions = {
 		}
 		
 		allow = {
-			OR = {
-				AND = {
-					has_landed_title = k_england
-					completely_controls = k_denmark
-					completely_controls = k_norway
-				}
-				AND = {
-					completely_controls = k_northumbria
-					completely_controls = k_wessex
-					completely_controls = k_mercia
-					completely_controls = k_denmark
-					completely_controls = k_norway
-				}
+			AND = {
+				completely_controls_region = custom_england
+				completely_controls = k_denmark
+				completely_controls = k_norway
 			}
 			trigger_if = {
 				limit = { k_danelaw = { is_titular = no } }
-				completely_controls = k_danelaw
+				has_landed_title = k_danelaw
 			}
 			OR = {
 				religion = catholic
