@@ -58,6 +58,58 @@ tribal = {
 		ai_creation_factor = 95
 		extra_tech_building_start = 2
 	}
+
+	af_copper_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_vastmanland }
+				has_building = af_copper_mine_1
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		
+		gold_cost = 300
+		build_time = 730
+		
+		tax_income = 2.5
+		local_tax_modifier = 0.010
+		military_techpoints = 0.015
+
+		convert_to_castle = eu_copper_mine_1
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 0.3
+	}
+	
+	af_copper_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_vastmanland }
+				has_building = af_copper_mine_1
+				has_building = af_copper_mine_2
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		upgrades_from = eu_copper_mine_1
+		trigger = { TECH_TRADE_PRACTICES = 1 }		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 4
+		local_tax_modifier = 0.015
+		military_techpoints = 0.020
+		
+		convert_to_castle = eu_copper_mine_1
+		
+		ai_creation_factor = 95
+		extra_tech_building_start = 2
+	}
 	
 	af_silver_mine_1 = {
 		desc = eu_gold_mine_1_desc
