@@ -55,7 +55,10 @@ republic_governments = {
 							has_game_started = yes
 							is_merchant_republic = yes
 						}
-						capital_scope = { port = yes }
+						AND = {
+							capital_scope = { port = yes }
+							government = republic_government
+						}
 					}
 					higher_real_tier_than = count
 					any_demesne_province = {
