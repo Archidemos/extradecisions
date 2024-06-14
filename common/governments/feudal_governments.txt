@@ -728,11 +728,11 @@ feudal_governments = {
 		frame_suffix = "_republic"
 		title_prefix = "city_"
 		potential = {
+			is_patrician = no
 			NAND = {
 				controls_religion = yes
 				NOT = { religion_group = muslim }
 			}
-			NOT = { is_government_potential = merchant_republic_government }
 			holy_order = no
 			higher_tier_than = BARON
 		}

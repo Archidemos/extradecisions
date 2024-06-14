@@ -22,6 +22,7 @@ republic_governments = {
 		frame_suffix = "_merchantrepublic"
 		title_prefix = "city_"
 		potential = {
+			NOT = { is_government_potential = ar_republic_government }
 			OR = {
 				controls_religion = no
 				religion_group = muslim
@@ -55,10 +56,7 @@ republic_governments = {
 							has_game_started = yes
 							is_merchant_republic = yes
 						}
-						AND = {
-							capital_scope = { port = yes }
-							government = republic_government
-						}
+						capital_scope = { port = yes }
 					}
 					higher_real_tier_than = count
 					any_demesne_province = {
