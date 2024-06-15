@@ -1001,3 +1001,37 @@ narrative_event = { #Event for everyone about the formation
 		name = MOGGOLDOPT3
 	}
 }
+
+character_event = {
+    id = MP.037
+
+    is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
+    hide_window = yes
+    
+    only_playable = yes
+
+    trigger = {
+        government = republic_government
+        
+        # Non-patrician requirements to turn into a merchant republic
+        capital_scope = { is_coastal = yes }
+        
+        # Require at least one province and be Duke tier or higher
+        higher_real_tier_than = COUNT
+        num_of_count_titles >= 1
+        
+        # MR can't be under MR
+        trigger_if = {
+            limit = { independent = no }
+        
+            liege_before_war = {
+                is_merchant_republic = no
+            }
+        }
+    }
+    
+    immediate = {
+        create_family_palace = yes
+        set_government_type = merchant_republic_government
+    }
+}
