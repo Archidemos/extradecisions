@@ -1035,3 +1035,36 @@ character_event = {
         set_government_type = merchant_republic_government
     }
 }
+
+character_event = {
+	id = MP.038
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = set_orthodox_free }
+		start_date >= 769.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = set_orthodox_free
+		any_playable_ruler = {
+			limit = {
+				holder_scope = { has_landed_title = k_orthodox }
+			}
+			save_event_target_as = orthodox_independent
+			holder_scope = {
+				limit = {
+					has_landed_title = k_orthodox
+				}
+				set_defacto_liege = event_target:orthodox_independent
+			}
+		}
+	}
+}

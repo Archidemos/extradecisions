@@ -165,6 +165,35 @@ k_celtic_christian = {
 	}
 }
 
+d_orthodox_guard = {
+	color={ 255 240 240 }
+	color2 = { 220 220 0}
+
+	capital = 496 # Constantinople
+	culture = greek
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	allow = {
+		has_landed_title = k_orthodox
+	}
+
+	# Always exists
+	landless = yes
+
+	mercenary = yes
+
+	mercenary_type = papal_guard_composition
+
+	strength_growth_per_century = 1.00
+
+	religion = orthodox
+
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
 d_insular_guard = {
 	color={ 255 240 240 }
 	color2 = { 220 220 0}
