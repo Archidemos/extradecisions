@@ -13,7 +13,7 @@ temple = {
 		tax_income = 0.5
 		culture_techpoints = 0.025
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 104
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -33,7 +33,7 @@ temple = {
 		tax_income = 1
 		culture_techpoints = 0.030
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 103
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -53,7 +53,7 @@ temple = {
 		tax_income = 2
 		culture_techpoints = 0.035
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 102
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -73,7 +73,7 @@ temple = {
 		tax_income = 3
 		culture_techpoints = 0.040
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 101
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -170,7 +170,7 @@ temple = {
 		levy_size = 0.010
 		heavy_infantry = 45
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 89
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -189,7 +189,7 @@ temple = {
 		levy_size = 0.015
 		heavy_infantry = 55
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -208,7 +208,7 @@ temple = {
 		levy_size = 0.020
 		heavy_infantry = 65
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -227,7 +227,7 @@ temple = {
 		levy_size = 0.025
 		heavy_infantry = 85
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -245,7 +245,7 @@ temple = {
 		light_infantry_offensive = 0.15
 		light_infantry = 60
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 89
 		add_number_to_name = no
 	
 		extra_tech_building_start = 10.0
@@ -264,7 +264,7 @@ temple = {
 		light_infantry_offensive = 0.15
 		light_infantry = 80
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 	
 		extra_tech_building_start = 10.0
@@ -283,7 +283,7 @@ temple = {
 		light_infantry_offensive = 0.15
 		light_infantry = 100
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 	
 		extra_tech_building_start = 10.0
@@ -302,9 +302,601 @@ temple = {
 		light_infantry_offensive = 0.15
 		light_infantry = 120
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 	
+		extra_tech_building_start = 10.0
+	}
+
+	church_garden_1 = {
+		desc = church_garden_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
+		}
+		prerequisites = { tp_wall_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_garden_2 = {
+		desc = church_garden_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
+		}
+		prerequisites = { tp_wall_3 }
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = church_garden_1
+		
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_garden_3 = {
+		desc = church_garden_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
+		}
+		prerequisites = { tp_wall_4 }
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = church_garden_2
+		
+		local_tax_modifier = 0.075
+
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_garden_4 = {
+		desc = church_garden_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 5
+		}
+		prerequisites = { tp_wall_5 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_garden_3
+		
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_garden_5 = {
+		desc = church_garden_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 6
+		}
+		prerequisites = { tp_wall_6 }
+		gold_cost = 750
+		build_time = 1350
+
+		upgrades_from = church_garden_4
+		
+		local_tax_modifier = 0.15
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	church_belltower_1 = {
+		desc = church_belltower_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { tp_monastery_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		light_infantry = 45
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_belltower_2 = {
+		desc = church_belltower_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { tp_monastery_2 }
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = church_belltower_1
+		
+		light_infantry = 55
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_belltower_3 = {
+		desc = church_belltower_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		prerequisites = { tp_monastery_3 }
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = church_belltower_2
+		
+		light_infantry = 65
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_belltower_4 = {
+		desc = church_belltower_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		prerequisites = { tp_monastery_3 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_belltower_3
+		
+		light_infantry = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_belltower_5 = {
+		desc = church_belltower_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		prerequisites = { tp_monastery_4 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_belltower_4
+		
+		light_infantry = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_archery_1 = {
+		desc = church_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { tp_barracks_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		archers = 45
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_archery_2 = {
+		desc = church_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { tp_barracks_3 }
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = church_archery_1
+		
+		archers = 55
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_archery_3 = {
+		desc = church_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		prerequisites = { tp_barracks_4 }
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = church_archery_2
+		
+		archers = 65
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_archery_4 = {
+		desc = church_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		prerequisites = { tp_barracks_5 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_archery_3
+		
+		archers = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_archery_5 = {
+		desc = church_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		prerequisites = { tp_barracks_5 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_archery_4
+		
+		archers = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_market_1 = {
+		desc = church_market_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
+		}
+		prerequisites = { tp_town_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_market_2 = {
+		desc = church_market_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
+		}
+		prerequisites = { tp_town_3 }
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = church_market_1
+		
+		tax_income = 2
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_market_3 = {
+		desc = church_market_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
+		}
+		prerequisites = { tp_town_4 }
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = church_market_2
+		
+		tax_income = 2.5
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_market_4 = {
+		desc = church_market_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 5
+		}
+		prerequisites = { tp_town_5 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = church_market_3
+		
+		local_tax_modifier = 3
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	church_market_5 = {
+		desc = church_market_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 6
+		}
+		prerequisites = { tp_town_6 }
+		gold_cost = 750
+		build_time = 1350
+
+		upgrades_from = church_market_4
+		
+		local_tax_modifier = 4
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	hospital_sector_1 = {
+		desc = hospital_sector_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
+		}
+		prerequisites = { tp_school_1 }
+		gold_cost = 150
+		build_time = 365
+		
+		disease_defence = 0.025
+		liege_piety = 0.025
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	hospital_sector_2 = {
+		desc = hospital_sector_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
+		}
+		prerequisites = { tp_school_1 }
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = hospital_sector_1
+		
+		disease_defence = 0.05
+		liege_piety = 0.05
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	hospital_sector_3 = {
+		desc = hospital_sector_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
+		}
+		prerequisites = { tp_school_2 }
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = hospital_sector_2
+		
+		disease_defence = 0.1
+		liege_piety = 0.1
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	hospital_sector_4 = {
+		desc = hospital_sector_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 5
+		}
+		prerequisites = { tp_school_2 }
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = hospital_sector_3
+		
+		disease_defence = 0.15
+		liege_piety = 0.15
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	hospital_sector_5 = {
+		desc = hospital_sector_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 6
+		}
+		prerequisites = { tp_school_2 }
+		gold_cost = 750
+		build_time = 1350
+
+		upgrades_from = hospital_sector_4
+		
+		disease_defence = 0.2
+		liege_piety = 0.2
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}	
+
+	theocracy_district_1 = {
+		desc = theocracy_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { tp_town_3 }
+		gold_cost = 350
+		build_time = 365
+		
+		levy_size = 0.0025
+		local_revolt_risk = 0.1
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	theocracy_district_2 = {
+		desc = theocracy_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 3
+		}
+		prerequisites = { tp_town_4 }
+		gold_cost = 500
+		build_time = 547
+
+		upgrades_from = theocracy_district_1
+		
+		levy_size = 0.01
+		local_revolt_risk = 0.2
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 95
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	theocracy_district_3 = {
+		desc = theocracy_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { tp_town_4 }
+		gold_cost = 750
+		build_time = 730
+
+		upgrades_from = theocracy_district_2
+		
+		levy_size = 0.02
+		local_revolt_risk = 0.3
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 94
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	theocracy_district_4 = {
+		desc = theocracy_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { tp_town_5 }
+		gold_cost = 1000
+		build_time = 1095
+
+		upgrades_from = theocracy_district_3
+		
+		levy_size = 0.03
+		local_revolt_risk = 0.4
+		local_tax_modifier = 0.15
+
+		ai_creation_factor = 93
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	theocracy_district_5 = {
+		desc = theocracy_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { tp_town_3 }
+		gold_cost = 1250
+		build_time = 1460
+
+		upgrades_from = theocracy_district_4
+		
+		levy_size = 0.04
+		local_revolt_risk = 0.5
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 92
+		add_number_to_name = no
+
 		extra_tech_building_start = 10.0
 	}
 }
@@ -324,7 +916,7 @@ city = {
 		levy_size = 0.025
 		tech_growth_modifier = 0.025
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 104
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -345,7 +937,7 @@ city = {
 		levy_size = 0.05
 		tech_growth_modifier = 0.035
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 103
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -365,7 +957,7 @@ city = {
 		levy_size = 0.075
 		tech_growth_modifier = 0.055
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 102
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -385,7 +977,7 @@ city = {
 		levy_size = 0.1
 		tech_growth_modifier = 0.075
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 101
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -404,7 +996,7 @@ city = {
 		levy_size = 0.025
 		pikemen = 45
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 100
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -424,7 +1016,7 @@ city = {
 		levy_size = 0.035
 		pikemen = 55
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 89
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -444,7 +1036,7 @@ city = {
 		levy_size = 0.045
 		pikemen = 65
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -464,7 +1056,7 @@ city = {
 		levy_size = 0.055
 		pikemen = 75
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 88
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -482,7 +1074,7 @@ city = {
 		tax_income = 1.5
 		tech_growth_modifier = 0.025
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 104
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -501,7 +1093,7 @@ city = {
 		tax_income = 2
 		tech_growth_modifier = 0.035
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 103
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -520,7 +1112,7 @@ city = {
 		tax_income = 2.5
 		tech_growth_modifier = 0.045
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 102
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -540,7 +1132,7 @@ city = {
 		tech_growth_modifier = 0.055
 		local_tax_modifier = 0.055
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 101
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -558,7 +1150,7 @@ city = {
 		economy_techpoints = 0.025
 		local_tax_modifier = 0.025
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 103
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -577,7 +1169,7 @@ city = {
 		economy_techpoints = 0.035
 		local_tax_modifier = 0.035
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 102
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -596,7 +1188,7 @@ city = {
 		economy_techpoints = 0.05
 		local_tax_modifier = 0.05
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 101
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -605,7 +1197,7 @@ city = {
 	ar_republic_caravansary_4 = {
 		desc = ar_republic_caravansary_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6}
+			TECH_CITY_CONSTRUCTION = 6
 		}
 		gold_cost = 400
 		build_time = 1095
@@ -615,7 +1207,7 @@ city = {
 		economy_techpoints = 0.075
 		local_tax_modifier = 0.075
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 100
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -654,7 +1246,7 @@ city = {
 		tax_income = 3
 		local_tax_modifier = 0.05
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 95
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -674,7 +1266,7 @@ city = {
 		tax_income = 3.5
 		local_tax_modifier = 0.075
 		
-		ai_creation_factor = 96
+		ai_creation_factor = 94
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -694,7 +1286,576 @@ city = {
 		tax_income = 5
 		local_tax_modifier = 0.1
 		
+		ai_creation_factor = 93
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	goods_merchant_1 = {
+		desc = goods_merchant_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
+		}
+		prerequisites = { ct_wall_2 }
+		prerequisites = { ct_wall_q_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	goods_merchant_2 = {
+		desc = goods_merchant_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = goods_merchant_1
+		
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	goods_merchant_3 = {
+		desc = goods_merchant_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = goods_merchant_2
+		
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	goods_merchant_4 = {
+		desc = goods_merchant_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 5
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = goods_merchant_3
+		
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	goods_merchant_5 = {
+		desc = goods_merchant_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 6
+		}
+		gold_cost = 750
+		build_time = 1350
+
+		upgrades_from = goods_merchant_4
+		
+		local_tax_modifier = 0.15
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_barracks_1 = {
+		desc = ar_republic_barracks_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ct_training_grounds_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		light_infantry = 45
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_barracks_2 = {
+		desc = ar_republic_barracks_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_republic_barracks_1
+		
+		light_infantry = 55
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_barracks_3 = {
+		desc = ar_republic_barracks_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_republic_barracks_2
+		
+		light_infantry = 65
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_barracks_4 = {
+		desc = ar_republic_barracks_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_barracks_3
+		
+		light_infantry = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_barracks_5 = {
+		desc = ar_republic_barracks_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_barracks_4
+		
+		light_infantry = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_archery_1 = {
+		desc = ar_republic_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ct_training_grounds_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		archers = 45
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_archery_2 = {
+		desc = ar_republic_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = ar_republic_archery_1
+		
+		archers = 55
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_archery_3 = {
+		desc = ar_republic_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = ar_republic_archery_2
+		
+		archers = 65
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_archery_4 = {
+		desc = ar_republic_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_archery_3
+		
+		archers = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_archery_5 = {
+		desc = ar_republic_archery_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_archery_4
+		
+		archers = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_forum_1 = {
+		desc = merchant_forum_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
+		}
+		prerequisites = { ct_wall_2 }
+		prerequisites = { ct_wall_q_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_forum_2 = {
+		desc = merchant_forum_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = merchant_forum_1
+		
+		tax_income = 2
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_forum_3 = {
+		desc = merchant_forum_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = merchant_forum_2
+		
+		tax_income = 2.5
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_forum_4 = {
+		desc = merchant_forum_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 5
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = merchant_forum_3
+		
+		local_tax_modifier = 3
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_forum_5 = {
+		desc = merchant_forum_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+			TECH_TRADE_PRACTICES = 6
+		}
+		gold_cost = 750
+		build_time = 1350
+
+		upgrades_from = merchant_forum_4
+		
+		local_tax_modifier = 4
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_inn_1 = {
+		desc = merchant_inn_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ct_training_grounds_2 }
+		gold_cost = 150
+		build_time = 365
+		
+		garrison_size = 0.025
+		levy_size = 0.025
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_inn_2 = {
+		desc = merchant_inn_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 225
+		build_time = 547
+
+		upgrades_from = merchant_inn_1
+		
+		garrison_size = 0.035
+		levy_size = 0.035
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_inn_3 = {
+		desc = merchant_inn_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		gold_cost = 400
+		build_time = 730
+
+		upgrades_from = merchant_inn_2
+		
+		garrison_size = 0.045
+		levy_size = 0.045
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_inn_4 = {
+		desc = merchant_inn_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = merchant_inn_3
+		
+		garrison_size = 0.055
+		levy_size = 0.055
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	merchant_inn_5 = {
+		desc = merchant_inn_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 8
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = merchant_inn_4
+		
+		garrison_size = 0.075
+		levy_size = 0.075
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	republic_district_1 = {
+		desc = republic_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		prerequisites = { ct_marketplace_3 }
+		gold_cost = 350
+		build_time = 365
+		
+		levy_size = 0.0025
+		local_revolt_risk = 0.1
+		local_tax_modifier = 0.05
+		
 		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	republic_district_2 = {
+		desc = republic_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 3
+		}
+		prerequisites = { ct_marketplace_4 }
+		gold_cost = 500
+		build_time = 547
+
+		upgrades_from = republic_district_1
+		
+		levy_size = 0.01
+		local_revolt_risk = 0.2
+		local_tax_modifier = 0.075
+		
+		ai_creation_factor = 95
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	republic_district_3 = {
+		desc = republic_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ct_marketplace_5 }
+		gold_cost = 750
+		build_time = 730
+
+		upgrades_from = republic_district_2
+		
+		levy_size = 0.02
+		local_revolt_risk = 0.3
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 94
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	republic_district_4 = {
+		desc = republic_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { ct_marketplace_5 }
+		gold_cost = 1000
+		build_time = 1095
+
+		upgrades_from = republic_district_3
+		
+		levy_size = 0.03
+		local_revolt_risk = 0.4
+		local_tax_modifier = 0.15
+		
+		ai_creation_factor = 93
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	republic_district_5 = {
+		desc = republic_district_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ct_marketplace_5 }
+		gold_cost = 1250
+		build_time = 1460
+
+		upgrades_from = republic_district_4
+		
+		levy_size = 0.04
+		local_revolt_risk = 0.5
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 92
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0

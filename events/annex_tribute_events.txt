@@ -1,77 +1,77 @@
-#namespace = TRIB
-#
-#narrative_event = {	#Tributary gets event to give up his lands or to be rebelious
-#    id = TRIB.001
-#	title = EVTNAMETRIB.1
-#	desc = EVTDESCTRIB.1
-#
-#	picture = "GFX_evt_mongols"
-#	border = "GFX_event_narrative_frame_war"
-#
-#	is_triggered_only = yes
-#    
-#    only_playable = yes
-#
-# 	option = { #Gives into the Annexation
-#        name = EVTOPTTRIB.1
-#		ai_chance = { factor = 100 }
-#		set_defacto_liege = FROM
-#    }
-#	
-#    option = { #Refuses Annexation
-#        name = EVTOPTTRIB.2
-#		ai_chance = { factor = 0 }
-#		FROM = { hidden_tooltip = { narrative_event = { id = TRIB.002 days 5 } } }
-#    }
-#}
-#
-#narrative_event = {	#Overlord gets news of Rebelious Tributary
-#    id = TRIB.002
-#	title = EVTNAMETRIB.2
-#	desc = EVTDESCTRIB.2
-#
-#	picture = "GFX_evt_mongols"
-#	border = "GFX_event_narrative_frame_war"
-#
-#	is_triggered_only = yes
-#    
-#    only_playable = yes
-#	
-#    option = { #Declares war on the rebelious tributary
-#        name = EVTOPTTRIB.3
-#		ai_chance = { factor = 100 }
-#        unsafe_war = {
-#            casus_belli = annex_rebelious_tributary
-#            target = ROOT
-#        }
-#    }
-#	
-#    option = { #Gives up and loses control
-#        name = EVTOPTTRIB.4
-#		ai_chance = { factor = 0 }
-#		ROOT = {
-#			suzerain = {
-#				remove_tributary = PREV
-#			}
-#			hidden_tooltip = { narrative_event = { id = TRIB.003 } }
-#		}
-#    }
-#}
-#
-#narrative_event = {	#Rebelious Tributary gets news about Overlord giving up
-#    id = TRIB.003
-#	title = EVTNAMETRIB.3
-#	desc = EVTDESCTRIB.3
-#
-#	picture = "GFX_evt_mongols"
-#	border = "GFX_event_narrative_frame_war"
-#
-#	is_triggered_only = yes
-#    
-#    only_playable = yes
-#	
-#    option = { #Understood
-#        name = EVTOPTTRIB.3
-#		ai_chance = { factor = 100 }
-#    }
-#}
+namespace = TRIB
+
+narrative_event = {	#Tributary gets event to give up his lands or to be rebelious
+    id = TRIB.001
+	title = EVTNAMETRIB.1
+	desc = EVTDESCTRIB.1
+
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+    
+    only_playable = yes
+
+ 	option = { #Gives into the Annexation
+        name = EVTOPTTRIB.1
+		ai_chance = { factor = 100 }
+		set_defacto_liege = event_target:tribute_annexer
+		clear_event_target = tribute_annexer
+    }
+	
+    option = { #Refuses Annexation
+        name = EVTOPTTRIB.2
+		ai_chance = { factor = 0 }
+		custom_tooltip = {
+			text = "PLAYER_REFUSE_ANNEX_TRIBUTE"
+			event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.002 days = 5 } } }
+		}
+    }
+}
+
+narrative_event = {	#Overlord gets news of Rebelious Tributary
+    id = TRIB.002
+	title = EVTNAMETRIB.2
+	desc = EVTDESCTRIB.2
+
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+    
+    only_playable = yes
+	
+    option = { #Declares war on the rebelious tributary
+        name = EVTOPTTRIB.3
+		ai_chance = { factor = 100 }
+		custom_tooltip = {
+			text = "OVERLORD_DECS_WAR_ANNEX_TRIBUTE"
+			unsafe_war = {
+				casus_belli = annex_rebelious_tributary
+				target = FROM
+			}
+		}
+    }
+	
+    option = { #Gives up and loses control
+        name = EVTOPTTRIB.4
+		ai_chance = { factor = 0 }
+		FROM = { suzerain = { remove_tributary = FROM } }
+		FROM = { hidden_tooltip = { narrative_event = { id = TRIB.003 days = 5 } } }
+    }
+}
+
+narrative_event = {	#Rebelious Tributary gets news about Overlord giving up
+    id = TRIB.003
+	title = EVTNAMETRIB.3
+	desc = EVTDESCTRIB.3
+
+	picture = GFX_evt_feast
+
+	is_triggered_only = yes
+    
+    only_playable = yes
+	
+    option = { #Understood
+        name = EVTOPTTRIB.5
+		ai_chance = { factor = 100 }
+    }
+}

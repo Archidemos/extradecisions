@@ -12,15 +12,10 @@ pledge_crusade_trigger = {
 	}
 	custom_tooltip = {
 		text = crusade_no_antipope_TT
-
-		rightful_religious_head_scope = {
-			OR = {
-				has_landed_title = k_papal_state
-				has_landed_title = d_fraticelli
-				has_landed_title = k_celtic_christian
-				religion = orthodox
-			}
-		}
+			NOT = { has_landed_title = k_papal_state }
+			NOT = { has_landed_title = k_orthodox }
+			NOT = { has_landed_title = d_fraticelli }
+			NOT = { has_landed_title = k_celtic_christian }
 	}
 	rightful_religious_head_scope = {
 		NOT = {

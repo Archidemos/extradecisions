@@ -59,7 +59,8 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
-			set_global_flag = west_rome_formed				
+			set_global_flag = west_rome_formed		
+			
 			ROOT = {
 				any_demesne_title = {
 					limit = { 
@@ -95,6 +96,14 @@ decisions = {
 							usurp_title = PREV
 							make_capital_holding = yes
 						}
+					}
+					if = {
+						limit = { government = merchant_republic_government }
+						b_viterbo = {
+							grant_title = PREV
+							usurp_title = PREV
+							ROOT = { capital = PREV }
+						}				
 					}
 				}
 			}
