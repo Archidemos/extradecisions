@@ -1,127 +1,127 @@
-decisions = {
-	become_genghis_khan = {
-		only_independent = yes
-		is_high_prio = yes
-		ai_check_interval = 60
-		
-		potential = {
-			is_playable = yes
-			independent = yes
-			culture = mongol
-			has_dlc = "Horse Lords"
-			government = nomadic_government
-			NOT = { has_global_flag = mongol_horde_united }
-			NOT = { is_title_active = e_mongol_empire }
-		}
-		
-		allow = {
-			num_of_count_titles_in_realm = 35
-			prestige = 1500
-		}
-		
-		effect = {
-			set_global_flag = mongol_horde_arrival
-			set_global_flag = mongol_horde_united
-			set_special_character_title = GENGHIS_KHAN
-			spawn_unit = {
-				owner = ROOT
-				province = PREV
-				home = PREV
-				troops = {
-					knights = { 10000 10000 }
-					light_cavalry = { 10000 10000 }
-					horse_archers = { 5000 5000 }
-				}
-					attrition = 0
-				disband_on_peace = no
-			}
-			spawn_unit = {
-				owner = ROOT
-				province = PREV
-				home = PREV
-				troops = {
-					knights = { 10000 10000 }
-					light_cavalry = { 10000 10000 }
-					horse_archers = { 5000 5000 }
-				}
-					attrition = 0
-				disband_on_peace = no
-			}
-			spawn_unit = {
-				owner = ROOT
-				province = PREV
-				home = PREV
-				troops = {
-					knights = { 10000 10000 }
-					light_cavalry = { 10000 10000 }
-					horse_archers = { 5000 5000 }
-				}
-					attrition = 0
-				disband_on_peace = no
-			}
-			prestige = 1000
-			add_character_modifier = {
-				modifier = greatest_of_khans
-				duration = -1
-			}
-			if = {
-				limit = {
-					has_dlc = "Holy Fury"
-					NOT = {
-						any_owned_bloodline = {
-							has_bloodline_flag = genghis_khan_line
-						}
-					}
-				}
-				create_bloodline = {
-					type = genghis_khan
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						e_mongol_empire = {
-							holder_scope = { always = yes }
-						}
-					}
-				}
-				any_demesne_title = {
-					limit = {
-						tier = EMPEROR
-					}
-					set_title_flag = to_be_destroyed
-				}
-				e_mongol_empire = {
-					hidden_tooltip = {
-						activate_title = { title = THIS status = yes }
-					}
-					grant_title = PREV
-					make_primary_title = yes
-				}
-				any_demesne_title = {
-					limit = {
-						has_title_flag = to_be_destroyed
-					}
-					activate_title = { title = THIS status = no }
-					destroy_landed_title = THIS
-				}
-			}
-			if = {
-				limit = {
-					ai = yes
-				}
-				character_event = { id = 60530 } # ai reinforcements
-				population = 50000
-			}
-			hidden_tooltip = {
-				any_playable_ruler = {
-					narrative_event = { id = 60520 } # notify the world
-				}
-				narrative_event = { id = 60520 } # and myself
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
+#decisions = {
+#	become_genghis_khan = {
+#		only_independent = yes
+#		is_high_prio = yes
+#		ai_check_interval = 60
+#		
+#		potential = {
+#			is_playable = yes
+#			independent = yes
+#			culture = mongol
+#			has_dlc = "Horse Lords"
+#			government = nomadic_government
+#			NOT = { has_global_flag = mongol_horde_united }
+#			NOT = { is_title_active = e_mongol_empire }
+#		}
+#		
+#		allow = {
+#			num_of_count_titles_in_realm = 35
+#			prestige = 1500
+#		}
+#		
+#		effect = {
+#			set_global_flag = mongol_horde_arrival
+#			set_global_flag = mongol_horde_united
+#			set_special_character_title = GENGHIS_KHAN
+#			spawn_unit = {
+#				owner = ROOT
+#				province = PREV
+#				home = PREV
+#				troops = {
+#					knights = { 10000 10000 }
+#					light_cavalry = { 10000 10000 }
+#					horse_archers = { 5000 5000 }
+#				}
+#					attrition = 0
+#				disband_on_peace = no
+#			}
+#			spawn_unit = {
+#				owner = ROOT
+#				province = PREV
+#				home = PREV
+#				troops = {
+#					knights = { 10000 10000 }
+#					light_cavalry = { 10000 10000 }
+#					horse_archers = { 5000 5000 }
+#				}
+#					attrition = 0
+#				disband_on_peace = no
+#			}
+#			spawn_unit = {
+#				owner = ROOT
+#				province = PREV
+#				home = PREV
+#				troops = {
+#					knights = { 10000 10000 }
+#					light_cavalry = { 10000 10000 }
+#					horse_archers = { 5000 5000 }
+#				}
+#					attrition = 0
+#				disband_on_peace = no
+#			}
+#			prestige = 1000
+#			add_character_modifier = {
+#				modifier = greatest_of_khans
+#				duration = -1
+#			}
+#			if = {
+#				limit = {
+#					has_dlc = "Holy Fury"
+#					NOT = {
+#						any_owned_bloodline = {
+#							has_bloodline_flag = genghis_khan_line
+#						}
+#					}
+#				}
+#				create_bloodline = {
+#					type = genghis_khan
+#				}
+#			}
+#			if = {
+#				limit = {
+#					NOT = {
+#						e_mongol_empire = {
+#							holder_scope = { always = yes }
+#						}
+#					}
+#				}
+#				any_demesne_title = {
+#					limit = {
+#						tier = EMPEROR
+#					}
+#					set_title_flag = to_be_destroyed
+#				}
+#				e_mongol_empire = {
+#					hidden_tooltip = {
+#						activate_title = { title = THIS status = yes }
+#					}
+#					grant_title = PREV
+#					make_primary_title = yes
+#				}
+#				any_demesne_title = {
+#					limit = {
+#						has_title_flag = to_be_destroyed
+#					}
+#					activate_title = { title = THIS status = no }
+#					destroy_landed_title = THIS
+#				}
+#			}
+#			if = {
+#				limit = {
+#					ai = yes
+#				}
+#				character_event = { id = 60530 } # ai reinforcements
+#				population = 50000
+#			}
+#			hidden_tooltip = {
+#				any_playable_ruler = {
+#					narrative_event = { id = 60520 } # notify the world
+#				}
+#				narrative_event = { id = 60520 } # and myself
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#}

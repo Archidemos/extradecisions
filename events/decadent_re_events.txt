@@ -11,6 +11,9 @@ character_event = {
         uses_decadence = yes
     }
 
+	mean_time_to_happen = { months = 1 }
+
+
     immediate = {
         primary_title = {
             save_event_target_as = dec_trigger_now
@@ -92,10 +95,6 @@ character_event = {
             if = {
                 limit = { decadence >= 15 decadence < 25 }
                 add_character_modifier = { name = decadent_value_15 duration = -1 }
-            }
-            if = {
-                limit = { decadence >= 25 decadence < 35 }
-                add_character_modifier = { name = decadent_value_25 duration = -1 }
             }
             if = {
                 limit = { decadence >= 35 decadence < 55 }

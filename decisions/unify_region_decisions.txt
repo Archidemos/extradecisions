@@ -4,7 +4,6 @@ decisions = {
 		is_high_prio = yes
 
 		potential = {
-			NOT = { has_landed_title = e_hre }
 			is_playable = yes
 			primary_title = {
 				higher_tier_than = DUKE
@@ -18,6 +17,7 @@ decisions = {
 			NOT = { has_character_flag = is_otto }
 			NOT = { has_global_flag = germany_united }
 			NOT = { has_landed_title = k_dutch_republic }
+			NOT = { has_landed_title = e_hre }
 		}
 		
 		allow = {
@@ -29,14 +29,17 @@ decisions = {
 			NOT = {	trait = incapable }
 			prestige = 1000
 			OR = {
-				has_landed_title = k_wesphalia
-				has_landed_title = k_thuringian
-				has_landed_title = k_swabia
-			}
-			AND = {
-				completely_controls = k_wesphalia
-				completely_controls = k_thuringian
-				completely_controls = k_swabia
+				OR = {
+					has_landed_title = k_wesphalia
+					has_landed_title = k_thuringian
+					has_landed_title = k_swabia
+					AND = {
+						completely_controls = k_wesphalia
+						completely_controls = k_thuringian
+						completely_controls = k_swabia
+					}
+				}
+				has_landed_title = k_germany
 			}
 		}
 
@@ -81,6 +84,8 @@ decisions = {
 				d_thurgau = { de_jure_liege = k_germany }
 				d_fulda = { de_jure_liege = k_germany }
 				d_hamburg = { de_jure_liege = k_germany }
+				d_koln = { de_jure_liege = k_germany }
+				d_holstein = { de_jure_liege = k_denmark }
 				d_mecklemburg = { de_jure_liege = k_wolgast }
 				
 				activate_title = {

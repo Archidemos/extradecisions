@@ -432,6 +432,9 @@ narrative_event = {
             d_hamburg = {
                 de_jure_liege = k_saxony
             }
+			d_koln = {
+				de_jure_liege = k_saxony
+			}
             # Set De Jure Thuringia
             d_thuringia = {
                 de_jure_liege = k_thuringian
@@ -663,13 +666,13 @@ narrative_event = {
                 }
                 d_thuringia = {
                     holder_scope = {
-                        grant_title_no_opinion = k_thuringia_otto
+                        grant_title_no_opinion = k_thuringian
                         save_event_target_as = thuringia_king
                     }
                 }
                 any_vassal = {
                     limit = {
-                        de_jure_liege = k_thuringia_otto
+                        de_jure_liege = k_thuringian
                     }
                     set_defacto_liege = event_target:thuringia_king
                 }
@@ -682,13 +685,13 @@ narrative_event = {
                 }
                 c_thuringen = {
                     holder_scope = {
-                        grant_title_no_opinion = k_thuringia_otto
+                        grant_title_no_opinion = k_thuringian
                         save_event_target_as = thuringia_king
                     }
                 }
                 any_vassal = {
                     limit = {
-                        de_jure_liege = k_thuringia_otto
+                        de_jure_liege = k_thuringian
                     }
                     set_defacto_liege = event_target:thuringia_king
                 }
@@ -918,6 +921,9 @@ narrative_event = {
 				d_swabia = { de_jure_liege = k_germany }
 				d_thuringia = { de_jure_liege = k_germany }
 				d_thurgau = { de_jure_liege = k_germany }
+				d_hamburg = { de_jure_liege = k_germany }
+				d_koln = { de_jure_liege = k_germany }
+				d_fulda = { de_jure_liege = k_germany }
 				
 				activate_title = {
 					title = k_germany
