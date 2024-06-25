@@ -6,8 +6,6 @@ trade_post = {
 	tr_walls_1 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -52,7 +50,7 @@ trade_post = {
 		}
 		desc = tr_walls_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 3 }
-		gold_cost = 100
+		gold_cost = 200
 		build_time = 182
 		ai_creation_factor = 95
 		
@@ -65,8 +63,6 @@ trade_post = {
 	tr_walls_2 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -111,7 +107,7 @@ trade_post = {
 		}
 		desc = tr_walls_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 150
+		gold_cost = 300
 		build_time = 274
 		upgrades_from = tr_walls_1
 		ai_creation_factor = 94
@@ -125,8 +121,6 @@ trade_post = {
 	tr_walls_3 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -171,7 +165,7 @@ trade_post = {
 		}
 		desc = tr_walls_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 5 }
-		gold_cost = 200
+		gold_cost = 400
 		build_time = 365
 		upgrades_from = tr_walls_2
 		ai_creation_factor = 93
@@ -185,8 +179,6 @@ trade_post = {
 	tr_market_1 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -231,7 +223,7 @@ trade_post = {
 		}
 		desc = tr_market_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 3 }
-		gold_cost = 100
+		gold_cost = 250
 		build_time = 182
 		ai_creation_factor = 95
 		
@@ -243,8 +235,6 @@ trade_post = {
 	tr_market_2 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -289,7 +279,7 @@ trade_post = {
 		}
 		desc = tr_market_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 150
+		gold_cost = 375
 		build_time = 274
 		upgrades_from = tr_market_1
 		ai_creation_factor = 94
@@ -302,8 +292,6 @@ trade_post = {
 	tr_market_3 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -348,7 +336,7 @@ trade_post = {
 		}
 		desc = tr_market_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 5 }
-		gold_cost = 200
+		gold_cost = 500
 		build_time = 365
 		upgrades_from = tr_market_2
 		ai_creation_factor = 93
@@ -361,8 +349,8 @@ trade_post = {
 	
 	tr_lighthouse_1 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -420,8 +408,8 @@ trade_post = {
 	
 	tr_lighthouse_2 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -480,8 +468,8 @@ trade_post = {
 	
 	tr_lighthouse_3 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -539,8 +527,8 @@ trade_post = {
 	
 	tr_headquarters_1 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -597,8 +585,8 @@ trade_post = {
 	
 	tr_headquarters_2 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -656,8 +644,8 @@ trade_post = {
 	
 	tr_headquarters_3 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -715,8 +703,8 @@ trade_post = {
 	
 	tr_spice_merchant_1 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -761,19 +749,20 @@ trade_post = {
 		}
 		desc = tr_spice_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 3 }
-		gold_cost = 100
+		gold_cost = 300
 		build_time = 182
 		ai_creation_factor = 100
 		
 		tax_income = 0.5
+		trade_route_wealth = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
 	
 	tr_spice_merchant_2 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -818,18 +807,20 @@ trade_post = {
 		}
 		desc = tr_spice_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 150
+		gold_cost = 450
 		build_time = 274
 		upgrades_from = tr_spice_merchant_1
 		ai_creation_factor = 99
 		
 		tax_income = 1
+		trade_route_wealth = 1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
 	
 	tr_spice_merchant_3 = {
-		potential = {
+		potential = 
+			port = yes
 			OR = {
 				port = yes
 				AND = {
@@ -876,12 +867,13 @@ trade_post = {
 		}
 		desc = tr_spice_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 5 }
-		gold_cost = 200
+		gold_cost = 600
 		build_time = 365
 		upgrades_from = tr_spice_merchant_2
 		ai_creation_factor = 98
 		
 		tax_income = 1
+		trade_route_wealth = 1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -889,8 +881,6 @@ trade_post = {
 	tr_road_1 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -948,8 +938,6 @@ trade_post = {
 	tr_road_2 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1008,8 +996,6 @@ trade_post = {
 	tr_road_3 = {
 		potential = {
 			OR = {
-				port = no
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1067,8 +1053,8 @@ trade_post = {
 	
 	tr_jewelry_merchant_1 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1113,11 +1099,11 @@ trade_post = {
 		}
 		desc = tr_jewelry_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 100
+		gold_cost = 475
 		build_time = 182
 		ai_creation_factor = 100
 		
-		tax_income = 1
+		tax_income = 2
 		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
@@ -1125,8 +1111,8 @@ trade_post = {
 	
 	tr_jewelry_merchant_2 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1171,12 +1157,12 @@ trade_post = {
 		}
 		desc = tr_jewelry_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 5 }
-		gold_cost = 150
-		build_time = 274
+		gold_cost = 625
+		build_time = 274	
 		upgrades_from = tr_jewelry_merchant_1
 		ai_creation_factor = 99
 		
-		tax_income = 2
+		tax_income = 3
 		local_tax_modifier = 0.05
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
@@ -1184,8 +1170,8 @@ trade_post = {
 	
 	tr_jewelry_merchant_3 = {
 		potential = {
+			port = yes
 			OR = {
-				port = yes
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1230,12 +1216,12 @@ trade_post = {
 		}
 		desc = tr_jewelry_merchant_1_desc
 		trigger = { TECH_TRADE_PRACTICES = 6 }
-		gold_cost = 200
+		gold_cost = 850
 		build_time = 365
 		upgrades_from = tr_jewelry_merchant_2
 		ai_creation_factor = 98
 		
-		tax_income = 2.5
+		tax_income = 3.5
 		local_tax_modifier = 0.1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
@@ -1244,8 +1230,8 @@ trade_post = {
 	trade_route_market_1 = {
 		desc = trade_route_market_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1304,8 +1290,8 @@ trade_post = {
 	trade_route_market_2 = {
 		desc = trade_route_market_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1365,8 +1351,8 @@ trade_post = {
 	trade_route_market_3 = {
 		desc = trade_route_market_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1426,8 +1412,8 @@ trade_post = {
 	trade_route_farm_1 = {
 		desc = trade_route_farm_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1486,8 +1472,8 @@ trade_post = {
 	trade_route_farm_2 = {
 		desc = trade_route_farm_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1547,8 +1533,8 @@ trade_post = {
 	trade_route_farm_3 = {
 		desc = trade_route_farm_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1609,8 +1595,8 @@ trade_post = {
 	wool_merchant_1 = {
 		desc = wool_merchant_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1668,8 +1654,8 @@ trade_post = {
 	wool_merchant_2 = {
 		desc = wool_merchant_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1729,8 +1715,8 @@ trade_post = {
 	wool_merchant_3 = {
 		desc = wool_merchant_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1789,9 +1775,9 @@ trade_post = {
 
 	trade_route_guard_1 = {
 		desc = trade_route_guard_desc
-		potential = {
+		potential = 
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1850,8 +1836,8 @@ trade_post = {
 	trade_route_guard_2 = {
 		desc = trade_route_guard_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1911,8 +1897,8 @@ trade_post = {
 	trade_route_guard_3 = {
 		desc = trade_route_guard_desc
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -1971,8 +1957,8 @@ trade_post = {
 
 	tr_marble_merchant_1 = {
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -2017,7 +2003,7 @@ trade_post = {
 		}
 		desc = tr_marble_merchant_desc
 		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 100
+		gold_cost = 475
 		build_time = 182
 		ai_creation_factor = 100
 		
@@ -2029,8 +2015,8 @@ trade_post = {
 	
 	tr_marble_merchant_2 = {
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -2075,7 +2061,7 @@ trade_post = {
 		}
 		desc = tr_marble_merchant_desc
 		trigger = { TECH_TRADE_PRACTICES = 5 }
-		gold_cost = 150
+		gold_cost = 625
 		build_time = 274
 		upgrades_from = tr_marble_merchant_1
 		ai_creation_factor = 99
@@ -2088,8 +2074,8 @@ trade_post = {
 	
 	tr_marble_merchant_3 = {
 		potential = {
+			port = no
 			OR = {
-				port = no
 				AND = {
 					trade_route = silk_road
 					silk_road_trade_post_trigger = yes
@@ -2134,7 +2120,7 @@ trade_post = {
 		}
 		desc = tr_marble_merchant_desc
 		trigger = { TECH_TRADE_PRACTICES = 6 }
-		gold_cost = 200
+		gold_cost = 850
 		build_time = 365
 		upgrades_from = tr_marble_merchant_2
 		ai_creation_factor = 98

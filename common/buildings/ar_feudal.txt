@@ -628,7 +628,7 @@ castle = {
 		}
 		prerequisites = { ca_militia_barracks_1 }
 		prerequisites = { ca_wall_2 }
-		gold_cost = 80
+		gold_cost = 160
 		build_time = 365
 		
 		heavy_infantry = 45
@@ -652,7 +652,7 @@ castle = {
 		}
 		prerequisites = { ca_militia_barracks_2 }
 		prerequisites = { ca_wall_3 }
-		gold_cost = 60
+		gold_cost = 260
 		build_time = 547
 		
 		upgrades_from = knight_guild_1
@@ -678,7 +678,7 @@ castle = {
 		}
 		prerequisites = { ca_militia_barracks_3 }
 		prerequisites = { ca_wall_4 }
-		gold_cost = 122
+		gold_cost = 350
 		build_time = 730
 
 		upgrades_from = knight_guild_2
@@ -704,7 +704,7 @@ castle = {
 		}
 		prerequisites = { ca_militia_barracks_4 }
 		prerequisites = { ca_wall_5 }
-		gold_cost = 244
+		gold_cost = 500
 		build_time = 1095
 
 		upgrades_from = knight_guild_3
@@ -731,7 +731,7 @@ castle = {
 
 		prerequisites = { ca_militia_barracks_5 }
 		prerequisites = { ca_wall_6 }
-		gold_cost = 350
+		gold_cost = 650
 		build_time = 1460
 
 		upgrades_from = knight_guild_4
@@ -994,6 +994,7 @@ castle = {
 		build_time = 365
 		
 		local_tax_modifier = 0.05
+		tax_income = 1
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -1014,6 +1015,7 @@ castle = {
 		upgrades_from = slaughterhouse_1
 		
 		local_tax_modifier = 0.05
+		tax_income = 0.5
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -1034,6 +1036,7 @@ castle = {
 		upgrades_from = slaughterhouse_2
 		
 		local_tax_modifier = 0.075
+		tax_income = 1
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -1054,6 +1057,7 @@ castle = {
 		upgrades_from = slaughterhouse_3
 		
 		local_tax_modifier = 0.1
+		tax_income = 1.5
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1074,6 +1078,7 @@ castle = {
 		upgrades_from = slaughterhouse_4
 		
 		local_tax_modifier = 0.15
+		tax_income = 2
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -1092,7 +1097,7 @@ castle = {
 		gold_cost = 250
 		build_time = 365
 		
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -1113,7 +1118,7 @@ castle = {
 
 		upgrades_from = feudal_farm_1
 		
-		tax_income = 1
+		tax_income = 1.5
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -1155,7 +1160,7 @@ castle = {
 
 		upgrades_from = feudal_farm_3
 		
-		tax_income = 3
+		tax_income = 2.5
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1176,7 +1181,7 @@ castle = {
 
 		upgrades_from = feudal_farm_4
 		
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -1190,12 +1195,12 @@ castle = {
 			TECH_CASTLE_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_town_3 }
-		gold_cost = 350
+		gold_cost = 550
 		build_time = 730
 		
 		levy_size = 0.05
 		disease_defence = -0.0025
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 96
 		add_number_to_name = no
@@ -1210,14 +1215,14 @@ castle = {
 			TECH_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_town_3 }
-		gold_cost = 500
+		gold_cost = 700
 		build_time = 1095
 
 		upgrades_from = feudal_district_1
 		
 		levy_size = 0.05
 		disease_defence = -0.0025
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 95
 		add_number_to_name = no
@@ -1232,14 +1237,14 @@ castle = {
 			TECH_CONSTRUCTION = 4
 		}
 		prerequisites = { ca_town_4 }
-		gold_cost = 750
+		gold_cost = 950
 		build_time = 2190
 
 		upgrades_from = feudal_district_2
 		
 		levy_size = 0.05
 		disease_defence = -0.0025
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 94
 		add_number_to_name = no
@@ -1254,7 +1259,7 @@ castle = {
 			TECH_CONSTRUCTION = 5
 		}
 		prerequisites = { ca_town_4 }
-		gold_cost = 1000
+		gold_cost = 1100
 		build_time = 2400
 
 		upgrades_from = feudal_district_3
@@ -1262,7 +1267,7 @@ castle = {
 		levy_size = 0.075
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 93
 		add_number_to_name = no
@@ -1277,7 +1282,7 @@ castle = {
 			TECH_CONSTRUCTION = 6
 		}
 		prerequisites = { ca_town_5 }
-		gold_cost = 1250
+		gold_cost = 1400
 		build_time = 3190
 
 		upgrades_from = feudal_district_4
@@ -1285,7 +1290,7 @@ castle = {
 		levy_size = 0.1
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 4
+		tax_income = 3
 		
 		ai_creation_factor = 92
 		add_number_to_name = no
