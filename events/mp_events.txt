@@ -1068,3 +1068,41 @@ character_event = {
 		}
 	}
 }
+
+character_event = { #Event to Target to ask for Unrival for Multiplayer players
+	id = MP.039
+	desc = UNRIVALDESC.1
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = { #We cool now
+		name = UNRIVALOPT1
+		ai_chance = { factor = 20 }
+		random_rival = {
+			remove_rival = FROM
+		}
+	}
+	
+	option = { #I still hate you
+		name = UNRIVALOPT2
+		ai_chance = { factor = 80 }
+		
+		FROM = { character_event = { id = MP.040 days = 3 } }
+	}
+}
+
+character_event = { #Event about if the player refuses a unrival
+	id = MP.040
+	desc = UNRIVALDESC.2
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { #Okay
+		name = UNRIVALOPT3
+		ai_chance = { factor = 100 }
+	}
+}

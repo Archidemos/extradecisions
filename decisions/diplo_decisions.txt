@@ -1,0 +1,98 @@
+targetted_decisions = {
+	unrival_person = {
+		ai = no
+	    diplomacy_icon = GFX_stable_prestige_icon_decision
+		
+		potential = {
+			character = ROOT
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			ROOT = {
+				is_rival = FROM
+			}
+		}
+
+		allow = {
+			FROM = {
+				diplomacy = 15
+				prestige = 500
+				NOT = { has_character_modifier = cooldown_unrival }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cooldown_unrival
+					years = 2
+				}
+			}
+			ROOT = { character_event = { id = MP.039 days = 3 } }			
+		}
+	}
+
+	improve_opinion = {
+		ai = no
+	    diplomacy_icon = GFX_stable_prestige_icon_decision
+		
+		potential = {
+			character = ROOT
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+		}
+
+		allow = {
+			ai = yes
+			FROM = {
+				diplomacy = 12
+				NOT = { has_character_modifier = cooldown_improve_opinion }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cooldown_improve_opinion
+					years = 2
+				}
+			}
+			ROOT = {
+				opinion = {
+					modifier = opinion_improve_ar
+					who = FROM
+				}
+			}
+		}
+	}
+}
+
+decisions = {
+
+	lower_threat = {
+		ai = no
+		
+		potential = {
+			is_adult = yes
+		}
+		
+		allow = {
+			FROM = {
+				wealth = 500
+				prestige = 500
+				diplomacy = 13
+				NOT = { has_character_modifier = lowered_threat }
+			}
+		}
+		
+		effect = {
+			wealth = -500
+			prestige = -500
+			add_character_modifier = {
+				modifier = lowered_threat
+				years = 1
+			}
+		}
+	}
+}

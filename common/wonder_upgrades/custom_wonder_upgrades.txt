@@ -10,10 +10,10 @@ upgrade_london_bridge_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		tradevalue = 30
+		tradevalue = 2.5
 		local_tax_modifier = 0.05
 		supply_limit = 0.25
 	}
@@ -31,7 +31,7 @@ upgrade_london_bridge_housing = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		disease_defence = 0.05
@@ -55,7 +55,7 @@ upgrade_apostolic_palace_bureau = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -76,7 +76,7 @@ upgrade_apostolic_palace_library = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		disease_defence = 0.05
@@ -100,7 +100,7 @@ upgrade_mosque_cordoba_tower = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -121,14 +121,14 @@ upgrade_mosque_cordoba_fountain = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		disease_defence = 0.05
 	}
 	owner_modifier = {
-		build_cost_temple_modifier = 0.1
-		build_time_temple_modifier = 0.1
+		build_cost_temple_modifier = -0.1
+		build_time_temple_modifier = -0.1
 		learning = 3
 	}
 }
@@ -145,7 +145,7 @@ upgrade_florence_cathedral_dome = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -166,14 +166,14 @@ upgrade_florence_cathedral_bells = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		church_opinion = 5
 	}
 	owner_modifier = {
-		build_cost_city_modifier = 0.1
-		build_time_city_modifier = 0.1
+		build_cost_city_modifier = -0.1
+		build_time_city_modifier = -0.1
 		stewardship = 2
 	}
 }
@@ -190,7 +190,7 @@ upgrade_walls_ragusa_armory = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -211,13 +211,13 @@ upgrade_walls_ragusa_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tax_income = 5
 	}
 	owner_modifier = {
-		build_cost_city_modifier = 0.1
+		build_cost_city_modifier = -0.1
 		global_tax_modifier = 0.2
 		stewardship = 2
 	}
@@ -235,7 +235,7 @@ upgrade_baku_ateshgah_altar = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -256,7 +256,7 @@ upgrade_baku_ateshgah_walls = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		siege_defence = 0.10
@@ -279,7 +279,7 @@ upgrade_carthage_ruins_port_system = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tradevalue = 10
@@ -300,11 +300,11 @@ upgrade_carthage_ruins_grand_port = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tax_income = 5
-		tradevalue = 10
+		tradevalue = 2.5
 	}
 	owner_modifier = {
 		global_tax_modifier = 0.1
@@ -324,10 +324,9 @@ upgrade_dutch_polders_extended = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		tradevalue = 10
 		local_tax_modifier = 0.1
 		levy_size = 0.1
 	}
@@ -345,11 +344,10 @@ upgrade_dutch_polders_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier 0.05
-		tradevalue = 10
+		local_tax_modifier = 0.05
 	}
 	owner_modifier = {
 		stewardship = 2
@@ -369,10 +367,10 @@ upgrade_alcazar_segovia_tower = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		fort_level	= 1
+		fort_level = 1
 		military_techpoints = 0.05
 		levy_size = 0.1
 	}
@@ -390,10 +388,10 @@ upgrade_alcazar_segovia_walls = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		siege_defence 0.1
+		siege_defence = 0.1
 		levy_size = 0.1
 	}
 	owner_modifier = {
@@ -414,10 +412,10 @@ upgrade_hohenzollern_castle_tower = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		fort_level	= 1
+		fort_level = 1
 		military_techpoints = 0.05
 		garrison_size = 0.1
 	}
@@ -435,10 +433,10 @@ upgrade_hohenzollern_castle_walls = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		siege_defence 0.1
+		siege_defence = 0.1
 		garrison_size = 0.1
 	}
 	owner_modifier = {
@@ -459,7 +457,7 @@ upgrade_brandenburg_gate_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		military_techpoints = 0.05
@@ -484,10 +482,10 @@ upgrade_brandenburg_gate_statues = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		siege_defence 0.1
+		siege_defence = 0.1
 	}
 	owner_modifier = {
 		martial = 1
@@ -508,7 +506,7 @@ upgrade_irminsul_altar = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		garrison_size = 0.1
@@ -532,7 +530,7 @@ upgrade_irminsul_walls = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		siege_defence = 0.10
@@ -555,10 +553,10 @@ upgrade_kronborg_ports = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		tradevalue = 10
+		tradevalue = 2.5
 		local_tax_modifier = 0.1
 		levy_size = 0.1
 	}
@@ -576,13 +574,13 @@ upgrade_kronborg_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier 0.05
+		local_tax_modifier = 0.05
 	}
 	owner_modifier = {
-		build_cost_modifier = 0.1
+		build_cost_modifier = -0.1
 		diplomacy = 2
 		monthly_character_piety = 2
 	}
@@ -600,10 +598,10 @@ upgrade_stave_chruch_fountain = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		tradevalue = 10
+		tradevalue = 2.5
 		local_tax_modifier = 0.1
 		levy_size = 0.1
 	}
@@ -621,10 +619,10 @@ upgrade_stave_chruch_statue = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier 0.05
+		local_tax_modifier = 0.05
 	}
 	owner_modifier = {
 		land_morale = 0.1
@@ -645,7 +643,7 @@ upgrade_falun_mine_bureau = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		local_tax_modifier = 0.1
@@ -665,14 +663,14 @@ upgrade_falun_mine_caravan = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
 		tax_income = 10
 	}
 	owner_modifier = {
-		build_time_modifier = 0.1
-		build_cost_modifier = 0.1
+		build_time_modifier = -0.1
+		build_cost_modifier = -0.1
 	}
 }
 upgrade_visby_city_toll = { # Lighthouse
@@ -687,10 +685,10 @@ upgrade_visby_city_toll = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		tradevalue = 10
+		tradevalue = 2.5
 		local_tax_modifier = 0.1
 		levy_size = 0.1
 	}
@@ -708,13 +706,201 @@ upgrade_visby_city_lighthouse = { # Lighthouse
 		is_singular
 	}
 	build_time = 24
-	gold_cost_flat = 450
+	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier = 0.1
-		trade_route_value = 0.1
-		trade_route_wealth = 0.1
+		local_tax_modifier = 0.05
+		trade_route_value = 2.5
+		trade_route_wealth = 5
 	}
 	owner_modifier = {
+	}
+}
+
+upgrade_mosque_esfahan_market = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_crates
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		local_tax_modifier = 0.05
+		trade_route_value = 2.5
+		trade_route_wealth = 2.5
+	}
+}
+
+upgrade_mosque_esfahan_palace = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		local_tax_modifier = 0.025
+		levy_size = 0.1
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_temple_ares_statue = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		trade_route_value = 2.5
+		trade_route_wealth = 2.5
+		levy_size = 0.1
+	}
+	owner_modifier = {
+		command_modifier = {
+			morale_defence = 0.05
+		}
+	}
+}
+
+upgrade_temple_ares_altar = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_skulls
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		levy_size = 0.1
+	}
+	owner_modifier = {
+		command_modifier = {
+			religious_enemy = 0.1
+		}
+	}
+}
+
+upgrade_great_basilica_walls = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		levy_size = 0.1
+	}
+	owner_modifier = {
+		threat_decay_speed = 0.1
+	}
+}
+
+upgrade_great_basilica_bells = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+	}
+	owner_modifier = {
+		build_time_modifier	 = -0.05
+		build_cost_modifier = -0.05
+		stewardship = 2
+	}
+}
+
+upgrade_jerusalem_church_bells = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		levy_size = 0.1
+	}
+	owner_modifier = {
+		threat_decay_speed = 0.1
+	}
+}
+
+upgrade_jerusalem_church_walls = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		garrison_size = 0.05
+		fort_level = 1
+	}
+	owner_modifier = {
+		global_revolt_risk = -0.05
+		learning = 1
 	}
 }

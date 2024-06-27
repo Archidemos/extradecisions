@@ -223,6 +223,16 @@ monastic_order_benedictine = {
 			value = 10
 		}
 		triggered_gain = {
+			desc = cologne_cathedral_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_cologne_cathedral
+					wonder_stage = 4
+				}
+			}
+			value = 5
+		}
+		triggered_gain = {
 			desc = "saintly_monastic_gain"
 			trigger = {
 				any_owned_bloodline = {
@@ -877,6 +887,16 @@ monastic_order_orthodox = {
 				}
 			}
 			value = 3
+		}
+		triggered_gain = {
+			desc = great_basilica_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_great_basilica
+					wonder_stage = 4
+				}
+			}
+			value = 5
 		}
 	}
 
@@ -2880,6 +2900,16 @@ hermetics = {
 			rank = 4
 			value = 10
 		}
+		triggered_gain = {
+			desc = university_naples_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_university_naples
+					wonder_stage = 4
+				}
+			}
+			value = 5
+		}
 	}
 
 	member_score_per_attribute = 3
@@ -3260,6 +3290,16 @@ the_assassins = {
 		society_rank = {
 			rank = 4
 			value = 10
+		}
+		triggered_gain = {
+			desc = assassin_castle_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_assassin_castle
+					wonder_stage = 4
+				}
+			}
+			value = 5
 		}
 	}
 
@@ -6414,6 +6454,16 @@ warrior_lodge_norse = {
 		has_trait = {
 			trait = hunchback
 			value = -1
+		}
+		triggered_gain = {
+			desc = wonder_irminsul_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_irminsul
+					wonder_stage = 4
+				}
+			}
+			value = 5
 		}
 	}
 	
@@ -10995,6 +11045,16 @@ is_adult = yes
 		has_trait = {
 			trait = hunchback
 			value = -1
+		}
+		triggered_gain = {
+			desc = temple_ares_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_temple_ares
+					wonder_stage = 4
+				}
+			}
+			value = 5
 		}
 	}
 	

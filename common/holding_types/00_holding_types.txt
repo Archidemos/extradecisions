@@ -102,6 +102,23 @@ trade_post = {
 		}
 		conditional_tooltip = {
 			trigger = {
+				trade_route = varingian_route
+				OR = {
+					FROM = {
+						is_patrician = no
+					}
+					AND = {
+						port = no
+						FROM = {
+							is_patrician = yes
+						}
+					}
+				}
+			}
+			varingian_route_trade_post_trigger = yes
+		}
+		conditional_tooltip = {
+			trigger = {
 				trade_route = venice_route
 				OR = {
 					FROM = {
@@ -167,6 +184,23 @@ trade_post = {
 				}
 			}
 			via_regia_trade_post_trigger = yes
+		}
+		conditional_tooltip = {
+			trigger = {
+				trade_route = andalusian_route
+				OR = {
+					FROM = {
+						is_patrician = no
+					}
+					AND = {
+						port = no
+						FROM = {
+							is_patrician = yes
+						}
+					}
+				}
+			}
+			andalusian_route_trade_post_trigger = yes
 		}
 	}
 }
