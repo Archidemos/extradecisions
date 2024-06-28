@@ -31,26 +31,22 @@ narrative_event = {
 			}
 			set_global_flag = anglo_norse_enabled
 		}
-		fail_trigger_effect = {
-			if = {
-				limit = {
-					NOT = { has_trait = viking }
-				}
-				add_trait = viking
+		if = {
+			limit = {
+				NOT = { has_trait = viking }
 			}
+			add_trait = viking
 		}
 	}
 	
 	option = {
 		name = OPTB_NOR1
 		custom_tooltip = { text = stayed_norse_tt }
-		fail_trigger_effect = {
-			if = {
-				limit = {
-					NOT = { has_trait = viking }
-				}
-				add_trait = viking
+		if = {
+			limit = {
+				NOT = { has_trait = viking }
 			}
+			add_trait = viking
 		}
 		ai_will_do = { factor = 0 }
 	}

@@ -71,7 +71,7 @@ character_event = {
 		random = {
 			chance = 40
 			add_trait = stressed
-			modifier = {
+			mult_modifier = {
 				factor = 0
 				trait = stressed
 			}
@@ -79,11 +79,11 @@ character_event = {
 		random = {
 			chance = 20
 			add_trait = depressed
-			modifier = {
+			mult_modifier = {
 				factor = 0
 				trait = depressed
 			}
-			modifier = {
+			mult_modifier = {
 				factor = 0
 				AND = {
 					trait = stressed
@@ -101,15 +101,15 @@ character_event = {
 					change_variable = { which = quran_study_var value = 3 }
 				}
 				character_event = { id = MUSLIM.11 days = 1 random = 90 }
-				modifier = {
+				mult_modifier = {
 					factor = 0.5
 					trait = slothful
 				}
-				modifier = {
+				mult_modifier = {
 					factor = 0.7
 					trait = decadent
 				}
-				modifier = {
+				mult_modifier = {
 					factor = 1.5
 					trait = diligent
 				}
@@ -346,11 +346,11 @@ character_event = {
 			60 = {}
 			40 = {
 				add_trait = charitable
-				modifier = { factor = 0 trait = charitable }
+				mult_modifier = { factor = 0 trait = charitable }
 			}
 			50 = {
 				add_trait = gregarious
-				modifier = { factor = 0  NOT = { trait = charitable } }
+				mult_modifier = { factor = 0  NOT = { trait = charitable } }
 			}
 		}
 		character_event = { id = MUSLIM.19 days = 1 random = 90 }
@@ -432,8 +432,21 @@ character_event = {
 		prestige = -50
 		random_list = {
 			50 = { }
-			40 = { add_trait = patient wealth = 10 modifier = { factor = 0 trait = patient } }
-			10 = { add_trait = kind modifier = { factor = 5 NOT = { trait = patient } } }
+			40 = {
+				add_trait = patient
+				wealth = 10
+				mult_modifier = {
+					factor = 0
+					trait = patient
+				}
+			}
+			10 = {
+				add_trait = kind
+				mult_modifier = {
+					factor = 5
+					NOT = { trait = patient }
+				}
+			}
 		}
 		character_event = { id = MUSLIM.22 days = 1 random = 90 }
 	}
@@ -560,28 +573,28 @@ character_event = {
 		random_list = {
 			5 = {
 				character_event = { id = MUSLIM.30 days = 50 }
-				modifier = {
+				mult_modifier = {
 					factor = 2
 					check_variable = {
 						which = quran_study_var
 						value = 10
 					}
 				}
-				modifier = {
+				mult_modifier = {
 					factor = 4
 					check_variable = {
 						which = quran_study_var
 						value = 15
 					}
 				}
-				modifier = {
+				mult_modifier = {
 					factor = 0
 					trait = faqih
 				}
 			}
 			30 = {
 				character_event = { id = MUSLIM.31 days = 50 }
-				modifier = {
+				mult_modifier = {
 					factor = 0
 					trait = hafiz
 				}
@@ -800,7 +813,7 @@ character_event = {
 	
 	option = {
 		name = A_MUSLIM104
-		on_trigger_switch = {
+		trigger_switch = {
 			on_trigger = has_character_flag
 			
 			mystic_lifestyle_chosen = { clr_character_flag = mystic_lifestyle_chosen add_trait = mystic }
