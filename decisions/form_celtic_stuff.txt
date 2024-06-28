@@ -37,8 +37,10 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
-			trigger_if = {
-				has_landed_title = k_celtic_christian
+			if = {
+				limit = {
+					has_landed_title = k_celtic_christian
+				}
 				e_celtic_empire = { add_law = succ_open_elective }
 			}
 			add_claim = k_northumbria

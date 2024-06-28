@@ -5444,11 +5444,13 @@ pepin_religious = {
 			if = { 
 				limit = { 
 					religion_head = { 
-						any_artifact = { 
-							has_artifact_flag = christian
-							NOR =  { 
-								has_artifact_flag = very_rare
-								has_artifact_flag = unique #Won't give the holiest ones away.
+						any_artifact = {
+							limit  = {
+								has_artifact_flag = christian
+								NOR =  { 
+									has_artifact_flag = very_rare
+									has_artifact_flag = unique #Won't give the holiest ones away.
+								}
 							}
 						} 
 					} 
