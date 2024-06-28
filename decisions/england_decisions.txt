@@ -34,7 +34,7 @@ decisions = {
 			add_claim = d_valois
 			add_claim = d_berry
 			add_claim = d_champagne
-			add_claim = d_blois
+			add_claim = d_orleans
 			add_claim = d_picardie
 			
 			add_character_modifier = {
@@ -77,7 +77,7 @@ decisions = {
 		
 		potential = {
 			culture_group = north_germanic
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			any_realm_province = {
 				is_capital = yes
 				OR = {
@@ -139,7 +139,7 @@ decisions = {
 		potential = {
 			k_england = { is_titular = no }
 			OR = {
-				religion = reformed_norse_pagan
+				religion = norse_pagan_reformed
 				religion = norse_pagan
 			}
 			culture_group = north_germanic

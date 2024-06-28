@@ -17,7 +17,7 @@ decisions = {
 			}
 			OR = {
 				religion_group = christian
-				religion = hellenic
+				religion = hellenic_pagan
 			}
 			NOT = { has_global_flag = west_rome_formed }
 		}
@@ -32,11 +32,11 @@ decisions = {
 			completely_controls = k_aragon
 			completely_controls = k_carinthia
 			completely_controls = d_tunis
-			if = {
+			trigger_if = {
 				limit = { k_romagna = { is_titular = no } }
 				completely_controls = k_romagna
 			}
-			if = {
+			trigger_if = {
 				limit = { k_papacy = { is_titular = no } }
 				completely_controls = k_papacy
 			}
