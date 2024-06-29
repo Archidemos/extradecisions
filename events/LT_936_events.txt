@@ -499,10 +499,7 @@ narrative_event = {
                 }
                 any_vassal = {
                     limit = {
-						OR = {
-							de_jure_liege_or_above = k_frisia
-							capital_scope = { region = custom_frisia }
-						}
+                        de_jure_liege_or_above = k_frisia
                     }
                     set_defacto_liege = event_target:frisia_king
                 }
@@ -520,10 +517,9 @@ narrative_event = {
                     }
                 }
                 any_vassal = {
-                    OR = {
-						de_jure_liege_or_above = k_frisia
-						capital_scope = { region = custom_frisia }
-					}
+                    limit = {
+                        de_jure_liege_or_above = k_frisia
+                    }
                     set_defacto_liege = event_target:frisia_king
                 }
             }

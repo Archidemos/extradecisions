@@ -1152,20 +1152,6 @@ letter_event = {
 				has_landed_title = d_fraticelli
 			}
 		}
-		modifier = {
-			factor = 0
-			NOT = {
-				FROM = {
-					any_artifact = { 
-						has_artifact_flag = christian 
-						NOR = { 
-							has_artifact_flag = rare
-							has_artifact_flag = very_rare
-						}
-					}
-				}
-			}
-		}
 		FROM = { letter_event = { id = HF.20240 } } #Give me a relic.
 	}
 	option = { #For the Pope
@@ -1174,106 +1160,6 @@ letter_event = {
 			OR = { 
 				has_landed_title = k_papal_state
 				has_landed_title = d_fraticelli
-			}
-		}
-		modifier = {
-			factor = 0.5
-			vassal_of = FROM
-		} 
-		modifier = { 	#Supported Pope more likely to ask for little
-			factor = 1.5
-			has_opinion_modifier = { 
-				who = FROM 
-				modifier = opinion_supported_pope 
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = -100 
-				} 
-			}
-		}
-		modifier = {
-			factor = 0.2
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = -80 
-				} 
-			}
-		}
-		modifier = {
-			factor = 0.3
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = -60 
-				} 
-			}
-		}
-		modifier = {
-			factor = 0.4
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = -40 
-				} 
-			}
-		}
-		modifier = {
-			factor = 0.5
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = -20 
-				} 
-			}
-		}
-		modifier = {
-			factor = 0.6
-			NOT = { 
-				opinion = { 
-					who = FROM
-					value = 0 
-				} 
-			}
-		}
-		modifier = {
-			factor = 1.25
-			opinion = { 
-				who = FROM
-				value = 20 
-			}
-		}
-		modifier = {
-			factor = 1.5
-			opinion = { 
-				who = FROM
-				value = 40 
-			}
-		}
-		modifier = {
-			factor = 1.5
-			opinion = { 
-				who = FROM
-				value = 60 
-			}
-		}
-		modifier = {
-			factor = 1.5
-			opinion = { 
-				who = FROM
-				value = 80 
-			}
-		}
-		modifier = {
-			factor = 1.5
-			opinion = { 
-				who = FROM
-				value = 100 
 			}
 		}
 		FROM = { letter_event = { id = HF.20212 } } #I want gold.

@@ -33,7 +33,7 @@ narrative_event = {
 		}
 		if = {
 			limit = {
-				NOT = { has_trait = viking }
+				NOT = { trait = viking }
 			}
 			add_trait = viking
 		}
@@ -44,11 +44,11 @@ narrative_event = {
 		custom_tooltip = { text = stayed_norse_tt }
 		if = {
 			limit = {
-				NOT = { has_trait = viking }
+				NOT = { trait = viking }
 			}
 			add_trait = viking
 		}
-		ai_will_do = { factor = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 

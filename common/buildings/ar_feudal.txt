@@ -626,8 +626,7 @@ castle = {
 		trigger = {
 			TECH_CASTLE_CONSTRUCTION = 3
 		}
-		prerequisites = { ca_militia_barracks_1 }
-		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_militia_barracks_1 ca_wall_2 }
 		gold_cost = 160
 		build_time = 365
 		
@@ -650,8 +649,7 @@ castle = {
 		trigger = {
 			TECH_CASTLE_CONSTRUCTION = 4
 		}
-		prerequisites = { ca_militia_barracks_2 }
-		prerequisites = { ca_wall_3 }
+		prerequisites = { ca_militia_barracks_2 ca_wall_3 }
 		gold_cost = 260
 		build_time = 547
 		
@@ -676,8 +674,7 @@ castle = {
 		trigger = {
 			TECH_CASTLE_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_militia_barracks_3 }
-		prerequisites = { ca_wall_4 }
+		prerequisites = { ca_militia_barracks_3 ca_wall_4 }
 		gold_cost = 350
 		build_time = 730
 
@@ -702,8 +699,10 @@ castle = {
 		trigger = {
 			TECH_CASTLE_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_militia_barracks_4 }
-		prerequisites = { ca_wall_5 }
+		prerequisites = {
+			ca_militia_barracks_4
+			ca_wall_5
+		}
 		gold_cost = 500
 		build_time = 1095
 
@@ -729,8 +728,7 @@ castle = {
 			TECH_CASTLE_CONSTRUCTION = 6
 		}
 
-		prerequisites = { ca_militia_barracks_5 }
-		prerequisites = { ca_wall_6 }
+		prerequisites = { ca_militia_barracks_4 ca_wall_5 }
 		gold_cost = 650
 		build_time = 1460
 
@@ -825,7 +823,7 @@ castle = {
 		trigger = {
 			TECH_CASTLE_CONSTRUCTION = 6
 		}
-		prerequisites = { ca_training_grounds_4 }
+		prerequisites = { ca_training_grounds_3 }
 		gold_cost = 244
 		build_time = 1095
 
@@ -850,7 +848,7 @@ castle = {
 			TECH_CASTLE_CONSTRUCTION = 8
 		}
 
-		prerequisites = { ca_training_grounds_5 }
+		prerequisites = { ca_training_grounds_3 }
 		gold_cost = 350
 		build_time = 1460
 
@@ -1092,8 +1090,7 @@ castle = {
 			TECH_CITY_CONSTRUCTION = 4
 			TECH_CONSTRUCTION = 3
 		}
-		prerequisites = { ca_wall_1 }
-		prerequisites = { ca_wall_q_1 }
+		prerequisites = { ca_wall_1 ca_wall_q_1 }
 		gold_cost = 250
 		build_time = 365
 		
@@ -1111,8 +1108,7 @@ castle = {
 			TECH_CITY_CONSTRUCTION = 5
 			TECH_CONSTRUCTION = 4
 		}
-		prerequisites = { ca_wall_1 }
-		prerequisites = { ca_wall_q_1 }
+		prerequisites = { ca_wall_1 ca_wall_q_1 }
 		gold_cost = 350
 		build_time = 547
 
@@ -1132,8 +1128,7 @@ castle = {
 			TECH_CITY_CONSTRUCTION = 6
 			TECH_CONSTRUCTION = 5
 		}
-		prerequisites = { ca_wall_2 }
-		prerequisites = { ca_wall_q_2 }
+		prerequisites = { ca_wall_2 ca_wall_q_2 }
 		gold_cost = 500
 		build_time = 730
 
@@ -1153,8 +1148,7 @@ castle = {
 			TECH_CITY_CONSTRUCTION = 8
 			TECH_CONSTRUCTION = 6
 		}
-		prerequisites = { ca_wall_2 }
-		prerequisites = { ca_wall_q_2 }
+		prerequisites = { ca_wall_2 ca_wall_q_2 }
 		gold_cost = 650
 		build_time = 1095
 
@@ -1174,8 +1168,7 @@ castle = {
 			TECH_CITY_CONSTRUCTION = 8
 			TECH_CONSTRUCTION = 6
 		}
-		prerequisites = { ca_wall_3 }
-		prerequisites = { ca_wall_q_3 }
+		prerequisites = { ca_wall_3 ca_wall_q_3 }
 		gold_cost = 650
 		build_time = 1095
 
@@ -1937,7 +1930,7 @@ castle = {
 				has_building = eu_cloth_workshop_1
 				ROOT = { province = c_middlesex }
 				ROOT = { province = c_lincoln }
-				ROOT = { province = c_leichester }
+				ROOT = { province = c_leicester }
 				ROOT = { province = c_gowrie }
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
@@ -1975,7 +1968,7 @@ castle = {
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
 				ROOT = { province = c_ulm }
-				ROOT = { province = c_wruttemberg }
+				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
@@ -1989,7 +1982,7 @@ castle = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijsel }
+				ROOT = { province = c_overijssel }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -2023,7 +2016,7 @@ castle = {
 				has_building = eu_cloth_workshop_1
 				ROOT = { province = c_middlesex }
 				ROOT = { province = c_lincoln }
-				ROOT = { province = c_leichester }
+				ROOT = { province = c_leicester }
 				ROOT = { province = c_gowrie }
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
@@ -2061,7 +2054,7 @@ castle = {
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
 				ROOT = { province = c_ulm }
-				ROOT = { province = c_wruttemberg }
+				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
@@ -2075,7 +2068,7 @@ castle = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijsel }
+				ROOT = { province = c_overijssel }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
