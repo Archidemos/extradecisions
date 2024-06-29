@@ -89,30 +89,33 @@ character_event = {
 
     immediate = {
         event_target:decadent_value_title = {
-            if = {
-                limit = { decadence < 15 }
-                add_character_modifier = { name = decadent_value_0 duration = -1 }
+            holder_scope = {
+                if = {
+                    limit = { decadence < 15 }
+                    add_character_modifier = { name = decadent_value_0 duration = -1 }
+                }
+                if = {
+                    limit = { decadence >= 15 decadence < 25 }
+                    add_character_modifier = { name = decadent_value_15 duration = -1 }
+                }
+                if = {
+                    limit = { decadence >= 35 decadence < 55 }
+                    add_character_modifier = { name = decadent_value_35 duration = -1 }
+                }
+                if = {
+                    limit = { decadence >= 55 decadence < 75 }
+                    add_character_modifier = { name = decadent_value_55 duration = -1 }
+                }
+                if = {
+                    limit = { decadence >= 75 decadence < 95 }
+                    add_character_modifier = { name = decadent_value_75 duration = -1 }
+                }
+                if = {
+                    limit = { decadence >= 95 }
+                    add_character_modifier = { name = decadent_value_95 duration = -1 }
+                }
             }
-            if = {
-                limit = { decadence >= 15 decadence < 25 }
-                add_character_modifier = { name = decadent_value_15 duration = -1 }
-            }
-            if = {
-                limit = { decadence >= 35 decadence < 55 }
-                add_character_modifier = { name = decadent_value_35 duration = -1 }
-            }
-            if = {
-                limit = { decadence >= 55 decadence < 75 }
-                add_character_modifier = { name = decadent_value_55 duration = -1 }
-            }
-            if = {
-                limit = { decadence >= 75 decadence < 95 }
-                add_character_modifier = { name = decadent_value_75 duration = -1 }
-            }
-            if = {
-                limit = { decadence >= 95 }
-                add_character_modifier = { name = decadent_value_95 duration = -1 }
-            }
+            
         }
         character_event = {
             id = isldecadent.101
