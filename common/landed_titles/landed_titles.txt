@@ -26,6 +26,26 @@ e_pirates = {
 
 # SPECIAL TITLES
 
+d_brunswick = { # added back to avoid errors
+	color={ 183 172 172 }
+	color2={ 255 255 255 }
+
+	capital = 257 # Brunswick
+
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				d_brunswick = {
+					is_titular = yes
+				}
+			}
+			d_brunswick = {
+				is_titular = no
+			}
+		}
+	}
+}
+
 e_outremer = {
 	color={ 180 180 180 }
 	color2={ 255 255 255 }
