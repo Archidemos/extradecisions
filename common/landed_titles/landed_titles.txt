@@ -45142,7 +45142,13 @@ e_latin_empire = {
 			is_heresy_of = catholic
 		}
 		e_byzantium = {
-			has_holder = no
+			OR = {
+                has_holder = no
+                AND = {
+                    has_holder = yes
+                    NOT = { government = nomadic_government }
+                }
+            }
 		}
 		e_roman_empire = {
 			has_holder = no

@@ -1,0 +1,86 @@
+decisions = {
+
+	form_latin_empire = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 60
+
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_latin_empire }
+			NOT = { has_landed_title = e_west_rome }
+			NOT = { has_landed_title = k_papal_state }
+			NOT = { has_landed_title = e_byzantium }
+			any_demesne_title = {
+				OR = {
+					any_de_jure_liege_title = { title = k_byzantium }
+					any_de_jure_liege_title = { title = k_thrace }
+				}
+			}
+			OR = {
+				has_landed_title = k_cyprus
+				has_landed_title = k_antioch
+			}
+			higher_tier_than = DUKE
+			NOT = { has_global_flag = latin_empire_formed }
+			OR = {
+				k_cyprus = {
+					is_titular = no
+				}
+				k_antioch = {
+					is_titular = no
+				}
+			}
+		}
+
+		allow = {
+			war = no
+			prestige = 4000
+			has_landed_title = c_byzantion
+			independent = yes
+			OR = {
+				has_landed_title = c_thrake
+				any_vassal = {
+					has_landed_title = c_thrake
+				}
+			}
+			OR = {
+				has_landed_title = k_cyprus
+				has_landed_title = k_antioch
+			}
+			completely_controls = d_thrace
+			completely_controls = d_thessalonika
+			completely_controls = d_adrianopolis
+			religion = catholic
+		}
+
+		effect = {
+			set_global_flag = latin_empire_formed
+			activate_title = { title = e_latin_empire status = yes }
+			primary_title = {
+				e_latin_empire = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			add_trait = crusader_king
+			create_bloodline = {
+				type = destroyer_of_byzantium
+			}
+			ROOT = {
+				narrative_event = { id = LATIN.1 }
+			}
+			any_playable_ruler = {
+				limit = {
+					OR = {
+						independent = yes
+						ai = no
+					}
+					is_within_diplo_range = ROOT
+				}
+				narrative_event = { id = LATIN.1 }
+			}
+		}	
+	}
+}
