@@ -5319,156 +5319,156 @@ narrative_event = {
 }
 
 # Seljuk's successor revitalizes the new state
-character_event = {
-	id = 60207
-	desc = EVTDESC60207
-	
-	picture = GFX_evt_mongols
-	border = GFX_event_normal_frame_war
-	
-	only_playable = yes
-	only_independent = yes
-	has_global_flag = seljuk_spawned_by_event
-	
-	trigger = {
-		year = 980
-		NOT = { year = 1100 }
-		uses_decadence = yes
-		
-		dynasty = 613 # Seljuk
-		
-		higher_tier_than = duke
-		
-		martial = 7
-		
-		NOT = { has_character_flag = seljuk_himself }
-		NOT = { has_character_flag = seljuk_reinforcements }
-	}
-	
-	mean_time_to_happen = {
-		months = 240
-		modifier = {
-			factor = 0.5
-			martial = 9
-		}
-		modifier = {
-			factor = 0.5
-			martial = 11
-		}
-		modifier = {
-			factor = 0.5
-			martial = 13
-		}
-	}
-	
-	immediate = {
-		set_character_flag = seljuk_reinforcements
-		
-		decadence = -75
-		
-		capital_scope = {
-			ROOT = {
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				if = {
-					limit = {
-						martial = 9
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-				if = {
-					limit = {
-						martial = 11
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-				if = {
-					limit = {
-						martial = 13
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = EVTOPTA60207
-	}
-}
-
+#character_event = {
+#	id = 60207
+#	desc = EVTDESC60207
+#	
+#	picture = GFX_evt_mongols
+#	border = GFX_event_normal_frame_war
+#	
+#	only_playable = yes
+#	only_independent = yes
+#	has_global_flag = seljuk_spawned_by_event
+#	
+#	trigger = {
+#		year = 980
+#		NOT = { year = 1100 }
+#		uses_decadence = yes
+#		
+#		dynasty = 613 # Seljuk
+#		
+#		higher_tier_than = duke
+#		
+#		martial = 7
+#		
+#		NOT = { has_character_flag = seljuk_himself }
+#		NOT = { has_character_flag = seljuk_reinforcements }
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 240
+#		modifier = {
+#			factor = 0.5
+#			martial = 9
+#		}
+#		modifier = {
+#			factor = 0.5
+#			martial = 11
+#		}
+#		modifier = {
+#			factor = 0.5
+#			martial = 13
+#		}
+#	}
+#	
+#	immediate = {
+#		set_character_flag = seljuk_reinforcements
+#		
+#		decadence = -75
+#		
+#		capital_scope = {
+#			ROOT = {
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 9
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 11
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 13
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	option = {
+#		name = EVTOPTA60207
+#	}
+#}
+#
 ##################################
 # Rise of the Timurids
 ##################################
@@ -6490,227 +6490,227 @@ narrative_event = {
 }
 
 # Timur's successors revitalize the state
-character_event = {
-	id = 60307
-	desc = EVTDESC60307
-	
-	picture = GFX_evt_mongols
-	border = GFX_event_normal_frame_war
-	
-	only_playable = yes
-	only_independent = yes
-	has_global_flag = timur_spawned_by_event
-	
-	trigger = {
-		year = 1370
-		NOT = { year = 1500 }
-		
-		dynasty = 800 # Timurid
-		
-		higher_tier_than = duke
-		
-		martial = 7
-		
-		NOT = { has_character_flag = timur_himself }
-		NOT = { has_character_flag = timur_reinforcements }
-	}
-	
-	mean_time_to_happen = {
-		months = 360
-		modifier = {
-			factor = 0.5
-			martial = 9
-		}
-		modifier = {
-			factor = 0.5
-			martial = 11
-		}
-		modifier = {
-			factor = 0.5
-			martial = 13
-		}
-	}
-	
-	immediate = {
-		set_character_flag = timur_reinforcements
-		
-		if = {
-			limit = {
-				uses_decadence = yes
-			}
-			decadence = -75
-		}
-		
-		capital_scope = { 
-			ROOT = {
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				spawn_unit = {
-					province = PREV
-					home = PREV
-					owner = THIS
-					troops = {
-						light_infantry = { 2250 2250 }
-						light_cavalry = { 2000 2000 }
-						horse_archers = { 1500 1500 }
-						knights = { 50 50 }
-					}
-				}
-				if = {
-					limit = {
-						martial = 9
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-				if = {
-					limit = {
-						martial = 11
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-				if = {
-					limit = {
-						martial = 13
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = THIS
-						troops = {
-							light_infantry = { 2250 2250 }
-							light_cavalry = { 2000 2000 }
-							horse_archers = { 1500 1500 }
-							knights = { 50 50 }
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = EVTOPTA60307
-	}
-}
-
-
+#character_event = {
+#	id = 60307
+#	desc = EVTDESC60307
+#	
+#	picture = GFX_evt_mongols
+#	border = GFX_event_normal_frame_war
+#	
+#	only_playable = yes
+#	only_independent = yes
+#	has_global_flag = timur_spawned_by_event
+#	
+#	trigger = {
+#		year = 1370
+#		NOT = { year = 1500 }
+#		
+#		dynasty = 800 # Timurid
+#		
+#		higher_tier_than = duke
+#		
+#		martial = 7
+#		
+#		NOT = { has_character_flag = timur_himself }
+#		NOT = { has_character_flag = timur_reinforcements }
+#	}
+#	
+#	mean_time_to_happen = {
+#		months = 360
+#		modifier = {
+#			factor = 0.5
+#			martial = 9
+#		}
+#		modifier = {
+#			factor = 0.5
+#			martial = 11
+#		}
+#		modifier = {
+#			factor = 0.5
+#			martial = 13
+#		}
+#	}
+#	
+#	immediate = {
+#		set_character_flag = timur_reinforcements
+#		
+#		if = {
+#			limit = {
+#				uses_decadence = yes
+#			}
+#			decadence = -75
+#		}
+#		
+#		capital_scope = { 
+#			ROOT = {
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				spawn_unit = {
+#					province = PREV
+#					home = PREV
+#					owner = THIS
+#					troops = {
+#						light_infantry = { 2250 2250 }
+#						light_cavalry = { 2000 2000 }
+#						horse_archers = { 1500 1500 }
+#						knights = { 50 50 }
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 9
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 11
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#				if = {
+#					limit = {
+#						martial = 13
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#					spawn_unit = {
+#						province = PREV
+#						home = PREV
+#						owner = THIS
+#						troops = {
+#							light_infantry = { 2250 2250 }
+#							light_cavalry = { 2000 2000 }
+#							horse_archers = { 1500 1500 }
+#							knights = { 50 50 }
+#						}
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	option = {
+#		name = EVTOPTA60307
+#	}
+#}
+#
+#
 ##########################################
 # Rise of the Ghaznavids under Sabuktigin
 ##########################################
@@ -8225,7 +8225,7 @@ character_event = {
 			set_mother = event_target:borte
 		}
 		create_character = {
-			name="Ögedei" # Ögedei Khan
+			name="ï¿½gedei" # ï¿½gedei Khan
 			age = 24
 			dynasty=1051210
 			religion="tengri_pagan"
