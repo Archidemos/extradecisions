@@ -5,12 +5,389 @@ narrative_event = { #Event for everyone about the formation
 	title = EVTNAMEDTCH.100
 	desc = EVTDESCDTCH.100
 	
-	picture = GFX_evt_busy_trading_dock_republic
-	
+	picture = GFX_evt_busy_trading_dock_republic	
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = EVTOPTDTCH.001
+	}
+}
+
+narrative_event = { #Event for everyone about the formation
+	id = DTCH.101
+	title = EVTNAMEDTCH.101
+	desc = EVTDESCDTCH.101
+	
+	picture = GFX_evt_busy_trading_dock_republic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDTCH.001
+	}
+}
+
+narrative_event = {
+	id = DTCH.102
+	title = DTCHNAME1
+	desc =  DTCHDESC1
+	
+	is_triggered_only = yes	
+	
+	picture = GFX_evt_busy_trading_dock_republic
+	
+	option = { #Become a Dutch Kingdom
+		name = DTCHOPT1
+		ai_chance = { factor = 50 }
+		
+		activate_title = { title = k_dutch_republic status = yes }
+		activate_title = { title = k_frisia status = no }
+		primary_title = {
+			k_dutch_republic = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		custom_tooltip = {
+			text = dutch_kingdom_retinue
+			hidden_tooltip = {
+				k_dutch_republic = {
+					set_name = "KINGDOM_DUTCH_REPUBLIC"
+					adjective = "KINGDOM_DUTCH_REPUBLIC_ADJ"
+				}
+			}
+		}
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = KING
+					NOT = { title = k_dutch_republic }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		hidden_effect = {
+			d_holland = { de_jure_liege = k_dutch_republic }
+			d_gelre = { de_jure_liege = k_dutch_republic }
+			d_flanders = { de_jure_liege = k_dutch_republic }
+			d_brabant = { de_jure_liege = k_dutch_republic }
+			if = {
+				limit = { is_title_active = e_hre }
+				k_dutch_republic = { de_jure_liege = e_hre }
+			}
+			if = {
+				limit = { is_title_active = e_germany }
+				k_dutch_republic = { de_jure_liege = e_germany }
+			}
+			any_player = {
+					narrative_event = { id = DTCH.101 }
+			}
+		}
+		hidden_tooltip = {
+			ROOT = {
+				c_holland = {
+					grant_title = PREV
+					usurp_title = PREV
+					ROOT = { capital = PREV }
+					make_capital_holding = yes
+				}
+				c_westfriesland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				c_sticht = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				c_zeeland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_dorestad = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_hoorn = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_vlissingen = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				d_holland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}					
+				b_dordrecht = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+			}
+			
+			c_holland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = dutch_armory
+						years = -1
+					}
+				}
+			}
+			c_westfriesland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_fortification
+						years = -1
+					}
+				}
+			}
+			c_zeeland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_fortification
+						years = -1
+					}
+				}
+			}
+			c_sticht = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_fortification
+						years = -1
+					}
+				}
+			}
+			c_mijdrecht = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_fortification
+						years = -1
+					}
+				}
+			}
+		}	
+	}
+	
+	option = { #Become the Dutch Republic
+		name = DTCHOPT2
+		ai_chance = { factor = 50 }
+		
+		activate_title = { title = k_dutch_republic status = yes }
+		activate_title = { title = k_frisia status = no }
+		primary_title = {
+			k_dutch_republic = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		
+		create_family_palace = yes
+			
+		set_government_type = merchant_republic_government
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = KING
+					NOT = { title = k_dutch_republic }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		hidden_effect = {
+			d_holland = { de_jure_liege = k_dutch_republic }
+			d_gelre = { de_jure_liege = k_dutch_republic }
+			d_flanders = { de_jure_liege = k_dutch_republic }
+			d_brabant = { de_jure_liege = k_dutch_republic }
+			if = {
+				limit = { is_title_active = e_hre }
+				k_dutch_republic = { de_jure_liege = e_hre }
+			}
+			if = {
+				limit = { is_title_active = e_germany }
+				k_dutch_republic = { de_jure_liege = e_germany }
+			}
+			any_player = {
+					narrative_event = { id = DTCH.100 }
+			}
+		}
+		hidden_tooltip = {
+			ROOT = {
+				c_holland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				c_westfriesland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				c_sticht = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				c_zeeland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_dorestad = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_hoorn = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				b_vlissingen = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+				d_holland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}					
+				b_dordrecht = {
+					grant_title = PREV
+					usurp_title = PREV
+					ROOT = { capital = PREV }
+					make_capital_holding = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						num_of_government_vassals = {
+							government = merchant_republic_government
+							value = 1
+						}
+					}
+				}
+				
+				any_unique_dynasty_vassal = { # gives random vassals a family palace
+					count = 4
+					limit = {
+						is_female = no
+						OR = {
+							is_republic = yes
+							is_tribal = yes
+						}
+						is_patrician = no
+						prisoner = no
+						NOT = { trait = incapable }
+						is_adult = yes
+						NOT = { 
+							dynasty = none 
+						}
+					}
+					
+					
+					create_family_palace = yes
+				}
+			}
+			c_holland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = dutch_stock_market
+						years = -1
+					}
+				}
+			}
+			c_westfriesland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_expansion
+						years = -1
+					}
+				}
+			}
+			c_zeeland = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_expansion
+						years = -1
+					}
+				}
+			}
+			c_sticht = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_expansion
+						years = -1
+					}
+				}
+			}
+			c_mijdrecht = {
+				location = {
+					add_holding_slot = 1
+					add_province_modifier = {
+						name = increased_holding
+						years = 50
+						hidden = yes
+					}
+					add_province_modifier = {
+						name = polder_expansion
+						years = -1
+					}
+				}
+			}
+		}
 	}
 }

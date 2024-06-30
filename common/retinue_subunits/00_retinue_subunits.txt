@@ -922,7 +922,7 @@ HORDE_RETTYPE_CAV1 =
 	hire_cost = 25
 	costs_prestige = yes
 	
-	maintenance_multiplier = 0.50
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -946,7 +946,7 @@ HORDE_RETTYPE_CAV2 =
 	hire_cost = 50
 	costs_prestige = yes
 	
-	maintenance_multiplier = 0.50
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -972,7 +972,7 @@ HORDE_RETTYPE_CAV3 =
 	hire_cost = 75
 	costs_prestige = yes
 	
-	maintenance_multiplier = 0.5
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -997,7 +997,7 @@ HORDE_RETTYPE_CAV4 =
 	
 	hire_cost = 50
 	
-	maintenance_multiplier = 0.3
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1019,7 +1019,7 @@ HORDE_RETTYPE_CAV5 =
 	
 	hire_cost = 100
 	
-	maintenance_multiplier = 0.3
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1042,7 +1042,7 @@ HORDE_RETTYPE_CAV6 =
 	
 	hire_cost = 150
 	
-	maintenance_multiplier = 0.3
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1064,7 +1064,7 @@ HORDE_RETTYPE_CAV7 =
 	
 	hire_cost = 150
 	
-	maintenance_multiplier = 0.3
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1089,7 +1089,7 @@ HORDE_RETTYPE_PAGAN =
 	hire_cost = 50
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1115,7 +1115,7 @@ HORDE_RETTYPE_MUSLIM =
 	hire_cost = 50
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1141,7 +1141,7 @@ HORDE_RETTYPE_CHRISTIAN =
 	hire_cost = 75
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1166,7 +1166,7 @@ HORDE_RETTYPE_ZOROASTRIAN =
 	hire_cost = 75
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1191,7 +1191,7 @@ HORDE_RETTYPE_JEWISH =
 	hire_cost = 50
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1215,7 +1215,7 @@ HORDE_RETTYPE_EASTERN =
 	hire_cost = 50
 	costs_piety = yes
 	
-	maintenance_multiplier = 0.25
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1239,6 +1239,8 @@ HORDE_RETTYPE_INDIAN =
 	special_troops = war_elephants
 
 	hire_cost = 250
+	
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1265,6 +1267,8 @@ HORDE_RETTYPE_DESERT = {
 	
 	hire_cost = 250
 	
+	maintenance_multiplier = 0.75
+	
 	potential = {
 		is_nomadic = yes
 		capital_scope = {
@@ -1286,6 +1290,8 @@ HORDE_RETTYPE_EUROPE = {
 	first_amount = 250
 	
 	hire_cost = 250
+	
+	maintenance_multiplier = 0.75
 	
 	potential = {
 		is_nomadic = yes
@@ -1627,5 +1633,29 @@ RETTYPE_K_MACEDONIA =
 	modifier = {
 		pikemen_offensive = 0.4
 		heavy_infantry_offensive = 0.4
+	}
+}
+
+RETTYPE_K_DUTCH_REPUBLIC = 
+{
+	first_type = 5
+	first_amount = 200
+	second_type = 2
+	second_amount = 200
+	
+	potential = {
+		is_nomadic = no
+		AND = {
+			ROOT = { has_landed_title = k_dutch_republic }
+			government = feudal_government
+		}
+	}
+	
+	maintenance_multiplier = 4.5
+	
+	modifier = {
+		pikemen_offensive = 0.5
+		pikemen_morale = 0.2
+		archers_offensive = 0.9
 	}
 }

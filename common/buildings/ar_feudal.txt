@@ -615,133 +615,6 @@ castle = {
 
 		extra_tech_building_start = 10.0
 	}
-
-	knight_guild_1 = {
-		desc =  knight_guild_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 3
-		}
-		prerequisites = { ca_militia_barracks_1 ca_wall_2 }
-		gold_cost = 160
-		build_time = 365
-		
-		heavy_infantry = 45
-		knights = 20
-		
-		ai_creation_factor = 89
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	knight_guild_2 = {
-		desc =  knight_guild_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 4
-		}
-		prerequisites = { ca_militia_barracks_2 ca_wall_3 }
-		gold_cost = 260
-		build_time = 547
-		
-		upgrades_from = knight_guild_1
-		
-		heavy_infantry = 55
-		knights = 30
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	knight_guild_3 = {
-		desc =  knight_guild_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 5
-		}
-		prerequisites = { ca_militia_barracks_3 ca_wall_4 }
-		gold_cost = 350
-		build_time = 730
-
-		upgrades_from = knight_guild_2
-		
-		heavy_infantry = 65
-		knights = 40
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	knight_guild_4 = {
-		desc =  knight_guild_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 5
-		}
-		prerequisites = {
-			ca_militia_barracks_4
-			ca_wall_5
-		}
-		gold_cost = 500
-		build_time = 1095
-
-		upgrades_from = knight_guild_3
-		
-		heavy_infantry = 75
-		knights = 50
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	knight_guild_5 = {
-		desc =  knight_guild_1_desc
-
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 6
-		}
-
-		prerequisites = { ca_militia_barracks_4 ca_wall_5 }
-		gold_cost = 650
-		build_time = 1460
-
-		upgrades_from = knight_guild_4
-		
-		heavy_infantry = 95
-		knights = 60
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
 	
 	mercenary_guild_1 = {
 		desc =  mercenary_guild_1_desc
@@ -855,125 +728,6 @@ castle = {
 		upgrades_from = mercenary_guild_4
 		
 		light_infantry = 95
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	horse_breeder_1 = {
-		desc =  horse_breeder_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 2
-		}
-		prerequisites = { ca_stable_1 }
-		gold_cost = 80
-		build_time = 365
-		
-		light_cavalry = 45
-		
-		ai_creation_factor = 89
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	horse_breeder_2 = {
-		desc =  horse_breeder_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 3
-		}
-		prerequisites = { ca_stable_2 }
-		gold_cost = 60
-		build_time = 547
-		
-		upgrades_from = horse_breeder_1
-		
-		light_cavalry = 55
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	horse_breeder_3 = {
-		desc =  horse_breeder_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 4
-		}
-		prerequisites = { ca_stable_3 }
-		gold_cost = 122
-		build_time = 730
-
-		upgrades_from = horse_breeder_2
-		
-		light_cavalry = 65
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	horse_breeder_4 = {
-		desc =  horse_breeder_1_desc
-		
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 5
-		}
-		prerequisites = { ca_stable_4 }
-		gold_cost = 244
-		build_time = 1095
-
-		upgrades_from = horse_breeder_3
-		
-		light_cavalry = 75
-		
-		ai_creation_factor = 88
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-	
-	horse_breeder_5 = {
-		desc =  horse_breeder_1_desc
-
-		is_active_trigger = {
-			is_tribal = no
-		}
-		
-		trigger = {
-			TECH_CASTLE_CONSTRUCTION = 6
-		}
-
-		prerequisites = { ca_stable_5 }
-		gold_cost = 350
-		build_time = 1460
-
-		upgrades_from = horse_breeder_4
-		
-		light_cavalry = 95
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -2095,18 +1849,17 @@ castle = {
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
 	}
+	
 	rhodos_grand_master_palace = {
 		desc = rhodos_grand_master_palace_desc
 		add_number_to_name = no
 		potential = {
-			OR = {
-				ROOT = { province = c_rhodos }
-			}
-			FROMFROM = { is_capital = yes }
+			FROMFROM = { province = c_rhodos }
 		}
 		
 		is_active_trigger = {
 			is_tribal = no
+			holder_scope = { religion_group = christian }
 		}
 
 		gold_cost = 700
@@ -2118,9 +1871,60 @@ castle = {
 		galleys = 150
 		military_techpoints = 0.05
 		
-		ai_creation_factor = 95
-		extra_tech_building_start = 2
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
 	}
+	
+	malta_fort = {
+		desc = malta_fort_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_malta }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+
+		gold_cost = 500
+		build_time = 730
+		
+		heavy_infantry = 250
+		fort_level = 2
+		siege_defence = 0.2
+		galleys = 150
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+
+	kolossi_fort = {
+		desc = kolossi_fort_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_limisol }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+
+		gold_cost = 500
+		build_time = 730
+		
+		heavy_infantry = 250
+		fort_level = 2
+		siege_defence = 0.2
+		galleys = 150
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+
 	woldys_fort = {
 		desc = woldys_fort_desc
 		add_number_to_name = no
