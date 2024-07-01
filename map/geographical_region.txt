@@ -7,6 +7,59 @@
 #		E.g. If the region world_europe contains the region world_europe_west then world_europe_west needs to be declared as a region before (i.e. higher up in this file) world_europe.
 
 ###########################################################################
+# PURGED REGIONS 
+###########################################################################
+
+world_africa_west = {
+	duchies = {
+		d_songhay d_mali d_ghana d_timbuktu d_bambuk d_yatenga d_tagant d_gurma
+	}
+}
+world_africa_central = {
+	duchies = {
+		d_kebbi d_kanem d_air d_bornu d_hausaland
+	}
+}
+
+world_himalayas = {
+	inclusive = yes
+	duchies = {
+		d_lhasa d_yarlung d_shigatse d_nagchu d_sumparu d_bhutan d_purang d_ngari d_ladakh d_dege d_qamdo d_nyingchi d_kathmandu d_gorkha d_kashmir d_pamir d_uttaranchal d_qinghai d_nagormo d_nangqen
+	}
+}
+
+world_india_deccan = {
+	duchies = {
+		#Maharastra
+		d_vidharba d_konkana d_nasikya d_devagiri d_rattapadi
+		#Karnata
+		d_kalyani d_gangavadi d_nulambavadi d_raichur_doab
+		#Tamilakam
+		d_chola_nadu d_pandya_nadu d_chera_nadu d_tondai_nadu
+		#Andhra
+		d_vengi d_udayagiri
+		#Telingana
+		d_warangal d_racakonda
+		#Lanka
+		d_lanka d_sinhala
+	}
+}
+world_india_bengal = {
+	duchies = {
+		#Gondwana
+		d_dahala d_ratanpur
+		#Bengal
+		d_vanga d_varendra d_gauda d_nadia d_suhma
+		#Kamarupa
+		d_kamarupanagara d_para_lauhitya d_sutiya
+		#Orissa
+		d_daksina_kosala d_tosali d_kalinga d_dandakaranya
+		#Bihar
+		d_tirabhukti d_kasi d_jharkand d_magadha
+	}
+}
+
+###########################################################################
 # World Regions
 #	These groups are mutually exclusive on the same tier
 ###########################################################################
@@ -353,59 +406,5 @@ custom_navarra = {
 custom_balearic = {
 	duchies = {
 		d_mallorca
-	}
-}
-
-
-###########################################################################
-# PURGED REGIONS 
-###########################################################################
-
-world_africa_west = {
-	duchies = {
-		d_songhay d_mali d_ghana d_timbuktu d_bambuk d_yatenga d_tagant d_gurma
-	}
-}
-world_africa_central = {
-	duchies = {
-		d_kebbi d_kanem d_air d_bornu d_hausaland
-	}
-}
-
-world_himalayas = {
-	inclusive = yes
-	duchies = {
-		d_lhasa d_yarlung d_shigatse d_nagchu d_sumparu d_bhutan d_purang d_ngari d_ladakh d_dege d_qamdo d_nyingchi d_kathmandu d_gorkha d_kashmir d_pamir d_uttaranchal d_qinghai d_nagormo d_nangqen
-	}
-}
-
-world_india_deccan = {
-	duchies = {
-		#Maharastra
-		d_vidharba d_konkana d_nasikya d_devagiri d_rattapadi
-		#Karnata
-		d_kalyani d_gangavadi d_nulambavadi d_raichur_doab
-		#Tamilakam
-		d_chola_nadu d_pandya_nadu d_chera_nadu d_tondai_nadu
-		#Andhra
-		d_vengi d_udayagiri
-		#Telingana
-		d_warangal d_racakonda
-		#Lanka
-		d_lanka d_sinhala
-	}
-}
-world_india_bengal = {
-	duchies = {
-		#Gondwana
-		d_dahala d_ratanpur
-		#Bengal
-		d_vanga d_varendra d_gauda d_nadia d_suhma
-		#Kamarupa
-		d_kamarupanagara d_para_lauhitya d_sutiya
-		#Orissa
-		d_daksina_kosala d_tosali d_kalinga d_dandakaranya
-		#Bihar
-		d_tirabhukti d_kasi d_jharkand d_magadha
 	}
 }
