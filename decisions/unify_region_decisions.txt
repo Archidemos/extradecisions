@@ -129,6 +129,142 @@ decisions = {
 		}
 	}
 
+	ar_form_the_hre = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 24
+		
+		potential = {
+			NOT = { has_global_flag = ar_hre_formed }
+			is_playable = yes
+			has_global_flag = germany_united
+			independent = yes
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
+			OR = {
+				culture = german
+				culture = dutch
+			}
+			e_hre = {
+				has_holder = no
+			}
+			is_alternate_start = no
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			prestige = 1000
+			realm_size = 180
+			has_landed_title = k_germany
+			conditional_tooltip = {
+				limit = {
+					start_date = 936.8.7
+				}
+				has_landed_title = k_italy
+			}
+			conditional_tooltip = {
+				limit = {
+					NOT = { start_date = 936.8.7 }
+				}
+				custom_tooltip = {
+					text = FORM_THE_HRE_TT
+					any_demesne_title = {
+						tier = KING
+						NOT = {
+							title = k_germany
+						}
+					}
+				}
+			}
+			conditional_tooltip = {
+				trigger = {
+					ai = no
+				}
+
+				scaled_wealth = 2
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					ai = no
+				}
+				scaled_wealth = -2
+			}
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+			if = {
+				limit = {
+					has_character_flag = is_otto
+				}
+				narrative_event = { id = LT.40015 }
+		        any_playable_ruler = {
+		            limit = {
+		                is_within_diplo_range = ROOT
+		            }
+		            narrative_event = { id = LT.40015 }
+		        }
+				create_bloodline = {
+					type = otto
+				}
+			}
+			add_artifact = crown_hre
+			primary_title = {
+				show_scope_change = no
+				e_hre = {
+					show_scope_change = no
+					grant_title = ROOT
+					copy_title_laws = PREV
+					add_law = succ_hre_elective
+				}
+			}
+
+			hidden_tooltip = {
+				princely_elective_german_elector_setup_effect = yes
+
+				e_germany = {
+					any_direct_de_jure_vassal_title = {
+						de_jure_liege = e_hre
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					OR = {
+						tier = KING
+						AND = {
+							tier = EMPEROR
+							NOT = {
+								title = e_hre
+							}
+						}
+					}
+				}
+				destroy_landed_title = THIS
+			}
+            activate_title = {
+                title = e_hre
+                status = yes
+            }
+            activate_title = {
+                title = e_germany
+                status = no
+            }
+			set_global_flag = ar_hre_formed
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	unite_england = {
 		ai_check_interval = 12
 		is_high_prio = yes
