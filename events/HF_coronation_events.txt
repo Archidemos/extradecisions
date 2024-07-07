@@ -1146,6 +1146,7 @@ letter_event = {
 	}
 	option = { #For the Pope
 		name = EVTOPTCHF30201
+		ai_chance = { factor = 10 }
 		trigger = { 
 			OR = { 
 				has_landed_title = k_papal_state
@@ -1155,7 +1156,19 @@ letter_event = {
 		FROM = { letter_event = { id = HF.20240 } } #Give me a relic.
 	}
 	option = { #For the Pope
+		name = EVTOPTCHF30201
+		ai_chance = { factor = 10 }
+		trigger = { 
+			OR = { 
+				has_landed_title = k_papal_state
+				has_landed_title = d_fraticelli
+			}
+		}
+		FROM = { letter_event = { id = HF.20214 } } #I want you to depose excommunicated ruler.
+	}
+	option = { #For the Pope
 		name = EVTOPTCHF30202
+		ai_chance = { factor = 80 }
 		trigger = { 
 			OR = { 
 				has_landed_title = k_papal_state

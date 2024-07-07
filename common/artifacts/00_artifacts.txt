@@ -18,6 +18,7 @@ slots = {
 loot_axe = { #The Old Gods only
 	martial = 2
 	combat_rating = 5
+	command_modifier = { heavy_infantry = 0.025 light_infantry = 0.025 }
 	quality = 2
 	flags = { combat_weapon easter_egg }
 	stacking = no
@@ -27,12 +28,18 @@ loot_axe = { #The Old Gods only
 
 strange_chest = { # (DLC: The Old Gods)
 	flags = { chest }
+	learning = 1
 	picture = "GFX_strange_chest"
 }
 
 cursed_diamond = { # (DLC: Rajas of India)
 	monthly_character_prestige = 1
+	stewardship = 2
+	health = -1
 	global_tax_modifier = 0.1
+	build_cost_modifier = -0.05
+	build_time_modifier = -0.05
+	
 	quality = 3
 	flags = { event diamond curse }
 	stacking = no
@@ -45,7 +52,13 @@ cursed_diamond = { # (DLC: Rajas of India)
 
 cursed_diamond_crown = { # (DLC: Rajas of India)
 	monthly_character_prestige = 1
-	stewardship = 3
+	stewardship = 4
+	health = -1
+	martial = -2
+	global_tax_modifier = 0.1
+	build_cost_modifier = -0.05
+	build_time_modifier = -0.05
+	
 	quality = 4
 	flags = { event diamond curse }
 	stacking = no
@@ -59,6 +72,7 @@ cursed_diamond_crown = { # (DLC: Rajas of India)
 
 rival_skull = { # (DLC: Reaper's Due)
 	quality = 1
+	intrigue = 1
 	monthly_character_prestige = 0.05
 	allowed_gift = {
 		always = no
@@ -82,7 +96,6 @@ famous_head = {
 famous_tongue = {
 	monthly_character_prestige = 0.05
 	diplomacy = 1
-	monthly_character_prestige = 0.05
 	quality = 1
 	flags = { saint bodypart }
 	picture = "GFX_saintly_tongue"
@@ -97,7 +110,6 @@ infamous_tongue = {
 }
 
 famous_hand = {
-	monthly_character_prestige = 0.05
 	combat_rating = 5
 	martial = 1
 	quality = 1
@@ -124,7 +136,9 @@ famous_foot = {
 }
 
 famous_ancient_weapon = { #rusty old weapon
-	monthly_character_prestige = 0.5
+	command_modifier = {
+		morale_offence = 0.025
+	}
 	martial = 1
 	quality = 1
 	flags = { weapon }
@@ -1329,6 +1343,7 @@ crown_hre = {
 	monthly_character_prestige = 1.0
 	monthly_character_piety = 1.0
 	diplomacy = 4
+	demesne_size = 1
 	vassal_opinion = 5
 	quality = 5
 	active = {
@@ -1386,6 +1401,8 @@ crown_pahlavi = {
 	monthly_character_piety = 1.0
 	stewardship = 2
 	diplomacy = 2
+	build_cost_modifier = -0.025
+	build_time_modifier = -0.025
 	vassal_opinion = 10
 	quality = 5
 	active = { 
@@ -2033,7 +2050,7 @@ sword_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		actual_light_infantry = 0.05
+		actual_light_infantry = 0.025
 	}
 	quality = 1
 	active = {
@@ -2050,8 +2067,8 @@ sword_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		heavy_infantry = 0.05
-		actual_light_infantry = 0.10
+		heavy_infantry = 0.025
+		actual_light_infantry = 0.05
 	}
 	quality = 2
 	active = {
@@ -2068,8 +2085,8 @@ sword_tier_3_heartseeker = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2086,8 +2103,8 @@ sword_tier_3_vengeance = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2104,8 +2121,8 @@ sword_tier_3_fury = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2122,8 +2139,8 @@ sword_tier_4_heartseeker = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2140,8 +2157,8 @@ sword_tier_4_vengeance = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2158,8 +2175,8 @@ sword_tier_4_fury = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2177,7 +2194,7 @@ scimitar_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		actual_light_infantry = 0.05
+		actual_light_infantry = 0.025
 	}
 	quality = 1
 	active = {
@@ -2194,8 +2211,8 @@ scimitar_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		heavy_infantry = 0.05
-		actual_light_infantry = 0.10
+		heavy_infantry = 0.025
+		actual_light_infantry = 0.05
 	}
 	quality = 2
 	active = {
@@ -2212,8 +2229,8 @@ scimitar_tier_3_golden = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2230,8 +2247,8 @@ scimitar_tier_3_fortune = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2248,8 +2265,8 @@ scimitar_tier_3_conquest = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		actual_light_infantry = 0.15
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2266,8 +2283,8 @@ scimitar_tier_4_golden = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2284,8 +2301,8 @@ scimitar_tier_4_fortune = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2302,8 +2319,8 @@ scimitar_tier_4_conquest = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.075
+		actual_light_infantry = 0.10
 	}
 	quality = 4
 	active = {
@@ -2321,7 +2338,7 @@ lance_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		pikemen = 0.05
+		pikemen = 0.025
 	}
 	quality = 1
 	active = {
@@ -2338,8 +2355,8 @@ lance_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		cavalry = 0.05
-		pikemen = 0.10
+		cavalry = 0.025
+		pikemen = 0.05
 	}
 	quality = 2
 	active = {
@@ -2356,8 +2373,8 @@ lance_tier_3_impaler = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		pikemen = 0.15
+		cavalry = 0.05
+		pikemen = 0.075
 	}
 	quality = 3
 	active = {
@@ -2374,8 +2391,8 @@ lance_tier_3_trident = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		pikemen = 0.15
+		cavalry = 0.05
+		pikemen = 0.075
 	}
 	quality = 3
 	active = {
@@ -2392,8 +2409,8 @@ lance_tier_3_piercer = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		pikemen = 0.15
+		cavalry = 0.05
+		pikemen = 0.075
 	}
 	quality = 3
 	active = {
@@ -2410,8 +2427,8 @@ lance_tier_4_impaler = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		pikemen = 0.2
+		cavalry = 0.075
+		pikemen = 0.1
 	}
 	quality = 4
 	active = {
@@ -2428,8 +2445,8 @@ lance_tier_4_trident = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		pikemen = 0.2
+		cavalry = 0.075
+		pikemen = 0.1
 	}
 	quality = 4
 	active = {
@@ -2446,8 +2463,8 @@ lance_tier_4_piercer = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		pikemen = 0.2
+		cavalry = 0.075
+		pikemen = 0.1
 	}
 	quality = 4
 	active = {
@@ -2465,7 +2482,7 @@ axe_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		actual_heavy_infantry = 0.05
+		actual_heavy_infantry = 0.025
 	}
 	quality = 1
 	active = {
@@ -2482,8 +2499,8 @@ axe_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		light_infantry = 0.05
-		actual_heavy_infantry = 0.1
+		light_infantry = 0.025
+		actual_heavy_infantry = 0.05
 	}
 	quality = 2
 	active = {
@@ -2500,8 +2517,8 @@ axe_tier_3_cleaver = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		light_infantry = 0.1
-		actual_heavy_infantry = 0.15
+		light_infantry = 0.05
+		actual_heavy_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2518,8 +2535,8 @@ axe_tier_3_ravager = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		light_infantry = 0.1
-		actual_heavy_infantry = 0.15
+		light_infantry = 0.05
+		actual_heavy_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2536,8 +2553,8 @@ axe_tier_3_marauder = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		light_infantry = 0.1
-		actual_heavy_infantry = 0.15
+		light_infantry = 0.05
+		actual_heavy_infantry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2554,8 +2571,8 @@ axe_tier_4_cleaver = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		light_infantry = 0.15
-		actual_heavy_infantry = 0.2
+		light_infantry = 0.075
+		actual_heavy_infantry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2572,8 +2589,8 @@ axe_tier_4_ravager = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		light_infantry = 0.15
-		actual_heavy_infantry = 0.2
+		light_infantry = 0.075
+		actual_heavy_infantry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2590,8 +2607,8 @@ axe_tier_4_marauder = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		light_infantry = 0.15
-		actual_heavy_infantry = 0.2
+		light_infantry = 0.075
+		actual_heavy_infantry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2609,7 +2626,7 @@ mace_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		light_cavalry = 0.05
+		light_cavalry = 0.025
 	}
 	quality = 1
 	active = {
@@ -2626,8 +2643,8 @@ mace_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		heavy_infantry = 0.05
-		light_cavalry = 0.10
+		knights = 0.025
+		light_cavalry = 0.05
 	}
 	quality = 2
 	active = {
@@ -2644,8 +2661,8 @@ mace_tier_3_foe_hammer = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		light_cavalry = 0.15
+		knights = 0.05
+		light_cavalry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2662,8 +2679,8 @@ mace_tier_3_bone_breaker = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		light_cavalry = 0.15
+		knights = 0.05
+		light_cavalry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2680,8 +2697,8 @@ mace_tier_3_shatterer = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		heavy_infantry = 0.10
-		light_cavalry = 0.15
+		knights = 0.05
+		light_cavalry = 0.075
 	}
 	quality = 3
 	active = {
@@ -2698,8 +2715,8 @@ mace_tier_4_foe_hammer = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		light_cavalry = 0.2
+		knights = 0.075
+		light_cavalry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2716,8 +2733,8 @@ mace_tier_4_bone_breaker = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		light_cavalry = 0.2
+		knights = 0.075
+		light_cavalry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2734,8 +2751,8 @@ mace_tier_4_shatterer = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		light_cavalry = 0.2
+		knights = 0.075
+		light_cavalry = 0.1
 	}
 	quality = 4
 	active = {
@@ -2753,8 +2770,7 @@ bow_tier_1_new = {
 	martial = 1
 	combat_rating = 5
 	command_modifier = {
-		cavalry = 0.05
-		archers = 0.10
+		archers = 0.025
 	}
 	quality = 1
 	active = {
@@ -2771,8 +2787,8 @@ bow_tier_2_new = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		cavalry = 0.05
-		archers = 0.10
+		cavalry = 0.025
+		archers = 0.05
 	}
 	quality = 2
 	active = {
@@ -2789,8 +2805,8 @@ bow_tier_3_silent_wind = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		archers = 0.15
+		cavalry = 0.05
+		archers = 0.075
 	}
 	quality = 3
 	active = {
@@ -2807,8 +2823,8 @@ bow_tier_3_lightning = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		archers = 0.15
+		cavalry = 0.05
+		archers = 0.075
 	}
 	quality = 3
 	active = {
@@ -2825,8 +2841,8 @@ bow_tier_3_eagle = {
 	martial = 2
 	combat_rating = 10
 	command_modifier = {
-		cavalry = 0.10
-		archers = 0.15
+		cavalry = 0.05
+		archers = 0.075
 	}
 	quality = 3
 	active = {
@@ -2843,8 +2859,8 @@ bow_tier_4_silent_wind = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		archers = 0.2
+		cavalry = 0.075
+		archers = 0.1
 	}
 	quality = 4
 	active = {
@@ -2861,8 +2877,8 @@ bow_tier_4_lightning = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		archers = 0.2
+		cavalry = 0.075
+		archers = 0.1
 	}
 	quality = 4
 	active = {
@@ -2879,8 +2895,8 @@ bow_tier_4_eagle = {
 	martial = 2
 	combat_rating = 15
 	command_modifier = {
-		cavalry = 0.15
-		archers = 0.2
+		cavalry = 0.075
+		archers = 0.1
 	}
 	quality = 4
 	active = {
@@ -3180,7 +3196,7 @@ emerald_tablet = {
 				society = hermetics
 				rank >= 3
 			}
-			learning = 20
+			learning = 15
 		}
 	}
 	allowed_gift = {
@@ -3200,7 +3216,7 @@ hermetic_handgun = {
 	combat_rating = 25
 	martial = 2
 	monthly_character_prestige = 1
-	command_modifier = { morale_offence = 0.1 }
+	command_modifier = { morale_offence = 0.15 }
 	quality = 3
 	active = { 
 		OR = {
@@ -3215,7 +3231,8 @@ hermetic_handgun = {
 
 hermetic_compass = {
 	learning = 2
-	stewardship = 2 
+	stewardship = 2
+	build_time_modifier = -0.1
 	monthly_character_prestige = 0.5
 	quality = 3
 	active = { 
@@ -3231,6 +3248,7 @@ hermetic_compass = {
 
 radius_astronomicus = {
 	learning = 3
+	diplomacy = 1
 	tech_growth_modifier = 0.05
 	monthly_character_prestige = 0.5
 	quality = 3
@@ -3247,8 +3265,9 @@ radius_astronomicus = {
 
 hermetic_cypher_machine = {
 	learning = 1
-	intrigue = 2
-	plot_power_modifier = 0.1
+	intrigue = 3
+	plot_power_modifier = 0.15
+	defensive_plot_power_modifier = 0.15
 	quality = 2
 	active = { 
 		OR = {
@@ -3263,10 +3282,10 @@ hermetic_cypher_machine = {
 
 hermetic_plate_armor = {
 	learning = 1
-	martial = 1
+	martial = 2
 	combat_rating = 15
 	monthly_character_prestige = 0.25
-	command_modifier = { morale_defence = 0.1 }
+	command_modifier = { morale_defence = 0.15 }
 	quality = 2
 	active = { 
 		OR = {
@@ -3282,6 +3301,7 @@ hermetic_plate_armor = {
 
 hermetic_glasses = {
 	learning = 2
+	health = 0.5
 	monthly_character_prestige = 0.25
 	quality = 1
 	active = { 
@@ -3300,7 +3320,9 @@ hermetic_glasses = {
 jade_dragon = {
 	monthly_character_prestige = 1
 	global_tax_modifier = 0.1
-	diplomacy = 2
+	build_time_modifier = -0.1
+	diplomacy = 1
+	stewardship = 1
 	quality = 5
 	flags = { chinese statue rare }
 	picture = "GFX_jade_dragon"
@@ -3320,6 +3342,8 @@ chinese_dragon_amulet = {
 chinese_artwork = {
 	monthly_character_prestige = 0.35
 	monthly_character_piety = 0.1
+	learning = 2
+	diplomacy = 1
 	quality = 2
 	flags = { chinese art decor }
 	picture = "GFX_chinese_artwork"
@@ -3327,7 +3351,8 @@ chinese_artwork = {
 }
 chinese_calligraphy = {
 	monthly_character_prestige = 0.35
-	town_opinion = 2
+	town_opinion = 5
+	stewardship = 1
 	quality = 2
 	flags = { chinese art decor }
 	picture = "GFX_chinese_calligraphy"
@@ -3336,6 +3361,7 @@ chinese_calligraphy = {
 chinese_sculpture = {
 	monthly_character_prestige = 0.35
 	build_time_modifier = -0.05
+	stewardship = 1
 	quality = 2
 	flags = { chinese sculpture decor }
 	picture = "GFX_chinese_sculpture"
@@ -3344,7 +3370,8 @@ chinese_sculpture = {
 chinese_ceremonial_robes = {
 	quality = 3
 	monthly_character_prestige = 0.5
-	diplomacy = 1
+	diplomacy = 2
+	learning = 1
 	active = {
 		is_adult = yes
 	}
@@ -3357,6 +3384,7 @@ silk_shroud = {
 	quality = 3
 	monthly_character_prestige = 0.6
 	intrigue = 2
+	plot_power_modifier = 0.05
 	active = {
 		is_adult = yes
 	}
@@ -3368,7 +3396,8 @@ silk_shroud = {
 water_clock = {
 	quality = 4
 	monthly_character_piety = 0.5
-	learning = 2
+	learning = 3
+	stewardship = 1
 	flags = { chinese clock }
 	picture = "GFX_water_clock"
 	stacking = no
@@ -3379,9 +3408,8 @@ jian_sword = {
 	martial = 2
 	combat_rating = 12
 	command_modifier = {
-		heavy_infantry = 0.10
-		light_cavalry = 0.125
-		actual_light_infantry = 0.125
+		heavy_infantry = 0.05
+		actual_light_infantry = 0.05
 	}
 	active = {
 		is_adult = yes
@@ -3393,7 +3421,7 @@ jian_sword = {
 }
 chinese_prev_emperor_sculpture = {
 	monthly_character_prestige = 0.15
-	diplomacy = 1
+	stewardship = 1
 	quality = 1
 	flags = { chinese sculpture decor }
 	picture = "GFX_small_chinese_figurine"
@@ -3402,7 +3430,8 @@ chinese_prev_emperor_sculpture = {
 chinese_arm_protector = {
 	quality = 2
 	monthly_character_prestige = 0.4
-	sex_appeal_opinion = 10
+	martial = 1
+	combat_rating = 5
 	flags = { chinese bracelet }
 	stacking = no
 	picture = "GFX_chinese_arm_protector"
@@ -3414,9 +3443,8 @@ chinese_serpent_spear = {
 	martial = 1
 	combat_rating = 7
 	command_modifier = {
-		cavalry = 0.05
-		heavy_infantry = 0.035
-		pikemen = 0.035
+		cavalry = 0.025
+		pikemen = 0.025
 	}
 	quality = 2
 	active = {
@@ -3432,9 +3460,8 @@ chinese_ji = {
 	martial = 2
 	combat_rating = 8
 	command_modifier = {
-		cavalry = 0.1
-		heavy_infantry = 0.075
-		pikemen = 0.075
+		light_infantry = 0.1
+		pikemen = 0.1
 	}
 	quality = 3
 	active = {
@@ -3448,10 +3475,11 @@ chinese_ji = {
 chinese_crossbow = {
 	monthly_character_prestige = 0.25
 	martial = 2
-	combat_rating = 8
+	combat_rating = 15
 	defensive_plot_power_modifier = 0.15
 	command_modifier = {
-		light_infantry = 0.10
+		light_infantry = 0.1
+		archers = 0.1
 	}
 	quality = 3
 	active = {
@@ -3459,12 +3487,12 @@ chinese_crossbow = {
 	}
 	flags = { chinese combat_weapon crossbow ranged_weapon }
 	stacking = no
-	picture = "GFX_relic_box_simple"
+	picture = "GFX_chinese_crossbow"
 	slot = weapon
 }
 chinese_bronze_sculpture = {
 	monthly_character_prestige = 0.1
-	stewardship = 1
+	stewardship = 2
 	quality = 3
 	flags = { chinese art decor }
 	picture = "GFX_chinese_bronze_statue"
@@ -3472,7 +3500,7 @@ chinese_bronze_sculpture = {
 }
 chinese_painting_of_glitterhoof = {
 	quality = 1
-	martial = 1
+	learning = 1
 	same_religion_opinion = 5
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 0.1
@@ -3482,7 +3510,7 @@ chinese_painting_of_glitterhoof = {
 }
 chinese_tapestry = {
 	monthly_character_prestige = 0.1
-	build_cost_modifier = -0.1
+	build_cost_modifier = -0.05
 	quality = 2
 	flags = { chinese art decor }
 	picture = "GFX_chinese_tapestry"
@@ -3491,6 +3519,8 @@ chinese_tapestry = {
 chinese_tapestry_grand = {
 	monthly_character_prestige = 0.3
 	short_reign_length = -2
+	stewardship = 1w
+	build_time_modifier = -0.05
 	vassal_opinion = 5
 	quality = 3
 	flags = { chinese art decor }
@@ -3519,7 +3549,7 @@ armor_tier_2 = {
 	monthly_character_prestige = 0.5
 	martial = 1
 	combat_rating = 7
-	command_modifier = { morale_offence = 0.05 }
+	command_modifier = { morale_offence = 0.025 }
 	quality = 2
 	active = {
 		is_adult = yes
@@ -3533,7 +3563,7 @@ armor_tier_3_guardian = {
 	monthly_character_prestige = 0.75
 	martial = 1
 	combat_rating = 10
-	command_modifier = { morale_offence = 0.1 }
+	command_modifier = { morale_offence = 0.05 }
 	quality = 3
 	active = {
 		is_adult = yes
@@ -3547,7 +3577,7 @@ armor_tier_3_champion = {
 	monthly_character_prestige = 0.75
 	martial = 1
 	combat_rating = 10
-	command_modifier = { morale_offence = 0.1 }
+	command_modifier = { morale_offence = 0.05 }
 	quality = 3
 	active = {
 		is_adult = yes
@@ -3561,7 +3591,7 @@ armor_tier_3_warden = {
 	monthly_character_prestige = 0.75
 	martial = 1
 	combat_rating = 10
-	command_modifier = { morale_offence = 0.1 }
+	command_modifier = { morale_offence = 0.05 }
 	quality = 3
 	active = {
 		is_adult = yes
@@ -3575,7 +3605,7 @@ armor_tier_4_guardian = {
 	monthly_character_prestige = 1
 	martial = 2
 	combat_rating = 15
-	command_modifier = { morale_offence = 0.15 }
+	command_modifier = { morale_offence = 0.10 }
 	quality = 4
 	active = {
 		is_adult = yes
@@ -3589,7 +3619,7 @@ armor_tier_4_champion = {
 	monthly_character_prestige = 1
 	martial = 2
 	combat_rating = 15
-	command_modifier = { morale_offence = 0.15 }
+	command_modifier = { morale_offence = 0.10 }
 	quality = 4
 	active = {
 		is_adult = yes
@@ -3603,7 +3633,7 @@ armor_tier_4_warden = {
 	monthly_character_prestige = 1
 	martial = 2
 	combat_rating = 15
-	command_modifier = { morale_offence = 0.15 }
+	command_modifier = { morale_offence = 0.10 }
 	quality = 4
 	active = {
 		is_adult = yes
@@ -3901,7 +3931,7 @@ sword_1_battlefield = {
 	monthly_character_prestige = 0.25
 	combat_rating = 5
 	command_modifier = {
-		center = 0.05
+		center = 0.025
 	}
 	quality = 1
 	active = {
@@ -3916,7 +3946,7 @@ sword_1_battlefield_upgraded = {
 	monthly_character_prestige = 0.25
 	combat_rating = 6
 	command_modifier = {
-		center = 0.1
+		center = 0.05
 	}
 	quality = 1
 	active = {
@@ -3931,7 +3961,7 @@ sword_2_battlefield = {
 	monthly_character_prestige = 0.5
 	combat_rating = 10
 	command_modifier = {
-		center = 0.1
+		center = 0.05
 	}
 	quality = 1
 	active = {
@@ -3946,7 +3976,7 @@ sword_2_battlefield_upgraded = {
 	monthly_character_prestige = 0.5
 	combat_rating = 11
 	command_modifier = {
-		center = 0.25
+		center = 0.075
 	}
 	quality = 1
 	active = {
@@ -3961,7 +3991,7 @@ sword_3_battlefield = {
 	monthly_character_prestige = 0.75
 	combat_rating = 15
 	command_modifier = {
-		center = 0.15
+		center = 0.075
 	}
 	quality = 3
 	active = {
@@ -3976,7 +4006,7 @@ sword_3_battlefield_upgraded = {
 	monthly_character_prestige = 0.8
 	combat_rating = 16
 	command_modifier = {
-		center = 0.3
+		center = 0.1
 	}
 	quality = 3
 	active = {
@@ -3989,6 +4019,7 @@ sword_3_battlefield_upgraded = {
 }
 enemy_skull = {
 	quality = 1
+	learning = 1
 	monthly_character_prestige = 0.05
 	cruel_opinion = 5
 	allowed_gift = {
@@ -3999,6 +4030,7 @@ enemy_skull = {
 }
 skull_cup = {
 	quality = 2
+	learning = 2
 	monthly_character_prestige = 0.05
 	cruel_opinion = 5
 	tribal_opinion = 5
@@ -4243,6 +4275,7 @@ crown_winged_helmet = {
 	quality = 2
 	command_modifier = {
 		religious_enemy = 0.05
+		heavy_infantry = 0.025
 	}
 	active = {
 		is_adult = yes
@@ -4262,6 +4295,7 @@ crown_wrapped_helmet = {
 	quality = 2
 	command_modifier = {
 		religious_enemy = 0.05
+		light_cavalry = 0.05
 	}
 	active = {
 		is_adult = yes
@@ -4302,8 +4336,9 @@ sword_whispering = {
 	martial = 3
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		actual_light_infantry = 0.2
+		heavy_infantry = 0.10
+		actual_light_infantry = 0.05
+		religious_enemy = 0.05
 	}
 	quality = 4
 	active = {
@@ -4320,8 +4355,9 @@ mace_whispering = {
 	martial = 3
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		light_cavalry = 0.2
+		heavy_infantry = 0.05
+		light_cavalry = 0.10
+		religious_enemy = 0.05
 	}
 	quality = 4
 	active = {
@@ -4338,8 +4374,8 @@ axe_whispering = {
 	martial = 3
 	combat_rating = 15
 	command_modifier = {
-		heavy_infantry = 0.15
-		light_cavalry = 0.2
+		light_infantry = 0.1
+		actual_heavy_infantry = 0.05
 	}
 	quality = 4
 	active = {
@@ -4352,8 +4388,10 @@ axe_whispering = {
 }
 
 terrible_sword = {
-	combat_rating = 1
+	combat_rating = 5
 	quality = 1
+	martial = 1
+	learning = 1
 	active = {
 		is_adult = yes
 	}
