@@ -76,13 +76,19 @@ targetted_decisions = {
 
 		allow = {
 			prestige = 500
-			wealth = 500
+			owner = {
+				show_scope_change = no
+				scaled_wealth = { value = 2 min = 100 }
+			}
 			NOT = { has_character_modifier = cooldown_library }
 		}
 		
 		effect = {
 			prestige = -500
-			wealth = -500
+			owner = {
+				show_scope_change = no
+				scaled_wealth = { value = -2 min = -100 }
+			}
 			FROM = {
 				military_techpoints = 100
 				culture_techpoints = 100

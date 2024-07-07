@@ -171,8 +171,18 @@ decisions = {
 							culture = new_celtic
 						}
 						if = {
-							limit = { 
-								culture = italian
+							limit = {
+								culture = irish
+								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
+							}
+							random = { 
+								chance = 40 
+								culture = new_celtic 
+							}
+						}
+						if = {
+							limit = {
+								culture = welsh
 								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
 							}
 							random = { 
@@ -182,7 +192,7 @@ decisions = {
 						}
 						if = {
 							limit = { 
-								culture_group = latin
+								culture_group = celtic
 								capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
 							}
 							random = { 
@@ -192,7 +202,7 @@ decisions = {
 						}
 						if = {
 							limit = { 
-								culture_group = latin
+								culture_group = celtic
 								capital_scope = { NOT = { distance = { where = PREV distance = 400 } } } 
 							}
 							random = { 

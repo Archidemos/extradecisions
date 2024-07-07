@@ -8,9 +8,11 @@ slots = {
 #############################
 
 necronomicon = { # (DLC: Way of Life)
-	learning = 5
-	diplomacy = -1
+	learning = 3
+	intrigue = 3
+	diplomacy = -2
 	quality = 4
+	health = -0.5
 	monthly_character_piety = -2
 	flags = { book unholy curse }
 	
@@ -968,6 +970,8 @@ magnum_opus_alchemy_transmutation_4 = {
 art_of_war = {
 	quality = 5
 	monthly_character_prestige = 1
+	combat_rating = 10
+	command_modifier = { center = 0.1 }
 	martial = 3
 	flags = { chinese book very_rare }
 	picture = "GFX_art_of_war"
@@ -1502,7 +1506,7 @@ honest_recipes = {
 gastronomic_tonics = {
 	quality = 2
 	stewardship = 1
-	intrigue = 11
+	intrigue = 1
 	plot_power_modifier = 0.05
 	flags = { about_intrigue cooking book created }
 	picture = "GFX_book_cook_blank_03"
