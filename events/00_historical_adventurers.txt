@@ -760,7 +760,7 @@ character_event = {
 				home = 100
 				
 				match_character = event_target:hauteville_enemy
-				match_mult = 0.8
+				match_mult = 0.9
 
 				attrition = 1.0
 				disband_on_peace = yes
@@ -784,6 +784,8 @@ character_event = {
 	
 	immediate = {
 		set_global_flag = hauteville_won
+
+		add_law = succ_primogeniture
 		
 		if = {
 			limit = {
@@ -867,13 +869,18 @@ character_event = {
 	trigger = {
 		start_date < 1080.1.1
 		NOT = { has_global_flag = saladin_spawned }
-		year = 1140
 		culture_group = arabic
 		religion = sunni
 	}
 	
 	mean_time_to_happen = {
-		years = 10
+		years = 50
+		modifier = {
+			factor = 0.1
+			c_cairo = {
+				holder_scope = { NOT = { religion_group = muslim } }
+			}
+		}
 	}
 	
 	immediate = {
@@ -958,7 +965,7 @@ character_event = {
 			home = 697
 
 			match_character = event_target:saladin_enemy
-			match_mult = 0.95
+			match_mult = 1.2
 
 			attrition = 1.0
 			disband_on_peace = yes
@@ -974,7 +981,8 @@ character_event = {
 				archers = { 500 500 }
 				light_infantry = { 1000 1000 }
 				heavy_infantry = { 1000 1000 }
-				knights = { 100 100 }
+				pikemen = { 2000 2000 }
+				knights = { 500 500 }
 			}
 
 			attrition = 1.0
