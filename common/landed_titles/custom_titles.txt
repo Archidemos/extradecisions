@@ -161,3 +161,48 @@ k_dutch_republic = {
 	culture = dutch
 	religion = catholic
 }
+
+d_qizilbash = {
+
+	color={ 90 150 0 }
+	color2={ 255 255 255 }
+	
+	capital = 686 # Kurdistan
+	
+	# Hire Trigger
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				NOT = {
+					is_alternate_start = yes
+				}
+			}
+			OR = {
+				religion_group = muslim
+				religion_group = zoroastrian_group
+			}
+		}
+	}
+	
+	# Parent Religion 
+	religion = shiite
+	culture = kurdish
+
+	mercenary = yes
+	
+	title = "DEDEBABA"
+	foa = "GRANDHEADMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Cannot be vassalized
+	independent = yes
+	
+	strength_growth_per_century = 1.00
+
+	mercenary_type = qizilbash_composition
+}

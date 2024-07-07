@@ -1162,7 +1162,7 @@ NNomad = {
 	MANPOWER_INCREASE_MULTIPLIER = 0.1,				-- The rate current manpower grows or declines to max manpower
 	MANPOWER_LOW_SENTIMENT_INCREASE_MULTIPLIER = 2.0, -- The manpower effect of a negative Clan Sentiment vs the ruling Clan. At a value of 2, -100 Sentiment is 200% faster manpower regrowth.
 	POPULATION_TAX_MULTIPLIER = 0.0005,				-- Monthly tax income determined by the current population
-	MAX_POPULATION_EMPTY_HOLDING_MULTIPLIER = 500,  -- Max population increase for each empty holding in provinces where the capital is also an empty holding
+	MAX_POPULATION_EMPTY_HOLDING_MULTIPLIER = 750,  -- Max population increase for each empty holding in provinces where the capital is also an empty holding
 	MAX_MANPOWER_POPULATION_MULTIPLIER = 0.20,		-- How big max manpower will be, determined by the current population value
 	UNITS_FOR_OCCUPATION = 100,						-- Number of hostile units needing to stand on settlement-less nomad provinces to be considered occupied
 	START_POPULATION = 0.40,						-- Starting population, multiplied with max population
@@ -1424,7 +1424,7 @@ NMilitary = {
 	GALLEYS_PHASE_PURSUE_DEFENSE = 1,
 	GALLEYS_GRAPHICAL_FACTOR = 1,
 
-	COMMAND_MODIFIER_MARTIAL_MULTIPLIER = 0.05,	  -- How much positive command modifiers are increased, and negative modifiers decreased (capped to 100% for negative), per point of martial
+	COMMAND_MODIFIER_MARTIAL_MULTIPLIER = 0.0035,	  -- How much positive command modifiers are increased, and negative modifiers decreased (capped to 100% for negative), per point of martial
 
 	MAX_RIVER_MOVEMENT_FORT_LEVEL = 10.0,
 	BOTTLENECK_SIZE_MODIFIER = 1.0,

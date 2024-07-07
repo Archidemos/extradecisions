@@ -312,7 +312,6 @@ wonder_mausoleum_halicarnassus = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.3
-			land_morale = 0.025
 			short_reign_length = -1
 		}
 	}
@@ -331,7 +330,9 @@ wonder_mausoleum_halicarnassus = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.4
-			land_morale = 0.025
+			command_modifier = {
+				morale_offence = 0.05
+			}
 			short_reign_length = -2
 			health = 0.5
 		}

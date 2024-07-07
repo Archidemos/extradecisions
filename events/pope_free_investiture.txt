@@ -153,7 +153,8 @@ character_event = {
 				trait = hedonist
 			}
 		}
-		piety = -25
+		piety = -100
+		prestige = -100
 		religion_authority = {
 			modifier = ruler_defied_pope
 			years = 10
@@ -177,7 +178,7 @@ character_event = {
 	option = {
 		name = EVTOPTC67001 # Give gold to Pope
 		trigger = {
-			wealth = 200
+			wealth = 400
 		}
 		
 		ai_chance = {
@@ -192,7 +193,7 @@ character_event = {
 			}
 		}
 		
-		wealth = -200
+		wealth = -400
 		FROM = { clr_character_flag = pope_currently_demanding }
 		set_character_flag = pope_respects_our_law
 		clr_character_flag = pope_wants_our_law_changed

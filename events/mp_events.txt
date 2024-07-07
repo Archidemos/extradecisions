@@ -1103,3 +1103,75 @@ character_event = { #Event about if the player refuses a unrival
 		ai_chance = { factor = 100 }
 	}
 }
+
+character_event = {
+    id = MP.041
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		any_realm_wonder = {
+			wonder_stage >= 4
+			OR = {
+				has_wonder = wonder_brandenburg_gate
+				has_wonder = wonder_irminsul
+				has_wonder = wonder_pagan_stones_stonehenge
+				has_wonder = wonder_mausoleum_halicarnassus
+				has_wonder = wonder_temple_ares
+				has_wonder = wonder_alcazar_segovia
+				has_wonder = wonder_hohenzollern_castle
+				has_wonder = wonder_baku_ateshgah
+				has_wonder = wonder_jerusalem_church
+				has_wonder = wonder_mosque_mecca
+			}
+		}
+    }	
+
+    immediate = {
+		any_realm_wonder = {
+			limit = { wonder_stage >= 4 }
+			
+			if = {
+				limit = { has_wonder = wonder_brandenburg_gate }
+				ROOT = { add_character_modifier = { name = brandenburg_gate_keeper duration = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_irminsul }
+				ROOT = { add_character_modifier = { name = irminsul_keeper duration = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_pagan_stones_stonehenge }
+				ROOT = { add_character_modifier = { name = stonehenge_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_mausoleum_halicarnassus }
+				ROOT = { add_character_modifier = { name = mausoleum_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_temple_ares }
+				ROOT = { add_character_modifier = { name = temple_ares_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_alcazar_segovia }
+				ROOT = { add_character_modifier = { name = alcazar_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_hohenzollern_castle }
+				ROOT = { add_character_modifier = { name = hohenzollern_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_baku_ateshgah }
+				ROOT = { add_character_modifier = { name = baku_ateshgah_keeper years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_baku_ateshgah }
+				ROOT = { add_character_modifier = { name = wonder_jerusalem_church years = -1 } }
+			}
+			else_if = {
+				limit = { has_wonder = wonder_baku_ateshgah }
+				ROOT = { add_character_modifier = { name = wonder_mosque_mecca years = -1 } }
+			}
+		}
+	}
+}
