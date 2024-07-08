@@ -16494,7 +16494,6 @@ free_tributary_cb = {
 	can_use = {
 		ROOT = {
 			OR = {
-				is_tributary = { type = confederate_state }
 				AND = {
 					is_tributary = yes
 					OR = {
@@ -16503,6 +16502,8 @@ free_tributary_cb = {
 							OR = {
 								is_tributary = { type = nomadic }
 								is_tributary = { type = default }
+								is_tributary = { type = confederate_state }
+								is_tributary = { type = client }
 							}
 						}
 						AND = {
@@ -16530,6 +16531,8 @@ free_tributary_cb = {
 							OR = {
 								is_tributary = { type = nomadic }
 								is_tributary = { type = default }
+								is_tributary = { type = confederate_state }
+								is_tributary = { type = client }
 							}
 						}
 						AND = {

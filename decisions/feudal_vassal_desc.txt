@@ -83,6 +83,10 @@ targetted_decisions = {
 					is_tributary = {
 						type = confederate_state 
 						suzerain = FROM
+					}
+					is_tributary = {
+						type = client 
+						suzerain = FROM
 					}					
 				}
 			}
@@ -95,6 +99,7 @@ targetted_decisions = {
 			}
 			FROM = {
 				prestige = 1000
+				diplomacy = 16
 				has_regent = no
 				NOT = { has_character_modifier = recently_released_vassal }
 			}
