@@ -901,7 +901,7 @@ character_event = {
 			attributes = {
 				martial = 8
 				diplomacy = 8
-				stewardship = 6
+				stewardship = 12
 				intrigue = 6
 				learning = 6
 			}
@@ -1058,8 +1058,8 @@ character_event = {
 			}
 		}
 		
-		spawn_good_commander_effect = yes
-		spawn_good_commander_effect = yes
+		spawn_fantastic_commander_effect = yes
+		spawn_fantastic_commander_effect = yes
 		
 		unsafe_war = {
 			target = event_target:saladin_enemy
@@ -1083,7 +1083,6 @@ character_event = {
 	
 	immediate = {
 		set_global_flag = saladin_won
-		give_nickname = nick_the_great
 		FROM = {
 			wealth = 1000
 			create_bloodline = {
@@ -1104,11 +1103,74 @@ character_event = {
 					knights = { 1000 1000 }
 				}
 
-				attrition = 1.0
+				attrition = 0
 				disband_on_peace = no
-				maintenance_multiplier = 0.5
+				maintenance_multiplier = 0
 			}
 
+			spawn_unit = {
+				owner = ROOT
+				province = 697
+				home = 697
+
+				troops = {
+					archers = { 500 500 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 1000 1000 }
+					pikemen = { 2000 2000 }
+					knights = { 1000 1000 }
+				}
+
+				attrition = 0
+				disband_on_peace = no
+				maintenance_multiplier = 0
+			}
+			
+			# William the Conqueror style land redistribution
+
+			d_cairo = {
+				usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				any_de_jure_vassal_title = {
+					limit = { holder_scope = { ai = yes } }
+					usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				}
+			}
+
+			d_alexandria = {
+				usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				any_de_jure_vassal_title = {
+					limit = { holder_scope = { ai = yes } }
+					usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				}
+			}
+
+			d_damietta = {
+				usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				any_de_jure_vassal_title = {
+					limit = { holder_scope = { ai = yes } }
+					usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				}
+			}
+
+			d_asyut = {
+				usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				any_de_jure_vassal_title = {
+					limit = { holder_scope = { ai = yes } }
+					usurp_title_plus_barony_if_unlanded = { target = FROM type = invasion }
+				}
+			}
+
+			while = { #create some random kurds for him to distribute to
+				count = 15
+
+				create_character = {
+					culture = FROM
+					religion = FROM
+
+					dynasty = random
+					random_traits = yes
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -1127,7 +1189,7 @@ character_event = {
 			}
 		}
 		any_player = { # new larp
-			narrative_event = { id = HA.27 }
+			narrative_event = { id = HA.27 days = 1 }
 		}
 	}
 }
@@ -1657,7 +1719,13 @@ narrative_event = {
 	desc = D_HA27
 	picture = GFX_evt_end_of_days
 
+	portrait = FROMFROM
+
 	is_triggered_only = yes
+
+	immediate = {
+		FROMFROM = { give_nickname = nick_the_great }
+	}
 
 	option = {
 		trigger = { religion_group = muslim }
