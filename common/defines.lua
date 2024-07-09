@@ -1154,7 +1154,7 @@ NDecadence = {
 	REALM_SIZE_MULTIPLIER = 0.001,
 	DEMESNE_FRACTION_MULT_POS = 0.5,
 	DEMESNE_FRACTION_MULT_NEG = -0.8,
-	SAFETY_VALUE = 50								-- The limit at where your decadence will give you a risk of decadence revolts
+	SAFETY_VALUE = 65								-- The limit at where your decadence will give you a risk of decadence revolts
 },
 
 NNomad = {

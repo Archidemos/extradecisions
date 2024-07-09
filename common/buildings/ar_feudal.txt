@@ -1073,7 +1073,7 @@ castle = {
 		gold_cost = 950
 		build_time = 1095
 
-		upgrades_from = feudal_district_1
+		upgrades_from = feudal_trade_hub_1
 		
 		tax_income = 3.5
 		local_tax_modifier = 0.05
@@ -1094,7 +1094,7 @@ castle = {
 		gold_cost = 1150
 		build_time = 2190
 
-		upgrades_from = feudal_district_2
+		upgrades_from = feudal_trade_hub_2
 		
 		tax_income = 4
 		local_tax_modifier = 0.075
@@ -1115,7 +1115,7 @@ castle = {
 		gold_cost = 1350
 		build_time = 2400
 
-		upgrades_from = feudal_district_3
+		upgrades_from = feudal_trade_hub_3
 		
 		tax_income = 4.5
 		local_tax_modifier = 0.1
@@ -1136,7 +1136,7 @@ castle = {
 		gold_cost = 1550
 		build_time = 3190
 
-		upgrades_from = feudal_district_4
+		upgrades_from = feudal_trade_hub_4
 		
 		tax_income = 5
 		local_tax_modifier = 0.15
@@ -2125,6 +2125,1618 @@ temple = {
 		tax_income = 5
 		
 		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_gold_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_gold_mine_1
+				ROOT = { province = c_rashka }
+				ROOT = { province = c_la_mancha }
+				ROOT = { province = c_plzen }
+				ROOT = { province = c_nitra }
+				ROOT = { province = c_sakmara }
+				ROOT = { province = c_aksu }
+				ROOT = { province = c_medapata }
+				ROOT = { province = c_tudgha }
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+				ROOT = { province = c_innsbruck }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_gold_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_gold_mine_2
+				has_building = eu_gold_mine_1
+				ROOT = { province = c_rashka }
+				ROOT = { province = c_la_mancha }
+				ROOT = { province = c_plzen }
+				ROOT = { province = c_nitra }
+				ROOT = { province = c_sakmara }
+				ROOT = { province = c_aksu }
+				ROOT = { province = c_medapata }
+				ROOT = { province = c_tudgha }
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_gold_mine_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 20
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_silver_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silver_mine_1
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_baden }
+				ROOT = { province = c_tirol }
+				ROOT = { province = c_luneburg }
+				ROOT = { province = c_olomouc }
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_silver_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silver_mine_2
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_baden }
+				ROOT = { province = c_tirol }
+				ROOT = { province = c_luneburg }
+				ROOT = { province = c_olomouc }
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+
+		upgrades_from = eu_silver_mine_1
+
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_copper_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_copper_mine_1
+				ROOT = { province = c_vastmanland }
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_cagliari }
+				ROOT = { province = c_berg }
+				ROOT = { province = c_gemer }
+				ROOT = { province = c_craiova }
+				ROOT = { province = c_kastamon }
+				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_muscat }
+				ROOT = { province = c_mohadavasaka }
+				ROOT = { province = c_ranthambore }
+				ROOT = { province = c_vairata }
+				ROOT = { province = c_pratishthana }
+				ROOT = { province = c_aksum }
+				ROOT = { province = c_tadla }
+				ROOT = { province = c_cornwall }
+				ROOT = { province = c_ormond }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		military_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 0.3
+	}
+	
+	eu_copper_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_copper_mine_1
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_cagliari }
+				ROOT = { province = c_berg }
+				ROOT = { province = c_gemer }
+				ROOT = { province = c_craiova }
+				ROOT = { province = c_kastamon }
+				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_muscat }
+				ROOT = { province = c_mohadavasaka }
+				ROOT = { province = c_ranthambore }
+				ROOT = { province = c_vairata }
+				ROOT = { province = c_pratishthana }
+				ROOT = { province = c_aksum }
+				ROOT = { province = c_tadla }
+				ROOT = { province = c_cornwall }
+				ROOT = { province = c_ormond }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+
+		upgrades_from = eu_copper_mine_1
+
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_glassworks_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_glassworks_1
+				ROOT = { province = c_barcelona }
+				ROOT = { province = c_caceres }
+				ROOT = { province = c_arques }
+				ROOT = { province = c_plauen }
+				ROOT = { province = c_breisgau }
+				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_piombino }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		culture_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_glassworks_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_glassworks_2
+				has_building = eu_glassworks_1
+				ROOT = { province = c_barcelona }
+				ROOT = { province = c_caceres }
+				ROOT = { province = c_arques }
+				ROOT = { province = c_plauen }
+				ROOT = { province = c_breisgau }
+				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_piombino }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_glassworks_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		culture_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_chinaware_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_chinaware_1
+				FROM = { culture = han }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { culture = han }
+		}
+		
+		trigger = { 
+			TECH_TRADE_PRACTICES = 4
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 350
+		build_time = 730
+		
+		tax_income = 5
+		stewardship = 1
+		local_tax_modifier = 0.025
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_chinaware_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_chinaware_1
+				has_building = eu_chinaware_2
+				FROM = { culture = han }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { culture = han }
+		}
+		
+		trigger = { 
+			TECH_TRADE_PRACTICES = 5
+		}
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_chinaware_1
+		
+		gold_cost = 500
+		build_time = 730
+		
+		tax_income = 10
+		stewardship = 2
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_paper_mills_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_paper_mills_1
+				ROOT = { province = c_lyon }
+				ROOT = { province = c_sens }
+				ROOT = { province = c_saargau }
+				ROOT = { province = c_mainz }
+				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nurnberg }
+				ROOT = { province = c_treviso }
+				ROOT = { province = c_padova }
+				ROOT = { province = c_ancona }
+				ROOT = { province = c_roma }
+				ROOT = { province = c_genoa }
+				ROOT = { province = c_chieti }
+				ROOT = { province = c_valencia }
+				ROOT = { province = c_amisos }
+				ROOT = { province = c_akhmim }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_yazd }
+				ROOT = { province = c_esfahan }
+				ROOT = { province = c_herat }
+				ROOT = { province = c_samarkand }
+				ROOT = { province = c_kondana }
+				ROOT = { province = c_naldurg }
+				ROOT = { province = c_jaunpur }
+				ROOT = { province = c_magadha }
+				ROOT = { province = c_gauda }
+				ROOT = { province = c_sarasvata_mandala }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		culture_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_paper_mills_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_paper_mills_2
+				has_building = eu_paper_mills_1
+				ROOT = { province = c_lyon }
+				ROOT = { province = c_sens }
+				ROOT = { province = c_saargau }
+				ROOT = { province = c_mainz }
+				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nurnberg }
+				ROOT = { province = c_treviso }
+				ROOT = { province = c_padova }
+				ROOT = { province = c_ancona }
+				ROOT = { province = c_roma }
+				ROOT = { province = c_genoa }
+				ROOT = { province = c_chieti }
+				ROOT = { province = c_valencia }
+				ROOT = { province = c_amisos }
+				ROOT = { province = c_akhmim }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_yazd }
+				ROOT = { province = c_esfahan }
+				ROOT = { province = c_herat }
+				ROOT = { province = c_samarkand }
+				ROOT = { province = c_kondana }
+				ROOT = { province = c_naldurg }
+				ROOT = { province = c_jaunpur }
+				ROOT = { province = c_magadha }
+				ROOT = { province = c_gauda }
+				ROOT = { province = c_sarasvata_mandala }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_paper_mills_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		culture_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_saffron_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		local_tax_modifier = 0.025
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_saffron_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				has_building = eu_saffron_plantation_2
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_saffron_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		local_tax_modifier = 0.05
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+
+	eu_silk_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 7.5
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		economy_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_silk_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_2
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_silk_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_cloth_workshop_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_cloth_workshop_1
+				ROOT = { province = c_middlesex }
+				ROOT = { province = c_lincoln }
+				ROOT = { province = c_leicester }
+				ROOT = { province = c_gowrie }
+				ROOT = { province = c_york }
+				ROOT = { province = c_rennes }
+				ROOT = { province = c_penthievre }
+				ROOT = { province = c_caen }
+				ROOT = { province = c_evreux }
+				ROOT = { province = c_montpellier }
+				ROOT = { province = c_venaissin }
+				ROOT = { province = c_toledo }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_meknes }
+				ROOT = { province = c_tunis }
+				ROOT = { province = c_tripolitana }
+				ROOT = { province = c_leptis_magna }
+				ROOT = { province = c_cairo }
+				ROOT = { province = c_antiocheia }
+				ROOT = { province = c_medina }
+				ROOT = { province = c_jeddah }
+				ROOT = { province = c_baghdad }
+				ROOT = { province = c_melitene }
+				ROOT = { province = c_ankyra }
+				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_chalkidike }
+				ROOT = { province = c_thessalonike }
+				ROOT = { province = c_istria }
+				ROOT = { province = c_krain }
+				ROOT = { province = c_pettau }
+				ROOT = { province = c_belgrade }
+				ROOT = { province = c_sandomierskie }
+				ROOT = { province = c_sacz }
+				ROOT = { province = c_lubelska }
+				ROOT = { province = c_brandenburg }
+				ROOT = { province = c_lubeck }
+				ROOT = { province = c_leiningen }
+				ROOT = { province = c_thuringen }
+				ROOT = { province = c_furstenberg }
+				ROOT = { province = c_ulm }
+				ROOT = { province = c_wurttemberg }
+				ROOT = { province = c_bologna }
+				ROOT = { province = c_lucca }
+				ROOT = { province = c_lombardia }
+				ROOT = { province = c_brescia }
+				ROOT = { province = c_como }
+				ROOT = { province = c_geneve }
+				ROOT = { province = c_savoie }
+				ROOT = { province = c_aosta }
+				ROOT = { province = c_zaragoza }
+				ROOT = { province = c_albarracin }
+				ROOT = { province = c_imeretia }
+				ROOT = { province = c_oromieh }
+				ROOT = { province = c_mosul }
+				ROOT = { province = c_overijssel }
+				ROOT = { province = c_westfriesland }
+				ROOT = { province = c_holland }
+				ROOT = { province = c_sticht }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		economy_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_cloth_workshop_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_cloth_workshop_2
+				has_building = eu_cloth_workshop_1
+				ROOT = { province = c_middlesex }
+				ROOT = { province = c_lincoln }
+				ROOT = { province = c_leicester }
+				ROOT = { province = c_gowrie }
+				ROOT = { province = c_york }
+				ROOT = { province = c_rennes }
+				ROOT = { province = c_penthievre }
+				ROOT = { province = c_caen }
+				ROOT = { province = c_evreux }
+				ROOT = { province = c_montpellier }
+				ROOT = { province = c_venaissin }
+				ROOT = { province = c_toledo }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_meknes }
+				ROOT = { province = c_tunis }
+				ROOT = { province = c_tripolitana }
+				ROOT = { province = c_leptis_magna }
+				ROOT = { province = c_cairo }
+				ROOT = { province = c_antiocheia }
+				ROOT = { province = c_medina }
+				ROOT = { province = c_jeddah }
+				ROOT = { province = c_baghdad }
+				ROOT = { province = c_melitene }
+				ROOT = { province = c_ankyra }
+				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_chalkidike }
+				ROOT = { province = c_thessalonike }
+				ROOT = { province = c_istria }
+				ROOT = { province = c_krain }
+				ROOT = { province = c_pettau }
+				ROOT = { province = c_belgrade }
+				ROOT = { province = c_sandomierskie }
+				ROOT = { province = c_sacz }
+				ROOT = { province = c_lubelska }
+				ROOT = { province = c_brandenburg }
+				ROOT = { province = c_lubeck }
+				ROOT = { province = c_leiningen }
+				ROOT = { province = c_thuringen }
+				ROOT = { province = c_furstenberg }
+				ROOT = { province = c_ulm }
+				ROOT = { province = c_wurttemberg }
+				ROOT = { province = c_bologna }
+				ROOT = { province = c_lucca }
+				ROOT = { province = c_lombardia }
+				ROOT = { province = c_brescia }
+				ROOT = { province = c_como }
+				ROOT = { province = c_geneve }
+				ROOT = { province = c_savoie }
+				ROOT = { province = c_aosta }
+				ROOT = { province = c_zaragoza }
+				ROOT = { province = c_albarracin }
+				ROOT = { province = c_imeretia }
+				ROOT = { province = c_oromieh }
+				ROOT = { province = c_mosul }
+				ROOT = { province = c_overijssel }
+				ROOT = { province = c_westfriesland }
+				ROOT = { province = c_holland }
+				ROOT = { province = c_sticht }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_cloth_workshop_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+}
+
+city = {
+	eu_gold_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_gold_mine_1
+				ROOT = { province = c_rashka }
+				ROOT = { province = c_la_mancha }
+				ROOT = { province = c_plzen }
+				ROOT = { province = c_nitra }
+				ROOT = { province = c_sakmara }
+				ROOT = { province = c_aksu }
+				ROOT = { province = c_medapata }
+				ROOT = { province = c_tudgha }
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+				ROOT = { province = c_innsbruck }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_gold_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_gold_mine_2
+				has_building = eu_gold_mine_1
+				ROOT = { province = c_rashka }
+				ROOT = { province = c_la_mancha }
+				ROOT = { province = c_plzen }
+				ROOT = { province = c_nitra }
+				ROOT = { province = c_sakmara }
+				ROOT = { province = c_aksu }
+				ROOT = { province = c_medapata }
+				ROOT = { province = c_tudgha }
+				ROOT = { province = c_bambuk }
+				ROOT = { province = c_bure }
+				ROOT = { province = c_mali }
+				ROOT = { province = c_massawa }
+				ROOT = { province = c_damot }
+				ROOT = { province = c_asosa }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_gold_mine_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 20
+		local_tax_modifier = 0.2
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_silver_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silver_mine_1
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_baden }
+				ROOT = { province = c_tirol }
+				ROOT = { province = c_luneburg }
+				ROOT = { province = c_olomouc }
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_silver_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silver_mine_2
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_baden }
+				ROOT = { province = c_tirol }
+				ROOT = { province = c_luneburg }
+				ROOT = { province = c_olomouc }
+				ROOT = { province = c_timbuktu }
+				ROOT = { province = c_aoudaghost }
+				ROOT = { province = c_kano }
+				ROOT = { province = c_katsina }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+
+		upgrades_from = eu_silver_mine_1
+
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_copper_mine_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_copper_mine_1
+				ROOT = { province = c_vastmanland }
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_cagliari }
+				ROOT = { province = c_berg }
+				ROOT = { province = c_gemer }
+				ROOT = { province = c_craiova }
+				ROOT = { province = c_kastamon }
+				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_muscat }
+				ROOT = { province = c_mohadavasaka }
+				ROOT = { province = c_ranthambore }
+				ROOT = { province = c_vairata }
+				ROOT = { province = c_pratishthana }
+				ROOT = { province = c_aksum }
+				ROOT = { province = c_tadla }
+				ROOT = { province = c_cornwall }
+				ROOT = { province = c_ormond }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		military_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 0.3
+	}
+	
+	eu_copper_mine_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_copper_mine_1
+				ROOT = { province = c_akroinon }
+				ROOT = { province = c_cagliari }
+				ROOT = { province = c_berg }
+				ROOT = { province = c_gemer }
+				ROOT = { province = c_craiova }
+				ROOT = { province = c_kastamon }
+				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_muscat }
+				ROOT = { province = c_mohadavasaka }
+				ROOT = { province = c_ranthambore }
+				ROOT = { province = c_vairata }
+				ROOT = { province = c_pratishthana }
+				ROOT = { province = c_aksum }
+				ROOT = { province = c_tadla }
+				ROOT = { province = c_cornwall }
+				ROOT = { province = c_ormond }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+
+		upgrades_from = eu_copper_mine_1
+
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_glassworks_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_glassworks_1
+				ROOT = { province = c_barcelona }
+				ROOT = { province = c_caceres }
+				ROOT = { province = c_arques }
+				ROOT = { province = c_plauen }
+				ROOT = { province = c_breisgau }
+				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_piombino }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		culture_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_glassworks_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_glassworks_2
+				has_building = eu_glassworks_1
+				ROOT = { province = c_barcelona }
+				ROOT = { province = c_caceres }
+				ROOT = { province = c_arques }
+				ROOT = { province = c_plauen }
+				ROOT = { province = c_breisgau }
+				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_piombino }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_glassworks_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		culture_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_chinaware_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_chinaware_1
+				FROM = { culture = han }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { culture = han }
+		}
+		
+		trigger = { 
+			TECH_TRADE_PRACTICES = 4
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 350
+		build_time = 730
+		
+		tax_income = 5
+		stewardship = 1
+		local_tax_modifier = 0.025
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_chinaware_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_chinaware_1
+				has_building = eu_chinaware_2
+				FROM = { culture = han }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { culture = han }
+		}
+		
+		trigger = { 
+			TECH_TRADE_PRACTICES = 5
+		}
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_chinaware_1
+		
+		gold_cost = 500
+		build_time = 730
+		
+		tax_income = 10
+		stewardship = 2
+		local_tax_modifier = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	eu_paper_mills_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_paper_mills_1
+				ROOT = { province = c_lyon }
+				ROOT = { province = c_sens }
+				ROOT = { province = c_saargau }
+				ROOT = { province = c_mainz }
+				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nurnberg }
+				ROOT = { province = c_treviso }
+				ROOT = { province = c_padova }
+				ROOT = { province = c_ancona }
+				ROOT = { province = c_roma }
+				ROOT = { province = c_genoa }
+				ROOT = { province = c_chieti }
+				ROOT = { province = c_valencia }
+				ROOT = { province = c_amisos }
+				ROOT = { province = c_akhmim }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_yazd }
+				ROOT = { province = c_esfahan }
+				ROOT = { province = c_herat }
+				ROOT = { province = c_samarkand }
+				ROOT = { province = c_kondana }
+				ROOT = { province = c_naldurg }
+				ROOT = { province = c_jaunpur }
+				ROOT = { province = c_magadha }
+				ROOT = { province = c_gauda }
+				ROOT = { province = c_sarasvata_mandala }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		culture_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_paper_mills_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_paper_mills_2
+				has_building = eu_paper_mills_1
+				ROOT = { province = c_lyon }
+				ROOT = { province = c_sens }
+				ROOT = { province = c_saargau }
+				ROOT = { province = c_mainz }
+				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nurnberg }
+				ROOT = { province = c_treviso }
+				ROOT = { province = c_padova }
+				ROOT = { province = c_ancona }
+				ROOT = { province = c_roma }
+				ROOT = { province = c_genoa }
+				ROOT = { province = c_chieti }
+				ROOT = { province = c_valencia }
+				ROOT = { province = c_amisos }
+				ROOT = { province = c_akhmim }
+				ROOT = { province = c_kerman }
+				ROOT = { province = c_yazd }
+				ROOT = { province = c_esfahan }
+				ROOT = { province = c_herat }
+				ROOT = { province = c_samarkand }
+				ROOT = { province = c_kondana }
+				ROOT = { province = c_naldurg }
+				ROOT = { province = c_jaunpur }
+				ROOT = { province = c_magadha }
+				ROOT = { province = c_gauda }
+				ROOT = { province = c_sarasvata_mandala }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_paper_mills_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		culture_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_saffron_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		local_tax_modifier = 0.025
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_saffron_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_saffron_plantation_1
+				has_building = eu_saffron_plantation_2
+				ROOT = { province = c_marrakech }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_tangiers }
+				ROOT = { province = c_al_djazair }
+			}
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_saffron_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		local_tax_modifier = 0.05
+		monthly_character_prestige = 0.10
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+
+	eu_silk_plantation_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 7.5
+		global_trade_route_value = 10
+		global_trade_route_wealth = 10
+		economy_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_silk_plantation_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_silk_plantation_2
+				has_building = eu_silk_plantation_1
+				ROOT = { province = c_qazwin }
+				ROOT = { province = c_gurgan }
+				ROOT = { province = c_tabriz }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_silk_plantation_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		global_trade_route_value = 15
+		global_trade_route_wealth = 15
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 2
+	}
+	
+	eu_cloth_workshop_1 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_cloth_workshop_1
+				ROOT = { province = c_middlesex }
+				ROOT = { province = c_lincoln }
+				ROOT = { province = c_leicester }
+				ROOT = { province = c_gowrie }
+				ROOT = { province = c_york }
+				ROOT = { province = c_rennes }
+				ROOT = { province = c_penthievre }
+				ROOT = { province = c_caen }
+				ROOT = { province = c_evreux }
+				ROOT = { province = c_montpellier }
+				ROOT = { province = c_venaissin }
+				ROOT = { province = c_toledo }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_meknes }
+				ROOT = { province = c_tunis }
+				ROOT = { province = c_tripolitana }
+				ROOT = { province = c_leptis_magna }
+				ROOT = { province = c_cairo }
+				ROOT = { province = c_antiocheia }
+				ROOT = { province = c_medina }
+				ROOT = { province = c_jeddah }
+				ROOT = { province = c_baghdad }
+				ROOT = { province = c_melitene }
+				ROOT = { province = c_ankyra }
+				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_chalkidike }
+				ROOT = { province = c_thessalonike }
+				ROOT = { province = c_istria }
+				ROOT = { province = c_krain }
+				ROOT = { province = c_pettau }
+				ROOT = { province = c_belgrade }
+				ROOT = { province = c_sandomierskie }
+				ROOT = { province = c_sacz }
+				ROOT = { province = c_lubelska }
+				ROOT = { province = c_brandenburg }
+				ROOT = { province = c_lubeck }
+				ROOT = { province = c_leiningen }
+				ROOT = { province = c_thuringen }
+				ROOT = { province = c_furstenberg }
+				ROOT = { province = c_ulm }
+				ROOT = { province = c_wurttemberg }
+				ROOT = { province = c_bologna }
+				ROOT = { province = c_lucca }
+				ROOT = { province = c_lombardia }
+				ROOT = { province = c_brescia }
+				ROOT = { province = c_como }
+				ROOT = { province = c_geneve }
+				ROOT = { province = c_savoie }
+				ROOT = { province = c_aosta }
+				ROOT = { province = c_zaragoza }
+				ROOT = { province = c_albarracin }
+				ROOT = { province = c_imeretia }
+				ROOT = { province = c_oromieh }
+				ROOT = { province = c_mosul }
+				ROOT = { province = c_overijssel }
+				ROOT = { province = c_westfriesland }
+				ROOT = { province = c_holland }
+				ROOT = { province = c_sticht }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 5
+		local_tax_modifier = 0.025
+		economy_techpoints = 0.03
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+	
+	eu_cloth_workshop_2 = {
+		desc = eu_gold_mine_1_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				has_building = eu_cloth_workshop_2
+				has_building = eu_cloth_workshop_1
+				ROOT = { province = c_middlesex }
+				ROOT = { province = c_lincoln }
+				ROOT = { province = c_leicester }
+				ROOT = { province = c_gowrie }
+				ROOT = { province = c_york }
+				ROOT = { province = c_rennes }
+				ROOT = { province = c_penthievre }
+				ROOT = { province = c_caen }
+				ROOT = { province = c_evreux }
+				ROOT = { province = c_montpellier }
+				ROOT = { province = c_venaissin }
+				ROOT = { province = c_toledo }
+				ROOT = { province = c_fes }
+				ROOT = { province = c_meknes }
+				ROOT = { province = c_tunis }
+				ROOT = { province = c_tripolitana }
+				ROOT = { province = c_leptis_magna }
+				ROOT = { province = c_cairo }
+				ROOT = { province = c_antiocheia }
+				ROOT = { province = c_medina }
+				ROOT = { province = c_jeddah }
+				ROOT = { province = c_baghdad }
+				ROOT = { province = c_melitene }
+				ROOT = { province = c_ankyra }
+				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_chalkidike }
+				ROOT = { province = c_thessalonike }
+				ROOT = { province = c_istria }
+				ROOT = { province = c_krain }
+				ROOT = { province = c_pettau }
+				ROOT = { province = c_belgrade }
+				ROOT = { province = c_sandomierskie }
+				ROOT = { province = c_sacz }
+				ROOT = { province = c_lubelska }
+				ROOT = { province = c_brandenburg }
+				ROOT = { province = c_lubeck }
+				ROOT = { province = c_leiningen }
+				ROOT = { province = c_thuringen }
+				ROOT = { province = c_furstenberg }
+				ROOT = { province = c_ulm }
+				ROOT = { province = c_wurttemberg }
+				ROOT = { province = c_bologna }
+				ROOT = { province = c_lucca }
+				ROOT = { province = c_lombardia }
+				ROOT = { province = c_brescia }
+				ROOT = { province = c_como }
+				ROOT = { province = c_geneve }
+				ROOT = { province = c_savoie }
+				ROOT = { province = c_aosta }
+				ROOT = { province = c_zaragoza }
+				ROOT = { province = c_albarracin }
+				ROOT = { province = c_imeretia }
+				ROOT = { province = c_oromieh }
+				ROOT = { province = c_mosul }
+				ROOT = { province = c_overijssel }
+				ROOT = { province = c_westfriesland }
+				ROOT = { province = c_holland }
+				ROOT = { province = c_sticht }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		prerequisites = { ca_wall_2 }
+		
+		upgrades_from = eu_cloth_workshop_1
+		
+		gold_cost = 700
+		build_time = 730
+		
+		tax_income = 10
+		local_tax_modifier = 0.05
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 99
 		extra_tech_building_start = 2
 	}
 }
