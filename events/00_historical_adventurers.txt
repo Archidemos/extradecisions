@@ -699,7 +699,7 @@ character_event = {
 			troops = {
 				archers = { 500 500 }
 				light_infantry = { 500 500 }
-				heavy_infantry = { 2000 2000 }
+				heavy_infantry = { 5000 5000 }
 				light_cavalry = { 500 500 }
 				knights = { 150 150 }
 			}
@@ -763,7 +763,7 @@ character_event = {
 				match_mult = 0.9
 
 				attrition = 1.0
-				disband_on_peace = yes
+				disband_on_peace = no
 				maintenance_multiplier = 0.1
 			}
 		}
@@ -908,8 +908,11 @@ character_event = {
 		
 		new_character = {
 			wealth = 500
+			piety = 1000
+			prestige = 500
 			dynasty = 24000
 			add_trait = mujahid
+			dna = fcvmfemunim
 			if = {
 				limit = {
 					has_education_martial_trigger = no
@@ -918,26 +921,27 @@ character_event = {
 				random_list	= {
 					5 = { add_trait = brilliant_strategist }
 					8 = { add_trait = skilled_tactician }
-					4 = { add_trait = tough_soldier }
-					2 = { add_trait = misguided_warrior }
+					2 = { add_trait = tough_soldier }
+					1 = { add_trait = misguided_warrior }
 				}
 			}
 			add_trait = quick
+			random = {
+				chance = 10
+				remove_trait = quick
+				add_trait = genius
+			}
 			add_trait = ambitious
 			add_trait = patient
 			add_trait = diligent
 			add_trait = charitable
+			add_trait = holy_warrior
+			add_trait = inspiring_leader
 			remove_trait = dull
 			remove_trait = feeble
 			set_character_flag = is_saladin_spawn
 			add_claim = k_syria
 			add_claim = k_egypt
-			
-			c_cairo = {
-				top_liege = {
-					holder_scope = { save_event_target_as = saladin_enemy }
-				}
-			}
 			
 			character_event = { id = HA.17 } #set up in scope of ROOT
 		}
@@ -958,6 +962,26 @@ character_event = {
 			culture = ROOT
 			name = "CLAIMANT_ADVENTURE"
 		}
+
+		if = {
+			limit = {
+				c_cairo = {
+					holder_scope = { independent = no } 
+				}
+			}
+			c_cairo = {
+				holder_scope = {
+					top_liege = { save_event_target_as = saladin_enemy }
+				}
+			}
+		}
+		else = {
+			c_cairo = {
+				holder_scope = {
+					save_event_target_as = saladin_enemy
+				}
+			}
+		}
 		
 		spawn_unit = {
 		    owner = ROOT
@@ -968,7 +992,7 @@ character_event = {
 			match_mult = 1.2
 
 			attrition = 1.0
-			disband_on_peace = yes
+			disband_on_peace = no
 			maintenance_multiplier = 0.5
 		}
 		
@@ -983,6 +1007,42 @@ character_event = {
 				heavy_infantry = { 1000 1000 }
 				pikemen = { 2000 2000 }
 				knights = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+
+		spawn_unit = {
+		    owner = ROOT
+			province = 697
+			home = 697
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1000 1000 }
+				pikemen = { 2000 2000 }
+				knights = { 500 500 }
+			}
+
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.5
+		}
+
+		spawn_unit = {
+		    owner = ROOT
+			province = 697
+			home = 697
+
+			troops = {
+				archers = { 500 500 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1000 1000 }
+				pikemen = { 2000 2000 }
+				knights = { 1000 1000 }
 			}
 
 			attrition = 1.0
@@ -1006,7 +1066,7 @@ character_event = {
 		unsafe_war = {
 			target = event_target:saladin_enemy
 			thirdparty_title = k_egypt
-			casus_belli = claim
+			casus_belli = invasion
 		}
 	}
 }
@@ -1026,10 +1086,49 @@ character_event = {
 	immediate = {
 		set_global_flag = saladin_won
 		FROM = {
+			wealth = 1000
 			create_bloodline = {
 				type = saladin
 			}
-			decadence = -15
+			decadence = -25
+
+			spawn_unit = {
+				owner = ROOT
+				province = 697
+				home = 697
+
+				troops = {
+					archers = { 500 500 }
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 1000 1000 }
+					pikemen = { 2000 2000 }
+					knights = { 1000 1000 }
+				}
+
+				attrition = 1.0
+				disband_on_peace = no
+				maintenance_multiplier = 0.5
+			}
+
+		}
+		if = {
+			limit = {
+				k_syria = {
+					has_holder = yes
+				}
+			}
+			k_syria = {
+				holder_scope = {
+					reverse_unsafe_war = {
+						target = FROM
+						casus_belli = invasion
+						thirdparty_title = PREV
+					}
+				}
+			}
+		}
+		any_player = { # new larp
+			narrative_event = { id = HA.27 }
 		}
 	}
 }
@@ -1495,7 +1594,7 @@ character_event = {
 			troops = {
 				archers = { 500 500 }
 				light_infantry = { 1000 1000 }
-				heavy_infantry = { 1500 1500 }
+				heavy_infantry = { 2000 2000 }
 			}
 
 			attrition = 1.0
@@ -1550,5 +1649,24 @@ character_event = {
 				set_father = c_163109
 			}
 		}
+	}
+}
+
+narrative_event = {
+	id = HA.27
+	title = T_HA27
+	desc = D_HA27
+	picture = GFX_evt_end_of_days
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = { religion_group = muslim }
+		name = HA_27_muslim
+	}
+
+	option = {
+		trigger = { NOT = { religion_group = muslim } }
+		name = HA_27_other
 	}
 }
