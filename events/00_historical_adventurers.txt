@@ -23,7 +23,7 @@ character_event = { #check start date
 		}
 		trigger_if = {
 			limit = { start_date == 769.1.1 }
-			year = 810
+			year = 800
 			culture = norse
 			religion = norse_pagan
 		}
@@ -886,16 +886,17 @@ character_event = {
 	immediate = {
 		set_global_flag = saladin_spawned
 		create_character = {
-			random_traits = yes
+			random_traits = no
 			name = "Saladin"
+			dna = fcvmfemunim
 			dynasty = 24000
 			religion = sunni
 			culture = kurdish
 			race = levantine_arabic
 			female = no
 			age = 16
-			health = 6
-			fertility = 0.5
+			health = 6.5
+			fertility = 0.7
 
 			attributes = {
 				martial = 8
@@ -912,7 +913,6 @@ character_event = {
 			prestige = 500
 			dynasty = 24000
 			add_trait = mujahid
-			dna = fcvmfemunim
 			if = {
 				limit = {
 					has_education_martial_trigger = no
@@ -937,8 +937,6 @@ character_event = {
 			add_trait = charitable
 			add_trait = holy_warrior
 			add_trait = inspiring_leader
-			remove_trait = dull
-			remove_trait = feeble
 			set_character_flag = is_saladin_spawn
 			add_claim = k_syria
 			add_claim = k_egypt
