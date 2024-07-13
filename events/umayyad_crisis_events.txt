@@ -73,9 +73,8 @@ character_event = {
 					has_landed_title = e_cordoba
 				}
 			}
+			add_character_modifier = { name = umayyad_curse_1 duration = -1 }
 	    }
-		remove_character_modifier = umayyad_curse_1
-		add_character_modifier = { name = umayyad_curse_1 duration = -1 }
     }
 }
 
@@ -105,9 +104,8 @@ character_event = {
 					has_landed_title = e_cordoba
 				}
 			}
+			add_character_modifier = { name = umayyad_curse_2 duration = -1 }
 	    }
-		remove_character_modifier = umayyad_curse_2
-		add_character_modifier = { name = umayyad_curse_2 duration = -1 }
     }
 }
 
@@ -137,9 +135,8 @@ character_event = {
 					has_landed_title = e_cordoba
 				}
 			}
+			add_character_modifier = { name = umayyad_curse_3 duration = -1 }
 	    }
-		remove_character_modifier = umayyad_curse_3
-		add_character_modifier = { name = umayyad_curse_3 duration = -1 }
     }
 }
 
@@ -203,6 +200,7 @@ narrative_event = {
 			religion = catholic
 			age = 32
 			dynasty = random
+			add_trait = crusader
 			random_traits = yes
 			attributes = {
 				martial=9
@@ -211,7 +209,7 @@ narrative_event = {
 				stewardship=7
 			}
 		}
-		
+
 		new_character = {
 			save_event_target_as = umayyad_invader_mission
 			wealth = 1000
@@ -221,20 +219,46 @@ narrative_event = {
 			remove_trait = imbecile
 			remove_trait = weak
 			remove_trait = feeble
-			character_event = { id = UMM.8 }
-		}
-		
-		166 = {
-			kingdom = {
-				event_target:umayyad_invader_mission = {
-					unsafe_war = {
-						casus_belli = scripted_invasion_umayyad
-						target = ROOT
-						thirdparty_title = PREV
-					}
+			
+			create_title = {
+				name = "UMAYYAD_INVASION_MISSION_ARMY"
+				adventurer = yes
+				tier = DUKE
+				landless = yes
+				culture = THIS
+				holder = THIS
+				temporary = yes
+			}
+			
+			spawn_unit = {
+				province = 166
+				troops =
+				{
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+
+			spawn_unit = {
+				province = 166
+				troops =
+				{
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
 		}
+		
+		event_target:umayyad_invader_mission = {
+			unsafe_war = {
+				casus_belli = scripted_invasion_umayyad
+				target = ROOT
+				thirdparty_title = k_andalusia
+			}
+		}
+		
 		any_playable_ruler = {
 			limit = { ai = no }
 			if = {
@@ -247,68 +271,5 @@ narrative_event = {
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
-	}
-}
-
-character_event = {
-	id = UMM.8
-	hide_window = yes
-    is_triggered_only = yes
-	
-	immediate = {
-		create_title = {
-			name = "UMAYYAD_INVASION_MISSION_ARMY"
-			adventurer = yes
-			tier = DUKE
-			landless = yes
-			culture = ROOT
-			holder = ROOT
-			temporary = yes
-		}
-		
-		spawn_unit = {
-			province = 166
-			troops =
-			{
-				light_cavalry = { 1000 1000 }
-				light_infantry = { 2500 2500 }
-				knights = { 1500 1500 }
-			}
-		}
-
-		spawn_unit = {
-			province = 166
-			troops =
-			{
-				light_cavalry = { 1000 1000 }
-				light_infantry = { 2500 2500 }
-				knights = { 1500 1500 }
-			}
-		}
-	}
-}
-
-character_event = {
-	id = UMM.100
-    hide_window = yes
-    is_triggered_only = yes
-	
-	trigger = {
-		OR = {
-			NOR = {
-				has_landed_title = k_andalusia
-				has_landed_title = e_cordoba
-			}
-			OR = {
-				has_landed_title = k_andalusia
-				independent = no
-			}
-		}
-	}
-	
-	immediate = {
-		remove_character_modifier = umayyad_curse_1
-		remove_character_modifier = umayyad_curse_2
-		remove_character_modifier = umayyad_curse_3
 	}
 }

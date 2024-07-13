@@ -1,7 +1,7 @@
 decisions = {
 	end_umayyad_crisis_1 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 3
 		
 		potential = {
 			independent = yes
@@ -16,14 +16,14 @@ decisions = {
 		}
 		
 		allow = {
-			wealth = 2000
-			prestige = 1000
-			stewardship = 15
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
 		}
 		
 		effect = {
-			wealth = -2000
-			prestige = -1000			
+			wealth = -1000
+			prestige = -500			
 			clr_global_flag = umayyad_crisis_1
 			set_global_flag = umayyad_crisis_finished_1
 			remove_character_modifier = umayyad_curse_1
@@ -36,7 +36,7 @@ decisions = {
 
 	end_umayyad_crisis_2 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 3
 		
 		potential = {
 			independent = yes
@@ -51,13 +51,13 @@ decisions = {
 		}
 		
 		allow = {
-			prestige = 1500
+			prestige = 1000
 			wealth = 400
-			diplomacy = 15
+			diplomacy = 11
 		}
 		
 		effect = {
-			prestige = -1500
+			prestige = -1000
 			wealth = -400
 			clr_global_flag = umayyad_crisis_2
 			set_global_flag = umayyad_crisis_finished_2
@@ -71,7 +71,7 @@ decisions = {
 
 	end_umayyad_crisis_3 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 3
 		
 		potential = {
 			NOT = { has_global_flag = umayyad_crisis_3_taken }
@@ -89,7 +89,7 @@ decisions = {
 		allow = {
 			prestige = 1000
 			wealth = 400
-			martial = 15
+			martial = 13
 		}
 		
 		effect = {
