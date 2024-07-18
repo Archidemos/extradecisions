@@ -870,15 +870,22 @@ character_event = {
 		start_date < 1080.1.1
 		NOT = { has_global_flag = saladin_spawned }
 		has_landed_title = k_papacy # new trigger to slow event down, who's triggering doesn't matter in theory..? (unless the war somehow doesnt't fire then he'll be at the pope's service)
+		total_years_played = 50
 	}
 	
 	mean_time_to_happen = {
-		years = 50
+		years = 25
 		modifier = {
-			factor = 0.1
-			c_cairo = {
-				holder_scope = { NOT = { religion_group = muslim } }
-			}
+			factor = 2
+			start_date < 937.1.1
+		}
+		modifier = {
+			factor = 2
+			start_date < 867.1.1
+		}
+		modifier = {
+			factor = 2
+			start_date == 769.1.1
 		}
 	}
 	
