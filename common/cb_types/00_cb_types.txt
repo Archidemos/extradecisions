@@ -4313,10 +4313,21 @@ new_crusade = {
 						}
 					}
 				}
-				religion_group = christian
-				custom_tooltip = {
-					text = CTT_CHRISTIAN_CRUSADES_UNLOCKED
-					has_global_flag = christian_crusades_unlocked
+				OR = {
+					AND = { 
+						religion_group = christian
+						custom_tooltip = {
+							text = CTT_CHRISTIAN_CRUSADES_UNLOCKED
+							has_global_flag = christian_crusades_unlocked
+						}
+					}
+					AND = {
+						religion_group = muslim
+						custom_tooltip = {
+							text = CTT_MUSLIM_JIHADS_UNLOCKED
+							has_global_flag = muslim_jihads_unlocked
+						}
+					}
 				}
 			}
 			mercenary = no

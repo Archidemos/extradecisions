@@ -1051,7 +1051,7 @@ castle = {
 			TECH_TRADE_PRACTICES = 3
 		}
 		prerequisites = { ca_town_3 ca_wall_3 }
-		gold_cost = 850
+		gold_cost = 700
 		build_time = 730
 		
 		tax_income = 3
@@ -1070,7 +1070,7 @@ castle = {
 			TECH_CASTLE_CONSTRUCTION = 3
 		}
 		prerequisites = { ca_town_3 ca_wall_3 }
-		gold_cost = 950
+		gold_cost = 800
 		build_time = 1095
 
 		upgrades_from = feudal_trade_hub_1
@@ -1091,7 +1091,7 @@ castle = {
 			TECH_CONSTRUCTION = 4
 		}
 		prerequisites = { ca_town_4 ca_wall_4 }
-		gold_cost = 1150
+		gold_cost = 900
 		build_time = 2190
 
 		upgrades_from = feudal_trade_hub_2
@@ -1112,7 +1112,7 @@ castle = {
 			TECH_CONSTRUCTION = 5
 		}
 		prerequisites = { ca_town_4 ca_wall_4 }
-		gold_cost = 1350
+		gold_cost = 1000
 		build_time = 2400
 
 		upgrades_from = feudal_trade_hub_3
@@ -1133,7 +1133,7 @@ castle = {
 			TECH_CONSTRUCTION = 6
 		}
 		prerequisites = { ca_town_5 ca_wall_5 }
-		gold_cost = 1550
+		gold_cost = 1100
 		build_time = 3190
 
 		upgrades_from = feudal_trade_hub_4
@@ -1143,6 +1143,316 @@ castle = {
 		
 		ai_creation_factor = 92
 		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_headquarters_1 = {
+		desc = castle_headquarters_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_district_1 }
+		gold_cost = 700
+		build_time = 730
+		
+		levy_size = 0.025
+		light_infantry = 150
+		heavy_infantry = 80
+		military_techpoints = 0.025
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_headquarters_2 = {
+		desc = castle_headquarters_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 5
+		}
+		gold_cost = 800
+		build_time = 1095
+
+		prerequisites = { feudal_district_2 }
+		upgrades_from = castle_headquarters_1
+		
+		levy_size = 0.035
+		light_infantry = 160
+		heavy_infantry = 90
+		military_techpoints = 0.035
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_headquarters_3 = {
+		desc = castle_headquarters_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
+		}
+		gold_cost = 900
+		build_time = 2190
+
+		prerequisites = { feudal_district_3 }
+		upgrades_from = castle_headquarters_2
+		
+		levy_size = 0.045
+		light_infantry = 170
+		heavy_infantry = 100
+		military_techpoints = 0.05
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	castle_headquarters_4 = {
+		desc = castle_headquarters_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
+		}
+		gold_cost = 1000
+		build_time = 2400
+		
+		prerequisites = { feudal_district_4 }
+		upgrades_from = castle_headquarters_3
+		
+		levy_size = 0.055
+		light_infantry = 180
+		heavy_infantry = 110
+		military_techpoints = 0.075
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	castle_headquarters_5 = {
+		desc = castle_headquarters_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 7
+		}
+		gold_cost = 1100
+		build_time = 3190
+
+		prerequisites = { feudal_district_5 }
+		upgrades_from = castle_headquarters_4
+		
+		levy_size = 0.055
+		light_infantry = 190
+		heavy_infantry = 120
+		military_techpoints = 0.1
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	stone_mine_1 = {
+		desc = stone_mine_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 4
+		}
+		prerequisites = { castle_smith_1 }
+		gold_cost = 700
+		build_time = 730
+		
+		light_infantry = 120
+		heavy_infantry = 40
+		tax_income = 3
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	stone_mine_2 = {
+		desc = stone_mine_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 5
+		}
+		gold_cost = 800
+		build_time = 1095
+
+		prerequisites = { castle_smith_2 }
+		upgrades_from = stone_mine_1
+		
+		light_infantry = 130
+		heavy_infantry = 50
+		tax_income = 3
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	stone_mine_3 = {
+		desc = stone_mine_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 5
+		}
+		gold_cost = 900
+		build_time = 2190
+
+		prerequisites = { castle_smith_3 }
+		upgrades_from = stone_mine_2
+		
+		light_infantry = 140
+		heavy_infantry = 60
+		tax_income = 3
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	stone_mine_4 = {
+		desc = stone_mine_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
+		}
+		gold_cost = 1000
+		build_time = 2400
+		
+		prerequisites = { castle_smith_4 }
+		upgrades_from = stone_mine_3
+		
+		light_infantry = 150
+		heavy_infantry = 70
+		tax_income = 3
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	stone_mine_5 = {
+		desc = stone_mine_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 7
+		}
+		gold_cost = 1100
+		build_time = 3190
+
+		prerequisites = { castle_smith_5 }
+		upgrades_from = stone_mine_4
+		
+		light_infantry = 160
+		heavy_infantry = 80
+		tax_income = 3
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_university_1 = {
+		desc = feudal_university_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		prerequisites = { feudal_district_1 }
+		gold_cost = 600
+		build_time = 1095
+		
+		tech_growth_modifier = 0.15
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 90
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_university_2 = {
+		desc = feudal_university_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		prerequisites = { feudal_district_2 }
+		upgrades_from = feudal_university_1
+		gold_cost = 800
+		build_time = 2190
+		
+		tech_growth_modifier = 0.15
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 89
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_university_3 = {
+		desc = feudal_university_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		prerequisites = { feudal_district_3 }
+		upgrades_from = feudal_university_2
+		gold_cost = 800
+		build_time = 2190
+		
+		tech_growth_modifier = 0.15
+		economy_techpoints = 0.05
+		
+		ai_creation_factor = 88
 
 		extra_tech_building_start = 10.0
 	}

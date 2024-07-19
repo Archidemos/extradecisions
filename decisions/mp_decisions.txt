@@ -101,3 +101,134 @@ targetted_decisions = {
 		}
 	}
 }
+
+decisions = {
+	end_travel = {
+		ai = no
+		only_playable = yes
+		
+		potential = {
+			FROM = {
+				OR = {
+					trait = on_hajj
+					trait = travelling
+					trait = on_pilgrimage
+				}
+			}
+		}
+		
+		allow = {
+			FROM = {
+				OR = {
+					trait = travelling
+					has_character_modifier = out_traveling
+					had_character_flag = { flag = activated_pilgrimage years = 2 }
+					had_character_flag = { flag = pilgrimage_to_canterbury years = 2 }
+					had_character_flag = { flag = pilgrimage_to_jerusalem years = 2 }
+					had_character_flag = { flag = pilgrimage_to_koln years = 2 }
+					had_character_flag = { flag = pilgrimage_to_rome years = 2 }
+					had_character_flag = { flag = pilgrimage_to_santiago years = 2 }
+					had_character_flag = { flag = pilgrimage_to_constantinople years = 2 }
+					had_character_flag = { flag = pilgrimage_to_axum years = 2 }
+					had_character_flag = { flag = pilgrimage_to_antioch years = 2 }
+					had_character_flag = { flag = preparing_pilgrimage years = 2 }
+					had_character_flag = { flag = good_pilgrimage years = 2 }
+					had_character_flag = { flag = bad_pilgrimage years = 2 }
+					had_character_flag = { flag = abominable_pilgrimage years = 2 }
+					had_character_flag = { flag = preparing_hajj years = 2 }
+					had_character_flag = { flag = hajj_company years = 2 }
+					had_character_flag = { flag = asked_on_hajj years = 2 }
+					had_character_flag = { flag = hajj_bring_guards years = 2 }
+					had_character_flag = { flag = hajj_travel_lightly years = 2 }
+					had_character_flag = { flag = hajj_rival years = 2 }
+					had_character_flag = { flag = hajj_arrived_in_mecca years = 2 }
+					had_character_flag = { flag = on_home_from_hajj years = 2 }
+					had_character_flag = { flag = gained_hajj_health years = 2 }
+					had_character_flag = { flag = hajj_home_event years = 2 }
+					had_character_flag = { flag = achievement_to_mecca years = 2 }
+					had_character_flag = { flag = promise_hajj years = 2 }
+					had_character_flag = { flag = promise_jihad years = 2 }
+					had_character_flag = { flag = saved_assassin years = 2 }
+					had_character_flag = { flag = activated_hajj years = 2 }
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				remove_character_modifier = out_traveling
+				clr_character_flag = activated_pilgrimage
+				clr_character_flag = pilgrimage_to_canterbury
+				clr_character_flag = pilgrimage_to_jerusalem
+				clr_character_flag = pilgrimage_to_koln
+				clr_character_flag = pilgrimage_to_rome
+				clr_character_flag = pilgrimage_to_santiago
+				clr_character_flag = pilgrimage_to_constantinople
+				clr_character_flag = pilgrimage_to_axum
+				clr_character_flag = pilgrimage_to_antioch
+				clr_character_flag = do_not_disturb
+				clr_character_flag = preparing_pilgrimage
+				clr_character_flag = good_pilgrimage
+				clr_character_flag = bad_pilgrimage
+				clr_character_flag = abominable_pilgrimage
+				clr_character_flag = preparing_hajj
+				clr_character_flag = hajj_company
+				clr_character_flag = asked_on_hajj
+				clr_character_flag = hajj_bring_guards
+				clr_character_flag = hajj_travel_lightly
+				clr_character_flag = hajj_rival
+				clr_character_flag = hajj_arrived_in_mecca
+				clr_character_flag = on_home_from_hajj
+				clr_character_flag = gained_hajj_health
+				clr_character_flag = hajj_home_event
+				clr_character_flag = achievement_to_mecca
+				clr_character_flag = promise_hajj
+				clr_character_flag = promise_jihad
+				clr_character_flag = saved_assassin
+				clr_character_flag = activated_hajj
+				remove_trait = travelling
+				remove_trait = on_hajj
+				remove_trait = on_pilgrimage
+				if = {
+					limit = { religion_group = christian }
+					add_trait = pilgrim
+				}
+				if = {
+					limit = { religion_group = muslim }
+					add_trait = hajjaj
+				}
+			}
+		}
+	}
+	
+	end_kowtow = {
+		ai = no
+		only_playable = yes
+		
+		potential = {
+			ROOT = {
+				trait = kow_tow_travels
+			}
+		}
+
+		allow = {
+			FROM = {
+				had_character_flag = { flag = went_on_kow_tow_pilgrimage years = 2 }
+			}
+		}
+		
+		effect = {
+			FROM = {
+				remove_character_modifier = out_traveling
+				clr_character_flag = do_not_disturb
+				clr_character_flag = kow_tow_bad_outcome
+				clr_character_flag = kow_tow_okay_outcome
+				clr_character_flag = kow_tow_great_outcome
+				clr_character_flag = went_on_kow_tow_pilgrimage
+				clean_up_after_kow_tow_effect = yes
+				remove_trait = kow_tow_travels
+				add_trait = kow_tow_completed_tier_2
+			}
+		}
+	}
+}
