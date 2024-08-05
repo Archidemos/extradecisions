@@ -32,8 +32,15 @@ narrative_event = {
 					name = seljuk_invasions
 					value = delayed_random
 				}
-				year = 1100
-				total_years_played = 50
+				year = 1120
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = seljuk_invasions
+					value = historical
+				}
+				year = 1120
 			}
 			AND = {
 				has_game_rule = {
@@ -44,8 +51,7 @@ narrative_event = {
 			}
 		}
 		NOT = { has_global_flag = seljuk_spawned }
-		NOR = {
-			year = 1074
+		NOT = {
 			has_game_rule = {
 				name = seljuk_invasions
 				value = off

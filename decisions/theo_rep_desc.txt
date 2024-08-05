@@ -276,4 +276,44 @@ settlement_decisions = {
 			factor = 0
 		}
 	}
+
+	pirate_boon = {
+		ai = no
+	
+		potential = {
+			FROM = { government = pirate_republic_government }
+		}
+		
+		allow = {
+			controlled_by = FROM
+			FROM = {
+				wealth = 250
+				government = pirate_republic_government
+			}
+			NOT = { location = { has_province_modifier = ar_republic_bonus } }
+			controlled_by = FROM
+			location = { port = yes }
+		}
+		
+		effect = {
+			FROM = {
+				show_scope_change = no
+				wealth = -250
+			}
+			location = {
+				add_province_modifier = {
+					name = pirate_den
+					years = 5
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }

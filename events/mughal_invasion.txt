@@ -32,8 +32,15 @@ narrative_event = {
 					name = mughal_invasion
 					value = delayed_random
 				}
-				year = 1150
-				total_years_played = 50
+				year = 1000
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = mughal_invasion
+					value = historical
+				}
+				year = 1000
 			}
 			AND = {
 				has_game_rule = {
@@ -44,8 +51,7 @@ narrative_event = {
 			}
 		}
 		NOT = { has_global_flag = mughal_invades }
-		NOR = {
-			year = 1074
+		NOT = {
 			has_game_rule = {
 				name = mughal_invasion
 				value = off

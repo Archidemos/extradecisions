@@ -33,7 +33,14 @@ narrative_event = {
 					value = delayed_random
 				}
 				year = 1200
-				total_years_played = 50
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = rum_invasion
+					value = historical
+				}
+				year = 1200
 			}
 			AND = {
 				has_game_rule = {
@@ -44,8 +51,7 @@ narrative_event = {
 			}
 		}
 		NOT = { has_global_flag = rum_spawned }
-		NOR = {
-			year = 1074
+		NOT = {
 			has_game_rule = {
 				name = rum_invasion
 				value = off

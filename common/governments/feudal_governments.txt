@@ -387,7 +387,7 @@ feudal_governments = {
 		free_retract_vassalage = yes
 	}
 	roman_imperial_government = {
-		preferred_holdings = { CASTLE CITY }
+		preferred_holdings = { CASTLE }
 		allowed_holdings = {
 			CASTLE
 			CITY
@@ -457,16 +457,16 @@ feudal_governments = {
 		demesne_size = -3
 
 		unit_modifier = {
-			knights_offensive = -0.20
-			knights_defensive = -0.20
+			knights_offensive = -0.10
+			knights_defensive = -0.10
 		}
 		character_modifier = {
 			global_tax_modifier = -0.10
 			castle_vassal_tax_modifier = -0.10
 			city_vassal_tax_modifier = -0.10
 			retinuesize_perc = -0.50
-			knights_offensive = -0.20
-			knights_defensive = -0.20
+			knights_offensive = -0.10
+			knights_defensive = -0.10
 		}
 	}
 
@@ -971,6 +971,109 @@ feudal_governments = {
 		character_modifier = {
 			levy_size = -1
 			demesne_size = 2
+		}
+	}
+	
+	pirate_republic_government = {
+		preferred_holdings = { CITY CASTLE }
+		allowed_holdings = { 
+			TRADE_POST
+			TRIBAL
+			CITY
+			CASTLE
+			FAMILY_PALACE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		accepts_liege_governments = { # Accepts other republics
+			republic_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_piraterepublic"
+		vassal_call_to_arms = {
+			pirate_republic_government
+		}
+		title_prefix = "pirate_"
+		frame_suffix = "_piraterepublic"
+		potential = {
+			OR = {
+				controls_religion = no
+				has_religion_feature = religion_temporal_head
+				AND = {
+					religion = norse_pagan_reformed
+					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
+				}
+			}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NAND = {
+				culture_group = tibetan_group
+				OR = {
+					religion = bon
+					religion = bon_reformed
+					religion = buddhist
+				}
+				higher_tier_than = BARON
+			}
+			NAND = { 
+				tier = EMPEROR
+				primary_title = { has_title_flag = pretender_chinese_empire }
+				OR = {
+					culture_group = chinese_group
+					culture = khitan
+					culture = tangut
+					culture = jurchen
+					has_character_flag = chinese_imperial_government_preserve
+				}
+			}
+			is_patrician = no
+			higher_tier_than = BARON
+			NOT = { tier = BARON }
+		}
+		
+		color = { 51 51 51 }
+
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 2000
+
+		allow_looting = yes		
+		can_usurp_kingdoms_and_empires = no
+		can_imprison_without_reason = no
+		can_create_empires = no
+		vassal_government_opinion_penalties = no
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+		free_retract_vassalage = yes
+
+		vassal_limit = 20
+
+		character_modifier = {
+			castle_vassal_min_levy = -0.3
+			castle_vassal_max_levy = -0.3
+			siege_speed = 0.2
+			retinue_maintenence_cost = -0.90
+			retinuesize_perc = 4
+			levy_size = -0.7
 		}
 	}
 }

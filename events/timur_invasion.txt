@@ -32,8 +32,15 @@ narrative_event = {
 					name = timur_invasion
 					value = delayed_random
 				}
-				year = 1100
-				total_years_played = 50
+				year = 1170
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = timur_invasion
+					value = historical
+				}
+				year = 1170
 			}
 			AND = {
 				has_game_rule = {
@@ -44,8 +51,7 @@ narrative_event = {
 			}
 		}
 		NOT = { has_global_flag = timur_spawned }
-		NOR = {
-			year = 1074
+		NOT = {
 			has_game_rule = {
 				name = timur_invasion
 				value = off
@@ -84,7 +90,7 @@ narrative_event = {
 						}
 						e_timurids = {
 							grant_title = PREV
-							add_law = succ_turkish_succession
+							add_law = succ_mongol_succession
 						}
 						any_demesne_title = {
 							limit = {
@@ -159,14 +165,14 @@ narrative_event = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
 							grant_title = PREV
-							add_law = succ_turkish_succession
+							add_law = succ_mongol_succession
 						}
 						set_defacto_liege = THIS
 						if = {
 							limit = {
 								has_dlc = "Horse Lords"
 							}
-							set_government_type = muslim_government
+							set_government_type = nomadic_government
 						}
 						if = {
 							limit = {
@@ -202,9 +208,9 @@ narrative_event = {
 						intrigue=5
 						stewardship=7
 					}
-					health = 6
+					health = 7
 					fertility = 0.7
-					religion="sunni"
+					religion="tengri_pagan"
 					culture=turkish
 					trait="brave"
 					trait="ambitious"
@@ -220,25 +226,25 @@ narrative_event = {
 							has_dlc = "Holy Fury"
 							NOT = {
 								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_timur_line
+									has_bloodline_flag = genghis_khan_line
 								}
 							}
 						}
 						create_bloodline = {
-							type = bloodline_timur
+							type = genghis_khan
 						}
 					}
 					e_timurids = {
 						set_title_landless = { title = THIS status = yes }
 						grant_title = PREV
-						add_law = succ_turkish_succession
+						add_law = succ_mongol_succession
 					}
 					set_defacto_liege = THIS
 					if = {
 						limit = {
 							has_dlc = "Horse Lords"
 						}
-						set_government_type = muslim_government
+						set_government_type = nomadic_government
 					}
 					if = {
 						limit = {
@@ -246,7 +252,7 @@ narrative_event = {
 						}
 						set_government_type = tribal_government
 					}
-					wealth = 12000
+					wealth = 15000
 					prestige = 10000
 					piety = 5000
 					population = 50000
@@ -262,7 +268,7 @@ narrative_event = {
 					e_timurids = {
 						holder_scope = {
 							unsafe_war = {
-								casus_belli = nomad_invasion
+								casus_belli = timurids_special_cb
 								target = PREVPREVPREV
 								thirdparty_title = PREVPREV
 							}
@@ -296,7 +302,6 @@ narrative_event = {
 			has_battle_omen_modifier_trigger = no
 		}
 	}
-	
 	option = {
 		name = "EVTOPTB60500"
 		trigger = {
@@ -413,7 +418,7 @@ character_event = {
 	immediate = {
 		create_character = {
 			name = "Chulpan"
-			age = 49
+			age = 35
 			dynasty = random
 			religion = sunni
 			culture = turkish
@@ -443,6 +448,11 @@ character_event = {
 			trait="brilliant_strategist"
 			trait="trickster"
 		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:chulpan
+			set_character_flag = is_timur_umar
+		}
 		create_character = {
 			name="Jahangir" 
 			age = 26
@@ -457,9 +467,10 @@ character_event = {
 		new_character = {
 			set_father = ROOT
 			set_mother = event_target:chulpan
+			set_character_flag = is_timur_jahan
 		}
 		create_character = {
-			name="Jahangir"
+			name="Miran Shah"
 			age = 24
 			dynasty = 800
 			religion="sunni"
@@ -471,6 +482,7 @@ character_event = {
 		new_character = {
 			set_father = ROOT
 			set_mother = event_target:chulpan
+			set_character_flag = is_timur_miran
 		}
 		create_character = {
 			name="Shah Rukh"
@@ -486,6 +498,7 @@ character_event = {
 		new_character = {
 			set_father = ROOT
 			set_mother = event_target:chulpan
+			set_character_flag = is_timur_rukh
 		}
 	}
 }
@@ -650,7 +663,7 @@ character_event = {
 	
 	immediate = {
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 902 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -660,77 +673,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
-			attrition = 0
-			troops =
-			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
-			}
-		}
-		spawn_unit = {
-			province = 1181 # Tuul
+			province = 902 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -771,6 +714,246 @@ character_event = {
 		}
 		spawn_unit = {
 			province = 902 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1181 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -789,7 +972,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		population = 120000
+		population = 75000
 		add_character_modifier = {
 			modifier = invading_population_halt
 			duration = 10950
@@ -799,5 +982,896 @@ character_event = {
 			id = 60516
 			days = 365
 		}
+	}
+}
+
+narrative_event = { #Event for the Timurids when they conquer Esfahan to either turn Feudal or stay a Horde
+	id = TIME.105
+	title = "EVTNAMETIME105"
+	desc = "EVTDESCTIME105"
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+
+	only_independent = yes
+
+	trigger = {
+		has_landed_title = e_timurids
+		FROM = { title = c_esfahan }
+		NOT = { has_global_flag = timurid_turn_feudal }
+	}
+	
+	option = { #Timurids turns to Feudalism
+		name = TIMEOPT1
+		ai_chance = { factor = 80 }
+		set_global_flag = timurid_turn_feudal
+		
+		set_government_type = muslim_government
+		religion = sunni
+		wealth = 5000
+		prestige = 5000
+		piety = 2500
+		
+		d_jibal = {
+			grant_title = ROOT
+		}
+		c_esfahan = {
+			grant_title = ROOT
+			ROOT = { capital = PREV }
+		}
+		c_qom = {
+			grant_title = ROOT
+		}
+		c_hamadan = {
+			grant_title = ROOT
+		}
+		c_rayy = {
+			grant_title = ROOT
+		}
+		c_zanjan_abhar = {
+			grant_title = ROOT
+		}
+		c_luristan = {
+			grant_title = ROOT
+		}
+		
+		narrative_event = { id = MP.100 days = 1 }
+		character_event = { id = HFP.41090 days = 1 }
+		character_event = { id = TIME.107 days = 100 }
+		any_player = { narrative_event = { id = TIME.106 days = 1 } }
+	}
+	
+	option = { #Timurids stay a horde and get reinforcements
+		name = TIMEOPT2
+		ai_chance = { factor = 20 }
+		spawn_unit = {
+			province = 636 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 636 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 636 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 636 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 663 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 663 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 663 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+	}
+}
+
+narrative_event = { #Event for everyone about the Timurids turning to Feudalism
+	id = TIME.106
+	title = EVTNAMETIME106
+	desc = EVTDESCTIME106
+	
+	picture = GFX_evt_mongols	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TIMEOPT3
+	}
+}
+
+character_event = {
+	id = TIME.107
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		d_jibal = {
+			grant_title = ROOT
+		}
+		c_esfahan = {
+			grant_title = ROOT
+			ROOT = { capital = PREV }
+		}
+		c_qom = {
+			grant_title = ROOT
+		}
+		c_hamadan = {
+			grant_title = ROOT
+		}
+		c_rayy = {
+			grant_title = ROOT
+		}
+		c_zanjan_abhar = {
+			grant_title = ROOT
+		}
+		c_luristan = {
+			grant_title = ROOT
+		}
+	}
+}
+
+narrative_event = { #Event for the Timurids when they reach the peak of Iraq and Qara Qoyunlu invades
+	id = TIME.108
+	title = "EVTNAMEILKH108"
+	desc = "EVTDESCILKH108"
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+
+	only_independent = yes
+
+	trigger = { #Wont fire if the Timurids settle as Iqta/Feudal
+		has_landed_title = e_timurids
+		FROM = { title = c_deir }
+		FROM = { is_nomadic = yes }
+		NOT = { has_global_flag = qara_qoyunlu_spawned }
+	}
+
+	option = { #To War!
+		name = TIMEOPT10
+		ai_chance = { factor = 100 }
+		set_global_flag = qara_qoyunlu_spawned
+		activate_title = { title = e_qara_qoyunlu status = yes }
+			
+		if = {
+			limit = {
+				has_global_flag = qara_yusuf_born
+			}
+			if = {
+				limit = {
+					any_independent_ruler = {
+						has_character_flag = qara_yusuf_born
+						demesne_size = 1
+						ai = yes
+					}
+				}
+				log = "Temujin exists as independent ai"
+				random_independent_ruler = {
+					limit = {
+						has_character_flag = qara_yusuf_born
+						ai = yes
+					}
+					any_demesne_title = {
+						limit = {
+							tier = EMPEROR
+						}
+						set_title_flag = to_be_destroyed
+					}
+					e_qara_qoyunlu = {
+						grant_title = PREV
+						add_law = succ_mongol_succession
+					}
+					any_demesne_title = {
+						limit = {
+							has_title_flag = to_be_destroyed
+						}
+						activate_title = { title = THIS status = no }
+						destroy_landed_title = THIS
+					}
+					wealth = 12000
+					prestige = 10000
+					set_character_flag = is_special_character
+					set_character_flag = qara_yusuf_invader
+					character_event = { id = TIME.109 } # Spawn troops
+					character_event = { id = TIME.104 days = 1 } # Spawn population
+					if = {
+						limit = {
+							has_dlc = "Holy Fury"
+							NOT = {
+								any_owned_bloodline = {
+									has_bloodline_flag = bloodline_timur_line
+								}
+							}
+						}
+						create_bloodline = {
+							type = bloodline_timur
+						}
+					}
+				}
+				break = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						e_qara_qoyunlu = {
+							holder_scope = {
+								always = yes
+							}
+						}
+					}
+				}
+				log = "Real Temujin didn't recieve title"
+				create_character = {
+					random_traits = yes
+					dynasty=800
+					religion = shiite
+					culture = turkish
+					female = no
+					age = 24
+					attributes = {
+						martial = 12
+					}
+					trait = brilliant_strategist
+					trait = ambitious
+					trait = diligent
+					trait = brave
+				}
+				new_character = {
+					if = {
+						limit = {
+							has_dlc = "Holy Fury"
+							NOT = {
+								any_owned_bloodline = {
+									has_bloodline_flag = bloodline_timur_line
+								}
+							}
+						}
+						create_bloodline = {
+							type = bloodline_timur
+						}
+					}
+					e_qara_qoyunlu = {
+						set_title_landless = { title = THIS status = yes }
+						set_title_flag = temporary_landless_title
+						grant_title = PREV
+						add_law = succ_mongol_succession
+					}
+					set_defacto_liege = THIS
+					if = {
+						limit = {
+							has_dlc = "Horse Lords"
+						}
+						set_government_type = nomadic_government
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "Horse Lords" }
+						}
+						set_government_type = tribal_government
+					}
+					wealth = 12000
+					prestige = 10000
+					set_character_flag = qara_yusuf_invader
+					character_event = { id = TIME.102 } # Spawn courtiers
+					character_event = { id = TIME.109 } # Spawn troops
+					character_event = { id = TIME.104 days = 1 } # Spawn population
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					e_qara_qoyunlu = {
+						holder_scope = { always = yes }
+					}
+				}
+			}
+			log = "Spawning Temujin for invasion"
+			create_character = {
+				name="Qara Yusuf"
+				dynasty=random
+				age = 38
+				attributes = {
+					martial=9
+					diplomacy=8
+					intrigue=5
+					stewardship=7
+				}
+				health = 6
+				fertility = 0.7
+				religion="shiite"
+				culture=turkish
+				trait="brave"
+				trait="ambitious"
+				trait="diligent"
+				trait="cavalry_leader"
+				trait="brilliant_strategist"
+			}
+			new_character = {
+				set_character_flag = qara_yusuf_born
+				set_character_flag = is_special_character
+				if = {
+					limit = {
+						has_dlc = "Holy Fury"
+						NOT = {
+							any_owned_bloodline = {
+								has_bloodline_flag = bloodline_qara_line
+							}
+						}
+					}
+					create_bloodline = {
+						type = bloodline_qara
+					}
+				}
+				e_qara_qoyunlu = {
+					set_title_landless = { title = THIS status = yes }
+					grant_title = PREV
+					add_law = succ_mongol_succession
+				}
+				set_defacto_liege = THIS
+				if = {
+					limit = {
+						has_dlc = "Horse Lords"
+					}
+					set_government_type = nomadic_government
+				}
+				if = {
+					limit = {
+						NOT = { has_dlc = "Horse Lords" }
+					}
+					set_government_type = tribal_government
+				}
+				wealth = 12000
+				prestige = 10000
+				piety = 5000
+				population = 50000
+				set_character_flag = qara_yusuf_invader
+				character_event = { id = TIME.110 } # Spawn Temujins generals
+				character_event = { id = TIME.102 } # Spawn courtiers
+				character_event = { id = TIME.109 } # Spawn troops
+				character_event = { id = TIME.104 days = 1 } # Spawn population
+			}
+		}			
+		695 = {
+			kingdom = {
+				e_qara_qoyunlu = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = qara_special_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+# Spawn Qara Qoyunlu troops
+character_event = {
+	id = TIME.109
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 697 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 686 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = TIME.110
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			name = "Manuel III"
+			age = 49
+			dynasty = random
+			religion = shiite
+			culture = greek
+			female = yes
+			random_traits = yes
+		}
+		new_character = {
+			save_event_target_as = manuel
+			add_spouse = ROOT
+		}
+		create_character = {
+			name="Shah Muhammad"
+			age = 27
+			dynasty = 800
+			religion="shiite"
+			culture=turkish
+			attributes = {
+				martial=10
+				diplomacy=4
+				intrigue=6
+				stewardship=6
+			}
+			trait="brave"
+			trait="strong"
+			trait="quick"
+			trait="diligent"
+			trait="brilliant_strategist"
+			trait="trickster"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:manuel
+		}
+		create_character = {
+			name="Qara Iskander" 
+			age = 26
+			dynasty = 800
+			religion="shiite"
+			culture=turkish
+			trait="skilled_tactician"
+			trait="wroth"
+			trait="just"
+			trait="drunkard"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:manuel
+		}
+		create_character = {
+			name="Jahan Shah"
+			age = 24
+			dynasty = 800
+			religion="shiite"
+			culture=turkish
+			trait="skilled_tactician"
+			trait="gregarious"
+			trait="just"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:manuel
+		}
+		create_character = {
+			name="Abu Said"
+			age = 29
+			dynasty = 800
+			religion="shiite"
+			culture=turkish
+			trait="skilled_tactician"
+			trait="hunter"
+			trait="kind"
+			trait="patient"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:manuel
+		}
+	}
+}
+
+narrative_event = { #Event for everyone about the Timurids being defeated by Qara Qoyunlu
+	id = TIME.111
+	title = EVTNAMETIME111
+	desc = EVTDESCTIME111
+	
+	picture = GFX_evt_mongols	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TIMEOPT11
 	}
 }

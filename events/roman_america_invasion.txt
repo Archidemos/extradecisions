@@ -1,0 +1,1474 @@
+namespace = ROMA
+
+character_event = { #Pope event to trigger the first Player Event
+	id = ROMA.96
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = roman_invasion
+					value = random
+				}
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = roman_invasion
+					value = delayed_random
+				}
+				year = 1250
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = roman_invasion
+					value = test
+				}
+				year = 769
+			}
+		}
+		NOT = { has_global_flag = roman_america_part_1_triggered }
+		NOT = { has_global_flag = west_rome_formed }
+		NOT = {
+			has_game_rule = {
+				name = roman_invasion
+				value = off
+			}
+		}
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+	}
+	
+	immediate = {
+		any_independent_ruler = {
+			limit = {
+				OR = {
+					culture = saxon
+					culture = english
+					culture = scotish
+				}
+			}
+			save_event_target_as = random_britanian_spotted_romans
+		}
+		any_player = { narrative_event = { id = ROMA.97 } }
+		set_global_flag = roman_america_part_1_triggered
+		ROOT = { character_event = { id = ROMA.98 days = 5 } }
+	}
+}
+
+narrative_event = { #Player Event about the Roman Fleet being spotted accros the Atlantic
+	id = ROMA.97
+	title = "EVTNAMEROMA97"
+	desc = "EVTDESCROMA97"
+
+	picture = "GFX_evt_longships_at_sea_oldgods"
+	portrait = event_target:random_britanian_spotted_romans
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Currious"	
+	}
+}
+
+character_event = { #Pope event to trigger the seccond Player Event
+	id = ROMA.98
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+	trigger = {
+		NOT = { has_global_flag = roman_america_part_2_triggered }
+		controls_religion = yes
+	}
+	
+	immediate = {
+		any_independent_ruler = { 
+			limit = {
+				OR = {
+					culture = saxon
+					culture = english
+					culture = scotish
+				}
+			}
+			save_event_target_as = random_britanian_spotted_romans
+		}
+		any_player = { narrative_event = { id = ROMA.99 } }
+		set_global_flag = roman_america_part_2_triggered
+		ROOT = { character_event = { id = ROMA.100 days = 5 } }
+	}
+}
+
+narrative_event = { #Player Event about the Roman Fleet getting closer and more detail
+	id = ROMA.99
+	title = "EVTNAMEROMA99"
+	desc = "EVTDESCROMA99"
+	portrait = event_target:random_britanian_spotted_romans
+
+	picture = "GFX_evt_longships_at_sea_oldgods"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "I wonder..."	
+	}
+}
+
+narrative_event = { #The Event about the Roman Fleet invading Britania
+	id = ROMA.100
+	title = "EVTNAMEROMA100"
+	desc = "EVTDESCROMA100"
+	major = yes
+	hide_from = yes
+	is_triggered_only = yes
+	sound = ar_army_marching
+	
+	picture = GFX_evt_western_knights_byzantine
+	border = "GFX_event_narrative_frame_war"
+	
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	portrait = event_target:mongol_china_invader
+
+	
+	trigger = {
+		NOT = { has_global_flag = rome_invades }
+		NOT = { has_global_flag = west_rome_formed }
+		controls_religion = yes
+	}
+	
+	immediate = {
+			set_global_flag = rome_invades
+			set_global_flag = west_rome_formed
+			
+			activate_title = { title = e_west_rome status = yes }
+			
+			if = {
+				limit = {
+					has_global_flag = rome_born
+				}
+				if = {
+					limit = {
+						any_independent_ruler = {
+							has_character_flag = is_roman_america_invader
+							demesne_size = 1
+							ai = yes
+						}
+					}
+					log = "Temujin exists as independent ai"
+					random_independent_ruler = {
+						limit = {
+							has_character_flag = is_roman_america_invader
+							ai = yes
+						}
+						any_demesne_title = {
+							limit = {
+								tier = EMPEROR
+							}
+							set_title_flag = to_be_destroyed
+						}
+						e_west_rome = {
+							grant_title = PREV
+							add_law = succ_byzantine_elective
+						}
+						any_demesne_title = {
+							limit = {
+								has_title_flag = to_be_destroyed
+							}
+							activate_title = { title = THIS status = no }
+							destroy_landed_title = THIS
+						}
+						wealth = 12000
+						prestige = 10000
+						set_character_flag = is_special_character
+						set_character_flag = roman_america_invader
+						character_event = { id = ROMA.103 } # Spawn troops
+						character_event = { id = ROMA.104 days = 1 } # Spawn population
+						if = {
+							limit = {
+								has_dlc = "Holy Fury"
+								NOT = {
+									any_owned_bloodline = {
+										has_bloodline_flag = bloodline_roman_line
+									}
+								}
+							}
+							create_bloodline = {
+								type = bloodline_roman
+							}
+						}
+					}
+					break = yes
+				}
+				if = {
+					limit = {
+						NOT = {
+							e_west_rome = {
+								holder_scope = {
+									always = yes
+								}
+							}
+						}
+					}
+					log = "Real Temujin didn't recieve title"
+					create_character = {
+						random_traits = yes
+						dynasty=1069093
+						religion = hellenic_pagan
+						culture = roman
+						female = no
+						age = 24
+						attributes = {
+							martial = 12
+						}
+						trait = brilliant_strategist
+						trait = ambitious
+						trait = diligent
+						trait = brave
+					}
+					new_character = {
+						if = {
+							limit = {
+								has_dlc = "Holy Fury"
+								NOT = {
+									any_owned_bloodline = {
+										has_bloodline_flag = bloodline_roman_line
+									}
+								}
+							}
+							create_bloodline = {
+								type = bloodline_roman
+							}
+						}
+						e_west_rome = {
+							set_title_landless = { title = THIS status = yes }
+							set_title_flag = temporary_landless_title
+							grant_title = PREV
+							add_law = succ_byzantine_elective
+						}
+						set_defacto_liege = THIS
+						if = {
+							limit = {
+								has_dlc = "Horse Lords"
+							}
+							set_government_type = roman_imperial_government
+						}
+						if = {
+							limit = {
+								NOT = { has_dlc = "Horse Lords" }
+							}
+							set_government_type = feudal_government
+						}
+						wealth = 12000
+						prestige = 10000
+						set_character_flag = roman_america_invader
+						character_event = { id = ROMA.102 } # Spawn courtiers
+						character_event = { id = ROMA.103 } # Spawn troops
+						character_event = { id = ROMA.104 days = 1 } # Spawn population
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						e_west_rome = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				log = "Spawning Temujin for invasion"
+				create_character = {
+					dynasty=random
+					dna=random
+					properties=random
+					age = 29
+					attributes = {
+						martial=9
+						diplomacy=8
+						intrigue=5
+						stewardship=7
+					}
+					health = 7
+					fertility = 0.7
+					religion="hellenic_pagan"
+					culture="roman"
+					trait="brave"
+					trait="ambitious"
+					trait="diligent"
+					trait="cavalry_leader"
+					trait="brilliant_strategist"
+				}
+				new_character = {
+					set_character_flag = is_roman_america_invader
+					if = {
+						limit = {
+							has_dlc = "Holy Fury"
+							NOT = {
+								any_owned_bloodline = {
+									has_bloodline_flag = bloodline_roman_line
+								}
+							}
+						}
+						create_bloodline = {
+							type = bloodline_roman
+						}
+					}
+					e_west_rome = {
+						set_title_landless = { title = THIS status = yes }
+						set_title_flag = mughal_india_invade
+						grant_title = PREV
+						add_law = succ_byzantine_elective
+					}
+					set_defacto_liege = THIS
+					if = {
+						limit = {
+							has_dlc = "Horse Lords"
+						}
+						set_government_type = roman_imperial_government
+					}
+					if = {
+						limit = {
+							NOT = { has_dlc = "Horse Lords" }
+						}
+						set_government_type = feudal_government
+					}
+					wealth = 12000
+					prestige = 10000
+					piety = 5000
+					population = 50000
+					set_character_flag = roman_america_invader
+					character_event = { id = ROMA.101 } # Spawn Temujins generals
+					character_event = { id = ROMA.102 } # Spawn courtiers
+					character_event = { id = ROMA.103 } # Spawn troops
+					character_event = { id = ROMA.104 days = 1 } # Spawn population
+				}
+			}			
+			31 = {
+				kingdom = {
+					e_west_rome = {
+						holder_scope = {
+							unsafe_war = {
+								casus_belli = roman_extermination_cb
+								target = PREVPREVPREV
+								thirdparty_title = PREVPREV
+							}
+						}
+					}
+				}
+			}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA60500"
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = pagan_group
+			}
+			NOT = { government = nomadic_government }
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB60500"
+		trigger = {
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			NOT = { religion_group = pagan_group }
+			NOT = { government = nomadic_government }
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+	
+	option = {
+		name = "EVTOPTC60500"
+		trigger = {
+			government = nomadic_government
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+
+	option = { # scrying omen included
+		name = "EVTOPTA60500"
+
+		if = { #in case this does not run in the immediate due to "major = yes"
+			limit = {
+				OR = {
+					has_power_omen_modifier_trigger = yes
+					has_battle_omen_modifier_trigger = yes
+				}
+			}
+			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+		}
+
+		calculate_scrying_outcome_effect = yes
+		remove_scrying_omen_modifiers_effect = yes
+		tooltip_info = yes
+
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = pagan_group
+			}
+			NOT = { government = nomadic_government }
+			OR = {
+				has_power_omen_modifier_trigger = yes
+				has_battle_omen_modifier_trigger = yes
+			}
+		}
+	}
+	
+	option = { # scrying omen included
+		name = "EVTOPTB60500"
+
+		if = { #in case this does not run in the immediate due to "major = yes"
+			limit = {
+				OR = {
+					has_power_omen_modifier_trigger = yes
+					has_battle_omen_modifier_trigger = yes
+				}
+			}
+			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+		}
+		
+		calculate_scrying_outcome_effect = yes
+		remove_scrying_omen_modifiers_effect = yes
+		tooltip_info = yes
+
+		trigger = {
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			NOT = { religion_group = pagan_group }
+			NOT = { government = nomadic_government }
+			OR = {
+				has_power_omen_modifier_trigger = yes
+				has_battle_omen_modifier_trigger = yes
+			}
+		}
+	}
+	
+	option = { # scrying omen included
+		name = "EVTOPTC60500"
+
+		if = { #in case this does not run in the immediate due to "major = yes"
+			limit = {
+				OR = {
+					has_power_omen_modifier_trigger = yes
+					has_battle_omen_modifier_trigger = yes
+				}
+			}
+			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+		}
+
+		calculate_scrying_outcome_effect = yes
+		remove_scrying_omen_modifiers_effect = yes
+		tooltip_info = yes
+
+		trigger = {
+			government = nomadic_government
+			OR = {
+				has_power_omen_modifier_trigger = yes
+				has_battle_omen_modifier_trigger = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = ROMA.101
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			age = 32
+			dynasty = random
+			religion = hellenic_pagan
+			culture = roman
+			female = yes
+			random_traits = yes
+		}
+		new_character = {
+			save_event_target_as = roman_mother_invasion
+			add_spouse = ROOT
+		}
+		create_character = {
+			age = 35
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			attributes = {
+				martial=10
+				diplomacy=4
+				intrigue=6
+				stewardship=6
+			}
+			trait="brave"
+			trait="strong"
+			trait="quick"
+			trait="diligent"
+			trait="brilliant_strategist"
+			trait="trickster"
+		}
+		create_character = {
+			age = 27
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			trait="skilled_tactician"
+			trait="wroth"
+			trait="just"
+			trait="drunkard"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:roman_mother_invasion
+		}
+		create_character = {
+			age = 24
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			trait="skilled_tactician"
+			trait="gregarious"
+			trait="just"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:roman_mother_invasion
+		}
+		create_character = {
+			age = 29
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			trait="skilled_tactician"
+			trait="hunter"
+			trait="kind"
+			trait="patient"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:roman_mother_invasion
+		}
+		create_character = {
+			age = 18
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			random_traits = yes
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:roman_mother_invasion
+		}
+		create_character = {
+			age = 50
+			dynasty = ROOT
+			religion="hellenic_pagan"
+			culture="roman"
+			attributes = {
+				martial=10
+				diplomacy=5
+				intrigue=5
+				stewardship=4
+			}
+			trait="skilled_tactician"
+			trait="brave"
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:roman_mother_invasion
+		}
+	}
+}
+# Spawn extra courtiers
+character_event = {
+	id = ROMA.102
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 20
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 25
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 26
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 28
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = yes
+			age = 20
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 27
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 51
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 44
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = hellenic_pagan
+			culture = ROOT
+			female = no
+			age = 24
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+	}
+}
+# Spawn mongol troops
+character_event = {
+	id = ROMA.103
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 31 # Cornwall
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = ROMA.999
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		capital_scope = {
+			religion = ROOT
+			culture = ROOT
+		}
+	}
+}
+
+#character_event = {
+#	id = ROMA.1000
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		ai = yes
+#		any_liege = { has_landed_title = e_west_rome }
+#		ROOT = { has_government = repulic_government }
+#	}
+#	
+#	immediate = {
+#		any_owned_province = {
+#			if = {
+#				limit = {
+#					any_province_holding = {
+#						NOT = {
+#							capital_holding = { 
+#								holding_type = castle
+#							}
+#						}
+#					}
+#				}
+#				random_province_holding = {
+#					limit = { holding_type = castle }
+#					make_capital_holding = THIS
+#				}
+#			}
+#		}
+#		set_government = feudal_government
+#	}
+#}
+
+###Western Rome Province Events
+
+narrative_event = { #The Conquest of England
+	id = ROMA.1001
+	title = EVTNAMEROMA1001
+	desc = EVTDESCROMA1001
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_britainia }
+		completely_controls = c_middlesex
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_britainia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		#112 = {
+		#	kingdom = {
+		#		e_west_rome = {
+		#			holder_scope = {
+		#				unsafe_war = {
+		#					casus_belli = roman_extermination_cb
+		#					target = PREVPREVPREV
+		#					thirdparty_title = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+
+narrative_event = {
+	id = ROMA.1002
+	title = EVTNAMEROMA1002
+	desc = EVTDESCROMA1002
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_francia }
+		completely_controls = c_ile_de_france
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_francia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops =
+			{
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		#149 = {
+		#	kingdom = {
+		#		e_west_rome = {
+		#			holder_scope = {
+		#				unsafe_war = {
+		#					casus_belli = roman_extermination_cb
+		#					target = PREVPREVPREV
+		#					thirdparty_title = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+
+narrative_event = {
+	id = ROMA.1003
+	title = EVTNAMEROMA1003
+	desc = EVTDESCROMA1003
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_francia }
+		completely_controls = c_bordeaux
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_francia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		#136 = {
+		#	kingdom = {
+		#		e_west_rome = {
+		#			holder_scope = {
+		#				unsafe_war = {
+		#					casus_belli = roman_extermination_cb
+		#					target = PREVPREVPREV
+		#					thirdparty_title = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+
+narrative_event = {
+	id = ROMA.1004
+	title = EVTNAMEROMA1004
+	desc = EVTDESCROMA1004
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_francia }
+		completely_controls = c_dijon
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_francia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		#214 = {
+		#	kingdom = {
+		#		e_west_rome = {
+		#			holder_scope = {
+		#				unsafe_war = {
+		#					casus_belli = roman_extermination_cb
+		#					target = PREVPREVPREV
+		#					thirdparty_title = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+
+narrative_event = {
+	id = ROMA.1005
+	title = EVTNAMEROMA1005
+	desc = EVTDESCROMA1005
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_francia }
+		completely_controls = c_toulouse
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_francia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+		#235 = {
+		#	kingdom = {
+		#		e_west_rome = {
+		#			holder_scope = {
+		#				unsafe_war = {
+		#					casus_belli = roman_extermination_cb
+		#					target = PREVPREVPREV
+		#					thirdparty_title = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+
+narrative_event = {
+	id = ROMA.1006
+	title = EVTNAMEROMA1006
+	desc = EVTDESCROMA1006
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		is_alternate_start = no
+		has_landed_title = e_west_rome
+		has_character_flag = roman_america_invader
+		OR = {
+			religion_group = christian
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		NOT = { has_global_flag = roman_america_italia }
+		completely_controls = c_lombardia
+	}
+	
+	option = {
+		name = EVTOPTALoR.1
+		set_global_flag = roman_america_italia
+		prestige = 100
+		spawn_unit = {
+			province = 29 # Devon
+			attrition = 0
+			troops = {
+				light_infantry = { 2750 2750 }
+				heavy_infantry = { 1000 1000 }
+				archers = { 2250 2250 }
+				light_cavalry = { 1000 1000 }
+				knights = { 500 500 }
+			}
+		}
+	}
+}

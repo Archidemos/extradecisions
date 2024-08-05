@@ -20,7 +20,6 @@ narrative_event = {
 	
 	trigger = {
 		OR = {
-			year = 1067
 			AND = {
 				has_game_rule = {
 					name = umayyad_invasion
@@ -39,6 +38,14 @@ narrative_event = {
 			AND = {
 				has_game_rule = {
 					name = umayyad_invasion
+					value = historical
+				}
+				year = 1067
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = umayyad_invasion
 					value = test
 				}
 				year = 1066
@@ -46,7 +53,6 @@ narrative_event = {
 		}
 		NOT = { has_global_flag = umayyads_invades }
 		NOR = {
-			year = 1074
 			has_game_rule = {
 				name = umayyad_invasion
 				value = off

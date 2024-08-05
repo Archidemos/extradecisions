@@ -1,6 +1,387 @@
 ####################
 #### QUALITY 5  ####
 ####################
+kaaba_key = {
+    max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Holy Fury" }
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = d_medina
+			}
+		}
+	}
+    artifacts = {
+        kaaba_key = {
+            value = 1
+        }
+    }
+}
+
+umayyad_banner = {
+    max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Holy Fury" }
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				OR = {
+					title = e_cordoba
+					title = k_andalusia
+				}
+			}
+		}
+	}
+    artifacts = {
+        umayyad_banner = {
+            value = 1
+        }
+    }
+}
+
+abbasid_banner = {
+    max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Holy Fury" }
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+    artifacts = {
+        abbasid_banner = {
+            value = 1
+        }
+    }
+}
+
+turban_muhammed = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		turban_muhammed = {
+			value = 1
+		}
+	}
+}
+
+turban_ali = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		turban_ali = {
+			value = 1
+		}
+	}
+}
+
+uthman_quran = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		uthman_quran = {
+			value = 1
+		}
+	}
+}
+
+necklace_persian = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		necklace_persian = {
+			value = 1
+		}
+	}
+}
+
+arabic_soap = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		arabic_soap = {
+			value = 1
+		}
+	}
+}
+
+andalusian_mercury_clock = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		andalusian_mercury_clock = {
+			value = 1
+		}
+	}
+}
+
+arabic_pencil = {
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_arabia
+			}
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim		
+			is_landed = yes	
+		}
+	}
+
+	artifacts = {
+		arabic_pencil = {
+			value = 1
+		}
+	}
+}
+
 coconut_woldy = {
     max_amount = 1
 	spawn_date = -1.1.1

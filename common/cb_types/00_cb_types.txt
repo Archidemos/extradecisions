@@ -5497,6 +5497,7 @@ new_crusade = {
 						limit = {
 							crusader_king = {
 								is_female = yes
+								religion_group = christian
 							}
 						}
 						crusader_king = {
@@ -5508,10 +5509,30 @@ new_crusade = {
 							set_bloodline_founder_religion_flag_effect = yes
 						}
 					}
-					else = {
+					else_if = {
+						limit = {
+							crusader_king = {
+								religion_group = christian
+							}
+						}
 						crusader_king = {
 							create_bloodline = {
 								type = crusade_lord
+								religion = THIS
+								inheritance = patrilineal
+							}
+							set_bloodline_founder_religion_flag_effect = yes
+						}
+					}
+					else_if = {
+						limit = {
+							crusader_king = {
+								religion_group = muslim
+							}
+						}
+						crusader_king = {
+							create_bloodline = {
+								type = jihad_sultan_blood
 								religion = THIS
 								inheritance = patrilineal
 							}
@@ -9604,16 +9625,29 @@ imperial_reconquest = {
 	}
 
 	can_use = {
-		ROOT = {
-			has_landed_title = e_roman_empire
-			independent = yes
-			OR = { 
-				religion_group = christian
-				religion = hellenic_pagan
-				religion = hellenic_pagan_reformed
+		OR = {
+			ROOT = {
+				has_landed_title = e_roman_empire
+				independent = yes
+				OR = { 
+					religion_group = christian
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+				NOT = { same_realm = FROM }
+				mercenary = no
 			}
-			NOT = { same_realm = FROM }
-			mercenary = no
+			ROOT = {
+				has_landed_title = e_west_rome
+				independent = yes
+				OR = { 
+					religion_group = christian
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+				NOT = { same_realm = FROM }
+				mercenary = no
+			}
 		}
 		FROM = {
 			NOT = { religion_group = muslim }
@@ -9622,6 +9656,7 @@ imperial_reconquest = {
 
 	can_use_title = {
 		OR = {
+			ROOT = { has_landed_title = e_west_rome }
 			de_jure_liege_or_above = k_byzantium
 			de_jure_liege_or_above = k_thrace
 			de_jure_liege_or_above = k_anatolia
@@ -9788,6 +9823,35 @@ imperial_reconquest = {
 	
 	defender_ai_defeat_worth = {
 		factor = 100
+	}
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 100
+			ROOT = {
+				OR = {
+					primary_title = { title = e_roman_empire }
+					primary_title = { title = e_west_rome }
+				}
+			}
+			empire = {
+				title = e_france
+				title = e_spain
+				title = e_italy
+				title = e_byzantium
+				title = e_arabia
+				title = e_maghreb
+				title = e_carpathia
+			}
+			title = k_carinthia
+			NOT = { title = k_arabia }
+			NOT = { title = k_yemen }
+			NOT = { title = k_haasa }
+			NOT = { title = k_hungary }
+			NOT = { title = k_dacia }	
+		}
 	}
 }
 
@@ -10667,6 +10731,16 @@ pagan_subjugation = {
 					trait = crowned_by_bishop
 					trait = crowned_by_pope
 					trait = crowned_by_myself
+				}
+			}
+		}
+		modifier = { #the Roman Reconquest Invasion CB is better than this
+			factor = 0
+			has_dlc = "Holy Fury"
+			ROOT = {
+				AND = {
+					primary_title = { title = e_west_rome }
+					has_character_flag = roman_america_invader
 				}
 			}
 		}
@@ -12728,6 +12802,14 @@ pagan_county_conquest = {
 	
 	can_use = {
 		NOT = { holder_scope = { government = ar_confederation_government } }
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 		ROOT = {
 			mercenary = no
 		}
@@ -15478,9 +15560,25 @@ manifest_destiny_invasion = {
 	
 	can_use_gui = {
 		check_if_crusader_trigger = yes
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 	}
 
 	can_use = {
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 		ROOT = {
 			OR = {
 				ai = yes
@@ -16061,8 +16159,8 @@ tributary_cb = {
 
 	can_use = {
 		has_dlc = "Horse Lords"
-
 		ROOT = {
+			NOT = { government = pirate_republic_government }
 			mercenary = no
 			OR = {
 				is_tributary = no
@@ -16515,6 +16613,7 @@ free_tributary_cb = {
 								is_tributary = { type = default }
 								is_tributary = { type = confederate_state }
 								is_tributary = { type = client }
+								is_tributary = { type = pirate_colony }
 							}
 						}
 						AND = {
@@ -16544,6 +16643,7 @@ free_tributary_cb = {
 								is_tributary = { type = default }
 								is_tributary = { type = confederate_state }
 								is_tributary = { type = client }
+								is_tributary = { type = pirate_colony }
 							}
 						}
 						AND = {
@@ -17047,7 +17147,16 @@ nomad_dispute = {
 
 	can_use = {
 		has_dlc = "Horse Lords"
-
+		
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
+		
 		FROM = {
 			is_nomadic = yes
 		}
@@ -17206,6 +17315,7 @@ cb_liberate_nomad_duchy = {
 	}
 
 	can_use = {
+	
 		FROM = {
 			is_nomadic = yes
 		}
@@ -17617,6 +17727,12 @@ nomad_subjugation = {
 	
 	can_use_gui = {
 	#higher_tier_than between ROOT and FROM would be better but its tooltip doesn't say anything about comparing character tiers
+		ROOT = {
+			NOT = { has_landed_title = e_golden_horde }
+			NOT = { has_landed_title = e_il-khanate }
+			NOT = { has_landed_title = e_timurids }
+			NOT = { has_landed_title = e_mongol_empire }
+		}
 		OR = {
 			ROOT = {
 				higher_tier_than = king
@@ -17657,6 +17773,14 @@ nomad_subjugation = {
 	}
 	
 	can_use = {
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 		ROOT = {
 			OR = {
 				ai = yes
@@ -17981,6 +18105,12 @@ nomad_invasion = {
 	
 	can_use_gui = {
 		ROOT = {
+			NOT = { has_landed_title = e_golden_horde }
+			NOT = { has_landed_title = e_il-khanate }
+			NOT = { has_landed_title = e_timurids }
+			NOT = { has_landed_title = e_mongol_empire }
+		}
+		ROOT = {
 			prestige = 100
 			population = 30000
 			population_factor = 0.75 # 75% of max
@@ -18000,6 +18130,14 @@ nomad_invasion = {
 	}
 
 	can_use = {
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 		ROOT = {
 			is_nomadic = yes
 			OR = {
@@ -18390,6 +18528,14 @@ nomad_expansion = {
 	}
 
 	can_use = {
+		NOT = {
+			OR = {
+				ROOT = { has_landed_title = e_il-khanate }
+				ROOT = { has_landed_title = e_golden_horde }
+				ROOT = { has_landed_title = e_timurids }
+				ROOT = { has_landed_title = e_mongol_empire }
+			}
+		}
 		ROOT = {
 			is_nomadic = yes
 			NOT = { same_realm = FROM }
@@ -18616,6 +18762,17 @@ nomad_expansion = {
 				FROM = {
 					primary_title = { title = e_golden_horde }
 					NOT = { year = 1300 }
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				primary_title = { title = e_il-khanate }
+			}
+			empire = {
+				NOT = {
+					title = e_arabia
 				}
 			}
 		}

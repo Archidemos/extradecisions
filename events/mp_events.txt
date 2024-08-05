@@ -792,21 +792,8 @@ character_event = { #Event for the Pope to send the Golden Horde tributary propo
 	trigger = {
 		e_mongol_empire = { holder_scope = { is_landed = yes } }
 		e_golden_horde = { holder_scope = { is_landed = yes } }
-		
-		AND = {
-			has_game_rule = {
-				name = gold_horde_invasion
-				value = test
-			}
-			has_game_rule = {
-				name = mongol_invasion
-				value = test
-			}
-		}
-		
 		has_global_flag = mongol_empire_arrival
 		has_global_flag = golden_horde_arrival
-		is_save_game = no
 		controls_religion = yes
 		NOT = { has_global_flag = anti_golden_mongol_clash_1 }
 	}
@@ -835,12 +822,28 @@ narrative_event = { #Event to make the Golden Horde a tributary of the Mongol Em
 	option = { #We will tributise the Golden Horde
 		name = MOGGOLDOPT1
 		ai_chance = { factor = 100 }
-		if = {
-			any_playable_ruler = {
-				limit = { has_landed_title = e_mongol_empire  } 
-			} 
-			make_tributary = { who = e_golden_horde tributary_type = nomadic }
+		e_golden_horde = { holder_scope = { save_event_target_as = golden_horde_ruler } }
+
+		make_tributary = { 
+			who = event_target:golden_horde_ruler 
+			tributary_type = mongol_state 
 		}
+
+		opinion = {
+			name = in_non_aggression_pact
+			years = 50
+			who = event_target:golden_horde_ruler
+		}
+			
+		reverse_opinion = {
+			name = in_non_aggression_pact
+			years = 50
+			who = event_target:golden_horde_ruler
+		}
+
+		e_mongol_empire = { holder_scope = { add_pressed_claim = e_golden_horde } }
+		e_golden_horde = { holder_scope = { add_pressed_claim = e_il-khanate add_pressed_claim = e_mongol_empire } }
+		
 		set_global_flag = anti_golden_mongol_clash_2
 		hidden_effect = {
 			any_player = { narrative_event = { id = MP.031 days = 5 } }
@@ -929,21 +932,8 @@ character_event = { #Event for the Pope to send the Golden Horde tributary propo
 	trigger = {
 		e_mongol_empire = { holder_scope = { is_landed = yes } }
 		e_il-khanate = { holder_scope = { is_landed = yes } }
-		
-		AND = {
-			has_game_rule = {
-				name = ilkhanate_invasion
-				value = test
-			}
-			has_game_rule = {
-				name = mongol_invasion
-				value = test
-			}
-		}
-		
 		has_global_flag = mongol_empire_arrival
 		has_global_flag = ilkhanate_arrival
-		is_save_game = no
 		controls_religion = yes
 		NOT = { has_global_flag = anti_ilkhanate_mongol_clash_1 }
 	}
@@ -972,21 +962,32 @@ narrative_event = { #Event to make the Ilkhanate a tributary of the Mongol Empir
 	option = { #We will tributise the Golden Horde
 		name = MOGGOLDOPT1
 		ai_chance = { factor = 100 }
-		if = {
-			any_playable_ruler = {
-				limit = { has_landed_title = e_mongol_empire  } 
-			} 
-			make_tributary = { who = e_il-khanate tributary_type = nomadic }
+		e_il-khanate = { holder_scope = { save_event_target_as = illkhanate_ruler } }
+
+		make_tributary = { 
+			who = event_target:illkhanate_ruler 
+			tributary_type = mongol_state 
 		}
+
+		opinion = {
+			name = in_non_aggression_pact
+			years = 50
+			who = event_target:illkhanate_ruler
+		}
+			
+		reverse_opinion = {
+			name = in_non_aggression_pact
+			years = 50
+			who = event_target:illkhanate_ruler
+		}
+		
+		e_mongol_empire = { holder_scope = { add_pressed_claim = e_il-khanate } }
+		e_il-khanate = { holder_scope = { add_pressed_claim = e_golden_horde add_pressed_claim = e_mongol_empire } }
+		
 		set_global_flag = anti_ilkhanate_mongol_clash_2
 		hidden_effect = {
 			any_player = { narrative_event = { id = MP.036 days = 5 } }
 		}
-	}
-	
-	option = { #We refuse
-		name = MOGGOLDOPT2
-		ai_chance = { factor = 0 }
 	}
 }
 
@@ -1175,3 +1176,141 @@ character_event = {
 		}
 	}
 }
+
+character_event = {
+    id = MP.099
+    hide_window = yes
+    is_triggered_only = yes
+	
+    immediate = {
+		primary_title = {
+			e_il-khanate = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+			}
+		}
+		c_baghdad = {
+			grant_title = ROOT
+			ROOT = { capital = PREV }
+		}
+	}
+}
+
+character_event = {
+    id = MP.100
+    hide_window = yes
+    is_triggered_only = yes
+	
+    immediate = {
+		primary_title = {
+			e_timurids = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+			}
+		}
+		c_esfahan = {
+			grant_title = ROOT
+			ROOT = { capital = PREV }
+		}
+	}
+}
+
+##Instantly Roman Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Roman Invasion for Instant Game rule
+	id = MP.101
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = roman_invasion
+			value = test
+		}
+		NOT = { has_global_flag = roman_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.102 days = 13 }
+		}
+		set_global_flag = roman_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Roman Invasion
+	id = MP.102
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = roman_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		set_global_flag = roman_instant_invader_part_2
+		k_papal_state = { holder_scope = { narrative_event = { id = ROMA.096 } } }
+	}
+}
+
+#character_event = { #Character Event to delay the Province event to trigger the Roman Invasion for Instant Game rule
+#	id = MP.103
+#
+#	hide_window = yes
+#	is_triggered_only = yes	
+#	only_playable = yes
+#	
+#	immediate = {
+#		any_realm_character = {
+#			limit = { tier = BARON }
+#			set_government_type = pirate_republic_government
+#		}
+#	}
+#}
+
+character_event = {
+    id = MP.104
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        government = pirate_republic_government
+    }
+
+    immediate = {
+	    if = {
+		    limit = { government = pirate_republic_government }
+	    }
+		add_trait = adventurer
+    }
+}
+
+character_event = {
+    id = MP.105
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		start_date = 1066.9.15
+		has_landed_title = d_gotland
+		NOT = { has_global_flag = gotland_converted_republic }
+    }
+
+    immediate = {
+		set_global_flag = gotland_converted_republic
+		narrative_event = { id = GOTL.1 days = 3 }
+    }
+}
+
+

@@ -77,10 +77,43 @@ minor_epidemics = {
 	}
 }
 
+roman_invasion = {
+	name = "RULE_ROMAN_INVASION"
+	group = "RULE_GROUP_INVADERS"
+	alt_start_default = off
+	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_ROMAN_INVASION_RANDOM_DESC"
+	}
+	option = {
+		name = test
+		achievements = no
+		text = "RULE_OPTION_TEST"
+		desc = "RULE_ROMAN_INVASION_TEST_DESC"
+	}
+	option = {
+		name = delayed_random
+		text = "RULE_OPTION_DELAYED_RANDOM"
+		desc = "RULE_ROMAN_INVASION_DELAYED_RANDOM_DESC"
+	}
+	option = {
+		name = off
+		achievements = no
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_ROMAN_INVASION_OFF_DESC"
+	}
+}
+
 mughal_invasion = {
 	name = "RULE_MUGHAL_INVASION"
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
+	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_MUGHAL_INVASION_RANDOM_DESC"
+	}
 	option = {
 		name = test
 		achievements = no
@@ -91,11 +124,6 @@ mughal_invasion = {
 		name = historical
 		text = "RULE_OPTION_HISTORICAL"
 		desc = "RULE_MUGHAL_INVASION_HISTORICAL_DESC"
-	}
-	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_MUGHAL_INVASION_RANDOM_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -115,6 +143,11 @@ umayyad_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_UMAYYAD_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
@@ -124,11 +157,6 @@ umayyad_invasion = {
 		name = historical
 		text = "RULE_OPTION_HISTORICAL"
 		desc = "RULE_UMAYYAD_INVASION_HISTORICAL_DESC"
-	}
-	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_UMAYYAD_INVASION_RANDOM_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -148,6 +176,11 @@ mongol_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_MONGOL_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
@@ -157,11 +190,6 @@ mongol_invasion = {
 		name = historical
 		text = "RULE_OPTION_HISTORICAL"
 		desc = "RULE_MONGOL_INVASION_HISTORICAL_DESC"
-	}
-	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_MONGOL_INVASION_RANDOM_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -181,15 +209,20 @@ rum_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_RUM_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
 		desc = "RULE_RUM_INVASION_TEST_DESC"
 	}
 	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_RUM_INVASION_RANDOM_DESC"
+		name = historical
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_RUM_INVASION_HISTORICAL_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -209,15 +242,20 @@ ilkhanate_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_ILKHANATE_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
 		desc = "RULE_ILKHANATE_INVASION_TEST_DESC"
 	}
 	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_ILKHANATE_INVASION_RANDOM_DESC"
+		name = historical
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_ILKHANATE_INVASION_HISTORICAL_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -237,15 +275,20 @@ gold_horde_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_GOLD_HORDE_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
 		desc = "RULE_GOLD_HORDE_INVASION_TEST_DESC"
 	}
 	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_GOLD_HORDE_INVASION_RANDOM_DESC"
+		name = historical
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_GOLD_HORDE_INVASION_HISTORICAL_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -265,15 +308,20 @@ timur_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_TIMUR_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
 		desc = "RULE_TIMUR_INVASION_TEST_DESC"
 	}
 	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_TIMUR_INVASION_RANDOM_DESC"
+		name = historical
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_TIMUR_INVASION_HISTORICAL_DESC"
 	}
 	option = {
 		name = delayed_random
@@ -293,15 +341,20 @@ seljuk_invasion = {
 	group = "RULE_GROUP_INVADERS"
 	alt_start_default = off
 	option = {
+		name = random
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_SELJUK_INVASION_RANDOM_DESC"
+	}
+	option = {
 		name = test
 		achievements = no
 		text = "RULE_OPTION_TEST"
 		desc = "RULE_SELJUK_INVASION_TEST_DESC"
 	}
 	option = {
-		name = random
-		text = "RULE_OPTION_RANDOM"
-		desc = "RULE_SELJUK_INVASION_RANDOM_DESC"
+		name = historical
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_SELJUK_INVASION_HISTORICAL_DESC"
 	}
 	option = {
 		name = delayed_random

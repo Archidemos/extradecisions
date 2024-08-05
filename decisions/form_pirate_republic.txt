@@ -1,0 +1,23 @@
+decisions = {
+	form_pirate_republic = {
+		ai = no
+		
+		potential = {
+			NOT = { government = pirate_republic_government }
+		}
+
+		allow = {
+			realm_size <= 40
+			ROOT = { NOR = { tier = EMPEROR tier = KING } }
+			wealth = 500
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -500
+			set_government_type = pirate_republic_government
+			add_trait = adventurer
+			add_trait = pirate_commander
+		}
+	}
+}

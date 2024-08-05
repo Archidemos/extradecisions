@@ -1,0 +1,292 @@
+namespace = PIR
+
+#Pirate Trait Gained
+
+character_event = {
+	id = PIR.1
+	desc = { 
+		trigger = { 
+			government = pirate_republic_government
+		} 
+		text = EVTDESC_TOG_3320
+	}
+	picture = { 
+		trigger = { is_female = no } 
+		picture = GFX_evt_vikings_arriving_oldgods
+	}
+	picture = { 
+		trigger = { is_female = yes } 
+		picture = GFX_evt_norse_tempest
+	}
+	border = GFX_event_normal_frame_war
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		OR = {
+			has_dlc = "The Old Gods"
+			any_owned_bloodline = {
+				has_bloodline_flag = bloodline_viking
+			}
+			AND = {
+				has_religion_feature = religion_adventuring
+				has_religion_feature = religion_seafaring
+			}
+			has_religion_feature = religion_feature_norse
+		}
+		NOR = { 
+			trait = pirate_solo
+			trait = infamous_pirate
+			trait = legendary_pirate
+		}
+		FROM = { always = yes }
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3320
+		if = {
+			limit = { 
+				government = pirate_republic_government
+			}
+		}
+		add_trait = pirate_solo
+		hidden_tooltip = {
+			set_variable = { which = pirate_raids value = 0 }
+		}
+	}
+}
+
+#Infamous Pirate 
+character_event = {
+	id = PIR.2
+	desc = { 
+		trigger = { 
+			OR = {
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+				any_owned_bloodline = {
+					has_bloodline_flag = bloodline_viking
+				}
+			}
+		} 
+		text = TOG.3321.d
+	}
+	desc = { 
+		trigger = { 
+			NOR = {
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+				any_owned_bloodline = {
+					has_bloodline_flag = bloodline_viking
+				}
+			}
+		} 
+		text = EVTDESC_TOG_3321_HF
+	}
+	picture = { 
+		trigger = { is_female = no } 
+		picture = GFX_evt_vikings_arriving_oldgods
+	}
+	picture = { 
+		trigger = { is_female = yes } 
+		picture = GFX_evt_norse_tempest
+	}
+	border = GFX_event_normal_frame_war
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		government = pirate_republic_government
+		trait = pirate_solo
+		NOR = { 
+			trait = pirate_hero
+			trait = infamous_pirate
+		}
+		check_variable = { which = viking_raids value = 50 }
+		FROM = { always = yes }
+	}
+	
+	option = {
+		name = TOG.3321.a
+		if = {
+			limit = { 
+				trait = pirate_solo
+			}
+			remove_trait = pirate_solo
+		}
+		add_trait = infamous_pirate
+	}
+}
+
+#Legendary Pirate
+character_event = {
+	id = PIR.3
+	desc = TOG.3322.d
+	picture = { 
+		trigger = { is_female = no } 
+		picture = GFX_evt_vikings_arriving_oldgods
+	}
+	picture = { 
+		trigger = { is_female = yes } 
+		picture = GFX_evt_norse_tempest
+	}
+	border = GFX_event_normal_frame_war
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		government = pirate_republic_government
+		trait = infamous_pirate
+		NOT = { 
+			trait = legendary_pirate
+		}
+		check_variable = { which = viking_raids value = 100 }
+		FROM = { always = yes }
+	}
+	
+	option = {
+		name = TOG.3322.a
+		remove_trait = infamous_pirate
+		add_trait = legendary_pirate
+	}
+}
+
+##Events to recruit a Pirate army into war
+
+character_event = { #Someone requests you to join a war
+	id = PIR.99
+	desc = PIRDESC99
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Agree and make him pay
+		name = "Sounds good"
+		ai_chance = { factor = 100 }
+		FROM = { character_event = { id = PIR.100 days = 1 } }
+	}
+}
+
+character_event = { #Someone requests you to join a war
+	id = PIR.100
+	desc = PIRDESC100
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Agree and make him pay
+		name = "Sounds good"
+		ai_chance = { factor = 90 }
+		FROM = { character_event = { id = PIR.101 days = 1 } }
+	}
+	option = { #Refuse
+		name = "We're not interested"
+		ai_chance = { factor = 10 }
+		FROM = { character_event = { id = PIR.102 days = 1 } }
+	}
+}
+
+character_event = { #When Agreeing, the buyer gets a event back and pays the Pirate
+	id = PIR.101
+	desc = PIRDESC101
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Pays up
+		name = "Here is the gold"
+		ai_chance = { factor = 100 }
+		transfer_scaled_wealth = {
+			to = FROM
+			value = 2.0
+		}
+		any_war = {
+			FROM = {
+				show_scope_change = no
+				join_attacker_wars = ROOT
+				join_defender_wars = ROOT
+			}
+		}
+		ROOT = { character_event = { id = PIR.104 days = 1 } }
+	}
+	option = { #Refuses to pay
+		name = "That is too expensive"
+		ai_chance = { factor = 0 }
+		FROM = { character_event = { id = PIR.102 days = 1 } }
+	}
+}
+
+character_event = { #When Refusing, the buyer gets a event back and pays the Pirate
+	id = PIR.102
+	desc = PIRDESC102
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	option = { #Agree and make him pay
+		name = "Ok"
+		ai_chance = { factor = 100 }
+	}
+}
+
+character_event = { #Event back to the Pirates when the pay request gets denied at last moment
+	id = PIR.103
+	desc = PIRDESC103
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	option = { #Piss off
+		name = "Ok"
+		ai_chance = { factor = 100 }
+	}
+}
+
+character_event = { #Event back when the pirates will join
+	id = PIR.104
+	desc = PIRDESC104
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	option = { #Piss off
+		name = "Great"
+		ai_chance = { factor = 100 }
+	}
+}

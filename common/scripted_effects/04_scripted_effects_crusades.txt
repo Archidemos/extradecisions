@@ -111,8 +111,189 @@ crusade_give_artifact_effect = {
 	}
 
 	random_list = {
+		#Muslim Artifacts
+		
+		40 = { #Muslim Weapons
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_artifact = scimitar_tier_2_new
+					has_artifact = scimitar_tier_3_conquest
+				}
+			}
+			modifier = {
+				factor = 0.05
+				OR = {
+					has_artifact = lance_tier_2_new
+					has_artifact = lance_tier_3_impaler
+				}
+			}
+			set_character_flag = scimitar_tier_1
+			if = {
+				limit = {
+					has_character_flag = crusader_king_flag
+				}
+				add_artifact = scimitar_tier_3_conquest
+			}
+			else = {
+				add_artifact  = scimitar_tier_2_new
+			}
+			clr_character_flag = scimitar_tier_1
+		}
+		
+		40 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_artifact = lance_tier_2_new
+					has_artifact = lance_tier_3_impaler
+				}
+			}
+			modifier = {
+				factor = 0.05
+				modifier = {
+					factor = 0.05
+					OR = {
+						has_artifact = scimitar_tier_2_new
+						has_artifact = scimitar_tier_3_conquest
+					}
+				}
+			}
+			set_character_flag = lance_tier_2
+			if = {
+				limit = {
+					has_character_flag = crusader_king_flag
+				}
+				add_artifact = lance_tier_3_impaler
+			}
+			else = {
+				add_artifact  = lance_tier_2_new
+			}
+			clr_character_flag = lance_tier_2
+		}
+		
+		30 = { #Muslim Armor
+			modifier = {
+				factor = 0
+				has_artifact = armor_tier_2
+			}
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			set_character_flag = armor_tier_2
+			if = {
+				limit = {
+					has_character_flag = crusader_king_flag
+				}
+				add_artifact = armor_tier_3_champion
+			}
+			else = {
+				add_artifact  = armor_tier_2
+			}
+			clr_character_flag = armor_tier_2
+		}
+
+		10 = { #Semi-Important Muslim Artifacts
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = muhammed_armor
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = arabic_soap
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = andalusian_mercury_clock
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = arabic_pencil
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = lulu_dagger
+		}
+
+		5 = { #Important Muslim Artifacts
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = muhammed_armor
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = holy_banner_of_mohammad
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = cloak_of_ali
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = husseyin_ring
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = letter_of_mohammad_heraclius
+		}
+		5 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = sword_of_ali
+		}
+		2 = {
+			modifier = {
+				factor = 0
+				religion_group = christian
+			}
+			add_artifact = staff_of_moses
+		}
+		
 		#Crusade Weapons
 		20 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			modifier = {
 				factor = 0
 				OR = {
@@ -150,6 +331,10 @@ crusade_give_artifact_effect = {
 		20 = {
 			modifier = {
 				factor = 0
+				religion_group = muslim
+			}
+			modifier = {
+				factor = 0
 				OR = {
 					has_artifact = lance_tier_2_new
 					has_artifact = lance_tier_3_impaler
@@ -183,6 +368,10 @@ crusade_give_artifact_effect = {
 			clr_character_flag = lance_tier_2
 		}
 		20 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			modifier = {
 				factor = 0
 				OR = {
@@ -220,6 +409,10 @@ crusade_give_artifact_effect = {
 		20 = {
 			modifier = {
 				factor = 0
+				religion_group = muslim
+			}
+			modifier = {
+				factor = 0
 				OR = {
 					has_artifact = mace_tier_2_new
 					has_artifact = mace_tier_3_bone_breaker
@@ -254,16 +447,32 @@ crusade_give_artifact_effect = {
 		}
 		#Random Christian associated artifacts
 		5 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			add_artifact = fragment_of_true_cross
 		}
 		5 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			add_artifact = holy_foreskin
 		}
 		5 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			add_artifact = weeping_statue
 		}
 		#Crusade Armor
 		20 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			modifier = {
 				factor = 0
 				has_artifact = armor_tier_2
@@ -286,6 +495,10 @@ crusade_give_artifact_effect = {
 		}
 		#Artifacts based on Saints created throughout the game
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			trigger = {
 				has_character_flag = saints_exists
 			}
@@ -296,6 +509,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			trigger = {
 				has_character_flag = saints_exists
 			}
@@ -306,6 +523,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			trigger = {
 				has_character_flag = saints_exists
 			}
@@ -316,6 +537,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			trigger = {
 				has_character_flag = saints_exists
 			}
@@ -326,6 +551,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			trigger = {
 				has_character_flag = saints_exists
 			}
@@ -338,6 +567,10 @@ crusade_give_artifact_effect = {
 		#Artifacts based on placeholder Saints
 		2 = {
 			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
+			modifier = {
 				factor = 0.5
 				has_character_flag = saints_exists
 			}
@@ -348,6 +581,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			modifier = {
 				factor = 0.5
 				has_character_flag = saints_exists
@@ -360,6 +597,10 @@ crusade_give_artifact_effect = {
 		}
 		2 = {
 			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
+			modifier = {
 				factor = 0.5
 				has_character_flag = saints_exists
 			}
@@ -371,6 +612,10 @@ crusade_give_artifact_effect = {
 		}
 		2 = {
 			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
+			modifier = {
 				factor = 0.5
 				has_character_flag = saints_exists
 			}
@@ -381,6 +626,10 @@ crusade_give_artifact_effect = {
 			}
 		}
 		2 = {
+			modifier = {
+				factor = 0
+				religion_group = muslim
+			}
 			modifier = {
 				factor = 0.5
 				has_character_flag = saints_exists
@@ -420,14 +669,22 @@ setting_up_the_crusader_kingdom_effect = {
 	if = {
 		limit = {
 			is_female = no
+			NOT = { religion_group = muslim }
 		}
 		add_trait = crusader_king
 	}
 	if = {
 		limit = {
 			is_female = yes
+			NOT = { religion_group = muslim }
 		}
 		add_trait = crusader_queen
+	}
+	if = {
+		limit = {
+			religion_group = muslim
+		}
+		add_trait = jihad_sultan
 	}
 	character_event = { id = HFP.41090 days = 1 }
 	character_event = { id = HFP.41090 days = 3 }
@@ -688,9 +945,10 @@ crusader_commander_counter_negative_effect = {
 }
 
 create_crusader_king_crown_effect = { #Applied after Crusade is over, on the Beneficiary.
-	if = { 
+	if = {
 		limit = { 
 			higher_real_tier_than = DUKE
+			religion_group = christian
 			NOT = { any_artifact = { has_artifact_flag = crusader_crown } }
 			NOT = { primary_title = { has_title_flag = flag_title_crusader_crown } } #Spawn only once per-Kingdom.
 		} 
@@ -705,7 +963,7 @@ create_crusader_king_crown_effect = { #Applied after Crusade is over, on the Ben
 				capital_scope = { region = world_middle_east_arabia }
 			}
 			primary_title = { set_title_flag = flag_title_crusader_crown } #Let this kind of artifact only spawn once per conquered Crusader Kingdom.
-			add_artifact = crown_crusader_king
+			if = { limit = { religion_group = christian } add_artifact = crown_crusader_king }
 			new_artifact = {
 				set_description = crown_crusader_king_desc_1
 				random_list = { #Randomize names to avoid too much repetition.
@@ -719,6 +977,27 @@ create_crusader_king_crown_effect = { #Applied after Crusade is over, on the Ben
 					20 = { set_name = crown_crusader_king_random_8 }
 				}
 			}
+		}
+	}
+	if = {
+		limit = { 
+			higher_real_tier_than = DUKE
+			religion_group = muslim
+			NOT = { any_artifact = { has_artifact_flag = crusader_crown } }
+			NOT = { primary_title = { has_title_flag = flag_title_crusader_crown } } #Spawn only once per-Kingdom.
+		} 
+		random = {
+			chance = 40
+			modifier = { 
+				factor = 1.75
+				has_landed_title = k_jerusalem
+			}
+			modifier = { 
+				factor = 1.5
+				capital_scope = { region = world_middle_east_arabia }
+			}
+			primary_title = { set_title_flag = flag_title_crusader_crown } #Let this kind of artifact only spawn once per conquered Crusader Kingdom.
+			if = { limit = { religion_group = muslim } add_artifact = turban_muslim }
 		}
 	}
 }
@@ -933,195 +1212,421 @@ alternate_crusade_artifact_distribution_effect = {
 	custom_tooltip = {
 		text = alternate_crusade_artifact_distribution_effect_TT
 
-		random_list = {
-			#Crusade Weapons
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_artifact = sword_tier_2_new
-						has_artifact = sword_tier_3_vengeance
-					}
-				}
-				modifier = {
-					factor = 0.05
-					OR = {
-						has_artifact = lance_tier_2_new
-						has_artifact = lance_tier_3_impaler
-						has_artifact = axe_tier_2_new
-						has_artifact = axe_tier_3_ravager
-						has_artifact = mace_tier_2_new
-						has_artifact = mace_tier_3_bone_breaker
-					}
-				}
-				set_character_flag = sword_tier_1
-				if = {
-					limit = {
-						has_character_flag = crusader_king_flag
-					}
-					add_artifact = sword_tier_3_vengeance
-				}
-				else = {
-					add_artifact  = sword_tier_2_new
-				}
-				new_artifact = {
-					set_name = alternate_crusade_artifact_name
-					set_description = alternate_crusade_artifact_description
-				}
-				clr_character_flag = sword_tier_1
+		if = {
+			limit = {
+				religion_group = muslim
 			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_artifact = lance_tier_2_new
-						has_artifact = lance_tier_3_impaler
+			
+			random_list = {
+				#Muslim Artifacts
+				40 = { #Muslim Weapons
+					modifier = {
+						factor = 0
+						religion_group = christian
 					}
-				}
-				modifier = {
-					factor = 0.05
-					OR = {
-						has_artifact = sword_tier_2_new
-						has_artifact = sword_tier_3_vengeance
-						has_artifact = axe_tier_2_new
-						has_artifact = axe_tier_3_ravager
-						has_artifact = mace_tier_2_new
-						has_artifact = mace_tier_3_bone_breaker
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = scimitar_tier_2_new
+							has_artifact = scimitar_tier_3_conquest
+						}
 					}
-				}
-				set_character_flag = lance_tier_2
-				if = {
-					limit = {
-						has_character_flag = crusader_king_flag
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+						}
 					}
-					add_artifact = lance_tier_3_impaler
-				}
-				else = {
-					add_artifact  = lance_tier_2_new
-				}
-				new_artifact = {
-					set_name = alternate_crusade_artifact_name
-					set_description = alternate_crusade_artifact_description
-				}
-				clr_character_flag = lance_tier_2
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_artifact = axe_tier_2_new
-						has_artifact = axe_tier_3_ravager
+					set_character_flag = scimitar_tier_1
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = scimitar_tier_3_conquest
 					}
-				}
-				modifier = {
-					factor = 0.05
-					OR = {
-						has_artifact = sword_tier_2_new
-						has_artifact = sword_tier_3_vengeance
-						has_artifact = lance_tier_2_new
-						has_artifact = lance_tier_3_impaler
-						has_artifact = mace_tier_2_new
-						has_artifact = mace_tier_3_bone_breaker
+					else = {
+						add_artifact  = scimitar_tier_2_new
 					}
+					clr_character_flag = scimitar_tier_1
 				}
-				set_character_flag = axe_tier_2
-				if = {
-					limit = {
-						has_character_flag = crusader_king_flag
+				
+				40 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
 					}
-					add_artifact = axe_tier_3_ravager
-				}
-				else = {
-					add_artifact  = axe_tier_2_new
-				}
-				new_artifact = {
-					set_name = alternate_crusade_artifact_name
-					set_description = alternate_crusade_artifact_description
-				}
-				clr_character_flag = axe_tier_2
-			}
-			20 = {
-				modifier = {
-					factor = 0
-					OR = {
-						has_artifact = mace_tier_2_new
-						has_artifact = mace_tier_3_bone_breaker
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+						}
 					}
-				}
-				modifier = {
-					factor = 0.05
-					OR = {
-						has_artifact = sword_tier_2_new
-						has_artifact = sword_tier_3_vengeance
-						has_artifact = lance_tier_2_new
-						has_artifact = lance_tier_3_impaler
-						has_artifact = axe_tier_2_new
-						has_artifact = axe_tier_3_ravager
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = scimitar_tier_2_new
+							has_artifact = scimitar_tier_3_conquest
+						}
 					}
-				}
-				set_character_flag = mace_tier_2
-				if = {
-					limit = {
-						has_character_flag = crusader_king_flag
+					set_character_flag = lance_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = lance_tier_3_impaler
 					}
-					add_artifact = mace_tier_3_bone_breaker
-				}
-				else = {
-					add_artifact  = mace_tier_2_new
-				}
-				new_artifact = {
-					set_name = alternate_crusade_artifact_name
-					set_description = alternate_crusade_artifact_description
-				}
-				clr_character_flag = mace_tier_2
-			}
-			#Random Christian associated artifacts
-			5 = {
-				add_artifact = fragment_of_true_cross
-			}
-			5 = {
-				add_artifact = holy_foreskin
-			}
-			5 = {
-				add_artifact = weeping_statue
-			}
-			#Crusade Armor
-			20 = {
-				modifier = {
-					factor = 0
-					has_artifact = armor_tier_2
-				}
-				set_character_flag = armor_tier_2
-				if = {
-					limit = {
-						has_character_flag = crusader_king_flag
+					else = {
+						add_artifact  = lance_tier_2_new
 					}
-					add_artifact = armor_tier_3_champion
+					clr_character_flag = lance_tier_2
 				}
-				else = {
-					add_artifact  = armor_tier_2
+				
+				30 = { #Muslim Armor
+					modifier = {
+						factor = 0
+						has_artifact = armor_tier_2
+					}
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					set_character_flag = armor_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = armor_tier_3_champion
+					}
+					else = {
+						add_artifact  = armor_tier_2
+					}
+					clr_character_flag = armor_tier_2
 				}
-				new_artifact = {
-					set_name = alternate_crusade_artifact_name 
-					set_description = alternate_crusade_artifact_description
+
+				10 = { #Semi-Important Muslim Artifacts
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = necklace_persian
 				}
-				clr_character_flag = armor_tier_2
+				10 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = arabic_pencil
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = arabic_soap
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = andalusian_mercury_clock
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = lulu_dagger
+				}
+
+				5 = { #Important Muslim Artifacts
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = muhammed_armor
+				}	
+				5 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = holy_banner_of_mohammad
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = cloak_of_ali
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = husseyin_ring
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = letter_of_mohammad_heraclius
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = sword_of_ali
+				}
+				
+				2 = { #Super Rare Artifacts
+					modifier = {
+						factor = 0
+						religion_group = christian
+					}
+					add_artifact = staff_of_moses
+				}
 			}
-			#Artifacts based on placeholder Saints
-			2 = {
-				add_artifact = saintly_finger
+		}
+		if = {
+			limit = {
+				religion_group = christian
 			}
-			2 = {
-				add_artifact = saintly_bone
-			}
-			2 = {
-				add_artifact = saintly_skull_tier_1
-			}
-			2 = {
-				add_artifact = saintly_skull_tier_2
-			}
-			2 = {
-				add_artifact = saintly_tongue
+			random_list = {
+				#Crusade Weapons
+				20 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = sword_tier_2_new
+							has_artifact = sword_tier_3_vengeance
+						}
+					}
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+							has_artifact = axe_tier_2_new
+							has_artifact = axe_tier_3_ravager
+							has_artifact = mace_tier_2_new
+							has_artifact = mace_tier_3_bone_breaker
+						}
+					}
+					set_character_flag = sword_tier_1
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = sword_tier_3_vengeance
+					}
+					else = {
+						add_artifact  = sword_tier_2_new
+					}
+					new_artifact = {
+						set_name = alternate_crusade_artifact_name
+						set_description = alternate_crusade_artifact_description
+					}
+					clr_character_flag = sword_tier_1
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+						}
+					}
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = sword_tier_2_new
+							has_artifact = sword_tier_3_vengeance
+							has_artifact = axe_tier_2_new
+							has_artifact = axe_tier_3_ravager
+							has_artifact = mace_tier_2_new
+							has_artifact = mace_tier_3_bone_breaker
+						}
+					}
+					set_character_flag = lance_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = lance_tier_3_impaler
+					}
+					else = {
+						add_artifact  = lance_tier_2_new
+					}
+					new_artifact = {
+						set_name = alternate_crusade_artifact_name
+						set_description = alternate_crusade_artifact_description
+					}
+					clr_character_flag = lance_tier_2
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = axe_tier_2_new
+							has_artifact = axe_tier_3_ravager
+						}
+					}
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = sword_tier_2_new
+							has_artifact = sword_tier_3_vengeance
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+							has_artifact = mace_tier_2_new
+							has_artifact = mace_tier_3_bone_breaker
+						}
+					}
+					set_character_flag = axe_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = axe_tier_3_ravager
+					}
+					else = {
+						add_artifact  = axe_tier_2_new
+					}
+					new_artifact = {
+						set_name = alternate_crusade_artifact_name
+						set_description = alternate_crusade_artifact_description
+					}
+					clr_character_flag = axe_tier_2
+				}
+				20 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					modifier = {
+						factor = 0
+						OR = {
+							has_artifact = mace_tier_2_new
+							has_artifact = mace_tier_3_bone_breaker
+						}
+					}
+					modifier = {
+						factor = 0.05
+						OR = {
+							has_artifact = sword_tier_2_new
+							has_artifact = sword_tier_3_vengeance
+							has_artifact = lance_tier_2_new
+							has_artifact = lance_tier_3_impaler
+							has_artifact = axe_tier_2_new
+							has_artifact = axe_tier_3_ravager
+						}
+					}
+					set_character_flag = mace_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = mace_tier_3_bone_breaker
+					}
+					else = {
+						add_artifact  = mace_tier_2_new
+					}
+					new_artifact = {
+						set_name = alternate_crusade_artifact_name
+						set_description = alternate_crusade_artifact_description
+					}
+					clr_character_flag = mace_tier_2
+				}
+				#Random Christian associated artifacts
+				5 = {
+					add_artifact = fragment_of_true_cross
+				}
+				5 = {
+					add_artifact = holy_foreskin
+				}
+				5 = {
+					add_artifact = weeping_statue
+				}
+				#Crusade Armor
+				20 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					modifier = {
+						factor = 0
+						has_artifact = armor_tier_2
+					}
+					set_character_flag = armor_tier_2
+					if = {
+						limit = {
+							has_character_flag = crusader_king_flag
+						}
+						add_artifact = armor_tier_3_champion
+					}
+					else = {
+						add_artifact  = armor_tier_2
+					}
+					new_artifact = {
+						set_name = alternate_crusade_artifact_name 
+						set_description = alternate_crusade_artifact_description
+					}
+					clr_character_flag = armor_tier_2
+				}
+				#Artifacts based on placeholder Saints
+				2 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					add_artifact = saintly_finger
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					add_artifact = saintly_bone
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					add_artifact = saintly_skull_tier_1
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					add_artifact = saintly_skull_tier_2
+				}
+				2 = {
+					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					add_artifact = saintly_tongue
+				}
 			}
 		}
 	}

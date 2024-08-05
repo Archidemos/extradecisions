@@ -1020,6 +1020,7 @@ e_chagatai = {
 
 e_timurids = {
 	color = { 120 20 20 }
+	color2 = { 0 250 250 }
 	
 	short_name = yes
 	
@@ -1036,6 +1037,29 @@ e_timurids = {
 	
 	culture = mongol
 	religion = sunni
+}
+
+e_qara_qoyunlu = {
+	color = { 50 168 164 }
+	color2 = { 0 250 250 }
+	
+	short_name = yes
+	
+	capital = 695 # Deir
+	
+	allow = {
+		always = no
+	}
+	
+	# Always exists
+	#landless = yes
+	
+	#tribe = yes
+	
+	culture = mongol
+	religion = shiite
+	
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 }
 
 # HOLY ORDERS
@@ -10393,27 +10417,6 @@ e_byzantium = {
 				b_dolnidabknik = {
 				}
 			}
-			c_dorostotum = {
-				color={ 162 47 205 }
-				color2={ 255 255 255 }
-				
-				b_dorosturum = {
-				}
-				b_rusi = {
-				}
-				b_shumen = {
-				}
-				b_borovo = {
-				}
-				b_byaladve = {
-				}
-				b_slivopole = {
-				}
-				b_tsenovo = {
-				}
-				b_samuil = {
-				}
-			}
 		}
 		d_karvuna = {
 			color={ 227 79 190 }
@@ -10466,6 +10469,27 @@ e_byzantium = {
 				b_varbitsz = {
 				}
 				b_smyadovo = {
+				}
+			}
+			c_dorostotum = {
+				color={ 162 47 205 }
+				color2={ 255 255 255 }
+				
+				b_dorosturum = {
+				}
+				b_rusi = {
+				}
+				b_shumen = {
+				}
+				b_borovo = {
+				}
+				b_byaladve = {
+				}
+				b_slivopole = {
+				}
+				b_tsenovo = {
+				}
+				b_samuil = {
 				}
 			}
 			c_constantia = {
@@ -11171,7 +11195,7 @@ e_byzantium = {
 	}
 	
 	k_sicily = {
-		color = { 166 132 224 }
+		color = { 136 98 156 }
 		color2={ 255 255 255 }
 		
 		capital = 340 #	Palermo
@@ -11452,7 +11476,7 @@ e_byzantium = {
 		color = { 90 40 138 }
 		color2={ 255 255 255 }
 		
-		capital = 340 #	Palermo
+		capital = 334 #	Palermo
 		
 		culture = italian
 		
@@ -13481,7 +13505,7 @@ e_italy = {
 	}
 	
 	k_sardinia = {
-		color={ 210 165 255 }
+		color={ 157 235 211 }
 		color2={ 255 255 255 }
 		
 		capital = 326 # Cagliari
@@ -13731,7 +13755,7 @@ e_scandinavia = {
 		
 		culture = pommeranian
 		
-		capital = 366 #Stettin
+		capital = 262 #Stettin
 
 		d_hamburg = {
 			color={ 162 160 110 }
@@ -16103,7 +16127,7 @@ e_scandinavia = {
 	}
 	
 	k_finland = {
-		color = { 130 73 20 }
+		color = { 206 235 223 }
 		color2={ 255 255 255 }
 		
 		capital = 382 # Finland
@@ -16788,7 +16812,7 @@ e_scandinavia = {
 	}
 	
 	k_sapmi = {
-		color = { 255 125 69 }
+		color = { 165 198 201 }
 		color2={ 255 255 255 }
 		
 		capital = 279 # Sápmi
@@ -17340,7 +17364,7 @@ e_scandinavia = {
 }
 
 e_wendish_empire = {
-	color={ 130 20 50 }
+	color={ 176 88 97 }
 	color2={ 200 0 0 }
 	
 	capital = 527 # Krakowskie
@@ -21620,7 +21644,7 @@ e_russia = {
 }
 
 e_pontic_steppe = {
-	color = { 125 80 18 }
+	color = { 128 166 152 }
 	color2={ 255 255 255 }
 	
 	culture = cuman
@@ -21650,7 +21674,7 @@ e_pontic_steppe = {
 		}
 	}
 	k_khazaria = {
-		color={ 250 184 31 }
+		color={ 119 149 166 }
 		color2={ 255 255 255 }
 		
 		capital = 620 #	Itil
@@ -21772,7 +21796,7 @@ e_pontic_steppe = {
 		}
 
 		d_itil = {
-			color={ 151 118 30 }
+			color={ 71 106 150 }
 			color2={ 255 255 255 }
 			
 			capital = 620 # Itil
@@ -22107,7 +22131,7 @@ e_pontic_steppe = {
 		color2={ 255 255 20 }
 	}
 	k_crimea = {
-		color={ 125 80 18 }
+		color={ 40 83 97 }
 		color2={ 255 255 20 }
 		
 		capital = 559 # Crimea
@@ -22768,7 +22792,7 @@ e_pontic_steppe = {
 }
 
 e_tartaria = {
-	color = { 211 177 80 }
+	color = { 130 185 224 }
 	color2={ 255 255 255 }
 	
 	culture = cuman
@@ -22786,7 +22810,7 @@ e_tartaria = {
 	}
 	
 	k_mongolia = {
-		color = { 100 100 250 }
+		color = { 116 153 168 }
 		
 		capital = 1457 # Kara-khorum
 		
@@ -23521,7 +23545,7 @@ e_tartaria = {
 		}
 	}
 	k_cuman = {
-		color = { 231 192 88 }
+		color = { 107 191 152 }
 		color2={ 255 255 255 }
 		
 		culture = cuman
@@ -23641,7 +23665,7 @@ e_tartaria = {
 		}
 
 		d_kazakh = {
-			color={ 120 70 40 }
+			color={ 162 219 196 }
 			color2={ 255 255 255 }
 
 			capital = 1433 # Kazakh
@@ -23716,7 +23740,7 @@ e_tartaria = {
 		}
 
 		d_ob = {
-			color={ 140 130 50 }
+			color={ 193 219 215 }
 			color2={ 255 255 255 }
 
 			capital = 1873 # Ob
@@ -23841,7 +23865,7 @@ e_tartaria = {
 		}
 
 		d_irtysh = {
-			color={ 150 100 50 }
+			color={ 130 186 152 }
 			color2={ 255 255 255 }
 
 			capital = 1132 # Irtysh
@@ -24175,7 +24199,7 @@ e_tartaria = {
 			}
 		}
 		d_om = {
-			color={ 240 240 150 }
+			color={ 126 143 140 }
 			color2={ 255 255 255 }
 
 			capital = 1861 # Om
@@ -24279,13 +24303,13 @@ e_tartaria = {
 }
 
 e_idel_ural = {
-	color={ 97 56 55 }
+	color={ 192 209 167 }
 	color2={ 255 255 255 }
 
 	capital = 610 # Bulgar
 
 	k_volga_bulgaria = {
-		color={ 94 83 70 }
+		color={ 62 97 138 }
 		color2={ 255 255 255 }
 			
 		capital = 610 # Bulgar
@@ -24376,7 +24400,7 @@ e_idel_ural = {
 			}
 		}
 		d_bulgar = {
-			color={ 110 90 67 }
+			color={ 77 94 115 }
 			color2={ 255 255 255 }
 			
 			capital = 610 # Bulgar
@@ -25175,7 +25199,7 @@ e_idel_ural = {
 		}
 	}
 	k_nenets = {
-		color={ 180 110 80 }
+		color={ 146 212 162 }
 		color2={ 255 255 255 }
 
 		capital = 1828 # Zavarot
@@ -25557,399 +25581,8 @@ e_turkestan = {
 	bolghar = "Turkestan"
 	avar = "Turkestan"
 
-	k_xixia = {
-		color={ 8 119 114 }
-		color2={ 255 255 255 }
-		
-		capital = 1513 # Jiuquan (in lieu of Xingqing/Yinchuan)
-		
-		culture = tangut
-		
-		khitan = "Tuyuhun"
-		bodpa = "Amdo"
-		han = "Qinghai"
-		#tangut = "Minyak"
-		mongol = "Tangghut"
-		
-		d_jiuquan = {
-			color={ 31 186 165 }
-			
-			capital = 1513 # Jiuquan
-			
-			uyghur = "Yugur"
-			
-			c_jiuquan = {
-				color={ 8 119 114 }
-				
-				holy_site = taoist
-				
-				b_jiuquan = {
-				}
-				b_suzhou = {
-				}
-				b_kongtong = {
-				}
-				b_fulu = {
-				}
-				b_xianshi = {
-				}
-				b_longdi = { # Fictional, for prosperity
-				}
-				b_guantou = { # Fictional, for prosperity
-				}
-			}
-			c_dunhuang = {
-				color={ 8 129 114 }
-
-				uyghur = "Dukhan"
-				
-				b_dunhuang = {
-					uyghur = "Dukhan"
-				}
-				b_fangpan = {
-				}
-				b_mogao = {
-				}
-				b_yueyaquan = {
-				}
-				b_yumenquan = {
-				}
-				b_hongliuwan = {
-				}
-				b_xuanquanzhi = {
-				}
-			}
-			c_anxi = {
-				color={ 28 119 114 }
-				
-				b_anxi = {
-				}
-				b_guazhou = {
-				}
-				b_xincheng = {
-				}
-				b_yuanquan = {
-				}
-				b_yulin = {
-				}
-				b_suoyang = {
-				}
-				b_renhou = { # Fictional, for prosperity
-				}
-			}
-			c_yungguan = {
-				color={ 8 119 134 }
-
-				b_yungguan = {
-				}
-				b_shouchang = {
-				}
-				b_ziting = {
-				}
-				b_tuotou = { # Fictional, for prosperity
-				}
-				b_guihuayuan = { # Fictional, for prosperity
-				}
-				b_nieercun = { # Fictional, for prosperity
-				}
-				b_pochao = { # Fictional, for prosperity
-				}
-			}
-			c_yumen = {
-				color={ 18 129 124 }
-
-				b_yumen = {
-				}
-				b_xiaxihao = {
-				}
-				b_huangzhawan = {
-				}
-				b_chuanbei = {
-				}
-				b_baoen = { #temple
-				}
-				b_dongshuwo = { #temple
-				}
-				b_shagang = {
-				}
-			}
-		}
-		d_qinghai = {
-			color={ 38 109 104 }
-			color2= { 255 255 255 }
-
-			capital = 1502 # Fuqi
-			
-			culture = tangut
-			
-			tangut = "Minyak"
-			khitan = "Tuyuhun"
-			mongol = "Kokonur"
-
-			c_fuqi = {
-				color={ 48 109 104 }
-				color2= { 255 255 255 }
-
-				b_fuqi = {
-				}
-				b_shinaihai = {
-				}
-				b_naerji = {
-				}
-				b_shatuo = { #temple
-				}
-				b_qieji = {
-				}
-				b_caierqiong = {
-				}
-				b_tiebujia = {
-				}
-			}
-			c_delingha = {
-				color={ 38 109 114 }
-				color2= { 255 255 255 }
-				
-				bodpa = "Dêrlênka"
-				mongol = "Delhi"
-				khitan = "Delhi"
-
-				b_delingha = {
-					bodpa = "Dêrlênka"
-					mongol = "Delhi"
-					khitan = "Delhi"
-				}
-				b_xuji = {
-				}
-				b_haixi = {
-				}
-				b_hedong = {
-				}
-				b_hexi = {
-				}
-				b_keluke = {
-				}
-				b_gahai = {
-				}
-			}
-			c_dulan = {
-				color={ 38 119 104 }
-				color2= { 255 255 255 }
-
-				b_dulan = {
-				}
-				b_reshui = { #temple
-				}
-				b_xiariha = {
-				}
-				b_zongjia = {
-				}
-				b_xiangride = {
-				}
-				b_gouli = {
-				}
-				b_xiangjia = {
-				}
-			}
-		}
-			
-		d_nagormo = {
-			color={ 18 139 134 }
-			color2= { 255 255 255 }
-
-			capital = 1501 # Nagormo
-			
-			mongol = "Golmud"
-			khitan = "Golmud"
-			uyghur = "Golmud"
-			han = "Ge'ermu"
-			
-			c_nagormo = {
-				color={ 28 139 134 }
-				color2= { 255 255 255 }
-				
-				mongol = "Golmud"
-				khitan = "Golmud"
-				uyghur = "Golmud"
-				han = "Ge'ermu"
-
-				b_golmud = {
-					han = "Ge'ermu"
-					bodpa = "Nagormo"
-				}
-				b_qarham = {
-				}
-				b_qingshui = {
-				}
-				b_xinle = {
-				}
-				b_dagele = {
-				}
-				b_baoku = {
-				}
-				b_dabuxun = {
-				}
-			}
-			c_qaidam = {
-				color={ 18 149 134 }
-				color2= { 255 255 255 }
-				
-				han = "Chaidan"
-				bodpa = "Cheba'i"
-				mongol = "Tsaydmyn"
-				
-				b_qaidam = {
-					han = "Chaidan"
-					bodpa = "Cheba'i"
-					mongol = "Tsaydmyn"
-				}
-				b_xitishan = {
-				}
-				b_yinmaxia = {
-				}
-				b_ligouchu = {
-				}
-				b_xiaochaidamu = {
-				}
-				b_daqaidam = {
-					han = "Da Chaidan"
-					bodpa = "'Dam Cheba'i"
-					mongol = "Da Tsaydmyn"
-				}
-				b_aolaohe = {
-				}
-			}
-			c_lenghu = {
-				color={ 18 139 144 }
-				color2= { 255 255 255 }
-				
-				bodpa = "Lenghu'u"
-				mongol = "Lyenkhyn"
-				
-				b_lenghu = {
-					bodpa = "Lenghu'u"
-					mongol = "Lyenkhyn"
-				}
-				b_tuanjie = { # Fictional, for prosperity
-				}
-				b_xinghu = { # Fictional, for prosperity
-				}
-				b_yucai = { # Fictional, for prosperity
-				}
-				b_yanhua = { # Fictional, for prosperity
-				}
-				b_junheju = { # Fictional, for prosperity
-				}
-				b_ledu = { # Fictional, for prosperity
-				}
-			}
-			c_tanggula = {
-				color={ 18 159 154 }
-				color2= { 255 255 255 }
-				
-				bodpa = "Dangla"
-				
-				b_dangla = {
-					han = "Tanggula"
-				}
-				b_tongtian = {
-				}
-				b_yanshiping = {
-				}
-				b_maqu = {
-				}
-				b_marong = {
-				}
-				b_wenquan = {
-				}
-				b_sewu = {
-				}
-			}
-		}
-		d_nangqen = {
-			color={ 44 152 132 }
-			color2= { 255 255 255 }
-
-			capital = 1503 # Nangqen
-			
-			bodpa = "Nangqên"
-			han = "Nangqian"
-			
-			c_nangqen = {
-			
-				color={ 54 152 132 }
-				color2= { 255 255 255 }
-				
-				bodpa = "Nangqên"
-				han = "Nangqian"
-				
-				b_xangda = {
-					han = "Xiangda"
-				}
-				b_tana_b = {
-				}
-				b_niangla = {
-				}
-				b_dongba = {
-				}
-				b_juela = {
-				}
-				b_maozhuang = {
-				}
-				b_gayong = {
-				}
-			}
-			c_zadoi = {
-
-				color={ 44 162 132 }
-				color2= { 255 255 255 }
-				
-				han = "Zaduo"
-				
-				b_zadoi = {
-					han = "Zaduo"
-				}
-				b_qapugtang = {
-					han = "Shahuteng"
-				}
-				b_chadan = {
-				}
-				b_moyun = {
-				}
-				b_angsai = {
-				}
-				b_aduo = {
-				}
-				b_zhaqing = {
-				}
-			}
-			c_lingtsang = {
-				color={ 44 152 142 }
-				color2= { 255 255 255 }
-				
-				han = "Liangsong"
-
-				b_denkok = {
-				}
-				b_serxu = {
-					bodpa = "Sêrxü"
-					han = "Shiqu"
-				}
-				b_gemeng = {
-				}
-				b_derong = {
-				}
-				b_arizha = {
-				}
-				b_maga = {
-				}
-				b_wenbo = {
-				}
-			}
-		}
-	}
-
 	k_turkestan = {
-		color={ 204 150 21 }
+		color={ 187 199 157 }
 		color2={ 255 255 255 }
 		
 		capital = 1794 # Syr Darya
@@ -25960,7 +25593,7 @@ e_turkestan = {
 		zoroastrian_group = 150 # Crusade target weight
 		
 		d_turkestan = {
-			color={ 224 170 24 }
+			color={ 187 199 157 }
 			color2={ 255 255 255 }
 			
 			capital = 622 # Turkestan
@@ -26096,7 +25729,7 @@ e_turkestan = {
 			}
 		}
 		d_syr_darya = {
-			color= { 145 115 40 }
+			color= { 152 160 163 }
 			color2={ 255 255 255 }
 			
 			capital = 1794 # Syr Darya
@@ -26207,13 +25840,13 @@ e_turkestan = {
 		}
 	}
 	k_zhetysu = {
-		color={ 200 130 70 }
+		color={ 139 163 144 }
 		color2={ 255 255 255 }
 
 		capital = 1797 # Almaty
 
 		d_chuy = {
-			color={ 165 155 55 }
+			color={ 153 189 173 }
 			color2={ 255 255 255 }
 
 			capital = 1424 # Chuy
@@ -26260,7 +25893,7 @@ e_turkestan = {
 			}
 		}
 		d_zhetysu = {
-			color= { 175 165 60 }
+			color= { 139 163 144  }
 			color2={ 255 255 255 }
 			
 			capital = 1797 # Almaty
@@ -26305,7 +25938,7 @@ e_turkestan = {
 			}
 		}
 		d_ili = {
-			color={ 145 165 40 }
+			color={ 96 224 175 }
 			color2={ 255 255 255 }
 
 			capital = 1425 # Ili
@@ -26763,7 +26396,7 @@ e_turkestan = {
 			}
 		}
 		d_karashar = {
-			color={ 170 130 0 }
+			color={ 187 201 179 }
 			
 			capital = 1443 # Karashar
 			
@@ -27348,120 +26981,6 @@ e_persia = {
 				}
 			}
 		}
-		d_ilam = {
-			color={ 131 135 92 }
-			color2={ 255 255 255 }
-			
-			capital = 688 # Baghdad
-			
-			zun_pagan_reformed = 200 # Crusade target weight
-			
-			c_kermanshah = {
-				color={ 75 114 90 }
-				color2={ 255 255 255 }
-				
-				b_javanroud = {
-				}
-				b_kermanshah = {
-				}
-				b_hulwan = {
-				}
-				b_paveh = {
-				}
-				b_mahalkufa = {
-				}
-				b_kangavar = {
-				}
-				b_kuzaran = {
-				}
-				b_ravansar = {
-				}
-			}
-			c_hawijal = {
-				color={ 150 205 80 }
-				color2={ 255 255 255 }
-				
-				b_olurabadi = {
-				}
-				b_abrishamabadi = {
-				}
-				b_orzooabadi = {
-				}
-				b_amanabadi = {
-				}
-				b_azanganabade = {
-				}
-				b_oshkanabadi = {
-				}
-				b_arzandanabadi = {
-				}
-				b_amirabade = {
-				}
-			}
-			c_kirkuk = {
-				color={ 90 160 105 }
-				color2={ 255 255 255 }
-				
-				b_kirkuk = {
-				}
-				b_daquq = {
-				}
-				b_ranya = {
-				}
-				b_halabja = {
-				}
-				b_makhmur = {
-				}
-				b_dukan = {
-				}
-				b_chuartan = {
-				}
-				b_kifri = {
-				}
-			}
-			c_ilam = {
-				color={ 105 150 52 }
-				color2={ 255 255 255 }
-				
-				b_dehloran = {
-				}
-				b_ilam = {
-				}
-				b_chahartaghi = {
-				}
-				b_abdanan = {
-				}
-				b_hezardar = {
-				}
-				b_mehran = {
-				}
-				b_ghalehghiran = {
-				}
-				b_towhid = {
-				}
-			}
-			c_chavari = {
-				color={ 16 110 12 }
-				color2={ 255 255 255 }
-				
-				b_ahramabadi = {
-				}
-				b_ostanabadi = {
-				}
-				b_arezanabadi = {
-				}
-				b_amakabadi = {
-				}
-				b_azarganabadi = {
-				}
-				b_irjandabadi = {
-				}
-				b_orazanabadi = {
-				}
-				b_ahramanabadi = {
-				}
-			}
-		}
 		d_kerman = {
 			color={ 98 118 63 }
 			color2={ 255 255 255 }
@@ -27902,7 +27421,7 @@ e_persia = {
 	}
 	
 	k_baluchistan = { # Kingdom of Sistan
-		color={ 155 169 114 }
+		color={ 217 215 132 }
 		color2={ 255 255 255 }
 		
 		capital = 1183 # Bost
@@ -28120,7 +27639,7 @@ e_persia = {
 	}
 
 	k_afghanistan = { # Kingdom of Kabulistan
-		color={ 163 121 57 }
+		color={ 138 161 85 }
 		color2={ 220 220 0 }
 		
 		capital = 1185 # Kabul
@@ -28676,6 +28195,120 @@ e_persia = {
 				}
 			}
 		}
+		d_ilam = {
+			color={ 131 135 92 }
+			color2={ 255 255 255 }
+			
+			capital = 688 # Baghdad
+			
+			zun_pagan_reformed = 200 # Crusade target weight
+			
+			c_kermanshah = {
+				color={ 75 114 90 }
+				color2={ 255 255 255 }
+				
+				b_javanroud = {
+				}
+				b_kermanshah = {
+				}
+				b_hulwan = {
+				}
+				b_paveh = {
+				}
+				b_mahalkufa = {
+				}
+				b_kangavar = {
+				}
+				b_kuzaran = {
+				}
+				b_ravansar = {
+				}
+			}
+			c_hawijal = {
+				color={ 150 205 80 }
+				color2={ 255 255 255 }
+				
+				b_olurabadi = {
+				}
+				b_abrishamabadi = {
+				}
+				b_orzooabadi = {
+				}
+				b_amanabadi = {
+				}
+				b_azanganabade = {
+				}
+				b_oshkanabadi = {
+				}
+				b_arzandanabadi = {
+				}
+				b_amirabade = {
+				}
+			}
+			c_kirkuk = {
+				color={ 90 160 105 }
+				color2={ 255 255 255 }
+				
+				b_kirkuk = {
+				}
+				b_daquq = {
+				}
+				b_ranya = {
+				}
+				b_halabja = {
+				}
+				b_makhmur = {
+				}
+				b_dukan = {
+				}
+				b_chuartan = {
+				}
+				b_kifri = {
+				}
+			}
+			c_ilam = {
+				color={ 105 150 52 }
+				color2={ 255 255 255 }
+				
+				b_dehloran = {
+				}
+				b_ilam = {
+				}
+				b_chahartaghi = {
+				}
+				b_abdanan = {
+				}
+				b_hezardar = {
+				}
+				b_mehran = {
+				}
+				b_ghalehghiran = {
+				}
+				b_towhid = {
+				}
+			}
+			c_chavari = {
+				color={ 16 110 12 }
+				color2={ 255 255 255 }
+				
+				b_ahramabadi = {
+				}
+				b_ostanabadi = {
+				}
+				b_arezanabadi = {
+				}
+				b_amakabadi = {
+				}
+				b_azarganabadi = {
+				}
+				b_irjandabadi = {
+				}
+				b_orazanabadi = {
+				}
+				b_ahramanabadi = {
+				}
+			}
+		}
 		d_karbala = {
 			color={ 147 181 78 }
 			color2={ 255 255 255 }
@@ -28916,7 +28549,7 @@ e_persia = {
 	}
 	
 	k_daylam = {
-		color={ 70 125 147 }
+		color={ 140 173 132 }
 		color2={ 255 255 255 }
 		
 		capital = 666 # Gilan
@@ -31142,7 +30775,7 @@ e_france = {
 	k_narbonensis = {
 		color={ 38 63 120 }
 		color2={ 255 255 20 }		
-		capital = 112 # Ile de France
+		capital = 221 # Ile de France
 		dignity = 30 # Counted as having this many more counties than it does
 		
 		culture = frankish
@@ -32656,7 +32289,7 @@ e_france = {
 	}
 	
 	k_brittany = {
-		color={ 66 76 219 }
+		color={ 165 146 224 }
 		color2={ 255 255 255 }
 		
 		capital = 105 # Vannes
@@ -32948,7 +32581,7 @@ e_france = {
 				}
 			}
 			c_tregor = {
-				color={ 48 59 209 }
+				color={ 145 160 184 }
 				color2={ 255 255 255 }
 								
 				b_guingamp = {
@@ -32976,7 +32609,7 @@ e_france = {
 		color={ 134 0 37 }
 		color2={ 220 220 0 }
 		
-		capital	= 221 # Provence
+		capital	= 136 # Provence
 		
 		culture = occitan
 
@@ -35755,6 +35388,117 @@ e_arabia = {
 
 		culture = bedouin_arabic
 
+		d_nefoud = {
+			color={ 17 228 10 }
+			color2={ 255 255 255 }
+			
+			capital = 863 # Hajr
+			
+			c_rafha = {
+				color={ 174 253 67 }
+				color2={ 255 255 255 }
+			
+				b_rafha = {
+				}
+				b_aljumaymah = {
+				}
+				b_timiat = {
+				}
+				b_markuz = {
+				}
+				b_lawqah = {
+				}
+				b_duwayd = {
+				}
+				b_uwayqilah = {
+				}
+				b_ashshir = {
+				}
+			}
+			c_hail = {
+				color={ 178 253 71 }
+				color2={ 255 255 255 }
+			
+				b_hail = {
+				}
+				b_asshinan = {
+				}
+				b_alghazalah = {
+				}
+				b_baqa = {
+				}
+				b_iqdah = {
+				}
+				b_mawqaq = {
+				}
+				b_murayfiq = {
+				}
+				b_saban = {
+				}
+			}
+			c_hajr = {
+				color={ 182 253 75 }
+				color2={ 255 255 255 }
+			
+				b_alhudaydah = {
+				}
+				b_assalif = {
+				}
+				b_almaqah = {
+				}
+				b_abha = {
+				}
+				b_khamismushait = {
+				}
+				b_bisha = {
+				}
+				b_baljurashi = {
+				}
+				b_jizan = {
+				}
+			}
+			c_halaban = {
+				color={ 186 253 79 }
+				color2={ 255 255 255 }
+			
+				b_afif = {
+				}
+				b_badaiidyan = {
+				}
+				b_alqaiyah = {
+				}
+				b_aljammaniyah = {
+				}
+				b_albijadiyah = {
+				}
+				b_almaklah = {
+				}
+				b_albaharah = {
+				}
+				b_arradum = {
+				}
+			}
+			c_dariya = {
+				color={ 181 255 99 }
+				color2={ 255 255 255 }
+				
+				b_dariya = {
+				}
+				b_fayd = {
+				}
+				b_al_ajfur = {
+				}
+				b_an_nibaj = {
+				}
+				b_al_qaryatan = {
+				}
+				b_at_talabiya = {
+				}
+				b_zubala = {
+				}
+			}
+		}
+
 		d_amman = { # Al Bahrain
 			color = { 32 127 30 }
 			color2={ 255 255 255 }
@@ -35974,6 +35718,73 @@ e_arabia = {
 		
 		muslim = 4000 # Crusade target weight
 		zoroastrian_group = 500 # Crusade target weight
+
+		d_sanaa = {
+			color={ 215 180 20 }
+			color2={ 255 255 255 }
+			
+			capital = 860 # Sanaa
+			
+			c_sanaa = {
+				color={ 215 180 20 }
+				color2={ 255 255 255 }
+			
+				b_sanaa = {
+				}
+				b_marib = {
+				}
+				b_qataba = {
+				}
+				b_dhamar = {
+				}
+				b_jabalannabishuayb = {
+				}
+				b_jabaltiyal = {
+				}
+				b_hodeida = {
+				}
+				b_harib = {
+				}
+			}
+			c_najran = {
+				color={ 185 180 20 }
+				color2={ 255 255 255 }
+				
+				b_najran = {
+				}
+				b_sada = {
+				}
+				b_huth = {
+				}
+				b_ribakhah = { # Fictional - For Prosperity
+				}
+				b_hasakat = { # Fictional - For Prosperity
+				}
+				b_az_zawwah = { # Fictional - For Prosperity
+				}
+				b_dahal_jalal = { # Fictional - For Prosperity
+				}
+			}
+			c_al_ahqaf = {
+				color={ 199 170 29 }
+				color2={ 255 255 255 }
+				
+				b_al_ahqaf = {
+				}
+				b_al_abr = {
+				}
+				b_sabwa = {
+				}
+				b_katabiya = { # Fictional - For Prosperity
+				}
+				b_alan = { # Fictional - For Prosperity
+				}
+				b_al_jayat = { # Fictional - For Prosperity
+				}
+				b_bujan = { # Fictional - For Prosperity
+				}
+			}
+		}
 	
 		d_arabia_petrae = {
 			color={ 121 196 2 }
@@ -36266,116 +36077,6 @@ e_arabia = {
 				}
 			}
 		}
-		d_nefoud = {
-			color={ 17 228 10 }
-			color2={ 255 255 255 }
-			
-			capital = 863 # Hajr
-			
-			c_rafha = {
-				color={ 174 253 67 }
-				color2={ 255 255 255 }
-			
-				b_rafha = {
-				}
-				b_aljumaymah = {
-				}
-				b_timiat = {
-				}
-				b_markuz = {
-				}
-				b_lawqah = {
-				}
-				b_duwayd = {
-				}
-				b_uwayqilah = {
-				}
-				b_ashshir = {
-				}
-			}
-			c_hail = {
-				color={ 178 253 71 }
-				color2={ 255 255 255 }
-			
-				b_hail = {
-				}
-				b_asshinan = {
-				}
-				b_alghazalah = {
-				}
-				b_baqa = {
-				}
-				b_iqdah = {
-				}
-				b_mawqaq = {
-				}
-				b_murayfiq = {
-				}
-				b_saban = {
-				}
-			}
-			c_hajr = {
-				color={ 182 253 75 }
-				color2={ 255 255 255 }
-			
-				b_alhudaydah = {
-				}
-				b_assalif = {
-				}
-				b_almaqah = {
-				}
-				b_abha = {
-				}
-				b_khamismushait = {
-				}
-				b_bisha = {
-				}
-				b_baljurashi = {
-				}
-				b_jizan = {
-				}
-			}
-			c_halaban = {
-				color={ 186 253 79 }
-				color2={ 255 255 255 }
-			
-				b_afif = {
-				}
-				b_badaiidyan = {
-				}
-				b_alqaiyah = {
-				}
-				b_aljammaniyah = {
-				}
-				b_albijadiyah = {
-				}
-				b_almaklah = {
-				}
-				b_albaharah = {
-				}
-				b_arradum = {
-				}
-			}
-			c_dariya = {
-				color={ 181 255 99 }
-				color2={ 255 255 255 }
-				
-				b_dariya = {
-				}
-				b_fayd = {
-				}
-				b_al_ajfur = {
-				}
-				b_an_nibaj = {
-				}
-				b_al_qaryatan = {
-				}
-				b_at_talabiya = {
-				}
-				b_zubala = {
-				}
-			}
-		}
 	}
 	
 	k_yemen = {
@@ -36392,72 +36093,6 @@ e_arabia = {
 		muslim = 3000 # Crusade target weight
 		zoroastrian_group = 300 # Crusade target weight
 		
-		d_sanaa = {
-			color={ 215 180 20 }
-			color2={ 255 255 255 }
-			
-			capital = 860 # Sanaa
-			
-			c_sanaa = {
-				color={ 215 180 20 }
-				color2={ 255 255 255 }
-			
-				b_sanaa = {
-				}
-				b_marib = {
-				}
-				b_qataba = {
-				}
-				b_dhamar = {
-				}
-				b_jabalannabishuayb = {
-				}
-				b_jabaltiyal = {
-				}
-				b_hodeida = {
-				}
-				b_harib = {
-				}
-			}
-			c_najran = {
-				color={ 185 180 20 }
-				color2={ 255 255 255 }
-				
-				b_najran = {
-				}
-				b_sada = {
-				}
-				b_huth = {
-				}
-				b_ribakhah = { # Fictional - For Prosperity
-				}
-				b_hasakat = { # Fictional - For Prosperity
-				}
-				b_az_zawwah = { # Fictional - For Prosperity
-				}
-				b_dahal_jalal = { # Fictional - For Prosperity
-				}
-			}
-			c_al_ahqaf = {
-				color={ 199 170 29 }
-				color2={ 255 255 255 }
-				
-				b_al_ahqaf = {
-				}
-				b_al_abr = {
-				}
-				b_sabwa = {
-				}
-				b_katabiya = { # Fictional - For Prosperity
-				}
-				b_alan = { # Fictional - For Prosperity
-				}
-				b_al_jayat = { # Fictional - For Prosperity
-				}
-				b_bujan = { # Fictional - For Prosperity
-				}
-			}
-		}
 		d_taizz = {
 			color={ 195 220 40 }
 			color2={ 255 255 255 }
@@ -38053,7 +37688,7 @@ e_arabia = {
 	}
 	
 	k_syria = {
-		color={ 145 130 88 }
+		color={ 104 161 139 }
 		color2={ 255 255 255 }
 		
 		culture = levantine_arabic
@@ -38671,6 +38306,56 @@ e_maghreb = {
 				}
 			}
 		}
+
+		d_sous = {
+			color={ 56 140 0 }
+			color2={ 255 255 255 }
+			
+			capital = 847 # Sous/Tharasset
+			
+			c_tharasset = { # Sous
+				color={ 47 154 16 }
+				color2={ 255 255 255 }
+				
+				b_tiznit = {}
+				b_igilliz = {}
+				b_rgab = {}
+				b_guelmim = {}
+				b_mihrleft = {}
+				b_belkassem = {}
+				b_ouaouteit = {}
+				b_taroudaut = {}
+				b_tata = {}
+				b_biourga = {}
+			}
+			c_warzazat = {
+				color={ 41 125 16 }
+				color2={ 255 255 255 }
+				
+				b_warzazat = {}
+				b_tasagdah = {}
+				b_shwan = {}
+				b_qalat_sless = {} # Fictional, for prosperity
+				b_el_jehifa = {} # Fictional, for prosperity
+				b_chtaouna = {} # Fictional, for prosperity
+				b_timhata = {} # Fictional, for prosperity
+			}
+			c_draa = {
+				color={ 58 127 35 }
+				color2={ 255 255 255 }
+								
+				holy_site = west_african_pagan
+				holy_site = west_african_pagan_reformed
+				
+				b_tazagourt = {}
+				b_tizgui = {}
+				b_kasbaeljoua = {}
+				b_alogoum = {}
+				b_jenane_el_menzeh = {} # Fictional, for prosperity
+				b_beni_djenade = {} # Fictional, for prosperity
+				b_tamchennennt = {} # Fictional, for prosperity
+			}
+		}
 	
 		d_marrakech = {
 			color={ 43 150 32 }
@@ -39070,114 +38755,6 @@ e_maghreb = {
 				b_msanne = {} # Fictional, for prosperity
 				b_aghoud = {} # Fictional, for prosperity
 				b_tiskouit = {} # Fictional, for prosperity
-			}
-			c_taghaza = {
-				color={ 130 180 61 }
-				color2={ 255 255 255 }
-				
-				b_taghaza = {}
-				b_kerzaz = {}
-				b_metarta = {}
-				b_reggane = {}
-				b_adrar = {}
-				b_aougrout = {}
-				b_charouine = {}
-				b_alouarta = {}
-			}
-		}
-		d_sous = {
-			color={ 56 140 0 }
-			color2={ 255 255 255 }
-			
-			capital = 847 # Sous/Tharasset
-			
-			c_tharasset = { # Sous
-				color={ 47 154 16 }
-				color2={ 255 255 255 }
-				
-				b_tiznit = {}
-				b_igilliz = {}
-				b_rgab = {}
-				b_guelmim = {}
-				b_mihrleft = {}
-				b_belkassem = {}
-				b_ouaouteit = {}
-				b_taroudaut = {}
-				b_tata = {}
-				b_biourga = {}
-			}
-			c_ifni = {
-				color={ 49 156 38 }
-				color2={ 255 255 255 }
-				
-				b_ifni = {}
-				b_tharasset = {}
-				b_tartaya = {}
-				b_tantan = {}
-				b_akhfennir = {}
-				b_chbika = {}
-				b_tidergit = {}
-				b_amot = {}
-				b_tiglit = {}
-			}
-			c_warzazat = {
-				color={ 41 125 16 }
-				color2={ 255 255 255 }
-				
-				b_warzazat = {}
-				b_tasagdah = {}
-				b_shwan = {}
-				b_qalat_sless = {} # Fictional, for prosperity
-				b_el_jehifa = {} # Fictional, for prosperity
-				b_chtaouna = {} # Fictional, for prosperity
-				b_timhata = {} # Fictional, for prosperity
-			}
-			c_draa = {
-				color={ 58 127 35 }
-				color2={ 255 255 255 }
-								
-				holy_site = west_african_pagan
-				holy_site = west_african_pagan_reformed
-				
-				b_tazagourt = {}
-				b_tizgui = {}
-				b_kasbaeljoua = {}
-				b_alogoum = {}
-				b_jenane_el_menzeh = {} # Fictional, for prosperity
-				b_beni_djenade = {} # Fictional, for prosperity
-				b_tamchennennt = {} # Fictional, for prosperity
-			}
-		}
-		d_adrar = {
-			color={ 90 190 5 }
-			color2={ 255 255 255 }
-			
-			capital = 920 # Ouadane
-			
-			c_ouadane = {
-				color={ 23 109 202 }
-				color2={ 255 255 255 }
-				
-				b_ouadane = {}
-				b_idjil = {}
-				b_wadan = {}
-				b_azuggi = {}
-				b_ksaralkiali = {}
-				b_wadane = {} #Fictional, for prosperity
-				b_kaliki = {} #Fictional, for prosperity
-				b_gag = {} #Fictional, for prosperity
-			}
-			c_idjil = {
-				color={ 8 76 207 }
-				color2={ 255 255 255 }
-				
-				b_bir_um_grein = {}
-				b_zouerat = {}
-				b_tazadit = {}
-				b_rouessa = {}
-				b_fderick = {}
-				b_krossa = {} #Fictional, for prosperity
-				b_mosa = {} #Fictional, for prosperity
 			}
 		}
 		d_tahert = {
@@ -41349,7 +40926,7 @@ e_britannia = {
 			color={ 189 30 4 }
 			color2={ 255 255 255 }
 			
-			capital = 67 # Warwick
+			capital = 17 # Warwick
 			
 			dignity = 5
 			
@@ -44259,6 +43836,52 @@ e_mali = {
 				b_sebete = {} #Modern placeholder, for prosperity
 			}
 		}
+		d_adrar = {
+			color={ 90 190 5 }
+			color2={ 255 255 255 }
+			
+			capital = 920 # Ouadane
+			
+			c_ouadane = {
+				color={ 23 109 202 }
+				color2={ 255 255 255 }
+				
+				b_ouadane = {}
+				b_idjil = {}
+				b_wadan = {}
+				b_azuggi = {}
+				b_ksaralkiali = {}
+				b_wadane = {} #Fictional, for prosperity
+				b_kaliki = {} #Fictional, for prosperity
+				b_gag = {} #Fictional, for prosperity
+			}
+			c_ifni = {
+				color={ 49 156 38 }
+				color2={ 255 255 255 }
+				
+				b_ifni = {}
+				b_tharasset = {}
+				b_tartaya = {}
+				b_tantan = {}
+				b_akhfennir = {}
+				b_chbika = {}
+				b_tidergit = {}
+				b_amot = {}
+				b_tiglit = {}
+			}
+			c_idjil = {
+				color={ 8 76 207 }
+				color2={ 255 255 255 }
+				
+				b_bir_um_grein = {}
+				b_zouerat = {}
+				b_tazadit = {}
+				b_rouessa = {}
+				b_fderick = {}
+				b_krossa = {} #Fictional, for prosperity
+				b_mosa = {} #Fictional, for prosperity
+			}
+		}
 		d_tagant = {
 			color={ 13 98 191 }
 			color2={ 255 255 255 }
@@ -44334,6 +43957,19 @@ e_mali = {
 				b_guezzam = {}
 				b_tamanrasset = {}
 				b_tazrouk = {}
+			}
+			c_taghaza = {
+				color={ 130 180 61 }
+				color2={ 255 255 255 }
+				
+				b_taghaza = {}
+				b_kerzaz = {}
+				b_metarta = {}
+				b_reggane = {}
+				b_adrar = {}
+				b_aougrout = {}
+				b_charouine = {}
+				b_alouarta = {}
 			}
 		}
 	}
@@ -44442,11 +44078,11 @@ e_mali = {
 }
 
 e_kanem = {
-	color={ 50 230 235 }
+	color={ 148 136 109 }
 	color2={ 255 255 255 }
 	
 	k_kanem = {
-		color={ 10 215 225 }
+		color={ 235 178 131 }
 		color2={ 255 255 255 }
 		
 		capital = 1739 # Djimi
@@ -52391,6 +52027,397 @@ e_tibet = {
 	#bodpa = "Bodchenpo"
 	han = "Tubo"
 
+	k_xixia = {
+		color={ 153 88 70 }
+		color2={ 255 255 255 }
+		
+		capital = 1513 # Jiuquan (in lieu of Xingqing/Yinchuan)
+		
+		culture = tangut
+		
+		khitan = "Tuyuhun"
+		bodpa = "Amdo"
+		han = "Qinghai"
+		#tangut = "Minyak"
+		mongol = "Tangghut"
+		
+		d_jiuquan = {
+			color={ 31 186 165 }
+			
+			capital = 1513 # Jiuquan
+			
+			uyghur = "Yugur"
+			
+			c_jiuquan = {
+				color={ 8 119 114 }
+				
+				holy_site = taoist
+				
+				b_jiuquan = {
+				}
+				b_suzhou = {
+				}
+				b_kongtong = {
+				}
+				b_fulu = {
+				}
+				b_xianshi = {
+				}
+				b_longdi = { # Fictional, for prosperity
+				}
+				b_guantou = { # Fictional, for prosperity
+				}
+			}
+			c_dunhuang = {
+				color={ 8 129 114 }
+
+				uyghur = "Dukhan"
+				
+				b_dunhuang = {
+					uyghur = "Dukhan"
+				}
+				b_fangpan = {
+				}
+				b_mogao = {
+				}
+				b_yueyaquan = {
+				}
+				b_yumenquan = {
+				}
+				b_hongliuwan = {
+				}
+				b_xuanquanzhi = {
+				}
+			}
+			c_anxi = {
+				color={ 28 119 114 }
+				
+				b_anxi = {
+				}
+				b_guazhou = {
+				}
+				b_xincheng = {
+				}
+				b_yuanquan = {
+				}
+				b_yulin = {
+				}
+				b_suoyang = {
+				}
+				b_renhou = { # Fictional, for prosperity
+				}
+			}
+			c_yungguan = {
+				color={ 8 119 134 }
+
+				b_yungguan = {
+				}
+				b_shouchang = {
+				}
+				b_ziting = {
+				}
+				b_tuotou = { # Fictional, for prosperity
+				}
+				b_guihuayuan = { # Fictional, for prosperity
+				}
+				b_nieercun = { # Fictional, for prosperity
+				}
+				b_pochao = { # Fictional, for prosperity
+				}
+			}
+			c_yumen = {
+				color={ 18 129 124 }
+
+				b_yumen = {
+				}
+				b_xiaxihao = {
+				}
+				b_huangzhawan = {
+				}
+				b_chuanbei = {
+				}
+				b_baoen = { #temple
+				}
+				b_dongshuwo = { #temple
+				}
+				b_shagang = {
+				}
+			}
+		}
+		d_qinghai = {
+			color={ 38 109 104 }
+			color2= { 255 255 255 }
+
+			capital = 1502 # Fuqi
+			
+			culture = tangut
+			
+			tangut = "Minyak"
+			khitan = "Tuyuhun"
+			mongol = "Kokonur"
+
+			c_fuqi = {
+				color={ 48 109 104 }
+				color2= { 255 255 255 }
+
+				b_fuqi = {
+				}
+				b_shinaihai = {
+				}
+				b_naerji = {
+				}
+				b_shatuo = { #temple
+				}
+				b_qieji = {
+				}
+				b_caierqiong = {
+				}
+				b_tiebujia = {
+				}
+			}
+			c_delingha = {
+				color={ 38 109 114 }
+				color2= { 255 255 255 }
+				
+				bodpa = "Dêrlênka"
+				mongol = "Delhi"
+				khitan = "Delhi"
+
+				b_delingha = {
+					bodpa = "Dêrlênka"
+					mongol = "Delhi"
+					khitan = "Delhi"
+				}
+				b_xuji = {
+				}
+				b_haixi = {
+				}
+				b_hedong = {
+				}
+				b_hexi = {
+				}
+				b_keluke = {
+				}
+				b_gahai = {
+				}
+			}
+			c_dulan = {
+				color={ 38 119 104 }
+				color2= { 255 255 255 }
+
+				b_dulan = {
+				}
+				b_reshui = { #temple
+				}
+				b_xiariha = {
+				}
+				b_zongjia = {
+				}
+				b_xiangride = {
+				}
+				b_gouli = {
+				}
+				b_xiangjia = {
+				}
+			}
+		}
+			
+		d_nagormo = {
+			color={ 18 139 134 }
+			color2= { 255 255 255 }
+
+			capital = 1501 # Nagormo
+			
+			mongol = "Golmud"
+			khitan = "Golmud"
+			uyghur = "Golmud"
+			han = "Ge'ermu"
+			
+			c_nagormo = {
+				color={ 28 139 134 }
+				color2= { 255 255 255 }
+				
+				mongol = "Golmud"
+				khitan = "Golmud"
+				uyghur = "Golmud"
+				han = "Ge'ermu"
+
+				b_golmud = {
+					han = "Ge'ermu"
+					bodpa = "Nagormo"
+				}
+				b_qarham = {
+				}
+				b_qingshui = {
+				}
+				b_xinle = {
+				}
+				b_dagele = {
+				}
+				b_baoku = {
+				}
+				b_dabuxun = {
+				}
+			}
+			c_qaidam = {
+				color={ 18 149 134 }
+				color2= { 255 255 255 }
+				
+				han = "Chaidan"
+				bodpa = "Cheba'i"
+				mongol = "Tsaydmyn"
+				
+				b_qaidam = {
+					han = "Chaidan"
+					bodpa = "Cheba'i"
+					mongol = "Tsaydmyn"
+				}
+				b_xitishan = {
+				}
+				b_yinmaxia = {
+				}
+				b_ligouchu = {
+				}
+				b_xiaochaidamu = {
+				}
+				b_daqaidam = {
+					han = "Da Chaidan"
+					bodpa = "'Dam Cheba'i"
+					mongol = "Da Tsaydmyn"
+				}
+				b_aolaohe = {
+				}
+			}
+			c_lenghu = {
+				color={ 18 139 144 }
+				color2= { 255 255 255 }
+				
+				bodpa = "Lenghu'u"
+				mongol = "Lyenkhyn"
+				
+				b_lenghu = {
+					bodpa = "Lenghu'u"
+					mongol = "Lyenkhyn"
+				}
+				b_tuanjie = { # Fictional, for prosperity
+				}
+				b_xinghu = { # Fictional, for prosperity
+				}
+				b_yucai = { # Fictional, for prosperity
+				}
+				b_yanhua = { # Fictional, for prosperity
+				}
+				b_junheju = { # Fictional, for prosperity
+				}
+				b_ledu = { # Fictional, for prosperity
+				}
+			}
+			c_tanggula = {
+				color={ 18 159 154 }
+				color2= { 255 255 255 }
+				
+				bodpa = "Dangla"
+				
+				b_dangla = {
+					han = "Tanggula"
+				}
+				b_tongtian = {
+				}
+				b_yanshiping = {
+				}
+				b_maqu = {
+				}
+				b_marong = {
+				}
+				b_wenquan = {
+				}
+				b_sewu = {
+				}
+			}
+		}
+		d_nangqen = {
+			color={ 44 152 132 }
+			color2= { 255 255 255 }
+
+			capital = 1503 # Nangqen
+			
+			bodpa = "Nangqên"
+			han = "Nangqian"
+			
+			c_nangqen = {
+			
+				color={ 54 152 132 }
+				color2= { 255 255 255 }
+				
+				bodpa = "Nangqên"
+				han = "Nangqian"
+				
+				b_xangda = {
+					han = "Xiangda"
+				}
+				b_tana_b = {
+				}
+				b_niangla = {
+				}
+				b_dongba = {
+				}
+				b_juela = {
+				}
+				b_maozhuang = {
+				}
+				b_gayong = {
+				}
+			}
+			c_zadoi = {
+
+				color={ 44 162 132 }
+				color2= { 255 255 255 }
+				
+				han = "Zaduo"
+				
+				b_zadoi = {
+					han = "Zaduo"
+				}
+				b_qapugtang = {
+					han = "Shahuteng"
+				}
+				b_chadan = {
+				}
+				b_moyun = {
+				}
+				b_angsai = {
+				}
+				b_aduo = {
+				}
+				b_zhaqing = {
+				}
+			}
+			c_lingtsang = {
+				color={ 44 152 142 }
+				color2= { 255 255 255 }
+				
+				han = "Liangsong"
+
+				b_denkok = {
+				}
+				b_serxu = {
+					bodpa = "Sêrxü"
+					han = "Shiqu"
+				}
+				b_gemeng = {
+				}
+				b_derong = {
+				}
+				b_arizha = {
+				}
+				b_maga = {
+				}
+				b_wenbo = {
+				}
+			}
+		}
+	}
+
 	k_yarlung = {
 		color={ 209 52 80 }
 		color2= { 255 255 255 }
@@ -53080,7 +53107,7 @@ e_tibet = {
 		}
 	}
 	k_guge = {
-		color={ 137 168 188 }
+		color={ 201 173 180 }
 		color2= { 255 255 255 }
 
 		capital = 1486 # Tsaparang

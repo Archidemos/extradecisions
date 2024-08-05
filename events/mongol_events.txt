@@ -7687,9 +7687,7 @@ narrative_event = {
 			}
 		}
 		controls_religion = yes # Let it happen for the Pope. He's always around.
-		NOR = {
-			has_global_flag = il_khanate_arrival # Backwards compatibility
-			has_global_flag = golden_horde_arrival # Backwards compatibility
+		NOT = {
 			has_global_flag = mongol_empire_arrival
 		}
 	}
@@ -7895,24 +7893,31 @@ narrative_event = {
 					dynasty=1051210
 					dna="bfimkolbecc"
 					properties="ge0af0000000"
-					age = 43
+					age = 40
 					attributes = {
 						martial=10
 						diplomacy=8
 						intrigue=8
 						stewardship=9
 					}
-					health = 6
+					health = 7
 					fertility = 0.7
 					religion="tengri_pagan"
 					culture="mongol"
+					trait="brilliant_strategist"
+					trait="cavalry_leader"
+					trait="unyielding_leader"
+					trait="sympathy_christendom"
+					trait="sympathy_islam"
+					trait="sympathy_zoroastrianism"
+					trait="sympathy_judaism"
+					trait="sympathy_indian"
+					trait="hunter"
 					trait="brave"
 					trait="ambitious"
 					trait="diligent"
 					trait="cruel"
-					trait="hunter"
-					trait="cavalry_leader"
-					trait="brilliant_strategist"
+					trait="adventurer"
 				}
 				new_character = {
 					set_character_flag = is_temujin
@@ -7946,6 +7951,10 @@ narrative_event = {
 							NOT = { has_dlc = "Horse Lords" }
 						}
 						set_government_type = tribal_government
+					}
+					add_character_modifier = {
+						name = greatest_of_khans
+						duration = -1
 					}
 					wealth = 12000
 					prestige = 20000

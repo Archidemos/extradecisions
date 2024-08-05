@@ -29,14 +29,17 @@ decisions = {
 			NOT = {	trait = incapable }
 			prestige = 1000
 			OR = {
-				OR = {
-					has_landed_title = k_wesphalia
-					has_landed_title = k_thuringian
-					has_landed_title = k_swabia
+				AND = {
+					OR = {
+						has_landed_title = k_wesphalia
+						has_landed_title = k_thuringian
+						has_landed_title = k_swabia
+					}
 					AND = {
 						completely_controls = k_wesphalia
 						completely_controls = k_thuringian
 						completely_controls = k_swabia
+						completely_controls = k_franconia
 					}
 				}
 				has_landed_title = k_germany
@@ -288,15 +291,17 @@ decisions = {
 			war = no
 			NOT = {	trait = incapable }
 			prestige = 1000
-			OR = {
-				has_landed_title = k_wessex
-				has_landed_title = k_northumbria
-				has_landed_title = k_mercia
-			}
 			AND = {
-				completely_controls = k_wessex
-				completely_controls = k_northumbria
-				completely_controls = k_mercia
+				OR = {
+					has_landed_title = k_wessex
+					has_landed_title = k_northumbria
+					has_landed_title = k_mercia
+				}
+				AND = {
+					completely_controls = k_wessex
+					completely_controls = k_northumbria
+					completely_controls = k_mercia
+				}
 			}
 		}
 

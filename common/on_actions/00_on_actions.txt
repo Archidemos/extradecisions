@@ -42,6 +42,7 @@ on_startup = {
 		MP.003
 		MP.004
 		MP.005
+		MP.104
 		MP.007
 		MP.008
 		MP.010
@@ -50,6 +51,7 @@ on_startup = {
 		UMM.1
 		
 		MP.038
+		MP.103
 		
 		MP.011 #For Mughals to spawn instantly
 		MP.013 #For Berbers to spawn instantly
@@ -59,6 +61,9 @@ on_startup = {
 		MP.021 #For Rum to spawn instantly
 		MP.027 #For Golden Horde to spawn instantly
 		MP.032 #For Ilkhanate to spawn instantly
+		MP.101 #For Roman America to spawn instantly
+		
+		MP.105
 	}
 }
 
@@ -129,7 +134,17 @@ on_yearly_pulse = {
 		MP.034 #Special event if Mongols and Ilkhanate spawn at once
 	}
 	
-	random_events = {
+    random_events = {
+        conquerers = {
+            500 = 60500    		#Mongol Horde starts forming.
+            500 = MUG.100   	#Mughals starts the Invasion.
+            500 = TIME.100		#Timurids starts the Invasion.
+            500 = SELJ.100		#Seljuks starts the Invasion.
+            500 = RUME.100		#Rum starts the Invasion.
+            500 = GOL.100		#Golden Horde starts the Invasion.
+            500 = ILKH.100		#Ilkhanate starts the Invasion.
+			500 = ROMA.96		#The Preperation of the Roman Invasion starts.
+        }
 		
 		# Feudal Life Events
 		100 = 4000
@@ -1157,13 +1172,6 @@ on_decade_pulse = {
 	}
 	
 	random_events = {
-		500 = 60500 	#Mongol Horde starts forming.
-		500 = MUG.100 	#Mughals starts the Invasion.
-		500 = TIME.100 	#Timurids starts the Invasion.
-		500 = SELJ.100 	#Seljuks starts the Invasion.
-		500 = RUME.100 	#Rum starts the Invasion.
-		500 = GOL.100 	#Golden Horde starts the Invasion.
-		500 = ILKH.100 	#Ilkhanate starts the Invasion.
 		
 		100 = 63050 	#former MTTH event
 		40 = SoA.4020 	#former MTTH event
@@ -2106,6 +2114,7 @@ on_loot_settlement = {
 		5 = TOG.3302
 		5 = TOG.3303
 		50 = TGF.3320
+		50 = PIR.1
 		20 = HF.23207 #Pirating events: taking thralls.
 		30 = HF.23209 #Pirating events: stealing cattle.
 		60 = HF.23210 #Pirating events: destroying large port city.
@@ -2114,7 +2123,9 @@ on_loot_settlement = {
 	}
 	events = {
 		TGF.3321
+		PIR.2
 		TGF.3322
+		PIR.3
 		TGF.3323
 		RIP.11720
 		MNM.9899 # Chance to steal artifact from capital holdings
@@ -2927,7 +2938,10 @@ on_new_holder = {
 		HREAR.13
 		
 		MP.037
-		
+		ILKH.105
+		TIME.105
+		TIME.108
+		ROMA.1000
 	}
 	random_events = {
 		delayed_hagia_sophia_conversion = {
@@ -2962,9 +2976,11 @@ on_new_holder_inheritance = {
 		HF.23779 #Setting up next god-emperor.
 		HFP.19100 #Make sure the Varangian guard handles its inheritance if not male-lead
 		MP.005
+		MP.104
 		MP.006
 		MP.007
 		MP.009
+		MP.103
 
 		HREAR.5
 		HREAR.6

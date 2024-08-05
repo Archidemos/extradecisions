@@ -6133,6 +6133,7 @@ warrior_lodge_norse = {
 			prisoner = no
 		}
 		OR = {
+			government = pirate_republic_government
 			religion_openly_norse_or_reformed_trigger = yes
 			AND = {
 				custom_tooltip = {
@@ -6147,12 +6148,14 @@ warrior_lodge_norse = {
 				NOT = { trait = zealous }
 			}
 		}
+		
 	}
 
 	show_society = {
 		OR = {
 			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
-			religion_openly_norse_or_reformed_trigger = yes	
+			religion_openly_norse_or_reformed_trigger = yes
+			government = pirate_republic_government
 			AND = {
 				#You are of a religion that doesn't match *any* warrior lodge
 				has_religion_matching_available_warrior_lodge_trigger = no

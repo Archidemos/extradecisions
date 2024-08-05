@@ -33,7 +33,14 @@ narrative_event = {
 					value = delayed_random
 				}
 				year = 1080
-				total_years_played = 50
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = gold_horde_invasion
+					value = historical
+				}
+				year = 1085
 			}
 			AND = {
 				has_game_rule = {
@@ -44,8 +51,7 @@ narrative_event = {
 			}
 		}
 		NOT = { has_global_flag = golden_horde_arrival }
-		NOR = {
-			year = 1074
+		NOT = {
 			has_game_rule = {
 				name = gold_horde_invasion
 				value = off
@@ -93,7 +99,7 @@ narrative_event = {
 							activate_title = { title = THIS status = no }
 							destroy_landed_title = THIS
 						}
-						wealth = 12000
+						wealth = 20000
 						prestige = 10000
 						set_character_flag = is_special_character
 						set_character_flag = golden_horde_invader
@@ -175,7 +181,7 @@ narrative_event = {
 							}
 							set_government_type = tribal_government
 						}
-						wealth = 12000
+						wealth = 20000
 						prestige = 10000
 						set_character_flag = golden_horde_invader
 						character_event = { id = GOL.102 } # Spawn courtiers
@@ -208,10 +214,12 @@ narrative_event = {
 					religion="tengri_pagan"
 					culture=mongol
 					trait = brilliant_strategist
-					trait = diligent
-					trait = humble
-					trait = gregarious
-					trait = just
+					trait = flat_terrain_leader
+					trait = rough_terrain_leader
+					trait = quick
+					trait = ambitious
+					trait = shrewed
+					trait = cruel
 				}
 				new_character = {
 					set_character_flag = golden_horde_himself
@@ -247,7 +255,7 @@ narrative_event = {
 						}
 						set_government_type = tribal_government
 					}
-					wealth = 12000
+					wealth = 20000
 					prestige = 10000
 					piety = 5000
 					population = 50000
@@ -263,7 +271,7 @@ narrative_event = {
 					e_golden_horde = {
 						holder_scope = {
 							unsafe_war = {
-								casus_belli = nomad_invasion
+								casus_belli = golden_horde_special_cb
 								target = PREVPREVPREV
 								thirdparty_title = PREVPREV
 							}
@@ -782,6 +790,106 @@ character_event = {
 			}
 		}
 		spawn_unit = {
+			province = 592 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 592 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 592 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 592 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 592 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 593 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 593 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 593 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 593 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 593 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
 			province = 593 # Khilok
 			attrition = 0
 			troops =
@@ -881,5 +989,19 @@ character_event = {
 			id = 60516
 			days = 365
 		}
+	}
+}
+
+narrative_event = { #Event for everyone about the Ilkhanate turning to Feudalism
+	id = GOL.105
+	title = EVTNAMEGOL105
+	desc = EVTDESCGOL105
+	
+	picture = GFX_evt_mongols
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOLDOPT1
 	}
 }

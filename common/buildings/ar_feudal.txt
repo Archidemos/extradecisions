@@ -1,4 +1,134 @@
 castle = {
+
+	pirate_den_1 = {
+		desc =  pirate_den_1_desc
+
+		potential = { FROM = { government = pirate_republic_government } }
+
+		is_active_trigger = { FROM = { government = pirate_republic_government } }
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 300
+		build_time = 365
+		
+		galleys = 40
+		monthly_character_prestige = 0.5
+		monthly_character_piety = 0.5
+		tax_income = 0.1
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	pirate_den_2 = {
+		desc =  pirate_den_1_desc
+		
+		potential = { FROM = { government = pirate_republic_government } }
+
+		is_active_trigger = { FROM = { government = pirate_republic_government } }
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+		}
+		gold_cost = 600
+		build_time = 547
+		
+		upgrades_from = pirate_den_1
+		
+		galleys = 40
+		monthly_character_prestige = 0.5
+		monthly_character_piety = 0.5
+		tax_income = 0.1
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	pirate_den_3 = {
+		desc =  pirate_den_1_desc
+
+		potential = { FROM = { government = pirate_republic_government } }
+
+		is_active_trigger = { FROM = { government = pirate_republic_government } }
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		gold_cost = 900
+		build_time = 730
+
+		upgrades_from = pirate_den_2
+		
+		galleys = 40
+		monthly_character_prestige = 1
+		monthly_character_piety = 1
+		tax_income = 0.2
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	pirate_den_4 = {
+		desc =  pirate_den_1_desc
+
+		potential = { FROM = { government = pirate_republic_government } }
+
+		is_active_trigger = { FROM = { government = pirate_republic_government } }
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		gold_cost = 1100
+		build_time = 1095
+
+		upgrades_from = pirate_den_3
+		
+		galleys = 40
+		monthly_character_prestige = 1
+		monthly_character_piety = 1
+		tax_income = 0.2
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	pirate_den_5 = {
+		desc =  pirate_den_1_desc
+
+		potential = { FROM = { government = pirate_republic_government } }
+
+		is_active_trigger = { FROM = { government = pirate_republic_government } }
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+
+		gold_cost = 1300
+		build_time = 1460
+
+		upgrades_from = pirate_den_4
+		
+		galleys = 40
+		monthly_character_prestige = 1
+		monthly_character_piety = 1
+		tax_income = 0.3
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
 	medieval_bridge_1 = {
 		desc =  medieval_bridge_1_desc
 		
@@ -2375,12 +2505,14 @@ castle = {
 		gold_cost = 700
 		build_time = 730
 		
-		siege_defence = 0.2
-		fort_level = 1
+		siege_defence = 0.3
+		fort_level = 2
+		garrison_size = 0.2
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
 	}
+
 }
 
 temple = {
