@@ -195,7 +195,12 @@ targetted_decisions = {
 		ai_target_filter = vassals
 
 		potential = {
-			ROOT = { vassal_of = FROM }
+			ROOT = {
+				AND = {
+					vassal_of = FROM
+					is_ruler = yes
+				}
+			}
 		}
 	
 		from_potential = {

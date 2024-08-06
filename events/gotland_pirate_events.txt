@@ -6,6 +6,11 @@ narrative_event = {
 	desc =  GOTLDESC1
 	
 	is_triggered_only = yes	
+	is_save_game = no
+	
+	trigger = {
+		is_save_game = no
+	}
 	
 	picture = GFX_evt_busy_trading_dock_republic
 
@@ -20,7 +25,7 @@ narrative_event = {
 
 		set_defacto_liege = ROOT
 		
-		any_independent_ruler = { limit = { has_landed_title = k_sweden } add_claim = c_gotland }
+		k_sweden = { holder_scope = { add_claim = c_gotland } }
 
 		hidden_tooltip = {
 			ROOT = {
