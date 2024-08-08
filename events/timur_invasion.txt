@@ -32,8 +32,7 @@ narrative_event = {
 					name = timur_invasion
 					value = delayed_random
 				}
-				year = 1170
-				total_years_played < 50
+				year >= 1175
 			}
 			AND = {
 				has_game_rule = {
@@ -1004,7 +1003,7 @@ narrative_event = { #Event for the Timurids when they conquer Esfahan to either 
 	
 	option = { #Timurids turns to Feudalism
 		name = TIMEOPT1
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 90 }
 		set_global_flag = timurid_turn_feudal
 		
 		set_government_type = muslim_government
@@ -1044,7 +1043,7 @@ narrative_event = { #Event for the Timurids when they conquer Esfahan to either 
 	
 	option = { #Timurids stay a horde and get reinforcements
 		name = TIMEOPT2
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 		spawn_unit = {
 			province = 636 # Khilok
 			attrition = 0
