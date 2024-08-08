@@ -297,4 +297,28 @@ decisions = {
 			}
 		}
 	}
+	fix_open_elective = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			OR = {
+				government = ar_theocracy_government
+				government = ar_republic_government
+			}
+			NOT = { has_law = succ_open_elective }
+		}
+		
+		allow = {
+			NOT = { has_law = succ_open_elective }
+		}
+		
+		effect = {
+			primary_title = { add_law = succ_open_elective }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

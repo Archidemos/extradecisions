@@ -32,8 +32,7 @@ narrative_event = {
 					name = ilkhanate_invasion
 					value = delayed_random
 				}
-				year = 1080
-				total_years_played < 5
+				year >= 1085
 			}
 			AND = {
 				has_game_rule = {
@@ -1169,7 +1168,7 @@ narrative_event = { #Event for the Ilkhanate when they conquer Baghdad to either
 	
 	option = { #Ilkhanate turns to Feudalism
 		name = ILKHOPT1
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 90 }
 		set_global_flag = ilkhanate_turn_feudal
 		
 		set_government_type = feudal_government
@@ -1202,7 +1201,7 @@ narrative_event = { #Event for the Ilkhanate when they conquer Baghdad to either
 	
 	option = { #They stay a horde and get reinforcements
 		name = ILKHOPT2
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 		spawn_unit = {
 			province = 636 # Khilok
 			attrition = 0

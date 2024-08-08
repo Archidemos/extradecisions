@@ -29,6 +29,7 @@ character_event = {
 	trigger = {
 		start_date <= 936.8.7
 		is_save_game = no
+		dynasty = 597
 		OR = {
 			has_landed_title = k_andalusia
 			has_landed_title = e_cordoba
@@ -54,15 +55,14 @@ character_event = {
     is_triggered_only = yes
 
     trigger = {
-		AND = {
-			OR = {
-				has_landed_title = k_andalusia
-				has_landed_title = e_cordoba
-			}
-			religion_group = muslim
-			has_global_flag = umayyad_crisis_1
-			independent = yes
+		dynasty = 597
+		OR = {
+			has_landed_title = k_andalusia
+			has_landed_title = e_cordoba
 		}
+		religion_group = muslim
+		has_global_flag = umayyad_crisis_1
+		independent = yes
     }
 
     immediate = {
@@ -85,15 +85,14 @@ character_event = {
     is_triggered_only = yes
 
     trigger = {
-		AND = {
-			OR = {
-				has_landed_title = k_andalusia
-				has_landed_title = e_cordoba
-			}
-			religion_group = muslim
-			has_global_flag = umayyad_crisis_2
-			independent = yes
+		dynasty = 597
+		OR = {
+			has_landed_title = k_andalusia
+			has_landed_title = e_cordoba
 		}
+		religion_group = muslim
+		has_global_flag = umayyad_crisis_2
+		independent = yes
     }
 
     immediate = {
@@ -116,15 +115,14 @@ character_event = {
     is_triggered_only = yes
 
     trigger = {
-		AND = {
-			OR = {
-				has_landed_title = k_andalusia
-				has_landed_title = e_cordoba
-			}
-			religion_group = muslim
-			has_global_flag = umayyad_crisis_3
-			independent = yes
+		dynasty = 597
+		OR = {
+			has_landed_title = k_andalusia
+			has_landed_title = e_cordoba
 		}
+		religion_group = muslim
+		has_global_flag = umayyad_crisis_3
+		independent = yes
     }
 
     immediate = {
@@ -272,4 +270,41 @@ narrative_event = {
 			}
 		}
 	}
+}
+
+character_event = {
+    id = UMM.20
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		NOT = { dynasty = 597 }
+		OR = {
+			has_landed_title = e_cordoba
+			has_landed_title = k_andalusia
+		}
+    }
+
+    immediate = {
+		remove_character_modifier = umayyad_curse_1
+		remove_character_modifier = umayyad_curse_2
+		remove_character_modifier = umayyad_curse_3
+    }
+}
+character_event = {
+    id = UMM.21
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		dynasty = 597
+		independent = no
+		NOT = { has_landed_title = k_andalusia }
+    }
+
+    immediate = {
+		remove_character_modifier = umayyad_curse_1
+		remove_character_modifier = umayyad_curse_2
+		remove_character_modifier = umayyad_curse_3
+    }
 }
