@@ -4,10 +4,12 @@
 title = c_buhairya
 
 # Settlements
-max_settlements = 2
+max_settlements = 3
 b_buhairya = castle
-b_budhkula = city
+b_qasrfarfra = city
 
+#b_mut = temple
+#b_budhkula = castle
 #b_abuminqar = castle
 
 # Misc
@@ -15,6 +17,11 @@ culture = coptic
 religion = miaphysite
 
 # History
-996.1.1 = { religion = shiite }
-996.1.1 = { culture = egyptian_arabic }
+633.1.1 = {
+	culture = maghreb_latin
+	remove_settlement = b_qasrfarfra
+	b_buhairya = tribal
+}
+909.1.1 = { religion = shiite }
+909.1.1 = { culture = egyptian_arabic }
 1171.1.1 = { religion = sunni }
