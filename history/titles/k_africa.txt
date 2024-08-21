@@ -23,7 +23,6 @@
 }
 534.6.1={
 	holder=0
-	de_jure_liege=e_byzantium
 	liege=e_byzantium
 	vice_royalty=yes
 }
@@ -39,10 +38,11 @@
 #Muhallabids
 768.1.1={
 	holder = 210014
+	vice_royalty=no
 }
-#768.1.1={
-#	liege = "e_arabia"
-#}
+768.1.1={
+	liege = "e_arabia"
+}
 771.1.1={
 	holder = 210015
 }
@@ -88,9 +88,15 @@
 }
 863.1.1={
 	holder = 163146
+	
 }
 864.1.1={
 	holder = 163096
+	set_tribute_suzerain = { who = e_arabia type = permanent }
+}
+934.1.1 = {
+	holder = 32901
+	clear_tribute_suzerain = e_arabia
 }
 #Zirids
 1045.1.1=

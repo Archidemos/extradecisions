@@ -1,0 +1,1755 @@
+namespace = RASHD
+
+###Islamic Conquest Events for the Caliphate
+
+narrative_event = { #The Conquest of Iraq complete
+	id = RASHD.1
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_iraq }
+		completely_controls = c_baghdad
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.100 days = 1 } } }
+		set_global_flag = rashudin_conquered_iraq
+		prestige = 100
+		ROOT = {
+			c_kuwait = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+		}
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 719 # Mecca
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		783 = { #Maan
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of the Ghassanids complete
+	id = RASHD.2
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_ghassanid }
+		completely_controls = c_maan
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.101 days = 1 } } }
+		set_global_flag = rashudin_conquered_ghassanid
+		prestige = 100
+		ROOT = {
+			c_amman = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_az_zarqa = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_al_mafraq = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_syria = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+		}
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 719 # Mecca
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		774 = { #Jerusalem
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Jerusalem complete
+	id = RASHD.3
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_jerusalem }
+		completely_controls = c_jerusalem
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.102 days = 1 } } }
+		set_global_flag = rashudin_conquered_jerusalem
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 719 # Mecca
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		c_163029 = {
+			wealth = 2000
+			k_jerusalem = {
+				grant_title = c_163029
+			}
+			c_madaba = {
+				grant_title = c_163029
+			}
+			c_safed = {
+				grant_title = c_163029
+			}
+			c_beirut = {
+				grant_title = c_163029
+			}
+			c_tyrus = {
+				grant_title = c_163029
+			}
+			c_acre = {
+				grant_title = c_163029
+			}
+			c_tiberias = {
+				grant_title = c_163029
+			}
+			c_jerusalem = {
+				grant_title = c_163029
+			}
+			c_jaffa = {
+				grant_title = c_163029
+			}
+			c_hebron = {
+				grant_title = c_163029
+			}
+			c_kerak = {
+				grant_title = c_163029
+			}
+			c_monreal = {
+				grant_title = c_163029
+			}
+			c_beersheb = {
+				grant_title = c_163029
+			}
+			c_ascalon = {
+				grant_title = c_163029
+			}
+			c_darum = {
+				grant_title = c_163029
+			}
+			c_negev = {
+				grant_title = c_163029
+			}
+			set_defacto_liege = e_arabia
+		}
+		728 = { #Damascus
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Syria complete
+	id = RASHD.4
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_syria }
+		completely_controls = c_damascus
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.103 days = 1 } } }
+		set_global_flag = rashudin_conquered_syria
+		prestige = 100
+		ROOT = {
+			c_al_jazira = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_al_bichri = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_tadmor = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+			c_druz = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = sunni
+			}
+		}
+		c_163029 = {
+			wealth = 2000
+			while = {
+				count = 5
+				spawn_unit = {
+					province = 840 # Fes
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						camel_cavalry = { 1000 1000 }
+					}
+				}
+			}
+			k_syria = {
+				grant_title = c_163029
+			}
+			c_asas = {
+				grant_title = c_163029
+			}
+			c_druz = {
+				grant_title = c_163029
+			}
+			c_az_zarqa = {
+				grant_title = c_163029
+			}
+			c_amman = {
+				grant_title = c_163029
+			}
+			c_irbid = {
+				grant_title = c_163029
+			}
+			c_al_mafraq = {
+				grant_title = c_163029
+			}
+			c_syria = {
+				grant_title = c_163029
+			}
+			c_damascus = {
+				grant_title = c_163029
+			}
+			c_tadmor = {
+				grant_title = c_163029
+			}
+			c_palmyra = {
+				grant_title = c_163029
+			}
+			c_homs = {
+				grant_title = c_163029
+			}
+			c_hama = {
+				grant_title = c_163029
+			}
+			c_aleppo = {
+				grant_title = c_163029
+			}
+			c_alexandretta = {
+				grant_title = c_163029
+			}
+			c_antiocheia = {
+				grant_title = c_163029
+			}
+			c_archa = {
+				grant_title = c_163029
+			}
+			c_tortosa = {
+				grant_title = c_163029
+			}
+			c_tripoli = {
+				grant_title = c_163029
+			}
+			c_baalbek = {
+				grant_title = c_163029
+			}
+			c_limisol = {
+				grant_title = c_163029
+			}
+			c_agrosi = {
+				grant_title = c_163029
+			}
+			c_famagusta = {
+				grant_title = c_163029
+			}
+			c_lefekara = {
+				grant_title = c_163029
+			}
+			c_cakopetie = {
+				grant_title = c_163029
+			}
+
+			set_defacto_liege = e_arabia
+		}
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 719 # Mecca
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		697 = { #Mosul
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Mesopotamia complete
+	id = RASHD.5
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_mesopotamia }
+		completely_controls = c_mosul
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.104 days = 1 } } }
+		set_global_flag = rashudin_conquered_mesopotamia
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 774 # Jerusalem
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		796 = { #Cairo
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Egypt complete
+	id = RASHD.6
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_egypt }
+		completely_controls = c_cairo
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.105 days = 1 } } }
+		set_global_flag = rashudin_conquered_egypt
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 693 # Baghdad
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		c_163029 = {
+			wealth = 2000
+			while = {
+				count = 5
+				spawn_unit = {
+					province = 840 # Fes
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						camel_cavalry = { 1000 1000 }
+					}
+				}
+			}
+			k_egypt = {
+				grant_title = c_163029
+			}
+			c_sinai = {
+				grant_title = PREV
+			}
+			c_eilat = {
+				grant_title = PREV
+			}
+			c_el-arish = {
+				grant_title = PREV
+			}
+			c_farama = {
+				grant_title = PREV
+			}
+			c_pelusia = {
+				grant_title = PREV
+			}
+			c_sarqihya = {
+				grant_title = PREV
+			}
+			c_quena = {
+				grant_title = PREV
+			}
+			c_aswan = {
+				grant_title = PREV
+			}
+			c_asyut = {
+				grant_title = PREV
+			}
+			c_cairo = {
+				grant_title = PREV
+			}
+			c_manupura = {
+				grant_title = PREV
+			}
+			c_delta = {
+				grant_title = PREV
+			}
+			c_gabiyaha = {
+				grant_title = PREV
+			}
+			c_gizeh = {
+				grant_title = PREV
+			}
+			c_buhairya = {
+				grant_title = PREV
+			}
+			c_alexandria = {
+				grant_title = PREV
+			}
+			c_quattara = {
+				grant_title = PREV
+			}
+			c_al_alamayn = {
+				grant_title = PREV
+			}
+			c_alqusair = {
+				grant_title = PREV
+			}
+			c_kharga = {
+				grant_title = PREV
+			}
+			c_faiyum = {
+				grant_title = PREV
+			}
+			c_akhmim = {
+				grant_title = PREV
+			}
+			c_esna = {
+				grant_title = PREV
+			}
+			c_kharibta = {
+				grant_title = PREV
+			}
+			c_paraetonium = {
+				grant_title = PREV
+			}
+			c_kolzum = {
+				grant_title = PREV
+			}
+			c_farafra = {
+				grant_title = PREV
+			}
+			c_senoussi = {
+				grant_title = PREV
+			}
+			c_benghazi = {
+				grant_title = PREV
+			}
+			c_cyrenaica = {
+				grant_title = PREV
+			}
+			c_tobruk = {
+				grant_title = PREV
+			}
+			c_cyrenaica = {
+				grant_title = PREV
+			}
+			set_defacto_liege = e_arabia
+		}
+		c_1000782 = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		646 = { #Esfahan
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Persia complete
+	id = RASHD.7
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_persia }
+		completely_controls = c_esfahan
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.106 days = 1 } } }
+		set_global_flag = rashudin_conquered_persia
+		prestige = 100
+		create_character = {
+			name="Abu Muslim"
+			dynasty=101727
+			dna="bfimkolbecc"
+			properties="ge0af0000000"
+			age = 43
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+			health = 6
+			fertility = 0.7
+			religion="sunni"
+			culture="bedouin_arabic"
+			trait="brave"
+			trait="ambitious"
+			trait="diligent"
+			trait="cavalry_leader"
+			trait="brilliant_strategist"
+			trait="sayyid"
+			trait=sahaba
+		}
+		new_character = {
+			k_persia = {
+				grant_title = PREV
+			}
+			c_lut = {
+				grant_title = PREV
+			}
+			c_sistan = {
+				grant_title = PREV
+			}
+			c_yazd = {
+				grant_title = PREV
+			}
+			c_kerman = {
+				grant_title = PREV
+			}
+			c_sirjan = {
+				grant_title = PREV
+			}
+			c_hormuz = {
+				grant_title = PREV
+			}
+			c_ladistan = {
+				grant_title = PREV
+			}
+			c_fars = {
+				grant_title = PREV
+			}
+			c_shiraz = {
+				grant_title = PREV
+			}
+			c_hendjan = {
+				grant_title = PREV
+			}
+			c_esfahan = {
+				grant_title = PREV
+			}
+			c_avhaz = {
+				grant_title = PREV
+			}
+			c_khozistan = {
+				grant_title = PREV
+			}
+			c_tigris = {
+				grant_title = PREV
+			}
+			c_luristan = {
+				grant_title = PREV
+			}
+			c_hamadan = {
+				grant_title = PREV
+			}
+			c_qom = {
+				grant_title = PREV
+			}
+			c_rayy = {
+				grant_title = PREV
+			}
+			c_kurdistan = {
+				grant_title = PREV
+			}
+			c_istakhr = {
+				grant_title = PREV
+			}
+			c_zanjan_abhar = {
+				grant_title = PREV
+			}
+			c_shahrazur = {
+				grant_title = PREV
+			}
+			c_bam = {
+				grant_title = PREV
+			}
+			c_kujawy = {
+				grant_title = PREV
+			}
+			set_defacto_liege = e_arabia
+			set_government_type = muslim_government
+			wealth = 12000
+			prestige = 10000
+			piety = 5000
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 840 # Fes
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						camel_cavalry = { 1000 1000 }
+					}
+				}
+			}
+		}
+		1183 = { #Bost
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Sistan complete
+	id = RASHD.8
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_khorasan }
+		completely_controls = c_bost
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.107 days = 1 } } }
+		set_global_flag = rashudin_conquered_khorasan
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 693 # Baghdad
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		k_persia = {
+			holder_scope = {
+				c_farrah = {
+					grant_title = PREV
+				}
+				c_zahedan = {
+					grant_title = PREV
+				}
+				c_saravan = {
+					grant_title = PREV
+				}
+				c_tis = {
+					grant_title = PREV
+				}
+				c_chagai = {
+					grant_title = PREV
+				}
+				c_makran = {
+					grant_title = PREV
+				}
+				c_bost = {
+					grant_title = PREV
+				}
+				c_zaranj = {
+					grant_title = PREV
+				}
+				c_armail = {
+					grant_title = PREV
+				}
+				while = {
+					count = 3
+					spawn_unit = {
+						province = 840 # Fes
+						attrition = 0
+						troops = {
+							light_infantry = { 2000 2000 }
+							heavy_infantry = { 500 500 }
+							archers = { 1000 1000 }
+							light_cavalry = { 500 500 }
+							camel_cavalry = { 1000 1000 }
+						}
+					}
+				}
+			}
+		}
+		634 = { #Nishapur
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Khorasan complete
+	id = RASHD.9
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_sistan }
+		completely_controls = c_nishapur
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.111 days = 1 } } }
+		set_global_flag = rashudin_conquered_sistan
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 693 # Baghdad
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		e_persia = {
+			holder_scope = {
+				any_demesne_title = {
+					limit = { 
+						title = e_persia
+					}
+					unsafe_destroy_landed_title = e_persia
+				}
+			}
+		}
+		k_persia = {
+			holder_scope = {
+				c_konjikala = {
+					grant_title = PREV
+				}
+				c_merv = {
+					grant_title = PREV
+				}
+				c_tus = {
+					grant_title = PREV
+				}
+				c_nishapur = {
+					grant_title = PREV
+				}
+				c_qohistan = {
+					grant_title = PREV
+				}
+				c_balkh = {
+					grant_title = PREV
+				}
+				c_herat = {
+					grant_title = PREV
+				}
+				c_birjand = {
+					grant_title = PREV
+				}
+				c_mandesh = {
+					grant_title = PREV
+				}
+				c_maymana = {
+					grant_title = PREV
+				}
+				c_badghis = {
+					grant_title = PREV
+				}
+				c_kanj_rustaq = {
+					grant_title = PREV
+				}
+				c_guzgan = {
+					grant_title = PREV
+				}
+				c_amol = {
+					grant_title = PREV
+				}
+				c_sarakhs = {
+					grant_title = PREV
+				}
+				c_yarkand = {
+					grant_title = PREV
+				}
+				c_kashgar = {
+					grant_title = PREV
+				}
+				c_khotan = {
+					grant_title = PREV
+				}
+			}
+		}
+		681 = { #Ani
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Armenia complete
+	id = RASHD.10
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_armenia }
+		completely_controls = c_ani
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.108 days = 1 } } }
+		ROOT = { narrative_event = { id = RASHD.112 } }
+		set_global_flag = rashudin_conquered_armenia
+		prestige = 100
+		c_1000637 = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		ROOT = {
+			c_klarjeti = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_kartli = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_kakheti = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_mtskheta = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_guria = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_imeretia = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_egrisi = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_abkhazia = {
+				grant_title = PREV
+				usurp_title = PREV
+			}
+			c_vaspurakan = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = ROOT
+			}
+			c_masis = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = ROOT
+			}
+			c_dwin = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = ROOT
+			}
+			c_tao = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = ROOT
+			}
+			c_lori = {
+				grant_title = PREV
+				usurp_title = PREV
+				religion = ROOT
+			}
+		}
+	}
+}
+narrative_event = { #The Conquest of Africa complete
+	id = RASHD.11
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_africa }
+		completely_controls = c_tunis
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.109 days = 1 } } }
+		set_global_flag = rashudin_conquered_africa
+		prestige = 100
+		c_1000636 = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}
+		ROOT = {
+			c_biskra = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_ouled_nail = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_mzab = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_lemdiyya = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_al_djazair = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_orania = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_atlas_mnt = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tlemcen = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_beni_yanni = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_hanyan = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_snassen = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_figuig = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_el_rif = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_cebta = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_fes = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tangiers = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_infa = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_marrakech = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_massat = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_anti-atlas = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_ifni = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tharasset = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_canarias = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_sijilmasa = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_muluja = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_ashir = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_taza = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_meknes = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tudgha = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_warzazat = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tadla = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_tinmallal = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_draa = {
+				grant_title = PREV
+				religion = sunni
+			}
+			c_ziz = {
+				grant_title = PREV
+				religion = sunni
+			}
+			k_mauretania = {
+				random_realm_province = {
+					limit = {
+						de_jure_liege_or_above = PREVPREV
+						OR = {
+							NOT = { culture = ROOT }
+							NOT = { religion = ROOT }
+						}
+					}
+					culture = ROOT
+					religion = ROOT
+				}
+			}
+		}
+		while = {
+			count = 5
+			spawn_unit = {
+				province = 840 # Fes
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		181 = { #Cordoba
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+narrative_event = { #The Conquest of Spain complete
+	id = RASHD.12
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_spain }
+		completely_controls = c_cordoba
+	}
+	
+	option = {
+		name = "Onwards!"
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.110 days = 1 } } }
+		set_global_flag = rashudin_conquered_spain
+		
+		prestige = 100
+		
+		add_character_modifier = {
+			name = rashudin_overextention
+			years = 10
+		}
+		ROOT = { narrative_event = { id = RASHD.114 } }
+	}
+}
+
+###Islamic Conquest Complete Events for Players
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Iraq
+	id = RASHD.100
+	title = ANNORASHD.100
+	desc = ANNORASHDDESC.100
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of The Ghassanids
+	id = RASHD.101
+	title = ANNORASHD.101
+	desc = ANNORASHDDESC.101
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Jerusalem
+	id = RASHD.102
+	title = ANNORASHD.102
+	desc = ANNORASHDDESC.102
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Syria
+	id = RASHD.103
+	title = ANNORASHD.103
+	desc = ANNORASHDDESC.103
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Mesopotamia
+	id = RASHD.104
+	title = ANNORASHD.104
+	desc = ANNORASHDDESC.104
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Egypt
+	id = RASHD.105
+	title = ANNORASHD.105
+	desc = ANNORASHDDESC.105
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Persia
+	id = RASHD.106
+	title = ANNORASHD.106
+	desc = ANNORASHDDESC.106
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Sistan
+	id = RASHD.107
+	title = ANNORASHD.107
+	desc = ANNORASHDDESC.107
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Armenia
+	id = RASHD.108
+	title = ANNORASHD.108
+	desc = ANNORASHDDESC.108
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Africa
+	id = RASHD.109
+	title = ANNORASHD.109
+	desc = ANNORASHDDESC.109
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Spain
+	id = RASHD.110
+	title = ANNORASHD.110
+	desc = ANNORASHDDESC.110
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #Announcement about the finished Islamic Conquest of Khorasan
+	id = RASHD.111
+	title = ANNORASHD.111
+	desc = ANNORASHDDESC.111
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "This is bad.."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "In the name of Allah!"
+	}
+}
+
+narrative_event = { #The Umayyads declare war on the Rashudins
+	id = RASHD.112
+	title = EVTNAMERASHD112
+	desc = EVTDESCRASHD112
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Onwards!"
+		set_global_flag = rashudin_replaced_umayyad
+		
+		prestige = 100
+		k_syria = {
+			holder_scope = {
+				set_defacto_liege = THIS
+				while = {
+					count = 5
+					spawn_unit = {
+						province = 840 # Fes
+						attrition = 0
+						troops = {
+							light_infantry = { 2000 2000 }
+							heavy_infantry = { 500 500 }
+							archers = { 1000 1000 }
+							light_cavalry = { 500 500 }
+							camel_cavalry = { 1000 1000 }
+						}
+					}
+				}
+				unsafe_war = {
+					casus_belli = umayyad_rashudin_war
+					target = e_arabia
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Islamic Conquests continue
+	id = RASHD.113
+	title = EVTNAMERASHD113
+	desc = EVTDESCRASHD113
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Onwards!"
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 808 # Benghazi
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		817 = { #Tunis
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Abbasids declare war on the Umayyads
+	id = RASHD.114
+	title = EVTNAMERASHD114
+	desc = EVTDESCRASHD114
+	sound = ar_army_marching
+	
+	picture = GFX_evt_victory_arch_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Onwards!"
+		set_global_flag = rashudin_replaced_umayyad
+		
+		prestige = 100
+		k_persia = {
+			holder_scope = {
+				set_defacto_liege = THIS
+				while = {
+					count = 5
+					spawn_unit = {
+						province = 840 # Fes
+						attrition = 0
+						troops = {
+							light_infantry = { 2000 2000 }
+							heavy_infantry = { 500 500 }
+							archers = { 1000 1000 }
+							light_cavalry = { 500 500 }
+							camel_cavalry = { 1000 1000 }
+						}
+					}
+				}
+				unsafe_war = {
+					casus_belli = abbasid_umayyad_war
+					target = e_arabia
+				}
+			}
+		}
+	}
+}

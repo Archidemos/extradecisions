@@ -4,24 +4,30 @@
 }
 
 830.1.1={
-	liege=0
+	liege=e_arabia
 	holder = 33932
 }
 936.1.1 = {
+	liege= 0
 	holder = 34042
 	set_tribute_suzerain = {
-		who = k_egypt
+		who = e_arabia
 		type = permanent
 	}
 }
 1061.1.1=
 {
-	clear_tribute_suzerain = k_egypt
+	clear_tribute_suzerain = e_arabia
+	set_tribute_suzerain = {
+		who = k_egypt
+		type = permanent
+	}
 	holder=34046 # Hussayn - not actually the Emir of Mecca (it was Abul-Hashim ibn Muhammed )
 }
 1076.1.1=
 {
 	liege="k_persia"
+	clear_tribute_suzerain = k_egypt
 }
 1094.1.1=
 {

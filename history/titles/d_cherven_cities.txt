@@ -1,6 +1,6 @@
 633.1.1={
 	holder = 1000535
-	de_jure_liege = k_dummy
+
 }
 
 
@@ -28,9 +28,15 @@
 }
 927.1.1={
 	holder = 82268
+	liege= d_cherven_cities
+	set_tribute_suzerain = {
+		who = d_bohemia
+		type = permanent
+	}
 }
 977.1.2={
 	liege="d_volhynia"
+	clear_tribute_suzerain = d_bohemia
 }
 977.1.2={
 	holder=608

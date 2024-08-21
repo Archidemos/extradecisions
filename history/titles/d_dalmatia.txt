@@ -7,10 +7,13 @@
 	holder=1000652
 }
 750.1.1={
+	liege = "e_byzantium"
 	holder=145849
 }
 856.1.1={
 	holder=145120
+	vice_royalty = yes
+	liege = "e_byzantium"
 }
 923.1.1={
 	holder=8604
@@ -21,8 +24,17 @@
 935.1.1={
 	holder=8606
 }
+936.1.1={
+	holder= 262700
+	liege= 0
+	set_tribute_suzerain = {
+		who = e_byzantium
+		type = permanent
+	}
+}
 945.1.1={
 	holder=8607
+	clear_tribute_suzerain = e_byzantium
 }
 949.1.1={
 	holder=8634

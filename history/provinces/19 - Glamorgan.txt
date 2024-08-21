@@ -5,12 +5,12 @@ title = c_glamorgan
 
 # Settlements
 max_settlements = 6
-b_cardiff = castle
-b_llandaff = temple
+b_cardiff = tribal
+#b_llandaff = temple
 
-b_neath = castle
-b_caerphilly = castle
-b_margam = castle
+#b_neath = castle
+#b_caerphilly = castle
+#b_margam = castle
 #b_ogmore = castle
 #b_st_donats = castle
 
@@ -20,6 +20,15 @@ religion = catholic
 terrain = hills
 
 # History
+633.1.1={ religion = celtic_christian }
+760.1.1 = {
+	b_cardiff = castle
+	b_llandaff = temple
+
+	b_neath = castle
+	b_caerphilly = castle
+	b_margam = castle
+}
 769.1.1 = {
 	culture = welsh
 	religion = celtic_christian

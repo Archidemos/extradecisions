@@ -1,14 +1,16 @@
 633.1.1 = {
 	liege=k_slavs
-	de_jure_liege = k_dummy
+
 	holder=1000502 # Cech
 }
 
 720.1.1={
-	holder = 168345
+	holder = 0
+	liege= 0
 }
 745.1.1={
 	holder = 168346
+	liege= 0
 }
 783.1.1={
 	holder = 168347
@@ -28,12 +30,18 @@
 
 851.1.1={
 	holder = 168351
+	liege=0
+	set_tribute_suzerain = {
+		who = k_moravia
+		type = permanent
+	}
 }
 867.1.1={
 	law = agnatic_succession
 
 }
 873.1.1={
+	clear_tribute_suzerain = k_moravia
 	holder = 500
 }
 894.1.1={

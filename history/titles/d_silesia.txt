@@ -1,5 +1,5 @@
 633.1.1 = {
-	de_jure_liege = k_dummy
+
 	holder = 1000522
 }
 
@@ -17,18 +17,26 @@
 }
 864.1.1={
 	holder = 82293
+	liege=0
+	set_tribute_suzerain = {
+		who = k_moravia
+		type = permanent
+	}
 }
 907.7.4={
 	liege = 0
-}
-912.1.1={
-	holder = 82294
+	clear_tribute_suzerain = k_moravia
 }
 912.1.1={
 	holder = 82297
+	set_tribute_suzerain = {
+		who = d_bohemia
+		type = permanent
+	}
 }
 942.1.1={
 	holder = 82300
+	clear_tribute_suzerain = d_bohemia
 }
 965.1.1={
 	holder = 82301

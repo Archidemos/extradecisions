@@ -5,8 +5,8 @@ title = c_lindisfarne
 
 # Settlements
 max_settlements = 3
-b_lindisfarne = temple
-b_yeavering = castle
+b_lindisfarne = tribal
+#b_yeavering = castle
 
 #b_norham = castle
 #b_tweedmouth = city
@@ -19,6 +19,11 @@ culture = saxon
 religion = catholic
 
 # History
+633.1.1={ religion = celtic_christian }
+760.1.1 = { 
+	b_lindisfarne = temple
+	b_yeavering = castle
+}
 875.1.1 = { capital = b_yeavering }#Bishop of Lindisfarne flees from Viking invasions and settles in Durham
 1093.1.1 = { capital = b_lindisfarne }#Came back under the domain of the Bishops of Durham
 1100.11.11 = { culture = english }

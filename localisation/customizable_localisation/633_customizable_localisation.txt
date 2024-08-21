@@ -1,0 +1,1723 @@
+defined_text = {
+	name = GetTruncatedTitle
+	text = {
+		localisation_key = String_trunc_emperor
+		trigger = {
+			is_feudal = yes
+			is_female = no
+			tier = emperor
+			NOT = {
+				culture = greek
+				culture = russian
+				culture = german
+				culture_group = iranian
+				culture_group = arabic
+				culture_group = altaic
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+				controls_religion = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = String_trunc_empress
+		trigger = {
+			is_feudal = yes
+			is_female = yes
+			tier = emperor
+			NOT = {
+				culture = greek
+				culture = russian
+				culture = german
+				culture_group = iranian
+				culture_group = arabic
+				culture_group = altaic
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+				controls_religion = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = String_trunc_king
+		trigger = {
+			is_feudal = yes
+			tier = king
+			is_female = no
+			NOT = {
+				culture = greek
+				culture = nepali
+				culture = bodpa
+				culture = tangut
+				culture = nahuatl
+				culture_group = iranian
+				culture_group = arabic
+				culture_group = altaic
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+				culture_group = west_african
+				controls_religion = yes
+				NOT = {
+					primary_title = {
+						is_vice_royalty = yes
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = String_trunc_queen
+		trigger = {
+			is_feudal = yes
+			tier = king
+			is_female = yes
+			NOT = {
+				culture = nepali
+				culture = bodpa
+				culture = tangut
+				culture = nahuatl
+				culture_group = iranian
+				culture_group = arabic
+				culture_group = altaic
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+				culture_group = west_african
+				controls_religion = yes
+				NOT = {
+					primary_title = {
+						is_vice_royalty = yes
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = String_trunc_caliph
+		trigger = {
+			controls_religion = yes
+			OR = {
+				religion = shiite
+				religion = sunni
+				is_heresy_of = shiite
+				is_heresy_of = sunni
+			}
+		}
+	}
+	fallback_text = {
+		localisation_key = String_trunc_duke
+	}
+}
+
+defined_text = {
+	name = GetDeadRulerAdjective
+	text = {
+		localisation_key = String_great
+		trigger = {
+			OR = {
+				has_nickname = nick_the_great
+				has_nickname = nick_the_victorious
+			}
+		}
+	}
+	text = {
+		localisation_key = String_violent
+		trigger = {
+			OR = {
+				has_nickname = nick_the_conqueror
+				has_nickname = nick_the_avenger
+				has_nickname = nick_the_ill_tempered
+				has_nickname = nick_the_jackal
+				has_nickname = nick_the_impaler
+				has_nickname = nick_the_beheader
+				has_nickname = nick_the_ruthless
+				has_nickname = nick_the_flail_of
+				has_nickname = nick_the_scourge_of
+				has_nickname = nick_the_scourge_of_god
+				has_nickname = nick_the_slayer_of_culture
+				has_nickname = nick_the_terror_of_provincename
+				has_nickname = nick_the_butcher
+				has_nickname = nick_the_vengeful
+				has_nickname = nick_the_tormentor
+				has_nickname = nick_the_mutilator
+				has_nickname = nick_the_bane_of_realmname
+				has_nickname = nick_the_flayer
+				has_nickname = nick_the_kingslayer
+				has_nickname = nick_the_world_burner
+				trait = wroth
+			}
+		}
+	}
+	text = {
+		localisation_key = String_wicked
+		trigger = {
+			OR = {
+				has_nickname = nick_the_wicked
+				has_nickname = nick_the_unfaithful
+				has_nickname = nick_the_beguiling
+				has_nickname = nick_the_temptress
+				has_nickname = nick_the_seducer
+				has_nickname = nick_the_lewd
+				has_nickname = nick_the_lecher
+				has_nickname = nick_the_unchaste
+				has_nickname = nick_the_decadent
+				has_nickname = nick_son_of_evilgod
+				has_nickname = nick_the_despoiler
+				has_nickname = nick_the_depraved
+				has_nickname = nick_the_monster
+				has_nickname = nick_the_black
+				trait = lustful
+			}
+		}
+	}
+	text = {
+		localisation_key = String_warlike
+		trigger = {
+			OR = {
+				has_nickname = nick_the_ironside
+				has_nickname = nick_the_lion
+				has_nickname = nick_the_lionheart
+				has_nickname = nick_the_bold
+				has_nickname = nick_the_dragon
+				has_nickname = nick_the_wolf
+				has_nickname = nick_the_shieldmaiden
+				has_nickname = nick_the_viking
+				has_nickname = nick_the_strong
+				has_nickname = nick_the_liberator
+				has_nickname = nick_the_fearless
+				has_nickname = nick_the_brave
+				has_nickname = nick_the_crusader
+				trait = brilliant_strategist
+				martial = 18
+			}
+		}
+	}
+	text = {
+		localisation_key = String_shrewd
+		trigger = {
+			OR = {
+				has_nickname = nick_snake_in_the_eye
+				has_nickname = nick_the_shadow
+				has_nickname = nick_the_spider
+				has_nickname = nick_the_strange
+				has_nickname = nick_of_a_thousand_faces
+				has_nickname = nick_the_whisperer
+				has_nickname = nick_the_wily
+				has_nickname = nick_the_shrewd
+				intrigue = 15
+			}
+		}
+	}
+	text = {
+		localisation_key = String_blessed
+		trigger = {
+			has_nickname = nick_the_blesseed
+			has_nickname = nick_the_saint
+		}
+	}
+	text = {
+		localisation_key = String_pious
+		trigger = {
+			OR = {
+				has_nickname = nick_the_pious
+				has_nickname = nick_the_apostle
+				has_nickname = nick_the_confessor
+				AND = {
+					learning = 9
+					trait = mastermind_theologian
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = String_inept
+		trigger = {
+			OR = {
+				has_nickname = nick_the_careless
+				has_nickname = nick_the_ill_ruler
+				has_nickname = nick_the_unready
+				has_nickname = nick_the_mule
+				has_nickname = nick_the_drunkard
+				has_nickname = nick_the_gouty
+				has_nickname = nick_the_simple
+				has_nickname = nick_the_survivor
+				has_nickname = nick_the_rash
+				has_nickname = nick_the_effeminate
+				trait = indulgent_wastrel
+				trait = naive_appeaser
+			}
+		}
+	}
+	text = {
+		localisation_key = String_repugnant
+		trigger = {
+			OR = {
+				has_nickname = nick_peg_leg
+				has_nickname = nick_iron_hand
+				has_nickname = nick_the_lisp_and_lame
+				has_nickname = nick_the_blind
+				has_nickname = nick_the_leper
+				has_nickname = nick_half_hand
+				has_nickname = nick_the_lame
+				has_nickname = nick_the_hideous
+				has_nickname = nick_the_frog
+				has_nickname = nick_the_repulsive
+				has_nickname = nick_the_fat
+				has_nickname = nick_the_cannibal
+				has_nickname = nick_the_plaguebearer
+			}
+		}
+	}
+	text = {
+		localisation_key = String_illustrious
+		trigger = {
+			OR = {
+				learning = 12
+				diplomacy = 14
+			}
+		}
+	}
+	text = {
+		localisation_key = String_magnificent
+		trigger = {
+			stewardship = 16
+		}
+	}
+	fallback_text = {
+		localisation_key = String_unremarkable
+	}
+}
+
+defined_text = {
+	name = GetDeathPhrase
+
+	# Christian deaths
+	text = {
+		localisation_key = christian_succ_desc_1
+		trigger = {
+			religion_group = christian
+			random = 88
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_2
+		trigger = {
+			religion_group = christian
+			random = 86
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_3
+		trigger = {
+			religion_group = christian
+			random = 83
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_4
+		trigger = {
+			religion_group = christian
+			random = 80
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_5
+		trigger = {
+			religion_group = christian
+			random = 75
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_6
+		trigger = {
+			religion_group = christian
+			random = 67
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_7
+		trigger = {
+			religion_group = christian
+			random = 50
+		}
+	}
+	text = {
+		localisation_key = christian_succ_desc_8
+		trigger = {
+			religion_group = christian
+		}
+	}
+
+	# Muslim death
+	text = {
+		localisation_key = muslim_succ_desc_1
+		trigger = {
+			religion_group = muslim
+			random = 88
+		}
+	}
+	text = {
+		localisation_key = muslim_succ_desc_2
+		trigger = {
+			religion_group = muslim
+			random = 86
+		}
+	}
+	text = {
+		localisation_key = muslim_succ_desc_3
+		trigger = {
+			religion_group = muslim
+			random = 83
+		}
+	}
+	text = {
+		localisation_key = muslim_succ_desc_4
+		trigger = {
+			religion_group = muslim
+			random = 80
+		}
+	}
+	text = {
+		localisation_key = succ_desc_5
+		trigger = {
+			religion_group = muslim
+			random = 75
+		}
+	}
+	text = {
+		localisation_key = succ_desc_6
+		trigger = {
+			religion_group = muslim
+			random = 67
+		}
+	}
+	text = {
+		localisation_key = succ_desc_7
+		trigger = {
+			religion_group = muslim
+			random = 50
+		}
+	}
+	text = {
+		localisation_key = muslim_succ_desc_8
+		trigger = {
+			religion_group = muslim
+		}
+	}
+
+	# Norse pagan death
+	text = {
+		localisation_key = pagan_group_succ_desc_1
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 88
+		}
+	}
+	text = {
+		localisation_key = succ_desc_2
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 86
+		}
+	}
+	text = {
+		localisation_key = norse_pagan_succ_desc_3
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 83
+		}
+	}
+	text = {
+		localisation_key = norse_pagan_succ_desc_4
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 80
+		}
+	}
+	text = {
+		localisation_key = succ_desc_5
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 75
+		}
+	}
+	text = {
+		localisation_key = succ_desc_6
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 67
+		}
+	}
+	text = {
+		localisation_key = succ_desc_7
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+			random = 50
+		}
+	}
+	text = {
+		localisation_key = norse_pagan_succ_desc_8
+		trigger = {
+			OR = {
+				religion = norse_pagan_reformed
+				religion = norse_pagan
+			}
+		}
+	}
+
+	# Pagan death
+	text = {
+		localisation_key = pagan_group_succ_desc_1
+		trigger = {
+			religion_group = pagan_group
+			random = 88
+		}
+	}
+	text = {
+		localisation_key = succ_desc_2
+		trigger = {
+			religion_group = pagan_group
+			random = 86
+		}
+	}
+	text = {
+		localisation_key = pagan_group_succ_desc_3
+		trigger = {
+			religion_group = pagan_group
+			random = 83
+		}
+	}
+	text = {
+		localisation_key = pagan_group_succ_desc_4
+		trigger = {
+			religion_group = pagan_group
+			random = 80
+		}
+	}
+	text = {
+		localisation_key = succ_desc_5
+		trigger = {
+			religion_group = pagan_group
+			random = 75
+		}
+	}
+	text = {
+		localisation_key = succ_desc_6
+		trigger = {
+			religion_group = pagan_group
+			random = 67
+		}
+	}
+	text = {
+		localisation_key = succ_desc_7
+		trigger = {
+			religion_group = pagan_group
+			random = 50
+		}
+	}
+	text = {
+		localisation_key = pagan_group_succ_desc_8
+		trigger = {
+			religion_group = pagan_group
+		}
+	}
+
+	# Everybody else's death
+	text = {
+		localisation_key = succ_desc_1
+		trigger = {
+			random = 88
+		}
+	}
+	text = {
+		localisation_key = succ_desc_2
+		trigger = {
+			random = 86
+		}
+	}
+	text = {
+		localisation_key = succ_desc_3
+		trigger = {
+			random = 83
+		}
+	}
+	text = {
+		localisation_key = succ_desc_4
+		trigger = {
+			random = 80
+		}
+	}
+	text = {
+		localisation_key = succ_desc_5
+		trigger = {
+			random = 75
+		}
+	}
+	text = {
+		localisation_key = succ_desc_6
+		trigger = {
+			random = 67
+		}
+	}
+	text = {
+		localisation_key = succ_desc_7
+		trigger = {
+			random = 50
+		}
+	}
+	fallback_text = {
+		localisation_key = succ_desc_8
+	}
+}
+
+defined_text = {
+	name = GetDeathText
+
+	# Virtues
+	text = {
+		localisation_key = death_text_2_chaste
+		trigger = {
+			is_wicked = no
+			trait = chaste
+		}
+	}
+	text = {
+		localisation_key = death_text_2_temperate
+		trigger = {
+			is_wicked = no
+			trait = temperate
+		}
+	}
+	text = {
+		localisation_key = death_text_2_charitable
+		trigger = {
+			is_wicked = no
+			trait = charitable
+		}
+	}
+	text = {
+		localisation_key = death_text_2_diligent
+		trigger = {
+			is_wicked = no
+			trait = diligent
+		}
+	}
+	text = {
+		localisation_key = death_text_2_patient
+		trigger = {
+			is_wicked = no
+			trait = patient
+		}
+	}
+	text = {
+		localisation_key = death_text_2_kind
+		trigger = {
+			is_wicked = no
+			trait = kind
+		}
+	}
+	text = {
+		localisation_key = death_text_2_humble
+		trigger = {
+			is_wicked = no
+			trait = humble
+		}
+	}
+
+	# Vices
+	text = {
+		localisation_key = death_text_2_lustful
+		trigger = {
+			trait = lustful
+		}
+	}
+	text = {
+		localisation_key = death_text_2_gluttonous
+		trigger = {
+			trait = gluttonous
+		}
+	}
+	text = {
+		localisation_key = death_text_2_greedy
+		trigger = {
+			trait = greedy
+		}
+	}
+	text = {
+		localisation_key = death_text_2_slothful
+		trigger = {
+			trait = slothful
+		}
+	}
+	text = {
+		localisation_key = death_text_2_envious
+		trigger = {
+			trait = wroth
+		}
+	}
+	text = {
+		localisation_key = death_text_2_proud
+		trigger = {
+			trait = proud
+		}
+	}
+
+	fallback_text = {
+		localisation_key = death_text_2_neutral
+	}
+}
+
+defined_text = {
+	name = GetHeirText
+
+	text = {
+		localisation_key = heir_text_1_underage
+		trigger = {
+			is_adult = no
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_five_skills
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				diplomacy = 10
+				stewardship = 10
+				intrigue = 10
+				learning = 10
+				martial = 10
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_useless
+		trigger = {
+			NOT = {
+				diplomacy = 5
+				stewardship = 5
+				intrigue = 5
+				learning = 5
+				martial = 5
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_military
+		trigger = {
+			martial = 12
+			OR = {
+				trait = misguided_warrior  
+				trait = tough_soldier  
+				trait = skilled_tactician 
+				trait = brilliant_strategist 
+			}
+			NOT = {
+				trait = craven
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_learning
+		trigger = {
+			learning = 12
+			OR = {
+				trait = detached_priest   
+				trait = martial_cleric   
+				trait = scholarly_theologian  
+				trait = mastermind_theologian
+			}
+			NOT = {
+				trait = slothful
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_stewardship
+		trigger = {
+			stewardship = 12
+			OR = {
+				trait = indulgent_wastrel    
+				trait = thrifty_clerk    
+				trait = fortune_builder   
+				trait = midas_touched   
+			}
+			NOT = {
+				trait = gluttonous
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_intrigue
+		trigger = {
+			intrigue = 12
+			OR = {
+				trait = amateurish_plotter    
+				trait = flamboyant_schemer    
+				trait = intricate_webweaver   
+				trait = elusive_shadow   
+			}
+			NOT = {
+				trait = honest
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_diplomacy
+		trigger = {
+			diplomacy = 12
+			OR = {
+				trait = naive_appeaser     
+				trait = underhanded_rogue     
+				trait = charismatic_negotiator    
+				trait = grey_eminence    
+			}
+			NOT = {
+				trait = deceitful
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_strong_and_smart
+		trigger = {
+			is_strong_trigger = yes
+			is_smart_trigger = yes
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_weak_and_dumb
+		trigger = {
+			is_weak_trigger = yes
+			is_dumb_trigger = yes
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_poet
+		trigger = {
+			trait = poet
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_falconer
+		trigger = {
+			trait = falconer
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_varangian
+		trigger = {
+			trait = varangian
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_decadent
+		trigger = {
+			trait = decadent
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_lunatic
+		trigger = {
+			trait = lunatic
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_possessed
+		trigger = {
+			trait = possessed
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_fair
+		trigger = {
+			trait = fair
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_tolerant
+		trigger = {
+			OR = {
+				trait = sympathy_christendom
+				trait = sympathy_islam
+				trait = sympathy_pagans
+				trait = sympathy_zoroastrianism
+				trait = sympathy_judaism
+				trait = sympathy_indian
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_adventurer
+		trigger = {
+			trait = adventurer
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_ugly_deceitful
+		trigger = {
+			trait = ugly
+			trait = deceitful
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_glutton_greedy
+		trigger = {
+			trait = gluttonous
+			trait = greedy
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_cynical_just
+		trigger = {
+			trait = cynical
+			trait = just
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_content_arbitrary
+		trigger = {
+			trait = content
+			trait = arbitrary
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_craven_military_ed
+		trigger = {
+			trait = craven
+			OR = {
+				trait = misguided_warrior  
+				trait = tough_soldier  
+				trait = skilled_tactician 
+				trait = brilliant_strategist 
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_shy_content
+		trigger = {
+			trait = content
+			trait = shy
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_zealous_paranoid
+		trigger = {
+			trait = zealous
+			trait = paranoid
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_zealous_charitable
+		trigger = {
+			trait = zealous
+			trait = charitable
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_proud_brave
+		trigger = {
+			trait = proud
+			trait = brave
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_cynical_cruel
+		trigger = {
+			trait = cynical
+			trait = cruel
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_humble_stubborn
+		trigger = {
+			trait = humble
+			trait = stubborn
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_deceitful_envious
+		trigger = {
+			trait = deceitful
+			trait = envious
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_patient_trusting
+		trigger = {
+			trait = patient
+			trait = trusting
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_paranoid_stressed
+		trigger = {
+			trait = paranoid
+			OR = {
+				trait = stressed
+				trait = depressed
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_stubborn_kind
+		trigger = {
+			trait = stubborn
+			trait = kind
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_strong_brave
+		trigger = {
+			is_strong_trigger = yes
+			trait = brave
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_temperate_lustful
+		trigger = {
+			trait = temperate
+			trait = lustful
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_charitable_just
+		trigger = {
+			trait = charitable
+			trait = just
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_diligent_greedy
+		trigger = {
+			trait = diligent
+			trait = greedy
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_craven_honest
+		trigger = {
+			trait = craven
+			trait = honest
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_shy_trusting
+		trigger = {
+			trait = shy
+			trait = trusting
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_gregarious_honest
+		trigger = {
+			trait = gregarious
+			trait = honest
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_cynical_arbitrary
+		trigger = {
+			trait = cynical
+			trait = arbitrary
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_cruel_wroth
+		trigger = {
+			trait = cruel
+			trait = wroth
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_wroth_zealous
+		trigger = {
+			trait = wroth
+			trait = zealous
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_traits_paranoid_deceitful
+		trigger = {
+			trait = paranoid
+			trait = deceitful
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_piety
+		trigger = {
+			piety = 500
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_prestige
+		trigger = {
+			prestige = 1000
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_friends
+		trigger = {
+			num_of_friends = 2
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_tyrant
+		trigger = {
+			any_vassal = {
+				has_opinion_modifier = { who = ROOT modifier = opinion_tyrant }
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_rich
+		trigger = {
+			wealth = 5000
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_children
+		trigger = {
+			num_of_children = 6
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_rivals
+		trigger = {
+			num_of_rivals = 2
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_combat_skill
+		trigger = {
+			combat_rating = 3
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_poor_health
+		trigger = {
+			NOT = {
+				health = 3
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_bastard
+		trigger = {
+			trait = legit_bastard
+			trait = bastard
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_viking
+		trigger = {
+			OR = {
+				trait = viking
+				trait = ravager
+				trait = seaking
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_crusader
+		trigger = {
+			OR = {
+				trait = crusader
+				trait = mujahid
+				trait = valhalla_bound
+			}
+		}
+	}
+
+	text = {
+		localisation_key = heir_text_1_three_skills
+		trigger = {
+			calc_true_if = {
+				amount = 3
+				diplomacy = 10
+				stewardship = 10
+				intrigue = 10
+				learning = 10
+				martial = 10
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = heir_text_1_default
+	}
+}
+
+defined_text = {
+	name = GetSuccessionName
+
+	text = {
+		localisation_key = 633_succ_caliphate_elective
+		trigger = {
+			holder_scope = {
+				religion_group = muslim
+				controls_religion = yes
+			}
+		}
+	}
+
+	fallback_text = {
+		localisation_key = 633_succ_offmap_succession
+	}
+}
+
+defined_text = {
+	name = GetSuccessionDesc
+
+	text = {
+		localisation_key = 633_succ_caliphate_elective_desc
+		trigger = {
+			holder_scope = {
+				religion_group = muslim
+				controls_religion = yes
+			}
+		}
+	}
+
+	fallback_text = {
+		localisation_key = 633_succ_offmap_succession_desc
+	}
+}
+
+defined_text = {
+	name = GetNoHeirAlertName
+
+	text = {
+		localisation_key = alert_noheir_name_caliphate
+		trigger = {
+			holder_scope = {
+				religion_group = muslim
+				controls_religion = yes
+				has_law = succ_offmap_succession
+			}
+		}
+	}
+
+	fallback_text = {
+		localisation_key = alert_noheir_name_vanilla
+	}
+}
+
+defined_text = {
+	name = GetNoHeirAlertInstant
+
+	text = {
+		localisation_key = alert_noheir_instant_caliphate
+		trigger = {
+			holder_scope = {
+				religion_group = muslim
+				controls_religion = yes
+				has_law = succ_offmap_succession
+			}
+		}
+	}
+
+	fallback_text = {
+		localisation_key = alert_noheir_instant_vanilla
+	}
+}
+
+defined_text = {
+	name = GetNoHeirAlertDelayed
+
+	text = {
+		localisation_key = alert_noheir_delayed_caliphate
+		trigger = {
+			holder_scope = {
+				religion_group = muslim
+				controls_religion = yes
+				has_law = succ_offmap_succession
+			}
+		}
+	}
+
+	fallback_text = {
+		localisation_key = alert_noheir_delayed_vanilla
+	}
+}
+
+defined_text = {
+	name = GetMinervaName
+	text = {
+		localisation_key = String_minerva
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_athena
+	}
+}
+
+defined_text = {
+	name = GetVestaName
+	text = {
+		localisation_key = String_vesta
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_hestia
+	}
+}
+
+defined_text = {
+	name = GetJupiterName
+	text = {
+		localisation_key = String_jupiter
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_zeus
+	}
+}
+
+defined_text = {
+	name = GetSaturnName
+	text = {
+		localisation_key = String_saturn
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_dionysus
+	}
+}
+
+defined_text = {
+	name = GetPlutoName
+	text = {
+		localisation_key = String_pluto
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_pluto
+	}
+}
+
+defined_text = {
+	name = GetMarsName
+	text = {
+		localisation_key = String_mars
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_ares
+	}
+}
+
+defined_text = {
+	name = GetVenusName
+	text = {
+		localisation_key = String_venus
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_aphrodite
+	}
+}
+
+defined_text = {
+	name = GetMercuryName
+	text = {
+		localisation_key = String_mercury
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_hermes
+	}
+}
+
+defined_text = {
+	name = GetDianaName
+	text = {
+		localisation_key = String_diana
+		trigger = {
+			OR = {
+				culture_group = latin
+				culture = amazigh
+				culture_group = iberian
+				culture_group = central_germanic
+				culture_group = west_germanic
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_artemis
+	}
+}
+
+# Sunni called "Muslim" before appearance of Shiites
+defined_text = {
+	name = GetSunniMuslimString
+	text = {
+		#localisation_key = muslim
+		localisation_key = String_Sunni
+		trigger = {
+			NOT = { has_global_flag = shiite_appeared }
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = String_Sunni
+	}
+}
+
+defined_text = {
+	name = GetSunniMuslimCaliphate
+	text = {
+		#localisation_key = string_muslim_caliphate
+		localisation_key = string_sunni_caliphate
+		trigger = {
+			NOT = { has_global_flag = shiite_appeared }
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = string_sunni_caliphate
+	}
+}
+
+defined_text = {
+	name = GetSunniMuslimDesc
+	text = {
+		#localisation_key = muslim_DESC_string
+		localisation_key = sunni_DESC_string
+		trigger = {
+			NOT = { has_global_flag = shiite_appeared }
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = sunni_DESC_string
+	}
+}
+
+defined_text = {
+	name = GetZikriName
+	text = {
+		localisation_key = String_hanifi
+		trigger = {
+			zikri = {
+				has_flag = hanifi
+			}
+		}
+	}
+	text = {
+		localisation_key = String_rahmanist
+		trigger = {
+			zikri = {
+				has_flag = rahmanist
+			}
+		}
+	}
+	fallback_text = {
+		localisation_key = String_zikri_zikri
+	}
+}
+
+defined_text = {
+	name = GetZikriProphetName
+	text = {
+		localisation_key = zikri_prophet_dynamic
+		trigger = {
+			event_target:zikri_prophet = {
+				NOT = { character = none }
+			}
+		}
+	}
+	fallback_text = {
+		localisation_key = zikri_prophet_static
+	}
+}
+
+defined_text = {
+	name = GetGrandpaAyanaDesc
+	text = {
+		localisation_key = String_grandpa_ayana
+		trigger = {
+			father_even_if_dead = {
+				father_even_if_dead = {
+					is_alive = no
+				}
+			}		
+		}
+	}
+	fallback_text = {
+		localisation_key = String_ayana_none
+	}
+}
+
+defined_text = {
+	name = GetGrandpaAyanaTypeDesc
+	text = {
+		localisation_key = String_ayana_martial
+		trigger = {
+			has_character_flag = grandpa_ayana_martial
+		}
+	}
+	text = {
+		localisation_key = String_ayana_diplomacy
+		trigger = {
+			has_character_flag = grandpa_ayana_diplomacy
+		}
+	}
+	text = {
+		localisation_key = String_ayana_stewardship
+		trigger = {
+			has_character_flag = grandpa_ayana_stewardship
+		}
+	}
+	text = {
+		localisation_key = String_ayana_intrigue
+		trigger = {
+			has_character_flag = grandpa_ayana_intrigue
+		}
+	}
+	text = {
+		localisation_key = String_ayana_learning
+		trigger = {
+			has_character_flag = grandpa_ayana_learning
+		}
+	}
+	fallback_text = {
+		localisation_key = String_ayana_none
+	}
+}
+
+defined_text = {
+	name = GetFatherAyanaDesc
+	text = {
+		localisation_key = String_father_ayana
+		trigger = {
+			father_even_if_dead = {
+				is_alive = no
+			}		
+		}
+	}
+	fallback_text = {
+		localisation_key = String_ayana_none
+	}
+}
+
+defined_text = {
+	name = GetFatherAyanaTypeDesc
+	text = {
+		localisation_key = String_ayana_martial
+		trigger = {
+			has_character_flag = father_ayana_martial
+		}
+	}
+	text = {
+		localisation_key = String_ayana_diplomacy
+		trigger = {
+			has_character_flag = father_ayana_diplomacy
+		}
+	}
+	text = {
+		localisation_key = String_ayana_stewardship
+		trigger = {
+			has_character_flag = father_ayana_stewardship
+		}
+	}
+	text = {
+		localisation_key = String_ayana_intrigue
+		trigger = {
+			has_character_flag = father_ayana_intrigue
+		}
+	}
+	text = {
+		localisation_key = String_ayana_learning
+		trigger = {
+			has_character_flag = father_ayana_learning
+		}
+	}
+	fallback_text = {
+		localisation_key = String_ayana_none
+	}
+}
+
+defined_text = {
+	name = GetClanAyanaDesc
+	text = {
+		localisation_key = String_ayana_martial
+		trigger = {
+			has_dynasty_flag = martial_clan_ayana
+		}
+	}
+	text = {
+		localisation_key = String_ayana_diplomacy
+		trigger = {
+			has_dynasty_flag = diplomacy_clan_ayana
+		}
+	}
+	text = {
+		localisation_key = String_ayana_stewardship
+		trigger = {
+			has_dynasty_flag = stewardship_clan_ayana
+		}
+	}
+	text = {
+		localisation_key = String_ayana_intrigue
+		trigger = {
+			has_dynasty_flag = intrigue_clan_ayana
+		}
+	}
+	text = {
+		localisation_key = String_ayana_learning
+		trigger = {
+			has_dynasty_flag = learning_clan_ayana
+		}
+	}
+	fallback_text = {
+		localisation_key = String_ayana_none
+	}
+}

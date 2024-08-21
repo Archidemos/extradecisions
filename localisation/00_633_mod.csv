@@ -1,0 +1,940 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+# Mayor of the Palace
+title_mayor_of_the_palace;Mayor Palatine;;;;;;;;;;;;;x
+title_mayor_of_the_palace_desc;The Mayor Palatine, or Mayor of the Palace, is a high office in old Frankish royal realms. The Mayor Palatine can join factions freely, even if on the council. He will gain an uninheritable weak claim on the primary title upon succession.;;;;;;;;;;;;;x
+mayor_of_the_palace;Mayors of the Palace;;;;;;;;;;;;;x
+mayor_of_the_palace_0;Mayoralty Abolished;;;;;;;;;;;;;x
+mayor_of_the_palace_0_option;Abolish;;;;;;;;;;;;;x
+mayor_of_the_palace_0_desc;The Palace Mayoralty is abolished.\n;;;;;;;;;;;;;x
+mayor_of_the_palace_1_option;Advisory;;;;;;;;;;;;;x
+mayor_of_the_palace_1;Advisory Mayoralty;;;;;;;;;;;;;x
+mayor_of_the_palace_1_desc;The Mayor Palatine is a member of the council and designated regent, capable of increased factionalism. He will get a weak claim to your primary title on succession.\n;;;;;;;;;;;;;x
+mayor_of_the_palace_2;Mayoral Regency;;;;;;;;;;;;;x
+mayor_of_the_palace_2_option;Regency;;;;;;;;;;;;;x
+mayor_of_the_palace_2_desc;The Mayor Palatine acts as regent to a figurehead monarch.\n;;;;;;;;;;;;;x
+plot_reclaim_mayor_authority;Reclaim Royal Authority;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_title;Reclaim Royal Authority;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_desc;[From.GetTitledFirstName] has decided it is time to reclaim true power to rule in [From.PrimaryTitle.GetBaseName]. Once [From.GetSheHe] has enough backing, [From.GetSheHe] can present an ultimatum to [Root.GetTitledName].;;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_decision;Assert Royal Authority;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_decision_tooltip;Move against the Mayor Palatine in order to regain control of the throne...;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_tooltip;Denounce the Mayoral Regency and claim the right to rule as solely a Royal prerogative, supported by a large portion of your court.;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_decision_desc;Denounce the Mayoral Regency and claim the right to rule as solely a Royal prerogative, supported by a large portion of your court.;;;;;;;;;;;;x
+plot_reclaim_mayor_authority_short;Reclaim Royal Authority;;;;;;;;;;;;x
+bloodline_effect_mayor_of_the_palace;Unlocks §GMayor of the Palace§! laws for all cultures;;;;;;;;;;;;;x
+culture_effect_mayor_of_the_palace;Enables §GMayor of the Palace§! laws;;;;;;;;;;;;;x
+Mod.DESC810;For years [Root.Liege.Regent.GetTitledFirstName] has unlawfully ruled. Perhaps [Root.Liege.Regent.GetHerHis] presence in [Root.Location.GetName] will present us an opportunity to change that...;;;;;;;;;;;;;x
+Mod.810EVTOPTA;I need to come up with a plan;;;;;;;;;;;;x
+Mod.DESC811;For years [Root.Liege.Regent.GetTitledName] has held [Root.Liege.GetTitledFirstName]'s power and ruled in [Root.Liege.GetHerHis] stead. But I have an ingenious plan to rectify the situation...;;;;;;;;;;;;;x
+Mod.811EVTOPTA;...Or perhaps not.;;;;;;;;;;;;;x
+Mod.811EVTOPTB;Persuade [Root.Liege.Regent.GetHerHim] to step aside;;;;;;;;;;;;;x
+Mod.811EVTOPTC;Challenge [Root.Liege.Regent.GetHerHim] to duel for the throne!;;;;;;;;;;;;;x
+Mod.811EVTOPTD;Let's kill [Root.Liege.Regent.GetHerHim] in [Root.Liege.Regent.GetHerHis] sleep!;;;;;;;;;;;;;x
+Mod.811EVTOPTE;It is [Root.Liege.GetTitledFirstName]'s Divine Right!;;;;;;;;;;;;;x
+Mod.DESC812;"For years, you have wisely ruled the realm for [Root.Liege.GetTitledFirstName] while [Root.Liege.GetSheHe] was unable. But now it is time the [Root.Liege.GetOnlyDynastyName]s wore the crown both in word and and in deed once again, for the good of all.";;;;;;;;;;;;;x
+Mod.812EVTOPTA;Very well;;;;;;;;;;;;;x
+Mod.812EVTOPTA_TT;The Regency of the Mayoralty Palatine will be ended.;;;;;;;;;;;;;x
+Mod.812EVTOPTB;You are not yet ready;;;;;;;;;;;;;x
+Mod.812EVTOPTB_TT;You convince [Root.Liege.GetTitledFirstName] to back down, for now.;;;;;;;;;;;;;x
+Mod.812EVTOPTC;A gradual return to power would be prudent;;;;;;;;;;;;;x
+Mod.812EVTOPTC_TT;The Mayoral Regency is ended, but the council is fully empowered.;;;;;;;;;;;;;x
+Mod.DESC816;After an amicable and productive discussion, [From.GetTitledFirstName] has agreed that [GetFullBaseName] should once again be [From.Liege.GetTitledFirstName]'s to rule in truth.;;;;;;;;;;;;;x
+Mod.816EVTOPTA;Long live [From.Liege.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.816EVTOPTA_TT;[Root.Liege.GetTitledFirstName] will owe you a favor;;;;;;;;;;;;;x
+Mod.DESC817;"[Root.GetFOA], I know you long to do good for the realm, so would it not be better that a wise and experienced leader rule, for the good of all?";;;;;;;;;;;;;x
+Mod.DESC818;In order to effect a less disruptive transition, [From.GetTitledName] has suggested that the Council be given a large degree of authority until [From.GetLiege.GetTitledFirstName] can learn the ropes.;;;;;;;;;;;;;x
+Mod.818EVTOPTA;An acceptable solution;;;;;;;;;;;;;x
+Mod.DESC813;"You power-grabbing Mayors have ruled long enough! I challenge you to a duel for [GetLiege.GetTitledFirstName]'s right to the realm, if you dare fight me!;;;;;;;;;;;;;x
+Mod.813EVTOPTA;A duel it is then!;;;;;;;;;;;;;x
+Mod.813EVTOPTA_TT;You accept the challenge.;;;;;;;;;;;;;x
+Mod.813EVTOPTB;Eek! No need for that...;;;;;;;;;;;;;x
+Mod.813EVTOPTB_TT;You forfeit the kingdom to [GetLiege.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.813EVTOPTC;How about a challenge of true skill?;;;;;;;;;;;;;x
+Mod.813EVTOPTC_TT;You suggest a board game.;;;;;;;;;;;;;x
+Mod.DESC819;After a hard-fought contest, the duel has resulted in...;;;;;;;;;;;;;x
+Mod.819EVTOPTA;Victory for me and for [From.GetLiege.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.819EVTOPTB;Utter defeat.;;;;;;;;;;;;;x
+Mod.DESC820;After a hard-fought game, the contest of minds has resulted in...;;;;;;;;;;;;;x
+Mod.820EVTOPTA;Victory for me and for [From.GetLiege.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.820EVTOPTB;Naught but ignominy.;;;;;;;;;;;;;x
+Mod.DESC814;A creeping shadow, a muffled footfall, a trick of the light... Is that [From.GetTitledFirstName]?! What is it that glints in his hand?!;;;;;;;;;;;;;x
+Mod.814EVTOPTA;Too late...;;;;;;;;;;;;;x
+Mod.814EVTOPTB;I keep a knife under my pillow for a reason!;;;;;;;;;;;;;x
+Mod.814EVTOPTC;I knew I heard something earlier...;;;;;;;;;;;;;x
+Mod.814EVTOPTC_TT;From a safe perch in the rafters, you observe [From.GetTitledFirstName] killing a pillow.;;;;;;;;;;;;;x
+Mod.DESC821;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. A swift stroke of my blade and the faint gurgle of spilt blood is all it takes to free [From.GetLiege.GetBaseName] from his iron grip.;;;;;;;;;;;;;x
+Mod.821EVTOPTA;Long live [From.GetLiege.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.821EVTOPTA_TT;[From.GetTitledName] dies!;;;;;;;;;;;;;x
+Mod.DESC822;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. My blade finds...steel?! We struggle in the eerie gloom... But [From.GetSheHe]'s too good with a blade. I have to escape before my life is ended instead of [From.GetHersHis]!;;;;;;;;;;;;;x
+Mod.822EVTOPTA;Aargh!;;;;;;;;;;;;;x
+Mod.DESC823;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. My blade finds...steel?! We struggle in the eerie gloom. Our blades slice through each other's soft flesh at the same moment.;;;;;;;;;;;;;x
+Mod.823EVTOPTA;At least [From.GetLiege.GetBaseName] is free of [From.GetHerHim]!;;;;;;;;;;;;;x
+Mod.DESC824;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. Sharp steel slices swift and sure through bedding and...more bedding. Where is [From.GetTitledFirstName]? Does [From.GetSheHe] know? Or was [From.GetSheHe] just lucky this night?;;;;;;;;;;;;;x
+Mod.824EVTOPTA;Either way, I must leave before I'm discovered;;;;;;;;;;;;;x
+Mod.DESC815;A supporter of your nominal liege, [GetLiege.GetTitledFirstName], demands that [GetLiege.GetHerHis] throne be returned to [GetLiege.GetHerHim] with all its trappings and responsibilities, as a divine right.;;;;;;;;;;;;;x
+Mod.815EVTOPTA;It is the will of [From.GetHighGodName];;;;;;;;;;;;;x
+Mod.815EVTOPTB;Religion does not rule in this realm!;;;;;;;;;;;;;x
+Mod.815EVTOPTC;According to [Root.Religion.GetScriptureName], that is debatable...;;;;;;;;;;;;;x
+Mod.815EVTOPTC_TT;You refuse, with good theological backing.;;;;;;;;;;;;;x
+Mod.DESC825;"Your sad devotion to that ancient religion has not helped you conjure up a whit of justification for your claims. No religious nut is going to rule [From.GetBaseName]!";;;;;;;;;;;;;x
+Mod.825EVTOPTA;May [Root.GetHighGodName] rebuke you for your blasphemy!;;;;;;;;;;;;;x
+Mod.DESC826;After a deep theological discussion of the principles of [Root.Religion.GetScriptureName], [From.GetTitledFirstName] has convinced you that the current partition of power is truly the best form of government in the eyes of [Root.GetHighGodName].;;;;;;;;;;;;;x
+Mod.826EVTOPTA;[From.GetSheHe] has shown me the light;;;;;;;;;;;;;x
+Mod.DESC830;Due to the efforts of one of our loyal vassals, [From.GetTitledName], our royal authority and regency has been restored!;;;;;;;;;;;;;x
+Mod.830EVTOPTA;Excellent;;;;;;;;;;;;;x
+Mod.DESC831;Due to the efforts of one of our loyal vassals, [From.GetTitledName], our royal authority and regency has been restored, at least in part.;;;;;;;;;;;;;x
+Mod.831EVTOPTA;Very good;;;;;;;;;;;;;x
+Mod.DESC629;For years [Root.Regent.GetTitledName] has held our power and ruled in our stead. But now, perhaps it is time for the true ruler to take back control...;;;;;;;;;;;;;x
+Mod.DESC631;For years [Root.Regent.GetTitledName] has ruled in our stead. But now that We have reached adulthood, perhaps it is time for the true ruler to take back control...;;;;;;;;;;;;;x
+Mod.631EVTOPTA;...Or perhaps not.;;;;;;;;;;;;;x
+Mod.631EVTOPTB;Persuade [Root.Regent.GetHerHim] to step aside;;;;;;;;;;;;;x
+Mod.631EVTOPTC;Challenge [Root.Regent.GetHerHim] to duel for the throne!;;;;;;;;;;;;;x
+Mod.631EVTOPTD;Let's kill [Root.Regent.GetHerHim] in [Root.Regent.GetHerHis] sleep!;;;;;;;;;;;;;x
+Mod.631EVTOPTE;It is Our Divine Right!;;;;;;;;;;;;;x
+Mod.631EVTOPTF;I'd be a much better ruler;;;;;;;;;;;;;x
+Mod.DESC632;"For years, you have wisely ruled Our realm for Us while We were unable. But now it is time the [From.GetOnlyDynastyName]s wore the crown both in word and and in deed once again, for the good of all.";;;;;;;;;;;;;x
+Mod.632EVTOPTA;Very well;;;;;;;;;;;;;x
+Mod.632EVTOPTA_TT;The Regency of the Mayoralty Palatine will be ended.;;;;;;;;;;;;;x
+Mod.632EVTOPTB;You are not yet ready;;;;;;;;;;;;;x
+Mod.632EVTOPTB_TT;You convince [From.GetTitledFirstName] to back down, for now.;;;;;;;;;;;;;x
+Mod.632EVTOPTC;A gradual return to power would be prudent;;;;;;;;;;;;;x
+Mod.632EVTOPTC_TT;The Mayoral Regency is ended, but the council is fully empowered.;;;;;;;;;;;;;x
+Mod.DESC636;After an amicable and productive discussion, [From.GetTitledFirstName] has agreed that [GetFullBaseName] should once again be Ours to rule in truth.;;;;;;;;;;;;;x
+Mod.636EVTOPTA;Long live [Root.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.DESC637;"[Root.GetFOA], I know you long to do good for the realm. But would it not be better that a wise and experienced leader rule while you are yet so young?";;;;;;;;;;;;;x
+Mod.637EVTOPTA;I guess it would be wiser to wait...;;;;;;;;;;;;;x
+Mod.DESC638;In order to effect a less disruptive transition, [From.GetTitledName] has suggested that the Council be given a large degree of authority until We can learn the ropes.;;;;;;;;;;;;;x
+Mod.638EVTOPTA;Very well.;;;;;;;;;;;;;x
+Mod.DESC633;"You power-grabbing Mayors have ruled long enough! I challenge you to a duel for the realm, if you dare fight me!;;;;;;;;;;;;;x
+Mod.633EVTOPTA;A duel it is then!;;;;;;;;;;;;;x
+Mod.633EVTOPTA_TT;You accept the challenge.;;;;;;;;;;;;;x
+Mod.633EVTOPTB;Eek! No need for that...;;;;;;;;;;;;;x
+Mod.633EVTOPTB_TT;You forfeit the kingdom to [Root.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.633EVTOPTC;How about a challenge of true skill?;;;;;;;;;;;;;x
+Mod.633EVTOPTC_TT;You suggest a board game.;;;;;;;;;;;;;x
+Mod.DESC639;After a hard-fought contest, the duel has resulted in...;;;;;;;;;;;;;x
+Mod.639EVTOPTA;Victory for me and for [Root.GetName]!;;;;;;;;;;;;;x
+Mod.639EVTOPTB;Utter defeat.;;;;;;;;;;;;;x
+Mod.DESC640;After a hard-fought game, the contest of minds has resulted in...;;;;;;;;;;;;;x
+Mod.640EVTOPTA;Victory for me and for [Root.GetName]!;;;;;;;;;;;;;x
+Mod.640EVTOPTB;Naught but ignominy.;;;;;;;;;;;;;x
+Mod.DESC634;A creeping shadow, a muffled footfall, a trick of the light... Is that [From.GetTitledFirstName]?! What is it that glints in his hand?!;;;;;;;;;;;;;x
+Mod.634EVTOPTA;Too late...;;;;;;;;;;;;;x
+Mod.634EVTOPTB;I keep a knife under my pillow for a reason!;;;;;;;;;;;;;x
+Mod.634EVTOPTC;I knew I heard something earlier...;;;;;;;;;;;;;x
+Mod.634EVTOPTC_TT;From a safe perch in the rafters, you observe [From.GetTitledFirstName] killing a pillow.;;;;;;;;;;;;;x
+Mod.DESC641;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. A swift stroke of my blade and the faint gurgle of spilt blood is all it takes to free [Root.GetBaseName] from his iron grip.;;;;;;;;;;;;;x
+Mod.641EVTOPTA;Long live [Root.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.641EVTOPTA_TT;[From.GetTitledName] dies!;;;;;;;;;;;;;x
+Mod.DESC642;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. My blade finds...steel?! We struggle in the eerie gloom... But [From.GetSheHe]'s too good with a blade. I have to escape before my life is ended instead of [From.GetHersHis]!;;;;;;;;;;;;;x
+Mod.642EVTOPTA;Aargh!;;;;;;;;;;;;;x
+Mod.DESC643;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. My blade finds...steel?! We struggle in the eerie gloom. Our blades slice through each other's soft flesh at the same moment.;;;;;;;;;;;;;x
+Mod.643EVTOPTA;At least [Root.GetBaseName] is free of [From.GetHerHim]!;;;;;;;;;;;;;x
+Mod.DESC644;As everyone sleeps, I creep silently toward [From.GetTitledFirstName]'s bedchamber. Sharp steel slices swift and sure through bedding and...more bedding. Where is [From.GetTitledFirstName]? Does [From.GetSheHe] know? Or was [From.GetSheHe] just lucky this night?;;;;;;;;;;;;;x
+Mod.644EVTOPTA;Either way, I must leave before I'm discovered;;;;;;;;;;;;;x
+Mod.DESC635;Your nominal liege, [From.GetTitledFirstName], has come to you to demand his throne be returned to him with all its trappings and responsibilities. He claims it is his divine right.;;;;;;;;;;;;;x
+Mod.635EVTOPTA;It is the will of [From.GetHighGodName];;;;;;;;;;;;;x
+Mod.635EVTOPTB;Religion does not rule in this realm!;;;;;;;;;;;;;x
+Mod.635EVTOPTC;According to [Root.Religion.GetScriptureName], that is debatable...;;;;;;;;;;;;;x
+Mod.635EVTOPTC_TT;You refuse, with good theological backing.;;;;;;;;;;;;;x
+Mod.DESC645;"Your sad devotion to that ancient religion has not helped you conjure up a whit of justification for your claims. If anything, it makes me less confident in your ability to lead. No religious nut is going to rule [From.GetBaseName]!";;;;;;;;;;;;;x
+Mod.645EVTOPTA;May [Root.GetHighGodName] rebuke you for your blasphemy!;;;;;;;;;;;;;x
+Mod.DESC646;After a deep theological discussion of the principles of [Root.Religion.GetScriptureName], [From.GetTitledFirstName] has convinced you that the current partition of power is truly the best form of government in the eyes of [Root.GetHighGodName].;;;;;;;;;;;;;x
+Mod.646EVTOPTA;[From.GetSheHe] has shown me the light;;;;;;;;;;;;;x
+Mod.DESC671;You have skillfully ruled as Mayor Palatine for years now, while the dynastic ruler eats and drinks and makes merry. You might have enough political capital built up to try to make your heir Mayor after you die, without anyone making too big a stink...;;;;;;;;;;;;;x
+Mod.671EVTOPTA;Not a good a idea right now;;;;;;;;;;;;;x
+Mod.671EVTOPTB;The [Root.GetLastWordInDynastyName]s! Long may they reign!
+faction_claimant_split_realm_short;Create Junior Realm;;;;;;;;;;;;;x
+faction_claimant_split_realm_title;[New.GetTitledFirstName] for [This.GetName];;;;;;;;;;;;;x
+faction_claimant_split_realm_desc;Members seek to install §Y[New.GetTitledName]§! on the throne of §Y[This.GetName]§!, in the Frankish tradition of splitting off realms to potential heirs. When sufficiently powerful, §Y[From.GetTitledName]§! may present an ultimatum to §Y[From.Liege.GetBestName]§!.;;;;;;;;;;;;;x
+faction_claimant_split_realm_ultimatum;Demand Installation of Claimant;Demander l'intronisation [Root.SupportedClaimant.GetDuDela] prétendant[Root.SupportedClaimant.GetNoneE];Einsetzung eines Anspruchstellers fordern;;Reclamar la instalación del demandante;;;;;;;;;x
+faction_claimant_split_realm_ultimatum_desc;Present an ultimatum to §Y[Root.Liege.GetBestName]§!, demanding the installation of §Y[Root.SupportedClaimant.GetBestName]§! on the throne of §Y[Root.SupportedClaimantTitle.GetName]§!. If [Root.Liege.GetSubjectPronoun] refuses to comply, the Faction will rise in revolt.;Présentez un ultimatum [Root.Liege.Get_au_Title]§Y[Root.Liege.GetBestName]§! pour exiger l'intronisation [Root.SupportedClaimant.Get_du_Title]§Y[Root.SupportedClaimant.GetBestName]§! sur le trône de §Y[Root.SupportedClaimantTitle.GetName]§!. [Root.Liege.GetSilSielleCap] refuse votre requête, votre faction prendra alors les armes.;Stellt §Y[Root.Liege.GetBestName]§! ein Ultimatum und fordert die Einsetzung von §Y[Root.SupportedClaimant.GetBestName]§! auf dem Thron von §Y[Root.SupportedClaimantTitle.GetName]§!. Sollte [Root.Liege.GetSubjectPronoun] dies ablehnen, wird Eure Fraktion einen Aufstand anzetteln.;;Enviar un ultimátum a §Y[Root.Liege.GetBestName]§!, reclamando que se instale a §Y[Root.SupportedClaimant.GetBestName]§! en el trono de §Y[Root.SupportedClaimantTitle.GetName]§!. Si [Root.Liege.GetSubjectPronoun] se niega a concederla, tu Facción se suble;;;;;;;;;x
+Mod.DESC800;[Root.GetFirstName], I you flout our hallowed traditions! [From.SupportedClaimant.GetTitledName] has the right to rule [From.SupportedClaimantTitle.GetName], as I and other nobles have the right to be ruled by our own king. Relinquish the title or there will be war!\n\nSigned,\n[From.GetTitledName];
+Mod.DESC611;I proceed toward the prelate who my rightful crown, with my future subjects all around, and feel proud and perhaps a bit apprehensive at my great responsibility. I will not fail them! Lost in my thoughts, I start to ascend the steps...and promptly stumble and fall, bringing priest crown and all rolling to the floor! I can't tell if my vassals are laughing or angry at my apparent mockery of our tradition.;;;;;;;;;;;;;x
+Mod.611EVTOPTA;Those steps are just too darn small...;;;;;;;;;;;;;x
+# Misc
+khagan_overthrow_execution_warning_tooltip;You surrender and submit yourself to the mercy of [From.GetTitledName]. [From.GetSheHeCap] may or may not spare your life...\n;;;;;;;;;;;;;x
+e_dummy;Imperium Nullius;;;;;;;;;;;;x
+k_dummy;Regnum Nullius;;;;;;;;;;;;x
+k_gokturk;Göktürks;;;;;;;;;;;;x
+k_gokturk_adj;Göktürk;;;;;;;;;;;;x
+d_alzek;Alzek's Host;;;;;;;;;;;;x
+d_alzek_adj;Alzek's;;;;;;;;;;;;x
+deaf;Deaf;;;;;;;;;;;;x
+deaf_desc;The character has been completely deaf since birth.;;;;;;;;;;;;x
+giant;Giant;;;;;;;;;;;;x
+giant_desc;This character is extraordinarily tall, and is called a giant.;;;;;;;;;;;;x
+clumsy_giant;Clumsy Giant;;;;;;;;;;;;x
+clumsy_giant_opinion;Clumsy Giant;;;;;;;;;;;;
+Mod.DESC10;The servant fills my tiny goblet of wine, and I duly try to pick it up to drink. But these little goblets are just too small for me, and I end up spilling wine all over [From.GetTitledFirstName]!;;;;;;;;;;;;x
+Mod.10EVTOPTA;I'm so sorry!;;;;;;;;;;;;x
+K_GALLIA;Gallia;;;;;;;;;;;;x
+K_GALLIA_ADJ;Gallian;;;;;;;;;;;;x
+# Visigothic Kingdom stuff
+hispanic_roman;Hispanian;;;;;;;;;;;;x
+visigothic_german;Visigothic;;;;;;;;;;;;x
+visigothic;Visigothic;;;;;;;;;;;;x
+eliminate_claimants;Eliminate Title Claimants;;;;;;;;;;;;x
+eliminate_claimants_tooltip;Under Visigothic law, new rulers such as [Root.GetTitledName] may eliminate imminent threats to the security and safety of the realm.;;;;;;;;;;;;x
+k_septimania;Septimania;;;;;;;;;;;;x
+k_septimania_adj;Septimanian;;;;;;;;;;;;x
+d_septimania;Narbonensis;;;;;;;;;;;;x
+d_septimania_adj;Narbonene;;;;;;;;;;;;x
+k_andalusia;Hispania;;;;;;;;;;;;x
+k_andalusia_adj;Hispanian;;;;;;;;;;;;x
+k_asturias;Cantabria;;;;;;;;;;;;x
+k_asturias_adj;Cantabrian;;;;;;;;;;;;x
+d_aragon;Tarragona;;;;;;;;;;;;x
+d_aragon_adj;Tarragonian;;;;;;;;;;;;x
+d_algarve;Lacobriga;;;;;;;;;;;;x
+d_algarve_adj;Lacobrigian;;;;;;;;;;;;x
+d_murcia;Cartagona;;;;;;;;;;;;x
+d_murcia_adj;Cartagonian;;;;;;;;;;;;x
+d_beja;Lusitania;;;;;;;;;;;;x
+d_beja_adj;Lusitanian;;;;;;;;;;;;x
+k_badajoz;Lusitania;;;;;;;;;;;;x
+k_badajoz_adj;Lusitanian;;;;;;;;;;;;x
+d_castilla;Cantabria;;;;;;;;;;;;x
+d_castilla_adj;Cantabrian;;;;;;;;;;;;x
+d_granada;Baetica;;;;;;;;;;;;x
+d_granda_adj;Baetican;;;;;;;;;;;;x
+d_badajoz;Carpetania;;;;;;;;;;;;x
+d_badajoz_adj;Carpetanian;;;;;;;;;;;;x
+d_navarra;Vasconia;;;;;;;;;;;;x
+d_navarra_adj;Vasconian;;;;;;;;;;;;x
+d_valencia;Hispania Citerior;;;;;;;;;;;;x
+d_valencia_adj;Citerior Hispanian;;;;;;;;;;;;x
+d_leon;Sabaria;;;;;;;;;;;;x
+d_leon_adj;Sabarian;;;;;;;;;;;;x
+PROV166;Getares;;;;;;;;;;;;x
+c_algeciras;Getares;;;;;;;;;;;;x
+c_algeciras_adj;Getarian;;;;;;;;;;;;x
+PROV168;Urci;;;;;;;;;;;;x
+c_almeria;Urci;;;;;;;;;;;;x
+c_almeria_adj;Urcian;;;;;;;;;;;;x
+# Francia stuff
+k_france;Neustria;;;;;;;;;;;;x
+k_france_adj;Neustrian;;;;;;;;;;;;x
+k_lotharingia;Austrasia;;;;;;;;;;;;x
+k_lotharingia_adj;Austrasian;;;;;;;;;;;;x
+d_swabia;Allemania;;;;;;;;;;;;x
+d_swabia_adj;Allemanian;;;;;;;;;;;;x
+d_anjou;Maine;;;;;;;;;;;;x
+d_anjou_adj;Mainian;;;;;;;;;;;;x
+d_flanders;Dentelin;;;;;;;;;;;;x
+d_flanders_adj;Dentelite;;;;;;;;;;;;x
+# Persia
+k_khwarezm;Khwarazmia;;;;;;;;;;;;x
+k_khwarezm_adj;Khwarazmian;;;;;;;;;;;;x
+d_baghdad;Asuristan;;;;;;;;;;;;x
+d_baghdad_adj;Asuristanian;;;;;;;;;;;;x
+d_mosul;Arbayistan;;;;;;;;;;;;x
+d_mosul_adj;Arbayistani;;;;;;;;;;;;x
+d_jazira;Adiabene;;;;;;;;;;;;x
+d_jazira_adj;Adiabene;;;;;;;;;;;;x
+c_baghdad;Ctesiphon;;;;;;;;;;;;x
+c_baghdad_adj;Ctesiphene;;;;;;;;;;;;x
+PROV693;Ctesiphon;;;;;;;;;;;;x
+d_mosul;Arbayistan;;;;;;;;;;;;x
+d_mosul_adj;Arbayistani;;;;;;;;;;;;x
+d_samarra;Garmakan;;;;;;;;;;;;x
+d_samarra_adj;Garmakanian;;;;;;;;;;;;x
+d_jibal;Spahan;;;;;;;;;;;;x
+d_jibal_adj;Spahani;;;;;;;;;;;;x
+d_mafaza;Arbashar;;;;;;;;;;;;x
+d_mafaza_adj;Arbasharian;;;;;;;;;;;;x
+d_basra;Meshan;;;;;;;;;;;;x
+d_basra_adj;Meshani;;;;;;;;;;;;x
+zoroastrian_DESC;Zoroastrians worship Ahura Mazda, the uncreated God, as proclaimed by the ancient Iranian prophet Zoroaster. The ancient form of the religion involved great sacred hill top fires, the exposure of dead bodies to scavenger birds for cleansing, and religious close-kin marriages in imitation of Ahura Mazda and Zoroaster.;;;;;;;;;;;;x
+# Slavica
+k_slavs;Slavs;;;;;;;;;;;;x
+k_slavs_adj;Slavic;;;;;;;;;;;;x
+# Byzantine / Roman area
+k_ravenna;Ravenna;;;;;;;;;;;;x
+k_ravenna_adj;Ravennian;;;;;;;;;;;;x
+k_bulgaria;Thracia;;;;;;;;;;;;x
+k_bulgaria_adj;Thracian;;;;;;;;;;;;x
+k_serbia;Dacia;;;;;;;;;;;;x
+k_serbia_adj;Dacian;;;;;;;;;;;;x
+k_croatia;Illyria;;;;;;;;;;;;x
+k_croatia_adj;Illyrian;;;;;;;;;;;;x
+d_slavonia;Savia;;;;;;;;;;;;x
+d_slavonia_adj;Savian;;;;;;;;;;;;x
+d_bosnia;Valeria;;;;;;;;;;;;x
+d_bosnia_adj;Valerian;;;;;;;;;;;;x
+coptic;Coptic;;;;;;;;;;;;x
+syriac;Syriac;;;;;;;;;;;;x
+maghreb_latin;Numidian;;;;;;;;;;;;x
+amazigh_group;Amazigh;;;;;;;;;;;;x
+amazigh;Amazigh;;;;;;;;;;;;x
+# Germanic / gothic / gepids random stuff
+RETTYPE_CUL_GOTH;Gadrauhts;;;;;;;;;;;;x
+ca_culture_ostrogothic_1;Gadrauhts Barracks;;;;;;;;;;;;x
+ca_culture_ostrogothic_2;Gadrauhts Barracks;;;;;;;;;;;;x
+ca_culture_ostrogothic_3;Gadrauhts Barracks;;;;;;;;;;;;x
+ca_culture_ostrogothic_4;Gadrauhts Barracks;;;;;;;;;;;;x
+ca_culture_ostrogothic_1_desc;The Ostrogothic Gadrauhts is the continuation of the Gothic auxilliary and foederati units of the Roman army. Here is where these elite warriors are trained and drilled to be ready for battle in the service of their liege.;;;;;;;;;;;;x
+ostrogothic;Ostrogothic;;;;;;;;;;;;x
+arian;Arian;;;;;;;;;;;;x
+d_gepids;Gepidia;;;;;;;;;;;;x
+d_bosnia_adj_ostrogothic;Gepid;;;;;;;;;;;;;x
+# Avaria / Turks / Bolghars
+k_great_bulgaria;Onoguria;;;;;;;;;;;;x
+k_great_bulgaria_adj;Onogurian;;;;;;;;;;;;x
+d_antes;Antes;;;;;;;;;;;;x
+d_antes_adj;Antes;;;;;;;;;;;;x
+# Africa
+#d_fezzan;Garama;;;;;;;;;;;;x
+d_tlemcen;Altava;;;;;;;;;;;;x
+d_tlemcen_adj;Altavan;;;;;;;;;;;;x
+d_cairo;Arcadia;;;;;;;;;;;;x
+d_cairo_adj;Arcadian;;;;;;;;;;;;x
+b_malao;Malao;;;;;;;;;;;;x
+b_mosylonid;Mosylonid;;;;;;;;;;;;x
+b_avalites;Avalites;;;;;;;;;;;;x
+d_nidar_avengers;Nidar's Avengers;;;;;;;;;;;;x
+d_east_african_pagan_reformed;Cushitic High Priesthood;;;;;;;;;;;;x
+d_east_african_pagan_reformed_adj;Cushite;;;;;;;;;;;;x
+east_african_pagan;Cushitic;;;;;;;;;;;;x
+east_african_pagan_reformed;Cushitic;;;;;;;;;;;;x
+east_african_pagan_DESC;Cushitic believers worhsip the supreme deity Waaq or Eebo, along with several minor deities. They believe that the balance of the Earth is tied to a giant bull and cow. Whenever the cow turns her eyes away from the bull, the earth shifts, causing natural disasters.;;;;;;;;;;;;x
+temple_baron_east_african_pagan;Qallu;;;;;;;;;;;;x
+temple_baron_east_african_pagan_reformed;Qallitu;;;;;;;;;;;;x
+temple_baron_female_east_african_pagan;Qallitu;;;;;;;;;;;;x
+temple_baron_female_east_african_pagan_reformed;Qallitu;;;;;;;;;;;;x
+temple_barony_east_african_pagan;Taal;;;;;;;;;;;;x
+temple_barony_east_african_pagan_reformed;Taal;;;;;;;;;;;;x
+WAAQ;Waaqa;;;;;;;;;;;;x
+EEBO;Eebo;;;;;;;;;;;;x
+ATETE;Atete;;;;;;;;;;;;x
+NIDAR;Nidar;;;;;;;;;;;;x
+HUUR;Huur the Reaper;;;;;;;;;;;;x
+QALLU;Qallu;;;;;;;;;;;;x
+ABBAA_MUUDAA;Abbaa Muudaa;;;;;;;;;;;;x
+secretly_convert_to_east_african_pagan_holy_site;Secretly Convert to Cushitic;;;;;;;;;;;;x
+secretly_convert_to_east_african_pagan_reformed_holy_site;Secretly Convert to Cushitic;;;;;;;;;;;;x
+secretly_convert_to_east_african_pagan_reformed_holy_site_desc;The §YCushitic§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;x
+secretly_convert_to_east_african_pagan_holy_site_desc;The §YCushitic§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;x
+Mod.DESC440;My mother [Mother.GetFirstName] now sings with Atete, but her ayana spirit lives on in this world. I must perform the spirit ceremony, and by Atete's grace my mother's ayana will fill me and bestow upon me her wisdom and fecundity.\n\nI shall need some sacred herbs for the ritual.;;;;;;;;;;;;x
+Mod.440EVTOPTA;Ask [ayana_provider.GetFirstName] for some herbs;;;;;;;;;;;;x
+Mod.440EVTOPTB;Buy my own herbs;;;;;;;;;;;;x
+Mod.440EVTOPTC;I can't right now;;;;;;;;;;;;x
+Mod.DESC441;My [GetFromRelation] [From.GetFirstName] is planning her ayana ceremony in order to inherit her mother's spirit, and she's asked me to gather some powerful sacred herbs to facilitate the possession ritual.;;;;;;;;;;;;x
+Mod.441EVTOPTA;Search the forest for a rare specimen;;;;;;;;;;;;x
+Mod.441EVTOPTB;Buy her some mandrakes at the market;;;;;;;;;;;;x
+Mod.441EVTOPTC;She can use the reeds by the riverbank;;;;;;;;;;;;x
+Mod.DESC442;I carefully split the herbs, consuming one third, burning one third, and casting one third on the river. As the smoke billows 'round me, I chant and call upon my mother's ayana to fill me with her wisdom.;;;;;;;;;;;;x
+Mod.442EVTOPTA;I can feel her within me!;;;;;;;;;;;;x
+Mod.442EVTOPTB;And ... nothing;;;;;;;;;;;;x
+Mod.DESC443;I watch as [From.GetFirstName] carefully splits the herbs, consuming one third, burning one third, and casting one third on the river. As the smoke billows around her, she chants and cries out to Atete that her mother's ayana spirit may fill her.;;;;;;;;;;;;x
+Mod.443EVTOPTA;She shakes and foams at the mouth ... it's happening!;;;;;;;;;;;;x
+Mod.443EVTOPTB;Was something supposed to happen?;;;;;;;;;;;;x
+Mod.DESC444;After days of sacred communion with my mother's ayana, I'm finally ready for her final gift. As I feel my delirium recede, I hear her voice as a whisper in my mind...;;;;;;;;;;;;x
+Mod.444EVTOPTA;Exalted daughter, receive my blessing!;;;;;;;;;;;;x
+Mod.444EVTOPTB;Many happy years, daughter!;;;;;;;;;;;;x
+Mod.444EVTOPTC;A curse upon you, misbegotten brood!;;;;;;;;;;;;x
+Mod.DESC445;After days of sacred communion with her mother's ayana, [From.GetFirstName]'s delirium is finally receding. What gifts shall the ayana bestow upon her?;;;;;;;;;;;;x
+Mod.445EVTOPTA;She is supremely blessed!;;;;;;;;;;;;x
+Mod.445EVTOPTB;She is blessed!;;;;;;;;;;;;x
+Mod.445EVTOPTC;A malevolent spirit has cursed her!;;;;;;;;;;;;x
+Mod.DESC446;I venture into the wilds outside the city in search of rare herbs for [ayana_target.GetFirstName]'s ayana ceremony. As I delve deeper into the dark woods, all is eerily quiet... Did I see that? What was that large shape?;;;;;;;;;;;;x
+Mod.446EVTOPTA;Here, these mandrakes will do!;;;;;;;;;;;;x
+Mod.446EVTOPTB;I must press further to find something truly special...;;;;;;;;;;;;x
+Mod.DESC447;There it is! A holy orchid that would make Atete weep!\n...But it's the lair of a massive lion! Too late to run now...;;;;;;;;;;;;x
+Mod.447EVTOPTA;Grrrrr! Aaaaaargh!;;;;;;;;;;;;x
+Mod.DESC448;There it is! A holy orchid that would make Atete weep! I'll just take that and be on my merry way.;;;;;;;;;;;;x
+Mod.448EVTOPTA;[ayana_target.GetFirstName] will be very pleased;;;;;;;;;;;;x
+bad_ayana_modifier;Malevolent Ayana;;;;;;;;;;;;x
+good_ayana_modifier;Good Ayana;;;;;;;;;;;;x
+powerful_ayana_modifier;Powerful Ayana;;;;;;;;;;;;x
+Mod.DESC450;Which ayana will you choose to whisper in your mind and guide your footsteps? The [Root.GetLastWordInDynastyName] Clan Ayana promises [Root.GetClanAyanaDesc]. [Root.GetGrandpaAyanaDesc] [Root.GetFatherAyanaDesc];;;;;;;;;;;;x
+Mod.450EVTOPTA;I will choose the [Root.GetLastWordInDynastyName] Ayana;;;;;;;;;;;;x
+Mod.450EVTOPTB;My grandfather's spirit will guide me;;;;;;;;;;;;x
+Mod.450EVTOPTC;I will follow my father's path;;;;;;;;;;;;x
+Mod.DESC451;As I meditate on my choice, I fall into a deep trance. I can hear five ayana spirits whispering to me of the blessings they will bestow. Which should I choose?;;;;;;;;;;;;x
+Mod.451EVTOPTA;The Spirit of Tongues;;;;;;;;;;;;x
+Mod.451EVTOPTB;The Spirit of Swords;;;;;;;;;;;;x
+Mod.451EVTOPTC;The Spirit of Scales;;;;;;;;;;;;x
+Mod.451EVTOPTD;I must choose a different spirit...;;;;;;;;;;;;x
+Mod.452EVTOPTA;The Spirit of Vipers;;;;;;;;;;;;x
+Mod.452EVTOPTB;The Spirit of Books;;;;;;;;;;;;x
+String_grandpa_ayana;Your grandfather's ayana will bless you with [Root.GetGrandpaAyanaTypeDesc].;;;;;;;;;;;;x
+String_father_ayana;Choosing your father [father_even_if_dead.GetFirstName]'s ayana will provide [Root.GetFatherAyanaTypeDesc].;;;;;;;;;;;;x
+String_ayana_diplomacy;a silver tongue;;;;;;;;;;;;x
+String_ayana_martial;strength and strategy;;;;;;;;;;;;x
+String_ayana_stewardship;skill at rulership;;;;;;;;;;;;x
+String_ayana_intrigue;sleight of hand and mind;;;;;;;;;;;;x
+String_ayana_learning;true knowledge;;;;;;;;;;;;x
+String_ayana_none; ;;;;;;;;;;;;x
+pick_ayana_tooltip;§Y[Root.GetTitledFirstName]§! gets to pick a new ayana to follow.;;;;;;;;;;;;x
+pick_clan_ayana_tooltip;§Y[Root.GetTitledFirstName]§! gets to pick a new patron ayana for the clan.;;;;;;;;;;;;x
+pick_ayana;Pick a patron Ayana Spirit;;;;;;;;;;;;x
+pick_ayana_desc;[Root.GetTitledName] can pick a patron ayana to improve attributes.;;;;;;;;;;;;x
+pick_clan_ayana;Pick a clan Ayana Spirit;;;;;;;;;;;;x
+pick_clan_ayana_desc;As the head of the dynasty, [Root.GetTitledName] can pick a clan ayana, allowing all dynasty members access to patron ayanas of the same type.;;;;;;;;;;;;x
+diplomacy_ayana_modifier;Silver-tongued Ayana;;;;;;;;;;;;x
+diplomacy_ayana_modifier_desc;This character follows the guidance of a diplomatic ayana;;;;;;;;;;;;x
+martial_ayana_modifier;Warrior Ayana;;;;;;;;;;;;x
+martial_ayana_modifier_desc;This character follows the guidance of a martial ayana;;;;;;;;;;;;x
+stewardship_ayana_modifier;Ruler Ayana;;;;;;;;;;;;x
+stewardship_ayana_modifier_desc;This character follows the guidance of an ayana of stewardship;;;;;;;;;;;;x
+intriuge_ayana_modifier;Sneaky Ayana;;;;;;;;;;;;x
+intrigue_ayana_modifier_desc;This character follows the guidance of an ayana of intrigues;;;;;;;;;;;;x
+learning_ayana_modifier;Wise Ayana;;;;;;;;;;;;x
+learning_ayana_modifier_desc;This character follows the guidance of an ayana of learning;;;;;;;;;;;;x
+# Scandinavia
+nick_keeneyed;the Keen-Eyed;;;;;;;;;;;;;x
+nick_ringslinger;the Ringslinger;;;;;;;;;;;;;x
+# Britain
+d_northumberland;Bernicia;;;;;;;;;;;;;x
+d_york;Deira;;;;;;;;;;;;;x
+k_wales;Britain;;;;;;;;;;;;;x
+k_wales_adj;Briton;;;;;;;;;;;;;x
+welsh;Brythonic;;;;;;;;;;;;;x
+# Measles
+Mod.TITLE602;Measles;;;;;;;;;;;;;x
+Mod.DESC602;A brand new--and very virulent--disease has appeared in [measles_outbreak_location.GetName]. The healers have unimaginatively named it Measles, as it presents with small measles on the infected's skin. It causes fever, sweating, nausea, or even death, for some. They think it appeared due to prolonged contact with cattle, as it is similar to Rinderpest, a bovine disease.;;;;;;;;;;;;;x
+Mod.602EVTOPTA;May [Root.GetRandomGodName] preserve us from this curse!;;;;;;;;;;;;;x
+Mod.602EVTOPTB;Inbred hicks and their cows . . .;;;;;;;;;;;;;x
+Mod.602EVTOPTC;Somebody's been spending too much time with the animals . . .;;;;;;;;;;;;;x
+# Roman retinue
+RETTYPE_CUL_ROMAN;Legionary Infantry;;;;;;;;;;;;x
+ca_culture_roman_1;Legionary Barracks;;;;;;;;;;;;x
+ca_culture_roman_2;Legionary Barracks;;;;;;;;;;;;x
+ca_culture_roman_3;Legionary Barracks;;;;;;;;;;;;x
+ca_culture_roman_4;Legionary Barracks;;;;;;;;;;;;x
+ca_culture_roman_1_desc;The legions of Rome have remained essentially unchanged in formation for centuries, a core of well-trained heavy infantry with supporting light foot. Here is where these elite soldiers are trained and drilled to be ready for battle in the service of their liege.;;;;;;;;;;;;x
+# ######################################################
+# ################ Rise of Islam #######################
+BM_RISE_OF_ISLAM;Rise of Islam;;;;;;;;;;;;x
+BM_BM_RISE_OF_ISLAM_DESC;After the fall of the western Roman Empire in the 5th century, and the subsequent establishment of the Ostrogothic kingdom in Italy, Emperor Justinian attempted to regain lost imperial lands. He succeeded in retaking Africa and Italy, but Italy was quickly invaded by the Lombards, who continue to contest Italian lands with the empire. In the East, the devastating series of Byzantine-Sassanid wars finally came to end in 628, leaving both Constantinople and Ctesiphon reeling. The prophet Muhammad, who was successful in consolidating Arabia under the banner of Islam, passed on in 632. The freshly-united Arab tribes are zealous for their new faith and see the Persian and Roman lands as ripe for conquest...;;;;;;;;;;;;x
+BM_RISE_OF_ISLAM_ERA;Rise of Islam;;;;;;;;;;;;x
+BM_RISE_OF_ISLAM_ERA_INFO;After the fall of the western Roman Empire in the 5th century, and the subsequent establishment of the Ostrogothic kingdom in Italy, Emperor Justinian attempted to regain lost imperial lands. He succeeded in retaking Africa and Italy, but Italy was quickly invaded by the Lombards, who continue to contest Italian lands with the empire. In the East, the devastating series of Byzantine-Sassanid wars finally came to end in 628, leaving both Constantinople and Ctesiphon reeling. The prophet Muhammad, who was successful in consolidating Arabia under the banner of Islam, passed on in 632. The freshly-united Arab tribes are zealous for their new faith and see the Persian and Roman lands as ripe for conquest...;;;;;;;;;;;;x
+Mod.TITLE3;Rashidun Invasion of Mesopotamia;;;;;;;;;;;;x
+Mod.DESC3;Before his passing, Muhammad, the prophet of Islam, dispatched ultimata to the powers of the West and of the East, warning them to convert or face the divine consequences. Shahanshah Khosrau of the Sassanid Empire, scorning the power of the barbarian Bedouins, burned the letter rather than heed its warning. The devout Caliph, reminded of the zealotry of his friend and leader, the prophet Muhammad, has called for a holy invasion of the lands of the Persians. Muslims from all Arabia have gathered under his banner to carry out the Rashidun, or rightly-guided, conquest and conversion of Iranshahr.;;;;;;;;;;;;;x
+Mod.3EVTOPTA;Ha! Misguided fools, all of them!;;;;;;;;;;;;x
+Mod.3EVTOPTB;Their carcasses will declare the true faith!;;;;;;;;;;;;x
+Mod.3EVTOPTC;Let Allah lend them strength!;;;;;;;;;;;;x
+Mod.TITLE4;Rashidun Conquest of Ghassanids;;;;;;;;;;;;x
+Mod.DESC4;According to the Muhammad, all of Arabia is rightfully the domain of Islam and the Arabs, and should be united under one banner. The Ghassanid Kingdom, as clients of the Roman Empire and Miaphysite Christians, refuse to recognize the rule of the Caliphate. The Caliph has called for the conquest of the Ghassanids to bring them under the true rule of Islam.;;;;;;;;;;;;;x
+Mod.4EVTOPTA;Ha! Misguided fools, all of them!;;;;;;;;;;;;x
+Mod.4EVTOPTB;Their carcasses will declare the true faith!;;;;;;;;;;;;x
+Mod.4EVTOPTC;Let Allah lend them strength!;;;;;;;;;;;;x
+Mod.TITLE5;Fall of the Ghassanids;;;;;;;;;;;;x
+Mod.DESC5;The Ghassanid Christian Arab state, fixture of Arab politics for more than three centuries, has fallen to the Muslim Caliphate. It is a small conquest, but does it herald greater things to come?;;;;;;;;;;;;;x
+Mod.5EVTOPTA;Are these Arabs really that dangerous?;;;;;;;;;;;;x
+Mod.5EVTOPTB;Praise Allah!;;;;;;;;;;;;x
+Mod.TITLE6;Fall of Mesopotamia;;;;;;;;;;;;x
+Mod.DESC6;The powerful Persian Empire, greatest rival of Rome for nearly a millenium, has been humbled by the semi-civilized Bedouin Islamic tribes. Ctesiphon, the great metropolitan capital of Iranian culture, has been ransacked by the invading Rashidun armies, and Mesopotamia wrested from the control of the Sassanids. The Islamic Caliph now turns his baleful gaze toward the still-formidable Roman Empire.;;;;;;;;;;;;;x
+Mod.6EVTOPTA;Unbelievable!;;;;;;;;;;;;x
+Mod.6EVTOPTB;Praise Allah!;;;;;;;;;;;;x
+Mod.TITLE7;Rashidun Invasion of Palestine;;;;;;;;;;;;x
+Mod.DESC7;Jerusalem, holy site of three faiths, lies under the control of the Roman Empire. This is not a situation that can be tolerated by the Caliph and his devout subjects. He has declared a Rashidun holy invasion of Palestine to bring Jerusalem under the rightful rule of the Muslim Caliphate.;;;;;;;;;;;;;x
+Mod.7EVTOPTA;Interesting...;;;;;;;;;;;;x
+Mod.7EVTOPTB;What fools dare to defy the might of Rome?;;;;;;;;;;;;x
+Mod.7EVTOPTC;Let Allah give them victory!;;;;;;;;;;;;x
+Mod.TITLE8;Fall of Jerusalem;;;;;;;;;;;;x
+Mod.DESC8;Jerusalem, symbolic birthplace of the Abrahamic faiths, has fallen under the control of the Caliphate. The Eastern Roman Empire, stronghold of Christendom, has been cut in half by the invading Bedouin tribes. Are the hordes never to be stopped?;;;;;;;;;;;;;x
+Mod.8EVTOPTA;Unbelievable!;;;;;;;;;;;;x
+Mod.8EVTOPTB;Praise Allah!;;;;;;;;;;;;x
+Mod.TITLE9;Failed Invasion of Mespotamia;;;;;;;;;;;;x
+Mod.DESC9;The zealous hordes of Muslim invaders didn't bargain for the stiff defense of crack Persian cataphracts. They were swiftly routed and sent home to Arabia with their tails between their legs.;;;;;;;;;;;;;x
+Mod.9EVTOPTA;As expected of such barbarians;;;;;;;;;;;;x
+Mod.9EVTOPTB;Curses!;;;;;;;;;;;;x
+Mod.TITLE25;The Birth of the Ibadi;;;;;;;;;;;;x
+Mod.DESC25;[Root.GetTitledName], concerned that Islam is straying from the true path laid out by Muhammad, has diligently searched the Quran with the help of his advisors. He has gained insight into a different way of practicing Islam, a new sect that he calls Ibadism. He has convinced the rest of his people to follow him and become Ibadis.;;;;;;;;;;;;;x
+Mod.25EVTOPTA;We shall follow the true path of the Prophet;;;;;;;;;;;;;x
+Mod.25EVTOPTB;We must guide them back to the true path;;;;;;;;;;;;;x
+Mod.25EVTOPTC;Perhaps this will sow some discord among these Arab invaders;;;;;;;;;;;;;x
+Mod.25EVTOPTD;This is no concern of ours;;;;;;;;;;;;;x
+Mod.TITLE26;The Rise of the Shia Caliphate;;;;;;;;;;;;x
+Mod.DESC26;[Root.GetTitledName], as the direct relation of Muhammad, feels that he should be Caliph, citing Muhammad's own words. Over the years, those who support him and those who support the current Caliphs have grown farther apart, splitting the faith. Those who agree with the right of his claim to the Caliphate and its lands are now called Shiites, while other Muslims are called Sunnis.;;;;;;;;;;;;;x
+Mod.26EVTOPTA;[Root.GetTitledName] is the true Caliph!;;;;;;;;;;;;;x
+Mod.26EVTOPTB;We must guide them back to the true path;;;;;;;;;;;;;x
+Mod.26EVTOPTC;Perhaps this will sow some discord among these Arab invaders;;;;;;;;;;;;;x
+Mod.26EVTOPTD;This is no concern of ours;;;;;;;;;;;;;x
+Mod.26EVTOPTE;A new way to practice Islam? We must look into it.;;;;;;;;;;;;;x
+Mod.TITLE27;Follow the Shia Caliph;;;;;;;;;;;;;x
+Mod.DESC27;The new Shia caliph has asked for my support.;;;;;;;;;;;;;x
+Mod.27EVTOPTA;Very well, let us be Shia;;;;;;;;;;;;;x
+Mod.27EVTOPTB;Never! The Shia sect is heresy!;;;;;;;;;;;;;x
+Mod.DESC28;After waiting for months for you to declare holy war on the Ghassanids as mandated by the Prophet, most of your hordes have given up and returned to their tents.;;;;;;;;;;;;;x
+Mod.28EVTOPTA;Islam is a religion of peace!;;;;;;;;;;;;;x
+Mod.DESC29;The tribes have waited months for the great invasion of the mighty infidel empire of Persia. Instead, you busy yourself at home with the welfare of the realm. Disgusted, they disperse.;;;;;;;;;;;;;x
+Mod.DESC30;Your hordes have informed you that if you will not invade the Holy Land as commanded by the Prophet, they will no longer fight for you.;;;;;;;;;;;;;x
+wrong_caliph;False Caliph;;;;;;;;;;;;;x
+right_caliph;True Caliph;;;;;;;;;;;;;x
+rashidun_invasion_1_desc;Rightly-guided invasion of infidel lands. May only be declared by strict mandate of the Prophet.;;;;;;;;;;;;;x
+rashidun_invasion_2_desc;Rightly-guided invasion of infidel lands. May only be declared by strict mandate of the Prophet.;;;;;;;;;;;;;x
+rashidun_invasion_1_b_desc;Rightly-guided invasion of infidels' lands. May only be declared by strict mandate of the Prophet.;;;;;;;;;;;;;x
+rashidun_invasion_2_b_desc;Rightly-guided invasion of infidels' lands. May only be declared by strict mandate of the Prophet.;;;;;;;;;;;;;x
+invade_ghassanids;Invade Ghassan;;;;;;;;;;;;x
+invade_ghassanids_tooltip;Declare the holy invasion of the Ghassanid kingdom as ordained by the prophet.;;;;;;;;;;;;x
+invade_ghassanids_desc;Declare the holy invasion of the Ghassanid kingdom as ordained by the prophet.;;;;;;;;;;;;x
+invade_persia;Invade Persia;;;;;;;;;;;;x
+invade_persia_tooltip;Claim the the fertile lowlands of the infidel Persians for the rightly-guided followers of Islam.;;;;;;;;;;;;x
+invade_persia_desc;Let us claim the the fertile lowlands of the infidel Persians for the rightly-guided followers of Islam.;;;;;;;;;;;;x
+invade_palestine;Invade Palestine;;;;;;;;;;;;x
+invade_palestine_tooltip;Reclaim the holy lands of Ishmael from the hands of the misguided Romans.;;;;;;;;;;;;x
+invade_palestine_desc;Let us reclaim the holy lands of Abraham and Ishmael from the hands of the misguided Romans.;;;;;;;;;;;;x
+zikri;[GetZikriName];;;;;;;;;;;;x
+String_Zikri;[GetZikriName];;;;;;;;;;;;x
+String_zikri_zikri;Zikri;;;;;;;;;;;;x
+String_hanifi;Hanifi;;;;;;;;;;;;x
+String_rahmanist;Rahmanist;;;;;;;;;;;;x
+zikri_DESC;[GetZikriName] Islam is a Sunni heresy in-game. [GetZikriName]s are the followers of their prophet [GetZikriProphetName];;;;;;;;;;;;x
+secretly_zikri;Secretly [GetZikriName];;;;;;;;;;;;x
+secretly_zikri_desc;This character is secretly a [GetZikriName];;;;;;;;;;;;x
+zikri_prophet_static;Imam Akhar Zaman Hazrat Syed Muhammad Jaunpuri (Imam Mehdi.);;;;;;;;;;;;x
+zikri_prophet_dynamic;[zikri_prophet.GetFullName];;;;;;;;;;;;x
+Mod.DESC10T;[Root.Religion.GetName] heretics have been gathering in [Root.GetName], drawn by the words of a mysterious new "prophet" who claims the mantle of Muhammad, complete with fresh miracles and revelations from [Root.Religion.GetHighGodName]!;;;;;;;;;;;;x
+Mod.DESC11;[Root.Religion.GetName] heretics have risen up in [Root.GetName], incited by the militant ravings of their self-proclaimed prophet, [zikri_prophet.GetFullName]. They are determined to install him as the rightful ruller of the Ummah! If not swiftly crushed, this revolt could spread like wildfire!;;;;;;;;;;;;x
+Mod.TITLE13;A New Prophet?;;;;;;;;;;;;x
+Mod.DESC12;[From.Religion.GetName] heretics have risen up in [From.GetName], incited by the militant ravings of their self-proclaimed prophet, [zikri_prophet.GetFullName]. They are determined to install him as the rightful ruller of the Ummah! If not swiftly crushed, this revolt could spread like wildfire!;;;;;;;;;;;;x
+Mod.DESC13;[From.Religion.GetName] heretics have been gathering in [From.GetName], drawn by the words of a mysterious "prophet" who claims the mantle of Muhammad, complete with fresh miracles and revelations from [From.Religion.GetHighGodName]! Who knows to what lengths he will go to spread his message?...;;;;;;;;;;;;x
+# #################### 633 Mod Zoro events ##############################
+Mod.TITLE17;Zoroastrian Great Holy Wars;;;;;;;;;;;;x
+Mod.DESC17;Foreign invaders have captured much of the heartland of the Zoroastrian faith, and Mazdan believers labor under their heavy yoke. In order to liberate the followers of Ahura Mazda, and bring the heartland back under Zoroastrian control, [Root.GetTitledName] has called for a new era of total holy war against all opponents of the Zoroastrian faith.;;;;;;;;;;;;;x
+Mod.17EVTOPTA;Ahura Mazda wills it!;;;;;;;;;;;;x
+Mod.17EVTOPTB;Foolish posturing!;;;;;;;;;;;;x
+Mod.DESC18;In response to the new era of Crusades and Jihads among the Abrahamic monotheists, the Great [Root.GetTitledName] has informed all [Root.Religion.GetName] [Root.Religion.GetPriestTitle]s of [Root.GetPossPronoun] plans for a magnificent [Root.Religion.GetName] response. The Zoroastrian High Priest may now declare Great Holy Wars. This could be the beginning of unprecedented Zoroastrian aggression.;;;;;;;;;;;;x
+# ##################### New decisions and objectives
+imprison_claimant;Neutralize Title Claimant;;;;;;;;;;;;x
+imprison_claimant_desc;Because [Root.GetTitledName], as a claimant to your recently-acquired title, poses a clear and present threat to the safety and security of the realm, he can be imprisoned without objection from your vassals.;;;;;;;;;;;;x
+create_poland;Found the Kingdom of Poland;;;;;;;;;;;;x
+create_poland_desc;As sole leader of all the Polish peoples, [Root.GetTitledName] may create the Kingdom of Poland.;;;;;;;;;;;;x
+create_bohemia;Found the Kingdom of Bohemia;;;;;;;;;;;;x
+create_bohemia_desc;As sole leader of all the Bohemian peoples, [Root.GetTitledName] may create the Kingdom of Bohemia.;;;;;;;;;;;;x
+create_pomerania;Found the Kingdom of Pomerania;;;;;;;;;;;;x
+create_pomerania_desc;As sole leader of all the Pomeranian peoples, [Root.GetTitledName] may create the Kingdom of Pomerania.;;;;;;;;;;;;x
+create_new_kingdom;Found a new kingdom;;;;;;;;;;;;x
+create_new_kingdom_desc;As leader of the [Root.Culture.GetName] peoples, [Root.GetTitledName] may create a new kingdom.;;;;;;;;;;;;x
+NOT_ANY_INDEP_RULER_STARTS;No independent ruler;;;;;;;;;;;;x
+obj_become_king_of_culture_tip;Is [Root.GetKingQueen] of [Root.Culture.GetName] peoples. There must be no other independent rulers of this culture.;;;;;;;;;;;;x
+obj_become_king_of_culture_title;Become [Root.GetKingQueen] of [Root.Culture.GetName] peoples;;;;;;;;;;;;x
+obj_become_king_of_culture_desc;[This.GetTitledFirstName] wants to become [Root.GetKingQueen] of [Root.Culture.GetName]. If pagan, it allows [This.GetObjectPronoun] the unlimited use of the Subjugation Casus Belli of all rulers of this culture.;;;;;;;;;;;;x
+# ###################### New religions, etc
+arian;Arian;;;;;;;;;;;;x
+arian_DESC;Arians, in contrast to other Christians, do not believe in the doctrine of the Trinity. They claim that Jesus was created by God before the angels as the planned Redeemer and Mediator for mankind.;;;;;;;;;;;;x
+donatist;Donatist;;;;;;;;;;;;x
+donatist_DESC;Donatists are named after their founder, Donatus Magnus, a 4th century Amazigh bishop. They believe that the clergy must be sacred in order to offer valid and effective sacraments and prayers. They revere martyrs and especially despise those who publicly repudiate the faith under persecution.;;;;;;;;;;;;x
+d_circumcellion;Agonistics;;;;;;;;;;;;x
+d_circumcellion_adj;Agonistic;;;;;;;;;;;;x
+roman_rite;Roman Rite;;;;;;;;;;;;x
+roman_rite_desc;This character follows the Roman rite of the Chalcedonian Christian church. Roman mass is practiced in Latin, and many of its followers view the Pope as the undisputed head of the church, rather than as simply first among equals.;;;;;;;;;;;;x
+greek_rite;Greek Rite;;;;;;;;;;;;x
+greek_rite_desc;This character follows the Greek or Byzantine rite of the Chalcedonian Christian church. They believe all five pentarchs to be of equal primacy, and support the authority of the Roman Emperor to confirm the selection of the Pope.;;;;;;;;;;;;x
+celtic_rite;Celtic Rite;;;;;;;;;;;;x
+celtic_rite_desc;This character follows the Celtic rite of the Chalcedonian Christian church. Celtic practice incorporates many of the traditions of pre-Christian times, and they don't place as much value on the hierarchy of the church, deferring to their local bishops rather than the Popes or Patriarchs in most spirtual matters.;;;;;;;;;;;;x
+convert_to_greek_culture;Adopt Greek Culture;;;;;;;;;;;;x
+convert_to_greek_culture_tooltip;Reformed Hellenic believers such as [ROOT.GetTitledName] may adopt Greek culture in keeping with the faith's original followers.;;;;;;;;;;;;x
+convert_to_roman_culture;Adopt Roman Culture;;;;;;;;;;;;x
+convert_to_roman_culture_tooltip;Under the Romans, the Hellenic religion reached its greatest heights. In the revived spirit of Hellenic conquest, [ROOT.GetTitledName] may adopt the Roman culture.
+secretly_convert_to_hellenic_pagan_reformed_holy_site_desc;The §YHellenic§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;x
+secretly_convert_to_hellenic_pagan_holy_site_desc;The §YHellenic§! pilgrims that flock to the holy site in §Y[Root.Location.GetName]§! impress me with the depth and passion of their faith. I am tempted to convert in secrecy...;;;;;;;;;;;;x
+# ####################### culture conversions (syriac > levantine, coptic > egyptian, maghreb > berber)
+Mod.DESC50;The Syriac people of our lands, isolated from Hellenic influences, have begun to adopt some of the Arab ways of their masters, birthing the new fusion Arabic Levantine culture.;;;;;;;;;;;;x
+Mod.50EVTOPT;Interesting...;;;;;;;;;;;;x
+Mod.DESC51;Our Levantine culture, appealing to both Syriac and Arab subjects, continues to spread, unifying our once-split lands.;;;;;;;;;;;;x
+Mod.51EVTOPT;We are indeed wise;;;;;;;;;;;;x
+Mod.DESC52;The Coptic people of our lands, isolated from Hellenic influences, have begun to adopt some of the Arab ways of their masters, birthing the new fusion Arabic Egyptian culture.;;;;;;;;;;;;x
+Mod.52EVTOPT;Interesting...;;;;;;;;;;;;x
+Mod.DESC53;Our Egyptian culture, appealing to both Coptic and Arab subjects, continues to spread, unifying our once-split lands.;;;;;;;;;;;;x
+Mod.53EVTOPT;We are indeed wise;;;;;;;;;;;;x
+Mod.DESC54;Although Bedouin culture is that of our fathers, the new Levantine culture has a certain functionality when dealing with our subjects. I have therefore prevailed upon a member of my court to adopt this for everyday administrative use.;;;;;;;;;;;;x
+Mod.54EVTOPT;A most useful development;;;;;;;;;;;;x
+Mod.DESC55;I was considering important business when I had an amazing insight. To strengthen my realm I must bring my vassals round to my way of thinking. I have decided to convince my vassals to adopt Levantine culture.;;;;;;;;;;;;x
+Mod.55EVTOPT;Sometimes I even surprise myself;;;;;;;;;;;;x
+Mod.DESC56;My liege has persuaded me to embrace the Levantine culture that is sweeping the realm.;;;;;;;;;;;;x
+Mod.56EVTOPT;Ok;;;;;;;;;;;;x
+Mod.DESC57;Although Bedouin culture is that of our fathers, the new Egyptian culture has a certain functionality when dealing with our subjects. I have therefore prevailed upon a member of my court to adopt this for everyday administrative use.;;;;;;;;;;;;x
+Mod.57EVTOPT;A most useful development;;;;;;;;;;;;x
+Mod.DESC58;I was considering important business when I had an amazing insight. To strengthen my realm I must bring my vassals round to my way of thinking. I have convinced one of my vassals to adopt Egyptian culture.;;;;;;;;;;;;x
+Mod.58EVTOPT;Sometimes I even surprise myself;;;;;;;;;;;;x
+Mod.DESC59;My liege has persuaded me to embrace the Egyptian culture that is sweeping the realm.;;;;;;;;;;;;x
+Mod.59EVTOPT;Ok;;;;;;;;;;;;x
+Mod.DESC60;The Maghreb people of our lands, isolated from Latin influences, have begun to adopt some of the Arab ways of their masters, birthing the new fusion Arabic Berber culture.;;;;;;;;;;;;x
+Mod.60EVTOPT;Interesting...;;;;;;;;;;;;x
+Mod.DESC61;Our new Berber culture, appealing to both Maghreb and Arab subjects, continues to spread, unifying our once-split lands.;;;;;;;;;;;;x
+Mod.61EVTOPT;We are indeed wise;;;;;;;;;;;;x
+Mod.DESC62;Although Bedouin culture is that of our fathers, the new Berber culture has a certain functionality when dealing with our subjects. I have therefore prevailed upon a member of my court to adopt this for everyday administrative use.;;;;;;;;;;;;x
+Mod.62EVTOPT;A most useful development;;;;;;;;;;;;x
+Mod.DESC63;I was considering important business when I had an amazing insight. To strengthen my realm I must bring my vassals round to my way of thinking. I have convinced one of my vassals to adopt Berber culture.;;;;;;;;;;;;x
+Mod.63EVTOPT;Sometimes I even surprise myself;;;;;;;;;;;;x
+Mod.DESC64;My liege has persuaded me to embrace the Berber culture that is sweeping the realm.;;;;;;;;;;;;x
+Mod.64EVTOPT;Ok;;;;;;;;;;;;x
+# Bookmark stuff
+ERA_CHAR_NAME_1000000;Sisenando of the Visigoths;;;;;;;;;;;;x
+ERA_CHAR_INFO_1000000;A character of obscure origin, Sisenando was a minor Visigothic noble before his accession to the throne. He travelled to the Frankish kingdom and obtained the support of Dagobert I by promising him a 500-pound plate of pure gold, a Visigothic heirloom, gift from Aetius, the Roman general, to the Visigothic king Thorismund in A.D. 451. Upon his ascension to the throne in 631 with the help of the Franks, he reneged on his promise and instead gave Dagobert an equivalent value of silver and gold coins. Sisenando convoked the 4th Council of Toledo, which formulated civil and ecclesiastical laws, and increased the power of the Church and the king at the expense of the nobles, as well as fully establishing the elective nature of the Visigothic monarchy.;;;;;;;;;;;;x
+ERA_VISIGOTH_KINGDOM;Visigoth Kingdom;;;;;;;;;;;;x
+ERA_CHAR_NAME_180637;Yazdegerd III;;;;;;;;;;;;x
+ERA_CHAR_INFO_180637;A series of civil wars followed the death of Khosrow II in 628, eventually placing his grandson Yazdegerd III on the throne in 632. Just 17 at the time of his succession, the young Sassanid emperor was unable to hold back the hordes of Islamic invaders that overran his empire. He was eventually betrayed by his own father-in-law, a Mervian noble, in 651, and his descendants fled into obscurity in the far east.;;;;;;;;;;;;x
+ERA_SASSANID_EMPIRE;Sassanid Empire;;;;;;;;;;;;x
+ERA_CHAR_NAME_1001620;Harsha;;;;;;;;;;;;x
+ERA_CHAR_INFO_1001620;Upon the death of his father, Prabhakara, Harsha's older brother Rajya succeeded to the throne. The Pushyabuti kings were allied with the Maukhari king of Maghadha, Grahavarman, who was defeated and killed by Malwa in 604. The new king Rajya promptly defeated the Malwa king, but was betrayed to his death by his supposed ally, Shashanka of Gandhara in Bengal. Harsha then assumed the Pushyabuti throne and completely obliterated the Gandhara kingdom, killing Shashanka. Harsha assumed control of the Maukhari kingdom and transferred his capital to Kannauj. He went on to unify most of northern India under his control, but was unable to overcome the Chalukya kingdom in the south. His empire would completely disappear upon his death.;;;;;;;;;;;;x
+ERA_PUSHYABUTI_KINGDOM;Pushyabuti Kingdom;;;;;;;;;;;;x
+ERA_CHAR_NAME_205057;Penda of Mercia;;;;;;;;;;;;x
+ERA_CHAR_INFO_205057;Penda, one of as many as 12 sons of his father Pybba, had to overcome several dynastic rivals before he was able to secure uncontested control of the Mercian throne. One of the last pagan Anglo-Saxon kings, he refused to even consider conversion to Christianity. He wrested Hwicce from the control of Christian Wessex in 628, and allied with the Welsh to break the strength of Northumbria at the Battle of Hatfield Chase on October 12, 632, which split Northumbria once again into the kingdoms of Bernicia and Deira. By the time of his death in 655, Mercia could claim to be the most powerful Anglo-Saxon kingdom.;;;;;;;;;;;;x
+ERA_CHAR_NAME_163014;Caliph Abu Bakr;;;;;;;;;;;;x
+ERA_CHAR_INFO_163014;Chosen by the Ansar, the Muslims of Medina, to replace the Prophet Muhammad as the leader of Islam, Abu Bakr is recognized by most Muslims as one of the four Rashidun, or rightly-guided, Caliphs. Abu Bakr swiftly extinguished several rebellions in Arabia after Muhammad's death, and proceeded to invade the Persian and Roman empires. His conquests were continued by his successors after his brief one-year reign.;;;;;;;;;;;;x
+# ###################### Hellenic bad marriage event chain #################################
+Mod.DESC501;I have discovered that the marriage of [From.GetTitledName] was conducted without the holy blessing of the Pontificate. His wife is causing him to neglect the matters of the faith and pursue more exciting pastimes.;;;;;;;;;;;;x
+Mod.501EVTOPTA;Perhaps he will come around, eventually...;;;;;;;;;;;;x
+Mod.501EVTOPTB;I must convince him of the error of his ways.;;;;;;;;;;;;x
+Mod.501EVTOPTC;This is blatant disrespect! He must be excommunicated!;;;;;;;;;;;;x
+Mod.DESC502;[From.GetTitledName] claims that my marriage to [spouse.GetTitledName] was carried out without the blessing of the Pontificate. He requests that I correct the situation immediately, or face the consequences.;;;;;;;;;;;;x
+Mod.502EVTOPTA;I will do as His Holiness commands!;;;;;;;;;;;;x
+Mod.502EVTOPTB;I don't much like my wife anyway.;;;;;;;;;;;;x
+Mod.502EVTOPTC;Very well, I will divorce her.;;;;;;;;;;;;x
+Mod.502EVTOPTD;The Pontifex Maximus should stick to religious matters.;;;;;;;;;;;;x
+Mod.502EVTOPTE;I love [spouse.GetTitledName] and I won't give her up!;;;;;;;;;;;;x
+Mod.502EVTOPTF;I have no fear of the Pontifex Maximus!;;;;;;;;;;;;x
+Mod.502EVTOPTG;With all due respect, His Holiness is mistaken.;;;;;;;;;;;;x
+Mod.502EVTOPTH;Divorce is too good for her...;;;;;;;;;;;;x
+Mod.502EVTOPTI;Some time in prison will do her good.;;;;;;;;;;;;x
+Mod.DESC504;[From.GetTitledName] has heeded our Holy command and decided to divorce his wife.;;;;;;;;;;;;x
+Mod.504EVTOPTA;You have done well, my son.;;;;;;;;;;;;x
+Mod.504EVTOPTB;Too little, too late;;;;;;;;;;;;x
+Mod.DESC505;[From.GetTitledName] has ignored our Holy Voice and has decided to continue in unlawful wedded bliss with his wife.;;;;;;;;;;;;x
+Mod.505EVTOPTA;I have done all I could do. I wash my hands of him.;;;;;;;;;;;;x
+Mod.505EVTOPTB;How dare he!;;;;;;;;;;;;x
+Mod.505EVTOPTC;Excommunication may bring him back to the flock.;;;;;;;;;;;;x
+Mod.DESC506;[From.GetTitledName] has responded to our plea by executing his wife.;;;;;;;;;;;;x
+Mod.506EVTOPTA;A bit excessive, but the problem has been corrected.;;;;;;;;;;;;x
+Mod.506EVTOPTB;Just what I would have done.;;;;;;;;;;;;x
+Mod.506EVTOPTC;He went too far! Murderers have no place in the Hellenic faith!;;;;;;;;;;;;x
+Mod.DESC507;[From.GetTitledName] has imprisoned his wife in response to our admonitions.;;;;;;;;;;;;x
+Mod.507EVTOPTA;You have done well, my son.;;;;;;;;;;;;x
+Mod.507EVTOPTB;A wise and fitting punishment.;;;;;;;;;;;;x
+Mod.507EVTOPTC;Too little, too late;;;;;;;;;;;;x
+Mod.DESC508;[From.GetTitledName], pleased with our corrective action, has decided not to pursue the matter any further.;;;;;;;;;;;;x
+Mod.DESC509;'Although you have repented, you must still pay the penalty for your misdeeds. I hereby banish you from all ceremonies and rituals of the holy temples of Hellenism.';;;;;;;;;;;;x
+Mod.DESC510;'You are misguided. I bear no blame for any punishment that may fall upon your heads by the wrath of the gods.';;;;;;;;;;;;x
+Mod.DESC511;'How dare you disobey the holy command of my illustrious self, [From.GetTitledName]! Perhaps excommunication will bring you back to the will of the gods.';;;;;;;;;;;;;x
+Mod.DESC512;'You are a true Hellene, my son. Your decision is exactly what I would have done myself.';;;;;;;;;;;;;x
+Mod.DESC513;'You have gone too far! I meant for you to chastise your wife, not murder her! You are fortunate that I, unlike you, am merciful. Excommunication is the least of the punishments that you deserve.';;;;;;;;;;;;;x
+Mod.DESC514;'I have chastised you, and yet you refuse to repent. The Pontificate will give you no mercy.';;;;;;;;;;;;;x
+Mod.DESC515;'Your failure to correct your error demonstrates that you are beyond temporal punishment. Your excommunication is lifted, and whatever wrath the gods see fit to provide is on your own head.';;;;;;;;;;;;;x
+# ########################## Hellenic patron deities ##############################################
+EVTDESC_Mod_525;You can choose to follow a deity with whom you have an affinity. [Root.GetMinervaName] grants insight for running your realm. Worship [Root.GetMarsName] for fortune in war. [Root.GetDianaName] is the Goddess of the Hunt. Drink and carouse to please [Root.GetSaturnName]. Pray for prosperity to [Root.GetCeresName]. Apollo blesses his followers with learning and personability. Or follow [Root.GetMercuryName] to help along your intrigues.;;;;;;;;;;;;;x
+EVTOPT_Artemis_Mod_525;Divine Huntress [Root.GetDianaName], I devote the fruit of my bow to thee.;;;;;;;;;;;;;x
+EVTOPT_Athena_Mod_525;Oh [Root.GetMinervaName], enlighten me with your inscrutable wisdom.;;;;;;;;;;;;;x
+EVTOPT_Hermes_Mod_525;Grant me your quickness and your stealth, shrewd [Root.GetMercuryName].;;;;;;;;;;;;;x
+EVTOPT_Dionysus_Mod_525;With wine and ecstasy I will honor you, great [Root.GetSaturnName]!;;;;;;;;;;;;;x
+EVTOPT_Ares_Mod_525;My sword will never be sheathed, wrathful [Root.GetMarsName]!;;;;;;;;;;;;;x
+EVTOPT_Demeter_Mod_525;My bounty is yours, fair [Root.GetCeresName].;;;;;;;;;;;;;x
+EVTOPT_Apollo_Mod_525;Bright Apollo, shine your charm and learning upon me.;;;;;;;;;;;;;x
+EVTOPT_Imperial_Mod_525;Soon I too shall be Divine in both body and spirit!;;;;;;;;;;;;;x
+EVTDESC_Mod_526;[Root.GetDianaName] of the wildland, Mistress of Animals, is the Goddess of the Hunt. She uses her bow to protect virgins and young girls, or even to bring them death if they anger her. She remains ever chaste as she mourns her beloved, Orion, who she killed in a hunting accident.;;;;;;;;;;;;;x
+EVTDESC_Mod_527;[Root.GetMinervaName] the Virgin, bright-eyed Goddess of Wisdom, sprang fully grown and fully armed from the head of her father, [Root.GetJupiterName]. As the patron goddess of wisdom, justice, and heroic endeavour, she guards the city from foreign invaders, fighting bravely and skillfully but only when necessary.;;;;;;;;;;;;;x
+EVTDESC_Mod_528;Thievery and trickery are the domain of [Root.GetMercuryName], Messenger God. Conductor of souls and messenger of Olympus, he moves freely between the domains of the divine, the living, and the dead. [Root.GetMercuryName] loves mortals more than other gods, and has had many affairs and children with them.;;;;;;;;;;;;;x
+EVTDESC_Mod_529;[Root.GetSaturnName], God of Wine, is the patron of ecstasy and intoxication. His female followers and Satyrs lure men and women alike into orgies of spiraling intoxication and eventual ecstatic madness. His thyrsus staff is a weapon to destroy the self-conscious, the inhibited, and the oppressive.;;;;;;;;;;;;;x
+EVTDESC_Mod_530;[Root.GetMarsName] is the God of Conflict. His sons are Fear and Terror, and his sister is Discord. Ares revels in the violent and the untamed aspects of war, and never deigns to stay his weapon. He sows dissent and conflict at every chance among gods and mortals alike.;;;;;;;;;;;;;x
+EVTDESC_Mod_531;The Earth and its bounty belong to [Root.GetCeresName], Goddess of the Harvest. A blond-haired goddess, she separates the grain from the chaff, giving the farmer his harvest in due season. Winter comes when [Root.GetCeresName]'s daughter, Persephone, goes away every year to her husband [Root.GetPlutoName] in the Underworld.;;;;;;;;;;;;;x
+EVTDESC_Mod_532;Apollo, God of Light, is the twin brother of [Root.GetDianaName] and the son of [Root.GetJupiterName] and Leto. He is the embodiment of the ideal youth, charismatic and accomplished in the arts of poetry and music. When his wrath is aroused, he scourges the land with plague and disease.;;;;;;;;;;;;;x
+follower_of_artemis;Follower of Artemis;;;;;;;;;;;;;x
+follower_of_artemis_desc;This character is a devout follower of Artemis, the Hellenic deity of the Hunt.;;;;;;;;;;;;;x
+follower_of_athena;Follower of Athena;;;;;;;;;;;;;x
+follower_of_athena_desc;This character is a devout follower of Athena, the Hellenic deity of Wisdom.;;;;;;;;;;;;;x
+follower_of_hermes;Follower of Hermes;;;;;;;;;;;;;x
+follower_of_hermes_desc;This character is a devout follower of Hermes, the Hellenic deity of Tricks and Travel.;;;;;;;;;;;;;x
+follower_of_dionysus;Follower of Dionysus;;;;;;;;;;;;;x
+follower_of_dionysus_desc;This character is a devout follower of Dionysus, the Hellenic deity of Wine.;;;;;;;;;;;;;x
+follower_of_ares;Follower of Ares;;;;;;;;;;;;;x
+follower_of_ares_desc;This character is a devout follower of Artemis, the Hellenic deity of War.;;;;;;;;;;;;;x
+follower_of_demeter;Follower of Demeter;;;;;;;;;;;;;x
+follower_of_demeter_desc;This character is a devout follower of Demeter, the Hellenic deity of the Harvest.;;;;;;;;;;;;;x
+follower_of_apollo;Follower of Apollo;;;;;;;;;;;;;x
+follower_of_apollo_desc;This character is a devout follower of Apollo, the Hellenic deity of the Sun.;;;;;;;;;;;;;x
+GOD_MINERVA;[Root.GetMinervaName];;;;;;;;;;;;;x
+GOD_VESTA;[Root.GetVestaName];;;;;;;;;;;;;x
+GOD_JUPITER;[Root.GetJupiterName];;;;;;;;;;;;;x
+GOD_SATURN;[Root.GetSaturnName];;;;;;;;;;;;;x
+PLUTO;[Root.GetPlutoName];;;;;;;;;;;;;x
+GOD_MARS;[Root.GetMarsName];;;;;;;;;;;;;x
+GOD_VENUS;[Root.GetVenusName];;;;;;;;;;;;;x
+GOD_MERCURY;[Root.GetMercuryName];;;;;;;;;;;;;x
+String_minerva;Minerva;;;;;;;;;;;;;x
+String_athena;Athena;;;;;;;;;;;;;x
+String_vesta;Vesta;;;;;;;;;;;;;x
+String_hestia;Hestia;;;;;;;;;;;;;x
+String_jupiter;Jupiter;;;;;;;;;;;;;x
+String_zeus;Zeus;;;;;;;;;;;;;x
+String_saturn;Saturn;;;;;;;;;;;;;x
+String_dionysus;Dionysus;;;;;;;;;;;;;x
+String_pluto;Pluto;;;;;;;;;;;;;x
+String_hades;Hades;;;;;;;;;;;;;x
+String_mars;Mars;;;;;;;;;;;;;x
+String_ares;Ares;;;;;;;;;;;;;x
+String_venus;Venus;;;;;;;;;;;;;x
+String_aphrodite;Aphrodite;;;;;;;;;;;;;x
+String_mercury;Mercury;;;;;;;;;;;;;x
+String_hermes;Hermes;;;;;;;;;;;;;x
+String_diana;Diana;;;;;;;;;;;;;x
+String_artemis;Artemis;;;;;;;;;;;;;x
+# ################## Hellenic Artifacts ###################
+golden_fleece;Golden Fleece;;;;;;;;;;;;;x
+golden_fleece_desc;The Golden Fleece is the hide of a divine winged ram sired by Poseidon in his primitive form. The fleece symbolizes wealth and authority to rule. King Aeetes of Colchis famously promised the fleece to Jason as a prize for a successful quest.;;;;;;;;;;;;;x
+aegis;Aegis;;;;;;;;;;;;;x
+aegis_desc;The Aegis is the shield of Athena, who bestowed it upon Perseus to aid him in his quest to free Andromeda. Perseus used the Aegis to behead Medusa, the Gorgon whose gaze could turn a man to stone.;;;;;;;;;;;;;x
+winged_sandals;Talaria;;;;;;;;;;;;;x
+winged_sandals_desc;The Talaria are the winged sandals of the messenger god Hermes. Forged by Hephaestus from imperishable gold, they allow their wearer to fly as swift as a bird. Hermes once lent them to Perseus to help him kill Medusa.;;;;;;;;;;;;;x
+feet;Footwear;;;;;;;;;;;;;x
+# ########################## Secret Societies #####################################################
+secret_hellenic_pagan_reformed_society;Dionysian Mysteries;;;;;;;;;x
+secret_hellenic_pagan_reformed__society_desc;Outwardly conformed, true believers of Hellenism still practice the merry and mysterious festival of ecstasy for their gods, preparing for the day when their rites will again hold sway.;;;;;;;;;;;;;x
+secret_east_african_pagan_reformed_community;Secret Cushitic Pagan Community;;;;;;;;;;;;;x
+secret_east_african_pagan_reformed_community_desc;In secret, Cushitic faithfuls have organized themselves as a community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_hellenic_pagan_reformed_community;Secret Hellenic Community;;;;;;;;;;;;;x
+secret_hellenic_pagan_reformed_community_desc;In secret, Hellenic faithfuls have organized themselves as a community in this province. From there it converts others, grows, and protects their own.;;;;;;;;;;;;;x
+secret_hellenic_pagan_reformed_society_leader_desc;The High Priest of $SOCIETY|Y$, leading the international effort of bringing more people into the fold.;;;;;;;;;;;;;x
+# ############################### Alzek #########################################
+KHAN;Khan;;;;;;;;;;;;;x
+Mod.TITLE37;Alzek's Host;;;;;;;;;;;;;x
+Mod.DESC37;A band of barbarian Bolghars from the east has arrived in your lands, fleeing from failed conquests. Their leader Alzek, a brave warrior of noble birth, seeks an audience.\n\nMy [Root.GetChancellorName], [Root.job_chancellor.GetTitledFirstName], thinks we should hear what he has to say, but my [Root.GetLordSpiritualName], [Root.job_spiritual.GetTitledFirstName], cautions against association with infidels and unbelievers.;;;;Un ejercito de Bolghares bárbaros del oriente ha llegado en tu país, escapando de conquistas fracasadas. Su líder Alzek, un guerrero bravo de sangre azul, pide una entrevista.\n\nMi [Root.GetChancellorName] piensa que debamos oír lo que el tiene que decir, pero mi [Root.GetLordSpiritualName] te amonesta contra la asosiación con los infieles y descreídos.;;;;;;;;x
+Mod.37EVTOPTA;Let's find out what this barbarian wants;;;;;;;;;;;;;x
+Mod.37EVTOPTB;Pagans can seek refuge elsewhere;;;;;;;;;;;;;x
+Mod.37EVTOPTC;Execute them! Deus Vult!;;;;;;;;;;;;;x
+Mod.37EVTOPTD;Lie in wait to arrest him;;;;;;;;;;;;;x
+Mod.TITLE38;Alzek;;;;;;;;;;;;;x
+Mod.DESC38;"Well met, [Root.GetTitledFirstName]! I am Alzek, Khan of a thousand warriors and son and brother to the Great Khans of the Onogurs, Kutrigurs, and Utigurs. My army fought bravely against the hordes of the Avars, but we were hopelessly outnumbered. We are exhausted from months of travel across the inhospitable wastelands of the unforgiving Slavs.\n\n"We humbly ask that you allow us to take refuge among your people. In return, my warriors will help protect your subjects and lands against whatever enemies you may have.";;;;;;;;;;;;;x
+Mod.38EVTOPTA;Very well, they may stay with us for a while;;;;;;;;;;;;;x
+Mod.38EVTOPTB;Unfortunately, we cannot spare anything for them;;;;;;;;;;;;;x
+Mod.38EVTOPTC;These heathens will feel the edge of my blade!;;;;;;;;;;;;;x
+Mod.TITLE40;Alzek's Host;;;;;;;;;;;;;x
+Mod.DESC40;"[Root.GetFOA], I am Alzek, Khan of a thousand warriors and son and brother to the Great Khans of the Onogurs, Kutrigurs, and Utigurs. My army has fought bravely among Avars and Slavs. We are exhausted from months of travel across the inhospitable wastelands of unforgiving peoples.\n\n"We humbly ask that you allow us to settle among your people. In return, my warriors will refrain from laying waste to your fields and forests.";;;;;;;;;;;;;x
+Mod.40EVTOPTA;They may settle in my one of my demesne lands;;;;;;;;;;;;;x
+Mod.40EVTOPTB;My vassal has plenty of land, let them settle there;;;;;;;;;;;;;x
+Mod.40EVTOPTC;These foul pagans deserve to die of starvation;;;;;;;;;;;;;x
+Mod.TITLE41;Alzek;;;;;;;;;;;;;x
+Mod.DESC41;"We have lived among you now for many months, dependent on your hospitality for food and shelter. We have fought by your side in your wars, and we have harmed nary a hair on the head of one of your subjects. There is not one stain on our service and loyalty to you.\n\n"I ask that you give me and my people a permanent home in which to settle, as our true and just reward for our alliance with you.";;;;;;;;;;;;;x
+Mod.41EVTOPTA;How about you work for me as permanently employed mercenaries?;;;;;;;;;;;;;x
+Mod.41EVTOPTB;You may settle in one of my personal provinces;;;;;;;;;;;;;x
+Mod.41EVTOPTC;You may settle in lands of one of my vassals;;;;;;;;;;;;;x
+Mod.41EVTOPTD;Unfortunately, I think our association must come to an end;;;;;;;;;;;;;x
+Mod.TITLE42;Alzek in Bavaria;;;;;;;;;;;;;x
+Mod.DESC42;We have received word that [From.GetTitledName], one of Our tributaries, has--without Our knowledge or consent--taken in a band of armed pagan barbarian refugees from the east. Their leader, Alzek, has promised to fight as an ally beside the Bavarians in exchange for shelter and provisions.;;;;;;;;;;;;;x
+Mod.42EVTOPTA;This will not stand!;;;;;;;;;;;;;x
+Mod.42EVTOPTB;Excellent! Perhaps he will not be so keen to call me into all his wars . . .;;;;;;;;;;;;;x
+Mod.TITLE43;A Message from [From.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.DESC43;To the most dutiful [Root.GetTitledName]:\n\nIt has come to Our notice that you have given refuge to a most heathen and barbaric foreigner, called by the name Alzek, and have habored the host of the same, heedless of the depradations they have committed against good Christians.\n\nWe hereby command that you immediately and with prejudice rid your lands of this pagan scourge.;;;;;;;;;;;;;x
+Mod.43EVTOPTA;So shall it be done! Execute them!;;;;;;;;;;;;;x
+Mod.43EVTOPTB;Banish them from our lands;;;;;;;;;;;;;x
+Mod.43EVTOPTC;We don't need approval from [From.GetTitledFirstName]!;;;;;;;;;;;;;x
+Mod.TITLE44;Reply from [From.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.DESC44;To the misguided [Root.GetTitledFirstName]:\n\nIt is not the will of God that a single one of his children should perish, whether they be Christian or pagan. He may yet work his will through even the meanest of instruments.\n\nWe cannot in good conscience release these Avars to the meager mercies of the Devil, though all the might of man collude to force it. We release ourselves from our oaths and of your worthless protection!;;;;;;;;;;;;;x
+Mod.44EVTOPTA;This will not stand!;;;;;;;;;;;;;x
+Mod.44EVTOPTB;So be it!;;;;;;;;;;;;;x
+Mod.DESC49;[From.GetTitledFirstName] sends word that several of our Bolghar mercenaries wreaked havoc in the capital city yesterday. In their drunken stupor, they set fire to an inn, killed two watchmen, pissed on a church, and mocked God! The people are crying out for justice.;;;;;;;;;;;;;x
+Mod.49EVTOPTA;Make an example of them.;;;;;;;;;;;;;x
+Mod.49EVTOPTB;Oh, come now. Boys will be boys.;;;;;;;;;;;;;x
+# ############################ Venice and Amalfi ######################################
+Mod.DESC401;You have been approached by several influential merchant families from Venice. They are seeking your blessing to establish the Most Serene Republic of Venice, a trading confederation that will operate in the Adriatic and Mediterranean. By sanctioning this and turning Venice into an Imperial hub of commerce, you could stand to profit greatly from their trade...;;;;;;;;;;;;;x
+Mod.401EVTOPTA;They have my blessing.;;;;;;;;;;;;;x
+Mod.401EVTOPTB;Not on my watch!;;;;;;;;;;;;;x
+permit_venice_tooltip;You permit the formation of the Republic of Venice.;;;;;;;;;;;;;x
+deny_venice_tooltip;You refuse the formation of the Republic of Venice.;;;;;;;;;;;;;x
+Mod.TITLE417;The Republic of Venice;;;;;;;;;;;;;x
+Mod.DESC417;Several merchant guilds and trade cities along the shores of the Adriatic have come together in [From.MercRepCapital.GetName] to form the Most Serene Republic of Venice with the blessing of [FromFrom.TopLiege.GetTitledFirstName] of the Byzantine Empire. This confederation of port cities is dedicated towards the continued prosperity of its members and the mutual defense of any merchant vessels flying its flag. Their eventual and unstated goal, of course, is to one day completely dominate all trade in the Mediterranean sea...;;;;;;;;;;;;;x
+Mod.417EVTOPTA;That's bound to ruffle some feathers...;;;;;;;;;;;;;x
+Mod.417EVTOPTB;A new rival!;;;;;;;;;;;;;x
+Mod.DESC409;The merchants running one of your Trade Posts have abandoned their allegiance to your dynasty! They now serve one of the patrician families in the newly born Republic of Venice, claiming that the upstart trade league affords them better opportunities to profit.;;;;;;;;;;;;;x
+Mod.409EVTOPTA;Ingrates!;;;;;;;;;;;;;x
+Mod.DESC421;You have been approached by several influential merchant families from Amalfi. They are seeking your blessing to establish the Republic of Amalfi, a trading confederation that will operate in the Tyrrhenian Sea. By sanctioning this and turning Amalfi into an Imperial hub of commerce, you could stand to profit greatly from their trade...;;;;;;;;;;;;;x
+Mod.421EVTOPTA;They have my blessing.;;;;;;;;;;;;;x
+Mod.421EVTOPTB;Not on my watch!;;;;;;;;;;;;;x
+permit_amalfi_tooltip;You permit the formation of the Republic of Amalfi.;;;;;;;;;;;;;x
+deny_amalfi_tooltip;You refuse the formation of the Republic of Amalfi.;;;;;;;;;;;;;x
+Mod.TITLE437;The Republic of Amalfi;;;;;;;;;;;;;x
+Mod.DESC437;Several merchant guilds and trade cities along the shores of the Tyrrhenian Sea have come together in [From.MercRepCapital.GetName] to form the Republic of Amalfi with the blessing of [FromFrom.TopLiege.GetTitledFirstName] of the Byzantine Empire. This confederation of port cities is dedicated towards the continued prosperity of its members and the mutual defense of any merchant vessels flying its flag. Their eventual and unstated goal, of course, is to one day completely dominate all trade in the Mediterranean sea...;;;;;;;;;;;;;x
+Mod.437EVTOPTA;That's bound to ruffle some feathers...;;;;;;;;;;;;;x
+Mod.437EVTOPTB;A new rival!;;;;;;;;;;;;;x
+Mod.DESC429;The merchants running one of your Trade Posts have abandoned their allegiance to your dynasty! They now serve one of the patrician families in the newly born Republic of Amalfi, claiming that the upstart trade league affords them better opportunities to profit.;;;;;;;;;;;;;x
+Mod.429EVTOPTA;Ingrates!;;;;;;;;;;;;;x
+# ############################################# Moddable Succession ######################################################
+witan_elective;Witenagemot;;;;;;;;;;;;;x
+succ_witan_elective;Witenagemot;;;;;;;;;;;;;x
+succ_witan_elective_desc;Succession by Witenagemot, the meeting of the Witan, which is made up of all realm lords temporal and spiritual, as well as the ruler's immediate family. Succession is limited to landed dynasty members, close relatives, and claimants.;;;;;;;;;;;;;x
+culture_effect_witan_succession;Has access to the §GWitanagemot§! succession law;;;;;;;;;;;;;x
+title_caliphate_heir;Caliphal Heir;;;;;;;;;;;;;x
+title_caliphate_heir_desc;Under Caliphal Elective law, the heir to the caliphate is chosen by vote of eligible realm lords and theocrats.;;;;;;;;;;;;;x
+caliphate_heir;Caliphal Heir;;;;;;;;;;;;;x
+caliphate_heir_desc;This character is the heir of the Caliphate under Caliphal Elective succession.;;;;;;;;;;;;;x
+caliphate_elective;Caliphal Elective;;;;;;;;;;;;;x
+succ_caliphate_elective;Caliphal Elective;;;;;;;;;;;;;x
+succ_caliphate_elective_desc;The succession of the nascent Rashidun Caliphate. The next Caliph is chosen from a list of candidates eligible by right of dynasty or consummate qualifications.\n\nSecondary titles are inherited by acclamation for the primary title heir.;;;;;;;;;;;;;x
+succ_offmap_succession_desc;[This.GetSuccessionDesc];;;;;;;;;;;;;x
+tooltip_feudal_elector_vote_competent;He is competent;;;;;;;;;;;;;x
+tooltip_feudal_elector_vote_very_competent;He is very competent;;;;;;;;;;;;;x
+633_succ_caliphate_elective;Election;;;;;;;;;;;;;x
+633_succ_caliphate_elective_desc;The next Caliph is elected by secret ballot of the most learned and important leaders of the Ummah.\n\nRight-click the Caliph and use the §YElect Caliph§! decision to cast your vote.;;;;;;;;;;;;;x
+633_succ_offmap_succession;Appointment;;;;;;;;;;;;;x
+633_succ_offmap_succession_desc;A new Governor arrives from China each time the old one dies. The Governor is always a competent steward.;Un nouveau gouverneur arrive de Chine à chaque fois que le précédent meurt. C'est toujours un intendant compétent.;Ein neuer Gouverneur erscheint jedes Mal, wenn der alte stirbt. Der Gouverneur ist immer ein fähiger Kämmerer.;;Un gobernador nuevo llega de China cuando muere el anterior. El gobernador siempre es un administrador competente.;;;;;;;;;x
+elect_caliph;Elect Caliph;;;;;;;;;x
+elect_caliph_desc;Elect an eligible candidate to vote for as heir to the Caliphate.;;;;;;;;;x
+caliphate_votes;Caliphate Votes;;;;;;;;;x
+alert_noheir_name;[Root.GetNoHeirAlertName];;;;;;;;;x
+alert_noheir_instant;[Root.GetNoHeirAlertInstant];;;;;;;;;x
+alert_noheir_delayed;[Root.GetNoHeirAlertDelayed];;;;;;;;;x
+alert_noheir_name_caliphate;Caliphal Succession;;;;;;;;;x
+alert_noheir_instant_caliphate;§YCaliphal Elective Succession§!;;;;;;;;;x
+alert_noheir_delayed_caliphate;Use the §YElect Caliph§! decision to nominate an heir. The current heir will be given the §YCaliphal Heir§! minor title and trait.;;;;;;;;;x
+alert_noheir_name_vanilla;No heir;Pas d'héritier;Kein Erbe;;No tienes Heredero;;;;;;;;;x
+alert_noheir_instant_vanilla;§YNo heir of your dynasty!§!;§YPas d'héritier de votre dynastie !§!;§YEure Dynastie hat keinen Erben!§!;;§Y¡No es heredero de tu dinastía!§!;;;;;;;;;x
+alert_noheir_delayed_vanilla;If your ruler dies now the game will end!;Si votre personnage mourait maintenant, la partie prendrait fin !;Wenn Euer Herrscher jetzt stirbt, endet das Spiel!;;¡Si tu gobernante muere ahora terminará la partida!;;;;;;;;;x
+Mod.TITLE604;[Root.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.DESC604;[From.GetTitledFirstName];;;;;;;;;;;;;x
+Mod.604EVTOPT1;he [From.GetDeadRulerAdjective] [From.GetTitledFirstName] [From.GetDeathPhrase] at age [From.GetAgeYears]. [From.GetSheHeCap] [From.GetDeathReason]. [From.GetDeathText].;;;;;;;;;;;;;x
+Mod.604EVTOPT2;he [Root.GetDeadRulerAdjective] [Root.GetTitledFirstName] -- [Root.GetHeirText].;;;;;;;;;;;;;x
+Mod.604EVTOPT3;T;;;;;;;;;;;;;x
+Mod.604EVTOPT4;T;;;;;;;;;;;;;x
+String_illustrious;illustrious;;;;;;;;;;;;;x
+String_great;great;;;;;;;;;;;;;x
+String_warlike;warlike;;;;;;;;;;;;;x
+String_violent;violent;;;;;;;;;;;;;x
+String_wicked;wicked;;;;;;;;;;;;;x
+String_shrewd;shrewd;;;;;;;;;;;;;x
+String_blessed;blessed;;;;;;;;;;;;;x
+String_pious;pious;;;;;;;;;;;;;x
+String_inept;inept;;;;;;;;;;;;;x
+String_repugnant;repugnant;;;;;;;;;;;;;x
+String_magnificent;magnificent;;;;;;;;;;;;;x
+String_unremarkable;unremarkable;;;;;;;;;;;;;x
+heir_text_1_default;An enigma even to those who know [Root.GetHerHim], [Root.GetHerHis] rule may doom or save us all;, une énigme même pour ceux qui [Root.GetLeLa] connaissent, lui succède. Son règne pourrait être voué à l'échec ou bien tous nous sauver;[Root.GetSheHeCap] ist ein Rätsel selbst für die, die [Root.GetHerHim] kennen. [Root.GetSheHeCap] könnte unser Untergang oder unsere Rettung sein.;;Un enigma hasta para quienes [Root.GetHerHim] conocen, [Root.GetHerHis] gobierno puede condenarnos o salvarnos a todos;;;;;;;;;x
+heir_text_1_underage;Merely [Root.GetAgeYears] years old, the realm is left in the capable hands of the regent and council;, à peine âgé[Root.GetNoneE] de [Root.GetAgeYears] ans, lui succède. Le pays est laissé entre les mains d'un régent et du Conseil;Aufgrund des geringen Alters von nur [Root.GetAgeYears] Jahren wird das Reich vom Regenten und dem Rat regiert.;;Con solo [Root.GetAgeYears] años, el reino está en las competentes manos del regente y el consejo;;;;;;;;;x
+heir_text_1_useless;Having no skills with which to keep the realm together, [Root.GetHerHis] rule may be doomed to fail; lui succède. N'ayant pas de compétence qui pourrait maintenir le pays uni, son règne pourrait être voué à l'échec;Da [Root.GetSheHe] über keinerlei Fähigkeiten verfügt, um das Reich zusammenzuhalten, wird [Root.GetSheHe] womöglich an dieser Aufgabe scheitern.;;Al no tener habilidades para mantener unido el reino, [Root.GetHerHis] reinado puede estar condenado al fracaso;;;;;;;;;x
+heir_text_1_strong_and_smart;Possessing a mighty physique and an exceptionally astute mind, [Root.GetFirstName]'s rule is sure to spawn both song and tale; lui succède. Possédant un physique puissant et un esprit intuitif, son règne se répandra en chansons et en légendes;[Root.GetFirstName] verfügt über beeindruckende körperliche sowie geistige Stärke und es werden sicher Lieder und Legenden über [Root.GetHerHim] verfasst.;;Al poseer un físico poderos y una mente excepcionalmente astuta, el reinado de [Root.GetFirstName] producirá cantares e historias;;;;;;;;;x
+heir_text_1_weak_and_dumb;Blessed with neither a sharp mind nor a warrior's physique, [Root.GetFirstName]'s rule will surely be arduous; lui succède. Doté[Root.GetNoneE] ni d'un esprit vif ni d'un physique de guerrier, son règne va sûrement être difficile;[Root.GetFirstName] verfügt weder über einen scharfen Geist noch den Körper eines Kriegers, und wird sich beim Herrschen sicherlich schwertun.;;Sin la bendición de una mente aguda ni el físico de un guerrero, el reinado de [Root.GetFirstName] seguramente sea difícil;;;;;;;;;x
+heir_text_1_demon;Being the child of [Root.Religion.GetRandomEvilGodName], [Root.GetFirstName]'s rule is sure to usher in a new age of terror and despair; lui succède. Étant l'enfant envoyé[Root.GetNoneE] par [Root.Religion.GetRandomEvilGodName], son règne sera celui de la terreur et du désespoir;Als Kind von [Root.Religion.GetRandomEvilGodName] wird die Herrschaft von [Root.GetFirstName] sicherlich ein neues Zeitalter des Grauens und der Hoffnungslosigkeit einläuten.;;Hijo/a de [Root.Religion.GetRandomEvilGodName], el reinado de [Root.GetFirstName] seguramente traiga una nueva era de terror y desesperación;;;;;;;;;x
+heir_text_1_military;Being a talented military tactician, we expect [Root.GetHerHim] to lead us to many victories on the field of battle; lui succède. Étant un fin tacticien militaire, nous nous attendons à ce qu'[Root.GetIlElle] nous mène à de nombreuses victoires sur le champ de bataille;Da [Root.GetSheHe] über großes militärisches Geschick verfügt, erwarten wir, dass [Root.GetSheHe] uns zu vielen Siegen auf dem Schlachtfeld führen wird.;;Al poseer una talentosa táctica militar, de [Root.GetSheHe] esperamos que nos lleve a muchas victorias en el campo de batalla;;;;;;;;;x
+heir_text_1_learning;A wise and learned [Root.GetManWoman], progress and innovation is expected under [Root.GetHerHis] rule;, un[Root.GetNoneE] [Root.GetManWoman] sage et érudit[Root.GetNoneE] dont nous attendons des innovations, lui succède;Da [Root.GetSheHe] weise und gebildet ist, versprechen wir uns große Fortschritte und Innovationen.;;[Root.GetManWoman] inteligente e instruido/a, se espera progreso e innovación bajo [Root.GetHerHis] reinado.;;;;;;;;;x
+heir_text_1_stewardship;Being both thrifty and frugal, the realm will surely prosper under [Root.GetHerHis] rule; lui succède. Son caractère frugal et économe permettra sûrement au pays de prospérer;Da er [Root.GetSheHe] als sparsam und genügsam gilt, sollte [Root.GetSheHe] dem Reich sicher zu Wohlstand verhelfen können.;;Económico/a y frugal, seguro que el reino prosperará bajo [Root.GetHerHis] reinado.;;;;;;;;;x
+heir_text_1_intrigue;A crafty and perceptive [Root.GetManWoman], [Root.GetSheHe] will have no problem gaining leverage where needed; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] perspicace qui n'aura pas de problème à influencer les gens si nécessaire;[Root.GetSheHeCap] zeichnet sich durch List und Scharfsinn aus und sollte daher stets die Oberhand gewinnen, wenn es darauf ankommt.;;[Root.GetManWoman] astuto/a y perspicaz, a [Root.GetSheHe] no le costará ejercer influencia cuando sea necesario;;;;;;;;;x
+heir_text_1_diplomacy;An accomplished diplomat, vassals and foreign rulers alike are sure to respect [Root.GetHerHim]; lui succède. Un[Root.GetNoneE] diplomate accompli[Root.GetNoneE] que les vassaux et les souverains étrangers respecteront;Da [Root.GetSheHe] mit diplomatischem Talent gesegnet ist, werden [Root.GetHerHim] sowohl Vasallen als auch fremdländische Herrscher respektieren.;;Diplomático/a consumado, gobernantes vasallos y extranjeros [Root.GetHerHim] respetarán por igual;;;;;;;;;x
+heir_text_1_traits_glutton_greedy;A rotund and selfish [Root.GetManWoman], we are hoping [Root.GetSheHe] will not eat the realm out of house and home; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] enrobé[Root.GetNoneE] et égoïste, nous espérons qu'[Root.GetIlElle] n'engloutira pas le pays;[Root.GetSheHeCap] ist dicklich, eigennützig und wird hoffentlich nicht das gesamte Reich arm fressen.;;[Root.GetManWoman] voluminoso/a y egoísta, esperamos que [Root.GetSheHe] no deje el reino vacío;;;;;;;;;x
+heir_text_1_traits_poet;A prolific writer of prose, [Root.GetFirstName] will likely be able to charm anyone with [Root.GetHerHis] words; lui succède. Prosateur prolifique, [Root.GetIlElle] sera capable de charmer quiconque avec ses mots;[Root.GetFirstName] ist in den Künsten der Prosa wohl bewandert und vermag mit gewandten Worten jeden zu überzeugen.;;Prolífico escritor/a de prosa, es probable que [Root.GetFirstName] encante a todo el mundo con [Root.GetHerHis]s palabras;;;;;;;;;x
+heir_text_1_traits_cynical_just;Not fearing [Root.Religion.GetHighGodName], [Root.GetSheHe] never lets religion get in the way of justice; lui succède. Ne craignant pas [Root.Religion.GetHighGodName], [Root.GetIlElle] ne laisse jamais la religion faire obstacle à la justice;[Root.GetSheHeCap] fürchtet [Root.Religion.GetHighGodName] nicht und wird niemals zulassen, dass Religion über Gerechtigkeit gestellt wird.;;No teme a [Root.Religion.GetHighGodName], [Root.GetSheHe] no deja jamás que la religión se interponga en el camino de la justicia;;;;;;;;;x
+heir_text_1_traits_content_arbitrary;A carefree [Root.GetManWoman], [Root.GetSheHe] is perfectly fine with letting things stay as they are; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] insouciant[Root.GetNoneE] qui laisse les choses telles qu'elles sont;Da [Root.GetSheHe] völlig sorglos und unbekümmert ist, wird wohl weiterhin alles seinen gewohnten Gang gehen.;;[Root.GetManWoman] despreocupado/a, [Root.GetSheHe] es perfectamente capaz de dejar las cosas tal como están;;;;;;;;;x
+heir_text_1_traits_craven_military_ed;Preferring to lead troops from the safety of [Root.GetHerHis] home, [Root.GetFirstName] will have a hard time inspiring the troops; lui succède. Préférant diriger les troupes depuis la sécurité de sa demeure, [Root.GetIlElle] aura du mal à les motiver;Da [Root.GetFirstName] die Truppen lieber aus heimatlicher Sicherheit anführt, wird [Root.GetSheHe] sich schwertun, die Soldaten anzuspornen.;;A [Root.GetFirstName] le costará inspirar a las tropas, ya que prefiere dirigirlas desde la seguridad de [Root.GetHerHis] casa;;;;;;;;;x
+heir_text_1_traits_shy_content;A reclusive [Root.GetManWoman], [Root.GetSheHe] is perfectly fine letting the council do most of [Root.GetHerHis] work - for better or for worse; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] reclus[Root.GetNoneE] qui accepte volontiers de laisser le Conseil faire le plus gros du travail - pour le meilleur, comme pour le pire;[Root.GetSheHeCap] lebt sehr zurückgezogen und überlässt dem Rat nur zu gern den Großteil der Arbeit ... auf Gedeih und Verderb.;;[Root.GetManWoman] huraño/a, [Root.GetSheHe] es perfectamente capaz de dejar que el consejo haga la mayor parte de [Root.GetHerHis] trabajo, para bien o para mal;;;;;;;;;x
+heir_text_1_traits_zealous_paranoid;Seeing the agents of [Root.Religion.GetRandomEvilGodName] around every corner, heretics and heathens alike should beware [Root.GetHerHis] rule; lui succède. Voyant des agents envoyés par [Root.Religion.GetRandomEvilGodName] partout, les hérétiques et les infidèles devraient [Root.GetLeLa] craindre;[Root.GetSheHeCap] sieht an jeder Ecke Anhänger von [Root.Religion.GetRandomEvilGodName]. Ketzer und Heiden sollten sich also in Acht nehmen, wenn [Root.GetSheHe] an die Macht kommt.;;Ve agentes de [Root.Religion.GetRandomEvilGodName] por todas partes, que herejes e infieles se cuiden de [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_traits_zealous_charitable;Both pious and generous, the [Root.Religion.GetPriestTitle]s are likely to grow rich under [Root.GetHerHis] rule;, un[Root.GetNoneE] [Root.GetManWoman] faisant preuve de piété et de générosité, lui succède. Les [Root.Religion.GetPriestTitle]s s'enrichiront probablement durant son règne;[Root.GetSheHeCap] ist fromm und freigiebig, die [Root.Religion.GetPriestTitle]-Gemeinschaft kann sich also auf goldene Zeiten vorbereiten.;;Piadoso/a y generoso/a, es probable que los [Root.Religion.GetPriestTitle]s se hagan ricos durante [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_traits_decadent;Decadent and indulgent, [Root.GetSheHe] brings shame upon the [Root.GetOnlyDynastyName] dynasty - an ill spell for the future of the realm; lui succède. Décadent[Root.GetNoneE] et indulgent[Root.GetNoneE], [Root.GetIlElle] fait honte à la dynastie [Root.GetOnlyDynastyName] - un mauvais présage pour le pays;[Root.GetSheHeCap] ist dekadent, maßlos und bringt Schande über die [Root.GetOnlyDynastyName]-Dynastie. Schlechte Aussichten für die Zukunft des Reichs.;;Decadente e indulgente, [Root.GetSheHe] avergüenza a la dinastía [Root.GetOnlyDynastyName], un mal augurio para el futuro del reino;;;;;;;;;x
+heir_text_1_traits_proud_brave;Always clad in glistening and splendid armor, [Root.GetFirstName] wants everyone to see [Root.GetHerHim] as [Root.GetSheHe] charges into battle; lui succède. Portant toujours une armure scintillante et splendide, [Root.GetIlElle] veut que tout le monde [Root.GetLeLa] voit en train de charger l'ennemi;[Root.GetFirstName] ist stets in glänzender Rüstung anzutreffen und möchte, dass alle dabei zusehen, wie [Root.GetSheHe] sich in den Kampf stürzt.;;Vistiendo siempre una armadura reluciente y espléndida, [Root.GetFirstName] quiere que todos [Root.GetHerHim] vean cuando [Root.GetSheHe] se lance al combate.;;;;;;;;;x
+heir_text_1_traits_cynical_cruel;Never fearing the wrath of [Root.Religion.GetHighGodName], [Root.GetFirstName] is unlikely to spare any subject the punishments [Root.GetSheHe] sees fit; lui succède. Ne craignant pas la colère divine, [Root.GetIlElle] n'épargnera probablement ses châtiments à aucun sujet;Der Zorn von [Root.Religion.GetHighGodName] lässt [Root.GetFirstName] völlig kalt, und kaum ein Untertan wird verschont, wenn [Root.GetSheHe] die Bestrafung für angemessen hält.;;Como jamás ha temido la ira de [Root.Religion.GetHighGodName], es muy improbable que [Root.GetFirstName] no castigue a sus súbditos como se le antoje;;;;;;;;;x
+heir_text_1_traits_humble_stubborn;Adamant in [Root.GetHerHis] ways of worship, faith and tradition is likely to be favored under [Root.GetHerHis] rule; lui succède. Inflexible dans ses croyances, [Root.GetIlElle] favorisera sans doute la foi et la tradition lors de son règne;[Root.GetSheHeCap] ist in Fragen der Gottesanbetung unnachgiebig. Wenn [Root.GetSheHe] an die Macht kommt, werden Glaube und Tradition einen hohen Stellenwert einnehmen.;;Inflexible en [Root.GetHerHis] manera de adorar, es muy probable que los caminos de la fe y la tradición sean favorecidos en [Root.GetHerHis] reinado.;;;;;;;;;x
+heir_text_1_traits_deceitful_envious;A devious and discontent soul, [Root.GetHerHis] rule is likely to be filled with spite and intrigue;, un esprit sournois et insatisfait, lui succède. Son règne sera sans doute fait de rancune et d'intrigues;Da [Root.GetSheHe] eine verschlagene und unzufriedene Seele ist, müssen wir uns auf eine Herrschaft voller Tücke und Intrigen gefasst machen.;;De alma taimada y descontenta, es probable que [Root.GetHerHis] reinado está lleno de rencor e intriga;;;;;;;;;x
+heir_text_1_traits_patient_trusting;A confiding and patient [Root.GetManWoman], [Root.GetFirstName] is convinced that good things will eventually come to [Root.GetHerHim]; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] confiant[Root.GetNoneE] et patient[Root.GetNoneE] qui a la conviction que de bonnes choses vont finir par lui arriver;[Root.GetFirstName] ist vertrauensvoll, geduldig und davon überzeugt, dass letztlich alles gut werden wird.;; [Root.GetManWoman] confiado y paciente, [Root.GetFirstName] está convencido/a de que al final [Root.GetHerHim] llegarán las cosas buenas;;;;;;;;;x
+heir_text_1_traits_paranoid_stressed;Plagued by seeing shadows around every corner, [Root.GetSheHe] is likely to be ruled by fear; lui succède. Tourmenté[Root.GetNoneE] par des gens qui [Root.GetLeLa] suivraient, [Root.GetIlElle] est enclin[Root.GetNoneE] à être dominé[Root.GetNoneE] par la peur;[Root.GetSheHeCap] sieht Schatten hinter jeder Ecke und wird vermutlich von der eigenen Angst beherrscht.;;Plagado con ver sombras en cada esquina, es probable que [Root.GetSheHe] reine mediante el miedo;;;;;;;;;x
+heir_text_1_piety;A godly [Root.GetManWoman], [Root.GetFirstName] is sure to impress the [Root.Religion.GetPriestTitle]s with [Root.GetHerHis] extensive knowledge of the [Root.Religion.GetScriptureName]; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] dévot[Root.GetNoneE], [Root.GetIlElle] impressionnera les [Root.Religion.GetPriestTitle]s avec ses connaissances [Root.GetScriptureDuDelaDes];[Root.GetFirstName] ist fromm und wird die [Root.Religion.GetPriestTitle]-Gemeinde zweifelsohne mit umfassendem Wissen über [Root.Religion.GetScriptureName] zu beeindrucken wissen.;; [Root.GetManWoman] devoto/a, [Root.GetFirstName] acabará por impresionar al [Root.Religion.GetPriestTitle]s con [Root.GetHerHis] extenso conocimiento del/la [Root.Religion.GetScriptureName];;;;;;;;;x
+heir_text_1_prestige;A renowned [Root.GetManWoman], dignitaries from far and wide will surely bow before [Root.GetHerHim];, un[Root.GetNoneE] [Root.GetManWoman] célèbre, lui succède. Des dignitaires venus de loin se courberont devant [Root.GetLuiElle];Da [Root.GetSheHe] äußerst berühmt ist, werden sich Würdenträger aus nah und fern sicherlich unterwürfig zeigen.;;Un/a [Root.GetManWoman] de renombre, dignatarios de todos los lugares se inclinarán ante [Root.GetHerHim];;;;;;;;;x
+heir_text_1_friends;Blessed with an abundance of friends, [Root.GetFirstName] is likely to find strong support for [Root.GetHerHis] rule; lui succède. Ayant une abondance d'amis, [Root.GetIlElle] trouvera probablement du soutien pour son règne;[Root.GetFirstName] hat eine Menge Freunde und wird sich sicherlich die Unterstützung vieler sichern können.;;Bendecido/a con una abundancia de amigos, es probable que [Root.GetFirstName] tenga un fuerte apoyo para [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_tyrant;Already a feared tyrant, the realm trembles before [Root.GetHerHis] rule; lui succède. Redouté[Root.GetNoneE] pour sa tyrannie, le pays tremble déjà à l'idée de son règne;[Root.GetSheHeCap] ist schon jetzt gefürchtet und tyrannisiert das Volk. Das Reich zittert davor, wenn [Root.GetSheHe] die Herrschaft übernehmen wird.;;Ya era un tirano temido, el reino tiembla antes de [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_rich;In possession of fabulous riches, only time will tell if [Root.GetSheHe] will make the realm thrive or roost on the gold like a dragon; lui succède. Richissime, nous verrons [Root.GetSilSielle] fera prospérer le pays ou [Root.GetSilSielle] trônera sur l'or tel un dragon;[Root.GetSheHeCap] ist äußerst vermögend, doch es ist noch nicht klar, ob [Root.GetSheHe] das Reich zu noch mehr Wohlstand führt, oder das Gold wie ein Drache hütet.;;Al poseer riquezas fabulosas, solo el tiempo dirá si [Root.GetSheHe] hará prosperar al reino o se sentará sobre ellas, como si fuera un dragón.;;;;;;;;;x
+heir_text_1_children;A prolific [Root.GetManWoman], [Root.GetSheHe] has already produced numerous potential heirs for the realm; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] prolifique qui a déjà donné naissance à de nombreux héritiers potentiels pour le pays;Da [Root.GetSheHe] mit Fruchtbarkeit gesegnet ist, hat [Root.GetSheHe] schon mehrere potenzielle Thronfolger für das Reich hervorgebracht.;;[Root.GetManWoman] prolífico/a, [Root.GetSheHe] ya ha producido numerosos posibles herederos para el reino;;;;;;;;;x
+heir_text_1_rivals;Surrounded by enemies and rivals, we hope that [Root.GetFirstName]'s rule is not struck short by means of a dagger in the back; lui succède. Entouré[Root.GetNoneE] d'ennemis et de rivaux, nous espérons que son règne ne soit pas écourté par un poignard planté dans le dos;[Root.GetFirstName] ist von Feinden und Rivalen umgeben. Wir hoffen, dass [Root.GetSheHe] kein vorzeitiges Ende durch einen Dolchstoß erleidet.;;Rodeado/a de enemigos y rivales, ojalá el reinado de [Root.GetFirstName] no dure poco a mediante una puñalada por la espalda;;;;;;;;;x
+heir_text_1_combat_skill;A formidable duelist, we expect [Root.GetHerHim] to excel in tournaments and personal combat alike; lui succède. Formidable duelliste, nous nous attendons à ce qu'[Root.GetIlElle] excelle dans les tournois et les combats personnels;[Root.GetSheHeCap] hat schon mehrere Duelle für sich entschieden und sollte sowohl bei Turnieren als auch im Einzelkampf triumphieren können.;;Duelista formidable, esperamos ver[Root.GetHerHim] destacar en torneos y combate personal por igual;;;;;;;;;x
+heir_text_1_poor_health;A frail and sickly [Root.GetManWoman], the realm wishes for good health to return to [Root.GetHerHim]; lui succède. Une personne frêle et maladive, le pays lui souhaite de retrouver une bonne santé;Da [Root.GetSheHe] so gebrechlich und kränklich ist, hofft das gesamte Reich darauf, [Root.GetSheHe] möge sich bald besser fühlen.;;[Root.GetManWoman] frágil y enfermizo/a, el reino desea que [Root.GetHerHim] vuelva la buena salud;;;;;;;;;x
+heir_text_1_bastard;Being an illegitimate child, [Root.GetFirstName] will surely set out to make [Root.GetHerHis] mark on destiny;, enfant illégitime, lui succède. [Root.GetIlElleCap] voudra sans doute graver son nom dans l'Histoire;Als uneheliches Kind wird [Root.GetFirstName] sicherlich danach streben, das Schicksal nach eigenem Gutdünken zu beeinflussen.;;Al ser hijo/a ilegítimo/a, [Root.GetFirstName] probablemente esté dispuesto/a a dejar una marca en [Root.GetHerHis] destino.;;;;;;;;;x
+heir_text_1_viking;Having led numerous raids, [Root.GetFirstName]'s name is known and feared across the world; lui succède. Ayant mené plusieurs pillages, son nom est connu et craint à travers le monde;[Root.GetFirstName] hat schon mehrere Raubzüge angeführt und ist deshalb überall bekannt und gefürchtet.;;Habiendo conducido numerosos asaltos, el nombre de [Root.GetFirstName] es conocido y temido a lo largo y ancho del mundo.;;;;;;;;;x
+heir_text_1_crusader;Having led men against the infidel, [Root.GetFirstName]'s name is surely beloved in the eyes of [Root.Religion.GetHighGodName]; lui succède. Ayant mené des hommes contre les infidèles, son nom est apprécié par [Root.Religion.GetHighGodName];[Root.GetFirstName] hat schon Kreuzzüge gegen die Ungläubigen angeführt und genießt daher sicherlich das Wohlwollen von [Root.Religion.GetHighGodName].;;Habiendo dirigido hombres contra los infieles, seguro que el nombre de [Root.GetFirstName] es grato a los ojos de [Root.Religion.GetHighGodName],;;;;;;;;;x
+heir_text_1_traits_adventurer;An adventurous [Root.GetManWoman], [Root.GetFirstName]'s life is likely to be filled with glory and excitement; lui succède. Un aventurier dont la vie est remplie de gloire et d'excitations;[Root.GetFirstName] gelüstet es nach Abenteuern, und [Root.GetSheHe] wird sicherlich ein aufregendes und ruhmreiches Leben führen.;;[Root.GetManWoman] aventurero/a, es probable que la vida de [Root.GetFirstName] esté lleno de gloria y emoción;;;;;;;;;x
+heir_text_1_traits_falconer;Graceful in [Root.GetHerHis] handling of birds of prey, [Root.GetFirstName] is sure to skillfully impress both visiting vassals and foreign dignitaries; lui succède. Maniant les oiseaux de proie avec grâce, [Root.GetIlElle] saura impressionner les vassaux et les dignitaires étrangers lui rendant visite;[Root.GetFirstName] hat den meisterhaften Umgang mit Greifvögeln erlernt und wird mit Sicherheit durchreisende Vasallen und fremdländische Würdenträger zu beeindrucken wissen.;;Grácil en su manejo [Root.GetHerHis]s aves de presa, es muy probable que [Root.GetFirstName] impresione hábilmente tanto a los vasallos de visita como a los dignatarios extranjeros;;;;;;;;;x
+heir_text_1_traits_lunatic;Being a stark raving lunatic and deranged mad[Root.GetManWoman], the only one who can help [Root.GetFirstName]'s rule is [Root.Religion.GetHighGodName]; lui succède. Atteint[Root.GetNoneE] de folie, seul [Root.Religion.GetHighGodName] pourra l'aider à régner;[Root.GetFirstName] ist verrückt und völlig wahnsinnig. Nur [Root.Religion.GetHighGodName] könnte die Herrschaft von [Root.GetFirstName] noch zum Guten wenden.;;Siendo un/a [Root.GetManWoman] lunático y alocadamente chiflado/a, solo [Root.Religion.GetHighGodName] puede salvar el reinado de [Root.GetFirstName];;;;;;;;;x
+heir_text_1_traits_possessed;Suspected to be possessed by a demon sent by [Root.Religion.GetRandomEvilGodName], the [Root.Religion.GetPriestTitle]s will do their best to reign [Root.GetHerHim] in; lui succède. Suspecté[Root.GetNoneE] d'être possédé[Root.GetNoneE] par un démon envoyé par [Root.Religion.GetRandomEvilGodName], les [Root.Religion.GetPriestTitle]s feront de leur mieux pour [Root.GetLeLa] limiter;[Root.GetSheHeCap] soll von einem Dämon besessen sein, der von [Root.Religion.GetRandomEvilGodName] gesandt wurde. Die [Root.Religion.GetPriestTitle]-Gemeinschaft wird alles daransetzen, [Root.GetHerHim] unter Kontrolle zu halten.;;Sospechoso/a de estar poseído/a por un demonio enviado por [Root.Religion.GetRandomEvilGodName], los [Root.Religion.GetPriestTitle]s lo darán todo para tener[Root.GetHerHim] controlado;;;;;;;;;x
+heir_text_1_traits_fair;Beautiful beyond words, [Root.GetFirstName]'s appearance will have foreign dignitaries groveling at [Root.GetHerHis] feet; lui succède. Sa beauté est indescriptible, et les dignitaires étrangers ramperont à ses pieds;[Root.GetFirstName] ist unbeschreiblich schön und wird fremdländische Würdenträger vor sich auf dem Bauche rutschen lassen.;;De una belleza que no puede expresar con palabras, la aparición de [Root.GetFirstName] hará que los dignatarios extranjeros se postren a [Root.GetHerHis]s pies;;;;;;;;;x
+heir_text_1_traits_tolerant;Tolerant of those of other faiths, [Root.GetFirstName]'s curiosity will surely find [Root.GetHerHim] many friends; lui succède. Tolérant ceux ayant d'autres croyances, sa curiosité lui fera sans doute de nombreux amis;[Root.GetFirstName] ist tolerant im Umgang mit Andersgläubigen und bringt eine gesunde Menge an Wissbegier mit, um viele Freunde zu gewinnen.;;Tolerante con los de otras fes, la curiosidad de [Root.GetFirstName] [Root.GetHerHim] dará muchos amigos;;;;;;;;;x
+heir_text_1_traits_ugly_deceitful;With a soul as wretched as [Root.GetHerHis] face, we expect nothing but deception and vengeance from [Root.GetHerHim]; lui succède. Avec un esprit aussi vilain que son visage, nous nous attendons à de la tromperie et de la vengeance de sa part;Seele und Gesicht von [Root.GetFirstName] sind gleichermaßen bemitleidenswert, sodass [Root.GetSheHe] zweifelsohne voller Tücke und Rachsucht regieren wird.;;Con un alma tan retorcida como [Root.GetHerHis] rostro, [Root.GetHerHim] esperamos lleno de engaño y venganza;;;;;;;;;x
+heir_text_1_traits_kind;A gentle and compassionate soul, the vassals will surely thrive under [Root.GetFirstName]'s reign; lui succède. Une âme faite de gentillesse et de compassion, les vassaux prospéreront sous son règne;Dank der sanften und mitfühlenden Seele von [Root.GetFirstName] wird es den Vasallen sicherlich wohlergehen.;;Un alma gentil y compasiva, seguramente los vasallos prosperen bajo el reinado de [Root.GetFirstName];;;;;;;;;x
+heir_text_1_traits_proud;Ever confident in [Root.GetHerselfHimself], [Root.GetFirstName]'s rule may bring glory or shame to the [Root.GetOnlyDynastyName] dynasty - only time will tell; lui succède. Ayant toujours confiance en [Root.GetLuiElle], son règne apportera gloire ou honte à la dynastie [Root.GetOnlyDynastyName], seul le temps nous le dira;Erfüllt von Selbstbewusstsein wird [Root.GetFirstName] entweder Ruhm oder Schande über die [Root.GetOnlyDynastyName]-Dynastie bringen. Die Zukunft wird es zeigen.;;Siempre seguro/a de sí mismo/a, el reinado de [Root.GetFirstName] puede traer gloria o vergüenza a la dinastía [Root.GetOnlyDynastyName]. El tiempo lo dirá;;;;;;;;;x
+heir_text_1_traits_cynical;Never caring for the word of the [Root.Religion.GetPriestTitle], many fear [Root.GetFirstName]'s rule will come to an early end as [Root.Religion.GetHighGodName] smites [Root.GetHerHim]; lui succède. Ne se souciant pas des paroles des [Root.Religion.GetPriestTitle]s, beaucoup craignent que [Root.Religion.GetHighGodName] n'écourte son règne en guise de châtiment;[Root.GetFirstName] hatte nie viel für die Predigten der Geistlichen übrig, sodass viele befürchten, dass [Root.Religion.GetHighGodName] [Root.GetFirstName] vorzeitig niederstrecken wird.;;Jamás le han preocupado las palabras del [Root.Religion.GetPriestTitle], muchos temen que el reinado de [Root.GetFirstName] tenga un fin temprano cuando [Root.Religion.GetHighGodName] [Root.GetHerHim] aniquile;;;;;;;;;x
+heir_text_1_traits_gregarious;Well-spoken and outgoing, we expect [Root.GetFirstName] to have no problem charming the court to [Root.GetHerHis] side; lui succède. Éloquent[Root.GetNoneE] et extraverti[Root.GetNoneE], [Root.GetIlElle] n'aura pas de difficulté à charmer la Cour;Wortgewandtheit und Aufgeschlossenheit sind die Stärken von [Root.GetFirstName], und [Root.GetSheHe] wird den Hof im Nu für sich gewinnen.;;Elocuente y sociable, esperamos que [Root.GetFirstName] no tenga ningún problema para cautiva a la corte y ponerla de [Root.GetHerHis] parte;;;;;;;;;x
+heir_text_1_traits_zealous;Spending long hours in prayer as to not upset [Root.Religion.GetHighGodName], we are confident that [Root.GetFirstName]'s reign will be a blessing to the realm; lui succède. Passant des heures à prier afin de ne pas contrarier [Root.Religion.GetHighGodName], son règne sera une bénédiction pour le pays;[Root.GetFirstName] betet täglich stundenlang zu [Root.Religion.GetHighGodName] und bittet um Gnade. [Root.GetSheHeCap] wird mit Sicherheit ein Segen für das Reich sein.;;Al pasar largas horas rezando para no disgustar a [Root.Religion.GetHighGodName], estamos convencidos que el reinado de [Root.GetFirstName] será una bendición para el reino;;;;;;;;;x
+heir_text_1_traits_ambitious;Being an ambitious [Root.GetManWoman], we expect the realm to grow and prosper under [Root.GetHerHis] rule; lui succède. Étant un[Root.GetNoneE] [Root.GetManWoman] plein[Root.GetNoneE] d'ambitions, nous nous attendons à ce que le pays grandisse et prospère sous son règne;[Root.GetFirstName] ist ehrgeizig und sollte dem Reich Wachstum und Wohlstand bringen.;;[Root.GetManWoman] ambicioso/a, esperamos que el reino crezca y prospere bajo [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_traits_diligent;Energetic and collected, [Root.GetFirstName] will surely improve the realm under [Root.GetHerHis] rule; lui succède. Énergique et serein[Root.GetNoneE], [Root.GetIlElle] améliorera sans doute le pays durant son règne;[Root.GetFirstName] ist energetisch, gefasst und wird das Reich sicherlich verbessern.;;Enérgico/a y sereno/a, [Root.GetFirstName] seguramente mejore el reino bajo [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_traits_deceitful;Devious and deceptive, [Root.GetFirstName]'s feud with truth itself may also be [Root.GetHerHis] undoing; lui succède. Sa fourberie pourrait bien [Root.GetLeLa] mener à sa perte;[Root.GetFirstName] ist verschlagen und falsch. [Root.GetSheHeCap] nimmt es mit der Wahrheit nicht so genau, was [Root.GetHerHim] letztlich in den Untergang treiben könnte.;;Taimado/a y engañoso/a, la enemistad de [Root.GetFirstName] la misma verdad puede ser su [Root.GetHerHis] perdición;;;;;;;;;x
+heir_text_1_traits_shy;A silent [Root.GetManWoman], we do not expect [Root.GetHerHim] to do well in diplomatic matters; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] taciturne dont nous doutons des aptitudes en matière diplomatique;[Root.GetFirstName] ist schweigsam, und wir gehen davon aus, dass [Root.GetSheHe] sich in diplomatischen Angelegenheiten schwertun wird.;;[Root.GetManWoman] silencioso/a, no esperamos que se [Root.GetHerHim] den bien los asuntos diplomáticos;;;;;;;;;x
+heir_text_1_traits_humble;A pious and humble [Root.GetManWoman], we fear that [Root.GetFirstName] may have been better suited for a temple rather than the [PrimaryTitle.GetRulerTitle]'s throne; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] dévot[Root.GetNoneE] et humble qui est peut-être plus fait[Root.GetNoneE] pour un temple que le trône;Da [Root.GetFirstName] fromm und bescheiden ist, wäre [Root.GetSheHe] in einem Tempel leider besser aufgehoben als auf dem [PrimaryTitle.GetRulerTitle]-Thron.;;[Root.GetManWoman] piadoso/a y humilde, tenemos que [Root.GetFirstName] puede ser más adecuado para el templo que para el trono de [PrimaryTitle.GetRulerTitle];;;;;;;;;x
+heir_text_1_traits_arbitrary;A corrupt and unjust [Root.GetManWoman], we do not expect [Root.GetHerHis] vassals to sit idly by if the realm starts crumbling; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] corrompu[Root.GetNoneE] et injuste, ses vassaux ne resteront pas les bras croisés si le pays devait s'effondrer;[Root.GetFirstName] ist korrupt und ungerecht. Wenn das Reich zu zerfallen droht, werden die Vasallen wohl kaum untätig zusehen.;;[Root.GetManWoman] corrupto/a e injusto/a, no esperamos que [Root.GetHerHis]s vasallos se queden sentados si el reino empieza a venirse abajo;;;;;;;;;x
+heir_text_1_traits_temperate;A modest and temperate [Root.GetManWoman], [Root.GetFirstName]'s passive nature may also be [Root.GetHerHis] undoing; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] tempéré[Root.GetNoneE] et modeste, dont la nature passive pourrait tout aussi bien [Root.GetLeLa] conduire à sa perte;[Root.GetFirstName] ist bescheiden und gemäßigt. Doch zu große Passivität kann sich nachteilig auf ein Reich auswirken.;;[Root.GetManWoman] modesto/a y comedido/a, la naturaleza pasiva de [Root.GetFirstName]puede que también sea su [Root.GetHerHis] perdición;;;;;;;;;x
+heir_text_1_traits_chaste;Loyal to [Root.GetHerHis] spouse and family, [Root.GetFirstName]'s dynasty, [Root.GetOnlyDynastyName], is likely to view [Root.GetHerHim] with fond eyes; lui succède. Fidèle à s[Root.GetOnAOpp] [Root.GetHusbandWifeOpp] et à sa famille, la dynastie [Root.GetOnlyDynastyName] [Root.GetLeLa] regarde avec des yeux tendres;[Root.GetFirstName] ist Ehepartner und Familie treu ergeben. Die [Root.GetOnlyDynastyName]-Dynastie wird ihn [Root.GetHerHim] wohlwollend akzeptieren.;;Leal a [Root.GetHerHis] consorte y familia, es muy probable que [Root.GetOnlyDynastyName] de [Root.GetFirstName] [Root.GetHerHim] vean con afecto;;;;;;;;;x
+heir_text_1_traits_lustful;[Root.GetHerHis] eyes always set upon the next target, the vassals of the realm do well in locking up their [Root.GetHusbandWifeOpp]s; lui succède. Toujours à l'affût d'une nouvelle conquête, les vassaux feraient mieux d'enfermer leurs [Root.GetHusbandWifeOpp]s;Die Augen von [Root.GetFirstName] sind stets auf das nächste Ziel gerichtet. Die Vasallen im Reich tun gut daran, ihre Ehepartner wegzusperren.;;Siempre tiene los ojos fijado en [Root.GetHerHis] próximo objetivo. Los vasallos del reino harán bien en encerrar bajo llave a sus [Root.GetHusbandWifeOpp]s;;;;;;;;;x
+heir_text_1_traits_content;Content with [Root.GetHerHis] lot, [Root.GetFirstName]'s vassals may ridicule [Root.GetHerHim] for [Root.GetHerHis] passive nature; lui succède. Se contentant de ce qu'[Root.GetIlElle] a, ses vassaux pourraient se moquer de sa nature passive;[Root.GetFirstName] ist mit dem Schicksal zufrieden, selbst wenn die Vasallen diese Passivität lächerlich finden mögen.;;Contento con [Root.GetHerHis] parte, los vasallos de [Root.GetFirstName] puede que [Root.GetHerHim] ridiculicen por [Root.GetHerHis] naturaleza pasiva;;;;;;;;;x
+heir_text_1_traits_patient;Being a [Root.GetManWoman] willing to wait for a plan to come together, we expect great change to come to the realm - albeit slowly; lui succède. Attendant patiemment un plan d'action, le pays changera beaucoup - mais lentement;[Root.GetFirstName] übt sich stets in Geduld. Wir erwarten große Veränderungen im Reich, auch wenn diese sicherlich noch eine Weile auf sich warten lassen.;;[Root.GetManWoman] deseoso de esperar a que los planes cuajen, esperamos que lleguen grandes cambios al reino... solo que lentamente;;;;;;;;;x
+heir_text_1_traits_brave;Courageous and willing to rush to action, we hope that [Root.GetFirstName]'s bravery will not see the realm fall into reckless ruin; lui succède. Brave et prêt[Root.GetNoneE] à l'action, nous espérons qu'[Root.GetIlElle] ne mènera pas le pays à sa ruine;[Root.GetFirstName] ist mutig und voller Tatendrang. Wir hoffen, [Root.GetSheHe] wird das Reich nicht unbesonnen in den Ruin stürzen.;;Valiente y deseando saltar a la acción, esperamos que la bravura de [Root.GetFirstName] no sea imprudencia que lleve al reino a la ruina;;;;;;;;;x
+heir_text_1_traits_just;Fair and just in all things, we hope that [Root.GetSheHe] will handle any conflicts with grace; lui succède. Juste en toute chose, nous espérons qu'[Root.GetIlElle] gérera les conflits avec grâce;[Root.GetSheHeCap] ist ein Symbol der Gerechtigkeit und wir hoffen, [Root.GetSheHe] wird alle Konflikte anmutig meistern.;;Justo e imparcial en todo, esperamos que [Root.GetSheHe] maneja cualquier conflicto con gracia;;;;;;;;;x
+heir_text_1_traits_gluttonous;A large [Root.GetManWoman], we hope that [Root.GetSheHe] puts the realm before [Root.GetHerHis] own hunger; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] enrobé[Root.GetNoneE], dont nous espérons qu'[Root.GetIlElle] fera passer le pays avant sa faim;Da [Root.GetFirstName] sehr gut gebaut ist, hoffen wir, dass [Root.GetSheHe] das Reich über den eigenen Appetit stellt.;;[Root.GetManWoman] de gran tamaño, esperamos que [Root.GetSheHe] ponga el reino por delante de [Root.GetHerHis] apetito;;;;;;;;;x
+heir_text_1_traits_envious;Being an envious and distrustful [Root.GetManWoman], the vassals of the realm will have a hard time gaining [Root.GetHerHis] trust; lui succède. Enviant les autres et étant méfiant[Root.GetNoneE], les vassaux auront du mal à gagner sa confiance;[Root.GetSheHeCap] ist von Neid und Argwohn zerfressen. Die Vasallen des Reichs werden es schwer haben, das Vertrauen von [Root.GetFirstName] zu erlangen.;;[Root.GetManWoman] envidioso/a y desconfiado/a, a los vasallos del reino les costará mucho ganarse [Root.GetHerHis] confianza;;;;;;;;;x
+heir_text_1_traits_craven;A craven coward, it is unlikely that [Root.GetHerHis] subjects will respect [Root.GetHerHim]; lui succède. Sa lâcheté ne sera pas appréciée par ses sujets;So hundsfeige wie [Root.GetSheHe] ist, werden die Untertanen [Root.GetHerHim] wohl kaum respektieren.;;Un/a vil cobarde, es improbable que [Root.GetHerHis] súbditos [Root.GetHerHim] respeten.;;;;;;;;;x
+heir_text_1_traits_greedy;A greedy [Root.GetManWoman], the poor peasantry of the realm is likely to disapprove; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] avide que n'appréciera pas la paysannerie;Vor allem beim armen Landvolk wird diese gierige Person kaum Erfolg haben.;;[Root.GetManWoman] codicioso/a, a quien no apreciarán los campesinos pobres del reino;;;;;;;;;x
+heir_text_1_traits_cruel;A mean-spirited [Root.GetManWoman], we expect [Root.GetFirstName]'s court to live in fear of [Root.GetHerHim]; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] mesquin[Root.GetNoneE] qui instille la peur chez ses sujets;[Root.GetFirstName] ist niederträchtig und der Hof wird [Root.GetHerHim] sicherlich fürchten.;;[Root.GetManWoman] mezquino/a, esperamos que la corte de [Root.GetFirstName] viva temiéndo[Root.GetHerHim];;;;;;;;;x
+heir_text_1_traits_trusting;Trusting and complacent, [Root.GetFirstName]'s council may have more power over [Root.GetHerHim] than what is right; lui succède. Sa nature confiante pourrait octroyer un pouvoir trop grand au Conseil;Da [Root.GetFirstName] äußerst treuherzig und selbstzufrieden ist, wird der Rat wohl mehr Macht über [Root.GetHerHim] haben, als angebracht wäre.;;Confiado/a y complaciente, puede que el consejo de [Root.GetFirstName] tenga más poder sobre [Root.GetSheHe] de lo que debería;;;;;;;;;x
+heir_text_1_traits_honest;Unable to tell a lie, we fear that there may be those who despise [Root.GetHerHis] honesty; lui succède. Incapable de mentir, nous craignons que certains méprisent son honnêteté;Da [Root.GetSheHe] einfach nicht lügen kann, wird [Root.GetSheHe] wohl bei all jenen in Ungnade fallen, die Aufrichtigkeit verabscheuen.;;Incapaz de mentir, tenemos que habrá quienes desprecien [Root.GetHerHis] sinceridad;;;;;;;;;x
+heir_text_1_traits_slothful;Being an idle [Root.GetManWoman], we fear that nothing will come of [Root.GetFirstName]'s reign; lui succède. Étant un[Root.GetNoneE] [Root.GetManWoman] fainéant[Root.GetNoneE], nous craignons que rien ne ressorte de son règne;Aufgrund der Untätigkeit von [Root.GetFirstName] fürchten wir, dass im Reich nichts vorangehen wird.;;[Root.GetManWoman] holgazán/a, tenemos que nada saldrá del reinado de [Root.GetFirstName];;;;;;;;;x
+heir_text_1_traits_charitable;A generous [Root.GetManWoman], we hope that not all the wealth of the realm end up in the pockets of the [Root.Religion.GetPriestTitle]s; lui succède. Enclin[Root.GetNoneE] à la charité, nous espérons que toute la richesse du pays n'ira pas dans les poches des [Root.Religion.GetPriestTitle]s;Da [Root.GetSheHe] sehr freigiebig ist, hoffen wir, dass nicht das gesamte Reichsvermögen in die Taschen des Klerus wandern wird.;;[Root.GetManWoman] generoso/a, esperamos que no toda la riqueza del reino termine en los bolsillos de los [Root.Religion.GetPriestTitle]s;;;;;;;;;x
+heir_text_1_traits_wroth;Prone to rage, [Root.GetFirstName]'s enemies and vassals alike are likely to live in fear of [Root.GetHerHim]; lui succède. Enclin[Root.GetNoneE] à des accès de colère, [Root.GetIlElle] instille la peur chez ses ennemis, tout comme chez ses vassaux;Die häufigen Wutausbrüche von [Root.GetFirstName] werden Feinde wie Vasallen wohl in Furcht leben lassen.;;Con propensión a la ira, tanto enemigos como vasallos de [Root.GetFirstName] [Root.GetHerHim] temerán por igual;;;;;;;;;x
+heir_text_1_traits_paranoid;A suspicious [Root.GetManWoman], [Root.GetFirstName]'s paranoia might not sit well with [Root.GetHerHis] subjects; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] très méfiant[Root.GetNoneE], ce qui risque de poser problème à ses sujets;[Root.GetFirstName] ist überaus misstrauisch und neigt zu Paranoia, was bei den Untertanen kaum gut ankommen sollte.;;[Root.GetManWoman] suspicaz, puede que la paranoia de [Root.GetFirstName] no encaje bien con [Root.GetHerHis] súbditos;;;;;;;;;x
+heir_text_1_traits_erudite;A bookish and scholarly [Root.GetManWoman], we fear the [Root.Religion.GetPriestTitle]s will thrive while the Burghers suffer;, un[Root.GetNoneE] érudit[Root.GetNoneE], lui succède. Nous craignons que les [Root.Religion.GetPriestTitle]s se portent bien et que les bourgeois ne souffrent de son règne;[Root.GetFirstName] liest und lernt gerne. Wir fürchten, die [Root.Religion.GetPriestTitle]-Gemeinde wird davon profitieren, während das Bürgertum darunter leiden wird.;;[Root.GetManWoman] erudito/a y aficionado/a a los libros, tememos que los [Root.Religion.GetPriestTitle]s prosperen mientras los burgueses sufren;;;;;;;;;x
+heir_text_1_traits_stubborn;A bullheaded [Root.GetManWoman], [Root.GetFirstName]'s subjects may have a hard time getting a word in after [Root.GetSheHe] makes up [Root.GetHerHis] mind; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] dont les sujets auront du mal à placer un mot après qu'[Root.GetIlElle] ait pris une décision;Die Dickköpfigkeit von [Root.GetFirstName] wird es Untertanen erschweren, [Root.GetHerHim] von einmal gefassten Entschlüssen abzubringen.;; [Root.GetManWoman] obstinado/a, puede que a los súbditos de [Root.GetFirstName] les cueste conseguir añadir algo después de que [Root.GetSheHe] haya tomado [Root.GetHerHis] decisión;;;;;;;;;x
+heir_text_1_three_skills;Having mastered many skills, [Root.GetSheHe] is sure to be admired by [Root.GetHerHis] subjects; lui succède. Maîtrisant plusieurs domaines de compétence, [Root.GetIlElle] sera sans doute admiré[Root.GetNoneE] par ses sujets;Da [Root.GetSheHe] viele Fertigkeiten gemeistert hat, werden die Untertanen [Root.GetHerHim] sicherlich verehren.;;Dominando tantas habilidades, seguro que [Root.GetSheHe] será admirado/a por [Root.GetHerHis] súbditos;;;;;;;;;x
+heir_text_1_five_skills;Blessed with awesome knowledge of all things between heaven and earth, [Root.GetFirstName]'s rule is sure to be legendary; lui succède. Doté[Root.GetNoneE] d'une connaissance impressionnante de toute chose entre ciel et terre, son règne deviendra probablement légendaire;[Root.GetFirstName] ist mit beeindruckendem Wissen über alles Mögliche zwischen Himmel und Erde gesegnet und wird sicherlich zu einer Legende.;;Bendecido/a con un conocimiento asombroso de todas las cosas del mundo, seguro que el reinado de [Root.GetFirstName] será legendario;;;;;;;;;x
+heir_text_1_traits_varangian;Having served in distant Miklagard, [Root.GetFirstName]'s adventurous spirit is likely to inspire [Root.GetHerHis] subjects; lui succède. Esprit aventureux ayant servi dans la lointaine Miklagård, [Root.GetIlElle] inspirera facilement ses sujets;[Root.GetFirstName] diente schon im fernen Miklagard und kann dank dieser Abenteuerlust sicher die Untertanen anspornen.;;Habiendo servido en la lejana Miklagard, es muy probable que el espíritu aventurero de [Root.GetFirstName] inspire a [Root.GetHerHis] súbditos;;;;;;;;;x
+heir_text_1_traits_stubborn_kind;Convinced that everyone should be shown kindness regardless of worth, we fear that [Root.GetFirstName]'s enemies may use this to their advantage; lui succède. Convaincu[Root.GetNoneE] que tout le monde devrait faire preuve de gentillesse, nous craignons que ses ennemis n'en profitent;[Root.GetFirstName] ist davon überzeugt, dass alle Menschen unabhängig ihrer Herkunft gleichermaßen gütig behandelt werden sollten. Feinde könnten dies jedoch zu ihrem Vorteil nutzen.;;Convencido que se deber mostrar amabilidad a todos a pesar de su valía, tememos que los enemigos de [Root.GetFirstName] empleen esto en su beneficio;;;;;;;;;x
+heir_text_1_traits_strong_brave;Towering over [Root.GetHerHis] enemies on the battlefield, [Root.GetFirstName] will have no problem inspiring [Root.GetHerHis] troops; lui succède. Surpassant ses ennemis sur le champ de bataille, [Root.GetIlElle] n'aura pas de mal à inspirer ses hommes;[Root.GetFirstName] gibt auf dem Schlachtfeld eine imposante Figur ab und wird keine Probleme dabei haben, die Truppen zu motivieren.;;Al imponerse sobre [Root.GetHerHis] enemigos en el campo de batalla, a [Root.GetFirstName] no le costará nada inspirar a sus [Root.GetHerHis] tropas;;;;;;;;;x
+heir_text_1_traits_temperate_lustful;Ever willing to entertain [Root.GetHerHis] spouse, we expect the royal family to grow and prosper; lui succède. Toujours disposé[Root.GetNoneE] à divertir s[Root.GetOnAOpp] [Root.GetHusbandWifeOpp], nous nous attendons à ce que la famille s'agrandisse;Da [Root.GetSheHe] der Erfüllung der ehelichen Pflichten stets und gerne nachkommt, rechnen wir mit einer stetig wachsenden Königsfamilie.;;Siempre deseoso/a de entretener a [Root.GetHerHis] consorte, esperamos que la familia real aumente y prospere;;;;;;;;;x
+heir_text_1_traits_charitable_just;An equitable [Root.GetManWoman], we expect [Root.GetHerHim] to ascertain that everyone gets their fair share; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] équitable qui s'assurera que chacun est sa part;[Root.GetSheHeCap] gilt als äußerst gerecht und wir gehen davon aus, dass niemand zu kurz kommen wird.;;[Root.GetManWoman] equitativo/a, esperamos de [Root.GetSheHe] que se asegure de que todos reciben lo que es justo;;;;;;;;;x
+heir_text_1_traits_diligent_greedy;An industrious [Root.GetManWoman], the realm will either be brought to riches or ruin under [Root.GetHerHim]; lui succède. Un[Root.GetNoneE] [Root.GetManWoman] assidu[Root.GetNoneE] et avide, dont on ignore si le règne enrichira ou malmènera le pays;[Root.GetFirstName] ist arbeitsam und wird das Reich zur Blüte bringen oder in den Ruin stürzen.;;[Root.GetManWoman] trabajador/a, [Root.GetHerHim] tocará llevar el reino a la riqueza... o a la ruina;;;;;;;;;x
+heir_text_1_traits_craven_honest;Ever willing to admit [Root.GetHerHis] weaknesses of which there are many, it is with great doubt if the realm will confide in their new [PrimaryTitle.GetRulerTitle]; lui succède. Toujours enclin[Root.GetNoneE] à admettre ses défauts qui sont nombreux, c'est avec un grand doute que le pays se fie à [Root.GetLuiElle];[Root.GetSheHeCap] hat viele Schwächen und gesteht diese auch offen ein. Ob [Root.GetSheHe] auf dem [PrimaryTitle.GetRulerTitle]-Posten das Vertrauen des Reichs erlangen kann, ist mehr als zweifelhaft.;;Siempre dispuesto a admitir [Root.GetHerHis]s numerosas debilidades, dudamos mucho que el reino llegue a confiar en su nuevo [PrimaryTitle.GetRulerTitle];;;;;;;;;x
+heir_text_1_traits_shy_trusting;A naive [Root.GetManWoman], [Root.GetHerHis] reluctant nature may stop [Root.GetHerHim] from taking charge; lui succède. Sa nature peu enthousiaste et sa naïveté pourraient l'empêcher de prendre les rênes;Naivität und ein zurückhaltendes Wesen könnten verhindern, dass [Root.GetSheHe] die Zügel in der Hand behalten wird.;;[Root.GetManWoman] ingenuo/a , [Root.GetHerHis] naturaleza reacia puede impedir[Root.GetHerHim] que tome el mando;;;;;;;;;x
+heir_text_1_traits_gregarious_honest;Never afraid to speak [Root.GetHerHis] mind, [Root.GetSheHe] will surely charm the realm with [Root.GetHerHis] astute honesty; lui succède. N'ayant pas peur de dire ce qu'[Root.GetIlElle] pense, [Root.GetIlElle] charmera sûrement ses sujets avec son honnêteté;[Root.GetSheHeCap] hält mit Meinungen nie hinter dem Berg und wird das Reich zweifelsohne mit scharfsinniger Ehrlichkeit für sich gewinnen.;;Nunca teme dar [Root.GetHerHis] opinión, así que [Root.GetSheHe] seguramente encandilará al reino con [Root.GetHerHis] sinceridad astuta;;;;;;;;;x
+heir_text_1_traits_cynical_arbitrary;Lacking a moral compass, [Root.GetHerHis] subjects will have to learn whether they should fear or respect [Root.GetHerHim]; lui succède. Manquant de boussole morale, ses sujets apprendront s'ils doivent [Root.GetLeLa] craindre ou [Root.GetLeLa] respecter;Da [Root.GetSheHe] über keinerlei moralischen Kompass verfügt, wird das Volk erst herausfinden müssen, ob es [Root.GetHerHim] fürchten oder respektieren soll.;;Al no tener brújula moral alguna, [Root.GetHerHis] súbditos tendrán que aprender si temer[Root.GetHerHim] o respetar[Root.GetHerHim];;;;;;;;;x
+heir_text_1_traits_cruel_wroth;A true sadist, we fear for what the realm will turn into under [Root.GetHerHis] rule; lui succède. Étant un[Root.GetNoneE] véritable sadique, nous avons peur de ce que deviendra le pays sous son règne;Aufgrund der sadistischen Züge von [Root.GetFirstName] befürchten wir das Schlimmste für das Reich.;;Todo un/a sádico/a, tememos en qué se convertirá el reino bajo [Root.GetHerHis] reinado;;;;;;;;;x
+heir_text_1_traits_wroth_zealous;Blinded by religious fervor, heathens and heretics alike will come to fear [Root.GetHerHis] righteous fury; lui succède. Aveuglé[Root.GetNoneE] par sa ferveur religieuse, les hérétiques et les infidèles craindront sa fureur vertueuse;Geblendet von religiöser Leidenschaft wird [Root.GetSheHe] Heiden und Ketzern mit rechtschaffenem Zorn das Fürchten lehren.;;Cegado/a por el fervor religioso, infieles y herejes aprenderán a temer [Root.GetHerHis] justa ira;;;;;;;;;x
+heir_text_1_traits_paranoid_deceitful;A devious and distrustful character, we expect [Root.GetHerHim] to have daggers with each of our names on; lui succède. Retors et méfiant[Root.GetNoneE], nous nous attendons à être des cibles pour [Root.GetLuiElle];Da [Root.GetSheHe] verschlagen und argwöhnisch ist, hält [Root.GetSheHe] sicher schon eine Sammlung von Dolchen mit unseren Namen darauf bereit.;;Personaje artero y desconfiado, [Root.GetHerHim] imaginamos llevando dagas con nuestros nombres escritos en ellas;;;;;;;;;x
+death_text_2_default;Although not especially blessed, we hope [From.GetFirstName] will find peace in the afterlife;Bien qu'[From.GetIlElle] n'ait pas particulièrement fait preuve de dévotion, nous espérons qu'[From.GetIlElle] trouvera la paix dans l'au-delà;[From.GetFirstName] war zwar nicht immer vom Glück verwöhnt, wird aber hoffentlich trotzdem Frieden im Jenseits finden;;Aunque no fue especialmente bendecido, esperamos que [From.GetFirstName] encuentre paz en la otra vida.;;;;;;;;;x
+death_text_2_neutral;Although not especially blessed, we hope [From.GetFirstName] will find peace in the afterlife;Bien qu'[From.GetIlElle] n'ait pas particulièrement fait preuve de dévotion, nous espérons qu'[From.GetIlElle] trouvera la paix dans l'au-delà;[From.GetFirstName] war zwar nicht immer vom Glück verwöhnt, wird aber hoffentlich trotzdem Frieden im Jenseits finden;;Aunque no fue especialmente bendecido, esperamos que [From.GetFirstName] encuentre paz en la otra vida.;;;;;;;;;x
+death_text_2_lustful;Well-known to be prone to carnal sins, [From.GetSheHe] was often unfaithful to [From.GetHerHis] [From.GetHusbandWifeOpp]. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Connu[From.GetNoneE] pour ses péchés charnels, [From.GetIlElle] trompait en effet souvent s[From.GetOnAOpp] [From.GetHusbandWifeOpp]. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war den Fleischeslüsten bekanntermaßen nie abgeneigt und beging zahlreiche Ehebrüche. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Bien conocido por su propensión a los pecados carnales, [From.GetSheHe] fue a menudo infiel a [From.GetHerHis] [From.GetHusbandWifeOpp]. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_gluttonous;Known to be Gluttonous, [From.GetSheHe] was constantly eating and rather overweight. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Connu[From.GetNoneE] pour sa gourmandise, [From.GetIlElle] mangeait constamment et était en surpoids. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war kulinarischen Genüssen stets zugeneigt, aß unaufhörlich und war recht übergewichtig. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Conocido por ser Glotón/Glotona, [From.GetSheHe] estaba comiendo continuamente y tenía bastante sobrepeso. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_greedy;A Greedy [From.GetManWoman], [From.GetSheHe] often remarked on the need to tax [From.GetHerHis] people into space. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Un[From.GetNoneE] [From.GetManWoman] avare dont nous avons souvent remarqué le besoin de surtaxer son peuple. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war von Gier zerfressen und hätte die Untertanen am liebsten zu Tode besteuert. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Un [From.GetManWoman] Codicioso/a, a menudo afirmaba la necesidad de gravar a [From.GetHerHis] gente hasta el límite. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_slothful;Prone to Sloth, [From.GetSheHe] never did anything [From.GetSheHe] did not have to. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Connu[From.GetNoneE] pour sa paresse, [From.GetIlElle] n'a en effet jamais rien entrepris autrement que sous la contrainte. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war überaus faul und tat selten mehr als absolut notwendig. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Dado/a a la Pereza, [From.GetSheHe] nunca hizo nada a lo que [From.GetSheHe] no estuviera obligado/a. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_envious;Ever Envious, [From.GetSheHe] always wanted what other people had. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Nous [From.GetLeLa] connaissions pour son envie de ce que les autres ont. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war von Neid erfüllt und begehrte stets das Hab und Gut anderer. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Envidioso/a, [From.GetSheHe] siempre quiso lo que tenían los demás. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_wroth;A Wroth [From.GetManWoman], people feared to cross [From.GetHerHim] - or even bring bad news. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Connu[From.GetNoneE] pour ses colères, [From.GetIlElle] inspirait la peur de devoir lui apporter de mauvaises nouvelles. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war hitzköpfig und versetzte andere mit Zornausbrüchen in Angst und Schrecken. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;[From.GetManWoman] con Ira, la gente siempre temía cruzarse con él o incluso darle malas noticias. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_proud;Guilty of the sin of Pride, [From.GetSheHe] wanted everyone to know of [From.GetHerHis] greatness. A wicked [From.GetManWoman], [From.GetFirstName] will surely pay for [From.GetHerHis] sins in the afterlife;Coupable du péché d'orgueil, [From.GetIlElle] voulait que tout le monde connaisse sa grandeur. Une mauvaise personne qui paiera pour ses péchés dans l'au-delà;[From.GetFirstName] war von unbändigem Stolz zerfressen und wollte alle anderen in den Schatten stellen. Für diese abscheulichen Sünden wird [From.GetSheHe] im Jenseits sicherlich büßen müssen;;Culpable del pecado del Orgullo, [From.GetSheHe] quería que todo el mundo supiera [From.GetHerHis] grandeza. [From.GetManWoman] perverso/a, [From.GetFirstName] seguramente pague por [From.GetHerHis] pecados en la otra vida.;;;;;;;;;x
+death_text_2_chaste;A Chaste [From.GetManWoman], [From.GetHerHis] honor was beyond refute. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Un[From.GetNoneE] [From.GetManWoman] chaste, plaçant son honneur au-dessus de tout soupçon. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war keusch und ehrenvoll. Im Leben von Gottesfürchtigkeit erfüllt, ist [From.GetSheHe] im Jenseits nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;[From.GetManWoman] Casto/a, [From.GetHerHis] honore estaba más allá de toda duda. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_temperate;Ever Temperate, [From.GetSheHe] never let [From.GetHerHis] base urges get the better of [From.GetHerHim]. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Sa tempérance était connue de tous, [From.GetIlElle] n'a en effet jamais laissé ses bas instincts prendre le dessus. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war stets gemäßigt und gab sich niemals niederen Gelüsten hin. Im Jenseits ist [From.GetSheHe] nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Siempre Moderado/a, [From.GetSheHe] nunca dejó que [From.GetHerHis] impulsos básicos le dominasen. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_charitable;Well-known to be Charitable, [From.GetSheHe] freely gave money to [From.GetHerHis] friends and family. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Son caractère charitable était connu de tous, donnant en effet volontiers de l'argent à ses proches. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war überaus wohltätig und bedachte Freunde und Verwandte freigiebig mit Geld. Im Jenseits ist [From.GetSheHe] nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Bien conocido por ser Caritativo/a, [From.GetSheHe] daba libremente dinero a [From.GetHerHis] amigos y familia. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_diligent;A shining example of Diligence, [From.GetHerHis] duty was never neglected. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Brillant exemple de diligence, [From.GetIlElle] n'a jamais négligé son devoir. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war unglaublich fleißig und vernachlässigte niemals die Pflicht. Im Jenseits ist [From.GetSheHe] nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Un ejemplo brillante de Diligencia, nunca abandonó [From.GetHerHis] deber. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_kind;Known to be Kind, few had a bad word to say about [From.GetHerHim]. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Sa gentillesse était connue de tous, peu avaient à dire du mal à son sujet. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war gütig wie kein Zweiter und kam mit fast jedem gut zurecht. Im Jenseits ist [From.GetSheHe] nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Conocido/a por su Amabilidad, pocos tuvieron nada que criticar[From.GetHerHim]. Un/a [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_patient;Always Patient, [From.GetSheHe] never lost [From.GetHerHis] temper. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Sa patience était sa vertu, [From.GetIlElle] n'a en effet jamais perdu son sang-froid. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war immer geduldig und gab sich niemals dem Jähzorn hin. Im Leben von Gottesfürchtigkeit erfüllt, ist [From.GetSheHe] im Jenseits nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Siempre Paciente, [From.GetSheHe] nunca perdió los estribos. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+death_text_2_humble;A humble [From.GetManWoman], [From.GetSheHe] never wanted anyone to make a fuss over [From.GetHerHis] accomplishments. A godly [From.GetManWoman], [From.GetFirstName] is with [From.Religion.GetRandomGodName] now;Son humilité était sa vertu, [From.GetIlElle] n'a jamais voulu que quiconque complimente ses accomplissements. Un[From.GetNoneE] [From.GetManWoman] qui fit ainsi preuve de dévotion, et qui a rejoint [From.Religion.GetRandomGodName] à présent;[From.GetFirstName] war bescheiden und lehnte es ab, für Errungenschaften gelobt zu werden. Im Leben von Gottesfürchtigkeit erfüllt, ist [From.GetSheHe] im Jenseits nun auf alle Zeiten mit [From.Religion.GetRandomGodName] vereint;;Un/a [From.GetManWoman] Humilde, nunca quiso que nadie resaltase [From.GetHerHis] logros. [From.GetManWoman] piadoso/a, [From.GetFirstName] ahora está con [From.Religion.GetRandomGodName].;;;;;;;;;x
+# Stuff for persia
+shamsir_zomorrodnegar;Shamsir Zomorrodnegar;;;;;;;;;;;;;x
+shamsir_zomorrodnegar_desc;The magic emerald-studded sword in the Persian story Amir Arsalan. The hideous demon Fulad-zereh was invulnerable to all weapons except the blows of Shamshir Zomorrodnegar. This blade originally belonged to King Solomon.;;;;;;;;;;;;;x
+# New bloodlines
+syagrius;Blood of Syagrius;;;;;;;;;;;;;x
+syagrius_desc;Last Roman ruler in the Western Roman Empire, he was able to hold northern Gaul until A.D. 486, when he was finally deposed by Clovis Meroving of the Franks.;;;;;;;;;;;;;x
+gupta;Gupta Blood;;;;;;;;;;;;;x
+gupta_desc;Gupta, wise ruler and patron of the holy arts, and founder of the eponymous dynasty whose empire spanned the subcontinent in its heyday.;;;;;;;;;;;;;x
+arsacid;Arsacid Blood;;;;;;;;;;;;;x
+arsacid_desc;Vonones is descended from the kings of the mighty Arsacid Parthian Empire. Skilled warriors of the horse and bow, they harried the Romans from the East for centuries.;;;;;;;;;;;;;x
+cunimund;Blood of Cunimund;;;;;;;;;;;;;x
+cunimund_desc;Ruler of the Gepids, he was beheaded by the Lombard King Alboin, who was murdered by Cunimund's daughter Rosamund after she was forced to drink from his skull.;;;;;;;;;;;;;x
+hausa_najibu;Blood of Najibu;;;;;;;;;;;;;x
+hausa_najibu_desc;Mythical progenitor who migrated to Hausaland from Canaan, he founded the matriarchal tribe of Daura, whose scion Magajiva was the mother of the Seven Hausa.;;;;;;;;;;;;;x
+BLOODLINE_ZIK;House of Zik;;;;;;;;;;;;;x
+BLOODLINE_ISPAHBUDHAN;House of Ispahbudhan;;;;;;;;;;;;;x
+BLOODLINE_MIHRAN;House of Mihran;;;;;;;;;;;;;x
+BLOODLINE_SUREN;House of Suren;;;;;;;;;;;;;x
+BLOODLINE_SPANDIYADH;House of Spandiyadh;;;;;;;;;;;;;x
+BLOODLINE_WARAZ;House of Waraz;;;;;;;;;;;;;x
+BLOODLINE_KAREN;House of Karen;;;;;;;;;;;;;x
+# Modifiera
+opinion_of_orthodox;Opinion of [orthodox.GetName];;;;;;;;;;;;;x
+opinion_of_catholic;Opinion of [catholic.GetName];;;;;;;;;;;;;x
+opinion_of_lombard;Opinion of Lombard;;;;;;;;;;;;;x
+lombard_opinion;Lombard Opinion;;;;;;;;;;;;;x
+maghreb_latin_opinion;Numidian Opinion;;;;;;;;;;;;;x
+amazigh_opinion;Amazigh Opinion;;;;;;;;;;;;;x
+bengali_opinion;Bengali Opinion;;;;;;;;;;;;;x
+syriac_opinion;Syriac Opinion;;;;;;;;;;;;;x
+arian_opinion;[arian.GetName] Opinion;;;;;;;;;;;;;x
+donatist_opinion;[donatist.GetName] Opinion;;;;;;;;;;;;;x

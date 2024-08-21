@@ -5,11 +5,11 @@ title = c_gwynedd
 
 # Settlements
 max_settlements = 5
-b_degannwy = castle
-b_bangor_fawr = temple
-b_caernarfon = city
+b_degannwy = tribal
+#b_bangor_fawr = temple
+#b_caernarfon = city
 
-b_abergwyngregyn = castle
+#b_abergwyngregyn = castle
 #b_harlech = castle
 #b_conwy = castle
 #b_llanrhos = temple
@@ -20,6 +20,14 @@ religion = catholic
 terrain = hills
 
 # History
+633.1.1={ religion = celtic_christian }
+760.1.1 = {
+	b_degannwy = castle
+	b_bangor_fawr = temple
+	b_caernarfon = city
+
+	b_abergwyngregyn = castle
+}
 769.1.1 = {
 	culture = welsh
 	religion = celtic_christian

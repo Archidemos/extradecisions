@@ -5,13 +5,13 @@ title = c_bath
 
 # Settlements
 max_settlements = 5
-b_bath = castle
+b_bath = tribal
 
-b_burnham = city
+#b_burnham = city
 
 #b_bristol = city
 
-b_wells = temple
+#b_wells = temple
 
 #b_cleeve = castle
 
@@ -26,9 +26,13 @@ religion = catholic
 # History
 633.1.1 = {
 	culture = welsh
+	religion = celtic_christian
 }
-
-
+760.1.1 = {
+	b_bath = castle
+	b_burnham = city
+	b_wells = temple
+}
 1000.1.1={ # Bristol founded
 	b_bristol = city
 }

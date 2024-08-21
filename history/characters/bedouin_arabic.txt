@@ -853,6 +853,10 @@
 	935.1.1={
 		decadence = 25
 		wealth = -500
+		add_claim = e_arabia
+		add_claim = k_africa
+		add_claim = k_mauretania
+		add_claim = d_medina
 	}
 	961.10.15={
 		death=yes
@@ -1853,6 +1857,7 @@
 	culture="bedouin_arabic"
 	father=33924
 	trait="sayyid"
+	trait=sahaba
 	566.1.1={
 		birth="566.1.1"
 	}
@@ -1898,6 +1903,7 @@
 	culture="bedouin_arabic"
 	father=33924
 	trait="sayyid"
+	trait=sahaba
 	549.1.1={
 		birth="549.1.1"
 	}
@@ -1912,6 +1918,7 @@
 	religion="shiite"
 	culture="bedouin_arabic"
 	father=33910
+	trait="sahaba"
 	trait="sayyid"
 	598.10.23={
 		birth="598.10.23"
@@ -1931,6 +1938,7 @@
 	culture="bedouin_arabic"
 	father=33911
 	mother=33921
+	trait=sahaba
 	trait="sayyid"
 	626.1.8={
 		birth="626.1.8"
@@ -2066,6 +2074,7 @@
 	dynasty=589
 	religion="sunni"
 	culture="bedouin_arabic"
+	trait=sahaba
 	father=33922
 	605.1.1={
 		birth="605.1.1"
@@ -2151,6 +2160,7 @@
 	father=33911
 	mother=33921
 	trait="sayyid"
+	trait=sahaba
 	625.3.1={
 		birth="625.3.1"
 	}
@@ -2218,6 +2228,8 @@
 	}
 	732.1.1={
 		add_spouse=188746
+		add_claim = k_andalusia
+		capital = c_baghdad
 	}
 	775.1.1={
 		death=yes
@@ -2433,8 +2445,9 @@
 		birth=yes
 	}
 	866.1.1={
-		add_claim = k_egypt # Tulunids
-		add_claim = k_baluchistan # Saffarids
+		add_claim = k_africa # Aglabids
+		add_claim = k_andalusia # Umayyads
+		add_claim = k_mauretania
 		add_claim = d_hamadan # Dulafids
 		add_claim = d_khorasan # Tahirids
 		add_claim = d_medina # Hashimids
@@ -2442,6 +2455,7 @@
 		add_claim = d_tripoli # Sulaymanids
 		add_claim = d_edessa # Mustazhirids
 		add_claim = d_azerbaijan # Yazidids
+		capital = c_baghdad
 	}
 	869.1.1={
 		death=yes
@@ -2567,6 +2581,11 @@
 	trait="sayyid"
 	912.1.1={
 		birth="912.1.1"
+		add_claim = e_cordoba
+		add_claim = k_andalusia
+		add_claim = k_africa
+		add_claim = k_mauretania
+		add_claim = d_medina
 	}
 	940.1.1={
 		death="940.1.1"
@@ -5984,6 +6003,10 @@
 
 	731.3.1={
 		birth=yes
+		add_claim = e_arabia
+		add_claim = k_africa
+		add_claim = k_egypt
+		add_claim = d_medina
 	}
 	788.10.7={
 		death=yes
@@ -6061,6 +6084,10 @@
 	866.1.1={
 		decadence = 25
 		wealth = -300
+		add_claim = e_arabia
+		add_claim = k_africa
+		add_claim = k_mauretania
+		add_claim = d_medina
 	}
 	886.1.1={
 		death="886.1.1"
@@ -6323,6 +6350,7 @@
 	dynasty=7296
 	religion="sunni"
 	culture="bedouin_arabic"
+	trait=sahaba
 	father = 163012
 	542.7.1={
 		birth="542.7.1"
@@ -6334,12 +6362,20 @@
 
 163014= {
 	name="Abu Bakr"
-	dynasty=7296
+	dynasty=2000312
 	religion="sunni"
+	trait=sahaba
 	culture="bedouin_arabic"
+	health = 7
 	father = 163013
-	573.1.1={
+	dna="bfefj0fa0d0"
+	properties="ag0jgj00000000000000000000000000000000"
+
+	593.1.1={
 		birth="573.1.1"
+	}
+	633.1.1={
+		capital = c_mecca
 	}
 	643.8.23={
 		death="643.8.23"
@@ -6352,6 +6388,7 @@
 	religion="sunni"
 	culture="bedouin_arabic"
 	father=159480
+	trait=sahaba
 	586.1.1={
 		birth="586.1.1"
 	}
@@ -6442,6 +6479,7 @@
 	culture="bedouin_arabic"
 	father = 163020
 	trait=sayyid
+	trait=sahaba
 	579.1.1={
 		birth="579.1.1"
 	}
@@ -6562,6 +6600,7 @@
 	culture="bedouin_arabic"
 	father = 163028
 	trait=sayyid
+	trait=sahaba
 	602.1.1={
 		birth="602.1.1"
 	}
@@ -6758,6 +6797,7 @@
 	father=33911
 	mother=33921
 	trait="sayyid"
+	trait=sahaba
 	633.1.1={
 		birth="633.1.1"
 	}
@@ -12030,6 +12070,7 @@
 	dynasty=101727 # Abbasid
 	religion="sunni"
 	culture="bedouin_arabic"
+	trait=sahaba
 	father=33901
 	trait="sayyid"
 	660.1.1={
@@ -15594,6 +15635,9 @@
 	936.1.1 = {
 		effect = {
 			add_weak_pressed_claim = k_egypt
+			add_claim = e_arabia
+			add_claim = k_mauretania
+			add_claim = d_medina
 			spawn_unit = {
 				province = 816 # Mahdia
 				owner = ROOT

@@ -5,13 +5,13 @@ title = c_gwent
 
 # Settlements
 max_settlements = 4
-b_caerwent = castle
-b_caerleon = castle
-b_newport = city
+b_caerwent = tribal
+#b_caerleon = castle
+#b_newport = city
 
 #b_chepstow = castle
 #b_abergavenny = castle
-b_monmouth = temple
+#b_monmouth = temple
 #b_tintern = castle
 
 # Misc
@@ -20,3 +20,10 @@ religion = catholic
 terrain = hills
 
 # History
+633.1.1={ religion = celtic_christian }
+760.1.1 = {
+	b_caerwent = castle
+	b_caerleon = castle
+	b_newport = city
+	b_monmouth = temple
+}

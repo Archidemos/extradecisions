@@ -5,11 +5,11 @@ title = c_dyfed
 
 # Settlements
 max_settlements = 5
-b_pembroke = castle
-b_st_davids = temple
+b_pembroke = tribal
+#b_st_davids = temple
 
-b_haverford = city
-b_narberth = castle
+#b_haverford = city
+#b_narberth = castle
 #b_llanstadwell = temple
 #b_tenby = castle
 #b_penycwm = city
@@ -20,6 +20,14 @@ religion = catholic
 terrain = hills
 
 # History
+633.1.1={ religion = celtic_christian }
+760.1.1 = {
+	b_pembroke = castle
+	b_st_davids = temple
+
+	b_haverford = city
+	b_narberth = castle
+}
 769.1.1 = {
 	culture = welsh
 	religion = celtic_christian

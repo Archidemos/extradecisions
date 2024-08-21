@@ -5,9 +5,9 @@ title = c_plauen
 
 # Settlements
 max_settlements = 5
-b_plauen = castle
-b_leipzig = city
-b_merseburg = temple
+b_plauen = tribal
+#b_leipzig = city
+#b_merseburg = temple
 
 #b_knobelsdorf = castle
 #b_halle = city
@@ -22,11 +22,14 @@ religion = slavic_pagan
 633.1.1={
 	culture = serbian
 	religion = slavic_pagan
-	b_plauen = tribal
-	remove_settlement=b_leipzig
 }
 
 # History
+760.1.1 = { 
+	b_plauen = castle
+	b_leipzig = city
+	b_merseburg = temple
+}
 1066.1.1 = {
 	culture = german
 	religion = catholic
