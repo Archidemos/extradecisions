@@ -55,9 +55,9 @@ very_hard_ai = {
 }
 
 insane_ai = {
-	land_morale = 0.30
-	global_tax_modifier = 0.2
-	levy_reinforce_rate = 0.6
+	land_morale = 1
+	global_tax_modifier = 0.4
+	levy_reinforce_rate = 1.5
 }
 
 ##########################################################################
@@ -88,16 +88,22 @@ land_province = {
 mild_winter = {
 	supply_limit = -2
 	max_attrition = 0.1
+	local_tax_modifier = -0.10
+	fort_level = 1
 }
 
 normal_winter = {
 	supply_limit = -3
 	max_attrition = 0.15
+	local_tax_modifier = -0.25
+	fort_level = 1.5
 }
 
 severe_winter = {
 	supply_limit = -5
 	max_attrition = 0.2
+	local_tax_modifier = -0.5
+	fort_level = 2
 }
 
 out_of_supply = 
@@ -654,9 +660,9 @@ failed_mission = {
 
 # Applied for Nomads if the province is in the steppe, desert, and plains
 nomad_horse_offensive_modifier = {
-	light_cavalry_offensive = 0.05
-	knights_offensive = 0.05
-	horse_archers_offensive = 0.05
+	light_cavalry_offensive = 0.015
+	knights_offensive = 0.015
+	horse_archers_offensive = 0.015
 }
 
 # Applied for Nomads if the province is in the artctic, hills, or mountains

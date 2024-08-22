@@ -5921,6 +5921,7 @@ religious = {
 			NOT = { pacifist = yes }
 			NOT = { religion = taoist }
 			NOT = { religion_group = christian }
+			NOT = { religion_group = indian_group }
 			NOT = { religion_group = jewish }
 			NOT = { religion_group = zoroastrian_group }
 			NAND = {
@@ -12014,10 +12015,12 @@ pagan_holy_war = {
 
 	can_use = {
 		ROOT = {
+			NOT = { religion = taoist }
 			OR = {
 				religion_group = christian
 				religion_group = jewish
 				religion_group = zoroastrian
+				religion_group = indian_group
 				religion = bon_reformed
 				religion = hellenic_pagan_reformed
 				religion = norse_pagan_reformed
@@ -12099,10 +12102,12 @@ pagan_holy_war = {
 
 	is_valid = {
 		ROOT = {
+			NOT = { religion = taoist }
 			OR = {
 				religion_group = christian
 				religion_group = jewish
 				religion_group = zoroastrian
+				religion_group = indian_group
 				religion = bon_reformed
 				religion = hellenic_pagan_reformed
 				religion = norse_pagan_reformed
@@ -14873,7 +14878,10 @@ buddhist_holy_war = {
 	
 	can_use = {
 		ROOT = {
-			religion = buddhist
+			OR = {
+				religion = buddhist
+				religion = taoist
+			}
 			NOT = { same_realm = FROM }
 			OR = {
 				NOT = { religion_group = FROM }
@@ -14964,7 +14972,10 @@ buddhist_holy_war = {
 
 	is_valid = {
 		ROOT = {
-			religion = buddhist
+			OR = {
+				religion = buddhist
+				religion = taoist
+			}
 			NOT = { same_realm = FROM }
 			OR = {
 				NOT = { religion_group = FROM }
@@ -16152,7 +16163,27 @@ tributary_cb = {
 		ROOT = {
 			relative_realm_size = {
 				who = FROM 
-				size > 2.5
+				size > 1.5
+			}
+			conditional_tooltip = {
+				trigger = {
+					capital_scope = {
+						NOT = {
+							region = world_europe
+						}
+					}
+				}
+				prestige = 250
+				TECH_MAJESTY = 1
+			}
+			conditional_tooltip = {
+				trigger = {
+					capital_scope = {
+						region = world_europe
+					}
+				}
+				prestige = 500
+				TECH_MAJESTY = 2
 			}
 		}
 	}
@@ -16304,12 +16335,15 @@ tributary_cb = {
 		ROOT = {
 			show_scope_change = no
 			prestige = 200
-			make_tributary = { who = FROM percentage = 0.4 }
-			add_character_modifier = {
-				modifier = recently_released_vassal
-				years = 20
-				inherit = yes
+			if = {
+				limit = { NOT = { has_character_modifier = recently_released_vassal } }
+				add_character_modifier = {
+					modifier = recently_released_vassal
+					years = 15
+					inherit = yes
+				}
 			}
+			make_tributary = { who = FROM percentage = 0.4 }
 		}
 		
 		if  = {

@@ -98,8 +98,20 @@ targetted_decisions = {
 				FROM = { higher_real_tier_than = ROOT }
 			}
 			FROM = {
-				prestige = 1000
-				diplomacy = 16
+				conditional_tooltip = {
+					trigger = {
+						NOT = { religion_group = christian }
+					}
+					diplomacy = 10
+					prestige = 1500
+				}
+				conditional_tooltip = {
+					trigger = {
+						religion_group = christian
+					}
+					diplomacy = 13
+					prestige = 1000
+				}
 				has_regent = no
 				NOT = { has_character_modifier = recently_released_vassal }
 			}
