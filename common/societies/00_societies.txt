@@ -538,6 +538,16 @@ monastic_order_dominican = {
 			value = 10
 		}
 		triggered_gain = {
+			desc = cologne_cathedral_gain
+			trigger = {
+				any_realm_wonder = {
+					has_wonder = wonder_cathedral_notre_dame
+					wonder_stage = 4
+				}
+			}
+			value = 5
+		}
+		triggered_gain = {
 			desc = "saintly_monastic_gain"
 			trigger = {
 				any_owned_bloodline = {

@@ -72,9 +72,14 @@ wonder_mosque_cordoba = {
 		restore_cost_flat = 500
 		restore_cost_ticking = 2
 		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+			trade_route_value = 5
+		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			learning = 1
 		}
 	}
 	stage = {
@@ -202,10 +207,13 @@ wonder_winter_palace = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_wealth = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			threat_decay_speed = 0.1
+			demesne_size = 1
 		}
 	}
 	stage = {
@@ -250,7 +258,7 @@ wonder_winter_palace = {
 			global_tax_modifier = 0.025
 			monthly_character_piety = 0.3
 			diplomacy = 2
-			threat_decay_speed = 0.1
+			threat_decay_speed = 0.2
 			demesne_size = 1
 		}
 	}
@@ -328,8 +336,12 @@ wonder_cologne_cathedral = {
 		restore_cost_flat = 500
 		restore_cost_ticking = 2
 		upgrade_slots = 2
+		local_modifier = {
+			culture_techpoints = 0.025
+		}
 		owner_modifier = {
-			monthly_character_piety = 0.1
+			monthly_character_piety = 0.2
+			learning = 1
 		}
 	}
 	stage = {
@@ -444,6 +456,8 @@ wonder_florence_cathedral = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
+			economy_techpoints = 0.05
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.1
@@ -566,6 +580,8 @@ wonder_walls_ragusa = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 5
+			trade_route_wealth = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -688,7 +704,9 @@ wonder_baku_ateshgah = {
 		local_modifier = {
 		}
 		owner_modifier = {
+			martial = 1
 			monthly_character_piety = 0.1
+			global_revolt_risk = -0.02
 		}
 	}
 	stage = {
@@ -705,6 +723,7 @@ wonder_baku_ateshgah = {
 		local_modifier = {
 		}
 		owner_modifier = {
+			martial = 1
 			monthly_character_piety = 0.2
 			global_revolt_risk = -0.02
 		}
@@ -802,6 +821,8 @@ wonder_carthage_ruins = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 5
+			trade_route_wealth = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -930,6 +951,8 @@ wonder_dutch_polders = {
 			local_tax_modifier = 0.02
 		}
 		owner_modifier = {
+			build_cost_modifier = -0.02
+			build_time_modifier = -0.02
 		}
 	}
 	stage = {
@@ -949,8 +972,8 @@ wonder_dutch_polders = {
 			local_tax_modifier = 0.03
 		}
 		owner_modifier = {
-			build_cost_modifier = -0.02
-			build_time_modifier = -0.02
+			build_cost_modifier = -0.03
+			build_time_modifier = -0.03
 		}
 	}
 	stage = {
@@ -970,8 +993,8 @@ wonder_dutch_polders = {
 			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
-			build_cost_modifier = -0.03
-			build_time_modifier = -0.03
+			build_cost_modifier = -0.05
+			build_time_modifier = -0.05
 			stewardship = 1
 		}	
 	}
@@ -1059,6 +1082,8 @@ wonder_alcazar_segovia = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.15
+			land_morale = 0.025
+			land_organisation = 0.025
 		}
 	}
 	stage = {
@@ -1189,6 +1214,7 @@ wonder_hohenzollern_castle = {
 			fort_level = 0.50
 		}
 		owner_modifier = {
+			martial = 1
 		}
 	}
 	stage = {
@@ -1211,6 +1237,8 @@ wonder_hohenzollern_castle = {
 			command_modifier = {
 				damage = 0.05
 			}
+			stewardship = 1
+			martial = 1
 		}
 	}
 	stage = {
@@ -1318,8 +1346,12 @@ wonder_brandenburg_gate = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			military_techpoints = 0.05
 		}
 		owner_modifier = {
+			land_morale = 0.025
+			land_organisation = 0.025
+
 		}
 	}
 	stage = {
@@ -1353,7 +1385,7 @@ wonder_brandenburg_gate = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			military_techpoints = 0.05
+			military_techpoints = 0.1
 		}
 		owner_modifier = {
 			land_morale = 0.025
@@ -1436,6 +1468,8 @@ wonder_taj_mahal = {
 		local_modifier = {
 		}
 		owner_modifier = {
+			threat_decay_speed = 0.1
+			short_reign_length = -1
 		}
 	}
 	stage = {
@@ -1555,6 +1589,8 @@ wonder_hampi = {
 			fort_level = 0.25
 		}
 		owner_modifier = {
+			land_morale = 0.025
+			stewardship = 1
 		}
 	}
 	stage = {
@@ -1671,6 +1707,7 @@ wonder_konark_sun_temple = {
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.10
+			learning = 1
 		}
 	}
 	stage = {
@@ -1783,6 +1820,8 @@ wonder_mahabodhi_temple = {
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.10
+			learning = 1
+			short_reign_length = -1
 		}
 	}
 	stage = {
@@ -1898,6 +1937,7 @@ wonder_ajanta_ellora_caves = {
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.10
+			learning = 1
 		}
 	}
 	stage = {
@@ -2013,6 +2053,7 @@ wonder_charminar = {
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.10
+			global_tax_modifier = 0.025
 		}
 	}
 	stage = {
@@ -2124,6 +2165,7 @@ wonder_mattancherry_palace = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.10
@@ -2239,6 +2281,7 @@ wonder_chruches_goa = {
 		local_modifier = {
 		}
 		owner_modifier = {
+			land_morale = 0.025
 			monthly_character_piety = 0.10
 		}
 	}
@@ -2352,6 +2395,8 @@ wonder_kalighat_kali_temple = {
 		local_modifier = {
 		}
 		owner_modifier = {
+			combat_rating = 5
+			learning = 1
 		}
 	}
 	stage = {
@@ -2474,6 +2519,7 @@ wonder_irminsul = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			land_organisation = 0.05
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.1
@@ -2592,9 +2638,11 @@ wonder_kronborg = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.1
+			build_cost_modifier = -0.05
 		}
 	}
 	stage = {
@@ -2715,8 +2763,10 @@ wonder_stave_chruch = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			culture_techpoints = 0.05
 		}
 		owner_modifier = {
+			land_morale = 0.025
 			monthly_character_piety = 2
 		}
 	}
@@ -2839,9 +2889,13 @@ wonder_falun_mine = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 5
+			local_tax_modifier = 0.1
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			global_revolt_risk = -0.02
+			monthly_character_wealth = 1
 		}
 	}
 	stage = {
@@ -2958,6 +3012,8 @@ wonder_visby_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 5
+			trade_route_wealth = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -2983,6 +3039,7 @@ wonder_visby_city = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
+			stewardship = 1
 		}
 	}
 	stage = {
@@ -3081,6 +3138,8 @@ wonder_london_bridge = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.025
+			levy_size = 0.025
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.1
@@ -3101,6 +3160,7 @@ wonder_london_bridge = {
 		}
 		local_modifier = {
 			local_tax_modifier = 0.05
+			levy_size = 0.025
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.2
@@ -3120,6 +3180,7 @@ wonder_london_bridge = {
 		upgrade_slots = 2
 		local_modifier = {
 			local_tax_modifier = 0.05
+			levy_size = 0.025
 		}
 		owner_modifier = {
 			monthly_character_piety = 0.3
@@ -3206,10 +3267,12 @@ wonder_mosque_esfahan = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			stewardship = 1
 		}
 	}
 	stage = {
@@ -3337,6 +3400,9 @@ wonder_assassin_castle = {
 			fort_level = 0.50
 		}
 		owner_modifier = {
+			intrigue = 1
+			plot_power_modifier = 0.05
+			plot_discovery_chance = 0.05
 		}
 	}
 	stage = {
@@ -3455,9 +3521,11 @@ wonder_university_naples = {
 		upgrade_slots = 2
 		local_modifier = {
 			culture_techpoints = 0.05
+			local_tax_modifier = 0.025
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			learning = 1
 		}
 	}
 	stage = {
@@ -3583,9 +3651,13 @@ wonder_temple_ares = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 5
+			trade_route_wealth = 10
+			levy_size = 0.5		
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			martial = 1
 		}
 	}
 	stage = {
@@ -3605,6 +3677,7 @@ wonder_temple_ares = {
 			trade_route_value = 5
 			trade_route_wealth = 10
 			galleys_perc = 0.10
+			levy_size = 0.5
 		}
 		owner_modifier = {
 			global_revolt_risk = -0.05
@@ -3626,6 +3699,7 @@ wonder_temple_ares = {
 			trade_route_value = 5
 			trade_route_wealth = 10
 			galleys_perc = 0.10
+			levy_size = 0.5
 		}
 		owner_modifier = {
 			global_revolt_risk = -0.025
@@ -3714,6 +3788,9 @@ wonder_great_basilica = {
 		restore_cost_flat = 500
 		restore_cost_ticking = 2
 		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.025
+		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
@@ -3837,6 +3914,10 @@ wonder_jerusalem_church = {
 		restore_cost_flat = 500
 		restore_cost_ticking = 2
 		upgrade_slots = 2
+		local_modifier = {
+			trade_route_value = 5
+			local_tax_modifier = 0.025
+		}
 		owner_modifier = {
 			monthly_character_piety = 0.2
 		}
@@ -3961,6 +4042,8 @@ wonder_mosque_mecca = {
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			global_tax_modifier = 0.025
+			learning = 1
 		}
 	}
 	stage = {
@@ -3982,6 +4065,7 @@ wonder_mosque_mecca = {
 			monthly_character_piety = 0.4
 			global_tax_modifier = 0.025
 			learning = 1
+			stewardship = 1
 		}
 	}
 	stage = {
