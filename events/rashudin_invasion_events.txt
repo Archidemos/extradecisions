@@ -6,9 +6,9 @@ narrative_event = { #The Conquest of Iraq complete
 	id = RASHD.1
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -65,9 +65,9 @@ narrative_event = { #The Conquest of the Ghassanids complete
 	id = RASHD.2
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -139,9 +139,9 @@ narrative_event = { #The Conquest of Jerusalem complete
 	id = RASHD.3
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -173,54 +173,12 @@ narrative_event = { #The Conquest of Jerusalem complete
 		}
 		c_163029 = {
 			wealth = 2000
-			k_jerusalem = {
-				grant_title = c_163029
+			gain_settlements_under_title = {
+				title = k_jerusalem
+				enemy = FROM
+				type = invasion
 			}
-			c_madaba = {
-				grant_title = c_163029
-			}
-			c_safed = {
-				grant_title = c_163029
-			}
-			c_beirut = {
-				grant_title = c_163029
-			}
-			c_tyrus = {
-				grant_title = c_163029
-			}
-			c_acre = {
-				grant_title = c_163029
-			}
-			c_tiberias = {
-				grant_title = c_163029
-			}
-			c_jerusalem = {
-				grant_title = c_163029
-			}
-			c_jaffa = {
-				grant_title = c_163029
-			}
-			c_hebron = {
-				grant_title = c_163029
-			}
-			c_kerak = {
-				grant_title = c_163029
-			}
-			c_monreal = {
-				grant_title = c_163029
-			}
-			c_beersheb = {
-				grant_title = c_163029
-			}
-			c_ascalon = {
-				grant_title = c_163029
-			}
-			c_darum = {
-				grant_title = c_163029
-			}
-			c_negev = {
-				grant_title = c_163029
-			}
+			usurp_title = k_jerusalem
 			set_defacto_liege = e_arabia
 		}
 		728 = { #Damascus
@@ -243,9 +201,9 @@ narrative_event = { #The Conquest of Syria complete
 	id = RASHD.4
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -299,82 +257,11 @@ narrative_event = { #The Conquest of Syria complete
 					}
 				}
 			}
-			k_syria = {
-				grant_title = c_163029
+			gain_settlements_under_title = {
+				title = k_syria
+				enemy = FROM
+				type = invasion
 			}
-			c_asas = {
-				grant_title = c_163029
-			}
-			c_druz = {
-				grant_title = c_163029
-			}
-			c_az_zarqa = {
-				grant_title = c_163029
-			}
-			c_amman = {
-				grant_title = c_163029
-			}
-			c_irbid = {
-				grant_title = c_163029
-			}
-			c_al_mafraq = {
-				grant_title = c_163029
-			}
-			c_syria = {
-				grant_title = c_163029
-			}
-			c_damascus = {
-				grant_title = c_163029
-			}
-			c_tadmor = {
-				grant_title = c_163029
-			}
-			c_palmyra = {
-				grant_title = c_163029
-			}
-			c_homs = {
-				grant_title = c_163029
-			}
-			c_hama = {
-				grant_title = c_163029
-			}
-			c_aleppo = {
-				grant_title = c_163029
-			}
-			c_alexandretta = {
-				grant_title = c_163029
-			}
-			c_antiocheia = {
-				grant_title = c_163029
-			}
-			c_archa = {
-				grant_title = c_163029
-			}
-			c_tortosa = {
-				grant_title = c_163029
-			}
-			c_tripoli = {
-				grant_title = c_163029
-			}
-			c_baalbek = {
-				grant_title = c_163029
-			}
-			c_limisol = {
-				grant_title = c_163029
-			}
-			c_agrosi = {
-				grant_title = c_163029
-			}
-			c_famagusta = {
-				grant_title = c_163029
-			}
-			c_lefekara = {
-				grant_title = c_163029
-			}
-			c_cakopetie = {
-				grant_title = c_163029
-			}
-
 			set_defacto_liege = e_arabia
 		}
 		while = {
@@ -411,9 +298,9 @@ narrative_event = { #The Conquest of Mesopotamia complete
 	id = RASHD.5
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -463,9 +350,9 @@ narrative_event = { #The Conquest of Egypt complete
 	id = RASHD.6
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -511,104 +398,10 @@ narrative_event = { #The Conquest of Egypt complete
 					}
 				}
 			}
-			k_egypt = {
-				grant_title = c_163029
-			}
-			c_sinai = {
-				grant_title = PREV
-			}
-			c_eilat = {
-				grant_title = PREV
-			}
-			c_el-arish = {
-				grant_title = PREV
-			}
-			c_farama = {
-				grant_title = PREV
-			}
-			c_pelusia = {
-				grant_title = PREV
-			}
-			c_sarqihya = {
-				grant_title = PREV
-			}
-			c_quena = {
-				grant_title = PREV
-			}
-			c_aswan = {
-				grant_title = PREV
-			}
-			c_asyut = {
-				grant_title = PREV
-			}
-			c_cairo = {
-				grant_title = PREV
-			}
-			c_manupura = {
-				grant_title = PREV
-			}
-			c_delta = {
-				grant_title = PREV
-			}
-			c_gabiyaha = {
-				grant_title = PREV
-			}
-			c_gizeh = {
-				grant_title = PREV
-			}
-			c_buhairya = {
-				grant_title = PREV
-			}
-			c_alexandria = {
-				grant_title = PREV
-			}
-			c_quattara = {
-				grant_title = PREV
-			}
-			c_al_alamayn = {
-				grant_title = PREV
-			}
-			c_alqusair = {
-				grant_title = PREV
-			}
-			c_kharga = {
-				grant_title = PREV
-			}
-			c_faiyum = {
-				grant_title = PREV
-			}
-			c_akhmim = {
-				grant_title = PREV
-			}
-			c_esna = {
-				grant_title = PREV
-			}
-			c_kharibta = {
-				grant_title = PREV
-			}
-			c_paraetonium = {
-				grant_title = PREV
-			}
-			c_kolzum = {
-				grant_title = PREV
-			}
-			c_farafra = {
-				grant_title = PREV
-			}
-			c_senoussi = {
-				grant_title = PREV
-			}
-			c_benghazi = {
-				grant_title = PREV
-			}
-			c_cyrenaica = {
-				grant_title = PREV
-			}
-			c_tobruk = {
-				grant_title = PREV
-			}
-			c_cyrenaica = {
-				grant_title = PREV
+			gain_settlements_under_title = {
+				title = k_egypt
+				enemy = FROM
+				type = invasion
 			}
 			set_defacto_liege = e_arabia
 		}
@@ -638,9 +431,9 @@ narrative_event = { #The Conquest of Persia complete
 	id = RASHD.7
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -681,81 +474,12 @@ narrative_event = { #The Conquest of Persia complete
 			trait=sahaba
 		}
 		new_character = {
-			k_persia = {
-				grant_title = PREV
+			gain_settlements_under_title = {
+				title = k_persia
+				enemy = FROM
+				type = invasion
 			}
-			c_lut = {
-				grant_title = PREV
-			}
-			c_sistan = {
-				grant_title = PREV
-			}
-			c_yazd = {
-				grant_title = PREV
-			}
-			c_kerman = {
-				grant_title = PREV
-			}
-			c_sirjan = {
-				grant_title = PREV
-			}
-			c_hormuz = {
-				grant_title = PREV
-			}
-			c_ladistan = {
-				grant_title = PREV
-			}
-			c_fars = {
-				grant_title = PREV
-			}
-			c_shiraz = {
-				grant_title = PREV
-			}
-			c_hendjan = {
-				grant_title = PREV
-			}
-			c_esfahan = {
-				grant_title = PREV
-			}
-			c_avhaz = {
-				grant_title = PREV
-			}
-			c_khozistan = {
-				grant_title = PREV
-			}
-			c_tigris = {
-				grant_title = PREV
-			}
-			c_luristan = {
-				grant_title = PREV
-			}
-			c_hamadan = {
-				grant_title = PREV
-			}
-			c_qom = {
-				grant_title = PREV
-			}
-			c_rayy = {
-				grant_title = PREV
-			}
-			c_kurdistan = {
-				grant_title = PREV
-			}
-			c_istakhr = {
-				grant_title = PREV
-			}
-			c_zanjan_abhar = {
-				grant_title = PREV
-			}
-			c_shahrazur = {
-				grant_title = PREV
-			}
-			c_bam = {
-				grant_title = PREV
-			}
-			c_kujawy = {
-				grant_title = PREV
-			}
+			usurp_title = k_persia
 			set_defacto_liege = e_arabia
 			set_government_type = muslim_government
 			wealth = 12000
@@ -796,9 +520,9 @@ narrative_event = { #The Conquest of Sistan complete
 	id = RASHD.8
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -830,33 +554,12 @@ narrative_event = { #The Conquest of Sistan complete
 		}
 		k_persia = {
 			holder_scope = {
-				c_farrah = {
-					grant_title = PREV
+				gain_settlements_under_title = {
+					title = k_baluchistan
+					enemy = FROM
+					type = invasion
 				}
-				c_zahedan = {
-					grant_title = PREV
-				}
-				c_saravan = {
-					grant_title = PREV
-				}
-				c_tis = {
-					grant_title = PREV
-				}
-				c_chagai = {
-					grant_title = PREV
-				}
-				c_makran = {
-					grant_title = PREV
-				}
-				c_bost = {
-					grant_title = PREV
-				}
-				c_zaranj = {
-					grant_title = PREV
-				}
-				c_armail = {
-					grant_title = PREV
-				}
+				set_defacto_liege = e_arabia
 				while = {
 					count = 3
 					spawn_unit = {
@@ -893,9 +596,9 @@ narrative_event = { #The Conquest of Khorasan complete
 	id = RASHD.9
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -937,61 +640,13 @@ narrative_event = { #The Conquest of Khorasan complete
 		}
 		k_persia = {
 			holder_scope = {
-				c_konjikala = {
-					grant_title = PREV
-				}
-				c_merv = {
-					grant_title = PREV
-				}
-				c_tus = {
-					grant_title = PREV
-				}
-				c_nishapur = {
-					grant_title = PREV
-				}
-				c_qohistan = {
-					grant_title = PREV
-				}
-				c_balkh = {
-					grant_title = PREV
-				}
-				c_herat = {
-					grant_title = PREV
-				}
-				c_birjand = {
-					grant_title = PREV
-				}
-				c_mandesh = {
-					grant_title = PREV
-				}
-				c_maymana = {
-					grant_title = PREV
-				}
-				c_badghis = {
-					grant_title = PREV
-				}
-				c_kanj_rustaq = {
-					grant_title = PREV
-				}
-				c_guzgan = {
-					grant_title = PREV
-				}
-				c_amol = {
-					grant_title = PREV
-				}
-				c_sarakhs = {
-					grant_title = PREV
-				}
-				c_yarkand = {
-					grant_title = PREV
-				}
-				c_kashgar = {
-					grant_title = PREV
-				}
-				c_khotan = {
-					grant_title = PREV
+				gain_settlements_under_title = {
+					title = k_khorasan
+					enemy = FROM
+					type = invasion
 				}
 			}
+			set_defacto_liege = e_arabia
 		}
 		681 = { #Ani
 			kingdom = {
@@ -1013,9 +668,9 @@ narrative_event = { #The Conquest of Armenia complete
 	id = RASHD.10
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -1030,6 +685,7 @@ narrative_event = { #The Conquest of Armenia complete
 		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.108 days = 1 } } }
 		ROOT = { narrative_event = { id = RASHD.112 } }
+		disband_event_forces = yes
 		set_global_flag = rashudin_conquered_armenia
 		prestige = 100
 		c_1000637 = {
@@ -1103,9 +759,9 @@ narrative_event = { #The Conquest of Africa complete
 	id = RASHD.11
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
@@ -1279,6 +935,25 @@ narrative_event = { #The Conquest of Africa complete
 			}
 		}
 		while = {
+			count = 20
+			ROOT = {
+				random_realm_province = {
+					limit = {
+						title = k_mauretania
+					}
+					culture = ROOT
+					religion = ROOT
+				}
+				random_realm_province = {
+					limit = {
+						title = k_africa
+					}
+					culture = ROOT
+					religion = ROOT
+				}
+			}
+		}
+		while = {
 			count = 5
 			spawn_unit = {
 				province = 840 # Fes
@@ -1307,35 +982,195 @@ narrative_event = { #The Conquest of Africa complete
 		}
 	}
 }
-narrative_event = { #The Conquest of Spain complete
+narrative_event = { #The Conquest of Andalusia complete
 	id = RASHD.12
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	trigger = {
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
 		religion_group = muslim
-		NOT = { has_global_flag = rashudin_conquered_spain }
+		NOT = { has_global_flag = rashudin_conquered_andalusia }
 		completely_controls = c_cordoba
 	}
 	
 	option = {
 		name = "Onwards!"
-		hidden_effect = { any_player = { narrative_event = { id = RASHD.110 days = 1 } } }
-		set_global_flag = rashudin_conquered_spain
-		
+		set_global_flag = rashudin_conquered_andalusia
 		prestige = 100
 		
 		add_character_modifier = {
 			name = rashudin_overextention
-			years = 10
+			years = 50
 		}
+		
+		ROOT = {
+			c_rosello = {
+				grant_title = PREV
+			}
+			c_carcassonne = {
+				grant_title = PREV
+			}
+			c_narbonne = {
+				grant_title = PREV
+			}
+			c_montpellier = {
+				grant_title = PREV
+			}
+		}
+		156 = { #Coruna
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Galicia complete
+	id = RASHD.13
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_arab_army_shout
+	
+	picture = GFX_evt_kaaba
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_galicia }
+		completely_controls = c_coruna
+	}
+	
+	option = {
+		name = "Onwards!"
+		set_global_flag = rashudin_conquered_galicia
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 774 # Jerusalem
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		155 = { #Asturias de Oviedo
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Asturias complete
+	id = RASHD.14
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_arab_army_shout
+	
+	picture = GFX_evt_kaaba
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_asturias }
+		completely_controls = c_asturias_de_oviedo
+	}
+	
+	option = {
+		name = "Onwards!"
+		set_global_flag = rashudin_conquered_asturias
+		prestige = 100
+		while = {
+			count = 2
+			spawn_unit = {
+				province = 774 # Jerusalem
+				attrition = 0
+				troops = {
+					light_infantry = { 2000 2000 }
+					heavy_infantry = { 500 500 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+					camel_cavalry = { 1000 1000 }
+				}
+			}
+		}
+		ROOT = {
+			c_burgos = {
+				grant_title = PREV
+			}
+		}
+		152 = { #Navarra
+			kingdom = {
+				e_arabia = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #The Conquest of Navarra complete
+	id = RASHD.15
+	title = EVTNAMERASHD1
+	desc = EVTDESCRASHD1
+	sound = ar_arab_army_shout
+	
+	picture = GFX_evt_kaaba
+	
+	trigger = {
+		is_alternate_start = no
+		has_landed_title = e_arabia
+		has_character_flag = rashudin_expander
+		religion_group = muslim
+		NOT = { has_global_flag = rashudin_conquered_navarra }
+		completely_controls = c_navarra
+	}
+	
+	option = {
+		name = "Onwards!"
+		set_global_flag = rashudin_conquered_navarra
+		prestige = 100
+		disband_event_forces = yes
 		ROOT = { narrative_event = { id = RASHD.114 } }
+		ROOT = { narrative_event = { id = RASHD.115 days 10 } }
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.110 days = 1 } } }
 	}
 }
 
@@ -1348,7 +1183,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Iraq
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1372,7 +1207,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of The Gha
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1396,7 +1231,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Jerusal
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1420,7 +1255,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Syria
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1444,7 +1279,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Mesopot
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1468,7 +1303,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Egypt
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1492,7 +1327,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Persia
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1516,7 +1351,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Sistan
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1540,7 +1375,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Armenia
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1564,7 +1399,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Africa
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1588,7 +1423,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Spain
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1612,7 +1447,7 @@ narrative_event = { #Announcement about the finished Islamic Conquest of Khorasa
 
 	is_triggered_only = yes
 	
-	picture = "GFX_evt_mongols"
+	picture = GFX_evt_moors
 	border = "GFX_event_narrative_frame_war"
 	
 	option = {
@@ -1633,9 +1468,9 @@ narrative_event = { #The Umayyads declare war on the Rashudins
 	id = RASHD.112
 	title = EVTNAMERASHD112
 	desc = EVTDESCRASHD112
-	sound = ar_army_marching
+	sound = ar_arabs_lose
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_moors
 	
 	is_triggered_only = yes
 	
@@ -1644,7 +1479,7 @@ narrative_event = { #The Umayyads declare war on the Rashudins
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
-		k_syria = {
+		k_jerusalem = {
 			holder_scope = {
 				set_defacto_liege = THIS
 				while = {
@@ -1674,9 +1509,9 @@ narrative_event = { #The Islamic Conquests continue
 	id = RASHD.113
 	title = EVTNAMERASHD113
 	desc = EVTDESCRASHD113
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_kaaba
 	
 	is_triggered_only = yes
 	
@@ -1717,9 +1552,9 @@ narrative_event = { #The Abbasids declare war on the Umayyads
 	id = RASHD.114
 	title = EVTNAMERASHD114
 	desc = EVTDESCRASHD114
-	sound = ar_army_marching
+	sound = ar_arabs_lose
 	
-	picture = GFX_evt_victory_arch_byzantine
+	picture = GFX_evt_moors
 	
 	is_triggered_only = yes
 	
@@ -1751,5 +1586,105 @@ narrative_event = { #The Abbasids declare war on the Umayyads
 				}
 			}
 		}
+	}
+}
+
+narrative_event = { #The Spanish break off and fortify themselfs
+	id = RASHD.115
+	title = EVTNAMERASHD115
+	desc = EVTDESCRASHD115
+	sound = ar_arabs_lose
+	
+	picture = GFX_evt_crusaders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "No way!"
+		set_global_flag = rashudin_spannish_retreat
+		hidden_effect = { any_player = { narrative_event = { id = RASHD.116 days = 1 } } }
+
+		add_character_modifier = {
+			name = spannish_raids
+			years = 50
+		}
+
+		c_1000000 = {
+			k_asturias = {
+				grant_title = PREV
+			}
+			c_asturias_de_oviedo = {
+				grant_title = PREV
+			}
+			c_asturias_de_santillana = {
+				grant_title = PREV
+			}
+			c_viscaya = {
+				grant_title = PREV
+			}
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 840 # Fes
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 1500 1500 }
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { #Announcement about the Spannish holding strong
+	id = RASHD.116
+	title = ANNORASHD116
+	desc = ANNORASHDDESC116
+
+	is_triggered_only = yes
+	
+	picture = GFX_evt_crusaders
+	border = "GFX_event_narrative_frame_war"
+	sound = ar_arabs_lose
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "God be praised!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "What do these Germans hope to acomplish!"
+	}
+}
+
+narrative_event = { #Announcement about the Rashudins losing
+	id = RASHD.200
+	title = ANNORASHD200
+	desc = ANNORASHDDESC200
+
+	is_triggered_only = yes
+	
+	picture = GFX_evt_crusaders
+	border = "GFX_event_narrative_frame_war"
+	sound = ar_arabs_lose
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "God be praised!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "It is over for Islam.."
 	}
 }

@@ -1,0 +1,2199 @@
+
+###########################################
+#                                         #
+# 633 On action events					  #
+#                                         #
+# ID Mod.600-Mod.699                      #
+#                                         #
+###########################################
+namespace = Mod
+
+# Events at start of game
+character_event = {
+    id = Mod.600
+    is_triggered_only = yes
+
+    hide_window = yes
+
+    trigger = {
+        ai = no
+        NOT = {
+			year = 634
+			month = 1
+		}
+		NOT = {
+			has_global_flag = start_mod_events
+		}
+		start_date = 633.1.1
+    }
+
+    immediate = {
+		# Some random Hellenic holdout characters about Byzantium
+		e_byzantium = {
+			holder = {
+				any_realm_lord = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = k_byzantium
+							de_jure_liege_or_above = k_anatolia
+						}
+					}
+					random_list = {
+						2 = {
+							create_character = {
+								random_traits = yes
+								dynasty = NONE
+								religion = hellenic_pagan
+								culture = PREV
+								race = PREV
+								age = 22
+							}
+						}
+						2 = {
+							create_character = {
+								random_traits = yes
+								dynasty = NONE
+								religion = hellenic_pagan
+								culture = PREV
+								race = PREV
+								female=yes
+								age = 22
+							}
+						}
+						1 = {
+							create_character = {
+								random_traits = yes
+								dynasty = NONE
+								religion = hellenic_pagan
+								culture = PREV
+								race = PREV
+								trait = mystic
+								age = 26
+							}
+						}
+						1 = {
+							create_character = {
+								random_traits = yes
+								dynasty = NONE
+								religion = hellenic_pagan
+								culture = PREV
+								race = PREV
+								trait = mystic
+								female=yes
+								age = 26
+							}
+						}
+						94 = {
+							# do nothing
+						}
+					}
+				}
+			}
+		}
+		# Women for all
+		any_playable_ruler = {
+			limit = {
+				NOT = {
+					any_courtier = {
+						is_female = yes
+					}
+				}
+				is_married = no
+				is_female = no
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				religion = THIS
+				culture = THIS
+				race = THIS
+				female = yes
+				age = 16
+			}
+		}
+		# Sigebert for Austrasia
+		c_168700 = { # Sigebert
+			k_lotharingia = {
+				add_pressed_claim = PREV
+			}
+			c_91402 = { # Pepin
+				start_faction = {
+					faction = faction_claimant
+					title = k_lotharingia
+					thirdparty = PREV
+				}
+				k_neustria = {
+					random_vassal = {
+						random_list = {
+							30 = {
+								join_faction = {
+									faction = faction_claimant
+									faction_leader = PREVPREV
+								}
+							}
+							70 = {
+							}
+						}
+					}
+				}
+				k_burgundy = {
+					random_vassal = {
+						random_list = {
+							40 = {
+								join_faction = {
+									faction = faction_claimant
+									faction_leader = PREVPREV
+								}
+							}
+							60 = {
+							}
+						}
+					}
+				}
+				k_lotharingia = {
+					random_vassal = {
+						random_list = {
+							75 = {
+								join_faction = {
+									faction = faction_claimant
+									faction_leader = PREVPREV
+								}
+							}
+							25 = {
+							}
+						}
+					}
+				}
+			}
+		}
+		# china fix
+		offmap_china = {
+			set_offmap_name = tang_china
+		}
+		set_global_flag = caliphate_elective
+		set_global_flag = start_mod_events
+    }
+}
+
+# First appearance of measles
+province_event = {
+	id = Mod.601
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		year = 730
+		disease = measles
+		NOT = {
+			has_global_flag = first_measles_outbreak
+		}
+	}
+	
+	immediate = {
+		set_global_flag = first_measles_outbreak
+		save_event_target_as = measles_outbreak_location
+		any_playable_ruler = {
+			limit = {
+				ai = no
+			}
+			narrative_event =  {
+				id = Mod.602
+				days = 10
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = Mod.602
+	desc = Mod.DESC602
+	title = Mod.TITLE602
+	picture = GFX_rinderpest
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.602EVTOPTA
+		trigger = {
+			NOT = {
+				trait = honest
+				trait = cynical
+			}
+		}
+	}
+	option = {
+		name = Mod.602EVTOPTB
+		tooltip_info = honest
+		trigger = {
+			trait = honest
+		}
+		add_character_modifier = {
+			name = too_honest
+			duration = 730
+		}
+	}
+	option = {
+		name = Mod.602EVTOPTC
+		tooltip_info = cynical
+		trigger = {
+			trait = cynical
+		}
+		add_character_modifier = {
+			name = the_cynical
+			duration = 730
+		}
+	}
+}
+
+character_event = {
+	id = Mod.603
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		controls_religion = yes
+		independent = yes
+
+		always = no
+		
+		any_character = {
+			has_minor_title = title_caliphate_heir
+			has_character_flag = caliphate_heir_apparent_@ROOT
+		}
+	}
+
+	immediate = {
+		random_realm_character = {
+			limit = {
+				has_minor_title = title_caliphate_heir
+				has_character_flag = caliphate_heir_apparent_@ROOT
+			}
+			if = {
+				limit = {
+					ROOT = {
+						dynasty = PREV
+					}
+				}
+				ROOT = {
+					abdicate_to = PREV
+				}
+				long_character_event = {
+					id = Mod.604
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						is_landed = no
+					}
+					ROOT = {
+						capital_holding = {
+							grant_title = PREVPREV
+						}
+					}
+				}
+				ROOT = {
+					any_demesne_title = {
+						if = {
+							limit = {
+								controls_religion = yes
+							}
+							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+						}
+						if = {
+							limit = {
+								tier = emperor
+							}
+							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+							add_law = { law = succ_offmap_succession cooldown = no opinion_effect = no }
+						}
+						if = {
+							limit = {
+								tier = king
+								ROOT = { tier = king }
+							}
+							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+							add_law = { law = succ_offmap_succession cooldown = no opinion_effect = no }
+						}
+					}
+				}
+				ROOT = {
+					random_close_relative = {
+						limit = {
+							would_be_heir_under_law = {
+								who = ROOT
+								law = turkish_succession
+							}
+						}
+						ROOT = { abdicate_to = PREV }
+						any_claim = {
+							add_pressed_claim = PREV
+						}
+						long_character_event = {
+							id = Mod.604
+						}
+					}
+				}
+			}
+			set_variable = {
+				which = caliphate_votes
+				value = 0
+			}
+			any_realm_character = {
+				limit = {
+					is_female = no
+				}
+				character_event = { id = Mod.701 }
+			}
+			any_realm_lord = {
+				ROOT = {
+					clr_character_flag = caliphate_choice_of_@PREV
+				}
+			}
+			clr_character_flag = caliphate_choice_of_@ROOT
+			clr_character_flag = caliphate_heir_apparent_@ROOT
+			remove_title = title_caliphate_heir
+		}
+	}
+}
+
+# Death of a ruler, display succession screen
+long_character_event = {
+	id = Mod.604
+	title = Mod.TITLE604
+	desc = Mod.DESC604
+	picture = GFX_evt_death_default
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.604EVTOPT1
+	}
+	option = {
+		name = Mod.604EVTOPT2
+	}
+	option = {
+		name = Mod.604EVTOPT3
+	}
+	option = {
+		name = Mod.604EVTOPT4
+	}
+}
+
+# Create the next heir on candidate death
+character_event = {
+	id = Mod.605
+	hide_window = yes
+	is_triggered_only = yes
+
+	religion_group = muslim
+
+	trigger = {
+		trait = caliphate_heir
+	}
+
+	immediate = {
+		d_sunni = { holder_scope = { save_event_target_as = local_sunni_caliph } }
+		d_shiite = { holder_scope = { save_event_target_as = local_shiite_caliph } }
+		d_ibadi = { holder_scope = { save_event_target_as = local_ibadi_caliph } }
+		d_kharijite = { holder_scope = { save_event_target_as = local_kharijite_caliph } }
+		d_hurufi = { holder_scope = { save_event_target_as = local_hurufi_caliph } }
+		d_yazidi = { holder_scope = { save_event_target_as = local_yazidi_caliph } }
+
+		set_variable = {
+			which = caliphate_votes
+			value = 0
+		}
+
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_sunni_caliph
+			}
+			event_target:local_sunni_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_sunni_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_shiite_caliph
+			}
+			event_target:local_shiite_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_shiite_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_ibadi_caliph
+			}
+			event_target:local_ibadi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_ibadi_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_kharijite_caliph
+			}
+			event_target:local_kharijite_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_kharijite_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_hurufi_caliph
+			}
+			event_target:local_hurufi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_hurufi_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_yazidi_caliph
+			}
+			event_target:local_yazidi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_yazidi_caliph
+		}
+	}
+}
+
+# Create the next heir on candidate conversion
+character_event = {
+	id = Mod.606
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { religion_group = muslim }
+		NOT = { religion_group = muslim }
+		trait = caliphate_heir
+	}
+
+	immediate = {
+		d_sunni = { holder_scope = { save_event_target_as = local_sunni_caliph } }
+		d_shiite = { holder_scope = { save_event_target_as = local_shiite_caliph } }
+		d_ibadi = { holder_scope = { save_event_target_as = local_ibadi_caliph } }
+		d_kharijite = { holder_scope = { save_event_target_as = local_kharijite_caliph } }
+		d_hurufi = { holder_scope = { save_event_target_as = local_hurufi_caliph } }
+		d_yazidi = { holder_scope = { save_event_target_as = local_yazidi_caliph } }
+
+		set_variable = {
+			which = caliphate_votes
+			value = 0
+		}
+		remove_trait = caliphate_heir
+		remove_title = title_caliphate_heir
+
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_sunni_caliph
+			}
+			event_target:local_sunni_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_sunni_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_shiite_caliph
+			}
+			event_target:local_shiite_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_shiite_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_ibadi_caliph
+			}
+			event_target:local_ibadi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_ibadi_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_kharijite_caliph
+			}
+			event_target:local_kharijite_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_kharijite_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_hurufi_caliph
+			}
+			event_target:local_hurufi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_hurufi_caliph
+		}
+		if = {
+			limit = {
+				has_character_flag = caliphate_heir_apparent_@event_target:local_yazidi_caliph
+			}
+			event_target:local_yazidi_caliph = {
+				save_event_target_as = local_current_caliph
+				any_realm_character = {
+					limit = {
+						check_variable = {
+							which = caliphate_votes
+							value = 1
+						}
+					}
+					character_event = { id=Mod.702 }
+				}
+			}
+			clr_character_flag = caliphate_heir_apparent_@event_target:local_yazidi_caliph
+		}
+	}
+}
+
+# New caliphate succession
+character_event = {
+	id = Mod.607
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		religion_group = muslim
+		controls_religion = yes
+		independent = yes
+		primary_title = {
+			has_law = succ_caliphate_elective
+		}
+	}
+
+	immediate = {
+		current_heir = {
+			if = {
+				limit = {
+					religion = ROOT
+				}
+				ROOT = {
+					any_demesne_title = {
+						if = {
+							limit = {
+								controls_religion = yes
+							}
+							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+						}
+					}
+				}
+			}
+			ROOT = {
+				any_demesne_title = {
+					limit = {
+						has_law = succ_caliphate_elective
+						higher_tier_than = COUNT
+						controls_religion = no
+						NOT = {
+							ROOT = {
+								primary_title = {
+									title = PREVPREV
+								}
+							}
+						}
+					}
+					add_variable = {
+						which = local_tnum
+						value = 1
+					}
+					save_event_target_as = title_to_caliph_inherit_@local_tnum
+					usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+				}
+			}
+			character_event = { id = Mod.608 days = 1 }
+		}
+	}
+}
+
+character_event = {
+	id = Mod.608
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		while = {
+			limit = {
+				check_variable = {
+					which = local_tnum
+					value = 1
+				}
+			}
+			event_target:title_to_caliph_inherit_@local_tnum = {
+				if = {
+					limit = {
+						has_law = succ_caliphate_elective
+						holder_scope = {
+							controls_religion = no
+						}
+					}
+					if = {
+						limit = {
+							holder_scope = {
+								religion_group = muslim
+							}
+						}
+						add_law = succ_turkish_succession
+					}
+					else = {
+						add_law = succ_feudal_elective
+					}
+				}
+			}
+			subtract_variable = {
+				which = local_tnum
+				value = 1
+			}
+		}
+	}
+}
+
+
+# ############# Giant ##############
+character_event = {
+	id = Mod.610
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		higher_tier_than = count
+		always = no
+		NAND = {
+			religion_group = muslim
+			controls_religion = yes
+		}
+		current_heir = {
+			trait = giant
+			NOT = { has_character_modifier = clumsy_giant }
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			50 = {
+				current_heir = {
+					character_event = { id = Mod.611 days = 30 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = Mod.611
+	desc = Mod.DESC611
+	picture = GFX_coronation_european
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = giant
+		NOT = { ruled_years = 2 }
+		always = no
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_tribal = yes
+				NOT = { culture_group = east_african }
+				NOT = { culture_group = west_african }
+				NOT = { culture_group = dravidian_group }
+				NOT = { culture_group = indo_aryan_group }
+			}
+			#picture = GFX_coronation_tomislav
+		}
+		else_if = {
+			limit = {
+				religion = catholic
+				religion = fraticelli
+			}
+			#picture = GFX_coronation_catholic
+		}
+	}
+	
+	option = {
+		name = Mod.611EVTOPTA
+		
+		add_character_modifier = { name = clumsy_giant }
+	}
+}
+	
+			
+
+# #########################################################
+# ##################### Witenagemot #######################
+
+character_event = {
+	id = Mod.620
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+
+	trigger = {
+		has_law = witan_succession_enabled
+		NOT = {
+			has_law = succ_feudal_elective
+		}
+
+		always = no
+	}
+	
+	immediate = {
+		primary_title = {
+			heir_under_primogeniture_law = {
+				save_event_target_as = local_witan_prime
+			}
+			heir_under_seniority_law = {
+				if = {
+					limit = {
+						NOT = {
+							character = event_target:local_witan_prime
+						}
+					}
+				}
+				save_event_target_as = local_witan_second
+			}
+		}
+		if = {
+			limit = {
+				player_heir = {
+					NOT = {
+						character = event_target:local_witan_prime
+						character = event_target:local_witan_second
+					}
+				}
+			}
+			player_heir = {
+				save_event_target_as = local_witan_third
+			}
+		}
+		any_dynasty_member = {
+			# Preliminary preparations
+			set_variable = {
+				which = local_witan_score
+				value = 0
+			}
+			export_to_variable = { which = local_stew value = diplomacy }
+			export_to_variable = { which = local_mart value = martial }
+			export_to_variable = { which = local_diplo value = stewardship }
+			export_to_variable = { which = local_learn value = learning }
+			
+			# Calculate the score for this character:
+				# Good rulers with high attributes are on the ballot
+			change_variable = {
+				which = local_witan_score
+				which = local_stew
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_mart
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_diplo
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_learn
+			}
+			# As well as ones with rulership traits of the first order
+			if = {
+				limit = {
+					OR = {
+						trait = diligent
+						trait = patient
+						trait = just
+					}
+				}
+				change_variable = {
+					which = local_witan_score
+					value = 8
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						trait = diligent
+						trait = patient
+						trait = just
+					}
+				}
+				change_variable = {
+					which = local_witan_score
+					value = 8
+				}
+			}
+			# But not ones with detractors
+			if = {
+				limit = {
+					OR = {
+						trait = slothful
+						trait = arbitrary
+					}
+				}
+				subtract_variable = {
+					which = local_witan_score
+					value = 8
+				}
+			}
+			# And especially not children
+			if = {
+				limit = {
+					is_adult = no
+				}
+				divide_variable = {
+					which = local_witan_score
+					value = 2
+				}
+			}
+			
+			# Highest scorers get put on ballot
+			if = {
+				limit = {
+					NOT = {
+						ROOT = {
+							any_dynasty_member = {
+								check_variable = {
+									which = local_witan_score
+									which = PREVPREV
+								}
+							}
+							any_close_relative = {
+								check_variable = {
+									which = local_witan_score
+									which = PREVPREV
+								}
+							}
+						}
+					}
+				}
+				event_target:local_witan_third = {
+					save_event_target_as = local_witan_fourth
+				}
+				save_event_target_as = local_witan_third
+			}
+								
+		}
+		any_close_relative = {
+			# Preliminary preparations
+			set_variable = {
+				which = local_witan_score
+				value = 0
+			}
+			export_to_variable = { which = local_stew value = diplomacy }
+			export_to_variable = { which = local_mart value = martial }
+			export_to_variable = { which = local_diplo value = stewardship }
+			export_to_variable = { which = local_learn value = learning }
+			
+			# Calculate the score for this character:
+				# Good rulers with high attributes are on the ballot
+			change_variable = {
+				which = local_witan_score
+				which = local_stew
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_mart
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_diplo
+			}
+			change_variable = {
+				which = local_witan_score
+				which = local_learn
+			}
+			# As well as ones with rulership traits of the first order
+			if = {
+				limit = {
+					OR = {
+						trait = diligent
+						trait = patient
+						trait = just
+					}
+				}
+				change_variable = {
+					which = local_witan_score
+					value = 5
+				}
+			}
+			# But not ones with detractors
+			if = {
+				limit = {
+					OR = {
+						trait = slothful
+						trait = arbitrary
+					}
+				}
+				subtract_variable = {
+					which = local_witan_score
+					value = 5
+				}
+			}
+			# And especially not children
+			if = {
+				limit = {
+					is_adult = no
+				}
+				divide_variable = {
+					which = local_witan_score
+					value = 2
+				}
+			}
+			
+			# Highest scorers get put on ballot
+			if = {
+				limit = {
+					NOT = {
+						ROOT = {
+							any_dynasty_member = {
+								check_variable = {
+									which = local_witan_score
+									which = PREVPREV
+								}
+							}
+							any_close_relative = {
+								check_variable = {
+									which = local_witan_score
+									which = PREVPREV
+								}
+							}
+						}
+					}
+				}
+				event_target:local_witan_third = {
+					save_event_target_as = local_witan_fourth
+				}
+				save_event_target_as = local_witan_third
+			}
+								
+		}
+		any_realm_lord = {
+			narrative_event = {
+				id = Mod.621
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = Mod.621
+	title = Mod.TITLE621
+	desc = Mod.DESC621
+	picture = GFX_witan
+	
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+	
+	option = {
+		name = Mod.621EVTOPTA
+		ai_chance = {
+			factor = 2
+		}
+		event_target:local_witan_prime = {
+			change_variable = {
+				which = local_witan_votes
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = Mod.621EVTOPTB
+		ai_chance = {
+			factor = 1.5
+		}
+		event_target:local_witan_second = {
+			change_variable = {
+				which = local_witan_votes
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = Mod.621EVTOPTC
+		ai_chance = {
+			factor = 1
+		}
+		event_target:local_witan_third = {
+			change_variable = {
+				which = local_witan_votes
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = Mod.621EVTOPTD
+		ai_chance = {
+			factor = 1
+		}
+		event_target:local_witan_fourth = {
+			change_variable = {
+				which = local_witan_votes
+				value = 1
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				FROM = {
+					NOT = { has_character_flag = vote_result }
+				}
+			}
+			FROM = {
+				#long_character_event = { id = Mod.622 }
+			}
+		}
+	}
+}
+
+
+
+
+# PLOT DECISION TRIGGERED: Give the ruler a chance to abolish the Palace Mayoralty
+character_event = {
+	id = Mod.629
+	desc = Mod.DESC629
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_men = yes
+	
+	trigger = {
+		OR = {
+			culture = old_frankish
+			any_bloodline = {
+				has_bloodline_flag = bloodline_mayor_of_the_palace
+			}
+		}
+	}
+	
+	# Decide to do nothing
+	option = {
+		name = Mod.631EVTOPTA
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.5
+				trait = wroth
+			}
+		}
+	}
+	
+	# Attempt to persuade the Mayor to step aside
+	option = {
+		name = Mod.631EVTOPTB
+		tooltip_info = diplomacy
+		trigger = {
+			OR = {
+				diplomacy = 10
+				trait = grey_eminence
+				trait = charismatic_negotiator
+				trait = socializer
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.632
+				days = 4
+			}
+		}
+	}
+	
+	# Challenge him to a duel!
+	option = {
+		name = Mod.631EVTOPTC
+		tooltip_info = martial
+		trigger = {
+			OR = {
+				martial = 10
+				trait = brilliant_strategist
+				trait = skilled_tactician
+				trait = duelist
+				trait = gamer
+				trait = wroth
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.633
+				days = 4
+			}
+		}
+	}
+	
+	# Try to assassinate him
+	option = {
+		name = Mod.631EVTOPTD
+		tooltip_info = intrigue
+		trigger = {
+			OR = {
+				intrigue = 10
+				trait = elusive_shadow
+				trait = intricate_webweaver
+				trait = schemer
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.634
+				days = 4
+			}
+		}
+	}
+	
+	# Invoke your divine right
+	option = {
+		name = Mod.631EVTOPTE
+		tooltip_info = learning
+		trigger = {
+			OR = {
+				learning = 10
+				trait = mastermind_theologian
+				trait = zealous
+				trait = theologian
+				trait = mystic
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.635
+				days = 4
+			}
+		}
+	}
+	
+	# Claim to be a better financial steward of the realm
+	#option = {
+	#	name = Mod.631EVTOPTF
+	#	tooltip_info = stewardship
+	#	trigger = {
+	#		OR = {
+	#			stewardship = 14
+	#			trait = midas_touched
+	#			trait = fortune_builder
+	#			trait = administrator
+	#			trait = greedy
+	#		}
+	#	}
+	#	regent = {
+	#		character_event = {
+	#			#id = Mod.635
+	#			days = 4
+	#		}
+	#	}
+	#}
+}
+
+# Reduce Mayor of the Palace power on usurpation
+character_event = {
+	id = Mod.630
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		culture = old_frankish
+		any_demesne_title = {
+			has_law = mayor_of_the_palace_2
+		}
+	}
+	
+	immediate = {
+		any_demesne_title = {
+			limit = {
+				has_law = mayor_of_the_palace_2
+			}
+			add_law = {
+				law = mayor_of_the_palace_1
+				cooldown = no
+				opinion_effect = no
+			}
+		}
+	}
+}
+
+# Give the newly adult ruler a chance to abolish the Palace Mayoralty
+character_event = {
+	id = Mod.631
+	desc = Mod.DESC631
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	only_men = yes
+	
+	trigger = {
+		OR = {
+			culture = old_frankish
+			any_bloodline = {
+				has_bloodline_flag = bloodline_mayor_of_the_palace
+			}
+		}
+		has_law = mayor_of_the_palace_2
+		higher_tier_than = duke
+		OR = {
+			trait = diligent
+			trait = brave
+			trait = quick
+			trait = genius
+			trait = wroth
+			trait = arbitrary
+			trait = ambitious
+		}
+		OR = {
+			diplomacy = 11
+			martial = 11
+			stewardship = 11
+			intrigue = 11
+			learning = 13
+		}
+		NOT = {
+			trait = slothful
+			trait = craven
+			trait = trusting
+		}
+		OR = {
+			trait = brilliant_strategist
+			trait = skilled_tactician
+			trait = midas_touched
+			trait = fortune_builder
+			trait = grey_eminence
+			trait = charismatic_negotiator
+			trait = intricate_webweaver
+			trait = elusive_shadow
+			trait = mastermind_theologian
+		}
+		NOT = {
+			regent = {
+				reverse_opinion = {
+					who = ROOT
+					value = 25
+				}
+			}
+		}
+	}
+	
+	# Decide to do nothing
+	option = {
+		name = Mod.631EVTOPTA
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.5
+				trait = wroth
+			}
+		}
+	}
+	
+	# Attempt to persuade the Mayor to step aside
+	option = {
+		name = Mod.631EVTOPTB
+		tooltip_info = diplomacy
+		trigger = {
+			OR = {
+				diplomacy = 13
+				trait = grey_eminence
+				trait = charismatic_negotiator
+				trait = socializer
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.632
+				days = 4
+			}
+		}
+	}
+	
+	# Challenge him to a duel!
+	option = {
+		name = Mod.631EVTOPTC
+		tooltip_info = martial
+		trigger = {
+			OR = {
+				martial = 13
+				trait = brilliant_strategist
+				trait = skilled_tactician
+				trait = duelist
+				trait = gamer
+				trait = wroth
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.633
+				days = 4
+			}
+		}
+	}
+	
+	# Try to assassinate him
+	option = {
+		name = Mod.631EVTOPTD
+		tooltip_info = intrigue
+		trigger = {
+			OR = {
+				intrigue = 13
+				trait = elusive_shadow
+				trait = intricate_webweaver
+				trait = schemer
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.634
+				days = 4
+			}
+		}
+	}
+	
+	# Invoke your divine right
+	option = {
+		name = Mod.631EVTOPTE
+		tooltip_info = learning
+		trigger = {
+			OR = {
+				learning = 15
+				trait = mastermind_theologian
+				trait = zealous
+				trait = theologian
+				trait = mystic
+			}
+		}
+		regent = {
+			character_event = {
+				id = Mod.635
+				days = 4
+			}
+		}
+	}
+	
+	# Claim to be a better financial steward of the realm
+	#option = {
+	#	name = Mod.631EVTOPTF
+	#	tooltip_info = stewardship
+	#	trigger = {
+	#		OR = {
+	#			stewardship = 14
+	#			trait = midas_touched
+	#			trait = fortune_builder
+	#			trait = administrator
+	#			trait = greedy
+	#		}
+	#	}
+	#	regent = {
+	#		character_event = {
+	#			#id = Mod.635
+	#			days = 4
+	#		}
+	#	}
+	#}
+}
+
+# Regent response to persuasion
+character_event = {
+	id = Mod.632
+	desc = Mod.DESC632
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	# Accede to the request
+	option = {
+		name = Mod.632EVTOPTA
+		custom_tooltip = { text = Mod.632EVTOPTA_TT }
+		FROM = {
+			character_event = {
+				id = Mod.636
+				days = 4
+			}
+		}
+	}
+	
+	# Impress with vague promises
+	option = {
+		name = Mod.632EVTOPTB
+		tooltip_info = diplomacy
+		custom_tooltip = { text = Mod.632EVTOPTB_TT }
+		trigger = {
+			diplomacy = 17
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.637
+			}
+		}
+	}
+
+	# Ok, but the council must be fully empowered . . .
+	option = {
+		name = Mod.632EVTOPTC
+		tooltip_info = diplomacy
+		custom_tooltip = { text = Mod.632EVTOPTC_TT }
+		trigger = {
+			OR = {
+				diplomacy = 12
+				trait = grey_eminence
+				trait = charismatic_negotiator
+			}
+			NOT = { diplomacy = 18 }
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.638
+			}
+		}
+	}
+}
+
+# We are empowered again !
+character_event = {
+	id = Mod.636
+	desc = Mod.DESC636
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.636EVTOPTA
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+		}
+		# Add an opinion debuff to the mayor ?
+	}
+}
+
+# We are impressed with vague promises
+character_event = {
+	id = Mod.637
+	desc = Mod.DESC637
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.637EVTOPTA
+		opinion = {
+			modifier = opinion_disappointed
+			who = FROM
+			years = 5
+		}
+	}
+}
+
+# We compromise and fully empower the council
+character_event = {
+	id = Mod.638
+	desc = Mod.DESC638
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.637EVTOPTA
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+
+			add_law = { law = law_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = war_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = revoke_title_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = imprison_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = banish_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = execution_voting_power_1 cooldown = no opinion_effect = no }
+			add_law = { law = succession_voting_power_1 cooldown = no opinion_effect = no }
+		}
+	}
+}
+
+
+# Regent response to duel
+character_event = {
+	id = Mod.633
+	desc = Mod.DESC633
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	# A duel it is then
+	option = {
+		name = Mod.633EVTOPTA
+		custom_tooltip = { text = Mod.633EVTOPTA_TT }
+		save_event_target_as = opponent
+		FROM = {
+			save_event_target_as = challenger
+			character_event = {
+				id = WoL.11003
+				days = 4
+			}
+			character_event = {
+				id = Mod.639
+				days = 20
+			}
+		}
+	}
+	
+	# Ahh I'm so scared!
+	option = {
+		name = Mod.633EVTOPTB
+		tooltip_info = craven
+		custom_tooltip = { text = Mod.632EVTOPTB_TT }
+		trigger = {
+			trait = craven
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.636
+				days = 4
+			}
+		}
+	}
+
+	# How about a challenge of real skill . . .
+	option = {
+		name = Mod.633EVTOPTC
+		tooltip_info = gamer
+		custom_tooltip = { text = Mod.632EVTOPTC_TT }
+		trigger = {
+			trait = gamer
+		}
+		
+		character_event = {
+			id = WoL.4160
+			days = 4
+		}
+		character_event = {
+			id = Mod.640
+			days = 20
+		}
+	}
+}
+
+
+# At the end of the duel
+character_event = {
+	id = Mod.639
+	desc = Mod.DESC639
+	picture = GFX_evt_death_default
+	
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.639EVTOPTA
+
+		trigger = {
+			has_character_modifier = recent_duel_victory
+		}
+
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+		}
+	}
+
+	option = {
+		name = Mod.639EVTOPTB
+		trigger = {
+			NOT = { has_character_modifier = recent_duel_victory }
+		}
+	}
+}
+
+# At the end of the chess game
+character_event = {
+	id = Mod.640
+	desc = Mod.DESC640
+	picture = GFX_evt_melee
+	
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.640EVTOPTA
+
+		trigger = {
+			has_character_modifier = game_winner
+		}
+
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+		}
+	}
+
+	option = {
+		name = Mod.640EVTOPTB
+		trigger = {
+			NOT = { has_character_modifier = game_winner }
+		}
+	}
+}
+
+# The Mayor gets the assassination event
+character_event = {
+	id = Mod.634
+	desc = Mod.DESC634
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	# Go out with a whimper
+	option = {
+		name = Mod.634EVTOPTA
+		trigger = {
+			NOT = {
+				trait = paranoid
+				trait = elusive_shadow
+				trait = schemer
+				intrigue = 14
+			}
+		}
+		FROM = { character_event = { id = Mod.641 } }
+		death = {
+			death_reason = death_murder_unknown
+		}
+	}
+	
+	# I keep a knife under my pillow for a reason!
+	option = {
+		name = Mod.634EVTOPTB
+		tooltip_info = paranoid
+		trigger = {
+			trait = paranoid
+		}
+		
+		random_list = {
+			34 = {
+				modifier = {
+					trait = duelist
+					factor = 2
+				}
+				add_trait = wounded
+				FROM = { character_event = { id = Mod.642 } }
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+				FROM = { character_event = { id = Mod.642 } }
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+				FROM = { character_event = { id = Mod.643 } }
+			}
+		}
+	}
+	
+	# I see him coming and get out
+	option = {
+		name = Mod.634EVTOPTC
+		tooltip_info = intrigue
+		custom_tooltip = { text = Mod.634EVTOPTC_TT }
+		trigger = {
+			OR = {
+				intrigue = 14
+				trait = elusive_shadow
+				trait = schemer
+			}
+		}
+		FROM = { character_event = { id = Mod.644 days = 4 } }
+	}
+}
+
+# We successfully killed the Mayor and take back power
+character_event = {
+	id = Mod.641
+	desc = Mod.DESC641
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.641EVTOPTA
+		custom_tooltip = { text = Mod.641EVTOPTA_TT }
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+		}
+	}
+}
+
+# He fought back! (and didn't die)
+character_event = {
+	id = Mod.642
+	desc = Mod.DESC642
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.642EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_murder_attempt
+			who = FROM
+		}
+		random_list = {
+			34 = {
+				modifier = {
+					factor = 2
+					trait = duelist
+				}
+				add_trait = wounded
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+			}
+		}
+	}
+}
+
+# He fought back! (and did die)
+character_event = {
+	id = Mod.643
+	desc = Mod.DESC643
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.643EVTOPTA
+		primary_title = {
+			revoke_law = mayor_of_the_palace_2
+			add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+		}
+		random_list = {
+			34 = {
+				modifier = {
+					factor = 2
+					trait = duelist
+				}
+				add_trait = wounded
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+			}
+		}
+	}
+}
+
+# He got away!
+character_event = {
+	id = Mod.644
+	desc = Mod.DESC644
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.644EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_murder_attempt
+			who = FROM
+		}
+	}
+}
+
+
+# The Mayor gets the divine right event
+character_event = {
+	id = Mod.635
+	desc = Mod.DESC635
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	# Agree
+	option = {
+		name = Mod.635EVTOPTA
+		trigger = {
+			OR = {
+				trait = zealous
+				trait = humble
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		FROM = { character_event = { id = Mod.636 days = 4 } }
+	}
+	
+	# Refuse cynically
+	option = {
+		name = Mod.635EVTOPTB
+		FROM = {
+			any_realm_lord = {
+				opinion = {
+					modifier = cynical_neg
+					who = ROOT
+				}
+			}
+		}
+		FROM = { character_event = { id = Mod.645 days = 4 } }
+	}
+	
+	# Refuse with good religious reason
+	option = {
+		name = Mod.635EVTOPTC
+		tooltip_info = learning
+		custom_tooltip = { text = Mod.635EVTOPTC_TT }
+		trigger = {
+			OR = {
+				learning = 14
+				trait = mastermind_theologian
+				trait = scholarly_theologian
+				trait = erudite
+				trait = theologian
+			}
+		}
+		ai_chance = {
+			factor = 10 # If possible the AI loves this option
+		}
+		FROM = { character_event = { id = Mod.646 days = 4 } }
+	}
+}
+
+# He refused us with no good reason
+character_event = {
+	id = Mod.645
+	desc = Mod.DESC645
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.645EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_disappointed
+			who = FROM
+			years = 5
+		}
+	}
+}
+
+# He refused us with sound reasoning
+character_event = {
+	id = Mod.646
+	desc = Mod.DESC646
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.646EVTOPTA
+	}
+}
+
+# Bounce to newly married Mayoral regency character
+character_event = {
+	id = Mod.660
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			has_law = mayor_of_the_palace_2
+			#culture = old_frankish
+			higher_tier_than = duke
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			character_event = { id = Mod.631 days = 14 }
+		}
+	}
+}
+
+# On death of monarch give claim to mayor palatine
+character_event = {
+	id = Mod.670
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	culture = old_frankish
+	
+	trigger = {
+		OR = {
+			has_law = mayor_of_the_palace_1
+			has_law = mayor_of_the_palace_2
+		}
+		higher_tier_than = duke
+	}
+	
+	immediate = {
+		any_courtier_or_vassal = {
+			limit = {
+				has_minor_title = title_mayor_of_the_palace
+			}
+			ROOT = {
+				primary_title = {
+					add_weak_claim = PREVPREV
+				}
+			}
+		}
+	}
+}
+
+# Successful mayor gets chance to pass on the title
+character_event = {
+	id = Mod.671
+	desc = Mod.DESC671
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		liege = {
+			has_law = mayor_of_the_palace_2
+			higher_tier_than = duke
+		}
+
+		has_minor_title = title_mayor_of_the_palace
+		age = 40
+		NOT = { has_character_flag = assigned_mayor_palatine_heir }
+		ruled_years = 10
+		prestige = 300
+		calc_true_if = {
+			amount = 3
+			diplomacy = 10
+			martial = 10
+			stewardship = 10
+			intrigue = 10
+			learning = 10
+		}
+		player_heir = {
+			calc_true_if = {
+				amount = 3
+				diplomacy = 8
+				martial = 8
+				stewardship = 8
+				intrigue = 8
+				learning = 8
+			}
+			is_adult = yes
+			dynasty = ROOT
+		}
+	}
+	
+	option = {
+		name = Mod.671EVTOPTA
+	}
+	
+	option = {
+		name = Mod.671EVTOPTB
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.2
+				NOT = { ai_rationality = 5 }
+			}
+			modifier = {
+				factor = 5
+				ai_ambition = 10
+			}
+		}
+		liege = {
+			any_realm_lord = {
+				limit = {
+					NOT = { dynasty = ROOT }
+				}
+				opinion = {
+					modifier = opinion_tyrant
+					who = ROOT
+				}
+			}
+		}
+		liege = {
+			ROOT = {
+				player_heir = {
+					set_character_flag = mayor_palatine_heir
+				}
+			}
+		}
+		set_character_flag = assigned_mayor_palatine_heir
+	}
+}
+
+character_event = {
+	id = Mod.672
+	desc = Mod.DESC672
+	picture = GFX_evt_throne_room
+
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	trigger = {
+		liege = {
+			has_law = mayor_of_the_palace_2
+			higher_tier_than = duke
+		}
+		has_minor_title = title_mayor_of_the_palace
+		player_heir = {
+			has_character_flag = mayor_palatine_heir
+		}
+	}
+	
+	immediate = {
+		player_heir = {
+			character_event = {
+				id = Mod.673
+				days = 1
+			}
+		}
+	}
+}
+
+character_event = {
+	id = Mod.673
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	only_playable = yes
+
+	immediate = {
+		clr_character_flag = mayor_palatine_heir
+		liege = {
+			regent = {
+				#remove_title = title_regent
+				remove_title = title_mayor_of_the_palace
+			}
+		}
+		give_minor_title = title_regent
+		give_minor_title = title_mayor_of_the_palace
+	}
+}

@@ -1,0 +1,1306 @@
+
+###########################################
+#                                         #
+# 813 Faction plot events				  #
+#                                         #
+# ID Mod.800-Mod.899                      #
+#                                         #
+###########################################
+namespace = Mod
+
+# Ultimatum - Install Pretender
+letter_event = {
+	id = Mod.800
+	desc = "Mod.DESC800"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { in_faction = faction_claimant_split_realm }
+	}
+	
+	immediate = {
+		FROM = { 
+			diplomatic_immunity = yes 
+			any_faction_backer = {
+				faction = faction_claimant_split_realm
+				diplomatic_immunity = yes
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA8000 # Give in
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0			
+				NOT = {
+					FROM = {
+						faction_power = 
+						{
+							faction = faction_claimant_split_realm
+							power = 1.0
+						}
+					}
+				}
+			}			
+			modifier = {
+				factor = 0.001
+				has_nickname = nick_the_conqueror
+			}
+			modifier = {
+				factor = 1.25
+				is_weak_trigger = yes
+			}
+			modifier = {
+				factor = 1.25
+				trait = craven
+			}
+			modifier = {
+				factor = 1.25
+				trait = humble
+			}
+			modifier = {
+				factor = 1.25
+				trait = kind
+			}
+			modifier = {
+				factor = 1.25
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = content
+			}
+		}
+		
+		hidden_tooltip = {
+			any_vassal = {
+				limit = {
+					ai = no
+					NOT = { in_faction = faction_claimant_split_realm }
+				}
+				character_event = { id = 8099 }
+			}
+			FROM = {
+				any_faction_backer = {
+					faction = faction_claimant_split_realm
+					letter_event = { id = 8098 }
+					diplomatic_immunity = no
+				}
+				letter_event = { id = Mod.801 }
+				diplomatic_immunity = no
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB8000"
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 1.25
+				is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				trait = proud
+			}
+			modifier = {
+				factor = 1.25
+				trait = envious
+			}
+			modifier = {
+				factor = 1.25
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.75
+				FROM = {
+					faction_power = 
+					{
+						faction = faction_claimant_split_realm
+						power = 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					faction_power = 
+					{
+						faction = faction_claimant_split_realm
+						power = 1.0
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					faction_power = 
+					{
+						faction = faction_claimant_split_realm
+						power = 2.0
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					faction_power = 
+					{
+						faction = faction_claimant_split_realm
+						power = 3.0
+					}
+				}
+			}	
+			modifier = {
+				factor = 0.5
+				FROM = {
+					faction_power = 
+					{
+						faction = faction_claimant_split_realm
+						power = 4.0
+					}
+				}
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					FROM = { faction_power = { faction = faction_claimant_split_realm power = 1.0 } }
+				}
+				random = {
+					chance = 25
+					character_event = { id = 45002 days = 120 } # Loyalists flock to the liege's banner
+				}
+			}
+		}
+		FROM = {
+			letter_event = { id = Mod.802 days = 3 tooltip = "EVTTOOLTIP8100" }
+			tooltip = {
+				any_faction_backer = {
+					faction = faction_claimant_split_realm
+				}
+			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						NOT = { faction_power = { faction = faction_claimant_split_realm power = 0.75 } }
+					}
+					random_list = {
+						50 = {
+						}
+						30 = {
+							character_event = { id = 45000 days = 17 } # A great number of rebels flock to the revolter's banner
+						}
+						20 = {
+							character_event = { id = 45004 days = 17 } # Rebels flock to the revolter's banner
+						}
+					}
+				}
+				if = {
+					limit = {
+						faction_power = { faction = faction_claimant_split_realm power = 0.75 }
+						NOT = { faction_power = { faction = faction_claimant_split_realm power = 1.5 } }
+					}
+					random_list = {
+						75 = {
+						}
+						5 = {
+							character_event = { id = 45000 days = 17 } # A great number of rebels flock to the revolter's banner
+						}
+						20 = {
+							character_event = { id = 45004 days = 17 } # Rebels flock to the revolter's banner
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Demand accepted - Install Claimant
+letter_event = {
+	id = Mod.801
+	desc = "EVTDESC8061"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		supported_claimant = {
+			opinion = {
+				modifier = opinion_very_grateful
+				who = ROOT
+				years = 10
+			}
+			reverse_opinion = {
+				modifier = opinion_fought_for_claimant
+				who = ROOT
+				years = 20
+			}
+		}
+	}
+	
+	option = {
+		name = "EXCELLENT"
+		clr_character_flag = faction_claimant_split_realm_ultimatum_taken
+		supported_claimant = {
+			if = {
+				limit = {
+					prisoner = yes
+					host = { character = FROM  }
+				}
+				prisoner = no
+			}
+			ROOT = {
+				supported_claimant_title = {
+					# If the claimant has the wrong government type, take care of that first.
+					if = {
+						limit = {
+							higher_tier_than = PREVPREV
+							holder_scope = {
+								OR = {
+									is_feudal = yes
+									is_tribal = yes
+									is_nomadic = yes
+								}
+							}
+							ROOT = {
+								supported_claimant = {
+									is_ruler = yes
+									OR = {
+										is_theocracy = yes
+										is_republic = yes
+									}
+								}
+							}
+						}
+						ROOT = { 
+							supported_claimant = {
+								abdicate = { move = no }
+							}
+						}
+					}
+				
+					usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = faction_demand }
+				}
+				supported_claimant = {
+					FROM = {
+						make_tributary = {
+							who = PREV
+							tributary_type = permanent
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Demand rejected - Install Claimant
+letter_event = {
+	id = Mod.802
+	desc = "EVTDESC8100"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		supported_claimant = {
+			reverse_opinion = {
+				modifier = opinion_fought_for_claimant
+				who = ROOT
+				years = 20
+			}
+		}
+		any_faction_backer = {
+			faction = faction_claimant_split_realm
+			supported_claimant = {
+				reverse_opinion = {
+					modifier = opinion_fought_for_claimant
+					who = PREV
+					years = 20
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA8100"
+		
+		if = {
+			limit = {
+				supported_claimant = {
+					character = ROOT
+				}
+			}
+			faction_claimant_split_realm = { # The target (title) of the faction
+				reverse_war = {
+					target = ROOT
+					casus_belli = claim_on_liege
+					faction = faction_claimant_split_realm
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { 
+					supported_claimant = {
+						character = ROOT
+					}
+				}
+			}
+			faction_claimant_split_realm = { # The target (title) of the faction
+				reverse_war = {
+					target = ROOT
+					casus_belli = other_claim_on_liege
+					faction = faction_claimant_split_realm
+				}
+			}
+		}
+		
+		clr_character_flag = faction_claimant_split_realm_ultimatum_taken
+		set_character_flag = faction_claimant_split_realm_war
+	}
+}
+
+# ################ Mayor of the palace plot events ################### #
+character_event = {
+	id = Mod.810
+	desc = "Mod.DESC810"
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_intrigue
+	
+	capable_only = yes
+	prisoner = no
+	is_part_of_plot = yes
+	
+	trigger = {
+		any_backed_character = {
+			has_plot = plot_reclaim_mayor_authority
+			plot_power = 0.5
+			plot_target_char = {
+				age = 16
+				prisoner = no
+				OR = {
+					at_location = ROOT # The plotter needs to be at the target's location to get a chance
+					ROOT = { ai = yes }
+				}
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+			}
+			OR = {
+				NOT = { has_character_flag = mayor_in_motion }
+				had_character_flag = { flag = mayor_in_motion days = 100 }
+			}
+			ROOT = {
+				plot_power_contribution = 
+				{
+					plotter = PREV
+					power = 0.025
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3600
+		
+		modifier = {
+			factor = 5
+			NOT = {
+				learning = 8
+				intrigue = 8
+				martial = 8
+				diplomacy = 8
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.10
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.20
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.40
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.50
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.60
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.70
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.80
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.90
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.33
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				plot_power = 1.0
+			}
+		}
+		modifier = {
+			factor = 0.33
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				plot_power = 1.5
+			}
+		}
+		modifier = {
+			factor = 0.33
+			any_backed_character = {
+				has_plot = plot_reclaim_mayor_authority
+				plot_power = 2.0
+			}
+		}
+	}
+	
+	immediate = {
+		random_backed_character = {
+			limit = {
+				has_plot = plot_reclaim_mayor_authority
+				plot_power = 0.5
+				plot_target_char = {
+					age = 16
+					prisoner = no
+					NOT = { trait = incapable }
+					NOT = { is_inaccessible_trigger = yes }
+				}
+				ROOT = {
+					plot_power_contribution = 
+					{
+						plotter = PREV
+						power = 0.025
+					}
+				}
+			}
+			plot_target_char = {
+				save_event_target_as = plot_mayor_target
+			}
+			save_event_target_as = plot_leader
+		}
+	}
+	
+	option = {
+		name = "Mod.810EVTOPTA" # I should come up with a plan
+		hidden_tooltip = {
+			character_event = { id = Mod.811 days = 7 }
+		}
+		set_character_flag = mayor_in_motion
+	}
+	option = {
+		name = "EVTOPTD8150" # I cannot afford this
+		trigger = {
+			ai = no
+		}
+	}
+}
+
+# PLOT EVENT TRIGGERED: Give the plotter chance to abolish the Palace Mayoralty on behalf of the ruler
+character_event = {
+	id = Mod.811
+	desc = Mod.DESC811
+	picture = GFX_evt_throne_room # something else?
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	# Decide to do nothing
+	option = {
+		name = Mod.811EVTOPTA
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 0.5
+				trait = wroth
+			}
+		}
+	}
+	
+	# Attempt to persuade the Mayor to step aside
+	option = {
+		name = Mod.811EVTOPTB
+		tooltip_info = diplomacy
+		trigger = {
+			OR = {
+				diplomacy = 9
+				trait = grey_eminence
+				trait = charismatic_negotiator
+				trait = socializer
+			}
+		}
+		event_target:plot_mayor_target = {
+			character_event = {
+				id = Mod.812
+				days = 4
+			}
+		}
+	}
+	
+	# Challenge him to a duel!
+	option = {
+		name = Mod.811EVTOPTC
+		tooltip_info = martial
+		trigger = {
+			OR = {
+				martial = 10
+				trait = brilliant_strategist
+				trait = skilled_tactician
+				trait = duelist
+				trait = gamer
+				trait = wroth
+			}
+		}
+		event_target:plot_mayor_target = {
+			character_event = {
+				id = Mod.813
+				days = 4
+			}
+		}
+	}
+	
+	# Try to assassinate him
+	option = {
+		name = Mod.811EVTOPTD
+		tooltip_info = intrigue
+		trigger = {
+			OR = {
+				intrigue = 9
+				trait = elusive_shadow
+				trait = intricate_webweaver
+				trait = schemer
+			}
+		}
+		event_target:plot_mayor_target = {
+			character_event = {
+				id = Mod.814
+				days = 4
+			}
+		}
+	}
+	
+	# Invoke divine right
+	option = {
+		name = Mod.811EVTOPTE
+		tooltip_info = learning
+		trigger = {
+			OR = {
+				learning = 10
+				trait = mastermind_theologian
+				trait = zealous
+				trait = theologian
+				trait = mystic
+			}
+		}
+		event_target:plot_mayor_target = {
+			character_event = {
+				id = Mod.815
+				days = 4
+			}
+		}
+	}
+}
+
+# Regent response to persuasion
+character_event = {
+	id = Mod.812
+	desc = Mod.DESC812
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	# Accede to the request
+	option = {
+		name = Mod.812EVTOPTA
+		custom_tooltip = { text = Mod.812EVTOPTA_TT }
+		FROM = {
+			character_event = {
+				id = Mod.816
+				days = 4
+			}
+		}
+	}
+	
+	# Impress with vague promises
+	option = {
+		name = Mod.812EVTOPTB
+		tooltip_info = diplomacy
+		custom_tooltip = { text = Mod.812EVTOPTB_TT }
+		trigger = {
+			diplomacy = 17
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.817
+			}
+		}
+	}
+
+	# Ok, but the council must be fully empowered . . .
+	option = {
+		name = Mod.812EVTOPTC
+		tooltip_info = diplomacy
+		custom_tooltip = { text = Mod.812EVTOPTC_TT }
+		trigger = {
+			OR = {
+				diplomacy = 12
+				trait = grey_eminence
+				trait = charismatic_negotiator
+			}
+			NOT = { diplomacy = 18 }
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.818
+			}
+		}
+	}
+}
+
+# We are empowered again !
+character_event = {
+	id = Mod.816
+	desc = Mod.DESC816
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.816EVTOPTA
+		custom_tooltip = { text = Mod.816EVTOPTA_TT }
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.830 days = 7 } } # Inform the king
+			}
+		}
+		# Add an opinion debuff to the mayor ?
+	}
+}
+
+# We are impressed with vague promises
+character_event = {
+	id = Mod.817
+	desc = Mod.DESC817
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.637EVTOPTA
+		opinion = {
+			modifier = opinion_disappointed
+			who = FROM
+			years = 5
+		}
+	}
+}
+
+# We compromise and fully empower the council
+character_event = {
+	id = Mod.818
+	desc = Mod.DESC818
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.818EVTOPTA
+		custom_tooltip = { text = Mod.816EVTOPTA_TT }
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+
+					add_law = { law = law_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = war_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = revoke_title_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = imprison_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = banish_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = execution_voting_power_1 cooldown = no opinion_effect = no }
+					add_law = { law = succession_voting_power_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.831 days = 7 } } # Inform the king
+			}
+		}
+	}
+}
+
+# Regent response to duel
+character_event = {
+	id = Mod.813
+	desc = Mod.DESC813
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	# A duel it is then
+	option = {
+		name = Mod.813EVTOPTA
+		custom_tooltip = { text = Mod.813EVTOPTA_TT }
+		save_event_target_as = opponent
+		FROM = {
+			save_event_target_as = challenger
+			character_event = {
+				id = WoL.11003
+				days = 4
+			}
+			character_event = {
+				id = Mod.819
+				days = 20
+			}
+		}
+	}
+	
+	# Ahh I'm so scared!
+	option = {
+		name = Mod.813EVTOPTB
+		tooltip_info = craven
+		custom_tooltip = { text = Mod.812EVTOPTB_TT }
+		trigger = {
+			trait = craven
+		}
+		
+		FROM = {
+			character_event = {
+				id = Mod.816
+				days = 4
+			}
+		}
+	}
+
+	# How about a challenge of real skill . . .
+	option = {
+		name = Mod.813EVTOPTC
+		tooltip_info = gamer
+		custom_tooltip = { text = Mod.812EVTOPTC_TT }
+		trigger = {
+			trait = gamer
+		}
+		
+		character_event = {
+			id = WoL.4160
+			days = 4
+		}
+		character_event = {
+			id = Mod.820
+			days = 20
+		}
+	}
+}
+
+
+# At the end of the duel
+character_event = {
+	id = Mod.819
+	desc = Mod.DESC819
+	picture = GFX_evt_death_default
+	
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.819EVTOPTA
+		custom_tooltip = { text = Mod.816EVTOPTA_TT }
+
+		trigger = {
+			has_character_modifier = recent_duel_victory
+		}
+		
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.830 days = 7 } } # Inform the king
+			}
+		}
+	}
+
+	option = {
+		name = Mod.819EVTOPTB
+		trigger = {
+			NOT = { has_character_modifier = recent_duel_victory }
+		}
+	}
+}
+
+# At the end of the chess game
+character_event = {
+	id = Mod.820
+	desc = Mod.DESC820
+	picture = GFX_evt_melee
+	
+	is_triggered_only = yes
+
+	option = {
+		name = Mod.820EVTOPTA
+		custom_tooltip = { text = Mod.816EVTOPTA_TT }
+
+		trigger = {
+			has_character_modifier = game_winner
+		}
+
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.830 days = 7 } } # Inform the king
+			}
+		}
+	}
+
+	option = {
+		name = Mod.820EVTOPTB
+		trigger = {
+			NOT = { has_character_modifier = game_winner }
+		}
+	}
+}
+
+
+# The Mayor gets the assassination event
+character_event = {
+	id = Mod.814
+	desc = Mod.DESC814
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	# Go out with a whimper
+	option = {
+		name = Mod.814EVTOPTA
+		trigger = {
+			NOT = {
+				trait = paranoid
+				trait = elusive_shadow
+				trait = schemer
+				intrigue = 14
+			}
+		}
+		FROM = { character_event = { id = Mod.821 } }
+		death = {
+			death_reason = death_murder_unknown
+		}
+	}
+	
+	# I keep a knife under my pillow for a reason!
+	option = {
+		name = Mod.814EVTOPTB
+		tooltip_info = paranoid
+		trigger = {
+			trait = paranoid
+		}
+		
+		random_list = {
+			34 = {
+				modifier = {
+					trait = duelist
+					factor = 2
+				}
+				add_trait = wounded
+				FROM = { character_event = { id = Mod.822 } }
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+				FROM = { character_event = { id = Mod.822 } }
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+				FROM = { character_event = { id = Mod.823 } }
+			}
+		}
+	}
+	
+	# I see him coming and get out
+	option = {
+		name = Mod.814EVTOPTC
+		tooltip_info = intrigue
+		custom_tooltip = { text = Mod.814EVTOPTC_TT }
+		trigger = {
+			OR = {
+				intrigue = 14
+				trait = elusive_shadow
+				trait = schemer
+			}
+		}
+		FROM = { character_event = { id = Mod.824 days = 4 } }
+	}
+}
+
+# We successfully killed the Mayor and take back power
+character_event = {
+	id = Mod.821
+	desc = Mod.DESC821
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.821EVTOPTA
+		custom_tooltip = { text = Mod.821EVTOPTA_TT }
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.830 days = 7 } } # Inform the king
+			}
+		}
+	}
+}
+
+# He fought back! (and didn't die)
+character_event = {
+	id = Mod.822
+	desc = Mod.DESC822
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.822EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_murder_attempt
+			who = FROM
+		}
+		random_list = {
+			34 = {
+				modifier = {
+					factor = 2
+					trait = duelist
+				}
+				add_trait = wounded
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+			}
+		}
+	}
+}
+
+# He fought back! (and did die)
+character_event = {
+	id = Mod.823
+	desc = Mod.DESC823
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.823EVTOPTA
+		FROM = {
+			liege = {
+				primary_title = {
+					revoke_law = mayor_of_the_palace_2
+					add_law = { law = mayor_of_the_palace_1 cooldown = no opinion_effect = no }
+				}
+				hidden_tooltip = { character_event = { id = Mod.830 days = 7 } } # Inform the king
+			}
+		}
+		random_list = {
+			34 = {
+				modifier = {
+					factor = 2
+					trait = duelist
+				}
+				add_trait = wounded
+			}
+			33 = {
+				add_maimed_trait_effect = yes
+			}
+			33 = {
+				death = {
+					death_reason = death_murder
+					killer = FROM
+				}
+			}
+		}
+	}
+}
+
+# He got away!
+character_event = {
+	id = Mod.824
+	desc = Mod.DESC824
+	picture = GFX_evt_shadow
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.824EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_murder_attempt
+			who = FROM
+		}
+	}
+}
+
+
+# The Mayor gets the divine right event
+character_event = {
+	id = Mod.815
+	desc = Mod.DESC815
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	# Agree
+	option = {
+		name = Mod.815EVTOPTA
+		trigger = {
+			OR = {
+				trait = zealous
+				trait = humble
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		FROM = { character_event = { id = Mod.816 days = 4 } }
+	}
+	
+	# Refuse cynically
+	option = {
+		name = Mod.815EVTOPTB
+		FROM = {
+			any_realm_lord = {
+				opinion = {
+					modifier = cynical_neg
+					who = ROOT
+				}
+			}
+		}
+		FROM = { character_event = { id = Mod.825 days = 4 } }
+	}
+	
+	# Refuse with good religious reason
+	option = {
+		name = Mod.815EVTOPTC
+		tooltip_info = learning
+		custom_tooltip = { text = Mod.815EVTOPTC_TT }
+		trigger = {
+			OR = {
+				learning = 14
+				trait = mastermind_theologian
+				trait = scholarly_theologian
+				trait = erudite
+				trait = theologian
+			}
+		}
+		ai_chance = {
+			factor = 10 # If possible the AI loves this option
+		}
+		FROM = { character_event = { id = Mod.826 days = 4 } }
+	}
+}
+
+# He refused us with no good reason
+character_event = {
+	id = Mod.825
+	desc = Mod.DESC825
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.825EVTOPTA
+		reverse_opinion = {
+			modifier = opinion_disappointed
+			who = FROM
+			years = 5
+		}
+	}
+}
+
+# He refused us with sound reasoning
+character_event = {
+	id = Mod.826
+	desc = Mod.DESC826
+	picture = GFX_evt_library
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.826EVTOPTA
+	}
+}
+
+# King is informed by plotter that his authority is restored
+character_event = {
+	id = Mod.830
+	desc = Mod.DESC830
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.830EVTOPTA
+		opinion = {
+			modifier = opinion_very_grateful
+			who = FROM
+			years = 10
+		}
+		reverse_add_favor = FROM
+	}
+}
+
+# King is informed by plotter that his authority is mostly restored
+character_event = {
+	id = Mod.831
+	desc = Mod.DESC831
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Mod.831EVTOPTA
+		opinion = {
+			modifier = opinion_grateful
+			who = FROM
+			years = 10
+		}
+		reverse_add_favor = FROM
+	}
+}
+

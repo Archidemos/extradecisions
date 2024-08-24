@@ -1,7 +1,7 @@
 first_rashudin_invasion = {
 	name = CB_NAME_RASHUDIN_INVASION
 	war_name = WAR_NAME_RASHUDIN_INVASION
-	sprite = 7
+	sprite = 8
 	truce_days = 0
 	hostile_against_others = yes
 	allow_whitepeace = no
@@ -124,22 +124,122 @@ first_rashudin_invasion = {
 	}
 
 	on_reverse_demand = {
-		ROOT = {
-			show_scope_change = no
-			prestige = -200
-			transfer_scaled_wealth = {
-				to = FROM
-				value = 4.0
+		FROM = {
+			c_dhu_zabi = {
+				grant_title = PREV
 			}
-			if = {
-				limit = {
-					NOT = {
-						any_liege = {
-							dynasty = PREV
+			c_hajar = {
+				grant_title = PREV
+			}
+			c_muscat = {
+				grant_title = PREV
+			}
+			c_duqm = {
+				grant_title = PREV
+			}
+		}
+		d_arabia_petrae = {
+			holder_scope = {
+				c_hijaz = {
+					grant_title = PREV
+				}
+			}
+		}
+		custom_tooltip = {
+			text = byz_rashudin_ortho
+			hidden_tooltip = {
+				create_character = {
+					dynasty=random
+					age = 33
+					attributes = {
+						martial=9
+						diplomacy=8
+						intrigue=5
+						stewardship=7
+					}
+					health = 6
+					fertility = 0.7
+					religion="orthodox"
+					culture="bedouin_arabic"
+					random_traits = yes
+				}
+				new_character = {
+					gain_settlements_under_title = {
+						title = k_arabia
+						enemy = ROOT
+						type = invasion
+					}
+					usurp_title = k_arabia
+					wealth = 500
+					prestige = 500
+					piety = 500
+					save_event_target_as = new_ruler
+					while = {
+						count = 2
+						spawn_unit = {
+							province = 840 # Fes
+							attrition = 0
+							troops = {
+								light_infantry = { 2000 2000 }
+								heavy_infantry = { 500 500 }
+								archers = { 1000 1000 }
+							}
 						}
 					}
 				}
-				decadence = 10
+				while = {
+					count = 5
+					k_arabia = {
+						holder_scope = {
+							random_realm_province = {
+								limit = {
+									de_jure_liege_or_above = PREVPREV
+									OR = {
+										NOT = { culture = bedouin_arabic }
+										NOT = { religion = orthodox }
+									}
+								}
+								culture = bedouin_arabic
+								religion = orthodox
+							}
+						}
+					}
+				}
+			}
+			k_arabia = {
+				holder_scope = {
+					d_sanaa = {
+						grant_title = PREV
+					}
+					c_bayda = {
+						grant_title = PREV
+					}
+					c_aden = {
+						grant_title = PREV
+					}
+				}
+			}
+			e_byzantium = {
+				holder_scope = {
+					make_tributary = { who = event_target:new_ruler tributary_type = permanent }
+				}
+			}
+			if = {
+				limit = { FROM = { ai = no } }
+				FROM = { set_defacto_liege = ROOT }
+			}
+			ROOT = { character_event = { id = HFP.41090 days = 1 } }
+			hidden_effect = { any_player = { narrative_event = { id = RASHD.200 days = 1 } } }
+		}
+		while = {
+			count = 20
+			FROM = {
+				random_realm_province = {
+					limit = {
+						de_jure_liege_or_above = PREVPREV
+					}
+					religion = orthodox
+				}
 			}
 		}
 		e_arabia = {
@@ -149,57 +249,6 @@ first_rashudin_invasion = {
 						title = e_arabia
 					}
 					unsafe_destroy_landed_title = THIS
-				}
-			}
-		}
-		while = {
-			count = 20
-			FROM = {
-				random_realm_province = {
-					limit = {
-						de_jure_liege_or_above = PREVPREV
-					}
-					religion = pagan
-				}
-			}
-		}
-		FROM = {
-			show_scope_change = no
-			prestige = 200
-			hidden_tooltip = {
-				if = {
-					limit = {
-						has_ambition = obj_strengthen_religion
-					}
-					change_variable = { which = strengthen_religion value = 1 }
-				}
-			}
-			if = {
-				limit = { 
-					has_dlc = "Legacy of Rome"
-					OR = { 
-						has_landed_title = e_byzantium
-						has_landed_title = e_roman_empire
-					}
-						OR = { 
-							religion_group = christian
-							religion = hellenic_pagan
-							religion = hellenic_pagan_reformed
-						}
-				}
-				hidden_tooltip = { character_event = { id = LoR.30 days = 12 } }
-			}
-			participation_scaled_prestige = 200
-		}
-		any_defender = {
-			limit = { NOT = { character = FROM } }
-			hidden_tooltip = { participation_scaled_prestige = 200 }
-			hidden_tooltip = {
-				if = {
-					limit = {
-						has_ambition = obj_strengthen_religion
-					}
-					change_variable = { which = strengthen_religion value = 1 }
 				}
 			}
 		}
@@ -225,7 +274,7 @@ first_rashudin_invasion = {
 rashudin_invasion_cb = {
 	name = CB_NAME_RASHUDIN_INVASION
 	war_name = WAR_NAME_RASHUDIN_INVASION
-	sprite = 7
+	sprite = 8
 	truce_days = 0
 	hostile_against_others = yes
 	is_permanent = yes
@@ -560,7 +609,7 @@ rashudin_invasion_cb = {
 umayyad_rashudin_war = {
 	name = CB_NAME_RASHUDIN_UMAYYAD
 	war_name = WAR_NAME_RASHUDIN_UMAYYAD
-	sprite = 7
+	sprite = 8
 	truce_days = 0
 	hostile_against_others = yes
 	allow_whitepeace = no
@@ -652,7 +701,7 @@ umayyad_rashudin_war = {
 abbasid_umayyad_war = {
 	name = CB_NAME_RASHUDIN_UMAYYAD_TWO
 	war_name = WAR_NAME_RASHUDIN_UMAYYAD_TWO
-	sprite = 7
+	sprite = 8
 	truce_days = 0
 	hostile_against_others = yes
 	allow_whitepeace = no
@@ -684,14 +733,71 @@ abbasid_umayyad_war = {
 				is_religious = yes
 				type = invasion
 			}
+			gain_settlements_under_title = {
+				title = k_spanish_galicia
+				enemy = ROOT
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_asturias
+				enemy = ROOT
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_navarra
+				enemy = ROOT
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			c_rosello = {
+				grant_title = PREV
+			}
+			c_carcassonne = {
+				grant_title = PREV
+			}
+			c_narbonne = {
+				grant_title = PREV
+			}
+			c_montpellier = {
+				grant_title = PREV
+			}
+			c_mallorca = {
+				grant_title = PREV
+			}
+			c_menorca = {
+				grant_title = PREV
+			}
+			activate_title = { title = e_cordoba status = yes }
+			e_cordoba = {
+				grant_title = PREV
+				name = "Umayyads"
+				adjective = "Umayyad"
+			}
 			k_andalusia = {
 				grant_title = PREV
 				name = "Umayyads"
 				adjective = "Umayyad"
 			}
+			add_character_modifier = {
+				name = spannish_raids
+				years = 50
+			}
+			remove_character_modifier = rashudin_overextention
 			set_defacto_liege = THIS
 		}
-		ROOT = { set_character_flag = rashudin_expander }
+		ROOT = { 
+			set_character_flag = rashudin_expander
+			add_character_modifier = {
+				name = rashudin_overextention
+				years = 50
+			}
+			remove_character_modifier = spannish_raids
+		}
 	}
 	
 	on_fail = {

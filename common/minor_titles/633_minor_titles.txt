@@ -1,0 +1,121 @@
+########################################################
+# MINOR TITLES
+# Characters can have any number of these
+########################################################
+#	grant_limit: Max number of holders.
+#	realm_in_name: Append the name of the country after the title (Queen [of Sweden])
+#	allowed_to_hold: conditions for the character to hold the title
+#	allowed_to_grant: conditions for a ruler to grant the title
+#	regent: This is the title for regents (not really "minor")
+#	gain_effect: fires when the title is granted
+#	lose_effect: fires when a title is lost through most causes
+#	retire_effect: fires when a title is lost due to the character stepping down
+#	death_effect: fires when a title is lost due to the character dying
+#	message: should fire a message to the its owner when set
+#	The other fields are all character modifiers.
+
+title_mayor_of_the_palace = {
+	is_high_prio = yes
+	is_voter = yes
+	realm_in_name = yes
+	show_as_title = yes
+	dignity = 5
+	grant_limit = 1
+	opinion_effect = 15
+	revoke_allowed = yes
+
+	monthly_salary = 0.05
+	monthly_prestige = 0.75
+
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+		prisoner = no
+		NOT = { trait = incapable }
+		has_regent = no
+		#tier = count
+	}
+	
+	allowed_to_grant = {
+		has_regent = no
+		OR = {
+			has_law = mayor_of_the_palace_1
+			has_law = mayor_of_the_palace_2
+		}
+		OR = {
+			tier=king
+			tier=emperor
+		}
+		OR = {
+			culture = old_frankish
+			dynasty = 542
+		}
+		NOT = {
+			has_game_rule = {
+				name = regencies
+				value = off
+			}
+		}
+	}
+	revoke_trigger = {
+		FROM = { has_regent = no }
+	}
+
+	gain_effect = {
+		if = {
+			limit = {
+				FROM = { has_law = mayor_of_the_palace_2 }
+			}
+			#give_minor_title = title_regent
+		}
+		else = { give_minor_title = title_appointed_regent }
+	}
+
+	lose_effect = {
+		remove_title = title_appointed_regent
+		#remove_title = title_regent
+	}
+	retire_effect = {
+		remove_title = title_appointed_regent
+		#remove_title = title_regent
+	}
+	
+	message = yes
+}
+
+title_caliphate_heir = {
+	is_high_prio = yes
+	
+	dignity = 1
+	#realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 15
+	
+	#patrician_heir = yes
+	#counts_as_purple_born = yes
+	
+	monthly_salary = 0.01
+	monthly_prestige = 0.20
+	
+	allowed_to_hold = {
+		is_female = no
+		#dynasty = FROM
+		NOT = { trait = incapable }
+	}
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	gain_effect = {
+		add_trait = caliphate_heir
+	}
+	lose_effect = {
+		remove_trait = caliphate_heir
+	}
+	retire_effect = {
+		remove_trait = caliphate_heir
+	}
+
+	message = yes
+}
