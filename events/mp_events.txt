@@ -159,31 +159,31 @@ narrative_event = {
 	}
 }
 
-narrative_event = {
-	id = MP.002
-	title = EVTNAMEMUG100
-	desc = EVTDESCMUG100
-	hide_window = yes
-	hide_from = yes
-	is_triggered_only = yes
-	
-	religion = catholic
-	min_age = 16
-
-	trigger = {
-		NOT = { has_global_flag = none_take_archi }
-		start_date >= 769.1.1
-		is_save_game = no
-		controls_religion = yes
-	}
-	
-	immediate = {
-		set_global_flag = none_take_archi
-		c_60000006 = {
-			set_character_flag = no_court_invites
-		}
-	}
-}
+#narrative_event = {
+#	id = MP.002
+#	title = EVTNAMEMUG100
+#	desc = EVTDESCMUG100
+#	hide_window = yes
+#	hide_from = yes
+#	is_triggered_only = yes
+#	
+#	religion = catholic
+#	min_age = 16
+#
+#	trigger = {
+#		NOT = { has_global_flag = none_take_archi }
+#		start_date >= 769.1.1
+#		is_save_game = no
+#		controls_religion = yes
+#	}
+#	
+#	immediate = {
+#		set_global_flag = none_take_archi
+#		c_60000006 = {
+#			set_character_flag = no_court_invites
+#		}
+#	}
+#}
 
 character_event = {
 	id = MP.003
@@ -1304,6 +1304,7 @@ character_event = {
     trigger = {
 		start_date = 1066.9.15
 		has_landed_title = d_gotland
+		is_save_game = no
 		NOT = { has_global_flag = gotland_converted_republic }
     }
 
@@ -1312,5 +1313,3 @@ character_event = {
 		narrative_event = { id = GOTL.1 days = 3 }
     }
 }
-
-
