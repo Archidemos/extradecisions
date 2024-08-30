@@ -15,6 +15,7 @@ character_event = {
 		set_global_flag = 633_events_fired
 		any_player = { narrative_event = { id = ARISL.107 days = 5 } }
 		any_player = { narrative_event = { id = ARISL.108 days = 10 } }
+		e_arabia = { add_law = { law = vassal_wars_law_2 cooldown = yes option_effect = no } }
 	}
 }
 
@@ -64,9 +65,9 @@ narrative_event = { #The Rashudin Caliphate gets their Units
 		set_global_flag = rashudin_aggresion_flagged
 		e_arabia = {
 			holder_scope = {
-				wealth = 20000
-				prestige = 2500
-				piety = 2500
+				wealth = 10000
+				prestige = 1000
+				piety = 500
 				save_event_target_as = rashudin_invader
 				set_character_flag = rashudin_expander
 				decadence = -10
@@ -84,6 +85,7 @@ narrative_event = { #The Rashudin Caliphate gets their Units
 						}
 					}
 				}
+				character_event = { id = ARISL.109 } # Spawn courtiers
 			}
 		}
 	}	
@@ -115,6 +117,118 @@ narrative_event = { #The Rashudin Caliphate gets their Units
 				religion_group = muslim
 				religion_group = christian
 			}
+		}
+	}
+}
+
+character_event = {
+	id = ARISL.109
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		any_courtier_or_vassal = { remove_title = title_commander }
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 27
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 51
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 44
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 24
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 44
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = ROOT
+			female = no
+			age = 24
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = holy_warrior
+		}
+		new_character = {
+			give_minor_title = title_commander
+		}
+		c_33911 = {
+			give_minor_title = title_commander
+		}
+		c_1001398 = {
+			give_minor_title = title_commander
 		}
 	}
 }

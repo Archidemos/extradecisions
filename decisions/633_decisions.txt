@@ -1,0 +1,57 @@
+decisions = {
+	end_hispanic_raids = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			has_character_modifier = spannish_raids
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			diplomacy = 10
+			completely_controls = c_astorga
+			completely_controls = c_najera
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500
+			remove_character_modifier = spannish_raids
+			add_claim = k_asturias
+			add_claim = asturias_de_oviedo
+			add_claim = asturias_de_santillana
+			add_claim = c_viscaya
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	end_rashudin_overextention = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			has_character_modifier = rashudin_overextention
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500
+			remove_character_modifier = rashudin_overextention
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

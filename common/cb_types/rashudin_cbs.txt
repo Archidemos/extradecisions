@@ -245,8 +245,14 @@ first_rashudin_invasion = {
 		e_arabia = {
 			holder_scope = {
 				any_demesne_title = {
-					limit = { 
+					limit = {
 						title = e_arabia
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+				any_demesne_title = {
+					limit = {
+						title = d_sunni
 					}
 					unsafe_destroy_landed_title = THIS
 				}
@@ -717,13 +723,124 @@ abbasid_umayyad_war = {
 	}
 
 	on_success = {
-		e_arabia = {
-			holder_scope = {
-				clr_character_flag = rashudin_expander
-				abdicate_to = ROOT
+		ROOT = {
+			gain_settlements_under_title = {
+				title = k_arabia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
 			}
-			name = "Abbasids"
-			adjective = "Abbasid"
+			gain_settlements_under_title = {
+				title = k_yemen
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_egypt
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_mesopotamia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_haasa
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_georgia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_sardinia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_iraq
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_jerusalem
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_syria
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_armenia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_africa
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_mauretania
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_persia
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_khorasan
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			gain_settlements_under_title = {
+				title = k_baluchistan
+				enemy = FROM
+				same_religion = yes # Only vassalize rulers of my religion
+				is_religious = yes
+				type = invasion
+			}
+			e_arabia = {
+				usurp_title = PREV
+				name = "Abbasids"
+				adjective = "Abbasid"
+			}
 		}
 		FROM = {
 			gain_settlements_under_title = {
