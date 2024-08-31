@@ -4367,166 +4367,6 @@ d_maghreb_corsairs = {
 	mercenary_type = naval_merc_composition
 }
 
-d_ghilman = {
-	color={ 60 165 80 }
-	color2={ 255 255 255 }
-	
-	graphical_culture = bektashigfx
-
-	capital = 627 # Kara-Kum
-	
-	# Hire Trigger
-	allow = {
-		conditional_tooltip = {
-			trigger = {
-				NOT = {
-					is_alternate_start = yes
-				}
-			}
-			religion_group = muslim
-		}
-	}
-	
-	# Parent Religion 
-	religion = sunni
-	
-	holy_order = yes
-
-	title = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	# Extra income due to banking, etc
-	monthly_income = 10 # (Must be an integer between 1 and 512)
-	
-	mercenary_type = ghilman_composition
-}
-
-d_nasr = {
-	color={ 60 165 80 }
-	color2={ 255 255 255 }
-	
-	graphical_culture = bektashigfx
-
-	capital = 733 # Aleppo
-	
-	# Hire Trigger
-	allow = {
-		conditional_tooltip = {
-			trigger = {
-				NOT = {
-					is_alternate_start = yes
-				}
-			}
-			religion_group = muslim
-		}
-	}
-	
-	# Parent Religion 
-	religion = sunni
-	
-	holy_order = yes
-
-	title = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	# Extra income due to banking, etc
-	monthly_income = 10 # (Must be an integer between 1 and 512)
-	
-	mercenary_type = ghilman_composition
-}
-
-d_ali = {
-	color={ 60 165 80 }
-	color2={ 255 255 255 }
-	
-	graphical_culture = bektashigfx
-
-	capital = 694 # Karbala
-	
-	# Hire Trigger
-	allow = {
-		conditional_tooltip = {
-			trigger = {
-				NOT = {
-					is_alternate_start = yes
-				}
-			}
-			religion_group = muslim
-		}
-	}
-	
-	# Parent Religion 
-	religion = shiite
-	
-	holy_order = yes
-
-	title = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	# Extra income due to banking, etc
-	monthly_income = 10 # (Must be an integer between 1 and 512)
-	
-	mercenary_type = ghilman_composition
-}
-
-d_husseyin = {
-	color={ 60 165 80 }
-	color2={ 255 255 255 }
-	
-	graphical_culture = bektashigfx
-
-	capital = 697 # Mosul
-	
-	# Hire Trigger
-	allow = {
-		conditional_tooltip = {
-			trigger = {
-				NOT = {
-					is_alternate_start = yes
-				}
-			}
-			religion_group = muslim
-		}
-	}
-	
-	# Parent Religion 
-	religion = shiite
-	
-	holy_order = yes
-
-	title = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	# Always exists
-	landless = yes
-	
-	# Cannot be held as a secondary title
-	primary = yes
-	
-	# Extra income due to banking, etc
-	monthly_income = 10 # (Must be an integer between 1 and 512)
-	
-	mercenary_type = ghilman_composition
-}
-
 d_ghanan_band = {
 	color = { 108 123 48 }
 	color2 = { 255 255 255 }
@@ -10443,6 +10283,27 @@ e_byzantium = {
 				b_bourgas = {
 				}
 				b_valchidol = {
+				}
+			}
+			c_topoli = {
+				color={ 207 92 250 }
+				color2={ 255 255 255 }
+				
+				b_ezerova = {
+				}
+				b_kamerana = {
+				}
+				b_vinitsar = {
+				}
+				b_vaglena = {
+				}
+				b_mladosta = {
+				}
+				b_zelenikar = {
+				}
+				b_kazashkor = {
+				}
+				b_oreshaka = {
 				}
 			}
 			c_karvuna = {
@@ -26896,7 +26757,7 @@ e_turkestan = {
 }
 
 e_persia = {
-	color={ 133 98 191 }
+	color={ 131 204 20 }
 	color2={ 255 255 255 }
 	
 	capital = 646 #	Esfahan
@@ -35389,7 +35250,7 @@ e_arabia = {
 		culture = bedouin_arabic
 
 		d_nefoud = {
-			color={ 213 219 167 }
+			color={ 17 228 10 }
 			color2={ 255 255 255 }
 			
 			capital = 863 # Hajr
@@ -35709,7 +35570,7 @@ e_arabia = {
 	}	
 
 	k_arabia = {
-		color={ 158 173 52 }
+		color={ 124 199 50 }
 		color2={ 255 255 255 }
 		
 		capital = 719 # Mecca
@@ -35720,7 +35581,7 @@ e_arabia = {
 		zoroastrian_group = 500 # Crusade target weight
 
 		d_sanaa = {
-			color={ 131 148 53 }
+			color={ 215 180 20 }
 			color2={ 255 255 255 }
 			
 			capital = 860 # Sanaa
@@ -35941,7 +35802,7 @@ e_arabia = {
 			}
 		}
 		d_medina = {
-			color={ 190 201 109 }
+			color={ 150 249 43 }
 			color2={ 255 255 255 }
 			
 			capital = 719 # Mecca
@@ -36769,7 +36630,7 @@ e_arabia = {
 			}
 		}
 		d_sinai = {
-			color={ 183 189 79 }
+			color={ 88 99 2 }
 			color2={ 255 255 255 }
 			
 			capital = 788 # Farama
