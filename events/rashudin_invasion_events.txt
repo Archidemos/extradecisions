@@ -1725,3 +1725,54 @@ narrative_event = { #Event to switch to the Abbasids
 		name = "Never!"
 	}
 }
+
+# Shia Islam got spawned
+narrative_event = {
+	id = RASHD.400
+	title = EVTNAMERASHD400
+	desc = EVTDESCRASHD400
+	
+	picture = GFX_jerusalem_captured_muslims_soa
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Shia? but we are all Muslims.."
+		set_global_flag = shia_spawned
+		any_playable_ruler = {
+			limit = { region = world_persia }
+			narrative_event = { id = RASHD.401 }
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = RASHD.401
+	title = EVTNAMERASHD401
+	desc = EVTDESCRASHD401
+	
+	picture = GFX_Hagia_sofia_muslim
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = "Ya Allah, Ya Ali!"
+		ai_chance = { factor = 90 }
+		religion = shiite
+		any_courtier = {
+			limit = {
+				religion = shiite
+				liege = { character = shiite }
+			}
+			religion = shiite
+		}
+		capital_scope = {
+			religion = shiite
+		}
+	}
+	option = { # No
+		name = "We are with the Sahaba!"
+		ai_chance = { factor = 10 }
+	}
+}
