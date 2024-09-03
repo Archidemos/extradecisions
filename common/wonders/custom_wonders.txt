@@ -135,6 +135,8 @@ wonder_winter_palace = {
 		picture = GFX_wonder_strip_royalpalace
 		allow_construction = no
 		show_model = yes
+		model = wonder_palace
+		
 		background_overrides = {
 			fields = snow
 			}
@@ -392,6 +394,7 @@ wonder_florence_cathedral = {
 		picture = GFX_wonder_strip_royalpalace
 		allow_construction = no
 		show_model = yes
+		model = wonder_palace
 		potential = {
 			religion_group = christian
 		}
@@ -514,6 +517,7 @@ wonder_walls_ragusa = {
 		picture = GFX_wonder_strip_grand_walls
 		allow_construction = no
 		show_model = yes
+		model = wonder_wall
 		potential = {
 			religion = orthodox
 		}
@@ -634,6 +638,7 @@ wonder_baku_ateshgah = {
 		picture = GFX_wonder_strip_temple
 		allow_construction = no
 		show_model = yes
+		model = wonder_temple_pagan
 		potential = {
 			religion = zoroastrian
 		}
@@ -879,6 +884,7 @@ wonder_dutch_polders = {
 		allow_construction = no
 		is_in_water = yes
 		show_model = yes
+		model = wonder_harbor
 		potential = {
 			religion_group = christian
 		}
@@ -1004,6 +1010,7 @@ wonder_alcazar_segovia = {
 		picture = GFX_wonder_strip_grandfortress
 		allow_construction = no
 		show_model = yes
+		model = wonder_fortress
 		potential = {
 			religion_group = christian
 		}
@@ -1138,6 +1145,7 @@ wonder_hohenzollern_castle = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_fortress
 		potential = {
 			religion_group = christian
 		}
@@ -1273,6 +1281,7 @@ wonder_brandenburg_gate = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_statue_horse
 		potential = {
 			religion_group = christian
 		}
@@ -1402,6 +1411,7 @@ wonder_taj_mahal = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_mosque
 		potential = {
 			religion_group = muslim
 		}
@@ -1522,6 +1532,7 @@ wonder_hampi = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_underground_city
 		potential = {
 			religion_group = indian_group
 		}
@@ -1640,6 +1651,7 @@ wonder_konark_sun_temple = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_temple_hindu
 		potential = {
 			religion_group = indian_group
 		}
@@ -1753,6 +1765,7 @@ wonder_mahabodhi_temple = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_temple_hindu
 		potential = {
 			religion_group = indian_group
 		}
@@ -1869,6 +1882,7 @@ wonder_ajanta_ellora_caves = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_underground_city
 		potential = {
 			religion_group = indian_group
 		}
@@ -1986,6 +2000,7 @@ wonder_charminar = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_mosque
 		potential = {
 			religion = shiite
 		}
@@ -2101,6 +2116,7 @@ wonder_mattancherry_palace = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_palace
 		potential = {
 			religion_group = indian_group
 		}
@@ -2215,6 +2231,7 @@ wonder_chruches_goa = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_cathedral
 		potential = {
 			religion_group = christian
 		}
@@ -2329,6 +2346,7 @@ wonder_kalighat_kali_temple = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_temple_hindu
 		potential = {
 			religion_group = indian_group
 		}
@@ -2444,6 +2462,7 @@ wonder_irminsul = {
 		picture = GFX_wonder_strip_temple
 		allow_construction = no
 		show_model = yes
+		model = wonder_temple_pagan
 		potential = {
 			OR = {
 				religion = norse_pagan
@@ -2572,6 +2591,7 @@ wonder_kronborg = {
 		picture = GFX_wonder_strip_royalpalace
 		allow_construction = no
 		show_model = yes
+		model = wonder_palace
 		potential = {
 			religion_group = christian
 		}
@@ -2692,6 +2712,7 @@ wonder_stave_chruch = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_cathedral
 		potential = {
 			religion_group = christian
 		}
@@ -2815,6 +2836,7 @@ wonder_falun_mine = {
 		picture = GFX_wonder_strip_undergroundcity
 		allow_construction = no
 		show_model = yes
+		model = wonder_underground_city
 		potential = {
 			religion_group = christian
 		}
@@ -2945,6 +2967,7 @@ wonder_visby_city = {
 		picture = GFX_wonder_strip_grand_walls
 		allow_construction = no
 		show_model = no
+		model = wonder_wall
 		potential = {
 			religion = orthodox
 		}
@@ -3069,6 +3092,7 @@ wonder_london_bridge = {
 		allow_construction = no
 		show_model = yes
 		is_in_water = yes
+		model = wonder_wall
 		potential = {
 			religion_group = christian
 		}
@@ -3326,6 +3350,7 @@ wonder_assassin_castle = {
 		allow_construction = no
 		is_in_water = no
 		show_model = yes
+		model = wonder_fortress
 		potential = {
 			religion = shiite
 		}
@@ -3451,7 +3476,9 @@ wonder_assassin_castle = {
 
 wonder_university_naples = {
 	picture = GFX_wonder_strip_university
+	model = wonder_university
 	allow_construction = no
+	show_model = yes
 	potential = {
 		religion_group = christian
 	}
@@ -3579,6 +3606,7 @@ wonder_temple_ares = {
 		picture = GFX_wonder_strip_amphitheatre
 		allow_construction = no
 		show_model = yes
+		model = wonder_amphitheater
 		potential = {
 			OR = {
 				religion = hellenic_pagan
@@ -3717,6 +3745,8 @@ wonder_temple_ares = {
 wonder_great_basilica = {
 	picture = GFX_wonder_strip_cathedral
 	model = wonder_cathedral
+	allow_construction = no
+	show_model = yes
 	potential = {
 		religion = orthodox
 	}
@@ -4093,6 +4123,140 @@ wonder_mosque_mecca = {
 			command_modifier = {
 				religious_enemy = 0.05
 			}
+		}
+	}
+}
+
+wonder_prauge_castle = {
+		picture = GFX_wonder_strip_royalpalace
+		allow_construction = no
+		show_model = yes
+		model = wonder_palace
+		potential = {
+			religion = catholic
+		}
+		active = {
+			ROOT = {
+				religion = catholic
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_gargoyles
+			upgrade_bells
+			upgrade_stained_glass_window
+			upgrade_relic_tomb
+			upgrade_grand_basilica
+			upgrade_catacombs
+			upgrade_giant_cross
+			upgrade_bells_golden
+
+			#
+			upgrade_torture_chamber
+			upgrade_historical_mural
+
+			upgrade_prauge_castle_bridge
+			upgrade_prauge_castle_cathedral
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+			upgrade_tavern
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+			is_historical
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2500
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			trade_route_wealth = 10
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.1
+			threat_decay_speed = 0.1
+			vassal_opinion = 5
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.025
+			trade_route_wealth = 10
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			diplomacy = 1
+			learning = 1
+			threat_decay_speed = 0.1
+			vassal_opinion = 5
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.025
+			trade_route_wealth = 10
+		}
+		owner_modifier = {
+			global_tax_modifier = 0.025
+			monthly_character_piety = 0.3
+			diplomacy = 2
+			threat_decay_speed = 0.2
+			vassal_opinion = 5
 		}
 	}
 }

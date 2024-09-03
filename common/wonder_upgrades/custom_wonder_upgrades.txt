@@ -904,3 +904,51 @@ upgrade_jerusalem_church_walls = { # Lighthouse
 		learning = 1
 	}
 }
+
+upgrade_prauge_castle_bridge = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_anchor
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		local_tax_modifier = 0.05
+		tax_income = 1.5
+	}
+	owner_modifier = {
+		castle_vassal_tax_modifier = 0.05
+	}
+}
+
+upgrade_prauge_castle_cathedral = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		culture_techpoints = 0.055
+	}
+	owner_modifier = {
+		global_revolt_risk = -0.05
+		learning = 1
+		monthly_character_piety = 0.125
+	}
+}

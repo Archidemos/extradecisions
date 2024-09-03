@@ -67,6 +67,16 @@ feudal_governments = {
 			}
 			is_patrician = no
 		}
+
+		unit_modifier = {
+			levy_size = 0.05
+		}
+		
+		character_modifier = {
+			castle_vassal_min_levy = 0.05
+			castle_vassal_max_levy = 0.05
+			levy_size = 0.05
+		}
 		
 		color = { 91 133 207 }
 		
@@ -150,6 +160,20 @@ feudal_governments = {
 		
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
+		}
+		
+		unit_modifier = {
+			levy_size = -0.1
+		}
+		
+		character_modifier = {
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
+			castle_vassal_tax_modifier = -0.05
+			city_vassal_tax_modifier = -0.05
+			global_tax_modifier = -0.10
+			levy_size = -0.1
+			land_morale = -0.1
 		}
 		capital_move_delay = 600
 	}
@@ -301,7 +325,10 @@ feudal_governments = {
 		vassal_limit = 10
 		
 		character_modifier = {
-			monthly_character_piety = 1
+			castle_vassal_min_levy = 0.15
+			castle_vassal_max_levy = 0.15
+			castle_vassal_tax_modifier = 0.20
+			global_tax_modifier = 0.10
 		}
 	}
 
@@ -461,8 +488,10 @@ feudal_governments = {
 			knights_defensive = -0.10
 		}
 		character_modifier = {
-			global_tax_modifier = -0.10
-			castle_vassal_tax_modifier = -0.10
+			global_tax_modifier = -0.15
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
+			castle_vassal_tax_modifier = -0.05
 			city_vassal_tax_modifier = -0.10
 			retinuesize_perc = -0.50
 			knights_offensive = -0.10
@@ -560,6 +589,13 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
+
+		character_modifier = {
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			global_tax_modifier = 0.05
+		}
+
 		capital_move_delay = 2000
 		gets_religion_opinion_penalties = no
 		gives_religion_opinion_penalties = no
@@ -640,8 +676,16 @@ feudal_governments = {
 		}
 		capital_move_delay = 2000
 		color = { 143 12 125 }
+
+		unit_modifier = {
+			levy_size = 0.1
+		}
+		
 		character_modifier = {
 			land_morale = -0.1
+			levy_size = 0.1
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
 		}
 	}
 	indian_government = {
@@ -717,6 +761,8 @@ feudal_governments = {
 		vassal_limit = 5
 		tech_growth_modifier = 0.05
 		character_modifier = {
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
 			war_elephants_offensive = 0.10
 			demesne_size = 1
 			vassal_limit = 5
@@ -758,6 +804,8 @@ feudal_governments = {
 			stewardship = 1
 			global_tax_modifier = 0.2
 			town_opinion = 5
+			city_vassal_min_levy = 0.30
+			city_vassal_max_levy = 0.30
 		}
 		
 		vassal_limit = -10
@@ -804,6 +852,8 @@ feudal_governments = {
 			add_piety_modifier = 0.2
 			church_opinion = 5
 			fertility = -10
+			temple_vassal_min_levy = 0.30
+			temple_vassal_max_levy = 0.30
 		}
 
 		vassal_limit = -10
@@ -1066,14 +1116,18 @@ feudal_governments = {
 		free_retract_vassalage = yes
 
 		vassal_limit = 20
-
+		
+		unit_modifier = {
+			levy_size = -0.20
+		}
+		
 		character_modifier = {
 			castle_vassal_min_levy = -0.3
 			castle_vassal_max_levy = -0.3
 			siege_speed = 0.2
 			retinue_maintenence_cost = -0.90
 			retinuesize_perc = 4
-			levy_size = -0.7
+			levy_size = -0.20
 		}
 	}
 }

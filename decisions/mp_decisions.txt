@@ -1,4 +1,214 @@
 targetted_decisions = {
+	convert_to_tribal_vassal = {
+		diplomacy_icon = GFX_trait_administrator
+		ai_check_interval = 12
+		ai_target_filter = vassals
+
+		potential = {
+			ROOT = {
+				AND = {
+					vassal_of = FROM
+					is_ruler = yes
+					government = tribal_government
+				}
+			}
+		}
+	
+		from_potential = {
+			ROOT = { is_feudal = yes }
+		}
+
+		allow = {
+			NOT = { goverment = tribal_government }
+			FROM = { NOT = { has_character_modifier = recently_made_tribal } }
+			ROOT = { capital_scope = { has_building = tb_hillfort_4 } }
+		}
+		
+		effect = {
+			ROOT = { wealth = 200 }
+			FROM = { wealth = -200 }
+			if = {
+				limit = {
+					NOT = { religion_group = muslim }
+					NAND = {
+						culture_group = tibetan_group
+						OR = {
+							religion = bon
+							religion = bon_reformed
+							religion = buddhist
+						}
+						higher_tier_than = BARON
+					}
+				}
+				
+				if = {
+					limit = {
+						ai = no
+					}
+					chronicle = {
+						entry = CHRONICLE_ADOPTED_FEUDALISM
+						picture = GFX_evt_castle_construction
+					}
+				}
+				set_government_type = feudal_government
+			}
+			
+			if = {
+				limit = {
+					religion_group = muslim
+				}
+				
+				if = {
+					limit = {
+						ai = no
+					}
+					chronicle = {
+						entry = CHRONICLE_ADOPTED_IQTA
+						picture = GFX_evt_castle_construction
+					}
+				}
+				set_government_type = muslim_government
+			}
+			
+			if = {
+				limit = {
+					culture_group = tibetan_group
+					OR = {
+						religion = bon
+						religion = bon_reformed
+						religion = buddhist
+					}
+					higher_tier_than = BARON
+				}
+				
+				if = {
+					limit = {
+						ai = no
+					}
+					chronicle = {
+						entry = CHRONICLE_ADOPTED_FEUDALISM
+						picture = GFX_evt_castle_construction
+					}
+				}
+				set_government_type = theocratic_feudal_government
+			}
+			
+			hidden_tooltip = {
+				if = {
+					limit = {
+						capital_holding = {
+							holding_type = tribal
+							ROOT = { NOT = { tier = BARON } }
+						}
+						capital_scope = {
+							any_province_holding = {
+								holding_type = castle
+								holder_scope = {
+									OR = {
+										character = ROOT
+										is_liege_or_above = ROOT
+									}
+								}
+							}
+						}
+					}
+					
+					capital_scope = {
+						random_province_holding = {
+							limit = {
+								holding_type = castle
+								holder_scope = {
+									OR = {
+										character = ROOT
+										is_liege_or_above = ROOT
+									}
+								}
+							}
+							if = {
+								limit = {
+									NOT = { holder = ROOT }
+								}
+								usurp_title = ROOT
+							}
+							make_capital_holding = yes
+							ROOT = { set_character_flag = feudalize_handled_capital }
+						}
+					}
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					tier = baron
+					holding_type = tribal
+					location = {
+						capital_holding = {
+							NOT = { holding_type = castle }
+						}
+					}
+				}
+				convert_to = CASTLE
+				refill_holding_levy = yes
+				location = { #Clear Tribal Great Pillars
+					clr_province_flag = flag_great_pillar_norse
+					clr_province_flag = flag_great_pillar_tengri
+					clr_province_flag = flag_great_pillar_slavic
+					clr_province_flag = flag_great_pillar_baltic
+					clr_province_flag = flag_great_pillar_finnish
+					clr_province_flag = flag_great_pillar_west_african
+					clr_province_flag = flag_great_pillar_aztec
+					clr_province_flag = flag_great_pillar_bon
+					clr_province_flag = flag_great_pillar_zun
+					clr_province_flag = flag_great_pillar_hellenic
+				}
+				
+				if = {
+					limit = {
+						dejure_liege_title = {
+							holder = ROOT
+							location = {
+								num_of_empty_holdings = 2
+							}
+							NOT = {
+								any_direct_de_jure_vassal_title = {
+									holding_type = city
+								}
+							}
+						}
+					}
+					location = {
+						build_holding = {
+							type = city
+						}
+					}
+				}
+				if = {
+					limit = {
+						dejure_liege_title = {
+							holder = ROOT
+							location = {
+								num_of_empty_holdings = 2
+							}
+							NOT = {
+								any_direct_de_jure_vassal_title = {
+									holding_type = temple
+								}
+							}
+						}
+					}
+					location = {
+						build_holding = {
+							type = temple
+						}
+					}
+				}
+			}
+			FROM = { add_character_modifier = { modifier = recently_made_tribal years = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	convert_piety_prestige = {
 		filter = self
 		ai_target_filter = self
@@ -64,7 +274,7 @@ targetted_decisions = {
 		filter = self
 		ai_target_filter = self
 		ai = no
-	    diplomacy_icon = GFX_stable_prestige_icon_decision
+	    diplomacy_icon = GFX_trait_scholar
 		
 		potential = {
 			character = FROM
@@ -319,6 +529,57 @@ decisions = {
 		
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	develop_tech_capital = {
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			is_feudal = yes
+			NOT = { has_character_modifier = demobilized_realm }
+			NOT = { capital_scope = { has_character_modifier = tech_efforts } }
+		}
+		
+		allow = {
+			NOT = { has_character_modifier = demobilized_realm }
+			NOT = { capital_scope = { has_character_modifier = tech_efforts } }
+			NOT = { has_character_modifier = remobilizing_realm }
+		}
+		
+		effect = {	
+			add_character_modifier = { name = demobilized_realm years = -1 }
+			capital_scope = { add_province_modifier = { name = tech_efforts years = -1 } }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	cancel_develop_tech_capital = {
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			capital_scope = { has_province_modifier = tech_efforts }
+			has_character_modifier = demobilized_realm
+		}
+		
+		allow = {
+			capital_scope = { has_province_modifier = tech_efforts }
+			has_character_modifier = demobilized_realm
+		}
+		
+		effect = {
+			remove_character_modifier = demobilized_realm
+			capital_scope = { remove_province_modifier = tech_efforts }
+			
+			add_character_modifier = { name = remobilizing_realm years = 5 }
+		}
+		
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

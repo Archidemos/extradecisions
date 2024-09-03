@@ -1,27 +1,27 @@
 TECH_GROUP_MILITARY = {
 	TECH_INFANTRY = {
 		modifier = {
-			LIGHT_INFANTRY_DEFENSIVE = 0.6
-			ARCHERS_DEFENSIVE = 0.6
-			archers_morale = 0.4
 			light_infantry_morale = 0.4
-			HEAVY_INFANTRY_DEFENSIVE = 0.6
+			LIGHT_INFANTRY_DEFENSIVE = 0.6
+			archers_morale = 0.4
+			ARCHERS_DEFENSIVE = 0.6
 			heavy_infantry_morale = 0.4
-			PIKEMEN_DEFENSIVE = 0.6
+			HEAVY_INFANTRY_DEFENSIVE = 0.6
 			pikemen_morale = 0.4
+			PIKEMEN_DEFENSIVE = 0.6
 		}	
 	}
 	TECH_CAVALRY = {
 		modifier = {
+			LIGHT_CAVALRY_morale = 0.4
 			LIGHT_CAVALRY_DEFENSIVE = 0.6
+			KNIGHTS_morale = 0.4
 			KNIGHTS_DEFENSIVE = 0.6
+			camel_cavalry_morale = 0.4
 			camel_cavalry_defensive = 0.6
+			war_elephants_morale = 0.4
 			war_elephants_defensive = 0.6
 			horse_archers_defensive = 0.6
-			LIGHT_CAVALRY_morale = 0.4
-			KNIGHTS_morale = 0.4
-			camel_cavalry_morale = 0.4
-			war_elephants_morale = 0.4
 			horse_archers_morale = 0.4
 		}
 	}
@@ -30,7 +30,7 @@ TECH_GROUP_MILITARY = {
 			LIGHT_CAVALRY_OFFENSIVE  = 0.6
 			horse_archers_offensive = 0.6
 			ARCHERS_OFFENSIVE = 0.6
-#			LIGHT_INFANTRY_OFFENSIVE = 0.6
+			LIGHT_INFANTRY_OFFENSIVE = 0.6
 			camel_cavalry_offensive = 0.6
 			custom_modifier_text  = better_skirmisher_tactics_custom_modifier_tt
 		}
@@ -41,7 +41,7 @@ TECH_GROUP_MILITARY = {
 			KNIGHTS_OFFENSIVE = 0.6
 			PIKEMEN_OFFENSIVE = 0.6
 			HEAVY_INFANTRY_OFFENSIVE = 0.6
-#			war_elephants_offensive = 0.6
+			war_elephants_offensive = 0.6
 			custom_modifier_text  = better_melee_tactics_custom_modifier_tt
 		}
 	}
@@ -49,14 +49,14 @@ TECH_GROUP_MILITARY = {
 		modifier = {
 			SIEGE_SPEED = 1.0
 			SIEGE_DEFENCE = 1.0
+			GLOBAL_SUPPLY_LIMIT = 1.0
 		}
 	}
 	TECH_RECRUITMENT = {
 		modifier = {
-			GLOBAL_SUPPLY_LIMIT = 1.0
 			LAND_MORALE = 0.2
-			#retinuesize_perc = 1.0
-			#regiment_reinforcement_speed = 1.0
+			retinuesize_perc = 1.0
+			regiment_reinforcement_speed = 1.0
 			levy_reinforce_rate = 1.0
 			land_organisation = 1.0
 		}

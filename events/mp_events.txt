@@ -1313,3 +1313,57 @@ character_event = {
 		narrative_event = { id = GOTL.1 days = 3 }
     }
 }
+
+# Event: Marshal Assigned to Research Military Tech
+character_event = {
+    id = MP.106
+    desc = "EVTDESC_marshal_research_1"
+	is_triggered_only = yes
+	
+    trigger = {
+        has_job_action = action_advance_mil_tech
+		location = {
+			owner = {
+				job_marshal = {
+					character = ROOT
+				}
+			}
+		}
+        NOT = { has_character_flag = marshal_researching }
+    }
+	
+	immediate = {
+		FROM = {
+			location = {
+				add_province_modifier = {
+					name = levy_reinforcements
+					duration = 365
+				}
+			}
+		}
+	}
+	
+    option = {
+        name = "OK"
+    }
+}
+# Event: Marshal Removed from Research Military Tech
+character_event = {
+    id = MP.107
+    desc = "EVTDESC_marshal_research_2"
+	is_triggered_only = yes
+	
+    trigger = {
+        has_character_flag = marshal_researching
+        NOT = { has_job_action = action_advance_mil_tech }
+    }
+	
+    immediate = {
+		clr_character_flag = marshal_researching
+		location = { remove_province_modifier = military_research_boost }
+    }
+	
+    option = {
+        name = "OK"
+    }
+}
