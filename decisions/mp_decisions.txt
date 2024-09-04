@@ -22,6 +22,10 @@ targetted_decisions = {
 			NOT = { goverment = tribal_government }
 			FROM = { NOT = { has_character_modifier = recently_made_tribal } }
 			ROOT = { capital_scope = { has_building = tb_hillfort_4 } }
+			custom_tooltip = {
+				text = no_north_korea
+				ROOT = { over_max_demesne_size <= 0 }
+			}
 		}
 		
 		effect = {
