@@ -7,7 +7,7 @@ targetted_decisions = {
 		potential = {
 			ROOT = {
 				AND = {
-					vassal_of = FROM
+					is_vassal_or_below_of = FROM
 					is_ruler = yes
 					government = tribal_government
 				}
@@ -206,7 +206,7 @@ targetted_decisions = {
 					}
 				}
 			}
-			FROM = { add_character_modifier = { modifier = recently_made_tribal years = 1 } }
+			FROM = { add_character_modifier = { modifier = recently_made_tribal months = 6 } }
 		}
 		
 		ai_will_do = {
