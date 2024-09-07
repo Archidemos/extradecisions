@@ -21,7 +21,7 @@ narrative_event = { #The Conquest of Iraq complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.100 days = 1 } } }
 		set_global_flag = rashudin_conquered_iraq
 		prestige = 100
@@ -79,7 +79,7 @@ narrative_event = { #The Conquest of the Ghassanids complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.101 days = 1 } } }
 		set_global_flag = rashudin_conquered_ghassanid
 		prestige = 100
@@ -146,7 +146,7 @@ narrative_event = { #The Conquest of Jerusalem complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.102 days = 1 } } }
 		set_global_flag = rashudin_conquered_jerusalem
 		prestige = 100
@@ -209,7 +209,7 @@ narrative_event = { #The Conquest of Syria complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.103 days = 1 } } }
 		set_global_flag = rashudin_conquered_syria
 		prestige = 100
@@ -303,7 +303,7 @@ narrative_event = { #The Conquest of Mesopotamia complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.104 days = 1 } } }
 		set_global_flag = rashudin_conquered_mesopotamia
 		prestige = 100
@@ -356,7 +356,7 @@ narrative_event = { #The Conquest of Egypt complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.105 days = 1 } } }
 		set_global_flag = rashudin_conquered_egypt
 		prestige = 100
@@ -438,7 +438,7 @@ narrative_event = { #The Conquest of Persia complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.106 days = 1 } } }
 		set_global_flag = rashudin_conquered_persia
 		prestige = 100
@@ -528,7 +528,7 @@ narrative_event = { #The Conquest of Sistan complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.107 days = 1 } } }
 		set_global_flag = rashudin_conquered_khorasan
 		prestige = 100
@@ -605,7 +605,7 @@ narrative_event = { #The Conquest of Khorasan complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.111 days = 1 } } }
 		set_global_flag = rashudin_conquered_sistan
 		prestige = 100
@@ -678,7 +678,7 @@ narrative_event = { #The Conquest of Armenia complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.108 days = 1 } } }
 		ROOT = { narrative_event = { id = RASHD.112 } }
 		disband_event_forces = yes
@@ -776,7 +776,7 @@ narrative_event = { #The Conquest of Africa complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.109 days = 1 } } }
 		set_global_flag = rashudin_conquered_africa
 		prestige = 100
@@ -972,7 +972,7 @@ narrative_event = { #The Conquest of Andalusia complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_conquered_andalusia
 		prestige = 100
 		
@@ -1030,7 +1030,7 @@ narrative_event = { #The Conquest of Galicia complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_conquered_galicia
 		prestige = 100
 		while = {
@@ -1082,7 +1082,7 @@ narrative_event = { #The Conquest of Asturias complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_conquered_asturias
 		prestige = 100
 		while = {
@@ -1139,12 +1139,12 @@ narrative_event = { #The Conquest of Navarra complete
 	}
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_conquered_navarra
 		prestige = 100
 		disband_event_forces = yes
 		ROOT = { narrative_event = { id = RASHD.114 } }
-		ROOT = { narrative_event = { id = RASHD.115 days 10 } }
+		ROOT = { narrative_event = { id = RASHD.115 days = 10 } }
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.110 days = 1 } } }
 	}
 }
@@ -1454,7 +1454,7 @@ narrative_event = { #The Umayyads declare war on the Rashudins
 	is_triggered_only = yes
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1496,7 +1496,7 @@ narrative_event = { #The Islamic Conquests continue
 	is_triggered_only = yes
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		prestige = 100
 		while = {
 			count = 2
@@ -1539,7 +1539,7 @@ narrative_event = { #The Abbasids declare war on the Umayyads
 	is_triggered_only = yes
 	
 	option = {
-		name = "Onwards!"
+		name = "RASCONCOM"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1590,7 +1590,7 @@ narrative_event = { #The Spanish break off and fortify themselfs
 	}
 	
 	option = {
-		name = "No way!"
+		name = RASHSPN1
 		set_global_flag = rashudin_spannish_retreat
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.116 days = 1 } } }
 
@@ -1644,13 +1644,13 @@ narrative_event = { #Announcement about the Spannish holding strong
 		trigger = {
 			NOT = { religion_group = muslim }
 		}
-		name = "God be praised!"
+		name = RASHSPN2
 	}
 	option = {
 		trigger = {
 			religion_group = muslim
 		}
-		name = "What do these Germans hope to acomplish!"
+		name = RASHSPN3
 	}
 }
 
@@ -1669,13 +1669,13 @@ narrative_event = { #Announcement about the Rashudins losing
 		trigger = {
 			NOT = { religion_group = muslim }
 		}
-		name = "God be praised!"
+		name = RASHLOSTRSHCHR
 	}
 	option = {
 		trigger = {
 			religion_group = muslim
 		}
-		name = "It is over for Islam.."
+		name = RASHLOSTRSH
 	}
 }
 
@@ -1708,7 +1708,7 @@ narrative_event = { #Event to switch to the Umayyads
 		set_player_character = event_target:umayyad_playable
 	}
 	option = {
-		name = "Never!"
+		name = "RASHINVSWITCH"
 	}
 }
 
@@ -1737,7 +1737,7 @@ narrative_event = { #Event to switch to the Abbasids
 		set_player_character = event_target:abbasid_playable
 	}
 	option = {
-		name = "Never!"
+		name = "RASHINVSWITCH"
 	}
 }
 
@@ -1752,7 +1752,7 @@ narrative_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "Shia? but we are all Muslims.."
+		name = RASHSHIASPAWN1
 		set_global_flag = shia_spawned
 		any_playable_ruler = {
 			limit = { region = world_persia }
@@ -1772,7 +1772,7 @@ narrative_event = {
 	is_triggered_only = yes
 	
 	option = { # Yes
-		name = "Ya Allah, Ya Ali!"
+		name = RASHSHIASPAWN2
 		ai_chance = { factor = 90 }
 		religion = shiite
 		any_courtier = {
@@ -1787,7 +1787,7 @@ narrative_event = {
 		}
 	}
 	option = { # No
-		name = "We are with the Sahaba!"
+		name = RASHSHIASPAWN3
 		ai_chance = { factor = 10 }
 	}
 }

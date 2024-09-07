@@ -84,21 +84,7 @@ decisions = {
 		effect = {
 			wealth = -1000
 			prestige = -500
-			add_global_flag = caliphate_reignited
-			while = {
-				count = 4
-				spawn_unit = {
-					province = 719 # Mecca
-					attrition = 0
-					troops = {
-						light_infantry = { 2000 2000 }
-						heavy_infantry = { 500 500 }
-						archers = { 1000 1000 }
-						light_cavalry = { 500 500 }
-						camel_cavalry = { 1000 1000 }
-					}
-				}
-			}
+			set_global_flag = caliphate_reignited
 			e_arabia = {
 				grant_title = PREV
 				copy_title_laws = PREV
@@ -159,20 +145,6 @@ decisions = {
 		effect = {
 			wealth = -1000
 			prestige = -500
-			while = {
-				count = 4
-				spawn_unit = {
-					province = 719 # Mecca
-					attrition = 0
-					troops = {
-						light_infantry = { 2000 2000 }
-						heavy_infantry = { 500 500 }
-						archers = { 1000 1000 }
-						light_cavalry = { 500 500 }
-						camel_cavalry = { 1000 1000 }
-					}
-				}
-			}
 			set_global_flag = arabia_ortho_passified
 		}
 

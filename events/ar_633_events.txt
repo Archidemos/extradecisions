@@ -15,7 +15,7 @@ character_event = {
 		set_global_flag = 633_events_fired
 		any_player = { narrative_event = { id = ARISL.107 days = 5 } }
 		any_player = { narrative_event = { id = ARISL.108 days = 10 } }
-		e_arabia = { add_law = { law = vassal_wars_law_2 cooldown = yes option_effect = no } }
+		e_arabia = { add_law = { law = vassal_wars_law_2 cooldown = yes } }
 	}
 }
 
@@ -92,31 +92,15 @@ narrative_event = { #The Rashudin Caliphate gets their Units
 
 	
 	option = {
-		name = "Jesus Christ.."
+		name = ARISL.108NOMUS
 		trigger = {
-			religion_group = christian
+			NOT = { religion_group = muslim }
 		}
 	}
 	option = {
-		name = "May Allah grant us victory!"
+		name = ARISL.108MUSLIM
 		trigger = {
 			religion_group = muslim
-		}
-	}
-	option = {
-		name = "Ahura have mercy.."
-		trigger = {
-			religion_group = zoroastrian_group
-		}
-	}
-	option = {
-		name = "This is concerning.."
-		trigger = {
-			NOR = {
-				religion_group = zoroastrian_group
-				religion_group = muslim
-				religion_group = christian
-			}
 		}
 	}
 }

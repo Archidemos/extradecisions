@@ -28,89 +28,6 @@ character_event = {
     }
 
     immediate = {
-		# Some random Hellenic holdout characters about Byzantium
-		e_byzantium = {
-			holder = {
-				any_realm_lord = {
-					limit = {
-						OR = {
-							de_jure_liege_or_above = k_byzantium
-							de_jure_liege_or_above = k_anatolia
-						}
-					}
-					random_list = {
-						2 = {
-							create_character = {
-								random_traits = yes
-								dynasty = NONE
-								religion = hellenic_pagan
-								culture = PREV
-								race = PREV
-								age = 22
-							}
-						}
-						2 = {
-							create_character = {
-								random_traits = yes
-								dynasty = NONE
-								religion = hellenic_pagan
-								culture = PREV
-								race = PREV
-								female=yes
-								age = 22
-							}
-						}
-						1 = {
-							create_character = {
-								random_traits = yes
-								dynasty = NONE
-								religion = hellenic_pagan
-								culture = PREV
-								race = PREV
-								trait = mystic
-								age = 26
-							}
-						}
-						1 = {
-							create_character = {
-								random_traits = yes
-								dynasty = NONE
-								religion = hellenic_pagan
-								culture = PREV
-								race = PREV
-								trait = mystic
-								female=yes
-								age = 26
-							}
-						}
-						94 = {
-							# do nothing
-						}
-					}
-				}
-			}
-		}
-		# Women for all
-		any_playable_ruler = {
-			limit = {
-				NOT = {
-					any_courtier = {
-						is_female = yes
-					}
-				}
-				is_married = no
-				is_female = no
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = NONE
-				religion = THIS
-				culture = THIS
-				race = THIS
-				female = yes
-				age = 16
-			}
-		}
 		# Sigebert for Austrasia
 		c_168700 = { # Sigebert
 			k_lotharingia = {
@@ -514,7 +431,6 @@ character_event = {
 
 	trigger = {
 		FROM = { religion_group = muslim }
-		NOT = { religion_group = muslim }
 		trait = caliphate_heir
 	}
 
@@ -540,7 +456,7 @@ character_event = {
 			event_target:local_sunni_caliph = {
 				save_event_target_as = local_current_caliph
 				any_realm_character = {
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_sunni_caliph
@@ -552,7 +468,7 @@ character_event = {
 			event_target:local_shiite_caliph = {
 				save_event_target_as = local_current_caliph
 				any_realm_character = {
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_shiite_caliph
@@ -570,7 +486,7 @@ character_event = {
 							value = 1
 						}
 					}
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_ibadi_caliph
@@ -588,7 +504,7 @@ character_event = {
 							value = 1
 						}
 					}
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_kharijite_caliph
@@ -606,7 +522,7 @@ character_event = {
 							value = 1
 						}
 					}
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_hurufi_caliph
@@ -624,7 +540,7 @@ character_event = {
 							value = 1
 						}
 					}
-					character_event = { id=Mod.702 }
+					character_event = { id = Mod.702 }
 				}
 			}
 			clr_character_flag = caliphate_heir_apparent_@event_target:local_yazidi_caliph
@@ -679,10 +595,6 @@ character_event = {
 							}
 						}
 					}
-					add_variable = {
-						which = local_tnum
-						value = 1
-					}
 					save_event_target_as = title_to_caliph_inherit_@local_tnum
 					usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
 				}
@@ -734,83 +646,6 @@ character_event = {
 		}
 	}
 }
-
-
-# ############# Giant ##############
-character_event = {
-	id = Mod.610
-	hide_window = yes
-	
-	is_triggered_only = yes
-	
-	only_playable = yes
-	
-	trigger = {
-		higher_tier_than = count
-		always = no
-		NAND = {
-			religion_group = muslim
-			controls_religion = yes
-		}
-		current_heir = {
-			trait = giant
-			NOT = { has_character_modifier = clumsy_giant }
-		}
-	}
-	
-	immediate = {
-		random_list = {
-			50 = {
-				current_heir = {
-					character_event = { id = Mod.611 days = 30 }
-				}
-			}
-		}
-	}
-}
-
-character_event = {
-	id = Mod.611
-	desc = Mod.DESC611
-	picture = GFX_evt_coronation
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		trait = giant
-		NOT = { ruled_years = 2 }
-		always = no
-	}
-	
-	immediate = {
-		if = {
-			limit = {
-				is_tribal = yes
-				NOT = { culture_group = east_african }
-				NOT = { culture_group = west_african }
-				NOT = { culture_group = dravidian_group }
-				NOT = { culture_group = indo_aryan_group }
-			}
-			#picture = GFX_coronation_tomislav
-		}
-		else_if = {
-			limit = {
-				religion = catholic
-				religion = fraticelli
-			}
-			#picture = GFX_coronation_catholic
-		}
-	}
-	
-	option = {
-		name = Mod.611EVTOPTA
-		
-		add_character_modifier = { name = clumsy_giant }
-	}
-}
-	
-			
-
 # #########################################################
 # ##################### Witenagemot #######################
 
@@ -826,7 +661,6 @@ character_event = {
 		NOT = {
 			has_law = succ_feudal_elective
 		}
-
 		always = no
 	}
 	
@@ -964,7 +798,6 @@ character_event = {
 				}
 				save_event_target_as = local_witan_third
 			}
-								
 		}
 		any_close_relative = {
 			# Preliminary preparations
@@ -1058,7 +891,6 @@ character_event = {
 				}
 				save_event_target_as = local_witan_third
 			}
-								
 		}
 		any_realm_lord = {
 			narrative_event = {
