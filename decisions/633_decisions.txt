@@ -54,4 +54,130 @@ decisions = {
 			factor = 1
 		}
 	}
+
+	reignite_islam_invasion = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = caliphate_reignited }
+			NOT = { has_global_flag = arabia_ortho_passified }
+			religion_group = muslim
+			NOT = { any_playable_ruler = { has_landed_title = e_arabia } }
+		}
+		
+		allow = {
+			completely_controls = c_mecca
+			religion_group = muslim
+			wealth = 1000
+			prestige = 500
+			completely_controls = d_medina
+			completely_controls = d_arabia_petrae
+			completely_controls = d_nefoud
+			completely_controls = d_amman
+			completely_controls = d_oman
+			completely_controls = d_hadramut
+			completely_controls = d_taizz
+			completely_controls = d_sanaa
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500
+			add_global_flag = caliphate_reignited
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 719 # Mecca
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						camel_cavalry = { 1000 1000 }
+					}
+				}
+			}
+			e_arabia = {
+				grant_title = PREV
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			c_mecca = {
+				grant_title = PREV
+				usurp_title = PREV
+				ROOT = { capital = PREV }
+			}
+			set_character_flag = rashudin_expander
+			693 = { #Baghdad
+				kingdom = {
+					e_arabia = {
+						holder_scope = {
+							unsafe_war = {
+								casus_belli = rashudin_invasion_cb
+								target = PREVPREVPREV
+								thirdparty_title = PREVPREV
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	passify_arabia_orthodox = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = caliphate_reignited }
+			NOT = { has_global_flag = arabia_ortho_passified }
+			religion = orthodox
+			NOT = { any_playable_ruler = { has_landed_title = e_arabia } }
+		}
+		
+		allow = {
+			completely_controls = c_mecca
+			religion = orthodox
+			wealth = 1000
+			prestige = 500
+			completely_controls = d_medina
+			completely_controls = d_arabia_petrae
+			completely_controls = d_nefoud
+			completely_controls = d_amman
+			completely_controls = d_oman
+			completely_controls = d_hadramut
+			completely_controls = d_taizz
+			completely_controls = d_sanaa
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 719 # Mecca
+					attrition = 0
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						camel_cavalry = { 1000 1000 }
+					}
+				}
+			}
+			set_global_flag = arabia_ortho_passified
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

@@ -294,7 +294,10 @@ rashudin_invasion_cb = {
 	can_use = {
 		ROOT = {
 			has_landed_title = e_arabia
-			has_character_flag = rashudin_expander
+			religion_group = muslim
+			OR = {
+				has_character_flag = rashudin_expander
+			}
 		}
 	}
 	
@@ -338,6 +341,7 @@ rashudin_invasion_cb = {
 			}
 			
 			ROOT = { character_event = { id = ROMA.999 days = 1 } }
+			ROOT = { character_event = { id = RASHD.400 days = 10 } }
 			ROOT = { character_event = { id = HFP.41090 days = 1 } }
 		}
 	}
@@ -528,6 +532,7 @@ rashudin_invasion_cb = {
 				}
 			}
 		}
+		ROOT = { character_event = { id = RASHD.400 days = 10 } }
 	}
 
 	attacker_ai_victory_worth = {
