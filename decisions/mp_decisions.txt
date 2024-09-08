@@ -566,18 +566,21 @@ decisions = {
 		ai_check_interval = 12
 		
 		potential = {
-			capital_scope = { has_province_modifier = tech_efforts }
 			has_character_modifier = demobilized_realm
 		}
 		
 		allow = {
-			capital_scope = { has_province_modifier = tech_efforts }
-			has_character_modifier = demobilized_realm
+			OR = {
+				any_realm_province = {
+					has_province_modifier = tech_efforts
+				}
+				has_character_modifier = demobilized_realm
+			}
 		}
 		
 		effect = {
 			remove_character_modifier = demobilized_realm
-			capital_scope = { remove_province_modifier = tech_efforts }
+			any_realm_province = { remove_province_modifier = tech_efforts }
 			
 			add_character_modifier = { name = remobilizing_realm years = 5 }
 		}
