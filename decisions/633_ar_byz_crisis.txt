@@ -1,0 +1,138 @@
+decisions = {
+	end_byz_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = byz_crisis_1_taken }
+			independent = yes
+			AND = {
+				has_landed_title = e_byzantium
+				religion_group = christian
+				has_global_flag = byz_crisis_1
+			}
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500			
+			clr_global_flag = byz_crisis_1
+			set_global_flag = byz_crisis_1_taken
+			remove_character_modifier = byz_curse_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_byz_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = byz_crisis_2_taken }
+			independent = yes
+			AND = {
+				has_landed_title = e_byzantium
+				religion_group = christian
+				has_global_flag = byz_crisis_2
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			diplomacy = 11
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = byz_crisis_2
+			set_global_flag = byz_crisis_2_taken
+			remove_character_modifier = byz_curse_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_byz_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = byz_crisis_3_taken }
+			independent = yes
+			AND = {
+				has_landed_title = e_byzantium
+				religion_group = christian
+				has_global_flag = byz_crisis_3
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			martial = 13
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			set_global_flag = byz_crisis_3_taken
+			clr_global_flag = byz_crisis_3
+			remove_character_modifier = byz_curse_3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_byz_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			NOT = { has_global_flag = byz_crisis_done }
+			OR = {
+				NOT = { has_global_flag = byz_crisis_1 }
+				NOT = { has_global_flag = byz_crisis_2 }
+				NOT = { has_global_flag = byz_crisis_3 }
+			}
+			AND = {
+				has_landed_title = e_byzantium
+				religion_group = christian
+				has_global_flag = byz_crisis_1
+				has_global_flag = byz_crisis_2
+				has_global_flag = byz_crisis_3
+			}
+		}
+
+		allow = {
+			independent = yes
+		}
+
+		effect = {
+			set_global_flag = byz_crisis_done
+			wealth = 3000
+			prestige = 4000
+			clr_global_flag = umayyad_crisis_finished_1
+			clr_global_flag = umayyad_crisis_finished_2
+			clr_global_flag = umayyad_crisis_finished_3			
+			any_player = { narrative_event = { id = UMM.5 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
