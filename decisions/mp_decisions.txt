@@ -552,7 +552,7 @@ decisions = {
 		}
 		
 		effect = {	
-			add_character_modifier = { name = demobilized_realm years = -1 }
+			add_character_modifier = { name = demobilized_realm years = -1 inherit = yes }
 			capital_scope = { add_province_modifier = { name = tech_efforts years = -1 } }
 		}
 		
@@ -582,7 +582,7 @@ decisions = {
 			remove_character_modifier = demobilized_realm
 			any_realm_province = { remove_province_modifier = tech_efforts }
 			
-			add_character_modifier = { name = remobilizing_realm years = 5 }
+			add_character_modifier = { name = remobilizing_realm years = 5 inherit = yes }
 		}
 		
 		ai_will_do = {

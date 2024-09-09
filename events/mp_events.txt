@@ -1314,56 +1314,36 @@ character_event = {
     }
 }
 
-# Event: Marshal Assigned to Research Military Tech
-character_event = {
-    id = MP.106
-    desc = "EVTDESC_marshal_research_1"
+narrative_event = { #Event for everyone about the formation of the Angevin Empire
+	id = MP.106
+	title = EVTNAMEMP100
+	desc = EVTDESCMP100
+	sound = ar_army_marching
+	
+	picture = GFX_evt_found_hre
+	
+	border = GFX_event_narrative_frame_war
+	
 	is_triggered_only = yes
 	
-    trigger = {
-        has_job_action = action_advance_mil_tech
-		location = {
-			owner = {
-				job_marshal = {
-					character = ROOT
-				}
-			}
-		}
-        NOT = { has_character_flag = marshal_researching }
-    }
-	
-	immediate = {
-		FROM = {
-			location = {
-				add_province_modifier = {
-					name = levy_reinforcements
-					duration = 365
-				}
-			}
-		}
+	option = { #At last
+		name = "Concerning.."
 	}
-	
-    option = {
-        name = "OK"
-    }
 }
-# Event: Marshal Removed from Research Military Tech
-character_event = {
-    id = MP.107
-    desc = "EVTDESC_marshal_research_2"
+
+narrative_event = { #Event for everyone about the formation of the PLC
+	id = MP.107
+	title = EVTNAMEMP101
+	desc = EVTDESCMP101
+	sound = ar_army_marching
+	
+	picture = "GFX_evt_mongols"
+	
+	border = GFX_event_narrative_frame_war
+	
 	is_triggered_only = yes
 	
-    trigger = {
-        has_character_flag = marshal_researching
-        NOT = { has_job_action = action_advance_mil_tech }
-    }
-	
-    immediate = {
-		clr_character_flag = marshal_researching
-		location = { remove_province_modifier = military_research_boost }
-    }
-	
-    option = {
-        name = "OK"
-    }
+	option = { #At last
+		name = "Concerning.."
+	}
 }

@@ -2,12 +2,17 @@ plc_bloodline = {
 	picture = GFX_bloodlines_symbol_horse
 	allow_bastards = yes
 	combat_rating = 5
+	command_modifier = {
+		light_cavalry = 0.4
+		knights = 0.2
+	}
+	bloodline_effect_drill = 1
 	polish_opinion = 5
 	lithuanian_opinion = 5
 	religion_flex = -0.2
 	plc_jew_effect = 1
 	inheritance = patrilineal
-	flags = { created_bloodline plc_bloodlineflag }
+	flags = { created_bloodline plc_bloodlineflag bloodline_drill }
 }
 
 ibadi_leader_bloodline = {

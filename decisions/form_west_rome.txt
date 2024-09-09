@@ -20,6 +20,12 @@ decisions = {
 				religion = hellenic_pagan
 			}
 			NOT = { has_global_flag = west_rome_formed }
+			capital_scope = {
+				OR = {
+					region = world_europe_west
+					region = world_europe_south_italy
+				}
+			}
 		}
 		
 		allow = {

@@ -10,6 +10,7 @@ fort = {
 		gold_cost = 50
 		build_time = 365
 		fort_level = 0.50
+		siege_defence = 0.05
 		ai_creation_factor = 90
 		
 		extra_tech_building_start = 1.0
@@ -21,6 +22,7 @@ fort = {
 		gold_cost = 50
 		build_time = 365 #1.5y
 		fort_level = 0.50
+		siege_defence = 0.05
 		ai_creation_factor = 89
 		
 		extra_tech_building_start = 1.4
@@ -32,6 +34,7 @@ fort = {
 		gold_cost = 100
 		build_time = 365 #2y
 		fort_level = 0.50
+		siege_defence = 0.05
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 1.2
@@ -43,6 +46,7 @@ fort = {
 		gold_cost = 150
 		build_time = 365 #3y
 		fort_level = 0.50
+		siege_defence = 0.05
 		ai_creation_factor = 87
 
 		extra_tech_building_start = 0.8
@@ -54,6 +58,7 @@ fort = {
 		gold_cost = 150
 		build_time = 365 #4y
 		fort_level = 0.50
+		siege_defence = 0.05
 		ai_creation_factor = 86
 
 		extra_tech_building_start = 0.4
@@ -64,7 +69,7 @@ fort = {
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		gold_cost = 50
 		build_time = 365
-		garrison_size = 1.5
+		garrison_size = 0.5
 		ai_creation_factor = 90
 		
 		extra_tech_building_start = 1.0
@@ -75,7 +80,8 @@ fort = {
 		upgrades_from = fort_camp_1
 		gold_cost = 50
 		build_time = 365 #1.5y
-		garrison_size = 1.5
+		garrison_size = 2.5
+		levy_size = 2.5
 		ai_creation_factor = 89
 		
 		extra_tech_building_start = 1.4
@@ -86,7 +92,7 @@ fort = {
 		upgrades_from = fort_camp_2
 		gold_cost = 100
 		build_time = 365 #2y
-		garrison_size = 1.5
+		garrison_size = 0.5
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 1.2
@@ -97,7 +103,7 @@ fort = {
 		upgrades_from = fort_camp_3
 		gold_cost = 150
 		build_time = 365 #3y
-		garrison_size = 1.5
+		garrison_size = 0.5
 		ai_creation_factor = 87
 
 		extra_tech_building_start = 0.8
@@ -108,7 +114,7 @@ fort = {
 		upgrades_from = fort_camp_4
 		gold_cost = 150
 		build_time = 365 #4y
-		garrison_size = 1.5
+		garrison_size = 0.5
 		ai_creation_factor = 86
 
 		extra_tech_building_start = 0.4
@@ -235,7 +241,7 @@ fort = {
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		gold_cost = 50
 		build_time = 365
-		military_techpoints = 0.01
+		military_techpoints = 0.1
 		ai_creation_factor = 90
 		
 		extra_tech_building_start = 1.0
@@ -246,7 +252,7 @@ fort = {
 		upgrades_from = fort_hq_1
 		gold_cost = 50
 		build_time = 365 #1.5y
-		military_techpoints = 0.02
+		military_techpoints = 0.1
 		ai_creation_factor = 89
 		
 		extra_tech_building_start = 1.4
@@ -257,9 +263,193 @@ fort = {
 		upgrades_from = fort_hq_2
 		gold_cost = 100
 		build_time = 365 #2y
-		military_techpoints = 0.04
+		military_techpoints = 0.1
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 1.2
 	}
+
+	fort_trade_protection_1 = {
+		desc = fort_trade_protection_desc
+		potential = {
+			port = yes
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = trans_saharan_trade_route
+					trans_saharan_trade_post_market_trigger = yes
+				}
+				AND = {
+					trade_route = england_route
+					england_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = genoa_route
+					genoa_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = hansa_route_sca
+					hansa_route_sca_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = varingian_route
+					varingian_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = venice_route
+					venice_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_imperii
+					via_imperii_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_militaris_route
+					via_militaris_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_regia
+					via_regia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = andalusian_route
+					andalusian_route_trade_post_trigger = yes
+				}
+			}
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		gold_cost = 50
+		build_time = 365
+		tax_income = 2
+		local_tax_modifier = 0.05
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.0
+	}
+	fort_trade_protection_2 = {
+		desc = fort_trade_protection_desc
+		potential = {
+			port = yes
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = trans_saharan_trade_route
+					trans_saharan_trade_post_market_trigger = yes
+				}
+				AND = {
+					trade_route = england_route
+					england_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = genoa_route
+					genoa_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = hansa_route_sca
+					hansa_route_sca_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = varingian_route
+					varingian_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = venice_route
+					venice_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_imperii
+					via_imperii_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_militaris_route
+					via_militaris_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_regia
+					via_regia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = andalusian_route
+					andalusian_route_trade_post_trigger = yes
+				}
+			}
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = fort_hq_1
+		gold_cost = 50
+		build_time = 365 #1.5y
+		tax_income = 2
+		local_tax_modifier = 0.05
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.4
+	}
+	fort_trade_protection_3 = {
+		desc = fort_trade_protection_desc
+		potential = {
+			port = yes
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = trans_saharan_trade_route
+					trans_saharan_trade_post_market_trigger = yes
+				}
+				AND = {
+					trade_route = england_route
+					england_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = genoa_route
+					genoa_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = hansa_route_sca
+					hansa_route_sca_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = varingian_route
+					varingian_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = venice_route
+					venice_route_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_imperii
+					via_imperii_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_militaris_route
+					via_militaris_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = via_regia
+					via_regia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = andalusian_route
+					andalusian_route_trade_post_trigger = yes
+				}
+			}
+		}
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		upgrades_from = fort_hq_2
+		gold_cost = 100
+		build_time = 365 #2y
+		tax_income = 2
+		local_tax_modifier = 0.05
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+
 }

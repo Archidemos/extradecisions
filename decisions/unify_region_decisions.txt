@@ -139,16 +139,19 @@ decisions = {
 		
 		potential = {
 			NOT = { has_global_flag = ar_hre_formed }
+			NOT = { has_global_flag = charlemagne_hre }
 			is_playable = yes
 			has_global_flag = germany_united
+			independent = yes
+			NOT = { has_global_flag = rome_restored }
 			independent = yes
 			OR = {
 				religion = catholic
 				religion = fraticelli
 			}
-			OR = {
-				culture = german
-				culture = dutch
+			NOT = { has_landed_title = e_byzantium }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
 			}
 			e_hre = {
 				has_holder = no
