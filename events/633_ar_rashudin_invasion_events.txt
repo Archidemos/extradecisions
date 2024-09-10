@@ -7,7 +7,6 @@ narrative_event = { #The Conquest of Iraq complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
 	
 	picture = GFX_evt_kaaba
 	
@@ -21,7 +20,7 @@ narrative_event = { #The Conquest of Iraq complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.100 days = 1 } } }
 		set_global_flag = rashudin_conquered_iraq
 		prestige = 100
@@ -65,8 +64,7 @@ narrative_event = { #The Conquest of the Ghassanids complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -79,7 +77,7 @@ narrative_event = { #The Conquest of the Ghassanids complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.101 days = 1 } } }
 		set_global_flag = rashudin_conquered_ghassanid
 		prestige = 100
@@ -132,8 +130,7 @@ narrative_event = { #The Conquest of Jerusalem complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -146,8 +143,9 @@ narrative_event = { #The Conquest of Jerusalem complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.102 days = 1 } } }
+		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.10 days = 2 } } }
 		set_global_flag = rashudin_conquered_jerusalem
 		prestige = 100
 		while = {
@@ -174,7 +172,6 @@ narrative_event = { #The Conquest of Jerusalem complete
 			usurp_title = k_jerusalem
 			set_defacto_liege = e_arabia
 		}
-		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.10 days = 2 }
 		728 = { #Damascus
 			kingdom = {
 				e_arabia = {
@@ -196,8 +193,7 @@ narrative_event = { #The Conquest of Syria complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -210,8 +206,9 @@ narrative_event = { #The Conquest of Syria complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.103 days = 1 } } }
+		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.11 days = 2 } } }
 		set_global_flag = rashudin_conquered_syria
 		prestige = 100
 		ROOT = {
@@ -269,7 +266,6 @@ narrative_event = { #The Conquest of Syria complete
 				}
 			}
 		}
-		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.11 days = 2 }
 		697 = { #Mosul
 			kingdom = {
 				e_arabia = {
@@ -291,8 +287,7 @@ narrative_event = { #The Conquest of Mesopotamia complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -305,7 +300,7 @@ narrative_event = { #The Conquest of Mesopotamia complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.104 days = 1 } } }
 		set_global_flag = rashudin_conquered_mesopotamia
 		prestige = 100
@@ -344,8 +339,7 @@ narrative_event = { #The Conquest of Egypt complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -358,8 +352,9 @@ narrative_event = { #The Conquest of Egypt complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.105 days = 1 } } }
+		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.12 days = 2 } } }
 		set_global_flag = rashudin_conquered_egypt
 		prestige = 100
 		while = {
@@ -405,7 +400,6 @@ narrative_event = { #The Conquest of Egypt complete
 				killer = ROOT
 			}
 		}
-		e_byzantium = { holder_scope = { narrative_event = { id = RASHBYZ.12 days = 2 }
 		646 = { #Esfahan
 			kingdom = {
 				e_arabia = {
@@ -427,8 +421,7 @@ narrative_event = { #The Conquest of Persia complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -441,7 +434,7 @@ narrative_event = { #The Conquest of Persia complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.106 days = 1 } } }
 		set_global_flag = rashudin_conquered_persia
 		prestige = 100
@@ -517,8 +510,7 @@ narrative_event = { #The Conquest of Sistan complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -531,7 +523,7 @@ narrative_event = { #The Conquest of Sistan complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.107 days = 1 } } }
 		set_global_flag = rashudin_conquered_khorasan
 		prestige = 100
@@ -594,8 +586,7 @@ narrative_event = { #The Conquest of Khorasan complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -608,7 +599,7 @@ narrative_event = { #The Conquest of Khorasan complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.111 days = 1 } } }
 		set_global_flag = rashudin_conquered_sistan
 		prestige = 100
@@ -667,8 +658,7 @@ narrative_event = { #The Conquest of Armenia complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -681,7 +671,7 @@ narrative_event = { #The Conquest of Armenia complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.108 days = 1 } } }
 		ROOT = { narrative_event = { id = RASHD.112 } }
 		disband_event_forces = yes
@@ -765,8 +755,7 @@ narrative_event = { #The Conquest of Africa complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -779,7 +768,7 @@ narrative_event = { #The Conquest of Africa complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.109 days = 1 } } }
 		set_global_flag = rashudin_conquered_africa
 		prestige = 100
@@ -961,8 +950,7 @@ narrative_event = { #The Conquest of Andalusia complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -975,7 +963,7 @@ narrative_event = { #The Conquest of Andalusia complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_conquered_andalusia
 		prestige = 100
 		
@@ -1019,8 +1007,7 @@ narrative_event = { #The Conquest of Galicia complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -1033,7 +1020,7 @@ narrative_event = { #The Conquest of Galicia complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_conquered_galicia
 		prestige = 100
 		while = {
@@ -1071,8 +1058,7 @@ narrative_event = { #The Conquest of Asturias complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -1085,7 +1071,7 @@ narrative_event = { #The Conquest of Asturias complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_conquered_asturias
 		prestige = 100
 		while = {
@@ -1128,8 +1114,7 @@ narrative_event = { #The Conquest of Navarra complete
 	title = EVTNAMERASHD1
 	desc = EVTDESCRASHD1
 	sound = ar_arab_army_shout
-	is_triggered_only = yes
-		
+	
 	picture = GFX_evt_kaaba
 	
 	trigger = {
@@ -1142,12 +1127,12 @@ narrative_event = { #The Conquest of Navarra complete
 	}
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_conquered_navarra
 		prestige = 100
 		disband_event_forces = yes
 		ROOT = { narrative_event = { id = RASHD.114 } }
-		ROOT = { narrative_event = { id = RASHD.115 days = 10 } }
+		ROOT = { narrative_event = { id = RASHD.115 days 10 } }
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.110 days = 1 } } }
 	}
 }
@@ -1457,7 +1442,7 @@ narrative_event = { #The Umayyads declare war on the Rashudins
 	is_triggered_only = yes
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1499,7 +1484,7 @@ narrative_event = { #The Islamic Conquests continue
 	is_triggered_only = yes
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		prestige = 100
 		while = {
 			count = 2
@@ -1542,7 +1527,7 @@ narrative_event = { #The Abbasids declare war on the Umayyads
 	is_triggered_only = yes
 	
 	option = {
-		name = "RASCONCOM"
+		name = "Onwards!"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1593,7 +1578,7 @@ narrative_event = { #The Spanish break off and fortify themselfs
 	}
 	
 	option = {
-		name = RASHSPN1
+		name = "No way!"
 		set_global_flag = rashudin_spannish_retreat
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.116 days = 1 } } }
 
@@ -1647,13 +1632,13 @@ narrative_event = { #Announcement about the Spannish holding strong
 		trigger = {
 			NOT = { religion_group = muslim }
 		}
-		name = RASHSPN2
+		name = "God be praised!"
 	}
 	option = {
 		trigger = {
 			religion_group = muslim
 		}
-		name = RASHSPN3
+		name = "What do these Germans hope to acomplish!"
 	}
 }
 
@@ -1672,13 +1657,13 @@ narrative_event = { #Announcement about the Rashudins losing
 		trigger = {
 			NOT = { religion_group = muslim }
 		}
-		name = RASHLOSTRSHCHR
+		name = "God be praised!"
 	}
 	option = {
 		trigger = {
 			religion_group = muslim
 		}
-		name = RASHLOSTRSH
+		name = "It is over for Islam.."
 	}
 }
 
@@ -1711,7 +1696,7 @@ narrative_event = { #Event to switch to the Umayyads
 		set_player_character = event_target:umayyad_playable
 	}
 	option = {
-		name = "RASHINVSWITCH"
+		name = "Never!"
 	}
 }
 
@@ -1740,57 +1725,6 @@ narrative_event = { #Event to switch to the Abbasids
 		set_player_character = event_target:abbasid_playable
 	}
 	option = {
-		name = "RASHINVSWITCH"
-	}
-}
-
-# Shia Islam got spawned
-narrative_event = {
-	id = RASHD.400
-	title = EVTNAMERASHD400
-	desc = EVTDESCRASHD400
-	
-	picture = GFX_jerusalem_captured_muslims_soa
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = RASHSHIASPAWN1
-		set_global_flag = shia_spawned
-		any_playable_ruler = {
-			limit = { region = world_persia }
-			narrative_event = { id = RASHD.401 }
-		}
-	}
-}
-
-# Convert or Not?
-narrative_event = {
-	id = RASHD.401
-	title = EVTNAMERASHD401
-	desc = EVTDESCRASHD401
-	
-	picture = GFX_Hagia_sofia_muslim
-	
-	is_triggered_only = yes
-	
-	option = { # Yes
-		name = RASHSHIASPAWN2
-		ai_chance = { factor = 90 }
-		religion = shiite
-		any_courtier = {
-			limit = {
-				religion = shiite
-				liege = { character = shiite }
-			}
-			religion = shiite
-		}
-		capital_scope = {
-			religion = shiite
-		}
-	}
-	option = { # No
-		name = RASHSHIASPAWN3
-		ai_chance = { factor = 10 }
+		name = "Never!"
 	}
 }

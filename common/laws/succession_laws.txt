@@ -1560,77 +1560,78 @@ succession_laws = {
 		}			
 	}
 
-	succ_caliphate_elective = {
-		oldest_child_opinion = -15
-		child_opinion = -5
-		dynasty_opinion = -5
-		vassal_opinion = 10
-		vassal_limit = 10
-		potential = {
-			NAND = { 
-				has_law = succ_byzantine_elective 
-				OR = { 
-					title = e_byzantium
-					title = e_roman_empire
-				}
-			}
-			holder_scope = {
-				OR = {
-					independent = yes
-					NOT = {
-						any_liege = {
-							holy_order = yes
-						}
-					}
-				}
-				is_republic = no
-				is_merchant_republic = no
-				is_patrician = no
-				religion_group = muslim
-				controls_religion = yes
-				OR = {
-					independent = yes
-					NOT = {
-						any_demesne_title = {
-							is_vice_royalty = yes
-						}
-					}
-				}
-			}
-			OR = {
-				is_landless_type_title = no
-				is_tribal_type_title = yes
-				temporary = yes
-			}
-			#is_primary_type_title = no
-			NOT = { tier = baron }
-			NOT = { holder_scope = { government = confucian_bureaucracy } }
-			NOT = { holder_scope = { government = chinese_imperial_government } }
-		}
-		allow = {
-			custom_tooltip = {
-				text = not_forced_tt
-				hidden_tooltip = {
-					holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
-				}
-			}
-			hidden_tooltip = {
-				holder_scope = {
-					religion_group = muslim
-					controls_religion = yes
-				}
-			}
-		}
-		effect = {
-			succession = {
-				base_type = feudal_elective
-				voting_rules = caliphate_elective
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-	}
+	#succ_caliphate_elective = {
+	#	oldest_child_opinion = -15
+	#	child_opinion = -5
+	#	dynasty_opinion = -5
+	#	vassal_opinion = 10
+	#	vassal_limit = 10
+	#	potential = {
+	#		NAND = { 
+	#			has_law = succ_byzantine_elective 
+	#			OR = { 
+	#				title = e_byzantium
+	#				title = e_roman_empire
+	#			}
+	#		}
+	#		holder_scope = {
+	#			OR = {
+	#				independent = yes
+	#				NOT = {
+	#					any_liege = {
+	#						holy_order = yes
+	#					}
+	#				}
+	#			}
+	#			is_republic = no
+	#			is_merchant_republic = no
+	#			is_patrician = no
+	#			religion_group = muslim
+	#			controls_religion = yes
+	#			has_landed_title = e_arabia
+	#			OR = {
+	#				independent = yes
+	#				NOT = {
+	#					any_demesne_title = {
+	#						is_vice_royalty = yes
+	#					}
+	#				}
+	#			}
+	#		}
+	#		OR = {
+	#			is_landless_type_title = no
+	#			is_tribal_type_title = yes
+	#			temporary = yes
+	#		}
+	#		#is_primary_type_title = no
+	#		NOT = { tier = baron }
+	#		NOT = { holder_scope = { government = confucian_bureaucracy } }
+	#		NOT = { holder_scope = { government = chinese_imperial_government } }
+	#	}
+	#	allow = {
+	#		custom_tooltip = {
+	#			text = not_forced_tt
+	#			hidden_tooltip = {
+	#				holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
+	#			}
+	#		}
+	#		hidden_tooltip = {
+	#			holder_scope = {
+	#				religion_group = muslim
+	#				controls_religion = yes
+	#			}
+	#		}
+	#	}
+	#	effect = {
+	#		succession = {
+	#			base_type = feudal_elective
+	#			voting_rules = caliphate_elective
+	#		}
+	#	}
+	#	revoke_allowed = {
+	#		always = no
+	#	}
+	#}
 
 	
 	succ_witan_elective = {

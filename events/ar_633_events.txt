@@ -216,3 +216,27 @@ character_event = {
 		}
 	}
 }
+
+narrative_event = {
+	id = ARISL.110
+	title = ARNAME110
+	desc = ARDESC110
+    is_triggered_only = yes
+	
+	picture = GFX_evt_large_army
+	portrait = event_target:uniter_britannia
+	
+    trigger = {
+		start_date = 633.1.1
+		is_save_game = no
+		NOT = { has_global_flag = british_aggresion_flagged }
+    }
+	
+	immediate = {
+		e_britannia = { holder_scope = { save_event_target_as = uniter_britannia } }
+	}	
+	
+	option = {
+		name = "Troublesome indeed.."
+	}
+}

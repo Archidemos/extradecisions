@@ -1,4 +1,147 @@
 decisions = {
+	conclude_english_aggresion = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			has_global_flag = british_aggresion_flagged
+			OR = {
+				culture_group = west_germanic
+				culture_group = celtic
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			completely_controls = k_wessex
+			completely_controls = k_mercia
+			completely_controls = k_northumbria
+			completely_controls = k_wales
+			OR = {
+				has_landed_title = k_wessex
+				has_landed_title = k_mercia
+				has_landed_title = k_northumbria
+				has_landed_title = k_wales
+			}
+		}
+		
+		effect = {
+			clr_global_flag = british_aggresion_flagged
+			set_global_flag = british_aggresion_flagged_part_2
+			set_global_flag = british_aggresion_flagged_part_3
+			prestige = 2000
+			e_britannia = {
+				grant_title = PREV
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			create_bloodline = {
+				type = bloodline_unifier_england
+			}
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = ARISL.110 days = 1 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	integrate_scotland = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			has_global_flag = british_aggresion_flagged_part_2
+			OR = {
+				culture_group = west_germanic
+				culture_group = celtic
+			}
+			has_landed_title = e_britannia
+		}
+		
+		allow = {
+			wealth = 400
+			prestige = 1000
+			completely_controls = k_scotland
+		}
+		
+		effect = {
+			clr_global_flag = british_aggresion_flagged_part_2
+			prestige = 2000
+			k_scotland = {
+				grant_title = PREV
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			while = {
+				count = 20
+				random_realm_province = {
+					limit = {
+						de_jure_liege_or_above = PREVPREV
+						culture = pictish
+					}
+					culture = ROOT
+					religion = ROOT
+					add_province_modifier = { name = recently_assimilated years = 10 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	integrate_ireland = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			has_global_flag = british_aggresion_flagged_part_3
+			OR = {
+				culture_group = west_germanic
+				culture_group = celtic
+			}
+			has_landed_title = e_britannia
+		}
+		
+		allow = {
+			wealth = 400
+			prestige = 1000
+			completely_controls = k_ireland
+		}
+		
+		effect = {
+			clr_global_flag = british_aggresion_flagged_part_3
+			prestige = 2000
+			k_ireland = {
+				grant_title = PREV
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			while = {
+				count = 20
+				random_realm_province = {
+					limit = {
+						de_jure_liege_or_above = PREVPREV
+						culture = irish
+					}
+					culture = ROOT
+					religion = ROOT
+					add_province_modifier = { name = recently_assimilated years = 10 }
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	end_hispanic_raids = {
 		is_high_prio = yes
 		ai_check_interval = 1
@@ -25,6 +168,39 @@ decisions = {
 			add_claim = c_viscaya
 		}
 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	claim_mecca = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_nomadic = no
+			is_playable = yes
+			has_global_flag = rashudin_aggresion_flagged
+			has_landed_title = e_arabia
+			NOT = { has_landed_title = c_mecca }
+			any_realm_lord = { 
+				ai = yes
+				has_landed_title = c_mecca 
+			}
+		}
+		allow = {
+			NOT = { has_landed_title = c_mecca }
+			any_realm_lord = { 
+				has_landed_title = c_mecca 
+			}
+		}
+		effect = {
+			ROOT = {
+				c_mecca = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 1
 		}

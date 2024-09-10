@@ -549,60 +549,60 @@ character_event = {
 }
 
 # New caliphate succession
-character_event = {
-	id = Mod.607
-	hide_window = yes
-	
-	is_triggered_only = yes
-
-	trigger = {
-		religion_group = muslim
-		controls_religion = yes
-		independent = yes
-		primary_title = {
-			has_law = succ_caliphate_elective
-		}
-	}
-
-	immediate = {
-		current_heir = {
-			if = {
-				limit = {
-					religion = ROOT
-				}
-				ROOT = {
-					any_demesne_title = {
-						if = {
-							limit = {
-								controls_religion = yes
-							}
-							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
-						}
-					}
-				}
-			}
-			ROOT = {
-				any_demesne_title = {
-					limit = {
-						has_law = succ_caliphate_elective
-						higher_tier_than = COUNT
-						controls_religion = no
-						NOT = {
-							ROOT = {
-								primary_title = {
-									title = PREVPREV
-								}
-							}
-						}
-					}
-					save_event_target_as = title_to_caliph_inherit_@local_tnum
-					usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
-				}
-			}
-			character_event = { id = Mod.608 days = 1 }
-		}
-	}
-}
+#character_event = {
+#	id = Mod.607
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		religion_group = muslim
+#		controls_religion = yes
+#		independent = yes
+#		primary_title = {
+#			has_law = succ_caliphate_elective
+#		}
+#	}
+#
+#	immediate = {
+#		current_heir = {
+#			if = {
+#				limit = {
+#					religion = ROOT
+#				}
+#				ROOT = {
+#					any_demesne_title = {
+#						if = {
+#							limit = {
+#								controls_religion = yes
+#							}
+#							usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+#						}
+#					}
+#				}
+#			}
+#			ROOT = {
+#				any_demesne_title = {
+#					limit = {
+#						has_law = succ_caliphate_elective
+#						higher_tier_than = COUNT
+#						controls_religion = no
+#						NOT = {
+#							ROOT = {
+#								primary_title = {
+#									title = PREVPREV
+#								}
+#							}
+#						}
+#					}
+#					save_event_target_as = title_to_caliph_inherit_@local_tnum
+#					usurp_title_plus_barony_if_unlanded_and_vassals_no_adj = { target = PREVPREV type = election }
+#				}
+#			}
+#			character_event = { id = Mod.608 days = 1 }
+#		}
+#	}
+#}
 
 character_event = {
 	id = Mod.608
