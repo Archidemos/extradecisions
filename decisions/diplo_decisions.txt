@@ -1,7 +1,7 @@
 targetted_decisions = {
 	unrival_person = {
 		ai = no
-	    diplomacy_icon = GFX_stable_prestige_icon_decision
+	    diplomacy_icon = GFX_trait_socializer
 		
 		potential = {
 			character = ROOT
@@ -15,7 +15,7 @@ targetted_decisions = {
 
 		allow = {
 			FROM = {
-				diplomacy = 15
+				diplomacy = 10
 				prestige = 500
 				NOT = { has_character_modifier = cooldown_unrival }
 			}
@@ -34,7 +34,7 @@ targetted_decisions = {
 
 	improve_opinion = {
 		ai = no
-	    diplomacy_icon = GFX_stable_prestige_icon_decision
+	    diplomacy_icon = GFX_trait_socializer
 		
 		potential = {
 			character = ROOT
@@ -46,7 +46,7 @@ targetted_decisions = {
 		allow = {
 			ai = yes
 			FROM = {
-				diplomacy = 12
+				diplomacy = 10
 				NOT = { has_character_modifier = cooldown_improve_opinion }
 			}
 		}
@@ -81,7 +81,7 @@ decisions = {
 			FROM = {
 				wealth = 500
 				prestige = 500
-				diplomacy = 14
+				diplomacy = 12
 				NOT = { has_character_modifier = lowered_threat }
 			}
 		}

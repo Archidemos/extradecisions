@@ -45,3 +45,57 @@ settlement_decisions = {
 		}
 	}
 }
+
+title_decisions = {
+	scorched_earth = {
+		filter = owned
+		ai_target_filter = owned
+		
+		potential = {
+			real_tier = COUNT
+			holder_scope = {
+				OR = {
+					character = FROM
+					is_vassal_or_below_of = FROM
+				}
+			}
+		}
+		
+		allow = {
+			NOR = {
+				location = { has_province_modifier = ar_scorched_earth }
+				location = { has_province_modifier = mountain_pass }
+			}
+			FROM = { NOT = { has_character_modifier = province_burner } }
+		}
+		
+		effect = {
+			location = {
+				add_province_modifier = {
+					name = ar_scorched_earth
+					years = 4
+				}
+				add_province_modifier = {
+					name = ar_scorched_earth_penalty
+					years = 5
+				}
+			}
+			FROM = {
+				if = {
+					limit = { NOT = { has_character_modifier = province_burner } }
+					add_character_modifier = {
+						name = province_burner
+						years = 5
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

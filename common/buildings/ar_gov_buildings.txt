@@ -22,7 +22,7 @@ temple = {
 	ar_theocratic_cathedral_2 = {
 		desc = ar_theocratic_cathedral_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 350
 		build_time = 547
@@ -30,7 +30,7 @@ temple = {
 		upgrades_from = ar_theocratic_cathedral_1
 		
 		monthly_character_piety = 0.075
-		tax_income = 1
+		tax_income = 1.5
 		culture_techpoints = 0.030
 		
 		ai_creation_factor = 103
@@ -42,7 +42,7 @@ temple = {
 	ar_theocratic_cathedral_3 = {
 		desc = ar_theocratic_cathedral_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 450
 		build_time = 730
@@ -50,7 +50,7 @@ temple = {
 		upgrades_from = ar_theocratic_cathedral_2
 		
 		monthly_character_piety = 0.075
-		tax_income = 2
+		tax_income = 2.5
 		culture_techpoints = 0.035
 		
 		ai_creation_factor = 102
@@ -62,7 +62,7 @@ temple = {
 	ar_theocratic_cathedral_4 = {
 		desc = ar_theocratic_cathedral_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 600
 		build_time = 1095
@@ -70,8 +70,28 @@ temple = {
 		upgrades_from = ar_theocratic_cathedral_3
 		
 		monthly_character_piety = 0.1
-		tax_income = 3
+		tax_income = 3.5
 		culture_techpoints = 0.040
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_cathedral_5 = {
+		desc = ar_theocratic_cathedral_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 750
+		build_time = 1095
+
+		upgrades_from = ar_theocratic_cathedral_4
+		
+		monthly_character_piety = 0.15
+		tax_income = 4.5
+		culture_techpoints = 0.050
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -101,7 +121,7 @@ temple = {
 	ar_theocratic_pilgrim_stop_2 = {
 		desc = ar_theocratic_pilgrim_stop_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 100
 		build_time = 182
@@ -121,7 +141,7 @@ temple = {
 	ar_theocratic_pilgrim_stop_3 = {
 		desc = ar_theocratic_pilgrim_stop_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 200
 		build_time = 182
@@ -141,7 +161,7 @@ temple = {
 	ar_theocratic_pilgrim_stop_4 = {
 		desc = ar_theocratic_pilgrim_stop_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 350
 		build_time = 182
@@ -151,6 +171,26 @@ temple = {
 		levy_size = 0.015
 		pikemen = 85
 		local_tax_modifier = 0.050
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_pilgrim_stop_5 = {
+		desc = ar_theocratic_pilgrim_stop_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 450
+		build_time = 182
+
+		upgrades_from = ar_theocratic_pilgrim_stop_4
+		
+		levy_size = 0.020
+		pikemen = 95
+		local_tax_modifier = 0.060
 		
 		ai_creation_factor = 96
 		add_number_to_name = no
@@ -179,7 +219,7 @@ temple = {
 	ar_theocratic_templar_armory_2 = {
 		desc = ar_theocratic_templar_armory_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 300
 		build_time = 547
@@ -198,7 +238,7 @@ temple = {
 	ar_theocratic_templar_armory_3 = {
 		desc = ar_theocratic_templar_armory_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 450
 		build_time = 730
@@ -217,7 +257,7 @@ temple = {
 	ar_theocratic_templar_armory_4 = {
 		desc = ar_theocratic_templar_armory_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 550
 		build_time = 1095
@@ -232,6 +272,26 @@ temple = {
 
 		extra_tech_building_start = 10.0
 	}
+
+	ar_theocratic_templar_armory_5 = {
+		desc = ar_theocratic_templar_armory_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_theocratic_templar_armory_4
+		
+		levy_size = 0.035
+		heavy_infantry = 95
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
 	ar_theocratic_christian_statues_1 = {
 		desc = ar_theocratic_christian_statues_desc
 		trigger = {
@@ -256,7 +316,7 @@ temple = {
 	ar_theocratic_christian_statues_2 = {
 		desc = ar_theocratic_christian_statues_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 300
 		build_time = 365
@@ -275,7 +335,7 @@ temple = {
 	ar_theocratic_christian_statues_3 = {
 		desc = ar_theocratic_christian_statues_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 450
 		build_time = 365
@@ -294,7 +354,7 @@ temple = {
 	ar_theocratic_christian_statues_4 = {
 		desc = ar_theocratic_christian_statues_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 500
 		build_time = 365
@@ -303,6 +363,25 @@ temple = {
 		
 		light_infantry_offensive = 0.15
 		light_infantry = 120
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+
+	ar_theocratic_christian_statues_5 = {
+		desc = ar_theocratic_christian_statues_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 650
+		build_time = 365
+	
+		upgrades_from = ar_theocratic_christian_statues_4
+		
+		light_infantry_offensive = 0.20
+		light_infantry = 150
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -320,7 +399,7 @@ temple = {
 		gold_cost = 250
 		build_time = 365
 		
-		tax_income = 0.50
+		tax_income = 1
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 104
@@ -332,8 +411,8 @@ temple = {
 	church_garden_2 = {
 		desc = church_garden_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_TRADE_PRACTICES = 3
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
 		}
 		prerequisites = { tp_wall_3 }
 		gold_cost = 275
@@ -341,7 +420,7 @@ temple = {
 
 		upgrades_from = church_garden_1
 		
-		tax_income = 0.50
+		tax_income = 2
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 103
@@ -353,8 +432,8 @@ temple = {
 	church_garden_3 = {
 		desc = church_garden_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_TRADE_PRACTICES = 4
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
 		}
 		prerequisites = { tp_wall_4 }
 		gold_cost = 425
@@ -362,7 +441,7 @@ temple = {
 
 		upgrades_from = church_garden_2
 		
-		tax_income = 1
+		tax_income = 3
 		local_tax_modifier = 0.075
 
 		ai_creation_factor = 102
@@ -374,8 +453,8 @@ temple = {
 	church_garden_4 = {
 		desc = church_garden_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 5
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
 		prerequisites = { tp_wall_5 }
 		gold_cost = 575
@@ -383,7 +462,7 @@ temple = {
 
 		upgrades_from = church_garden_3
 		
-		tax_income = 1
+		tax_income = 4
 		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 101
@@ -395,18 +474,19 @@ temple = {
 	church_garden_5 = {
 		desc = church_garden_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 6
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
-		gold_cost = 800
-		build_time = 1350
+		prerequisites = { tp_wall_5 }
+		gold_cost = 750
+		build_time = 1095
 
 		upgrades_from = church_garden_4
 		
-		tax_income = 1.5
+		tax_income = 5
 		local_tax_modifier = 0.15
 		
-		ai_creation_factor = 100
+		ai_creation_factor = 101
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
@@ -432,7 +512,7 @@ temple = {
 	church_belltower_2 = {
 		desc = church_belltower_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { tp_monastery_2 }
 		gold_cost = 225
@@ -451,7 +531,7 @@ temple = {
 	church_belltower_3 = {
 		desc = church_belltower_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		prerequisites = { tp_monastery_3 }
 		gold_cost = 400
@@ -470,7 +550,7 @@ temple = {
 	church_belltower_4 = {
 		desc = church_belltower_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		prerequisites = { tp_monastery_3 }
 		gold_cost = 550
@@ -525,7 +605,7 @@ temple = {
 	church_archery_2 = {
 		desc = church_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { tp_barracks_3 }
 		gold_cost = 225
@@ -544,7 +624,7 @@ temple = {
 	church_archery_3 = {
 		desc = church_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		prerequisites = { tp_barracks_4 }
 		gold_cost = 400
@@ -563,7 +643,7 @@ temple = {
 	church_archery_4 = {
 		desc = church_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		prerequisites = { tp_barracks_5 }
 		gold_cost = 550
@@ -608,7 +688,7 @@ temple = {
 		gold_cost = 150
 		build_time = 365
 		
-		tax_income = 1.5
+		tax_income = 2
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -619,8 +699,8 @@ temple = {
 	church_market_2 = {
 		desc = church_market_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_TRADE_PRACTICES = 3
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
 		}
 		prerequisites = { tp_town_3 }
 		gold_cost = 225
@@ -628,7 +708,7 @@ temple = {
 
 		upgrades_from = church_market_1
 		
-		tax_income = 2
+		tax_income = 3
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -639,8 +719,8 @@ temple = {
 	church_market_3 = {
 		desc = church_market_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_TRADE_PRACTICES = 4
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
 		}
 		prerequisites = { tp_town_4 }
 		gold_cost = 400
@@ -648,7 +728,7 @@ temple = {
 
 		upgrades_from = church_market_2
 		
-		tax_income = 2.5
+		tax_income = 4
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -659,8 +739,8 @@ temple = {
 	church_market_4 = {
 		desc = church_market_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 5
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
 		prerequisites = { tp_town_5 }
 		gold_cost = 550
@@ -668,7 +748,7 @@ temple = {
 
 		upgrades_from = church_market_3
 		
-		local_tax_modifier = 3
+		tax_income = 5
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -679,8 +759,8 @@ temple = {
 	church_market_5 = {
 		desc = church_market_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 6
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_TRADE_PRACTICES = 5
 		}
 		prerequisites = { tp_town_6 }
 		gold_cost = 750
@@ -688,7 +768,7 @@ temple = {
 
 		upgrades_from = church_market_4
 		
-		local_tax_modifier = 4
+		tax_income = 6
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -719,8 +799,8 @@ temple = {
 	hospital_sector_2 = {
 		desc = hospital_sector_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_TRADE_PRACTICES = 3
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
 		}
 		prerequisites = { tp_school_1 }
 		gold_cost = 225
@@ -741,8 +821,8 @@ temple = {
 	hospital_sector_3 = {
 		desc = hospital_sector_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_TRADE_PRACTICES = 4
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
 		}
 		prerequisites = { tp_school_2 }
 		gold_cost = 400
@@ -763,8 +843,8 @@ temple = {
 	hospital_sector_4 = {
 		desc = hospital_sector_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 5
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
 		prerequisites = { tp_school_2 }
 		gold_cost = 550
@@ -785,8 +865,8 @@ temple = {
 	hospital_sector_5 = {
 		desc = hospital_sector_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 6
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_TRADE_PRACTICES = 5
 		}
 		prerequisites = { tp_school_2 }
 		gold_cost = 750
@@ -813,9 +893,9 @@ temple = {
 		gold_cost = 550
 		build_time = 730
 		
-		levy_size = 0.05
+		levy_size = 0.1
 		disease_defence = -0.0025
-		tax_income = 4
+		tax_income = 4.5
 		
 		ai_creation_factor = 96
 		add_number_to_name = no
@@ -826,8 +906,7 @@ temple = {
 	theocracy_district_2 = {
 		desc = theocracy_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
-			TECH_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { tp_town_4 }
 		gold_cost = 700
@@ -835,9 +914,9 @@ temple = {
 
 		upgrades_from = theocracy_district_1
 		
-		levy_size = 0.05
+		levy_size = 0.15
 		disease_defence = -0.0025
-		tax_income = 3
+		tax_income = 5.5
 		
 		ai_creation_factor = 95
 		add_number_to_name = no
@@ -848,8 +927,8 @@ temple = {
 	theocracy_district_3 = {
 		desc = theocracy_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 3
 		}
 		prerequisites = { tp_town_4 }
 		gold_cost = 950
@@ -857,9 +936,9 @@ temple = {
 
 		upgrades_from = theocracy_district_2
 		
-		levy_size = 0.05
+		levy_size = 0.20
 		disease_defence = -0.0025
-		tax_income = 3
+		tax_income = 6.5
 		
 		ai_creation_factor = 94
 		add_number_to_name = no
@@ -870,8 +949,8 @@ temple = {
 	theocracy_district_4 = {
 		desc = theocracy_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 4
 		}
 		prerequisites = { tp_town_5 }
 		gold_cost = 1100
@@ -879,10 +958,10 @@ temple = {
 
 		upgrades_from = theocracy_district_3
 		
-		levy_size = 0.075
+		levy_size = 0.25
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 3
+		tax_income = 7.5
 
 		ai_creation_factor = 93
 		add_number_to_name = no
@@ -894,7 +973,7 @@ temple = {
 		desc = theocracy_district_desc
 		trigger = {
 			TECH_CITY_CONSTRUCTION = 6
-			TECH_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 5
 		}
 		prerequisites = { tp_town_3 }
 		gold_cost = 1400
@@ -902,10 +981,10 @@ temple = {
 
 		upgrades_from = theocracy_district_4
 		
-		levy_size = 0.1
+		levy_size = 0.3
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 3
+		tax_income = 8.5
 		
 		ai_creation_factor = 92
 		add_number_to_name = no
@@ -926,7 +1005,7 @@ city = {
 		gold_cost = 61
 		build_time = 150
 		
-		tax_income = 0.2
+		tax_income = 0.5
 		levy_size = 0.025
 		tech_growth_modifier = 0.025
 		
@@ -939,14 +1018,14 @@ city = {
 	ar_republic_city_toll_2 = {
 		desc = ar_republic_city_toll_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 122
 		build_time = 300
 
 		upgrades_from = ar_republic_city_toll_1
 
-		tax_income = 0.2
+		tax_income = 1.5
 		fort_level = 0.4		
 		levy_size = 0.05
 		tech_growth_modifier = 0.035
@@ -960,14 +1039,14 @@ city = {
 	ar_republic_city_toll_3 = {
 		desc = ar_republic_city_toll_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 244
 		build_time = 465
 
 		upgrades_from = ar_republic_city_toll_2
 
-		tax_income = 0.3
+		tax_income = 2.5
 		levy_size = 0.075
 		tech_growth_modifier = 0.055
 		
@@ -980,16 +1059,36 @@ city = {
 	ar_republic_city_toll_4 = {
 		desc = ar_republic_city_toll_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 488
 		build_time = 665
 
 		upgrades_from = ar_republic_city_toll_3
 
-		tax_income = 0.5		
+		tax_income = 3.5		
 		levy_size = 0.1
 		tech_growth_modifier = 0.075
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_toll_5 = {
+		desc = ar_republic_city_toll_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 650
+		build_time = 665
+
+		upgrades_from = ar_republic_city_toll_4
+
+		tax_income = 4.5
+		levy_size = 0.15
+		tech_growth_modifier = 0.1
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1006,7 +1105,7 @@ city = {
 		gold_cost = 150
 		build_time = 365
 		
-		garrison_size = 0.025
+		garrison_size = 0.05
 		levy_size = 0.025
 		pikemen = 45
 		
@@ -1019,15 +1118,15 @@ city = {
 	ar_republic_city_guard_headquarters_2 = {
 		desc = ar_republic_city_guard_headquarters_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 225
 		build_time = 547
 
 		upgrades_from = ar_republic_city_guard_headquarters_1
 		
-		garrison_size = 0.035
-		levy_size = 0.035
+		garrison_size = 0.05
+		levy_size = 0.05
 		pikemen = 55
 		
 		ai_creation_factor = 89
@@ -1039,15 +1138,15 @@ city = {
 	ar_republic_city_guard_headquarters_3 = {
 		desc = ar_republic_city_guard_headquarters_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 400
 		build_time = 730
 
 		upgrades_from = ar_republic_city_guard_headquarters_2
 		
-		garrison_size = 0.045
-		levy_size = 0.045
+		garrison_size = 0.05
+		levy_size = 0.05
 		pikemen = 65
 		
 		ai_creation_factor = 88
@@ -1059,16 +1158,36 @@ city = {
 	ar_republic_city_guard_headquarters_4 = {
 		desc = ar_republic_city_guard_headquarters_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 550
 		build_time = 1095
 
 		upgrades_from = ar_republic_city_guard_headquarters_3
 		
-		garrison_size = 0.055
-		levy_size = 0.055
+		garrison_size = 0.05
+		levy_size = 0.05
 		pikemen = 75
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_city_guard_headquarters_5 = {
+		desc = ar_republic_city_guard_headquarters_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 750
+		build_time = 1095
+
+		upgrades_from = ar_republic_city_guard_headquarters_4
+		
+		garrison_size = 0.05
+		levy_size = 0.05
+		pikemen = 85
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1097,14 +1216,14 @@ city = {
 	ar_republic_marketplace_2 = {
 		desc = ar_republic_marketplace_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 150
 		build_time = 547
 
 		upgrades_from = ar_republic_marketplace_1
 		
-		tax_income = 2
+		tax_income = 2.5
 		tech_growth_modifier = 0.035
 		
 		ai_creation_factor = 103
@@ -1116,14 +1235,14 @@ city = {
 	ar_republic_marketplace_3 = {
 		desc = ar_republic_marketplace_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 250
 		build_time = 730
 
 		upgrades_from = ar_republic_marketplace_2
 		
-		tax_income = 2.5
+		tax_income = 3.5
 		tech_growth_modifier = 0.045
 		
 		ai_creation_factor = 102
@@ -1135,16 +1254,36 @@ city = {
 	ar_republic_marketplace_4 = {
 		desc = ar_republic_marketplace_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 400
 		build_time = 1095
 
 		upgrades_from = ar_republic_marketplace_3
 		
-		tax_income = 4
+		tax_income = 4.5
 		tech_growth_modifier = 0.055
 		local_tax_modifier = 0.055
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_marketplace_5 = {
+		desc = ar_republic_marketplace_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = ar_republic_marketplace_4
+		
+		tax_income = 5.5
+		tech_growth_modifier = 0.06
+		local_tax_modifier = 0.06
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1161,8 +1300,8 @@ city = {
 		gold_cost = 100
 		build_time = 365
 		
-		economy_techpoints = 0.025
-		local_tax_modifier = 0.025
+		economy_techpoints = 0.1
+		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -1173,15 +1312,15 @@ city = {
 	ar_republic_caravansary_2 = {
 		desc = ar_republic_caravansary_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 150
 		build_time = 547
 
 		upgrades_from = ar_republic_caravansary_1
 		
-		economy_techpoints = 0.035
-		local_tax_modifier = 0.035
+		economy_techpoints = 0.1
+		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -1192,15 +1331,15 @@ city = {
 	ar_republic_caravansary_3 = {
 		desc = ar_republic_caravansary_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 250
 		build_time = 730
 
 		upgrades_from = ar_republic_caravansary_2
 		
-		economy_techpoints = 0.05
-		local_tax_modifier = 0.05
+		economy_techpoints = 0.1
+		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1211,21 +1350,41 @@ city = {
 	ar_republic_caravansary_4 = {
 		desc = ar_republic_caravansary_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 400
 		build_time = 1095
 
 		upgrades_from = ar_republic_caravansary_3
 		
-		economy_techpoints = 0.075
-		local_tax_modifier = 0.075
+		economy_techpoints = 0.1
+		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
 	}
+
+	ar_republic_caravansary_5 = {
+		desc = ar_republic_caravansary_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+		gold_cost = 550
+		build_time = 1095
+
+		upgrades_from = ar_republic_caravansary_4
+		
+		economy_techpoints = 0.1
+		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
 	ar_republic_gold_minter_1 = {
 		desc = ar_republic_gold_minter_desc
 		trigger = {
@@ -1233,10 +1392,10 @@ city = {
 			TECH_CONSTRUCTION = 3
 		}
 		prerequisites = { ct_wall_2 ct_wall_q_2 }
-		gold_cost = 250
+		gold_cost = 450
 		build_time = 365
 		
-		tax_income = 2.5
+		tax_income = 4.5
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 96
@@ -1248,15 +1407,15 @@ city = {
 	ar_republic_gold_minter_2 = {
 		desc = ar_republic_gold_minter_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 3
 		}
-		gold_cost = 350
+		gold_cost = 550
 		build_time = 547
 
 		upgrades_from = ar_republic_gold_minter_1
 		
-		tax_income = 3
+		tax_income = 5.5
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 95
@@ -1268,15 +1427,15 @@ city = {
 	ar_republic_gold_minter_3 = {
 		desc = ar_republic_gold_minter_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 4
 		}
-		gold_cost = 500
+		gold_cost = 700
 		build_time = 730
 
 		upgrades_from = ar_republic_gold_minter_2
 		
-		tax_income = 3.5
+		tax_income = 6.5
 		local_tax_modifier = 0.075
 		
 		ai_creation_factor = 94
@@ -1288,16 +1447,36 @@ city = {
 	ar_republic_gold_minter_4 = {
 		desc = ar_republic_gold_minter_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 5
 		}
-		gold_cost = 650
+		gold_cost = 900
 		build_time = 1095
 
 		upgrades_from = ar_republic_gold_minter_3
 		
-		tax_income = 5
+		tax_income = 7.5
 		local_tax_modifier = 0.1
+		
+		ai_creation_factor = 93
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	ar_republic_gold_minter_5 = {
+		desc = ar_republic_gold_minter_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_CONSTRUCTION = 6
+		}
+		gold_cost = 1200
+		build_time = 1095
+
+		upgrades_from = ar_republic_gold_minter_4
+		
+		tax_income = 8.5
+		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 93
 		add_number_to_name = no
@@ -1312,10 +1491,10 @@ city = {
 			TECH_TRADE_PRACTICES = 2
 		}
 		prerequisites = { ct_wall_2 ct_wall_q_2 }
-		gold_cost = 150
+		gold_cost = 300
 		build_time = 365
 		
-		local_tax_modifier = 0.05
+		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -1326,15 +1505,15 @@ city = {
 	goods_merchant_2 = {
 		desc = goods_merchant_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_TRADE_PRACTICES = 3
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
 		}
-		gold_cost = 225
+		gold_cost = 450
 		build_time = 547
 
 		upgrades_from = goods_merchant_1
 		
-		local_tax_modifier = 0.05
+		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -1345,15 +1524,15 @@ city = {
 	goods_merchant_3 = {
 		desc = goods_merchant_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_TRADE_PRACTICES = 4
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
 		}
-		gold_cost = 400
+		gold_cost = 550
 		build_time = 730
 
 		upgrades_from = goods_merchant_2
 		
-		local_tax_modifier = 0.075
+		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -1364,15 +1543,15 @@ city = {
 	goods_merchant_4 = {
 		desc = goods_merchant_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 5
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
-		gold_cost = 550
+		gold_cost = 700
 		build_time = 1095
 
 		upgrades_from = goods_merchant_3
 		
-		local_tax_modifier = 0.1
+		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1383,10 +1562,10 @@ city = {
 	goods_merchant_5 = {
 		desc = goods_merchant_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 6
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_TRADE_PRACTICES = 5
 		}
-		gold_cost = 750
+		gold_cost = 850
 		build_time = 1350
 
 		upgrades_from = goods_merchant_4
@@ -1408,8 +1587,8 @@ city = {
 		gold_cost = 150
 		build_time = 365
 		
-		light_infantry = 45
-		
+		light_infantry = 65
+		archers = 10		
 		ai_creation_factor = 89
 		add_number_to_name = no
 
@@ -1419,14 +1598,15 @@ city = {
 	ar_republic_barracks_2 = {
 		desc = ar_republic_barracks_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 225
 		build_time = 547
 
 		upgrades_from = ar_republic_barracks_1
 		
-		light_infantry = 55
+		light_infantry = 75
+		archers = 45
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1437,14 +1617,15 @@ city = {
 	ar_republic_barracks_3 = {
 		desc = ar_republic_barracks_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 400
 		build_time = 730
 
 		upgrades_from = ar_republic_barracks_2
 		
-		light_infantry = 65
+		light_infantry = 85
+		archers = 55
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1455,14 +1636,15 @@ city = {
 	ar_republic_barracks_4 = {
 		desc = ar_republic_barracks_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 550
 		build_time = 1095
 
 		upgrades_from = ar_republic_barracks_3
 		
-		light_infantry = 75
+		light_infantry = 95
+		archers = 65
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1480,7 +1662,8 @@ city = {
 
 		upgrades_from = ar_republic_barracks_4
 		
-		light_infantry = 75
+		light_infantry = 105
+		archers = 75
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1497,7 +1680,7 @@ city = {
 		gold_cost = 150
 		build_time = 365
 		
-		archers = 45
+		archers = 65
 		
 		ai_creation_factor = 89
 		add_number_to_name = no
@@ -1508,14 +1691,14 @@ city = {
 	ar_republic_archery_2 = {
 		desc = ar_republic_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 225
 		build_time = 547
 
 		upgrades_from = ar_republic_archery_1
 		
-		archers = 55
+		archers = 75
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1526,14 +1709,14 @@ city = {
 	ar_republic_archery_3 = {
 		desc = ar_republic_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 400
 		build_time = 730
 
 		upgrades_from = ar_republic_archery_2
 		
-		archers = 65
+		archers = 85
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1544,14 +1727,14 @@ city = {
 	ar_republic_archery_4 = {
 		desc = ar_republic_archery_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 550
 		build_time = 1095
 
 		upgrades_from = ar_republic_archery_3
 		
-		archers = 75
+		archers = 95
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1569,7 +1752,7 @@ city = {
 
 		upgrades_from = ar_republic_archery_4
 		
-		archers = 75
+		archers = 105
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1587,7 +1770,7 @@ city = {
 		gold_cost = 225
 		build_time = 365
 		
-		tax_income = 1.5
+		tax_income = 2.5
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 104
@@ -1599,15 +1782,15 @@ city = {
 	merchant_forum_2 = {
 		desc = merchant_forum_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_TRADE_PRACTICES = 3
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_TRADE_PRACTICES = 2
 		}
 		gold_cost = 350
 		build_time = 547
 
 		upgrades_from = merchant_forum_1
 		
-		tax_income = 1
+		tax_income = 3.5
 		local_tax_modifier = 0.05
 		
 		ai_creation_factor = 103
@@ -1619,15 +1802,15 @@ city = {
 	merchant_forum_3 = {
 		desc = merchant_forum_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_TRADE_PRACTICES = 4
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_TRADE_PRACTICES = 3
 		}
 		gold_cost = 575
 		build_time = 730
 
 		upgrades_from = merchant_forum_2
 		
-		tax_income = 2
+		tax_income = 4.5
 		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 102
@@ -1639,15 +1822,15 @@ city = {
 	merchant_forum_4 = {
 		desc = merchant_forum_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 5
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_TRADE_PRACTICES = 4
 		}
 		gold_cost = 700
 		build_time = 1095
 
 		upgrades_from = merchant_forum_3
 		
-		tax_income = 2
+		tax_income = 5.5
 		local_tax_modifier = 0.1
 		
 		ai_creation_factor = 101
@@ -1659,15 +1842,15 @@ city = {
 	merchant_forum_5 = {
 		desc = merchant_forum_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
-			TECH_TRADE_PRACTICES = 6
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_TRADE_PRACTICES = 5
 		}
 		gold_cost = 825
 		build_time = 1350
 
 		upgrades_from = merchant_forum_4
 		
-		tax_income = 3
+		tax_income = 6.5
 		local_tax_modifier = 0.15
 		
 		ai_creation_factor = 100
@@ -1685,8 +1868,8 @@ city = {
 		gold_cost = 225
 		build_time = 365
 		
-		garrison_size = 0.025
-		levy_size = 0.025
+		garrison_size = 0.1
+		levy_size = 0.1
 		
 		ai_creation_factor = 89
 		add_number_to_name = no
@@ -1697,15 +1880,15 @@ city = {
 	merchant_inn_2 = {
 		desc = merchant_inn_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		gold_cost = 350
 		build_time = 547
 
 		upgrades_from = merchant_inn_1
 		
-		garrison_size = 0.035
-		levy_size = 0.035
+		garrison_size = 0.15
+		levy_size = 0.15
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1716,15 +1899,15 @@ city = {
 	merchant_inn_3 = {
 		desc = merchant_inn_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 4
 		}
 		gold_cost = 575
 		build_time = 730
 
 		upgrades_from = merchant_inn_2
 		
-		garrison_size = 0.045
-		levy_size = 0.045
+		garrison_size = 0.2
+		levy_size = 0.2
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1735,15 +1918,15 @@ city = {
 	merchant_inn_4 = {
 		desc = merchant_inn_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
+			TECH_CITY_CONSTRUCTION = 5
 		}
 		gold_cost = 700
 		build_time = 1095
 
 		upgrades_from = merchant_inn_3
 		
-		garrison_size = 0.055
-		levy_size = 0.055
+		garrison_size = 0.25
+		levy_size = 0.25
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1754,15 +1937,15 @@ city = {
 	merchant_inn_5 = {
 		desc = merchant_inn_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 8
+			TECH_CITY_CONSTRUCTION = 6
 		}
 		gold_cost = 825
 		build_time = 1350
 
 		upgrades_from = merchant_inn_4
 		
-		garrison_size = 0.075
-		levy_size = 0.075
+		garrison_size = 0.30
+		levy_size = 0.30
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1779,9 +1962,9 @@ city = {
 		gold_cost = 550
 		build_time = 730
 		
-		levy_size = 0.05
+		levy_size = 0.1
 		disease_defence = -0.0025
-		tax_income = 3
+		tax_income = 4.5
 		
 		ai_creation_factor = 96
 		add_number_to_name = no
@@ -1792,17 +1975,16 @@ city = {
 	republic_district_2 = {
 		desc = republic_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 4
-			TECH_CONSTRUCTION = 3
+			TECH_CITY_CONSTRUCTION = 3
 		}
 		prerequisites = { ct_marketplace_4 }
 		gold_cost = 700
 		build_time = 1095
 		upgrades_from = republic_district_1
 		
-		levy_size = 0.05
+		levy_size = 0.15
 		disease_defence = -0.0025
-		tax_income = 3
+		tax_income = 5.5
 		
 		ai_creation_factor = 95
 		add_number_to_name = no
@@ -1813,8 +1995,8 @@ city = {
 	republic_district_3 = {
 		desc = republic_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 5
-			TECH_CONSTRUCTION = 4
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 3
 		}
 		prerequisites = { ct_marketplace_5 }
 		gold_cost = 950
@@ -1822,9 +2004,9 @@ city = {
 
 		upgrades_from = republic_district_2
 		
-		levy_size = 0.05
+		levy_size = 0.2
 		disease_defence = -0.0025
-		tax_income = 3
+		tax_income = 6.5
 		
 		ai_creation_factor = 94
 		add_number_to_name = no
@@ -1835,8 +2017,8 @@ city = {
 	republic_district_4 = {
 		desc = republic_district_desc
 		trigger = {
-			TECH_CITY_CONSTRUCTION = 6
-			TECH_CONSTRUCTION = 5
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 4
 		}
 		prerequisites = { ct_marketplace_5 }
 		gold_cost = 1100
@@ -1844,10 +2026,10 @@ city = {
 
 		upgrades_from = republic_district_3
 		
-		levy_size = 0.075
+		levy_size = 0.25
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 3
+		tax_income = 7.5
 		
 		ai_creation_factor = 93
 		add_number_to_name = no
@@ -1859,7 +2041,7 @@ city = {
 		desc = republic_district_desc
 		trigger = {
 			TECH_CITY_CONSTRUCTION = 6
-			TECH_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 5
 		}
 		prerequisites = { ct_marketplace_5 }
 		gold_cost = 1400
@@ -1867,10 +2049,10 @@ city = {
 
 		upgrades_from = republic_district_4
 		
-		levy_size = 0.1
+		levy_size = 0.35
 		disease_defence = -0.0025
 		local_revolt_risk = 0.001
-		tax_income = 3
+		tax_income = 8.5
 		
 		ai_creation_factor = 92
 		add_number_to_name = no

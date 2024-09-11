@@ -1,9 +1,10 @@
 decisions = {
 	end_hre_crisis_1 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = hre_crisis_finished_1 }
 			has_landed_title = e_hre
 			has_global_flag = hre_crisis_1
 		}
@@ -28,9 +29,10 @@ decisions = {
 
 	end_hre_crisis_2 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = hre_crisis_finished_2 }
 			has_landed_title = e_hre
 			has_global_flag = hre_crisis_2
 		}
@@ -55,9 +57,10 @@ decisions = {
 
 	end_hre_crisis_3 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = hre_crisis_finished_3 }
 			has_landed_title = e_hre
 			has_global_flag = hre_crisis_3
 		}
@@ -82,9 +85,10 @@ decisions = {
 
 	end_hre_crisis_4 = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = hre_crisis_finished_4 }
 			has_landed_title = e_hre
 			has_global_flag = hre_crisis_4
 		}
@@ -109,10 +113,16 @@ decisions = {
 
 	finalize_hre_crisis = {
 		is_high_prio = yes
-		ai_check_interval = 2
+		ai_check_interval = 1
 
 		potential = {
 			NOT = { has_global_flag = hre_crisis_done }
+			OR = {
+				NOT = { has_global_flag = hre_crisis_1 }
+				NOT = { has_global_flag = hre_crisis_2 }
+				NOT = { has_global_flag = hre_crisis_3 }
+				NOT = { has_global_flag = hre_crisis_4 }
+			}
 			has_landed_title = e_hre
 			AND = {
 				has_global_flag = hre_crisis_finished_1
@@ -123,6 +133,8 @@ decisions = {
 		}
 
 		allow = {
+			independent = yes
+			religion_group = christian
 		}
 
 		effect = {

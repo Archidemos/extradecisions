@@ -27,6 +27,7 @@ wonder_pyramid_giza = {
 	}
 	background_overrides = {
 		desert = snow
+		farmlands = desert
 	}
 	available_upgrades = {
 		# UNIQUE:
@@ -292,9 +293,12 @@ wonder_mausoleum_halicarnassus = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
+			short_reign_length = -1
+			diplomacy = 1
 		}
 	}
 	stage = {
@@ -309,10 +313,12 @@ wonder_mausoleum_halicarnassus = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.3
 			short_reign_length = -1
+			diplomacy = 2
 		}
 	}
 	stage = {
@@ -327,6 +333,7 @@ wonder_mausoleum_halicarnassus = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.4
@@ -334,6 +341,7 @@ wonder_mausoleum_halicarnassus = {
 				morale_offence = 0.05
 			}
 			short_reign_length = -2
+			diplomacy = 2
 			health = 0.5
 		}
 	}
@@ -403,6 +411,7 @@ wonder_lighthouse_alexandria = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -421,6 +430,7 @@ wonder_lighthouse_alexandria = {
 		upgrade_slots = 2
 		local_modifier = {
 			local_tax_modifier = 0.05
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
@@ -440,6 +450,7 @@ wonder_lighthouse_alexandria = {
 		local_modifier = {
 			local_tax_modifier = 0.1
 			trade_route_value = 0.1
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.3
@@ -628,10 +639,12 @@ wonder_apostolic_palace = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			culture_techpoints = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			learning = 1
 		}
 	}
 	stage = {
@@ -652,6 +665,7 @@ wonder_apostolic_palace = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
 			learning = 1
+			health = 0.5
 		}
 	}
 	stage = {
@@ -759,9 +773,11 @@ wonder_house_of_wisdom = {
 		upgrade_slots = 2
 		local_modifier = {
 			culture_techpoints = 0.05
+			military_techpoints = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			learning = 1
 		}
 	}
 	stage = {
@@ -777,9 +793,14 @@ wonder_house_of_wisdom = {
 		upgrade_slots = 2
 		local_modifier = {
 			culture_techpoints = 0.05
+			military_techpoints = 0.05
+			local_tax_modifier = 0.05
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			learning = 1
+			health = 0.5
 		}
 	}
 	stage = {
@@ -795,9 +816,14 @@ wonder_house_of_wisdom = {
 		upgrade_slots = 2
 		local_modifier = {
 			culture_techpoints = 0.05
+			military_techpoints = 0.05
+			local_tax_modifier = 0.05
+			trade_route_value = 10
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			learning = 2
+			health = 0.5
 		}
 	}
 }
@@ -865,9 +891,11 @@ wonder_underground_city_petra = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
+			stewardship = 1
 		}
 	}
 	stage = {
@@ -882,10 +910,12 @@ wonder_underground_city_petra = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
 			stewardship = 1
+			diplomacy = 1
 		}
 	}
 	stage = {
@@ -900,12 +930,13 @@ wonder_underground_city_petra = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.4
 			global_tax_modifier = 0.05
-			stewardship = 1
-			diplomacy = 1
+			stewardship = 2
+			diplomacy = 2
 		}
 	}
 }
@@ -1122,6 +1153,8 @@ wonder_cathedral_notre_dame = {
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.1
+			castle_vassal_min_levy = 0.025
+			castle_vassal_max_levy = 0.025
 		}
 	}
 	stage = {
@@ -1139,7 +1172,10 @@ wonder_cathedral_notre_dame = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
-			monthly_character_piety = 0.2
+			vassal_opinion = 5
+			castle_vassal_min_levy = 0.025
+			castle_vassal_max_levy = 0.025
+			diplomacy = 2
 		}
 	}
 	stage = {
@@ -1157,7 +1193,11 @@ wonder_cathedral_notre_dame = {
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
-			monthly_character_piety = 0.2
+			vassal_opinion = 5
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			diplomacy = 2
+			dominican_wealth_gain = 1
 		}
 	}
 }

@@ -165,7 +165,20 @@ decisions = {
 				type = plc_bloodline
 				inheritance = patrilineal
 			}
-			
+			custom_tooltip = {
+				text = "The De-Jure Kingdom title of the Wendish Empire will be transfered to the Commonwealth and will also recieve the Kingdom of Galicia-Volhynia"
+				hidden_effect = {	
+					k_pomerania = { de_jure_liege = e_plc }
+					k_poland = { de_jure_liege = e_plc }
+					k_lithuania	 = { de_jure_liege = e_plc }
+					k_galicia-volhynia = { de_jure_liege = e_plc }
+					
+					activate_title = {
+						title = e_wendish_empire
+						status = no
+					}
+				}
+			}
 			if = {
 				limit = {
 					NOT = {
@@ -198,6 +211,8 @@ decisions = {
 			}
 			
 			528 = { set_name = "Warsaw" }
+			
+			hidden_tooltip = { any_player = { narrative_event = { id = MP.107 } } }
 		}
 	}
 	
@@ -721,7 +736,7 @@ decisions = {
 		}
 		
 		allow = {
-			prestige = 10000
+			prestige = 5000
 			trigger_if = {
 				limit = { e_hre = { has_holder = no } }
 				completely_controls = k_germany
@@ -737,6 +752,7 @@ decisions = {
 		effect = {
 			old_german_dejure_effect = yes
 			set_global_flag = hre_removed
+			prestige = 10000
 			activate_title = {
 				title = e_germany
 				status = yes

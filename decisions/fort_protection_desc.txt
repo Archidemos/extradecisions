@@ -1,56 +1,56 @@
-settlement_decisions = {
-	fortify_province = {
-		ai = no
-
-		from_potential = {
-			is_playable = yes
-			is_feudal = yes
-		}
-		
-		potential = {
-		}
-
-		allow = {
-			OR = {
-				holder_scope = {
-					character = FROM
-				}
-				controlled_by = FROM				
-			}
-			FROM = { wealth = 100 }
-			location = { has_fort = yes }
-		}
-		
-		effect = {
-			FROM = { wealth = -100 }
-			location = {
-				add_province_modifier = {
-					name = fort_protection
-					years = 2
-				}
-			}
-		}
-	}
-	destroy_fortify_province = {
-		ai = no
-
-		from_potential = {
-			is_playable = yes
-			is_feudal = yes
-		}
-		
-		potential = {
-			location = { has_province_modifier = fort_protection }
-		}
-
-		allow = {
-			controlled_by = FROM
-		}
-		
-		effect = {
-			location = {
-				remove_province_modifier = fort_protection
-			}
-		}
-	}
-}
+#settlement_decisions = {
+#	fortify_province = {
+#		ai = no
+#
+#		from_potential = {
+#			is_playable = yes
+#			is_feudal = yes
+#		}
+#		
+#		potential = {
+#		}
+#
+#		allow = {
+#			OR = {
+#				holder_scope = {
+#					character = FROM
+#				}
+#				controlled_by = FROM				
+#			}
+#			FROM = { wealth = 100 }
+#			location = { has_fort = yes }
+#		}
+#		
+#		effect = {
+#			FROM = { wealth = -100 }
+#			location = {
+#				add_province_modifier = {
+#					name = fort_protection
+#					years = 2
+#				}
+#			}
+#		}
+#	}
+#	destroy_fortify_province = {
+#		ai = no
+#
+#		from_potential = {
+#			is_playable = yes
+#			is_feudal = yes
+#		}
+#		
+#		potential = {
+#			location = { has_province_modifier = fort_protection }
+#		}
+#
+#		allow = {
+#			controlled_by = FROM
+#		}
+#		
+#		effect = {
+#			location = {
+#				remove_province_modifier = fort_protection
+#			}
+#		}
+#	}
+#}

@@ -2766,6 +2766,7 @@ tributary_permanent_cb = { # New8
 						}
 					}
 				}
+				prestige = 250
 				TECH_MAJESTY = 1
 			}
 			conditional_tooltip = {
@@ -2774,6 +2775,7 @@ tributary_permanent_cb = { # New8
 						region = world_europe
 					}
 				}
+				prestige = 500
 				TECH_MAJESTY = 2
 			}
 		}
@@ -2955,12 +2957,15 @@ tributary_permanent_cb = { # New8
 		ROOT = {
 			show_scope_change = no
 			prestige = 200
-			make_tributary = { who = FROM tributary_type = permanent }
-			add_character_modifier = {
-				modifier = recently_released_vassal
-				years = 10
-				inherit = yes
+			if = {
+				limit = { NOT = { has_character_modifier = recently_released_vassal } }
+				add_character_modifier = {
+					modifier = recently_released_vassal
+					years = 15
+					inherit = yes
+				}
 			}
+			make_tributary = { who = FROM tributary_type = permanent }
 		}
 		
 		if  = {
@@ -3280,10 +3285,13 @@ tributary_nomad_cb = { # New9
 		ROOT = {
 			show_scope_change = no
 			prestige = 200
-			add_character_modifier = {
-				modifier = recently_released_vassal
-				years = 10
-				inherit = yes
+			if = {
+				limit = { NOT = { has_character_modifier = recently_released_vassal } }
+				add_character_modifier = {
+					modifier = recently_released_vassal
+					years = 15
+					inherit = yes
+				}
 			}
 			make_tributary = { who = FROM tributary_type = nomadic }
 		}

@@ -123,6 +123,8 @@ action_statecraft = {
 
 	offmap = yes
 	
+	threat_decay_speed = 0.015
+	
 	events = { MNM.78000 MNM.78003 } 
 }
 
@@ -223,6 +225,7 @@ action_oversee_construction = {
 	}
 	
 	local_build_time_modifier = -0.025
+	local_build_cost_modifier = -0.025
 	
 	events = { 923 924 }
 }
@@ -450,8 +453,8 @@ action_train_troops = {
 		}
 	}
 	
-	levy_size = 0.025
-	levy_reinforce_rate = 0.05
+	levy_size = 0.05
+	levy_reinforce_rate = 0.1
 	
 	events = { 941 942 }
 }

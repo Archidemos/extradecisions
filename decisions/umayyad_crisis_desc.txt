@@ -4,6 +4,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = umayyad_crisis_1_taken }
 			independent = yes
 			AND = {
 				OR = {
@@ -39,6 +40,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
+			NOT = { has_global_flag = umayyad_crisis_2_taken }
 			independent = yes
 			AND = {
 				OR = {
@@ -95,8 +97,8 @@ decisions = {
 		effect = {
 			prestige = -1000
 			wealth = -400
-			set_global_flag = umayyad_crisis_3_taken
 			clr_global_flag = umayyad_crisis_3
+			set_global_flag = umayyad_crisis_3_taken
 			ROOT = { narrative_event = { id = UMM.7 } }
 			custom_tooltip = {
 				text = umayyad_army_warning
@@ -124,7 +126,6 @@ decisions = {
 					has_landed_title = k_andalusia
 					has_landed_title = e_cordoba
 				}
-				religion_group = muslim
 				has_global_flag = umayyad_crisis_finished_1
 				has_global_flag = umayyad_crisis_finished_2
 				has_global_flag = umayyad_crisis_finished_3
@@ -133,6 +134,7 @@ decisions = {
 
 		allow = {
 			independent = yes
+			religion_group = muslim
 		}
 
 		effect = {
@@ -148,7 +150,7 @@ decisions = {
 			add_claim = d_toulouse
 			clr_global_flag = umayyad_crisis_finished_1
 			clr_global_flag = umayyad_crisis_finished_2
-			clr_global_flag = umayyad_crisis_finished_3			
+			clr_global_flag = umayyad_crisis_finished_3
 			any_player = { narrative_event = { id = UMM.5 } }
 		}
 		ai_will_do = {

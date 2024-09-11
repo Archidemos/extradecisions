@@ -12,6 +12,7 @@ decisions = {
 				culture = english
 				culture = norman
 				culture = frankish
+				culture = saxon
 			}
 			NOT = { has_global_flag = angevin_formed }
 		}
@@ -30,23 +31,54 @@ decisions = {
 		effect = {
 			wealth = -500
 			prestige = 1000
-			
+			create_bloodline = {
+				type = bloodline_angevin
+			}			
 			add_claim = d_valois
 			add_claim = d_berry
 			add_claim = d_champagne
 			add_claim = d_orleans
 			add_claim = d_picardie
+
+			activate_title = { title = e_angevin_empire status = yes }			
+			primary_title = {
+				e_angevin_empire = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			
+			hidden_effect = {	
+				k_france = { de_jure_liege = e_angevin_empire }
+				k_brittany = { de_jure_liege = e_angevin_empire }
+				k_aquitaine	 = { de_jure_liege = e_angevin_empire }
+				k_narbonensis = { de_jure_liege = e_angevin_empire }
+				k_burgundy = { de_jure_liege = e_angevin_empire }
+				k_lotharingia = { de_jure_liege = e_angevin_empire }
+				k_england = { de_jure_liege = e_angevin_empire }
+				k_wales = { de_jure_liege = e_angevin_empire }
+				k_scotland = { de_jure_liege = e_angevin_empire }
+				k_ireland = { de_jure_liege = e_angevin_empire }
+				
+				activate_title = {
+					title = e_france
+					status = no
+				}
+				activate_title = {
+					title = e_britannia
+					status = no
+				}
+			}
 			
 			add_character_modifier = {
 				name = angevin_fervor
 				duration = -1
 			}
 			
-			k_england = {
-				set_coa = k_angevin_empire
-			}
-			
 			set_global_flag = angevin_formed
+			
+			hidden_tooltip = { any_player = { narrative_event = { id = MP.106 } } }
 		}
 	}
 	

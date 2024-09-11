@@ -121,7 +121,7 @@ hospital = {
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		disease_defence = 0.04
+		disease_defence = 0.05
 		liege_piety = 0.10
 		church_opinion = 2
 		
@@ -135,14 +135,14 @@ hospital = {
 		prerequisites = { hospital_building_1 }
 		desc = chapel_building_desc
 		trigger = { TECH_CONSTRUCTION = 3 }
-		gold_cost = 600
+		gold_cost = 500
 		build_time = 365
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		disease_defence = 0.02
+		disease_defence = 0.05
 		liege_piety = 0.1
-		church_opinion = 2
+		church_opinion = 5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -160,7 +160,8 @@ hospital = {
 		add_number_to_name = no
 		
 		liege_prestige = 0.25
-		economy_techpoints = 0.04
+		economy_techpoints = 0.05
+		tax_income = 1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -179,6 +180,7 @@ hospital = {
 		
 		liege_prestige = 0.25
 		liege_piety = 0.10
+		tax_income = 2.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -196,7 +198,7 @@ hospital = {
 		add_number_to_name = no
 		
 		tech_growth_modifier = 0.25
-		culture_techpoints = 0.03
+		culture_techpoints = 0.05
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -214,7 +216,7 @@ hospital = {
 		add_number_to_name = no
 		
 		tech_growth_modifier = 0.25
-		disease_defence = 0.02
+		disease_defence = 0.05
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -234,10 +236,10 @@ hospital = {
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		disease_defence = 0.02
-		culture_techpoints = 0.03
-		economy_techpoints = 0.03
-		military_techpoints = 0.03
+		disease_defence = 0.05
+		culture_techpoints = 0.05
+		economy_techpoints = 0.05
+		military_techpoints = 0.05
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -257,8 +259,8 @@ hospital = {
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		culture_techpoints = 0.03
-		military_techpoints = 0.03
+		culture_techpoints = 0.05
+		military_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -278,8 +280,8 @@ hospital = {
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		culture_techpoints = 0.03
-		economy_techpoints = 0.03
+		culture_techpoints = 0.05
+		economy_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -294,12 +296,12 @@ hospital = {
 			pharmacology_laboratory_1
 		}
 		trigger = { TECH_CONSTRUCTION = 4 }
-		gold_cost = 650
+		gold_cost = 550
 		build_time = 365
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		tax_income = 2
+		tax_income = 5
 		local_tax_modifier = 0.05
 
 		extra_tech_building_start = 10.0
@@ -320,7 +322,8 @@ hospital = {
 		ai_creation_factor = 5
 		add_number_to_name = no
 		
-		disease_defence = 0.02
+		disease_defence = 0.05
+		local_revolt_risk = 0.05
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}

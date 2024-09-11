@@ -10,7 +10,7 @@ character_event = {
 		} 
 		text = EVTDESC_TOG_3320
 	}
-	picture = { 
+	picture = {
 		trigger = { is_female = no } 
 		picture = GFX_evt_vikings_arriving_oldgods
 	}
@@ -29,6 +29,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
+		government = pirate_republic_government
 		OR = {
 			has_dlc = "The Old Gods"
 			any_owned_bloodline = {
@@ -52,7 +53,7 @@ character_event = {
 		name = EVTOPTA_TOG_3320
 		if = {
 			limit = { 
-				government = pirate_republic_government
+				ROOT = { government = pirate_republic_government }
 			}
 		}
 		add_trait = pirate_solo
@@ -66,7 +67,8 @@ character_event = {
 character_event = {
 	id = PIR.2
 	desc = { 
-		trigger = { 
+		trigger = {
+			government = pirate_republic_government
 			OR = {
 				religion = norse_pagan
 				religion = norse_pagan_reformed
@@ -111,7 +113,7 @@ character_event = {
 		government = pirate_republic_government
 		trait = pirate_solo
 		NOR = { 
-			trait = pirate_hero
+			trait = legendary_pirate
 			trait = infamous_pirate
 		}
 		check_variable = { which = viking_raids value = 50 }

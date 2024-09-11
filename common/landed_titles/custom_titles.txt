@@ -206,3 +206,168 @@ d_qizilbash = {
 
 	mercenary_type = qizilbash_composition
 }
+
+### Sunni Holy Orders ###
+
+d_ghilman = {
+	color={ 60 165 80 }
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 627 # Kara-Kum
+	
+	# Hire Trigger
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				NOT = {
+					is_alternate_start = yes
+				}
+			}
+			religion_group = muslim
+		}
+	}
+	
+	# Parent Religion 
+	religion = sunni
+	
+	holy_order = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to banking, etc
+	monthly_income = 10 # (Must be an integer between 1 and 512)
+	
+	mercenary_type = ghilman_composition
+}
+
+d_nasr = {
+	color={ 60 165 80 }
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 733 # Aleppo
+	
+	# Hire Trigger
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				NOT = {
+					is_alternate_start = yes
+				}
+			}
+			religion_group = muslim
+		}
+	}
+	
+	# Parent Religion 
+	religion = sunni
+	
+	holy_order = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to banking, etc
+	monthly_income = 10 # (Must be an integer between 1 and 512)
+	
+	mercenary_type = ghilman_composition
+}
+
+### Shiite Holy Orders ###
+
+
+d_ali = {
+	color={ 60 165 80 }
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 694 # Karbala
+	
+	# Hire Trigger
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				NOT = {
+					is_alternate_start = yes
+				}
+			}
+			religion_group = muslim
+		}
+	}
+	
+	# Parent Religion 
+	religion = shiite
+	
+	holy_order = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to banking, etc
+	monthly_income = 10 # (Must be an integer between 1 and 512)
+	
+	mercenary_type = ghilman_composition
+}
+
+d_husseyin = {
+	color={ 60 165 80 }
+	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
+
+	capital = 697 # Mosul
+	
+	# Hire Trigger
+	allow = {
+		conditional_tooltip = {
+			trigger = {
+				NOT = {
+					is_alternate_start = yes
+				}
+			}
+			religion_group = muslim
+		}
+	}
+	
+	# Parent Religion 
+	religion = shiite
+	
+	holy_order = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to banking, etc
+	monthly_income = 10 # (Must be an integer between 1 and 512)
+	
+	mercenary_type = ghilman_composition
+}
