@@ -9,7 +9,10 @@ character_event = { #check start date
 	only_playable = yes
 	
 	trigger = {
-		NOT = { start_date >= 936.1.1 }
+		NOR = {
+			start_date >= 936.1.1
+			start_date <= 700.1.1
+		}
 		NOT = { has_global_flag = normans_spawned }
 		trigger_if = {
 			limit = { start_date == 867.1.1 }
