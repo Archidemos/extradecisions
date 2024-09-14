@@ -11,6 +11,7 @@ narrative_event = { #The Conquest of Iraq complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -68,6 +69,7 @@ narrative_event = { #The Conquest of the Ghassanids complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -134,6 +136,7 @@ narrative_event = { #The Conquest of Jerusalem complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -197,6 +200,7 @@ narrative_event = { #The Conquest of Syria complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -291,6 +295,7 @@ narrative_event = { #The Conquest of Mesopotamia complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -343,6 +348,7 @@ narrative_event = { #The Conquest of Egypt complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -425,6 +431,7 @@ narrative_event = { #The Conquest of Persia complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -514,6 +521,7 @@ narrative_event = { #The Conquest of Sistan complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -590,6 +598,7 @@ narrative_event = { #The Conquest of Khorasan complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -662,6 +671,7 @@ narrative_event = { #The Conquest of Armenia complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -683,69 +693,74 @@ narrative_event = { #The Conquest of Armenia complete
 				killer = ROOT
 			}
 		}
-		ROOT = {
-			c_klarjeti = {
-				grant_title = PREV
-			}
-			c_kartli = {
-				grant_title = PREV
-			}
-			c_kakheti = {
-				grant_title = PREV
-			}
-			c_vaspurakan = {
-				grant_title = PREV
-			}
-			c_masis = {
-				grant_title = PREV
-			}
-			c_dwin = {
-				grant_title = PREV
-			}
-			c_tao = {
-				grant_title = PREV
-			}
-			c_lori = {
-				grant_title = PREV
-			}
+		custom_tooltip = {
+			text = "As you have conquered Armenia, you will go a little further up the mountains and take a little more land before retreating back"
+			hidden_tooltip = {
+				ROOT = {
+					c_klarjeti = {
+						grant_title = PREV
+					}
+					c_kartli = {
+						grant_title = PREV
+					}
+					c_kakheti = {
+						grant_title = PREV
+					}
+					c_vaspurakan = {
+						grant_title = PREV
+					}
+					c_masis = {
+						grant_title = PREV
+					}
+					c_dwin = {
+						grant_title = PREV
+					}
+					c_tao = {
+						grant_title = PREV
+					}
+					c_lori = {
+						grant_title = PREV
+					}
 
-			c_albania = {
-				grant_title = PREV
-			}
-			c_shemakha	= {
-				grant_title = PREV
-			}
-			c_azerbaijan = {
-				grant_title = PREV
-			}
-			c_shirvan = {
-				grant_title = PREV
-			}
-			c_derbent = {
-				grant_title = PREV
-			}
-			c_balanjar = {
-				grant_title = PREV
-			}
+					c_albania = {
+						grant_title = PREV
+					}
+					c_shemakha	= {
+						grant_title = PREV
+					}
+					c_azerbaijan = {
+						grant_title = PREV
+					}
+					c_shirvan = {
+						grant_title = PREV
+					}
+					c_derbent = {
+						grant_title = PREV
+					}
+					c_balanjar = {
+						grant_title = PREV
+					}
 
-			c_teluch = {
-				grant_title = PREV
-			}
-			c_adana = {
-				grant_title = PREV
-			}
-			c_tarsos = {
-				grant_title = PREV
-			}
-			c_theodosiopolis = {
-				grant_title = PREV
-			}
+					c_teluch = {
+						grant_title = PREV
+					}
+					c_adana = {
+						grant_title = PREV
+					}
+					c_tarsos = {
+						grant_title = PREV
+					}
+					c_theodosiopolis = {
+						grant_title = PREV
+					}
 
-			c_suenik = {
-				grant_title = PREV
-			}
-			c_tabriz = {
-				grant_title = PREV
+					c_suenik = {
+						grant_title = PREV
+					}
+					c_tabriz = {
+						grant_title = PREV
+					}
+				}
 			}
 		}
 	}
@@ -759,6 +774,7 @@ narrative_event = { #The Conquest of Africa complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -778,132 +794,137 @@ narrative_event = { #The Conquest of Africa complete
 				killer = ROOT
 			}
 		}
-		ROOT = {
-			c_biskra = {
-				grant_title = PREV
-			}
-			c_ouled_nail = {
-				grant_title = PREV
-			}
-			c_mzab = {
-				grant_title = PREV
-			}
-			c_lemdiyya = {
-				grant_title = PREV
-			}
-			c_al_djazair = {
-				grant_title = PREV
-			}
-			c_orania = {
-				grant_title = PREV
-			}
-			c_atlas_mnt = {
-				grant_title = PREV
-			}
-			c_tlemcen = {
-				grant_title = PREV
-			}
-			c_beni_yanni = {
-				grant_title = PREV
-			}
-			c_hanyan = {
-				grant_title = PREV
-			}
-			c_snassen = {
-				grant_title = PREV
-			}
-			c_figuig = {
-				grant_title = PREV
-			}
-			c_el_rif = {
-				grant_title = PREV
-			}
-			c_cebta = {
-				grant_title = PREV
-			}
-			c_fes = {
-				grant_title = PREV
-			}
-			c_tangiers = {
-				grant_title = PREV
-			}
-			c_infa = {
-				grant_title = PREV
-			}
-			c_marrakech = {
-				grant_title = PREV
-			}
-			c_massat = {
-				grant_title = PREV
-			}
-			c_anti-atlas = {
-				grant_title = PREV
-			}
-			c_ifni = {
-				grant_title = PREV
-			}
-			c_tharasset = {
-				grant_title = PREV
-			}
-			c_canarias = {
-				grant_title = PREV
-			}
-			c_sijilmasa = {
-				grant_title = PREV
-			}
-			c_muluja = {
-				grant_title = PREV
-			}
-			c_ashir = {
-				grant_title = PREV
-			}
-			c_taza = {
-				grant_title = PREV
-			}
-			c_meknes = {
-				grant_title = PREV
-			}
-			c_tudgha = {
-				grant_title = PREV
-			}
-			c_warzazat = {
-				grant_title = PREV
-			}
-			c_tadla = {
-				grant_title = PREV
-			}
-			c_tinmallal = {
-				grant_title = PREV
-			}
-			c_draa = {
-				grant_title = PREV
-			}
-			c_ziz = {
-				grant_title = PREV
-			}	
-			c_tuggurt = {
-				grant_title = PREV
-			}
-			c_arigh = {
-				grant_title = PREV
-			}
-			c_suf = {
-				grant_title = PREV
-			}
-			c_nalut = {
-				grant_title = PREV
-			}
-			c_nafusa = {
-				grant_title = PREV
-			}
-			c_tadjrift = {
-				grant_title = PREV
-			}
-			c_tebessa = {
-				grant_title = PREV
-			}
-			c_gafsa = {
-				grant_title = PREV
+		custom_tooltip = {
+			text = "You will take over any North African tribe"
+			hidden_tooltip = {
+				ROOT = {
+					c_biskra = {
+						grant_title = PREV
+					}
+					c_ouled_nail = {
+						grant_title = PREV
+					}
+					c_mzab = {
+						grant_title = PREV
+					}
+					c_lemdiyya = {
+						grant_title = PREV
+					}
+					c_al_djazair = {
+						grant_title = PREV
+					}
+					c_orania = {
+						grant_title = PREV
+					}
+					c_atlas_mnt = {
+						grant_title = PREV
+					}
+					c_tlemcen = {
+						grant_title = PREV
+					}
+					c_beni_yanni = {
+						grant_title = PREV
+					}
+					c_hanyan = {
+						grant_title = PREV
+					}
+					c_snassen = {
+						grant_title = PREV
+					}
+					c_figuig = {
+						grant_title = PREV
+					}
+					c_el_rif = {
+						grant_title = PREV
+					}
+					c_cebta = {
+						grant_title = PREV
+					}
+					c_fes = {
+						grant_title = PREV
+					}
+					c_tangiers = {
+						grant_title = PREV
+					}
+					c_infa = {
+						grant_title = PREV
+					}
+					c_marrakech = {
+						grant_title = PREV
+					}
+					c_massat = {
+						grant_title = PREV
+					}
+					c_anti-atlas = {
+						grant_title = PREV
+					}
+					c_ifni = {
+						grant_title = PREV
+					}
+					c_tharasset = {
+						grant_title = PREV
+					}
+					c_canarias = {
+						grant_title = PREV
+					}
+					c_sijilmasa = {
+						grant_title = PREV
+					}
+					c_muluja = {
+						grant_title = PREV
+					}
+					c_ashir = {
+						grant_title = PREV
+					}
+					c_taza = {
+						grant_title = PREV
+					}
+					c_meknes = {
+						grant_title = PREV
+					}
+					c_tudgha = {
+						grant_title = PREV
+					}
+					c_warzazat = {
+						grant_title = PREV
+					}
+					c_tadla = {
+						grant_title = PREV
+					}
+					c_tinmallal = {
+						grant_title = PREV
+					}
+					c_draa = {
+						grant_title = PREV
+					}
+					c_ziz = {
+						grant_title = PREV
+					}	
+					c_tuggurt = {
+						grant_title = PREV
+					}
+					c_arigh = {
+						grant_title = PREV
+					}
+					c_suf = {
+						grant_title = PREV
+					}
+					c_nalut = {
+						grant_title = PREV
+					}
+					c_nafusa = {
+						grant_title = PREV
+					}
+					c_tadjrift = {
+						grant_title = PREV
+					}
+					c_tebessa = {
+						grant_title = PREV
+					}
+					c_gafsa = {
+						grant_title = PREV
+					}
+				}
 			}
 		}
 		while = {
@@ -954,6 +975,7 @@ narrative_event = { #The Conquest of Andalusia complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -971,6 +993,8 @@ narrative_event = { #The Conquest of Andalusia complete
 			name = rashudin_overextention
 			years = 50
 		}
+		
+		e_arabia = { add_law = { law = vassal_wars_law_0 cooldown = yes } }	
 		
 		ROOT = {
 			c_rosello = {
@@ -1011,6 +1035,7 @@ narrative_event = { #The Conquest of Galicia complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -1062,6 +1087,7 @@ narrative_event = { #The Conquest of Asturias complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -1118,6 +1144,7 @@ narrative_event = { #The Conquest of Navarra complete
 	picture = GFX_evt_kaaba
 	
 	trigger = {
+		start_date == 633.1.1
 		is_alternate_start = no
 		has_landed_title = e_arabia
 		has_character_flag = rashudin_expander
@@ -1442,7 +1469,7 @@ narrative_event = { #The Umayyads declare war on the Rashudins
 	is_triggered_only = yes
 	
 	option = {
-		name = "Onwards!"
+		name = "May Allah choose the right Caliph!"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1527,7 +1554,7 @@ narrative_event = { #The Abbasids declare war on the Umayyads
 	is_triggered_only = yes
 	
 	option = {
-		name = "Onwards!"
+		name = "May Allah choose the right Caliph!"
 		set_global_flag = rashudin_replaced_umayyad
 		
 		prestige = 100
@@ -1581,7 +1608,6 @@ narrative_event = { #The Spanish break off and fortify themselfs
 		name = "No way!"
 		set_global_flag = rashudin_spannish_retreat
 		hidden_effect = { any_player = { narrative_event = { id = RASHD.116 days = 1 } } }
-
 		add_character_modifier = {
 			name = spannish_raids
 			years = 50

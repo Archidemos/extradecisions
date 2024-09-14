@@ -4,6 +4,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
+			start_date == 633.1.1
 			has_global_flag = british_aggresion_flagged
 			OR = {
 				culture_group = west_germanic
@@ -61,6 +62,7 @@ decisions = {
 				culture_group = celtic
 			}
 			has_landed_title = e_britannia
+			start_date == 633.1.1
 		}
 		
 		allow = {
@@ -107,6 +109,7 @@ decisions = {
 				culture_group = celtic
 			}
 			has_landed_title = e_britannia
+			start_date == 633.1.1
 		}
 		
 		allow = {
@@ -156,6 +159,7 @@ decisions = {
 			diplomacy = 10
 			completely_controls = c_astorga
 			completely_controls = c_najera
+			start_date == 633.1.1
 		}
 		
 		effect = {
@@ -187,6 +191,7 @@ decisions = {
 				ai = yes
 				has_landed_title = c_mecca 
 			}
+			start_date == 633.1.1
 		}
 		allow = {
 			NOT = { has_landed_title = c_mecca }
@@ -212,6 +217,7 @@ decisions = {
 		
 		potential = {
 			has_character_modifier = rashudin_overextention
+			start_date == 633.1.1
 		}
 		
 		allow = {
@@ -239,10 +245,12 @@ decisions = {
 			NOT = { has_global_flag = caliphate_reignited }
 			NOT = { has_global_flag = arabia_ortho_passified }
 			religion_group = muslim
-			NOT = { any_playable_ruler = { has_landed_title = e_arabia } }
+			e_arabia = { has_holder = no }
+			start_date == 633.1.1
 		}
 		
 		allow = {
+			e_arabia = { has_holder = no }
 			completely_controls = c_mecca
 			religion_group = muslim
 			wealth = 1000
@@ -301,6 +309,7 @@ decisions = {
 			NOT = { has_global_flag = arabia_ortho_passified }
 			religion = orthodox
 			NOT = { any_playable_ruler = { has_landed_title = e_arabia } }
+			start_date == 633.1.1
 		}
 		
 		allow = {

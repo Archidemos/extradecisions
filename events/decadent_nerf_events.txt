@@ -1,0 +1,30 @@
+namespace = DECNF
+
+character_event = {
+    id = DECNF.1
+    desc = "EVTDESCisldecadent2"
+    picture = "GFX_evt_shadow"
+	border = GFX_event_normal_frame_diplomacy
+    
+    is_triggered_only = yes
+    only_playable = yes
+	
+	trigger = { 
+		dynasty_head = { 
+			character = ROOT
+			decadence < 10
+		} 
+	}
+	
+    option = {
+        name = "It is too much sometimes.."
+		ai_chance = { factor = 80 }
+        decadence = 30
+    }
+    option = {
+        name = "I must strive to be better!"
+		ai_chance = { factor = 20 }
+        decadence = 15
+		scaled_wealth = -2
+    }
+}

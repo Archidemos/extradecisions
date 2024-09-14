@@ -6,7 +6,7 @@ character_event = {
     is_triggered_only = yes
 	
     trigger = {
-		start_date = 633.1.1
+		start_date == 633.1.1
 		is_save_game = no
 		NOT = { has_global_flag = 633_events_fired }
     }
@@ -29,7 +29,7 @@ narrative_event = {
 	portrait = event_target:one_seven_kings
 	
     trigger = {
-		start_date = 633.1.1
+		start_date == 633.1.1
 		is_save_game = no
 		NOT = { has_global_flag = british_aggresion_flagged }
     }
@@ -56,7 +56,7 @@ narrative_event = { #The Rashudin Caliphate gets their Units
 	portrait = event_target:rashudin_invader
 	
     trigger = {
-		start_date = 633.1.1
+		start_date == 633.1.1
 		is_save_game = no
 		NOT = { has_global_flag = rashudin_aggresion_flagged }
     }
@@ -227,7 +227,7 @@ narrative_event = {
 	portrait = event_target:uniter_britannia
 	
     trigger = {
-		start_date = 633.1.1
+		start_date == 633.1.1
 		is_save_game = no
 		NOT = { has_global_flag = british_aggresion_flagged }
     }
