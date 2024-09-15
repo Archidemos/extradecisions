@@ -44,7 +44,7 @@ first_rashudin_invasion = {
 					decadence = -10
 				}
 				while = {
-					count = 20
+					count = 5
 					ROOT = {
 						random_realm_province = {
 							limit = {
@@ -283,7 +283,7 @@ rashudin_invasion_cb = {
 	sprite = 8
 	truce_days = 0
 	hostile_against_others = yes
-	is_permanent = yes
+	is_permanent = no
 	can_ask_to_join_war = yes
 	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 	
@@ -319,7 +319,7 @@ rashudin_invasion_cb = {
 					decadence = -10
 				}
 				while = {
-					count = 20
+					count = 5
 					ROOT = {
 						random_realm_province = {
 							limit = {
@@ -729,145 +729,341 @@ abbasid_umayyad_war = {
 
 	on_success = {
 		ROOT = {
-			gain_settlements_under_title = {
-				title = k_anatolia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_trebizond
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_daylam
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_alania
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_arabia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_yemen
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_egypt
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_mesopotamia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_haasa
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_georgia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_sardinia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_iraq
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_jerusalem
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_syria
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_armenia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_africa
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_mauretania
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_persia
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_khorasan
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
-			}
-			gain_settlements_under_title = {
-				title = k_baluchistan
-				enemy = FROM
-				same_religion = yes # Only vassalize rulers of my religion
-				is_religious = yes
-				type = invasion
+			custom_tooltip = {
+				text = "The Caliphate will go trough administrative reforms and grant out titles to new rulers that are loyal to the Abbasids"
+				hidden_tooltip = {
+					gain_settlements_under_title = {
+						title = k_arabia
+						enemy = FROM
+						same_religion = yes # Only vassalize rulers of my religion
+						is_religious = yes
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_haasa
+						enemy = FROM
+						same_religion = yes # Only vassalize rulers of my religion
+						is_religious = yes
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_yemen
+						enemy = FROM
+						same_religion = yes # Only vassalize rulers of my religion
+						is_religious = yes
+						type = invasion
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_anatolia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_egypt
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_egypt = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_mesopotamia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_mesopotamia = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_iraq
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_iraq = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_jerusalem
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_jerusalem = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_syria
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_syria = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_armenia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_alania
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_trebizond
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_georgia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_armenia = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_africa
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_sardinia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+						k_africa = {
+							gain_title = PREV
+						}
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_mauretania
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion="sunni"
+						fertility = 0.7
+						age = 20
+						health = 6
+						attributes = {
+							martial=9
+							diplomacy=8
+							intrigue=5
+							stewardship=7
+						}
+					}
+					new_character = {
+						gain_settlements_under_title = {
+							title = k_persia
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_khorasan
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_baluchistan
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						gain_settlements_under_title = {
+							title = k_daylam
+							enemy = FROM
+							same_religion = yes # Only vassalize rulers of my religion
+							is_religious = yes
+							type = invasion
+						}
+						set_defacto_liege = ROOT
+					}
+				}
 			}
 			e_arabia = {
 				usurp_title = PREV

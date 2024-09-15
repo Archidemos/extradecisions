@@ -11,6 +11,10 @@ kaaba_key = {
 			factor = 0
 			NOT = { has_dlc = "Holy Fury" }
 		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
 	}
     
     weight = {
@@ -31,13 +35,21 @@ kaaba_key = {
 
 umayyad_banner = {
     max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = -769.1.1
 	
 	spawn_chance = {
 		value = 100
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Holy Fury" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { start_date == 633.1.1 }
 		}
 	}
     
@@ -62,13 +74,21 @@ umayyad_banner = {
 
 abbasid_banner = {
     max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = 769.1.1
 	
 	spawn_chance = {
 		value = 100
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Holy Fury" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { start_date == 633.1.1 }
 		}
 	}
     
@@ -90,7 +110,7 @@ abbasid_banner = {
 
 turban_muhammed = {
 	max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = 769.1.1
 	
 	spawn_chance = {
 		value = 20
@@ -101,6 +121,10 @@ turban_muhammed = {
 		modifier = {
 			factor = 0
 			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { start_date == 633.1.1 }
 		}
 	}
 
@@ -132,7 +156,7 @@ turban_muhammed = {
 
 turban_ali = {
 	max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = 769.1.1
 	
 	spawn_chance = {
 		value = 20
@@ -143,6 +167,10 @@ turban_ali = {
 		modifier = {
 			factor = 0
 			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { start_date == 633.1.1 }
 		}
 	}
 
@@ -174,7 +202,7 @@ turban_ali = {
 
 uthman_quran = {
 	max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = 769.1.1
 	
 	spawn_chance = {
 		value = 20
@@ -185,6 +213,10 @@ uthman_quran = {
 		modifier = {
 			factor = 0
 			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { start_date == 633.1.1 }
 		}
 	}
 
