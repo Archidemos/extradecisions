@@ -1,0 +1,197 @@
+namespace = NERF
+
+character_event = { #Event to give all Kings/Emperors a Event Target and proceed to next event
+	id = NERF.1
+    only_rulers = yes
+    notification = yes
+	hide_window = yes
+	
+	trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = on
+		}
+		OR = {
+			tier = KING
+			tier = EMPEROR
+		}
+		is_nomadic = no
+		is_tribal = no
+		NOT = { government = merchant_republic_government }
+		NOT = { has_character_modifier = byz_curse_1 }
+		NOT = { has_character_modifier = byz_curse_2 }
+		NOT = { has_character_modifier = byz_curse_3 }
+		
+		NOT = { has_character_modifier = hre_curse_1 }
+		NOT = { has_character_modifier = hre_curse_2 }
+		NOT = { has_character_modifier = hre_curse_3 }
+		NOT = { has_character_modifier = hre_curse_4 }
+
+		NOT = { has_character_modifier = umayyad_curse_1 }
+		NOT = { has_character_modifier = umayyad_curse_2 }
+		NOT = { has_character_modifier = umayyad_curse_3 }
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+    immediate = {
+        primary_title = {
+            save_event_target_as = nerf_trigger_now
+        }
+        character_event = {
+            id = NERF.2
+            days = 1
+        }
+    }
+}
+
+
+character_event = { # Set the character's modifier based on their decadence
+    id = NERF.2
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = on
+		}
+		is_nomadic = no
+		is_tribal = no
+        has_landed_title = event_target:nerf_trigger_now
+    }
+
+    immediate = {
+        if = {
+            limit = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+            }
+            primary_title = {
+                save_event_target_as = nerf_value_title
+            }
+            character_event = {
+                id = NERF.3
+                days = 1
+            }
+        }
+        clear_event_target = nerf_trigger_now
+    }
+   
+}
+
+character_event = {
+    id = NERF.3
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = on
+		}
+		is_nomadic = no
+		is_tribal = no
+        has_landed_title = event_target:nerf_value_title
+    }
+
+    immediate = {
+        event_target:nerf_value_title = {
+            holder_scope = {
+				if = {
+					limit = { ROOT = { realm_size <= 65 } }
+					add_character_modifier = { name = realm_nerf_1 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 65 realm_size <= 100 } }
+					add_character_modifier = { name = realm_nerf_2 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 100 realm_size <= 200 } }
+					add_character_modifier = { name = realm_nerf_3 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 200 realm_size <= 300 } }
+					add_character_modifier = { name = realm_nerf_4 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 300 realm_size <= 400 } }
+					add_character_modifier = { name = realm_nerf_5 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 400 realm_size <= 550 } }
+					add_character_modifier = { name = realm_nerf_6 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 550 realm_size <= 700 } }
+					add_character_modifier = { name = realm_nerf_7 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 700 } }
+					add_character_modifier = { name = realm_nerf_8 duration = -1 }
+				}
+            }
+        }
+        character_event = {
+            id = NERF.4
+        }
+        clear_event_target = nerf_value_title
+    }
+}
+
+character_event = {
+    id = NERF.4
+    desc = EVTDESCNERF1
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+    notification = yes
+
+    immediate = {
+        # Remove any existing modifiers (optional)
+        remove_character_modifier = realm_nerf_1
+        remove_character_modifier = realm_nerf_2
+        remove_character_modifier = realm_nerf_3
+        remove_character_modifier = realm_nerf_4
+        remove_character_modifier = realm_nerf_5
+        remove_character_modifier = realm_nerf_6
+        remove_character_modifier = realm_nerf_7
+
+        if = {
+            limit = { ROOT = { realm_size < 50 } }
+            add_character_modifier = { name = realm_nerf_1 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 50 realm_size < 100 } }
+            add_character_modifier = { name = realm_nerf_2 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 100 realm_size < 200 } }
+            add_character_modifier = { name = realm_nerf_3 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 200 realm_size < 300 } }
+            add_character_modifier = { name = realm_nerf_4 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 300 realm_size < 400 } }
+            add_character_modifier = { name = realm_nerf_5 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 400 realm_size < 500 } }
+            add_character_modifier = { name = realm_nerf_6 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 500 realm_size < 600 } }
+            add_character_modifier = { name = realm_nerf_7 duration = -1 }
+        }
+        if = {
+            limit = { ROOT = { realm_size > 600 } }
+            add_character_modifier = { name = realm_nerf_8 duration = -1 }
+        }
+    }
+}

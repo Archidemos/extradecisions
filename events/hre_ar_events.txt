@@ -1,6 +1,6 @@
 namespace = HREAR
 
-narrative_event = {
+narrative_event = { #At the death of Louis, the Player/AI has to choose what to do with the HRE
 	id = HREAR.1
 	title = HREARNAME1
 	desc = HREDESC1
@@ -16,27 +16,168 @@ narrative_event = {
 		start_date = 867.1.1
     }
 
+	immediate = { #To fix the problem where a player loses all of its vassals as Germany
+            d_saxony = {
+                de_jure_liege = k_germany
+            }
+            d_munster_germany = {
+                de_jure_liege = k_germany
+            }
+            d_angria = {
+                de_jure_liege = k_germany
+            }
+            d_bremen = {
+                de_jure_liege = k_germany
+            }
+            d_hamburg = {
+                de_jure_liege = k_germany
+            }
+			d_koln = {
+				de_jure_liege = k_germany
+			}
+            # Set De Jure Thuringia
+            d_thuringia = {
+                de_jure_liege = k_germany
+            }
+            # Set De Jure Franconia
+            d_hesse = {
+                de_jure_liege = k_germany
+            }
+            d_rhine = {
+                de_jure_liege = k_germany
+            }
+            d_franconia = {
+                de_jure_liege = k_germany
+            }
+            d_fulda = {
+                de_jure_liege = k_germany
+            }
+            # Set De Jure Swabia
+            d_swabia = {
+                de_jure_liege = k_germany
+            }
+            d_baden = {
+                de_jure_liege = k_germany
+            }
+            d_alsace = {
+                de_jure_liege = k_germany
+            }
+            d_thurgau = {
+                de_jure_liege = k_germany
+            }
+            d_raetia = {
+                de_jure_liege = k_germany
+            }
+		}
 	
-	option = {
+	option = { #Destory the HRE and reverse the dejure back
 		name = EVTOPTHREAR.1
-		ai_chance = { factor = 100 }
-		unsafe_destroy_landed_title = e_hre
-		unsafe_destroy_landed_title = e_france
+		ai_chance = { factor = 80 }
+		k_france = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_aquitaine = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_lotharingia = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_italy = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_bavaria = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		destroy_landed_title = e_hre
+		destroy_landed_title = e_france
 		set_global_flag = hre_concluded
-		any_player = { 
+		any_player = {
 			narrative_event = { id = HREAR.3 } 
 		}
 	}
 	
-	option = {
-		name = EVTOPTHREAR.2
-		ai_chance = { factor = 0 }
-		set_global_flag = hre_concluded
-		any_playable_ruler = {
-			limit = {
-				has_landed_title = e_hre
+	option = { #Destroy the HRE but Tributize the Independent going Kingdoms and reverse the dejure back
+		name = "How dare they, retain as much control possible!"
+		ai_chance = { factor = 10 }
+		k_france = {
+			holder_scope = {
+				set_defacto_liege = THIS
 			}
-			narrative_event = { id = HREAR.2 }
+		}
+		k_aquitaine = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_lotharingia = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_italy = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		k_bavaria = {
+			holder_scope = {
+				set_defacto_liege = THIS
+			}
+		}
+		destroy_landed_title = e_hre
+		destroy_landed_title = e_france
+		k_germany = {
+			holder_scope = {
+				make_tributary = {
+					who = k_france
+					tributary_type = default
+				}
+				make_tributary = {
+					who = k_aquitaine
+					tributary_type = default
+				}
+				make_tributary = {
+					who = k_lotharingia
+					tributary_type = default
+				}
+				make_tributary = {
+					who = k_italy
+					tributary_type = default
+				}
+				make_tributary = {
+					who = k_bavaria
+					tributary_type = default
+				}
+				make_tributary = {
+					who = d_genoa
+					tributary_type = default
+				}
+			}
+		}
+		set_global_flag = hre_concluded
+		any_player = {
+			narrative_event = { id = HREAR.3 } 
+		}
+	}
+	
+	option = { #Keep the HRE but the HRE Crisis fires
+		name = EVTOPTHREAR.2
+		ai_chance = { factor = 10 }
+		set_global_flag = hre_concluded
+		e_hre = {
+			holder_scope = {
+				narrative_event = { id = HREAR.2 }
+			}
 		}
 		any_player = { 
 			narrative_event = { id = HREAR.4 }
@@ -45,7 +186,7 @@ narrative_event = {
 	
 }
 
-narrative_event = {
+narrative_event = { #The event to fire the HRE Crisis for keeping the HRE
 	id = HREAR.2
 	title = HREARNAME2
 	desc = HREDESC2
@@ -55,6 +196,75 @@ narrative_event = {
 	picture = GFX_evt_found_hre
 	
     is_triggered_only = yes
+
+	immediate = {
+            d_saxony = {
+                de_jure_liege = k_wesphalia
+            }
+            d_munster_germany = {
+                de_jure_liege = k_wesphalia
+            }
+            d_angria = {
+                de_jure_liege = k_wesphalia
+            }
+            d_bremen = {
+                de_jure_liege = k_wesphalia
+            }
+            d_hamburg = {
+                de_jure_liege = k_wesphalia
+            }
+			d_koln = {
+				de_jure_liege = k_wesphalia
+			}
+            # Set De Jure Thuringia
+            d_thuringia = {
+                de_jure_liege = k_wesphalia
+            }
+			d_brandenburg = {
+				de_jure_liege = k_pomerania
+			}
+            d_lausitz = {
+                de_jure_liege = k_pomerania
+            }
+			d_rugen = {
+				de_jure_liege = k_denmark
+			}
+            d_mecklemburg = {
+                de_jure_liege = k_denmark
+            }			
+			d_meissen = {
+				de_jure_liege = k_pomerania
+			}
+            # Set De Jure Franconia
+            d_hesse = {
+                de_jure_liege = k_franconia
+            }
+            d_rhine = {
+                de_jure_liege = k_franconia
+            }
+            d_franconia = {
+                de_jure_liege = k_franconia
+            }
+            d_fulda = {
+                de_jure_liege = k_franconia
+            }
+            # Set De Jure Swabia
+            d_swabia = {
+                de_jure_liege = k_swabia
+            }
+            d_baden = {
+                de_jure_liege = k_swabia
+            }
+            d_alsace = {
+                de_jure_liege = k_swabia
+            }
+            d_thurgau = {
+                de_jure_liege = k_swabia
+            }
+            d_raetia = {
+                de_jure_liege = k_swabia
+            }
+		}
 	
 	option = {
 		name = EVTOPTHREAR.5
@@ -88,7 +298,7 @@ narrative_event = {
 	
 }
 
-narrative_event = {
+narrative_event = { #Announcement event for players that the HRE is destoryed
 	id = HREAR.3
 	title = HREARNAME3
 	desc = HREDESC3
@@ -99,6 +309,75 @@ narrative_event = {
 	
     is_triggered_only = yes
 	
+	immediate = {
+            d_saxony = {
+                de_jure_liege = k_wesphalia
+            }
+            d_munster_germany = {
+                de_jure_liege = k_wesphalia
+            }
+            d_angria = {
+                de_jure_liege = k_wesphalia
+            }
+            d_bremen = {
+                de_jure_liege = k_wesphalia
+            }
+            d_hamburg = {
+                de_jure_liege = k_wesphalia
+            }
+			d_koln = {
+				de_jure_liege = k_wesphalia
+			}
+            # Set De Jure Thuringia
+            d_thuringia = {
+                de_jure_liege = k_wesphalia
+            }
+			d_brandenburg = {
+				de_jure_liege = k_pomerania
+			}
+            d_lausitz = {
+                de_jure_liege = k_pomerania
+            }
+			d_rugen = {
+				de_jure_liege = k_denmark
+			}
+            d_mecklemburg = {
+                de_jure_liege = k_denmark
+            }			
+			d_meissen = {
+				de_jure_liege = k_pomerania
+			}
+            # Set De Jure Franconia
+            d_hesse = {
+                de_jure_liege = k_franconia
+            }
+            d_rhine = {
+                de_jure_liege = k_franconia
+            }
+            d_franconia = {
+                de_jure_liege = k_franconia
+            }
+            d_fulda = {
+                de_jure_liege = k_franconia
+            }
+            # Set De Jure Swabia
+            d_swabia = {
+                de_jure_liege = k_swabia
+            }
+            d_baden = {
+                de_jure_liege = k_swabia
+            }
+            d_alsace = {
+                de_jure_liege = k_swabia
+            }
+            d_thurgau = {
+                de_jure_liege = k_swabia
+            }
+            d_raetia = {
+                de_jure_liege = k_swabia
+            }
+		}
+	
 	option = {
 		name = EVTOPTHREAR.3
 		ai_chance = { factor = 100 }
@@ -106,7 +385,7 @@ narrative_event = {
 	
 }
 
-narrative_event = {
+narrative_event = { #Announcement event for players when the HRE is kept together
 	id = HREAR.4
 	title = HREARNAME4
 	desc = HREDESC4

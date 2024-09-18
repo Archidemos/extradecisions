@@ -18,6 +18,7 @@ castle = {
 		monthly_character_prestige = 0.5
 		monthly_character_piety = 0.5
 		tax_income = 0.1
+		levy_size = 0.05		
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -44,6 +45,7 @@ castle = {
 		monthly_character_prestige = 0.5
 		monthly_character_piety = 0.5
 		tax_income = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -70,6 +72,7 @@ castle = {
 		monthly_character_prestige = 1
 		monthly_character_piety = 1
 		tax_income = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -96,6 +99,7 @@ castle = {
 		monthly_character_prestige = 1
 		monthly_character_piety = 1
 		tax_income = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -123,6 +127,7 @@ castle = {
 		monthly_character_prestige = 1
 		monthly_character_piety = 1
 		tax_income = 0.3
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -146,9 +151,9 @@ castle = {
 		gold_cost = 100
 		build_time = 365
 		
-		economy_techpoints = 0.10
-		culture_techpoints = 0.10
-		military_techpoints = 0.10
+		economy_techpoints = 0.05
+		culture_techpoints = 0.05
+		military_techpoints = 0.05
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -171,10 +176,11 @@ castle = {
 		build_time = 547
 		
 		upgrades_from = feudal_library_1
-		
-		economy_techpoints = 0.10
-		culture_techpoints = 0.10
-		military_techpoints = 0.10
+
+		tech_growth_modifier = 0.15
+		economy_techpoints = 0.05
+		culture_techpoints = 0.05
+		military_techpoints = 0.05
 
 		
 		ai_creation_factor = 103
@@ -198,7 +204,8 @@ castle = {
 		build_time = 730
 
 		upgrades_from = feudal_library_2
-		
+
+		tech_growth_modifier = 0.15		
 		economy_techpoints = 0.10
 		culture_techpoints = 0.10
 		military_techpoints = 0.10
@@ -225,7 +232,8 @@ castle = {
 		build_time = 1095
 
 		upgrades_from = feudal_library_3
-		
+
+		tech_growth_modifier = 0.15		
 		economy_techpoints = 0.10
 		culture_techpoints = 0.10
 		military_techpoints = 0.10
@@ -253,7 +261,8 @@ castle = {
 		build_time = 1460
 
 		upgrades_from = feudal_library_4
-		
+
+		tech_growth_modifier = 0.15		
 		economy_techpoints = 0.10
 		culture_techpoints = 0.10
 		military_techpoints = 0.10
@@ -281,7 +290,7 @@ castle = {
 		
 		local_movement_speed = 0.025
 		tax_income = 1
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -307,7 +316,7 @@ castle = {
 		
 		local_movement_speed = 0.05
 		tax_income = 1.5
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 
 		
 		ai_creation_factor = 103
@@ -334,7 +343,7 @@ castle = {
 		
 		local_movement_speed = 0.075
 		tax_income = 2
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 
 		
 		ai_creation_factor = 102
@@ -361,7 +370,7 @@ castle = {
 		
 		local_movement_speed = 0.1
 		tax_income = 2.5
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 
 		
 		ai_creation_factor = 101
@@ -389,7 +398,7 @@ castle = {
 		
 		local_movement_speed = 0.15
 		tax_income = 3
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 
 		
 		ai_creation_factor = 100
@@ -536,6 +545,7 @@ castle = {
 		build_time = 365
 		
 		garrison_size = 0.05
+		levy_size = 0.05
 		archers = 50
 		light_infantry = 40
 		
@@ -561,6 +571,7 @@ castle = {
 		upgrades_from = castle_tower_1
 		
 		garrison_size = 0.1
+		levy_size = 0.05
 		archers = 60
 		light_infantry = 50
 		
@@ -586,6 +597,7 @@ castle = {
 		upgrades_from = castle_tower_2
 		
 		garrison_size = 0.15
+		levy_size = 0.1
 		fort_level = 0.25
 		archers = 70
 		light_infantry = 60
@@ -612,6 +624,7 @@ castle = {
 		upgrades_from = castle_tower_3
 		
 		garrison_size = 0.2
+		levy_size = 0.1
 		fort_level = 0.25
 		archers = 80
 		light_infantry = 70
@@ -638,6 +651,7 @@ castle = {
 		upgrades_from = castle_tower_4
 		
 		garrison_size = 0.3
+		levy_size = 0.1
 		fort_level = 0.5
 		archers = 90
 		light_infantry = 80
@@ -661,7 +675,7 @@ castle = {
 		gold_cost = 200
 		build_time = 365
 		
-		levy_size = 0.05
+		levy_size = 0.1
 		light_infantry = 45
 		heavy_infantry = 30
 		local_tax_modifier = 0.025
@@ -799,7 +813,7 @@ castle = {
 		local_tax_modifier = 0.025
 		tax_income = 1.5
 		levy_reinforce_rate = 0.025
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -827,7 +841,7 @@ castle = {
 		local_tax_modifier = 0.05
 		tax_income = 2
 		levy_reinforce_rate = 0.05		
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -855,7 +869,7 @@ castle = {
 		local_tax_modifier = 0.075
 		tax_income = 2.5
 		levy_reinforce_rate = 0.075
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -883,7 +897,7 @@ castle = {
 		local_tax_modifier = 0.1
 		tax_income = 3
 		levy_reinforce_rate = 0.1
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -912,7 +926,7 @@ castle = {
 		local_tax_modifier = 0.15
 		tax_income = 4
 		levy_reinforce_rate = 0.15
-		culture_techpoints = 0.10
+		culture_techpoints = 0.05
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -1058,7 +1072,8 @@ castle = {
 		prerequisites = { ca_keep_1 ca_town_3 }
 		gold_cost = 250
 		build_time = 365
-		
+
+		levy_size = 0.05		
 		local_tax_modifier = 0.05
 		tax_income = 2
 		
@@ -1079,7 +1094,8 @@ castle = {
 		build_time = 547
 
 		upgrades_from = slaughterhouse_1
-		
+
+		levy_size = 0.05		
 		local_tax_modifier = 0.05
 		tax_income = 2.5
 		
@@ -1100,7 +1116,8 @@ castle = {
 		build_time = 730
 
 		upgrades_from = slaughterhouse_2
-		
+
+		levy_size = 0.05		
 		local_tax_modifier = 0.075
 		tax_income = 3
 		
@@ -1121,7 +1138,8 @@ castle = {
 		build_time = 1095
 
 		upgrades_from = slaughterhouse_3
-		
+
+		levy_size = 0.05		
 		local_tax_modifier = 0.1
 		tax_income = 4
 		
@@ -1142,7 +1160,8 @@ castle = {
 		build_time = 1095
 
 		upgrades_from = slaughterhouse_4
-		
+
+		levy_size = 0.05		
 		local_tax_modifier = 0.15
 		tax_income = 5
 		
@@ -1161,9 +1180,10 @@ castle = {
 		prerequisites = { ca_wall_1 ca_wall_q_1 medieval_road_1 }
 		gold_cost = 250
 		build_time = 365
-		
+
+		levy_size = 0.05		
 		tax_income = 1.5
-		economy_techpoints = 0.15
+		economy_techpoints = 0.10
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -1182,9 +1202,10 @@ castle = {
 		build_time = 547
 
 		upgrades_from = feudal_farm_1
-		
+
+		levy_size = 0.05		
 		tax_income = 2.5
-		economy_techpoints = 0.15
+		economy_techpoints = 0.10
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -1203,9 +1224,10 @@ castle = {
 		build_time = 730
 
 		upgrades_from = feudal_farm_2
-		
+
+		levy_size = 0.05		
 		tax_income = 3.5
-		economy_techpoints = 0.15
+		economy_techpoints = 0.10
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -1224,9 +1246,10 @@ castle = {
 		build_time = 1095
 
 		upgrades_from = feudal_farm_3
-		
+
+		levy_size = 0.05		
 		tax_income = 4.5
-		economy_techpoints = 0.15
+		economy_techpoints = 0.10
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -1245,9 +1268,10 @@ castle = {
 		build_time = 1095
 
 		upgrades_from = feudal_farm_4
-		
+
+		levy_size = 0.05		
 		tax_income = 5.5
-		economy_techpoints = 0.15
+		economy_techpoints = 0.10
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -1264,7 +1288,7 @@ castle = {
 		gold_cost = 450
 		build_time = 547
 		
-		levy_size = 0.1
+		levy_size = 0.15
 		disease_defence = -0.0025
 		tax_income = 3.5
 		
@@ -1307,7 +1331,7 @@ castle = {
 
 		upgrades_from = feudal_district_2
 		
-		levy_size = 0.2
+		levy_size = 0.25
 		disease_defence = -0.0025
 		tax_income = 5.5
 		
@@ -1374,7 +1398,7 @@ castle = {
 		
 		tax_income = 4.5
 		local_tax_modifier = 0.05
-		economy_techpoints = 0.2
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 96
 		add_number_to_name = no
@@ -1395,7 +1419,7 @@ castle = {
 		
 		tax_income = 5
 		local_tax_modifier = 0.05
-		economy_techpoints = 0.2
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 95
 		add_number_to_name = no
@@ -1417,7 +1441,7 @@ castle = {
 		
 		tax_income = 5.5
 		local_tax_modifier = 0.075
-		economy_techpoints = 0.2
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 94
 		add_number_to_name = no
@@ -1439,7 +1463,7 @@ castle = {
 		
 		tax_income = 6
 		local_tax_modifier = 0.1
-		economy_techpoints = 0.2
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 93
 		add_number_to_name = no
@@ -1461,7 +1485,7 @@ castle = {
 		
 		tax_income = 6.5
 		local_tax_modifier = 0.15
-		economy_techpoints = 0.2
+		economy_techpoints = 0.05
 		
 		ai_creation_factor = 92
 		add_number_to_name = no
@@ -1482,10 +1506,10 @@ castle = {
 		gold_cost = 450
 		build_time = 547
 		
-		levy_size = 0.25
+		levy_size = 0.3
 		light_infantry = 150
 		heavy_infantry = 80
-		military_techpoints = 0.2
+		military_techpoints = 0.1
 		
 		ai_creation_factor = 89
 		add_number_to_name = no
@@ -1511,7 +1535,7 @@ castle = {
 		levy_size = 0.35
 		light_infantry = 160
 		heavy_infantry = 90
-		military_techpoints = 0.2
+		military_techpoints = 0.1
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1537,7 +1561,7 @@ castle = {
 		levy_size = 0.45
 		light_infantry = 170
 		heavy_infantry = 100
-		military_techpoints = 0.2
+		military_techpoints = 0.1
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1563,7 +1587,7 @@ castle = {
 		levy_size = 0.55
 		light_infantry = 180
 		heavy_infantry = 110
-		military_techpoints = 0.2
+		military_techpoints = 0.1
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1589,7 +1613,7 @@ castle = {
 		levy_size = 0.65
 		light_infantry = 190
 		heavy_infantry = 120
-		military_techpoints = 0.2
+		military_techpoints = 0.1
 		
 		ai_creation_factor = 88
 		add_number_to_name = no
@@ -1613,6 +1637,7 @@ castle = {
 		light_infantry = 120
 		heavy_infantry = 50
 		archers = 40
+		levy_size = 0.1
 		tax_income = 4.5
 		
 		ai_creation_factor = 89
@@ -1639,6 +1664,7 @@ castle = {
 		light_infantry = 130
 		heavy_infantry = 60
 		archers = 50
+		levy_size = 0.1
 		tax_income = 5.5
 		
 		ai_creation_factor = 88
@@ -1665,6 +1691,7 @@ castle = {
 		light_infantry = 140
 		heavy_infantry = 70
 		archers = 60
+		levy_size = 0.1
 		tax_income = 6
 		
 		ai_creation_factor = 88
@@ -1691,6 +1718,7 @@ castle = {
 		light_infantry = 150
 		heavy_infantry = 80
 		archers = 70
+		levy_size = 0.1
 		tax_income = 6.5
 		
 		ai_creation_factor = 88
@@ -1717,6 +1745,7 @@ castle = {
 		light_infantry = 160
 		heavy_infantry = 90
 		archers = 80
+		levy_size = 0.1
 		tax_income = 7
 		
 		ai_creation_factor = 88
@@ -1737,9 +1766,9 @@ castle = {
 		build_time = 547
 		
 		tech_growth_modifier = 0.25
-		economy_techpoints = 0.35
-		culture_techpoints = 0.35
-		military_techpoints = 0.35
+		economy_techpoints = 0.10
+		culture_techpoints = 0.10
+		military_techpoints = 0.10
 		
 		
 		ai_creation_factor = 90
@@ -1760,9 +1789,9 @@ castle = {
 		build_time = 730
 		
 		tech_growth_modifier = 0.25
-		economy_techpoints = 0.35
-		culture_techpoints = 0.35
-		military_techpoints = 0.35
+		economy_techpoints = 0.10
+		culture_techpoints = 0.10
+		military_techpoints = 0.10
 		
 		ai_creation_factor = 89
 
@@ -1782,9 +1811,9 @@ castle = {
 		build_time = 2190
 		
 		tech_growth_modifier = 0.25
-		economy_techpoints = 0.35
-		culture_techpoints = 0.35
-		military_techpoints = 0.35
+		economy_techpoints = 0.15
+		culture_techpoints = 0.15
+		military_techpoints = 0.15
 		
 		ai_creation_factor = 88
 
@@ -1807,7 +1836,7 @@ castle = {
 		build_time = 547
 		
 		tax_income = 4
-		disease_defence = 0.0025
+		levy_size = 0.05
 		levy_reinforce_rate = 0.2
 		supply_limit = 0.1
 
@@ -1834,7 +1863,7 @@ castle = {
 		upgrades_from = feudal_windmill_1
 		
 		tax_income = 5
-		disease_defence = 0.0025
+		levy_size = 0.05
 		levy_reinforce_rate = 0.25
 		supply_limit = 0.05
 		
@@ -1860,7 +1889,7 @@ castle = {
 		upgrades_from = feudal_windmill_2
 		
 		tax_income = 6
-		disease_defence = 0.0025
+		levy_size = 0.05
 		levy_reinforce_rate = 0.3
 		supply_limit = 0.05
 		
@@ -1886,7 +1915,7 @@ castle = {
 		upgrades_from = feudal_windmill_3
 		
 		tax_income = 7
-		disease_defence = 0.0025
+		levy_size = 0.05
 		levy_reinforce_rate = 0.35
 		supply_limit = 0.05
 		
@@ -1912,7 +1941,7 @@ castle = {
 		upgrades_from = feudal_windmill_4
 		
 		tax_income = 8
-		disease_defence = 0.0025
+		levy_size = 0.05
 		levy_reinforce_rate = 0.4
 		supply_limit = 0.05
 		
@@ -2075,7 +2104,7 @@ castle = {
 		gold_cost = 450
 		build_time = 547
 		
-		supply_limit = -0.15
+		levy_size = 0.05
 		siege_defence = 0.25
 		garrison_size = 0.25
 		tax_income = 2
@@ -2108,7 +2137,7 @@ castle = {
 
 		upgrades_from = feudal_mountain_fort_1
 		
-		supply_limit = -0.1
+		levy_size = 0.05
 		siege_defence = 0.25
 		garrison_size = 0.25
 		tax_income = 2.5
@@ -2140,7 +2169,7 @@ castle = {
 
 		upgrades_from = feudal_mountain_fort_2
 		
-		supply_limit = -0.1
+		levy_size = 0.05
 		siege_defence = 0.2
 		garrison_size = 0.2
 		tax_income = 3
@@ -2172,7 +2201,7 @@ castle = {
 
 		upgrades_from = feudal_mountain_fort_3
 		
-		supply_limit = -0.1
+		levy_size = 0.05
 		siege_defence = 0.15
 		garrison_size = 0.15
 		tax_income = 3.5
@@ -2204,7 +2233,7 @@ castle = {
 
 		upgrades_from = feudal_mountain_fort_4
 		
-		supply_limit = -0.1
+		levy_size = 0.05
 		siege_defence = 0.10
 		garrison_size = 0.10
 		tax_income = 4
@@ -2233,7 +2262,7 @@ castle = {
 		tax_income = 3.5
 		levy_reinforce_rate = 0.1
 		local_tax_modifier = 0.05
-		disease_defence = 0.0015
+		levy_size = 0.05
 		supply_limit = 0.15
 
 		
@@ -2261,7 +2290,7 @@ castle = {
 		tax_income = 4.5
 		levy_reinforce_rate = 0.15
 		local_tax_modifier = 0.05
-		disease_defence = 0.0015
+		levy_size = 0.05
 		supply_limit = 0.1
 		
 		ai_creation_factor = 103
@@ -2288,7 +2317,7 @@ castle = {
 		tax_income = 5
 		levy_reinforce_rate = 0.2
 		local_tax_modifier = 0.05
-		disease_defence = 0.0015
+		levy_size = 0.05
 		supply_limit = 0.1
 		
 		ai_creation_factor = 102
@@ -2315,7 +2344,7 @@ castle = {
 		tax_income = 6
 		levy_reinforce_rate = 0.25
 		local_tax_modifier = 0.05
-		disease_defence = 0.0015
+		levy_size = 0.05
 		supply_limit = 0.1
 		
 		ai_creation_factor = 101
@@ -2342,7 +2371,7 @@ castle = {
 		tax_income = 7
 		levy_reinforce_rate = 0.3
 		local_tax_modifier = 0.05
-		disease_defence = 0.0015
+		levy_size = 0.05
 		supply_limit = 0.1
 		
 		ai_creation_factor = 100
@@ -2518,6 +2547,7 @@ castle = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -2562,6 +2592,7 @@ castle = {
 		
 		tax_income = 20
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -2600,6 +2631,7 @@ castle = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -2639,6 +2671,7 @@ castle = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -2684,6 +2717,7 @@ castle = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 0.3
@@ -2731,6 +2765,7 @@ castle = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -2764,6 +2799,7 @@ castle = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -2802,6 +2838,7 @@ castle = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -2832,6 +2869,7 @@ castle = {
 		tax_income = 5
 		stewardship = 1
 		local_tax_modifier = 0.025
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -2867,6 +2905,7 @@ castle = {
 		tax_income = 10
 		stewardship = 2
 		local_tax_modifier = 0.05
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -2919,6 +2958,7 @@ castle = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -2976,6 +3016,7 @@ castle = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3006,7 +3047,7 @@ castle = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		local_tax_modifier = 0.025
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3041,7 +3082,7 @@ castle = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		local_tax_modifier = 0.05
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3073,6 +3114,7 @@ castle = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3108,6 +3150,7 @@ castle = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3193,6 +3236,7 @@ castle = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3282,6 +3326,7 @@ castle = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3503,6 +3548,7 @@ temple = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3547,6 +3593,7 @@ temple = {
 		
 		tax_income = 20
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3585,6 +3632,7 @@ temple = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3624,6 +3672,7 @@ temple = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3669,6 +3718,7 @@ temple = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 0.3
@@ -3716,6 +3766,7 @@ temple = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3749,6 +3800,7 @@ temple = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3787,6 +3839,7 @@ temple = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3817,6 +3870,7 @@ temple = {
 		tax_income = 5
 		stewardship = 1
 		local_tax_modifier = 0.025
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3852,6 +3906,7 @@ temple = {
 		tax_income = 10
 		stewardship = 2
 		local_tax_modifier = 0.05
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3904,6 +3959,7 @@ temple = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -3961,6 +4017,7 @@ temple = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -3991,7 +4048,7 @@ temple = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		local_tax_modifier = 0.025
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4026,7 +4083,7 @@ temple = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		local_tax_modifier = 0.05
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4058,6 +4115,7 @@ temple = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4093,6 +4151,7 @@ temple = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4178,6 +4237,7 @@ temple = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4267,6 +4327,7 @@ temple = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4310,6 +4371,7 @@ city = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4354,6 +4416,7 @@ city = {
 		
 		tax_income = 20
 		local_tax_modifier = 0.2
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4392,6 +4455,7 @@ city = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4431,6 +4495,7 @@ city = {
 		
 		tax_income = 10
 		local_tax_modifier = 0.1
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4476,6 +4541,7 @@ city = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 0.3
@@ -4523,6 +4589,7 @@ city = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		military_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4556,6 +4623,7 @@ city = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4594,10 +4662,12 @@ city = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
 	}
+	
 	eu_chinaware_1 = {
 		desc = eu_gold_mine_1_desc
 		add_number_to_name = no
@@ -4624,6 +4694,7 @@ city = {
 		tax_income = 5
 		stewardship = 1
 		local_tax_modifier = 0.025
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4659,6 +4730,7 @@ city = {
 		tax_income = 10
 		stewardship = 2
 		local_tax_modifier = 0.05
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4711,6 +4783,7 @@ city = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4768,6 +4841,7 @@ city = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		culture_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4798,7 +4872,7 @@ city = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		local_tax_modifier = 0.025
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4833,7 +4907,7 @@ city = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		local_tax_modifier = 0.05
-		monthly_character_prestige = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4865,6 +4939,7 @@ city = {
 		global_trade_route_value = 10
 		global_trade_route_wealth = 10
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -4900,6 +4975,7 @@ city = {
 		global_trade_route_value = 15
 		global_trade_route_wealth = 15
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
@@ -4985,6 +5061,7 @@ city = {
 		tax_income = 5
 		local_tax_modifier = 0.025
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 100
 		extra_tech_building_start = 2
@@ -5074,6 +5151,7 @@ city = {
 		tax_income = 10
 		local_tax_modifier = 0.05
 		economy_techpoints = 0.10
+		levy_size = 0.05
 		
 		ai_creation_factor = 99
 		extra_tech_building_start = 2
