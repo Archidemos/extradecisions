@@ -463,6 +463,13 @@ de_jure_laws = {
 		}
 		allow = {
 			year = 1000
+			trigger_if = {
+				limit = {
+					holder_scope = { has_landed_title = e_hre }
+					has_global_flag = ggh_end
+				}
+				had_global_flag = { flag = guelph_victory years = 100}
+			}
 		}
 		revoke_allowed = {
 			always = no

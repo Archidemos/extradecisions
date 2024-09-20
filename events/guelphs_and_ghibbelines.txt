@@ -1,0 +1,781 @@
+namespace = GGH
+
+# NOT EVERYTHING HERE IS TRUE!! THIS MOD WAS RUSHED OUT!!
+
+# Start: Salian Emperor dies and heir is not Salian
+# phase 1: ITALIANS VS EMPEROR
+# phase 2: VASSALS V VASSALS (+EMPEROR?) (+POPE?)
+# 
+# Prologue: Invesiture Controversy -> Concordat of Worms on last Salian death -> force papal investiture?
+# Pope excomms Heinrich in event -> Heinrich gets option to repent -> (history) -> -prestige -vassal opinion
+# 
+# -- phase 1 --
+# Lomard league: any willing Italian in (e_)Italia (piety, culture and other shit influence it)
+# Hierarchy: Milan>Tuscany>Ivrea>Verona>Modena
+# 
+# Leaders are "elected" -> Goons appointed (only for 2nd phase)
+# Lombard league: Matilda? Milan? obv not just Lombards, any willing italian within k_italy? + ferrara?? direct vassals or all vassals???
+# Should wars be between everyone or only Italians? -> certain tension variable -> Big war -> 1st phase war????
+# Interbellum -> ???? -> 2nd phase
+
+# 1-200 1st phase
+# 201-400 2nd phase
+# 401-600 prologue
+
+## 1ST PHASE ## hre vs lombard league
+
+character_event = {
+    id = GGH.1
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder_inheritance
+
+    trigger = {
+        start_date >= 1066.1.1
+        NOR = {
+            has_global_flag = ggh_start 
+            has_dynasty_flag = hre_starting_dyn
+        }
+        FROM = { title = e_hre }
+    }
+
+    immediate = {
+        FROMFROM = { save_event_target_as = hre_portrait }
+        narrative_event = { id = GGH.2 months = 10 }
+        set_global_flag = ggh_start
+    }
+}
+
+narrative_event = { # CONCORDAT OF WORMS (?)
+    id = GGH.2
+    title = T_GGH2
+    desc = D_GGH2
+    picture = GFX_evt_holy_roman_emperor
+    portrait = event_target:hre_portrait
+    is_triggered_only = yes
+
+    immediate = {
+        set_character_flag = ghibbeline_leader
+        add_trait = ghibbeline
+        random_vassal = {
+            preferred_limit = {
+                culture = german
+                piety = 0
+            }
+            preferred_limit = {
+                dynasty = 650 #Welf
+            }
+            set_character_flag = guelph_leader
+            add_trait = guelph
+        }
+        any_vassal = {
+            limit = {
+                de_jure_liege_or_above = e_italy
+                NOT = { has_character_flag = guelph_leader } #ghibbeline leader is emperor
+            }
+            narrative_event = { id = GGH.3 }
+        }
+        set_variable = {
+            which = global_ggh_tension
+            value = 0
+        }
+    }
+
+    option = {
+        name = A_GGH2
+    }
+
+}
+
+narrative_event = {
+    id = GGH.3
+    title = T_GGH3
+    desc = D_GGH3
+    picture = GFX_evt_holy_roman_emperor
+    portrait = event_target:hre_portrait
+
+    is_triggered_only = yes
+
+    option = { #guelph
+        name = A_GGH3
+        add_trait = guelph
+
+        hidden_effect = {
+            change_variable = {
+                which = global_ggh_tension
+                value = 1
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+            additive_modifier = {
+                value = 10
+                piety = 200
+            }
+            modifier = {
+                factor = 1.5
+                likes_better_than = {
+                    who = rightful_religious_head_scope
+                    than = liege
+                }
+            }
+        }
+    }
+
+    option = { #ghibbeline
+        name = B_GGH3
+        add_trait = ghibbeline
+
+        hidden_effect = {
+            change_variable = {
+                which = global_ggh_tension
+                value = 1
+            }
+        }
+
+        ai_chance = {
+            factor = 10
+            additive_modifier = {
+                value = 10
+                likes_better_than = {
+                    who = liege
+                    than = rightful_religious_head_scope
+                }
+            }
+            additive_modifier = {
+                value = 10
+                piety < 200
+            }
+            additive_modifier = {
+                value = -10
+                OR = {
+                    culture = italian
+                    culture = lombard
+                }
+            }
+            additive_modifier = {
+                value = 20
+                OR = {
+                    de_jure_liege_or_above = k_papal_state
+                    de_jure_liege_or_above = k_romagna
+                }
+            }
+            modifier = {
+                factor = 1.5
+                likes_better_than = {
+                    who = liege
+                    than = rightful_religious_head_scope
+                }
+            }
+        }
+    }
+
+    option = { #neutral
+        name = C_GGH3
+        custom_tooltip = {
+            text = ggh_neutral_tt
+        }
+        ai_chance = {
+            factor = 75
+            modifier = {
+                factor = 0.3
+                trait = ambitious
+            }
+            modifier = {
+                factor = 1.5
+                trait = content
+            }
+        }
+    }
+}
+
+character_event = {
+    id = GGH.200
+    title = T_GGH200
+    desc = D_GGH200
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH200
+        add_trait = guelph
+
+        ai_chance = {
+            factor = 10
+            additive_modifier = {
+                value = 10
+                piety = 200
+            }
+            modifier = {
+                factor = 1.5
+                likes_better_than = {
+                    who = rightful_religious_head_scope
+                    than = liege
+                }
+            }
+        }
+    }
+
+    option = {
+        name = B_GGH200
+        add_trait = ghibbeline
+
+        ai_chance = {
+            factor = 10
+            additive_modifier = {
+                value = 10
+                likes_better_than = {
+                    who = liege
+                    than = rightful_religious_head_scope
+                }
+            }
+            additive_modifier = {
+                value = 10
+                piety < 200
+            }
+            additive_modifier = {
+                value = -10
+                OR = {
+                    culture = italian
+                    culture = lombard
+                }
+            }
+            additive_modifier = {
+                value = 20
+                de_jure_liege_or_above = k_romagna
+            }
+            modifier = {
+                factor = 1.5
+                likes_better_than = {
+                    who = liege
+                    than = rightful_religious_head_scope
+                }
+            }
+        }
+    }
+
+    option = {
+        name = C_GGH200
+        prestige = 500
+        clr_character_flag = ggh_cooldown
+
+        hidden_effect = {
+            change_variable = { #added in decision
+                which = global_ggh_tension
+                value = -1
+            }
+        }
+
+        ai_chance = {
+            factor = 75
+            modifier = {
+                factor = 0.3
+                trait = ambitious
+            }
+            modifier = {
+                factor = 1.5
+                trait = content
+            }
+        }
+    }
+}
+
+letter_event = {
+    id = GGH.201
+    title = T_GGH201
+    desc = D_GGH201
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH201
+        custom_tooltip = {
+            text = guelph_leader_tt
+        }
+        guelph = {
+            limit = {
+                has_character_flag = guelph_leader
+            }
+            character_event = { id = GGH.202 } #empty event for portrait
+        }
+    }
+
+    option = {
+        name = A_GGH201
+        custom_tooltip = {
+            text = ghibbeline_leader_tt
+        }
+        ghibbeline = {
+            limit = {
+                has_character_flag = ghibbeline_leader
+            }
+            character_event = { id = GGH.202 } #empty event for portrait
+        }
+    }
+}
+
+character_event = {
+    id = GGH.202
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+
+    }
+}
+
+letter_event = { #call to arms!
+    id = GGH.205
+    title = T_GGH205
+    desc = D_GGH205
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH205
+    }
+}
+
+narrative_event = {
+    id = GGH.300
+    title = T_GGH300
+    desc = D_GGH300
+    picture = GFX_evt_holy_roman_emperor
+    is_triggered_only = yes
+
+    option = {
+        name = GUELPH_VICTORY
+        e_hre = {
+            change_variable = {
+                which = imperial_auth
+                value = -15
+            }
+        }
+        narrative_event = {
+            id = GGH.500
+            years = 1
+        }
+        trigger = { has_global_flag = guelph_victory }
+    }
+
+    option = {
+        name = GHIBBELINE_VICTORY
+        e_hre = {
+            change_variable = {
+                which = imperial_auth
+                value = 15
+            }
+        }
+        trigger = { has_global_flag = ghibbeline_victory }
+    }
+}
+
+character_event = {
+    id = GGH.350
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_character_flag = ghibbeline_leader
+            has_character_flag = guelph_leader
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_character_flag = guelph_leader
+            }
+            guelph = {
+                limit = { NOT = { has_character_flag = guelph_leader is_landed = yes } }
+                set_character_flag = guelph_leader
+            }
+        }
+        if = {
+            limit = {
+                has_character_flag = ghibbeline_leader
+            }
+            ghibbeline = {
+                limit = { NOT = { has_character_flag = ghibbeline_leader is_landed = yes } }
+                set_character_flag = ghibbeline_leader
+            }
+        }
+    }
+}
+
+## 401-600
+
+# dictatus papae -> heinrich iv writes to pope -> excom -> rebellion + legitimacy reasons -> autonomy in land -> canossa -> repentance
+#(saxon rebellion by rheinfeld??)
+
+character_event = { 
+    id = GGH.401
+    hide_window = yes
+
+    is_triggered_only = yes # on_startup
+
+    trigger = {
+        start_date >= 1066.1.1
+        NOT = {
+            has_global_flag = investiture_controversy 
+        }
+        has_landed_title = e_hre
+    }
+
+    immediate = {
+        character_event = { id = GGH.402 months = 60 random = 2000 }
+        set_global_flag = investiture_controversy
+        set_dynasty_flag = hre_starting_dyn
+    }
+}
+
+character_event_event = { # investiture controversy
+    id = GGH.402
+    title = T_GGH402
+    desc = D_GGH402
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    immediate = {
+        any_realm_character = {
+            remove_claim = k_papal_state
+        }
+        random_vassal = {
+            limit = {
+                is_theocracy = yes
+                real_tier = COUNT
+            }
+            save_event_target_as = antipope_hre
+        }
+    }
+
+    option = {
+        name = A_GGH402
+        random = {
+            chance = 30
+            add_trait = ambitious
+        }
+        prestige = 100
+        piety = -100
+
+        event_target:antipope_hre = {
+            add_claim = k_papal_state
+        }
+
+        character_event = { id = GGH.410 years = 1 }
+    }
+}
+
+character_event = {
+    id = GGH.410
+    title = T_GGH410
+    desc = D_GGH410
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH410
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = 2
+            }
+        }
+
+        hidden_effect = {
+            k_papal_state = {
+                character_event = { #excom
+                    id = GGH.411
+                    months = 6
+                    random = 100
+                }
+            }
+        }
+    }
+}
+
+character_event = { #pope on his way to excom (effect happens on HRE side)
+    id = GGH.411
+    title = T_GGH411
+    desc = D_GGH411
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH411
+
+        show_trait = excommunicated
+
+        FROM = {
+            character_event = {
+                id = GGH.412
+                months = 2
+                random = 60
+            }
+        }
+    }
+}
+
+character_event = { #excom
+    id = GGH.412
+    title = T_GGH412
+    desc = D_GGH412
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = { #repent
+        name = A_GGH412
+        custom_tooltip = { text = saxon_rebellion_tt }
+        piety = -250
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = -10
+            }
+        }
+        
+        add_trait = excommunicated
+
+        FROM = {
+            character_event = {
+                id = GGH.413
+                days = 90
+            }
+        }
+    }
+
+    option = { #war?
+        name = B_GGH412
+        custom_tooltip = { text = saxon_rebellion_tt }
+
+        piety = -250
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = -10
+            }
+        }
+        
+        add_trait = excommunicated
+
+        war = {
+            target = FROM
+            casus_belli = subdue_pope
+            infamy = 30
+        }
+    }
+
+    after = {
+        d_saxony = {
+            holder_scope = {
+                if = {
+                    limit = {
+                        ai = yes
+                    }
+                    any_war = {
+                        end_war = invalid  
+                        is_primary_war_attacker = yes
+                    }
+                }
+                
+                character_event = { id = GGH.420 days = 15 }
+            }
+        }
+    }
+}
+
+character_event = { # pope rejects
+    id = GGH.413
+    title = T_GGH413
+    desc = D_GGH413
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH413
+
+        FROM = {
+            character_event = {
+                id = GGH.414
+                months = 2
+                random = 60
+            }
+        }
+    }
+}
+
+character_event = { # repent
+    id = GGH.414
+    title = T_GGH414
+    desc = D_GGH414
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH414
+        prestige = -1000
+
+        add_artifact = hairy_cloak
+        repeat_event = { id = GGH.415 months = 6 random = 100 }
+    }
+}
+
+character_event = { # repent
+    id = GGH.415
+    title = T_GGH415
+    desc = D_GGH415
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH415
+        piety = 100
+        remove_trait = excommunicated
+
+        destroy_artifact = hairy_cloak
+    }
+}
+
+character_event = { # saxon rebellion
+    id = GGH.420
+    title = T_GGH420
+    desc = D_GGH420
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = { # saxony, bavaria and brandenburg revolt
+        name = A_GGH420
+
+        war = {
+            casus_belli = ggh_uprising
+            target = FROM
+        }
+
+        FROM = {
+            narrative_event = { id = GGH.422 }
+            any_vassal = {
+                character_event = {
+                    id = GGH.421
+                }
+            }
+        }
+    }
+}
+
+character_event = { # saxon rebellion
+    id = GGH.421
+    title = T_GGH421
+    desc = D_GGH421
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = { #join
+        name = A_GGH421
+
+        join_attacker_wars = FROM
+        ai_chance = {
+            factor = 5
+            modifier = { #historical
+                factor = 100
+                OR = {
+                    has_landed_title = d_brandenburg
+                    has_landed_title = d_bavaria
+                }
+            }
+			modifier = {
+				factor = 3
+				likes_better_than = {
+					who = ROOT
+					than = FROM
+				}
+			}
+        }
+    }
+
+    option = {
+        name = B_GGH421
+        ai_chance = {
+            factor = 95
+        }
+    }
+}
+
+narrative_event = {
+    id = GGH.422
+    title = T_GGH422
+    desc = D_GGH422
+    picture = GFX_evt_holy_roman_emperor
+
+    is_triggered_only = yes
+
+    option = {
+        name = A_GGH422
+    }
+}
+
+narrative_event = {
+    id = GGH.500
+    title = T_GGH500
+    desc = D_GGH500
+    picture =
+
+    is_triggered_only = yes
+
+    option = { # Dissolve HRE
+        name = A_GGH500
+        piety = 1000
+        old_german_dejure_effect = yes
+        set_global_flag = hre_removed
+        activate_title = {
+            title = e_germany
+            status = yes
+        }
+        activate_title = {
+            title = e_hre
+            status = no
+        }
+        hidden_effect = {
+            capital_scope = {
+                kingdom = {
+                    limit = { THIS = { has_holder = no } }
+                    grant_title_no_opinion = ROOT
+                    ROOT = {
+                        any_vassal = {
+                            limit = { primary_title = { de_jure_liege_or_above = PREVPREVPREV } }
+                            set_defacto_liege = ROOT
+                        }
+                    }
+                }
+            }
+            destroy_landed_title = e_hre
+        }
+        ai_chance = { factor = 5 }
+    }
+
+    option = {
+        name = B_GGH500
+        prestige = 1000
+        e_hre = {
+            change_variable = {
+                which = imperial_auth
+                value = 5
+            }
+        }
+        ai_chance = { factor = 95 }
+    }
+}

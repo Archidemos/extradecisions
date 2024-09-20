@@ -58,7 +58,16 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
-			holder_scope = { NOT = { government = ar_confederation_government } }			
+			holder_scope = { NOT = { government = ar_confederation_government } }
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 80
+				}
+			}		
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -91,6 +100,17 @@ laws = {
 			}
 			custom_tooltip = {
 				text = tooltip_disables_advisors
+			}
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
 			}
 			hidden_tooltip = {
 				if = {
@@ -195,6 +215,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			enable_council_voting_on_issue = laws
 			custom_tooltip = {
 				text = council_on_custom
@@ -260,6 +291,15 @@ laws = {
 			}
 			NOT = { is_nomadic = yes }
 			holder_scope = { NOT = { government = ar_confederation_government } }
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 70
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -289,6 +329,17 @@ laws = {
 			disable_council_voting_on_issue = declare_war_interaction
 			custom_tooltip = {
 				text = council_war_off_custom
+			}
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
 			}
 			hidden_tooltip = {
 				if = {
@@ -383,6 +434,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			enable_council_voting_on_issue = declare_war_interaction
 			custom_tooltip = {
 				text = council_war_on_custom
@@ -439,6 +501,16 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
+
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -463,6 +535,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -557,6 +640,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -610,6 +704,16 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
+
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -633,6 +737,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -726,6 +841,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -778,6 +904,16 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
+
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -802,6 +938,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -896,6 +1043,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -948,6 +1106,16 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
+
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -971,6 +1139,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -1065,6 +1244,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -1118,6 +1308,15 @@ laws = {
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -1141,6 +1340,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -1234,6 +1444,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 5
+					}
+				}
+			}
 			hidden_tooltip = {
 				if = {
 					limit = { 
@@ -1284,6 +1505,15 @@ laws = {
 			NOT = {
 				has_law = succession_voting_power_0
 			}
+			trigger_if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				check_variable = {
+					which = imperial_auth
+					value = 40
+				}
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -1303,6 +1533,17 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = -10
+					}
+				}
+			}
 			custom_tooltip = {
 				text = succession_voting_power_0_effect_tooltip
 			}
@@ -1370,6 +1611,18 @@ laws = {
 			factor = 0
 		}
 		effect = {
+			if = {
+				limit = {
+					holder_scope = { has_imperial_trait = yes }
+				}
+				primary_title = {
+					change_variable = {
+						which = imperial_auth
+						value = 10
+					}
+				}
+			}
+
 			custom_tooltip = {
 				text = succession_voting_power_1_effect_tooltip
 			}

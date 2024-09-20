@@ -1,0 +1,1360 @@
+## HRE scripted effects ##
+# 
+# Base = 50.00
+#
+# Full Council Power: Effect (don't want to write the numbers rn) - addition_imperial
+#
+# 
+#   Bi-Yearly ->
+#
+# --- Generic Imperial Variables ---
+#
+# Dejure vassals outside realm:-0.05  -0.025 if tribute (*4 if e_hre) - imperial_dejure_debuff
+# Heretic Counties:-0.07/County, -0.10 Heathens - imperial_heresy # All non-ROOT religious counties
+# Heretic Vassals:-0.04 Count / -0.10 Duke / -0.22 King - imperial_heresy # Heresy only 
+# Tributaries:0.25/Tribute - imperial_tributaries
+# Vassal Counts:0.03 - imperial_vassals
+# Vassal Dukes:0.08 - imperial_vassals
+# Vassal Kings:0.20 - imperial_vassals
+# State Diplomacy:state_diplomacy Stat/15 - imperial_state_diplomacy
+# Lowborn Wife:-1.00 - imperial_lowborn_spouse
+# Regency:-1.50 - imperial_regency
+# Council Power:-5.00 to 0.00 - imperial_council
+# Prestige:1K Prestige/0.50 Max 5K Prestige 1000/2000=0.50 - imperial_prestige
+# Bloodline:1.00 - imperial_bloodline
+#
+# --- Special Title Variable (e.g. only available to HRE or Byz) ---
+#
+# Imperial Regalia:0.50 - imperial_reichskrone
+# Control in Italy:0.50 (HOLDS ATLEAST X AMOUNT OF ITALIA) - imperial_italia
+# Control in Arles:0.50 - imperial_arles
+# Control in Levant:0.50 - imperial_levant
+# Control in Egypt:0.50 - imperial_egypt
+#
+# --- Special Religious/Cultural Variable (e.g. Christian and/or Greek) ---
+#
+# Free Invesiture 1.00, Papal Investiture 0.00 - imperial_investiture
+# Anti-Pope:0.50 - imperial_antipope 
+# Excommunicated: -2.50 - imperial_excommunication
+# Crowned:-2.00 Uncrowned, -1.00 Bad Coronation, 0.00 OK, 1.00 Pope Coronation, 2.00 Self-Crowned - imperial_coronation
+# Bad Caliph:-1.00 - imperial_bad_caliph
+# Decadent:-3.00 to 0.50 - imperial_decadence
+# Crusader Trait:0.50 - imperial_crusader
+#
+#   Actions ->
+#
+# Lose War:-5.00 - HRE.100 HRE.101
+# Win War:2.00 (Excludes Peasant Wars) - HRE.102 HRE.103
+# Ghibbelines Win GGH War:15.00 - HRE.300
+# Guelphs Win:-15.00 - HRE.300
+# Lose Anti-Papal/Anti-King War:-10 -
+# New Emperor:-5.00 - inside grant_imperial_trait
+# Change Council Law: +5.00 / -10.00 - VIA laws/ze_council_power_laws
+#
+# --- Decisions ---
+#
+# Grant Boon:-5.00
+
+reset_imperial_authority = {
+    primary_title = {
+        set_variable = {
+            which = imperial_auth
+            value = 50 #base
+        }
+    }
+}
+
+grant_imperial_trait = {
+    if = {
+        limit = {
+            has_imperial_trait = yes
+        }
+        remove_imperial_trait = yes
+    }
+    if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 20
+                }
+            }
+        }
+        if = {
+            limit = { has_landed_title = e_hre }
+            add_trait = emperor_hre_very_low
+        }
+        else_if = {
+            limit = { has_landed_title = e_byzantium }
+            add_trait = emperor_byz_very_low
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_landed_title = e_roman_empire
+                    has_landed_title = e_west_rome
+                }
+            }
+            add_trait = emperor_rome_very_low
+        }
+        else = {
+            add_trait = emperor_generic_very_low
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value >= 20
+                }
+            }
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 40
+                }
+            }
+        }
+        if = {
+            limit = { has_landed_title = e_hre }
+            add_trait = emperor_hre_low
+        }
+        else_if = {
+            limit = { has_landed_title = e_byzantium }
+            add_trait = emperor_byz_low
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_landed_title = e_roman_empire
+                    has_landed_title = e_west_rome
+                }
+            }
+            add_trait = emperor_rome_low
+        }
+        else = {
+            add_trait = emperor_generic_low
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value >= 40
+                }
+            }
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 60
+                }
+            }
+        }
+        if = {
+            limit = { has_landed_title = e_hre }
+            add_trait = emperor_hre_average
+        }
+        else_if = {
+            limit = { has_landed_title = e_byzantium }
+            add_trait = emperor_byz_average
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_landed_title = e_roman_empire
+                    has_landed_title = e_west_rome
+                }
+            }
+            add_trait = emperor_rome_average
+        }
+        else = {
+            add_trait = emperor_generic_average
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value >= 60
+                }
+            }
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 80
+                }
+            }
+        }
+        if = {
+            limit = { has_landed_title = e_hre }
+            add_trait = emperor_hre_high
+        }
+        else_if = {
+            limit = { has_landed_title = e_byzantium }
+            add_trait = emperor_byz_high
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_landed_title = e_roman_empire
+                    has_landed_title = e_west_rome
+                }
+            }
+            add_trait = emperor_rome_high
+        }
+        else = {
+            add_trait = emperor_generic_high
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value >= 80
+                }
+            }
+        }
+        if = {
+            limit = { has_landed_title = e_hre }
+            add_trait = emperor_hre_very_high
+        }
+        else_if = {
+            limit = { has_landed_title = e_byzantium }
+            add_trait = emperor_byz_very_high
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_landed_title = e_roman_empire
+                    has_landed_title = e_west_rome
+                }
+            }
+            add_trait = emperor_rome_very_high
+        }
+        else = {
+            add_trait = emperor_generic_very_high
+        }
+    }
+}
+
+remove_imperial_trait = {
+    # HRE
+    remove_trait = emperor_hre_very_low
+    remove_trait = emperor_hre_low
+    remove_trait = emperor_hre_average
+    remove_trait = emperor_hre_high
+    remove_trait = emperor_hre_very_high
+    # Byzantium
+    remove_trait = emperor_byz_very_low
+    remove_trait = emperor_byz_low
+    remove_trait = emperor_byz_average
+    remove_trait = emperor_byz_high
+    remove_trait = emperor_byz_very_high
+    # (West) Roman Empire
+    remove_trait = emperor_rome_very_low
+    remove_trait = emperor_rome_low
+    remove_trait = emperor_rome_average
+    remove_trait = emperor_rome_high
+    remove_trait = emperor_rome_very_high
+    # Generic
+    remove_trait = emperor_generic_very_low
+    remove_trait = emperor_generic_low
+    remove_trait = emperor_generic_average
+    remove_trait = emperor_generic_high
+    remove_trait = emperor_generic_very_high
+}
+
+check_imperial_authority = {
+
+    # --- Generic Imperial Variables --- #
+
+    primary_title = {
+        set_variable = { #reset value
+            which = imperial_dejure_debuff
+            value = 0
+        }
+    }
+
+    primary_title = {
+        any_de_jure_vassal_title = {
+            limit = { 
+                real_tier = COUNT 
+                holder_scope = { 
+                    NOR = { 
+                        is_vassal_or_below_of = ROOT 
+                        character = ROOT # not the emperor himself
+                    }
+                }
+            }
+            
+            if = {
+                limit = {
+                    holder_scope = {
+                        OR = {
+                            is_tributary = {
+                                suzerain = ROOT
+                            }
+                            any_liege = {
+                                is_tributary = {
+                                    suzerain = ROOT
+                                }
+                            }
+                        }
+                    }
+                }
+                log = "[This.GetName] is not a part of the [Prev.GetName], but (their top liege) is a tributary"
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_dejure_debuff
+                            value = -0.025
+                        }
+                    }
+                }
+            }
+            else = {
+                log = "[This.GetName] is not a part of the [Prev.GetName]"
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_dejure_debuff
+                            value = -0.05
+                        }
+                    }
+                }
+            }
+        }
+
+        if = {
+            limit = { ROOT = { primary_title = { title = e_hre } } }
+            multiply_variable = {
+                which = imperial_dejure_debuff
+                value = 4
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_heresy
+            value = 0
+        }
+    }
+    if = {
+        any_realm_province = {
+            limit = {
+                NOT = { religion = ROOT }
+                religion_group = ROOT
+            }
+            ROOT = {
+                primary_title = {
+                    change_variable = {
+                        which = imperial_heresy
+                        value = -0.05
+                    }
+                }
+            }
+        }
+        any_realm_province = { # Heathens
+            limit = {
+                NOT = { religion_group = ROOT }
+            }
+            ROOT = {
+                primary_title = {
+                    change_variable = {
+                        which = imperial_heresy
+                        value = -0.10
+                    }
+                }
+                else_if = { # Add to tech tooltip??
+                    limit = {
+                        TECH_CULTURE_FLEX = 5
+                    }
+                    multiply_variable = {
+                        which = imperial_heresy
+                        value = 0.5
+                    }
+                }
+            }
+        }
+    }
+
+    any_realm_character = {
+        limit = {
+            NOT = { religion = ROOT }
+            religion_group = ROOT
+        }
+        trigger_switch = {
+            on_trigger = tier
+            KING = {
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_heresy
+                            value = -0.22
+                        }
+                    }
+                }
+            }
+            DUKE = {
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_heresy
+                            value = -0.10
+                        }
+                    }
+                }
+            }
+            COUNT = {
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_heresy
+                            value = -0.04
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_tributaries
+            value = 0
+        }
+    }
+
+    any_tributary = {
+        ROOT = {
+            primary_title = {
+                change_variable = {
+                    which = imperial_tributaries
+                    value = 0.25 #low to prevent meta? too low?
+                }
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_vassals
+            value = 0
+        }
+    }
+    any_vassal = {
+        primary_title = {
+            trigger_switch = {
+                on_trigger = real_tier
+                KING = {
+                    ROOT = {
+                        primary_title = {
+                            change_variable = {
+                                which = imperial_vassals
+                                value = 0.2
+                            }
+                        }
+                    }
+                }
+                DUKE = {
+                    ROOT = {
+                        primary_title = {
+                            change_variable = {
+                                which = imperial_vassals
+                                value = 0.08
+                            }
+                        }
+                    }
+                }
+                COUNT = {
+                    ROOT = {
+                        primary_title = {
+                            change_variable = {
+                                which = imperial_vassals
+                                value = 0.03
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_state_diplomacy
+            value = 0
+        }
+        ROOT = {
+            export_to_variable = {
+                which = imperial_state_diplomacy
+                value = realm_diplomacy
+            }
+            primary_title = {
+                set_variable = {
+                    which = imperial_state_diplomacy
+                    which = PREV
+                }
+            }
+        }
+        
+        divide_variable = {
+            which = imperial_state_diplomacy
+            value = 15
+        }
+    }
+
+    if = {
+        limit = {
+            any_spouse = { dynasty = none }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_lowborn_spouse
+                value = -1
+            }
+        }
+    }
+    else = {
+        primary_title = {
+            set_variable = {
+                which = imperial_lowborn_spouse
+                value = 0
+            }
+        }
+    }
+
+
+    primary_title = {
+        set_variable = {
+            which = imperial_council
+            value = 0
+        }
+        if = {
+            limit = { has_law = succession_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -1.5
+            }
+        }
+        if = {
+            limit = { has_law = execution_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = war_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = banish_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = revoke_title_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = imprison_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = law_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+        if = {
+            limit = { has_law = grant_title_voting_power_1 }
+            change_variable = {
+                which = imperial_council
+                value = -0.5
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_prestige
+            value = 0
+        }
+        export_to_variable = {
+            which = imperial_prestige
+            value = prestige
+        }
+        divide_variable = {
+            which = imperial_prestige
+            value = 2500
+        }
+    }
+    
+    if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_prestige
+                    value > 2
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_prestige
+                value = 2
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_regency
+            value = 0
+        }
+    }
+    if = {
+        limit = {
+            has_regent = yes
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_regency
+                value = -1.5
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            any_owned_bloodline = {
+                has_bloodline_flag = bloodline_effect_imperial_authority
+            }
+            set_variable = {
+                which = imperial_bloodline
+                value = 1
+            }
+        }
+    }
+    else = {
+        set_variable = {
+            which = imperial_bloodline
+            value = 1
+        }
+    }
+    
+
+    # --- Special Title Variables --- #
+
+    if = {
+        limit = {
+            OR = {
+                AND = {
+                    any_artifact = {
+                        artifact_type = crown_hre
+                        is_artifact_equipped = yes
+                    }
+                    has_landed_title = e_hre
+                }
+                AND = {
+                    any_artifact = {
+                        artifact_type = crown_byzantine
+                        is_artifact_equipped = yes
+                    }
+                    OR = {
+                        has_landed_title = e_byzantium
+                        has_landed_title = e_roman_empire
+                    }
+                    
+                }
+            }
+            
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_reichskrone
+                value = 0.25
+            }
+        }
+    }
+    else = {
+        primary_title = {
+            set_variable = {
+                which = imperial_reichskrone
+                value = 0
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_italia_count
+            value = 0
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                has_landed_title = e_hre # Not Roman Empire or west Rome since they should own it eitherway
+                has_landed_title = e_byzantium
+            }
+        }
+        e_italy = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    real_tier = COUNT
+                    owner = { top_liege = { character = ROOT } }
+                }
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_italia_count
+                            value = 1 #Hold x% of italia?
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                primary_title = {
+                    check_variable = {
+                        which = imperial_italia_count
+                        value = 20
+                    }
+                }
+            }
+            primary_title = {
+                set_variable = {
+                    which = imperial_italia
+                    value = 1
+                }
+            }
+        }
+        else = {
+            primary_title = {
+                set_variable = {
+                    which = imperial_italia
+                    value = 0
+                }
+            }
+        }
+    }
+    
+
+    primary_title = {
+        set_variable = {
+            which = imperial_arles_count
+            value = 0
+        }
+    }
+    if = {
+        limit = { has_landed_title = e_hre }
+        k_burgundy = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    real_tier = COUNT
+                    owner = { top_liege = { character = ROOT }  }
+                }
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_arles_count
+                            value = 1
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                primary_title = {
+                    check_variable = {
+                        which = imperial_arles_count
+                        value = 15
+                    }
+                }
+            }
+            primary_title = {
+                set_variable = {
+                    which = imperial_arles
+                    value = 0.5
+                }
+            }
+        }
+        else = {
+            primary_title = {
+                set_variable = {
+                    which = imperial_arles
+                    value = 0
+                }
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_levant_count
+            value = 0
+        }
+    }
+    if = {
+        limit = { has_landed_title = e_byzantium }
+        k_syria = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    real_tier = COUNT
+                    owner = { top_liege = { character = ROOT }  }
+                }
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_levant_count
+                            value = 1
+                        }
+                    }
+                }
+            }
+        }
+        k_jerusalem = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    real_tier = COUNT
+                    owner = { top_liege = { character = ROOT }  }
+                }
+                ROOT = {
+                    primary_title = {
+                        change_variable = {
+                            which = imperial_levant_count
+                            value = 1
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                primary_title = {
+                    check_variable = {
+                        which = imperial_levant_count
+                        value = 32
+                    }
+                }
+            }
+            primary_title = {
+                set_variable = {
+                    which = imperial_levant
+                    value = 0.5
+                }
+            }
+        }
+        else = {
+            primary_title = {
+                set_variable = {
+                    which = imperial_egypt
+                    value = 0
+                }
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            OR = {
+                has_landed_title = e_byzantium
+                has_landed_title = e_roman_empire
+            }
+        }
+        if = {
+            limit = {
+                completely_controls = k_egypt
+            }
+            primary_title = {
+                set_variable = {
+                    which = imperial_egypt
+                    value = 0.5
+                }
+            }
+        }
+        else = {
+            primary_title = {
+                set_variable = {
+                    which = imperial_egypt
+                    value = 0
+                }
+            }
+        }
+    }
+
+    # --- Special Religious/Cultural Variables --- #
+
+    if = {
+        limit = {
+            has_law = investiture_law_1
+            OR = {
+                religion = catholic
+                religion = fraticelli
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_investiture
+                value = 1
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_law = investiture_law_0
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_investiture
+                value = 0
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            OR = {
+                religion = catholic
+                religion = fraticelli
+            }
+            any_vassal = {
+                has_claim = k_papal_state
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_antipope
+                value = 0.5
+            }
+        }
+    }
+    else = {
+        primary_title = {
+            set_variable = {
+                which = imperial_antipope
+                value = 0
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_excommunication
+            value = 0
+        }
+    }
+    if = {
+        limit = {
+            trait = excommunicated
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_excommunication
+                value = -2.5
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            OR = {
+                religion = catholic
+                religion = fraticelli
+            }
+        }
+        trigger_switch = {
+            on_trigger = trait
+            crowned_by_priest = {
+                primary_title = {
+                    set_variable = {
+                        which = imperial_coronation
+                        value = -1
+                    }
+                }
+            }
+            crowned_by_bishop = {
+                primary_title = {
+                    set_variable = {
+                        which = imperial_coronation
+                        value = 0
+                    }
+                }
+            }
+            crowned_by_pope = {
+                primary_title = {
+                    set_variable = {
+                        which = imperial_coronation
+                        value = 1
+                    }
+                }
+            }
+            crowned_by_myself = {
+                primary_title = {
+                    set_variable = {
+                        which = imperial_coronation
+                        value = 2
+                    }
+                }
+            }
+            fallback = { # no coronation trait
+                primary_title = {
+                    set_variable = {
+                        which = imperial_coronation
+                        value = -2
+                    }
+                }
+            }
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_bad_caliph
+            value = 0
+        }
+    }
+    if = {
+        limit = { trait = bad_priest_muslim } # Bad Caliph
+        set_variable = {
+            which = imperial_bad_caliph
+            value = -1
+        }
+    }
+
+    primary_title = {
+        set_variable = {
+            which = imperial_decadent
+            value = 0
+        }
+    }
+    trigger_switch = {
+        on_trigger = decadence
+        80 = {
+            set_variable = {
+                which = imperial_decadent
+                value = -3
+            }
+        }
+        60 = {
+            set_variable = {
+                which = imperial_decadent
+                value = -1.5
+            }
+        }
+        50 = {
+            set_variable = {
+                which = imperial_decadent
+                value = -1
+            }
+        }
+        25 = {
+            set_variable = {
+                which = imperial_decadent
+                value = -0.5
+            }
+        }
+        10 = {
+            set_variable = {
+                which = imperial_decadent
+                value = -0.25
+            }
+        }
+        0 = {
+            set_variable = {
+                which = imperial_decadent
+                value = 0.5
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            has_crusade_trait_trigger = yes
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_crusader
+                value = 0.5
+            }
+        }
+    }
+    else = {
+        primary_title = {
+            set_variable = {
+                which = imperial_crusader
+                value = 0
+            }
+        }
+    }
+
+    addition_imperial = yes
+}
+
+addition_imperial = {
+    primary_title = {
+        set_variable = {
+            which = imperial_auth_old
+            which = imperial_auth
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_reichskrone
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_dejure_debuff
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_italia
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_arles
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_investiture
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_heresy
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_tributaries
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_vassals
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_crusader
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_state_diplomacy
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_lowborn_spouse
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_state_diplomacy
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_prestige
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_coronation
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_regency
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_excommunication
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_levant
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_egypt
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_bad_caliph
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_decadent
+        }
+        change_variable = {
+            which = imperial_auth
+            which = imperial_bloodline
+        }
+        
+        divide_variable = { #remove stupid decimals >:( (looks ugly) also rounds down automatically - save seperate variable with decimals?
+            which = imperial_auth
+            value = 1000
+        }
+        multiply_variable = {
+            which = imperial_auth
+            value = 1000
+        }
+        divide_variable = {
+            which = imperial_auth_old # For Comparison
+            value = 1000
+        }
+        multiply_variable = {
+            which = imperial_auth_old
+            value = 1000
+        }
+    }
+    
+    if = { #imperial_council is great way to count council laws / This part is the authority cap based on council power
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value == 0
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 100
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 100
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value == -0.5
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 90
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 90
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value == -1
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 80
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 80
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value == -1.5
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 70
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 70
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value == -2
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 60
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 60
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            primary_title = {
+                check_variable = {
+                    which = imperial_council
+                    value <= -2.5
+                }
+                check_variable = {
+                    which = imperial_auth
+                    value = 50
+                }
+            }
+        }
+        primary_title = {
+            set_variable = {
+                which = imperial_auth
+                value = 50
+            }
+        }
+    }
+
+    primary_title = {
+        PREV = {
+            any_demesne_title = {
+                set_variable = {
+                    which = imperial_auth
+                    which = PREVPREV
+                }
+            }
+        }
+    }
+
+    character_event = {
+        id = HRE.200 # Update event
+        days = 1
+    }
+}

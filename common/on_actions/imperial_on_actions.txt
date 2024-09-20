@@ -1,0 +1,84 @@
+on_startup = {
+    events = {
+        HRE.1 # Setup trait
+        GGH.401
+    }
+}
+
+on_bi_yearly_pulse = {
+    events = {
+        HRE.5 # biyear check up
+        HRE.6 # pass imperial flag to other titles
+    }
+}
+
+on_yearly_pulse = {
+    events = {
+        HRE.105 # Check Bloodline
+    }
+}
+
+on_five_year = {
+    random_events = {
+        1000 = 0
+        100 = HRE.110 # random +- auth
+        100 = HRE.111
+        100 = HRE.112
+        100 = HRE.113
+    }
+}
+
+on_decade_pulse = {
+    events = {
+        HRE.7 # imperial_title flag clean-up
+    }
+}
+
+
+on_death = {
+    events = {
+        GGH.350 # new faction leader
+    }
+}
+
+on_new_holder = {
+    events = {
+        HRE.2 # give trait to new hre emperor
+        HRE.3 # remove on deposed ruler
+    }
+}
+
+on_new_holder_inheritance = {
+    events = {
+        GGH.1 # Guelphs and Ghibbelines setup
+        HRE.2
+        HRE.3
+    }
+}
+
+on_new_holder_usurpation = {
+    events = {
+        HRE.2
+        HRE.3
+    }
+}
+
+on_war_ended_defeat = {
+    events = {
+        HRE.100
+        HRE.102
+    }
+}
+
+on_war_ended_victory = {
+    events = {
+        HRE.101
+        HRE.103
+    }
+}
+
+on_war_started = {
+    events = {
+        HRE.100
+    }
+}
