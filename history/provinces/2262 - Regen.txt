@@ -5,9 +5,9 @@ title = c_regen
 
 # Settlements
 max_settlements = 4
-b_fenyvese = castle
-b_tavaszliget = city
-b_csillaghegy = temple
+b_fenyvese = tribal
+#b_tavaszliget = city
+#b_csillaghegy = temple
 #b_malyva = temple
 #b_gyongyosa = castle
 #b_szilvas = city
@@ -17,9 +17,15 @@ b_csillaghegy = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_kristalyvar = castle
+	b_pipacsfalu = city
+	b_kodmon = temple
+}
 856.1.1 = {
 	culture = slovieni
-	religion = catholic 
+	religion = catholic
+	b_kristalyvar = tribal
 }
 930.1.1 = { 
 	culture = hungarian 
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_kristalyvar = castle
+	b_pipacsfalu = city
+	b_kodmon = temple
 }

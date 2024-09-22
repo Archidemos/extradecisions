@@ -5,9 +5,9 @@ title = c_turco
 
 # Settlements
 max_settlements = 4
-b_sziklavar = castle
-b_hovirag = city
-b_tolgyerdo = temple
+b_sziklavar = tribal
+#b_hovirag = city
+#b_tolgyerdo = temple
 #b_kekpatak = temple
 #b_fatyolfalva = castle
 #b_fenyves = city
@@ -17,9 +17,15 @@ b_tolgyerdo = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_sziklavar = castle
+	b_hovirag = city
+	b_tolgyerdo = temple
+}
 856.1.1 = {
 	culture = slovieni
-	religion = catholic 
+	religion = catholic
+	b_sziklavar = tribal
 }
 930.1.1 = { 
 	culture = hungarian 
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_sziklavar = castle
+	b_hovirag = city
+	b_tolgyerdo = temple
 }

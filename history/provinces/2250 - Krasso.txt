@@ -5,9 +5,9 @@ title = c_krasso
 
 # Settlements
 max_settlements = 4
-b_felsohaz = castle
-b_kisvaros = city
-b_nyilasker = temple
+b_felsohaz = tribal
+#b_kisvaros = city
+#b_nyilasker = temple
 #b_szentkiraly = temple
 #b_vadkert = castle
 #b_lampas = city
@@ -17,7 +17,13 @@ b_nyilasker = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_felsohaz = castle
+	b_kisvaros = city
+	b_nyilasker = temple
+}
 856.1.1 = {
+	b_felsohaz = tribal
 	culture = slovieni
 	religion = catholic 
 }
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_felsohaz = castle
+	b_kisvaros = city
+	b_nyilasker = temple
 }

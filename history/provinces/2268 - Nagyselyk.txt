@@ -5,9 +5,9 @@ title = c_nagyselyk
 
 # Settlements
 max_settlements = 4
-b_topart = castle
-b_harmatos = city
-b_baranyka = temple
+b_topart = tribal
+#b_harmatos = city
+#b_baranyka = temple
 #b_sargabarack = temple
 #b_tavaszfeny = castle
 #b_szelidvar = city
@@ -17,9 +17,15 @@ b_baranyka = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_topart = castle
+	b_harmatos = city
+	b_baranyka = temple
+}
 856.1.1 = {
 	culture = slovieni
 	religion = catholic 
+	b_topart = tribal
 }
 930.1.1 = { 
 	culture = hungarian 
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_topart = castle
+	b_harmatos = city
+	b_baranyka = temple
 }

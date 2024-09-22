@@ -5,9 +5,9 @@ title = c_mures
 
 # Settlements
 max_settlements = 4
-b_napsugar = castle
-b_csondvaros = city
-b_feketevar = temple
+b_napsugar = tribal
+#b_csondvaros = city
+#b_feketevar = temple
 #b_gyumolcsfara = temple
 #b_hidmezo = castle
 #b_borostyan = city
@@ -17,9 +17,15 @@ b_feketevar = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_napsugar = castle
+	b_csondvaros = city
+	b_feketevar = temple
+}
 856.1.1 = {
 	culture = slovieni
-	religion = catholic 
+	religion = catholic
+	b_napsugar = tribal
 }
 930.1.1 = { 
 	culture = hungarian 
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_napsugar = castle
+	b_csondvaros = city
+	b_feketevar = temple
 }

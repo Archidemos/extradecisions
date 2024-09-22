@@ -5,9 +5,9 @@ title = c_ung
 
 # Settlements
 max_settlements = 4
-b_kiserdorada = castle
-b_fenyvara = city
-b_sargaret = temple
+b_kiserdorada = tribal
+#b_fenyvara = city
+#b_sargaret = temple
 #b_hopehely = temple
 #b_tavirozsa = castle
 #b_nyirfa = city
@@ -17,9 +17,15 @@ b_sargaret = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_kiserdorada = castle
+	b_fenyvara = city
+	b_sargaret = temple
+}
 856.1.1 = {
 	culture = slovieni
-	religion = catholic 
+	religion = catholic
+	b_kiserdorada = tribal
 }
 930.1.1 = { 
 	culture = hungarian 
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_kiserdorada = castle
+	b_fenyvara = city
+	b_sargaret = temple
 }

@@ -5,9 +5,9 @@ title = c_covasna
 
 # Settlements
 max_settlements = 4
-b_vizpart = castle
-b_harmonikas = city
-b_fenykep = temple
+b_vizpart = tribal
+#b_harmonikas = city
+#b_fenykep = temple
 #b_babkeszito = temple
 #b_szigetvar = castle
 #b_tolgykert = city
@@ -17,7 +17,13 @@ b_fenykep = temple
 culture = avar
 religion = tengri_pagan
 # History
+800.1.1 = {
+	b_vizpart = castle
+	b_harmonikas = city
+	b_fenykep = temple
+}
 856.1.1 = {
+	b_vizpart = tribal
 	culture = slovieni
 	religion = catholic 
 }
@@ -27,4 +33,7 @@ religion = tengri_pagan
 }
 950.1.1 = {
 	religion = catholic
+	b_vizpart = castle
+	b_harmonikas = city
+	b_fenykep = temple
 }
