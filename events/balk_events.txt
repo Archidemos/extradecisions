@@ -1,0 +1,71 @@
+namespace = YUG
+
+narrative_event = { #Event for everyone about the formation
+	id = YUG.100
+	title = EVTNAMEYUG.100
+	desc = EVTDESCYUG.100
+	sound = ar_army_marching
+	
+	picture = "GFX_evt_crusaders"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Currious.."
+	}
+}
+
+
+# The Schism Mended
+narrative_event = {
+	id = YUG.001
+	title = EVTNAMEYUG.001
+	desc = EVTDESCYUG.001
+	
+    picture = GFX_evt_mass_crusade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Away they go!"
+
+		set_global_flag = yugo_convert_mended
+		any_playable_ruler = {
+			limit = { vassal_of = FROM is_ruler = yes }
+			narrative_event = { id = YUG.002 }	
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = YUG.002
+	title = EVTNAMEYUG.002
+	desc = EVTDESCYUG.002
+	
+    picture = GFX_evt_mass_crusade
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = "For the Glory of Yugoslavia!"
+		ai_chance = { factor = 75 }
+		religion = ROOT
+		any_courtier = {
+			limit = {
+				religion = ROOT
+				liege = { character = ROOT }
+			}
+			religion = ROOT
+		}
+		capital_scope = {
+			religion = ROOT
+		}
+	}
+	option = { # No
+		name = "We rule for him, not him directly!"
+		ai_chance = { factor = 25 }
+	}
+}
