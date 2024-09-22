@@ -4,7 +4,7 @@
 title = c_belgrade
 
 # Settlements
-max_settlements = 4
+max_settlements = 6
 b_belgrade = tribal
 
 #b_kragujevac = castle
@@ -17,15 +17,19 @@ b_belgrade = tribal
 # Misc
 culture = serbian
 religion = slavic_pagan
+terrain = farmlands
 
 # History
 633.1.1 = {
 	culture = romanian
 }
-
+766.1.1 = { b_belgrade = castle }
 780.1.1 = {
 	religion = orthodox
-	b_belgrade = castle
-	b_zemun = city
-	b_smederevo = temple
+	b_kragujevac = castle
+	b_pozarevac = city
+	b_branicevo = temple
+}
+935.1.1 = {
+	b_lipovic = castle
 }
