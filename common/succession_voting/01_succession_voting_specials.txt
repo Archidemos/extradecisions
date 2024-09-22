@@ -8287,46 +8287,6 @@ hre_feudal_elective = {
 				} 
 			}
 		}
-
-		additive_modifier = { #Same GGH faction
-			value = 30
-			localisation_key = tooltip_feudal_elector_vote_ggh
-			NOT = { character = FROM } #But not if it's me.
-			NOT = { is_rival = FROM } #Special case
-			FROM = {
-				OR = {
-					AND = {
-						ROOT = { trait = guelph }
-						trait = guelph
-					}
-					AND = {
-						ROOT = { trait = ghibbeline }
-						trait = ghibbeline
-					}
-				}
-			}
-		}
-		
-		additive_modifier = { #Same faction + faction leader
-			value = 20
-			localisation_key = tooltip_feudal_elector_vote_ggh_leader
-			NOT = { character = FROM } #But not if it's me.
-			NOT = { is_rival = FROM } #Special case
-			FROM = {
-				OR = {
-					AND = {
-						ROOT = { trait = guelph }
-						trait = guelph
-						has_character_flag = guelph_leader
-					}
-					AND = {
-						ROOT = { trait = ghibbeline }
-						trait = ghibbeline
-						has_character_flag = ghibbeline_leader
-					}
-				}
-			}
-		}
 	}
 	
 	#ROOT = Current Title holder, FROM = Candidate, FROMFROM = Title, FROMFROMFROM = Null
