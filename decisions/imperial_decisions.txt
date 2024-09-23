@@ -1,0 +1,156 @@
+decisions = {
+    adopt_imperial_rule = {
+        is_high_prio = yes
+        ai_check_interval = 120
+        only_independent = yes
+
+        potential = {
+            real_tier = EMPEROR
+            has_law = ze_administration_laws_2 # Imperial Administration
+            NOT = { primary_title = { has_title_flag = imperial_title } }
+            is_nomadic = no
+            is_tribal = no
+        }
+
+        allow = {
+            prestige = 3000
+            piety = 500
+            wealth = 500
+        }
+
+        effect = {
+            prestige = 2000
+            piety = 500
+            wealth = -500
+            if = {
+                limit = { NOT = { trait = ambitious } }
+                random = {
+                    chance = 50
+                    add_trait = ambitious
+                }
+            }
+            
+            custom_tooltip = {
+                text = ADOPT_IMPERIALISM
+                primary_title = {
+                    set_title_flag = imperial_title
+                    set_variable = {
+                        which = imperial_auth
+                        value = 50
+                    }
+                }
+                character_event = { id = HRE.5 }
+            }
+        }
+    }
+}
+
+targeted_decisions = {
+
+    grant_imperial_boon = {
+        ai_check_interval = 180
+        filter = vassals
+        ai_target_filter = vassals
+
+        potential = {
+            FROM = {
+                primary_title = {
+                    has_title_flag = imperial_title
+                }
+            }
+            ROOT = {
+                age = 16
+                NOT = { character = FROM } #some reaon vassals includes yourself
+            }
+        }
+
+        allow = {
+            is_incapable = no
+            war = no
+            prisoner = no
+            trigger_if = {
+                limit = {
+                    has_character_modifier = imperial_boon
+                }
+                NOT = {
+                    has_character_modifier = imperial_boon
+                }
+            }
+            FROM = {
+                primary_title = {
+                    show_scope_change = no
+                    check_variable = {
+                        which = imperial_auth
+                        value = 25
+                    }
+                }
+                trigger_if = {
+                    limit = {
+                        has_character_modifier = recently_granted_boon
+                    }
+                    NOT = {
+                        has_character_modifier = recently_granted_boon
+                    }
+                }
+            }
+        }
+
+        effect = {
+            add_character_modifier = {
+                name = imperial_boon
+                years = 10
+            }
+            opinion = {
+                name = granted_boon
+                who = FROM
+                years = 10
+            }
+            FROM = {
+                primary_title = {
+                    show_scope_change = no
+                    change_variable = {
+                        which = imperial_auth
+                        value = -5
+                    }
+                }
+                hidden_effect = {
+                    add_character_modifier = {
+                        name = recently_granted_boon
+                        hidden = yes
+                        years = 15
+                    }
+                }
+            }
+        }
+    }
+}
+
+title_decisions = {
+    
+    enable_imperial_update_event = {
+        filter = primary_title
+        ai_target_filter = none
+        ai = no
+
+        potential = {
+            FROM = {
+                has_character_modifier = hide_imperial_update
+            }
+
+            ROOT = {
+                has_title_flag = imperial_title
+            }
+        }
+        
+        allow = {
+
+        }
+
+        effect = {
+            FROM = {
+                show_scope_change = no
+                remove_character_modifier = hide_imperial_update
+            }
+        }
+    }
+}

@@ -1,0 +1,557 @@
+namespace = HRE
+
+character_event = { #setup
+    id = HRE.1
+    hide_window = yes
+
+    is_triggered_only = yes # on_startup
+
+    trigger = {
+        primary_title = { # Titles on start to give this to
+            OR = {
+                title = e_hre
+                title = e_byzantium
+                title = e_roman_empire # Give the title_flag
+                title = e_west_rome
+            }
+        }
+        is_save_game = no
+    }
+
+    immediate = {
+        primary_title = { set_title_flag = imperial_title }
+
+        reset_imperial_authority = yes
+
+        check_imperial_authority = yes
+        
+        grant_imperial_trait = yes
+        
+    }
+}
+
+character_event = { #give to new emperor
+    id = HRE.2
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder / on_new_holder_inheritance / on_new_holder_usurpation
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        is_save_game = no
+
+        FROM = { title = { has_title_flag = imperial_title } }
+    }
+
+    immediate = {
+        primary_title = {
+            change_variable = { # new emperor
+                which = imperial_auth
+                value = -5
+            }
+        }
+
+        check_imperial_authority = yes
+
+        grant_imperial_trait = yes
+    }
+}
+
+character_event = { #remove from deposed
+    id = HRE.3
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder / on_new_holder_inheritance / on_new_holder_usurpation
+
+    trigger = {
+        FROM = { title = { has_title_flag = imperial_title } }
+
+        FROMFROM = {
+            NOT = { primary_title = { has_title_flag = imperial_title } }
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = { has_imperial_trait = yes }
+            FROMFROM = {
+                remove_imperial_trait = yes
+            }
+        }
+    }
+}
+
+character_event = { #check authority
+    id = HRE.5
+    hide_window = yes
+
+    is_triggered_only = yes # on_bi_yearly_pulse
+
+    only_independent = yes
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        has_imperial_trait = yes
+    }
+
+    immediate = {
+        check_imperial_authority = yes
+        
+        grant_imperial_trait = yes
+    }
+}
+
+character_event = { #pass imperial flag
+    id = HRE.6
+    hide_window = yes
+
+    is_triggered_only = yes # on_bi_yearly_pulse
+
+    only_independent = yes
+
+    trigger = {
+        real_tier = EMPEROR
+        any_demesne_title = { has_title_flag = imperial_title }
+    }
+
+    immediate = {
+        primary_title = { set_title_flag = imperial_title }
+    }
+}
+
+character_event = { # clean-up flag
+    id = HRE.7
+    hide_window = yes
+
+    is_triggered_only = yes # on_decade
+
+    only_independent = yes
+
+    trigger = {
+        real_tier = KING
+    }
+
+    immediate = {
+        primary_title = {
+            empire = {
+                limit = {
+                    has_title_flag = imperial_title
+                    has_holder = no
+                    NOR = {
+                        title = e_hre
+                        title = e_byzantium
+                        title = e_west_rome
+                        title = e_roman_empire
+                    }
+                }
+                clr_title_flag = imperial_title 
+            }
+        }
+    }
+}
+
+
+## IMPERIAL AUTHORITY 100-199
+
+
+character_event = { #LOSE WAR / START WAR
+    id = HRE.100
+    hide_window = yes
+
+    is_triggered_only = yes # on_war_ended_defeat / on_war_started
+
+    trigger = {
+        FROM = {
+            primary_title = { has_title_flag = imperial_title }
+        }
+    }
+
+    immediate = {
+        primary_title = {
+            change_variable = {
+                which = imperial_auth
+                value = -5
+            }
+        }
+    }
+}
+
+character_event = { #LOSE WAR (defensive)
+    id = HRE.101
+    hide_window = yes
+
+    is_triggered_only = yes # on_war_ended_victory 
+
+    trigger = {
+        ROOT = {
+            primary_title = { has_title_flag = imperial_title }
+        }
+    }
+
+    immediate = {
+        primary_title = {
+            change_variable = {
+                which = imperial_auth
+                value = -5
+            }
+        }
+    }
+}
+
+character_event = { #WIN WAR (defensive)
+    id = HRE.102
+    hide_window = yes
+
+    is_triggered_only = yes # on_war_ended_defeat
+
+    trigger = {
+        ROOT = {
+            primary_title = { has_title_flag = imperial_title }
+            has_imperial_trait = yes
+            any_war = {
+                using_unimportant_cb = no
+            }
+        }
+    }
+
+    immediate = {
+        primary_title = {
+            change_variable = {
+                which = imperial_auth
+                value = 2
+            }
+        }
+    }
+}
+
+character_event = { #WIN WAR
+    id = HRE.103
+    hide_window = yes
+
+    is_triggered_only = yes # on_war_ended_victory 
+
+    trigger = {
+        FROM = {
+            primary_title = { has_title_flag = imperial_title }
+            has_imperial_trait = yes
+        }
+    }
+
+    immediate = {
+        primary_title = {
+            change_variable = {
+                which = imperial_auth
+                value = 2
+            }
+        }
+    }
+}
+
+character_event = { #check bloodline
+    id = HRE.105
+    hide_window = yes
+
+    is_triggered_only = yes # on_yearly
+
+    trigger = {
+        primary_title = {
+            has_title_flag = imperial_title
+            check_variable = {
+                which = imperial_auth
+                value = 80
+            }
+        }
+        NOR = {
+            any_owned_bloodline = {
+                has_bloodline_flag = bloodline_effect_imperial_authority
+            }
+            is_incapable = yes
+            war = no
+            prisoner = no
+            age = 16
+        }
+        has_imperial_trait = yes
+        has_law = centralization_4
+        trigger_if = {
+            limit = { NOT = { has_dlc = "Zeus" } } # Conclave
+            has_law = crown_authority_4
+        }
+        trigger_else = {
+            has_law = law_voting_power_0
+        }
+
+        OR = {
+            stewardship = 18
+            diplomacy = 18
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                check_variable = {
+                    which = imperial_bloodline_counter
+                    value = 15
+                }
+            }
+            narrative_event = { id = HRE.106 }
+        }
+        else = {
+            change_variable = {
+                which = imperial_bloodline_counter
+                value = 1
+            }
+        }
+    }
+}
+
+narrative_event = {
+    id = HRE.106
+    title = T_HRE106
+    desc = D_HRE106
+    picture = GFX_evt_powerful_ruler
+    
+    is_triggered_only = yes
+
+    option = {
+        name = A_HRE106
+        if = {
+            limit = {
+                has_landed_title = e_hre
+            }
+            create_bloodline = {
+                type = bloodline_imperial_authority_hre
+            }
+        }
+        else = {
+            create_bloodline = {
+                type = bloodline_imperial_authority
+            }
+        }
+    }
+}
+
+character_event = {
+    id = HRE.200
+    title = IMPERIAL_VARIABLES
+    desc = IMPERIAL_VARIABLES_desc
+    window = EventWindowImperial
+    background = GFX_event_imperial_bg
+
+    is_triggered_only = yes # addition_imperial / bi-yearly
+
+    trigger = {
+        NOT = {
+            has_character_modifier = hide_imperial_update
+        }
+        total_years_played = 1 # not spamming the event on first year
+    }
+
+    option = {
+        name = ""
+        custom_tooltip = {
+            text = CLICK_TO_EXIT
+        }
+    }
+
+    option = {
+        name = ""
+        add_character_modifier = {
+            name = hide_imperial_update
+            duration = -1
+            hidden = yes
+            inherit = yes
+        }
+        custom_tooltip = {
+            text = STOP_NOTIFICATIONS
+        }
+    }
+}
+
+character_event = { # random positive
+    id = HRE.110
+    title = T_HRE110
+    desc = D_HRE110
+    picture = GFX_evt_relaxed_ruler
+
+    is_triggered_only = yes # on_five_year
+
+    weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 50
+                }
+            }
+		}
+        modifier = {
+			factor = 2
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value = 75
+                }
+            }
+		}
+	}
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        has_imperial_trait = yes
+    }
+
+    option = {
+        name = A_HRE110
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = 2
+            }
+        }
+    }
+}
+
+character_event = { # random positive
+    id = HRE.111
+    title = T_HRE110
+    desc = D_HRE110
+    picture = GFX_evt_relaxed_ruler
+
+    is_triggered_only = yes # on_five_year
+
+    weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 50
+                }
+            }
+		}
+        modifier = {
+			factor = 2
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value = 75
+                }
+            }
+		}
+	}
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        has_imperial_trait = yes
+    }
+
+    option = {
+        name = A_HRE110
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = 5
+            }
+        }
+    }
+}
+
+character_event = { # random negative
+    id = HRE.112
+    title = T_HRE112
+    desc = D_HRE112
+    picture = GFX_evt_stressed_ruler
+
+    is_triggered_only = yes # on_five_year
+
+    weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 50
+                }
+            }
+		}
+        modifier = {
+			factor = 0.5
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value = 75
+                }
+            }
+		}
+	}
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        has_imperial_trait = yes
+    }
+
+    option = {
+        name = A_HRE112
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = -2
+            }
+        }
+    }
+}
+
+character_event = { # random negative
+    id = HRE.113
+    title = T_HRE112
+    desc = D_HRE112
+    picture = GFX_evt_stressed_ruler
+
+    is_triggered_only = yes # on_five_year
+
+    weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value < 50
+                }
+            }
+		}
+        modifier = {
+			factor = 0.5
+			primary_title = {
+                check_variable = {
+                    which = imperial_auth
+                    value = 75
+                }
+            }
+		}
+	}
+
+    trigger = {
+        primary_title = { has_title_flag = imperial_title }
+        has_imperial_trait = yes
+    }
+
+    option = {
+        name = A_HRE112
+        primary_title = {
+            show_scope_change = no
+            change_variable = {
+                which = imperial_auth
+                value = -5
+            }
+        }
+    }
+}
