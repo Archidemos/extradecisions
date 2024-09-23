@@ -3514,12 +3514,23 @@
 205057 = {
 	name="Penda" #
 	dynasty=1047002
-	religion="catholic"
+	religion="norse_pagan"
 	culture="saxon"
 	father=205056
 	trait= zealous
 	600.1.1={
 		birth="600.1.1"
+		wealth = 340
+		effect = {
+			spawn_unit = {
+				province = 67 # Warwick
+				owner = ROOT
+				troops = {
+					light_infantry = { 750 750 }
+					archers = { 250 250 }
+				}
+			}
+		}
 	}
 	655.11.15={
 		death="655.11.15"
@@ -3528,7 +3539,7 @@
 205058 = {
 	name="Eowa" #
 	dynasty=1047002
-	religion="catholic"
+	religion="norse_pagan"
 	culture="saxon"
 	father=205056
 	601.1.1={
@@ -3554,7 +3565,7 @@
 205060 = {
 	name="Peada"
 	dynasty=1047002
-	religion="catholic"
+	religion="norse_pagan"
 	culture="saxon"
 	father=205057
 	630.1.1={
