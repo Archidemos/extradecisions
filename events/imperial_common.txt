@@ -331,43 +331,6 @@ narrative_event = {
     }
 }
 
-character_event = {
-    id = HRE.200
-    title = IMPERIAL_VARIABLES
-    desc = IMPERIAL_VARIABLES_desc
-    window = EventWindowImperial
-    background = GFX_event_imperial_bg
-
-    is_triggered_only = yes # addition_imperial / bi-yearly
-
-    trigger = {
-        NOT = {
-            has_character_modifier = hide_imperial_update
-        }
-        total_years_played = 1 # not spamming the event on first year
-    }
-
-    option = {
-        name = ""
-        custom_tooltip = {
-            text = CLICK_TO_EXIT
-        }
-    }
-
-    option = {
-        name = ""
-        add_character_modifier = {
-            name = hide_imperial_update
-            duration = -1
-            hidden = yes
-            inherit = yes
-        }
-        custom_tooltip = {
-            text = STOP_NOTIFICATIONS
-        }
-    }
-}
-
 character_event = { # random positive
     id = HRE.110
     title = T_HRE110
@@ -552,6 +515,42 @@ character_event = { # random negative
                 which = imperial_auth
                 value = -5
             }
+        }
+    }
+}
+
+character_event = {
+    id = HRE.200
+    title = IMPERIAL_VARIABLES
+    desc = IMPERIAL_VARIABLES_desc
+    window = EventWindowImperial
+
+    is_triggered_only = yes # addition_imperial / bi-yearly
+
+    trigger = {
+        NOT = {
+            has_character_modifier = hide_imperial_update
+        }
+        total_years_played = 1 # not spamming the event on first year
+    }
+
+    option = {
+        name = ""
+        custom_tooltip = {
+            text = CLICK_TO_EXIT
+        }
+    }
+
+    option = {
+        name = ""
+        add_character_modifier = {
+            name = hide_imperial_update
+            duration = -1
+            hidden = yes
+            inherit = yes
+        }
+        custom_tooltip = {
+            text = STOP_NOTIFICATIONS
         }
     }
 }
