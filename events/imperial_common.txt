@@ -40,7 +40,7 @@ character_event = { #give to new emperor
         primary_title = { has_title_flag = imperial_title }
         is_save_game = no
 
-        FROM = { title = { has_title_flag = imperial_title } }
+        FROM = { has_title_flag = imperial_title }
     }
 
     immediate = {
@@ -64,7 +64,7 @@ character_event = { #remove from deposed
     is_triggered_only = yes # on_new_holder / on_new_holder_inheritance / on_new_holder_usurpation
 
     trigger = {
-        FROM = { title = { has_title_flag = imperial_title } }
+        FROM = { has_title_flag = imperial_title }
 
         FROMFROM = {
             NOT = { primary_title = { has_title_flag = imperial_title } }
