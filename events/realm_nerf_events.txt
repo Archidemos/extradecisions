@@ -103,7 +103,11 @@ character_event = {
         event_target:nerf_value_title = {
             holder_scope = {
 				if = {
-					limit = { ROOT = { realm_size <= 65 } }
+					limit = { ROOT = { realm_size <= 20 } }
+					add_character_modifier = { name = realm_nerf_0 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 20 realm_size <= 65 } }
 					add_character_modifier = { name = realm_nerf_1 duration = -1 }
 				}
 				if = {
@@ -127,11 +131,11 @@ character_event = {
 					add_character_modifier = { name = realm_nerf_6 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 550 realm_size <= 700 } }
+					limit = { ROOT = { realm_size >= 550 realm_size <= 800 } }
 					add_character_modifier = { name = realm_nerf_7 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 700 } }
+					limit = { ROOT = { realm_size >= 800 } }
 					add_character_modifier = { name = realm_nerf_8 duration = -1 }
 				}
             }
@@ -162,37 +166,41 @@ character_event = {
         remove_character_modifier = realm_nerf_7
 		remove_character_modifier = realm_nerf_8
 
-        if = {
-            limit = { ROOT = { realm_size < 50 } }
-            add_character_modifier = { name = realm_nerf_1 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 50 realm_size < 100 } }
-            add_character_modifier = { name = realm_nerf_2 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 100 realm_size < 200 } }
-            add_character_modifier = { name = realm_nerf_3 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 200 realm_size < 300 } }
-            add_character_modifier = { name = realm_nerf_4 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 300 realm_size < 400 } }
-            add_character_modifier = { name = realm_nerf_5 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 400 realm_size < 500 } }
-            add_character_modifier = { name = realm_nerf_6 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 500 realm_size < 600 } }
-            add_character_modifier = { name = realm_nerf_7 duration = -1 }
-        }
-        if = {
-            limit = { ROOT = { realm_size > 600 } }
-            add_character_modifier = { name = realm_nerf_8 duration = -1 }
-        }
+		if = {
+			limit = { ROOT = { realm_size <= 20 } }
+			add_character_modifier = { name = realm_nerf_0 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 20 realm_size <= 65 } }
+			add_character_modifier = { name = realm_nerf_1 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 65 realm_size <= 100 } }
+			add_character_modifier = { name = realm_nerf_2 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 100 realm_size <= 200 } }
+			add_character_modifier = { name = realm_nerf_3 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 200 realm_size <= 300 } }
+			add_character_modifier = { name = realm_nerf_4 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 300 realm_size <= 400 } }
+			add_character_modifier = { name = realm_nerf_5 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 400 realm_size <= 550 } }
+			add_character_modifier = { name = realm_nerf_6 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 550 realm_size <= 800 } }
+			add_character_modifier = { name = realm_nerf_7 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 800 } }
+			add_character_modifier = { name = realm_nerf_8 duration = -1 }
+		}
     }
 }
