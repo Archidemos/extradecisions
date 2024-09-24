@@ -137,7 +137,7 @@ decisions = {
 			culture_group = south_slavic
 			religion_group = christian
 			has_landed_title = e_yugoslavia
-			NOT = { has_global_flag = yugoslavia_epirus_dacia }
+			NOT = { has_global_flag = yugoslavia_dacia_integrated }
 		}
 		
 		allow = {
@@ -148,10 +148,38 @@ decisions = {
 		effect = {
 			prestige = 1000
 			k_dacia = { de_jure_liege = e_yugoslavia }
-			set_global_flag = yugoslavia_epirus_dacia	
+			set_global_flag = yugoslavia_dacia_integrated	
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
+
+	plc_integrate_bohemia = {
+		only_playable = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			has_global_flag = commonwealth_formed
+			religion_group = christian
+			has_landed_title = e_plc
+			NOT = { has_global_flag = plc_integrated_bohemia }
+		}
+		
+		allow = {
+			prestige = 1000
+			completely_controls = k_dacia
+		}
+		
+		effect = {
+			prestige = 1000
+			k_dacia = { de_jure_liege = e_plc }
+			set_global_flag = plc_integrated_bohemia	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 }
