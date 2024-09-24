@@ -519,6 +519,32 @@ character_event = { # random negative
     }
 }
 
+character_event = { # GFX warning
+    id = HRE.199
+    title = "Warning"
+    desc = IMPERIAL_VARIABLES_warning_desc
+    window = EventWindowImperial
+
+    is_triggered_only = yes # on_start_up
+
+    trigger = {
+        NOT = {
+            has_character_modifier = hide_imperial_update
+        }
+        is_save_game = no
+        is_multiplayer_host_character = yes # Host should do it
+    }
+
+    option = {
+        name = "OK"
+    }
+
+    option = {
+        name = "Disable it!"
+        set_global_flag = disabled_imperial_event
+    }
+}
+
 character_event = {
     id = HRE.200
     title = IMPERIAL_VARIABLES
@@ -530,6 +556,7 @@ character_event = {
     trigger = {
         NOT = {
             has_character_modifier = hide_imperial_update
+            has_global_flag = disabled_imperial_event
         }
         total_years_played = 1 # not spamming the event on first year
     }
