@@ -47,6 +47,7 @@ liege="k_jerusalem"
 1112.1.1=
 {
 	holder=223670 #Pons
+	liege = 0
 }
 1137.3.1=
 {
@@ -55,10 +56,15 @@ liege="k_jerusalem"
 1152.1.1=
 {
 	holder=223650 #Raymond III
+	set_tribute_suzerain = {
+		who = k_jerusalem
+		type = permanent
+	}
 }
 1187.9.1=
 {
 	holder=223651 #Raymond IV
+	clear_tribute_suzerain = k_jerusalem
 }
 1198.6.1=
 {

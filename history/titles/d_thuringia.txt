@@ -25,6 +25,7 @@
 }
 633.1.1={
 	set_tribute_suzerain = { who = k_france percentage = 0.40 }
+	liege = 0
 	holder = 190384 #Chamar
 }
 666.1.1={
@@ -38,10 +39,15 @@
 	holder = 168224 #Radulf
 }
 769.1.1={
-	liege = k_france
+	liege = 0
+	set_tribute_suzerain = {
+		who = k_france
+		type = permanent
+	}
 }
 775.1.1={
 	holder = 168226 #Thankulf
+	clear_tribute_suzerain = k_france
 }
 815.1.1={
 	holder = 168227 #Hadulf

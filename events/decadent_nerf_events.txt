@@ -9,17 +9,18 @@ character_event = {
     is_triggered_only = yes
     only_playable = yes
 	
-	trigger = { 
+	trigger = {
+		ai = no
 		dynasty_head = { 
 			character = ROOT
 			decadence < 10
-		} 
+		}
 	}
 	
     option = {
         name = "It is too much sometimes.."
 		ai_chance = { factor = 80 }
-        decadence = 30
+        decadence = 25
     }
     option = {
         name = "I must strive to be better!"

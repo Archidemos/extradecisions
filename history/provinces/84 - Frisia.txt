@@ -6,13 +6,13 @@ title = c_frisia
 # Settlements
 max_settlements = 5
 
-b_groningen = castle
-b_stavoren = city
+b_groningen = tribal
+#b_stavoren = city
 
 #b_leeuwarden = castle
 #b_bolsward = castle
 #b_franeker = castle
-b_dokkum = temple
+#b_dokkum = temple
 #b_assen = castle
 #b_harlingen = castle
 
@@ -21,6 +21,11 @@ culture = frisian
 religion = catholic
 terrain = farmlands
 # History
-790.1.1 = { culture = dutch }
+790.1.1 = { 
+	culture = dutch
+	b_groningen = castle
+	b_stavoren = city
+	b_dokkum = temple
+}
 1227.1.1 = { capital = b_dokkum }
 1297.1.1 = { trade_post = b_warendorp }

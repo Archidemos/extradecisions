@@ -518,12 +518,34 @@ character_event = { # random negative
         }
     }
 }
+character_event = {
+	id = HRE.198
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+        NOT = {
+            has_character_modifier = hide_imperial_update
+        }
+        is_save_game = no
+        is_multiplayer_host_character = yes # Host should do it
+		NOT = { has_global_flag = imperial_warning_fired }
+    }
+	
+	immediate = {
+		set_global_flag = imperial_warning_fired
+		any_player = {
+				limit = { is_multiplayer_host_character = yes }
+				narrative_event = { id = HRE.199 days = 2 
+			} 
+		}
+	}
+}
 
 character_event = { # GFX warning
     id = HRE.199
     title = "Warning"
     desc = IMPERIAL_VARIABLES_warning_desc
-    window = EventWindowImperial
 
     is_triggered_only = yes # on_start_up
 

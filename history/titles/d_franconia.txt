@@ -9,6 +9,7 @@
 }
 651.1.1={
 	holder = 190389 #Hetan
+	liege = 0
 }
 677.1.1={
 	holder = 190390 #Gozbert
@@ -20,10 +21,14 @@
 	holder = 190392 #Thuringus
 }
 769.1.1={
-	liege = k_france
+	set_tribute_suzerain = {
+		who = k_france
+		type = permanent
+	}
 }
 770.1.1={
 	holder = 190393 #Ado
+	clear_tribute_suzerain = k_france
 }
 805.1.1={
 	holder = 0
@@ -68,5 +73,5 @@
 }
 1152.2.15={
 	holder = 0
-	liege = 0
+	liege= k_germany
 }
