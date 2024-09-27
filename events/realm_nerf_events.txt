@@ -121,35 +121,35 @@ character_event = {
         event_target:nerf_value_title = {
             holder_scope = {
 				if = {
-					limit = { ROOT = { realm_size <= 20 } }
+					limit = { ROOT = { realm_size < 20 } }
 					add_character_modifier = { name = realm_nerf_0 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 20 realm_size <= 65 } }
+					limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
 					add_character_modifier = { name = realm_nerf_1 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 65 realm_size <= 150 } }
+					limit = { ROOT = { realm_size >= 65 realm_size < 150 } }
 					add_character_modifier = { name = realm_nerf_2 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 150 realm_size <= 250 } }
+					limit = { ROOT = { realm_size >= 150 realm_size < 250 } }
 					add_character_modifier = { name = realm_nerf_3 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 250 realm_size <= 350 } }
+					limit = { ROOT = { realm_size >= 250 realm_size < 350 } }
 					add_character_modifier = { name = realm_nerf_4 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 350 realm_size <= 550 } }
+					limit = { ROOT = { realm_size >= 350 realm_size < 550 } }
 					add_character_modifier = { name = realm_nerf_5 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 550 realm_size <= 650 } }
+					limit = { ROOT = { realm_size >= 550 realm_size < 650 } }
 					add_character_modifier = { name = realm_nerf_6 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 650 realm_size <= 850 } }
+					limit = { ROOT = { realm_size >= 650 realm_size < 850 } }
 					add_character_modifier = { name = realm_nerf_7 duration = -1 }
 				}
 				if = {
@@ -185,35 +185,35 @@ character_event = {
 		remove_character_modifier = realm_nerf_8
 
 		if = {
-			limit = { ROOT = { realm_size <= 20 } }
+			limit = { ROOT = { realm_size < 20 } }
 			add_character_modifier = { name = realm_nerf_0 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 20 realm_size <= 65 } }
+			limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
 			add_character_modifier = { name = realm_nerf_1 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 65 realm_size <= 150 } }
+			limit = { ROOT = { realm_size >= 65 realm_size < 150 } }
 			add_character_modifier = { name = realm_nerf_2 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 150 realm_size <= 250 } }
+			limit = { ROOT = { realm_size >= 150 realm_size < 250 } }
 			add_character_modifier = { name = realm_nerf_3 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 250 realm_size <= 350 } }
+			limit = { ROOT = { realm_size >= 250 realm_size < 350 } }
 			add_character_modifier = { name = realm_nerf_4 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 350 realm_size <= 550 } }
+			limit = { ROOT = { realm_size >= 350 realm_size < 550 } }
 			add_character_modifier = { name = realm_nerf_5 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 550 realm_size <= 650 } }
+			limit = { ROOT = { realm_size >= 550 realm_size < 650 } }
 			add_character_modifier = { name = realm_nerf_6 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 650 realm_size <= 850 } }
+			limit = { ROOT = { realm_size >= 650 realm_size < 850 } }
 			add_character_modifier = { name = realm_nerf_7 duration = -1 }
 		}
 		if = {
