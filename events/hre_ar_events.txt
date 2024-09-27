@@ -179,6 +179,20 @@ narrative_event = { #At the death of Louis, the Player/AI has to choose what to 
 				narrative_event = { id = HREAR.2 }
 			}
 		}
+		custom_tooltip = {
+			text = "You will remain Holy Roman Emperor, but you will pay the price for it."
+			hidden_tooltip = {
+				remove_character_modifier = realm_nerf_1
+				remove_character_modifier = realm_nerf_2
+				remove_character_modifier = realm_nerf_3
+				remove_character_modifier = realm_nerf_4
+				remove_character_modifier = realm_nerf_5
+				remove_character_modifier = realm_nerf_6
+				remove_character_modifier = realm_nerf_7
+				remove_character_modifier = realm_nerf_8
+			}
+		}
+		
 		any_player = { 
 			narrative_event = { id = HREAR.4 }
 		}
@@ -276,15 +290,6 @@ narrative_event = { #The event to fire the HRE Crisis for keeping the HRE
 		add_character_modifier = { name = hre_curse_2 duration = -1 }
 		add_character_modifier = { name = hre_curse_3 duration = -1 }
 		add_character_modifier = { name = hre_curse_4 duration = -1 }
-		
-		remove_character_modifier = realm_nerf_1
-		remove_character_modifier = realm_nerf_2
-		remove_character_modifier = realm_nerf_3
-		remove_character_modifier = realm_nerf_4
-		remove_character_modifier = realm_nerf_5
-		remove_character_modifier = realm_nerf_6
-		remove_character_modifier = realm_nerf_7
-		remove_character_modifier = realm_nerf_8
 		
 		save_event_target_as = is_hre_emperor_crisis
 		hidden_tooltip = {
