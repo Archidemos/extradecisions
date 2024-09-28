@@ -1,39 +1,33 @@
-# 2251 - Veszprem
-
 # County Title
 title = c_veszprem
-
 # Settlements
 max_settlements = 4
 b_borongo = tribal
-#b_sarkadfalva = city
-#b_marvanyos = temple
-#b_pipacsos = temple
-#b_barsonyosar = castle
-#b_gyumolcsos = city
-#b_zoldvar = castle
-
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = slovieni
+religion = slavic_pagan
+################################################################################
 # History
-800.1.1 = {
-	b_borongo = castle
-	b_sarkadfalva = city
-	b_marvanyos = temple
+################################################################################
+800.1.1 = { b_borongo = castle b_sarkadfalva = city b_marvanyos = temple } 
+895.1.1 = { culture = slovieni religion = catholic b_borongo = tribal } 
+930.1.1 = { culture = hungarian religion = tengri_pagan } 
+950.1.1 = { 
+    religion = catholic
+    b_borongo = castle
+    b_sarkadfalva = city
+    b_marvanyos = temple
 }
-895.1.1 = {
-	culture = slovieni
-	religion = catholic
-	b_borongo = tribal
-}
-930.1.1 = { 
-	culture = hungarian 
-	religion = tengri_pagan
-}
-950.1.1 = {
-	religion = catholic
-	b_borongo = castle
-	b_sarkadfalva = city
-	b_marvanyos = temple
-}
+
+################################################################################
+# 2251 - Veszprem
+################################################################################
+
+################################################################################
+# b_sarkadfalva = city
+# b_marvanyos = temple
+# b_pipacsos = temple
+# b_barsonyosar = castle
+# b_gyumolcsos = city
+# b_zoldvar = castle
+################################################################################

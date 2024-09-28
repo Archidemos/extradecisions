@@ -1,39 +1,23 @@
-# 440 - Olomouc
-
 # County Title
 title = c_olomouc
-
 # Settlements
 max_settlements = 5
 b_olomouc = tribal
 b_velehrad = temple
-
-#b_hradiste = city
-#b_svaty_kopecek = temple
-#b_prerov = castle
-#b_vyskov = castle
-#b_unicov = city
-#b_zabreh = city
-
 # Misc
-culture = bohemian
+culture = slovieni
 religion = slavic_pagan
 terrain = farmlands
+################################################################################
 # History
-633.1.1 = {
-	culture = polish
-}
-853.1.1 = { 
-	religion = catholic
-}
-#Bohemian conquest of Moravia
-1033.1.1 = {	
-	b_olomouc = castle
-	b_hradiste = city
-}
-1044.1.1 = {
-	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-	remove_settlement = b_velehrad 
-	b_svaty_kopecek = temple
-	b_prerov = castle
-}
+################################################################################
+633.1.1 = { culture = slovieni religion = slavic_pagan } 
+853.1.1 = { religion = catholic } 
+################################################################################
+# Bohemian conquest of Moravia
+################################################################################
+1033.1.1 = { b_olomouc = castle b_hradiste = city } 
+1044.1.1 = { remove_settlement = b_velehrad b_svaty_kopecek = temple b_prerov = castle } 
+################################################################################
+# 440 - Olomouc
+################################################################################

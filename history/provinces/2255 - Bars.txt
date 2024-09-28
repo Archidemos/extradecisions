@@ -1,40 +1,25 @@
-# 2255 - Bars
-
 # County Title
 title = c_bars
-
 # Settlements
 max_settlements = 5
 b_palmafa = tribal
-#b_vorosdomb = city
-#b_berkenye = temple
-#b_cserje = temple
-#b_tavaszi = castle
-#b_fenntarto = city
-#b_szentjanos = castle
-
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = slovieni
+religion = slavic_pagan
+################################################################################
 # History
-800.1.1 = {
-	b_palmafa = castle
-	b_vorosdomb = city
-	b_berkenye = temple
+################################################################################
+800.1.1 = { b_palmafa = castle b_vorosdomb = city b_berkenye = temple } 
+895.1.1 = { culture = slovieni religion = catholic b_palmafa = tribal } 
+930.1.1 = { culture = slovieni religion = catholic } 
+950.1.1 = { 
+    religion = catholic
+    b_palmafa = castle
+    b_vorosdomb = city
+    b_berkenye = temple
+    b_tavaszi = castle
 }
-895.1.1 = {
-	culture = slovieni
-	religion = catholic
-	b_palmafa = tribal
-}
-930.1.1 = { 
-	culture = hungarian 
-	religion = tengri_pagan
-}
-950.1.1 = {
-	religion = catholic
-	b_palmafa = castle
-	b_vorosdomb = city
-	b_berkenye = temple
-	b_tavaszi = castle
-}
+
+################################################################################
+# 2255 - Bars
+################################################################################

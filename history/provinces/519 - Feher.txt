@@ -1,38 +1,24 @@
-# 519 - Feher
-
 # County Title
 title = c_feher
-
 # Settlements
 max_settlements = 6
-
 b_feher = tribal
 b_arad = temple
-
-#b_elek = castle
-#b_abrudbanya = castle
-#b_nagyenyed = castle
-#b_vizakna = castle
-#b_tovis = castle
-
 # Misc
-culture = avar
-religion = tengri_pagan
+culture = romanian
+religion = slavic_pagan
 terrain = farmlands
+################################################################################
 # History
-800.1.1 = {
-	b_feher = castle
-	b_gyulafehervar = city
-}
-892.1.1 = { culture = romanian }
-895.1.1 = {
-	remove_settlement = b_gyulafehervar
-	b_feher = tribal
-}
-900.1.1 = { religion = orthodox }
-950.1.1 = {
-	b_feher = castle
-	b_gyulafehervar = city
-	b_elek = castle
-	b_nagyenyed = city
+################################################################################
+800.1.1 = { b_feher = castle b_gyulafehervar = city } 
+856.1.1 = { culture = romanian religion = orthodox } 
+892.1.1 = { culture = romanian } 
+895.1.1 = { remove_settlement = b_gyulafehervar b_feher = tribal } 
+900.1.1 = { religion = orthodox } 
+950.1.1 = { 
+    b_feher = castle
+    b_gyulafehervar = city
+    b_elek = castle
+    b_nagyenyed = city
 }
