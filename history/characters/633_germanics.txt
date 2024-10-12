@@ -1,11 +1,25 @@
 1000800 = {
 	name="Elemund" #fictional
 	dynasty=2000250
-	religion="catholic"
-	culture="lombard"
+	religion="arian"
+	culture="ostrogothic"
 	father=1000801
 	610.1.1={
 		birth=yes
+		add_claim = k_italy
+		effect = {
+			spawn_unit = {
+				province = 2248 # Lepcnica
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_infantry = { 500 500 }
+					heavy_infantry = { 250 250 }
+					archers = { 200 200 }
+					light_cavalry = { 50 50 }
+				}
+			}
+		}
 	}
 	670.1.1={
 		death=yes
@@ -14,8 +28,8 @@
 1000801 = {
 	name="Thurisind" #fictional
 	dynasty=2000250
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	father=1000802
 	567.1.1={
 		birth=yes
@@ -27,12 +41,11 @@
 1000802 = {
 	name="Cunimund"
 	dynasty=2000250
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	father=1000803
 	530.1.1={
 		birth=yes
-		add_claim = k_andalusia
 	}
 	567.1.1={
 		create_bloodline = {
@@ -50,8 +63,8 @@
 1000803 = {
 	name="Thurisind"
 	dynasty=2000250
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	father=1000804
 	510.1.1={
 		birth=yes
@@ -63,8 +76,8 @@
 1000804 = {
 	name="Elemund"
 	dynasty=2000250
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	490.1.1={
 		birth=yes
 	}
@@ -75,8 +88,8 @@
 1000809 = {
 	name="Rosamund" #fictional
 	dynasty=2000250
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	father=1000802
 	female=yes
 	550.1.1={
@@ -94,7 +107,7 @@
 # Thuringians
 1000805 = {
 	name="Herminafried"
-	dynasty=227 #von Thüringen
+	dynasty=227 #von ThÃ¼ringen
 	religion="catholic"
 	culture="german"
 	father=190382
@@ -107,7 +120,7 @@
 }
 1000806 = {
 	name="Radulf"
-	dynasty=227 #von Thüringen
+	dynasty=227 #von ThÃ¼ringen
 	religion="catholic"
 	culture="german"
 	father=190382
@@ -120,7 +133,7 @@
 }
 1000807 = {
 	name="Gozbert"
-	dynasty=227 #von Thüringen
+	dynasty=227 #von ThÃ¼ringen
 	religion="catholic"
 	culture="german"
 	father=1000805
@@ -133,7 +146,7 @@
 }
 1000808 = {
 	name="Heden"
-	dynasty=227 #von Thüringen
+	dynasty=227 #von ThÃ¼ringen
 	religion="catholic"
 	culture="german"
 	father=1000806
@@ -145,7 +158,7 @@
 	}
 }
 
-# Bavcatholics
+# Bavarians
 1000810 = {
 	name="Rupert" # St. Rupert (probably actually lived later on)
 	religion="catholic"
@@ -189,7 +202,7 @@
 	name="Geberic" #fictional
 	dynasty=2000251
 	religion="orthodox"
-	culture="visigothic"
+	culture="ostrogothic"
 	608.1.1={
 		birth=yes
 	}
@@ -203,8 +216,8 @@
 	name="Hildis"
 	dynasty=9618
 	father=168798
-	religion="catholic"
-	culture="visigothic"
+	religion="arian"
+	culture="ostrogothic"
 	female=yes
 	533.1.1={
 		birth=yes

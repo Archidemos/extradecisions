@@ -11,3 +11,33 @@ yugoslav_blood = {
 	picture = GFX_bloodlines_symbol_lion
 	flags = { bloodline_heroes bloodline_great_conquerors }
 }
+
+ostrogothic_blood = {
+	command_modifier = {
+		light_infantry = 0.2
+		heavy_infantry = 0.2
+	}
+	stewardship = 2	
+	bloodline_effect_one_invasion = 1
+	bloodline_effect_inquisitional = 1
+	bloodline_effect_great_heroes_appear = 1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_lion
+	flags = { bloodline_heroes bloodline_great_conquerors inquisitional_bloodline }
+}
+
+visigothic_blood = {
+	command_modifier = {
+		light_infantry = 0.3
+		heavy_infantry = 0.1
+		light_cavalry = 0.1
+	}
+	martial = 2	
+	bloodline_effect_inquisitional = 1
+	bloodline_effect_great_heroes_appear = 1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_lion
+	flags = { bloodline_heroes inquisitional_bloodline }
+}

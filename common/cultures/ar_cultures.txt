@@ -1,0 +1,86 @@
+central_germanic = {
+	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
+	graphical_cultures = { germangfx }
+	
+	ostrogothic = {
+		graphical_cultures = { germangfx }
+		
+		color = { 0.1 0.35 0.6 } 
+		alternate_start = {
+			OR = {
+				year < 1000
+				has_alternate_start_parameter = { key = culture value = full_random }
+			}
+		}
+
+		male_names = {
+			Adalfuns_Alphonse Adalrik Agila Alarich Amalaric Andagis Ansila Ardaric Ariaric Aspar Athalaric Athanagild Athanaric Atta Audo Audoacer
+			Ausvinth_Oswine Avavagis Badwila Beremund Botheric Childefonse Chindaswinth Dag Eboric Ebrimuth Ediulf Egica Elemund Ermanaric Euric Eutharic
+			Evermud Ferhonanth Fridegar Frithigern Geberic Gisalric Gunderit Haduswinth Hairuwulf Hathus Hermanaric Hermenigild Heraric Hidelfons Hildibad
+			Hunuil Kunimund Leovigild Liuva Liuverich Oliba Rekimer Richila Roderik Suniefred Swinthila Totabadaus Tautila_Totila Teia Theodahad
+			Theodemer Theodoric_Theodoric Thorismund Theudis Thrasaric Thraustila Ulfilas Unwen Valamir Veremund Vulfila Wallia Wifred_Wilfred Wittigeis Witiza
+		}
+		female_names = {
+			Adosinda Amalasuntha Amalfrida Amalina Amalwara Avagisa Avina Brunhilda Chlodoswintha Erilieva Fredegonda Gaatha Gailavira Gaileswintha Garsendis Gelvira
+			Glismoda Goswintha Gudeliva Helchen Heva Hilduara Hunila Kriemhilda Mataswintha Radegonda Riciberga Sunigilda Sunilda Theodana Valdamerca Wilgeforta 
+		}
+		from_dynasty_prefix = "us "
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 5
+		father_name_chance = 15
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 25
+		mother_name_chance = 5
+		allow_looting = yes
+		modifier = default_culture_modifier
+		dukes_called_kings = yes
+	}
+	visigothic = {
+		graphical_cultures = { southerngfx }
+		
+		color = { 0.55 0.55 0.15 }
+		alternate_start = {
+			OR = {
+				year < 1000
+				has_alternate_start_parameter = { key = culture value = full_random }
+			}
+		}
+
+		male_names = {
+			Adelfonso_Alphonse Agila Airmanagildo Alaricho_Alaric Aloito Assur Athanagildo Berengario_Berengar Diaco_Diaco Fafila
+			Friedenando_Ferdinand Friednand_Ferdinand Froila_Froila Garçi_Garcia Gonçalo_Gonzalo Gundemar Guttier_Walter Johan_John Liuva Liuvericho
+			Lupo_Lupo Mauregato Monnio_Munio Nunno_Nuno Oliba Ordonno_Ordono Pelagio_Pelagius Petro_Peter Ranimiro_Ramiro Rekkaredo_Richard
+			Rodericho_Roderick Sans_Sancho Silo Suneario_Sunyer Suniefredo Theodoricho_Theodoric Veremondo_Vermudo Wifredo_Wilfred Wimarano Witiza
+
+			#Abdela_Abdullah Abdelaçiç Abdelmelic Abdeluahid Abderrabmen Abrafim Ambroz Amet_Ahmad Ayyub Çacharya
+			#Çelim Çulema Hacan Hamdan Harun Içag Mahomat_Muhammad Maruan Muça Omar
+			#Xabrit Yabya Yafar Yuçuf Yunus
+		}
+		female_names = {
+			Adelgundis Adosinda Agnes_Agnes Aragonte Argilo Ava_Eva Brunechildis_Brunhilda Egilona Eldonza_Aldonza Elduara_Alduara
+			Elvira_Elvira Ermengardis_Ermengarde Ermenisinda_Ermesinda Flamula Fronilde_Fronilde Gaudiosa Gonterote_Gotruda Iberia Leodegundis Menenda
+			Monnia_Munia Monniadomna Onecca_Oneka Riciberga Sibilia_Sibylla Sisenanda Theodora_Theodora Urraca_Urraca Winidilda_Gunhild
+
+			#Abda Ayab Ayça Çayida Çeida Emira Isra Leyla Melica Nadia
+			#Nadira Neyla Nur Tarifa Yaçmina
+		}
+		from_dynasty_prefix = "de "
+		grammar_transform = french
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 5
+		father_name_chance = 10
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 50
+		mother_name_chance = 5
+		allow_looting = yes
+		modifier = default_culture_modifier
+	}
+}
