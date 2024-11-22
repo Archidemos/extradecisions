@@ -383,6 +383,43 @@ targetted_decisions = {
 }
 
 decisions = {
+
+	buff_constantinople = {
+		only_independent = yes
+		is_high_prio = yes
+		ai = no
+		only_playable = yes
+		
+		potential = {
+			has_landed_title = c_byzantion
+			NOT = { has_global_flag = constantinople_buffed }
+		}
+
+		allow = {
+			war = no
+			wealth = 2500
+			prestige = 1000
+			c_byzantion = {
+				location = {
+					has_province_modifier = nerf_constantinople
+				}
+			}
+		}
+		
+		effect = {
+			wealth = -2500
+			prestige = -1000
+			set_global_flag = constantinople_buffed
+			ROOT = {
+				c_byzantion = {
+					location = {
+						remove_province_modifier = nerf_constantinople
+					}
+				}
+			}
+		}
+	}
+
 	end_travel = {
 		ai = no
 		only_playable = yes

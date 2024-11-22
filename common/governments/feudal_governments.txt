@@ -979,15 +979,12 @@ feudal_governments = {
 		preferred_holdings = { CITY CASTLE }
 		allowed_holdings = { 
 			TRADE_POST
-			TRIBAL
 			CITY
 			CASTLE
-			FAMILY_PALACE
 			FORT
 			HOSPITAL
 		}
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
 		}
 		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
 			feudal_government
@@ -1068,16 +1065,16 @@ feudal_governments = {
 		vassal_limit = 20
 		
 		unit_modifier = {
-			levy_size = -0.20
+			levy_size = -0.15
 		}
 		
 		character_modifier = {
 			castle_vassal_min_levy = -0.3
 			castle_vassal_max_levy = -0.3
 			siege_speed = 0.2
-			retinue_maintenence_cost = -0.90
-			retinuesize_perc = 4
-			levy_size = -0.20
+			retinue_maintenence_cost = -0.3
+			retinuesize_perc = 2
+			levy_size = -0.15
 		}
 	}
 }
