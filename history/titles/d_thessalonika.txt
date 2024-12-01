@@ -53,6 +53,10 @@ holder=1732
 #4th crusade
 1204.5.16={ # Collapse of Byzantine Empire
 	liege=0
+	set_tribute_suzerain = {
+		who = e_latin_empire
+		type = permanent
+	}
 }
 1204.8.1=
 {
@@ -67,6 +71,7 @@ holder=213523 #Bonifazio I
 1207.9.4=
 {
 holder=31346 #Demetrio I
+	clear_tribute_suzerain = e_latin_empire
 }
 
 #conqued by Epirus
@@ -85,10 +90,15 @@ holder=215516
 1237.1.1=
 {
 holder=125711
+	set_tribute_suzerain = {
+		who = k_bulgaria
+		type = default
+	}
 }
 1244.1.1=
 {
 holder=125714
+	clear_tribute_suzerain = k_bulgaria
 }
 1246.1.1=
 {
