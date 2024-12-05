@@ -89,7 +89,7 @@ narrative_event = {
 						}
 						e_timurids = {
 							grant_title = PREV
-							add_law = succ_mongol_succession
+							add_law = succ_ultimogeniture
 						}
 						any_demesne_title = {
 							limit = {
@@ -164,7 +164,7 @@ narrative_event = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
 							grant_title = PREV
-							add_law = succ_mongol_succession
+							add_law = succ_ultimogeniture
 						}
 						set_defacto_liege = THIS
 						if = {
@@ -236,7 +236,7 @@ narrative_event = {
 					e_timurids = {
 						set_title_landless = { title = THIS status = yes }
 						grant_title = PREV
-						add_law = succ_mongol_succession
+						add_law = succ_ultimogeniture
 					}
 					set_defacto_liege = THIS
 					if = {
@@ -1212,7 +1212,7 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 					}
 					e_qara_qoyunlu = {
 						grant_title = PREV
-						add_law = succ_mongol_succession
+						add_law = succ_ultimogeniture
 					}
 					any_demesne_title = {
 						limit = {
@@ -1287,7 +1287,7 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 						set_title_landless = { title = THIS status = yes }
 						set_title_flag = temporary_landless_title
 						grant_title = PREV
-						add_law = succ_mongol_succession
+						add_law = succ_ultimogeniture
 					}
 					set_defacto_liege = THIS
 					if = {
@@ -1348,18 +1348,18 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 						has_dlc = "Holy Fury"
 						NOT = {
 							any_owned_bloodline = {
-								has_bloodline_flag = bloodline_qara_line
+								has_bloodline_flag = bloodline_timur_line #qara
 							}
 						}
 					}
 					create_bloodline = {
-						type = bloodline_qara
+						type = bloodline_timur #qara
 					}
 				}
 				e_qara_qoyunlu = {
 					set_title_landless = { title = THIS status = yes }
 					grant_title = PREV
-					add_law = succ_mongol_succession
+					add_law = succ_ultimogeniture
 				}
 				set_defacto_liege = THIS
 				if = {

@@ -159,12 +159,9 @@ crusade_give_artifact_effect = {
 			}
 			modifier = {
 				factor = 0.05
-				modifier = {
-					factor = 0.05
-					OR = {
-						has_artifact = scimitar_tier_2_new
-						has_artifact = scimitar_tier_3_conquest
-					}
+				OR = {
+					has_artifact = scimitar_tier_2_new
+					has_artifact = scimitar_tier_3_conquest
 				}
 			}
 			set_character_flag = lance_tier_2
