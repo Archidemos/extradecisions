@@ -577,7 +577,7 @@ character_event = {
     is_triggered_only = yes # addition_imperial / bi-yearly
 
     trigger = {
-        NOT = {
+        NOR = {
             has_character_modifier = hide_imperial_update
             has_global_flag = disabled_imperial_event
         }
