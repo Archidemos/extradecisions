@@ -13,7 +13,7 @@ narrative_event = {
 
 	trigger = {
 		NOT = { has_global_flag = crossing_penalty_added }
-		start_date >= 769.1.1
+		start_date >= 633.1.1
 		is_save_game = no
 		controls_religion = yes
 	}
@@ -1346,5 +1346,81 @@ narrative_event = { #Event for everyone about the formation of the PLC
 	
 	option = { #At last
 		name = "Concerning.."
+	}
+}
+
+character_event = { #Removes the realm nerf modifiers when you get usurped
+    id = MP.200
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		FROMFROM = {
+			NOR = { tier = KING tier = EMPEROR }
+			OR = {
+				has_character_modifier = realm_nerf_0
+				has_character_modifier = realm_nerf_1
+				has_character_modifier = realm_nerf_2
+				has_character_modifier = realm_nerf_3
+				has_character_modifier = realm_nerf_4
+				has_character_modifier = realm_nerf_5
+				has_character_modifier = realm_nerf_6
+				has_character_modifier = realm_nerf_7
+				has_character_modifier = realm_nerf_8
+			}
+		}
+    }
+
+    immediate = {
+		FROMFROM = {
+			remove_character_modifier = realm_nerf_0
+			remove_character_modifier = realm_nerf_1
+			remove_character_modifier = realm_nerf_2
+			remove_character_modifier = realm_nerf_3
+			remove_character_modifier = realm_nerf_4
+			remove_character_modifier = realm_nerf_5
+			remove_character_modifier = realm_nerf_6
+			remove_character_modifier = realm_nerf_7
+			remove_character_modifier = realm_nerf_8
+		}
+	}
+}
+
+character_event = { #Removes the realm nerf modifiers when you get usurped for Wars
+    id = MP.201
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		ROOT = {
+			NOR = { tier = KING tier = EMPEROR }
+			OR = {
+				has_character_modifier = realm_nerf_0
+				has_character_modifier = realm_nerf_1
+				has_character_modifier = realm_nerf_2
+				has_character_modifier = realm_nerf_3
+				has_character_modifier = realm_nerf_4
+				has_character_modifier = realm_nerf_5
+				has_character_modifier = realm_nerf_6
+				has_character_modifier = realm_nerf_7
+				has_character_modifier = realm_nerf_8
+			}
+		}
+    }
+
+    immediate = {
+		ROOT = {
+			remove_character_modifier = realm_nerf_0
+			remove_character_modifier = realm_nerf_1
+			remove_character_modifier = realm_nerf_2
+			remove_character_modifier = realm_nerf_3
+			remove_character_modifier = realm_nerf_4
+			remove_character_modifier = realm_nerf_5
+			remove_character_modifier = realm_nerf_6
+			remove_character_modifier = realm_nerf_7
+			remove_character_modifier = realm_nerf_8
+		}
 	}
 }

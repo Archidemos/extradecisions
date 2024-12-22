@@ -20,6 +20,324 @@ law_groups = {
 }
 
 laws = {
+	satrap_laws_0 = {
+		group = satrap_laws
+		default = yes
+		allow = {
+			holder_scope = { government = satrap_government }
+			NOT = { has_law = satrap_laws_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_1
+				revoke_law = satrap_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_1
+				remove_character_modifier = satrap_laws_modifier_2
+			}
+		}
+	}
+	satrap_laws_1 = {
+		group = satrap_laws
+		allow = {
+			holder_scope = { government = satrap_government }
+			NOT = { has_law = satrap_laws_1_vassal }
+			NOT = { has_law = satrap_laws_2_vassal }
+			NOT = { has_law = satrap_laws_1_pleased_vassals }
+			NOT = { has_law = satrap_laws_2_pleased_vassals }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = satrap_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0
+				revoke_law = satrap_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_2
+				add_character_modifier = { name = satrap_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_tax_modifier = 0.05
+		vassal_opinion = -5
+	}
+	satrap_laws_2 = {
+		group = satrap_laws
+		allow = {
+			NOT = { has_law = satrap_laws_1_vassal }
+			NOT = { has_law = satrap_laws_2_vassal }
+			NOT = { has_law = satrap_laws_0 }
+			holder_scope = { government = satrap_government }
+			has_law = revoke_title_voting_power_0
+			has_law = imprison_voting_power_0
+			has_law = grant_title_voting_power_0
+			has_law = banish_voting_power_0
+			has_law = execution_voting_power_0
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = satrap_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0
+				revoke_law = satrap_laws_1
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_1
+				add_character_modifier = { name = satrap_laws_modifier_2 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_tax_modifier = 0.1
+		vassal_opinion = -10
+	}
+
+	satrap_laws_0_vassal = {
+		group = satrap_laws_vassal
+		default = yes
+		allow = {
+			holder_scope = { government = satrap_government }
+			NOT = { has_law = satrap_laws_2_vassal }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_1_vassal
+				revoke_law = satrap_laws_2_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_1
+				remove_character_modifier = satrap_laws_modifier_2
+			}
+		}
+	}
+	satrap_laws_1_vassal = {
+		group = satrap_laws_vassal
+		allow = {
+			holder_scope = { government = satrap_government }
+			NOT = { has_law = satrap_laws_1 }
+			NOT = { has_law = satrap_laws_2 }
+			NOT = { has_law = satrap_laws_1_pleased_vassals }
+			NOT = { has_law = satrap_laws_2_pleased_vassals }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = satrap_laws_2_vassal
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0_vassal
+				revoke_law = satrap_laws_2_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_2_vassal
+				add_character_modifier = { name = satrap_laws_modifier_1_vassal inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = 0.05
+		heavy_infantry_offensive = 0.05
+		archers_offensive = 0.05
+		vassal_opinion = -5
+	}
+	satrap_laws_2_vassal = {
+		group = satrap_laws_vassal
+		allow = {
+			NOT = { has_law = satrap_laws_1 }
+			NOT = { has_law = satrap_laws_2 }
+			NOT = { has_law = satrap_laws_0_vassal }
+			holder_scope = { government = satrap_government }
+			has_law = revoke_title_voting_power_0
+			has_law = imprison_voting_power_0
+			has_law = grant_title_voting_power_0
+			has_law = banish_voting_power_0
+			has_law = execution_voting_power_0
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = satrap_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0_vassal
+				revoke_law = satrap_laws_1_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_1_vassal
+				add_character_modifier = { name = satrap_laws_modifier_2_vassal inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = 0.10
+		heavy_infantry_offensive = 0.1
+		archers_offensive = 0.1
+		vassal_opinion = -10
+	}
+
+	satrap_laws_0_pleased_vassals = {
+		group = pleased_satrap_laws
+		default = yes
+		allow = {
+			holder_scope = { government = satrap_government }
+			OR = {
+				has_law = satrap_laws_2
+				has_law = satrap_laws_2_vassal
+			}
+			NOT = { has_law = satrap_laws_2_pleased_vassals }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_1_pleased_vassals
+				revoke_law = satrap_laws_2_pleased_vassals
+			}
+			holder_scope = {
+				remove_character_modifier = satrap_laws_modifier_1_vassal
+				remove_character_modifier = satrap_laws_modifier_2_vassal
+			}
+		}
+	}
+	satrap_laws_1_pleased_vassals = {
+		group = pleased_satrap_laws
+		allow = {
+			holder_scope = { government = satrap_government }
+			OR = {
+				has_law = satrap_laws_2
+				has_law = satrap_laws_2_vassal
+			}
+			OR = {
+				has_law = satrap_laws_0_pleased_vassals
+				has_law = satrap_laws_2_pleased_vassals
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = satrap_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = satrap_laws_2_vassal
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0_pleased_vassals
+				revoke_law = satrap_laws_2_pleased_vassals
+			}
+		}
+		
+		vassal_opinion = 10
+		vassal_limit = 5
+	}
+	satrap_laws_2_pleased_vassals = {
+		group = pleased_satrap_laws
+		allow = {
+			OR = {
+				has_law = satrap_laws_2
+				has_law = satrap_laws_2_vassal
+			}
+			has_law = satrap_laws_1_pleased_vassals
+			holder_scope = { government = satrap_government }
+			NOT = { has_law = satrap_laws_0_pleased_vassals }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { government = satrap_government }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = satrap_laws_0_pleased_vassals
+				revoke_law = satrap_laws_1_pleased_vassals
+			}
+		}
+		
+		vassal_opinion = 20
+		vassal_limit = 10
+		demesne_size = 1
+	}
+	
 	status_of_women_0 = {
 		group = status_of_women
 		allow = {

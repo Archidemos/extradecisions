@@ -1,0 +1,695 @@
+namespace = ZOROSOC
+
+character_event = {
+	id = ZOROSOC.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+    	FROM = { leader = { society_member_of = zoro_fire_society } }
+    }
+    immediate = {
+    	FROM = { leader = { character_event = { id = ZOROSOC.2 } } }
+    }
+}
+
+letter_event = { #redirecting for portraits
+	id = ZOROSOC.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			letter_event = { id = ZOROSOC.3 }
+		}
+	}
+}
+
+letter_event = {
+	id = ZOROSOC.3
+	desc = DESC_ZOROSOC3
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { ai = no }
+		name = A_MUSLIM3
+		join_society = zoro_fire_society
+		scaled_wealth = -0.25
+	}
+	
+	option = {
+		trigger = { ai = yes }
+		name = A_MUSLIM3
+		join_society = zoro_fire_society
+	}
+}
+
+character_event = {
+    id = ZOROSOC.100
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC100
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "May the prayers be accepted!"
+		add_character_modifier = {
+			name = fire_shirne
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+}
+
+character_event = { #Prepare to pray
+    id = ZOROSOC.102
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC102
+	picture = GFX_evt_pilgrims_epic_journey_desert
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Time to go."
+		add_trait = travelling
+		ROOT = { character_event = { id = ZOROSOC.103 days = 3 } }
+	}
+}
+
+character_event = { #Walking to the temple
+    id = ZOROSOC.103
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC103
+	picture = GFX_evt_garden
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Always nice to see my land prosper.."
+		piety = 50
+		hidden_tooltip = {
+			random_list = {
+				20 = { ROOT = { character_event = { id = ZOROSOC.110 days = 3 } } }
+				80 = { ROOT = { character_event = { id = ZOROSOC.104 days = 3 } } }
+			}
+		}
+	}
+}
+
+character_event = { #Bandit in your way
+    id = ZOROSOC.110
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC110
+	picture = GFX_group_hf
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Dont hurt us, we will pay."
+		wealth = -100
+		prestige = -50
+		add_trait = craven
+		ROOT = { character_event = { id = ZOROSOC.111 days = 3 } }
+	}
+	option = {
+		name = "Stay out of my way, or i will make you bleed."
+		add_trait = brave
+		random_list = {
+			10 = { death = { death_reason = death_duel } }
+			20 = { add_maimed_trait_effect = yes }
+			20 = { add_trait = wounded }
+			50 = { add_trait = brave }
+		}
+		ROOT = { character_event = { id = ZOROSOC.111 days = 3 } }
+	}
+}
+
+character_event = { #Dealt with the Bandits
+    id = ZOROSOC.111
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC111
+	picture = GFX_evt_pilgrims_epic_journey_desert
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Lets keep moving."
+		prestige = 50
+		ROOT = { character_event = { id = ZOROSOC.104 days = 3 } }
+	}
+}
+
+character_event = { #Arived at the temple
+    id = ZOROSOC.104
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC104
+	picture = GFX_evt_sun_temple
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "The Temple looks beautifull as always."
+		piety = 100
+		ROOT = { character_event = { id = ZOROSOC.105 days = 3 } }
+	}
+	option = {
+		name = "Let me help out too!"
+		prestige = 50
+		random = {
+			chance = 20
+			add_trait = gardener
+		}
+		ROOT = { character_event = { id = ZOROSOC.105 days = 3 } }
+	}
+}
+
+character_event = { #You preform Gahs
+    id = ZOROSOC.105
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC105
+	picture = GFX_evt_secluded_in_prayer
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Ashura be praised."
+		piety = 50
+		ROOT = { character_event = { id = ZOROSOC.106 days = 3 } }
+	}
+}
+
+character_event = { #Priest gives u a blessing
+    id = ZOROSOC.106
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC106
+	picture = GFX_evt_beatification
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Thank you, Mowbad"
+		random = {
+			chance = 50
+			add_trait = temperate
+		}
+		piety = 50
+		hidden_tooltip = {
+			random_list = {
+				20 = { ROOT = { character_event = { id = ZOROSOC.108 days = 3 } } }
+				80 = { ROOT = { character_event = { id = ZOROSOC.107 days = 3 } } }
+			}
+		}
+	}
+	option = {
+		name = "Blessed be you, Mowbad"
+		add_trait = content
+		hidden_tooltip = {
+			random_list = {
+				20 = { ROOT = { character_event = { id = ZOROSOC.108 days = 3 } } }
+				80 = { ROOT = { character_event = { id = ZOROSOC.107 days = 3 } } }
+			}
+		}
+	}
+	option = {
+		name = "Of course, Mowbad"
+		add_trait = patient
+		random = {
+			chance = 60
+			add_trait = shy
+		}
+		hidden_tooltip = {
+			random_list = {
+				20 = { ROOT = { character_event = { id = ZOROSOC.108 days = 3 } } }
+				80 = { ROOT = { character_event = { id = ZOROSOC.107 days = 3 } } }
+			}
+		}
+	}
+}
+
+character_event = { #Priest is happy with you
+    id = ZOROSOC.107
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC107
+	picture = GFX_evt_bishop_byzantine
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "Thank Ashura"
+		add_trait = erudite
+		random = {
+			chance = 30
+			add_trait = trusting
+		}
+		if = { limit = { has_trait = depressed } remove_trait = depressed }
+		ROOT = { character_event = { id = ZOROSOC.108 days = 3 } }
+	}
+	option = {
+		name = "Thanks for this blessing, Mowbad"
+		random = {
+			chance = 30
+			add_trait = diligent
+		}
+		ROOT = { character_event = { id = ZOROSOC.108 days = 3 } }
+	}
+}
+
+character_event = { #You commune with people
+    id = ZOROSOC.108
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC108
+	picture = GFX_evt_feast_hf
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "What a nice sight!"
+		add_trait = humble
+		piety = 25
+		ROOT = { character_event = { id = ZOROSOC.109 days = 3 } }
+	}
+	option = {
+		name = "May our prayers be accepted!"
+		add_trait = gregarious
+		random = {
+			chance = 30
+			add_trait = proud
+		}
+		prestige = 50
+		ROOT = { character_event = { id = ZOROSOC.109 days = 3 } }
+	}
+}
+
+character_event = { #You head back home
+    id = ZOROSOC.109
+    only_rulers = yes
+	desc = EVTDESC_ZOROSOC109
+	picture = GFX_evt_desert
+	border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+	
+	option = {
+		name = "It was nice while it lasted!"
+		prestige = 100
+		piety = 150
+		add_character_modifier = {
+			name = zoro_gahs_reward
+			months = 6
+		}
+		remove_trait = travelling
+		trigger_if = {
+			ROOT = { society = zoro_fire_society }
+			change_society_currency = 250
+		}
+	}
+	option = {
+		name = "I have to try being better"
+		add_trait = ambitious
+		random = {
+			chance = 30
+			add_trait = paranoid
+		}
+		remove_trait = travelling
+		clr_character_flag = do_not_disturb
+		trigger_if = {
+			ROOT = { society = zoro_fire_society }
+			change_society_currency = 250
+		}
+	}
+}
+
+character_event = { #Search Begins
+	id = ZOROSOC.200
+	desc = EVTDESC_ZOROSOC200
+	picture = GFX_evt_sultan
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Start Search
+		name = "Let us start searching"
+		ROOT = { character_event = { id = ZOROSOC.201 days = 5 } }
+	}
+}
+
+character_event = { #Where to go
+	id = ZOROSOC.201
+	desc = EVTDESC_ZOROSOC201
+	picture = GFX_evt_courtiers_talking
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Greece
+		name = "Let us go to Greece, the edge of the Persian Empire"
+		ROOT = { character_event = { id = ZOROSOC.211 days = 5 } }
+	}
+	option = { #Egypt
+		name = "Perhaps Egypt, the old foodbasket of the Persian Empire"
+		ROOT = { character_event = { id = ZOROSOC.211 days = 5 } }
+	}
+	option = { #Anatolia
+		name = "Anatolia sounds like a good choice"
+		ROOT = { character_event = { id = ZOROSOC.211 days = 5 } }
+	}
+}
+
+character_event = { #The Travel
+	id = ZOROSOC.211
+	desc = EVTDESC_ZOROSOC211
+	picture = GFX_evt_pilgrims_epic_journey
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Go to location
+		name = "Onwards!"
+		add_trait = travelling
+		ROOT = { character_event = { id = ZOROSOC.202 days = 120 } }
+	}
+}
+
+character_event = { #At location
+	id = ZOROSOC.202
+	desc = EVTDESC_ZOROSOC202
+	picture = GFX_evt_desert
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let us search"
+		random_list = {
+			10 = { #Search Sucesfull
+				ROOT = { character_event = { id = ZOROSOC.203 } } 
+			}
+			30 = { #Found something else
+				ROOT = { character_event = { id = ZOROSOC.208 } }
+			}
+			60 = { #Search Failed
+				ROOT = { character_event = { id = ZOROSOC.209 } }
+			}
+		}
+	}
+}
+
+character_event = { #Search Sucesfull
+	id = ZOROSOC.203
+	desc = EVTDESC_ZOROSOC203
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Unbelivable, let's figure out which pages we have found!"
+		random_list = {
+			10 = { #Page 1
+				modifier = {
+					factor = 0
+					has_artifact = zoro_page_1
+				}
+				character_event = { id = ZOROSOC.204 } #receive "Head of a <GetArtifactSourceCap>" event
+			}
+			10 = { #Page 2
+				modifier = {
+					factor = 0
+					has_artifact = zoro_page_2
+				}
+				character_event = { id = ZOROSOC.205 } #receive "Head of a <GetArtifactSourceCap>" event
+			}
+			10 = { #Page 3
+				modifier = {
+					factor = 0
+					has_artifact = zoro_page_3
+				}
+				character_event = { id = ZOROSOC.206 } #receive "Head of a <GetArtifactSourceCap>" event
+			}
+			10 = { #Page 4
+				modifier = {
+					factor = 0
+					has_artifact = zoro_page_4
+				}
+				character_event = { id = ZOROSOC.207 } #receive "Head of a <GetArtifactSourceCap>" event
+			}
+		}
+	}
+}
+
+character_event = { #Page 1
+	id = ZOROSOC.204
+	desc = EVTDESC_ZOROSOC204
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "The first few pages are secure.."
+        add_artifact = zoro_page_1
+        new_artifact = {
+			set_creation_date = 1.1.1
+		}
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 2 } }
+	}
+}
+
+character_event = { #Page 2
+	id = ZOROSOC.205
+	desc = EVTDESC_ZOROSOC205
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "More pages for the collection!"
+        add_artifact = zoro_page_2
+        new_artifact = {
+			set_creation_date = 1.1.1
+		}
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 2 } }
+	}
+}
+
+character_event = { #Page 3
+	id = ZOROSOC.206
+	desc = EVTDESC_ZOROSOC206
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "These pages sure are facinating"
+        add_artifact = zoro_page_3
+        new_artifact = {
+			set_creation_date = 1.1.1
+		}
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 5 } }
+	}
+}
+
+character_event = { #Page 4
+	id = ZOROSOC.207
+	desc = EVTDESC_ZOROSOC207
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "The final few pages of the collection.."
+        add_artifact = zoro_page_4
+        new_artifact = {
+			set_creation_date = 1.1.1
+		}
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 5 } }
+	}
+}
+
+character_event = { #Found something else
+	id = ZOROSOC.208
+	desc = EVTDESC_ZOROSOC208
+	picture = GFX_evt_carriage
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "At least we are not leaving empty-handed.."
+		random_list = {
+			80 = { #Page 1
+				scaled_wealth = 0.5
+			}
+			10 = { #Page 1
+				modifier = {
+					factor = 0
+					has_artifact = lamassu_statue
+				}
+				add_artifact = lamassu_statue
+				new_artifact = {
+					set_creation_date = 1.1.1
+				}
+			}
+			10 = { #Page 1
+				modifier = {
+					factor = 0
+					has_artifact = staff_of_zoroaster
+				}
+				add_artifact = staff_of_zoroaster
+				new_artifact = {
+					set_creation_date = 1.1.1
+				}
+			}
+		}
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 5 } }
+	}
+}
+
+character_event = { #Search Failed
+	id = ZOROSOC.209
+	desc = EVTDESC_ZOROSOC209
+	picture = GFX_evt_leaving_table_angrily
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Perhaps Ahura has other plans.."
+		ROOT =  { character_event = { id = ZOROSOC.210 days = 5 } }
+	}
+}
+
+character_event = { #Returning Home
+	id = ZOROSOC.210
+	desc = EVTDESC_ZOROSOC210
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Time to head home"
+		remove_trait = travelling
+	}
+}
+
+narrative_event = {
+	id = ZOROSOC.212
+	title = EVTNAME_ZOROSOC212
+	desc = EVTDESC_ZOROSOC212
+    picture = GFX_evt_relic_box
+    border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ahura Mazda be praised!"
+		prestige = 2000
+		piety = 2000
+		ROOT = { destroy_artifact = zoro_page_1 }
+		ROOT = { destroy_artifact = zoro_page_2 }
+		ROOT = { destroy_artifact = zoro_page_3 }
+		ROOT = { destroy_artifact = zoro_page_4 }
+		religion_authority = {
+			modifier = restored_zoro_book
+		}
+		add_artifact = zoro_book
+	}
+}
+
+character_event = { #Restore Priesthood Event
+	id = ZOROSOC.300
+	desc = EVTDESC_ZOROSOC300
+	picture = GFX_evt_leaving_table_angrily
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We will install one of our highest Mowbad to this position"
+		
+		set_global_flag = zoroastrian_priesthood_founded
+		piety = -300
+		activate_title = { title = d_zoroastrian status = yes }
+		custom_tooltip = {
+			text = "You will appoint a high priest to the title of the Zoroastrian Church"
+			hidden_tooltip = {
+				create_random_priest = {
+					random_traits = yes
+					religion = zoroastrian
+					culture = persian
+					dynasty = random
+					female = no
+					age = 41
+				}
+				new_character = {
+					d_zoroastrian = {
+						grant_title = PREV
+					}
+					narrative_event = { id = TOG.6004 days = 2 }
+				}
+				d_zoroastrian = {
+					holder_scope = {
+						e_persia = {
+							holder_scope = {
+								set_defacto_vassal = PREVPREV
+							}
+						}
+					}
+				}
+			}
+		}
+		any_player =  { character_event = { id = ZOROSOC.301 days = 1 } }
+	}
+
+	option = {
+		name = "I am Ashura's Chosen, i should have the title!"
+		
+		set_global_flag = zoroastrian_priesthood_founded
+		piety = -1000
+		wealth = -500
+		activate_title = { title = d_zoroastrian status = yes }
+		d_zoroastrian = {
+			grant_title = PREV
+		}
+		hidden_tooltip = {
+			d_zoroastrian = {
+				holder_scope = {
+					e_persia = {
+						holder_scope = {
+							set_defacto_vassal = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		any_player =  { character_event = { id = ZOROSOC.301 days = 1 } }
+	}
+}
+
+narrative_event = { #Announcement about the Priesthood being restored
+	id = ZOROSOC.301
+	title = EVTNAME_ZOROSOC301
+	desc = EVTDESC_ZOROSOC301
+	picture = GFX_evt_sun_temple
+	border = GFX_event_narrative_frame_religion
+	sound = ar_zoro_prayer
+
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = zoroastrian }
+		}
+		name = "Another false religion making changes.."
+	}
+	option = {
+		trigger = {
+			religion_group = zoroastrian 
+		}
+		name = "Ashura be praised!"
+	}
+}

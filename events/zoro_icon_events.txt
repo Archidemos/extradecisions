@@ -1,0 +1,98 @@
+namespace = ZORO
+
+character_event = {
+	id = ZORO.100
+	desc = EVTDESC_ZORO100
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "I choose Spenta Mainyu"
+		add_character_modifier = {
+			name = icon_spenta_mainyu
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "I choose Asha"
+		add_character_modifier = {
+			name = icon_asha
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "I choose Vohoo Manah"
+		add_character_modifier = {
+			name = icon_vohoo_manah
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "Show me more"
+		hidden_tooltip = { character_event = { id = ZORO.101 } }
+	}
+}
+
+# Choose patron deity 2
+character_event = {
+	id = ZORO.101
+	desc = EVTDESC_ZORO101
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "I choose Kshathra"
+		add_character_modifier = {
+			name = icon_kshathra
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "I choose Armaiti"
+		add_character_modifier = {
+			name = icon_armaiti
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "I choose Haurvatat"
+		add_character_modifier = {
+			name = icon_haurvatat
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = EVTOPTD_ORT_101
+		hidden_tooltip = { character_event = { id = ZORO.100 } }
+	}
+}
+
+character_event = {
+    id = ZORO.102
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+        NOT = { religion_group = zoroastrian_group }
+    }
+
+    immediate = {
+		remove_character_modifier = icon_spenta_mainyu
+		remove_character_modifier = icon_asha
+		remove_character_modifier = icon_vohoo_manah
+		remove_character_modifier = icon_kshathra
+		remove_character_modifier = icon_armaiti
+		remove_character_modifier = icon_haurvatat
+	}
+}

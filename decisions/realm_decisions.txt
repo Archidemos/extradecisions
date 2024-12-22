@@ -1005,37 +1005,42 @@ decisions = {
 		}
 		allow = {
 			has_landed_title = e_persia
-			piety = 300
+			piety = 500
+			wealth = 1000
+			war = no
 		}
 		effect = {
+			custom_tooltip = {
+				text = "You will start the preperations for the ceremony to restore the Priesthood"
+				ROOT = { character_event = { id = ZOROSOC.300 } }
+			}
 			set_global_flag = zoroastrian_priesthood_founded
-			piety = -300
-			activate_title = { title = d_zoroastrian status = yes }
-			hidden_tooltip = {
-				create_random_priest = {
-					random_traits = yes
-					religion = zoroastrian
-					culture = persian
-					dynasty = random
-					female = no
-					age = 41
-				}
-				new_character = {
-					d_zoroastrian = {
-						grant_title = PREV
-					}
-					narrative_event = { id = TOG.6004 days = 2 }
-				}
-			}
-			d_zoroastrian = {
-				holder_scope = {
-					e_persia = {
-						holder_scope = {
-							set_defacto_vassal = PREVPREV
-						}
-					}
-				}
-			}
+		#	activate_title = { title = d_zoroastrian status = yes }
+		#	hidden_tooltip = {
+		#		create_random_priest = {
+		#			random_traits = yes
+		#			religion = zoroastrian
+		#			culture = persian
+		#			dynasty = random
+		#			female = no
+		#			age = 41
+		#		}
+		#		new_character = {
+		#			d_zoroastrian = {
+		#				grant_title = PREV
+		#			}
+		#			narrative_event = { id = TOG.6004 days = 2 }
+		#		}
+		#	}
+		#	d_zoroastrian = {
+		#		holder_scope = {
+		#			e_persia = {
+		#				holder_scope = {
+		#					set_defacto_vassal = PREVPREV
+		#				}
+		#			}
+		#		}
+		#	}
 		}
 		ai_will_do = {
 			factor = 1

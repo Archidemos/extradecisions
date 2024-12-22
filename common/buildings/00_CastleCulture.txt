@@ -4601,7 +4601,124 @@ castle = {
 		add_number_to_name = no
 
 		extra_tech_building_start = 10.0
-	}	
+	}
+	# Satrap Building
+	
+	satrap_government_temple_1 = {
+		desc = ca_government_monastery_1_desc
+		potential = {
+			OR = { 
+				FROM = { government = satrap_government }
+				has_building = ca_government_monastery_1
+			}
+		}
+		is_active_trigger = {
+			owner = { government = satrap_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = { government = satrap_government }
+		}
+		gold_cost = 150
+		build_time = 547
+		levy_size = 0.1
+		garrison_size = 0.05
+		culture_techpoints = 0.01
+		ai_creation_factor = 96
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+
+		extra_tech_building_start = 0.2
+	}
+	satrap_government_temple_2 = {
+		desc = ca_government_monastery_1_desc
+		potential = {
+			OR = { 
+				FROM = { government = satrap_government }
+				has_building = satrap_government_temple_1
+				has_building = satrap_government_temple_2
+			}
+		}
+		is_active_trigger = {
+			owner = { government = satrap_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+			FROM = { government = satrap_government }
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = satrap_government_temple_1
+		gold_cost = 200
+		build_time = 730
+		levy_size = 0.1
+		garrison_size = 0.05
+		culture_techpoints = 0.02
+		ai_creation_factor = 95
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		
+		extra_tech_building_start = 0.2
+	} 
+	satrap_government_temple_3 = {
+		desc = ca_government_monastery_1_desc
+		potential = {
+			OR = { 
+				FROM = { government = satrap_government }
+				has_building = satrap_government_temple_1
+				has_building = satrap_government_temple_2
+				has_building = satrap_government_temple_3
+			}
+		}
+		is_active_trigger = {
+			owner = { government = satrap_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = { government = satrap_government }
+		}
+		upgrades_from = satrap_government_temple_2
+		gold_cost = 300
+		build_time = 1095
+		levy_size = 0.1
+		garrison_size = 0.05
+		culture_techpoints = 0.03
+		ai_creation_factor = 94
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+
+		extra_tech_building_start = 0.2
+	} 
+	satrap_government_temple_4 = {
+		desc = ca_government_monastery_1_desc
+		potential = {
+			OR = { 
+				FROM = { government = satrap_government }
+				has_building = satrap_government_temple_1
+				has_building = satrap_government_temple_2
+				has_building = satrap_government_temple_3
+				has_building = satrap_government_temple_4
+			}
+		}
+		is_active_trigger = {
+			owner = { government = satrap_government }
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = { government = satrap_government }
+		}
+		upgrades_from = satrap_government_temple_3
+		gold_cost = 400
+		build_time = 1460
+		levy_size = 0.1
+		garrison_size = 0.05
+		culture_techpoints = 0.04
+		ai_creation_factor = 93
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+
+		extra_tech_building_start = 10.0
+	}
+	
 	# Coptic Spearmen
 	ca_culture_coptic_1 = {
 		desc = ca_culture_coptic_1_desc

@@ -362,3 +362,162 @@ lulu_dagger = { #Search for Artifact Reward, Jihad Reward
 	stacking = no
 	picture = "GFX_inscriped_dagger"
 }
+
+###########################
+### Society Artifacts ###
+###########################
+
+zoro_page_1 = { # First few Zoroastrian Pages
+	learning = 1
+	tech_growth_modifier = 0.05
+	quality = 3
+	active = {
+		OR = {
+			society_rank = {
+				society = zoro_fire_society
+				rank >= 3
+			}
+			learning = 15
+		}
+	}
+	allowed_gift = {
+		society_member_of = zoro_fire_society 
+	}
+	stacking = no
+	slot = library
+	picture = "GFX_emerald_tablet"
+}
+
+zoro_page_2 = { # Seccond few Zoroastrian Pages
+	diplomacy = 1
+	threat_decay_speed = 0.025
+	quality = 3
+	active = {
+		OR = {
+			society_rank = {
+				society = zoro_fire_society
+				rank >= 3
+			}
+			learning = 15
+		}
+	}
+	allowed_gift = {
+		society_member_of = zoro_fire_society 
+	}
+	stacking = no
+	slot = library
+	picture = "GFX_emerald_tablet"
+}
+
+zoro_page_3 = { # Third few Zoroastrian Pages
+	intrigue = 1
+	health = 0.25
+	quality = 3
+	active = {
+		OR = {
+			society_rank = {
+				society = zoro_fire_society
+				rank >= 3
+			}
+			learning = 15
+		}
+	}
+	allowed_gift = {
+		society_member_of = zoro_fire_society 
+	}
+	stacking = no
+	slot = library
+	picture = "GFX_emerald_tablet"
+}
+
+zoro_page_4 = { # Last few Zoroastrian Pages
+	martial = 1
+	quality = 3
+	active = {
+		OR = {
+			society_rank = {
+				society = zoro_fire_society
+				rank >= 3
+			}
+			learning = 15
+		}
+	}
+	allowed_gift = {
+		society_member_of = zoro_fire_society 
+	}
+	stacking = no
+	slot = library
+	picture = "GFX_emerald_tablet"
+}
+
+zoro_book = { # Zoroastrian Avesta
+	learning = 2
+	intrigue = 2
+	diplomacy = 2
+	health = 0.5
+	threat_decay_speed = 0.025
+	command_modifier = {
+		morale_offence = 0.1
+		morale_defence = 0.1
+	}
+	quality = 5
+	active = {
+		OR = {
+			society_rank = {
+				society = zoro_fire_society
+				rank >= 3
+			}
+			learning = 15
+		}
+	}
+	flags = { book }
+	
+	allowed_gift = {
+		society_member_of = zoro_fire_society
+	}
+	
+	stacking = no
+	picture = "GFX_book_red_glow"
+	#slot = library # You always make time for reading the Necronomicon...
+}
+
+lamassu_statue = {
+	monthly_character_prestige = 0.1
+	global_tax_modifier = 0.05
+	martial = 1
+	command_modifier = {
+		morale_offence = 0.05
+	}	
+	active = { religion_group = zoroastrian_group }
+	allowed_gift = {
+		religion_group = zoroastrian_group
+	}
+	quality = 3
+	flags = { religious zoroastrian }
+	stacking = no
+	picture = "GFX_lamassu_statue"
+}
+
+staff_of_zoroaster = {
+	monthly_character_prestige = 0.1
+	learning = 3
+	combat_rating = 15
+	command_modifier = {
+		morale_offence = 0.1
+		morale_defence = 0.1
+	}
+	stewardship = 2
+	same_religion_opinion = 5
+
+	active = { 
+		religion_group = zoroastrian
+	}
+	allowed_gift = {
+		religion_group = zoroastrian
+	}
+	quality = 5
+	flags = { religious zoroastrian very_rare troops_morale staff }
+	stacking = no
+	picture = "GFX_royal_scepter"
+	slot = weapon
+}

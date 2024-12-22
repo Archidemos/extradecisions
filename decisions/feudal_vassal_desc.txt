@@ -61,9 +61,9 @@ targetted_decisions = {
 		
 		from_potential = {
 			higher_tier_than = COUNT
-			war = no
 			ai = no
-		}	
+			NOT = { religion_group = zoroastrian_group }
+		}
 		
         potential = {
 			ROOT = {
@@ -98,6 +98,7 @@ targetted_decisions = {
 				FROM = { higher_real_tier_than = ROOT }
 			}
 			FROM = {
+				war = no
 				conditional_tooltip = {
 					trigger = {
 						NOT = { religion_group = christian }
@@ -123,6 +124,143 @@ targetted_decisions = {
 				text = "ENVOY_ANNEX_SENT"
 				FROM = { save_event_target_as = tribute_annexer }
 				hidden_tooltip = { narrative_event = { id = TRIB.001 days = 5 } }
+			}
+        }
+
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+
+    release_vassal_satrap = {
+		ai = no
+		diplomacy_icon = GFX_trait_saoshyant
+		
+		from_potential = {
+			ai = no
+			higher_tier_than = COUNT
+			holder_scope = { religion_group = zoroastrian_group }
+			holder_scope = { government = satrap_government }
+		}
+		
+        potential = {
+			vassal_of = FROM 
+				OR = {
+					tier = DUKE
+					tier = KING
+				}
+			is_landed = yes
+        }
+		
+        allow = {
+            FROM = { prestige = 250 }
+			FROM = { religion_group = zoroastrian_group }
+			FROM = { war = no }
+        }
+		
+        effect = {
+            set_defacto_liege = THIS
+			ROOT = {
+				narrative_event = { id = CEL.116 }
+			}
+            FROM = {
+                make_tributary = {
+                    who = ROOT
+                    tributary_type = client
+                }
+				prestige = -250	
+				add_character_modifier = {
+					modifier = pleased_satraps
+					years = 1
+					inherit = yes
+					stacking = no
+				}				
+			}
+			ROOT = {
+				add_character_modifier = {
+					modifier = recently_released_satrap
+					years = 10
+					inherit = yes
+				}
+				while = {
+					count = 2
+					spawn_unit = {
+						province = ROOT
+						troops = {
+							light_cavalry = { 500 500 }
+							light_infantry = { 1000 1000 }
+							archers = { 500 500 }
+						}
+						attrition=0
+						#maintenance=0
+					}
+				}
+			}
+        }
+		
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    annex_satrap = {
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		ai = no
+		diplomacy_icon = GFX_trait_saoshyant
+		
+		from_potential = {
+			ai = no
+			higher_tier_than = DUKE
+			holder_scope = { religion_group = zoroastrian_group }
+			holder_scope = { government = satrap_government }
+		}	
+		
+        potential = {
+			ROOT = {
+				is_tributary = {
+					type = client 
+					suzerain = FROM
+				}
+			}
+        }
+
+        allow = {
+			custom_tooltip = {
+				text = "NO_ANNEX_SAME_TIER"
+				FROM = { higher_real_tier_than = ROOT }
+			}
+			FROM = {
+				war = no
+				prestige = 1000
+				has_regent = no
+			}
+			ROOT = {
+				NOT = { has_character_modifier = recently_released_satrap }
+			}
+        }
+
+        effect = {
+            prestige = -1000
+			remove_character_modifier = pleased_satraps
+			custom_tooltip = {
+				text = "ENVOY_ANNEX_SENT"
+				FROM = { save_event_target_as = tribute_annexer }
+				hidden_tooltip = { narrative_event = { id = TRIB.001 days = 5 } }
+			}
+			FROM = {
+				add_character_modifier = {
+					modifier = annexed_satrap
+					years = 5
+					inherit = yes
+				}
 			}
         }
 
