@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 56 - Durham
 
 # County Title
@@ -5,35 +7,35 @@ title = c_durham
 
 # Settlements
 max_settlements = 4
-b_durham = castle
-b_st_cuthbert = temple
-b_hartlepool = city
 
-#b_gateshead = castle
-#b_chester-le-street = temple
-#b_jarrow = temple
-#b_auckland = castle
+b_durham = castle
+b_auckland = city
+
+#b_hartlepool = temple
+#b_castle_barnard = castle
+#b_bowes = castle
+#b_darlington = city 
+#b_stockton_on_tees = city
 #b_raby = castle
+#b_washington = castle
+#b_jarrow = temple
+#b_chester-le-street = temple
+
 
 # Misc
 culture = saxon
 religion = catholic
 
 # History
-633.1.1 = {
-	b_durham = tribal
-	remove_settlement = b_hartlepool
-	remove_settlement = b_st_cuthbert
-}
-633.1.1={ religion = norse_pagan }
-760.1.1={
-	b_durham=castle
-}
-769.1.1 = {
-	b_st_cuthbert = temple
-	b_hartlepool = city
-}
-760.1.1 = { religion = catholic }
-962.1.1 = { capital = b_durham }
+880.1.1 = { culture = norse } # Danes settle down
+880.1.1 = { religion = norse_pagan } # Danes settle down
+883.1.1 = { b_chester-le-street = temple } # Replacing Lindisfarne as Bishop see,which was destroyed 8 years earlier 
+883.1.1 = { religion = catholic } # Guthfrith grants Chester le Street and surrounding area to the community of St Cuthbert. 
+918.1.1 = { culture = anglonorse }
+995.1.1 = { remove_settlement = b_chester-le-street } # Bishop's See moved to Durham
+995.1.1 = { b_durham = temple } # Bishop's See moved to Durham
 1100.11.11 = { culture = english }
-1295.1.1 = { b_raby = castle }
+1150.1.1 = { b_auckland = temple } # Bishops castle built
+1185.1.1 = { b_hartlepool = city }
+1284.1.1 = { capital = b_auckland } # Bishop moved to Auckland
+1284.1.1 = { b_durham = city } # Bishop moved to Auckland

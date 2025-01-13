@@ -1,40 +1,34 @@
+# -*- ck2.history.provinces -*-
+
 # 48 - Lothian
 
 # County Title
 title = c_lothian
 
 # Settlements
-max_settlements = 4
-b_stirling = tribal
-
-#b_edinburgh = city
-
-#b_stow_of_wedale = castle
-#b_linlithgow = castle
-#b_falkirk = castle
+max_settlements = 6
+b_dunbar = castle
+b_edinburgh = city
 b_abercorn = temple
-#b_leith = castle
-#b_torphichen = castle
+#b_whitekirk = temple
+#b_thilerstane = castle
+#b_leith = city
+
 
 # Misc
-culture = welsh
+culture = scottish
 religion = catholic
 
 # History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = pictish
-	religion = catholic
-	b_falkirk = city
-}
-867.1.1 = {
-	culture = saxon
-	b_stirling = castle
-}
-1066.1.1 = {
-	religion = catholic
+700.1.1 = { culture = saxon }
+973.1.1 = { b_dunbar = tribal }
+1097.1.1 = { b_dunbar = castle }
+1097.1.1 = { 
+	b_dunbar = ca_keep_1
+	b_dunbar = ca_training_grounds_1
+	b_dunbar = ca_stable_1
+	b_dunbar = ca_stable_2
+	b_dunbar = ca_wall_1
+	b_dunbar = ca_wall_2
 }
 1100.11.11 = { culture = english }
-1235.9.25 = { culture = scottish }
-
-1250.1.1 = { b_stow_of_wedale = castle } 

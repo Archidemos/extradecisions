@@ -1,40 +1,36 @@
+# -*- ck2.history.provinces -*-
+
 # 544 - Korsun
 
 # County Title
 title = c_korsun
 
 # Settlements
-max_settlements = 2
+max_settlements = 4
 
-b_korsun = tribal	#1032
+b_korsun = tribal
+#b_tarashcha = city
+#b_cherkassy = city
+#b_bohuslav = temple
 
-#b_cherkassy	#1286
+#b_zvenyhorodka = castle
 
-#b_smila		#1542
-#b_chyhyryn		#1592
-#b_oleksandriia	#1746
-#b_kirovohrad	#1754
-#b_znamianka	#1869
 
 # Misc
-culture = hungarian
-religion = tengri_pagan
-terrain = steppe
+culture = russian
+religion = slavic_pagan
 
 # History
-633.1.1 = {
-	culture = volhynian
-	religion = slavic_pagan
-}
-
-892.1.1 = { culture = pecheneg }
-
+988.1.1 = {religion = orthodox }
 988.1.1 = {
-	religion = orthodox
+b_korsun = castle #1032
 }
-1032.1.1 = {
-	b_korsun = tb_hillfort_1
+1060.1.1 = { religion = tengri_pagan
+b_tarashcha = tribal
+capital = b_tarashcha
 }
-1091.1.1 = {
-	culture = cuman
-}
+1060.1.1 = { culture = oghuz }
+1139.1.1 = { culture = pecheneg } # Berendi returns to the steppes.
+1240.1.1 = { remove_settlement = b_tarashcha} #destroyed by Batu Khan
+1240.1.1 = { b_korsun = castle } #also destroyed, but capital is needed
+1240.1.1 = { capital = b_korsun }

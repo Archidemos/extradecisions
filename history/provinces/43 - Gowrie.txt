@@ -1,46 +1,33 @@
+# -*- ck2.history.provinces -*-
+
 # 43 - Gowrie
 
 # County Title
 title = c_gowrie
 
 # Settlements
-max_settlements = 5
+max_settlements = 6
 b_scone = tribal
-#b_perth = city
-b_dunkeld = temple
-
-b_forteviot = castle
-#b_dundee = castle
-#b_abernethy = castle
+#b_dunkeld = temple
+b_perth = city
+#b_forteviot = tribal
+#b_dundee = city
 #b_clunie = castle
-#b_errol = castle
+
 
 # Misc
-culture = pictish
+culture = scottish
 religion = catholic
-terrain = hills
 
 # History
-633.1.1={ religion = celtic_christian }
-930.1.1 = { religion = catholic }
+
 1066.1.1 = {
-	religion = catholic
+	b_scone = tb_hillfort_1
+	b_scone = tb_hillfort_2
+	b_scone = tb_training_grounds_1
+	b_scone = tb_war_camp_1
 }
-769.1.1 = {
-	culture = pictish
-	religion = celtic_christian
-}
-848.1.1={
-	culture = scottish
-}
-
-1066.1.1 = { 
+1146.1.1 = { 
 	b_scone = castle
-	b_perth = city
-	b_scone = ca_keep_1
-#	b_scone = ca_training_grounds_1
-	b_scone = ca_stable_1
-#	b_scone = ca_wall_1
-}
-
-1250.1.1 = { b_abernethy = castle }
+	b_dunkeld = temple
+} 

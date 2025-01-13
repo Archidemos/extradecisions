@@ -1,29 +1,30 @@
+# -*- ck2.history.provinces -*-
+
 # 355 - Padua
 
 # County Title
 title = c_padova
 
 # Settlements
-max_settlements = 4
-b_padova = castle
-b_este = castle
-b_polesine = city
-b_montagnana = temple
-#b_chioggia = castle
-#b_adria = castle
-#b_rovigo = castle
-#b_vigonza = castle
+max_settlements = 5
+b_camposampiero = castle
+b_carrara_carraraesi = castle
+b_padova = city
+#b_cittadella = city
+b_onara = castle
+b_montemerlo = castle
+#b_sacco = temple
 
 # Misc
-culture = italian
+culture = venetian
 religion = catholic
 terrain = farmlands
 # History
-633.1.1 = { culture = roman }
-760.1.1 = { culture = lombard }
-860.1.1 = { cultuure = italian }
+1035.1.1 = { capital = b_onara }
 1102.1.1 = { trade_post = b_contarini }
-1180.1.1 = { b_padova = city }
-1180.1.1 = { capital = b_padova }
-1325.1.1 = { b_padova = castle }
-1325.1.1 = { capital = b_padova }
+1199.1.1 = { capital = b_camposampiero }
+#1220.1.1 = { b_cittadella = city }
+#1260.8.26 = { remove_settlement = b_onara } # Ezzilini exterminated in Trevisio and Onara sacked.
+1318.1.1 = { capital = b_carrara_carraraesi }
+1328.1.1 = { capital = b_onara }
+1328.9.1 = { capital = b_carrara_carraraesi }

@@ -1,32 +1,27 @@
-# 932 - Tjust
+# -*- ck2.history.provinces -*-
 
+# 932 - Tjust # AKA Värend
 # County Title
 title = c_tjust
 
 # Settlements
-max_settlements = 3
-b_tornsfall = tribal
+max_settlements = 2
 
-#b_vastervik = city
-#b_vimmerby
-#b_doderhult
-#b_hulingsryd
-#b_kisa
-#b_jangolsrum
+b_kronoberg = tribal
+#b_vaxjo = temple
+#b_aringsas = city
+#b_alvesta = temple
+#b_jat = city
 
 # Misc
 culture = norse
 religion = norse_pagan
 
 # History
-800.1.1 = {
-	b_tornsfall = tb_shipyard_1
-}
-1000.1.1 = {
-	b_tornsfall = castle
-	b_tornsfall = ca_shipyard_1
-}
-1066.1.1 = {
-	culture = swedish
+
+1035.1.1 = { culture = gothic }  
+1130.1.1 = {
 	religion = catholic
 }
+1130.1.1 = { b_kronoberg = castle 
+b_vaxjo = temple}

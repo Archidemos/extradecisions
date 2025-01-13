@@ -1,19 +1,19 @@
+# -*- ck2.history.provinces -*-
+
 # 736 - Lykandos
 
 # County Title
 title = c_lykandos
 
 # Settlements
-max_settlements = 4
+max_settlements = 5
 b_lykandos = castle
+b_arabissos = city
+b_kokysos = temple
 
-b_tzamandos = city
-b_comanagene = temple
-#b_symposion = castle
-#b_papurius = castle
-#b_cocussus = castle
-#b_arabissus = castle
-#b_germanikeia = city
+#b_ablastha = city
+b_ariaramneia = castle
+#b_komanachryse = city
 
 # Misc
 terrain = mountain
@@ -21,14 +21,15 @@ culture = greek
 religion = orthodox
 
 # History
-700.1.1 = { religion = orthodox } # iconoclast
-#930.1.1 = { religion = orthodox }
+830.1.1 = { religion = paulician }
 
-910.1.1 = {
+890.1.1 = {
 	culture = armenian
-	religion = miaphysite
-}
+	religion = apostolic }
 
-1177.1.1 = { culture = turkish }
-1177.1.1 = { religion = sunni }
-1187.1.1 = { b_germanikeia = city }
+1162.1.1 = { culture = turkmen }
+1162.1.1 = { religion = sunni }
+1177.1.1 = { b_ablastha = castle }
+1177.1.1 = { capital = b_ablastha }
+1177.1.1 = { remove_settlement = b_lykandos }
+1256.1.1 = { culture = turkish }

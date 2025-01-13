@@ -1,35 +1,24 @@
+# -*- ck2.history.provinces -*-
+
 # 417 - Vitebsk
 
 # County Title
 title = c_vitebsk
 
 # Settlements
-max_settlements = 3
+max_settlements = 4
 
-b_vitebsk = tribal	#947/1021
-
-#b_sianno			#XVth
-#b_beshankovichy	#XVth
-#b_liozna			#1800
-#b_boguchevsk		#1800
-#b_ruba
-#b_bilieva
+b_vitebsk = tribal
+#b_velizh = castle
+#b_rudnya = temple
+#b_haradok = city
 
 # Misc
-culture = ilmenian
+culture = russian
 religion = slavic_pagan
-terrain = farmlands
+
 # History
-867.1.1 = {
-	culture = russian
-}
-947.1.1 = {
-	b_vitebsk = tb_hillfort_1
-}
-988.1.1 = {
-	religion = orthodox
-}
-1150.1.1 = {
-	b_vitebsk = castle
-	b_sianno = city
-}
+1002.1.1 = {religion = orthodox }
+1002.1.1 = {b_vitebsk = castle
+b_velizh = castle
+b_rudnya = temple}

@@ -1,28 +1,30 @@
+# -*- ck2.history.characters -*-
+
 6896 = {
 	name="Mahmud" # Fantasy
 	dynasty=855
 	religion=sunni
 	culture="persian"
 	845.1.1={
-		birth=yes
+		birth = yes
 	}
 	900.1.1={
-		death=yes
+		death = yes
 	}
 }
 
-6897 = {
-	name="Farroukh" # Fantasy
-	dynasty=856
-	religion=sunni
-	culture="persian"
-	840.1.1={
-		birth=yes
-	}
-	890.1.1={
-		death=yes
-	}
-}
+#6897 = {
+#	name="Farroukh" # Fantasy
+#	dynasty=856
+#	religion=sunni
+#	culture="persian"
+#	840.1.1={
+#		birth = yes
+#	}
+#	890.1.1={
+#		death = yes
+#	}
+#}
 
 6898 = {
 	name="Abolhassan" # Fantasy
@@ -30,106 +32,83 @@
 	religion=sunni
 	culture="persian"
 	842.1.1={
-		birth=yes
+		birth = yes
 	}
 	890.1.1={
-		death=yes
-	}
-}
-
-144140 = {
-	name="Muhammad"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93139
-	1113.1.1={
-		birth=yes
-	}
-	1163.1.1={
-		death=yes
-	}
-}
-
-144141 = {
-	name="Ghiyath"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father = 144140
-	1130.1.1={
-		birth=yes
-	}
-	1203.1.1={
-		death=yes
-	}
-}
-
-144142 = {
-	name="Mu'izz"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father = 144140
-	1132.1.1={
-		birth="1132.1.1"
-	}
-	1206.3.15={
-		death="1206.3.15"
-	}
-}
-
-144143 = {
-	name="Mahmud"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father = 144141
-	1147.1.1={
-		birth="1147.1.1"
-	}
-	1212.1.1={
-		death="1212.1.1"
+		death = yes
 	}
 }
 
 144144 = {
-    name="Gilan-Shah"
-    # AKA: Unsur al
-    dynasty=101689
-    martial=7
-    diplomacy=8
-    intrigue=7
-    stewardship=7
-    religion="sunni"
-    culture="persian"
-    father = 20703
-    1061.1.1={
-        birth="1061.1.1"
-    }
-    1090.1.1={
-        death="1090.1.1"
-    }
+	name="Gilan-Shah"
+	# AKA: Unsur al
+	dynasty=101689
+	martial=7
+	diplomacy=8
+	intrigue=7
+	stewardship=7
+	religion="sunni"
+	culture="daylamite"
+	father = 20703
+	1061.1.1={
+		birth="1061.1.1"
+	}
+	1090.1.1={
+		death="1090.1.1"
+	}
 }
 
 144225 = {
-	name="Hassan"
-	religion="shiite"
-	culture="persian"
-	1050.1.1={
-		birth="1050.1.1"
+	name = "Hassan" #b. Ali b. Muhammad b. Ja'far al-Sabbah
+	dynasty = 101728
+	martial = 6
+	diplomacy = 7
+	intrigue = 9
+	stewardship = 6
+	learning = 9
+	religion = "shiite" #Twelver Shia
+	culture = "levantine_arabic" #his father was from Kufa and claimed Yemeni origin
+	trait = "elusive_shadow"
+	trait = "quick"
+	trait = "zealous"
+	trait = "ambitious"
+	trait = "proud"
+	trait = "erudite"
+	father = 1235983
+	1054.1.1 = { #mid-1050s
+		birth = "1054.1.1"
+		culture = "persian" #adopted Persian as the language of the Ismaili in Persia
 	}
-	1124.1.1={
-		death="1124.1.1"
+	1071.1.1 = { #When he turned 17
+		religion = "ismaili"
+	}
+	1090.1.1 = {
+		add_trait = "strategist"
+	}
+	1124.6.12 = {
+		death = "1124.6.12"
 	}
 }
 
 144226 = {
 	name="Kiya Buzurg Ummid"
-	religion="shiite"
-	culture="persian"
+	dynasty=1000102202
+	martial=7
+	diplomacy=6
+	intrigue=7
+	religion="ismaili"
+	culture="daylamite"
+	trait="skilled_tactician"
+	trait="brave"
+	trait="defensive_leader"
 	1070.1.1={
 		birth="1070.1.1"
+	}
+	1090.1.1={
+		employer=144225
+	}
+	1124.1.1={ #1092.1.1={
+		employer=0
 	}
 	1138.1.1={
 		death="1138.1.1"
@@ -138,10 +117,16 @@
 
 144227 = {
 	name="Muhammad"
-	religion="shiite"
-	culture="persian"
+	dynasty=1000102202
+	religion="ismaili"
+	culture="daylamite"
+	father=144226
 	1100.1.1={
 		birth="1100.1.1"
+		employer=144226
+	}
+	1138.1.1={
+		employer=0
 	}
 	1162.1.1={
 		death="1162.1.1"
@@ -149,21 +134,29 @@
 }
 
 144228 = {
-	name="Nur al-Din Muhammed"
-	religion="shiite"
-	culture="persian"
-	1130.1.1={
-		birth="1130.1.1"
+	name = "Muhammed Nur al-Din"
+	dynasty = 1000102202
+	religion = "ismaili"
+	culture = "daylamite"
+	trait = "erudite"
+	father = 1231089
+	1147.1.1 = {
+		birth = "1147.1.1"
 	}
-	1210.1.1={
-		death="1210.1.1"
+	1210.1.1 = {
+		death = "1210.1.1"
 	}
 }
 
 144229 = {
-	name="Jalal al-Din Hasan"
-	religion="shiite"
-	culture="persian"
+	name="Hasan Jalal al-Din"
+	dynasty=1000102202
+	religion="ismaili"
+	culture="daylamite"
+	trait="temperate"
+	trait="honest"
+	trait="charitable"
+	father=144228
 	1170.1.1={
 		birth="1170.1.1"
 	}
@@ -173,11 +166,13 @@
 }
 
 144230 = {
-	name="'Ala al-Din Muhammad"
-	religion="shiite"
-	culture="persian"
-	1190.1.1={
-		birth="1190.1.1"
+	name="Muhammad 'Ala al-Din"
+	dynasty=1000102202
+	religion="ismaili"
+	culture="daylamite"
+	father=144229
+	1212.1.1={
+		birth="1212.1.1"
 	}
 	1255.1.1={
 		death="1255.1.1"
@@ -185,14 +180,19 @@
 }
 
 144231 = {
-	name="Rukn al-Din Khurshah"
-	religion="shiite"
-	culture="persian"
-	1210.1.1={
-		birth="1210.1.1"
+	name="Khurshah Rukn al-Din"
+	dynasty=1000102202
+	religion="ismaili"
+	culture="daylamite"
+	father=144230
+	1232.1.1={
+		birth="1232.1.1"
 	}
 	1256.1.1={
-		death="1256.1.1"
+		death={
+			death_reason=death_execution
+			killer=478011
+		}
 	}
 }
 
@@ -200,13 +200,13 @@
 	name="Afridun"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 20734
-	1058.1.1={
-		birth="1058.1.1"
+	1045.1.1={
+		birth = yes
 	}
 	1120.1.1={
-		death="1120.1.1"
+		death=yes
 	}
 }
 
@@ -214,18 +214,14 @@
 	name="Akhsitan"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
-	trait="ambitious"
-	trait="deceitful"
-	trait="envious"
-	trait="diligent"
-	father=232753
-	mother=232750
+	culture="adhari"
+	father = 232753
+	mother = 232750	
 	1128.1.1={
-		birth="1128.1.1"
+		birth=yes
 	}
 	1197.1.1={
-		death="1197.1.1"
+		death = yes
 	}
 }
 
@@ -233,11 +229,11 @@
 	name="Farrukhzad"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
-	father=232753
-	mother=232750
-	1138.1.1={
-		birth="1138.1.1"
+	culture="adhari"
+	father = 232753
+	mother = 232750	
+	1135.1.1={
+		birth="1135.1.1"
 	}
 	1204.8.1={
 		death="1204.8.1"
@@ -248,13 +244,13 @@
 	name="Gushtasb"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 144569
-	1171.1.1={
-		birth="1171.1.1"
+	1155.1.1={
+		birth="1155.1.1"
 	}
-	1230.1.1={
-		death="1230.1.1"
+	1225.1.1={
+		death="1225.1.1"
 	}
 }
 
@@ -262,10 +258,10 @@
 	name="Fariburz"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 144570
-	1192.1.1={
-		birth="1192.1.1"
+	1185.1.1={
+		birth="1185.1.1"
 	}
 	1243.1.1={
 		death="1243.1.1"
@@ -273,13 +269,13 @@
 }
 
 144572 = {
-	name="Akhsitan"
+	name="Akhistan"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 144571
-	1210.1.1={
-		birth="1210.1.1"
+	1220.1.1={
+		birth="1220.1.1"
 	}
 	1260.1.1={
 		death="1260.1.1"
@@ -290,10 +286,10 @@
 	name="Farrukhzad"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 144572
-	1229.1.1={
-		birth="1229.1.1"
+	1250.1.1={
+		birth="1250.1.1"
 	}
 	1282.1.1={
 		death="1282.1.1"
@@ -301,13 +297,13 @@
 }
 
 144574 = {
-	name="Keykubad"
+	name="Kai-Qubahd"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father = 144573
-	1279.1.1={
-		birth="1279.1.1"
+	1290.1.1={
+		birth="1290.1.1"
 	}
 	1348.1.1={
 		death="1348.1.1"
@@ -336,170 +332,40 @@
 }
 
 20703 = {
-    name="Keikavus"
-    dynasty=101689
-    martial=7
-    diplomacy=8
-    intrigue=7
-    stewardship=7
-    religion="sunni"
-    culture="persian"
-    father=166996
-    trait="thrifty_clerk"
-    trait="administrator"
-    trait="poet"
-    trait="temperate"
-	trait=sympathy_zoroastrianism
-    1021.1.1={
-        birth="1021.1.1"
-    }
-    1087.1.1={
-        death="1087.1.1"
-    }
-}
-
-220996 = {
-	name="Shahriyar"
-	dynasty=7331
-	father=160295
-	martial=5
-	diplomacy=4
-	intrigue=3
-	stewardship=8
-	trait="thrifty_clerk"
-	trait="charitable"
-	religion="zoroastrian"
-	culture="persian"
-	897.7.19={
-		birth=yes
+	name = "Kaykawus"
+	# AKA: Unsur al
+	dynasty = 101689
+	martial = 7
+	diplomacy = 8
+	intrigue = 7
+	stewardship = 7
+	religion = "sunni"
+	culture = "daylamite"
+	trait = "thrifty_clerk"
+	trait = "erudite"
+	father = 166996
+	1021.1.1 = {
+		birth = "1021.1.1"
 	}
-	970.12.10={
-		death=yes
+	1087.1.1 = {
+		death = "1087.1.1"
 	}
 }
 
-220995 = {
-	name="Rostam"
-	dynasty=7331
-	father=160295
-	martial=7
-	diplomacy=3
-	intrigue=8
-	stewardship=4
-	trait="tough_soldier"
-	trait="arbitrary"
-	religion="shiite"
-	culture="persian"
-	901.2.28={
-		birth=yes
-	}
-	979.10.12={
-		death=yes
-	}
-}
-
-220994 = {
-	name="Al-Marzuban"
-	dynasty=7331
-	father=220995
-	martial=2
-	diplomacy=4
-	intrigue=3
-	stewardship=6
-	learning=9
-	trait="charismatic_negotiator"
-	trait="just"
-	religion="shiite"
-	culture="persian"
-	931.9.12={
-		birth=yes
-	}
-	1006.10.12={
-		death=yes
-	}
-}
-
-
-220992 = {
-	name="Vandarin"
-	dynasty=7331
-	father=220995 #fictional connection
-	martial=4
-	diplomacy=5
-	intrigue=7
-	stewardship=2
-	learning=2
-	trait="charismatic_negotiator"
-	trait="kind"
-	religion="shiite"
-	culture="persian"
-	934.9.12={
-		birth=yes
-	}
-	997.10.12={
-		death=yes
-	}
-}
-
-220993 = {
-	name="Abu Ja'far Muhammad"
-	dynasty=7331
-	father=220992
-	martial=2
-	diplomacy=8
-	intrigue=4
-	stewardship=6
-	learning=4
-	trait="charismatic_negotiator"
-	trait="honest"
-	religion="shiite"
-	culture="persian"
-	964.4.20={
-		birth=yes
-	}
-	1029.11.21={
-		death=yes
-	}
-}
-
-220991 = {
-	name="Sharyab" #Fictional character
-	dynasty=7331
-	father=220992
-	martial=2
-	diplomacy=2
-	intrigue=3
-	stewardship=1
-	learning=1
-	trait="indulgent_wastrel"
-	religion="shiite"
-	culture="persian"
-	971.8.12={
-		birth=yes
-	}
-	1062.11.9={
-		death=yes
-	}
-}
 
 20704 = {
 	name="Qarin"
 	dynasty=7331
-	father=220991
 	martial=7
 	diplomacy=8
 	intrigue=7
 	stewardship=7
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	trait="tough_soldier"
-	trait="zealous"
-	trait="patient"
-	trait="content"
-	trait="honest"
-	disallow_random_traits = yes
-	1031.1.1={
-		birth="1031.1.1"
+	father=1231104 #relation provided in one of many later sources
+	1012.1.1={
+		birth="1012.1.1"
 	}
 	1074.1.1={
 		death="1074.1.1"
@@ -516,25 +382,6 @@
 	religion="sunni"
 	culture="persian"
 	trait="martial_cleric"
-	1039.1.1={
-		birth="1039.1.1"
-	}
-	1089.1.1={
-		death="1089.1.1"
-	}
-}
-
-20707 = {
-	name="Nasr"
-	dynasty=101863
-	martial=5
-	diplomacy=8
-	intrigue=5
-	stewardship=4
-	religion="sunni"
-	culture="persian"
-	trait="deceitful"
-	trait="amateurish_plotter"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -562,38 +409,47 @@
 	}
 }
 
+############################################ missing vanilla, modified
 20734 = {
 	name="Fariburz"
 	dynasty=101873
-	martial=5
-	diplomacy=6
+	martial=7
+	diplomacy=7
 	intrigue=6
 	stewardship=4
 	religion="sunni"
-	culture="persian"
-	trait="underhanded_rogue"
-	father=146101
-	1031.1.1={
-		birth="1031.1.1"
+	culture="adhari"
+	trait="charismatic_negotiator"
+	father=146101 # was missing
+        mother=1233493 # daughter of the king of Serir
+	1027.1.1={
+		birth = yes
 	}
 	1096.1.1={
-		death="1096.1.1"
+		death = yes
 	}
 }
+############################################
+
 227012 = {
-	name="Sinan"
+	name="Sinan" #Rashid al-Din b. Salman b. Muhammad Abu' l-Hasan al-Basri, AKA the "Old Man of the Mountain"
 	dynasty=100765
-	martial=5
-	diplomacy=4
-	intrigue=6
-	stewardship=8
-	religion="shiite"
-	culture="persian"
-	trait="diligent"
+	martial=7
+	diplomacy=7
+	intrigue=7
+	stewardship=5
+	learning=6
+	religion="ismaili" #born to an Imami Shi'ite family, then converted to Ismailism in his youth
+	culture="bedouin_arabic" #born in Basra
+	trait="patient"
 	trait="zealous"
-	trait="skilled_tactician"
+	trait="ambitious"
+	trait="elusive_shadow"
 	1129.1.1={
 		birth="1129.1.1"
+	}
+	1162.1.1={
+		add_trait="strategist"
 	}
 	1192.1.1={
 		death="1192.1.1"
@@ -601,48 +457,62 @@
 }
 
 3050 = {
-	name="Hassan"
-	dynasty=611
-	martial=6
-	diplomacy=7
-	intrigue=8
-	stewardship=9
-	religion="sunni"
-	culture="persian"
-	trait="patient"
-	trait="genius"
-	trait="scholar"
-	trait="ambitious"
-	trait="just"
-	trait="grey_eminence"
-	1018.4.10={
-		birth="1018.4.10"
+	name = "Hassan"  # AKA Nezam al-Molk or Nizam al-Mulk
+	dynasty = 1000101807
+	martial = 6
+	diplomacy = 7
+	intrigue = 8
+	stewardship = 9
+	learning = 7
+	religion = "sunni"
+	culture = "khorasani"
+	trait = "patient"
+	trait = "genius"
+	trait = "ambitious"
+	trait = "just"
+	trait = "grey_eminence"
+	trait = "erudite"
+	father = 1235922	
+	1018.4.10 = {
+		birth = "1018.4.10"
 	}
-	1063.9.4={
-		employer=3040
-		effect = {
-			give_job_title=job_chancellor
+	1040.5.30 = {
+		employer = 3036
+	}
+	1045.1.1 = {
+		employer = 3040
+	}
+	1063.9.4 = {
+		employer = 0
+		#effect = {
+		#	give_job_title = job_chancellor
+		#}
+	}
+	1064.1.1 = {
+		add_spouse = 1234551 #Her repudiation by Alp Arslan happened no earlier than 1063. And he was very active in the Caucasus in the late 1050'ies and the early 1060'ies, so it was likely a very short marriage
+	}	
+	1092.10.14 = {
+		death = {
+			death_reason = death_murder_unknown
+			killer = 1229906
 		}
-	}
-	1092.10.14={
-		death="1092.10.14"
 	}
 }
 
 41606 = {
-	name="Shariyar" # IV 
+	name="Shahriyar" # IV 
 	# AKA: Husam ud
 	dynasty=7331
 	martial=3
 	diplomacy=2
 	intrigue=7
 	stewardship=4
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	trait="thrifty_clerk"
 	father=20704
-	1057.1.1={
-		birth="1057.1.1"
+	1038.1.1={ #born by 1039
+		birth="1038.1.1"
 	}
 	1114.1.1={
 		death="1114.1.1"
@@ -702,25 +572,32 @@
 #	}
 #	1085.1.2={
 #		death="1085.1.2"
+
 #	}
 #}
 
 41703 = {
-	name="Omar"
-	dynasty=101729
-	martial=3
-	diplomacy=10
-	intrigue=6
-	stewardship=5
-	religion="sunni"
-	culture="persian"
-	trait="lustful"
-	trait="charismatic_negotiator"
-	1048.1.2={
-		birth="1048.1.2"
+	name = "Omar"
+	dynasty = 101729
+	martial = 3
+	diplomacy = 6
+	intrigue = 5
+	stewardship = 5
+	learning = 10
+	religion = "sunni"
+	culture = "khorasani"
+	trait = "detached_priest"
+	trait = "genius"
+	trait = "cynical"
+	trait = "erudite"
+	1048.5.18 = {
+		birth = "1048.5.18"
 	}
-	1098.1.2={
-		death="1098.1.2"
+	1064.5.18 = {
+		add_trait = "poet"
+	}
+	1131.12.4 = {
+		death = "1131.12.4"
 	}
 }
 
@@ -773,7 +650,7 @@
 	intrigue=5
 	stewardship=6
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	trait="ambitious"
 	trait="skilled_tactician"
 	trait="envious"
@@ -794,7 +671,7 @@
 	intrigue=7
 	stewardship=5
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	trait="tough_soldier"
 	trait="proud"
 	father=478022
@@ -807,7 +684,7 @@
 }
 
 478024 = {
-	name="Abul Fawaris Djamal ad-Din"
+	name="Jamal ad-Din Abul Fawaris"
 	# AKA: Abul Fawaris
 	dynasty=101915
 	martial=6
@@ -815,7 +692,7 @@
 	intrigue=3
 	stewardship=7
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	trait="underhanded_rogue"
 	trait="wroth"
 	father=478022
@@ -929,153 +806,100 @@
 	}
 }
 
-45106 = { 
-	name="Faraz" # Fantasy Zoroastrian ruler near Bukhara
-	dynasty=7510 # Faravid
-	martial=7
-	diplomacy=4
-	intrigue=5
-	stewardship=7
-	religion="zoroastrian"
-	culture="persian"
-	trait=tough_soldier
-	849.1.1={
-		birth=yes
+45105 = { 
+	name="Rostam" # Rostam II (was likely Muslim already in real history - his father Karen appears to have converted)
+	dynasty=7331 # Bavandid
+	martial=5
+	diplomacy=6
+	intrigue=6
+	stewardship=6
+	religion="sunni"
+	culture="daylamite"
+	trait=diligent
+	#trait=just
+	trait="tough_soldier"
+	trait="sympathy_zoroastrianism"
+	father=160294
+	845.1.1={
+		birth="845.1.1"
 	}
-	899.1.1={
-		death=yes
+	896.1.1={
+		death={
+			death_reason=death_execution
+			#killer= Rafi b. Harthama
+		}
+	}
+}
+
+45106 = { 
+	name="Gurdzad"
+	dynasty=7511
+	martial=7
+	religion="zoroastrian"
+	culture="daylamite"
+	father=160296 #fictional relation
+	803.1.1={
+		birth="803.1.1"
+	}
+	845.1.1={
+		death="845.1.1"
 	}
 }
 
 45107 = { 
-	name="Vandad" # Fictional leader of the House of Karen at the time
+	name="Baduspan"
 	dna = xqndnvqyari
 	properties = fo0edd000000000000
 	dynasty=7511 # Karen
-	martial=7
-	diplomacy=5
-	intrigue=5
-	stewardship=4
-	religion=zoroastrian
-	culture=persian
-	trait=tough_soldier
-	father = 45110
+	#martial=7
+	#diplomacy=5
+	#intrigue=5
+	#stewardship=4
+	religion=sunni
+	culture=daylamite
+	#trait=tough_soldier
+	trait=content
+	trait=sympathy_zoroastrianism
+	father = 45106
 	830.1.1={
-		birth=yes
-	}
-	
-	867.1.1 = {
-		# The last hope of the Zoroastrians
-		effect = {
-			spawn_unit = {
-				province = 633 # Gurgan
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 625 625 }
-					heavy_infantry = { 479 479 }
-					pikemen = { 30 30 }
-					archers = { 254 254 }
-					light_cavalry = { 132 132 }
-					knights = { 4 4 }
-					horse_archers = { 12 12 }
-				}
-				attrition = 0.5
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 633 # Gurgan
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 625 625 }
-						heavy_infantry = { 479 479 }
-						pikemen = { 30 30 }
-						archers = { 254 254 }
-						light_cavalry = { 132 132 }
-						knights = { 4 4 }
-						horse_archers = { 12 12 }
-					}
-					attrition = 0.5
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 633 # Gurgan
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 625 625 }
-						heavy_infantry = { 479 479 }
-						pikemen = { 30 30 }
-						archers = { 254 254 }
-						light_cavalry = { 132 132 }
-						knights = { 4 4 }
-						horse_archers = { 12 12 }
-					}
-					attrition = 0.5
-				}
-			}
-		}
+		birth = yes
 	}
 	
 	890.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 45109 = { 
-	name="Farah" # Fictional
-	female = yes
+	name="Shahriyar"
 	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father = 45110
-	835.1.1={
+	religion="sunni"
+	culture="daylamite"
+	father = 45107
+	853.1.1={
 		birth="835.1.1"
 	}
-	890.1.1={
-		death="890.1.1"
+	910.1.1={
+		death="910.1.1"
 	}
 }
 
 45110 = { 
-	name="Mazyar" # Historical. Died in revolt against the Caliph
+	name="Maziar" # Historical. Died in revolt against the Caliph
 	dynasty=7511
 	martial=7
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	trait="skilled_tactician"
 	father=160296
 	800.1.1={
 		birth="800.1.1"
 	}
-	839.1.1={
-		death="839.1.1"
+	840.1.1={
+		death={
+			death_reason=death_execution
+			killer=34008
+		}
 	}
 }
 
@@ -1083,7 +907,7 @@
 	name="Hashim" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	835.1.1={
 		birth="835.1.1"
 	}
@@ -1097,7 +921,7 @@
 	name="'Amr" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93010
 	855.1.1={
 		birth="855.1.1"
@@ -1112,7 +936,7 @@
 	name="Muhammad" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93011
 	871.1.1={
 		birth="871.1.1"
@@ -1127,7 +951,7 @@
 	name="Abdul Malik" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93012
 	890.1.1={
 		birth="890.1.1"
@@ -1142,7 +966,7 @@
 	name="Ahmad" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93013
 	910.1.1={
 		birth="910.1.1"
@@ -1157,7 +981,7 @@
 	name="Maimun" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93014
 	940.1.1={
 		birth="940.1.1"
@@ -1172,7 +996,7 @@
 	name="Muhammad" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93014
 	942.1.1={
 		birth="942.1.1"
@@ -1187,10 +1011,11 @@
 	name="Lashkari" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93014
 	946.1.1={
 		birth="946.1.1"
+		culture="adhari"
 	}
 		
 	1001.1.1={
@@ -1202,10 +1027,11 @@
 	name="al-Mansur" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="levantine_arabic"
 	father=93017
 	970.1.1={
 		birth="970.1.1"
+		culture="adhari"
 	}
 		
 	1034.1.1={
@@ -1217,7 +1043,7 @@
 	name="Abdul Malik" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93018
 	990.1.1={
 		birth="990.1.1"
@@ -1234,7 +1060,7 @@
 	name="al-Mansur" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93019
 	1010.1.1={
 		birth="1010.1.1"
@@ -1249,7 +1075,7 @@
 	name="Lashkari" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93019
 	1015.1.1={
 		birth="1015.1.1"
@@ -1264,7 +1090,7 @@
 	name="Abdul Malik" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93020
 	1030.1.1={
 		birth="1030.1.1"
@@ -1279,7 +1105,7 @@
 	name="Maimum" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93022
 	1050.1.1={
 		birth="1050.1.1"
@@ -1294,7 +1120,7 @@
 	name="Khalifa" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93023
 	1070.1.1={
 		birth="1070.1.1"
@@ -1309,7 +1135,7 @@
 	name="Muhammad" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93024
 	1095.1.1={
 		birth="1095.1.1"
@@ -1324,7 +1150,7 @@
 	name="Muzaffar" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93025
 	1115.1.1={
 		birth="1115.1.1"
@@ -1339,7 +1165,7 @@
 	name="Begbars" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93026
 	1135.1.1={
 		birth="1135.1.1"
@@ -1354,7 +1180,7 @@
 	name="Abdul Malik" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93027
 	1155.1.1={
 		birth="1155.1.1"
@@ -1369,7 +1195,7 @@
 	name="Rashid" 
 	dynasty=7326
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=93028
 	1180.1.1={
 		birth="1180.1.1"
@@ -1394,255 +1220,17 @@
 	}
 }
 
-93132 = {
-	name="Suri" # fictional
-	dynasty=1059986
-	religion=buddhist
-	culture="persian"
-	trait=mahayana_buddhist
-	trait=sympathy_islam
-	father=248620 # Amir cannot really be father of Muhammed unless he lived to be over 100 years of age
-	920.1.1={
-		birth=yes
-	}
-	980.1.1={
-		death=yes
-	}
-}
-
-93133 = {
-	name="Muhammad"
-	dynasty=1059986
-	religion=buddhist
-	culture="persian"
-	trait=mahayana_buddhist
-	trait=sympathy_islam
-	father=93132
-	960.1.1={
-		birth=yes
-	}
-	1011.1.1={
-		death=yes
-	}
-}
-
-93134 = {
-	name="Muhammad"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93133
-	980.1.1={
-		birth="980.1.1"
-	}
-	1030.1.1={
-		death="1030.1.1"
-	}
-}
-
-93135 = {
-	name="Shith"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93133
-	982.1.1={
-		birth="982.1.1"
-	}
-	1029.1.1={
-		death="1029.1.1"
-	}
-}
-
-93136 = {
-	name="Abbas"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93135
-	1000.1.1={
-		birth="1000.1.1"
-	}
-	1059.1.1={
-		death="1059.1.1"
-	}
-}
-
-93137 = {
-	name="Muhammad"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93136
-	1030.1.1={
-		birth="1030.1.1"
-	}
-	1080.1.1={
-		death="1080.1.1"
-	}
-}
-
-93138 = {
-	name="Hasan"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93137
-	1050.1.1={
-		birth="1050.1.1"
-	}
-	1100.1.1={
-		death="1100.1.1"
-	}
-}
-
-93139 = {
-	name="Hussain"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93138
-	1084.1.1={
-		birth="1084.1.1"
-	}
-	1146.1.1={
-		death="1146.1.1"
-	}
-}
-
-93140 = {
-	name="Saif"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93139
-	1110.1.1={
-		birth="1110.1.1"
-	}
-	1149.1.1={
-		death="1149.1.1"
-	}
-}
-
-93141 = {
-	name="Säm"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93139
-	1111.1.1={
-		birth="1111.1.1"
-	}
-	1155.1.1={
-		death="1155.1.1"
-	}
-}
-
-93143 = {
-	name="Hussain"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93139
-	1112.1.1={
-		birth="1112.1.1"
-	}
-	1161.1.1={
-		death="1161.1.1"
-	}
-}
-
-93144 = {
-	name="Säm"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=144143
-	1167.1.1={
-		birth="1167.1.1"
-	}
-	1213.1.1={
-		death="1213.1.1"
-	}
-}
-
-93145 = {
-	name="Atsiz"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93143
-	1150.1.1={
-		birth="1150.1.1"
-	}
-	1214.1.1={
-		death="1214.1.1"
-	}
-}
-
-93146 = {
-	name="Mas'ud"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93139
-	1115.1.1={
-		birth="1115.1.1"
-	}
-	1163.1.1={
-		death="1163.1.1"
-	}
-}
-
-93147 = {
-	name="Muhammad"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93146
-	1140.1.1={
-		birth="1140.1.1"
-	}
-	1192.1.1={
-		death="1192.1.1"
-	}
-}
-
-93148 = {
-	name="Säm"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93147
-	1160.1.1={
-		birth="1160.1.1"
-	}
-	1206.1.1={
-		death="1206.1.1"
-	}
-}
-
-93149 = {
-	name="Jalal-ud-Din Ali"
-	dynasty=791
-	religion="sunni"
-	culture="persian"
-	father=93148
-	1180.1.1={
-		birth="1180.1.1"
-	}
-	1215.1.1={
-		death="1215.1.1"
-	}
-}
 
 93150 = {
 	name="Marghini"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	1130.1.1={
 		birth="1130.1.1"
+	}
+	1161.1.1={
+		employer=1230334
 	}
 	1180.1.1={
 		death="1180.1.1"
@@ -1650,13 +1238,25 @@
 }
 
 93151 = {
-	name="Taju ud-Din Uthman"
+	name="Uthman Taju ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93150
 	1160.1.1={
 		birth="1160.1.1"
+	}
+	1161.1.1={
+		employer=1230334
+	}
+	1163.1.1={
+		employer=144141
+	}
+	1203.1.1={
+		employer=144142
+	}
+	1206.3.15={
+		employer=144143
 	}
 	1210.1.1={
 		death="1210.1.1"
@@ -1664,13 +1264,20 @@
 }
 
 93152 = {
-	name="Izz ud-Din Umar"
+	name="Umar Izz ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93150
 	1162.1.1={
 		birth="1162.1.1"
+		employer=1230334
+	}
+	1163.1.1={
+		employer=144141
+	}
+	1203.1.1={
+		employer=144142
 	}
 	1206.1.1={
 		death="1206.1.1"
@@ -1678,13 +1285,32 @@
 }
 
 93153 = {
-	name="Rukh ud-Din Abu-Bakr"
+	name="Muhammad Rukh ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93151
 	1190.1.1={
 		birth="1190.1.1"
+		employer=144141
+	}
+	1203.1.1={
+		employer=144142
+	}
+	1206.3.15={
+		employer=144143
+	}
+	1212.1.1 = {
+		employer = 93144
+	}
+	1213.1.1 = {
+		employer = 93145
+	}
+	1214.1.1 = {
+		employer = 1230332
+	}
+	1215.1.1={
+		employer=0
 	}
 	1245.1.1={
 		death="1245.1.1"
@@ -1692,30 +1318,33 @@
 }
 
 93154 = {
-	name="Shams ud-Din"
+	name="Muhammad Shams ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93153
 	1210.1.1={
 		birth="1210.1.1"
 	}
 	1277.1.1={
-		death="1277.1.1"
+		death={
+			death_reason=death_execution
+			killer=478010
+		}
 	}
 }
 
 93155 = {
-	name="Shams ud-Din"
+	name="Rukn al-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93154
 	1235.1.1={
 		birth="1235.1.1"
 	}
-	1295.1.1={
-		death="1295.1.1"
+	1305.1.1={
+		death="1305.1.1"
 	}
 }
 
@@ -1723,22 +1352,25 @@
 	name="Fakhr ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93155
 	1255.1.1={
 		birth="1255.1.1"
 	}
 	1308.1.1={
-		death="1308.1.1"
+		death={
+			death_reason=death_battle
+			killer=478007
+		}
 	}
 }
 
 93157 = {
-	name="Shams ud-Din"
+	name="Ghiyath al-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
-	father=93156
+	culture="khorasani"
+	father=93155
 	1275.1.1={
 		birth="1275.1.1"
 	}
@@ -1751,7 +1383,7 @@
 	name="Hafiz"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93157
 	1295.1.1={
 		birth="1295.1.1"
@@ -1762,11 +1394,11 @@
 }
 
 93159 = {
-	name="Mu'izz ud-Din"
+	name="Muhammad Mu'izz ud-Din"
 	dynasty=7330
 	religion="sunni"
-	culture="persian"
-	father=93158
+	culture="khorasani"
+	father=93157
 	1315.1.1={
 		birth="1315.1.1"
 	}
@@ -1777,11 +1409,11 @@
 93162 = {
 	name="Qarin" # Karen II
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=41606
-	1080.1.1={
-		birth="1080.1.1"
+	1060.1.1={
+		birth="1060.1.1"
 	}
 	1117.1.1={
 		death="1117.1.1"
@@ -1793,11 +1425,11 @@
 93163 = {
 	name="Rustam" # IV
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=41606
-	1082.1.1={
-		birth="1082.1.1"
+	1062.1.1={
+		birth="1062.1.1"
 	}
 	1118.1.1={
 		death="1118.1.1"
@@ -1809,11 +1441,11 @@
 93164 = {
 	name="Ali"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
-	father=93163
-	1102.1.1={
-		birth="1102.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=41606
+	1070.1.1={
+		birth="1070.1.1"
 	}
 	1142.1.1={
 		death="1142.1.1"
@@ -1826,11 +1458,14 @@
 93165 = {
 	name="Ghazi Rustam"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93164
-	1120.1.1={
-		birth="1120.1.1"
+	1110.1.1={
+		birth="1110.1.1"
+	}
+	1160.1.1={
+		add_trait="gout"
 	}
 	1165.1.1={
 		death="1165.1.1"
@@ -1843,14 +1478,14 @@
 93166 = {
 	name="Hassan"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93165
-	1140.1.1={
-		birth="1140.1.1"
+	1130.1.1={
+		birth="1130.1.1"
 	}
 	1173.1.1={
-		death="1173.1.1"
+		death={ death_reason=death_murder } #murdered by his slave bodyguard
 	}
 }
 
@@ -1860,11 +1495,11 @@
 93167 = {
 	name="Ardashir"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93166
-	1156.1.1={
-		birth="1156.1.1"
+	1149.1.1={
+		birth="1149.1.1"
 	}
 	1206.1.1={
 		death="1206.1.1"
@@ -1875,16 +1510,16 @@
 
 
 93168 = {
-	name="Ghazi Rustam"
+	name="Shams-al-Molk Rustam"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93167
-	1176.1.1={
-		birth="1176.1.1"
+	1169.1.1={
+		birth="1169.1.1"
 	}
 	1210.1.1={
-		death="1210.1.1"
+		death={ death_reason=death_murder } #murdered by an Alid
 	}
 }
 
@@ -1894,11 +1529,12 @@
 93169 = {
 	name="Ardashir"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
-	father=93168
-	1192.1.1={
-		birth="1192.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=1231146 #related to the Bavandids through her grandmother, who was supposedly a sister of Shams al-Molk Rustam
+	mother=1231147 #daughter of the Nizari imam Jalal al-Din Hasan
+	1207.1.1={
+		birth="1207.1.1"
 	}
 	1249.1.1={
 		death="1249.1.1"
@@ -1909,11 +1545,11 @@
 93170 = {
 	name="Muhammad"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93169
-	1220.1.1={
-		birth="1220.1.1"
+	1223.1.1={
+		birth="1223.1.1"
 	}
 	1267.1.1={
 		death="1267.1.1"
@@ -1923,16 +1559,18 @@
 
 
 93171 = {
-	name="Ali"
+	name="Ali" #Shams al-Molk, son-in-law of Shahragim
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93170
 	1240.1.1={
 		birth="1240.1.1"
 	}
 	1271.1.1={
-		death="1271.1.1"
+		death={
+			death_reason=death_execution
+		}
 	}
 }
 
@@ -1942,8 +1580,8 @@
 93172 = {
 	name="Yezdigerd"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93171
 	1258.1.1={
 		birth="1258.1.1"
@@ -1957,10 +1595,10 @@
 
 
 93173 = {
-	name="Shariyar"
+	name="Shahriyar"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93172
 	1278.1.1={
 		birth="1278.1.1"
@@ -1976,8 +1614,8 @@
 93174 = {
 	name="Kai-Kushrau"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93173
 	1294.1.1={
 		birth="1294.1.1"
@@ -1993,8 +1631,8 @@
 93175 = {
 	name="Sharaf"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93173
 	1299.1.1={
 		birth="1299.1.1"
@@ -2009,8 +1647,8 @@
 93176 = {
 	name="Hassan"
 	dynasty=7331
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93173
 	1301.1.1={
 		birth="1301.1.1"
@@ -2023,58 +1661,55 @@
 
 
 93177 = {
-	name="Ardashir"
+	name="Shahriwash"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216915
-	1000.1.1={
-		birth="1000.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	1030.1.1={
+		birth="1030.1.1"
 	}
-	1047.1.1={
-		death="1047.1.1"
+	1088.1.1={
+		death="1088.1.1"
 	}
 }
 
 
 93178 = {
-	name="Namwar"
+	name="Hazarasp"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93177
-	trait=sympathy_zoroastrianism
-	1020.1.1={
-		birth="1020.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=1231096 #fictional relation
+	1088.1.1={
+		birth="1088.1.1"
 	}
-	1078.1.1={
-		death="1078.1.1"
+	1138.1.1={
+		death="1138.1.1"
 	}
 }
 
 93179 = {
-	name="Sharaf"
+	name="Nasr" #Sharaf al-Din Nasr b. Shahriwash, numismatic evidence 1108-1109, 1110-1111 (Ruyan)
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93178
-	trait=sympathy_zoroastrianism
-	1040.1.1={
-		birth="1040.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93177
+	1050.1.1={
+		birth="1050.1.1"
 	}
-	1109.1.1={
-		death="1109.1.1"
+	1115.1.1={ #?
+		death="1115.1.1"
 	}
 }
 
 93180 = {
-	name="Shariwash"
+	name="Shahriwash" #b. Hazarasp
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93179
-	1093.1.1={
-		birth="1093.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93178
+	1115.1.1={ #first mentioned ca. 1140
+		birth="1115.1.1"
 	}
 	1168.1.1={
 		death="1168.1.1"
@@ -2082,13 +1717,15 @@
 }
 
 93181 = {
-	name="Kai-Ka'us"
+	name="Kai-Ka'us" #b. Hazarasp
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93180
-	1115.1.1={
-		birth="1115.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93178
+	trait="skilled_tactician"
+	trait="humble" #started out as a foot soldier under the Bavandid Shah-Ghazi Rostam
+	1122.1.1={ #should be young enough to have been a foot soldier ca. 1145
+		birth="1122.1.1"
 	}
 	1184.1.1={
 		death="1184.1.1"
@@ -2096,25 +1733,28 @@
 }
 
 93182 = {
-	name="Hazarasp"
+	name="Hazarasp" #b. Shahriwash
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93181
+	religion="zaydi"
+	culture="daylamite"
+	father=93180
 	1150.1.1={
 		birth="1150.1.1"
 	}
-	1210.1.1={
-		death="1210.1.1"
+	1186.1.1={ #imprisoned by the Bavandid Shah-Ardashir, murdered at the instigation of Hezabr al-Din Khurshid, to whom Shah-Ardashir gave Ruyan
+		death={
+			death_reason=death_murder
+			killer=1231098
+		}
 	}
 }
 
 93183 = {
 	name="Zarin-Kemer"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93182
+	religion="zaydi"
+	culture="daylamite"
+	father=1231149
 	1170.1.1={
 		birth="1170.1.1"
 	}
@@ -2126,11 +1766,11 @@
 93184 = {
 	name="Bisutun"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93182
-	1175.1.1={
-		birth="1175.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93183
+	1188.1.1={
+		birth="1188.1.1"
 	}
 	1223.1.1={
 		death="1223.1.1"
@@ -2140,39 +1780,39 @@
 93185 = {
 	name="Namwar"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93184
-	1195.1.1={
-		birth="1195.1.1"
+	1209.1.1={
+		birth="1209.1.1"
 	}
-	1230.1.1={
-		death="1230.1.1"
+	1243.1.1={
+		death="1243.1.1"
 	}
 }
 
 93186 = {
 	name="Ardashir"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93184
-	1200.1.1={
-		birth="1200.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93185
+	1228.1.1={
+		birth="1228.1.1"
 	}
-	1236.1.1={
-		death="1236.1.1"
+	1243.9.1={
+		death="1243.9.1"
 	}
 }
 
 93187 = {
-	name="Rakim Gaubara"
+	name="Shahragim"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93186
-	1220.1.1={
-		birth="1220.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93185
+	1233.1.1={
+		birth="1233.1.1"
 	}
 	1272.1.1={
 		death="1272.1.1"
@@ -2182,11 +1822,11 @@
 93188 = {
 	name="Namwar"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93187
-	1240.1.1={
-		birth="1240.1.1"
+	1252.1.1={
+		birth="1252.1.1"
 	}
 	1302.1.1={
 		death="1302.1.1"
@@ -2196,9 +1836,9 @@
 93189 = {
 	name="Kai-Khusrau"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93188
+	religion="zaydi"
+	culture="daylamite"
+	father=93187
 	1260.1.1={
 		birth="1260.1.1"
 	}
@@ -2210,8 +1850,8 @@
 93190 = {
 	name="Muhammad"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93189
 	1280.1.1={
 		birth="1280.1.1"
@@ -2222,27 +1862,30 @@
 }
 
 93191 = {
-	name="Shariyar"
+	name="Shahriyar"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93190
-	1296.1.1={
-		birth="1296.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93189
+	1286.1.1={
+		birth="1286.1.1"
 	}
 	1325.1.1={
-		death="1325.1.1"
+		death={
+			death_reason=death_murder
+			killer=93193
+		}
 	}
 }
 
 93192= {
 	name="Ziyar"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=93190
-	1298.1.1={
-		birth="1298.1.1"
+	religion="zaydi"
+	culture="daylamite"
+	father=93189
+	1288.1.1={
+		birth="1288.1.1"
 	}
 	1334.1.1={
 		death="1334.1.1"
@@ -2252,23 +1895,339 @@
 93193= {
 	name="Iskandar"
 	dynasty=7332
-	religion="shiite"
-	culture="persian"
+	religion="zaydi"
+	culture="daylamite"
 	father=93192
-	1318.1.1={
-		birth="1318.1.1"
+	1308.1.1={
+		birth="1308.1.1"
 	}
 	1360.1.1={
 		death="1360.1.1"
 	}
 }
 
+93194= {
+	name="Sorgan Sira"
+	dynasty=101912
+	religion="tengri_pagan"
+	culture="mongol"
+	1200.1.1={
+		birth="1200.1.1"
+	}
+	1250.1.1={
+		death="1250.1.1"
+	}
+}
 
-93268 = {
-	name="Sharaf ad-Din Muzzafar"
-	dynasty=101915
+93195= {
+	name="Tudaun"
+	dynasty=101912
+	religion="tengri_pagan"
+	culture="mongol"
+	father=93194
+	1224.1.1={
+		birth="1224.1.1"
+	}
+	1277.1.1={
+		death="1277.1.1"
+	}
+}
+
+1231525 = {
+	name="Kulduz"
+	dynasty=1000102400
+	religion="buddhist"
+	culture="khitan"
+	trait="mahayana_buddhist"
+	father=1231504 #fictional relation
+	1151.1.1={
+		birth="1151.1.1"
+	}
+	1209.1.1={
+		death="1209.1.1"
+	}
+	1232.1.1={
+		dynasty=7337
+	}
+}
+
+93258 = {
+	name="Baraq Hajib"
+	dynasty=1000102400
+	martial=7
+	diplomacy=7
+	stewardship=6
+	religion="buddhist"
+	culture="khitan"
+	father=1231525
+	trait="mahayana_buddhist"
+	trait="skilled_tactician"
+	1180.1.1={
+		birth="1180.1.1"
+		employer=188912
+	}
+	1210.1.1={
+		employer=93054
+	}
+	1221.1.1={
+		employer=0
+		religion="sunni"
+	}
+	1232.1.1={
+		dynasty=7337
+	}
+	1235.1.1={
+		death="1235.1.1"
+	}
+}
+
+1231526 = {
+	name="Hamitun"
+	dynasty=1000102400
+	religion="buddhist"
+	culture="khitan"
+	father=1231525
+	trait="mahayana_buddhist"
+	1183.1.1={
+		birth="1183.1.1"
+		employer=188912
+	}
+	1210.1.1={
+		employer=93054
+	}
+	1221.1.1={
+		employer=93258
+		religion="sunni"
+	}
+	1232.1.1={
+		dynasty=7337
+	}
+	1235.1.1={
+		employer=93259
+	}
+	1239.1.1={
+		death="1239.1.1"
+	}
+}
+
+93259 = {
+	name="Qutb ad-Din Muhammad"
+	dynasty=1000102400
+	religion="buddhist"
+	culture="khitan"
+	trait="mahayana_buddhist"
+	father=1231526
+	1200.1.1={
+		birth="1200.1.1"
+	}
+	1210.1.1={
+		employer=93054
+	}
+	1221.1.1={
+		employer=93258
+		religion="sunni"
+	}
+	1232.1.1={
+		culture=persian
+		dynasty=7337
+	}
+	1235.1.1={
+		employer=0
+	}
+	1257.1.1={
+		death="1257.1.1"
+	}
+}
+
+
+93260 = {
+	name="Rukn ad-Din Khwaja al-Hakk"
+	dynasty=1000102400
+	religion="buddhist"
+	culture="khitan"
+	trait="mahayana_buddhist"
+	father=93258
+	1201.1.1={
+		birth="1201.1.1"
+	}
+	1210.1.1={
+		employer=93054
+	}
+	1221.1.1={
+		employer=93258
+		religion="sunni"
+	}
+	1232.1.1={
+		culture=persian
+		dynasty=7337
+	}
+	1235.1.1={
+		employer=93259
+	}
+	1236.1.1={
+		employer=0
+	}
+	1251.1.1={
+		death="1251.1.1"
+	}
+}
+
+
+
+93261 = {
+	name="Muzzafar ad-Din Hajjaj Sultan"
+	dynasty=7337
+	religion="sunni"
+	culture="khitan"
+	father=93259
+	mother=93262
+	trait="ambitious"
+	1243.1.1={
+		birth="1243.1.1"
+		culture="persian"
+	}
+	1279.1.1={
+		employer=170204
+	}
+	1286.1.1={
+		death="1286.1.1"
+	}
+}
+
+93262 = {
+	name="Turkan Hatun"
+	female=yes
+	dynasty=1000102400
+	religion="sunni"
+	culture="khitan"
+	father=93258
+	1224.1.1={
+		birth="1224.1.1"
+	}
+	1232.1.1={
+		dynasty=7337
+		culture=persian
+	}
+	1242.1.1={
+		add_spouse=93259
+	}
+	1282.1.1={
+		death="1282.1.1"
+	}
+}
+
+
+93263 = {
+	name="Jalal ad-Din Suyurghatmish"
+	dynasty=7337
 	religion="sunni"
 	culture="persian"
+	father=93259
+	1248.1.1={
+		birth="1248.1.1"
+	}
+	1292.1.1={
+		death="1292.1.1"
+	}
+}
+
+
+93264 = {
+	name="Safvat ad-Din Padishah Hatun"
+	female=yes
+	dynasty=7337
+	religion="sunni"
+	culture="khitan"
+	father=93259
+	mother=93262
+	1246.1.1={
+		birth="1246.1.1"
+		culture="persian"
+	}
+	1272.1.1={
+		add_spouse=478010
+	}
+	1282.1.1={
+		add_spouse=125525
+	}
+	1295.1.1={
+		death={
+			death_reason=death_execution
+			killer=125522
+		}
+	}
+}
+
+93265 = {
+	name="Yuluq Shah"
+	dynasty=7337
+	religion="sunni"
+	culture="persian"
+	father=93263
+	1282.1.1={
+		birth="1282.1.1"
+	}
+	1296.1.1={
+		death="1296.1.1"
+	}
+}
+
+
+93266 = {
+	name="Muzzafar ad-Din"
+	dynasty=7337
+	religion="sunni"
+	culture="persian"
+	father=93263
+	1283.1.1={
+		birth="1283.1.1"
+	}
+	1301.1.1={
+		death="1301.1.1"
+	}
+}
+
+
+93267 = {
+	name="Qutb ad-Din"
+	dynasty=7337
+	religion="sunni"
+	culture="persian"
+	father=93263
+	1284.1.1={
+		birth="1284.1.1"
+	}
+	1308.1.1={
+		death="1308.1.1"
+	}
+}
+
+1231527 = {
+	name="Qutlugh Hatun" #name modified
+	female=yes
+	dynasty=7337
+	religion="sunni"
+	culture="persian"
+	father=93267
+	1304.1.1={
+		birth="1304.1.1"
+	}
+	1328.1.1={
+		add_spouse=478022
+	}
+	1366.1.1={
+		death="1366.1.1"
+	}
+}
+
+
+
+
+93268 = {
+	name="Muzzafar Sharaf ad-Din"
+	dynasty=101915
+	religion="sunni"
+	culture="khorasani"
 	1270.1.1={
 		birth="1270.1.1"
 	}
@@ -2277,222 +2236,223 @@
 	}
 }
 
-93269 = {
-	name="Tagh ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	1010.1.1={
-		birth="1010.1.1"
-	}
-	1073.1.1={
-		death="1073.1.1"
-	}
-}
+#93269 = {
+#	name="Tagh ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	1010.1.1={
+#		birth="1010.1.1"
+#	}
+#	1073.1.1={
+#		death="1073.1.1"
+#	}
+#}
 
 
-93270 = {
-	name="Baha ud-Dawla Tahir"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93269
-	1030.1.1={
-		birth="1030.1.1"
-	}
-	1088.1.1={
-		death="1088.1.1"
-	}
-}
-
-
-
-93271 = {
-	name="Badr ud-Dawla Abul Abbas"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93270
-	1050.1.1={
-		birth="1050.1.1"
-	}
-	1090.1.1={
-		death="1090.1.1"
-	}
-}
+#93270 = {
+#	name="Baha ud-Dawla Tahir"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93269
+#	1030.1.1={
+#		birth="1030.1.1"
+#	}
+#	1088.1.1={
+#		death="1088.1.1"
+#	}
+#}
 
 
 
-93272 = {
-	name="Baha ud-Dawla Khalaf"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93270
-	1053.1.1={
-		birth="1053.1.1"
-	}
-	1103.1.1={
-		death="1103.1.1"
-	}
-}
-
-
-93273 = {
-	name="Tagh ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93272
-	1095.1.1={
-		birth="1095.1.1"
-	}
-	1164.1.1={
-		death="1164.1.1"
-	}
-}
-
-
-93274 = {
-	name="Shams ad-Din Ahmad"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93273
-	1120.1.1={
-		birth="1120.1.1"
-	}
-	1167.1.1={
-		death="1167.1.1"
-	}
-}
+#93271 = {
+#	name="Badr ud-Dawla Abul Abbas"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93270
+#	1050.1.1={
+#		birth="1050.1.1"
+#	}
+#	1090.1.1={
+#		death="1090.1.1"
+#	}
+#}
 
 
 
-93275 = {
-	name="Izz ad-Din Muhammad"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93274
-	1140.1.1={
-		birth="1140.1.1"
-	}
-	1168.1.1={
-		death="1168.1.1"
-	}
-}
+#93272 = {
+#	name="Baha ud-Dawla Khalaf"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93270
+#	1053.1.1={
+#		birth="1053.1.1"
+#	}
+#	1103.1.1={
+#		death="1103.1.1"
+#	}
+#}
+
+
+#93273 = {
+#	name="Tagh ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93272
+#	1095.1.1={
+#		birth="1095.1.1"
+#	}
+#	1164.1.1={
+#		death="1164.1.1"
+#	}
+#}
+
+
+#93274 = {
+#	name="Shams ad-Din Ahmad"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93273
+#	1120.1.1={
+#		birth="1120.1.1"
+#	}
+#	1167.1.1={
+#		death="1167.1.1"
+#	}
+#}
 
 
 
-93276 = {
-	name="Tagh ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93275
-	1160.1.1={
-		birth="1160.1.1"
-	}
-	1215.1.1={
-		death="1215.1.1"
-	}
-}
+#93275 = {
+#	name="Izz ad-Din Muhammad"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93274
+#	1140.1.1={
+#		birth="1140.1.1"
+#	}
+#	1168.1.1={
+#		death="1168.1.1"
+#	}
+#}
+
+
+
+#93276 = {
+#	name="Tagh ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93275
+#	1160.1.1={
+#		birth="1160.1.1"
+#	}
+#	1215.1.1={
+#		death="1215.1.1"
+#	}
+#}
 
 
 
 
-93277 = {
-	name="Yamin ad-Din Bahram"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93276
-	1180.1.1={
-		birth="1180.1.1"
-	}
-	1221.1.1={
-		death="1221.1.1"
-	}
-}
+#93277 = {
+#	name="Yamin ad-Din Bahram"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93276
+#	1180.1.1={
+#		birth="1180.1.1"
+#	}
+#	1221.1.1={
+#		death="1221.1.1"
+#	}
+#}
 
-93278 = {
-	name="Tagh ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93277
-	1200.1.1={
-		birth="1200.1.1"
-	}
-	1226.1.1={
-		death="1226.1.1"
-	}
-}
+#93278 = {
+#	name="Tagh ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93277
+#	1200.1.1={
+#		birth="1200.1.1"
+#	}
+#	1226.1.1={
+#		death="1226.1.1"
+#	}
+#}
 
-93279 = {
-	name="Shihab ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93277
-	1201.1.1={
-		birth="1201.1.1"
-	}
-	1226.1.1={
-		death="1226.1.1"
-	}
-}
+#93279 = {
+#	name="Shihab ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93277
+#	1201.1.1={
+#		birth="1201.1.1"
+#	}
+#	1226.1.1={
+#		death="1226.1.1"
+#	}
+#}
 
-93280 = {
-	name="Rukh ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93277
-	1202.1.1={
-		birth="1202.1.1"
-	}
-	1226.1.1={
-		death="1226.1.1"
-	}
-}
+#93280 = {
+#	name="Rukh ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93277
+#	1202.1.1={
+#		birth="1202.1.1"
+#	}
+#	1226.1.1={
+#		death="1226.1.1"
+#	}
+#}
 
-93281 = {
-	name="Ala ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93277
-	1203.1.1={
-		birth="1203.1.1"
-	}
-	1226.1.1={
-		death="1226.1.1"
-	}
-}
+#93281 = {
+#	name="Ala ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93277
+#	1203.1.1={
+#		birth="1203.1.1"
+#	}
+#	1226.1.1={
+#		death="1226.1.1"
+#	}
+#}
 
-93282 = {
-	name="Nasir ad-Din"
-	dynasty=7338
-	religion="sunni"
-	culture="persian"
-	father=93277
-	1204.1.1={
-		birth="1204.1.1"
-	}
-	1226.1.1={
-		death="1226.1.1"
-	}
-}
+#93282 = {
+#	name="Nasir ad-Din"
+#	dynasty=7338
+#	religion="sunni"
+#	culture="persian"
+#	father=93277
+#	1204.1.1={
+#		birth="1204.1.1"
+#	}
+#	1226.1.1={
+#		death="1226.1.1"
+#	}
+#}
 
 93284 = {
 	name="Mas'ud"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
-	1170.1.1={
-		birth="1170.1.1"
+	culture="khorasani"
+	father=1235903
+	1154.1.1={
+		birth="1154.1.1"
 	}
 	1225.1.1={
 		death="1225.1.1"
@@ -2500,24 +2460,27 @@
 }
 
 93285 = {
-	name="Shams al-Din"
+	name="'Ali Shams al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93284
+	trait="tough_soldier"
 	1195.1.1={
 		birth="1195.1.1"
 	}
 	1255.1.1={
-		death="1255.1.1"
+		death={
+			death_reason=death_rabble
+		}
 	}
 }
 
 93286 = {
-	name="Mubariz al-Din"
+	name="Abu'l-Fath Mubariz al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93284
 	1200.1.1={
 		birth="1200.1.1"
@@ -2528,11 +2491,13 @@
 }
 
 93287 = {
-	name="Nasir al-Din"
+	name="Muhammad Nasir al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93286
+	trait="tough_soldier"
+	trait="diligent"
 	1238.1.1={
 		birth="1238.1.1"
 	}
@@ -2542,10 +2507,10 @@
 }
 
 93288 = {
-	name="Nusrat al-Din"
+	name="Muhammad Nusrat al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93287
 	1268.1.1={
 		birth="1268.1.1"
@@ -2556,13 +2521,17 @@
 }
 
 93289 = {
-	name="Rukh al-Din"
+	name="Mahmud Rukn al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93287
-	1270.1.1={
-		birth="1270.1.1"
+	trait="ambitious"
+	1259.1.1={ #eldest son of Nasir al-Din Muhammad
+		birth="1259.1.1"
+	}
+	1318.1.1 = {
+		add_trait="maimed"
 	}
 	1320.1.1={
 		death="1320.1.1"
@@ -2570,10 +2539,10 @@
 }
 
 93290 = {
-	name="Qutb al-Din"
+	name="Muhammad Qutb al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93289
 	1290.1.1={
 		birth="1290.1.1"
@@ -2587,7 +2556,7 @@
 	name="Taj al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93290
 	1310.1.1={
 		birth="1310.1.1"
@@ -2601,7 +2570,7 @@
 	name="Jalal al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93289
 	1295.1.1={
 		birth="1295.1.1"
@@ -2615,7 +2584,7 @@
 	name="Izz al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93289
 	1310.1.1={
 		birth="1310.1.1"
@@ -2629,7 +2598,7 @@
 	name="Qutb al-Din"
 	dynasty=7339
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=93293
 	1330.1.1={
 		birth="1330.1.1"
@@ -2639,28 +2608,28 @@
 	}
 }
 
-93295 = {
-	name="Qutlugh Inanj"
+#93295 = {
+#	name="Muzaffar al-Din" #duplicate
+#	dynasty=101876
+#	religion="sunni"
+#	culture="turkmen"
+#	father=144052
+#	1160.1.1={
+#		birth=yes
+#	}
+#	1220.1.1={
+#		death=yes
+#	}
+#}
+
+93296 = {
+	name="Abu-Bakr Nusrat ud-Din"
 	dynasty=101876
 	religion="sunni"
-	culture="persian"
+	culture="turkmen"
 	father=144052
 	1158.1.1={
 		birth="1158.1.1"
-	}
-	1195.1.1={
-		death="1195.1.1"
-	}
-}
-
-93296 = {
-	name="Nusrat ud-Din Abu-Bakr"
-	dynasty=101876
-	religion="sunni"
-	culture="persian"
-	father=93295
-	1178.1.1={
-		birth="1178.1.1"
 	}
 	1210.1.1={
 		death="1210.1.1"
@@ -2668,16 +2637,16 @@
 }
 
 93297 = {
-	name="Muzaffar ud-Din Ozbeg"
+	name="Ozbeg Muzaffar ud-Din"
 	dynasty=101876
 	religion="sunni"
-	culture="persian"
-	father=93295
-	1180.1.1={
-		birth="1180.1.1"
+	culture="turkmen"
+	father=144052
+	1160.1.1={
+		birth="1160.1.1"
 	}
-	1220.1.1={
-		death="1220.1.1"
+	1225.1.1={
+		death="1225.1.1"
 	}
 }
 
@@ -2685,34 +2654,35 @@
 	name="Qizil Arslan"
 	dynasty=101876
 	religion="sunni"
-	culture="persian"
-	father=93295
+	culture="turkmen"
+	father=93297
+	trait="deaf"
 	1182.1.1={
 		birth="1182.1.1"
 	}
-	1225.1.1={
-		death="1225.1.1"
+	1235.1.1={ #? Possibly entered Jalal al-Din Minguburnu's service
+		death="1235.1.1"
 	}
 }
 
 93299 = {
-	name="Nusrat ud-Din"
+	name="Nusrat ud-Din" #Tabriz and Azerbaijan ca. 1246
 	dynasty=101876
 	religion="sunni"
-	culture="persian"
-	father=93295
-	1190.1.1={
-		birth="1190.1.1"
+	culture="turkmen"
+	father=93298
+	1210.1.1={
+		birth="1210.1.1"
 	}
-	1230.1.1={
-		death="1230.1.1"
+	1260.1.1={
+		death="1260.1.1"
 	}
 }
 
 93300 = {
-	name="Sayf ad-Din Is'Haq"
+	name="Is'haq Sayf ad-Din"
 	dynasty=7340
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
 	1252.1.1={
 		birth="1252.1.1"
@@ -2726,10 +2696,10 @@
 }
 
 93301 = {
-	name="Taj al-Din Ebrahim"
+	name="Ebrahim Taj al-Din"
 	#AKA Zahed Gilani
 	dynasty=7341
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
 	1216.1.1={
 		birth="1216.1.1"
@@ -2743,7 +2713,7 @@
 	name="Bibi Fatemeh"
 	female=yes
 	dynasty=7341
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
 	father=93301
 	1285.1.1={
@@ -2755,9 +2725,9 @@
 }
 
 93303 = {
-	name="Sadr al-Din Musa"
+	name="Musa Sadr al-Din"
 	dynasty=7340
-	religion="shiite"
+	religion="sunni"
 	culture="persian"
 	father=93300
 	mother=93302
@@ -2774,136 +2744,140 @@
 	name="Nasr"
 	dynasty=810
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father = 163154
-	830.1.1={
-		birth=yes
+	829.1.1={
+		birth = yes
 	}
 	
-	867.1.1={
-		effect = {
-			decadence = -25
-			spawn_unit = {
-				province = 902 # Dashhowuz
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 277 277 }
-					heavy_infantry = { 244 244 }
-					archers = { 122 122 }
-					light_cavalry = { 54 54 }
-				}
-				attrition = 1.0
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 902 # Dashhowuz
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 277 277 }
-						heavy_infantry = { 244 244 }
-						archers = { 122 122 }
-						light_cavalry = { 54 54 }
-					}
-					attrition = 1.0
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 902 # Dashhowuz
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 277 277 }
-						heavy_infantry = { 244 244 }
-						archers = { 122 122 }
-						light_cavalry = { 54 54 }
-					}
-					attrition = 1.0
-				}
-			}
-		}
-	}
+  867.1.1={
+    add_spouse = 1230556
+  }
+	#867.1.1={
+	#	effect = {
+	#		decadence = -25
+	#		spawn_unit = {
+	#			province = 903 # Bukhara
+	#			owner = ROOT
+	#			leader = ROOT
+	#			match_character = ROOT
+	#			match_mult = 0.15
+	#			attrition = 1.0
+	#			earmark = start_troops
+	#		}
+	#		create_character = {
+	#			random_traits = yes
+	#			dynasty = random
+	#			religion = ROOT
+	#			culture = ROOT
+	#			female = no
+	#			age = 23
+	#			attributes = {
+	#				martial = 6
+	#			}
+	#			trait = skilled_tactician
+	#		}
+	#		new_character = {
+	#			spawn_unit = {
+	#				province = 903 # Bukhara
+	#				owner = ROOT
+	#				leader = THIS
+	#				match_character = ROOT
+	#				match_mult = 0.15
+	#				attrition = 1.0
+	#				earmark = start_troops
+	#			}
+	#		}
+	#		create_character = {
+	#			random_traits = yes
+	#			dynasty = random
+	#			religion = ROOT
+	#			culture = ROOT
+	#			female = no
+	#			age = 27
+	#			attributes = {
+	#				martial = 6
+	#			}
+	#			trait = skilled_tactician
+	#		}
+	#		new_character = {
+	#			spawn_unit = {
+	#				province = 903 # Bukhara
+	#				owner = ROOT
+	#				leader = THIS
+	#				match_character = ROOT
+	#				match_mult = 0.15
+	#				attrition = 1.0
+	#				earmark = start_troops
+	#			}
+	#		}
+	#	}
+	#}
 	
 	892.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 163100 = {
-	name="Muhammad"
+	name="Mohammad"
 	dynasty=811
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="naive_appeaser"
 	father = 163159
 	840.1.1={
 		birth="840.1.1"
 	}
-	873.1.1={
-		death="873.1.1"
+	910.7.7={
+		death="910.7.7"
 	}
 }
 
 163101 = {
 	name="Ya'qub" # Founder of the Saffarid dynasty
 	dynasty=812
-	martial = 8
+	martial = 10
+	diplomacy = 5
+	stewardship = 4
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father = 163163
-	trait = brave
-	trait = wroth
+	mother = 1235986
+	trait = temperate
+	trait = diligent
 	trait = charitable
+	trait = just
 	trait = ambitious
+	trait = zealous #described as a ghazi-like personality by more contemporaneous records
 	trait = brilliant_strategist
+	trait = holy_warrior #described as a ghazi-like personality by more contemporaneous records
+	trait = celibate
+	trait = scarred
 	840.1.1={
-		birth=yes
+		birth = yes
 	}
 	867.1.1 = {
-		add_claim = d_kabul
-		add_claim = d_bhakkar
-		add_claim = d_sauvira
+		add_claim = k_khorasan
+		#add_claim = d_zabulistan
+		#add_claim = d_bhakkar #a bit early - caliph offered Sindh to Ya'qub in 870
+		#add_claim = d_sauvira #a bit early - caliph offered Sindh to Ya'qub in 870
+		add_claim = d_fars
+		add_claim = d_kerman
+		#add_claim = c_rukhadj
+		#add_claim = c_badghis
+		#add_claim = c_ganj-rustaq
+		#add_claim = c_nishapur
 		effect = {
 			decadence = -25
 			spawn_unit = {
-				province = 906 # Birjand
+				province = 637 # Sistan
 				owner = ROOT
 				#leader = ROOT
-				troops = {
-					light_infantry = { 99 99 }
-					heavy_infantry = { 83 83 }
-					pikemen = { 20 20 }
-					archers = { 47 47 }
-					light_cavalry = { 37 37 }
-					knights = { 16 16 }
-					horse_archers = { 23 23 }
-				}
+				match_character = ROOT
+				match_mult = 0.30
 				attrition = 1.0
+				earmark = start_troops
 			}
 			create_character = {
 				random_traits = yes
@@ -2919,19 +2893,14 @@
 			}
 			new_character = {
 				spawn_unit = {
-					province = 906 # Birjand
+					province = 637 # Sistan
 					owner = ROOT
 					#leader = THIS
-					troops = {
-						light_infantry = { 99 99 }
-						heavy_infantry = { 83 83 }
-						pikemen = { 20 20 }
-						archers = { 47 47 }
-						light_cavalry = { 37 37 }
-						knights = { 16 16 }
-						horse_archers = { 23 23 }
-					}
+					match_character = ROOT
+					match_mult = 0.30
 					attrition = 1.0
+					earmark = start_troops
+					cannot_inherit = yes
 				}
 			}
 			create_character = {
@@ -2948,71 +2917,130 @@
 			}
 			new_character = {
 				spawn_unit = {
-					province = 906 # Birjand
+					province = 637 # Sistan
 					owner = ROOT
 					#leader = THIS
-					troops = {
-						light_infantry = { 99 99 }
-						heavy_infantry = { 83 83 }
-						pikemen = { 20 20 }
-						archers = { 47 47 }
-						light_cavalry = { 37 37 }
-						knights = { 16 16 }
-						horse_archers = { 23 23 }
-					}
+					match_character = ROOT
+					match_mult = 0.30
 					attrition = 1.0
+					earmark = start_troops
+					cannot_inherit = yes
 				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 28
+				attributes = {
+					martial = 5
+				}
+				trait = tough_soldier
+			}
+			new_character = {
+				spawn_unit = {
+					province = 637 # Sistan
+					owner = ROOT
+					#leader = THIS
+					match_character = ROOT
+					match_mult = 0.30
+					attrition = 1.0
+					earmark = start_troops
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 31
+				attributes = {
+					martial = 5
+				}
+				trait = tough_soldier
 			}
 		}
 	}
 	879.6.5={
-		death=yes
+		death = yes
 	}
 }
 
-74030 = {
-	name="Dariush"
-	dynasty=12273
+#74030 = {
+#	name="Dariush"
+#	dynasty=12273
+#
+#	culture="pahlavi"
+#	religion="zoroastrian"
+#
+#	835.1.1={
+#		birth="835.1.1"
+#	}
+#	880.1.1={
+#		death="880.1.1"
+#	}
+#}
 
-	culture="persian"
+#74033 = {
+#	name="Eskander"
+#	dynasty=12273
+#
+#	father=74030
+#
+#	culture="pahlavi"
+#	religion="zoroastrian"
+#
+#	862.1.1={
+#		birth="862.1.1"
+#	}
+#	928.1.1={
+#		death="928.1.1"
+#	}
+#}
+#74034 = {
+#	name="Shabaz"
+#	dynasty=12274
+#
+#	father=74031
+#
+#	culture="pahlavi"
+#	religion="zoroastrian"
+#
+#	846.1.1={
+#		birth="846.1.1"
+#	}
+#	901.1.1={
+#		death="901.1.1"
+#	}
+#}
+159579 = { 
+	name="Balash" # VI of Parthia
+	dynasty=100685
 	religion="zoroastrian"
-
-	835.1.1={
-		birth="835.1.1"
+	culture="pahlavi"
+	father=159550
+	180.11.1={
+		birth="180.11.1"
 	}
-	880.1.1={
-		death="880.1.1"
-	}
-}
-
-74033 = {
-	name="Eskander"
-	dynasty=12273
-
-	father=74030
-
-	culture="persian"
-	religion="zoroastrian"
-
-	862.1.1={
-		birth="862.1.1"
-	}
-	928.1.1={
-		death="928.1.1"
+	230.8.29={
+		death="230.8.29"
 	}
 }
 159599 = { 
 	name="Sasan" # II
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	130.11.1={
 		birth="130.11.1"
 		create_bloodline = {
 			type = sassanid
 			has_dlc = "Holy Fury"
-		}
-	}
+		}		
+	}	
 	200.1.1={
 		death="200.1.1"
 	}
@@ -3021,7 +3049,7 @@
 	name="Babak" # II
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=159599
 	150.11.1={
 		birth="150.11.1"
@@ -3034,7 +3062,7 @@
 	name="Ardeshir" # I
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=159600
 	180.11.1={
 		birth="180.11.1"
@@ -3047,7 +3075,7 @@
 	name="Shapur" # I
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=159601
 	215.11.1={
 		birth="215.11.1"
@@ -3061,13 +3089,13 @@
 	name="Asad"
 	dynasty=810
 	religion="sunni"
-	culture="persian"
-	father=188637
+	culture="khorasani"
+	father = 188637
 	756.1.1={
-		birth=yes
+		birth="756.1.1"
 	}
-	825.1.1={
-		death=yes
+	819.1.1={
+		death="819.1.1"
 	}
 }
 
@@ -3075,52 +3103,62 @@
 	name="Ahmad"
 	dynasty=810
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father = 163153
-	790.1.1={
-		birth=yes
+	799.1.1={
+		birth="799.1.1"
 	}
-	864.1.1={
-		death=yes
+	865.1.1={
+		death="865.1.1"
 	}
 }
 
 163155 = {
-	name="Ilyas"
+	name="Elyas"
 	dynasty=810
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father = 163153
-	788.1.1={
-		birth=yes
+	796.1.1={
+		birth="796.1.1"
 	}
 	856.1.1={
-		death=yes
+		death="856.1.1"
 	}
 }
 
 163156 = {
-	name="Ibrahim"
+	name="Ibrahim" #son of Ilyas, ruled in Herat
 	dynasty=810
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="tough_soldier"
 	father = 163155
-	810.1.1={
-		birth=yes
+	830.1.1={
+		birth="830.1.1"
 	}
-	868.1.1={
-		death=yes
+	875.1.1={ #?
+		death="875.1.1"
 	}
 }
 
 163157 = {
-	name="Isma'il"
+	name="Esmá'íl"
 	dynasty=810
+	diplomacy=6
+	martial=8
+	stewardship=7
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="brilliant_strategist"
+	trait="ambitious"
+	trait="zealous"
+	trait="just"
+	trait="patient"
+	trait="kind"
 	father = 163154
-	820.1.1={
-		birth="820.1.1"
+	849.1.1={
+		birth="849.1.1"
 	}
 	907.1.1={
 		death="907.1.1"
@@ -3128,11 +3166,11 @@
 }
 
 163158 = {
-	name="Adballah"
+	name="'Abdalláh"
 	dynasty=811
 	religion="sunni"
-	culture="persian"
-	father=188686
+	culture="khorasani"
+	father = 188686
 	798.1.1={
 		birth="798.1.1"
 	}
@@ -3142,13 +3180,13 @@
 }
 
 163159 = {
-	name="Tahir"
+	name="Táher"
 	dynasty=811
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father = 163158
-	815.1.1={
-		birth="815.1.1"
+	819.1.1={
+		birth="819.1.1"
 	}
 	862.1.1={
 		death="862.1.1"
@@ -3156,52 +3194,70 @@
 }
 
 163160 = {
-	name="Ubaudallah"
+	name="Obaydallah"
 	dynasty=811
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="flamboyant_schemer"
+	trait="poet"
 	father = 163158
-	822.1.1={
-		birth="822.1.1"
+	837.1.1={
+		birth="837.1.1"
 	}
-	881.1.1={
-		death="881.1.1"
+	913.1.1={
+		death="913.1.1"
 	}
 }
 
 163161 = {
-	name="Sulayman"
+	name="Soleyman"
 	dynasty=811
+	martial=5
+	diplomacy=4
+	stewardship=3
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="misguided_warrior"
+	trait="ambitious"
+	trait="greedy"
 	father = 163158
 	824.1.1={
 		birth="824.1.1"
 	}
-	879.1.1={
-		death="879.1.1"
+	864.1.1 = {
+		add_claim=d_tabarestan
+	}
+	879.7.7={
+		death="879.7.7"
 	}
 }
 
 163162 = {
-	name="Muhammad"
+	name="Mohammad" #b.'Abdalláh, governor of Baghdad, Fars, Yamáma and Bahrayn, 851-867
 	dynasty=811
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait="scholarly_theologian"
+	trait="erudite"
+	trait="poet"
 	father = 163158
-	820.1.1={
-		birth="820.1.1"
+	821.1.1={
+		birth="821.1.1"
 	}
-	890.1.1={
-		death="890.1.1"
+	867.1.1={
+		add_claim=d_fars
+		add_trait="ill" #ulcer
+	}
+	867.11.11={
+		death="867.11.11"
 	}
 }
 
 163163 = {
-	name="Layth"
+	name="al-Layth"
 	dynasty=812
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	810.1.1={
 		birth="810.1.1"
 	}
@@ -3212,15 +3268,28 @@
 
 163164 = {
 	name="Amr"
+	martial=9
+	diplomacy=8
+	stewardship=7 #described as a better organizer and ruler than his brother Ya'qub
 	dynasty=812
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
+	trait = brilliant_strategist #described as an equally effective military leader as Ya'qub
+	trait = charitable
+	trait = diligent
+	trait = just
+	trait = patient
+	trait = one_eyed
 	father = 163163
+	mother = 1235986
 	841.1.1={
 		birth="841.1.1"
 	}
-	901.1.1={
-		death="901.1.1"
+	902.1.1={
+		death={
+			death_reason=death_dungeon
+			killer=34019
+		}
 	}
 }
 
@@ -3228,8 +3297,9 @@
 	name="Ali"
 	dynasty=812
 	religion="sunni"
-	culture="persian"
-	father = 163163
+	culture="khorasani"
+		father = 163163
+		mother = 1235986
 	842.1.1={
 		birth="842.1.1"
 	}
@@ -3242,7 +3312,7 @@
 	name="Sapur"
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=159600
 	177.1.1={
 		birth="177.1.1"
@@ -3255,7 +3325,7 @@
 	name="Raidashir"
 	dynasty=1029100
 	religion="manichean"
-	culture="persian"
+	culture="pahlavi"
 	father=159600
 	182.1.1={
 		birth="182.1.1"
@@ -3269,7 +3339,7 @@
 	# Shapur I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=159601
 	215.1.1={
 		birth="215.1.1"
@@ -3283,7 +3353,7 @@
 	# Hormazd I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180605
 	246.1.1={
 		birth="246.1.1"
@@ -3297,7 +3367,7 @@
 	# Bahram I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180605
 	240.1.1={
 		birth="240.1.1"
@@ -3311,7 +3381,7 @@
 	# Bahram II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180607
 	260.1.1={
 		birth="260.1.1"
@@ -3325,7 +3395,7 @@
 	# Bahram III, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180608
 	285.1.1={
 		birth="285.1.1"
@@ -3339,7 +3409,7 @@
 	# Narseh, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180605
 	244.1.1={
 		birth="244.1.1"
@@ -3353,7 +3423,7 @@
 	# Hormazd II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180610
 	268.1.1={
 		birth="268.1.1"
@@ -3366,7 +3436,7 @@
 	name="Hormazd"
 	dynasty=1029100
 	religion="orthodox"
-	culture="persian"
+	culture="pahlavi"
 	father=180611
 	299.1.1={
 		birth="299.1.1"
@@ -3394,7 +3464,7 @@
 	# Ardeshir II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180611
 	307.1.1={
 		birth="307.1.1"
@@ -3409,7 +3479,7 @@
 	female=yes
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180614
 	330.1.1={
 		birth="330.1.1"
@@ -3423,7 +3493,7 @@
 	# Shapur III, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180614
 	333.1.1={
 		birth="333.1.1"
@@ -3437,7 +3507,7 @@
 	# Shapur II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180611
 	309.1.1={
 		birth="309.1.1"
@@ -3451,7 +3521,7 @@
 	# Bahram IV, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180617
 	339.1.1={
 		birth="339.1.1"
@@ -3465,7 +3535,7 @@
 	# Yazdegerd I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180616
 	369.1.1={
 		birth="369.1.1"
@@ -3479,7 +3549,7 @@
 	# Bahram V, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180619
 	393.1.1={
 		birth="393.1.1"
@@ -3493,7 +3563,7 @@
 	# Yazdegerd II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180620
 	417.1.1={
 		birth="417.1.1"
@@ -3507,7 +3577,7 @@
 	# Hormazd III, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180621
 	436.1.1={
 		birth="436.1.1"
@@ -3521,7 +3591,7 @@
 	# Balash, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180621
 	440.1.1={
 		birth="440.1.1"
@@ -3535,7 +3605,7 @@
 	# Peroz I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180621
 	438.1.1={
 		birth="438.1.1"
@@ -3545,24 +3615,24 @@
 	}
 }
 180625 = {
-	name="Djamasp"
+	name="Jamasp"
 	# Djamasp, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180624
 	470.1.1={
-		birth=yes
+		birth="470.1.1"
 	}
-	535.1.1={
-		death=yes
+	510.1.1={
+		death="510.1.1"
 	}
 }
 180626 = {
 	name="Zareh"
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180624
 	466.1.1={
 		birth="466.1.1"
@@ -3576,13 +3646,13 @@
 	# Kavadh I, Emperor of Persia
 	dynasty=1029100
 	religion="mazdaki"
-	culture="persian"
+	culture="pahlavi"
 	father=180624
 	469.1.1={
-		birth=yes
+		birth = yes
 	}
 	531.9.1={
-		death=yes
+		death = yes
 	}
 }
 180628 = {
@@ -3590,13 +3660,13 @@
 	# Khosrau I, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180627
 	505.1.1={
-		birth=yes
+		birth = yes
 	}
 	579.1.1={
-		death=yes
+		death = yes
 	}
 }
 180629 = {
@@ -3604,7 +3674,7 @@
 	# pretender to throne of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180628
 	532.1.1={
 		birth="532.1.1"
@@ -3618,7 +3688,7 @@
 	# Hormazd IV, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180628
 	528.1.1={
 		birth="528.1.1"
@@ -3632,7 +3702,7 @@
 	# Khosrau II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180630
 	560.1.1={
 		birth="560.1.1"
@@ -3649,7 +3719,7 @@
 	# Kavadh II, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180631
 	590.1.1={
 		birth="590.1.1"
@@ -3663,7 +3733,7 @@
 	# Ardeshir III, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180632
 	621.1.1={
 		birth="621.1.1"
@@ -3678,7 +3748,7 @@
 	female=yes
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180631
 	592.1.1={
 		birth="592.1.1"
@@ -3693,7 +3763,7 @@
 	female=yes
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180631
 	593.1.1={
 		birth="593.1.1"
@@ -3706,7 +3776,7 @@
 	name="Shahryar"
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180631
 	mother=180646
 	595.1.1={
@@ -3721,10 +3791,8 @@
 	# Yazdegerd III, Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="kurdish"
+	culture="pahlavi"
 	father=180636
-	dna="aeigd0ccdb0"
-	properties="fl0ag000000000000000000000000000000000"
 	617.1.1={
 		birth="617.1.1"
 	}
@@ -3738,7 +3806,7 @@
 	female=yes
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180637
 	643.1.1={
 		birth="643.1.1"
@@ -3753,7 +3821,7 @@
 	female=yes
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180637
 	648.1.1={
 		birth="648.1.1"
@@ -3767,7 +3835,7 @@
 	# Peroz II, would-be Emperor of Persia
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180637
 	645.1.1={
 		birth="645.1.1"
@@ -3780,7 +3848,7 @@
 	name="Narsieh"
 	dynasty=1029100
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	father=180640
 	675.1.1={
 		birth="675.1.1"
@@ -3794,13 +3862,13 @@
 	# Bahram VI, Emperor of Persia
 	dynasty=1042070
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	553.1.1={
 		birth="553.1.1"
-		create_bloodline = {
-			type = parthian
-			has_dlc = "Holy Fury"
-		}
+		#create_bloodline = { # Originally only served to make Samanids have this bloodline
+		#	type = parthian
+		#	has_dlc = "Holy Fury"
+		#}		
 	}
 	592.1.1={
 		death="592.1.1"
@@ -3811,7 +3879,7 @@
 	female = yes
 
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	847.1.1={
 		birth="847.1.1"
 	}
@@ -3824,365 +3892,112 @@
 	name="Jajjapa"
 	dynasty=1042083 # Hunas
 	religion="hindu"
-	culture="saka"
+	culture="persian"
 	trait="shaivist_hindu"
-	trait=kshatriya
 	father=191922
 	825.1.1={
-		birth=yes
+		birth = yes
 	}
 	880.1.1={
-		death=yes
-	}
-}
-188580 = {
-	name="Afrig"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	280.9.4={
-		birth=yes
-	}
-	350.1.1={
-		death=yes
+		death = yes
 	}
 }
 
-188581 = {
-	name="Bagra"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188580
-	312.1.28={
-		birth=yes
+##################### missing vanilla##############################################################################
+188656 = {
+	name="Ferîd" # fictitious holder of Kermanshah
+	dynasty=1042128 # Kermanibid
+	religion="sunni"
+	culture="kurdish"
+	748.1.1={
+		birth = yes
 	}
-	380.1.1={
-		death=yes
-	}
-}
-
-188582 = {
-	name="Sahhasak"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188581
-	337.1.1={
-		birth=yes
-	}
-	410.1.1={
-		death=yes
+	805.1.1={
+		death = yes
 	}
 }
 
-188583 = {
-	name="Askajamuk"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188582
-	365.1.1={
-		birth=yes
+188657 = {
+	name="Mistefa" # fictitious holder of Kurdistan
+	dynasty=1042129 
+	religion="sunni"
+	culture="kurdish"
+	745.1.1={
+		birth = yes
 	}
-	440.1.1={
-		death=yes
-	}
-}
-
-188584 = {
-	name="Azkajwar"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188583
-	400.1.1={
-		birth=yes
-	}
-	470.1.1={
-		death=yes
+	800.1.1={
+		death = yes
 	}
 }
 
-188585 = {
-	name="Sahr"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188584
-	430.1.1={
-		birth=yes
-	}
-	500.1.1={
-		death=yes
-	}
-}
-
-188586 = {
-	name="Shaush"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188585
-	460.1.1={
-		birth=yes
-	}
-	530.1.1={
-		death=yes
-	}
-}
-
-188587 = {
-	name="Hamgari"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188586
-	490.1.1={
-		birth=yes
-	}
-	560.1.1={
-		death=yes
-	}
-}
-
-188588 = {
-	name="Buzgar"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188587
-	520.1.1={
-		birth=yes
-	}
-	600.1.1={
-		death=yes
-	}
-}
-
-188589 = {
-	name="Arsamuh"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188588
-	560.1.1={
-		birth=yes
-	}
-	625.1.1={
-		death=yes
-	}
-}
-
-188590 = {
-	name="Sahr"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188589
-	600.1.1={
-		birth=yes
-	}
-	665.1.1={
-		death=yes
-	}
-}
-
-188591 = {
-	name="Sabri"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188590
-	635.1.1={
-		birth=yes
-	}
-	690.1.1={
-		death=yes
-	}
-}
-
-188592 = {
-	name="Azkajwar"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188591
-	665.1.1={
-		birth=yes
-	}
-	712.1.1={
-		death=yes
-	}
-}
-
-188593 = {
-	name="Askajamuk"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188592
-	690.1.1={
-		birth=yes
-	}
+188658 = {
+	name="Revend" # fictitious holder of Oromeih
+	dynasty=1042130 
+	religion="sunni"
+	culture="kurdish"
 	740.1.1={
-		death=yes
+		birth = yes
+	}
+	800.1.1={
+		death = yes
 	}
 }
 
-188594 = {
-	name="Sawashfan"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188593
-	715.1.1={
-		birth=yes
-	}
-	765.1.1={
-		death=yes
-	}
-}
-
-188595 = {
-	name="Torkasbatha"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188594
-	740.1.1={
-		birth=yes
-	}
-	790.1.1={
-		death=yes
-	}
-}
-
-188596 = {
-	name="Abdallah"
-	dynasty=1042112 # Afrighid
-	religion="zoroastrian"
-	culture="persian"
-	father=188595
-	765.1.1={
-		birth=yes
-	}
-	790.1.1={
-		religion=sunni
-	}
-	815.1.1={
-		death=yes
-	}
-}
-
-188597 = {
-	name="Mansur"
-	dynasty=1042112 # Afrighid
+188659 = {
+	name="Pîroz" # fictitious holder of Kirkuk
+	dynasty=1042131 
 	religion="sunni"
-	culture="persian"
-	father=188596
-	795.1.1={
-		birth=yes
+	culture="kurdish"
+	731.1.1={
+		birth = yes
 	}
-	850.1.1={
-		death=yes
-	}
-}
-
-188598 = {
-	name="Eraq"
-	dynasty=1042112 # Afrighid
-	religion="sunni"
-	culture="persian"
-	father=188597
-	825.1.1={
-		birth=yes
-	}
-	890.1.1={
-		death=yes
-	}
-}
-
-188599 = {
-	name="Muhammad"
-	dynasty=1042112 # Afrighid
-	religion="sunni"
-	culture="persian"
-	father=188598
-	865.1.1={
-		birth=yes
-	}
-	940.1.1={
-		death=yes
-	}
-}
-
-188600 = {
-	name="Abu Sa'id"
-	dynasty=1042112 # Afrighid
-	religion="sunni"
-	culture="persian"
-	father=188599
-	900.1.1={
-		birth=yes
-	}
-	970.1.1={
-		death=yes
-	}
-}
-
-188601 = {
-	name="Abu Abdallah"
-	dynasty=1042112 # Afrighid
-	religion="sunni"
-	culture="persian"
-	father=188600
-	925.1.1={
-		birth=yes
-	}
-	995.1.1={
-		death=yes
+	800.1.1={
+		death = yes
 	}
 }
 188629 = {
 	name="Khuzaymah" 
-	dynasty=1042122 # Banu Tamim
+	dynasty=1042142 # Tamimi
 	religion="sunni"
-	culture="persian"
+	culture="bedouin_arabic"
+	#father=1500082
 	695.1.1={
-		birth=yes
+		birth = yes
+		culture="khorasani"
 	}
 	750.1.1={
-		death=yes
+		death = yes
 	}
 }
 188630 = {
 	# Important Abbasid revolutionary, governor of Khorasan at times
 	name="Khazim"
-	dynasty=1042122 # Banu Tamim
+	dynasty=1042142 # Tamimi
 	religion="sunni"
-	culture="persian"
+	culture="bedouin_arabic"
 	father=188629
 	trait=brilliant_strategist
 	720.1.1={
-		birth=yes
+		birth = yes
+		culture="khorasani"
 	}
 	771.1.1={
-		death=yes
+		death = yes
 	}
 }
 188631 = {
 	name="Khuzaymah"  # or Kuzayma
-	dynasty=1042122 # Banu Tamim
+	dynasty=1042142 # Tamimi
 	religion="sunni"
-	culture="persian"
+	culture="bedouin_arabic"
 	father=188630
 	trait=skilled_tactician
 	742.1.1={
-		birth=yes
+		birth = yes
+		culture="khorasani"
 	}
 	819.1.1={
-		death=yes
+		death = yes
 	}
 }
 188664 = {
@@ -4191,10 +4006,10 @@
 	religion="zoroastrian"
 	culture="persian"
 	748.1.1={
-		birth=yes
+		birth = yes
 	}
 	810.1.1={
-		death=yes
+		death = yes
 	}
 }
 188660 = {
@@ -4203,10 +4018,10 @@
 	religion="ibadi"
 	culture="persian"
 	726.1.1={
-		birth=yes
+		birth = yes
 	}
 	793.1.1={
-		death=yes
+		death = yes
 	}
 }
 188632 = {
@@ -4215,10 +4030,10 @@
 	religion="sunni"
 	culture="persian"
 	725.1.1={
-		birth=yes
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4229,10 +4044,10 @@
 	culture="persian"
 	father=188632
 	756.1.1={
-		birth=yes
+		birth = yes
 	}
 	820.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4243,93 +4058,35 @@
 	culture="persian"
 	trait=brilliant_strategist
 	723.1.1={
-		birth=yes
+		birth = yes
 	}
 	785.1.1={
-		death=yes
+		death = yes
 	}
 }
-
-188686 = {
-	name="Tahir"
-	dynasty=811 # Tahirid
-	religion="sunni"
-	culture="persian"
-	father=188687
-	775.1.1={
-		birth=yes
-	}
-	822.1.1={
-		death=yes
-	}
-}
-
-188687 = {
-	name="Husayn"
-	dynasty=811 # Tahirid
-	religion="sunni"
-	culture="persian"
-	father=188688
-	745.1.1={
-		birth=yes
-	}
-	806.1.1={
-		death=yes
-	}
-}
-
-188688 = {
-	name="Ruzaiq"
-	dynasty=811 # Tahirid
-	religion="zoroastrian"
-	culture="persian"
-	720.1.1={
-		birth=yes
-	}
-	745.1.1={
-		religion="sunni"
-	}
-	782.1.1={
-		death=yes
-	}
-}
-
-188689 = {
-	name="Talha"
-	dynasty=811 # Tahirid
-	religion="sunni"
-	culture="persian"
-	father=188686
-	797.1.1={
-		birth=yes
-	}
-	828.1.1={
-		death=yes
-	}
-}
-
 
 188695 = {
-	name="Abu al-Najm" # general that fought Ustadhsis
+	name="Abu-al-Najm" # general that fought Ustadhsis
 	dynasty=1042154 # Sijistanid
 	religion="sunni"
 	culture="persian"
 	738.1.1={
-		birth=yes
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 232753 = {
-	name="Manuchehr"
+	name="Manuchihr Abu'l-Muzaffar"
+	# AKA: Abu'l-Muzaffar Manuchihr
 	dynasty=101873
 	martial=4
 	diplomacy=4
 	intrigue=4
 	stewardship=4
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	trait="gluttonous"
 	trait="just"
 	trait="tough_soldier"
@@ -4344,19 +4101,20 @@
 		death="1160.1.1"
 	}
 }
+# here from
 188642 = {
 	name="Barmak" 
 	dynasty=1042125 # Barmakid
 	religion="buddhist"
 	culture="persian"
 	670.1.1={
-		birth=yes
+		birth = yes
 	}
 	730.1.1={
 		religion="sunni"
 	}
 	740.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4367,13 +4125,13 @@
 	culture="persian"
 	father=188642
 	705.1.1={
-		birth=yes
+		birth = yes
 	}
 	730.1.1={
 		religion="sunni"
 	}
 	782.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4384,10 +4142,10 @@
 	culture="persian"
 	father=188643
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	806.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4398,10 +4156,10 @@
 	culture="persian"
 	father=188644
 	766.2.1={
-		birth=yes
+		birth = yes
 	}
 	808.11.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4412,10 +4170,10 @@
 	culture="persian"
 	father=188644
 	767.1.1={
-		birth=yes
+		birth = yes
 	}
 	803.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4426,39 +4184,41 @@
 	culture="persian"
 	father=188644
 	768.1.1={
-		birth=yes
+		birth = yes
 	}
 	810.1.1={
-		death=yes
+		death = yes
 	}
 }
 188651 = {
 	name="Abdallah" 
-	dynasty=1042122 # Banu Tamim
+	dynasty=1042142 # Tamimi
 	religion="sunni"
-	culture="persian"
+	culture="bedouin_arabic"
 	father=188630
 	trait=skilled_tactician
 	750.1.1={
-		birth=yes
+		birth = yes
+		culture="khorasani"
 	}
 	820.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188652 = {
 	name="Ibrahim" 
-	dynasty=1042122 # Banu Tamim
+	dynasty=1042142 # Tamimi
 	religion="sunni"
-	culture="persian"
+	culture="bedouin_arabic"
 	father=188630
 	trait=skilled_tactician
 	754.1.1={
-		birth=yes
+		birth = yes
+		culture="khorasani"
 	}
 	825.1.1={
-		death=yes
+		death = yes
 	}
 }
 146042 = {
@@ -4468,10 +4228,10 @@
 	culture="persian"
 
 	731.1.1={
-		birth=yes
+		birth = yes
 	}
 	788.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4482,24 +4242,24 @@
 	culture="persian"
 	father=146042
 	750.1.1={
-		birth=yes
+		birth = yes
 	}
 	817.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 146044 = {
-	name="Abu Sa'id"
+	name="Abu-Sa'id"
 	dynasty=1022361
 	religion="sunni"
 	culture="persian"
 	father=146043
 	800.1.1={
-		birth=yes
+		birth = yes
 	}
 	851.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4510,27 +4270,26 @@
 	culture="persian"
 	father=146044
 	820.1.1={
-		birth=yes
+		birth = yes
 	}
 	852.3.1={
-		death=yes
+		death = yes
 	}
 }
-
 146093 = {
 	name="Yazid"
 	dynasty=1029124 # Yazidid
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146090
 	962.1.1={
-		birth=yes
+		birth = yes
 	}
 	991.6.1={
 		dynasty=101873
 	}
 	1027.11.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4538,16 +4297,16 @@
 	name="Manuchehr"
 	dynasty=1029124
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
-	976.1.1={
-		birth=yes
+	978.1.1={
+		birth = yes
 	}
 	991.6.1={
 		dynasty=101873
 	}
 	1034.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4555,13 +4314,13 @@
 	name="Hormuzd"
 	dynasty=101873 # Kesranid or Kasranid
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146094
 	1010.1.1={
-		birth=yes
+		birth = yes
 	}
 	1065.4.9={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4569,16 +4328,16 @@
 	name="Anushirvan"
 	dynasty=1029124
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	978.1.1={
-		birth=yes
+		birth = yes
 	}
 	991.6.1={
 		dynasty=101873
 	}
 	999.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4586,16 +4345,16 @@
 	name="Ali"
 	dynasty=1029124
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	984.1.1={
-		birth=yes
+		birth = yes
 	}
 	991.6.1={
 		dynasty=101873
 	}
 	1043.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4603,16 +4362,16 @@
 	name="Kubad"
 	dynasty=1029124
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	990.1.1={
-		birth=yes
+		birth = yes
 	}
 	991.6.1={
 		dynasty=101873
 	}
 	1049.7.28={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4620,13 +4379,13 @@
 	name="Ahmad"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	996.1.1={
-		birth=yes
+		birth = yes
 	}
 	1044.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4634,13 +4393,13 @@
 	name="Ali"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146099
 	1016.1.1={
-		birth=yes
+		birth = yes
 	}
 	1050.3.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4648,13 +4407,16 @@
 	name="Salar"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	1002.1.1={
-		birth=yes
+		birth = yes
 	}
+	1025.1.1={
+		add_spouse= 1233493 # Sariyã, daughter of Bukht-Yisho II of Sarir
+	}        
 	1063.2.20={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4663,13 +4425,13 @@
 	dynasty=101873
 	female=yes
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	1008.1.1={
-		birth=yes
+		birth = yes
 	}
 	1065.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4677,42 +4439,44 @@
 	name="Mamlan"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146093
 	1014.1.1={
-		birth=yes
+		birth = yes
 	}
 	1067.2.24={
-		death=yes
+		death = yes
 	}
 }
 
+############################################################ modified
 146104 = {
 	name="Manuchehr"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
-	father=20734
+	culture="adhari"
+  father=20734
 	1050.1.1={
-		birth=yes
+		birth = yes
 	}
 	1106.1.1={
-		death=yes
+		death = yes
 	}
 }
+############################################################
 
 146105 = {
 	name="Afridun"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=232753
 	mother=232750
 	1134.1.1={
-		birth=yes
+		birth = yes
 	}
 	1160.6.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4721,14 +4485,14 @@
 	dynasty=101873
 	female=yes
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=232753
 	mother=232750
-	1130.1.1={
-		birth=yes
+	1133.1.1={
+		birth = yes
 	}
 	1137.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4736,14 +4500,14 @@
 	name="Fariburz"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=232753
 	mother=232750
 	1136.1.1={
-		birth=yes
+		birth = yes
 	}
 	1138.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4751,13 +4515,13 @@
 	name="Abul Fath"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144568
 	1162.1.1={
-		birth=yes
+		birth = yes
 	}
 	1176.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4766,13 +4530,13 @@
 	dynasty=101873
 	female=yes
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144568
 	1174.1.1={
-		birth=yes
+		birth = yes
 	}
 	1192.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4780,13 +4544,13 @@
 	name="Manuchehr"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144568
-	1176.1.1={
-		birth=yes
+	1175.1.1={
+		birth = yes
 	}
 	1192.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4795,13 +4559,13 @@
 	dynasty=101873
 	female=yes
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144568
-	1178.1.1={
-		birth=yes
+	1176.1.1={
+		birth = yes
 	}
 	1192.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4810,13 +4574,13 @@
 	dynasty=101873
 	female=yes
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144568
-	1180.1.1={
-		birth=yes
+	1177.1.1={
+		birth = yes
 	}
 	1192.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4824,14 +4588,14 @@
 	name="Shahanshah"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=232753
 	mother=232750
 	1132.1.1={
-		birth=yes
+		birth = yes
 	}
 	1200.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4839,13 +4603,13 @@
 	name="Fariburz"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146105
 	1152.1.1={
-		birth=yes
+		birth = yes
 	}
 	1204.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4853,13 +4617,13 @@
 	name="Rashid"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144569
 	1173.1.1={
-		birth=yes
+		birth = yes
 	}
 	1222.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4867,13 +4631,13 @@
 	name="Jalaladdin"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144570
 	1194.1.1={
-		birth=yes
+		birth = yes
 	}
 	1255.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4881,13 +4645,13 @@
 	name="Afridun"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144571
 	1212.1.1={
-		birth=yes
+		birth = yes
 	}
 	1256.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4895,13 +4659,13 @@
 	name="Akhsitan"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
-	father=144573
-	1258.1.1={
-		birth=yes
+	culture="adhari"
+	father=146117
+	1256.1.1={
+		birth = yes
 	}
 	1294.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4909,13 +4673,13 @@
 	name="Siamerk"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146118
 	1273.1.1={
-		birth=yes
+		birth = yes
 	}
 	1290.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4923,13 +4687,13 @@
 	name="Keykavus"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146118
 	1275.1.1={
-		birth=yes
+		birth = yes
 	}
 	1317.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4937,13 +4701,13 @@
 	name="Kavus"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144574
 	1307.1.1={
-		birth=yes
+		birth = yes
 	}
 	1372.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4951,13 +4715,13 @@
 	name="Muhammad"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=144574
 	1309.1.1={
-		birth=yes
+		birth = yes
 	}
 	1367.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4965,13 +4729,13 @@
 	name="Noder"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146121
 	1325.1.1={
-		birth=yes
+		birth = yes
 	}
 	1370.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4979,13 +4743,13 @@
 	name="Hushang"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146121
 	1327.1.1={
-		birth=yes
+		birth = yes
 	}
 	1382.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -4993,13 +4757,13 @@
 	name="Ibrahim"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	father=146122
 	1351.1.1={
-		birth=yes
+		birth = yes
 	}
 	1417.9.15={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5007,126 +4771,99 @@
 	name="Guzdaham"
 	dynasty=101873
 	religion="sunni"
-	culture="persian"
+	culture="adhari"
 	trait="ambitious"
 	trait="deceitful"
 	father=146101
 	1033.1.1={
-		birth=yes
+		birth = yes
 	}
 	1072.1.1={
-		death=yes
-	}
-}
-188634 = {
-	name="Noshrad" 
-	dynasty=1042070 # Samanid
-	religion="zoroastrian"
-	culture="kurdish"
-	father=180645
-	590.1.1={
-		birth=yes
-	}
-	650.1.1={
-		death=yes
+		death = yes
 	}
 }
 
-188635 = {
-	name="Togmath" 
-	dynasty=1042070 # Samanid
-	religion="zoroastrian"
-	culture="persian"
-	father=188634
-	635.1.1={
-		birth=yes
-	}
-	690.1.1={
-		death=yes
-	}
-}
-
-188636 = {
-	name="Jotman" 
-	dynasty=1042070 # Samanid
-	religion="zoroastrian"
-	culture="persian"
-	father=188635
-	680.1.1={
-		birth=yes
-	}
-	740.1.1={
-		death=yes
-	}
-}
+#188634-188636 unused
 
 188637 = {
-	name="Saman-Khuda" 
+	name="Sámán-Khudá" 
 	dynasty=810 # Samanid
 	religion="zoroastrian"
-	culture="persian"
-	father=188636
+	culture="pahlavi"
+	#father=188636
 	720.1.1={
-		birth=yes
+		birth = yes
 	}
 	737.1.1={
 		religion="sunni"
+		culture="persian"
 	}
 	785.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188638 = {
-	name="Nuh" 
+	name="Núh" 
 	dynasty=810 # Samanid
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=163153
 	785.1.1={
-		birth=yes
+		birth = yes
 	}
 	841.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188639 = {
-	name="Yahya" 
+	name="Yahyá" 
 	dynasty=810 # Samanid
 	religion="sunni"
-	culture="persian"
+	culture="khorasani"
 	father=163153
 	792.1.1={
-		birth=yes
+		birth = yes
 	}
 	855.1.1={
-		death=yes
+		death = yes
 	}
 }
 
-188666 = {
+188681 = {
+	name="Hashim"
+	dynasty=1042148
+	religion="mazdaki" # Khurramite
+	culture="persian"
+	731.1.1={
+		birth = yes
+	}
+	783.1.1={
+		death = yes
+	}
+}188666 = {
 	name="Kamran" # fictitious count of Khozistan
 	dynasty=1042141
 	religion="mazdaki"
-	culture="persian"
+	culture="pahlavi"
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	785.1.1={
-		death=yes
+		death = yes
 	}
 }
 188676 = {
 	name="Yazdegerd" # fictitious holder of Sirjan
 	dynasty=1042143
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	748.1.1={
-		birth=yes
+		birth = yes
 	}
 	808.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5134,12 +4871,12 @@
 	name="Manuchihr" # fictitious holder of Ladistan
 	dynasty=1042144
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	735.1.1={
-		birth=yes
+		birth = yes
 	}
 	795.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5147,26 +4884,25 @@
 	name="Gholam" # fictitious holder of Shiraz
 	dynasty=1042145
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	730.1.1={
-		birth=yes
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 191920 = {
 	name="Toramana"	#Fictional predecessors of Jajjapa of Hunamandala
 	dynasty=1042083 # Hunas
 	religion="hindu"
-	culture="saka"
+	culture="persian"
 	trait="shaivist_hindu" 
-	trait=kshatriya
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	780.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5174,15 +4910,14 @@
 	name="Mihirakula"	#Fictional predecessors of Jajjapa of Hunamandala
 	dynasty=1042083 # Hunas
 	religion="hindu"
-	culture="saka"
+	culture="persian"
 	trait="shaivist_hindu"
-	trait=kshatriya
 	father=191920
 	768.1.1={
-		birth=yes
+		birth = yes
 	}
 	840.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5190,15 +4925,14 @@
 	name="Jajjapa"	#II Fictional successor of Jajjapa of Hunamandala
 	dynasty=1042083 # Hunas
 	religion="hindu"
-	culture="saka"
+	culture="persian"
 	trait="shaivist_hindu"
-	trait=kshatriya
 	father=188242
 	860.1.1={
-		birth=yes
+		birth = yes
 	}
 	940.1.1={
-		death=yes
+		death = yes
 	}
 }
 188727 = {
@@ -5207,10 +4941,10 @@
 	religion="sunni"
 	culture="persian"
 	729.1.1={
-		birth=yes
+		birth = yes
 	}
 	795.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5218,12 +4952,12 @@
 	name="Jahandar" # fictitious holder of Qwivir
 	dynasty=1042161
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	738.1.1={
-		birth=yes
+		birth = yes
 	}
 	795.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5231,12 +4965,12 @@
 	name="Anushirvan" # fictitious holder of Esfahan
 	dynasty=1042162
 	religion="mazdaki"
-	culture="persian"
+	culture="pahlavi"
 	732.1.1={
-		birth=yes
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5244,12 +4978,12 @@
 	name="Jahanshah" # fictitious holder of Yazd
 	dynasty=1042163
 	religion="zoroastrian"
-	culture="persian"
+	culture="pahlavi"
 	741.1.1={
-		birth=yes
+		birth = yes
 	}
 	798.1.1={
-		death=yes
+		death = yes
 	}
 }
 160283 = {
@@ -5260,39 +4994,43 @@
 	intrigue=6
 	stewardship=6
 	religion="mazdaki"
-	culture="persian"
+	culture="pahlavi"
 	father=180627
 	504.1.1={
-		birth=yes
+		birth = yes
 	}
 	571.9.1={
-		death=yes
+		death = yes
 	}
 }
-160284 = {
-	name="Kavadh"  # name made up
-	dynasty=7331 # Bavandid 
-	religion="zoroastrian"
-	culture="persian"
-	father=160283
-	545.1.1={
-		birth=yes
-	}
-	600.1.1={
-		death=yes
-	}
-}
+#160284 = {
+#	name="Kavadh"  # name made up
+#	dynasty=7331 # Bavandid 
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160283
+#	545.1.1={
+#		birth = yes
+#	}
+#	600.1.1={
+#		death = yes
+#	}
+#}
 160285 = {
 	name="Bav" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
-	father=160284
+	culture="daylamite"
+	#father=160284 #mythical claim
 	590.1.1={
-		birth=yes
+		birth = yes
+		create_bloodline = {
+			type = bav
+			has_dlc = "Holy Fury"
+		}
 	}
 	665.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -5300,548 +5038,822 @@
 	name="Sorkhab" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160285 # debatable
 	635.1.1={
-		birth=yes
+		birth = yes
 	}
 	717.1.1={
-		death=yes
+		death = yes
 	}
 }
 160289 = {
 	name="Mehr Mardan" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160288
 	670.1.1={
-		birth=yes
+		birth = yes
 	}
 	755.1.1={
-		death=yes
+		death = yes
 	}
 }
 160290 = {
 	name="Sorkhab" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160289
 	700.1.1={
-		birth=yes
+		birth = yes
 	}
 	772.1.1={
-		death=yes
+		death = yes
 	}
 }
 160291 = {
 	name="Shervin" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160290
 	735.1.1={
-		birth=yes
+		birth = yes
 	}
 	817.1.1={
-		death=yes
+		death = yes
 	}
 }
 160292 = {
 	name="Shahryar" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160291
 	755.1.1={
-		birth=yes
+		birth = yes
 	}
 	825.1.1={
-		death=yes
+		death = yes
 	}
 }
 160293 = {
 	name="Shapur" 
 	dynasty=7331 # Bavandid 
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160292
 	790.1.1={
-		birth=yes
+		birth = yes
 	}
-	839.1.1={
-		death=yes
+	825.1.1={
+		death = {
+			death_reason=death_execution
+			killer=45110
+		}
 	}
 }
 160294 = {
 	name="Karen" 
-	dynasty=7331 # Bavandid 
+	dynasty=7331 # Bavandid
+	diplomacy=6
+	martial=6
+	intrigue=6
+	stewardship=5
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160292
+	trait=charismatic_negotiator #recovered Bavandid land with caliphal help, maintained Bavandid land under the Alids
+	trait=diligent
 	795.1.1={
-		birth=yes
+		birth = yes
 	}
-	867.1.1={
-		death=yes
+	842.1.1={
+		religion = sunni
+		trait="sympathy_zoroastrianism"
+	}
+	868.1.1={ #couldn't have died in 867 if he indeed was forced to flee to Kumis in 868
+		death = yes
 	}
 }
 160295 = {
 	name="Shervin" 
 	dynasty=7331 # Bavandid 
-	religion="zoroastrian"
-	culture="persian"
+	religion="sunni"
+	culture="daylamite"
 	father=45105
 	865.1.1={
-		birth=yes
+		birth = yes
 	}
-	930.1.1={
-		death=yes
+	931.1.1={ #? last mentioned in 930
+		death = yes
 	}
 }
 160286 = {
 	name="Sorkhab" 
 	dynasty=7331 # Bavandid 
-	religion="zoroastrian"
-	culture="persian"
+	religion="sunni"
+	culture="daylamite"
 	father=160294
+	trait="sympathy_zoroastrianism"
 	846.1.1={
-		birth=yes
+		birth = yes
 	}
 	900.1.1={
-		death=yes
+		death = yes
 	}
 }
 
+
 160296 = {
-	name="Qarin" 
+	name="Karen" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160297
 	780.1.1={
-		birth=yes
+		birth = yes
 	}
 	816.1.1={
-		death=yes
+		death = yes
 	}
 }
 160297 = {
 	name="Vandad Hormozd" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
-	father=160298
-	trait=zealous
-	trait=tough_soldier
+	culture="daylamite"
+	father=188731
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	815.1.1={
-		death=yes
+		death = yes
 	}
 }
 188731 = {
-	name="Vindaspagan" # historical
+	name="Maziar" #unhistorical
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160298
-	trait=tough_soldier
-	741.1.1={
-		birth=yes
+	700.1.1={
+		birth = yes
 	}
 	780.1.1={
-		death=yes
+		death = yes
 	}
 }
 160298 = {  
 	name="Karen" #unhistorical
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160299
 	680.1.1={ #postponed from 660
-		birth=yes
+		birth = yes
 	}
 	742.1.1={ #postponed from 737
-		death=yes
+		death = yes
 	}
 }
 160299 = {
 	name="Vandad" #unhistorical
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160300
 	635.1.1={
-		birth=yes
+		birth = yes
 	}
 	700.1.1={
-		death=yes
+		death = yes
 	}
 }
 160300 = {
 	name="Balash" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160301
 	600.1.1={
-		birth=yes
-		add_claim = e_persia
-		add_claim = k_perisa
+		birth = yes
 	}
 	673.1.1={
-		death=yes
+		death = yes
 	}
 }
 160301 = {
 	name="Alanda" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160302
 	560.1.1={
-		birth=yes
-		add_claim = e_persia
-		add_claim = k_perisa
+		birth = yes
 	}
 	635.1.1={
-		death=yes
+		death = yes
 	}
 }
 160302 = {
 	name="Karen" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
+	culture="daylamite"
 	father=160303
 	520.1.1={
-		birth=yes
+		birth = yes
 	}
 	600.1.1={
-		death=yes
+		death = yes
 	}
 }
 160303 = {
 	name="Sukhra" 
 	dynasty=7511
 	religion="zoroastrian"
-	culture="persian"
-	father=160304
+	culture="daylamite"
 	480.1.1={
-		birth=yes
+		birth = yes
+		create_bloodline = {
+			type = parthian
+			has_dlc = "Holy Fury"
+		}
 	}
 	550.1.1={
-		death=yes
+		death = yes
 	}
 }
-160304 = {
-	name="Zarmihr" #unhistorical
-	dynasty=7511
+220996 = {
+	name="Shahriyar"
+	dynasty=7331
+	father=160295
+	martial=5
+	diplomacy=4
+	intrigue=3
+	stewardship=8
+	trait="thrifty_clerk"
+	trait="charitable"
+	religion="sunni"
+	culture="daylamite"
+	897.7.19={
+		birth = yes
+	}
+	964.1.1 = {
+		employer=166990
+	}
+	967.1.1 = {
+		employer=166993
+	}
+	970.12.10={ #last mentioned in 968
+		death = yes
+	}
+}
+220995 = {
+	name="Rostam"
+	dynasty=7331
+	father=160295
+	martial=7
+	diplomacy=3
+	intrigue=8
+	stewardship=4
+	trait="tough_soldier"
+	trait="arbitrary"
+	religion="sunni"
+	culture="daylamite"
+	901.2.28={
+		birth = yes
+	}
+	964.1.1={
+		religion = shiite #Bavandid coins acknolwedging Buyid suzerainty and support for Shiism
+	}
+	979.10.12={
+		death = yes
+	}
+}
+220994 = {
+	name="Al-Marzuban"
+	dynasty=7331
+	father=220995
+	martial=2
+	diplomacy=4
+	intrigue=3
+	stewardship=6
+	learning=9
+	trait="charismatic_negotiator"
+	trait="just"
+	religion="sunni"
+	culture="daylamite"
+	931.9.12={
+		birth = yes
+	}
+	964.1.1={
+		religion = shiite #Bavandid coins acknolwedging Buyid suzerainty and support for Shiism
+	}
+	1006.10.12={
+		death = yes
+	}
+}
+220992 = {
+	name="Vandarin"
+	dynasty=7331
+	father=220995 #fictional connection
+	martial=4
+	diplomacy=5
+	intrigue=7
+	stewardship=2
+	learning=2
+	trait="charismatic_negotiator"
+	trait="kind"
+	religion="shiite"
+	culture="daylamite"
+	934.9.12={
+		birth = yes
+	}
+	964.1.1={
+		religion = shiite #Bavandid coins acknolwedging Buyid suzerainty and support for Shiism
+	}
+	997.10.12={
+		death = yes
+	}
+}
+220993 = {
+	name="Abu-Ja'far Muhammad"
+	dynasty=7331
+	father=220992
+	martial=2
+	diplomacy=8
+	intrigue=4
+	stewardship=6
+	learning=4
+	trait="charismatic_negotiator"
+	trait="honest"
+	religion="shiite"
+	culture="daylamite"
+	964.4.20={
+		birth = yes
+	}
+	1028.11.21={
+		death = {
+			death_reason=death_dungeon
+			killer=1231052
+		}
+	}
+}
+220991 = {
+	name="Sharyab" #Fictional name
+	dynasty=7331
+	father=220993
+	martial=2
+	diplomacy=2
+	intrigue=3
+	stewardship=1
+	learning=1
+	trait="indulgent_wastrel"
+	religion="shiite"
+	culture="daylamite"
+	985.8.12={
+		birth = yes
+	}
+	1029.11.21={ #?
+		death = {
+			death_reason=death_dungeon
+			killer=1231052
+		}
+	}
+}
+188580 = {
+	name="Afrigh"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=160305
+	culture="pahlavi"
+	280.9.4={
+		birth = yes
+	}
+	350.1.1={
+		death = yes
+	}
+}
+188581 = {
+	name="Baghra"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188580
+	312.1.28={
+		birth = yes
+	}
+	380.1.1={
+		death = yes
+	}
+}
+188582 = {
+	name="Sakhassak"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188581
+	337.1.1={
+		birth = yes
+	}
+	410.1.1={
+		death = yes
+	}
+}
+188583 = {
+	name="Askajamuk"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188582
+	365.1.1={
+		birth = yes
+	}
 	440.1.1={
-		birth=yes
+		death = yes
+	}
+}
+188584 = {
+	name="Azkajavar"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188583
+	400.1.1={
+		birth = yes
+	}
+	470.1.1={
+		death = yes
+	}
+}
+188585 = {
+	name="Sakhr"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188584
+	430.1.1={
+		birth = yes
 	}
 	500.1.1={
-		death=yes
+		death = yes
 	}
 }
-160305 = {
-	name="Alanda" #unhistorical
-	dynasty=7511
+188586 = {
+	name="Savosh"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=160306
-	410.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188585
+	460.1.1={
+		birth = yes
 	}
+	530.1.1={
+		death = yes
+	}
+}
+188587 = {
+	name="Khamgri"
+	dynasty=1042112 # Afrighid
+	religion="zoroastrian"
+	culture="pahlavi"
+	father=188586
 	490.1.1={
-		death=yes
+		birth = yes
+	}
+	560.1.1={
+		death = yes
 	}
 }
-160306 = {
-	name="Sukhra" #unhistorical
-	dynasty=7511
+188588 = {
+	name="Buzkar"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=160307
-	370.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188587
+	520.1.1={
+		birth = yes
 	}
-	450.1.1={
-		death=yes
+	600.1.1={
+		death = yes
 	}
 }
-160307 = {
-	name="Balash" #unhistorical
-	dynasty=7511
+188589 = {
+	name="Arsamukh"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=160308
-	335.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188588
+	560.1.1={
+		birth = yes
 	}
-	400.1.1={
-		death=yes
+	625.1.1={
+		death = yes
 	}
 }
-160308 = {
-	name="Zarmihr" #unhistorical
-	dynasty=7511
+188590 = {
+	name="Sakhr"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=160309
-	300.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188589
+	600.1.1={
+		birth = yes
 	}
-	375.1.1={
-		death=yes
+	665.1.1={
+		death = yes
 	}
 }
-160309 = {
-	name="Karen" #unhistorical
-	dynasty=7511
+188591 = {
+	name="Sabri"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=159557 #Karen-Pahlav lineage
-	245.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188590
+	635.1.1={
+		birth = yes
 	}
-	330.1.1={
-		death=yes
+	690.1.1={
+		death = yes
 	}
 }
-
-216901 = {
-	name="Paduspan"
-	dynasty=7332
-	father=216024 # perhaps
+188592 = {
+	name="Azkajavar"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	630.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188591
+	665.1.1={
+		birth = yes
 	}
-	694.1.1={
-		death=yes
+	712.1.1={
+		death = yes
 	}
 }
-
-216902 = {
-	name="Khur-Zad"
-	dynasty=7332
+188593 = {
+	name="Askajamuk"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=216901
-	660.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188592
+	690.1.1={
+		birth = yes
 	}
-	723.1.1={
-		death=yes
+	740.1.1={
+		death = yes
 	}
 }
-216903 = {
-	name="Paduspan"
-	dynasty=7332
+188594 = {
+	name="Shavoshfar"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=216902
-	680.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188593
+	715.1.1={
+		birth = yes
 	}
-	762.1.1={
-		death=yes
+	765.1.1={
+		death = yes
 	}
 }
-216904 = {
-	name="Shahriyar"
-	dynasty=7332
+188595 = {
+	name="Torkasba'ta"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=216903
-	trait=sympathy_islam
-	722.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188594
+	740.1.1={
+		birth = yes
 	}
-	791.1.1={
-		death=yes
+	790.1.1={
+		death = yes
 	}
 }
-
-216905 = {
-	name="Wandad Umid"
-	dynasty=7332
+188596 = {
+	name="'Abdallah"
+	dynasty=1042112 # Afrighid
 	religion="zoroastrian"
-	culture="persian"
-	father=216904
-	trait=sympathy_islam
-	750.1.1={
-		birth=yes
+	culture="pahlavi"
+	father=188595
+	765.1.1={
+		birth = yes
 	}
-	822.1.1={
-		death=yes
+	790.1.1={
+		religion=sunni
+		culture="khwarezmi"
 	}
-}
-
-216906 = {
-	name="Abdallah"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216905
-	trait=sympathy_zoroastrianism
-	775.1.1={
-		birth=yes
-	}
-	855.1.1={
-		death=yes
+	815.1.1={
+		death = yes
 	}
 }
-
-216907 = {
-	name="Faridun"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216906
-	trait=sympathy_zoroastrianism
-	798.1.1={
-		birth=yes
+188597 = {
+	name="Mansur"
+	dynasty=1042112 # Afrighid
+	religion="sunni"
+	culture="khwarezmi"
+	father=188596
+	795.1.1={
+		birth = yes
 	}
-	855.1.1={
-		death=yes
+	850.1.1={
+		death = yes
 	}
 }
-
-216908 = {
-	name="Paduspan"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216907
-	trait=sympathy_zoroastrianism
-	816.1.1={
-		birth=yes
+188598 = {
+	name="'Eraq"
+	dynasty=1042112 # Afrighid
+	religion="sunni"
+	culture="khwarezmi"
+	father=188597
+	825.1.1={
+		birth = yes
 	}
-	872.1.1={
-		death=yes
-	}
-}
-
-216909 = {
-	name="Shahriyar"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216908
-	trait=sympathy_zoroastrianism
-	836.1.1={
-		birth=yes
-	}
-	887.1.1={
-		death=yes
-	}
-}
-
-216910 = {
-	name="Hazar Sandan"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216909
-	trait=sympathy_zoroastrianism
-	854.1.1={
-		birth=yes
-	}
-	899.1.1={
-		death=yes
-	}
-}
-
-216911 = {
-	name="Shahriyar"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216910
-	trait=sympathy_zoroastrianism
-	872.1.1={
-		birth=yes
-	}
-	938.1.1={
-		death=yes
-	}
-}
-
-216912 = {
-	name="Shams al-Muluk"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216911
-	trait=sympathy_zoroastrianism
 	890.1.1={
-		birth=yes
-	}
-	965.1.1={
-		death=yes
+		death = yes
 	}
 }
-216913 = {
-	name="Istwandad"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216912
-	trait=sympathy_zoroastrianism
-	919.1.1={
-		birth=yes
+188599 = {
+	name="Mohammad"
+	dynasty=1042112 # Afrighid
+	religion="sunni"
+	culture="khwarezmi"
+	father=188598
+	865.1.1={
+		birth = yes
 	}
-	980.1.1={
-		death=yes
-	}
-}
-
-216914 = {
-	name="Fakhr al-Dawla"
-	dynasty=7332
-	religion="shiite"
-	culture="persian"
-	father=216913
-	trait=sympathy_zoroastrianism
 	940.1.1={
-		birth=yes
-	}
-	980.1.1={
-		death=yes
+		death = yes
 	}
 }
-
-216915 = {
-	name="Hazarasp"
-	dynasty=7332
-	religion="shiite"
+188600 = {
+	name="Ahmad"
+	dynasty=1042112 # Afrighid
+	religion="sunni"
+	culture="khwarezmi"
+	father=188599
+	900.1.1={
+		birth = yes
+	}
+	970.1.1={
+		death = yes
+	}
+}
+188601 = {
+	name="Abu-'Abdallah Mohammad"
+	dynasty=1042112 # Afrighid
+	religion="sunni"
+	culture="khwarezmi"
+	father=188600
+	925.1.1={
+		birth = yes
+	}
+	995.1.1={
+		death = {
+			death_reason=death_execution
+			killer=1231221
+		}
+	}
+}
+188686 = {
+	name="Táher"
+	dynasty=811
+	religion="sunni"
+	culture="khorasani"
+	father = 188687
+	776.1.1={
+		birth="776.1.1"
+	}
+	822.10.10={
+		death="822.10.10"
+	}
+}
+188687 = {
+	name="Hosayn"
+	dynasty=811
+	religion="sunni"
+	culture="khorasani"
+	father = 1230519
+	752.1.1={
+		birth="752.1.1"
+	}
+	805.10.10={
+		death="805.10.10"
+	}
+}
+188688 = {
+	name="Ruzaiq"
+	dynasty=811 # Tahirid
+	religion="sunni"
 	culture="persian"
-	father=216914
-	trait=sympathy_zoroastrianism
-	965.1.1={
-		birth=yes
+	660.1.1={
+		birth = yes
 	}
-	1017.1.1={
-		death=yes
+	740.1.1={
+		death = yes
 	}
 }
+188689 = {
+	name="Talha"
+	dynasty=811
+	religion="sunni"
+	culture="khorasani"
+	father = 188686
+	795.1.1={
+		birth="795.1.1"
+	}
+	828.10.10={
+		death="828.10.10"
+	}
+}
+#160304 = {
+#	name="Zarmihr" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160305
+#	440.1.1={
+#		birth = yes
+#	}
+#	500.1.1={
+#		death = yes
+#	}
+#}
+#160305 = {
+#	name="Alanda" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160306
+#	410.1.1={
+#		birth = yes
+#	}
+#	490.1.1={
+#		death = yes
+#	}
+#}
+#160306 = {
+#	name="Sukhra" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160307
+#	370.1.1={
+#		birth = yes
+#	}
+#	450.1.1={
+#		death = yes
+#	}
+#}
+#160307 = {
+#	name="Balash" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160308
+#	335.1.1={
+#		birth = yes
+#	}
+#	400.1.1={
+#		death = yes
+#	}
+#}
+#160308 = {
+#	name="Zarmihr" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=160309
+#	300.1.1={
+#		birth = yes
+#	}
+#	375.1.1={
+#		death = yes
+#	}
+#}
+#160309 = {
+#	name="Karen" #unhistorical
+#	dynasty=7511
+#	religion="zoroastrian"
+#	culture="daylamite"
+#	father=159557 #Karen-Pahlav lineage
+#	245.1.1={
+#		birth = yes
+#	}
+#	330.1.1={
+#		death = yes
+#	}
+#}
 
 166987 = {  #(Father of Mardavij/Vushmgir)
     name="Ziyar"
     dynasty=101689
     religion="zoroastrian"
-    culture="persian"
-    840.6.6={
+    culture="daylamite"
+	father=1231094
+    868.1.1={
         birth=yes
     }
 	888.1.1={
@@ -5851,13 +5863,28 @@
         death=yes
     }
 }
+166988 = {  #(Mother of Mardavij, name unknown)
+    name="Mahtab"
+    female=yes
+    dynasty=1000102204
+    religion="zoroastrian"
+    culture="daylamite"
+    father=1231129
+    868.1.1={
+        birth=yes
+    }
+    905.1.1={
+        death=yes
+    }
+}
 166989 = {
     name="Mardavij"
     dynasty=101689
+    martial=8
     dna = bcedirmbfcy
     properties = be00ca00000
     religion="zoroastrian"
-    culture="persian"
+    culture="daylamite"
     father=166987
     mother=166988
     trait="brilliant_strategist"
@@ -5868,22 +5895,17 @@
     891.7.25={
         birth=yes
     }
-    930.1.1 = {
-    	create_bloodline = {
-    		type = mardavij
-    		has_dlc = "Holy Fury"
-    	}
-    }
-    935.1.19={
-        death=yes
+    935.1.19={ #killed by Turkish ghulam
+        death={ death_reason=death_murder }
     }
 }
 166990 = {
     name="Vushmgir"
     dynasty=101689
+    martial=9
     religion="sunni"
     properties="asdebb"
-    culture="persian"
+    culture="daylamite"
     father=166987
     mother=166988
     trait="skilled_tactician"
@@ -5895,18 +5917,18 @@
     trait="siege_leader"
     898.3.13={
         birth=yes
-        effect = { set_character_flag = is_vushmgir }
+		effect = { set_character_flag = is_vushmgir }
     }
     923.1.1={
         add_spouse=166991
     }
-    936.1.1 = {
-    	prestige = 350
-    	piety = 230
-    	wealth = 150
+    936.1.1={
+    	add_claim=c_esfahan
     }
     967.1.1={
-        death=yes
+        death={
+        	death_reason=death_accident #killed by a boar while on a hunt
+        }
     }
 }
 
@@ -5914,8 +5936,8 @@
     name="Elnaz"
     female=yes
     dynasty=7331 # Bavandid
-    religion="zoroastrian"
-    culture="persian"
+    religion="sunni"
+    culture="daylamite"
     father=160295
     trait=scholarly_theologian
     908.7.6={
@@ -5929,7 +5951,7 @@
     name="Bisutun"
     dynasty=101689
     religion="sunni"
-    culture="persian"
+    culture="daylamite"
     father=166990
     mother=166991
     935.1.6={
@@ -5942,10 +5964,18 @@
 166993 = {
     name="Qabus"
     dynasty=101689
+    diplomacy=5
+    martial=4
+    stewardship=4
+    learning=6
     religion="sunni"
-    culture="persian"
+    culture="daylamite"
     father=166990
     mother=166991
+    trait=scholarly_theologian
+    trait=poet
+    trait=arbitrary
+    trait=zealous
     940.4.17={
         birth=yes
     }
@@ -5957,12 +5987,12 @@
     name="Manuchihr"
     dynasty=101689
     religion="sunni"
-    culture="persian"
+    culture="daylamite"
     father=166993
     970.8.11={
         birth=yes
     }
-    1031.1.2={
+    1029.1.2={
         death=yes
     }
 }
@@ -5970,12 +6000,13 @@
     name="Anushirvan Sharaf"
     dynasty=101689
     religion="sunni"
-    culture="persian"
+    culture="daylamite"
     father=166994
-    1001.4.19={
+    mother=1231166
+    1015.4.19={
         birth=yes
     }
-    1050.1.2={
+    1050.1.1={
         death=yes
     }
 }
@@ -5983,7 +6014,7 @@
     name="Eskander"
     dynasty=101689
     religion="sunni"
-    culture="persian"
+    culture="daylamite"
     father=166993
     972.1.1={
         birth=yes
@@ -5998,7 +6029,7 @@
     dynasty=214020 # Dabuyid
 	father=216020
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     734.1.1={
         birth=yes
     }
@@ -6012,15 +6043,13 @@
     dynasty=214020 # Dabuyid
 	father=216013
     religion=zoroastrian
-    culture=persian
-	trait=skilled_tactician
-	trait=gregarious
-    751.1.1={
+    culture=pahlavi
+    754.1.1={
         birth=yes
     }
-	769.1.1={
-		employer=244001 # according to chinese sources was in court of Tang
-		add_trait=sympathy_indian
+	761.1.1={
+		religion = sunni
+		trait=sympathy_zoroastrianism
 	}
     800.1.1={
         death=yes
@@ -6031,7 +6060,7 @@
     dynasty=214020 # Dabuyid
 	father=216013
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     757.1.1={
         birth=yes
     }
@@ -6049,7 +6078,7 @@
     dynasty=214020 # Dabuyid
 	father=216013
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     759.1.1={
         birth=yes
     }
@@ -6068,7 +6097,7 @@
     dynasty=214020 # Dabuyid
 	father=216013
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     753.1.1={
         birth=yes
     }
@@ -6086,7 +6115,7 @@
     dynasty=214020 # Dabuyid
 	father=216021
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     710.1.1={
         birth=yes
     }
@@ -6099,7 +6128,7 @@
     name="Farrukhan"
     dynasty=214020 # Dabuyid
     religion="zoroastrian"
-    culture="persian"
+    culture="pahlavi"
 	father=216023
     685.1.1={
         birth=yes
@@ -6115,23 +6144,11 @@
     dynasty=214020 # Dabuyid
 	father=216021
     religion=zoroastrian
-    culture=persian
-	trait=tough_soldier
-	trait=content
-	trait=diligent
-	trait=just
+    culture=pahlavi
     715.1.1={
         birth=yes
     }
-	769.1.1={
-		employer=244001 # according to chinese sources was in court of Tang
-		add_trait=sympathy_indian
-		add_claim = d_mazandaran
-		add_claim = c_tabaristan
-		add_claim = c_alamut
-		add_claim = c_daylam
-	}
-    771.1.1={
+    760.1.1={
         death=yes
     }
 }
@@ -6139,9 +6156,9 @@
 216023 = {
     name="Dabuya"
     dynasty=214020 # Dabuyid
-	father=216024
+	#father=216024
     religion=zoroastrian
-    culture=persian
+    culture=pahlavi
     640.1.1={
         birth=yes
     }
@@ -6150,52 +6167,79 @@
     }
 }
 
-216024 = {
-    name="Gavbarih"
-    dynasty=214020 # Dabuyid
-	father=216025
-    religion=zoroastrian
-    culture=persian
-    610.1.1={
-        birth=yes
-    }
-    660.1.1={
-        death=yes
-    }
-}
+#216024 = {
+#    name="Gavbarih"
+#    dynasty=214020 # Dabuyid
+#	father=216025
+#    religion=zoroastrian
+#    culture=persian
+#    610.1.1={
+#        birth=yes
+#    }
+#    660.1.1={
+#        death=yes
+#    }
+#}
 
-216025 = {
-    name="Peroz"
-    dynasty=214020 # Dabuyid
-	father=216026
-    religion=zoroastrian
-    culture=persian
-    575.1.1={
-        birth=yes
-    }
-    625.1.1={
-        death=yes
-    }
-}
+#216025 = {
+#    name="Peroz"
+#    dynasty=214020 # Dabuyid
+#	father=216026
+#    religion=zoroastrian
+#    culture=persian
+#    575.1.1={
+#        birth=yes
+#    }
+#    625.1.1={
+#        death=yes
+#    }
+#}
 
-216026 = {
-    name="Narsi"
-    dynasty=214020 # Dabuyid
-	father=180625 # perhaps
-    religion=zoroastrian
-    culture=persian
-    534.1.1={
-        birth=yes
-    }
-    600.1.1={
-        death=yes
-    }
+#216026 = {
+#    name="Narsi"
+#    dynasty=214020 # Dabuyid
+#	father=180625 # perhaps
+#    religion=zoroastrian
+#    culture=persian
+#    534.1.1={
+#        birth=yes
+#    }
+#    600.1.1={
+#        death=yes
+#    }
+#}
+242001 = {
+	name="Mordechai" # Sa'ad al-Dawla, Influential and Highly Competent Jewish Vizier of the Ilkhans, gained several high posts to his brothers in the administration
+	dynasty=1031115
+	stewardship=9
+	religion="jewish"
+	culture="persian"
+	trait="midas_touched"
+	trait="ambitious"
+	trait="physician"
+	trait="patient"
+	trait="stubborn" #reputation as a harsh governor
+	trait="proud" #openly discriminated against muslims in favor of his kinsmen and Jews
+	father=248131
+	1240.1.1={
+		birth=yes
+	}
+	1283.1.1={
+		employer=248137
+	}
+	1287.1.1={
+		employer=478008
+	}
+	1291.1.1={
+		death=yes
+	}
 }
 
 248001 = {
 	name="Keykhosraw" # Fictional local ruler
-	dynasty=1059000
-	religion=khurmazta
+	dynasty=1059011
+	religion=zoroastrian
+#	religion=khurmazta # at best this is a questionable decision
 	culture=sogdian
 	trait=sympathy_indian
 	820.1.1={
@@ -6211,8 +6255,9 @@
 
 248002 = {
 	name="Wakhushakk" # Fictional local ruler
-	dynasty=1059000
-	religion=khurmazta
+	dynasty=1059011
+	religion=zoroastrian
+#	religion=khurmazta # at best this is a questionable decision
 	culture=sogdian
 	father=248001
 	#mother=247696
@@ -6226,7 +6271,7 @@
 
 248003 = {
 	name="Kartir" # Fictional local ruler
-	dynasty=1059000
+	dynasty=1059011
 	religion=zoroastrian
 	culture=sogdian
 	father=248002
@@ -6240,18 +6285,19 @@
 
 248004 = {
 	name="Mahmud" # Fictional local ruler
-	dynasty=1059000
-	religion=khurmazta
+	dynasty=1059011
+	religion=zoroastrian
+#	religion=khurmazta # at best this is a questionable decision
 	culture=sogdian
 	father=248003
 	922.1.1={
 		birth=yes
 	}
 	950.1.1={
-		religion=shiite
+		religion=sunni
 	}
 	951.1.1={
-		culture=persian # tajik
+		culture=tajik # tajik
 	}
 	997.1.1={
 		death=yes
@@ -6260,9 +6306,9 @@
 
 248005 = {
 	name="Ismail" # Fictional local ruler
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248004
 	952.1.1={
 		birth=yes
@@ -6274,9 +6320,9 @@
 
 248011 = {
 	name="Shahbeg" 
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248004
 	960.1.1={
 		birth=yes
@@ -6288,9 +6334,9 @@
 
 248012 = {
 	name="Yaribeg" 
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248011
 	trait=brave
 	trait=strong
@@ -6312,9 +6358,9 @@
 
 248006 = {
 	name="Nasr" # Fictional local ruler
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248005
 	977.1.1={
 		birth=yes
@@ -6325,9 +6371,9 @@
 }
 248007 = {
 	name="Ali bin al-Asad"
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	trait=sympathy_zoroastrianism
 	trait=sympathy_indian
 	trait=scholarly_theologian
@@ -6341,9 +6387,9 @@
 }
 248008 = {
 	name="Emad"
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248007
 	trait=cruel
 	trait=greedy
@@ -6358,9 +6404,9 @@
 248009 = {
 	name="Zohreh"
 	female=yes
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248008
 	1077.1.1={
 		birth=yes
@@ -6372,9 +6418,9 @@
 
 248013 = {
 	name="Suleiman" 
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248012 #one of Yaribegs many sons but others have not been added to game
 	1060.1.1={
 		birth=yes
@@ -6387,9 +6433,9 @@
 248014 = {
 	name="Behnaz"
 	female=yes
-	dynasty=1059000
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248013
 	1110.1.1={
 		birth=yes
@@ -6401,13 +6447,14 @@
 
 248015 = {
 	name="Mirza" #fictional local ruler
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	trait=tough_soldier
 	trait=greedy
 	trait=ambitious
 	trait=strong
+	father=248013
 	1090.1.1={
 		birth=yes
 	}
@@ -6421,9 +6468,9 @@
 
 248016 = {
 	name="Nasrid" #fictional local ruler
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	mother=248014
 	father=248015
 	1137.1.1={
@@ -6436,9 +6483,9 @@
 
 248017 = {
 	name="Manuchehr" #fictional local ruler
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248016
 	1159.1.1={
 		birth=yes
@@ -6450,9 +6497,9 @@
 
 248018 = {
 	name="Eskander" #fictional local ruler
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248017
 	1190.1.1={
 		birth=yes
@@ -6464,9 +6511,9 @@
 
 248019 = {
 	name="Kavoos" #fictional local ruler
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248018
 	1210.1.1={
 		birth=yes
@@ -6478,9 +6525,9 @@
 
 248020 = {
 	name="Taj Mughal"
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248019
 	1250.1.1={
 		birth=yes
@@ -6491,9 +6538,9 @@
 }
 248021 = {
 	name="Armaghan"
-	dynasty=1059006
-	religion=shiite
-	culture=persian #tajik
+	dynasty=1059011
+	religion=sunni
+	culture=tajik #tajik
 	father=248020
 	1300.1.1={
 		birth=yes
@@ -6503,309 +6550,22 @@
 	}
 }
 
-248022 = {
-	name="Nasir Khusraw"
-	dynasty=0
-	religion=shiite
-	culture=persian
-	trait=physician
-	trait=poet
-	trait=gregarious
-	trait=scholarly_theologian
-	1004.1.1={
-		birth=yes
-	}
-	1053.1.1 = {
-		employer = 248007
-	}
-	1088.1.1={
-		death=yes
-	}
-}
-
-248044 = {
-	name="Danush" # fictional local ruler
-	dynasty=1059008
-	religion=buddhist
-	culture=persian #tajik
-	trait = vajrayana_buddhist
-	father=248043
-	944.1.1={
-		birth=yes
-	}
-	1006.1.1={
-		death=yes
-	}
-}
-248045 = {
-	name="Ardahan" # fictional local ruler
-	dynasty=1059008
-	religion=buddhist
-	culture=persian #tajik
-	trait = vajrayana_buddhist
-	father=248044
-	970.1.1={
-		birth=yes
-	}
-	1010.1.1={
-		religion=sunni # Kara-Khanid takeover Buddhism repressed
-	}
-	1042.1.1={
-		death=yes
-	}
-}
-248046 = {
-	name="Rostam" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	trait = sympathy_indian
-	trait=tough_soldier
-	trait=mountain_terrain_leader
-	father=248045
-	1010.1.1={
-		birth=yes
-	}
-	1066.1.1={
-		trait=secretly_nestorian # Nestorian presence indicated in various sources.
-	}
-	1070.1.1={
-		death=yes
-	}
-}
-248047 = {
-	name="Ardeshir" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248046
-	trait=skilled_tactician
-	trait=sympathy_indian
-	1032.1.1={
-		birth=yes
-	}
-	1066.1.1={
-		trait=secretly_nestorian # Nestorian presence indicated in various sources.
-	}
-	1098.1.1={
-		death=yes
-	}
-}
-
-248048 = {
-	name="Ahmad" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248047
-	trait=sympathy_indian
-	1055.1.1={
-		birth=yes
-	}
-	1078.1.1={
-		trait=secretly_nestorian
-	}
-	1110.1.1={
-		death=yes
-	}
-}
-
-248049 = {
-	name="Javeed" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248048
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1080.1.1={
-		birth=yes
-	}
-	1142.1.1={
-		death=yes
-	}
-}
-248050 = {
-	name="Abbas" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248049
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1110.1.1={
-		birth=yes
-	}
-	1175.1.1={
-		death=yes
-	}
-}
-248051 = {
-	name="Mahmud" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248050
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1140.1.1={
-		birth=yes
-	}
-	1210.1.1={
-		death=yes
-	}
-}
-248052 = {
-	name="Sadri" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248051
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1180.1.1={
-		birth=yes
-	}
-	1239.1.1={
-		death=yes
-	}
-}
-248053 = {
-	name="Ruhollas" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248052
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1205.1.1={
-		birth=yes
-	}
-	1280.1.1={
-		death=yes
-	}
-}
-248054 = {
-	name="Kurush" # fictional
-	dynasty=1059008
-	religion=nestorian
-	culture=persian #tajik
-	father=248052
-	trait=sympathy_islam
-	trait=sympathy_indian
-	trait=legit_bastard
-	1222.1.1={
-		birth=yes
-	}
-	1300.1.1={
-		death=yes
-	}
-}
-248055 = {
-	name="Hafez" # fictional local ruler
-	dynasty=1059008
-	religion=sunni
-	culture=persian #tajik
-	father=248053
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1240.1.1={
-		birth=yes
-	}
-	1310.1.1={
-		death=yes
-	}
-}
-248056 = {
-	name="Farzad" # fictional local ruler
-	dynasty=1059008
-	religion=shiite
-	culture=persian #tajik
-	father=248055
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1270.1.1={
-		birth=yes
-	}
-	1337.1.1={
-		death=yes
-	}
-}
-248057 = {
-	name="Khamush" # fictional local ruler
-	dynasty=1059008
-	religion=shiite
-	culture=persian #tajik
-	father=248056
-	trait=sympathy_christendom
-	trait=sympathy_indian
-	1295.1.1={
-		birth=yes
-	}
-	1350.1.1={
-		death=yes
-	}
-}
-
-248010 = {
-	name="Hurmat" # fictional daughter of Khosrau I
-	female=yes
-	dynasty=1029100
-	religion="zoroastrian"
-	culture="persian"
-	father=180628
-	570.1.1={
-		birth=yes
-	}
-	630.1.1={
-		death=yes
-	}
-}
-
-242001 = {
-	name="Saad Mordechai"
-	dynasty=1059023
-	stewardship=7
-	religion="sunni"
-	secret_religion="jewish"
-	culture="persian"
-	trait="midas_touched"
-	trait="ambitious"
-	trait="physician"
-	trait="patient"
-	trait="brave"
-	disallow_random_traits = yes
-	father=248131
-	1240.1.1={
-		birth=yes
-	}
-	1283.1.1={
-		employer=248137
-	}
-	1287.1.1={
-		employer=478008
-	}
-	1291.1.1={
-		death=yes
-	}
-}
-
 248131 = {
-	name="Hibbat" # real name unknown
-	dynasty=1059023
+	name="Safi al-Din" # b. Hibat-Allah Abhari
+	dynasty=1031115
 	religion="jewish"
 	culture="persian"
 	1200.1.1={
 		birth=yes
 	}
 	1250.1.1={
-		death=yes # murdered
+		death={ death_reason=death_murder } # murdered
 	}
 }
 
 248132 = {
-	name="Mahdhdhib" # real name unknown
-	dynasty=1059023
+	name="Fakhr al-Dawla" # brother of Sa'ad al-Dawla, appointed governor of Baghdad
+	dynasty=1031115
 	religion="jewish"
 	culture="persian"
 	father=248131
@@ -6813,12 +6573,12 @@
 		birth=yes
 	}
 	1292.1.1={
-		death=yes # murdered
+		death={ death_reason=death_murder } # murdered
 	}
 }
 248133 = {
-	name="Amin" # real name unknown
-	dynasty=1059023
+	name="Amin" # brother of Sa'ad al-Dawla, appointed governor of Northern Mesopotamia (Diyar Ra'bia) alongside Taj al-Din Isa, real name unknown
+	dynasty=1031115
 	religion="jewish"
 	culture="persian"
 	father=248131
@@ -6826,12 +6586,12 @@
 		birth=yes
 	}
 	1292.1.1={
-		death=yes # murdered
+		death={ death_reason=death_murder } # murdered
 	}
 }
 248134 = {
-	name="Fakhr" # real name unknown
-	dynasty=1059023
+	name="Mahdhdhib" # brother of Sa'ad al-Dawla who became the governor of Fars, realn name unknown
+	dynasty=1031115
 	religion="jewish"
 	culture="persian"
 	father=248131
@@ -6839,1027 +6599,72 @@
 		birth=yes
 	}
 	1292.1.1={
-		death=yes # murdered
+		death={ death_reason=death_murder } # murdered
 	}
 }
+
 248165 = {
-	name="Mahmud" 
+	name="Mahmud"
+	diplomacy=5
+	stewardship=7
 	dynasty=1059024
 	religion="sunni"
-	culture="persian"
+	culture="khwarezmi"
 	trait=midas_touched
 	trait=sympathy_pagans
 	trait=content
 	1180.1.1={
 		birth=yes
 	}
-	1240.1.1={
-		death=yes # moved to China
+	1255.1.1={
+		death=yes # moved to China ca. 1240
 	}
 }
 248166 = {
-	name="Masud-Beg" 
+	name="Masud-Beg"
+	diplomacy=6
+	stewardship=6
 	dynasty=1059024
 	religion="sunni"
-	culture="persian"
+	culture="khwarezmi"
 	trait=midas_touched
 	trait=sympathy_pagans
 	father=248165
 	1207.1.1={
 		birth=yes
 	}
-	1290.1.1={
+	1289.11.1={
 		death=yes # died sometime at end of 1289
 	}
 }
-248167 = {
-	name="Abu Bakr" 
-	dynasty=1059024
-	religion="sunni"
-	culture="persian"
-	trait=sympathy_pagans
-	father=248166
-	1227.1.1={
-		birth=yes
-	}
-	1298.1.1={
-		death=yes
-	}
-}
-248168 = {
-	name="Satilmish-Beg" 
-	dynasty=1059024
-	religion="sunni"
-	culture="persian"
-	trait=sympathy_pagans
-	#father=248154
-	1234.1.1={
-		birth=yes
-	}
-	1303.1.1={
-		death=yes
-	}
-}
-248169 = {
-	name="Suyunitch" 
-	dynasty=1059024
-	religion="sunni"
-	culture="persian"
-	trait=sympathy_pagans
-	#father=248154 #Time travel dad.
-	1260.1.1={
-		birth=yes
-	}
-	1338.1.1={
-		death=yes
-	}
-}
-248170 = {
-	name="Vandad" # fictional son of Suyunitch
-	dynasty=1059024
-	religion="sunni"
-	culture="persian"
-	trait=sympathy_pagans
-	father=248169
-	1290.1.1={
-		birth=yes
-	}
-	1340.1.1={
-		death=yes
-	}
-}
-248216 = {
-	name="Qutb ad-Din Habash" 
-	dynasty=0
-	religion="sunni"
-	culture="persian"
-	trait=grey_eminence
-	diplomacy=10
-	1200.1.1={
-		birth=yes
-	}
-	1227.12.2={
-		employer=93062
-	}
-	1260.1.1={
-		death=yes
-	}
-}
-248306 = {
-	name="Hasim"
-	dynasty=1059103
-	religion=sunni
-	culture=persian
-	800.1.1={
-		birth=yes
-	}
-	857.1.1={
-		death=yes
-	}
-}
-248307 = {
-	name="Dawud ibn al-Abbas"
-	dynasty=1059103
-	religion=sunni
-	culture=persian
-	father=248306
-	822.1.1={
-		birth=yes
-	}
-	873.1.1={
-		death=yes
-	}
-}
-248308 = {
-	name="Muhammad ibn Ahmad"
-	dynasty=1059103
-	religion=sunni
-	culture=persian
-	father=248307
-	853.1.1={
-		birth=yes
-	}
-	899.1.1={
-		death=yes
-	}
-}
-248309 = {
-	name="Ahmad ibn Muhammad"
-	dynasty=1059103
-	religion=sunni
-	culture=persian
-	father=248308
-	870.1.1={
-		birth=yes
-	}
-	908.1.1={
-		death=yes
-	}
-}
-
-1059970 = {
-    name="Vandad" # fictional son of Farrukhan
-    dynasty=214020 # Dabuyid
-    religion=zoroastrian
-    culture=persian
-	father= 216022
-    745.1.1={
-        birth=yes
-    }
-	769.1.1={
-		employer=244001
-		add_trait=sympathy_indian
-	}
-    775.1.1={
-        death=yes
-    }
-}
-1059968 = {
-	name="Bahram" # Bahram VII claimant to Sassanid throne
-	dynasty=1029100
-	religion="zoroastrian"
-	culture="persian"
-	father=180637
-	647.1.1={
-		birth=yes
-	}
-	710.1.1={
-		death=yes
-	}
-}
-
-1059969 = {
-	name="Khosrau" # reported son of Bahram VII
-	dynasty=1029100
-	religion="zoroastrian"
-	culture="persian"
-	trait=tough_soldier
-	father=1059968
-	677.1.1={
-		birth=yes
-	}
-	730.1.1={
-		culture=han
-		name=Juluo
-	}
-	740.1.1={
-		death=yes
-	}
-}
-
-248554 = {
-	name="Rustam Dushmanziyar"
-	dynasty=7331
-	religion="shiite"
-	culture="persian"
-	father=220995
-	trait=ambitious
-	trait=skilled_tactician
-	trait=sympathy_zoroastrianism
-	970.1.1={
-		birth=yes # maybe
-	}
-	1028.1.1={
-		dynasty=1059994 # establishes himself in Jibal
-	}	
-	1041.1.1={
-		death=yes
-	}
-}
-248555 = {
-	name="Faramurz"
-	dynasty=1059994
-	religion="shiite"
-	culture="persian"
-	father=248554
-	trait=charismatic_negotiator
-	trait=siege_leader
-	1020.1.1={
-		birth=yes # maybe
-	}
-	1066.1.1={ # claims to lost territories
-		add_claim=d_jibal
-		add_claim=c_hamadan
-		add_claim=c_rayy
-		add_claim=c_qom
-		add_claim=c_esfahan
-	}	
-	1072.11.1={
-		death=yes # unknown
-	}
-}
-248556 = {
-	name="Garshap"
-	dynasty=1059994
-	religion="shiite"
-	culture="persian"
-	father=248554
-	1022.1.1={
-		birth=yes # maybe
-	}	
-	1052.1.1={
-		death=yes
-	}
-}
-248557 = {
-	name="Ali Faramurz"
-	dynasty=1059994
-	religion="shiite"
-	culture="persian"
-	father=248555
-	trait=gregarious
-	trait=charitable
-	1042.1.1={
-		birth=yes # maybe
-	}	
-	1095.1.1={
-		death=yes # unknown
-	}
-}
-248558 = {
-	name="Garshasp"
-	dynasty=1059994
-	religion="shiite"
-	culture="persian"
-	father=248557
-	trait=tough_soldier
-	1073.1.1={
-		birth=yes # maybe
-	}	
-	1141.1.1={
-		death=yes
-	}
-}
-248559 = {
-	name="Shirin" # unknown daughter
-	female=yes
-	dynasty=1059994
-	religion="shiite"
-	culture="persian"
-	father=248557
-	1120.1.1={
-		birth=yes # maybe
-	}	
-	1152.1.1={
-		death=yes
-	}
-}
-248560 = {
-	name="Wardanruz" # unknown originator of this dynasty
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	trait=skilled_tactician
-	1080.1.1={
-		birth=yes # maybe
-	}
-	1101.1.1={
-		employer=248558
-	}	
-	1138.1.1={
-		death=yes
-	}
-}
-248561 = {
-	name="Sam Wardanruz"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248560
-	1121.1.1={
-		birth=yes # maybe
-	}
-	1188.1.1={
-		employer=93167 # deposed by brother
-	}
-	1188.1.1={
-		add_claim=c_yazd
-	}
-	1193.1.1={
-		death=yes 
-	}
-}
-248562 = {
-	name="Langar Wardanruz"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248560
-	trait=ambitious
-	trait=tough_soldier
-	1123.1.1={
-		birth=yes # maybe
-	}
-	1142.1.1={
-		add_spouse=248559 # to give marriage link to Kakuyids
-	}
-	1207.1.1={
-		death=yes #
-	}
-}
-248563 = {
-	name="Wardanruz Langar"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248562
-	mother=248559
-	1146.1.1={
-		birth=yes # maybe
-	}
-	1219.1.1={
-		death=yes
-	}
-}
-248564 = {
-	name="Isfahsalar Langar"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248562
-	mother=248559
-	1148.1.1={
-		birth=yes # maybe
-	}
-	1229.1.1={
-		death=yes
-	}
-}
-
-248566 = {
-	name="Mahmud Shah Isfansalar"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248564
-	1170.1.1={
-		birth=yes # maybe
-	}
-	1241.1.1={
-		death=yes
-	}
-}
-248567 = {
-	name="Salghur Shah"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248566
-	1195.1.1={
-		birth=yes # maybe
-	}
-	1252.1.1={
-		death=yes
-	}
-}
-248568 = {
-	name="Tolghan Shah"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248567
-	1215.1.1={
-		birth=yes # maybe
-	}
-	1272.1.1={
-		death=yes
-	}
-}
-248569 = {
-	name="Ala al-Dawla"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248568
-	1235.1.1={
-		birth=yes # maybe
-	}
-	1275.1.1={
-		death=yes
-	}
-}
-248570 = {
-	name="Yusuf Shah"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248568
-	1235.1.1={
-		birth=yes # maybe
-	}
-	1293.1.1={
-		employer=93172
-	}
-	1293.1.1={
-		add_claim=c_yazd
-	}
-	1297.1.1={
-		death=yes
-	}
-}
-248571 = {
-	name="Hajji Shah"
-	dynasty=1059993
-	religion="shiite"
-	culture="persian"
-	father=248570
-	1260.1.1={
-		birth=yes # maybe
-	}
-	1297.1.1={
-		add_claim=c_yazd
-	}
-	1300.1.1={
-		employer=93173
-	}
-	1315.1.1={
-		death=yes # deposed by Muzaffarids
-	}
-}
-248565 = {
-	name="Zayn al-Din Gorgani" # famous doctor
-	dynasty=0
-	religion="shiite"
-	culture="persian"
-	trait=temperate
-	trait=sympathy_zoroastrianism
-	trait=sympathy_christendom
-	trait=sympathy_judaism
-	trait=strong
-	trait=grey_eminence
-	trait=physician
-	trait=scholar
-	1041.1.1={
-		birth=yes # maybe
-	}
-	1066.1.1={
-		employer=20703
-	}
-	1096.1.1={
-		employer=144099
-	}
-	1130.1.1={
-		employer=144015
-	}
-	1136.1.1={
-		death=yes
-	}
-}
-
-248618 = {
-	name="Shansaban" # fictional
-	dynasty=1059986
-	religion=buddhist
-	culture="persian"
-	trait=mahayana_buddhist
-	trait=tough_soldier
-	trait=strong
-	750.1.1={
-		birth=yes # maybe
-	}
-	769.1.1={
-		employer=188570 # Bamiyan
-	}
-	805.1.1={
-		death=yes
-	}
-}
-248619 = {
-	name="Banji"
-	dynasty=1059986
-	religion=buddhist
-	culture="persian"
-	trait=mahayana_buddhist
-	trait=sympathy_islam # being legitimized by Caliph is likely medieval propaganda but we go with it
-	father=248618
-	782.1.1={
-		birth=yes
-	}
-	866.1.1={
-		death=yes
-	}
-}
-
-248620 = {
-	name="Amir"
-	dynasty=1059986
-	religion=buddhist
-	culture="persian"
-	trait=mahayana_buddhist
-	trait=sympathy_islam
-	trait=sympathy_pagans
-	trait=sympathy_zoroastrianism
-	trait=skilled_tactician
-	trait=strong
-	trait=brave
-	father=248619
-	850.1.1={
-		birth=yes # maybe
-	}
-	
-	867.1.1 = {
-		# Heathen tribes of Ghor
-		effect = {
-			spawn_unit = {
-				province = 907 # Mandesh
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 350 350 }
-					heavy_infantry = { 140 140 }
-					pikemen = { 40 40 }
-					archers = { 150 150 }
-					light_cavalry = { 40 40 }
-				}
-				attrition = 0.5
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = zoroastrian
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 8
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 907 # Mandesh
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 350 350 }
-						heavy_infantry = { 140 140 }
-						pikemen = { 40 40 }
-						archers = { 150 150 }
-						light_cavalry = { 40 40 }
-					}
-					attrition = 0.5
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = zun_pagan
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 8
-				}
-				trait = tough_soldier
-			}
-			new_character = {
-				spawn_unit = {
-					province = 907 # Mandesh
-					owner = ROOT
-					#leader = THIS
-					troops = {
-						light_infantry = { 350 350 }
-						heavy_infantry = { 140 140 }
-						pikemen = { 40 40 }
-						archers = { 150 150 }
-						light_cavalry = { 40 40 }
-					}
-					attrition = 0.5
-				}
-			}
+261009 = {
+	name = "Muhammad" # Abu Ali Muhammad b. Ali ibn Muqla al-Shirazi, Vizier of the Caliphate until April 936 before Ibn-Raiqs takeover in November
+	dynasty = 1000101920
+	religion = sunni
+	culture = persian
+	trait=fortune_builder
+	885.1.1 = {
+		birth = yes
+		culture = "levantine_arabic" #Born in Baghdad
+	}
+	936.4.1 = {
+		employer = 261006
+		add_trait="one_handed"
+	}
+	940.7.20 = {
+		death = {
+			death_reason=death_dungeon
+			killer=261006
 		}
 	}
-	
-	940.1.1={
-		death=yes # maybe
-	}
 }
 
-248690 = {
-	name="Varud" # fictional father of Tirdah
-	dynasty=1059973 
-	religion="zoroastrian"
-	culture="persian"
-	835.1.1={
-		birth=yes # maybe
-	}
-	867.1.1={
-		death=yes # maybe
-	}
-}
-248691 = {
-	name="Tirdadh" # historical ruler
-	dynasty=1059973 
-	religion="zoroastrian"
-	culture="persian"
-	father=248690
-	trait=cynical
-	trait=proud
-	trait=tough_soldier
-	trait=ambitious
-	trait=sympathy_islam # representing efforts of Shiite missionaries
-	trait=sympathy_pagans
-	trait=sympathy_christendom
-	848.1.1={
-		birth=yes # maybe
-	}
-	900.1.1={
-		death=yes # maybe
-	}
-}
-248692 = {
-	name="Harusindan" # historical ruler
-	dynasty=1059973 
-	religion="zoroastrian"
-	culture="persian"
-	father=248691
-	886.1.1={
-		birth=yes # maybe
-	}
-	922.1.1={
-		death=yes # maybe
-	}
-}
-166988 = {  #(Mother of Mardavij, name unknown)
-    name="Mahtab"
-    female=yes
-    dynasty=1059973
-    religion="sunni"
-    culture="persian"
-	father=248691
-    868.1.1={
-        birth=yes
-    }
-    905.1.1={
-        death=yes
-    }
-}
-248693 = {
-	name="Siahgil" # historical ruler
-	dynasty=1059973 
-	religion="zoroastrian"
-	culture="persian"
-	father=248692
-	904.1.1={
-		birth=yes # maybe
-	}
-	967.12.12={
-		death=yes # maybe
-	}
-}
-248694 = {
-	name="Lili" # historical ruler
-	dynasty=1059976
-	religion="zoroastrian"
-	culture="persian"
-	trait=brave
-	trait=tough_soldier
-	847.1.1={
-		birth=yes # maybe
-	}
-	867.1.1={
-		religion=shiite
-		trait=sympathy_zoroastrianism
-	}
-	921.1.1={
-		death=yes # maybe
-	}
-}
-
-248695 = {
-	name="Hossein" # historical rebel mentioned
-	dynasty=1059971
-	religion="shiite"
-	culture="persian"
-	trait=misguided_warrior
-	trait=zealous
-	846.1.1={
-		birth=yes
-	}
-	872.1.1={
-		death=yes
-	}
-}
-45105 = { 
-	name="Rostam" # Rostam II (was likely Muslim already in real history - his father Karen appears to have converted)
-	dynasty=7331 # Bavandid
-	martial=5
-	diplomacy=6
-	intrigue=6
-	stewardship=6
-	religion="zoroastrian"
-	culture="persian"
-	trait=diligent
-	trait=just
-	trait="skilled_tactician"
-	trait=sympathy_islam
-	father=160294
-	845.1.1={
-		birth="845.1.1"
-	}
-	896.1.1={
-		death="896.1.1"
-	}
-}
-248697 = {
-	name="Zakaria" # fictional brother of Tirdadh to represent remnants of Christianity among Dailamites
-	dynasty=1059973 
-	religion="nestorian"
-	culture="persian"
-	father=248690
-	trait=sympathy_islam # representing efforts of Shiite missionaries
-	trait=sympathy_zoroastrianism
-	trait=sympathy_pagans
-	850.1.1={
-		birth=yes # maybe
-	}
-	904.1.1={
-		death=yes # maybe
-	}
-}
-261011 = {
-	name = "Buya"
-	dynasty = 1029008
-	religion = shiite
-	culture = persian
-	868.1.1 = {
-		birth = yes
-	}
-	890.1.1 = {
-		add_spouse = 261015
-	}
-	921.1.1 = {
-		death = yes
-	}
-}
-261012 = {
-	name = "Ali"
-	dynasty = 1029008
-	religion = shiite
-	culture = persian
-
-	disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = inspiring_leader
-	trait = mountain_terrain_leader
-	trait = ambitious
-	trait = patient
-	trait = temperate
-
-	diplomacy = 6
-	martial = 8
-	stewardship = 8
-	intrigue = 5
-	learning = 6
-
-	father = 261011
-	mother = 261015
-	892.1.1 = {
-		birth = yes
-	}
-	932.1.1 = {
-		prestige = 300
-		wealth = 350
-		effect = {
-			add_friend = 261013
-			add_friend = 261014
-		}
-	}
-	949.1.1 = {
-		death = yes
-	}
-}
-261013 = {
-	name = "Hasan"
-	dynasty = 1029008
-	religion = shiite
-	culture = persian
-
-	disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = ambitious
-	trait = diligent
-	trait = just
-
-	diplomacy = 4
-	martial = 5
-	stewardship = 6
-	intrigue = 2
-	learning = 4
-
-	father = 261011
-	mother = 261015
-	898.1.1 = {
-		birth = yes
-	}
-	976.1.1 = {
-		death = yes
-	}
-}
-261014 = {
-	name = "Ahmad"
-	dynasty = 1029008
-	religion = shiite
-	culture = persian
-
-	disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = ambitious
-	trait = diligent
-	trait = greedy
-
-	diplomacy = 6
-	martial = 5
-	stewardship = 7
-	intrigue = 5
-	learning = 5
-
-	father = 261011
-	mother = 261015
-	915.1.1 = {
-		birth = yes
-	}
-	936.1.1 = {
-		add_trait = one_handed
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-261015 = {
-	name = "Farrin"
-	female = yes
-	religion = shiite
-	culture = persian
-	871.1.1 = {
-		birth = yes
-	}
-	925.1.1 = {
-		death = yes
-	}
-}
-261016 = {
-	name = "Ahmad"
-	dynasty = 810
-	religion = sunni
-	culture = persian
-	father = 163157
-	875.1.1 = {
-		birth = yes
-	}
-	914.1.1 = {
-		death = yes
-	}
-}
-261017 = {
-	name = "Nasr"
-	dynasty = 810
-	religion = sunni
-	culture = persian
-	father = 261016
-	906.1.1 = {
-		birth = yes
-	}
-	943.1.1 = {
-		death = yes
-	}
-}
-261018 = {
-	name = "Nuh"
-	dynasty = 810
-	religion = sunni
-	culture = persian
-	father = 261017
-	925.1.1 = {
-		birth = yes
-	}
-	954.1.1 = {
-		death = yes
-	}
-}
-261019 = {
-	name = "al-Layth"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 163165
-	870.1.1 = {
-		birth = yes
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-261020 = {
-	name = "Muhammad"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 163165
-	874.1.1 = {
-		birth = yes
-	}
-	911.1.1 = {
-		death = yes
-	}
-}
-261021 = {
-	name = "Al-Mu'addal"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 163165
-	880.1.1 = {
-		birth = yes
-	}
-	911.1.1 = {
-		death = yes
-	}
-}
-261022 = {
-	name = "Muhammad"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 261024
-	883.1.1 = {
-		birth = yes
-	}
-	915.1.1 = {
-		death = yes
-	}
-}
-261023 = {
-	name = "Ahmad"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 261022
-	906.1.1 = {
-		birth = yes
-	}
-	963.1.1 = {
-		death = yes
-	}
-}
-261024 = {
-	name = "Khalaf"
-	dynasty = 812
-	religion = sunni
-	culture = persian
-	father = 163163
-	857.1.1 = {
-		birth = yes
-	}
-	899.1.1 = {
-		death = yes
-	}
-}
 261025 = {
-	name = "Kaki"
-	dynasty = 1062492
-	religion = zoroastrian
-	culture = persian
+	name = "Kákúy" #Arabicized as Kákí
+	dynasty = 1000102207 #Firuzan/Perozan
+	religion = zoroastrian #?
+	culture = daylamite
+	father=1231158
 	875.1.1 = {
 		birth = yes
 	}
@@ -7868,640 +6673,20 @@
 	}
 }
 261026 = {
-	name = "Makan"
-	dynasty = 1062492
-	religion = zoroastrian
-	culture = persian
+	name = "Mákán" #governor of Kerman (ca. 933) and Gurgan (ca. 935-940) for the Samanids
+	dynasty = 1000102207
+	religion = zaydi #? Makan distinguished himself in service of the Alid army
+	culture = daylamite
 	father = 261025
+	trait = "tough_soldier"
+	trait = "ambitious"
 	894.1.1 = {
 		birth = yes
 	}
-	940.1.1 = {
-		death = yes
-	}
-}
-261034 = {
-	name = "Farighun"
-	dynasty = 1062497
-	religion = sunni
-	culture = persian
-	853.1.1 = {
-		birth = yes
-	}
-	919.1.1 = {
-		death = yes
-	}
-}
-261035 = {
-	name = "Ahmad"
-	dynasty = 1062497
-	religion = sunni
-	culture = persian
-	father = 261034
-	871.1.1 = {
-		birth = yes
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-261036 =  {
-	name = "Abu'l Haret"
-	dynasty = 1062497
-	religion = sunni
-	culture = persian
-	father = 261035
-	903.1.1 = {
-		birth = yes
-	}
-	982.1.1 = {
-		death = yes
-	}
-}
-261037 = {
-	name = "Abu Bakr"
-	dynasty = 1062498
-	religion = sunni
-	culture = persian
-	874.1.1 = {
-		birth = yes
-	}
-	941.1.1 = {
-		death = yes
-	}
-}
-261038 = {
-	name = "Abu 'Ali"
-	dynasty = 1062498
-	religion = sunni
-	culture = persian
-	father = 261037
-	898.1.1 = {
-		birth = yes
-	}
-	955.1.1 = {
-		death = yes
-	}
-}
-261039 = {
-	name = "Abu'l Muzaffar"
-	dynasty = 1062498
-	religion = sunni
-	culture = persian
-	father = 261038
-	920.1.1 = {
-		birth = yes
-	}
-	952.1.1 = {
-		death = yes
-	}
-}
-261043 = {
-	name = "Abd-Allah"
-	dynasty = 1062499
-	religion = sunni
-	culture = persian
-	880.1.1 = {
-		birth = yes
-	}
-	920.1.1 = {
-		death = yes
-	}
-}
-261044 = {
-	name = "Abu'l-Abbas"
-	dynasty = 1062499
-	religion = sunni
-	culture = persian
-	father = 261043
-	913.1.1 = {
-		birth = yes
-	}
-	973.1.1 = {
-		death = yes
-	}
-}
-261045 = {
-	name = "Abu'l Fadl"
-	dynasty = 1062500
-	religion = sunni
-	culture = persian
-	884.1.1 = {
-		birth = yes
-	}
-	940.1.1 = {
-		death = yes
-	}
-}
-261046 = {
-	name = "Muhammad"
-	dynasty = 1062500
-	religion = sunni
-	culture = persian
-	father = 261045
-	918.1.1 = {
-		birth = yes
-	}
-	974.1.1 = {
-		death = yes
-	}
-}
-261047 = {
-	name = "Ilyas"
-	dynasty = 1062501
-	religion = sunni
-	culture = persian
-	876.1.1 = {
-		birth = yes
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-261048 = {
-	name = "Muhammad"
-	dynasty = 1062501
-	religion = sunni
-	culture = persian
-	father = 261047
-	895.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-261049 = {
-	name = "Ilyasa"
-	dynasty = 1062501
-	religion = sunni
-	culture = persian
-	father = 261048
-	915.1.1 = {
-		birth = yes
-	}
-	968.1.1 = {
-		death = yes
-	}
-}
-261050 = {
-	name = "Sulaiman"
-	dynasty = 1062501
-	religion = sunni
-	culture = persian
-	father = 261048
-	920.1.1 = {
-		birth = yes
-	}
-	970.1.1 = {
-		death = yes
-	}
-}
-261051 = {
-	name = "Abdallah"
-	dynasty = 1062502
-	religion = sunni
-	culture = persian
-	858.1.1 = {
-		birth = yes
-	}
-	905.1.1 = {
-		death = yes
-	}
-}
-261052 = {
-	name = "Ali Yahya"
-	dynasty = 1062502
-	religion = sunni
-	culture = persian
-	father = 261051
-	889.1.1 = {
-		birth = yes
-	}
-	924.1.1 = {
-		death = yes
-	}
-}
-261053 = {
-	name = "Abu Makhlad"
-	dynasty = 1062502 
-	religion = sunni
-	culture = persian
-	father = 261052
-	908.1.1 = {
-		birth = yes
-	}
-	961.1.1 = {
-		death = yes
-	}
-}
-261054 = {
-	name = "Fasanjas"
-	dynasty = 1062503
-	religion = sunni
-	culture = persian
-	854.1.1 = {
-		birth = yes
-	}
-	905.1.1 = {
-		death = yes
-	}
-}
-261055 = {
-	name = "Abu'l-Fadl"
-	dynasty = 1062503
-	religion = sunni
-	culture = persian
-	father = 261054
-	876.1.1 = {
-		birth = yes
-	}
-	953.1.1 = {
-		death = yes
-	}
-}
-261056 = {
-	name = "Abu'l-Faraj"
-	dynasty = 1062503
-	religion = sunni
-	culture = persian
-	father = 261055
-	909.1.1 = {
-		birth = yes
-	}
-	981.1.1 = {
-		death = yes
-	}
-}
-261057 = {
-	name = "Abu Muhammad"
-	dynasty = 1062503
-	religion = sunni
-	culture = persian
-	father = 261055
-	914.1.1 = {
-		birth = yes
-	}
-	968.1.1 = {
-		death = yes
-	}
-}
-261058 = {
-	name = "Muhammad"
-	dynasty = 1062504
-	religion = sunni
-	culture = persian
-	858.1.1 = {
-		birth = yes
-	}
-	905.1.1 = {
-		death = yes
-	}
-}
-261059 = {
-	name = "Abu'l-Hasan"
-	dynasty = 1062504
-	religion = sunni
-	culture = persian
-	father = 261058
-	880.1.1 = {
-		birth = yes
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-261060 = {
-	name = "al-Husayn"
-	dynasty = 1062504
-	religion = sunni
-	culture = persian
-	father = 261059
-	906.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-261069 = {
-	name = "Ibrahim"
-	dynasty = 810
-	religion = sunni
-	culture = persian
-	father = 261016
-	911.1.1 = {
-		birth = yes
-	}
-	948.1.1 = {
-		death = yes
-	}
-}
-261099 = {
-	name = "Fereedun"
-	dynasty = 1062535
-	religion = sunni
-	culture = persian
-	910.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-261100 = {
-	name = "Parviz"
-	dynasty = 1062536
-	religion = sunni
-	culture = persian
-	888.1.1 = {
-		birth = yes
-	}
-	945.1.1 = {
-		death  =yes
-	}
-}
-261101 = {
-	name = "Ardavan"
-	dynasty = 1062537
-	religion = sunni
-	culture = persian
-	901.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-261121 = {
-	name = "Aram"
-	dynasty = 1062552
-	religion = sunni
-	culture = persian
-	900.1.1 = {
-		birth = yes
-	}
-	961.1.1 = {
-		death = yes
-	}
-}
-261131 = {
-	name = "Javeed"
-	dynasty = 1062561
-	religion = sunni
-	culture = persian
-	908.1.1 = {
-		birth = yes
-	}
-	941.1.1 = {
-		death = yes
-	}
-}
-1059701 = {
-	name="Reza" #Historical unnamed son of  Vandad
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=160297
-	782.1.1={
-		birth=yes
-	}
-	824.1.1={
-		death=yes
-	}
-}
-
-1059702 = {
-	name="Vinda-Umid" #Historical uncle of Mazyar
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059701
-	800.1.1={
-		birth=yes
-	}
-	826.1.1={
-		death=yes
-	}
-}
-
-1059703 = {
-	name="Gurdzad" #Possible historical member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059702
-	824.1.1={
-		birth=yes
-	}
-	867.1.1={
-		death=yes
-	}
-}
-
-1059704 = {
-	name="Baduspan" #Historical member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059703
-	846.1.1={
-		birth=yes
-	}
-	910.1.1={
-		death=yes
-	}
-}
-
-1059705 = {
-	name="Shahriyar" #Historical member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059704
-	trait=sympathy_islam
-	880.1.1={
-		birth=yes
-	}
-	917.1.1={
-		death=yes
-	}
-}
-
-1059706 = {
-	name="Muhammad" # Historical member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059705
-	901.1.1={
-		birth=yes
-	}
-	936.1.1={
-		add_claim=c_daylam # historical claim
-	}
-	960.1.1={
-		death=yes # unknown 
-	}
-}
-
-1059707 = {
-	name="Vandad" # Fictional member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059706
-	930.1.1={
-		birth=yes
-	}
-	1000.1.1={
-		death=yes 
-	}
-}
-
-1059708 = {
-	name="Qarin" # Fictional member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059707
-	960.1.1={
-		birth=yes
-	}
-	1020.1.1={
-		death=yes
-	}
-}
-
-1059709 = {
-	name="Shahriyar" # Fictional member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059708
-	990.1.1={
-		birth=yes
-	}
-	1050.1.1={
-		death=yes
-	}
-}
-
-1059710 = {
-	name="Mazyar" # Fictional member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059709
-	1020.1.1={
-		birth=yes
-	}
-	1070.1.1={
-		death=yes
-	}
-}
-
-1059711 = {
-	name="Balash" # Fictional member of Karen dynasty
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059710
-	1050.1.1={
-		birth=yes
-	}
-	1105.1.1={
-		death=yes
-	}
-}
-
-1059712 = {
-	name="Amir" # Last known ruler of house Karen
-	dynasty=7511
-	religion="zoroastrian"
-	culture="persian"
-	father=1059710
-	1090.1.1={
-		birth=yes
-	}
-	1130.1.1={
-		death=yes
-	}
-}
-
-1059713 = { 
-	name="Quhyar" # Historical
-	dynasty=7511
-	martial=7
-	religion="zoroastrian"
-	culture="persian"
-	trait="deceitful"
-	trait=sympathy_islam
-	father=160296
-	802.1.1={
-		birth="802.1.1"
-	}
-	839.1.1={
-		death="839.7.7" # Killed by his own soldiers
-	}
-}
-# Ruzbahan
-261339 = {
-	name=Vindad # historical
-	dynasty=1062594
-	religion=shiite
-	secret_religion="zoroastrian"
-	culture=persian
-	900.1.1={
-		birth=yes # maybe
-	}
-	945.1.1={
-		death=yes # yes
-	}
-}
-
-261340= {
-	name=Ruzbahan # historical
-	dynasty=1062594
-	religion=shiite
-	secret_religion="zoroastrian"
-	culture=persian
-	father=261339
-	trait=proud
-	trait=greedy
-	trait=tough_soldier
-	918.1.1={
-		birth=yes # maybe
-	}
-	958.1.1={
-		death=yes # yes
-	}
-}
-
-261341= {
-	name=Asfar # historical
-	dynasty=1062594
-	religion=shiite
-	culture=persian
-	father=261339
-	920.1.1={
-		birth=yes # maybe
-	}
-	958.1.1={
-		death=yes # maybe
-	}
-}
-261342= {
-	name=Bullaka # historical
-	dynasty=1062594
-	religion=zoroastrian
-	culture=persian
-	father=261339
-	trait=sympathy_zoroastrianism
-	922.1.1={
-		birth=yes # maybe
-	}
-	958.1.1={
-		death=yes # maybe
+	940.12.1 = {
+		death = {
+			death_reason=death_battle
+			killer=1230603 #Ahmad b. Mohtaj Chaghani
+		}
 	}
 }

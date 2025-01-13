@@ -1,35 +1,31 @@
+# -*- ck2.history.provinces -*-
+
+# 453 - Szekezfehervar #Csongrád
+
 # County Title
 title = c_szekezfehervar
+
 # Settlements
-max_settlements = 5
-b_szekezfehervar = tribal
+max_settlements = 4
+
+b_csongrad = tribal
+#b_szeged = city
+#b_opusztaszer = temple
+#b_kecskemet = city
+
 # Misc
-culture = slovieni
-religion = slavic_pagan
-################################################################################
+culture = avar
+religion = tengri_pagan
+
 # History
-################################################################################
-800.1.1 = { b_szekezfehervar = castle b_kaposvar = city b_csurgo = temple } 
-856.1.1 = { culture = slovieni religion = catholic } 
-895.1.1 = { remove_settlement = b_kaposvar b_szekezfehervar = tribal } 
-930.1.1 = { culture = hungarian religion = tengri_pagan } 
-950.1.1 = { 
-    religion = catholic
-    b_szekezfehervar = castle
-    b_kaposvar = city
-    b_nagyatad = castle
+895.1.1 = { culture = old_hungarian }
+1000.1.1 = { b_csongrad = castle }
+1025.1.1 = {
+	religion = catholic
+	culture = hungarian
 }
+1050.1.1 = { b_szeged = city }
+1150.1.1 = { b_opusztaszer = temple }
+1239.1.1 = { culture = cuman }
 
-################################################################################
-# 463 - Szekezfehervar
-################################################################################
 
-################################################################################
-# b_csurgo = temple
-# b_kaposvar = city
-# b_szigetvar = castle
-# b_barcs = castle
-# b_marcali = castle
-# b_nagyatad = castle
-# b_lengyeltoti = castle
-################################################################################

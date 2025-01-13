@@ -1,30 +1,34 @@
+# -*- ck2.history.provinces -*-
+
+## 513 - Birlad
+
 # County Title
 title = c_birlad
+
 # Settlements
-max_settlements = 5
-b_barlad = tribal
+max_settlements = 4
+
+b_barladmoldavia  = tribal
+#b_galati = city
+#b_putna = temple
+#b_adjud = castle
+#b_ceatea_craciuna = castle
+
 # Misc
 culture = romanian
-religion = slavic_pagan
-terrain = farmlands
-################################################################################
+religion = orthodox
+
 # History
-################################################################################
-892.1.1 = { culture = romanian } 
-900.1.1 = { religion = orthodox } 
-################################################################################
-# 513 - Birlad
-################################################################################
-
-################################################################################
-# b_vaslui = city
-# b_husi = temple # Slavic Pagan Holy site
-################################################################################
-
-################################################################################
-# b_galati = castle
-# b_tecuci = castle
-# b_braila = city
-# b_buzau = castle
-# b_ramnicusarat = castle
-################################################################################
+927.1.1 = {
+	culture = pecheneg
+	religion = tengri_pagan
+}
+1125.1.1 = {
+	culture = romanian
+	religion = orthodox
+}
+1280.1.1 = {
+	b_barladmoldavia  = castle
+	b_galati = city
+	b_putna = temple
+} 

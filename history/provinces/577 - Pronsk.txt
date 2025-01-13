@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 577 - Pronsk
 
 # County Title
@@ -6,32 +8,23 @@ title = c_pronsk
 # Settlements
 max_settlements = 4
 
-b_pronsk = tribal	#1186
+b_skopin = tribal
+#b_pronsk = city
+#b_elets = castle
 
-#b_skopin		#XIIth
-#b_likharevskoye_gorodishch	#XIIth
-#b_mikhaylov	#1551
-#b_pavelets
-#b_oktyabrsky
-#b_gryaznoye
+#b_ryazhsk = city
+#b_dankov = castle
 
+
+
+# Misc
 culture = mordvin
 religion = finnish_pagan
-terrain = plains
 
 # History
-633.1.1 = {
-	culture = meshchera
-}
-867.1.1 = {
-	culture = russian
-	religion = slavic_pagan
-}
-988.1.1 = {
-	religion = orthodox
-}
-1186.1.1 = {
-	b_pronsk = castle
-	b_skopin = temple
-	b_likharevskoye_gorodishch = city
-}
+1025.1.1 = { b_skopin = castle
+b_pronsk = city
+b_elets = castle }
+1130.1.1 = { culture = russian }
+1130.1.1 = { religion = orthodox }
+

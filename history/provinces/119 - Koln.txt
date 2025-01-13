@@ -4,28 +4,26 @@
 title = c_koln
 
 # Settlements
-max_settlements = 5
-b_koln = castle
-b_dietz = city
-b_mark = temple
-b_brauweiler = temple
+max_settlements = 6
 
-#b_bonn = castle
-#b_saffenburg = castle
-#b_hochstaden = castle
+b_koln = temple
+b_neuss = city 
+b_hochstaden = castle
 
+#b_neuenahr = castle 
+#b_brauweiler = temple 
+#b_remagen = city 
+
+#b_saffenburg = castle 
 
 # Misc
-culture = german
+culture = franconian
 religion = catholic
-terrain = farmlands
-# History
-633.1.1 = {
-	culture = old_frankish
-}
-860.1.1 = { culture = frankish }
-769.1.1 = {
-	build_wonder = wonder_cologne_cathedral
-	set_wonder_stage = 1
-}
 
+# History
+1028.1.1= { b_brauweiler = temple }
+1170.1.1 = { culture = german }
+1221.1.1= { b_remagen = city }
+1225.1.1= { b_neuenahr = castle }
+1288.6.5 = { capital = b_brauweiler }
+1288.6.5 = { b_koln = city }

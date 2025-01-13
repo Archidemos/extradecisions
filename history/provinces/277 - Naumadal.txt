@@ -1,33 +1,21 @@
+# -*- ck2.history.provinces -*-
+
 # 277 - Naumadal
 
 # County Title
 title = c_naumadal
 
 # Settlements
-max_settlements = 3
-b_lade = tribal
+max_settlements = 1
 
-#b_tinghaugen = city
-#b_logtun = temple
-#b_levanger = castle
-#b_hegra = city
-#b_leksvik = castle
-#b_halsstein = castle
+b_fosnes = tribal # Fólgsnnes
 
 # Misc
 culture = norse
 religion = norse_pagan
-terrain = mountain
 
 # History
-800.1.1 = {
-	b_lade = tb_shipyard_1
-}
-1000.1.1 = {
-	b_lade = castle
-	b_lade = ca_shipyard_1
-}
-1066.1.1 = {
-	culture = norwegian
-	religion = catholic
-}
+1030.1.1 = { b_fosnes = castle } #Fat Olav
+1031.1.1 = { religion = catholic } # Pushing Christianization of Tröndelag back
+1035.1.1 = { culture = norwegian } 
+

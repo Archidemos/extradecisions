@@ -1,43 +1,44 @@
+# -*- ck2.history.provinces -*-
+
 # 450 - Sopron
 
 # County Title
 title = c_sopron
 
 # Settlements
-max_settlements = 4
-b_sopron = tribal
+max_settlements = 5
 
-#b_csorna = city
-#b_gyor = temple
-#b_borsmonostor = castle
-#b_csepreg = castle
-#b_kapuvar = castle
-#b_kismarton = city
-#b_nagymarton = castle
+b_ikervar = tribal
+b_sopron = city
+b_vasvar = city
+#b_koszeg = temple
+#b_kapuvar = city
+#b_nemetujvar = castle
+#b_csorna = temple
+#b_szarvko = temple
+#b_lekahungary = city
+#b_lanzser = city
+#b_kabold = city
+#b_frakno = castle
+#b_ruszt = castle
+#b_karako = castle 
+#b_rohonc = temple
+#b_monyorokerek = temple
+
 
 # Misc
-culture = slovieni
-religion = slavic_pagan
+culture = carantanian
+religion = catholic 
 
 # History
+950.1.1 = { 
+	culture = old_hungarian 
+	religion = tengri_pagan 
+}
+1005.1.1 = {
+	b_ikervar = castle
+	religion = catholic
+	culture = hungarian
+}
 
-797.1.1 = {
-	religion = catholic
-	
-	b_sopron = castle
-	b_csorna = city
-	b_gyor = temple
-}
-895.1.1 = {
-	remove_settlement = b_csorna
-	b_sopron = tribal
-}
-930.1.1 = { 
-	culture = hungarian 
-	religion = tengri_pagan
-}
-950.1.1 = {
-	religion = catholic
-	b_sopron = castle
-	b_csorna = city
-}
+

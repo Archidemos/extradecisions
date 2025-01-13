@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 69 - Bedford
 
 # County Title
@@ -5,24 +7,24 @@ title = c_bedford
 
 # Settlements
 max_settlements = 4
-b_bedford = castle
 
-b_hertford = city
-b_st_albans = temple
-#b_berkhamsted = castle
+b_bedford = castle
+b_ampthill = city
+#b_flitwick = castle
 #b_luton = castle
-#b_dunstable = castle
-#b_ashridge = castle
-#b_watford = castle
+#b_great_barford = castle
+#b_gannock = castle
+#b_dunstable = temple
+#b_woburn = temple
+#b_leighton = city
+#b_westoning = city
 
 # Misc
 culture = saxon
 religion = catholic
 
 # History
-769.1.1 = {
-	b_berkhamsted = castle
-}
+
 867.1.1 = { 
 	b_bedford = ca_keep_1
 	b_bedford = ca_training_grounds_1
@@ -32,5 +34,8 @@ religion = catholic
 	b_bedford = ca_militia_barracks_1
 	b_bedford = ca_barracks_1
 }
-
+880.1.1 = { culture = norse } # Danes settle down
+880.1.1 = { religion = norse_pagan } # Danes settle down
+900.1.1 = { religion = catholic } # Danes starts converting relatively quickly
+916.1.7 = { culture = anglonorse } # Thurketel leaves for France
 1100.11.11 = { culture = english }

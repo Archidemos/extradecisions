@@ -1,28 +1,32 @@
+# -*- ck2.history.provinces -*-
+
 # 748 - Laodikeia
 
 # County Title
 title = c_laodikeia
 
 # Settlements
-max_settlements = 4
+max_settlements = 5
 
-b_laodikeia = castle
-b_flaviupolis = city
-b_rhoas = temple
-
-#b_hieropolis = castle
-#b_gordes = castle
-#b_kona = castle
+b_chonai = castle
+b_laodikeia = city
+b_kibyra = city
+b_tabai = temple #Modern City of Tavas
+b_antioch_on_the_meander = city #Ruined, nearby city of Kuyucak used for Turks
+#b_stauropolis = castle #Modern Geyre
+#b_attouda = temple
+#b_harpasa = castle
 
 # Misc
 culture = greek
 religion = orthodox
 
 # History
-740.1.1 = { religion = orthodox } # iconoclast
-#843.1.1 = { religion = orthodox }
 
-1187.1.1 = { b_kona = castle }
-
-1390.1.1 = { culture = turkish }
-1390.1.1 = { religion = sunni }
+1185.1.1 = { remove_settlement = b_kibyra }
+1185.1.1 = { b_stauropolis = castle }
+1205.1.1 = { culture = turkmen }
+1205.1.1 = { religion = sunni }
+1250.1.1 = { remove_settlement = b_antioch_on_the_meander } #Seems to have been ruined during Mongol Campaigns in Anatolia
+1250.1.1 = { b_attouda = city } #Denizli, replaces Antioch on the Meander
+1256.1.1 = { culture = turkish }

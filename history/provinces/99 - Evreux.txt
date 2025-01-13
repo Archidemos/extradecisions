@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 99 - Evreux
 
 # County Title
@@ -5,57 +7,43 @@ title = c_evreux
 
 # Settlements
 max_settlements = 5
+
+
 b_evreux = castle
-b_alencon = city
-b_lisieux = temple 
-#b_argentan = castle
-#b_honfleur = city
-#b_falaise = castle
-#b_sees = temple
+b_lisieux = temple
+b_ivry = castle
+b_honfleur = city
+#b_conchesenouches = castle
+#b_donjondechambois = castle
+#b_tourdesarchives = castle
+#b_chateaudestourelles = castle
+#b_pontleveque = city
+#b_verneuil = temple
 
 # Misc
-culture = old_frankish
+culture = frankish
 religion = catholic
-terrain = farmlands
-# History
-790.1.1 = { culture = frankish }
-911.1.1 = { # Viking takeover
-	#remove_settlement = b_alencon
-	#remove_settlement = b_lisieux
-	b_argentan = castle
-	#b_alencon = city
-	#b_lisieux = temple
 
+# History
+911.1.1 = { # Viking takeover
 	b_evreux = ca_keep_1
-	b_evreux = ca_training_grounds_1
-	b_evreux = ca_stable_1
 	b_evreux = ca_wall_1
 	b_evreux = ca_wall_2
-	b_evreux = ca_militia_barracks_1
+	b_evreux = ca_training_grounds_1
 	b_evreux = ca_barracks_1
 	b_evreux = ca_town_1
-	
-	b_argentan = ca_keep_1
-	b_argentan = ca_training_grounds_1
-	b_argentan = ca_stable_1
-	b_argentan = ca_wall_1
-	b_argentan = ca_wall_2
-	b_argentan = ca_militia_barracks_1
-	b_argentan = ca_barracks_1
-	b_argentan = ca_town_1
-	
-	b_alencon = ct_port_1
+    b_ivry = ca_keep_1
+	b_ivry = ca_wall_1
+	b_ivry = ca_wall_2
+	b_ivry = ca_training_grounds_1
+	b_ivry = ca_stable_1
+	b_ivry = ca_barracks_1
+	b_ivry = ca_town_1
+	b_honfleur = ct_wall_1
+	b_honfleur = ct_wall_2
+	b_honfleur = ct_port_1
+	b_honfleur = ct_port_2
+	b_honfleur = ct_port_3
 }
-
-936.1.1 = {
-	culture = norman
-}
-
-1066.1.1 = {
-	b_alencon = ct_wall_1
-	b_alencon = ct_wall_2
-	b_alencon = ct_port_2
-	b_alencon = ct_port_3
-}
-
+960.1.1 = { culture = norman }
 1100.11.11 = { culture = frankish }

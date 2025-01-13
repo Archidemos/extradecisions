@@ -1,32 +1,27 @@
-# 569 - Vyazma
+# -*- ck2.history.provinces -*-
+
+# 569 - Rzhev (Vyazma)
 
 # County Title
 title = c_vyazma
 
 # Settlements
 max_settlements = 3
-
-b_vyazma = tribal	#1230
-
-#b_yelnya = city	#1150
-#b_dorogobyzh = castle
-#b_ignatkovo = castle
-#b_tesnoye = castle
-#b_safonovo = city
-#b_mokhnatka = castle
+b_rzhev = tribal
+#b_vyazma = city
+b_verigino = temple #Formin
+#b_sychyovka = city
+#b_oscen = castle
 
 # Misc
-culture = ilmenian
+culture = russian
 religion = slavic_pagan
 
 # History
-867.1.1 = {
-	culture = russian
-}
-988.1.1 = {
-	religion = orthodox
-}
-1150.1.1 = {
-	b_vyazma = castle
-	b_yelnya = city
-}
+1040.1.1 = {culture = lithuanian}
+1040.1.1 = {religion = baltic_pagan}
+1148.1.1 = {culture = russian
+religion = orthodox}
+1148.1.1 = { b_rzhev = castle }
+1200.1.1 = { b_vyazma = city }
+

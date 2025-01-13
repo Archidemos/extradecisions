@@ -1,32 +1,34 @@
+# -*- ck2.history.provinces -*-
+
 # 574 - Rostov
 
 # County Title
 title = c_rostov
 
 # Settlements
-max_settlements = 4
+max_settlements = 5
 
-b_sarskoyegorodishche = tribal		#800
+b_sarskoyegorodishche = tribal
+b_rostov = city
+#b_spasoyakovlevsky = temple
+#b_petrovskoye = city
+#b_nerekhta = castle
+#b_nekrasovskoye = temple
+#b_gavrilovyam = city
 
-#b_rostov = city		#862
-#b_spasoyakovlevsky = temple		#XIVth
-
-#b_lvy
-#b_yepikharka
-#b_rezanka
-#b_kondakovo
-
-culture = mordvin
+# Misc
+culture = mari
 religion = finnish_pagan
-terrain = farmlands
 
 # History
-988.1.1 = {
+1009.1.1 = {
 	culture = russian
 	religion = orthodox
-	b_sarskoyegorodishche = castle
-	b_rostov = city
 }
-1150.1.1 = {
-	b_spasoyakovlevsky = temple
+1009.1.1 = {
+b_sarskoyegorodishche = castle
+b_spasoyakovlevsky = temple
 }
+1337.1.1 = { b_petrovskoye = city }
+
+

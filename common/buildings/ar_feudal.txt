@@ -675,7 +675,7 @@ castle = {
 		gold_cost = 200
 		build_time = 365
 		
-		levy_size = 0.1
+		levy_size = 0.025
 		light_infantry = 45
 		heavy_infantry = 30
 		local_tax_modifier = 0.025
@@ -702,7 +702,7 @@ castle = {
 		prerequisites = { ca_wall_q_2 ca_town_3 }
 		upgrades_from = castle_smith_1
 		
-		levy_size = 0.1
+		levy_size = 0.05
 		light_infantry = 55
 		heavy_infantry = 30
 		local_tax_modifier = 0.025
@@ -729,7 +729,7 @@ castle = {
 		prerequisites = { ca_wall_q_2 ca_town_4 }
 		upgrades_from = castle_smith_2
 		
-		levy_size = 0.2
+		levy_size = 0.1
 		light_infantry = 65
 		heavy_infantry = 40
 		local_tax_modifier = 0.025
@@ -948,7 +948,7 @@ castle = {
 		gold_cost = 150
 		build_time = 365
 		
-		levy_size = 0.05
+		levy_size = 0.015
 		light_infantry = 50
 		light_cavalry = 40
 		
@@ -974,7 +974,7 @@ castle = {
 		
 		upgrades_from = mercenary_guild_1
 		
-		levy_size = 0.1
+		levy_size = 0.025
 		light_infantry = 55
 		light_cavalry = 40
 		
@@ -1000,7 +1000,7 @@ castle = {
 
 		upgrades_from = mercenary_guild_2
 		
-		levy_size = 0.15
+		levy_size = 0.05
 		light_infantry = 65
 		light_cavalry = 50
 		
@@ -1288,7 +1288,7 @@ castle = {
 		gold_cost = 450
 		build_time = 547
 		
-		levy_size = 0.15
+		levy_size = 0.05
 		disease_defence = -0.0025
 		tax_income = 3.5
 		
@@ -1309,7 +1309,7 @@ castle = {
 
 		upgrades_from = feudal_district_1
 		
-		levy_size = 0.15
+		levy_size = 0.1
 		disease_defence = -0.0025
 		tax_income = 4.5
 		
@@ -1331,7 +1331,7 @@ castle = {
 
 		upgrades_from = feudal_district_2
 		
-		levy_size = 0.25
+		levy_size = 0.15
 		disease_defence = -0.0025
 		tax_income = 5.5
 		
@@ -1532,7 +1532,7 @@ castle = {
 		prerequisites = { feudal_district_2 mercenary_guild_2 }
 		upgrades_from = castle_headquarters_1
 		
-		levy_size = 0.35
+		levy_size = 0.10
 		light_infantry = 160
 		heavy_infantry = 90
 		military_techpoints = 0.1
@@ -1558,7 +1558,7 @@ castle = {
 		prerequisites = { feudal_district_3 mercenary_guild_3 }
 		upgrades_from = castle_headquarters_2
 		
-		levy_size = 0.45
+		levy_size = 0.15
 		light_infantry = 170
 		heavy_infantry = 100
 		military_techpoints = 0.1
@@ -1584,7 +1584,7 @@ castle = {
 		prerequisites = { feudal_district_4 mercenary_guild_4 }
 		upgrades_from = castle_headquarters_3
 		
-		levy_size = 0.55
+		levy_size = 0.20
 		light_infantry = 180
 		heavy_infantry = 110
 		military_techpoints = 0.1
@@ -2521,17 +2521,17 @@ castle = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
-				ROOT = { province = c_innsbruck }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -2564,16 +2564,17 @@ castle = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -2603,10 +2604,10 @@ castle = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_1
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
@@ -2616,6 +2617,8 @@ castle = {
 				ROOT = { province = c_salamanca }
 				ROOT = { province = c_molina }
 				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -2643,16 +2646,21 @@ castle = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_2
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
 				ROOT = { province = c_aoudaghost }
 				ROOT = { province = c_kano }
 				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -2684,13 +2692,13 @@ castle = {
 			OR = {
 				has_building = eu_copper_mine_1
 				ROOT = { province = c_vastmanland }
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -2729,13 +2737,14 @@ castle = {
 		potential = {
 			OR = {
 				has_building = eu_copper_mine_1
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_vastmanland }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -2781,7 +2790,7 @@ castle = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -2817,7 +2826,7 @@ castle = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -2918,24 +2927,24 @@ castle = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -2973,24 +2982,24 @@ castle = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -3169,45 +3178,45 @@ castle = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -3216,7 +3225,7 @@ castle = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -3256,45 +3265,45 @@ castle = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -3303,7 +3312,7 @@ castle = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -3522,17 +3531,17 @@ temple = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
-				ROOT = { province = c_innsbruck }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -3565,16 +3574,17 @@ temple = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -3604,10 +3614,10 @@ temple = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_1
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
@@ -3617,6 +3627,8 @@ temple = {
 				ROOT = { province = c_salamanca }
 				ROOT = { province = c_molina }
 				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -3644,16 +3656,21 @@ temple = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_2
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
 				ROOT = { province = c_aoudaghost }
 				ROOT = { province = c_kano }
 				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -3685,13 +3702,13 @@ temple = {
 			OR = {
 				has_building = eu_copper_mine_1
 				ROOT = { province = c_vastmanland }
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -3730,13 +3747,14 @@ temple = {
 		potential = {
 			OR = {
 				has_building = eu_copper_mine_1
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_vastmanland }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -3782,7 +3800,7 @@ temple = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -3818,7 +3836,7 @@ temple = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -3919,24 +3937,24 @@ temple = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -3974,24 +3992,24 @@ temple = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -4170,45 +4188,45 @@ temple = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -4217,7 +4235,7 @@ temple = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -4257,45 +4275,45 @@ temple = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -4304,7 +4322,7 @@ temple = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -4345,17 +4363,17 @@ city = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
-				ROOT = { province = c_innsbruck }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -4388,16 +4406,17 @@ city = {
 				ROOT = { province = c_la_mancha }
 				ROOT = { province = c_plzen }
 				ROOT = { province = c_nitra }
-				ROOT = { province = c_sakmara }
+				ROOT = { province = c_bulgar }
 				ROOT = { province = c_aksu }
 				ROOT = { province = c_medapata }
-				ROOT = { province = c_tudgha }
+				ROOT = { province = c_sous }
 				ROOT = { province = c_bambuk }
 				ROOT = { province = c_bure }
 				ROOT = { province = c_mali }
 				ROOT = { province = c_massawa }
 				ROOT = { province = c_damot }
 				ROOT = { province = c_asosa }
+				ROOT = { province = c_tirol }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -4427,10 +4446,10 @@ city = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_1
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
@@ -4440,6 +4459,8 @@ city = {
 				ROOT = { province = c_salamanca }
 				ROOT = { province = c_molina }
 				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -4467,16 +4488,21 @@ city = {
 		potential = {
 			OR = {
 				has_building = eu_silver_mine_2
-				ROOT = { province = c_akroinon }
-				ROOT = { province = c_bilino_polje }
+				ROOT = { province = c_ikonion }
+				ROOT = { province = c_vrhbosna }
 				ROOT = { province = c_baden }
-				ROOT = { province = c_tirol }
+				ROOT = { province = c_salzburg }
 				ROOT = { province = c_luneburg }
 				ROOT = { province = c_olomouc }
 				ROOT = { province = c_timbuktu }
 				ROOT = { province = c_aoudaghost }
 				ROOT = { province = c_kano }
 				ROOT = { province = c_katsina }
+				ROOT = { province = c_salamanca }
+				ROOT = { province = c_molina }
+				ROOT = { province = c_plasencia }
+				ROOT = { province = c_calatrava }
+				ROOT = { province = c_almansa }
 			}
 			FROMFROM = { is_capital = yes }
 		}
@@ -4508,13 +4534,13 @@ city = {
 			OR = {
 				has_building = eu_copper_mine_1
 				ROOT = { province = c_vastmanland }
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -4553,13 +4579,14 @@ city = {
 		potential = {
 			OR = {
 				has_building = eu_copper_mine_1
-				ROOT = { province = c_akroinon }
+				ROOT = { province = c_vastmanland }
+				ROOT = { province = c_kaisereia }
 				ROOT = { province = c_cagliari }
 				ROOT = { province = c_berg }
 				ROOT = { province = c_gemer }
-				ROOT = { province = c_craiova }
-				ROOT = { province = c_kastamon }
-				ROOT = { province = c_mesopotamia }
+				ROOT = { province = c_severin }
+				ROOT = { province = c_amastris }
+				ROOT = { province = c_manzikert }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_muscat }
 				ROOT = { province = c_mohadavasaka }
@@ -4605,7 +4632,7 @@ city = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -4641,7 +4668,7 @@ city = {
 				ROOT = { province = c_arques }
 				ROOT = { province = c_plauen }
 				ROOT = { province = c_breisgau }
-				ROOT = { province = c_upper_silesia }
+				ROOT = { province = c_wroclaw }
 				ROOT = { province = c_piombino }
 			}
 			FROMFROM = { is_capital = yes }
@@ -4743,24 +4770,24 @@ city = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -4798,24 +4825,24 @@ city = {
 				has_building = eu_paper_mills_1
 				ROOT = { province = c_lyon }
 				ROOT = { province = c_sens }
-				ROOT = { province = c_saargau }
+				ROOT = { province = c_julich }
 				ROOT = { province = c_mainz }
-				ROOT = { province = c_frankfurt }
+				ROOT = { province = c_nassau }
 				ROOT = { province = c_nurnberg }
 				ROOT = { province = c_treviso }
 				ROOT = { province = c_padova }
 				ROOT = { province = c_ancona }
 				ROOT = { province = c_roma }
 				ROOT = { province = c_genoa }
-				ROOT = { province = c_chieti }
+				ROOT = { province = c_manopello }
 				ROOT = { province = c_valencia }
 				ROOT = { province = c_amisos }
-				ROOT = { province = c_akhmim }
+				ROOT = { province = c_itfih }
 				ROOT = { province = c_kerman }
 				ROOT = { province = c_yazd }
 				ROOT = { province = c_esfahan }
-				ROOT = { province = c_herat }
-				ROOT = { province = c_samarkand }
+				ROOT = { province = c_farah }
+				ROOT = { province = c_samarqand }
 				ROOT = { province = c_kondana }
 				ROOT = { province = c_naldurg }
 				ROOT = { province = c_jaunpur }
@@ -4994,45 +5021,45 @@ city = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -5041,7 +5068,7 @@ city = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }
@@ -5081,45 +5108,45 @@ city = {
 				ROOT = { province = c_york }
 				ROOT = { province = c_rennes }
 				ROOT = { province = c_penthievre }
-				ROOT = { province = c_caen }
+				ROOT = { province = c_arques }
 				ROOT = { province = c_evreux }
 				ROOT = { province = c_montpellier }
 				ROOT = { province = c_venaissin }
 				ROOT = { province = c_toledo }
 				ROOT = { province = c_fes }
-				ROOT = { province = c_meknes }
+				ROOT = { province = c_sijilmasa }
 				ROOT = { province = c_tunis }
 				ROOT = { province = c_tripolitana }
 				ROOT = { province = c_leptis_magna }
 				ROOT = { province = c_cairo }
 				ROOT = { province = c_antiocheia }
 				ROOT = { province = c_medina }
-				ROOT = { province = c_jeddah }
+				ROOT = { province = c_yanbu }
 				ROOT = { province = c_baghdad }
 				ROOT = { province = c_melitene }
 				ROOT = { province = c_ankyra }
-				ROOT = { province = c_claudiopolis }
+				ROOT = { province = c_dorylaion }
 				ROOT = { province = c_chalkidike }
 				ROOT = { province = c_thessalonike }
 				ROOT = { province = c_istria }
 				ROOT = { province = c_krain }
-				ROOT = { province = c_pettau }
+				ROOT = { province = c_celje }
 				ROOT = { province = c_belgrade }
 				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_sacz }
-				ROOT = { province = c_lubelska }
+				ROOT = { province = c_sandomierskie }
 				ROOT = { province = c_brandenburg }
 				ROOT = { province = c_lubeck }
 				ROOT = { province = c_leiningen }
 				ROOT = { province = c_thuringen }
 				ROOT = { province = c_furstenberg }
-				ROOT = { province = c_ulm }
+				ROOT = { province = c_teck }
 				ROOT = { province = c_wurttemberg }
 				ROOT = { province = c_bologna }
 				ROOT = { province = c_lucca }
 				ROOT = { province = c_lombardia }
 				ROOT = { province = c_brescia }
-				ROOT = { province = c_como }
+				ROOT = { province = c_valassina }
 				ROOT = { province = c_geneve }
 				ROOT = { province = c_savoie }
 				ROOT = { province = c_aosta }
@@ -5128,7 +5155,7 @@ city = {
 				ROOT = { province = c_imeretia }
 				ROOT = { province = c_oromieh }
 				ROOT = { province = c_mosul }
-				ROOT = { province = c_overijssel }
+				ROOT = { province = c_oversticht }
 				ROOT = { province = c_westfriesland }
 				ROOT = { province = c_holland }
 				ROOT = { province = c_sticht }

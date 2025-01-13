@@ -1,23 +1,37 @@
+# -*- ck2.history.provinces -*-
+
+# 537 - Bereg # Somogy
+
 # County Title
 title = c_bereg
+
 # Settlements
 max_settlements = 3
-b_beregszasz = tribal
-# Misc
-culture = croatian # White Croats
-religion = slavic_pagan
-856.1.1 = { culture = slovieni }
-################################################################################
-# History
-################################################################################
-950.1.1 = { religion = catholic } 
-950.1.1 = { culture = hungarian } 
-1000.1.1 = { b_beregszasz = castle b_munkacs = city b_perecseny = temple } 
-################################################################################
-# 537 - Bereg
-################################################################################
 
-################################################################################
-# b_munkacs = city
-# b_perecseny = temple
-################################################################################
+b_somogyvar = tribal
+#b_zselicszentjakab = city
+
+#b_csurgo = temple
+#b_babocsa = castle
+#b_siofok = castle
+#b_kaposvar = castle
+#b_szigetvar = castle
+#b_fonyod = castle
+
+# Misc
+culture = croatian
+religion = catholic
+
+# History
+950.1.1 = { 
+	culture = old_hungarian 
+	religion = tengri_pagan 
+}
+1025.1.1 = { 
+	b_somogyvar = castle
+	b_zselicszentjakab = city
+	religion = catholic
+	culture = hungarian
+}
+
+

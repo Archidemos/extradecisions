@@ -5,38 +5,28 @@ title = c_praha
 
 # Settlements
 max_settlements = 7
-b_praha = tribal
+b_levyhradec= castle
+b_praha = castle
+b_stare_mesto = city
+b_brevnov = temple
 
-#b_stare_mesto = city
-#b_vysehrad = castle
-#b_brevnov = temple
-#b_kourim = castle
-#b_kolin = city
-#b_sazava = temple
-#b_zbraslav = temple
-#b_kuttenberg = city
+#b_boleslav = castle
+#b_slany = city 
+#b_sternbergprague = castle 
+#b_sazava = temple 
 
 # Misc
 culture = bohemian
 religion = slavic_pagan
-terrain = farmlands
+
 # History
-769.1.1 = {
-	build_wonder = wonder_prauge_castle
-	set_wonder_stage = 1
-}
-769.1.1 = {
-	b_praha = castle
-	b_stare_mesto = city
-	b_brevnov = temple
-	b_vysehrad = castle
-	b_sazava = castle
-	b_kolin = city
-}
+769.1.1 = { build_wonder = wonder_prauge_castle set_wonder_stage = 1 }
 883.1.1 = { religion = catholic }
-1261.1.1 = { b_kolin = city }
-1291.1.1 = { 
-	b_zbraslav = temple
-	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-	remove_settlement = b_sazava 
-	}
+883.1.1 = { capital = b_praha }
+900.1.1 = {
+      remove_settlement = b_levyhradec
+      }
+910.1.1 = { b_boleslav = castle }
+1032.1.1 = { b_sazava = temple }
+1241.1.1 = { b_sternbergprague = castle }
+1305.1.1 = { b_slany = city }

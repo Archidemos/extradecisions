@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 32 - Middlesex
 
 # County Title
@@ -5,32 +7,24 @@ title = c_middlesex
 
 # Settlements
 max_settlements = 6
+
 b_westminster = castle
 b_london = city
 b_st_pauls = temple
-#b_tottenham = castle
-#b_fulham = castle
-#b_staines = castle
-#b_harrow = castle
+#b_tower_of_london = castle
+#b_isleworth = castle
+#b_baynardscastle = castle
+b_fullham = temple
+#b_kensington = castle
 #b_chelsea = castle
 
 # Misc
 culture = saxon
 religion = catholic
-terrain = farmlands
+
 
 # History
-769.1.1 = {
-	b_st_pauls = temple
-	b_tottenham = castle
-}
-769.1.1 = {
-	build_wonder = wonder_london_bridge
-	set_wonder_stage = 1
-}
-930.1.1 = {
-	b_staines = city
-}
+769.1.1 = { build_wonder = wonder_london_bridge set_wonder_stage = 1 }
+1078.1.1 = { b_tower_of_london = castle }
 1100.11.11 = { culture = english }
-1187.1.1 = { b_fulham = castle } 
-1290.1.1 = { trade_post = b_vorrade }
+

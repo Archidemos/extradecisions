@@ -9,41 +9,53 @@ trans_saharan_trade_post_trigger = {
 			OR = {
 				province_id = 811	# Trade post
 				province_id = 840	# Trade post
-				province_id = 843	# Trade post
+				province_id = 918	# Trade post
 				province_id = 911	# Cloth production
 				province_id = 912	# Salt mine
 				province_id = 916	# Salt mine
 				province_id = 926	# Gold mine
-				province_id = 1739	# Trade post
-				province_id = 1746	# Trade post
-				province_id = 1761	# Gold mine
-				province_id = 849
+				province_id = 1329	# Trade post
+				province_id = 1328	# Trade post
+				province_id = 1405	# Trade post
+				province_id = 913
+				province_id = 914
+				province_id = 802
+				province_id = 1230
+				province_id = 1490
+				province_id = 841
+				province_id = 843
 				province_id = 831
 				province_id = 817
-				province_id = 816
-				province_id = 883
-				province_id = 1343
-				province_id = 874
+				province_id = 1384
+				
 			}
 		}
 	}
 }
-
-trans_saharan_trade_post_market_trigger = {
+tstp_trigger = {
 	OR = {
-		province_id = 811
-		province_id = 840
+		province_id = 811	# Trade post
+		province_id = 840	# Trade post
+		province_id = 918	# Trade post
+		province_id = 911	# Cloth production
+		province_id = 1329	# Trade post
+		province_id = 1328	# Trade post
+		province_id = 1405	# Trade post
+		province_id = 913
+		province_id = 914
+		province_id = 802
+		province_id = 1230
+		province_id = 1490
+		province_id = 841
 		province_id = 843
-		province_id = 911
-		province_id = 1739
-		province_id = 1746
+		province_id = 831
+		province_id = 817
 	}
 }
-
 trans_saharan_trade_post_gold_mine_trigger = {
 	OR = {
 		province_id = 926
-		province_id = 1761
+		province_id = 1384
 	}
 }
 
@@ -59,5 +71,13 @@ has_trans_saharan_gold_mine = {
 		trade_post_has_building = tr_gold_mine_1
 		trade_post_has_building = tr_gold_mine_2
 		trade_post_has_building = tr_gold_mine_3
+	}
+}
+
+has_trans_saharan_silver_mine = {
+	OR = {
+		trade_post_has_building = tr_silver_mine_1
+		trade_post_has_building = tr_silver_mine_2
+		trade_post_has_building = tr_silver_mine_3
 	}
 }

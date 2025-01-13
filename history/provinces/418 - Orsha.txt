@@ -1,34 +1,25 @@
+# -*- ck2.history.provinces -*-
+
 # 418 - Orsha
 
 # County Title
 title = c_orsha
 
 # Settlements
-max_settlements = 3
+max_settlements = 4
+b_krasnyy = tribal
+#b_kopys = castle
+#b_orsha = city
 
-b_orsha = tribal	#1067
 
-#b_talachyn		#1433
-#b_dubrowna		#XIVth
-#b_baran_orsha		#1518
-#b_shklow		#1535
-#b_krugale		#unsure
-#b_zheleznyaki	#unsure
+#b_horki = city
 
 # Misc
-culture = ilmenian
+culture = russian
 religion = slavic_pagan
-terrain = farmlands
+
 # History
-867.1.1 = {
-	culture = russian
-}
-988.1.1 = {
-	religion = orthodox
-}
-
-1150.1.1 = {
-	b_orsha = castle
-	b_talachyn = city
-}
-
+995.1.1 = {religion = orthodox }
+995.1.1 = {b_krasnyy = castle
+b_kopys = castle
+b_orsha = city }

@@ -93,21 +93,7 @@
 	}
 }
 
-242401 = {
-	name="Duk" # Fictional
-	dynasty=1053201
-	female = yes
-	
-	culture = zhangzhung
-	religion=bon
-	
-	745.1.1={
-		birth=yes
-	}
-	794.1.1={
-		death=yes
-	}
-}
+#242401 removed
 
 242402 = {
 	name="Zutse" # Fictional
@@ -229,40 +215,48 @@
 		add_spouse = 252004
 	}
 	754.1.1={
-		#effect={ROOT={add_consort=c_242405}}
-		effect={c_247342={add_friend=ROOT}}
+		effect = {
+			#add_consort = 242405
+			add_friend = 247342
+		}
 	}
 	764.1.1={
-		effect={ROOT={add_consort=c_252003}}
-		effect={c_247106={add_friend=ROOT}}
-		effect={c_252002={add_friend=ROOT}}
+		effect = {
+			add_consort = 252003
+			add_friend = 247106
+			add_friend = 252002
+		}
 	}
 	768.1.1={
-		effect={ROOT={add_consort=c_247107}}
+		effect = {
+			add_consort = 247107
+		}
 	}
 	769.1.1={
-		effect = {add_rival = 247105}
-		effect = {add_lover = 242405}
-		effect = {add_friend = 242405}
-		add_claim = k_guge
-		add_claim = c_tsaparang
-		add_claim = c_kyunglung
-		add_claim = c_purang
-		add_claim = c_gegyai
-		add_claim = c_zhongba
-		add_claim = c_gar
-		add_claim = c_leh
-		add_claim = c_diskit
-		add_claim = c_pangong
-		add_claim = c_shigatse
-		add_claim = c_lhatse
-		add_claim = c_sakya
-		add_claim = c_mangyul
-		add_claim = c_mustang
-		add_claim = d_purang
-		add_claim = d_ngari
-		add_claim = d_ladakh
-		add_claim = d_shigatse
+		effect = {
+			add_rival = 247105
+			add_lover = 242405
+			add_friend = 242405
+		}
+		#add_claim = k_guge
+		#add_claim = c_tsaparang
+		#add_claim = c_kyunglung
+		#add_claim = c_purang
+		#add_claim = c_gegyai
+		#add_claim = c_zhongba
+		#add_claim = c_gar
+		#add_claim = c_leh
+		#add_claim = c_diskit
+		#add_claim = c_pangong
+		#add_claim = c_shigatse
+		#add_claim = c_lhatse
+		#add_claim = c_sakya
+		#add_claim = c_mangyul
+		#add_claim = c_mustang
+		#add_claim = d_purang
+		#add_claim = d_ngari
+		#add_claim = d_ladakh
+		#add_claim = d_shigatse
 	}
 	770.1.1={
 		death=yes
@@ -446,18 +440,5 @@
 	}
 	783.1.1={
 		death=yes
-	}
-}
-
-261089 = {
-	name = "Lokpai"
-	dynasty = 1062526
-	religion = bon
-	culture = zhangzhung
-	889.1.1 = {
-		birth = yes
-	}
-	948.1.1 = {
-		death = yes
 	}
 }

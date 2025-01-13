@@ -1,4 +1,6 @@
-# 409 - Ladoga
+# -*- ck2.history.provinces -*-
+
+# 409 - Bezhetsky Verh # Ladoga
 
 # County Title
 title = c_bezhetsky_verh
@@ -6,27 +8,22 @@ title = c_bezhetsky_verh
 # Settlements
 max_settlements = 3
 
-b_ladoga = tribal	#753	#"Laatokka" in Finnish
+b_staryaladoga = tribal
+#b_tikhvin = temple
+#b_pikalyovo = city
+#b_kirishi = city
 
-#b_lyuban	#1499
-#b_tosno	#1500
-#b_vyritsa	#1903
-#b_kirovsk	#1929
-#b_naziya	#1933
-#b_novinka	#unsure
-
-culture = ugricbaltic
+# Misc
+culture = karelian
 religion = finnish_pagan
-terrain = farmlands
 
 # History
-862.1.1 = {
-	culture = russian
-	religion = slavic_pagan
-	b_ladoga = tb_hillfort_1
-	b_ladoga = tb_market_town_1
+867.1.1 = {
+	b_staryaladoga = tb_shipyard_1
 }
-988.1.1 = {
-	religion = orthodox
-	b_ladoga = castle
-}
+990.1.1 = {religion = orthodox 
+culture = russian}
+990.1.1 = {
+b_staryaladoga = castle
+b_tikhvin = temple
+b_pikalyovo = city }

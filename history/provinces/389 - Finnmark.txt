@@ -1,27 +1,28 @@
-# 389 - Finnmark
+# -*- ck2.history.provinces -*-
+
+# 389 - Finnmark - Rauðeyja
 
 # County Title
 title = c_finnmark
 
 # Settlements
-max_settlements = 1
-b_varghoeya = tribal
+max_settlements = 4
+b_bjarkoey = tribal
+#b_trondenes = city
+#b_steigar = city
+#b_vaagan = city
 
-#b_vardohus = temple
-#b_ostervagen = city
-#b_malangen = castle
-#b_hammerfest = castle
-#b_piselvnes = castle
-#b_karsloy = castle
-#b_tromso = city
-
-culture = lappish
-religion = finnish_pagan
+culture = norse
+religion = norse_pagan
 
 # History
-1066.1.1 = {
-	culture = norwegian 
-	religion = norse_pagan
-	b_varghoeya = tb_shipyard_1
+1000.1.1 = {
+	b_bjarkoey = castle 
+	b_trondenes = city
+	b_steigar = city
+	b_vaagan = city
+	b_bjarkoey = ca_shipyard_1
 }
-1080.1.1 = { religion = catholic }
+1031.1.1 = { religion = catholic }
+1035.1.1 = { culture = norwegian }
+

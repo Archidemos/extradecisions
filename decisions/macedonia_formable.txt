@@ -1,147 +1,147 @@
-decisions = {
-	form_macedonia = {
-		only_playable = yes
-		only_independent = yes
-		ai_check_interval = 24
-		is_high_prio = yes
-		
-		potential = {
-			culture = greek
-			capital_scope = {
-				region = world_europe_south_east
-			}
-			NOT = { has_global_flag = macedonia_formed }
-			NOT = { has_landed_title = e_byzantium }
-			NOT = { has_landed_title = k_byzantium }
-		}
-		
-		allow = {
-			culture = greek
-			OR = {
-				religion = orthodox
-				religion = hellenic_pagan
-			}
-			NOT = { tier = EMPEROR }
-			completely_controls = k_byzantium
-			NOT = { has_landed_title = k_byzantium }
-			any_playable_ruler = { has_landed_title = e_byzantium }
-			prestige = 500
-		}
-		
-		effect = {
-			prestige = 1000
-			set_global_flag = macedonia_formed
-			activate_title = { title = k_macedonia status = yes }
-			primary_title = {
-				k_macedonia = {
-					grant_title = ROOT
-					copy_title_laws = PREV
-					copy_title_history = PREV
-				}
-			}
-			k_macedonia = { holder_scope = { set_defacto_liege = e_byzantium } }
-			
-			ROOT = {
-				any_demesne_title = {
-					limit = {
-						NOT = { title = k_macedonia }
-					}
-					unsafe_destroy_landed_title = THIS
-				}
-			}
-			custom_tooltip = {
-				text = macedon_new_retinue
-			}
-			custom_tooltip = {
-				text = macedon_move_capital
-				hidden_tooltip = {
-					ROOT = {
-						c_thessalonike = {
-							grant_title = PREV
-							usurp_title = PREV
-							ROOT = { capital = PREV }
-						}
-						
-						c_aiginio = {
-							grant_title = PREV
-							usurp_title = PREV
-						}
-						
-						c_seres = {
-							grant_title = PREV
-							usurp_title = PREV
-						}
-						
-						c_chalkidike = {
-							grant_title = PREV
-							usurp_title = PREV
-						}
-					}
-				}
-			}
-			
-			custom_tooltip = {
-				text = macedon_move_dejure
-				hidden_tooltip = {
-					
-					d_ohrid = { de_jure_liege = k_macedonia }
-					d_thessalonika = { de_jure_liege = k_macedonia }
-					d_olympos = { de_jure_liege = k_macedonia }
-					d_athens = { de_jure_liege = k_macedonia }
-					d_achaia = { de_jure_liege = k_macedonia }
-					d_cephalonia = { de_jure_liege = k_macedonia }
-					d_strymon = { de_jure_liege = k_macedonia }
-					
-					if = {
-						limit = { is_title_active = e_byzantium }
-						k_macedonia = { de_jure_liege = e_byzantium }
-					}
-					any_player = { narrative_event = { id = MAKED.100 } }
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	ignite_greek_revolt = {
-		only_playable = yes
-		only_independent = yes
-		ai_check_interval = 12
-		is_high_prio = yes
-		
-		potential = {
-			has_landed_title = k_macedonia
-			NOT = { has_global_flag = ignited_greek_revolt }
-		}
-		
-		allow = {
-			liege = { primary_title = { title = e_byzantium } }
-			culture = greek
-			OR = {
-				religion = orthodox
-				religion = hellenic_pagan
-			}
-			NOT = { tier = EMPEROR }
-			NOT = { has_landed_title = k_byzantium }
-			any_playable_ruler = { has_landed_title = e_byzantium }
-		}
-		
-		effect = {
-			set_character_flag = is_greek_revolter
-			set_global_flag = ignited_greek_revolt
-			random_character = {
-				limit = { has_landed_title = e_byzantium }
-				set_character_flag = is_byz_emperor
-			}			
-			custom_tooltip = {
-				text = macedon_revolt_trigger
-				narrative_event = { id = MAKED.101 days = 3 }
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
+#decisions = {
+#	form_macedonia = {
+#		only_playable = yes
+#		only_independent = yes
+#		ai_check_interval = 24
+#		is_high_prio = yes
+#		
+#		potential = {
+#			culture = greek
+#			capital_scope = {
+#				region = world_europe_south_east
+#			}
+#			NOT = { has_global_flag = macedonia_formed }
+#			NOT = { has_landed_title = e_byzantium }
+#			NOT = { has_landed_title = k_byzantium }
+#		}
+#		
+#		allow = {
+#			culture = greek
+#			OR = {
+#				religion = orthodox
+#				religion = hellenic_pagan
+#			}
+#			NOT = { tier = EMPEROR }
+#			completely_controls = k_byzantium
+#			NOT = { has_landed_title = k_byzantium }
+#			any_playable_ruler = { has_landed_title = e_byzantium }
+#			prestige = 500
+#		}
+#		
+#		effect = {
+#			prestige = 1000
+#			set_global_flag = macedonia_formed
+#			activate_title = { title = k_macedonia status = yes }
+#			primary_title = {
+#				k_macedonia = {
+#					grant_title = ROOT
+#					copy_title_laws = PREV
+#					copy_title_history = PREV
+#				}
+#			}
+#			k_macedonia = { holder_scope = { set_defacto_liege = e_byzantium } }
+#			
+#			ROOT = {
+#				any_demesne_title = {
+#					limit = {
+#						NOT = { title = k_macedonia }
+#					}
+#					unsafe_destroy_landed_title = THIS
+#				}
+#			}
+#			custom_tooltip = {
+#				text = macedon_new_retinue
+#			}
+#			custom_tooltip = {
+#				text = macedon_move_capital
+#				hidden_tooltip = {
+#					ROOT = {
+#						c_thessalonike = {
+#							grant_title = PREV
+#							usurp_title = PREV
+#							ROOT = { capital = PREV }
+#						}
+#						
+#						c_aiginio = {
+#							grant_title = PREV
+#							usurp_title = PREV
+#						}
+#						
+#						c_seres = {
+#							grant_title = PREV
+#							usurp_title = PREV
+#						}
+#						
+#						c_chalkidike = {
+#							grant_title = PREV
+#							usurp_title = PREV
+#						}
+#					}
+#				}
+#			}
+#			
+#			custom_tooltip = {
+#				text = macedon_move_dejure
+#				hidden_tooltip = {
+#					
+#					d_ohrid = { de_jure_liege = k_macedonia }
+#					d_thessalonika = { de_jure_liege = k_macedonia }
+#					d_olympos = { de_jure_liege = k_macedonia }
+#					d_athens = { de_jure_liege = k_macedonia }
+#					d_achaia = { de_jure_liege = k_macedonia }
+#					d_cephalonia = { de_jure_liege = k_macedonia }
+#					d_strymon = { de_jure_liege = k_macedonia }
+#					
+#					if = {
+#						limit = { is_title_active = e_byzantium }
+#						k_macedonia = { de_jure_liege = e_byzantium }
+#					}
+#					any_player = { narrative_event = { id = MAKED.100 } }
+#				}
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	
+#	ignite_greek_revolt = {
+#		only_playable = yes
+#		only_independent = yes
+#		ai_check_interval = 12
+#		is_high_prio = yes
+#		
+#		potential = {
+#			has_landed_title = k_macedonia
+#			NOT = { has_global_flag = ignited_greek_revolt }
+#		}
+#		
+#		allow = {
+#			liege = { primary_title = { title = e_byzantium } }
+#			culture = greek
+#			OR = {
+#				religion = orthodox
+#				religion = hellenic_pagan
+#			}
+#			NOT = { tier = EMPEROR }
+#			NOT = { has_landed_title = k_byzantium }
+#			any_playable_ruler = { has_landed_title = e_byzantium }
+#		}
+#		
+#		effect = {
+#			set_character_flag = is_greek_revolter
+#			set_global_flag = ignited_greek_revolt
+#			random_character = {
+#				limit = { has_landed_title = e_byzantium }
+#				set_character_flag = is_byz_emperor
+#			}			
+#			custom_tooltip = {
+#				text = macedon_revolt_trigger
+#				narrative_event = { id = MAKED.101 days = 3 }
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#}

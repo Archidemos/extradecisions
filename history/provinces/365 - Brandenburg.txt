@@ -4,33 +4,30 @@
 title = c_brandenburg
 
 # Settlements
-max_settlements = 6
-b_brandenburg = tribal
-b_belzig = temple
+max_settlements = 5
 
-#b_juterborg = city
-#b_berlin = city
-b_ruppin = castle
-b_oranienburg = castle
-#b_muncheberg = castle
+b_copenick = tribal
+b_brenna = city
+
+#b_brandenburg = castle
+#b_lehnin = temple
+#b_berlin = city 
+
+#b_prenzlau = city 
+#b_quitzow = castle # from (now) Quitzöbel
+
 
 # Misc
+
 culture = pommeranian
 religion = slavic_pagan
 
 # History
-769.1.1 = {
-	build_wonder = wonder_brandenburg_gate
-	set_wonder_stage = 1
-}
-
-800.1.1 = {
-	b_brandenburg = castle
-	b_juterborg = city
-}
-1060.1.1={
-	religion = catholic
-}
-1187.1.1 = { b_oranienburg = castle } 
-1200.1.1 = { culture = german } 
-1200.1.1 = { religion = catholic } 
+769.1.1 = { build_wonder = wonder_brandenburg_gate set_wonder_stage = 1 }
+1128.12.4 = { b_copenick = castle }
+1128.12.4 = { b_brandenburg = castle }
+1157.1.1 = { culture = low_german }
+1157.1.1 = { religion = catholic } 
+1157.1.1 = { capital = b_brandenburg }
+1180.1.1 = { b_lehnin = temple } 
+1251.1.1 = { b_berlin = city } 

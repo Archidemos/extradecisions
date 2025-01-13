@@ -5,20 +5,25 @@ title = c_nurnberg
 
 # Settlements
 max_settlements = 5
-b_nurnberg = castle
-b_furth = city
-b_ellwangen = temple
 
-#b_kulmbach = castle
-#b_hohenburg = castle
-#b_nordlingen = castle
-#b_eichstatt = castle
-#b_erlangen = castle
+b_nurnbergerburg = castle
+
+#b_nordenberg = castle 
+#b_nurnberg = city
+#b_heilsbronn = temple
+#b_windsheim = city
+
+#b_cadolzburg = castle 
+#b_schwabach = city 
 
 # Misc
-culture = german
+culture = franconian
 religion = catholic
 
 # History
-## Nuremburg was Kaiserburg, inofficial capial
-1187.1.1 = { b_hohenburg = castle }
+## Nuremburg was a Kaiserburg, inofficial capital
+1050.1.1 = { b_nurnberg = city }
+1132.1.1 = { b_heilsbronn = temple }
+1156.1.1 = { b_nordenberg = castle }
+1170.1.1 = { culture = german }
+1248.1.1 = { b_windsheim = city }

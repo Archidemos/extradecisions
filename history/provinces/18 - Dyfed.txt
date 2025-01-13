@@ -1,30 +1,38 @@
+# -*- ck2.history.provinces -*-
+
 # 18 - Dyfed
 
 # County Title
 title = c_dyfed
 
 # Settlements
-max_settlements = 5
-b_pembroke = tribal
-#b_st_davids = temple
+max_settlements = 4
+b_penfro = tribal
+#b_tyddewi = temple
+b_hwlffordd = city
+#b_llanismel = castle
 
-#b_haverford = city
-#b_narberth = castle
-#b_llanstadwell = temple
-#b_tenby = castle
-#b_penycwm = city
 
 # Misc
 culture = welsh
-religion = celtic_christian
-terrain = farmlands
+religion = catholic
+terrain = hills
 
 # History
-760.1.1 = {
-	b_pembroke = castle
-	b_st_davids = temple
 
-	b_haverford = city
-	b_narberth = castle
+920.1.1 = {
+	b_penfro = castle
+	b_tyddewi = temple
 }
-1060.1.1 = { religion = catholic }
+#1066.1.1 = {
+#	b_penfro = tb_hillfort_1
+#	b_penfro = tb_hillfort_2
+#	b_penfro = tb_training_grounds_1
+#	b_penfro = tb_war_camp_1
+#}
+1087.1.1 = {
+	remove_settlement = b_tyddewi
+}
+1197.4.28={
+	b_tyddewi = temple
+}

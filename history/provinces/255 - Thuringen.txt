@@ -1,26 +1,27 @@
+# 255 - Thüringen
+
 # County Title
 title = c_thuringen
-# Settlements
-max_settlements = 4
-b_erfurt = tribal
-# b_eichsfeld = castle
-# b_reuss = castle
-# b_salzungen = castle
-# b_schmalkalden = castle
-b_henneberg = castle
-# Misc
-culture = german
-religion = catholic
-################################################################################
-# History
-################################################################################
-633.1.1 = { 
-    b_erfurt = tribal
-    remove_settlement = b_arnstadt
-    remove_settlement = b_henneberg
-    remove_settlement = b_muhlhausen
-    religion = norse_pagan
-}
 
-760.1.1 = { b_erfurt = castle b_arnstadt = city b_muhlhausen = temple } 
-769.1.1 = { religion = catholic }
+# Settlements
+max_settlements = 5
+
+b_wartburg = castle
+b_gleichen = castle
+
+#b_muhlhausen = city 
+#b_reinhardsbrunn = temple 
+#b_eisenach = city 
+
+#b_salza = castle 
+#b_heiligenstadt = city 
+
+# Misc
+culture = thuringian
+religion = catholic
+
+# History
+1085.1.1 = { b_reinhardsbrunn = temple }
+1135.1.1 = { b_muhlhausen = city }
+1170.1.1 = { culture = german }
+1246.1.1 = { b_eisenach = city }

@@ -1,26 +1,29 @@
+# -*- ck2.history.provinces -*-
+
+# 471 - Ochrid
+
 # County Title
 title = c_ochrid
-# Settlements
-max_settlements = 4
-b_debar = castle
-b_ohrid = temple
-b_svetigrad = city
-# Misc
-culture = serbian
-religion = orthodox
-633.1.1 = { culture = serbian religion = slavic_pagan }
-867.1.1 = { religion = orthodox }
-################################################################################
-# History
-################################################################################
-930.1.1 = { culture = bulgarian } 
-1066.1.1 = { culture = serbian } 
-################################################################################
-# 471 - Ochrid
-################################################################################
 
-################################################################################
-# b_bitola = temple
-# b_tomot = castle
-# b_krusevo = castle
-################################################################################
+# Settlements
+max_settlements = 5
+
+b_ohrid = castle
+b_prespa = castle
+b_bitola = temple
+#b_kastoria = city
+#b_edessa_voden = city
+#b_resen = city
+
+
+# Misc
+culture = bulgarian
+religion = orthodox
+
+# History
+
+1084.1.1 = { b_ohrid = temple }
+1107.1.1 = { b_ohrid = castle }
+
+
+

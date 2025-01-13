@@ -1,465 +1,601 @@
+# -*- ck2.buildings -*-
+
  # Triggers are in Province scope. The From Scope contains the settlement holder (character)
  # start trigger is in title scope.
 
 trade_post = {
 
-	tr_port_1 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_port_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 100
-		build_time = 182
-		ai_creation_factor = 95
-		
-		tradevalue = 10
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_port_2 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_port_2_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 150
-		build_time = 274
-		upgrades_from = tr_port_1
-		ai_creation_factor = 94
-		
-		tradevalue = 15
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_port_3 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_port_3_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 200
-		build_time = 365
-		upgrades_from = tr_port_2
-		ai_creation_factor = 93
-		
-		tradevalue = 20
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_enclave_1 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_enclave_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 100
-		build_time = 182
-		ai_creation_factor = 90
-		
-		tax_income = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_enclave_2 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_enclave_2_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 150
-		build_time = 274
-		upgrades_from = tr_enclave_1
-		ai_creation_factor = 89
-		
-		tax_income = 1.5
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_enclave_3 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_enclave_3_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 200
-		build_time = 365
-		upgrades_from = tr_enclave_2
-		ai_creation_factor = 88
-		
-		scouting = yes
-		tax_income = 2
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_garrison_1 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_garrison_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 100
-		build_time = 182
-		ai_creation_factor = 91
-		
-		retinuesize = 20
-		garrison_size = 0.5
-		fort_level = 3
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_garrison_2 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_garrison_2_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 150
-		build_time = 274
-		upgrades_from = tr_garrison_1
-		ai_creation_factor = 90
-		
-		retinuesize = 30
-		garrison_size = 0.5
-		fort_level = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_garrison_3 = {
-		potential = {
-			port = yes
-			FROM = {
-				is_patrician = yes
-			}
-		}
-		desc = tr_garrison_3_desc
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		gold_cost = 200
-		build_time = 365
-		upgrades_from = tr_garrison_2
-		ai_creation_factor = 89
-		
-		retinuesize = 50
-		garrison_size = 0.5
-		fort_level = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_silk_road_1 = {	# Silk Road Trading Post
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_1_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-		}
-		gold_cost = 200
-		build_time = 150
-		ai_creation_factor = 95
-		add_number_to_name = no
-		
-		trade_route_wealth = 1	# Affects total value of trade route
-		tradevalue = 30
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_silk_road_2 = {	# Silk Road Market
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_2_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 2
-		}
-		gold_cost = 400
-		build_time = 300
-		upgrades_from = tr_silk_road_1
-		ai_creation_factor = 95
-		add_number_to_name = no
-		
-		trade_route_wealth = 2	# Affects total value of trade route
-		tradevalue = 50
-		fort_level = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_silk_road_3 = {	# Major Silk Road City
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_3_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 4
-		}
-		gold_cost = 800
-		build_time = 600
-		upgrades_from = tr_silk_road_2
-		ai_creation_factor = 95
-		add_number_to_name = no
-		
-		trade_route_wealth = 4	# Affects total value of trade route
-		tradevalue = 70
-		fort_level = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	trade_offices_1 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_office_1_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-		}
-		gold_cost = 200
-		build_time = 600
-		ai_creation_factor = 95
-		add_number_to_name = no
-		
-		tech_growth_modifier = 0.25
-		monthly_character_prestige = 0.25
-		retinuesize = 50
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	trade_offices_2 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_office_2_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 2
-		}
-		gold_cost = 600
-		build_time = 600
-		upgrades_from = trade_offices_1
-		ai_creation_factor = 94
-		add_number_to_name = no
-		
-		monthly_character_prestige = 0.5
-		retinuesize = 100
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	trade_offices_3 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_office_3_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 4
-		}
-		gold_cost = 1200
-		build_time = 600
-		upgrades_from = trade_offices_2
-		ai_creation_factor = 93
-		add_number_to_name = no
-		
-		monthly_character_prestige = 1.75
-		retinuesize = 150
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	mercenary_garrison_1 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_garrison_1_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-		}
-		gold_cost = 200
-		build_time = 600
-		ai_creation_factor = 90
-		add_number_to_name = no
-		
-		garrison_size = 3
-		tradevalue = 5
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	mercenary_garrison_2 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_garrison_2_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 2
-		}
-		gold_cost = 400
-		build_time = 600
-		upgrades_from = mercenary_garrison_1
-		ai_creation_factor = 89
-		add_number_to_name = no
-		
-		garrison_size = 3
-		fort_level = 1
-		tradevalue = 10
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	mercenary_garrison_3 = {
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-		}
-		desc = tr_silk_road_garrison_3_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 4
-		}
-		gold_cost = 600
-		build_time = 600
-		upgrades_from = mercenary_garrison_2
-		ai_creation_factor = 88
-		add_number_to_name = no
-		
-		garrison_size = 3
-		fort_level = 1
-		tradevalue = 15
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	radhanite_quarter_1 = {
-		desc = radhanite_quarter_1_desc
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-			FROM = {
-				OR = { 
-					culture_group = israelite
-					religion_group = jewish_group
-					culture = khazar
-                }
-            }
-		}
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-		}
-		gold_cost = 150
-		build_time = 400
-		garrison_size = 0.1
-		tech_growth_modifier = 0.05
-		military_techpoints = 0.01
-		economy_techpoints = 0.01
-		culture_techpoints = 0.01
-		tradevalue = 10
+    tr_port_1 = {
+        desc = tr_port_1_desc
+        trigger = { TECH_TRADE_PRACTICES = 1 }
+        gold_cost = 35
+        build_time = 182
+        ai_creation_factor = 80
+
+		multiplicative_trade_post_income_modifier = 0.15
+		tradevalue = -10
+		trade_route_wealth = -0.5
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_port_2 = {
+        desc = tr_port_2_desc
+        trigger = { TECH_TRADE_PRACTICES = 2 }
+        gold_cost = 55
+        build_time = 234
+        upgrades_from = tr_port_1
+        ai_creation_factor = 79
+
+        multiplicative_trade_post_income_modifier = 0.2
+		tradevalue = -15
+		trade_route_wealth = -1
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_port_3 = {
+        desc = tr_port_3_desc
+        trigger = { TECH_TRADE_PRACTICES = 4}
+        gold_cost = 100
+        build_time = 300
+        upgrades_from = tr_port_2
+        ai_creation_factor = 78
+
+        multiplicative_trade_post_income_modifier = 0.25
+		trade_route_wealth = -1.5
+		tradevalue = -25
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_enclave_1 = {
+        desc = tr_enclave_1_desc
+        trigger = { TECH_TRADE_PRACTICES = 1 }
+        gold_cost = 45
+        build_time = 282
+        ai_creation_factor = 100
+
+        trade_route_value = 1
 		trade_route_wealth = 0.5
-		add_number_to_name = no
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	radhanite_quarter_2 = {
-		desc = radhanite_quarter_1_desc
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
-			FROM = {
-				OR = { 
-					culture_group = israelite
-					religion_group = jewish_group
-					culture = khazar
-                }
-            }
-		}
-		trigger = {
-			TECH_TRADE_PRACTICES = 3
-		}
-		gold_cost = 250
-		build_time = 600
-		upgrades_from = radhanite_quarter_1
-		
-		garrison_size = 0.2
-		tech_growth_modifier = 0.1
-		military_techpoints = 0.02
-		economy_techpoints = 0.02
-		culture_techpoints = 0.02
-		tradevalue = 20
+        extra_tech_building_start = 0.2
+    }
+
+    tr_enclave_2 = {
+        desc = tr_enclave_2_desc
+        trigger = { TECH_TRADE_PRACTICES = 2 }
+        gold_cost = 150
+        build_time = 374
+        upgrades_from = tr_enclave_1
+        ai_creation_factor = 99
+
+        trade_route_value = 1.5
 		trade_route_wealth = 1
-		add_number_to_name = no
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	radhanite_quarter_3 = {
-		desc = radhanite_quarter_1_desc
-		potential = {
-			trade_route = silk_road
-			silk_road_trade_post_trigger = yes
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_enclave_3 = {
+        desc = tr_enclave_3_desc
+        trigger = { TECH_TRADE_PRACTICES = 4 }
+        gold_cost = 200
+        build_time = 465
+        upgrades_from = tr_enclave_2
+        ai_creation_factor = 98
+
+        scouting = yes
+		trade_route_value = 2
+		trade_route_wealth = 2
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_garrison_1 = {
+        desc = tr_garrison_1_desc
+        trigger = { TECH_TRADE_PRACTICES = 1 }
+        gold_cost = 50
+        build_time = 182
+        ai_creation_factor = 81
+
+        retinuesize = 20
+        garrison_size = 1.5
+        fort_level = 1
+		tradevalue = 5 
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_garrison_2 = {
+        desc = tr_garrison_2_desc
+        trigger = { TECH_TRADE_PRACTICES = 2 }
+        gold_cost = 85
+        build_time = 274
+        upgrades_from = tr_garrison_1
+        ai_creation_factor = 80
+
+        retinuesize = 20
+        garrison_size = 1.75
+        fort_level = 2
+		tradevalue = 10
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_garrison_3 = {
+        desc = tr_garrison_3_desc
+        trigger = { TECH_TRADE_PRACTICES = 3 }
+        gold_cost = 135
+        build_time = 365
+        upgrades_from = tr_garrison_2
+        ai_creation_factor = 79
+
+        retinuesize = 20
+        garrison_size = 2.0
+        fort_level = 3
+		tradevalue = 15
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_silk_road_1 = {    # Silk Road Trading Post
+        potential = {
+            NOR = {
+				province = 326	#Sardinia
+				province = 938	#Balk
+				province = 1581	#Balk2
+				province = 1550	#Kabul
+				province = 1561	#Tunket
+				province = 926	#Africa2
+				province = 1384	#Africa1
+				province = 916	#Taghaza
+				province = 912  #Aoudaghost
+				province = 258	#Luneburg
+			}
+			OR = {
+				AND = {
+					trade_route = Atlantic_trading
+					atlantic_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Ochsenweg
+					ochsenweg_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = ATS_English_Route
+					english_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = trans_saharan_trade_route
+					trans_saharan_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Amber_road
+					amber_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = varangian_route
+					greek_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = volga_route
+					volga_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = German_roads
+					german_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Italian_roads
+					italy_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Iberian_roads
+					iberia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = French_roads
+					french_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = ViaEgnatia
+					via_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Balkan_roads
+					balkan_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Salt_roads
+					salt_trade_post_trigger = yes
+				}
+				AND = {				
+					trade_route = lisboa_port
+					lisboa_port_trigger = yes
+				}
+				AND = {
+					trade_route = dublin_port
+					dublin_port_trigger = yes
+				}
+				AND = {
+					trade_route = Sardinia_post
+					sardinia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = sicily_post
+					sicily_trade_post_trigger = yes
+				}
+			}
+		}
+		
+        desc = tr_silk_road_1_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 1
+        }
+        gold_cost = 75
+        build_time = 150
+        ai_creation_factor = 101
+
+        trade_route_wealth = 1  # Affects total value of trade route
+        tradevalue = 50
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_silk_road_2 = {    # Silk Road Market
+        desc = tr_silk_road_2_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 2
+        }
+        gold_cost = 100
+        build_time = 300
+        upgrades_from = tr_silk_road_1
+        ai_creation_factor = 100
+
+        trade_route_wealth = 1.5  # Affects total value of trade route
+        tradevalue = 75
+        fort_level = 1
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    tr_silk_road_3 = {    # Major Silk Road City
+        desc = tr_silk_road_3_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 4
+        }
+        gold_cost = 150
+        build_time = 600
+        upgrades_from = tr_silk_road_2
+        ai_creation_factor = 99
+
+        trade_route_wealth = 3 # Affects total value of trade route
+        tradevalue = 100
+        fort_level = 1
+        
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+
+    
+    trade_offices_1 = {
+        potential = {
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Ochsenweg
+					ochsenweg_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = ATS_English_Route
+					english_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = trans_saharan_trade_route
+					trans_saharan_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Amber_road
+					amber_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = varangian_route
+					greek_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = volga_route
+					volga_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = German_roads
+					german_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Italian_roads
+					italy_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Iberian_roads
+					iberia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = French_roads
+					french_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = ViaEgnatia
+					via_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Balkan_roads
+					balkan_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Salt_roads
+					salt_trade_post_trigger = yes
+				}
+				AND = {				
+					trade_route = lisboa_port
+					lisboa_port_trigger = yes
+				}
+				AND = {
+					trade_route = dublin_port
+					dublin_port_trigger = yes
+				}
+				AND = {
+					trade_route = Sardinia_post
+					sardinia_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = sicily_post
+					sicily_trade_post_trigger = yes
+				}
+				AND = {
+					trade_route = Atlantic_trading
+					atlantic_trade_post_trigger = yes
+				}
+			}
+        }
+        desc = tr_silk_road_office_1_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 2
+        }
+        gold_cost = 175
+        build_time = 600
+        ai_creation_factor = 6
+        
+        tech_growth_modifier = 0.05
+        monthly_character_prestige = 0.25
+        retinuesize = 20
+		economy_techpoints = 0.01
+		
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+    
+    trade_offices_2 = {
+        desc = tr_silk_road_office_2_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 3
+        }
+        gold_cost = 500
+        build_time = 600
+        upgrades_from = trade_offices_1
+        ai_creation_factor = 5
+        
+        monthly_character_prestige = 0.5
+        retinuesize = 20
+		tech_growth_modifier = 0.1
+		economy_techpoints = 0.01
+        
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+    
+    trade_offices_3 = {
+        desc = tr_silk_road_office_3_desc
+        trigger = {
+            TECH_TRADE_PRACTICES = 4
+        }
+        gold_cost = 1000
+        build_time = 600
+        upgrades_from = trade_offices_2
+        ai_creation_factor = 4
+        
+        monthly_character_prestige = 1.75
+        retinuesize = 20
+		tech_growth_modifier = 0.1
+		economy_techpoints = 0.02
+        
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+    
+    radhanite_quarter_1 = {
+        desc = radhanite_quarter_1_desc
+        potential = {
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+					FROM = {
+						OR = { 
+							culture_group = israelite
+							religion_group = jewish_group
+							culture = khazar
+						}
+					}
+				}
+			}
+			OR = {
+				has_building = radhanite_quarter_1
+				FROM = {
+					NOR = {
+						has_character_modifier = expelled_jewish
+						any_liege = {
+							has_character_modifier = expelled_jewish
+						}
+					}
+				}
+			}
+			
+		}
+		is_active_trigger = {
 			FROM = {
-				OR = { 
-					culture_group = israelite
-					religion_group = jewish_group
-					culture = khazar
-                }
-            }
+				NOR = {
+					has_character_modifier = expelled_jewish
+					any_liege = {
+						has_character_modifier = expelled_jewish
+					}
+				}
+			}
 		}
 		trigger = {
-			TECH_TRADE_PRACTICES = 4
+			TECH_TRADE_PRACTICES = 1
+			FROM = {
+				NOR = {
+					has_character_modifier = expelled_jewish
+					any_liege = {
+						has_character_modifier = expelled_jewish
+					}
+				}
+			}
 		}
-		gold_cost = 350
-		build_time = 800
-		upgrades_from = radhanite_quarter_2
-		
-		garrison_size = 0.3
-		tech_growth_modifier = 0.15
-		military_techpoints = 0.03
-		economy_techpoints = 0.03
-		culture_techpoints = 0.03
-		tradevalue = 40
-		trade_route_wealth = 2
-		add_number_to_name = no
+        gold_cost = 100
+        build_time = 400
+        garrison_size = 0.1
+        tech_growth_modifier = 0.05
+        military_techpoints = 0.01
+        economy_techpoints = 0.01
+        culture_techpoints = 0.01
+        tradevalue = 5
+        trade_route_wealth = 0.5
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+    
+    radhanite_quarter_2 = {
+        desc = radhanite_quarter_1_desc
+        potential = {
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+					FROM = {
+						OR = { 
+							culture_group = israelite
+							religion_group = jewish_group
+							culture = khazar
+						}
+					}
+				}
+				province = 1966
+			}
+			OR = {
+				has_building = radhanite_quarter_1
+				has_building = radhanite_quarter_2
+				FROM = {
+					NOR = {
+						has_character_modifier = expelled_jewish
+						any_liege = {
+							has_character_modifier = expelled_jewish
+						}
+					}
+				}
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				NOR = {
+					has_character_modifier = expelled_jewish
+					any_liege = {
+						has_character_modifier = expelled_jewish
+					}
+				}
+			}
+		}
+        trigger = {
+			TECH_TRADE_PRACTICES = 3
+			FROM = {
+				NOR = {
+					has_character_modifier = expelled_jewish
+					any_liege = {
+						has_character_modifier = expelled_jewish
+					}
+				}
+			}
+		}
+        gold_cost = 170
+        build_time = 600
+        upgrades_from = radhanite_quarter_1
+        
+        garrison_size = 0.2
+        tech_growth_modifier = 0.1
+        military_techpoints = 0.02
+        economy_techpoints = 0.02
+        culture_techpoints = 0.02
+        tradevalue = 10
+        trade_route_wealth = 1
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+    
+    radhanite_quarter_3 = {
+        desc = radhanite_quarter_1_desc
+        potential = {
+			OR = {
+				AND = {
+					trade_route = silk_road
+					silk_road_trade_post_trigger = yes
+					FROM = {
+						OR = { 
+							culture_group = israelite
+							religion_group = jewish_group
+							culture = khazar
+						}
+					}
+				}
+				province = 1966
+			}
+			OR = {
+				has_building = radhanite_quarter_1
+				FROM = {
+					NOR = {
+						has_character_modifier = expelled_jewish
+						any_liege = {
+							has_character_modifier = expelled_jewish
+						}
+					}
+				}
+			}
+			
+		}
+		is_active_trigger = {
+			FROM = {
+				NOR = {
+					has_character_modifier = expelled_jewish
+					any_liege = {
+						has_character_modifier = expelled_jewish
+					}
+				}
+			}
+		}
+        trigger = {
+            TECH_TRADE_PRACTICES = 4
+        }
+        gold_cost = 235
+        build_time = 800
+        upgrades_from = radhanite_quarter_2
+        
+        garrison_size = 0.3
+        tech_growth_modifier = 0.15
+        military_techpoints = 0.03
+        economy_techpoints = 0.03
+        culture_techpoints = 0.03
+        tradevalue = 15
+        trade_route_wealth = 2
+
+        extra_tech_building_start = 10.0 # Never get at start of game
+    }
+	
 }

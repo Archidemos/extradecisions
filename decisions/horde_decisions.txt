@@ -5,13 +5,15 @@ decisions = {
 		
 		potential = {
 			has_landed_title = e_golden_horde
+			NOT = { has_global_flag = gold_formed_russia }
 		}
 		
 		allow = {
-			completely_controls = e_russia		
+			e_golden_horde = { holder_scope = { completely_controls = e_russia } }
 		}
 
 		effect = {
+			set_global_flag = gold_formed_russia
 			create_character = {
 				random_traits = yes
 				religion = tengri_pagan
@@ -525,6 +527,7 @@ decisions = {
 					dynasty = 800
 				}
 			}
+			NOT = { has_global_flag = timurid_reformed }
 		}
 		
 		allow = {
@@ -535,6 +538,7 @@ decisions = {
 		}
 		
 		effect = {
+			set_global_flag = timurid_reformed
 			e_timurids = {
 				grant_title = PREV
 				copy_title_laws = PREV
@@ -611,5 +615,5 @@ decisions = {
 				}
 			}
 		}
-     }
+    }
 }

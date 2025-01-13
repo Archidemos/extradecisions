@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 10 - Kildare
 
 # County Title
@@ -5,28 +7,21 @@ title = c_kildare
 
 # Settlements
 max_settlements = 4
-b_knockaulin = tribal
-#b_kildare = city
-b_st_brigit = temple
 
-#b_athlone = castle
+b_naas = tribal
+b_kildare = city
 #b_maynooth = castle
-#b_rathangan = castle
-#b_clonard = temple
-#b_durrow = castle
+#b_old_leighlin = temple
+
+#b_dunaulin = castle # out of use by the 7th century
 
 # Misc
 culture = irish
 religion = catholic
 
 # History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = irish
-	religion = celtic_christian
-}
-1000.1.1 = {
-	b_knockaulin = castle
-	b_kildare = city
-}
-1337.1.1 = { b_kildare = city } 
+
+#1156.1.1 = { b_naas = castle } 
+1176.1.1 = { b_maynooth = castle } 
+1176.1.1 = { capital = b_maynooth } 
+1176.1.1 = { remove_settlement = b_naas } #?

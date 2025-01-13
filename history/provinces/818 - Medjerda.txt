@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 818 - Medjerda
 
 # County Title
@@ -6,10 +8,15 @@ title = c_medjerda
 # Settlements
 max_settlements = 5
 
-b_medjerda = castle
-b_lekef = city
-b_siliana = temple
+#b_mahdia = castle
+b_sousse = castle
+b_monastir = temple
+b_salakta = city
+#b_akuda = castle
 
+#b_lekef = city
+#b_siliana = temple
+#b_kasserine = city
 #b_sidimubarak = castle
 #b_qaafur = castle
 #b_dougga = castle
@@ -20,9 +27,7 @@ culture = maghreb_arabic
 religion = sunni
 
 # History
-633.1.1={
-	religion=catholic
-}
-760.1.1={
-	religion = sunni
+921.1.1 = {
+	b_mahdia = castle
+	capital = b_mahdia
 }

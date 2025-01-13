@@ -1,36 +1,28 @@
-# 342 - Agrigento
+# -*- ck2.history.provinces -*-
+# 342 - Agrigento # Butera
 
 # County Title
 title = c_agrigento
 
 # Settlements
-max_settlements = 5
-b_caltabellotta = castle
-b_butera = city
-b_agricento = temple
+max_settlements = 6
 
-#b_sanbiagioplatani = castle #San Biagio Platani
-b_gela = castle
-#b_licata = castle
-#b_raffadali = castle
-#b_montallegro = castle
+b_butera = castle
+b_caltabelotta = castle
+b_girgenti = temple
+#b_favara = castle
+#b_caltagirone = city
+b_licata = city
+
+
 
 # Misc
-culture = greek
-religion = orthodox
+culture = maghreb_arabic
+religion = sunni
 terrain = hills
 
 # History
-633.1.1={
-	religion = hellenic_pagan
-}
-860.1.1={
-	religion = orthodox
-}
-874.1.24={ culture = maghreb_arabic religion = sunni }
-935.1.1 = { religion = shiite }
-1065.1.1 = { religion = sunni }
-1102.1.1={ culture = italian religion = catholic }
+960.1.1={ culture = sicilian_arabic }
 1111.1.1 = { trade_post = b_ziani }
-
-1337.1.1 = { remove_settlement = b_agricento }
+1111.1.1={ culture = sicilian }
+1111.1.1={ religion = catholic }

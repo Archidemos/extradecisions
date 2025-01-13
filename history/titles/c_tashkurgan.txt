@@ -1,6 +1,6 @@
 #fictional placeholder dynasty
 590.1.1={
-	liege=0
+	#liege=0
 	holder=248029
 }
 640.1.1={
@@ -15,18 +15,18 @@
 735.1.1={
 	holder=248033
 }
-755.1.1={
-	liege=d_pamir
-}
+#755.1.1={
+#	liege=d_pamir
+#}
 775.1.1={
 	holder=248034
 }
 800.1.1={
 	holder=248037
 }
-840.1.1={
-	liege=0 # Tibetan empire collapses
-}
+#840.1.1={
+#	liege=0 # Tibetan empire collapses
+#}
 850.1.1={
 	holder=248038
 }
@@ -44,6 +44,10 @@
 }
 1006.1.1={
 	holder=248045
+	set_tribute_suzerain = { #approximation
+		who = k_turkestan_east
+		type = permanent
+	}
 }
 1042.1.1={
 	holder=248046
@@ -58,7 +62,8 @@
 	holder=248049
 }
 1137.1.1={
-	liege=k_khiva # turkish invasion
+	clear_tribute_suzerain = k_turkestan_east
+	liege=d_kashgar # turkish invasion
 }
 1141.1.1={
 	liege=0 # Kara-Khitai defeat Kara-Khanids
@@ -75,14 +80,20 @@
 1221.1.1={
 	liege=e_mongol_empire
 }
-1228.1.1={
+1234.2.10={
 	liege=e_chagatai
 }
 1239.1.1={
 	holder=248053
 }
+1267.1.1 = {
+	liege=k_turkestan_east
+}
 1280.1.1={
 	holder=248055 
+}
+1306.1.1 = {
+	liege=e_chagatai
 }
 1310.1.1={
 	holder=248056

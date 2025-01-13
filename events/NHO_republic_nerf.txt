@@ -1,0 +1,142 @@
+###################################
+#
+# NHO republic nerf
+#
+###################################
+
+namespace = NHO_republic_nerf
+
+# North and West European Republics need nerfing
+province_event = {
+	id = NHO_republic_nerf.1
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			kingdom = { title = k_iceland }
+			kingdom = { title = k_norway }
+			kingdom = { title = k_sweden }
+			kingdom = { title = k_finland }
+			kingdom = { title = k_novgorod }
+			kingdom = { title = k_bjarmia }
+			kingdom = { title = k_perm }
+			kingdom = { title = k_novgorod }
+			kingdom = { title = k_ruthenia }
+			kingdom = { title = k_polotsk }
+			kingdom = { title = k_terra }
+			kingdom = { title = k_lithuania }
+			kingdom = { title = k_poland }
+			kingdom = { title = k_pomerania }
+			kingdom = { title = k_denmark }
+			kingdom = { title = k_saxony }
+			kingdom = { title = k_frisia }
+			kingdom = { title = k_lower_lorraine }
+			kingdom = { title = k_brittany }
+			kingdom = { title = k_england }
+			kingdom = { title = k_scotland }
+			kingdom = { title = k_ellan_vannin }
+			kingdom = { title = k_ireland }
+			kingdom = { title = k_ireland_titular }
+			kingdom = { title = k_wales }
+			AND = {
+				kingdom = { title = k_france }
+				NOT = { duchy = { title = d_provence } }
+				NOT = { duchy = { title = d_septimania } }
+				NOT = { duchy = { title = d_barcelona } }
+				NOT = { duchy = { title = d_catalunya_nova } }
+				NOT = { duchy = { title = d_valencia } }
+				NOT = { duchy = { title = d_murcia } }
+				NOT = { duchy = { title = d_granada } }
+				NOT = { duchy = { title = d_sevilla } }
+				NOT = { duchy = { title = d_porto } }
+				NOT = { duchy = { title = d_beira } }
+				NOT = { duchy = { title = d_beja } }
+				NOT = { duchy = { title = d_algarve } }
+				NOT = { duchy = { title = d_ribatejo } }
+			}
+			AND = {
+				kingdom = { title = k_aquitaine }
+				NOT = { duchy = { title = d_provence } }
+				NOT = { duchy = { title = d_septimania } }
+				NOT = { duchy = { title = d_barcelona } }
+				NOT = { duchy = { title = d_catalunya_nova } }
+				NOT = { duchy = { title = d_valencia } }
+				NOT = { duchy = { title = d_murcia } }
+				NOT = { duchy = { title = d_granada } }
+				NOT = { duchy = { title = d_sevilla } }
+				NOT = { duchy = { title = d_porto } }
+				NOT = { duchy = { title = d_beira } }
+				NOT = { duchy = { title = d_beja } }
+				NOT = { duchy = { title = d_algarve } }
+				NOT = { duchy = { title = d_ribatejo } }
+			}
+			AND = {
+				kingdom = { title = k_navarra }
+				NOT = { duchy = { title = d_provence } }
+				NOT = { duchy = { title = d_septimania } }
+				NOT = { duchy = { title = d_barcelona } }
+				NOT = { duchy = { title = d_catalunya_nova } }
+				NOT = { duchy = { title = d_valencia } }
+				NOT = { duchy = { title = d_murcia } }
+				NOT = { duchy = { title = d_granada } }
+				NOT = { duchy = { title = d_sevilla } }
+				NOT = { duchy = { title = d_porto } }
+				NOT = { duchy = { title = d_beira } }
+				NOT = { duchy = { title = d_beja } }
+				NOT = { duchy = { title = d_algarve } }
+				NOT = { duchy = { title = d_ribatejo } }
+			}
+			AND = {
+				kingdom = { title = k_castille }
+				NOT = { duchy = { title = d_provence } }
+				NOT = { duchy = { title = d_septimania } }
+				NOT = { duchy = { title = d_barcelona } }
+				NOT = { duchy = { title = d_catalunya_nova } }
+				NOT = { duchy = { title = d_valencia } }
+				NOT = { duchy = { title = d_murcia } }
+				NOT = { duchy = { title = d_granada } }
+				NOT = { duchy = { title = d_sevilla } }
+				NOT = { duchy = { title = d_porto } }
+				NOT = { duchy = { title = d_beira } }
+				NOT = { duchy = { title = d_beja } }
+				NOT = { duchy = { title = d_algarve } }
+				NOT = { duchy = { title = d_ribatejo } }
+			}
+			AND = {
+				kingdom = { title = k_leon }
+				NOT = { duchy = { title = d_provence } }
+				NOT = { duchy = { title = d_septimania } }
+				NOT = { duchy = { title = d_barcelona } }
+				NOT = { duchy = { title = d_catalunya_nova } }
+				NOT = { duchy = { title = d_valencia } }
+				NOT = { duchy = { title = d_murcia } }
+				NOT = { duchy = { title = d_granada } }
+				NOT = { duchy = { title = d_sevilla } }
+				NOT = { duchy = { title = d_porto } }
+				NOT = { duchy = { title = d_beira } }
+				NOT = { duchy = { title = d_beja } }
+				NOT = { duchy = { title = d_algarve } }
+				NOT = { duchy = { title = d_ribatejo } }
+			}
+		}
+		owner = { government = merchant_republic_government }
+		NOT = {
+			AND = {
+				owner = { government = merchant_republic_government }
+				OR = {
+					owner = { tier = KING }
+					owner = { tier = EMPEROR }
+				}
+			}
+		}
+		NOT = { has_province_modifier = nho_republic_nerf }
+	}
+
+	immediate = {
+		add_province_modifier = {
+			name = nho_republic_nerf
+			years = 25
+		}
+	}
+}
+

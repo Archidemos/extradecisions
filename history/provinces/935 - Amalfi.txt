@@ -1,48 +1,29 @@
-# 935 - Amalfi
+# -*- ck2.history.provinces -*-
+
+# 936 - Amalfi
 
 # County Title
 title = c_amalfi
 
 # Settlements
-max_settlements = 4
-b_sorrento=castle
-b_amalfi=city
-b_ravello=temple
+max_settlements = 5
 
-#b_tramonti
-#b_positano
-#b_castellamare
-#b_capri
-#b_minori
+b_sorrento = castle
+b_amalfi = city
+b_ravello = temple
+#b_sarno = castle
+#b_nocera = castle
 
 # Misc
 culture = greek
 religion = orthodox
-terrain = farmlands
+terrain = mountain
+
 # History
-867.1.1 = { 
-	b_amalfi = ct_wall_1
-	b_amalfi = ct_wall_2
-	b_amalfi = ct_port_1
-	b_amalfi = ct_port_2
-	b_amalfi = ct_marketplace_1
-	b_amalfi = ct_marketplace_2
-	b_amalfi = ct_wall_q_1
-	b_amalfi = ct_barracks_1
-	b_amalfi = ct_training_grounds_1
-	b_amalfi = ct_shipyard_1
-	b_sorrento = ca_shipyard_1
-	b_ravello = tp_shipyard_1
-}
-
-898.1.1 = {
-	culture=lombard
-	religion=catholic
-}
-
-1076.12.13={
-	remove_settlement=b_amalfi
-	b_tramonti=city
-}
-
-1091.12.13 = { culture = italian }
+866.1.1 = { capital = b_amalfi }
+870.1.1 = { capital = b_sorrento }
+1040.1.1 = { b_nocera = castle }
+1066.1.1 = { b_sarno = castle }
+#1137.1.1 = { capital = b_nocera }
+1140.1.1 = { culture = neapolitan }
+1250.1.1 = { religion = catholic }

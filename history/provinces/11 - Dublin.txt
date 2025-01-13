@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 11 - Dublin
 
 # County Title
@@ -5,48 +7,27 @@ title = c_dublin
 
 # Settlements
 max_settlements = 5
-b_ath_cliath = tribal
-#b_dublin = city
-b_mellifont = temple
+
+b_dunleary = tribal
+b_dublin = city
 
 #b_christ_church = temple
-#b_wicklow = city
-#b_clondalkin = castle
+#b_dublin_castle = castle
+#b_clondalkin = temple
 #b_finglas = castle
-#b_mellifont = temple
-#b_trim = castle
 
 # Misc
-culture = irish
-religion = catholic
-terrain = farmlands
-# History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = irish
-	religion = celtic_christian
-}
-850.1.1 = {
-	culture = norse
-	religion = norse_pagan
-}
-1000.1.1 = {
-	b_ath_cliath = castle
-	b_dublin = city
+culture = norsegaelic
+religion = norse_pagan
 
-	b_ath_cliath = ca_keep_1
-	b_ath_cliath = ca_militia_barracks_1
-	b_ath_cliath = ca_wall_1
-	b_ath_cliath = ca_shipyard_1
-	b_dublin = ct_port_1
+# History
+867.1.1 = {
+	b_dunleary = tb_shipyard_1
+} 
+1028.1.1 = { religion = catholic }
+1172.1.1 = { 
+	culture = english
+	b_dunleary = castle
+	b_dunleary = ca_shipyard_1
 }
-1060.1.1 = { religion = catholic }
-1028.1.1 = {
-	remove_settlement = b_mellifont
-	b_christ_church = temple 
-}
-1066.1.1 = { culture = norwegian }
-1126.7.1 = { capital = b_dublin } #Falling back under local Ostman city rule
-1170.7.1 = { capital = b_ath_cliath } #End of direct city indepedence
-1172.1.1 = { culture = english }
-1337.1.1 = { b_trim = castle }
+1337.1.1 = { b_dublin_castle = castle } 

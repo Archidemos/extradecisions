@@ -1,26 +1,30 @@
-# 352 - Bologna
+# -*- ck2.history.provinces -*-
+
+# 352 - Bologna # Romagna
 
 # County Title
 title = c_bologna
 
 # Settlements
-max_settlements = 5
-b_bentivoglio = castle
-b_bologna = city
-#b_faenza = castle
-b_forli = temple
+max_settlements = 6
+b_loiano = castle # corte di Scanello
+b_bologna = temple
+#b_panigo = castle
+b_imola = city
+b_faenza = city
+#b_castel_del_rio = castle
+#b_zerfugnano = castle
 
-#b_castelguelfo = castle
-#b_bagnacavallo = castle
-#b_imola = city
-#b_budno = castle
 
 # Misc
 culture = italian
 religion = catholic
-
+terrain = plains
 # History
-633.1.1 = { culture = roman }
-760.1.1 = { culture = italian }
-1139.1.1 = { capital = b_bologna }
-1139.1.1 = { b_imola = city }
+1000.1.1 = { b_castel_del_rio = castle } 
+1061.1.1 = { b_panigo = castle } 
+1215.1.1= { capital = b_bologna }
+1221.6.13= { capital = b_loiano }
+1248.1.1= { capital = b_bologna }
+1249.1.1= { capital = b_loiano }
+1291.1.1= { capital = b_bologna }

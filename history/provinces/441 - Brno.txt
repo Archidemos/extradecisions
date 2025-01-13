@@ -4,47 +4,30 @@
 title = c_brno
 
 # Settlements
-max_settlements = 4
-b_veligrad = tribal
-#b_mikulcice = city
-b_rajhrad = temple
+max_settlements = 5
 
-#b_brno = castle
-#b_svitavy = castle
-#b_zdar = temple
-#b_pernstejn = castle
-#b_hodonin = city
-#b_boskovice = city
+b_mikulcice = castle 
+b_pohansko = city 
+b_rejhrad = temple 
+b_brno = castle 
+
+#b_zdar = temple 
+#b_mikulov = city 
+#b_pernstejn = castle 
+#b_boskovice = castle  
 
 # Misc
 culture = slovieni
-religion = slavic_pagan
+religion = catholic
 
 # History
-
-842.1.1 = {
-	religion = catholic
-}
-800.1.1 = {
-	b_veligrad = castle
-	b_mikulcice = city
-}
-#Magyar destruction of Great Moravia
 907.1.1 = {
-	b_brno = castle
-	capital = b_brno
-	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-	remove_settlement = b_veligrad 
-	remove_settlement = b_mikulcice 
-}
-1030.1.1 = {
-	b_hodonin = city
-}
-1103.1.1 = {
-	culture = bohemian
-}
-1252.1.1 = {
-	b_zdar = temple
-	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-	remove_settlement = b_rajhrad 
-}
+      remove_settlement = b_mikulcice
+      remove_settlement = b_pohansko
+      remove_settlement = b_rejhrad
+      }
+907.1.1 = { capital = b_brno }
+920.1.1 = { b_zdar = temple }
+930.1.1 = { b_mikulov = city }
+1208.1.1 = { b_pernstejn = castle }	
+1213.1.1 = { b_boskovice = castle }	

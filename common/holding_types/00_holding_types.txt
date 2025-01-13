@@ -17,24 +17,44 @@ trade_post = {
 	trigger = {
 		conditional_tooltip = {
 			trigger = {
-				trade_route = silk_road
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
+				FROM = { is_patrician = yes }
+				trigger_if = {
+					limit = { FROM = { is_merchant_republic = yes } }
+					owner = { top_liege = { has_embargo = FROM } }
+				}
+				trigger_else = {
+					FROM = { liege = { ROOT = { owner = { top_liege = { has_embargo = PREVPREVPREV } } } } }
+				}
+			}
+			trigger_if = {
+				limit = { FROM = { is_merchant_republic = yes } }
+				owner = {
+					show_scope_change = no
+					top_liege = { NOT = { has_embargo = FROM } }
+				}
+			}
+			trigger_else = {
+				owner = {
+					show_scope_change = no
+					top_liege = { NOT = { has_embargo = FROM } }
+				}
+				FROM = {
+					show_scope_change = no
+					liege = {
+						show_scope_change = no
+						ROOT = {
+							show_scope_change = no
+							owner = {
+								show_scope_change = no
+								top_liege = { NOT = { has_embargo = PREVPREVPREV } }
+							}
 						}
 					}
 				}
 			}
-			silk_road_trade_post_trigger = yes
 		}
 		conditional_tooltip = {
 			trigger = {
-				trade_route = trans_saharan_trade_route
 				OR = {
 					FROM = {
 						is_patrician = no
@@ -47,160 +67,70 @@ trade_post = {
 					}
 				}
 			}
-			trans_saharan_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = england_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = silk_road }
+				silk_road_trade_post_trigger = yes
 			}
-			england_route_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = genoa_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = Ochsenweg }
+				ochsenweg_trade_post_trigger = yes
 			}
-			genoa_route_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = hansa_route_sca
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = ATS_English_Route }
+				english_trade_post_trigger = yes
 			}
-			hansa_route_sca_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = varingian_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = trans_saharan_trade_route }
+				trans_saharan_trade_post_trigger = yes
 			}
-			varingian_route_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = venice_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = Amber_road }
+				amber_trade_post_trigger = yes
 			}
-			venice_route_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = via_imperii
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = volga_route }
+				volga_trade_post_trigger = yes
 			}
-			via_imperii_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = via_militaris_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = Italian_roads }
+				italy_trade_post_trigger = yes
 			}
-			via_militaris_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = via_regia
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = German_roads }
+				german_trade_post_trigger = yes
 			}
-			via_regia_trade_post_trigger = yes
-		}
-		conditional_tooltip = {
-			trigger = {
-				trade_route = andalusian_route
-				OR = {
-					FROM = {
-						is_patrician = no
-					}
-					AND = {
-						port = no
-						FROM = {
-							is_patrician = yes
-						}
-					}
-				}
+			conditional_tooltip = {
+				trigger = { trade_route = Iberian_roads }
+				iberia_trade_post_trigger = yes
 			}
-			andalusian_route_trade_post_trigger = yes
+			conditional_tooltip = {
+				trigger = { trade_route = French_roads }
+				french_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = varangian_route }
+				greek_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = Balkan_roads }
+				balkan_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = ViaEgnatia }
+				via_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = Salt_roads }
+				salt_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = Venetian_roads }
+				venice_trade_post_trigger = yes
+			}
+			conditional_tooltip = {
+				trigger = { trade_route = Atlantic_trading }
+				atlantic_trade_post_trigger = yes
+			}
 		}
 	}
 }
@@ -212,7 +142,6 @@ family_palace = {
 
 tribal = {
 	trigger = {
-		FROM = { NOT = { government = order_government } }
 	}
 }
 

@@ -1,40 +1,32 @@
+# -*- ck2.history.provinces -*-
+
 # 381 - Nyland
 
 # County Title
 title = c_nyland
 
 # Settlements
-max_settlements = 6
+max_settlements = 5
 
-b_porvoo = tribal
-b_loviisa = temple
-
-#b_espoo = city
-
-#b_hamina = castle
-#b_svartholm = castle
-#b_hanko = castle
-#b_kotka = city
+b_jukarsborg = tribal
+#b_porvoo = city
+#b_lohja = temple
+#b_sipoo = castle
+#b_raseborg = castle
+#b_suitia = castle
+#b_sjundbyn = castle
+#b_siuntio = temple
+#b_kirkkonummi = city
 
 
 # Misc
 culture = finnish
 religion = finnish_pagan
-terrain = farmlands
+
 # History
-1100.1.1 = {
-	b_porvoo = castle
-	b_espoo = city
-	
-	b_porvoo = ca_keep_1
-	b_porvoo = ca_militia_barracks_1
-	b_porvoo = ca_wall_1
-	b_porvoo = ca_wall_q_1
-	b_espoo = ct_barracks_1
-	b_loviisa = tp_barracks_1
-}
-1158.1.1 = { religion = catholic }	#Northern Crusades
-1158.1.1 = { name = "Nyland" }
-1187.1.1 = { b_espoo = city }
+1158.1.1 = { religion = catholic }	#Northern Crusades #?
+1250.1.1 = { b_jukarsborg = castle
+b_porvoo = city
+b_lohja = temple }
 1288.1.1= { trade_post = b_wittenborg }
-1337.1.1 = { b_loviisa = city }
+1337.1.1 = { b_raseborg = castle }

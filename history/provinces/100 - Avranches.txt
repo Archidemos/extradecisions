@@ -1,49 +1,45 @@
+# -*- ck2.history.provinces -*-
+
 # 100 - Avranches
 
 # County Title
 title = c_avranches
 
 # Settlements
-max_settlements = 5
+max_settlements = 3
 
-b_mortain = castle
-b_avranches = city
-b_barfleur = temple
-
-#b_cherbourg
-#b_coutances
-#b_carentan
-#b_barneville-carteret
+b_avranches = castle
+b_percy = castle
+b_granville = city
+#b_brecey = castle
+#b_pontorson = castle
 
 # Misc
-culture = old_frankish
+culture = frankish
 religion = catholic
 
 # History
-790.1.1 = { culture = frankish }
 911.1.1 = { # Viking takeover
-	b_cherbourg = castle
+	remove_settlement = b_percy
+	remove_settlement = b_granville
+        b_avranches = castle
+        b_percy = castle
+        b_granville = city
 
-	b_mortain = ca_keep_1
-	b_mortain = ca_training_grounds_1
-	b_mortain = ca_stable_1
-	b_mortain = ca_wall_1
-	b_mortain = ca_wall_2
-	b_mortain = ca_militia_barracks_1
-	b_mortain = ca_barracks_1
-	b_mortain = ca_town_1
-	b_avranches = ct_port_1
+	b_avranches = ca_keep_1
+	b_avranches = ca_training_grounds_1
+	b_avranches = ca_stable_1
+	b_avranches = ca_wall_1
+	b_avranches = ca_wall_2
+	b_avranches = ca_militia_barracks_1
+	b_avranches = ca_barracks_1
+	b_avranches = ca_town_1
+	b_granville = ct_port_1
 }
 
-936.1.1 = {
+960.1.1 = {
 	culture = norman
 }
 
-1066.1.1 = {
-	b_avranches = ct_wall_1
-	b_avranches = ct_wall_2
-	b_avranches = ct_port_2
-	b_avranches = ct_port_3
-}
-
 1100.11.11 = { culture = frankish }
+

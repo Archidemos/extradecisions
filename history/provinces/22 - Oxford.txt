@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 22 - Oxford
 
 # County Title
@@ -5,26 +7,28 @@ title = c_oxford
 
 # Settlements
 max_settlements = 5
-b_reading  = tribal
-#b_buckingham = castle
-#b_oxford = city
-b_abingdon = temple
 
-#b_banbury = castle
-#b_aylesbury = castle
-#b_eynsham = castle
-#b_wallingford = castle
+b_oxford = castle
+b_banbury = city
+#b_thame = temple
+#b_witney = city
+#b_hook_norton = castle
+#b_rewley = temple
+#b_kidlington = city
+#b_watlington = city
+#b_shirburn = castle
+#b_bramton = castle
+#b_chipping_norton = castle  # Clarkson
+#b_charlbury = city
+#b_eynsham = temple
+
+
 
 # Misc
 culture = saxon
 religion = catholic
-terrain = farmlands
+
 # History
-769.1.1 = {
-	b_reading = castle
-	b_oxford = city
-	b_banbury = castle
-}
+1066.10.14 = { b_hook_norton = castle } 
 1100.11.11 = { culture = english } 
-633.1.1={ religion = norse_pagan }
-760.1.1 = { religion = catholic }
+

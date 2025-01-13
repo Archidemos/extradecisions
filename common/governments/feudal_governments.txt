@@ -1,3 +1,5 @@
+# -*- ck2.governments -*-
+
 feudal_governments = {
 
 	feudal_government = {
@@ -18,8 +20,6 @@ feudal_governments = {
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
-		vassal_call_to_arms = {	
-		}
 		potential = {
 			OR = {
 				controls_religion = no
@@ -29,12 +29,13 @@ feudal_governments = {
 					religion = norse_pagan_reformed
 					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
 				}
+				religion = paulician
 			}
 			NOT = {	religion_group = muslim	}
-			NOT = {	religion_group = zoroastrian_group	}
+			NOT = {	religion_group = zoroastrian_group }
 			NOT = { is_government_potential = roman_imperial_government }
 			NOT = { is_government_potential = order_government }
-			NAND = { 
+			NAND = {
 				culture_group = tibetan_group
 				OR = {
 					religion = bon
@@ -68,7 +69,17 @@ feudal_governments = {
 			}
 			is_patrician = no
 		}
+		
+		color = { 91 133 207 }
+		
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
 
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
 		unit_modifier = {
 			castle_vassal_min_levy = -0.05
 			castle_vassal_max_levy = -0.05
@@ -80,18 +91,10 @@ feudal_governments = {
 			castle_vassal_max_levy = -0.05
 			levy_size = 0.05
 		}
-		
-		color = { 91 133 207 }
-		
-		dukes_called_kings = yes
-		barons_need_dynasty = yes
-		
-		can_build_tribal = no
-		
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
 		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 	
 	muslim_government = {
@@ -116,8 +119,6 @@ feudal_governments = {
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
-		vassal_call_to_arms = {		
-		}
 		frame_suffix = "_iqta"
 		potential = {
 			OR = {
@@ -128,6 +129,7 @@ feudal_governments = {
 					religion = norse_pagan_reformed
 					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
 				}
+				religion = paulician
 			}
 			religion_group = muslim
 			NOT = { is_government_potential = roman_imperial_government }
@@ -164,10 +166,6 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
-		
-		unit_modifier = {
-		}
-		
 		character_modifier = {
 			castle_vassal_min_levy = 0.05
 			castle_vassal_max_levy = 0.05
@@ -175,6 +173,9 @@ feudal_governments = {
 			city_vassal_tax_modifier = -0.05
 		}
 		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 
 	satrap_government = {
@@ -282,8 +283,6 @@ feudal_governments = {
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
-		vassal_call_to_arms = {	
-		}
 		frame_suffix = "_theocraticfeudal"
 		potential = {
 			OR = {
@@ -294,6 +293,7 @@ feudal_governments = {
 					religion = norse_pagan_reformed
 					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
 				}
+				religion = paulician
 			}
 			NOT = {	religion_group = muslim	}
 			NOT = { is_government_potential = roman_imperial_government }
@@ -304,18 +304,6 @@ feudal_governments = {
 					religion = bon
 					religion = bon_reformed
 					religion = buddhist
-				}
-				higher_tier_than = BARON
-			}
-			NAND = { 
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-				}
-				OR = {
-					religion = buddhist
-					religion = hindu
-					religion = jain
 				}
 				higher_tier_than = BARON
 			}
@@ -345,6 +333,8 @@ feudal_governments = {
 			tribal_government
 		}
 		capital_move_delay = 600
+		## Modifiers
+		court_size_modifier = 10
 	}
 	
 	chinese_imperial_government = {
@@ -368,8 +358,6 @@ feudal_governments = {
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
-		}
-		vassal_call_to_arms = {		
 		}
 		frame_suffix = "_chineseimperial"
 		potential = {
@@ -414,12 +402,16 @@ feudal_governments = {
 			castle_vassal_tax_modifier = 0.20
 			global_tax_modifier = 0.10
 		}
+		
+		## Modifiers
+		court_size_modifier = 15
 	}
 
 	order_government = {
 		preferred_holdings = { CASTLE }
 		allowed_holdings = {
 			CASTLE
+			TEMPLE
 			TRIBAL
 			FORT
 			HOSPITAL
@@ -441,8 +433,7 @@ feudal_governments = {
 		forced_contract = {
 			order_government
 		}
-		vassal_call_to_arms = {		
-		}
+
 		frame_suffix = "_order"
 		title_prefix = "order_"
 
@@ -498,7 +489,7 @@ feudal_governments = {
 		free_retract_vassalage = yes
 	}
 	roman_imperial_government = {
-		preferred_holdings = { CASTLE }
+		preferred_holdings = { CASTLE CITY }
 		allowed_holdings = {
 			CASTLE
 			CITY
@@ -515,8 +506,6 @@ feudal_governments = {
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
-		}
-		vassal_call_to_arms = {		
 		}
 		frame_suffix = "_romanimperial"
 		potential = {
@@ -564,7 +553,6 @@ feudal_governments = {
 		can_grant_kingdoms_and_empires_to_other_government_group = yes
 		can_be_granted_kingdoms_and_empires_by_other_government = no
 		free_retract_vassalage = yes
-
 		demesne_size = -3
 
 		unit_modifier = {
@@ -579,8 +567,10 @@ feudal_governments = {
 			knights_offensive = -0.10
 			knights_defensive = -0.10
 		}
+		
+		## Modifiers
+		court_size_modifier = 15
 	}
-
 	caliphate_government = {
 		preferred_holdings = { CASTLE }
 		allowed_holdings = { 

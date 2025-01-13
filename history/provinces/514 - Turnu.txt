@@ -1,17 +1,32 @@
+# -*- ck2.history.provinces -*-
+
+# 514 - Turnu
+
 # County Title
 title = c_turnu
+
 # Settlements
-max_settlements = 4
-b_turnu = castle
-b_giurgiu = city
-b_comana = temple
+max_settlements = 5
+
+b_turnu = tribal
+#b_giurgiu = city
+#b_slatina = castle
+#b_bucuresti = city
+#b_rosiorriidevede = castle
+
+
+
 # Misc
-culture = romanian
-religion = slavic_pagan
-terrain = farmlands
-856.1.1 = { culture = romanian religion = orthodox } 
-################################################################################
+culture = bulgarian
+religion = tengri_pagan
+
 # History
-################################################################################
-892.1.1 = { culture = romanian } 
-900.1.1 = { religion = orthodox } 
+
+900.1.1 = { religion = orthodox culture = bulgarian }
+927.1.1 = { culture = pecheneg }
+927.1.1 = { religion = manichean }
+1123.1.1 = { culture = romanian }
+1123.1.1 = { religion = orthodox }
+1299.1.2 = { b_turnu = castle
+b_bucuresti = castle
+b_giurgiu = city }

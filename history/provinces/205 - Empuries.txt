@@ -1,26 +1,32 @@
+# -*- ck2.history.provinces -*-
+
+# 205 - Empuries
+
 # County Title
 title = c_empuries
+
 # Settlements
 max_settlements = 4
-b_empuries = castle
-b_girona = city
-b_cerdana = castle
-# Misc
-culture = visigothic
-religion = catholic
-633.1.1 = { religion = adoptionist } 
-769.1.1 = { religion = catholic }
-################################################################################
-# History
-################################################################################
-867.1.1 = { 
-    b_empuries = ca_town_1
-    b_empuries = ca_keep_1
-    b_empuries = ca_stable_1
-    b_empuries = ca_militia_barracks_1
-    b_empuries = ca_wall_1
-    b_empuries = ca_wall_2
-}
+b_castellodempuries = castle
+b_santperederoda = temple
+b_torroellademontgri = city
+#b_peralada = castle
+#b_verges = castle
+#b_quermanco = castle
 
-974.1.1 = { culture = catalan } 
-1123.1.1 = { trade_post = b_grimaldi } 
+# Misc
+culture = catalan
+religion = catholic
+
+# History
+
+867.1.1 = { 
+	b_castellodempuries = ca_town_1
+	b_castellodempuries = ca_keep_1
+	b_castellodempuries = ca_stable_1
+	b_castellodempuries = ca_militia_barracks_1
+	b_castellodempuries = ca_wall_1
+	b_castellodempuries = ca_wall_2
+	b_castellodempuries = ca_barracks_1
+}
+1123.1.1 = { trade_post = b_grimaldi }

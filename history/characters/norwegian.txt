@@ -1,21 +1,26 @@
+# -*- ck2.history.characters -*-
+
 101545 = {
-	name="Thorgunna"
+	name="Þórgunnr" # Thorgunna daughter of Vagn, married Thurgot Ulvsson Fagerskind.
 	female = yes
-	dynasty=100304
+	dynasty=1000053391
 	martial=5
 	diplomacy=7
 	intrigue=8
 	stewardship=5
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="scholarly_theologian"
 	father=101543
 	mother=101544
-	1030.1.2={
+	1027.1.1={
 		birth=yes
 	}
+	1035.1.1={ 
+		culture = danish
+	}
 	1085.1.2={
-		death=yes
+		death="1085.1.2"
 	}
 }
 
@@ -28,35 +33,41 @@
 	intrigue=4
 	stewardship=7
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="charitable"
 	trait="temperate"
 	trait="martial_cleric"
 	father=102504
 	mother=102503
 	1024.1.2={
-		birth=yes
+		birth="1024.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1087.1.2={
-		death=yes
+		death="1087.1.2"
 	}
 }
 
 102523 = {
-	name="Håkon"
-	dynasty=100273
+	name="Haakon" # Haakon Ivarsson (Of Hlathir), Earl of the Upplands 1054-1064
+	dynasty=1043302
 	martial=6
 	diplomacy=8
 	intrigue=5
 	stewardship=7
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="diligent"
 	trait="brave"
 	trait="tough_soldier"
 	father=102522
-	1026.1.2={
-		birth=yes
+	1026.1.1={
+		birth = yes
+	}
+	1035.1.1 ={
+		culture = norwegian
 	}
 	1062.1.2= {
 		add_spouse = 102530
@@ -69,7 +80,7 @@
 102524 = {
 	name="Ragnhild"
 	female = yes
-	dynasty=100273
+	dynasty=1043302
 	martial=5
 	diplomacy=4
 	intrigue=6
@@ -80,18 +91,18 @@
 	trait="martial_cleric"
 	father=102523
 	mother=102530
-	1063.1.2={
-		birth=yes
+	1056.1.2={
+		birth="1056.1.2"
 	}
 	1106.1.2={
-		death=yes
+		death="1106.1.2"
 	}
 }
 
 102525 = {
 	name="Sunniva"
 	female = yes
-	dynasty=100273
+	dynasty=1043302
 	martial=8
 	diplomacy=8
 	intrigue=7
@@ -102,11 +113,11 @@
 	trait="martial_cleric"
 	father=102523
 	mother=102530
-	1063.1.2={
-		birth=yes
+	1060.1.2={
+		birth="1060.1.2"
 	}
 	1110.1.2={
-		death=yes
+		death="1110.1.2"
 	}
 }
 
@@ -119,17 +130,20 @@
 	intrigue=6
 	stewardship=8
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="humble"
 	trait="hunchback"
 	trait="fortune_builder"
 	father=102527
 	mother=100512
-	1025.1.2={
-		birth=yes
+	1023.1.2={
+		birth="1023.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1071.5.24={
-		death=yes
+		death="1071.5.24"
 	}
 }
 
@@ -147,32 +161,41 @@
 	trait="flamboyant_schemer"
 	father=102529
 	1040.1.2={
-		birth=yes
+		birth="1040.1.2"
 	}
 	1090.1.2={
-		death=yes
+		death="1090.1.2"
 	}
 }
 
 102531 = {
 	name="Harald" # 'Hårdråde'
 	dynasty=499
-	martial=7
-	diplomacy=7
+	martial=9
+	diplomacy=5
 	intrigue=7
-	stewardship=5
+	stewardship=4
 	religion=catholic
-	culture=norwegian
-	trait=just
+	culture=norse
+	trait=ambitious
+	trait=cruel # wouldn't really be "Hårdråde" without :)
 	trait=zealous
 	trait=envious
 	trait=brave
 	trait=skilled_tactician
-	trait=varangian
 	father=102500
 	mother=102501
 	1015.1.2={
-		birth=yes
+		birth = yes
+	}
+	1034.1.1={
+		trait=varangian # Moved on from Kiev to Constantinople and joined the Varangian Guard in 1034
+	}	
+	1035.1.1={
+		culture=norwegian
+	}
+	1042.6.5={
+		add_claim = k_norway
 	}
 	1044.1.2={
 		add_spouse=633
@@ -198,6 +221,7 @@
 					archers = { 572 572 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 			spawn_unit = {
 				province = 57 # York
@@ -211,6 +235,7 @@
 					archers = { 572 572 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 			spawn_unit = {
 				province = 57 # York
@@ -224,6 +249,7 @@
 					archers = { 572 572 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 		}
 	}
@@ -234,6 +260,7 @@
 		}
 	}
 }
+
 
 102532 = {
 	name="Magnus"
@@ -253,10 +280,10 @@
 	father=102531
 	mother=102551
 	1048.1.2={
-		birth=yes
+		birth = yes
 	}
 	1069.4.28={
-		death=yes
+		death = yes
 	}
 }
 
@@ -274,10 +301,10 @@
 	father=102531
 	mother=633
 	1047.1.2={
-		birth=yes
+		birth = yes
 	}
 	1066.9.26={
-		death=yes
+		death = yes
 	}
 }
 
@@ -298,13 +325,16 @@
 	father=102531
 	mother=102551
 	1050.1.1={
-		birth=yes
+		birth = yes
 	}
 	1068.1.1={
 		add_spouse=101516
 	}
+    1069.4.28={
+		give_nickname = nick_the_peaceful
+	}	
 	1093.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -321,10 +351,10 @@
 	father=102531
 	mother=633
 	1046.1.2={
-		birth=yes
+		birth = yes
 	}
 	1120.1.2={
-		death=yes
+		death = yes
 	}
 }
 
@@ -346,10 +376,10 @@
 	father=102531
 	mother=633
 	1045.1.4={
-		birth=yes
+		birth="1045.1.4"
 	}
 	1100.1.4={
-		death=yes
+		death="1100.1.4"
 	}
 }
 
@@ -369,13 +399,13 @@
 	father=102537
 	mother=102505
 	1043.1.1={
-		birth=yes
+		birth="1043.1.1"
 	}
 	1076.1.1={
 		add_spouse=220035
 	}
 	1098.1.1={
-		death=yes
+		death="1098.1.1"
 	}
 }
 
@@ -395,13 +425,13 @@
 	father=102537
 	mother=102505
 	1043.1.1={
-		birth=yes
+		birth="1043.1.1"
 	}
 	1058.1.1={
 		add_spouse=161327
 	}
 	1099.1.1={
-		death=yes
+		death="1099.1.1"
 	}
 }
 
@@ -417,10 +447,10 @@
 	culture="norwegian"
 	trait="scholarly_theologian"
 	1038.1.2={
-		birth=yes
+		birth="1038.1.2"
 	}
 	1088.1.2={
-		death=yes
+		death="1088.1.2"
 	}
 }
 
@@ -439,8 +469,11 @@
 	trait="flamboyant_schemer"
 	father=102546
 	mother=102513
-	1019.1.2={
+	1015.1.1={
 		birth=yes
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1040.1.1={
 		add_spouse=102506
@@ -459,16 +492,19 @@
 	intrigue=5
 	stewardship=5
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="envious"
 	trait="fortune_builder"
 	father=102550
 	mother=102566
 	1017.1.2={
-		birth=yes
+		birth="1017.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1067.1.2={
-		death=yes
+		death="1067.1.2"
 	}
 }
 
@@ -485,7 +521,7 @@
 	trait="temperate"
 	trait="martial_cleric"
 	father=102552
-	1040.1.2={
+	1045.1.1={
 		birth=yes
 	}
 	1060.1.27={
@@ -505,16 +541,19 @@
 	intrigue=4
 	stewardship=5
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="wroth"
 	trait="underhanded_rogue"
 	father=102556
 	mother=102555
 	1029.1.27={
-		birth=yes
+		birth="1029.1.27"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1079.1.27={
-		death=yes
+		death="1079.1.27"
 	}
 }
 
@@ -531,7 +570,7 @@
 	trait="flamboyant_schemer"
 	father=102553
 	mother=102557
-	1064.1.2={
+	1066.1.2={
 		birth=yes
 	}
 	1114.1.2={
@@ -548,16 +587,19 @@
 	intrigue=6
 	stewardship=4
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="chaste"
 	trait="honest"
 	trait="scholarly_theologian"
 	father=102561
 	1026.1.2={
-		birth=yes
+		birth="1026.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1076.1.2={
-		death=yes
+		death="1076.1.2"
 	}
 }
 
@@ -569,15 +611,18 @@
 	intrigue=5
 	stewardship=6
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="craven"
 	trait="skilled_tactician"
 	father=102560
 	1021.1.2={
-		birth=yes
+		birth="1021.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1081.1.1={
-		death=yes
+		death="1081.1.1"
 	}
 }
 
@@ -595,13 +640,13 @@
 	trait="tough_soldier"
 	father=102563
 	1055.1.1={
-		birth=yes
+		birth="1055.1.1"
 	}
 	1093.1.1={
 		add_spouse=101516
 	}
 	1105.1.2={
-		death=yes
+		death="1105.1.2"
 	}
 }
 
@@ -613,19 +658,22 @@
 	intrigue=5
 	stewardship=4
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="lustful"
 	trait="martial_cleric"
 	father=102567
 	mother=102515
 	1025.1.2={
-		birth=yes
+		birth="1025.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1061.1.2={
 		add_spouse = 101522
 	}
 	1090.1.1={
-		death=yes
+		death="1090.1.1"
 	}
 }
 
@@ -638,7 +686,7 @@
 	intrigue=7
 	stewardship=6
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="just"
 	trait="temperate"
 	trait="harelip"
@@ -646,10 +694,13 @@
 	father=102567
 	mother=102515
 	1030.1.2={
-		birth=yes
+		birth="1030.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1080.1.2={
-		death=yes
+		death="1080.1.2"
 	}
 }
 
@@ -668,10 +719,10 @@
 	father=102567
 	mother=102515
 	1034.1.2={
-		birth=yes
+		birth="1034.1.2"
 	}
 	1084.1.2={
-		death=yes
+		death="1084.1.2"
 	}
 }
 
@@ -687,10 +738,10 @@
 	father=102568
 	mother=101522
 	1065.1.2={
-		birth=yes
+		birth="1065.1.2"
 	}
 	1115.1.2={
-		death=yes
+		death="1115.1.2"
 	}
 }
 
@@ -702,14 +753,17 @@
 	intrigue=4
 	stewardship=5
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="just"
 	trait="amateurish_plotter"
 	father=102573
 	1017.1.2={
 		birth=yes
 	}
-	1067.1.1={
+	1035.1.1={
+		culture=icelandic
+	}
+	1047.1.1={
 		death=yes
 	}
 }
@@ -722,14 +776,18 @@
 	intrigue=6
 	stewardship=5
 	religion="catholic"
-	culture="norwegian"
+	culture="norse"
 	trait="patient"
 	trait="flamboyant_schemer"
+	father=1228172	
 	1020.1.2={
-		birth=yes
+		birth="1020.1.2"
+	}
+	1035.1.1={
+		culture=norwegian
 	}
 	1070.1.2={
-		death=yes
+		death="1070.1.2"
 	}
 }
 
@@ -747,10 +805,10 @@
 	trait="tough_soldier"
 	father=102575
 	1052.1.2={
-		birth=yes
+		birth="1052.1.2"
 	}
 	1102.1.2={
-		death=yes
+		death="1102.1.2"
 	}
 }
 
@@ -768,10 +826,10 @@
 	trait="thrifty_clerk"
 	father=102532 # Magnus Haraldson
 	1069.1.1={
-		birth=yes
+		birth="1069.1.1"
 	}
 	1094.6.6={
-		death=yes
+		death="1094.6.6"
 	}
 }
 
@@ -783,10 +841,10 @@
 	father=102547
 	mother=102506
 	1050.1.1={
-		birth=yes
+		birth="1050.1.1"
 	}
 	1120.1.1={
-		death=yes
+		death="1120.1.1"
 	}
 }
 
@@ -797,10 +855,10 @@
 	culture="norwegian"
 	father=202021
 	1215.1.1={
-		birth=yes
+		birth="1215.1.1"
 	}
 	1274.1.1={
-		death=yes
+		death="1274.1.1"
 	}
 }
 
@@ -941,7 +999,8 @@
 }
 
 200601 = {
-	name="Ulfhilde"
+	name="Ulvhild" # Daughter of Håkon Finnson of Tjøtta. Married to Inge of Sweden, Niels of Denmark and Sverker of Sweden
+	dynasty=1000053616 #av Tjøtta	
 	female = yes
 	martial=7
 	diplomacy=2
@@ -952,6 +1011,7 @@
 	trait="deceitful"
 	trait="greedy"
 	trait="intricate_webweaver"
+	father=1290050	
 	1095.1.1={
 		birth="1095.1.1"
 	}
@@ -1048,7 +1108,6 @@
 	religion="catholic"
 	culture="norwegian"
 	trait="zealous"
-	#trait="cynical"
 	trait="diligent"
 	trait="martial_cleric"
 	trait="ambitious"
@@ -1197,21 +1256,32 @@
 }
 
 202014 = {
-	name="Snorri"
-	dynasty=100001
-	martial=6
-	diplomacy=5
-	intrigue=6
-	stewardship=6
-	religion="catholic"
-	culture="norwegian"
-	trait="diligent"
-	trait="thrifty_clerk"
-	1179.1.1={
-		birth="1179.1.1"
+	name = "Snorri"
+	dynasty = 484
+	martial = 6
+	diplomacy = 5
+	intrigue = 6
+	stewardship = 6
+	religion = "catholic"
+	culture = "norwegian"
+	trait = "diligent"
+	trait = "thrifty_clerk"
+	trait = scholar
+	father = 1228134
+	1179.1.1 = {
+		birth = "1179.1.1"
 	}
-	1229.1.1={
-		death="1229.1.1"
+	1195.1.1 = {
+		trait = poet
+	}
+	1224.1.1 = {
+		add_spouse = 1026113
+	}
+	1241.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer = 144647
+		}
 	}
 }
 
@@ -1252,6 +1322,8 @@
 		birth="1133.1.1"
 	}
 	1183.1.1={
+		name = "Saint Thorlákur"
+		trait = "saint"
 		death="1183.1.1"
 	}
 }
@@ -1346,7 +1418,7 @@
 202023 = {
 	name="Sigrid"
 	female = yes
-	dynasty=101892
+	dynasty=480
 	martial=5
 	diplomacy=8
 	intrigue=7
@@ -1367,7 +1439,7 @@
 202024 = {
 	name="Jón"
 	# AKA: Jon
-	dynasty=101892
+	dynasty=480
 	martial=6
 	diplomacy=8
 	intrigue=7
@@ -1376,7 +1448,6 @@
 	culture="norwegian"
 	trait="patient"
 	trait="just"
-	#trait="wroth"
 	trait="martial_cleric"
 	father=202026
 	mother=202027
@@ -1414,7 +1485,7 @@
 
 202026 = {
 	name="Loftur"
-	dynasty=101892
+	dynasty=480
 	martial=6
 	diplomacy=5
 	intrigue=7
@@ -1456,9 +1527,9 @@
 }
 
 202028 = {
-	name="Sæmund"
+	name="Sæmundr"
 	# AKA: Saemund
-	dynasty=101892
+	dynasty=480
 	martial=4
 	diplomacy=7
 	intrigue=5
@@ -1482,7 +1553,7 @@
 202029 = {
 	name="Páll"
 	# AKA: Pall
-	dynasty=101892
+	dynasty=480
 	martial=6
 	diplomacy=7
 	intrigue=6
@@ -1705,8 +1776,8 @@
 	trait="amateurish_plotter"
 	father=202040
 	mother=202041
-	1141.1.1={
-		birth="1141.1.1"
+	1135.1.1={
+		birth="1135.1.1"
 	}
 	1165.5.5={
 		death="1165.5.5"
@@ -1714,15 +1785,14 @@
 }
 
 202050 = {
-	name="Erling" # Skakke
-	dynasty=1030031
+	name="Erling" # Erling Skakke of Stødle. Crusader (he earned his nickname Skakke on Crusade), Regent for Inge II, one of the most prominent nobles on the Lendmann side of the Civil wars
+	dynasty=1000053619
 	martial=7
 	diplomacy=7
 	intrigue=7
 	stewardship=6
 	religion="catholic"
 	culture="norwegian"
-	trait="clubfooted"
 	trait="tough_soldier"
 	father=183911
 	mother=183913
@@ -1732,7 +1802,7 @@
 	1145.1.1={
 		add_spouse=222596
 	}
-	1150.1.1={
+	1151.1.1={
 		trait="crusader"
 	}
 	1179.6.18={
@@ -1742,7 +1812,7 @@
 
 202051 = {
 	name="Magnus"
-	dynasty=1030031
+	dynasty=1000053619
 	martial=7
 	diplomacy=7
 	intrigue=7
@@ -1766,7 +1836,7 @@
 
 202052 = {
 	name="Sigurd"
-	dynasty=1030031
+	dynasty=1000053619
 	martial=7
 	diplomacy=7
 	intrigue=7
@@ -2047,6 +2117,9 @@
     1134.1.1={
 		add_spouse=100554 #Ingrid Ragnvaldsdotter
 	}
+    1135.1.7={
+		give_nickname="nick_gille"
+	}	
 	1136.12.14={
 		death="1136.12.14"
 	}
@@ -2068,10 +2141,12 @@
 	1073.1.1={
 		birth="1073.1.1"
 	}
+    1094.6.6={
+		give_nickname="nick_the_barefoot"
+	}	
 	1101.1.1={
 		add_spouse=200494 # Margareta Ingesdotter
-	}
-	
+	}	
 	1103.1.25={
 		death="1103.1.25"
 	}
@@ -2147,21 +2222,21 @@
 
 202515 = {
 	name="Astrid"
-	female = yes
+	female=yes
 	dynasty=375
+	religion="catholic"
+	culture="franconian"  # melted from: norwegian
 	martial=6
 	diplomacy=5
 	intrigue=7
 	stewardship=7
-	religion="catholic"
-	culture="norwegian"
 	trait="ill"
 	trait="flamboyant_schemer"
 	father=202516
-	1152.1.2={
+	1152.1.2 = {
 		birth="1152.1.2"
 	}
-	1185.1.29={
+	1185.1.29 = {
 		death="1185.1.29"
 	}
 }
@@ -2223,8 +2298,8 @@
 	trait="tough_soldier"
 	father=203007
 	mother=203077
-	1181.1.1={
-		birth="1181.1.1"
+	1180.1.1={
+		birth="1180.1.1"
 	}
 	1239.7.1={
 		death="1239.7.1"
@@ -2252,7 +2327,7 @@
 
 20580 = {
 	name="Sigfus"
-	dynasty=101892
+	dynasty=480
 	martial=8
 	diplomacy=8
 	intrigue=4
@@ -2273,8 +2348,8 @@
 }
 
 20581 = {
-	name="Saemundr"
-	dynasty=101892
+	name="Sæmundr"
+	dynasty=480
 	martial=7
 	diplomacy=8
 	intrigue=7
@@ -2343,7 +2418,7 @@
 }
 
 220021 = {
-	name="Gudrød"
+	name="Guðröðr"
 	# AKA: Gudrod 'Svarte' Olafsson
 	dynasty=556
 	martial=5
@@ -2354,7 +2429,6 @@
 	culture="norwegian"
 	trait="greedy"
 	trait="zealous"
-	#trait="cynical"
 	trait="martial_cleric"
 	trait="ill"
 	father=220023
@@ -2555,8 +2629,8 @@
 	trait="tough_soldier"
 	father=220020
 	mother=220038
-	1176.1.1={
-		birth="1176.1.1"
+	1166.1.1={
+		birth="1166.1.1"
 	}
 	1216.1.1={
 		death="1216.1.1"
@@ -2586,7 +2660,7 @@
 }
 
 220048 = {
-	name="Gudrød"
+	name="Guðröðr"
 	# AKA: Gudrod Ragnvaldsson
 	dynasty=556
 	martial=6
@@ -2679,6 +2753,9 @@
 	1089.1.1={
 		birth="1089.1.1"
 	}
+	1105.1.1={
+		add_spouse="1290084" # Ingibjörg Guttormsdottir of Steig
+	}	
 	1123.8.29={
 		death="1123.8.29"
 	}
@@ -2717,6 +2794,12 @@
 	1115.1.1={
 		birth="1115.1.1"
 	}
+	1133.1.1={
+		add_spouse="1227957" # Kirstin Knudsdatter of Denmark
+	}
+	1133.7.1={
+		remove_spouse="1227957" # Pushed aside his Queen
+	}	
 	1135.1.7={
 		trait="blinded"
 		trait="maimed"
@@ -2729,22 +2812,21 @@
 
 232686 = {
 	name="Uspak"
-	dynasty=3109 # MacDougall
+	dynasty=25046
 	martial=7
 	diplomacy=4
 	intrigue=6
 	stewardship=4
 	religion="catholic"
-	culture="norwegian"
+	culture="norsegaelic"
 	trait="brave"
 	trait="tough_soldier"
-	trait=legit_bastard
 	father=232683
 	1174.1.1={
-		birth=yes
+		birth="1174.1.1"
 	}
 	1229.1.1={
-		death=yes
+		death="1229.1.1"
 	}
 }
 
@@ -2803,8 +2885,8 @@
 	trait="tough_soldier"
 	father=40610
 	mother=40611
-	1042.1.1={
-		birth="1042.1.1"
+	1040.1.1={
+		birth="1040.1.1"
 	}
 	1090.1.1={
 		death="1090.1.1"
@@ -3225,6 +3307,7 @@
 	culture="norwegian"
 	trait="humble"
 	trait="amateurish_plotter"
+	father=1290055	
 	1247.1.2={
 		birth="1247.1.2"
 	}
@@ -3260,7 +3343,7 @@
 	name="Elin"
 	# AKA: Elin Toresdotter
 	female = yes
-	dynasty=128
+	dynasty=1000053621 #of Manvik
 	martial=5
 	diplomacy=7
 	intrigue=7
@@ -3281,7 +3364,7 @@
 450784 = {
 	name="Tore"
 	# AKA: Tore Hakonsson
-	dynasty=128
+	dynasty=1000053621 #of Manvik
 	martial=8
 	diplomacy=8
 	intrigue=8
@@ -3306,7 +3389,7 @@
 	name="Ingeborg"
 	# AKA: Ingeborg Erlingsdotter
 	female = yes
-	dynasty=128
+	dynasty=1000053621 #of Manvik
 	martial=6
 	diplomacy=7
 	intrigue=5
@@ -3673,8 +3756,8 @@
 	trait="martial_cleric"
 	father=452510
 	mother=452511
-	1303.1.2={
-		birth="1303.1.2"
+	1301.1.2={
+		birth="1301.1.2"
 	}
 	1361.6.17={
 		death="1361.6.17"
@@ -4098,7 +4181,7 @@
 }
 
 5788 = {
-	name="Gudrød"
+	name="Guðröðr"
 	# AKA: Gudrod 'Mearanach'
 	properties="ca0cad00000"	
 	dna="nviemerbzif"
@@ -4253,6 +4336,8 @@
 		birth="1060.1.1"
 	}
 	1117.4.16={
+		trait = "saint"
+		give_nickname = nick_the_saint
 		death="1117.4.16"
 	}
 }
@@ -4264,15 +4349,13 @@
 	culture="norwegian"
 	father=220046
 	1195.1.1={
-		birth=yes
-	}
-	1263.1.1={
-		add_spouse=188875
+		birth="1195.1.1"
 	}
 	1265.1.1={
-		death=yes
+		death="1265.1.1"
 	}
 }
+
 7393 = {
 	name="Ragnall"
 	dynasty=556
@@ -4615,7 +4698,7 @@
 
 161125 = {
 	name="Inge"
-	dynasty=1030031
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	trait="legit_bastard"
@@ -4630,7 +4713,7 @@
 
 161126 = {
 	name="Erling"
-	dynasty=1030031
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	trait="legit_bastard"
@@ -4678,7 +4761,7 @@
 161129 = {
 	name="Ingebjorg"
 	female=yes
-	dynasty=1030031
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	father=202051
@@ -4694,7 +4777,7 @@
 161130 = {
 	name="Margret"
 	female=yes
-	dynasty=1030031
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	father=202051
@@ -4708,7 +4791,7 @@
 }
 
 161124 = {
-	name="Asulf"
+	name="Åsulf"
 	dynasty=2033
 	religion="catholic"
 	culture="norwegian"
@@ -4790,7 +4873,7 @@
 161327 = {
 	name="Thora"
 	female=yes
-	dynasty=1043303
+	dynasty=461
 	religion="catholic"
 	culture="norwegian"
 	father=161326
@@ -4923,11 +5006,11 @@
 	culture="norwegian"
 	father=102553
 	mother=102557
-	1061.1.2={
-		birth="1061.1.2"
+	1063.1.2={
+		birth=yes
 	}
 	1103.1.1={
-		death="1103.1.1"
+		death=yes
 	}
 }
 
@@ -4938,11 +5021,11 @@
 	culture="norwegian"
 	father=102553
 	mother=102557
-	1062.1.2={
-		birth="1062.1.2"
+	1064.1.2={
+		birth=yes
 	}
 	1103.1.1={
-		death="1103.1.1"
+		death=yes
 	}
 }
 
@@ -4953,11 +5036,11 @@
 	culture="norwegian"
 	father=102553
 	mother=102557
-	1063.1.2={
-		birth="1063.1.2"
+	1065.1.2={
+		birth=yes
 	}
 	1103.1.1={
-		death="1103.1.1"
+		death=yes
 	}
 }
 
@@ -5038,12 +5121,13 @@
 }
 
 183910 = {
-	name="Svein"
-	dynasty=1030031
+	name="Svein" # Svein Sveinsson av Gjerde. Kyrpinga Orm is referred as the son of the grandson of Erlend av Gjerde, Svein Sveinsson must therefore be Erlends grandson
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
+	father=1290074	
 	1048.1.1={
-		birth="1048.1.1"
+		birth=yes
 	}
 	1068.1.1={
 		add_spouse=183905 #Ragna Hagalín
@@ -5054,8 +5138,8 @@
 }
 
 183911 = {
-	name="Orm"
-	dynasty=1030031
+	name="Orm" # Kyrpinga-Orm Sveinsson, known Lendmann. Foster-father for Magnus Haraldsson, the son of the King
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	father=183910
@@ -5076,7 +5160,7 @@
 
 183912 = {
 	name="Ogmund"
-	dynasty=1030031
+	dynasty=1000053619
 	religion="catholic"
 	culture="norwegian"
 	father=183911
@@ -5107,10 +5191,10 @@
 	religion=catholic
 	culture=norwegian
 	1191.1.1 = {
-			birth = yes
+		birth = yes
 	}
 	1260.1.1 = {
-			death = yes
+		death = yes
 	}
 }
 194314 = {
@@ -5119,10 +5203,10 @@
 	religion=catholic
 	culture=norwegian
 	1198.1.1 = {
-			birth = yes
+		birth = yes
 	}
 	1260.1.1 = {
-			death = yes
+		death = yes
 	}
 }
 194315 = {
@@ -5131,10 +5215,10 @@
 	religion=catholic
 	culture=norwegian
 	1198.1.1 = {
-			birth = yes
+		birth = yes
 	}
 	1260.1.1 = {
-			death = yes
+		death = yes
 	}
 }
 194316 = {
@@ -5143,10 +5227,10 @@
 	religion=catholic
 	culture=norwegian
 	1196.1.1 = {
-			birth = yes
+		birth = yes
 	}
 	1260.1.1 = {
-			death = yes
+		death = yes
 	}
 }
 194317 = {
@@ -5155,309 +5239,9 @@
 	religion=catholic
 	culture=norwegian
 	1196.1.1 = {
-			birth = yes
+		birth = yes
 	}
 	1260.1.1 = {
-			death = yes
-	}
-}
-
-188876 = {
-	name="Godred"
-	dynasty=556 # Crovan
-	religion="catholic"
-	culture="norwegian"
-	father=7392
-	trait=legit_bastard
-	1241.1.1={
-		birth=yes
-	}
-	1279.1.1={
-		death=yes
-	}
-}
-
-214083 = {
-	name = "Mar"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214082
-	1005.1.1 = {
-		birth = yes
-	}
-	1070.1.1 = {
-		death = yes
-	}
-}
-
-214084 = {
-	name = "Thormod"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214082
-	1008.1.1 = {
-		birth = yes
-	}
-	1067.1.1 = {
-		death = yes
-	}
-}
-
-214085 = {
-	name = "Torfi"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214082
-	1011.1.1 = {
-		birth = yes
-	}
-	1060.1.1 = {
-		death = yes
-	}
-}
-
-214086 = {
-	name = "Sigurd"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214083
-	1035.1.1 = {
-		birth = yes
-	}
-	1085.1.1 = {
-		death = yes
-	}
-}
-
-214087 = {
-	name = "Hamal"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214083
-	1040.1.1 = {
-		birth = yes
-	}
-	1095.1.1 = {
-		death = yes
-	}
-}
-
-214088 = {
-	name = "Gudmund"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214087
-	1065.1.1 = {
-		birth = yes
-	}
-	1110.1.1 = {
-		death = yes
-	}
-}
-
-214089 = {
-	name = "Thormod"
-	dynasty = 1043504
-	religion = catholic
-	culture = norse
-	father=214088
-	1090.1.1 = {
-		birth = yes
-	}
-	1145.1.1 = {
-		death = yes
-	}
-}
-
-280002 = {
-	name = "Anund"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	1028.1.1 = {
-		birth = yes
-	}
-	1080.1.1 = {
-		death = yes
-	}
-}
-
-280003 = {
-	name = "Arne"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280002
-	1057.1.1 = {
-		birth=yes
-	}
-	1113.1.1 = {
-		death = yes
-	}
-}
-280004 = {
-	name = "Gudbrand"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280003
-	1094.1.1 = {
-		birth = yes
-	}
-	1150.1.1 = {
-		death = yes
-	}
-}
-280005 = {
-	name = "Anund"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280004
-	1130.1.1 = {
-		birth = yes
-	}
-	1194.1.1 = {
-		death = yes
-	}
-}
-280006 = {
-	name = "Thormod"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280005
-	1166.1.1 = {
-		birth = yes
-	}
-	1231.1.1 = {
-		death = yes
-	}
-}
-280007 = {
-	name = "Arne"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280006
-	1201.1.1 = {
-		birth = yes
-	}
-	1282.1.1 = {
-		death = yes
-	}
-}
-280008 = {
-	name = "Thormod"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280007
-	1242.1.1 = {
-		birth = yes
-	}
-	1301.1.1 = {
-		death = yes
-	}
-}
-280009 = {
-	name = "Anund"
-	dynasty = 1062035
-	religion = catholic
-	culture = norwegian
-	father = 280008
-	1283.1.1 = {
-		birth = yes
-	}
-	1351.1.1 = {
-		death = yes
-	}
-}
-280012 = {
-	name = "Ingeborg"
-	female = yes
-	dynasty = 1062038
-	religion = catholic
-	culture = norwegian
-	1042.1.1 = {
-		birth = yes
-	}
-	1102.1.1 = {
-		death = yes
-	}
-}
-
-280013 = {
-	name = "Trond"
-	dynasty = 1062038
-	religion = catholic	
-	culture = norwegian
-	mother = 280012
-	1073.1.1 = {
-		birth = yes
-	}
-	1155.1.1 = {
-		death = yes
-	}
-}
-
-280014 = {
-	name = "Arne"
-	dynasty = 1062038
-	religion = catholic
-	culture = norwegian
-	father = 280013
-	1115.1.1 = {
-		birth = yes
-	}
-	1187.1.1 = {
-		death = yes
-	}
-}
-
-280015 = {
-	name = "Einar"
-	dynasty = 1062038
-	religion = catholic
-	culture = norwegian
-	father = 280014
-	1152.1.1 = {
-		birth = yes
-	}
-	1231.1.1 = {
-		death = yes
-	}
-}
-
-280016 = {
-	name = "Trond"
-	dynasty = 1062038
-	religion = catholic
-	culture = norwegian
-	father = 280015
-	1198.1.1 = {
-		birth = yes
-	}
-	1272.1.1 = {
-		death = yes
-	}
-}
-280017 = {
-	name = "Einar"
-	dynasty = 1062038
-	religion = catholic
-	culture = norwegian
-	father = 280016
-	1250.1.1 = {
-		birth = yes
-	}
-	1338.1.1 = {
 		death = yes
 	}
 }

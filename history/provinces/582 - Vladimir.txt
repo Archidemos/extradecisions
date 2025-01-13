@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 582 - Vladimir
 
 # County Title
@@ -6,39 +8,41 @@ title = c_vladimir
 # Settlements
 max_settlements = 6
 
-b_vladimir = tribal		#1108
-
-#b_starodub_vladimirsky	#1152
-#b_bogolyubovo			#1156
-#b_rochdestvenskoye		#XIIth
-#b_gorokhovets			#before 1239
-#b_viazniki		#1585
-#b_nikologory	#1628
-#b_kovrov		#city in 1778, actually very tied to Rochdestvenskoye
-
+b_bogolyubovo = tribal
+#b_vladimir = city
+#b_yurevpolskiy = city
+#b_sergiyevposad = temple
+#b_radonezh = castle
+#b_aleksandrov = city
+#b_strunino = city
+#b_pokrov = temple
+#b_shartura = city
 
 # Misc
-culture = mordvin
+culture = mari
 religion = finnish_pagan
-terrain = farmlands
+
 # History
-988.1.1 = {
-	religion = orthodox
-}
-1087.1.2 = {
+995.1.1 = {
 	culture = russian
+	religion = slavic_pagan
 }
-1108.1.1 = {
-	b_vladimir = castle
+995.1.1 = {
+b_bogolyubovo = castle
+b_vladimir = city
+b_sergiyevposad = temple
 }
-1152.1.1 = {
-	b_starodub_vladimirsky = city
-	b_rochdestvenskoye = temple
-	b_bogolyubovo = castle
-}
-1108.1.1 = {
-	b_gorokhovets = castle
-}
-1239.1.1 = {
-	remove_settlement = b_gorokhovets	#Mongol invasion
-}
+1025.1.1 = {religion = orthodox }
+1152.1.1 = { b_yurevpolskiy = city } 
+1187.1.1 = { b_radonezh = castle } 
+1238.1.1 = { remove_settlement = b_yurevpolskiy } #Mongol invasion
+1238.1.1 = { remove_settlement = b_radonezh }
+1299.1.1 = { b_pokrov = temple } #Metropolitan moves to Vladimir
+1325.1.1 = { remove_settlement = b_pokrov } #Metropolitan moves to Moscow
+
+
+
+
+
+
+

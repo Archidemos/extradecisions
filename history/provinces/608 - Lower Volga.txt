@@ -1,33 +1,34 @@
-# 608 - Lower Volga
+# -*- ck2.history.provinces -*-
+
+# 608 - Lower Volga  # Voroneszh
 
 # County Title
 title = c_lower_volga
 
 # Settlements
-max_settlements = 2
+max_settlements = 3
 
-b_sarysu = tribal
+b_korotoyak = tribal
+#b_lipetsk = tribal
+#b_voronezh = city
 
-#b_tsaritsyn = city
-#b_kamyshin = temple
-
-#b_petrovval = city
-#b_serebrjakovo = castle
-#b_dubovka = castle
-#b_kotovo = castle
-#b_prishib = castle
 
 # Misc
 culture = khazar
 religion = tengri_pagan
-
 # History
 
-822.1.1 = { culture = pecheneg } 
-
-1060.1.1 = { culture = cuman }
-
-1200.1.1 = { religion = sunni } 
-
-1227.1.1 = { culture = mongol } 
-
+825.1.1 = { culture = pecheneg } 
+895.1.1 = { culture = khazar } 
+966.1.1 = { culture = oghuz } 
+1061.1.1 = { culture = cuman } 
+1061.1.1 = { religion = tengri_pagan } 
+1200.1.1 = { religion = orthodox } 
+1200.1.1 = { culture = russian } 
+1200.1.1 = { b_lipetsk = castle } 
+1200.1.1 = { b_voronezh = city } 
+#1200.1.1 = { capital = b_lipetsk }
+1239.1.1 = { culture = cuman } 
+1239.1.1 = { remove_settlement = b_voronezh}
+1239.1.1 = { remove_settlement = b_lipetsk}
+#1239.1.1 = { capital = b_korotoyak }

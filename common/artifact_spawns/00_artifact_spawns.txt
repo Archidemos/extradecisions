@@ -2,11 +2,11 @@
 #### QUALITY 5  ####
 ####################
 lamassu_statue = {
-	max_amount = 1
+	max_amount = 2
 	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 100
+		value = 50
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -19,11 +19,6 @@ lamassu_statue = {
 
 	weight = {
 		value = 0
-		additive_modifier = {
-			value = 5
-			religion_group = zoroastrian_group
-			is_landed = yes
-		}
 		additive_modifier = {
 			value = 100
 			religion_group = zoroastrian_group
@@ -59,7 +54,7 @@ kaaba_key = {
 		additive_modifier = {
 			value = 100
 			primary_title = {
-				title = d_medina
+				title = d_sharif_mecca
 			}
 		}
 	}
@@ -72,7 +67,7 @@ kaaba_key = {
 
 umayyad_banner = {
     max_amount = 1
-	spawn_date = 769.1.1
+	spawn_date = -1.1.1
 	
 	spawn_chance = {
 		value = 100
@@ -111,7 +106,7 @@ umayyad_banner = {
 
 abbasid_banner = {
     max_amount = 1
-	spawn_date = 769.1.1
+	spawn_date = -1.1.1
 	
 	spawn_chance = {
 		value = 100
@@ -146,10 +141,10 @@ abbasid_banner = {
 
 turban_muhammed = {
 	max_amount = 1
-	spawn_date = 769.1.1
+	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 50
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -158,28 +153,14 @@ turban_muhammed = {
 			factor = 0
 			is_alternate_start = yes
 		}
-		modifier = {
-			factor = 0
-			NOT = { start_date == 633.1.1 }
-		}
 	}
 
 	weight = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -192,10 +173,10 @@ turban_muhammed = {
 
 turban_ali = {
 	max_amount = 1
-	spawn_date = 769.1.1
+	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 50
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -204,28 +185,14 @@ turban_ali = {
 			factor = 0
 			is_alternate_start = yes
 		}
-		modifier = {
-			factor = 0
-			NOT = { start_date == 633.1.1 }
-		}
 	}
 
 	weight = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -237,11 +204,11 @@ turban_ali = {
 }
 
 uthman_quran = {
-	max_amount = 1
-	spawn_date = 769.1.1
+	max_amount = 2
+	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 40
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -250,28 +217,14 @@ uthman_quran = {
 			factor = 0
 			is_alternate_start = yes
 		}
-		modifier = {
-			factor = 0
-			NOT = { start_date == 633.1.1 }
-		}
 	}
 
 	weight = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -283,11 +236,11 @@ uthman_quran = {
 }
 
 necklace_persian = {
-	max_amount = 1
+	max_amount = 4
 	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 40
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -302,18 +255,8 @@ necklace_persian = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -325,11 +268,11 @@ necklace_persian = {
 }
 
 arabic_soap = {
-	max_amount = 1
+	max_amount = 5
 	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 40
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -344,18 +287,8 @@ arabic_soap = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -367,11 +300,11 @@ arabic_soap = {
 }
 
 andalusian_mercury_clock = {
-	max_amount = 1
+	max_amount = 5
 	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 40
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -386,18 +319,8 @@ andalusian_mercury_clock = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 
@@ -409,11 +332,11 @@ andalusian_mercury_clock = {
 }
 
 arabic_pencil = {
-	max_amount = 1
+	max_amount = 4
 	spawn_date = -1.1.1
 	
 	spawn_chance = {
-		value = 20
+		value = 40
 		modifier = {
 			factor = 0
 			NOT = { has_dlc = "Mystics" }
@@ -428,18 +351,8 @@ arabic_pencil = {
 		value = 0
 		additive_modifier = {
 			value = 100
-			primary_title = {
-				title = e_arabia
-			}
-		}
-	}
-
-	weight = {
-		value = 0
-		additive_modifier = {
-			value = 100
-			religion_group = muslim		
-			is_landed = yes	
+			religion_group = muslim
+			is_landed = yes
 		}
 	}
 

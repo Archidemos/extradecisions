@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 752 - Galatia
 
 # County Title
@@ -6,25 +8,21 @@ title = c_galatia
 # Settlements
 max_settlements = 4
 
-b_mikissos = castle
-b_asponia = city
-
+b_kharsianon = castle
 b_tavia = temple
-
-#b_carissa = castle
-#b_kochisar = castle
-#b_karacaviran = castle
-#b_garsaura = castle
+b_mokissos = city
+b_basilika_therma = city
 
 # Misc
 culture = greek
 religion = orthodox
+terrain = hills # The central anatolian plateau shouldn't really be all mountains
 
 # History
-715.1.1 = { religion = iconoclast }
-#860.1.1 = { religion = orthodox }
 
 # The Seljuks take over Anatolia
 
-1097.8.26 = { culture = turkish }
+1097.8.26 = { remove_settlement = b_basilika_therma }
+1097.8.26 = { culture = turkmen }
 1097.8.26 = { religion = sunni }
+1256.1.1 = { culture = turkish }

@@ -1,35 +1,31 @@
-# 585 - Gorodez
+# -*- ck2.history.provinces -*-
+
+# 585 - Gorodez #Gorodets-Radilov
 
 # County Title
 title = c_gorodez
 
 # Settlements
-max_settlements = 3
+max_settlements = 4
 
-b_gorodez = tribal	#1172
-#b_kitezh			#legendary city "founded" between 1188 & 1238
 
-#b_bor			#XIVth
-#b_puchishche	#1594
-#b_tarasikha
-#b_chistoye_pole
-#b_spasskoye
+b_gorodez = tribal
+#b_chalovsk = city
+#b_yurevets = temple
+#b_puchishche = city
+#b_kovemino = castle
 
-culture = mordvin
+# Misc
+culture = mari
 religion = finnish_pagan
-terrain = plains
 
 # History
-988.1.1 = {
-	religion = orthodox
-}
-1087.1.2 = {
-	culture = russian
-}
-1172.1.1 = {
+1152.1.1 = {
 	b_gorodez = castle
-	b_kitezh = city
+	b_chalovsk = city
+	#b_yurevets = temple
 }
-1239.1.1 = {
-	remove_settlement = b_kitezh	#Mongol invasion
-}
+1152.1.1 = { culture = russian }
+1152.1.1 = { religion = orthodox }
+1225.1.1 = { b_yurevets = temple }
+1239.1.1 = { remove_settlement = b_yurevets } #Mongol invasion

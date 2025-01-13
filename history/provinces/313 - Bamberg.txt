@@ -1,35 +1,30 @@
+# 313 - Bamberg
+
 # County Title
-title = c_bamberg
+title = c_bamberg 
+
 # Settlements
 max_settlements = 4
-# b_ansbach = castle
-b_babenberg = castle
-b_bamberg = temple
-# b_cadolzburg = castle
-# b_colmberg = castle
-b_roth = city
+
+b_babenberg = castle 
+b_forchheim = city
+
+#b_schlusselberg = castle 
+#b_bamberg = temple
+
+#b_pottenstein = castle
+#b_erlangen = city
+#b_weissenohe = temple 
+
 # Misc
-culture = german
+culture = franconian
 religion = catholic
-################################################################################
+
 # History
-################################################################################
-633.1.1 = { 
-    b_babenberg = tribal
-    remove_settlement = b_bamberg
-    remove_settlement = b_roth
-    religion = norse_pagan
+1007.1.1 = { b_bamberg = temple }
+1007.1.1 = {
+	capital = b_bamberg
 }
-
-760.1.1 = { b_babenberg = castle } 
-769.1.1 = { religion = catholic }
-860.1.1 = { religion = catholic } 
-1337.1.1 = { b_ansbach = castle } 
-################################################################################
-# 313 - Bamberg
-################################################################################
-
-################################################################################
-# b_uffenheim = castle
-# b_crailsheim = castle
-################################################################################
+#1057.1.1 = { b_pottenstein = castle }
+#b_schlusselberg = castle 
+1170.1.1 = { culture = german }

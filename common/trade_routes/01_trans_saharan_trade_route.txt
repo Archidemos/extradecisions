@@ -1,98 +1,139 @@
 trans_saharan_trade_route = {
-	wealth = 7.0			# Total base wealth of trade route
+	wealth = 30			# Total base wealth of trade route
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 811	# Trade post
-			province_id = 840	# Trade post
-			province_id = 843	# Trade post
-			province_id = 911	# Cloth production
-			province_id = 912	# Salt mine
-			province_id = 916	# Salt mine
-			province_id = 926	# Gold mine
-			province_id = 1739	# Trade post
-			province_id = 1746	# Trade post
-			province_id = 1761	# Gold mine
-			province_id = 874	# Gold mine
-			province_id = 1343	# Gold mine
-			province_id = 817
-			province_id = 831
-			province_id = 849
-			province_id = 883
-			province_id = 816
-			province_id = 839
-		}
+		trans_saharan_trade_post_trigger = yes
 	}
 
 	modifier = {			# How the trade route modifies the provinces it passes
-		castle_tax_modifier = 0.05
-		city_tax_modifier = 0.05
-		temple_tax_modifier = 0.05
-		tribal_tax_modifier = 0.30
-		trade_route_value = 15
-		local_movement_speed = 0.30
+		castle_tax_modifier = 0.03
+		city_tax_modifier = 0.03
+		temple_tax_modifier = 0.03
+		tribal_tax_modifier = 0.15
+		trade_route_value = 5.3
+		local_movement_speed = 0.1
 		tech_growth_modifier = 0.10
 		icon = 127
 	}
 
 	start = {				# Start provinces of trade route
 		926		# Bambuk
-		1761	# Bure
+		1486	# Volta basin
+		1384	# Bure
 	}
 
 	### Inland route - Bure
-	path = {	# Bure-Timbuktu
-		1761 925 915 911 
+	path = {
+		1229 1230
 	}
-	path = {	# Timbuktu-Araouane
-		911 917
+	path = {
+		807 803 802
 	}
-	path = {	# Araouane to Muluja
-		917 916 918 1780 1733
+	path = {
+		1405 807
 	}
-
-	path = {	# Muluja to Fes
-		1733 1774 840 839
+	path = {
+		1227 1400 1405
 	}
-
-	path = {	# Timbuktu-Kano-Tripoli
-		911 914 1754 1755 1753 1752 1750 1751 1746 1744 1743 1739
+	path = {
+		1227 1329
 	}
-
-	path = {	#Djimi to North Africa
-		1739 1736 1735 1732 1730 1723
+	path = {
+		1225 1227
 	}
-	
-	path = {	# Nafusa to Tripoli
-		1723 811
+	path = {
+		1323 1321 1225
 	}
-	
-	path = {	# Nafusa to Tunis
-		1723 1724 813 814 816 2183 2177 817
+	path = {
+		1229 1485 880 1490
 	}
-	
-	path = {	# Tunis to Sebta
-		817 819 2180 820 2182 822 831 825 832 838 839
+	path = {
+		1329 1478 1480 1229
 	}
-	
-	path = {	# Djimi to Darfur
-		1739 1769 1770 1771 1772
+	path = {
+		1323 1328 1474 1476 1329
+	}	
+	path = {
+		911 914
 	}
-	path = {	#Darfur to Ethiopia
-		1772 1335 880 881 885 1280 1436 1379 874
+	path = {
+		914 927 1319 1322 1323
 	}
-	
-	path = {	# Timbuktu-Kano-Tripoli
-		1772 1994 1334 1993 883 1380 875 1343
+	path = {
+		1226 1404 1405
 	}
-	
-	### Coastal route - Bambuk
-	path = {	# Bambuk-Aoudaghost
-		926 1764 912
+	path = {
+		815 817
 	}
-	path = {	# Aoudaghost-Araouane
-		912 913 919 917
+	path = {
+		815 1353 814
 	}
-	path = {	# Aoudaghost-Marrakech-Safi
-		912 1762 920 921 846 847 1778 843 845 976 849
+	path = {
+		1226 1223 1351 814
+	}
+	path = {
+		1403 1402 1226
+	}
+	path = {
+		1394 1403
+	}
+	path = {
+		1225 1401 1403
+	}
+	path = {
+		914 922 1394
+	}
+	path = {
+		1396 1397 1392 1356 1352 815
+	}
+	path = {
+		1394 1395 1396
+	}
+	path = {
+		814 1349 811 1398 1399 807
+	}
+	path = {
+		840 841 839
+	}
+	path = {
+		913 912 920 921 1364
+	}
+	path = {
+		1364 1363 847 845 843 840
+	}
+	path = {
+		1364 918
+	}
+	path = {
+		918 840
+	}
+	path = {
+		918 834 833 831
+	}
+	path = {
+		918 1396
+	}
+	path = {
+		911 917 916
+	}
+	path = {
+		913 919 1366 916
+	}
+	path = {
+		916 918
+	}
+	path = {
+		926 1374 913
+	}
+	path = {
+		1486 928 915 911
+	}
+	path = {
+		1384 925 1387 1375
+	}
+	path = {
+		1375 913
+	}
+	path = {
+		1375 1377 911
 	}
 }

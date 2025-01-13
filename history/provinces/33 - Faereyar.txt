@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 33 - Faereyar
 
 # County Title
@@ -12,7 +14,6 @@ b_skansin = tribal
 #b_funningur = castle
 #b_kvivik = castle
 #b_sandur = castle
-#b_hov = castle
 #b_klaksvik = castle
 
 # Misc
@@ -21,12 +22,14 @@ religion = norse_pagan
 terrain = mountain
 
 # History
-855.1.1={
-	religion = norse_pagan
+867.1.1 = {
+	b_skansin = tb_shipyard_1
 }
-1000.1.1 = {
-	religion = catholic
+940.1.1 = {
 	b_skansin = castle
 	b_skansin = ca_shipyard_1
-} 
-1066.1.1 = { culture = norwegian }
+	b_torshavn = castle	
+}
+1005.1.1 = { remove_settlement = b_torshavn }
+1015.1.1 = { religion = catholic } 
+1035.1.1 = { culture = icelandic } 

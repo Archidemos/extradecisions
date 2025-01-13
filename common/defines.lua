@@ -39,16 +39,16 @@ NDiplomacy = {
 	DEMESNE_MAX_SIZE_PATRICIAN = 1.0,			-- Extra Max Demesne Size for Patricians (Tier effects do no not apply to Patricians!)
 	DEMESNE_MAX_SIZE_PATRICIAN_DOGE = 1.0,		-- Extra Max Demesne Size for a Patrician Doge (Tier effects do no not apply to Patricians!)
 	GAVELKIND_MAX_SIZE_BONUS = 0.30,			-- Max demesne size bonus from Gavelkind
-	DEMESNE_MAX_SIZE_JAIN_BONUS = 1,			-- Followers of the Jain religion have extra demesne
+	DEMESNE_MAX_SIZE_JAIN_BONUS = 3,			-- Followers of the Jain religion have extra demesne
 
 	GAME_RULE_DEMESNE_SIZE_HALF = 0.5,			-- Divider to decrease max demesne size when using "demesne size: half" game rule
 	GAME_RULE_DEMESNE_SIZE_QUARTERED = 0.25,	-- Divider to decrease max demesne size when using "demesne size: quartered" game rule
 	GAME_RULE_DEMESNE_SIZE_UNLIMITED = 10500,	-- Demesne size when using "demesne size: unlimited" game rule
 
-	VASSAL_BASE_LIMIT = 1.0,					-- Base Vassal Limit
+	VASSAL_BASE_LIMIT = 2.0,					-- Base Vassal Limit
 	VASSAL_LIMIT_DUKE_MULT = 10.0, 				-- Extra Vassal Limit from the ruler's rank
 	VASSAL_LIMIT_KING_MULT = 20.0, 				-- Extra Vassal Limit from the ruler's rank
-	VASSAL_LIMIT_EMPEROR_MULT = 30.0, 			-- Extra Vassal Limit from the ruler's rank
+	VASSAL_LIMIT_EMPEROR_MULT = 40.0, 			-- Extra Vassal Limit from the ruler's rank
 	VASSAL_LIMIT_GREAT_DUKE_BONUS = 5.0, 		-- Extra Vassal Limit for Dukes with more than one Duchy
 	VASSAL_LIMIT_DIPLOMACY_MULT = 0.3,			-- Extra Vassal Limit from ruler and spouse diplomacy
 	VASSAL_LIMIT_DECADENCE_MULTIPLIER = 0.25,	-- Negative modifier, multiplied with the current decadence.
@@ -854,12 +854,12 @@ NCharacter = {
 	MAX_LED_FACTIONS = 2,							-- Maximum number of led Factions
 	MAX_JOINED_FACTIONS = 2,						-- Maximum number of Factions a character can be a member of (including led factions)
 	NON_AGGRESSION_PACT_BLOCKS_FACTIONS = 1,		-- DEFUNCT! MOVED TO GAME RULES -- If set to 1 then factions will be blocked for vassals that have a non-aggression pact with their liege.
-	PORTRAIT_ADULT_MALE_AGE_THRESHOLD = 16,			-- Male child to adult age portrait switch
-	PORTRAIT_ADULT_FEMALE_AGE_THRESHOLD = 16,		-- Female child to adult age portrait switch
+	PORTRAIT_ADULT_MALE_AGE_THRESHOLD = 15,			-- Male child to adult age portrait switch
+	PORTRAIT_ADULT_FEMALE_AGE_THRESHOLD = 15,		-- Female child to adult age portrait switch
 	PORTRAIT_MID_AGE_THRESHOLD = 30,				-- Middle age switch for character portraits
 	PORTRAIT_OLD_AGE_THRESHOLD = 50,				-- Old age switch for character portraits
-	AGE_OF_ADULTHOOD_MALE = 16,						-- Male can rule at this age.
-	AGE_OF_ADULTHOOD_FEMALE = 16,					-- Female can rule at this age.
+	AGE_OF_ADULTHOOD_MALE = 15,						-- Male can rule at this age.
+	AGE_OF_ADULTHOOD_FEMALE = 15,					-- Female can rule at this age.
 	AGE_OF_MARRIAGE_MALE = 16,						-- Male allowed to marry at this age.
 	AGE_OF_MARRIAGE_FEMALE = 16,					-- Female allowed to marry at this age.
 	AGE_ADOLESCENT = 12,							-- Children are considered to be adolescent from this age
@@ -1002,11 +1002,11 @@ NTitle = {
 	EMPEROR_REVOKE_PRESTIGE_COST = 400, -- Unused, impossible
 
 -- Title Grant Decadence Reduction (Multiplied with current decadence)
-	BARON_GRANT_DECADENCE_RED = 0.025,
-	COUNT_GRANT_DECADENCE_RED = 0.05,
-	DUKE_GRANT_DECADENCE_RED = 0.10,
-	KING_GRANT_DECADENCE_RED = 0.15,
-	EMPEROR_GRANT_DECADENCE_RED = 0.20,
+	BARON_GRANT_DECADENCE_RED = 0.05,
+	COUNT_GRANT_DECADENCE_RED = 0.1,
+	DUKE_GRANT_DECADENCE_RED = 0.15,
+	KING_GRANT_DECADENCE_RED = 0.25,
+	EMPEROR_GRANT_DECADENCE_RED = 0.5,
 
 	CLAIM_VASSAL_TITLE_COST_MOD = 0.75,
 	CLAIM_DE_JURE_TITLE_COST_MOD = 0.5,
@@ -1090,7 +1090,7 @@ NEconomy = {
 	HOLDING_SLOT_BUILD_COST_MOD = 0.2,
 	BISHOP_TAX_TO_POPE_FACTOR = 0.1,				-- Bishops only pay half the tax to the Pope if they are loyal to him
 	BISHOP_TAX_TO_ANTI_POPE_FACTOR = 0.05,			-- Bishops only pay a quarter taxes to an Anti-Pope if they are loyal to him
-	DECADENCE_MODIFIER = 0.1,							-- Maximum effect of decadence, positive for low dec, negative for high
+	DECADENCE_MODIFIER = 0.2,						-- Maximum effect of decadence, positive for low dec, negative for high
 	DECADENCE_PER_WEEK_OF_COMBAT = -0.04,			-- Decadence lost per 7 days of combat, for each participant in the combat
 	DECADENCE_PER_WEEK_OF_SIEGE = -0.008,			-- Decadence lost per 7 days of siege, for each participant in the siege
 	TRADEZONE_VALUE_MULT = 0.5,						-- Multiple on trade zone value in tradezone bonus to trade posts and cities
@@ -1145,16 +1145,16 @@ NEconomy = {
 },
 
 NDecadence = {
-	BASE_EMPEROR_GAIN = 0.5,
-	BASE_KING_GAIN = 0.3,
-	BASE_DUKE_GAIN = 0.2,
+	BASE_EMPEROR_GAIN = 0.1,
+	BASE_KING_GAIN = 0.1,
+	BASE_DUKE_GAIN = 0.1,
 	BASE_COUNT_GAIN = 0.1,
 	BASE_BARON_GAIN = 0.1,
 	BASE_UNLANDED_GAIN = 0.1,
 	REALM_SIZE_MULTIPLIER = 0.001,
 	DEMESNE_FRACTION_MULT_POS = 0.5,
 	DEMESNE_FRACTION_MULT_NEG = -0.8,
-	SAFETY_VALUE = 65								-- The limit at where your decadence will give you a risk of decadence revolts
+	SAFETY_VALUE = 75								-- The limit at where your decadence will give you a risk of decadence revolts
 },
 
 NNomad = {
@@ -1162,7 +1162,7 @@ NNomad = {
 	MANPOWER_INCREASE_MULTIPLIER = 0.1,				-- The rate current manpower grows or declines to max manpower
 	MANPOWER_LOW_SENTIMENT_INCREASE_MULTIPLIER = 2.0, -- The manpower effect of a negative Clan Sentiment vs the ruling Clan. At a value of 2, -100 Sentiment is 200% faster manpower regrowth.
 	POPULATION_TAX_MULTIPLIER = 0.0005,				-- Monthly tax income determined by the current population
-	MAX_POPULATION_EMPTY_HOLDING_MULTIPLIER = 750,  -- Max population increase for each empty holding in provinces where the capital is also an empty holding
+	MAX_POPULATION_EMPTY_HOLDING_MULTIPLIER = 1000,  -- Max population increase for each empty holding in provinces where the capital is also an empty holding
 	MAX_MANPOWER_POPULATION_MULTIPLIER = 0.20,		-- How big max manpower will be, determined by the current population value
 	UNITS_FOR_OCCUPATION = 100,						-- Number of hostile units needing to stand on settlement-less nomad provinces to be considered occupied
 	START_POPULATION = 0.40,						-- Starting population, multiplied with max population
@@ -1254,10 +1254,10 @@ NMilitary = {
 	BATTLE_PIETY_MULTIPLIER = 0.5,					-- Piety gain/loss multiplier. This is based on the prestige value, so a value of 1 gives a leader as much piety as he gains prestige from combat
 	SIEGE_PIETY_MULTIPLIER = 0.2,					-- Piety gain/loss multiplier for sieges
 	SIEGE_WEALTH_MULTIPLIER = 1,					-- Wealth gain/loss multiplier for sieges
-	CAPITAL_WARSCORE_MULTIPLIER = 1.5,				-- Warscore multiplier for capital(this is scaled with SETTLEMENT_WARSCORE_MULTIPLIER)
+	CAPITAL_WARSCORE_MULTIPLIER = 1,				-- Warscore multiplier for capital(this is scaled with SETTLEMENT_WARSCORE_MULTIPLIER)
 	BASE_SETTLEMENT_WARSCORE = 1,					-- The base war score from occupying a Holding
 	SETTLEMENT_WARSCORE_MULTIPLIER = 0.3,			-- Warscore worth for occupied private demesne
-	VASSAL_SETTLEMENT_WARSCORE_MULTIPLIER = 0.5,	-- Warscore worth for occupied vassals
+	VASSAL_SETTLEMENT_WARSCORE_MULTIPLIER = 0.3,	-- Warscore worth for occupied vassals
 	PROVINCE_WITHOUT_SETTLEMENT_WARSCORE_MULTIPLIER = 0.02,			-- Warscore worth for occupied private demesne in provinces without holdings
 	VASSAL_PROVINCE_WITHOUT_SETTLEMENT_WARSCORE_MULTIPLIER = 0.02,	-- Warscore worth for occupied vassals in provinces without holdings
 	CONTESTED_TERRITORY_WARSCORE_MULTIPLIER = 1.75,	-- Multiplier for contested settlements
@@ -1280,7 +1280,7 @@ NMilitary = {
 	COASTAL_SUPPLY_BONUS = 0.5,						-- Supply bonus in coastal provinces
 	PAGAN_HOME_SUPPLY_MOD = 0.12,					-- Non Pagans suffer extreme attrition in some Pagan homelands (based on province religion)
 	NAVAL_ATTRITION = 0.0,							-- Attrition taken monthly by units loaded on ships
-	ARMY_MOVEMENT_SPEED = 5,						-- Base movement speed of land units
+	ARMY_MOVEMENT_SPEED = 3,						-- Base movement speed of land units
 	NAVY_MOVEMENT_SPEED = 15,						-- Base movement speed of naval units
 	ARMY_LOAD_MOVE_COST = 20.0,						-- Movement cost for moving armies onto fleets at sea.
 	ARMY_UNLOAD_MOVE_COST = 20.0,					-- Movement cost for moving armies off fleets at sea.
@@ -1291,13 +1291,13 @@ NMilitary = {
 	DEFENDER_ASSULT_DAMAGE_FACTOR = 0.6,			-- Defender damage scale factor when assaulting
 	DAYS_PER_FORTLEVEL_BEFORE_ASSAULT = 30,			-- Number of days until attacker can assault
 	FLANKING_DAMAGE_BONUS = 0.3,					-- Percentage bonus when flanking in combat
-	WAR_CONTRIBUTION_OCCUPATION_PER_DAY = 18,		-- Occupying a Holding gives this Contribution score per day
-	WAR_CONTRIBUTION_PROVINCE_WITHOUT_SETTLEMENT_OCCUPATION_PER_DAY = 5, -- Occupying a province without settlements gives this score per day, multiplied with the number of empty holdings
-	NOMAD_PROVINCE_WAR_CONTRIBUTION_MULTIPLIER = 2,	-- War Contribution multiplier for occupied provinces without holdings from nomad holders
-	WAR_CONTRIBUTION_BATTLE_PER_DAY = 0.14,			-- Every day in battle, a participant gets this. (My Troops / Total Friendly Troops) * Total Enemy Troops * WAR_CONTRIBUTION_BATTLE_PER_DAY. Max is [My Troops].
+	WAR_CONTRIBUTION_OCCUPATION_PER_DAY = 10,		-- Occupying a Holding gives this Contribution score per day
+	WAR_CONTRIBUTION_PROVINCE_WITHOUT_SETTLEMENT_OCCUPATION_PER_DAY = 3, -- Occupying a province without settlements gives this score per day, multiplied with the number of empty holdings
+	NOMAD_PROVINCE_WAR_CONTRIBUTION_MULTIPLIER = 3,	-- War Contribution multiplier for occupied provinces without holdings from nomad holders
+	WAR_CONTRIBUTION_BATTLE_PER_DAY = 0.20,			-- Every day in battle, a participant gets this. (My Troops / Total Friendly Troops) * Total Enemy Troops * WAR_CONTRIBUTION_BATTLE_PER_DAY. Max is [My Troops].
 	WAR_CONTRIBUTION_THEOCRACY_GHW_MULT = 0.25,	-- Holy Orders and other theocracies (notably the Pope) get less war contribution score during Great Holy Wars
-	LOW_DECADENCE_MORALE_MOD = 0.05,					-- Morale Defence Mod when at 0% decadence
-	HIGH_DECADENCE_MORALE_MOD = -0.25,				-- Morale Defence Mod when at 100% decadence
+	LOW_DECADENCE_MORALE_MOD = 0.25,					-- Morale Defence Mod when at 0% decadence
+	HIGH_DECADENCE_MORALE_MOD = -0.5,				-- Morale Defence Mod when at 100% decadence
 	CAPTURED_CLOSE_MALE_RELATIVE_WAR_SCORE = 5.0,	-- War score for holding a close male relative prisoner
 	CAPTURED_HEIR_WAR_SCORE = 50.0,					-- War score for holding the heir prisoner
 
@@ -1424,7 +1424,7 @@ NMilitary = {
 	GALLEYS_PHASE_PURSUE_DEFENSE = 1,
 	GALLEYS_GRAPHICAL_FACTOR = 1,
 
-	COMMAND_MODIFIER_MARTIAL_MULTIPLIER = 0.035,	  -- How much positive command modifiers are increased, and negative modifiers decreased (capped to 100% for negative), per point of martial
+	COMMAND_MODIFIER_MARTIAL_MULTIPLIER = 0.05,	  -- How much positive command modifiers are increased, and negative modifiers decreased (capped to 100% for negative), per point of martial
 
 	MAX_RIVER_MOVEMENT_FORT_LEVEL = 10.0,
 	BOTTLENECK_SIZE_MODIFIER = 1.0,
@@ -1501,7 +1501,7 @@ NMilitary = {
 	NEW_CRUSADE_START_DELAY = 365,							-- The minimum time between a new-style Crusade ("use_new_crusade = yes" in religion) is called and when the war is launched
 	NEW_CRUSADE_START_DELAY_RANDOM = 365,					-- Between 0 and this many days will be added to the Crusade launch delay. So with these numbers, the Crusade will launch between 12 and 24 months after it is called. The exact day is visible in the UI
 	CRUSADE_MINIMUM_CONTRIBUTION = 1000,					-- Participants who have contributed less than this to the war (via sieges, battles, etc., see the in-game war UI) do not receive anything from the Crusade pot
-	CRUSADE_MAX_POT_SHARE = 0.1,							-- It is not possible to receive more than this from the Crusade pot. If there's too few qualifying participants to distribute the full pot, any remainder goes to the Crusader King
+	CRUSADE_MAX_POT_SHARE = 0.2,							-- It is not possible to receive more than this from the Crusade pot. If there's too few qualifying participants to distribute the full pot, any remainder goes to the Crusader King
 	CRUSADER_KING_POT_SHARE = 0.1,							-- The Crusader King gets this portion of the pot, plus any remainder
 	CRUSADER_KING_ARTIFACTS = 2,							-- The Crusader King gets this many artifacts
 	CRUSADERS_GET_EXTRA_ARTIFACTS = 2,						-- The top <NUM> participants get one extra artifact each
@@ -1509,7 +1509,7 @@ NMilitary = {
 },
 
 NTechnology = {
-	DONT_EXECUTE_TECH_BEFORE = 1,				-- Set this to your earliest starting year
+	DONT_EXECUTE_TECH_BEFORE = 769,				-- Set this to your earliest starting year
 	POINTS_PER_ATTRIBUTE = 0.04,
 
 	BASE_NEIGHBOUR_SPREAD_BONUS = 0.03, 		-- bonus for each neighbour with the tech
@@ -1519,7 +1519,7 @@ NTechnology = {
 	TRADEPOST_SPREAD_BONUS = 0.002, 			-- Spread from trade posts
 	SPYACTION_SPREAD_BONUS = 0.006,				-- Spread from the target of the study technology spymaster action
 
-	IDEAL_YEAR_LEVEL_0 = 1, 					-- the chance to get a progress to this level will increase after this date and decrease before it
+	IDEAL_YEAR_LEVEL_0 = 700, 					-- the chance to get a progress to this level will increase after this date and decrease before it
 	IDEAL_YEAR_LEVEL_8 = 1500,
 	IDEAL_YEAR_AHEAD_PENALTY_INVEST = 0.6,		-- Percent increase in cost pre level ahead of ideal date
 

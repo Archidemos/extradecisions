@@ -1,37 +1,31 @@
-# 298 - Värend (prior to 1.10 called Småland)
+# -*- ck2.history.provinces -*-
+
+# 298 - Småland # AKA Njudung
 
 # County Title
 title = c_smaland
 
 # Settlements
 max_settlements = 3
-b_kronoberg = tribal
+b_nasborg = tribal
+#b_jonkoping = city
 
-#b_vaxjo = city
-#b_aringsas
-#b_alvesta
-#b_kronoberg
-#b_furuby
-#b_markaryd
+#b_brahehus = castle
+#b_ekesjo = castle
+#b_olmstads = temple
+#b_hakarps = city
 
 # Misc
 culture = norse
 religion = norse_pagan
 
 # History
-#800.1.1 = {
-#	b_kronoberg = tb_shipyard_1
-#}
-1000.1.1 = {
-	b_kronoberg = castle
-	b_vaxjo = city
+1022.1.7 = {b_nasborg = castle
+b_jonkoping = city}
+1035.1.1 = { culture = gothic } 
+1060.8.2 = {
+	religion = catholic
 }
-1066.1.1 = {
-	culture = swedish
-}
-1123.1.1 = {
-	religion = catholic # Around the time of the "crusade" against Småland
-}
-1170.1.1 = {
-	b_vaxjo = temple
+1066.1.1 = { 
+	b_nasborg = ca_keep_1
 }

@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 74000 = {
 	name="Muhan"
 	dynasty=12269
@@ -10,7 +12,7 @@
 		create_bloodline = {
 			type = ashina
 			has_dlc = "Holy Fury"
-		}
+		}		
 	}
 	611.1.1={
 		death="611.1.1"
@@ -116,6 +118,9 @@
 	656.1.1={
 		birth="656.1.1"
 	}
+	682.1.1={
+		add_spouse=1233409 # daugther of Alp-Elteber
+	}
 	715.1.1={
 		death="715.1.1"
 	}
@@ -127,7 +132,7 @@
 	father = 74007
 	culture="khazar"
 	religion="tengri_pagan"
-
+        mother=1233409 
 	683.1.1={
 		birth="683.1.1"
 	}
@@ -161,9 +166,6 @@
 	father = 146195
 	culture="khazar"
 	religion="tengri_pagan"
-	
-	trait = skilled_tactician
-	trait = quick
 
 	699.1.1={
 		birth="699.1.1"
@@ -281,74 +283,105 @@
 		death="886.1.1"
 	}
 }
-194369 = {
-	name="Yeldem"
-	female=yes
-	dynasty=12269
-
-	father = 74016
-
-	culture="khazar"
-	religion="jewish" 
-
-	846.1.1={
-		birth=yes
-	}
-	886.1.1={
-		death="886.1.1"
-	}
-}
 74018 = {
-	name="Bulan"
-	dynasty=12269
-	culture="khazar"
+	name="Bulan" #the first Bek/Ishad of Khazaria ca. 810s
+	dynasty=12270
+	culture="avar" #possibly part-Khazar, part-Israelite heritage; making him ethnically Avar for the mixed look in CPRplus
 	religion="tengri_pagan"
-	father = 74012
-	734.1.1={
-		birth="734.1.1"
+	#father = 74012 #very unlikely to have been a member of the Qaghanal family
+	trait="skilled_tactician" #tales of his conversion to Judaism point to his success as military commander in Crimea against the Magyars
+	781.1.1={ #?
+		birth=yes
+		culture="khazar" #possibly part-Khazar, part-Israelite heritage
 	}
-	794.1.1={
+	801.1.1={
+		add_spouse=1233281
+	}
+	808.1.1={
 		religion="jewish"
-		dynasty=12270
+		add_trait="sympathy_pagans"
 	}
-	802.1.1={
-		death="802.1.1"
+	835.1.1={ #possibly sometime after 832
+		death=yes
 	}
 }
 
 74019 = {
-	name="Obadiah"
-	dynasty=12269
+	name="Obadiah" #grandson or greatgrandson of Bulan, possibly reigning around the 840s-860s
+	dynasty=12270
 	father = 146186
 	culture="khazar"
-	religion="tengri_pagan"
-	768.1.1={
-		birth="768.1.1"
+	religion="jewish"
+	trait="thrifty_clerk"
+	trait="zealous" #available sources suggest him to be an even stronger proponent of Judaism
+	825.1.1={
+		birth=yes
 	}
-	794.1.1={
-		religion="jewish"
-		dynasty=12270
+	854.1.1={
+		add_spouse = 173000
 	}
-	823.1.1={
-		death="823.1.1"
+	867.1.1 = {
+		# Boost the initial strength of the Khazars
+		wealth = 1000
+		effect = {
+			spawn_unit = {
+				province = 620 # Itil
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_infantry = { 167 167 }
+					heavy_infantry = { 73 73 }
+					light_cavalry = { 80 80 }
+					archers = { 50 50 }
+					horse_archers = { 213 213 }
+				}
+				attrition = 0.5
+				earmark = start_troops
+			}
+				spawn_unit = {
+					province = 620 # Itil
+					owner = ROOT
+					troops = {
+						light_infantry = { 167 167 }
+						heavy_infantry = { 73 73 }
+						light_cavalry = { 80 80 }
+						archers = { 50 50 }
+						horse_archers = { 213 213 }
+					}
+					attrition = 0.5
+					earmark = start_troops
+				}
+				spawn_unit = {
+					province = 620 # Itil
+					owner = ROOT
+					troops = {
+						light_infantry = { 167 167 }
+						heavy_infantry = { 73 73 }
+						light_cavalry = { 80 80 }
+						archers = { 50 50 }
+						horse_archers = { 213 213 }
+					}
+					attrition = 0.5
+					earmark = start_troops
+			}
+		}
+	}
+	874.1.1={
+		death=yes
 	}
 }
 
 74020 = {
 	name="Hezekiah"
-	dynasty=12269
+	dynasty=12270
 	father = 74019
 	culture="khazar"
-	religion="tengri_pagan"
-	785.1.1={
-		birth="785.1.1"
+	religion="jewish"
+	843.1.1={
+		birth=yes
 	}
-	794.1.1={
-		religion="jewish"
-		dynasty=12270
-	}
-	829.1.1={
-		death="829.1.1"
+	878.1.1={
+		death=yes
 	}
 }
 
@@ -359,59 +392,55 @@
 	culture="khazar"
 	religion="jewish"
 
-	810.1.1={
-		birth="810.1.1"
+	864.1.1={
+		birth=yes
 	}
-	831.1.1={
-		death="831.1.1"
+	886.1.1={ #possibly died without an heir
+		death=yes
 	}
 }
 
 74022 = {
-	name="Hanukkah"
-	dynasty=12269
-	father = 74019
+	name="Hanukkah" #brother of Obadiah
+	dynasty=12270
+	father = 146186
 	culture="khazar"
 	religion="tengri_pagan"
-	787.1.1={
-		birth="787.1.1"
+	827.1.1={
+		birth=yes
 	}
-	794.1.1={
-		religion="jewish"
-		dynasty=12270
-	}
-	847.1.1={
-		death="847.1.1"
+	889.1.1={
+		death=yes
 	}
 }
 
 74023 = {
 	name="Isaac"
 	dynasty=12270
-	father = 74022
+	father = 74022 #?
 	culture="khazar"
 	religion="jewish"
 
-	804.1.1={
-		birth="804.1.1"
+	846.1.1={
+		birth=yes
 	}
-	856.1.1={
-		death="856.1.1"
+	897.1.1={
+		death=yes
 	}
 }
 
 74024 = {
 	name="Zebulun"
 	dynasty=12270
-	father = 74023
+	father = 74023 #?
 	culture=khazar
 	religion="jewish"
 
-	821.1.1={
-		birth=yes
-	}
 	864.1.1={
-		death=yes
+		birth = yes
+	}
+	902.1.1={
+		death = yes
 	}
 }
 
@@ -420,53 +449,15 @@
 	dna = hmdhnbsbvri
 	properties = eer0id000000000000
 	dynasty=12270
-	father = 74024
+	father = 74023 #?
 	culture=khazar
 	religion="jewish"
 
-	838.1.1={
-		birth=yes
+	866.1.1={
+		birth = yes
 	}
-	854.1.1={
-		add_spouse = 173000
-	}
-	867.1.1 = {
-		# Boost the initial strength of the Khazars
-		effect = {
-			spawn_unit = {
-				province = 620 # Itil
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
-				}
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 620 # Itil
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
-				}
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 620 # Itil
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 197 197 }
-					horse_archers = { 84 84 }
-				}
-				attrition = 0.5
-			}
-		}
-	}
-	888.1.1={
-		death=yes
+	904.1.1={
+		death = yes
 	}
 }
 
@@ -474,58 +465,31 @@
 	name="Nisi"
 	dynasty=12270
 	father = 74025
-	mother = 173000
+	#mother = 173000
 	culture="khazar"
 	religion="jewish" 
 
-	855.1.1={
-		birth=yes
+	882.1.1={
+		birth = yes
 	}
-	899.1.1={
-		death=yes
+	911.1.1={
+		death = yes
 	}
 }
 
-180226 = {
-	name=Yavdi	# fictional
-	# Count of Sarkel
-	dynasty=1042041
-	religion=jewish
-	culture=khazar
-	833.8.25={
-		birth=yes
-	}
-	889.1.1={
-		death=yes
-	}
-}
-194370 = {
-	name=Itakh	# fictional
-	dynasty=1042041
-	religion=jewish
-	culture=khazar
-	father=180226
-	853.8.25={
-		birth=yes
-	}
-	889.1.1={
-		death=yes
-	}
-}
-194371 = {
-	name=Ayten	# fictional
-	female=yes
-	dynasty=1042041
-	religion=jewish
-	culture=khazar
-	father=180226
-	855.8.25={
-		birth=yes
-	}
-	889.1.1={
-		death=yes
-	}
-}
+#180226 = {
+#	name=Yavdi	# fictional
+#	# Count of Sarkel
+#	dynasty=1042041
+#	religion=jewish
+#	culture=khazar
+#	833.8.25={
+#		birth = yes
+#	}
+#	889.1.1={
+#		death = yes
+#	}
+#}
 
 183244 = {
 	name=Lärkka
@@ -534,59 +498,32 @@
 	religion=tengri_pagan
 	culture=khazar
 	849.1.1={
-		birth=yes
+		birth = yes
 	}
 	877.1.1={
-		death=yes
+		death = yes
 	}
 }
 
-20663 = {
-	name=Isaac
-	dynasty=100620
-	martial=7
-	diplomacy=4
-	intrigue=5
-	stewardship=4
-	religion=jewish
-	culture=khazar
-	trait=content
-	trait=cynical
-	trait=scholarly_theologian
-	1025.1.1={
-		birth=yes
-	}
-	1089.1.1={
-		death=yes
-	}
-}
-194391 = {
-	name=Ezra
-	dynasty=100620
-	religion=jewish
-	culture=khazar
-	father=20663
-	1045.1.1={
-		birth=yes
-	}
-	1089.1.1={
-		death=yes
-	}
-}
-194392 = {
-	name=Sirin
-	female=yes
-	dynasty=100620
-	religion=jewish
-	culture=khazar
-	father=20663
-	1047.1.1={
-		birth=yes
-	}
-	1089.1.1={
-		death=yes
-	}
-}
+#20663 = {
+#	name=Isaac
+#	dynasty=100620
+#	martial=7
+#	diplomacy=4
+#	intrigue=5
+#	stewardship=4
+#	religion=jewish
+#	culture=khazar
+#	trait=content
+#	trait=cynical
+#	trait=scholarly_theologian
+#	1045.1.1={
+#		birth = yes
+#	}
+#	1089.1.1={
+#		death = yes
+#	}
+#}
 
 173000 = {
 	name="Belet"
@@ -595,10 +532,10 @@
 	culture=khazar
 
 	838.1.1={
-		birth=yes
+		birth = yes
 	}
 	892.1.1={
-		death=yes
+		death = yes
 	}
 }
 145786 = {
@@ -616,7 +553,7 @@
 }
 
 145787 = {
-	name="Irge"
+	name="Çiçek" #vanilla Irge
 	female=yes
 	dynasty=12269
 	culture="khazar"
@@ -630,7 +567,7 @@
 		name="Eirene"
 		religion="iconoclast"
 	}
-	750.1.25={
+	750.2.1={
 		death="750.1.25"
 	}
 }
@@ -661,32 +598,31 @@
 	culture="khazar"
 	father = 74004
 	677.1.1={
-		birth=yes
+		birth = yes
 	}
 	703.1.1={
 		name="Theodora"
 		religion="orthodox"
 	}
 	711.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 146186 = {
 	name="Ezra"
-	dynasty=12269
+	dynasty=12270
 	culture="khazar"
 	religion="tengri_pagan"
 	father = 74018
-	751.1.1={
-		birth=yes
+	803.1.1={
+		birth = yes
 	}
-	794.1.1={
+	808.1.1={
 		religion="jewish"
-		dynasty=12270
 	}
-	795.1.1={
-		death=yes
+	846.1.1={
+		death = yes
 	}
 }
 
@@ -695,12 +631,12 @@
 	dynasty=12270
 	culture="khazar"
 	religion="jewish"
-	father = 74026
-	872.1.1={
-		birth=yes
+	father = 74025 #?
+	883.1.1={
+		birth = yes
 	}
 	916.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -709,12 +645,12 @@
 	dynasty=12270
 	culture="khazar"
 	religion="jewish"
-	father = 146187
-	889.1.1={
-		birth=yes
+	father = 146187 #?
+	901.1.1={
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -723,26 +659,26 @@
 	dynasty=12270
 	culture="khazar"
 	religion="jewish"
-	father = 146187
-	891.1.1={
-		birth=yes
+	father = 146187 #?
+	903.1.1={
+		birth = yes
 	}
 	928.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 146190 = {
-	name="Aaron"
+	name="Aaron" #attested in the 930s
 	dynasty=12270
 	culture="khazar"
 	religion="jewish"
-	father = 146189
-	908.1.1={
-		birth=yes
+	father = 146187 #?
+	905.1.1={
+		birth = yes
 	}
 	945.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -752,14 +688,14 @@
 	culture="khazar"
 	religion="jewish"
 	father = 146190
-	921.1.1={
-		birth=yes
+	922.1.1={
+		birth = yes
 	}
-	936.1.1={
-		add_spouse=260995
+	938.1.1={
+        add_spouse= 1233412 # a daughter of the Alan king.
 	}
 	969.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -770,38 +706,38 @@
 	religion="jewish"
 	father = 146191
 	942.1.1={
-		birth=yes
+		birth = yes
 	}
-	969.1.1={
-		death=yes
+	966.1.1={
+		death = yes
 	}
 }
 
 146193 = {
-	name="David"
-	dynasty=1022378
+	name="David" # David of Taman
+	dynasty=1000100548
 	culture="khazar"
 	religion="jewish"
 
 	937.1.1={
-		birth=yes
+		birth = yes
 	}
 	993.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 146194 = {
-	name="Georgios"
+	name="Georgios" # Georgios Tzule
 	dynasty=1022378
 	culture="khazar"
-	religion="jewish"
-	father = 146193
+	religion="orthodox"
+	father=1233293 # Leon Tzoulas
 	962.1.1={
-		birth=yes
+		birth = yes
 	}
 	1023.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -812,24 +748,24 @@
 	religion="tengri_pagan"
 
 	682.1.1={
-		birth=yes
+		birth = yes
 	}
 	743.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 146196 = {
-	name="Simsam"
+	name="Simsam" # aka Samsam, Sãmsuya
 	dynasty=1022377
 	culture="khazar"
 	religion="tengri_pagan"
 	father = 146195
 	717.1.1={
-		birth=yes
+		birth = yes
 	}
 	774.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -840,10 +776,10 @@
 	religion="tengri_pagan"
 	father = 146196
 	738.1.1={
-		birth=yes
+		birth = yes
 	}
 	797.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -854,10 +790,10 @@
 	religion="tengri_pagan"
 	father = 146196
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	800.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -868,10 +804,10 @@
 	religion="tengri_pagan"
 	father = 146196
 	742.1.1={
-		birth=yes
+		birth = yes
 	}
 	805.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -882,10 +818,10 @@
 	religion="tengri_pagan"
 	father = 146196
 	744.1.1={
-		birth=yes
+		birth = yes
 	}
 	803.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -896,196 +832,182 @@
 	religion="tengri_pagan"
 
 	747.1.1={
-		birth=yes
+		birth = yes
 	}
 	801.1.1={
-		death=yes
-	}
-}
-
-146202 = {
-	name="Iltäbär"
-	dynasty=1022380
-	culture="khazar"
-	religion="tengri_pagan"
-
-	745.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-
-146203 = {  
-	name="Sartäç"
-	dynasty=1022381
-	culture="khazar"
-	religion="tengri_pagan"
-
-	733.1.1={ #down from 743
-		birth=yes
-	}
-	796.1.1={
-		death=yes
-	}
-}
-
-194347 = {
-	name="Yabghu"
-	dynasty=1022381
-	father = 146203
-	culture="khazar"
-	religion="tengri_pagan"
-
-	750.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-
-194355 = {
-	name="Gulay"
-	female = yes
-	dynasty=1022381
-	father = 146203
-	culture="khazar"
-	religion="tengri_pagan"
-
-	752.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-
-146204 = {
-	name="Mënümarót"
-	dynasty=1022382
-	culture="khazar"
-	religion="tengri_pagan"
-
-	731.1.1={
-		birth=yes
-	}
-	793.1.1={
-		death=yes
-	}
-}
-
-194346 = {
-	name="Bastu"
-	dynasty=1022382
-	father = 146204
-	culture="khazar"
-	religion="tengri_pagan"
-
-	750.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-194356 = {
-	name="Tura"
-	dynasty=1022382
-	female = yes
-	father = 146204
-	culture="khazar"
-	religion="tengri_pagan"
-
-	751.1.1={
-		birth=yes
-	}
-	799.1.1={
-		death=yes
-	}
-}
-256057 = {			#fictional, khazarian clan in 867
-	name = Hezekiah
-	dynasty = 1061037	#Hekel
-	religion = "jewish"
-	culture = "khazar"
-	850.1.1 = {
-		birth = yes
-	}
-	900.1.1 = {
 		death = yes
 	}
 }
-256058 = {			#fictional, khazarian clan in 867
-	name = Bulçan
-	dynasty = 1061038	#Bulçir
-	religion = "jewish"
-	culture = "khazar"
-	833.1.1 = {
-		birth = yes
-	}
-	900.1.1 = {
-		death = yes
-	}
-}
-258094 = {
-	name="Yavdi"
-	dynasty=1100016
-	religion="jewish"
+
+#146202 = {
+#	name="Iltäbär"
+#	dynasty=1022380
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	745.1.1={
+#		birth = yes
+#	}
+#	799.1.1={
+#		death = yes
+#	}
+#}
+
+#146203 = {  
+#	name="Sartäç"
+#	dynasty=1022381
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	733.1.1={ #down from 743
+#		birth = yes
+#	}
+#	796.1.1={
+#		death = yes
+#	}
+#}
+
+#146204 = {
+#	name="Mënümarót"
+#	dynasty=1022382
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	741.1.1={
+#		birth = yes
+#	}
+#	793.1.1={
+#		death = yes
+#	}
+#}
+
+
+194369 = {
+	name="Yeldem"
+	female=yes
+	dynasty=12269
+
+	father = 74016
+
 	culture="khazar"
-	1036.1.1={
-		birth=yes
-	}
-	1087.1.1={
-		death=yes
-	}
-}
-260702 = {
-	name = "Kamaj"
-	dynasty = 1062328
-	religion = tengri_pagan
-	culture = khazar
-	905.1.1 = {
+	religion="jewish" 
+
+	846.1.1={
 		birth = yes
 	}
-	963.1.1 = {
-		death = yes
+	886.1.1={
+		death="886.1.1"
 	}
 }
-260703 = {
-	name = "Kisa"
-	dynasty = 1062329
-	religion = tengri_pagan
-	culture = khazar
-	911.1.1 = {
-		birth = yes
-	}
-	960.1.1 = {
-		death = yes
-	}
-}
-260704 = {
-	name = "Yavantey"
-	dynasty = 1062330
-	religion = jewish
-	culture = khazar
-	906.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-261005 = {
-	name = "Ra'iq"
-	dynasty = 1062487
-	religion = sunni
-	culture = khazar
-	868.1.1 = {
-		birth = yes
-	}
-	915.1.1 = {
-		death = yes
-	}
-}
+#194370 = {
+#	name=Itakh	# fictional
+#	dynasty=1042041
+#	religion=jewish
+#	culture=khazar
+#	father=180226
+#	853.8.25={
+#		birth = yes
+#	}
+#	909.1.1={
+#		death = yes
+#	}
+#}
+#194371 = {
+#	name=Ayten	# fictional
+#	female=yes
+#	dynasty=1042041
+#	religion=jewish
+#	culture=khazar
+#	father=180226
+#	855.8.25={
+#		birth = yes
+#	}
+#	889.1.1={
+#		death = yes
+#	}
+#}
+#194391 = {
+#	name=Ezra
+#	dynasty=100620
+#	religion=jewish
+#	culture=khazar
+#	father=20663
+#	1062.1.1={
+#		birth = yes
+#	}
+#	1089.1.1={
+#		death = yes
+#	}
+#}
+#194392 = {
+#	name=Sirin
+#	female=yes
+#	dynasty=100620
+#	religion=jewish
+#	culture=khazar
+#	father=20663
+#	1047.1.1={
+#		birth = yes
+#	}
+#	1089.1.1={
+#		death = yes
+#	}
+#}
+#194347 = {
+#	name="Yabghu"
+#	dynasty=1022381
+#	father = 146203
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	750.1.1={
+#		birth = yes
+#	}
+#	799.1.1={
+#		death = yes
+#	}
+#}
+#194355 = {
+#	name="Gulay"
+#	female = yes
+#	dynasty=1022381
+#	father = 146203
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	752.1.1={
+#		birth = yes
+#	}
+#	799.1.1={
+#		death = yes
+#	}
+#}
+#194346 = {
+#	name="Bastu"
+#	dynasty=1022382
+#	father = 146204
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	750.1.1={
+#		birth = yes
+#	}
+#	799.1.1={
+#		death = yes
+#	}
+#}
+#194356 = {
+#	name="Tura"
+#	dynasty=1022382
+#	female = yes
+#	father = 146204
+#	culture="khazar"
+#	religion="tengri_pagan"
+#
+#	751.1.1={
+#		birth = yes
+#	}
+#	799.1.1={
+#		death = yes
+#	}
+#}

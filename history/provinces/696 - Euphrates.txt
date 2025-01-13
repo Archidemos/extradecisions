@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 696 - Samarra #Former Euphrates
 
 # County Title
@@ -6,19 +8,22 @@ title = c_euphrates
 # Settlements
 max_settlements = 6
 b_samarra = castle
-b_bayji = city
-b_tagrit = temple
-b_balad = castle
-b_amirli = castle
-
-#b_dujail = city
-#b_ishaqi = castle
-#b_faris = castle
+b_alqadisiyyah = castle
+b_ukbara = temple
+b_balad = temple
+b_harba = city
+b_alth = city
+#b_aldur = city
 
 #Misc
 culture = assyrian
-religion = zoroastrian
-terrain = farmlands
+religion = nestorian
+
 # History
-766.1.1 = { religion = sunni }
-1255.1.1 = { remove_settlement = b_tagrit }
+900.1.1 = {
+	remove_settlement = b_alqadisiyyah #not mentioned by Istakhri and Ibn Hawqal, and Muqaddasi refers to a single structure there
+}
+940.1.1 = { 
+	culture = levantine_arabic
+	religion = sunni
+}

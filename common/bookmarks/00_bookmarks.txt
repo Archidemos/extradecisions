@@ -1,125 +1,10 @@
-bm_charlemagne = {
-	name = "BM_CHARLEMAGNE_ERA"
-	desc = "BM_CHARLEMAGNE_ERA_INFO"
-	date = 769.1.1
-	
-	era = yes						## Will be shown on Era screen.
-	picture = GFX_pick_era_image_1
-	
-	selectable_character = {
-		id = 6392 # Charlemagne
-		age = 26
-		name = ERA_CHAR_NAME_6392
-		title = k_france
-		title_name = WEST_FRANCIA
-		
-		character = {
-			dna = bcedirmbfcy
-			properties = aj00bc00000
-			religion="catholic"
-			culture="old_frankish"
-			government = feudal_government
-			dynasty=25061
-		}
-	}
-
-	selectable_character = {
-		id = 144999 # Carloman
-		age = 18
-		name = ERA_CHAR_NAME_144999
-		title = k_lotharingia
-		title_name = k_lotharingia
-		
-		character = {
-			dna = bcalbhabgal
-			properties = aj0aca000000
-			religion="catholic"
-			culture="old_frankish"
-			government = feudal_government
-			dynasty=25061
-		}
-	}
-
-	selectable_character = {
-		id = 190347 # Desiderius
-		age = 52
-		name = ERA_CHAR_NAME_190347
-		title = k_lombardy
-		title_name = LOMBARD_KINGDOM
-		
-		character = {
-			dna = aldccxlhgaf
-			properties = ai0afa000000
-			religion="catholic"
-			culture="lombard"
-			government = feudal_government
-			dynasty=1044053
-		}
-	}
-
-	selectable_character = {
-		id = 73679 # Abd-Al-Rahman
-		age = 37
-		name = ERA_CHAR_NAME_73679
-		title = k_andalusia
-		title_name = ERA_UMAYYAD_EMPIRE
-		coa_dynasty = yes
-		dlc = "The Sword of Islam"
-		
-		character = {
-			dna = cmedkpffaax
-			properties = mj0afa000000
-			religion="sunni"
-			culture="bedouin_arabic"
-			government = muslim_government
-			dynasty=597
-		}
-	}
-
-	selectable_character = {
-		id = 34002 # Al-Mansur
-		age = 55
-		name = ERA_CHAR_NAME_34002
-		title = e_arabia
-		title_name = d_abbasid	
-		coa_dynasty = yes
-		dlc = "The Sword of Islam"
-		
-		character = {
-			dna = beegiscaaad
-			properties = ml0ag0000000
-			religion="sunni"
-			culture="bedouin_arabic"
-			government = muslim_government
-			dynasty=101727
-		}
-	}
-
-	selectable_character = {
-		id = 74413 # Krishna Rashtrakuta
-		age = 64
-		name = ERA_CHAR_NAME_74413
-		title = k_maharastra
-		title_name = ERA_RASHTRAKUTA_KINGDOM
-		coa_dynasty = yes
-		dlc = "Rajas of India"
-		
-		character = {
-			dna = dhcjffdbaaa
-			properties = ag0aea000000
-			religion="hindu"
-			culture="kannada"
-			government = feudal_government
-			dynasty=1043003
-		}
-	}
-}
+# -*- ck2.bookmarks -*-
 
 bm_the_old_gods = {
 	name = "BM_THE_OLD_GODS_ERA"
 	desc = "BM_THE_OLD_GODS_ERA_INFO"
 	date = 867.1.1
-	
+
 	era = yes						## Will be shown on Era screen.
 	picture = GFX_pick_era_image_2
 
@@ -129,7 +14,7 @@ bm_the_old_gods = {
 		name = ERA_CHAR_NAME_163112
 		title = d_york
 		title_name = ERA_JORVIK
-		
+
 		character = {
 			dna = tctbpftnsvn
 			properties = tg0djd000000
@@ -146,7 +31,7 @@ bm_the_old_gods = {
 		name = ERA_CHAR_NAME_40605
 		title = d_novgorod
 		title_name = ERA_HOLMGARDR
-		
+
 		character = {
 			dna = tczeyfghtom
 			properties = th0ebd000000
@@ -163,7 +48,7 @@ bm_the_old_gods = {
 		name = ERA_CHAR_NAME_90104
 		title = k_france
 		title_name = WEST_FRANCIA
-		
+
 		character = {
 			dna = cjlcjygaaar
 			properties = an0abb000000
@@ -180,12 +65,12 @@ bm_the_old_gods = {
 		name = ERA_CHAR_NAME_90107
 		title = k_germany
 		title_name = EAST_FRANCIA
-		
+
 		character = {
 			dna = bagmeomdaai
 			properties = aj0abb000000
 			religion="catholic"
-			culture="german"
+			culture="franconian"  # german
 			government = feudal_government
 			dynasty=25061
 		}
@@ -197,7 +82,7 @@ bm_the_old_gods = {
 		name = ERA_CHAR_NAME_1700
 		title = e_byzantium
 		title_name = e_byzantium
-		
+
 		character = {
 			dna = dageigbabbe
 			properties = am0aj0000000
@@ -216,12 +101,12 @@ bm_the_old_gods = {
 		title_name = d_abbasid
 		coa_dynasty = yes
 		dlc = "The Sword of Islam"
-		
+
 		character = {
 			dna = csdeypeevjm
 			properties = eo0bb0000000
 			religion="sunni"
-			culture="bedouin_arabic"
+			culture="levantine_arabic"
 			government = muslim_government
 			dynasty=101727
 		}
@@ -234,13 +119,19 @@ bm_the_old_gods = {
 	}
 
 	selectable_character = {
-		id = 163111 # Ivar the Boneless	
+		id = 163111 # Ivar the Boneless
 	}
 
 	selectable_character = {
-		id = 45107 # Vandad I
+		id = 1231129 # Tiradh
 	}
 }
+
+#bm_clash_of_emperors = {
+#	name = "BM_CLASH_OF_EMPERORS"
+#	desc = "BM_CLASH_OF_EMPERORS_DESC"
+#	date = 914.6.1
+#}
 
 bm_otto_the_first = {
 	name = "OTTO_THE_FIRST_ERA"
@@ -281,14 +172,14 @@ bm_otto_the_first = {
 			dna = axgiowlnepj
 			properties = anm0ka00000000000000000000000000000000
 			government = muslim_government
-			religion = shiite
-			culture = bedouin_arabic
+			religion = ismaili
+			culture = levantine_arabic
 			dynasty = 589
 		}
 	}
 
 	selectable_character = {
-		id = 33350 # King Æthelstan of England
+		id = 33350 # King Aethelstan of England
 		age = 43
 		title = k_england
 		title_name = k_england
@@ -336,7 +227,7 @@ bm_otto_the_first = {
 			dna = sezydwhylrb
 			properties = xb00kc00000000000000000000000000000000
 			religion = tengri_pagan
-			culture = hungarian
+			culture = old_hungarian
 			government = tribal_government
 			dynasty = 708
 		}
@@ -378,14 +269,273 @@ bm_otto_the_first = {
 	}
 }
 
+#bm_lechfeld = {
+#	name = "BM_LECHFELD"
+#	desc = "BM_LECHFELD_DESC"
+#	date = 955.8.13
+#
+#	selectable_character = {
+#		id = 1282 # Otto the Great
+#	}
+#
+#	selectable_character = {
+#		id = 460 # Takson Árpád
+#	}
+#
+#	selectable_character = {
+#		id = 508 # Boleslav the Cruel of Bohemia
+#	}
+#
+#	selectable_character = {
+#		id = 146191 # Ioseph of Khazaria
+#	}
+#}
+
+#bm_fatimids_egypt = {
+#	name = "BM_FATIMIDS_EGYPT"
+#	desc = "BM_FATIMIDS_EGYPT_DESC"
+#	date = 969.7.1
+#
+#	selectable_character = {
+#		id = 32903 # al-Mu'izz
+#	}
+#
+#	selectable_character = {
+#		id = 1234981 # Jawhar al-Siqilli
+#	}
+#}
+
+#bm_pandulf = {
+#	name = "BM_PANDULF"
+#	desc = "BM_PANDULF_DESC"
+#	date = 979.5.1
+#}
+
+#bm_vladimir_great = {
+#	name = "BM_VLADIMIR_GREAT"
+#	desc = "BM_VLADIMIR_GREAT_DESC"
+#	date = 988.1.1
+
+#	selectable_character = {
+#		id = 608 # Vladimir "the Great" Rurikovich
+#	}
+#}
+
+bm_age_of_kings = {
+	name = "BM_AGE_OF_KINGS"
+	desc = "BM_AGE_OF_KINGS_DESC"
+	date = 993.1.1
+	custom_start = yes
+
+	selectable_character = {
+		id = 200 # Hughes Capet
+	}
+	selectable_character = {
+		id = 101505 # Sveinn Tveskägg/Forkbeard
+	}
+	selectable_character = {
+		id = 608 # Vladimir "the Great" Rurikovich
+	}
+	selectable_character = {
+		id = 900 # Brian Boru
+	}
+	selectable_character = {
+		id = 144123 # Sabuktegin Ghaznavid
+	}
+	selectable_character = {
+		id = 3206 # al-Mansur (Almanzor)
+	}
+	selectable_character = {
+		id = 188406 # Didda Lohara
+	}
+}
+
+bm_spercheios = {
+	name = "BM_SPERCHEIOS"
+	desc = "BM_SPERCHEIOS_DESC"
+	date = 997.7.16
+
+	selectable_character = {
+		id = 728 # Samuil Kometopoulos
+	}
+	selectable_character = {
+		id = 1716 # Basil "the Bulgar-slayer"
+	}
+}
+
+bm_new_millennium = {
+	name = "BM_NEW_MILLENNIUM"
+	desc = "BM_NEW_MILLENNIUM_DESC"
+	date = 1000.12.25
+
+	selectable_character = {
+		id = 482 # Saint Stephen of Hungary
+	}
+	selectable_character = {
+		id = 144125 # Mahmud Ghaznavid
+	}
+	selectable_character = {
+		id = 8616 # Kresimir Trpimirovic
+	}
+	selectable_character = {
+		id = 1230264 # Nasr Ilek Karakhanid
+	}
+	selectable_character = {
+		id = 146194 # Georgios Tzul
+	}
+	selectable_character = {
+		id = 155121 # Ziri Maghrawavid
+	}
+}
+
+bm_canute_the_great = {
+	name = "BM_CANUTE_THE_GREAT"
+	desc = "BM_CANUTE_THE_GREAT_DESC"
+	date = 1018.8.1
+
+	selectable_character = {
+		id = 101510 # Knud the Great
+	}
+	selectable_character = {
+		id = 1716 # Basil "the Bulgar-slayer"
+	}
+	selectable_character = {
+		id = 144125 # Mahmud Ghaznavid
+	}
+	selectable_character = {
+		id = 1231073 # Abu-Shoja Buyid AKA Sultan al-Dawla Buyid
+	}
+	selectable_character = {
+		id = 1148 # Rudolf Welf
+	}
+	selectable_character = {
+		id = 3092 # al-Hakim Fatimid
+	}
+	selectable_character = {
+		id = 756 # Boleslaw the Brave
+	}
+	selectable_character = {
+		id = 612 # Yaroslav the Wise
+	}
+	selectable_character = {
+		id = 482 # Saint Stephen of Hungary
+	}
+}
+
+bm_taifa_kings = {
+	name = "BM_TAIFA_KINGS"
+	desc = "BM_TAIFA_KINGS_DESC"
+	date = 1031.11.30
+
+	selectable_character = {
+		id = 73690 # Yahya Hammudid
+	}
+	selectable_character = {
+		id = 45025 # Abd al-Aziz Amirid
+	}
+	selectable_character = {
+		id = 85008 # Mujahid al-Amiri
+	}
+	selectable_character = {
+		id = 3922 # Isma'il Dhunnunid
+	}
+	selectable_character = {
+		id = 73209 # Muhammad Abbadid
+	}
+	selectable_character = {
+		id = 45000 # Jahwar Jahwarid
+	}
+	selectable_character = {
+		id = 73185 # Yahya Tujibid
+	}
+}
+
+bm_dandanaqan = {
+	name = "BM_DANDANAQAN"
+	desc = "BM_DANDANAQAN_DESC"
+	date = 1040.6.1
+
+	selectable_character = {
+		id = 3038 # Tughril-Beg Seljuk
+	}
+	selectable_character = {
+		id = 144127 # Masud Ghaznavid
+	}
+	selectable_character = {
+		id = 3036 # Chagri-Beg Seljuk
+	}
+	selectable_character = {
+		id = 144128 # Mawdud Ghaznavid
+	}
+}
+
+bm_age_of_the_normans = {
+	name = "BM_AGE_OF_THE_NORMANS"
+	desc = "BM_AGE_OF_THE_NORMANS_DESC"
+	date = 1043.1.1
+
+	selectable_character = {
+		id = 1122 # William "Iron-Arm" de Hauteville
+	}
+	selectable_character = {
+		id = 30827 # Rainulf Drengot
+	}
+	selectable_character = {
+		id = 140 # William the Bastard
+	}
+	selectable_character = {
+		id = 114 # Edward the Confessor
+	}
+	selectable_character = {
+		id = 102529 # Magnus Yngling of Norway and Denmark
+	}
+	selectable_character = {
+		id = 612 # Yaroslav Rurikovich of Kiev
+	}
+	selectable_character = {
+		id = 3038 # Tughril-Beg Seljuk
+	}
+	selectable_character = {
+		id = 3096 # Caliph Al-Mustansir [Fatimid]
+	}
+	selectable_character = {
+		id = 1231074 # Abú Táher [Buyid]
+	}
+}
+
+bm_seljuks_in_baghdad = {
+	name = "BM_SELJUKS_IN_BAGHDAD"
+	desc = "BM_SELJUKS_IN_BAGHDAD_DESC"
+	date = 1055.12.18
+
+	selectable_character = {
+		id = 3038 # Tughril-Beg Seljuk
+	}
+	selectable_character = {
+		id = 1229942 # Arslan al-Basasiri
+	}
+	selectable_character = {
+		id = 3084 # al-Qa'im [Sunni Caliph]
+	}
+}
+
+bm_isaac_komnenos = {
+	name = "BM_ISAAC_KOMNENOS"
+	desc = "BM_ISAAC_KOMNENOS_DESC"
+	date = 1057.8.31
+
+	selectable_character = {
+		id = 1730 # Isaakios Komnenos
+	}
+}
+
 bm_fate_of_england = {
 	name = "BM_FATE_OF_ENGLAND_ERA"
 	desc = "BM_FATE_OF_ENGLAND_ERA_INFO"
 	date = 1066.9.15
-	
+
 	era = yes						## Will be shown on Era screen.
 	picture = GFX_pick_era_image_3
-	custom_start = yes				## Choosing "Custom Start" will open this bookmark
 
 	selectable_character = {
 		id = 140 # William the Conqueror
@@ -393,10 +543,10 @@ bm_fate_of_england = {
 		name = ERA_CHAR_NAME_140
 		title = d_normandy
 		title_name = d_normandy
-		
+
 		character = {
-			dna = cagfktibaal
-			properties = fj0dcd000000
+			dna = cagfktibfal
+			properties = fk0d0d000000
 			religion="catholic"
 			culture="norman"
 			government = feudal_government
@@ -410,12 +560,12 @@ bm_fate_of_england = {
 		name = ERA_CHAR_NAME_1316
 		title = e_hre
 		title_name = e_hre
-		
+
 		character = {
 			dna = ajbgarbifau
 			properties = ae00c0000000
 			religion="catholic"
-			culture="german"
+			culture="franconian"
 			government = feudal_government
 			dynasty=651
 		}
@@ -427,7 +577,7 @@ bm_fate_of_england = {
 		name = ERA_CHAR_NAME_1128
 		title = d_apulia
 		title_name = d_apulia
-		
+
 		character = {
 			dna = cdbcdogibck
 			properties = 0c0cbd000000
@@ -443,14 +593,14 @@ bm_fate_of_england = {
 		age = 37
 		name = ERA_CHAR_NAME_3096
 		title = k_egypt
-		title_name = k_fatimids
+		title_name = e_egypt
 		coa_dynasty = yes
 		dlc = "The Sword of Islam"
-		
+
 		character = {
 			dna = alhdhmkiaag
 			properties = ak00bc000000
-			religion="shiite"
+			religion="ismaili"
 			culture="egyptian_arabic"
 			government = muslim_government
 			dynasty=589
@@ -461,11 +611,11 @@ bm_fate_of_england = {
 		id = 3040 # Alp Arslan of Seljuks
 		age = 37
 		name = ERA_CHAR_NAME_3040
-		title = k_persia
-		title_name = k_persia
+		title = e_persia
+		title_name = e_persia
 		coa_dynasty = yes
 		dlc = "The Sword of Islam"
-		
+
 		character = {
 			dna = bdgeivbbbam
 			properties = fg0aha000000
@@ -476,46 +626,74 @@ bm_fate_of_england = {
 		}
 	}
 
-	selectable_character = {
-		id = 74441 # Somesvara I of Chalukyas
-		age = 64
-		name = ERA_CHAR_NAME_74441
-		title = k_maharastra
-		title_name = ERA_CHALUKYA
-		coa_dynasty = yes
-		dlc = "Rajas of India"
-		
-		character = {
-			dna = cgciafbbaaw
-			properties = ah00ac000000
-			religion="hindu"
-			culture="kannada"
-			government = feudal_government
-			dynasty=12319
-		}
-	}
-	
-	### These are not shown unless the player is viewing custom bookmarks
+#	selectable_character = {
+#		id = 74441 # Somesvara I of Chalukyas
+#		age = 64
+#		name = ERA_CHAR_NAME_74441
+#		title = k_maharastra
+#		title_name = ERA_CHALUKYA
+#		coa_dynasty = yes
+#		dlc = "Rajas of India"
+#		character = {
+#			dna = cgciafbbaaw
+#			properties = ah00ac000000
+#			religion="hindu"
+#			culture="kannada"
+#			government = feudal_government
+#			dynasty=12319
+#		}
+#	}
+# ^-- Not in SWMH
 
 	selectable_character = {
 		id = 122 # Harold Godwinson
+		age = 44
+		name = ERA_CHAR_NAME_122
+		title = k_england
+		title_name = ERA_ENGLALAND
+
+		character = {
+			dna="medjejoencc"
+			properties="ae00e0"
+			religion="catholic"
+			culture="anglonorse"
+			government = feudal_government
+			dynasty=756
+		}
 	}
+
+	### These are not shown unless the player is viewing custom bookmarks
 
 	selectable_character = {
 		id = 102531 # Harald Hårdråde
 	}
 
-	selectable_character = {
-		id = 20663 # Isaac of Khazaria
-	}
-	
+	#selectable_character = {
+	#	id = 20663 # Isaac of Khazaria
+	#}
+
+	#selectable_character = {
+	#	id = 1233089 # Togortac of the western Qipchaqs
+	#}
+
+	#selectable_character = {
+	#	id = 1233017 # Esen of the eastern Qipchaqs
+	#}
+
+	#selectable_character = {
+	#	id = 1231875 #Köteshk of the Blackcaps
+	#}
+
+	#selectable_character = {
+	#	id = 1231778 # Tiraq of the Pechenegs
+	#}
 }
 
 bm_norman_conquest = {
 	name = "BM_NORMAN_CONQUEST"
 	desc = "BM_NORMAN_CONQUEST_DESC"
 	date = 1066.12.26
-	
+
 	selectable_character = {
 		id = 140 # William the Conqueror
 	}
@@ -525,15 +703,47 @@ bm_norman_conquest = {
 	}
 
 	selectable_character = {
-		id = 20663 # Isaac of Khazaria
+		id = 1316 # Kaiser Heinrich IV
 	}
+
+	selectable_character = {
+		id = 1128 # Robert de Hauteville
+	}
+
+	selectable_character = {
+		id = 3096 # Caliph Al-Mustansir of Fatimids
+	}
+
+	selectable_character = {
+		id = 3040 # Alp Arslan of Seljuks
+	}
+
+	#selectable_character = {
+	#	id = 20663 # Isaac of Khazaria
+	#}
+
+	#selectable_character = {
+	#	id = 1233089 # Togortac of the western Qipchaqs
+	#}
+
+	#selectable_character = {
+	#	id = 1233017 # Esen of the eastern Qipchaqs
+	#}
+
+	#selectable_character = {
+	#	id = 1231875 #Köteshk of the Blackcaps
+	#}
+
+	#selectable_character = {
+	#	id = 1231778 # Tiraq of the Pechenegs
+	#}
 }
 
 bm_komnenos_dynasty = {
 	name = "BM_KOMNENOS_DYNASTY"
 	desc = "BM_KOMNENOS_DYNASTY_DESC"
 	date = 1081.4.1
-	
+
 	selectable_character = {
 		id = 1742 # Alexios I Komnenos
 	}
@@ -543,11 +753,125 @@ bm_komnenos_dynasty = {
 	}
 }
 
+bm_jerusalem = {
+	name = "BM_JERUSALEM_ERA"
+	desc = "BM_JERUSALEM_ERA_INFO"
+	date = 1124.7.7
+
+	#era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_image_JERUSALEM #GFX_pick_era_image_jerusalem
+
+	selectable_character = {
+		id = 232007 # King Baudouin II of Jerusalem
+		age = 49
+		name = ERA_CHAR_NAME_232007
+		title = k_jerusalem
+		title_name = k_jerusalem
+
+		character = {
+			dna = vgilmtikyzh
+			properties = ao0bfb000000
+			religion="catholic"
+			culture="frankish"
+			government = feudal_government
+			dynasty=20035 #de Rethel
+		}
+	}
+
+	selectable_character = {
+		id = 216517 # King Davit IV of Georgia
+		age = 51
+		name = ERA_CHAR_NAME_216517
+		title = k_georgia
+		title_name = k_georgia
+
+		character = {
+			dna = egkvcqphjwu
+			properties = ab0beb000000
+			religion="orthodox"
+			culture="georgian"
+			government = feudal_government
+			dynasty=507
+		}
+	}
+
+	selectable_character = {
+		id = 32905 # Caliph Al-Amir of Egypt
+		age = 28
+		name = ERA_CHAR_NAME_32905
+		title = e_egypt
+		title_name = e_egypt
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		character = {
+			dna = sisdpncuacx
+			properties = eo00fa000000
+			religion="ismaili"
+			culture="egyptian_arabic"
+			government = muslim_government
+			dynasty=589
+		}
+	}
+
+	selectable_character = {
+		id = 93435 # Emir of Damascus
+		age = 54
+		name = ERA_CHAR_NAME_93435
+		title = d_damascus
+		title_name = d_damascus
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		character = {
+			dna = qrldcuoauet
+			properties = kh0dgd000000
+			religion="sunni"
+			culture="turkmen"
+			government = muslim_government
+			dynasty = 7369
+		}
+	}
+
+	selectable_character = {
+		id = 34249 # Emir Timurtash of Aleppo
+		age = 34
+		name = ERA_CHAR_NAME_34249
+		title = d_aleppo
+		title_name = d_aleppo
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		character = {
+			dna = vitluywcjaj
+			properties = egocgd000000
+			religion="sunni"
+			culture="turkmen"
+			government = muslim_government
+			dynasty=100701
+		}
+	}
+
+	selectable_character = {
+		id = 231012 # Duke Joscelin of Edessa
+		age = 56
+		name = ERA_CHAR_NAME_231012
+		title = d_edessa
+		title_name = d_edessa
+
+		character = {
+			dna = giaynadyxnm
+			properties = 0ixe0d000000
+			religion="catholic"
+			culture="frankish"
+			government = feudal_government
+			dynasty=23100
+		}
+	}
+}
+
 bm_third_crusade = {
 	name = "BM_THIRD_CRUSADE"
 	desc = "BM_THIRD_CRUSADE_DESC"
 	date = 1187.1.1
-	
+
 	selectable_character = {
 		id = 204500 # Henry II of England
 	}
@@ -578,32 +902,114 @@ bm_third_crusade = {
 }
 
 bm_the_latin_empire = {
-	name = "BM_THE_LATIN_EMPIRE"
-	desc = "BM_THE_LATIN_EMPIRE_DESC"
+	name = "BM_THE_LATIN_EMPIRE_ERA"
+	desc = "BM_THE_LATIN_EMPIRE_ERA_INFO"
 	date = 1204.5.16
-	
+
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_image_5 #GFX_pick_era_image_the_latin_empire
+
 	selectable_character = {
 		id = 205523 # Baudouin I - Latin Empire
+		age = 32
+		name = ERA_CHAR_NAME_205523
+		title = e_latin_empire
+		title_name = e_latin_empire
+
+		character = {
+			dna = izdlkpmiyat
+			properties = aj0b00000000
+			religion="catholic"
+			culture="dutch"
+			government = feudal_government
+			dynasty=724
+		}
 	}
 
 	selectable_character = {
 		id = 215674 # Theodoros I - Byzantine Empire
+		age = 32
+		name = ERA_CHAR_NAME_215674
+		title = k_nikaea
+		title_name = k_nikaea
+
+		character = {
+			dna = rbxetdkuyac
+			properties = ajlb00000000
+			religion="orthodox"
+			culture="greek"
+			government = feudal_government
+			dynasty=101107
+		}
 	}
 
 	selectable_character = {
 		id = 204514 # John I of England
+		age = 37
+		name = ERA_CHAR_NAME_204514
+		title = k_england
+		title_name = ERA_ENGELOND
+
+		character = {
+			dna="kldxnqxzfjn"
+			properties="0g00l0"
+			religion="catholic"
+			culture="english"
+			government = feudal_government
+			dynasty=106
+		}
 	}
 
 	selectable_character = {
 		id = 205506 # Philippe II of France
+		age = 38
+		name = ERA_CHAR_NAME_205506
+		title = k_france
+		title_name = k_france
+
+		character = {
+			dna = kldfxebspon
+			properties = adoabc000000
+			religion="catholic"
+			culture="frankish"
+			government = feudal_government
+			dynasty=743 #Capetian
+		}
 	}
 
 	selectable_character = {
 		id = 209500 # Sancho I of Portugal
+		age = 49
+		name = ERA_CHAR_NAME_209500
+		title = k_portugal
+		title_name = k_portugal
+
+		character = {
+			dna = womrqyibddl
+			properties = ah0ajc000000
+			religion="catholic"
+			culture="portuguese"
+			government = feudal_government
+			dynasty=741 #de Bourgogne
+		}
 	}
 
 	selectable_character = {
-		id = 34187 # Kilij Arslan III of Rum
+		id = 225004 # Suleyman II of Rum
+		age = 38
+		name = ERA_CHAR_NAME_225004
+		title = k_rum
+		title_name = k_rum
+		coa_dynasty = yes
+		dlc = "The Sword of Islam"
+		character = {
+			dna = vovtxovawdn
+			properties = an00da000000
+			religion="sunni"
+			culture="turkmen"
+			government = muslim_government
+			dynasty=613
+		}
 	}
 }
 
@@ -611,17 +1017,17 @@ bm_the_mongols = {
 	name = "BM_THE_MONGOLS_ERA"
 	desc = "BM_THE_MONGOLS_ERA_INFO"
 	date = 1220.2.1
-	
-	#era = yes						## Will be shown on Era screen.
-	#picture = GFX_pick_era_image_4
-	
+
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_image_4
+
 	selectable_character = {
 		id = 457620 # Fernando III of Castille
 		age = 18
 		name = ERA_CHAR_NAME_457620
 		title = k_castille
 		title_name = k_castille
-		
+
 		character = {
 			dna = bcabiyiccaf
 			properties = ah00ja000000
@@ -638,7 +1044,7 @@ bm_the_mongols = {
 		name = ERA_CHAR_NAME_212513
 		title = e_hre
 		title_name = e_hre
-		
+
 		character = {
 			dna = agbceeccebr
 			properties = aj0bh0000000
@@ -655,7 +1061,7 @@ bm_the_mongols = {
 		name = ERA_CHAR_NAME_30809
 		title = k_jerusalem
 		title_name = k_jerusalem
-		
+
 		character = {
 			female = yes
 			dna = ajgdamibabj
@@ -671,16 +1077,16 @@ bm_the_mongols = {
 		id = 93052 # Mohammed Ala ed-Din of Khwarezian Empire
 		age = 50
 		name = ERA_CHAR_NAME_93052
-		title = k_persia
+		title = k_khwarezmia
 		title_name = ERA_KHWAREZM
 		coa_dynasty = yes
 		dlc = "The Sword of Islam"
-		
+
 		character = {
 			dna = cgeeapcdeaf
 			properties = ag0bha000000
 			religion="sunni"
-			culture="turkish"
+			culture="turkmen"
 			government = muslim_government
 			dynasty=101866
 		}
@@ -694,7 +1100,7 @@ bm_the_mongols = {
 		title_name = k_delhi
 		coa_dynasty = yes
 		dlc = "The Sword of Islam"
-		
+
 		character = {
 			dna = aefgiqfbeae
 			properties = ob00b0000000
@@ -713,7 +1119,7 @@ bm_the_mongols = {
 		title_name = e_mongol_empire
 		#coa_dynasty = yes
 		dlc = "Horse Lords"
-		
+
 		character = {
 			dna = bggmkufdfae
 			properties = k000cd000000
@@ -729,7 +1135,7 @@ bm_rise_of_the_hansa = {
 	name = "BM_RISE_OF_THE_HANSA"
 	desc = "BM_RISE_OF_THE_HANSA_DESC"
 	date = 1241.5.1
-	
+
 	selectable_character = {
 		id = 457620 # Fernando II of Castile
 	}
@@ -747,7 +1153,7 @@ bm_rise_of_the_hansa = {
 	}
 
 	selectable_character = {
-		id = 478011 # Hulegu Khan of Ilkhanate
+		id = 93062 # Chagatai of the Chagatai Khanate
 	}
 
 	selectable_character = {
@@ -760,122 +1166,36 @@ bm_rise_of_the_hansa = {
 }
 
 bm_100_years_war = {
-	name = "BM_100_YEARS_WAR_ERA"
-	desc = "BM_100_YEARS_WAR_ERA_INFO"
+	name = "BM_100_YEARS_WAR"
+	desc = "BM_100_YEARS_WAR_DESC"
 	date = 1337.1.1
-	
-	era = yes						## Will be shown on Era screen.
-	picture = GFX_pick_era_image_5
-	
+
 	selectable_character = {
 		id = 454500 # Edward III of England
-		age = 24
-		name = ERA_CHAR_NAME_454500
-		title = k_england
-		title_name = k_england
-		
-		character = {
-			dna = cdllaaijgan
-			properties = ad0bcc000000
-			religion="catholic"
-			culture="english"
-			government = feudal_government
-			dynasty=106
-		}
 	}
 
 	selectable_character = {
 		id = 455500 # Philippe VI of France
-		age = 43
-		name = ERA_CHAR_NAME_455500
-		title = k_france
-		title_name = k_france
-		
-		character = {
-			dna = caekgncfabw
-			properties = ad0aha000000
-			religion="catholic"
-			culture="frankish"
-			government = feudal_government
-			dynasty=101
-		}
 	}
 
 	selectable_character = {
 		id = 471500 # Casimir the Great
-		age = 26
-		name = ERA_CHAR_NAME_471500
-		title = k_poland
-		title_name = k_poland
-		
-		character = {
-			dna = bdlkbriiaaz
-			properties = aj0bbc000000
-			religion="catholic"
-			culture="polish"
-			government = feudal_government
-			dynasty=699
-		}
 	}
 
 	selectable_character = {
 		id = 476500 # Orhan Ottoman
-		age = 56
-		name = ERA_CHAR_NAME_476500
-		title = k_ottoman
-		title_name = k_ottoman
-		coa_dynasty = yes
-		dlc = "The Sword of Islam"
-		
-		character = {
-			dna = djeejhjcaaz
-			properties = ao0bfc000000
-			religion="sunni"
-			culture="turkish"
-			government = muslim_government
-			dynasty=7
-		}
 	}
 
 	selectable_character = {
 		id = 480000 # Özbeg Khan of Golden Horde
-		age = 55
-		name = ERA_CHAR_NAME_480000
-		title = e_golden_horde
-		title_name = e_golden_horde
-		#coa_dynasty = yes
-		dlc = "Horse Lords"
-		
-		character = {
-			dna = celmcjidaao
-			properties = fj0bfd000000
-			religion="tengri_pagan"
-			culture="mongol"
-			government = nomadic_government
-			dynasty=11100
-		}
 	}
 
 	selectable_character = {
 		id = 170258 # Muhammad II Tughluq
-		age = 40
-		name = ERA_CHAR_NAME_170258
-		title = e_rajastan
-		title_name = ERA_TUGHLUQ
-		coa_dynasty = yes
-		dlc = "The Sword of Islam"
-		
-		character = {
-			dna = bcheaobceag
-			properties = ac0bh0000000
-			religion="sunni"
-			culture="turkish"
-			government = muslim_government
-			dynasty=1040208
-		}
 	}
 
 	selectable_character = {
 		id = 451500 # Valdemar Atterdag
 	}
 }
+

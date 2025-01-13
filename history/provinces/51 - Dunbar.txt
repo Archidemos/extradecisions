@@ -1,38 +1,25 @@
+# -*- ck2.history.provinces -*-
+
 # 51 - Dunbar
 
 # County Title
 title = c_dunbar
 
 # Settlements
-max_settlements = 4
-b_dunbar = tribal
+max_settlements = 3
+b_berwick = castle
+b_coldingham = temple
+#b_gordon = city
 
-#b_berwick = city
 
-#b_thirlestane = castle
-b_tyninghame= temple
-#b_gordon = castle
-#b_huntly = castle
-#b_coldingham = castle
-#b_crichton = castle
 
 # Misc
-culture = welsh
+culture = scottish
 religion = catholic
 
 # History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = pictish
-	religion = catholic
-	b_thirlestane = city
-}
-867.1.1 = {
-	culture = saxon
-	b_dunbar = castle
-}
-1066.1.1 = {
-	religion = catholic
-}
+700.1.1 = { culture = saxon }
+955.1.1 = { b_berwick = tribal }
+1097.1.1 = { b_berwick = castle }
 1100.11.11 = { culture = english }
-1235.9.25 = { culture = scottish }
+

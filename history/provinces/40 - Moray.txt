@@ -1,47 +1,31 @@
+# -*- ck2.history.provinces -*-
+
 # 40 - Moray
 
 # County Title
 title = c_moray
 
 # Settlements
-max_settlements = 4
+max_settlements = 5
 b_forres = tribal
-#b_inverness = city
 b_elgin = temple
-
+#b_kinloss = city
 #b_lochindorb = castle
-#b_nairn = castle
-#b_kinloss = castle
-#b_cawdor = castle
-#b_urquhart = castle
+#b_cawdor = tribal
 
 # Misc
-culture = pictish
+culture = scottish
 religion = catholic
-terrain = hills
 
 # History
-633.1.1={ religion = celtic_christian }
+
 1066.1.1 = {
-	religion = catholic
+	b_forres = tb_hillfort_1
+	b_forres = tb_hillfort_2
+	b_forres = tb_training_grounds_1
+	b_forres = tb_war_camp_1
 }
-769.1.1 = {
-	culture = pictish
-	religion = celtic_christian
-}
-848.1.1={
-	culture = scottish
-}
-1000.1.1 = {
+1146.1.1 = { 
 	b_forres = castle
-	b_inverness = city
-}
-#suppression of MacWilliams and erection of lordships of Badenoch and Urquhart
-1215.7.1 = { 
-	b_lochindorb = castle
-	capital = b_lochindorb
-	# VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-	remove_settlement = b_forres
-	b_urquhart = castle
-	
-}
+	#b_elgin = temple
+} 

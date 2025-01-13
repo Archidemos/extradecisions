@@ -1,11 +1,14 @@
+# -*- ck2.history.characters -*-
+
 144092 = {
 	name="Al-Mu'izz Ismail"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=32916
 	1168.1.1={
 		birth="1168.1.1"
+		culture="levantine_arabic"
 	}
 	1202.1.1={
 		death="1202.1.1"
@@ -16,13 +19,13 @@
 	name="An-Nasir"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=32916
 	1169.1.1={
 		birth="1169.1.1"
 	}
-	1203.1.1={
-		death="1203.1.1"
+	1214.1.1={
+		death="1214.1.1"
 	}
 }
 
@@ -35,8 +38,8 @@
 	stewardship=4
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="lisp"
-	trait="tough_soldier"
+	add_trait="lisp"
+	add_trait="tough_soldier"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -72,7 +75,7 @@
 	stewardship=4
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="flamboyant_schemer"
+	add_trait="flamboyant_schemer"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -101,7 +104,7 @@
 #}
 
 20799 = {
-	name="Abdul-Madjid"
+	name="Abdul-Majid"
 	# AKA: Abdul
 	dynasty=101039
 	martial=4
@@ -110,8 +113,8 @@
 	stewardship=7
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="honest"
-	trait="underhanded_rogue"
+	add_trait="honest"
+	add_trait="underhanded_rogue"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -129,7 +132,7 @@
 	stewardship=8
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="tough_soldier"
+	add_trait="tough_soldier"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -147,8 +150,8 @@
 	stewardship=8
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="kind"
-	trait="tough_soldier"
+	add_trait="kind"
+	add_trait="tough_soldier"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -166,7 +169,7 @@
 	stewardship=7
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="tough_soldier"
+	add_trait="tough_soldier"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -184,9 +187,9 @@
 	stewardship=8
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="diligent"
-	trait="envious"
-	trait="flamboyant_schemer"
+	add_trait="diligent"
+	add_trait="envious"
+	add_trait="flamboyant_schemer"
 	1039.1.1={
 		birth="1039.1.1"
 	}
@@ -223,10 +226,10 @@
 	stewardship=8
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="humble"
-	trait="cynical"
-	trait="lisp"
-	trait="scholarly_theologian"
+	add_trait="humble"
+	add_trait="cynical"
+	add_trait="lisp"
+	add_trait="scholarly_theologian"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -244,8 +247,8 @@
 	stewardship=5
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="cynical"
-	trait="tough_soldier"
+	add_trait="cynical"
+	add_trait="tough_soldier"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -263,7 +266,7 @@
 	stewardship=6
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="fortune_builder"
+	add_trait="fortune_builder"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -282,9 +285,9 @@
 	stewardship=4
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="diligent"
-	trait="charitable"
-	trait="charismatic_negotiator"
+	add_trait="diligent"
+	add_trait="charitable"
+	add_trait="charismatic_negotiator"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -302,10 +305,10 @@
 	stewardship=4
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="deceitful"
-	trait="cynical"
-	trait="brave"
-	trait="charismatic_negotiator"
+	add_trait="deceitful"
+	add_trait="cynical"
+	add_trait="brave"
+	add_trait="charismatic_negotiator"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -323,7 +326,7 @@
 	stewardship=6
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="tough_soldier"
+	add_trait="tough_soldier"
 	1150.1.1={
 		birth="1150.1.1"
 	}
@@ -333,66 +336,107 @@
 }
 
 3090 = {
-	name="al-Aziz"
+	name="Nizar"
 	dynasty=589
 	martial=6
 	diplomacy=8
 	intrigue=7
 	stewardship=6
-	religion="shiite"
-	culture="egyptian_arabic"
-	trait="wroth"
-	trait="humble"
-	trait="tough_soldier"
-	trait="sayyid"
+	religion="ismaili"
+	culture="maghreb_arabic"
+	add_trait="wroth"
+	add_trait="humble"
+	add_trait="tough_soldier"
+	add_trait="sayyid"
 	father=32903
+	mother=1234968
 	955.1.1={
 		birth="955.1.1"
 	}
+	971.1.1={
+		add_spouse=1500420
+	}
+	975.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Aziz"
+	}	
 	996.10.13={
 		death="996.10.13"
 	}
 }
 
 3092 = {
-	name="al-Hakim"
+	name="al-Mansur"
 	dynasty=589
 	martial=4
-	diplomacy=4
-	intrigue=8
+	diplomacy=5
+	intrigue=7
 	stewardship=6
-	religion="shiite"
-	culture="egyptian_arabic"
-	trait="chaste"
-	trait="envious"
-	trait="zealous"
-	trait="lunatic"
-	trait="skilled_tactician"
-	trait="sayyid"
+	learning=6
+	religion="ismaili"
+	culture="maghreb_arabic"
+	add_trait="charitable"
+	add_trait="cruel"
+	add_trait="wroth"
+	add_trait="zealous"
+	add_trait="scholarly_theologian"
+	add_trait="sayyid"
 	father=3090
-	985.1.1={
-		birth="985.1.1"
+	985.1.1={ #11 years old upon succession
+		birth=yes
+	}
+	996.10.13={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Hakim"
+	}
+	1000.1.1={
+		add_spouse = "1234964"
+	}
+	1010.1.1={
+		add_trait="lunatic"
+	}
+	1018.1.1={
+		add_trait="celibate"
 	}
 	1021.2.12={
-		death="1021.2.12"
+		death={
+			death_reason=death_missing
+		}
 	}
 }
 
 3094 = {
-	name="az-Zahir"
+	name="'Ali"
 	# AKA: az
 	dynasty=589
 	martial=6
 	diplomacy=5
 	intrigue=8
 	stewardship=6
-	religion="shiite"
-	culture="egyptian_arabic"
-	trait="skilled_tactician"
-	trait="sayyid"
+	religion="ismaili"
+	culture="maghreb_arabic"
+	add_trait="skilled_tactician"
+	add_trait="sayyid"
 	father=3092
+	mother=1234964
 	1005.6.20={
 		birth="1005.6.20"
+	}
+	1021.2.12={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="az-Zahir"
+	}
+	1021.6.20={
+		culture="egyptian_arabic"
+	}
+	1028.1.1={
+		add_spouse=1144667
 	}
 	1036.6.13={
 		death="1036.6.13"
@@ -400,17 +444,17 @@
 }
 
 3098 = {
-	name="al-Majid"
+	name="Muhammad"
 	dynasty=589
 	martial=3
 	diplomacy=1
 	intrigue=6
 	stewardship=6
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
-	trait="proud"
-	trait="flamboyant_schemer"
-	trait="sayyid"
+	add_trait="proud"
+	add_trait="flamboyant_schemer"
+	add_trait="sayyid"
 	father=3096
 	1047.1.1={
 		birth="1047.1.1"
@@ -421,22 +465,31 @@
 }
 
 3100 = {
-	name="al-Mustali"
+	name="Ahmad"
 	# AKA: al
 	dynasty=589
 	martial=6
 	diplomacy=2
 	intrigue=4
 	stewardship=6
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
-	trait="craven"
-	trait="lisp"
-	trait="flamboyant_schemer"
-	trait="sayyid"
+	add_trait="craven"
+	add_trait="lisp"
+	add_trait="flamboyant_schemer"
+	add_trait="sayyid"
 	father=3096
-	1050.1.1={
-		birth="1050.1.1"
+	1074.9.16={ #died at 26
+		birth=yes
+	}
+	1089.1.1={
+		add_spouse = "1234590"
+	}
+	1094.1.10={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Musta'li"
 	}
 	1101.1.1={
 		death="1101.1.1"
@@ -444,22 +497,22 @@
 }
 
 41706 = {
-	name="Abu Mansur al-Nizar"
+	name="Abu-Mansur al-Nizar"
 	# AKA: Abu Mansur al
 	dynasty=589
 	martial=4
 	diplomacy=5
 	intrigue=3
 	stewardship=4
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
-	trait="zealous"
-	trait="wroth"
-	trait="martial_cleric"
-	trait="sayyid"
+	add_trait="zealous"
+	add_trait="wroth"
+	add_trait="martial_cleric"
+	add_trait="sayyid"
 	father=3096
-	1045.1.1={
-		birth="1045.1.1"
+	1045.10.10={
+		birth=yes
 	}
 	1097.1.1={
 		death="1097.1.1"
@@ -475,8 +528,8 @@
 	stewardship=5
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="cynical"
-	trait="underhanded_rogue"
+	add_trait="cynical"
+	add_trait="underhanded_rogue"
 	1300.1.1={
 		birth="1300.1.1"
 	}
@@ -486,7 +539,7 @@
 }
 
 485120 = {
-	name="Nadjmaddin"
+	name="Najmaddin"
 	dynasty=100714
 	martial=7
 	diplomacy=8
@@ -494,8 +547,8 @@
 	stewardship=5
 	religion="sunni"
 	culture="egyptian_arabic"
-	trait="slothful"
-	trait="flamboyant_schemer"
+	add_trait="slothful"
+	add_trait="flamboyant_schemer"
 	1300.1.1={
 		birth="1300.1.1"
 	}
@@ -505,29 +558,32 @@
 }
 
 32914 = {
-	name="ad-Dawla Turanshah"
+	name="Turanshah Shams ad-Dawla"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
-	
-	trait = brilliant_strategist
-	
+	culture="kurdish"
 	father=226053
 	1146.1.1={
-		birth="1146.1.1"
+		birth=yes
 	}
-	1180.5.19={ # Year is correct, day of year is fictional
+	1162.1.1={
+		culture="levantine_arabic"
+	}
+	1180.6.1={
 		death=yes
 	}
 }
 32915 = {
-	name="Abu Sa'id Buri"
+	name="Abu-Sa'id Buri"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=226053
 	1147.1.1={
 		birth="1147.1.1"
+	}
+	1163.1.1={
+		culture="levantine_arabic"
 	}
 	1184.1.1={
 		death="1184.1.1"
@@ -538,10 +594,13 @@
 	name="Tughtekin"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=226053
 	1148.1.1={
 		birth="1148.1.1"
+	}
+	1164.1.1={
+		culture="levantine_arabic"
 	}
 	1197.1.1={
 		death="1197.1.1"
@@ -553,10 +612,11 @@
 	name="Ghazi"
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=226000
 	1172.1.1={
 		birth="1172.1.1"
+		culture="levantine_arabic"
 	}
 	1216.10.8={
 		death="1216.10.8"
@@ -567,7 +627,7 @@
 	name="Khider" #Aleppo
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=226000
 	1177.1.1={
 		birth="1177.1.1"
@@ -581,7 +641,7 @@
 	name="Da'ud" 
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=226000
 	1180.1.1={
 		birth="1180.1.1"
@@ -595,7 +655,7 @@
 	name="Turanshah" 
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=226000
 	1181.1.1={
 		birth="1181.1.1"
@@ -609,7 +669,7 @@
 	name="Nosrat-es-Din" 
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=226000
 	1182.1.1={
 		birth="1182.1.1"
@@ -620,10 +680,10 @@
 }
 
 32922 = {
-	name="al-Mansour Muhammad" #Egypt 1200
+	name="al-Mansur Muhammad" #Egypt 1200
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=226050
 	1188.1.1={
 		birth="1188.1.1"
@@ -634,13 +694,14 @@
 }
 
 32924 = {
-	name="al-Kamil Naser-al-Din" #Egypt
+	name="al-Kamil Naser al-Din" #Egypt
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=226052
 	1180.1.1={
 		birth="1180.1.1"
+		culture="levantine_arabic"
 	}
 	1238.1.1={
 		death="1238.1.1"
@@ -651,10 +712,11 @@
 	name="as-Salih Ayyub" #Damascus and Egypt
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=32924
 	1205.1.1={
 		birth="1205.1.1"
+		culture="levantine_arabic"
 	}
 	1231.1.1={
 		add_spouse=32928
@@ -665,16 +727,20 @@
 }
 
 32926 = {
-	name="al-Adil" #Egypt
+	name="al-Adil Sayf al-Din" #Egypt
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=32924
-	1216.1.1={
-		birth="1216.1.1"
+	1221.1.1={
+		birth="1221.1.1"
+		culture="levantine_arabic"
 	}
 	1248.1.1={
-		death="1248.1.1"
+		death={
+			death_reason=death_dungeon
+			killer=32925
+		}
 	}
 }
 
@@ -682,13 +748,17 @@
 	name="al-Muazzam Turanshah" #Egypt
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="kurdish"
 	father=32925
 	1225.1.1={
 		birth="1225.1.1"
+		culture="levantine_arabic"
 	}
-	1250.1.1={
-		death="1250.1.1"
+	1250.5.1={
+		death={ #murdered by Baybars, Aybak, and Qalawun
+			death_reason=death_murder
+			killer=32933
+		}
 	}
 }
 
@@ -696,14 +766,133 @@
 	name="Mas'ud Yusuf" 
 	dynasty=24000
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="levantine_arabic"
 	father=32924
 	#mother=32928
-	1203.1.1={
-		birth=yes
+	1201.1.1={
+		birth="1201.1.1"
 	}
 	1229.1.1={
-		death=yes
+		death="1229.1.1"
+	}
+}
+
+32900 = {
+	name="'Abdallah" # Rabi Abdullah - the Eleventh Ismaili Imam and first Fatimid Caliph
+	dynasty=589
+	religion="ismaili"
+	culture="levantine_arabic"
+	father=33920
+	add_trait="sayyid"
+	873.1.1={ #born in Askar Mukram, Khuzistan
+		birth=yes
+	}
+	909.1.1 = {
+		create_bloodline = {
+			type = fatimid
+			has_dlc = "Holy Fury"
+		}
+	}
+	934.1.1={
+		death="934.1.1"
+	}
+}
+32901 = {
+	name="Muhammad"
+	dna = axgiowlnepj
+	prp = anm0ka00000000000000000000000000000000
+	dynasty=589
+	religion="ismaili"
+	culture="levantine_arabic"
+	father=32900
+	disallow_random_traits = yes
+	trait = tough_soldier #had some military career before he succeeded al-Mahdi
+	trait = sayyid
+	trait = diligent
+	trait = patient #perhaps grew overly patient toward the end of his reign (e.g. during Abu Yazid's rebellion)
+	trait = proud 
+	trait = zealous
+
+	diplomacy = 7
+	martial = 6
+	stewardship = 7
+	intrigue = 5
+	learning = 7
+
+	893.1.1={
+		birth="893.1.1"
+	}
+	934.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Qa'im"
+	}
+	936.1.1 = {
+		effect = {
+			add_weak_pressed_claim = k_egypt
+		}
+	}
+	946.5.17={
+		death="946.5.17"
+	}
+}
+32902 = {
+	name="Isma'il" 
+	dynasty=589
+	religion="ismaili"
+	culture="levantine_arabic"
+	father=32901
+	add_trait="sayyid"
+	913.1.1={
+		birth="913.1.1"
+	}
+	946.5.17={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Mansur"
+	}
+	953.3.19={
+		death="953.3.19"
+	}
+}
+
+32903 = {
+	name="Ma'add" 
+	dynasty=589
+	martial=8
+	diplomacy=7
+	stewardship=7
+	intrigue=7
+	religion="ismaili"
+	culture="levantine_arabic"
+	father=32902
+	add_trait="sayyid"
+	add_trait="scholarly_theologian"
+	add_trait="quick"
+	add_trait="patient"
+	add_trait="just"
+	932.1.1={
+		birth="932.1.1"
+	}
+	950.1.1={
+		culture="maghreb_arabic"
+	}
+	953.5.19={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Mu'izz"
+	}
+	954.1.1={
+		add_spouse = "1234968"
+	}
+	969.1.1={
+		give_nickname = nick_the_victorious #al-Mansuriyya/al-Qahira/Cairo
+	}
+	975.1.1={
+		death="975.1.1"
 	}
 }
 
@@ -711,12 +900,18 @@
 	name="Sitt al-Mulk"
 	female=yes
 	dynasty=589
-	religion="shiite"
-	culture="egyptian_arabic"
+	religion="ismaili"
+	culture="maghreb_arabic"
 	father=3090
-	trait="sayyid"
-	970.1.1={
-		birth="970.1.1"
+	mother=1500420
+	add_trait="just" #was loved by her subjects for her exceptional ability and understanding of legal matters, which could be very easily be interpreted as she was just to them
+	add_trait="honest" #was outspoken at the Fatimid court, both during the reign of her father and brother
+	add_trait="sympathy_christendom" #was proud of her part-Christian heritage	
+	add_trait="quick" #was noted for her intellect	
+	add_trait="fair" #was apparently quite beautiful as well	
+	add_trait="sayyid"
+	972.1.1={
+		birth=yes
 	}
 	1023.1.1={
 		death="1023.1.1"
@@ -724,27 +919,35 @@
 }
 
 32905 = {
-	name="al-Amir" 
+	name="al-Mansur" 
 	dynasty=589
-	religion="shiite"
+	dna = sisdpncuacx
+	properties = eo00fa000000
+	religion="ismaili"
 	culture="egyptian_arabic"
 	father=3100
-	trait="sayyid"
-	1096.1.1={
-		birth="1096.1.1"
+	add_trait="sayyid"
+	1096.1.1={ #5 years old upon succession
+		birth=yes
+	}
+	1101.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Amir"
 	}
 	1130.1.1={
-		death="1130.1.1"
+		death={ death_reason=death_murder } #possibly by the Assassins
 	}
 }
 
 32906 = {
-	name="al-Qasim" 
+	name="at-Tayyib" 
 	dynasty=589
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	father=32905
-	trait="sayyid"
+	add_trait="sayyid"
 	1126.1.1={
 		birth="1126.1.1"
 	}
@@ -754,14 +957,20 @@
 }
 
 32907 = {
-	name="al-Hafiz" 
+	name="Abd-al-Majid" 
 	dynasty=589
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	father=3098
-	trait="sayyid"
-	1090.1.1={
-		birth="1090.1.1"
+	add_trait="sayyid"
+	1075.1.1={ #55 years old in 1130
+		birth=yes
+	}
+	1130.1.1={ #actually January 1132
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Hafiz"
 	}
 	1149.1.1={
 		death="1149.1.1"
@@ -769,29 +978,41 @@
 }
 
 32908 = {
-	name="al-Zafir" 
+	name="Isma'il" 
 	dynasty=589
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	father=32907
-	trait="sayyid"
-	1120.1.1={
-		birth="1120.1.1"
+	add_trait="sayyid"
+	1132.1.1={ #17 years old upon succession
+		birth=yes
+	}
+	1149.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Zafir"
 	}
 	1154.1.1={
-		death="1154.1.1"
+		death={ death_reason=death_murder } #Zirid Nasr b. Abbas
 	}
 }
 
 32909 = {
-	name="al-Faiz" 
+	name="'Isa" 
 	dynasty=589
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	father=32908
-	trait="sayyid"
-	1149.1.1={
-		birth="1149.1.1"
+	add_trait="sayyid"
+	1149.1.1={ #5 years old upon succession
+		birth=yes
+	}
+	1154.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Fa'iz"
 	}
 	1160.1.1={
 		death="1160.1.1"
@@ -799,14 +1020,20 @@
 }
 
 32910 = {
-	name="al-Adid" 
+	name="'Abdallah" 
 	dynasty=589
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
-	father=32908
-	trait="sayyid"
-	1150.1.1={
+	father=1300206
+	add_trait="sayyid"
+	1150.1.1={ #died at age 21
 		birth="1150.1.1"
+	}
+	1160.1.1={
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name="al-Adid"
 	}
 	1171.1.1={
 		death="1171.1.1"
@@ -822,16 +1049,17 @@
 	intrigue=6
 	stewardship=5
 	religion="sunni"
-	culture="egyptian_arabic"
-	trait="slothful"
-	trait="arbitrary"
-	trait="martial_cleric"
+	culture="turkish"
+	add_trait="slothful"
+	add_trait="arbitrary"
+	add_trait="martial_cleric"
 	father=485000
 	1321.1.1={
 		birth="1321.1.1"
+		culture="egyptian_arabic"
 	}
-	1341.1.1={
-		death="1341.1.1"
+	1341.11.1={
+		death="1341.11.1"
 	}
 }
 
@@ -840,15 +1068,36 @@
 	dynasty=762
 	martial=4
 	diplomacy=8
-	intrigue=8
+	intrigue=9
 	stewardship=7
 	religion="sunni"
-	culture="egyptian_arabic"
-	trait="honest"
-	trait="tough_soldier"
+	culture="cuman"
+	add_trait="paranoid"  # Justifiably so even when considering the sheer number of executions and jailings he undertook.
+	add_trait="deceitful"  # Feigned seclusion so as to trick Baibars al-Jashnakir and Salar.
+	add_trait="patient"  # Prepared to bide his time so as to draw out enemies.
+	add_trait="intricate_webweaver" # As a young man he eventually triumphed over the rival palace forces he was subject to from his childhood.
 	father=32936
+	mother=8000513
 	1285.1.1={
 		birth="1285.1.1"
+		culture="egyptian_arabic"
+	}
+	1309.11.1={
+	    effect = {
+			any_character = {
+				limit = { character = 32940 }
+				imprison = ROOT
+			}
+		}
+	}    
+	1321.1.1={
+	    add_spouse="8000518"
+	}
+	1334.1.1={
+	    add_spouse="8000491"
+	}
+	1336.1.1={
+	    add_spouse="8000519"
 	}
 	1343.1.1={
 		death="1343.1.1"
@@ -856,31 +1105,40 @@
 }
 
 3096 = {
-	name="al-Mustansir"
-	dynasty=589
+	name = "Ma'add"
+	dynasty = 589
 	dna = alhdhmkiaag
 	properties = ak00bc000000
-	martial=6
-	diplomacy=8
-	intrigue=6
-	stewardship=1
-	religion="shiite"
-	culture="egyptian_arabic"
-	trait="naive_appeaser"
-	trait="sayyid"
-	trait="slothful"
-	trait="arbitrary"
-	trait="trusting"
-	trait="shy"
-	father=3094
-	1029.7.5={
-		birth="1029.7.5"
+	martial = 6
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	learning = 6
+	religion = "ismaili"
+	culture = "egyptian_arabic"
+	trait = "martial_cleric"
+	trait = "sayyid"
+	trait = "temperate"
+	trait = "kind"
+	trait = "humble"
+	trait = "shy"
+	trait = "erudite"
+	father = 3094
+    mother = 1144667
+	1029.7.5 = {
+		birth = "1029.7.5"
 	}
-	1060.1.1={
+	1036.6.13 = {
+		effect = {
+			set_character_flag = caliph_regnal_name_history_exception 
+		}
+		name = "al-Mustansir"
+	}
+	1067.1.1 = {
 		wealth = -500
 		decadence = 50
 	}
-	1094.1.10={
+	1094.1.10 = {
 		death="1094.1.10"
 	}
 }
@@ -888,17 +1146,32 @@
 32933 = {
 	name="Baibars" 
 	dynasty=7267
-	religion="sunni"
-	culture="egyptian_arabic"
-	trait="brilliant_strategist"
-	trait="strong" 
-	trait="ambitious" 
-	trait="deceitful" 
+	martial=5
+	diplomacy=4
+	intrigue=5
+	stewardship=5
+	religion="tengri_pagan"
+	culture="cuman"
+	add_trait="brilliant_strategist"
+	add_trait="robust"
+	add_trait="tall"
+	add_trait="powerful_voice" #granted these 3 descriptions are likely exaggerated, but these traits are rarely given so might as well give them
+	add_trait="ambitious" 
+	add_trait="deceitful"
+	add_trait="brave"
+	add_trait="diligent"
 	1223.7.19={
-		birth="1223.7.19"
+		birth="1223.7.19" # May have been 1227 or 28
+	}
+	1232.1.1={
+		religion="sunni"
+		culture="egyptian_arabic"
+		add_trait="bahriyya_mamluk"
+		employer="32925" # may not have been enslaved until 1239/40. Mentioned as being with as-Salih when the Ayyubid was imprisoned at Kerak briefly just before becoming sultan.
+	    effect={add_friend=32925}
 	}
 	1260.10.24={
-		create_bloodline = {
+	    create_bloodline = {
 			type = baibars
 			has_dlc = "Holy Fury"
 		}
@@ -912,10 +1185,12 @@
 	name="al-Said Barakah" 
 	dynasty=7267
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	father=32933
+	mother=8000516
 	1260.1.1={
 		birth="1260.1.1"
+		culture="egyptian_arabic"
 	}
 	1279.1.1={
 		death="1279.1.1"
@@ -926,11 +1201,12 @@
 	name="Solamish" 
 	dynasty=7267
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	father=32933
 	1272.1.1={
 		birth="1272.1.1"
-	}
+		culture="egyptian_arabic"
+    }
 	1290.1.1={
 		death="1290.1.1"
 	}
@@ -940,10 +1216,11 @@
 	name="Khadir" 
 	dynasty=7267
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	father=32933
 	1273.1.1={
 		birth="1273.1.1"
+		culture="egyptian_arabic"
 	}
 	1286.1.1={
 		death="1286.1.1"
@@ -953,13 +1230,45 @@
 32936 = {
 	name="Qalawun" 
 	dynasty=762
-	religion="sunni"
-	culture="turkish"
-	trait="skilled_tactician" 
-	trait="brave" 
-	trait="cynical"
+	martial=5
+	diplomacy=5  # He used diplomacy to outmanoeuvre rivals as much as force of arms.
+	intrigue=5
+	stewardship=4
+	religion="tengri_pagan"
+	culture="cuman"
+	add_trait="skilled_tactician"
+	add_trait="robust"
+	add_trait="brave" 
+	add_trait="cynical"
+	add_trait="diligent"
 	1222.1.1={
 		birth="1222.1.1"
+	}
+	1232.1.1={
+	    culture="egyptian_arabic"
+		add_trait="bahriyya_mamluk"
+		religion="sunni"
+		employer="32925"
+		effect={add_friend=32925}
+	}
+	1254.1.1={
+	    employer="32933"
+		add_spouse="8000511"
+		add_spouse="8000490"
+	}
+	1277.7.1={
+	    employer="32934"
+		add_trait="ambitious"
+		add_trait="deceitful"
+    }
+	1279.1.1={
+	    create_bloodline = {
+			type = qalawun
+			has_dlc = "Holy Fury"
+		}
+	}
+	1282.1.1={
+	    add_spouse="8000513"
 	}
 	1291.11.10={
 		death="1291.11.10"
@@ -969,40 +1278,93 @@
 32937 = {
 	name="al-Ashraf Khalil" 
 	dynasty=762
+	martial=5
+	intrigue=3
+	learning=3
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
+	add_trait="skilled_tactician"
+	add_trait="zealous" #called for jihad in the name of the Abbasid caliph
+	add_trait="proud" #this got him assasinated
+	add_trait="wroth"
+	add_trait="arbitrary" #Presumably his father didn't want him to be Sultan for a reason
 	father=32936
+	mother=8000490
 	1262.1.1={
 		birth="1262.1.1"
+		culture="egyptian_arabic"
+	}
+	1284.1.1={
+		add_spouse=8000512
 	}
 	1293.12.14={
-		death="1293.12.14"
+		death={ # Murdered by a group of senior Emirs led by Baydara. Lajin is said to have struck the final blow.
+			death_reason=death_murder
+			killer=8000473
+		}
 	}
 }
 
 32938 = {
 	name="Kitbugha" 
 	dynasty=7270
-	religion="sunni"
-	culture="egyptian_arabic"
-	1247.1.1={
-		birth="1247.1.1"
+	martial=4
+	stewardship=4
+	intrigue=4
+	religion="tengri_pagan"
+	culture="mongol"
+	add_trait="tough_soldier" # Regular commander of Mamluk expeditions
+	add_trait="brave" # Mamluk sources specifically mention his bravery. 
+	add_trait="duelist" # Battle at al-Bira where he personally killed Mongol commander Chinqar
+	1244.1.1={
+		birth="1244.1.1"
 	}
-	1296.1.1={
-		death="1296.1.1"
+	1260.1.1={
+		culture="egyptian_arabic"
+		religion="sunni"
+		add_trait="bahriyya_mamluk"
+	}
+	1260.10.24={
+	    employer="32933"
+	}
+	1294.7.1 = {
+		create_bloodline = {
+			type = kitbugha
+			has_dlc = "Holy Fury"
+		}
+	}
+	1304.1.1={
+		death="1304.1.1" # Survived his overthrow and died years later as the governor of Hama
 	}
 }
 
 32939 = {
 	name="Lajin" 
 	dynasty=7271
+	martial=4
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="caucasian_avar"   # Or Greek or Prussian according to his contemporary, the Christian writer ibn al-Ṣuqa'i. Safadi states he was a maternal cousin of Aqqush al-Afram, a Circassian
+	add_trait="tough_soldier" # Regular commander of Mamluk expeditions
 	1249.1.1={
 		birth="1249.1.1"
 	}
+	1258.1.1={
+		culture="egyptian_arabic"
+		add_trait="bahriyya_mamluk" # Should perhaps be Burji?
+	}
+	1260.10.24={
+	    employer="32933"
+	}
+	1296.1.1 = {
+		create_bloodline = {
+			type = lajin
+			has_dlc = "Holy Fury"
+		}
+	}
 	1299.1.16={
-		death="1299.1.16"
+		death = {
+		    death_reason = death_murder
+		}
 	}
 }
 
@@ -1010,19 +1372,39 @@
 	name="Baibars" 
 	dynasty=7272
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="caucasian_avar"
+	add_trait="ambitious"
+	add_trait="skilled_tactician" # Fought and led in many campaigns. One of the key commanders in the victory at Marj al-Saffar.
 	1270.1.1={
 		birth="1270.1.1"
+		culture="egyptian_arabic"
+		add_trait="burji_mamluk"
 	}
-	1310.1.1={
-		death="1310.1.1"
+	1277.1.1={
+	    employer="32936"
+		trait="zealous" #undertook hajj twice; strict treatment of the Copts and Christians
+	}
+	1309.1.1 = {
+		create_bloodline = {
+			type = jashankir
+			has_dlc = "Holy Fury"
+		}
+	}
+	1309.11.1={
+	    add_claim = k_egypt
+	}
+	1310.4.16={
+	    death = {
+		    death_reason = death_execution 
+	        killer = 485000
+		}
 	}
 }
 
 34998= {
 	name="Sa'id"
 	#placeholder
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	1090.1.1={
 		birth="1090.1.1"
@@ -1035,7 +1417,7 @@
 34999= {
 	name="Musa"
 	#placeholder
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	1105.1.1={
 		birth="1105.1.1"
@@ -1045,39 +1427,39 @@
 	}
 }
 
-34979= {
-	name="al-Afdal Shahanshah"
-	dynasty=101684
-	religion="shiite"
-	culture="egyptian_arabic"
-	father=34980
-	1066.1.1={
-		birth="1066.1.1"
-	}
-
-	1121.12.11={
-		death="1121.12.11"
-	}
-}
-
-34980= {
-	name="Badr"
-	dynasty=101684
-	religion="shiite"
-	culture="egyptian_arabic"
-	1030.1.1={
-		birth="1030.1.1"
-	}
-
-	1076.1.1={
-		death="1076.1.1"
-	}
-}
+#34979= {
+#	name="al-Afdal Shahanshah"
+#	dynasty=101684
+#	religion="ismaili"
+#	culture="egyptian_arabic"
+#	father=34980
+#	1066.1.1={
+#		birth="1066.1.1"
+#	}
+#
+#	1121.12.11={
+#		death="1121.12.11"
+#	}
+#}
+#
+#34980= {
+#	name="Badr"
+#	dynasty=101684
+#	religion="ismaili"
+#	culture="egyptian_arabic"
+#	1030.1.1={
+#		birth="1030.1.1"
+#	}
+#
+#	1076.1.1={
+#		death="1076.1.1"
+#	}
+#}
 
 34981 = {
 	name="al-Ma'mum"
 	dynasty=100793
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
 	1080.1.1={
 		birth="1080.1.1"
@@ -1089,16 +1471,20 @@
 }
 
 34982 = {
-	name="Shawar"
+	name="Shawar" #b. Mujir al-Sa'di, last Fatimid vizier
 	dynasty=7319
-	religion="shiite"
+	religion="ismaili"
 	culture="egyptian_arabic"
+	trait="ambitious"
 	1110.1.1={
 		birth="1110.1.1"
 	}
 
 	1169.1.18={
-		death="1169.1.18"
+		death={
+			death_reason=death_murder
+			killer=32912
+		}
 	}
 }
 
@@ -1106,11 +1492,15 @@
 	name="Baktmar"
 	dynasty=7320
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	1260.1.1={
 		birth="1260.1.1"
+		culture="egyptian_arabic"
+		add_trait="bahriyya_mamluk"
 	}
-
+    1279.7.1={
+	    employer="32936"
+	}
 	1311.1.1={
 		death="1311.1.1"
 	}
@@ -1120,13 +1510,21 @@
 	name="as-Salih Ali" 
 	dynasty=762
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkish"
 	father=32936
+	mother=8000511
 	1264.1.1={
 		birth="1264.1.1"
+		culture="egyptian_arabic"
 	}
-	1292.1.1={
-		death="1292.1.1"
+	1279.1.1 = {
+	    employer="32936" # Keeps disappearing to the Golden Horde for some daft reason.
+	}
+	1282.1.1={
+	    add_spouse="8000514"
+	}
+	1289.1.1={
+		death="1289.1.1"
 	}
 }
 
@@ -1134,11 +1532,13 @@
 	name="Musa" 
 	dynasty=762
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkish"
 	father=34984
+	mother=8000514
 	1285.1.1={
 		birth="1285.1.1"
-	}
+		culture="egyptian_arabic"
+    }
 	1311.1.1={
 		add_claim = k_egypt
 	}
@@ -1148,14 +1548,20 @@
 }
 
 34986 = {
-	name="Baibars"
+	name="Baibars" # AKA Baybars al-Mansuri. Long lived senior Emir as well as noted historian and writer.
 	dynasty=7321
 	religion="sunni"
-	culture="egyptian_arabic"
-	1270.1.1={
-		birth="1270.1.1"
+	culture="khitan" # As per Mamluk sources
+	trait = "grey_eminence" 
+	trait = "erudite"
+	1260.1.1={
+		birth="1260.1.1" # Definately born earlier
+		culture="egyptian_arabic"
+		add_trait="bahriyya_mamluk"
 	}
-
+    1279.7.1={
+	    employer="32936"
+	}
 	1330.1.1={
 		death="1330.1.1"
 	}
@@ -1163,58 +1569,103 @@
 
 34987 = {
 	name="Abdallah"
-	dynasty=7322
+	dynasty=1000103861
 	religion="sunni"
 	culture="egyptian_arabic"
+	father=1236243
 	1275.1.1={
 		birth="1275.1.1"
+		culture="nubian"
 	}
-
-	1320.1.1={
-		death="1320.1.1"
+	1294.1.1={
+		add_spouse=1228700
+	}
+	1315.1.1={
+		death="1315.1.1"
 	}
 }
 
 34988 = {
-	name="Kanz"
-	dynasty=7322
+	name="Shuja al-Din"
+	dynasty=1000103861
 	religion="sunni"
 	culture="egyptian_arabic"
 	father=34987
-	1300.1.1={
-		birth="1300.1.1"
+	mother=1228700
+	1295.1.1={
+		birth=yes
+		culture="nubian"
 	}
 
-	1350.1.1={
-		death="1350.1.1"
+	1333.1.1={
+		death=yes
 	}
 }
 
-34989 = {
-	name="Mahmud"
-	dynasty=7322
-	religion="sunni"
-	culture="egyptian_arabic"
-	father=34988
-	1330.1.1={
-		birth="1330.1.1"
-	}
+#34989 = {
+#	name="Mahmud"
+#	dynasty=7322
+#	religion="sunni"
+#	culture="egyptian_arabic"
+#	father=34988
+#	1330.1.1={
+#		birth="1330.1.1"
+#	}
+#
+#	1380.1.1={
+#		death="1380.1.1"
+#	}
+#}
 
-	1380.1.1={
-		death="1380.1.1"
-	}
-}
+#### ToG
 
 163115 = {
 	name="Ahmad"
 	dynasty=820
+	martial=7
+	diplomacy=7
+	stewardship=8
+	intrigue=6
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="uyghur"
+	trait="skilled_tactician" 
+	trait="brave"
+	trait="quick"
+	trait="ambitious"
+	trait="patient"
+	father=1234932
+	mother=1234933
 	835.9.1={
 		birth="835.9.1"
+		culture="levantine_arabic"
+	}
+	867.1.1={
+		effect = {
+			d_cairo = { add_pressed_claim = ROOT } #early, but to faciliate him ending up in Egypt
+			set_character_flag = emf_justified_claimant_d_cairo #if EMF is installed, more likely to get nominated for the claimant faction
+		}
 	}
 	884.3.1={
 		death="884.3.1"
+	}
+}
+
+163173 = {
+	name="Al-Abbas"
+	dynasty=820
+	religion="sunni"
+	culture="turkish"
+	father = 163115
+	mother = 1234959
+	852.1.1={
+		birth="852.1.1"
+		culture="levantine_arabic"
+	}
+	884.3.1={
+		death = {
+			death_reason = death_execution
+			killer = 163138
+		}
 	}
 }
 
@@ -1222,24 +1673,26 @@
 	name="Khumarawayh"
 	dynasty=820
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="uyghur"
 	father = 163115
-	855.1.1={
-		birth="855.1.1"
+	864.1.1={
+		birth=yes
+		culture="levantine_arabic"
 	}
 	896.1.1={
-		death="896.1.1"
+		death={ death_reason=death_murder } # murdered by one of his slaves
 	}
 }
 
 163139 = {
-	name="Shayban"
+	name="Shaybad"
 	dynasty=820
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkmen"
 	father = 163115
-	858.1.1={
+	856.1.1={
 		birth="856.1.1"
+		culture="levantine_arabic"
 	}
 	905.1.10={
 		death="905.1.10"
@@ -1254,35 +1707,37 @@
 	intrigue=8
 	stewardship=4
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	trait="honest"
 	trait="flamboyant_schemer"
 	father=485000
-	1334.1.1 = {
-		birth="1334.1.1"
+	1336.1.1 = {
+		birth="1336.1.1"
+		culture="egyptian_arabic"
 	}
-	1345.1.1 = {
-		death="1345.1.1"
+	1345.9.1 = {
+		death="1345.9.1"
 	}
 }
 
 485004 = {
-	name="al-Kamil Shaban"
+	name="an-Nasir Ahmad"
 	dynasty=762
 	martial=6
 	diplomacy=5
 	intrigue=8
 	stewardship=7
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkish"
 	trait="harelip"
 	trait="flamboyant_schemer"
 	father=485000
-	1326.1.1 = {
-		birth="1326.1.1"
+	1316.8.1 = {
+		birth="1316.8.1"
+		culture="egyptian_arabic"
 	}
-	1346.1.1 = {
-		death="1346.1.1"
+	1344.7.16 = {
+		death="1344.7.16"
 	}
 }
 
@@ -1294,14 +1749,15 @@
 	intrigue=8
 	stewardship=7
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	trait="flamboyant_schemer"
 	father=485000
 	1325.1.1 = {
 		birth="1325.1.1"
+		culture="egyptian_arabic"
 	}
-	1345.1.1 = {
-		death="1345.1.1"
+	1345.8.4 = {
+		death="1345.8.4"
 	}
 }
 
@@ -1313,36 +1769,38 @@
 	intrigue=6
 	stewardship=5
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	trait="slothful"
 	trait="tough_soldier"
 	father=485000
 	1327.1.1 = {
 		birth="1327.1.1"
+		culture="egyptian_arabic"
 	}
-	1346.1.1 = {
-		death="1346.1.1"
+	1346.9.21 = {
+		death="1346.9.21"
 	}
 }
 
 485007 = {
-	name="al-Muzzafar Haji"
+	name="al-Muzzafar Hajji"
 	dynasty=762
 	martial=8
 	diplomacy=5
 	intrigue=4
 	stewardship=6
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkish"
 	trait="charitable"
 	trait="honest"
 	trait="amateurish_plotter"
 	father=485000
-	1328.1.1 = {
-		birth="1328.1.1"
+	1331.1.1 = {
+		birth="1331.1.1"
+		culture="egyptian_arabic"
 	}
-	1347.1.1 = {
-		death="1347.1.1"
+	1347.12.1 = {
+		death="1347.12.1"
 	}
 }
 
@@ -1354,14 +1812,15 @@
 	intrigue=4
 	stewardship=7
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="cuman"
 	trait="flamboyant_schemer"
 	father=485000
-	1329.1.1 = {
-		birth="1329.1.1"
-	}
-	1351.1.1 = {
-		death="1351.1.1"
+	1334.1.1 = {
+		birth="1334.1.1"
+		culture="egyptian_arabic"
+    }
+	1361.3.17 = {
+		death="1361.3.17"
 	}
 }
 
@@ -1373,532 +1832,16 @@
 	intrigue=4
 	stewardship=8
 	religion="sunni"
-	culture="egyptian_arabic"
+	culture="turkish"
 	trait="gluttonous"
 	trait="underhanded_rogue"
 	father=485000
-	1330.1.1 = {
-		birth="1330.1.1"
-	}
-	1360.1.1 = {
-		death="1360.1.1"
-	}
-}
-210021 = {
-	name="Abderahman"
-	dynasty=1048002 #Tujibid
-	religion="sunni"
-	culture="egyptian_arabic"
-	father=210020
-	700.1.1={
-		birth="700.1.1"
-	}
-	760.1.1={
-		death="760.1.1"
-	}
-}
-210022 = {
-	name="Abdullah"
-	dynasty=1048002 #Tujibid
-	religion="sunni"
-	culture="egyptian_arabic"
-	father=210021
-	725.1.1={
-		birth="725.1.1"
-	}
-	800.1.1={
-		death="800.1.1"
-	}
-}
-210023 = {
-	name="Abdul-Aziz"
-	dynasty=601
-	religion="sunni"
-	culture="egyptian_arabic"
-	740.1.1={
-		birth="740.1.1"
-	}
-	780.1.1={
-		death="780.1.1"
-	}
-}
-210024 = {
-	name="Abu-Bakr"
-	dynasty=611
-	religion="sunni"
-	culture="egyptian_arabic"
-	735.1.1={
-		birth="735.1.1"
-	}
-	778.1.1={
-		death="778.1.1"
-	}
-}
-
-210025    = {
-	name="Adnan"
-	dynasty=614
-	religion="sunni"
-	culture="egyptian_arabic"
-	737.1.1={
-		birth="737.1.1"
-	}
-	775.1.2={
-		death="775.1.2"
-	}
-}
-210026  = {
-	name="Daoud"
-	dynasty=615
-	religion="sunni"
-	culture="egyptian_arabic"
-	740.1.1={
-		birth="740.1.1"
-	}
-	800.1.1={
-		death="800.1.1"
-	}
-}
-
-210027 = {
-	name="Nasir"
-	dynasty=7312
-	religion="sunni"
-	culture="egyptian_arabic"
-	720.1.1={
-		birth="720.1.1"
-	}
-	795.1.1={
-		death="795.1.1"
-	}
-}
-260820 = {
-	name = "Unujur"
-	dynasty = 1062411
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260819
-	932.1.1 = {
-		birth = yes
-	}
-	961.1.1 = {
-		death = yes
-	}
-}
-260821 = {
-	name = "Ali"
-	dynasty = 1062411
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260819
-	936.1.1 = {
-		birth = yes
-	}
-	966.1.1 = {
-		death = yes
-	}
-}
-260848 = {
-	name = "Farhan"
-	dynasty = 1062431
-	religion = sunni
-	culture = egyptian_arabic
-	903.1.1 = {
-		birth = yes
-	}
-	953.1.1 = {
-		death = yes
-	}
-}
-260849 = {
-	name = "Murshid"
-	dynasty = 1062432
-	religion = sunni
-	culture = egyptian_arabic
-	906.1.1 = {
-		birth = yes
-	}
-	949.1.1 = {
-		death = yes
-	}
-}
-260910 = {
-	name = "Androus"
-	dynasty = 1062465
-	religion = shiite
-	culture = egyptian_arabic
-	875.1.1 = {
-		birth = yes
-	}
-	929.1.1 = {
-		death = yes
-	}
-}
-260911 = {
-	name = "Habil"
-	dynasty = 1062465
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260910
-	902.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-260912 = {
-	name = "Dawlat"
-	dynasty = 1062465
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260911
-	925.1.1 = {
-		birth = yes
-	}
-	984.1.1 = {
-		death = yes
-	}
-}
-260913 = {
-	name = "Ablarion"
-	dynasty = 1062465
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260910
-	908.1.1 = {
-		birth = yes
-	}
-	971.1.1 = {
-		death = yes
-	}
-}
-260914 = {
-	name = "Hisham"
-	dynasty = 1062466
-	religion = sunni
-	culture = egyptian_arabic
-	884.1.1 = {
-		birth = yes
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-260915 = {
-	name = "Tajaddin"
-	dynasty = 1062466
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260914
-	910.1.1 = {
-		birth = yes
-	}
-	956.1.1 = {
-		death = yes
-	}
-}
-260916 = {
-	name = "Izzaddin"
-	dynasty = 1062466
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260914
-	915.1.1 = {
-		birth = yes
-	}
-	970.1.1 = {
-		death = yes
-	}
-}
-260917 = {
-	name = "Is'mail"
-	dynasty = 1062466
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260915
-	931.1.1 = {
-		birth = yes
-	}
-	987.1.1 = {
-		death = yes
-	}
-}
-260918 = {
-	name = "Abanoub"
-	dynasty = 1062467
-	religion = sunni
-	culture = egyptian_arabic
-	868.1.1 = {
-		birth = yes
-	}
-	921.1.1 = {
-		death = yes
-	}
-}
-260919 = {
-	name = "Binyamin"
-	dynasty = 1062467
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260918
-	899.1.1 = {
-		birth = yes
-	}
-	946.1.1 = {
-		death = yes
-	}
-}
-260920 = {
-	name = "Abanoub"
-	dynasty = 1062467
-	religion = sunni
-	culture = egyptian_arabic
-	father = 260919
-	922.1.1 = {
-		birth = yes
-	}
-	971.1.1 = {
-		death = yes
-	}
-}
-260921 = {
-	name = "Bashir"
-	dynasty = 1062468
-	religion = shiite
-	culture = egyptian_arabic
-	888.1.1 = {
-		birth = yes
-	}
-	945.1.1 = {
-		death = yes
-	}
-}
-260922 = {
-	name = "Asanet"
-	female = yes
-	dynasty = 1062468
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260921
-	915.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-260923 = {
-	name = "Ghiyasaddin"
-	dynasty = 1062468
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260921
-	919.1.1 = {
-		birth = yes
-	}
-	961.1.1 = {
-		death = yes
-	}
-}
-260924 = {
-	name = "Agathon"
-	dynasty = 1062469
-	religion = sunni
-	culture = egyptian_arabic
-	870.1.1 = {
-		birth = yes
-	}
-	929.1.1 = {
-		death = yes
-	}
-}
-260925 = {
-	name = "Anthinos"
-	dynasty = 1062469
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260924
-	905.1.1 = {
-		birth = yes
-	}
-	959.1.1 = {
-		death = yes
-	}
-}
-260926 = {
-	name = "Biktor"
-	dynasty = 1062469
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260925
-	928.1.1 = {
-		birth = yes
-	}
-	968.1.1 = {
-		death = yes
-	}
-}
-260927 = {
-	name = "Lot"
-	dynasty = 1062469
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260924
-	909.1.1 = {
-		birth = yes
-	}
-	957.1.1 = {
-		death = yes
-	}
-}
-260928 = {
-	name = "Abraam"
-	dynasty = 1062469
-	religion = shiite
-	culture = egyptian_arabic
-	father = 260927
-	935.1.1 = {
-		birth = yes
-	}
-	980.1.1 = {
-		death = yes
-	}
-}
-
-261299 = {
-	name = "Al-Abbas"
-	dynasty = 820
-	religion = sunni
-	culture = egyptian_arabic
-	father = 163115
-	853.1.1 = {
-		birth = yes
-	}
-	884.1.1 = {
-		death = yes
-	}
-}
-261300 = {
-	name = "Rabi'ah"
-	dynasty = 820
-	religion = sunni
-	culture = egyptian_arabic
-	father = 163115
-	857.1.1 = {
-		birth = yes
-	}
-	897.1.1 = {
-		death = yes
-	}
-}
-261301 = {
-	name = "Mudar"
-	dynasty = 820
-	religion = sunni
-	culture = egyptian_arabic
-	father = 163115
-	856.1.1 = {
-		birth = yes
-	}
-	905.1.1 = {
-		death = yes
-	}
-}
-261302 = {
-	name = "Nahid'lyad"
-	dynasty = 820
-	religion = sunni
-	culture = egyptian_arabic
-	father = 163115
-	859.1.1 = {
-		birth = yes
-	}
-	889.1.1 = {
-		death = yes
-	}
-}
-261304 = {
-	name = "Firuz"
-	dynasty = 1062587
-	religion = shiite
-	culture = egyptian_arabic
-	896.1.1 = {
-		birth = yes
-	}
-	949.1.1 = {
-		death = yes
-	}
-}
-261305 = {
-	name = "Athanasios"
-	dynasty = 1062588
-	religion = sunni
-	culture = egyptian_arabic
-	904.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-261306 = {
-	name = "Akbar"
-	dynasty = 1062589
-	religion = sunni
-	culture = egyptian_arabic
-	902.1.1 = {
-		birth = yes
-	}
-	980.1.1 = {
-		death = yes
-	}
-}
-261307 = {
-	name = "Badr"
-	dynasty = 1062590
-	religion = sunni
-	culture = egyptian_arabic
-	888.1.1 = {
-		birth = yes
-	}
-	953.1.1 = {
-		death = yes
-	}
-}
-261309 = {
-	name = "Musa"
-	dynasty = 1062592
-	religion = sunni
-	culture = egyptian_arabic
-	907.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-261310 = {
-	name = "Hisham"
-	dynasty = 1062593
-	religion = sunni
-	culture = egyptian_arabic
-	908.1.1 = {
-		birth = yes
-	}
-	944.1.1 = {
-		death = yes
-	}
-}
-261330 = {
-	name = "Ghabun"
-	dynasty = 1062601
-	religion = sunni
-	culture = egyptian_arabic
-	896.1.1 = {
-		birth = yes
-	}
-	947.1.1 = {
-		death = yes
+	mother=8000491
+	1337.1.1 = {
+		birth="1337.1.1"
+		culture="egyptian_arabic"
+	}
+	1360.12.1 = {
+		death="1360.12.1"
 	}
 }

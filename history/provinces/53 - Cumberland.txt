@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 53 - Cumberland
 
 # County Title
@@ -5,33 +7,24 @@ title = c_cumberland
 
 # Settlements
 max_settlements = 3
-b_burgh = tribal
 
-#b_carlisle = temple
-#b_gilsland = castle
+b_carlisle = castle
+#b_egremont= castle
 #b_penrith = city
-#b_egremont = castle
-#b_cockermouth = castle
-#b_papcastlet = castle
+#b_keswick = city
+#b_cockermouth = city
 #b_dacre = castle
+#b_gilsland
+#b_bewcastle
+
 
 # Misc
-culture = saxon
+culture = cumbric
 religion = catholic
 
 # History
-633.1.1 = {
-	culture = welsh
-	religion = celtic_christian
-}
-760.1.1 = { religion = catholic }
-760.1.1 = {
-	b_burgh = castle
-	b_penrith = city
-	b_carlisle = temple
-}
-860.1.1 ={
-	culture = saxon
-}
+973.1.1 = { b_carlisle = tribal }
+1067.1.1 = { b_egremont = castle }
+#1068.1.1 = { culture = saxon } # held by Scotland and therefor not affected by the Harrying.
+1092.1.1 = { b_carlisle = castle }
 1100.11.11 = { culture = english }
- 

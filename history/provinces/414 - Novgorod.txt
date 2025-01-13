@@ -1,59 +1,49 @@
+# -*- ck2.history.provinces -*-
+
 # 414 - Novgorod
 
 # County Title
 title = c_novgorod
 
 # Settlements
-max_settlements = 6
+max_settlements = 7
 
-b_novgorod = tribal
-b_soltsy = temple
-
-#b_pankovka
-#b_chudovo
-#b_luga
-#b_batetsky
-#b_shimsk
+b_novgorodkremlin = tribal
+b_novgorod = city
+#b_sanktsophia = temple
+b_peryn = temple
+#b_solcyn = city
+#b_borovichi = city
+#b_lyubytino = city
+#b_yurievmonestary = temple
+#b_antonievmonestary = temple
+#b_tesovnogorod = castle
+#b_holopojgorodok = castle
+#b_krestcy = castle
+#b_okulovka = city
+#b_korostyn = city
 
 # Misc
-culture = ilmenian
+culture = russian
 religion = slavic_pagan
-terrain = farmlands
+
 # History
-769.1.1 = {
-	build_wonder = wonder_winter_palace
-	set_wonder_stage = 1
+769.1.1 = { build_wonder = wonder_winter_palace set_wonder_stage = 1 } 
+867.1.1 = {
+	b_novgorodkremlin = tb_shipyard_1
 }
-859.1.1 = {
-	culture = russian
-	b_novgorod = tb_hillfort_1
-	b_novgorod = tb_market_town_1
-}
+988.1.1 = {religion = orthodox }
 988.1.1 = {
-	religion = orthodox
-	b_novgorod = castle
-	b_soltsy = city
-	b_luga = city
-	b_chudovo = castle
-	b_novgorod = ca_keep_1
-	b_novgorod = ca_wall_1
-	b_novgorod = ca_barracks_1
-	b_novgorod = ca_militia_barracks_1
-	b_novgorod = ca_stable_1
-}
-1136.1.1 = {
-	b_novgorod = city #Novgorod republic founded
-	b_novgorod = ct_marketplace_1
-	b_novgorod = ct_wall_1
-	b_novgorod = ct_wall_q_1
-	b_novgorod = ct_training_grounds_1
-	b_novgorod = ct_barracks_1
-	b_novgorod = ct_guard_1
-	
-	b_pankovka = castle	#anachronistic, but to pimp up gameplaywise
-	b_pankovka = ca_keep_1
-	b_pankovka = ca_wall_1
-	b_pankovka = ca_barracks_1
-	b_pankovka = ca_militia_barracks_1
-	b_pankovka = ca_stable_1
-}
+b_novgorodkremlin = castle
+b_novgorodkremlin = ca_shipyard_1
+b_sanktsophia = temple }
+1136.1.1 = { b_solcyn = city } #Novgorod republic founded
+1136.1.1 = { capital = b_novgorod }
+1150.1.1 = { b_yurievmonestary = temple }
+
+
+
+
+
+
+

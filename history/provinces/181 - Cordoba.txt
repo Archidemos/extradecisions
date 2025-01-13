@@ -1,30 +1,35 @@
+# -*- ck2.history.provinces -*-
+
+# 181 - Cordoba
+
 # County Title
 title = c_cordoba
-# Settlements
-max_settlements = 6
-b_alcolea = castle
-b_cordoba = temple
-b_lucena = city
-b_cabra = temple
-b_belalcazar = castle
-# b_martos = temple
-# b_canetedelastorres = castle
-culture = visigothic
-religion = sunni
-terrain = farmlands
-################################################################################
-# History
-################################################################################
-633.1.1 = { religion = adoptionist } 
-760.1.1 = { religion = sunni } 
-769.1.1 = { build_wonder = wonder_mosque_cordoba set_wonder_stage = 1 } 
-929.1.1 = { culture = andalusian_arabic } 
-1031.1.1 = { capital = b_lucena } 
-1070.1.1 = { capital = b_alcolea } 
-1236.1.1 = { 
-    b_cordoba = castle
-    capital = b_belalcazar # VERY IMPORTANT: remove_settlement must always be scripted AFTER a 'capital' switch away from the same settlement
-    remove_settlement = b_alcolea
-}
 
-1251.1.1 = { culture = castillan religion = catholic } 
+# Settlements
+max_settlements = 7
+b_cordoba = castle
+b_alcolea = castle
+b_cabra = temple
+b_lucena = city
+b_baena = temple
+b_montilla = city
+#b_madinat_al_zahra = city
+
+#b_iznajar = castle
+#b_guadalcazar = castle
+#b_adamuz = city
+
+
+#b_belalcazar = castle
+#b_canetedelastorres = castle
+
+# Misc
+culture = andalusian_arabic
+religion = sunni
+
+# History
+769.1.1 = { build_wonder = wonder_mosque_cordoba set_wonder_stage = 1 }
+940.1.1 = { b_madinat_al_zahra = city }
+1010.1.1 = { remove_settlement = b_madinat_al_zahra }
+1251.1.1 = { culture = castillan }
+1251.1.1 = { religion = catholic }

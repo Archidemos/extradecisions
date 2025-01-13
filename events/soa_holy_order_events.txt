@@ -1,3 +1,5 @@
+# -*- ck2.events -*-
+
 ###########################################
 #
 # Holy Order Events
@@ -386,9 +388,6 @@ letter_event = {
 	
 	option = {
 		name = EVTOPTA_SOA_1023 # Agree
-		ai_chance = {
-			factor = 100
-		}
 		
 		hidden_tooltip = {
 			remove_character_modifier = borrowed_from_knights_templar
@@ -399,6 +398,10 @@ letter_event = {
 		}
 		
 		piety = 100
+		
+		ai_chance = {
+			factor = 100
+		}		
 	}
 	
 	option = {
@@ -410,11 +413,47 @@ letter_event = {
 		FROM = {
 			wealth = 300
 		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				NOT = { wealth = 300 }
+			}
+		}		
 	}
 	
 	option = {
 		name = EVTOPTC_SOA_1003 # Refuse
-		piety = -1000
+		
+		if = {
+			limit = { NOT = { has_dlc = "Mystics" } }
+			piety = -1000
+		}
+		if = {
+			limit = { has_dlc = "Mystics" }
+			piety = -200
+			set_character_flag = assassins_refused_to_pay_debt
+		}
+
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 2
+				NOT = { wealth = 300 }
+			}
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+			modifier = {
+				factor = 2
+				is_impious_trigger = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_dlc = "Mystics" }
+			}
+		}
 	}
 }
 
@@ -486,6 +525,8 @@ character_event = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
+				religion = adoptionist
+				religion = arian
 			}
 			liege = {
 				holy_order = no
@@ -1052,6 +1093,8 @@ character_event = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
+				religion = adoptionist
+				religion = arian
 			}
 			liege = {
 				holy_order = no
@@ -1545,7 +1588,8 @@ character_event = {
 		OR = {
 			religion = sunni
 			religion = zikri
-			religion = yazidi
+			religion = mahdiyya
+			religion = nabawiyya
 		}
 		is_heretic = no
 		has_character_modifier = borrowed_from_bektashi
@@ -1713,7 +1757,8 @@ narrative_event = {
 		OR = {
 			religion = sunni
 			religion = zikri
-			religion = yazidi
+			religion = mahdiyya
+			religion = nabawiyya
 		}
 		is_heretic = no
 		NOT = {
@@ -1756,7 +1801,7 @@ narrative_event = {
 			random_traits = no
 			name = Bektash
 			dynasty = random
-			unsafe_religion = ROOT
+			religion = ROOT
 			culture = persian
 			female = no
 			age = 25
@@ -1936,7 +1981,8 @@ character_event = {
 		OR = {
 			religion = sunni
 			religion = zikri
-			religion = yazidi
+			religion = mahdiyya
+			religion = nabawiyya
 		}
 		is_heretic = no
 		
@@ -2091,7 +2137,8 @@ character_event = {
 		OR = {
 			religion = sunni
 			religion = zikri
-			religion = yazidi
+			religion = mahdiyya
+			religion = nabawiyya
 		}
 		is_heretic = no
 		
@@ -2113,7 +2160,8 @@ character_event = {
 			OR = {
 				religion = sunni
 				religion = zikri
-				religion = yazidi
+				religion = mahdiyya
+				religion = nabawiyya
 			}
 			liege = {
 				holy_order = no
@@ -2321,7 +2369,8 @@ character_event = {
 		OR = {
 			religion = sunni
 			religion = zikri
-			religion = yazidi
+			religion = mahdiyya
+			religion = nabawiyya
 		}
 
 		d_bektashi = {
@@ -2535,6 +2584,8 @@ character_event = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
+				religion = adoptionist
+				religion = arian
 			}
 			liege = {
 				holy_order = no
@@ -2952,9 +3003,9 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			religion = shiite
+			religion = ismaili
 			religion = druze
-			religion = hurufi
+			religion = qarmatian
 		}
 		is_heretic = no
 		has_character_modifier = borrowed_from_assassins
@@ -3207,9 +3258,9 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			religion = shiite
+			religion = ismaili
 			religion = druze
-			religion = hurufi
+			religion = qarmatian
 		}
 		is_heretic = no
 		
@@ -3418,9 +3469,9 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			religion = shiite
+			religion = ismaili
 			religion = druze
-			religion = hurufi
+			religion = qarmatian
 		}
 		is_heretic = no
 		
@@ -3442,9 +3493,9 @@ character_event = {
 		liege = {
 			holy_order = no
 			OR = {
-				religion = shiite
+				religion = ismaili
 				religion = druze
-				religion = hurufi
+				religion = qarmatian
 			}
 			liege = {
 				holy_order = no
@@ -3640,9 +3691,9 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			religion = shiite
+			religion = ismaili
 			religion = druze
-			religion = hurufi
+			religion = qarmatian
 		}
 		is_heretic = no
 		
@@ -4696,7 +4747,6 @@ character_event = {
 				religion = bogomilist
 				religion = monothelite
 				religion = iconoclast
-				religion = paulician
 			}
 			liege = {
 				holy_order = no
@@ -11469,7 +11519,7 @@ narrative_event = {
 		create_character = {
 			random_traits = no
 			dynasty = random
-			unsafe_religion = ROOT
+			religion = ROOT
 			culture = castillan
 			female = no
 			age = 31
@@ -11620,6 +11670,8 @@ character_event = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
+				religion = adoptionist
+				religion = arian
 			}
 			liege = {
 				holy_order = no
@@ -12202,7 +12254,7 @@ narrative_event = {
 		create_character = {
 			random_traits = no
 			dynasty = random
-			unsafe_religion = ROOT
+			religion = ROOT
 			culture = castillan
 			female = no
 			age = 31
@@ -12353,6 +12405,8 @@ character_event = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
+				religion = adoptionist
+				religion = arian
 			}
 			liege = {
 				holy_order = no
@@ -12938,7 +12992,7 @@ narrative_event = {
 		create_character = {
 			random_traits = no
 			dynasty = random
-			unsafe_religion = ROOT
+			religion = ROOT
 			culture = persian
 			female = no
 			age = 31

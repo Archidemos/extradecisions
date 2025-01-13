@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 710 - Al Bichri
 
 # County Title
@@ -17,8 +19,9 @@ b_osrhoene = temple
 
 #Misc
 culture = levantine_arabic
-religion = nestorian
+religion = sunni
 
 # History
-766.1.1 = { religion = sunni }
-935.1.1 = { religion = shiite }
+
+1183.1.1 = { remove_settlement = b_osrhoene culture = bedouin_arabic } #Tribalisation/Nomadization of Rahba
+1183.1.1 = { b_bichri = tribal } #Tribalisation/Nomadization of Rahba

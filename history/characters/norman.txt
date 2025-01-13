@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 10000 = {
 	name="Muriella"
 	female=yes
@@ -8,11 +10,11 @@
 	religion="catholic"
 	culture="norman"
 	trait="charismatic_negotiator"
-	985.1.2 = {
-		birth=yes
+	990.1.2 = {
+		birth = yes
 	}
-	1013.1.2 = {
-		death=yes
+	1019.1.2 = {
+		death = yes
 	}
 }
 
@@ -20,8 +22,6 @@
 	name="Alberada"
 	female=yes
 	dynasty=102000
-	father=210
-	mother=375
 	martial=5
 	diplomacy=5
 	intrigue=7
@@ -30,11 +30,12 @@
 	culture="norman"
 	trait="underhanded_rogue"
 	trait="patient"
-	1035.1.1 = {
-		birth=yes
+	father=1227444
+	1035.1.2 = {
+		birth = yes
 	}
-	1085.1.1 = {
-		death=yes
+	1085.1.2 = {
+		death = yes
 	}
 }
 
@@ -48,11 +49,11 @@
 	religion="catholic"
 	culture="norman"
 	trait="elusive_shadow"
-	997.1.1 = {
-		birth=yes
+	999.1.2 = {
+		birth = yes
 	}
-	1050.1.1 = {
-		death=yes
+	1050.1.2 = {
+		death = yes
 	}
 }
 
@@ -68,10 +69,10 @@
 	culture="norman"
 	trait="greedy"
 	1000.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1040.2.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -89,13 +90,13 @@
 	father=20112
 	mother=10015
 	1039.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1064.1.1 = {
 		add_spouse=10017
 	}
 	1118.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -187,7 +188,7 @@
 }
 
 110637 = {
-	name="Raoul"
+	name="Raoul" # Baron of Clifford. Ralph/Raoul de Tosny recorded in the Domesday book as Baron of Clifford.
 	dynasty=385
 	martial=7
 	diplomacy=5
@@ -203,7 +204,7 @@
 		birth="1038.1.1"
 	}
 	1066.1.1 = {
-		employer=140
+	employer=41226
 	}
 	1074.1.1 = {
 		add_spouse=41223
@@ -224,7 +225,7 @@
 	}
 	#wife probably not Avice de Clare
 	1066.1.1 = {
-		employer=140
+		employer=41226
 	}
 	1088.1.1 = {
 		death="1088.1.1"
@@ -273,7 +274,7 @@
 	1003.1.1 = {
 		add_spouse=10000
 	}
-	1014.1.1 = {
+	1021.1.1 = {
 		add_spouse=10008
 	}
 	1041.1.1 = {
@@ -320,6 +321,9 @@
 	mother=10000
 	1011.1.1 = {
 		birth="1011.1.1"
+	}
+	1037.1.1 = {
+		give_nickname = nick_ironarm
 	}
 	1046.1.1={
 		add_spouse=200324
@@ -383,8 +387,8 @@
 	trait="tough_soldier"
 	father=1120
 	mother=10000
-	1010.1.2 = {
-		birth="1010.1.2"
+	1015.1.2 = {
+		birth="1015.1.2"
 	}
 	1057.1.1 = {
 		death="1057.1.1"
@@ -417,15 +421,15 @@
 	dna = cdbcdogibck
 	properties = 0c0cbd000000
 	martial=9
-	diplomacy=6
-	intrigue=7
+	diplomacy=4
+	intrigue=6
 	stewardship=6
 	religion="catholic"
 	culture="norman"
 	trait="deceitful"
 	trait="envious"
 	trait="patient"
-	trait="strong"
+	trait="strong"	
 	trait="brilliant_strategist"
 	father=1120
 	mother=10008
@@ -437,10 +441,13 @@
 	}
 	1057.1.1 = {
 		remove_spouse=10003
-		give_nickname = nick_the_fox
+		give_nickname = nick_the_fox		
 	}
 	1058.1.1 = {
 		add_spouse=1123
+	}
+	1081.4.1={
+		add_claim = e_byzantium
 	}
 	1085.7.17 = {
 		death=yes
@@ -489,8 +496,15 @@
 	1031.1.2 = {
 		birth="1031.1.2"
 	}
-	1061.1.2 = {
+	1060.1.1 = {
 		add_spouse=10014
+	}
+	1078.3.31 = {
+		add_claim=k_epirus
+		add_claim=k_achaea
+		add_claim=d_ohrid
+		add_claim=d_neopatras
+		add_claim=d_thessalonika
 	}
 	1101.6.22 = {
 		death="1101.6.22"
@@ -686,16 +700,18 @@
 	dynasty=678
 	martial=8
 	diplomacy=7
-	intrigue=8
-	stewardship=6
+	intrigue=6
+	stewardship=5
 	religion="catholic"
 	culture="norman"
+	trait="tall" #Anna Komnene describes him as extraordinarily tall
+	trait="strong" #Anna Komnene sounds like she has a little crush when describing his physical stature and appearance
+	trait="fair" #Anna Komnene sounds like she has a little crush when describing his physical stature and appearance	
 	trait="brave"
+	trait="ambitious"	
 	trait="cynical"
 	trait="wroth"
-	trait="brilliant_strategist"
-	trait="sturdy"
-	disallow_random_traits = yes
+	trait="skilled_tactician"
 	father=1128
 	mother=10003
 	1058.1.1 = {
@@ -961,11 +977,14 @@
 	culture="norman"
 	father=211501
 	mother=206512
-	1154.1.1 = {
-		birth="1154.1.1"
+	1152.1.1 = {
+		birth="1152.1.1"
 	}
 	1161.1.1 = {
-		death="1161.1.1"
+		death={
+			death_reason=death_battle
+			killer=1063736
+		}
 	}
 }
 
@@ -1034,9 +1053,9 @@
 	name="William"
 	# AKA: William 'the Conqueror'
 	dynasty=752
-	dna = cagfktibaal
-	properties = fj0dcd000000
-	martial=7
+	dna = cagfktibfal
+	properties = fk0d0d000000
+	martial=8
 	diplomacy=7
 	intrigue=10
 	stewardship=6
@@ -1047,14 +1066,15 @@
 	trait="proud"
 	trait="cynical"
 	trait="brave"
-	trait="temperate"
+	trait="sturdy"	
+	trait="gluttonous"
 	trait="patient"
 	trait="legit_bastard"
-	trait="brilliant_strategist"
+	trait="skilled_tactician"
 	father=252
 	mother=41001
 	1027.1.15 = {
-		birth=yes
+		birth = yes
 	}
 	1035.7.3 = {
 		give_nickname=nick_the_bastard
@@ -1075,19 +1095,21 @@
 		
 		effect = {
 			set_global_flag = williams_invasion_of_england
+			
 			spawn_unit = {
 				province = 97 # Rouen
 				owner = ROOT
 				#leader = ROOT
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 766 766 }
+					heavy_infantry = { 566 566 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
 					archers = { 439 439 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 			spawn_unit = {
 				province = 97 # Rouen
@@ -1095,13 +1117,14 @@
 				#leader = 148 # Odo of Bayeux
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 766 766 }
+					heavy_infantry = { 566 566 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
 					archers = { 439 439 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 			spawn_unit = {
 				province = 97 # Rouen
@@ -1109,13 +1132,14 @@
 				#leader = 6818 # William of Eu
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 766 766 }
+					heavy_infantry = { 566 566 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
 					archers = { 439 439 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 			}
 			spawn_unit = {
 				province = 97 # Rouen
@@ -1123,13 +1147,14 @@
 				#leader = 150 # Robert of Mortain
 				troops = {
 					light_infantry = { 767 767 }
-					heavy_infantry = { 766 766 }
+					heavy_infantry = { 566 566 }
 					pikemen = { 152 152 }
 					light_cavalry = { 285 285 }
 					knights = { 114 114 }
 					archers = { 439 439 }
 				}
 				attrition = 1.0
+				earmark = start_troops
 				merge = yes # Merge all armies in this province
 			}
 			spawn_fleet = {
@@ -1152,7 +1177,7 @@
 		}
 		effect = {
 			clr_global_flag = williams_invasion_of_england
-			disband_event_forces = yes
+			disband_event_forces = start_troops
 		}
 	}
 	1066.12.25  = {
@@ -1161,12 +1186,19 @@
 		create_bloodline = {
 			type = william_the_conqueror
 			has_dlc = "Holy Fury"
+		}		
+	}
+	1082.1.1 = {
+		effect={
+			set_variable = { which = physique_variable value = 15 }
 		}
+		add_trait="is_fat"
 	}
 	1087.9.9 = {
-		death=yes
+		death = yes
 	}
 }
+
 
 141 = {
 	name="Agathe"
@@ -1181,13 +1213,10 @@
 	father=140
 	mother=367
 	1064.1.1 = {
-		birth=yes
-	}
-	1087.9.9 = {
-		add_claim = k_england
+		birth = yes
 	}
 	1074.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -1211,15 +1240,14 @@
 	1054.1.1 = {
 		birth="1054.1.1"
 	}
-	1087.9.9 = { add_claim = k_england }
+	1087.9.9 = {
+		add_claim = k_england
+	}
 	1096.1.1 = {
 		trait="crusader"
 	}
 	1100.1.1 = {
 		add_spouse=171162
-	}
-	1106.9.28 = { #Battle of Tinchebray
-		effect = { imprison = 202992 } # by Henry I
 	}
 	1134.2.3 = {
 		death="1134.2.3"
@@ -1240,13 +1268,13 @@
 	father=140
 	mother=367
 	1061.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1087.9.9 = {
 		add_claim = k_england
 	}
 	1090.8.13 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -1266,9 +1294,6 @@
 	mother=367
 	1055.1.1 = {
 		birth="1055.1.1"
-	}
-	1087.9.9 = {
-		add_claim = k_england
 	}
 	1081.1.1 = {
 		death="1081.1.1"
@@ -1416,7 +1441,7 @@
 	1012.1.1 = {
 		birth="1012.1.1"
 	}
-	1036.1.1 = {
+	1048.1.1 = {
 		add_spouse=449 #Maud de Belesme/Talvas
 	}
 	1074.1.1 = {
@@ -1462,8 +1487,8 @@
 	trait="flamboyant_schemer"
 	father=41000
 	mother=41001
-	1028.1.2 = {
-		birth="1028.1.2"
+	1030.1.2 = {
+		birth="1030.1.2"
 	}
 	1080.1.2 = {
 		death="1080.1.2"
@@ -1704,8 +1729,8 @@
 	trait="intricate_webweaver"
 	father=1120
 	mother=10000
-	1007.1.1 = {
-		birth="1007.1.1"
+	1017.1.1 = {
+		birth="1017.1.1"
 	}
 	1078.1.1 = {
 		death="1078.1.1"
@@ -1866,7 +1891,7 @@
 	intrigue=7
 	stewardship=7
 	religion="catholic"
-	culture="dutch"
+	culture="low_frankish"  # melted from: dutch
 	trait="harelip"
 	trait="thrifty_clerk"
 	father=167006
@@ -1909,11 +1934,11 @@
 	trait="chaste"
 	trait="skilled_tactician"
 	father=1150
-	1034.1.1 = {
-		birth="1034.1.1"
+	1024.1.1 = {
+		birth=yes
 	}
 	1088.1.1 = {
-		death="1088.1.1"
+		death=yes
 	}
 }
 
@@ -1930,10 +1955,10 @@
 	#father=144700
 	father = 190000
 	1054.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1105.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -1996,7 +2021,6 @@
 	mother=202995
 	1102.2.7 = {
 		birth="1102.2.7"
-		effect = { set_character_flag = is_matilda_daughter_of_Henry_I }
 	}
 	1135.12.2 = {
 		add_claim=k_england
@@ -2026,21 +2050,19 @@
 	father=140
 	mother=367
 	1068.9.1 = {
-		birth=yes
+		birth = yes
 	}
 	1087.9.9 = {
 		add_claim = k_england
-		effect = { set_character_flag = is_king_henry_I }
 	}
 	1100.11.11 = {
 		add_spouse=202995
 	}
 	1122.1.29 = {
 		add_spouse=206857 #Adelheid Reginar
-		add_trait = lovers_pox #It is believed that Henry contracted some kind of venereal disease, thus having no more children after 1123.
 	}
 	1135.12.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2104,8 +2126,8 @@
 	trait="tough_soldier"
 	father=204050
 	mother=204051
-	1143.1.1 = {
-		birth="1143.1.1"
+	1140.1.1 = {
+		birth="1140.1.1"
 	}
 	1185.1.1 = {
 		death="1185.1.1"
@@ -2248,13 +2270,13 @@
 	father=140
 	mother=367
 	1067.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1087.9.9 = {
 		add_claim = k_england
 	}
 	1137.3.8 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2272,8 +2294,8 @@
 	trait="flamboyant_schemer"
 	father=205986
 	mother=205982
-	1181.1.2 = {
-		birth="1181.1.2"
+	1175.1.2 = {
+		birth="1175.1.2"
 	}
 	1242.1.2 = {
 		death="1242.1.2"
@@ -2573,10 +2595,9 @@
 		death="1232.1.2"
 	}
 }
-
 211521 = {
-	name="William"
-	dynasty=678
+	name="William"#Guglielmo Gesualdo, conte di Gesualdo
+	dynasty=1000035667
 	religion="catholic"
 	culture="norman"
 	trait="bastard"
@@ -2585,7 +2606,7 @@
 		birth="1095.1.1"
 	}
 	1119.1.1 = {
-		employer=127083
+		add_spouse=73280
 	}
 	1127.7.1 = {
 		death="1127.7.1"
@@ -2593,8 +2614,8 @@
 }
 
 211523 = {
-	name="Elia"
-	dynasty=678
+	name="Elia" # Elia, conte di Gesualdo
+	dynasty=1000035667
 	religion="catholic"
 	culture="norman"
 	father=211521
@@ -2602,7 +2623,7 @@
 	1120.1.1 = {
 		birth="1120.1.1"
 	}
-	1146.1.1 = {
+	1145.1.1 = {
 		add_spouse=211524
 	}
 	1187.1.1 = {
@@ -2611,25 +2632,25 @@
 }
 
 211525 = {
-	name="William"
-	dynasty=678
+	name="Guglielmo" # oldest son of Elia, died 1170.
+	dynasty=1000035667
 	religion="catholic"
-	culture="norman"
+	culture="neapolitan"
 	father=211523
 	mother=211524
-	1147.1.1 = {
-		birth="1147.1.1"
+	1146.1.1 = {
+		birth=yes
 	}
-	1200.1.1 = {
-		death="1200.1.1"
+	1170.1.1 = {
+		death=yes
 	}
 }
 
 211526 = {
-	name="Aristolf"
-	dynasty=678
+	name="Aristolfo" # youngest son of Elia I, admiral of the Sicilian crusader flotillas during the 2nd and 3rd crusades. 
+	dynasty=1000035667
 	religion="catholic"
-	culture="norman"
+	culture="neapolitan"
 	father=211523
 	mother=211524
 	1150.1.1 = {
@@ -2746,7 +2767,7 @@
 232504 = {
 	name="Roger"
 	# AKA: Roger Dagobertos
-	dynasty=20066
+	dynasty=101478
 	martial=4
 	diplomacy=4
 	intrigue=4
@@ -2760,6 +2781,9 @@
 	1052.1.1 = {
 		birth="1052.1.1"
 	}
+	1081.1.1 = {
+		add_spouse = 1500445
+	}	
 	1107.1.1 = {
 		death="1107.1.1"
 	}
@@ -2822,10 +2846,6 @@
 	mother=241
 	914.1.2 = {
 		birth="914.1.2"
-	}
-	936.1.1 = {
-		give_nickname = "nick_longsword"
-		add_spouse = 411
 	}
 	942.12.17 = {
 		death="942.12.17"
@@ -3115,13 +3135,16 @@
 	culture="norman"
 	father=30826
 	986.1.1 = {
-		birth="986.1.1"
+		birth=yes
 	}
+	1022.1.1 = {
+		add_spouse=1167304
+	}	
 	1035.1.1 = {
 		add_spouse=168471
 	}
-	1040.1.1 = {
-		death="1040.1.1"
+	1045.1.1 = {
+		death=yes
 	}
 }
 
@@ -3368,7 +3391,7 @@
 }
 
 30870 = {
-	name="William"
+	name="Robert" 
 	dynasty=678
 	religion="catholic"
 	culture="norman"
@@ -3427,7 +3450,6 @@
 	culture="norman"
 	father=71253
 	mother=1143
-	trait = legit_bastard
 	1070.1.1 = {
 		birth="1070.1.1"
 	}
@@ -3792,12 +3814,6 @@
 	dynasty=752
 	religion="catholic"
 	culture="norman"
-	trait="skilled_tactician"
-	trait="scarred"
-	trait="ambitious"
-	trait="wroth"
-	trait="temperate"
-	disallow_random_traits = yes
 	father=142
 	mother=171162
 	1101.1.1 = {
@@ -3990,8 +4006,8 @@
 }
 
 41004 = {
-	name="Robert" #3rd Earl of Shrewsbury
-	dynasty=751
+	name="Robert" #Robert de Bellême 3rd Earl of Shrewsbury, Segniur de Bellême 1079ish-1119
+	dynasty=709
 	religion="catholic"
 	culture="norman"
 	father=152 #Roger II de Montgommery
@@ -4448,7 +4464,7 @@
 	1025.1.1 = {
 		birth="1025.1.1"
 	}
-	1044.1.2 = {
+	1050.1.2 = {
 		add_spouse=156
 	}
 	1078.1.1 = {
@@ -4472,8 +4488,8 @@
 	trait="tough_soldier"
 	father=41250
 	mother=156
-	1051.1.1 = {
-		birth="1051.1.1"
+	1050.1.1 = {
+		birth="1050.1.1"
 	}
 	1101.7.27 = {
 		death="1101.7.27"
@@ -4665,8 +4681,8 @@
 	trait="thrifty_clerk"
 	father=41260
 	mother=41252
-	1061.1.1 = {
-		birth="1061.1.1"
+	1060.1.1 = {
+		birth="1060.1.1"
 	}
 	1142.8.24 = {
 		death="1142.8.24"
@@ -4737,25 +4753,25 @@
 	}
 }
 
-41733 = {
-	name="Roscelin"
-	female=yes
-	dynasty=20014
-	martial=9
-	diplomacy=7
-	intrigue=8
-	stewardship=6
-	religion="catholic"
-	culture="norman"
-	trait="deceitful"
-	trait="skilled_tactician"
-	1035.1.2 = {
-		birth="1035.1.2"
-	}
-	1085.1.2 = {
-		death="1085.1.2"
-	}
-}
+#41733 = {
+#	name="Roscelin"
+#	female=yes
+#	dynasty=20014
+#	martial=9
+#	diplomacy=7
+#	intrigue=8
+#	stewardship=6
+#	religion="catholic"
+#	culture="norman"
+#	trait="deceitful"
+#	trait="skilled_tactician"
+#	1035.1.2 = {
+#		birth="1035.1.2"
+#	}
+#	1085.1.2 = {
+#		death="1085.1.2"
+#	}
+#}
 
 42004 = {
 	name="Frumentin"
@@ -4830,17 +4846,38 @@
 	trait="flamboyant_schemer"
 	father=42006
 	mother=42005
-	1027.1.2 = {
-		birth="1027.1.2"
+	1020.1.2 = {
+		birth="1020.1.2"
 	}
+	1064.1.1 = {
+		dynasty=1000100069
+	}	
 	1066.1.2 = {
 		add_spouse=42008
-	}
-	1070.1.2 = {
-		death="1070.1.2"
+	}	
+	1080.7.27 = {
+		death=yes
 	}
 }
-
+42009 = {
+	name="Humbert"
+	dynasty=1000100069
+	martial=6
+	diplomacy=4
+	intrigue=6
+	stewardship=7
+	religion="catholic"
+	culture="norman"
+	trait="martial_cleric"
+	father=42007
+	mother=42008
+	1045.1.1 = {
+		birth=yes
+	}
+	1095.1.1 = {
+		death=yes
+	}
+}
 42010 = {
 	name="Constantine"
 	dynasty=678
@@ -4911,8 +4948,10 @@
 }
 
 448 = {
-	name="William"
+	name="Guillaume" # William II Talvas son of William, seignur de Bellême 1035-1047ish and 1049ish-1052.
 	dynasty=709
+        father=1227377
+        mother=1227382
 	martial=5
 	diplomacy=4
 	intrigue=5
@@ -4920,28 +4959,38 @@
 	religion="catholic"
 	culture="norman"
 	trait="skilled_tactician"
-	1002.1.2 = {
-		birth="1002.1.2"
+        trait=cruel
+        trait=ambitious
+        trait=cynical
+	995.1.1 = {
+		birth = yes
 	}
-	1057.1.2 = {
-		death="1057.1.2"
+	1020.1.1 = {
+		add_spouse=1227388 # Hildeburg
+	}
+	1052.1.1 = {
+		death = yes
 	}
 }
 
 449 = {
-	name="Mabel" #Talvas
+	name="Mabel" #Talvas, daughter of William II Talvas
 	female=yes
 	dynasty=709 #de Belesme
 	religion="catholic"
 	culture="norman"
 	trait="charismatic_negotiator"
+        trait=cruel
+        trait=ambitious
+        trait=cynical
 	father=448
-	1020.1.1 = {
-		birth="1020.1.1"
+        mother=1227388
+	1023.1.1 = {
+		birth="1023.1.1"
 	}
 	# 1048 married  #Roger II de Montgommery
-	1075.1.1 = {
-		death="1075.1.1"
+	1079.1.1 = {
+		death="1079.1.1"
 	}
 }
 
@@ -4985,6 +5034,64 @@
 	}
 	1111.1.2 = {
 		death="1111.1.2"
+	}
+}
+
+5686 = {
+	name="Thomas"
+	dynasty=100073
+	martial=6
+	diplomacy=6
+	intrigue=6
+	stewardship=4
+	religion="catholic"
+	culture="norman"
+	trait="ill"
+	trait="scholarly_theologian"
+	1038.1.2 = {
+		birth="1038.1.2"
+	}
+	1088.1.2 = {
+		death="1088.1.2"
+	}
+}
+
+5688 = {
+	name="Gerard"
+	dynasty=100073
+	martial=8
+	diplomacy=8
+	intrigue=4
+	stewardship=4
+	religion="catholic"
+	culture="norman"
+	trait="patient"
+	trait="martial_cleric"
+	1052.1.2 = {
+		birth="1052.1.2"
+	}
+	1102.1.2 = {
+		death="1102.1.2"
+	}
+}
+
+5690 = {
+	name="Thomas"
+	dynasty=100073
+	martial=8
+	diplomacy=6
+	intrigue=6
+	stewardship=6
+	religion="catholic"
+	culture="norman"
+	trait="proud"
+	trait="cynical"
+	trait="scholarly_theologian"
+	1042.1.2 = {
+		birth="1042.1.2"
+	}
+	1092.1.2 = {
+		death="1092.1.2"
 	}
 }
 
@@ -5173,8 +5280,8 @@
 	trait="thrifty_clerk"
 	father=6806
 	mother=110639
-	1056.1.2 = {
-		birth="1056.1.2"
+	1053.1.2 = {
+		birth="1053.1.2"
 	}
 	1103.1.2 = {
 		death="1103.1.2"
@@ -5575,7 +5682,6 @@
 	culture="norman"
 	father=41250
 	mother=156
-	trait=legit_bastard
 	1045.1.1 = {
 		birth="1045.1.1"
 	}
@@ -5626,7 +5732,7 @@
 }
 
 82062 = {
-	name="Ranulf"
+	name="Ranulf" #Ranulf II de Briquessart/Meschin vicomte de Bessin/Bayeux, and 3rd earl of Chester
 	# AKA: Ranulf 'le Meschin'
 	dynasty=9111
 	martial=8
@@ -5636,7 +5742,7 @@
 	religion="catholic"
 	culture="norman"
 	trait="fortune_builder"
-	trait="tough_soldier"
+	trait="trained_warrior"
 	father=82060
 	mother=82059
 	1063.1.1 = {
@@ -5916,7 +6022,6 @@
 	trait="brilliant_strategist"
 	father=1120
 	mother=10008
-	trait=legit_bastard
 	1018.1.2 = {
 		birth=yes
 	}
@@ -6726,12 +6831,13 @@
 		death="1119.6.20"
 	}
 }
-
+#######
 129083 = {
 	name="Ilbert" #Ilbert de Lacie
 	dynasty=4037
 	religion="catholic"
 	culture="norman"
+        father=1227361     
 	1045.1.1 = {
 		birth="1045.1.1"
 	}
@@ -6739,7 +6845,7 @@
 		death="1093.1.1"
 	}
 }
-
+#######
 138442 = {
 	name="Guillaume" #Bishop Guillaume de Sure of Lyon/StJeanBaptiste
 	religion="catholic"
@@ -7025,8 +7131,8 @@
 	culture="norman"
 	father=211501
 	mother=206512
-	1154.1.1 = {
-		birth="1154.1.1"
+	1153.1.1 = {
+		birth="1153.1.1"
 	}
 	1158.1.1 = {
 		death="1158.1.1"
@@ -7108,7 +7214,7 @@
 
 211528 = {
 	name="Roger"
-	dynasty=678
+	dynasty=1000035667
 	religion="catholic"
 	culture="norman"
 	father=211521
@@ -7123,7 +7229,7 @@
 
 211529 = {
 	name="William"
-	dynasty=678
+	dynasty=1000035667
 	religion="catholic"
 	culture="norman"
 	trait="detached_priest"
@@ -7139,7 +7245,7 @@
 
 465525 = {
 	name="Elia"
-	dynasty=678
+	dynasty=1000035667
 	religion="catholic"
 	culture="norman"
 	father=211526
@@ -7226,6 +7332,7 @@
 	religion="catholic"
 	culture="norman"
 	trait=scholarly_theologian
+	father=1227457	
 	1140.1.1 = {
 		birth="1140.1.1"
 	}
@@ -7239,6 +7346,7 @@
 	dynasty=13115
 	religion="catholic"
 	culture="norman"
+	#father=1230918	
 	1050.1.1 = {
 		birth="1050.1.1"
 	}
@@ -7346,6 +7454,7 @@
 	dynasty=1027027
 	religion="catholic"
 	culture="norman"
+	father=1230925
 	1035.1.1 = {
 		birth="1035.1.1"
 	}
@@ -7388,12 +7497,25 @@
 	dynasty=7299
 	religion="catholic"
 	culture="norman"
+	martial=8
+	diplomacy=7
+	intrigue=5
+	stewardship=5	
+	trait="ambitious" #	Definitely aimed big for himself in the chaos follow Manzikert
+	trait="deceitful" # betrayed the Emperor thrice
+	trait="gregarious" # apparently had a way with people. Was for instance preferred as governor in Amasia, rather than a native Greek
 	trait="skilled_tactician"
 	1032.1.1 = {
-		birth="1032.1.1"
+		birth=yes
 	}
+	#1073.1.1 = {
+	#	trait="uncrowned"
+	#}
+	#1076.1.1 = {
+	#	remove_trait="uncrowned"
+	#}
 	1082.1.1 = {
-		death="1082.1.1"
+		death=yes
 	}
 }
 
@@ -7722,7 +7844,6 @@
 	mother=205898
 	1096.1.1={
 		birth="1096.1.1"
-		effect = { set_character_flag = is_stephen }
 	}
 	1125.1.1={
 		add_spouse=205860 #Mathilde de Boulogne
@@ -7737,7 +7858,7 @@
 }
 
 168182 = {
-	name="William" 
+	name="Guillaume" # William de Bellême, de Segniur de Alencon 1119-1171 and count of Pontheiu 1106-1126
 	dynasty=751
 	religion="catholic"
 	culture="norman"
@@ -7746,8 +7867,7 @@
 	1090.1.1 = {
 		birth="1090.1.1"
 		
-	}
-	
+	}	
 	1171.6.30 = {
 		death="1171.6.30"
 	}
@@ -8133,6 +8253,30 @@
 		death="1159.10.11"
 	}
 }
+
+20112 = {
+	name="Richard"
+	dynasty=22001
+	martial=8
+	diplomacy=5
+	intrigue=6
+	stewardship=6
+	religion="catholic"
+	culture="norman"
+	trait="just"
+	trait="tough_soldier"
+	father=260
+	986.1.1 = {
+		birth="986.1.1"
+	}
+	1029.1.2 = {
+		add_spouse=10015
+	}
+	1067.1.1 = {
+		death="1067.1.1"
+	}
+}
+
 180691 = {
 	name="Robert"
 	# Archbishop of Canterbury
@@ -8140,10 +8284,10 @@
 	culture="norman"
 	add_trait="fortune_builder"
 	995.1.1={
-		birth=yes
+		birth = yes
 	}
 	1054.1.1={
-		death=yes
+		death = yes
 	}
 }
 72126={
@@ -8157,13 +8301,13 @@
 	culture=norman
 
 	1136.1.1={
-		birth=yes
+		birth = yes
 	}
 	1155.1.1={
 		add_spouse=72130
 	}
 	1168.9.19={
-		death=yes
+		death = yes
 	}
 }
 
@@ -8178,10 +8322,10 @@
 	culture=norman
 
 	1138.1.1={
-		birth=yes
+		birth = yes
 	}
 	1168.12.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -8196,10 +8340,10 @@
 	culture=norman
 
 	1140.1.1={
-		birth=yes
+		birth = yes
 	}
 	1160.1.11={
-		death=yes
+		death = yes
 	}
 }
 
@@ -8214,10 +8358,10 @@
 	culture=norman
 
 	1142.1.1={
-		birth=yes
+		birth = yes
 	}
 	1168.12.1={
-		death=yes
+		death = yes
 	}
 }
 200330={
@@ -8228,13 +8372,13 @@
 	culture=norman
 
 	1100.1.1={
-		birth=yes
+		birth = yes
 	}
 	1122.1.1={
 		add_spouse=200329
 	}	
 	1158.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -8248,36 +8392,26 @@
 	religion=catholic
 	culture=norman
 
-	1071.1.1={
-		birth=yes
+	1042.1.1={
+		birth = yes
 	}	
 	1104.1.1={
-		death=yes
-	}
-}
-252381 = {
-	name="Bernard" #de Neufmarché
-	dynasty=105947
-	religion="catholic"
-	culture="norman"
-	1050.1.1 = {
-		birth=yes
-	}
-	#spouse - Nest, granddaughter of Gruffydd ap Llywelyn
-	1125.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 260555 = {
 	name = "Bernard" # the Dane
 	dynasty = 710
 	religion = catholic
-	culture = norman
+	culture = norse
 	trait = skilled_tactician
 	trait = viking
-	875.1.1 = {
+	880.1.1 = {
 		birth = yes
 	}
+	919.1.1 = {
+		culture = norman
+	}	
 	930.1.1 = {
 		give_nickname = nick_the_dane
 	}
@@ -8289,11 +8423,14 @@
 	name = "Torf" # le Riche
 	dynasty = 710
 	religion = catholic
-	culture = norman
+	culture = norse
 	father = 260555
 	905.1.1 = {
 		birth = yes
 	}
+	919.1.1 = {
+		culture = norman
+	}	
 	973.1.1 = {
 		death = yes
 	}

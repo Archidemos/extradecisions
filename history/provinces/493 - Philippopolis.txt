@@ -1,29 +1,36 @@
+# -*- ck2.history.provinces -*-
+
 # 493 - Philippopolis
 
 # County Title
 title = c_philippopolis
 
 # Settlements
-max_settlements = 3
+max_settlements = 5
 
-b_philippopolis = castle
-b_klokoknitsa = city
-b_prodromos = temple
+b_tespina = castle
+b_plovdiv = city
+b_asenscastle_petrich = castle
+#b_bachkovo = temple
+#b_perushtitsa = city
+#b_steinmahos = temple
+
+
+
 
 # Misc
-culture = greek
-religion = orthodox
+culture = bulgarian
+religion = orthodox #The Paulicians weren't deported to Philippopolis until after the sack of Tephrike and the end of the Paulician state in 873
 
 # History
 
-752.1.1 = { religion = paulician } # many Paulicians were deported to here
 
-1082.1.1 = { religion = orthodox }
+#4th crusade
+875.1.1 = { religion = paulician }
+970.1.1 = { religion = bogomilist }
+1205.1.1 = { remove_settlement = b_asenscastle_petrich } 
 
-#4th crusade 
-1205.1.1 = { remove_settlement = b_klokoknitsa } 
-
-1337.1.1 = { b_klokoknitsa = city }
+1337.1.1 = { b_perushtitsa = city }
 
 1384.1.1 = { culture = turkish }
 1384.1.1 = { religion = sunni }

@@ -1,30 +1,22 @@
+# -*- ck2.history.provinces -*-
+
+# 461 - Zagreb
+
 # County Title
 title = c_zagreb
+
 # Settlements
-max_settlements = 6
-b_zagreb = tribal
+max_settlements = 5
+
+b_medvedgrad = castle
+#b_kasina = castle
+b_gradec_zagreb = city
+b_kaptol = temple
+b_sisak = temple
+
 # Misc
 culture = croatian
-religion = slavic_pagan
-terrain = farmlands
-################################################################################
-# History
-################################################################################
-633.1.1 = { 
-    culture = ostrogothic
-    religion = arian
-    b_zagreb = castle
-    b_karlovac = city
-    b_sisak = temple
-}
+religion = catholic
 
-766.1.1 = { culture = croatian } 
-769.1.1 = { religion = catholic }
-800.1.1 = { 
-    religion = catholic
-    b_zagreb = castle
-    b_karlovac = city
-    b_sisak = temple
-    b_zrin = castle
-    b_cetin = city
-}
+# History
+1242.1.1 = { b_kasina = castle} 

@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 100553 = {
 	name="Magnus" # son of the Danish Prince Henrik Skadelår
 	dynasty=487
@@ -23,34 +25,53 @@
 	name="Svend" # Estridsson
 	dna = tibryeesgmw
 	properties = al0bga000000000000
-	dynasty=487
-	martial=2
+	dynasty=1000100938
+	martial=4
 	diplomacy=6
-	intrigue=6
+	intrigue=4
 	stewardship=7
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	trait="lustful"
-	trait="wroth"
+	#trait="ambitious" #Was "craven"; It's a bit strange that he's been given this. Sure, he wasn't the same born warrior as Harald Hardrada, but he never shied away from a fight. Quite the contrary, he resorted to fighting for his ambitions again and again, both before he got the throne of Denmark and after when he went to England in 1069-1070
 	trait="zealous"
+	#trait="content" #A bit strange that he's been given this as well. He never contended himself with his position when he fought for the Danish throne. He kept striving for more in life
+	trait="kind"
+	trait="diligent"
 	trait="midas_touched"
 	father=101535 # Ulf Torgilsson
 	mother=101509 # Estrid
 	1019.1.1={
-		birth=yes
+		birth="1019.1.1"
 		add_claim = k_england
+	}
+	1026.12.31={
+		dynasty=487
+	}	
+	1033.1.1={
+		add_trait="shrewd" #He was known for his way with people and for his Kingdom building efforts, this certainly earns him that trait
+	}
+	1035.1.1={
+		culture=danish
+		
+	}
+	1042.6.1={
+		add_claim = k_denmark
 	}
 	1046.1.1={
 		add_spouse=100513 # Gyda Anundsdottor
 	}
-	1052.1.1={
+	1048.1.1={
 		add_spouse=102516 # Gunhild Sveinsdatter
 	}
-	1054.1.1={
+	1051.1.1={
 		remove_spouse=102516 # Gunhild Sveinsdatter
 	}
-	1076.4.28={
-		death=yes
+	1069.1.1={
+		add_spouse=102551 # Thora Torbergsdatter (Arnung)
+	}
+	1074.4.28={
+		death="1074.4.28"
 	}
 }
 
@@ -106,7 +127,7 @@
 101518 = {
 	name="Margrete" #Asbjørnsdatter
 	female = yes
-	dynasty=502
+	dynasty=1000100938
 	martial=6
 	diplomacy=8
 	intrigue=8
@@ -149,6 +170,7 @@
 		give_nickname=nick_the_holy
 	}
 	1086.7.10={
+		trait = "saint"
 		death="1086.7.10"
 	}
 }
@@ -271,7 +293,7 @@
 }
 
 101525 = {
-	name="Bjørn"
+	name="Bjørn" # jarl of Holsten 1085ish
 	# AKA: Bjorn
 	dynasty=487
 	martial=7
@@ -331,16 +353,17 @@
 	trait="humble"
 	trait="charismatic_negotiator"
 	father=101515 # Svend Estridsson
-	1042.9.1={
-		birth=yes
+	1048.9.1={
+		birth="1048.9.1"
 	}
-	1067.1.1={
-		death=yes
+	1070.1.1={
+		death="1070.1.1"
 	}
 }
 
 101528 = {
-	name="Knud"	# AKA: Knud Magnus
+	name="Knud Magnus"
+	# AKA: Knud Magnus
 	dynasty=487
 	martial=8
 	diplomacy=4
@@ -352,11 +375,11 @@
 	trait="legit_bastard"
 	trait="tough_soldier"
 	father=101515 # Svend Estridsson
-	1039.1.1={
-		birth=yes
+	1041.1.1={
+		birth="1041.1.1"
 	}
 	1058.1.1={
-		death=yes
+		death="1058.1.1"
 	}
 }
 
@@ -466,19 +489,22 @@
 101534 = {
 	name="Gyda"
 	female = yes
-	dynasty=502
+	dynasty=1000100938
 	martial=8
 	diplomacy=4
 	intrigue=8
 	stewardship=4
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	trait="scholarly_theologian"
 	father=101533 # Thorgil Sprakalegg
 	997.1.1={
 		birth="997.1.1"
 	}
-	1066.1.5={
+	1035.1.1={
+		culture=danish
+	}
+	1066.1.1={
 		employer=122 # Harold Godwinson
 	}
 	1066.10.14={
@@ -492,19 +518,22 @@
 101536 = {
 	name="Asbjørn"
 	# AKA: Asbjorn
-	dynasty=502
+	dynasty=1000100938
 	martial=6
 	diplomacy=8
 	intrigue=4
 	stewardship=5
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	trait="greedy"
 	trait="skilled_tactician"
 	father=101535 # Ulf
 	mother=101509 # Estrid
 	1025.1.1={
 		birth="1025.1.1"
+	}
+	1035.1.1={
+		culture=danish
 	}
 	1086.1.1={
 		death="1086.1.1"
@@ -514,7 +543,7 @@
 101537 = {
 	name="Signe"
 	female = yes
-	dynasty=502
+	dynasty=1000100938
 	martial=7
 	diplomacy=6
 	intrigue=6
@@ -560,20 +589,23 @@
 	intrigue=4
 	stewardship=6
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	trait="honest"
 	trait="fair"
 	trait="tough_soldier"
 	father=101541 # Ulf
 	mother=102519 # Bodil
 	1033.1.1={
-		birth="1033.1.1"
+		birth = yes
+	}
+	1035.1.1={
+		culture=danish
 	}
 	1049.1.1={
 		add_spouse=101545 #Thorgunna Vagnsdatter
 	}
-	1090.1.2={
-		death="1090.1.2"
+	1070.4.28={
+		death = yes
 	}
 }
 
@@ -585,11 +617,14 @@
 	intrigue=7
 	stewardship=5
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	trait="greedy"
 	trait="flamboyant_schemer"
 	1026.1.2={
 		birth="1026.1.2"
+	}
+	1035.1.1={
+		culture=danish
 	}
 	1076.1.2={
 		death="1076.1.2"
@@ -639,7 +674,8 @@
 }
 
 101550 = {
-	name="Ingegerd"	# AKA: Ingegerd Knudsdatter
+	name="Ingegerd"
+	# AKA: Ingegerd Knudsdatter
 	female=yes
 	dynasty=487
 	martial=4
@@ -648,33 +684,32 @@
 	stewardship=6
 	religion="catholic"
 	culture="danish"
-	add_trait="twin"
 	trait="thrifty_clerk"
 	father=101519 	# Knud the Holy of Denmark
 	mother=369	# Adele of Flandres
-	1086.1.1={
-		birth=yes
+	1083.1.1={
+		birth="1083.1.1"
 	}
 	1135.1.1={
-		death=yes
+		death="1135.1.1"
 	}
 }
 
 101551 = {
-	name="Cecilia" # AKA: Cecilia Knudsdatter
+	name="Cecilia"
+	# AKA: Cecilia Knudsdatter
 	female=yes
 	dynasty=487
 	religion="catholic"
 	culture="danish"
 	trait="thrifty_clerk"
-	add_trait="twin"
 	father=101519 	# Knud the Holy of Denmark
 	mother=369	# Adele of Flandres
-	1086.1.1={
-		birth=yes
+	1087.1.1={
+		birth="1087.1.1"
 	}
 	1131.1.1={
-		death=yes
+		death="1131.1.1"
 	}
 }
 
@@ -712,13 +747,13 @@
 	father=201516
     mother=167013
 	1106.1.1={
-		birth=yes
+		birth = yes
 	}
 	1120.1.1={
 		add_spouse=200493 # Katarina Ingesdotter
 	}
 	1134.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -737,7 +772,7 @@
 	father=201537 #Ebbe Sunesøn
 	mother=201544
 	1170.1.1={
-		birth=yes
+		birth = yes
 	}
 	1199.6.1={
 		death = {
@@ -810,47 +845,6 @@
 	mother=222797
 	1170.6.28={
 		birth="1170.6.28"
-		add_claim = d_pommerania
-		add_claim = d_mecklemburg
-		add_claim = d_holstein
-		effect = {
-			spawn_unit = {
-				province = 266 # Kyzylorda
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 750 750 }
-					knights = { 250 250 }
-				}
-			}
-			spawn_unit = {
-				province = 266 # Kyzylorda
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 750 750 }
-					knights = { 250 250 }
-				}
-			}
-			spawn_unit = {
-				province = 266 # Kyzylorda
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 750 750 }
-					knights = { 250 250 }
-				}
-			}
-			spawn_unit = {
-				province = 266 # Kyzylorda
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_infantry = { 750 750 }
-					knights = { 250 250 }
-				}
-			}
-		}
 	}
 	1205.1.1 = {
 		add_spouse=96037 #Marketa Premyslid
@@ -1013,7 +1007,10 @@
 		add_spouse=170038
 	}
 	1157.8.9={
-		death="1157.8.9"
+		death={
+			death_reason=death_murder
+			killer=201518
+		}
 	}
 }
 
@@ -1077,6 +1074,7 @@
 	religion="catholic"
 	culture="danish"
 	trait="martial_cleric"
+	trait="legit_bastard"
 	father=201508
 	1157.1.1={
 		birth="1157.1.1"
@@ -1100,6 +1098,7 @@
 	trait="proud"
 	trait="skilled_tactician"
 	father=101521
+        mother=101548 # Bodil Thrugotsdatter
 	1096.1.15={
 		birth="1096.1.15"
 	}
@@ -1150,6 +1149,9 @@
 	1080.1.15={
 		birth="1080.1.15"
 	}
+	1100.1.1 = {
+		give_nickname="nick_spear"
+	}	
     1105.1.1={
         add_spouse=167013 #Ragnhild Magnusdatter
     }
@@ -1176,6 +1178,9 @@
     1130.1.1={
         add_spouse=222594
     }
+	1134.6.25 = {
+		give_nickname="nick_the_eternally_remembered"
+	}	
 	1137.7.18={
 		death="1137.7.18"
 	}
@@ -1201,7 +1206,7 @@
 		add_spouse = 212056
 	}
 	1157.10.23={
-		death="1157.10.23"
+		death={ death_reason=death_rabble }
 	}
 }
 
@@ -1257,7 +1262,7 @@
 }
 
 201521 = {
-	name="Esbern"
+	name="Esbern"# Esbern Snarre
 	dynasty=482
 	martial=4
 	diplomacy=5
@@ -1344,6 +1349,8 @@
 	trait="honest"
 	trait="temperate"
 	trait="flamboyant_schemer"
+        father=1227876 # Erik Folke "of Götaland", Jarl Falster 1104-1134 possibly Jarl of Sønderjylland 1134-1146
+        mother=101551 # Cecilia Knudsdatter
 	1109.1.2={
 		birth="1109.1.2"
 	}
@@ -1381,11 +1388,14 @@
 	intrigue=7
 	stewardship=8
 	religion="catholic"
-	culture="danish"
-	trait="underhanded_rogue"
+	culture="norse"
+	trait="fortune_builder"
 	father=101538
 	1034.1.1={
 		birth="1034.1.1"
+	}
+	1035.1.1={
+		culture=danish
 	}
 	1066.1.1={
 		add_spouse=101537 #Signe Asbjørnsdatter
@@ -1622,11 +1632,11 @@
 	trait="charismatic_negotiator"
 	father=201534 #Sune Ebbesen
 	mother=201535
-	1170.1.2={
-		birth="1170.1.2"
+	1170.1.1={
+		birth=yes
 	}
-	1220.1.2={
-		death="1220.1.2"
+	1246.5.17={
+		death=yes
 	}
 }
 
@@ -1746,6 +1756,7 @@
 	culture="danish"
 	
 	trait="martial_cleric"
+	trait="legit_bastard"
 	
 	father = 201508
 	
@@ -1815,31 +1826,31 @@
 }
 
 30553 = {
-	name="Knud" #Rostock
-	dynasty=101893 #Niklotid
+	name="Knud"  #Rostock # Knud Prislawsen Jarl of Lolland and Als 1167-1183
+	dynasty=101893  #Niklotid
 	religion="catholic"
-	culture="danish"
+	culture="pommeranian"  # melted from: danish
 	father=30551
 	mother=30549
-	1143.1.1={
+	1143.1.1 = {
 		birth="1143.1.1"
 	}
-	1183.11.6={
+	1183.11.6 = {
 		death="1183.11.6"
 	}
 }
 
 30554 = {
-	name="Valdemar" 
-	dynasty=101893 #Niklotid
+	name="Valdemar"
+	dynasty=101893  #Niklotid
 	religion="catholic"
-	culture="danish"
+	culture="pommeranian"  # melted from: danish
 	father=30551
 	mother=30549
-	1146.1.1={
+	1146.1.1 = {
 		birth="1146.1.1"
 	}
-	1182.1.1={
+	1182.1.1 = {
 		death="1182.1.1"
 	}
 }
@@ -1901,92 +1912,92 @@
 
 451501 = {
 	name="Helvig"
-	# AKA: Helvig Eriksdotter
-	female = yes
+	female=yes
 	dynasty=120
+	religion="catholic"
+	culture="low_german"  # melted from: danish
+	# AKA: Helvig Eriksdotter
 	martial=7
 	diplomacy=5
 	intrigue=8
 	stewardship=7
-	religion="catholic"
-	culture="danish"
 	trait="cynical"
 	trait="clubfooted"
 	trait="harelip"
 	trait="scholarly_theologian"
 	father=451502
 	mother=451503
-	1315.1.2={
+	1315.1.2 = {
 		birth="1315.1.2"
 	}
-	1365.1.2={
+	1365.1.2 = {
 		death="1365.1.2"
 	}
 }
 
 451502 = {
 	name="Erik"
-	# AKA: Erik Valdemarsen
 	dynasty=120
+	religion="catholic"
+	culture="low_german"  # melted from: danish
+	# AKA: Erik Valdemarsen
 	martial=8
 	diplomacy=5
 	intrigue=4
 	stewardship=5
-	religion="catholic"
-	culture="danish"
 	trait="scholarly_theologian"
-	1290.1.2={
+	1290.1.2 = {
 		birth="1290.1.2"
 	}
-	1310.1.2={
+	1310.1.2 = {
 		add_spouse=451503
 	}
-	1325.1.13={
+	1325.1.13 = {
 		death="1325.1.13"
 	}
 }
 
 451503 = {
 	name="Adelheid"
-	female = yes
+	female=yes
 	dynasty=154
+	religion="catholic"
+	culture="low_german"  # melted from: danish
 	martial=5
 	diplomacy=5
 	intrigue=4
 	stewardship=4
-	religion="catholic"
-	culture="danish"
 	trait="greedy"
 	trait="brave"
 	trait="inbred"
 	trait="charismatic_negotiator"
-	1295.1.2={
+	1295.1.2 = {
 		birth="1295.1.2"
 	}
-	1336.1.2={
+	1336.1.2 = {
 		death="1336.1.2"
 	}
 }
 
 451504 = {
 	name="Valdemar"
-	# AKA: Valdemar Eriksson
 	dynasty=120
+	religion="catholic"
+	culture="low_german"  # melted from: danish
+	# AKA: Valdemar Eriksson
 	martial=7
 	diplomacy=8
 	intrigue=8
 	stewardship=5
-	religion="catholic"
-	culture="danish"
 	trait="slothful"
 	trait="humble"
 	trait="tough_soldier"
 	father=451502
 	mother=451503
-	1323.1.2={
+	1323.1.2 = {
 		birth="1323.1.2"
 	}
-	1373.1.2={
+	1373.1.2 = {
 		death="1373.1.2"
 	}
 }
@@ -2052,7 +2063,7 @@
 	1219.1.1={
 		birth="1219.1.1"
 	}
-	1251.1.1={
+	1248.1.1={
 		add_spouse=451519 #Margareta Subislawic
 	}
 	1259.5.29={
@@ -2073,8 +2084,8 @@
 	trait="tough_soldier"
 	father=451513 # Christoffer I
 	mother=451519
-	1252.1.1={
-		birth="1252.1.1"
+	1249.1.1={
+		birth="1249.1.1"
 	}
 	1273.11.11 = {
 		add_spouse = 451517 #Agnes of Brandenburg
@@ -2133,7 +2144,7 @@
 	1278.1.30={
 		birth="1278.1.30"
 	}
-	1333.1.1={
+	1330.1.1={
 		employer=451500
 		trait="celibate"
 		remove_trait="ambitious"
@@ -3219,7 +3230,7 @@
 		birth="1153.1.1" 
 	}
 	1173.1.1 = {
-		add_spouse=201536 #Margarethe - this should be a matrilineal marrige
+		add_matrilineal_spouse=201536 #Margarethe - this should be a matrilineal marrige
 	}
 	1176.10.25={
 		trait="kinslayer"
@@ -3683,7 +3694,7 @@
 
 167019 = {
 	name="Hakon" #Sunnivasson Jyde
-	dynasty=100273 # Stibolt
+	dynasty=1043302
 	religion="catholic"
 	culture="danish"
 	mother=102525 #Sunniva Ragnhildsdatter
@@ -3708,7 +3719,7 @@
 		birth="1123.1.1"
 	}
 	1162.6.6={
-		death="1162.1.1"
+		death="1162.6.6"
 	}
 }
 
@@ -3758,10 +3769,11 @@
 }
 
 170022 = {
-	name="Peder" #Peder Strangesen
+	name="Peder" #Peder Strangesen 
 	dynasty=1025003 #Ulfeldt
 	religion="catholic"
 	culture="danish"
+        father=1227879 # Marsk Strange
 	1170.1.1={
 		birth="1170.1.1"
 	}
@@ -3793,13 +3805,16 @@
 	name="Harald"
 	dynasty=9552
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	father=168641
 	1000.1.1 = {
-		birth=yes
+		birth = yes
+	}
+	1035.1.1={
+		culture=danish
 	}	
 	1042.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -3807,13 +3822,16 @@
 	name="Torgils"
 	dynasty=9552
 	religion="catholic"
-	culture="danish"
+	culture="norse"
 	father=168642
 	1032.1.1 = {
-		birth=yes
+		birth = yes
+	}
+	1035.1.1={
+		culture=danish
 	}	
 	1069.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -3824,304 +3842,9 @@
 	culture="danish"
 	father=168642
 	1034.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	1062.1.1 = {
-		death=yes
-	}
-}
-
-183002 = {
-	name="Sigurd"
-	dynasty=487
-	martial=6
-	diplomacy=4
-	intrigue=5
-	stewardship=4
-	religion="catholic"
-	culture="danish"
-	add_trait="legit_bastard"
-	add_trait="tough_soldier"
-	father=101515 #Svend Estridsson
-	1060.1.2={
-		birth=yes
-	}
-	1089.1.2={
-		death=yes
-	}
-}
-
-183003 = {
-	name="Gorm"
-	# AKA: Guttorm
-	dynasty=487
-	martial=5
-	diplomacy=4
-	intrigue=3
-	stewardship=6
-	religion="catholic"
-	culture="danish"
-	add_trait="twin"
-	add_trait="legit_bastard"
-	add_trait="thrifty_clerk"
-	father=101515 #Svend Estridsson
-	1063.1.2={
-		birth=yes
-	}
-	1091.1.2={
-		death=yes
-	}
-}
-
-183004 = {
-	name="Ømund"
-	# AKA: Eymund
-	dynasty=487
-	martial=7
-	diplomacy=5
-	intrigue=4
-	stewardship=4
-	religion="catholic"
-	culture="danish"
-	add_trait="twin"
-	add_trait="legit_bastard"
-	add_trait="martial_cleric"
-	father=101515 #Svend Estridsson
-	1063.1.2={
-		birth=yes
-	}
-	1099.1.2={
-		death=yes
-	}
-}
-
-183005 = {
-	name="Ulf"
-	# AKA: Ubbe
-	dynasty=487
-	martial=3
-	diplomacy=4
-	intrigue=4
-	stewardship=2
-	religion="catholic"
-	culture="danish"
-	add_trait="legit_bastard"
-	add_trait="indulgent_wastrel"
-	father=101515 #Svend Estridsson
-	1065.1.2={
-		birth=yes
-	}
-	1104.1.2={
-		death=yes
-	}
-}
-
-310000 = {
-	name = "Christian"
-	religion="catholic"
-	culture="danish"
-	1030.1.1 = {
-		birth = yes
-	}
-	1102.1.1 = {
-		death = yes
-	}
-}
-310001 = {
-	name = "Ulfketil"
-	religion="catholic"
-	culture="danish"
-	1070.1.1 = {
-		birth = yes
-	}
-	1134.1.1 = {
-		death = yes
-	}
-}
-310002 = {
-	name = "Eskil"
-	religion="catholic"
-	culture="danish"
-	1115.1.1 = {
-		birth = yes
-	}
-	1157.1.1 = {
-		death = yes
-	}
-}
-310003 = {
-	name = "Svend"
-	religion="catholic"
-	culture="danish"
-	1135.1.1 = {
-		birth = yes
-	}
-	1191.1.1 = {
-		death = yes
-	}
-}
-310004 = {
-	name = "Peder"
-	religion="catholic"
-	culture="danish"
-	dynasty = 1075000
-	father = 310007
-	mother = 310017
-	1139.1.1 = {
-		birth = yes
-	}
-	1204.1.1 = {
-		death = yes
-	}
-}
-310005 = {
-	name = "Skjalm"
-	religion="catholic"
-	culture="danish"
-	dynasty = 1075000
-	father = 310007
-	mother = 310017
-	1153.1.1 = {
-		birth = yes
-	}
-	1215.1.1 = {
-		death = yes
-	}
-}
-310006 = {
-	name = "Ebbe"
-	religion="catholic"
-	culture="danish"
-	dynasty = 1075000
-	father = 310007
-	mother = 310017
-	1165.1.1 = {
-		birth = yes
-	}
-	1234.1.1 = {
-		death = yes
-	}
-}
-310007 = {
-	name = "Vogn"
-	religion="catholic"
-	culture="danish"
-	dynasty = 1062000
-	1115.1.1 = {
-		birth = yes
-	}
-	1165.1.1 = {
-		death = yes
-	}
-}
-310008 = {
-	name = "Peder"
-	religion="catholic"
-	culture="danish"
-	1198.1.1 = {
-		birth = yes
-	}
-	1246.1.1 = {
-		death = yes
-	}
-}
-310009 = {
-	name = "Peder"
-	religion="catholic"
-	culture="danish"
-	1220.1.1 = {
-		birth = yes
-	}
-	1260.1.1 = {
-		death = yes
-	}
-}
-310010 = {
-	name = "Tyge"
-	religion="catholic"
-	culture="danish"
-	1231.1.1 = {
-		birth = yes
-	}
-	1272.1.1 = {
-		death = yes
-	}
-}
-310011 = {
-	name = "Peder"
-	religion="catholic"
-	culture="danish"
-	1242.1.1 = {
-		birth = yes
-	}
-	1276.1.1 = {
-		death = yes
-	}
-}
-310012 = {
-	name = "Tyge"
-	religion="catholic"
-	culture="danish"
-	1240.1.1 = {
-		birth = yes
-	}
-	1288.1.1 = {
-		death = yes
-	}
-}
-310013 = {
-	name = "Jens"
-	religion="catholic"
-	culture="danish"
-	1251.1.1 = {
-		birth = yes
-	}
-	1306.1.1 = {
-		death = yes
-	}
-}
-310014 = {
-	name = "Esger"
-	religion="catholic"
-	culture="danish"
-	1275.1.1 = {
-		birth = yes
-	}
-	1310.1.1 = {
-		death = yes
-	}
-}
-310015 = {
-	name = "Esger"
-	religion="catholic"
-	culture="danish"
-	1267.1.1 = {
-		birth = yes
-	}
-	1325.1.1 = {
-		death = yes
-	}
-}
-310016 = {
-	name = "Svend"
-	religion="catholic"
-	culture="danish"
-	1291.1.1 = {
-		birth = yes
-	}
-	1352.1.1 = {
-		death = yes
-	}
-}
-310017 = {
-	name = "Ingerd"
-	female = yes
-	religion="catholic"
-	culture="danish"
-	1120.1.1 = {
-		birth = yes
-	}
-	1205.1.1 = {
 		death = yes
 	}
 }

@@ -1,47 +1,43 @@
-# 462 - Pecs
+# -*- ck2.history.provinces -*-
+
+# 452 - Pecs # Tolna
 
 # County Title
 title = c_pecs
 
 # Settlements
-max_settlements = 6
-b_pecs = tribal
+max_settlements = 5
 
-#b_kalocsa = temple
-#b_mohacs = city
-#b_sasd = castle
+b_tolnavar = tribal
+b_pecs = city
+#b_vaty = temple
+
 #b_pecsvarad = castle
-#b_siklos = castle
-#b_szentlorinc = city
-#b_darda = castle
+#b_szekszard = temple
+#b_regoly = castle
+#b_madogsa = temple
+#b_paks = castle
+#b_dombovar = city
+#b_tamasi = temple
+#b_simontornya = city
+#b_dobrokoz = castle
+#b_pecsvarad = castle
+#b_dunaszekcso = castle
+#b_siklos = temple
+#b_mohacs = city
 
 # Misc
 culture = avar
 religion = tengri_pagan
-terrain = farmlands
+
 # History
-800.1.1 = {
-	b_pecs = castle
-	b_mohacs = city
-	b_kalocsa = temple
+895.1.1 = { culture = khavar }
+1000.1.1 = { 
+	b_tolnavar = castle 
+	b_vaty = temple
 }
-856.1.1 = {
-	culture = slovieni
-	religion = catholic 
-}
-895.1.1 = {
-	remove_settlement = b_mohacs
-	b_pecs = tribal
-}
-930.1.1 = { 
-	culture = hungarian 
-	religion = tengri_pagan
-}
-950.1.1 = {
-	religion = catholic
-	b_pecs = castle
-	b_mohacs = city
-	b_siklos = castle
-	b_darda = castle
-}
+1025.1.1 = { religion = catholic }
+1041.1.1 = { culture = szekely }
 1187.1.1 = { b_pecsvarad = castle } 
+1250.1.1 = { culture = hungarian }
+

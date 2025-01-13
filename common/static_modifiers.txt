@@ -1,3 +1,5 @@
+# -*- ck2.event_modifiers -*-
+
 # All global modifiers are here.  They are applied from certain game-features.
 #
 # Effects are fully scriptable here.
@@ -9,55 +11,82 @@
 ##########################################################################
 
 very_easy_player = {
-	fertility = 0.5
-	land_morale = 0.5
+	fertility = 0.4
+	land_morale = 0.25
+	land_organisation = 0.2
+	max_manpower_mult = 0.25
+	manpower_growth = 0.25
+	retinue_maintenence_cost = -0.25
+	horde_maintenence_cost = -0.25
+	global_tax_modifier = 0.15
 }
 
 easy_player = {
-	fertility = 0.25
-	land_morale = 0.25
+	fertility = 0.2
+	land_morale = 0.15
+	land_organisation = 0.1
+	max_manpower_mult = 0.15
+	manpower_growth = 0.15
+	retinue_maintenence_cost = -0.15
+	horde_maintenence_cost = -0.15
+	global_tax_modifier = 0.05
 }
 
 normal_player = {
 }
 
 hard_player = {
+	land_morale = -0.25
+	land_organisation = -0.25
+	max_manpower_mult = -0.35
+	manpower_growth = -0.5
+	retinue_maintenence_cost = 0.5
+	horde_maintenence_cost = 0.5
 }
 
 very_hard_player = {
 	land_morale = -0.25
-}
-
-insane_player = {
-	land_morale = -0.5
+	land_organisation = -0.25
+	max_manpower_mult = -0.35
+	manpower_growth = -0.5
+	retinue_maintenence_cost = 0.5
+	horde_maintenence_cost = 0.5
 }
 
 very_easy_ai = {
-	land_morale = -0.25
+	land_morale = 0.05
+	land_organisation = 0.05
 }
 
 easy_ai = {
+	land_morale = 0.15
+	land_organisation = 0.15
 }
 
 normal_ai = {
+	land_morale = 0.25
+	land_organisation = 0.25
+	global_tax_modifier = 0.1
 }
 
 hard_ai = {
-	land_morale = 0.25
-	global_tax_modifier = 0.1
-	levy_reinforce_rate = 0.5
+	land_morale = 0.35
+	land_organisation = 0.35
+	max_manpower_mult = 0.15
+	manpower_growth = 0.15
+	retinue_maintenence_cost = -0.2
+	horde_maintenence_cost = -0.2
+	global_tax_modifier = 0.2
 }
 
 very_hard_ai = {
-	land_morale = 0.5
-	global_tax_modifier = 0.2
-	levy_reinforce_rate = 1.0
-}
-
-insane_ai = {
-	land_morale = 1
-	global_tax_modifier = 0.4
-	levy_reinforce_rate = 1.5
+	land_morale = 0.45
+	land_organisation = 0.25
+	max_manpower_mult = 0.3
+	manpower_growth = 0.3
+	retinue_maintenence_cost = -0.3
+	horde_maintenence_cost = -0.3
+	global_tax_modifier = 0.3
 }
 
 ##########################################################################
@@ -65,10 +94,11 @@ insane_ai = {
 ##########################################################################
 
 province_base_values = {
-	supply_limit = 5 # 5K troops
+	supply_limit = 6 # 6K troops
 }
 
 coastal = {
+	tech_growth_modifier = 0.25
 }
 
 non_coastal = {
@@ -88,25 +118,20 @@ land_province = {
 mild_winter = {
 	supply_limit = -2
 	max_attrition = 0.1
-	local_tax_modifier = -0.10
-	fort_level = 1
 }
 
 normal_winter = {
 	supply_limit = -3
 	max_attrition = 0.15
-	local_tax_modifier = -0.25
-	fort_level = 1.5
 }
 
 severe_winter = {
 	supply_limit = -5
 	max_attrition = 0.2
-	local_tax_modifier = -0.5
-	fort_level = 2
 }
 
-out_of_supply = {
+out_of_supply =
+{
 	max_attrition = 0.1
 }
 
@@ -115,27 +140,52 @@ no_adjacent_controlled = {
 
 # Another culture in the same culture group
 same_culture_group = {
-	local_revolt_risk = 0.01
+	local_revolt_risk = 0.005
+	levy_size = -0.05
+	levy_reinforce_rate = -0.05
+	local_tax_modifier = -0.05
+	garrison_size = -0.05
+	icon = 20
 }
 
 # A culture in another culture group
 non_accepted_culture = {
-	local_revolt_risk = 0.02
+	local_revolt_risk = 0.01
+	levy_size = -0.1
+	levy_reinforce_rate = -0.1
+	local_tax_modifier = -0.1
+	garrison_size = -0.1
+	icon = 20
 }
 
 # Another religion in the same religion group
 same_religion_group = {
-	local_revolt_risk = 0.01
+	local_revolt_risk = 0.005
+	levy_size = -0.1
+	levy_reinforce_rate = -0.1
+	local_tax_modifier = -0.1
+	garrison_size = -0.1
+	icon = 35
 }
 
 # A religion in another religion group
 different_religion = {
-	local_revolt_risk = 0.02
+	local_revolt_risk = 0.01
+	levy_size = -0.2
+	levy_reinforce_rate = -0.2
+	local_tax_modifier = -0.2
+	garrison_size = -0.2
+	icon = 35
 }
 
 # County vs Count is heresy vs parent religion
 county_heresy = {
-	local_revolt_risk = 0.03
+	local_revolt_risk = 0.02
+	levy_size = -0.25
+	levy_reinforce_rate = -0.25
+	local_tax_modifier = -0.25
+	garrison_size = -0.25
+	icon = 35
 }
 
 # Nomads: Pressure from minor Clans to form another Major Clan
@@ -147,6 +197,11 @@ nomad_ruling_clan_too_powerful = {
 # Isolated county
 county_isolated = {
 	local_revolt_risk = 0.04
+	levy_size = -0.7
+	levy_reinforce_rate = -0.7
+	local_tax_modifier = -0.7
+	garrison_size = -0.7
+	icon = 20
 }
 
 new_administration = {
@@ -170,92 +225,92 @@ occupied = {
 }
 
 occupied_different_culture = {
-	levy_size = -0.25
-	levy_reinforce_rate = -0.25
-	local_tax_modifier = -0.25
+	levy_size = -0.1
+	levy_reinforce_rate = -0.1
+	local_tax_modifier = -0.1
 	icon = 20
 }
 
 occupied_different_culturegroup = {
-	levy_size = -0.5
-	levy_reinforce_rate = -0.5
-	local_tax_modifier = -0.5
+	levy_size = -0.2
+	levy_reinforce_rate = -0.2
+	local_tax_modifier = -0.2
 	icon = 20
 }
 
 occupied_different_religion = {
-	levy_size = -0.5
-	levy_reinforce_rate = -0.5
-	local_tax_modifier = -0.5
+	levy_size = -0.2
+	levy_reinforce_rate = -0.2
+	local_tax_modifier = -0.2
 	icon = 35
 }
 
 occupied_different_religiongroup = {
-	levy_size = -2
-	levy_reinforce_rate = -0.5
-	local_tax_modifier = -0.75
+	levy_size = -0.4
+	levy_reinforce_rate = -0.4
+	local_tax_modifier = -0.4
 	icon = 35
 }
 
 looted_modifier = {
 	local_tax_modifier = -0.25
-	
+
 	icon = 24
 }
 
 maintaining_mercenary_band = {
 	levy_size = -0.025
-	levy_reinforce_rate = -0.025
+	levy_reinforce_rate = -0.05
 	max_manpower_mult = -0.1
 	manpower_growth = -0.1
 	icon = 31
 }
 
 maintaining_mercenary_band_2 = {
-	levy_size = -0.035
-	levy_reinforce_rate = -0.035
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.05
+	levy_reinforce_rate = -0.10
+	max_manpower_mult = -0.125
+	manpower_growth = -0.125
 	icon = 31
 }
 
 maintaining_mercenary_band_3 = {
-	levy_size = -0.045
-	levy_reinforce_rate = -0.045
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.075
+	levy_reinforce_rate = -0.15
+	max_manpower_mult = -0.15
+	manpower_growth = -0.15
 	icon = 31
 }
 
 maintaining_mercenary_band_4 = {
-	levy_size = -0.055
-	levy_reinforce_rate = -0.055
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.1
+	levy_reinforce_rate = -0.175
+	max_manpower_mult = -0.175
+	manpower_growth = -0.175
 	icon = 31
 }
 
 maintaining_mercenary_band_5 = {
-	levy_size = -0.065
-	levy_reinforce_rate = -0.065
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.125
+	levy_reinforce_rate = -0.2
+	max_manpower_mult = -0.2
+	manpower_growth = -0.2
 	icon = 31
 }
 
 maintaining_mercenary_band_6 = {
-	levy_size = -0.075
-	levy_reinforce_rate = -0.075
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.15
+	levy_reinforce_rate = -0.225
+	max_manpower_mult = -0.225
+	manpower_growth = -0.225
 	icon = 31
 }
 
 maintaining_mercenary_band_7 = {
-	levy_size = -0.095
-	levy_reinforce_rate = -0.095
-	max_manpower_mult = -0.1
-	manpower_growth = -0.1
+	levy_size = -0.175
+	levy_reinforce_rate = -0.25
+	max_manpower_mult = -0.25
+	manpower_growth = -0.25
 	icon = 31
 }
 
@@ -270,6 +325,8 @@ troops_tutorial = {
 }
 
 under_siege = {
+	levy_reinforce_rate = -2
+	local_tax_modifier = -0.5
 }
 
 revolt_risk = {
@@ -282,7 +339,8 @@ foreign_rebels = {
 }
 
 jizya_tax = {
-	local_tax_modifier = 0.15
+	local_tax_modifier = 0.4
+	levy_size = -0.2
 	icon = 4
 }
 
@@ -294,16 +352,17 @@ settled_adventurer = {
 # Combat Static Modifiers
 ##########################################################################
 
-river_crossing = {	
+river_crossing = {
 	icon = 2
 	archers_defensive = -0.1
 	light_infantry_defensive = -0.1
 	pikemen_defensive = -0.15
 	heavy_infantry_defensive = -0.15
 	light_cavalry_defensive = -0.125
-	camel_cavalry_defensive = -0.125
 	knights_defensive = -0.15
 	horse_archers_defensive = -0.125
+	camel_cavalry_defensive = -0.125
+	war_elephants_defensive = -0.15
 
 	archers_offensive = -0.05
 	light_infantry_offensive = -0.1
@@ -311,20 +370,22 @@ river_crossing = {
 	heavy_infantry_offensive = -0.15
 	light_cavalry_offensive = -0.125
 	knights_offensive = -0.15
-	camel_cavalry_offensive = -0.125
 	horse_archers_offensive = -0.075
+	camel_cavalry_offensive = -0.125
+	war_elephants_offensive = -0.15
 }
 
-major_river_crossing = {	
+major_river_crossing = {
 	icon = 2
 	archers_defensive = -0.2
 	light_infantry_defensive = -0.2
 	pikemen_defensive = -0.3
 	heavy_infantry_defensive = -0.3
 	light_cavalry_defensive = -0.25
-	camel_cavalry_defensive = -0.25
 	knights_defensive = -0.3
 	horse_archers_defensive = -0.25
+	camel_cavalry_defensive = -0.25
+	war_elephants_defensive = -0.3
 
 	archers_offensive = -0.1
 	light_infantry_offensive = -0.2
@@ -333,6 +394,8 @@ major_river_crossing = {
 	light_cavalry_offensive = -0.25
 	knights_offensive = -0.3
 	horse_archers_offensive = -0.15
+	camel_cavalry_offensive = -0.25
+	war_elephants_offensive = -0.3
 }
 
 strait_crossing = {
@@ -342,9 +405,10 @@ strait_crossing = {
 	pikemen_defensive = -0.3
 	heavy_infantry_defensive = -0.3
 	light_cavalry_defensive = -0.2
-	camel_cavalry_defensive = -0.2
 	knights_defensive = -0.3
 	horse_archers_defensive = -0.2
+	camel_cavalry_defensive = -0.2
+	war_elephants_defensive = -0.3
 
 	archers_offensive = -0.1
 	light_infantry_offensive = -0.15
@@ -353,6 +417,8 @@ strait_crossing = {
 	light_cavalry_offensive = -0.2
 	knights_offensive = -0.3
 	horse_archers_offensive = -0.2
+	camel_cavalry_offensive = -0.2
+	war_elephants_offensive = -0.3
 }
 
 amphibious_landing = {
@@ -362,9 +428,10 @@ amphibious_landing = {
 	pikemen_defensive = -0.2
 	heavy_infantry_defensive = -0.2
 	light_cavalry_defensive = -0.175
-	camel_cavalry_defensive = -0.175
 	knights_defensive = -0.2
 	horse_archers_defensive = -0.175
+	camel_cavalry_defensive = -0.175
+	war_elephants_defensive = -0.2
 
 	archers_offensive = -0.1
 	light_infantry_offensive = -0.15
@@ -373,6 +440,8 @@ amphibious_landing = {
 	light_cavalry_offensive = -0.175
 	knights_offensive = -0.2
 	horse_archers_offensive = -0.125
+	camel_cavalry_offensive = -0.175
+	war_elephants_offensive = -0.2
 }
 
 defenderbonus_mountain = {
@@ -394,7 +463,6 @@ defenderbonus_hills = {
 	heavy_infantry_defensive = 0.2
 	horse_archers_defensive = 0.15
 	light_cavalry_defensive = 0.15
-	camel_cavalry_defensive = -0.15
 
 	archers_offensive = 0.2
 	pikemen_offensive = 0.1
@@ -407,12 +475,10 @@ defenderbonus_jungle = {
 	light_infantry_defensive = 0.5
 	pikemen_defensive = 0.2
 	heavy_infantry_defensive = 0.1
-	horse_archers_defensive = -0.25
 
 	light_infantry_offensive = 0.5
 	heavy_infantry_offensive = 0.1
 	pikemen_offensive = 0.1
-	horse_archers_offensive = -0.15
 }
 
 defenderbonus_forest = {
@@ -439,7 +505,7 @@ defenderbonus_desert = {
 }
 
 personally_leading_troops = {
-	land_morale = 0.2
+	land_morale = 0.15
 }
 
 ##########################################################################
@@ -447,26 +513,27 @@ personally_leading_troops = {
 ##########################################################################
 
 static_diplomacy_mod = {
-	monthly_character_prestige = 0.005
-	threat_decay_speed = 0.001
+	monthly_character_prestige = 0.01
 }
 
 static_intrigue_mod = {
 	plot_power_modifier = 0.005
-	plot_discovery_chance = 0.005
+	defensive_plot_power_modifier = 0.0025
 }
 
 static_stewardship_mod = {
-	global_tax_modifier = 0.005
+	global_tax_modifier = 0.02
 }
 
 static_martial_mod = {
-	land_organisation = 0.005
+	global_garrison_size = 0.01
+	land_organisation = 0.01
+	land_morale = 0.005
+	# TODO: consider the new battle modifiers (2.8) for when the character is leading a flank
 }
 
 static_learning_mod = {
-	monthly_character_piety = 0.005
-	fertility = 0.005
+	monthly_character_piety = 0.02
 }
 
 ##########################################################################
@@ -475,9 +542,19 @@ static_learning_mod = {
 
 base_values = {
 	land_organisation = 0.2			#20% morale recovery.
+	fertility = -0.05
+	castle_vassal_max_levy = -0.4
+	temple_vassal_max_levy = -0.4
+	city_vassal_max_levy = -0.4
+	tribal_vassal_max_levy = -0.4
+	castle_vassal_tax_modifier = 0.08
+	temple_vassal_tax_modifier = 0.08
+	city_vassal_tax_modifier = 0.1
+	tribal_vassal_tax_modifier = 0.04
 }
 
 war = {
+	global_tax_modifier = -0.2
 }
 
 peace = {
@@ -498,6 +575,7 @@ castle = {
 	light_infantry = 60
 	heavy_infantry = 150
 	light_cavalry = 15
+	galleys = 2
 	levy_reinforce_rate = 1.25
 	land_organisation = 0.2
 }
@@ -507,35 +585,39 @@ city = {
 	fort_level = 0
 	light_infantry = 75
 	archers = 40
+	galleys = 2
 	build_cost_modifier = 500
 	build_time_modifier = 730
+	levy_reinforce_rate = 0.5
 	land_organisation = 0.2
 }
 
 temple = {
-	tax_income = 8
-	heavy_infantry = 45
-	light_infantry = 45
-	archers = 40
+	tax_income = 10
+	heavy_infantry = 25
+	pikemen = 75
+	light_infantry = 25
+	archers = 75
+	galleys = 2
 	build_cost_modifier = 500
 	build_time_modifier = 730
-	levy_reinforce_rate = 0.25
+	levy_reinforce_rate = 1
 	land_organisation = 0.2
 }
 
 trade_post = {
-	tax_income = 6
+	trade_route_value = 1
 	fort_level = 0
 	levy_size = 0
 	light_infantry = 50
 	archers = 50
-	build_cost_modifier = 150
-	build_time_modifier = 365
+	build_cost_modifier = 50
+	build_time_modifier = 182
 	land_organisation = 0.2
 }
 
 family_palace = {
-	tax_income = 10
+	tax_income = 5
 	fort_level = 0
 	light_infantry = 40
 	archers = 10
@@ -547,10 +629,10 @@ family_palace = {
 tribal = {
 	tax_income = 0.5
 	fort_level = 1
-	light_infantry = 100
-	heavy_infantry = 5
-	archers = 20
-	levy_reinforce_rate = 1.5
+	light_infantry = 80
+	heavy_infantry = 4
+	archers = 16
+	levy_reinforce_rate = 1
 	land_organisation = 0.2
 	build_cost_modifier = 25 # cost per empty holding slot
 	build_time_modifier = 365
@@ -597,39 +679,494 @@ hospital = {
 default_culture_modifier = {
 }
 
-old_frankish_culture_modifier = {
-	culture_effect_mayor_of_the_palace = 1
+cultural_flexibility = {
+	culture_flex = -0.4
 }
 
+##########################################################################
+# Culture Static Modifiers SWMH
+##########################################################################
+
+###########################################################################
+# Norse Culture Static Modifiers
+#norse_culture_modifier = {
+#	light_infantry_offensive = 0.15
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.15
+#	heavy_infantry_defensive = 0.05
+#	knights_defensive = -0.10
+#}
+#norwegian_culture_modifier = {
+#	archers_offensive = 0.1
+#	archers_defensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	knights_defensive = -0.05
+#}
+#gothic_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	knights_offensive = 0.05
+#}
+#danish_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.05
+#	knights_offensive = 0.1
+#	knights_defensive = 0.05
+#}
+#swedish_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	knights_defensive = -0.05
+#}
+#anglonorse_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.15
+#	heavy_infantry_defensive = 0.1
+#	knights_defensive = -0.1
+#}
+##########################################################################
+# West Germanic Culture Static Modifiers
+#saxon_culture_modifier = {
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.15
+#}
+#frisian_culture_modifier = {
+#	pikemen_offensive = 0.1
+#	pikemen_defensive = 0.1
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.1
+#	knights_offensive = -0.05
+#	knights_defensive = -0.05
+#}
+#english_culture_modifier = {
+#	archers_offensive = 0.15
+#	archers_defensive = 0.1
+#	heavy_infantry_defensive = 0.05
+#}
+##########################################################################
+# Celtic Culture Static Modifiers
+#irish_culture_modifier = {
+#	light_infantry_offensive = 0.15
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.10
+#	heavy_infantry_defensive = 0.10
+#	knights_defensive = -0.10
+#}
+#scotish_culture_modifier = {
+#	pikemen_offensive = 0.1
+#	pikemen_defensive = 0.1
+#	light_infantry_offensive = 0.1
+#	knights_defensive = -0.1
+#}
+#breton_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	heavy_infantry_offensive = 0.05
+#	heavy_infantry_defensive = 0.05
+#}
+#welsh_culture_modifier = {
+#	archers_offensive = 0.1
+#	archers_defensive = 0.1
+#	light_infantry_offensive = 0.05
+#	light_infantry_defensive = 0.05
+#}
+##########################################################################
+#
+# Central Germanic Culture Static Modifiers
+#
+#german_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	pikemen_defensive = 0.1
+#}
+#dutch_culture_modifier = {
+#	pikemen_offensive = 0.15
+#	pikemen_defensive = 0.15
+#}
+##########################################################################
+# Italian Culture Static Modifiers
+#roman_culture_modifier = {
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.15
+#}
+#lombard_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.15
+#	archers_offensive = 0.05
+#}
+#sardinian_culture_modifier = {
+#	light_infantry_offensive = 0.05
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#}
+#sicilian_culture_modifier = {
+#	heavy_infantry_offensive = 0.05
+#	heavy_infantry_defensive = 0.05
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#}
+#corsican_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.1
+#	heavy_infantry_offensive = 0.05
+#	heavy_infantry_defensive = 0.05
+#}
+#central_italian_culture_modifier = {
+#	knights_offensive = 0.05
+#	knights_defensive = 0.1
+#	pikemen_offensive = 0.05
+#	pikemen_defensive = 0.1
+#}
+#ligurian_culture_modifier = {
+#	archers_offensive = 0.1
+#	archers_defensive = 0.15
+#	pikemen_offensive = 0.05
+#}
+#venetian_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	light_cavalry_offensive = 0.1
+#}
+#langobardisch_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+##########################################################################
+# West Slavic Culture Static Modifiers
+#bohemian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	pikemen_offensive = 0.05
+#	pikemen_defensive = 0.05
+#}
+#polish_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+#pommeranian_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.1
+#	heavy_infantry_offensive = 0.05
+#	heavy_infantry_defensive = 0.05
+#}
+##########################################################################
+# East Slavic Culture Static Modifiers
+#russian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.05
+#	horse_archers_offensive = 0.05
+#	heavy_infantry_offensive = 0.1
+#}
+##########################################################################
+# South Slavic Culture Static Modifiers
+#croatian_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	knights_offensive = 0.05
+#	knights_defensive = 0.05
+#}
+#carantanian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+#serbian_culture_modifier = {
+#	light_cavalry_offensive = 0.15
+#	light_cavalry_defensive = 0.15
+#	knights_offensive = 0.1
+#	archers_offensive = -0.1
+#}
+#bulgarian_culture_modifier = {
+#	heavy_infantry_offensive = 0.05
+#	heavy_infantry_defensive = 0.1
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.05
+#}
+#romanian_culture_modifier = {
+#	archers_offensive = 0.05
+#	archers_defensive = 0.05
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#}
+##########################################################################
+# Magyar Culture Static Modifiers
+#hungarian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	horse_archers_offensive = 0.1
+#}
+##########################################################################
+# Oil Culture Static Modifiers
+#frankish_culture_modifier = {
+#	knights_offensive = 0.15
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.05
+#	archers_offensive = -0.05
+#	archers_defensive = -0.05
+#}
+#arpitan_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	pikemen_offensive = 0.05
+#	pikemen_defensive = 0.05
+#}
+#norman_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	heavy_infantry_offensive = 0.1
+#}
+#occitan_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+##########################################################################
+# Iberian Culture Static Modifiers
+#
+#catalan_culture_modifier = {
+#	light_infantry_offensive = 0.15
+#	light_infantry_defensive = 0.15
+#}
+#galician_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.1
+#	knights_offensive = 0.05
+#	knights_defensive = 0.05
+#}
+#basque_culture_modifier = {
+#	heavy_infantry_offensive = 0.1
+#	heavy_infantry_defensive = 0.05
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.05
+#}
+#spanish_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	archers_offensive = -0.05
+#	archers_defensive = -0.05
+#}
+#andalusian_arabic_culture_modifier = {
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	archers_offensive = 0.05
+#	archers_defensive = 0.05
+#}
+##########################################################################
+# Arab Culture Static Modifiers
+#arab_culture_modifier = {
+#	light_infantry_offensive = 0.05
+#	light_infantry_defensive = 0.1
+#	archers_offensive = 0.05
+#	archers_defensive = 0.1
+#}
+#beduin_arabic_culture_modifier = {
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	horse_archers_offensive = 0.05
+#	horse_archers_defensive = 0.05
+#}
+##########################################################################
+# Altaic Culture Static Modifiers
+#tatar_culture_modifier = {
+#	horse_archers_offensive = 0.1
+#	horse_archers_defensive = 0.1
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	pikemen_offensive = -0.05
+#	pikemen_defensive = -0.05
+#}
+#mongol_culture_modifier = {
+#	horse_archers_offensive = 0.15
+#	horse_archers_defensive = 0.15
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	pikemen_offensive = -0.1
+#	pikemen_defensive = -0.1
+#}
+#turkish_culture_modifier = {
+#	horse_archers_offensive = 0.1
+#	horse_archers_defensive = 0.05
+#	light_cavalry_offensive = 0.075
+#	light_cavalry_defensive = 0.075
+#}
+#bolghar_culture_modifier = {
+#	horse_archers_offensive = 0.075
+#	horse_archers_defensive = 0.075
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#	archers_offensive = 0.05
+#}
+##########################################################################
+# Persian Culture Static Modifiers
+#persian_culture_modifier = {
+#	knights_offensive = 0.075
+#	knights_defensive = 0.075
+#	horse_archers_offensive = 0.075
+#	horse_archers_defensive = 0.075
+#}
+#kurdish_culture_modifier = {
+#	archers_offensive = 0.075
+#	archers_defensive = 0.075
+#	light_infantry_offensive = 0.05
+#	light_infantry_defensive = 0.05
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+##########################################################################
+# Byzantine Culture Static Modifiers
+#greek_culture_modifier = {
+#	knights_offensive = 0.075
+#	knights_defensive = 0.075
+#	pikemen_offensive = 0.075
+#	pikemen_defensive = 0.075
+#}
+#armenian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	horse_archers_offensive = 0.05
+#	horse_archers_defensive = 0.05
+#}
+#georgian_culture_modifier = {
+#	knights_offensive = 0.1
+#	knights_defensive = 0.1
+#	light_cavalry_offensive = 0.05
+#	light_cavalry_defensive = 0.05
+#}
+#albanian_culture_modifier = {
+#	light_cavalry_offensive = 0.15
+#	light_cavalry_defensive = 0.075
+#	light_infantry_offensive = 0.075
+#}
+#alan_culture_modifier = {
+#	light_cavalry_offensive = 0.15
+#	light_cavalry_defensive = 0.1
+#	horse_archers_offensive = 0.05
+#}
+##########################################################################
+# Baltic Culture Static Modifiers
+#lithuanian_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	heavy_infantry_offensive = 0.125
+#	heavy_infantry_defensive = 0.075
+#}
+#baltic_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	archers_offensive = 0.1
+#	heavy_infantry_offensive = 0.1
+#}
+##########################################################################
+# Finish Culture Static Modifiers
+#finish_culture_modifier = {
+#	light_infantry_offensive = 0.1
+#	archers_offensive = 0.1
+#	light_cavalry_offensive = 0.1
+#}
+##########################################################################
+# North african Static Modifiers
+#tuareg_culture_modifier = {
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	horse_archers_offensive = 0.05
+#	horse_archers_defensive = 0.05
+#}
+#berber_culture_modifier = {
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#	horse_archers_offensive = 0.05
+#	horse_archers_defensive = 0.05
+#}
+#masmuda_culture_modifier = {
+#	archers_offensive = 0.05
+#	archers_defensive = 0.05
+#	light_cavalry_offensive = 0.1
+#	light_cavalry_defensive = 0.1
+#}
+##########################################################################
+# East african Static Modifiers
+##########################################################################
+#east_african_culture_modifier = {
+#	archers_offensive = 0.05
+#	archers_defensive = 0.05
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.05
+#	heavy_infantry_offensive = 0.05
+#}
+##########################################################################
+# West african Static Modifiers
+#west_african_culture_modifier = {
+#	archers_offensive = 0.05
+#	archers_defensive = 0.05
+#	light_infantry_offensive = 0.1
+#	light_infantry_defensive = 0.1
+#}
+##########################################################################
+# Judaic Culture Static Modifiers
+#ashkenazi_culture_modifier = {
+#}
+#sephardic_culture_modifier = {
+#}
 ##########################################################################
 # Age Static Modifiers
 ##########################################################################
 
 # 0-15
 age_child = {
+	health = -1
+	general_opinion = 10
+	vassal_opinion = -10
 }
 
 # 16-19
 age_teen = {
+	health = -0.5
+	fertility = 0.05
+	sex_appeal_opinion = 5
+	liege_opinion = -10
 }
 
 # 20-29
 age_young = {
+	health = 0.5
+	fertility = 0.1
+	sex_appeal_opinion = 5
 }
 
 # 30-49
 age_adult = {
 }
 
-# 50-69
+# 50-59
 age_old = {
+	health = -0.8
+	fertility = -0.2
+	sex_appeal_opinion = -5
 	combat_rating = -15
 }
 
-# 70+
+# 60+
 age_very_old = {
+	health = -1.8
+	fertility = -0.5
+	sex_appeal_opinion = -15
 	combat_rating = -35
 }
+
 
 #MNM Modifier
 
@@ -637,21 +1174,17 @@ age_very_old = {
 # Job Action Modifiers
 ##########################################################################
 
-action_advance_mil_tech_mod = {
-	military_techpoints = 1
-}
-
 statecraft_liege_mod = {
 	threat_decay_speed = 0.01
 }
 
 apostate_liege_mod = {
-	monthly_character_piety = 0.060
+	monthly_character_piety = 0.030
 }
 
 organize_army_liege_mod = {
-	retinue_maintenence_cost = -0.02	# only one of the two is used, the appropriate one for your government type
-	horde_maintenence_cost = -0.02
+	retinue_maintenence_cost = -0.01	# only one of the two is used, the appropriate one for your government type
+	horde_maintenence_cost = -0.01
 }
 ##########################################################################
 # #MNM Modifier
@@ -671,25 +1204,19 @@ failed_mission = {
 # #Government modifiers
 ##########################################################################
 
-# Applied for Nomads if the province is in the steppe, desert, and plains
+# Applied for Nomads if their capital province is in the steppe, desert, and plains
 nomad_horse_offensive_modifier = {
-	light_cavalry_offensive = 0.010
-	knights_offensive = 0.010
-	horse_archers_offensive = 0.010
 }
 
-# Applied for Nomads if the province is in the artctic, hills, or mountains
+# Applied for Nomads if their capital province is in the arctic, hills, or mountains
 nomad_horse_defensive_modifier = {
-	light_cavalry_defensive = -0.05
-	knights_defensive = -0.05
-	horse_archers_defensive = -0.05
 }
 
 # Applied to tribal holdings if you're of the wrong religion group
 tribal_wrong_religion_group_modifier = {
-	levy_size = -0.5
-	garrison_size = -0.5
-	local_tax_modifier = -0.5
+	levy_size = -0.25
+	garrison_size = -0.25
+	local_tax_modifier = -0.25
 }
 
 # Applied to tribal holdings if you're of the reformed version of the religion and the province isn't, or vice versa
@@ -701,9 +1228,9 @@ tribal_wrong_religion_reformed_modifier = {
 
 # Applied to tribal holdings if you're  of the wrong religion
 tribal_wrong_religion_modifier = {
-	levy_size = -0.25
-	garrison_size = -0.25
-	local_tax_modifier = -0.25
+	levy_size = -0.15
+	garrison_size = -0.15
+	local_tax_modifier = -0.15
 }
 
 # Applied to tribal holdings if you're  of the wrong culture grup
@@ -727,31 +1254,43 @@ tribal_wrong_culture_modifier = {
 
 # Applied to your holdings in your capital province if you're independent
 capital_county_independent_holder = {
-	levy_size = 0.5
+	levy_size = 0.25
+	levy_reinforce_rate = 0.25
+	local_tax_modifier = 0.15
 }
 
 # Applied to your holdings in your capital province if you're a count and a vassal
 capital_county_vassal_count = {
-	
+	levy_size = 0.25
+	levy_reinforce_rate = 0.25
+	local_tax_modifier = 0.15
 }
 
 # Applied to your holdings in your capital province if you're above count level and a vassal
 capital_county_vassal = {
 	levy_size = 0.25
+	levy_reinforce_rate = 0.25
+	local_tax_modifier = 0.15
 }
 
 # Applied to your holdings in the dejure duchy your capital is in if you're independent
 capital_duchy_independent_holder = {
-	levy_size = 0.25
+	levy_size = 0.1
+	levy_reinforce_rate = 0.1
+	local_tax_modifier = 0.15
 }
 
 # Applied to your holdings in the dejure duchy your capital is in if you're not independent
 capital_duchy_vassal = {
-	levy_size = 0.15
+	levy_size = 0.1
+	levy_reinforce_rate = 0.1
+	local_tax_modifier = 0.15
 }
 
 # Applied to your holdings in the dejure kingdom your capital is in
 capital_kingdom = {
+	levy_size = 0.05
+	levy_reinforce_rate = 0.1
 }
 
 # Applied to your holdings in the dejure empire your capital is in

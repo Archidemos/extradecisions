@@ -1,19 +1,22 @@
-# 9 - Connacht
+# -*- ck2.history.provinces -*-
+
+# 9 - Connacht 
 
 # County Title
 title = c_connacht
 
 # Settlements
-max_settlements = 4
-b_roscommon = tribal
-b_tuam = temple
-#b_galway = city
+max_settlements = 5
 
-#b_clonfert = castle
-#b_elphin = castle
-#b_mayo = castle
-#b_killala = castle
-#b_anchory = castle
+b_tuam = tribal
+b_galway = city
+#b_lisnatreanduff = tribal
+#b_mayo = temple
+#b_shrule = castle
+
+#b_killala = temple
+#b_castlebar = castle
+
 
 # Misc
 culture = irish
@@ -21,12 +24,6 @@ religion = catholic
 terrain = hills
 
 # History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = irish
-	religion = celtic_christian
-}
-1000.1.1 = {
-	b_roscommon = castle
-	b_galway = city
-}
+
+#818.1.1 = { remove_settlement = b_mayo } #Turgeis 
+1185.1.1 = { b_shrule = castle } # De Borgo

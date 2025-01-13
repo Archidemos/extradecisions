@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 836 - Snassen
 
 # County Title
@@ -6,29 +8,25 @@ title = c_snassen
 # Settlements
 max_settlements = 5
 
-b_oujda = castle
-b_jerada = city
-b_saldia = temple
+b_suq_ibrahim = castle
+#b_tanas = castle
+#b_marat = castle
+#b_mazouna = city
+#b_mostaganem = city
 
-#b_ainbenimathar = castle
-#b_debdou = castle
-#b_tendrara = castle
-#b_berkane = castle
+#b_sidiakacha = temple
+#b_tendrara = city
 #b_ahfir = castle
+
 
 # Misc
 culture = maghreb_arabic
-religion = catholic
+religion = sunni
 
 # History
-633.1.1={
-	religion=catholic
-}
-760.1.1={
-	religion = sunni
-}
-860.1.1={
-	religion = shiite
-}
-909.1.1 = { religion = sunni }
-1130.1.1 = { trade_post = b_embriaco }
+875.1.1 = { b_tanas = castle }
+931.1.1 = { capital = b_tanas }
+960.1.1 = { remove_settlement = b_suq_ibrahim }
+1000.1.1 = { b_mostaganem = city }
+1210.1.1 = { b_marat = castle } #sometime before 1226
+1245.1.1 = { b_mazouna = city } #sometime before 1250

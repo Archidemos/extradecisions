@@ -1,29 +1,28 @@
+# -*- ck2.history.provinces -*-
+
 # 345 - Lecce
 
 # County Title
 title = c_lecce
 
 # Settlements
-max_settlements = 4
-b_lecce = castle
-b_brindisi = city
+max_settlements = 6
+b_copertino = castle
 b_otranto = temple
+b_lecce = city
+#b_soleto = castle
+#b_ostuni = castle
+b_brindisi = temple
 
-#b_leuca = castle
-#b_castro = castle
-#b_ligento = castle
-#b_andrano = castle
-#b_oria = city
 
 # Misc
 culture = greek
 religion = orthodox
-terrain = farmlands
+terrain = plains
 
 # History
-1066.1.1 = { trade_post = b_faliero }
-1120.1.1={ culture = italian
-	   religion = catholic }
+1055.1.1 = { b_soleto = castle }
+1091.1.1={ culture = neapolitan  }
+1091.1.1={ religion = catholic }
 
 
-1187.1.1 = { b_leuca = castle }

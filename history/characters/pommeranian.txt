@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 100507 = {
 	name="Edla"
 	female = yes
@@ -37,7 +39,7 @@
 }
 
 20584 = {
-	name="Krutoj" #High chief of Mecklenburg
+	name="Krutoj" #Krutoj of Wagria
 	dynasty=101890
 	martial=7
 	diplomacy=4
@@ -51,20 +53,20 @@
 	trait="brilliant_strategist"
 	father=20586
 	1035.1.1={
-		birth="1035.1.1"
+		birth=yes
 	}
-	1076.1.1={
+	1065.1.1={
 	add_spouse=30480 #Slavia z Liubice
 	}
 	
 	
 	1093.1.1={
-		death="1093.1.1"
+		death=yes
 	}
 }
 
 20586 = {
-	name="Gryn"
+	name="Gryn" # Grin father of Krutoj
 	dynasty=101890
 	martial=5
 	diplomacy=5
@@ -77,10 +79,27 @@
 	trait="tough_soldier"
 	father=30483
 	999.1.1={
-		birth="999.1.1"
+		birth=yes
 	}
 	1043.1.1={
-		death="1043.1.1"
+		death=yes
+	}
+}
+
+30483 = { # The mythic Wizlaff of Rügen
+	name="Wizlaw" 
+	dynasty=101890
+	
+	religion="slavic_pagan"
+	culture="pommeranian"
+	
+	
+	
+	955.1.1={
+		birth=yes
+	}
+	1016.1.1={
+		death=yes
 	}
 }
 
@@ -207,11 +226,12 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	trait="tough_soldier"
-	1087.1.1={
-		birth="1087.1.1"
+        father= 30522# speculative, but centre of power seems to have been located in Kolberg so would make sense
+	1080.1.1={
+		birth=yes
 	}
 	1122.1.1={
-		death="1122.1.1"
+		death=yes
 	}
 }
 
@@ -244,7 +264,7 @@
 221711 = {
 	name="Walpurga"
 	female=yes
-	dynasty=177
+	dynasty=1000100410 # ought to have seperate dynasty to the griffins imo. Link is vague to put it mildly, sorry Longinus.
 	religion="catholic"
 	culture="pommeranian"
 	father=30520 #Swantibor
@@ -561,7 +581,7 @@
 }
 
 221734 = {
-	name="Wizlaw"
+	name="Wizlaw" 
 	dynasty=101890
 	martial=5
 	diplomacy=5
@@ -570,12 +590,12 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	trait="tough_soldier"
-	father=30482 #Rostislav
-	1122.1.1={
-		birth="1122.1.1"
+	father=30481
+	1102.1.1={
+		birth=yes
 	}
 	1163.1.1={
-		death="1163.1.1"
+		death=yes
 	}
 }
 
@@ -701,66 +721,50 @@
 30480 = {
 	name="Slavina"
 	female=yes
-	dynasty=101907 #z Wagria
+	dynasty=1000100414 #z Wagria
 	religion="slavic_pagan"
 	culture="pommeranian"
-	1061.1.1={
-		birth="1061.1.1"
+        father=1227010
+	1052.1.1={
+		birth=yes
 	}
-	1126.1.1={
-		death="1126.1.1"
+	1110.1.1={
+		death=yes
 	}
 }
-
+#ruler of Rugen #Unnamed son of Kruto and Slawina
 30481 = {
-	name="Wartislaw" #ruler of Rugen
+	name="Wartislaw" #Name unknown
 	dynasty=101890
 	religion="slavic_pagan"
 	culture="pommeranian"
 	father=20584 #Krutoj
 	mother=30480 #Slavina
 	1077.1.1={
-		birth="1077.1.1"
+		birth=yes
 	}
 	1135.1.1={
-		death="1135.1.1"
+		death=yes
 	}
 }
 
 30482 = {
-	name="Rostislav" #ruler of Rugen
+	name="Rostislav" #Race/Ratislav grandson of Kruto fl 1138-1150. Leader of A Rügian fleet attacking Wagria in 1138. Became prince of northern Wagria 1139.
 	dynasty=101890
 	
 	religion="slavic_pagan"
 	culture="pommeranian"
 	
-	father=30481 #Wartislaw
-	
-	
+	father=30481
+		
 	1104.1.1={
-		birth="1104.1.1"
+		birth=yes
 	}
-	1141.1.1={
-		death="1141.1.1"
+	1150.1.1={
+		death=yes
 	}
 }
 
-30483 = {
-	name="Wizlaw" 
-	dynasty=101890
-	
-	religion="slavic_pagan"
-	culture="pommeranian"
-	
-	
-	
-	955.1.1={
-		birth="955.1.1"
-	}
-	1016.1.1={
-		death="1016.1.1"
-	}
-}
 
 30484 = {
 	name="Dubizlaw"
@@ -770,7 +774,7 @@
 	
 	father=221734 #Wizlaw
 	1148.1.1={
-		birth="1148.1.1"
+		birth=yes
 	}
 	
 	#Danes conquer and convert Rügen
@@ -780,7 +784,7 @@
 	}
 	
 	1173.1.1={
-		death="1173.1.1"
+		death=yes
 	}
 }
 
@@ -1132,7 +1136,7 @@
 		death="1302.1.1"
 	}
 }
-
+#Pribislaw of Alt-lubeck
 30507 = {
 	name="Przybyslaw"
 	dynasty=101906
@@ -1140,10 +1144,13 @@
 	culture="pommeranian"
 	father=8400 #Budivoj
 	1070.1.1={
-		birth="1070.1.1"
+		birth=yes
+	}
+	1143.1.1={
+		employer=212362 # Adolf II. Segeberg retaken by Adolf during the Saxon offensive, Pribislaw steps down and live as a wealthy man. He had relinquished Wagria to Race Wizlawid in 1138/39 during the prior offensive.
 	}
 	1156.1.1={
-		death="1156.1.1"
+		death=yes
 	}
 }
 
@@ -1154,8 +1161,8 @@
 	culture="pommeranian"
 	father=8402 #Henrik
 	mother=30480 #Slavia
-	1094.1.1={
-		birth="1094.1.1"
+	1089.1.1={
+		birth="1089.1.1"
 	}
 	1129.1.1={
 		death="1129.1.1"
@@ -1219,26 +1226,26 @@
 	}
 }
 
-30520 = {
+30520 = { #Pommernian cheif in 1111-1112. Did not rule Kolberg. Supposedly the ancestor of a "Swantiboride" branch of the griffins but it seems horribly contradictual to the actual griffins and link with griffins appear unattested. Appear likely to be a misunderstanding of Johannes Longinus and the Swiebodzice theory.
 	name="Swantibor" 
-	dynasty=177
+	dynasty=1000100410 # ought to have seperate dynasty to the griffins imo. Link is vague to put it mildly, sorry Longinus.
 	religion="slavic_pagan"
 	culture="pommeranian"
-	father=221703 #Swietopelk
-	1104.1.1={
-		birth="1104.1.1"
+	father=1226984 
+	1075.1.1={
+		birth=yes
 	}
 	1124.1.1={
-		religion="catholic"
+		religion="catholic" # Prissani baptised
 	}
-	1144.1.1={
-		death="1144.1.1"
+	1135.1.1={
+		death=yes
 	}
 }
 
-30521 = {
+330521 = { # supposed to be a samboried version of Wartislaw II? or the mysterious castellan of Stettin?
 	name="Wartislaw" 
-	dynasty=177
+	dynasty=1000100410 # ought to have seperate dynasty to the griffins imo. Link is vague to put it mildly, sorry Longinus.
 	religion="catholic"
 	culture="pommeranian"
 	father=30520 #Swantibor
@@ -1252,45 +1259,44 @@
 
 30522 = {
 	name="Siemomysl"  #Duke of Pomerania, count of Stettin&Slupsk
-	dynasty=7162 #z Pomorski
+	dynasty=177
 	religion="slavic_pagan"
 	culture="pommeranian"
-	1010.1.1={
-		birth="1010.1.1"
+	1022.1.1={
+		birth=yes
 	}
-	1068.1.1={
-		death="1068.1.1"
+	1085.1.1={
+		death=yes
 	}
 }
 
-30523 = {
-	name="Swietibor"  #Duke of Pomerania, count of Stettin&Slupsk
-	# AKA: Swantibor
-	dynasty=7162 #z Pomorski
-	religion="slavic_pagan"
-	culture="pommeranian"
-	father=30522 #Siemomysl
-	1040.1.1={
-		birth="1040.1.1"
-	}
-	1092.1.1={
-		death="1092.1.1"
-	}
-}
+#30523 = { who is this guy supposed to be?
+#	name="Swietibor"  #Duke of Pomerania, count of Stettin&Slupsk
+#	# AKA: Swantibor
+#	dynasty=7162 #z Pomorski
+#	religion="slavic_pagan"
+#	culture="pommeranian"
+#	father=30522 #Siemomysl
+#	1039.1.1={
+#		birth=yes
+#	}
+#	1108.1.1={
+#		death=yes
+#	}
+#}
 
-30524 = {
-	name="Gwienomir"
-	dynasty=7162 #z Pomorski
-	religion="slavic_pagan"
-	culture="pommeranian"
-	father=30522 #Siemomysl
-	1047.1.1={
-		birth="1047.1.1"
-	}
-	1106.1.1={
-		death="1106.1.1"
-	}
-}
+#30524 = {  #wasn't related to the Griffins either
+#	name="Gwienomir"
+#	dynasty=7162 #z Pomorski
+#	religion="slavic_pagan"
+#	culture="pommeranian"
+#	1060.1.1={
+#		birth=yes
+#	}
+#	1113.1.1={
+#		death=yes
+#	}
+#}
 
 30525 = {
 	name="Dobroslawa"
@@ -1643,7 +1649,7 @@
 
 30556 = {
 	name="Przybyslaw"
-	dynasty=101893
+	dynasty=101893 #Niklotid
 	religion="catholic"
 	culture="pommeranian"
 	father=452003
@@ -1673,9 +1679,9 @@
 
 30561 = {
 	name="Przybyslaw"
-	dynasty=101893
+	dynasty=112 #von Mecklemburg
 	religion="catholic"
-	culture="pommeranian"
+	culture="pommeranian" #will remain Vendic, mainly due to his name
 	father=452002
 	#mother=christina of Sweden
 	1218.1.1={
@@ -1691,9 +1697,9 @@
 
 30574 = {
 	name="Barnim"
-	dynasty=101893 #Niklotid
+	dynasty=112 #von Mecklemburg
 	religion="catholic"
-	culture="pommeranian"
+	culture="low_german"
 	father=30572
 	mother=30532
 	1291.1.1={
@@ -1706,9 +1712,9 @@
 
 30593 = {
 	name="Przybyslaw"
-	dynasty=101893
+	dynasty=112 #von Mecklemburg
 	religion="catholic"
-	culture="pommeranian"
+	culture="pommeranian" #will remain Vendic, mainly due to his name
 	father=30561
 	mother=30548
 	1251.1.1={
@@ -1724,9 +1730,9 @@
 
 30594 = {
 	name="Prybko"
-	dynasty=101893
+	dynasty=112 #von Mecklemburg
 	religion="catholic"
-	culture="pommeranian"
+	culture="pommeranian" #will remain Vendic, mainly due to his name
 	father=30561
 	mother=30548
 	1253.1.1={
@@ -1739,9 +1745,9 @@
 
 30595 = {
 	name="Mszczuj"
-	dynasty=101893
+	dynasty=112 #von Mecklemburg
 	religion="catholic"
-	culture="pommeranian"
+	culture="pommeranian" #will remain Vendic, mainly due to his name
 	father=30593
 	mother=30463
 	1270.1.1={
@@ -2223,13 +2229,13 @@
 	trait="martial_cleric"
 	father=8411
 	1005.1.15={
-		birth="1005.1.15"
+		birth=yes
 	}
 	1060.1.1={
 	add_spouse=101527
 	}
 	1066.6.7={
-		death="1066.6.7"
+		death=yes
 	}
 }
 
@@ -2245,13 +2251,13 @@
 	trait="tough_soldier"
 	father=161119
 	970.1.1={
-		birth="970.1.1"
+		birth=yes
 	}
 	1000.1.1={
 		religion="catholic"
 	}
 	1028.1.1={
-		death="1028.1.1"
+		death=yes
 	}
 }
 
@@ -2376,14 +2382,15 @@
 	dynasty=101906
 	religion="slavic_pagan"
 	culture="pommeranian"
-	910.1.1={
-		birth="910.1.1"
+        father=1227059 #Stoignew
+	925.1.1={
+		birth=yes
 	}
-	928.1.1 = {
-		add_spouse = 261216
+        955.10.16 = {
+		religion=catholic # probably converted after the battle of Raxa
 	}
 	966.1.1={
-		death="966.1.1"
+		death=yes
 	}
 }
 
@@ -2393,12 +2400,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	father=161118
-	mother = 261216
 	930.1.1={
-		birth="930.1.1"
+		birth=yes
 	}
 	995.1.1={
-		death="995.1.1"
+		death=yes
 	}
 }
 
@@ -2408,7 +2414,6 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	father=161118
-	mother = 261216
 	930.1.1={
 		birth="930.1.1"
 	}
@@ -2424,10 +2429,10 @@
 	culture=pommeranian
 	father=161119
 	955.1.1={
-		birth=yes
+		birth = yes
 	}
 	1005.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2438,10 +2443,10 @@
 	culture=pommeranian
 	father = 194064
 	830.1.1={
-		birth=yes
+		birth = yes
 	}
 	890.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2453,10 +2458,10 @@
 	culture=pommeranian
 	father=184001
 	849.1.1={
-		birth=yes
+		birth = yes
 	}
 	897.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2466,15 +2471,15 @@
 	dynasty=1042801
 	religion="slavic_pagan"
 	culture="pommeranian"
-	father = 194067
+	father = 194073
 	850.1.1={
-		birth=yes
+		birth = yes
 	}
 	867.1.1={
 		add_spouse=6895
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 #Rügen
@@ -2491,31 +2496,30 @@
 	}
 }
 #Pomeralia
-184004 = {
-	name="Swietopelk"
-	dynasty=1042803
-	religion="slavic_pagan"
-	culture="pommeranian"
-	father=194073
-	829.1.1={
-		birth=yes
-	}
-	900.1.1={
-		death=yes
-	}
-}
+#184004 = {
+#	name="Swietopelk"
+#	dynasty=1042803
+#	religion="slavic_pagan"
+#	culture="pommeranian"
+#	829.1.1={
+#		birth = yes
+#	}
+#	900.1.1={
+#		death = yes
+#	}
+#}
 6895 = {
 	name=Jarka
 	female=yes
-	dynasty=1042803
+	dynasty=1000100412
 	religion=slavic_pagan
 	culture=pommeranian
-	father=184004
-	849.1.1={
-		birth=yes
+	father=1226994 
+	867.1.1={
+		birth = yes
 	}
-	897.1.1={
-		death=yes
+	920.1.1={
+		death = yes
 	}
 }
 
@@ -2552,7 +2556,6 @@
 	dynasty=1042806
 	religion="slavic_pagan"
 	culture="pommeranian"
-	father = 273059
 	840.1.1={
 		birth="840.1.1"
 	}
@@ -2568,10 +2571,10 @@
 	culture="pommeranian"
 	father=184006
 	870.1.1={
-		birth=yes
+		birth = yes
 	}
 	930.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2584,10 +2587,10 @@
 	culture="pommeranian"
 	father=168553
 	900.1.1={
-		birth=yes
+		birth = yes
 	}
 	960.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2600,7 +2603,7 @@
 	culture="pommeranian"
 	father=168554
 	950.1.1={
-		birth=yes
+		birth = yes
 	}
 	990.1.1={
 		add_spouse=168526
@@ -2619,11 +2622,11 @@
 	culture="pommeranian"
 	father=168554
 	952.1.1={
-		birth=yes
+		birth = yes
 	}
 	
-	996.1.1={ 
-		death=yes
+	996.1.1={
+		death = yes
 	}
 }
 
@@ -2636,11 +2639,11 @@
 	culture="pommeranian"
 	father=168554
 	953.1.1={
-		birth=yes
+		birth = yes
 	}
 	
-	992.1.1={ 
-		death=yes
+	992.1.1={
+		death = yes
 	}
 }
 
@@ -2654,11 +2657,11 @@
 	culture="pommeranian"
 	father=168554
 	954.1.1={
-		birth=yes
+		birth = yes
 	}
 	
-	1010.1.1={ 
-		death=yes
+	1010.1.1={
+		death = yes
 	}
 }
 
@@ -2671,11 +2674,11 @@
 	father=168555
 	mother=168526
 	994.1.1={
-		birth=yes
+		birth = yes
 	}
 	
-	1057.1.1={ 
-		death=yes
+	1057.1.1={
+		death = yes
 	}
 }
 
@@ -2686,11 +2689,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	848.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2704,11 +2707,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	847.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2722,11 +2725,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	846.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2737,13 +2740,13 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	848.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	867.1.1 = {
 		add_spouse=6894
 	}
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2754,11 +2757,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	849.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2772,11 +2775,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	849.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2790,11 +2793,11 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	849.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	898.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2808,11 +2811,11 @@
 	culture="pommeranian"
 	father=168584
 	870.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	920.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2827,11 +2830,11 @@
 	culture="pommeranian"
 	father=168590
 	895.1.1 = {
-		birth=yes
+		birth = yes
 	}
 	
 	929.1.1 = {
-		death=yes
+		death = yes
 	}
 }
 
@@ -2841,10 +2844,10 @@
 	religion="slavic_pagan"
 	culture="pommeranian"
 	750.1.1={
-		birth=yes
+		birth = yes
 	}
 	806.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2855,10 +2858,10 @@
 	culture="pommeranian"
 	father=168600
 	790.1.1={
-		birth=yes
+		birth = yes
 	}
 	850.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -2870,10 +2873,10 @@
 	culture="pommeranian"
 	father=184005
 	855.1.1={
-		birth=yes
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 194062 = {
@@ -3025,428 +3028,6 @@
 		birth = yes
 	}
 	866.1.1 = {
-		death = yes
-	}
-}
-260568 = {
-	name = "Barnim"
-	dynasty = 1062242
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261221
-	mother = 261222
-	909.1.1 = {
-		birth = yes
-	}
-	933.1.1 = {
-		add_spouse = 261220
-	}
-	952.1.1 = {
-		death = yes
-	}
-}
-260569 = {
-	name = "Branislav"
-	dynasty = 1062243
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261217
-	mother = 261218
-	913.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-260570 = {
-	name = "Gawel"
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261224
-	mother = 261225
-	899.1.1 = {
-		birth = yes
-	}
-	923.1.1 = {
-		add_spouse = 261228
-	}
-	950.1.1 = {
-		death = yes
-	}
-}
-260571 = {
-	name = "Jozef"
-	dynasty = 1062245
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261232
-	mother = 261233
-	888.1.1 = {
-		birth = yes
-	}
-	923.1.1 = {
-		add_spouse = 261226
-	}
-	949.1.1 = {
-		death = yes
-	}
-}
-261216 = {
-	name = "Branislava"
-	female = yes
-	dynasty = 1062583
-	religion = slavic_pagan
-	culture = pommeranian
-	912.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-261217 = {
-	name = "Tomasz"
-	dynasty = 1062243
-	religion = slavic_pagan
-	culture = pommeranian
-	888.1.1 = {
-		birth = yes
-	}
-	909.1.1 = {
-		add_spouse = 261218
-	}
-	931.1.1 = {
-		death = yes
-	}
-}
-261218 = {
-	name = "Andela"
-	female = yes
-	religion = slavic_pagan
-	culture = pommeranian
-	891.1.1 = {
-		birth = yes
-	}
-	949.1.1 = {
-		death = yes
-	}
-}
-261219 = {
-	name = "Dorota"
-	female = yes
-	dynasty = 1062243
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261217
-	mother = 261218
-	915.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-261220 = {
-	name = "Kornelia"
-	female = yes
-	dynasty = 1062243
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261217
-	mother = 261218
-	917.1.1 = {
-		birth = yes
-	}
-	968.1.1 = {
-		death = yes
-	}
-}
-261221 = {
-	name = "Szczepan"
-	dynasty = 1062242
-	religion = slavic_pagan
-	culture = pommeranian
-	885.1.1 = {
-		birth = yes
-	}
-	906.1.1 = {
-		add_spouse = 261222
-	}
-	928.1.1 = {
-		death = yes
-	}
-}
-261222 = {
-	name = "Bozena"
-	female = yes
-	dynasty = 1062584
-	religion = slavic_pagan
-	culture = pommeranian
-	888.1.1 = {
-		birth = yes
-	}
-	935.1.1 = {
-		death = yes
-	}
-}
-261223 = {
-	name = "Mieszko"
-	dynasty = 1062242
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260568
-	mother = 261220
-	934.1.1 = {
-		birth = yes
-	}
-	981.1.1 = {
-		death = yes
-	}
-}
-261224 = {
-	name = "Rostislav"
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	874.1.1 = {
-		birth = yes
-	}
-	915.1.1 = {
-		death = yes
-	}
-}
-261225 = {
-	name = "Gertruda"
-	female = yes
-	religion = slavic_pagan
-	culture = pommeranian
-	876.1.1 = {
-		birth = yes
-	}
-	929.1.1 = {
-		death = yes
-	}
-}
-261226 = {
-	name = "Pechna"
-	female = yes
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261224
-	mother = 261225
-	904.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-261227 = {
-	name = "Malgorzata"
-	female = yes
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 261224
-	mother = 261225
-	908.1.1 = {
-		birth = yes
-	}
-	974.1.1 = {
-		death = yes
-	}
-}
-261228 = {
-	name = "Jadwiga"
-	female = yes
-	dynasty = 1062585
-	religion = slavic_pagan
-	culture = pommeranian
-	905.1.1 = {
-		birth = yes
-	}
-	959.1.1 = {
-		death = yes
-	}
-}
-261229 = {
-	name = "Milena"
-	female = yes
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260570
-	mother = 261228
-	926.1.1 = {
-		birth = yes
-	}
-	972.1.1 = {
-		death = yes
-	}
-}
-261230 = {
-	name = "Walenty"
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260570
-	mother = 261228
-	929.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-261231 = {
-	name = "Tadeusz"
-	dynasty = 1062244
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260570
-	mother = 261228
-	931.1.1 = {
-		birth = yes
-	}
-	961.1.1 = {
-		death = yes
-	}
-}
-261232 = {
-	name = "Szymon"
-	dynasty = 1062245
-	religion = slavic_pagan
-	culture = pommeranian
-	865.1.1 = {
-		birth = yes
-	}
-	886.1.1 = {
-		add_spouse = 261233
-	}
-	935.1.1 = {
-		death = yes
-	}
-}
-261233 = {
-	name = "Radomila"
-	female = yes
-	religion = slavic_pagan
-	culture = pommeranian
-	868.1.1 = {
-		birth = yes
-	}
-	913.1.1 = {
-		death = yes
-	}
-}
-261234 = {
-	name = "Wlodek"
-	dynasty = 1062245
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260571
-	mother = 261226
-	925.1.1 = {
-		birth = yes
-	}
-	984.1.1 = {
-		death = yes
-	}
-}
-261235 = {
-	name = "Otokar"
-	dynasty = 1062245
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260571
-	mother = 261226
-	928.1.1 = {
-		birth = yes
-	}
-	946.1.1 = {
-		death = yes
-	}
-}
-261236 = {
-	name = "Jarka"
-	female = yes
-	dynasty = 1062245
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 260571
-	mother = 261226
-	930.1.1 = {
-		birth = yes
-	}
-	995.1.1 = {
-		death = yes
-	}
-}
-146174 = {
-	name="Przybyslaw"
-	dynasty=1042806
-	religion = slavic_pagan
-	culture = pommeranian
-	722.1.1={
-		birth=yes
-	}
-	787.1.1={
-		death=yes
-	}
-}
-
-146175 = {
-	name="Branislav"
-	dynasty=1042806
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 146174
-	742.1.1={
-		birth=yes
-	}
-	801.1.1={
-		death=yes
-	}
-}
-273057 = {
-	name="Radomil" 
-	dynasty=1042806
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 146175
-	770.1.1={
-		birth = yes
-	}
-	825.1.1={
-		death = yes
-	}
-}
-273058 = {
-	name="Przybyslaw" 
-	dynasty=1042806
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 273057
-	795.1.1={
-		birth = yes
-	}
-	849.1.1={
-		death = yes
-	}
-}
-273059 = {
-	name="Strasz" 
-	dynasty=1042806
-	religion = slavic_pagan
-	culture = pommeranian
-	father = 273058
-	818.1.1={
-		birth = yes
-	}
-	866.1.1={
 		death = yes
 	}
 }

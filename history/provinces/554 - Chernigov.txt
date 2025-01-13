@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 554 - Chernigov
 
 # County Title
@@ -6,28 +8,27 @@ title = c_chernigov
 # Settlements
 max_settlements = 5
 
-b_chernigov = tribal	#907
 
-#b_snov		#early, before 1068	#Today called "Sedniv"
-#b_korop	#1153
-#b_sosnytsia	#1247
-#b_mena	#1408
-#b_horodina	#1550
-#b_ripky	#1607
+b_chernigov = tribal
+#b_eletskymonestary = temple
+#b_nizhyn = city
+#b_kozelets = castle
+#b_borzna = castle
+
+#b_morivsk = castle
+#b_menachernigov = city
+#b_syvolozh = city
 
 # Misc
-culture = severian
+culture = russian
 religion = slavic_pagan
-terrain = farmlands
+
 # History
-867.1.1 = {
-	culture = russian
-}
-988.1.1 = { 
-	religion = orthodox
-}
-1150.1.1 = {
-	b_chernigov = castle
-	b_snov = city
-	b_korop = temple
-}
+
+988.1.1 = {b_chernigov = castle
+b_eletskymonestary = temple
+b_kozelets = castle
+b_borzna = castle }
+1025.1.1 = {religion = orthodox }
+1239.1.1 = { remove_settlement = b_borzna } #Mongol invasion
+1239.1.1 = { remove_settlement = b_kozelets }

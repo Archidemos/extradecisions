@@ -234,22 +234,6 @@ narrative_event = {
             }
             narrative_event = { id = LT.40007 }
         }
-		if = {
-			limit = { ai = yes }
-			add_random_commander_trait_effect = yes
-			spawn_unit = {
-				owner = ROOT
-				province = capital_scope
-				home = ROOT
-				match_character = 1282
-				match_mult = 0.5
-				
-				attrition = 1.0
-				disband_on_peace = yes
-				maintenance = no
-			}
-		}
-		ai_chance = { factor = 80 }
     }
 
     option = {
@@ -262,7 +246,6 @@ narrative_event = {
                 }
             }
         }
-		ai_chance = { factor = 20 }
     }
 }
 
@@ -398,13 +381,14 @@ narrative_event = {
 
     option = {
         name = EVTOPTA_LT_40009
-		ai_chance = { factor = 20 }
         prestige = 250
     }
 
     option = {
         name = EVTOPTB_LT_40009
-		ai_chance = { factor = 80 }
+        trigger = {
+            ai = no
+        }
         prestige = 500
         custom_tooltip = { text = EVTOPTB_LT_40009_TT }
         hidden_tooltip = {
@@ -428,47 +412,35 @@ narrative_event = {
             d_bremen = {
                 de_jure_liege = k_saxony
             }
-            d_hamburg = {
-                de_jure_liege = k_saxony
-            }
-			d_koln = {
-				de_jure_liege = k_saxony
-			}
             # Set De Jure Thuringia
             d_thuringia = {
-                de_jure_liege = k_thuringian
+                de_jure_liege = k_thuringia_otto
             }
-			d_brandenburg = {
-				de_jure_liege = k_thuringian
-			}
-			d_meissen = {
-				de_jure_liege = k_thuringian
-			}
             # Set De Jure Franconia
             d_hesse = {
-                de_jure_liege = k_franconia
+                de_jure_liege = k_franconia_otto
             }
             d_rhine = {
-                de_jure_liege = k_franconia
+                de_jure_liege = k_franconia_otto
             }
             d_franconia = {
-                de_jure_liege = k_franconia
+                de_jure_liege = k_franconia_otto
             }
             # Set De Jure Swabia
             d_swabia = {
-                de_jure_liege = k_swabia
+                de_jure_liege = k_swabia_otto
             }
             d_baden = {
-                de_jure_liege = k_swabia
+                de_jure_liege = k_swabia_otto
             }
             d_alsace = {
-                de_jure_liege = k_swabia
+                de_jure_liege = k_swabia_otto
             }
             d_thurgau = {
-                de_jure_liege = k_swabia
+                de_jure_liege = k_swabia_otto
             }
             d_raetia = {
-                de_jure_liege = k_swabia
+                de_jure_liege = k_swabia_otto
             }
             # Move all old kingdoms into Empire of Germania
             e_hre = {
@@ -482,95 +454,10 @@ narrative_event = {
                 copy_title_laws = k_germany
                 copy_title_history = k_germany
             }
+            k_germany = {
+                unsafe_destroy_landed_title = THIS
+            }
             ## Grant titles ##
-			# Frisia #
-			if = {
-				limit = {
-					any_vassal = {
-						has_landed_title = d_holland
-					}
-				}
-				d_holland = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_frisia
-                        save_event_target_as = frisia_king
-                    }
-                }
-                any_vassal = {
-                    limit = {
-                        de_jure_liege_or_above = k_frisia
-                    }
-                    set_defacto_liege = event_target:frisia_king
-                }
-            }
-			else_if = {
-                limit = {
-                    any_vassal = {
-                        has_landed_title = c_holland
-                    }
-                }
-                c_holland = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_frisia
-                        save_event_target_as = frisia_king
-                    }
-                }
-                any_vassal = {
-                    limit = {
-                        de_jure_liege_or_above = k_frisia
-                    }
-                    set_defacto_liege = event_target:frisia_king
-                }
-            }
-			#Transfer Zeeland
-			if = {
-				limit = {
-					has_landed_title = c_zeeland
-					NOT = { de_facto_liege = event_target:frisia_king }
-				}
-				event_target:frisia_king = {
-					grant_title_no_opinion = c_zeeland
-				}
-			}
-            # Franconia #
-            if = {
-                limit = {
-                    any_vassal = {
-                        has_landed_title = d_franconia
-                    }
-                }
-                d_franconia = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_franconia_otto
-                        save_event_target_as = franconia_king
-                    }
-                }
-                any_vassal = {
-                    limit = {
-                        de_jure_liege = k_franconia_otto
-                    }
-                    set_defacto_liege = event_target:franconia_king
-                }
-            }
-            else_if = {
-                limit = {
-                    any_vassal = {
-                        has_landed_title = c_wurzburg
-                    }
-                }
-                c_wurzburg = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_franconia_otto
-                        save_event_target_as = franconia_king
-                    }
-                }
-                any_vassal = {
-                    limit = {
-                        de_jure_liege = k_franconia_otto
-                    }
-                    set_defacto_liege = event_target:franconia_king
-                }
-            }
             # Franconia #
             if = {
                 limit = {
@@ -633,10 +520,10 @@ narrative_event = {
             else_if = {
                 limit = {
                     any_vassal = {
-                        has_landed_title = c_schwaben
+                        has_landed_title = c_wurttemberg
                     }
                 }
-                c_schwaben = {
+                c_wurttemberg = {
                     holder_scope = {
                         grant_title_no_opinion = k_swabia_otto
                         save_event_target_as = swabia_king
@@ -658,13 +545,13 @@ narrative_event = {
                 }
                 d_thuringia = {
                     holder_scope = {
-                        grant_title_no_opinion = k_thuringian
+                        grant_title_no_opinion = k_thuringia_otto
                         save_event_target_as = thuringia_king
                     }
                 }
                 any_vassal = {
                     limit = {
-                        de_jure_liege = k_thuringian
+                        de_jure_liege = k_thuringia_otto
                     }
                     set_defacto_liege = event_target:thuringia_king
                 }
@@ -677,13 +564,13 @@ narrative_event = {
                 }
                 c_thuringen = {
                     holder_scope = {
-                        grant_title_no_opinion = k_thuringian
+                        grant_title_no_opinion = k_thuringia_otto
                         save_event_target_as = thuringia_king
                     }
                 }
                 any_vassal = {
                     limit = {
-                        de_jure_liege = k_thuringian
+                        de_jure_liege = k_thuringia_otto
                     }
                     set_defacto_liege = event_target:thuringia_king
                 }
@@ -711,10 +598,10 @@ narrative_event = {
             else_if = {
                 limit = {
                     any_vassal = {
-                        has_landed_title = c_regensburg
+                        has_landed_title = c_abensberg
                     }
                 }
-                c_regensburg = {
+                c_abensberg = {
                     holder_scope = {
                         grant_title_no_opinion = k_bavaria
                         save_event_target_as = bavaria_king
@@ -741,68 +628,9 @@ narrative_event = {
                 }
                 set_defacto_liege = THIS
             }
-			# Buff Dithmarschen
-			if = {
-				limit = {
-					d_holstein = { holder_scope = { is_republic = yes } }
-				}
-				d_holstein = {
-					holder_scope = {
-						save_event_target_as = dithmarschen_mayor
-					}
-				}
-				d_holstein = { set_name = "Dithmarschen" }
-			}
-			event_target:dithmarschen_mayor = {
-				wealth = 500
-				spawn_unit = {
-					owner = event_target:dithmarschen_mayor
-					province = capital_scope
-
-					troops = {
-						archers = { 350 350 }
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						light_cavalry = { 125 125 }
-						knights = { 25 25 }
-					}
-
-					attrition = 1.0
-					disband_on_peace = no
-					cannot_inherit = no
-					earmark = dithmarschen_free_army
-					maintenance_multiplier = 0
-				}
-				capital_holding = {
-					add_building = ct_wall_q_1
-					add_building = ct_wall_q_2
-					add_building = ct_wall_1
-					add_building = ct_wall_2
-					add_building = ct_rep_arsenal_1
-					add_building = ct_rep_arsenal_2
-					add_building = ct_training_grounds_1
-					add_building = ct_training_grounds_2
-					add_building = ct_training_grounds_3
-					add_building = ct_barracks_1
-					add_building = ct_barracks_2
-					add_building = ct_barracks_3
-					add_building = ct_wall_3
-				}
-				grant_title_no_opinion = b_itzehoe
-				capital_scope = {
-					add_holding_slot = 1
-				}
-			}
             # Deactivate Titles
             activate_title = {
                 title = k_germany
-                status = no
-            }
-            k_germany = {
-                unsafe_destroy_landed_title = THIS
-            }
-            activate_title = {
-                title = k_wesphalia
                 status = no
             }
             activate_title = {
@@ -870,88 +698,6 @@ narrative_event = {
     option = {
         name = EVTOPTA_LT_40011
         prestige = 500
-		set_global_flag = germany_united
-    }
-}
-
-narrative_event = {
-    id = LT.40020
-    desc = EVTDESC_LT_400111
-    title = EVTTITLE_LT_400111
-    picture = GFX_evt_magnificent_castle
-    border = GFX_event_narrative_frame_war
-    is_triggered_only = yes
-
-    trigger = {
-        NOT = {
-            has_game_rule = {
-                name = otto_story
-                value = off
-            }
-        }
-    }
-
-    immediate = {
-
-    }
-
-    option = {
-        name = EVTOPTA_LT_400111
-		custom_tooltip = {
-			text = otto_won_dejure
-			hidden_effect = {	
-				d_alsace = { de_jure_liege = k_germany }
-				d_angria = { de_jure_liege = k_germany }
-				d_baden	 = { de_jure_liege = k_germany }
-				d_brandenburg = { de_jure_liege = k_germany }
-				d_bremen = { de_jure_liege = k_germany }
-				d_brunswick = { de_jure_liege = k_germany }
-				d_franconia = { de_jure_liege = k_germany }
-				d_hesse = { de_jure_liege = k_germany }
-				d_lausitz = { de_jure_liege = k_germany }
-				d_meissen = { de_jure_liege = k_germany }
-				d_munster_germany = { de_jure_liege = k_germany }
-				d_raetia = { de_jure_liege = k_germany }
-				d_rhine = { de_jure_liege = k_germany }
-				d_saxony = { de_jure_liege = k_germany }
-				d_swabia = { de_jure_liege = k_germany }
-				d_thuringia = { de_jure_liege = k_germany }
-				d_thurgau = { de_jure_liege = k_germany }
-				d_hamburg = { de_jure_liege = k_germany }
-				d_koln = { de_jure_liege = k_germany }
-				d_fulda = { de_jure_liege = k_germany }
-				
-				activate_title = {
-					title = k_germany
-					status = yes
-				}
-				activate_title = {
-					title = k_wesphalia
-					status = no
-				}
-				activate_title = {
-					title = k_thuringian
-					status = no
-				}
-				activate_title = {
-					title = k_swabia
-					status = no
-				}
-				activate_title = {
-					title = k_franconia
-					status = no
-				}
-				ROOT = {
-					any_demesne_title = {
-						limit = { 
-							tier = KING
-							NOT = { title = k_germany }
-						}
-						unsafe_destroy_landed_title = THIS
-					}
-				}
-			}
-		}
     }
 }
 
@@ -1038,7 +784,6 @@ narrative_event = {
     title = EVTTITLE_LT_40013
     picture = GFX_evt_large_army
     border = GFX_event_narrative_frame_war
-	sound = ar_army_marching
     is_triggered_only = yes
 
     trigger = {
@@ -1082,7 +827,6 @@ narrative_event = {
     only_playable = yes
     prisoner = no
     war = no
-	sound = ar_papal_hymn
 
     trigger = {
         NOT = {
@@ -1209,7 +953,6 @@ narrative_event = {
     border = GFX_event_narrative_frame_war
     is_triggered_only = yes
     portrait = event_target:sultan_egypt
-	sound = ar_army_marching
 
     min_age = 16
     only_playable = yes

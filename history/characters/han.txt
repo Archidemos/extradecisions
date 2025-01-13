@@ -39,25 +39,25 @@
 		add_spouse = 247866
 	}
 	617.6.1 = {
-			effect={ROOT={add_consort=c_247770}}
+			effect={c_247770={add_consort=ROOT}}
 	}#Consort Yin
 	618.6.18 = {
-			effect={ROOT={add_consort=c_247757}}
+			effect={c_247757={add_consort=ROOT}}
 	}#Consort Yang
 	619.1.1 = {
-			effect={ROOT={add_consort=c_247769}}
+			effect={c_247769={add_consort=ROOT}}
 	}#Consort Wei
 	619.1.1 = {
-			effect={ROOT={add_consort=c_247771}}
+			effect={c_247771={add_consort=ROOT}}
 	}#Consort Yan
 	626.9.4 = {
 		name = "Taizong"
 	}
 	637.1.1 = {
-			effect={ROOT={add_consort=c_217704}}
+			effect={c_217704={add_consort=ROOT}}
 	}#Wu Cairen
 	641.1.1 = {
-			effect={ROOT={add_consort=c_247868}}
+			effect={c_247868={add_consort=ROOT}}
 	}#Xu Cairen
 	649.7.10 = {
 		death = { death_reason = death_offmap }
@@ -82,10 +82,10 @@
 		add_spouse = 247903
 	} # Empress Wang
 	644.2.1 = {
-			effect={ROOT={add_consort=c_247905}}
+			effect={c_247905={add_consort=ROOT}}
 	} # Consort Liu
 	644.5.1 = {
-			effect={ROOT={add_consort=c_247904}}
+			effect={c_247904={add_consort=ROOT}}
 	} # Consort Xiao
 	648.1.1 = {
 			effect={c_217704={add_lover=ROOT}}
@@ -94,7 +94,7 @@
 		name = Gaozong
 	}
 	650.1.1 = {
-			effect={ROOT={add_consort=c_217704}}
+			effect={c_217704={add_consort=ROOT}}
 	}#Wu Zhaoyi (Wu Zetian)
 	655.12.1 = {
 			add_spouse = 217704
@@ -127,7 +127,7 @@
 		name = Zhongzong
 	}
 	705.3.1 = {
-			effect={ROOT={add_consort=c_247927}}
+			effect={c_247927={add_consort=ROOT}}
 	}
 	710.7.3 = {
 		death = { death_reason = death_offmap } # Has to die this way to count as a previous emperor
@@ -157,10 +157,10 @@
 	678.1.1 = {
 		name = "Dan"
 		add_spouse = 247931
-			effect={ROOT={add_consort=c_247946}}
+			effect={c_247946={add_consort=ROOT}}
 	} # Empress Liu and Consort Dou (really at an earlier date)
 	679.1.1 = {
-			effect={ROOT={add_consort=c_247945}}
+			effect={c_247945={add_consort=ROOT}}
 	}# Consort Doulu (really 676)
 	684.2.27 = {
 		name = "Ruizong"
@@ -237,19 +237,19 @@
 		add_spouse = 247964
 	}
 	710.1.1 = {
-			effect={ROOT={add_consort=c_247970}}
+			effect={c_247970={add_consort=ROOT}}
 	}# Consort Yang
 	712.9.8 = {
 		name = Xuanzong
 	}
 	713.1.1 = {
-			effect={ROOT={add_consort=c_247967}}
+			effect={c_247967={add_consort=ROOT}}
 	}# Consort Wu
 	726.1.1 = {
-			effect={ROOT={add_consort=c_247971}}
+			effect={c_247971={add_consort=ROOT}}
 	}# Consort Mei
 	745.1.1 = {
-			effect={ROOT={add_consort=c_247972}}
+			effect={c_247972={add_consort=ROOT}}
 	}# Consort Yang Guifei
 	762.5.3 = {
 		death = { death_reason = death_offmap }
@@ -269,7 +269,7 @@
 	}
 	725.1.1 = {
 		name = "Jun"
-		effect={ROOT={add_consort=c_247993}}
+		effect={c_247993={add_consort=ROOT}}
 	} # Consort Wu
 	728.1.1 = {
 			add_spouse = 247992
@@ -284,7 +284,7 @@
 		name = "Heng"
 	}
 	744.1.1 = {
-			effect={ROOT={add_consort=c_247991}}
+			effect={c_247991={add_consort=ROOT}}
 	}# Empress Zhang as Consort
 	746.1.1 = {
 			remove_spouse = 247992
@@ -310,13 +310,13 @@
 		birth = yes
 	}
 	741.1.1 = {
-			effect={ROOT={add_consort=c_247994}}
+			effect={c_247994={add_consort=ROOT}}
 	}# Consort Shen
 	746.1.1 = {
-			effect={ROOT={add_consort=c_247995}}
+			effect={c_247995={add_consort=ROOT}}
 	}# Consort Cui
 	757.1.1 = {
-			effect={ROOT={add_consort=c_247997}}
+			effect={c_247997={add_consort=ROOT}}
 	}# Consort Dugu
 	758.1.1 = {
 		name = "Yu"
@@ -341,10 +341,10 @@
 		birth = yes
 	}
 	760.1.1 = {
-			effect={ROOT={add_consort=c_247998}}
+			effect={c_247998={add_consort=ROOT}}
 	}# Consort Wang, later Empress
 	762.1.1 = {
-			effect={ROOT={add_consort=c_247999}}
+			effect={c_247999={add_consort=ROOT}}
 	}# Consort Wei
 	779.6.12 = {
 		name = "Dezong"
@@ -422,7 +422,7 @@
 	809.7.22 = {
 		birth = yes
 	}
-	824.2.29 = {
+	824.3.1 = { # No leap years in CK2, so have to shift dates around a bit
 		name = "Jingzong"
 	}
 	827.1.9 = {
@@ -494,13 +494,16 @@
 	culture = han
 	father = 217716 # Emperor Xuanzong
 	#mother = 
+	trait = "indulgent_wastrel" #recorded as an incapable and wasteful ruler
+	trait = "slothful" #left state matters into the hands of the eunuchs and made no effort to remedy it
+	trait = "trusting" #rampant favoritism in the court and the bureaucracy during his reign
+	trait = "content"
+	trait = "sympathy_indian" #clearly favored Buddhism and sponsored many Buddhist rituals towards the end of his reign
 	833.12.28 = {
 		birth = yes
 	}
-	859.9.13 = {
-		name = "Yizong"
-	}
 	873.8.15 = {
+		name = "Yizong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -579,13 +582,17 @@
 	culture = han
 	father = 215596 # Zhao Hongyin
 	#mother = # Du
+	trait = "skilled_tactician" #military background
+	trait = "quick"
+	trait = "kind" #remarkable absence of bloodshed in dealing with the former emperor and military commanders
+	trait = "honest" #upfront about his position when dealing with issues
+	trait = "ambitious"
+	trait = "just"
 	927.3.21 = {
 		birth = yes
 	}
-	960.2.1 = {
-		name = "Taizu"
-	}
 	976.11.14 = {
+		name = "Taizu"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -597,13 +604,14 @@
 	culture = han
 	father = 215596 # Zhao Hongyin
 	#mother = # Du
+	trait = "skilled_tactician" #military background
+	trait = "ambitious" #suspicious circumstances behind the death of his brother and nephews
+	trait = "just"
 	939.11.20 = {
 		birth = yes
 	}
-	976.11.15 = {
-		name = "Taizong"
-	}
 	997.5.8 = {
+		name = "Taizong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -615,13 +623,14 @@
 	culture = han
 	father = 217722 # Emperor Taizong
 	#mother = Li Yuande
+	trait = "fortune_builder" #economic boom
+	trait = "diligent"
+	trait = "patient"
 	968.12.23 = {
 		birth = yes
 	}
-	997.5.8 = {
-		name = "Zhenzong"
-	}
 	1022.3.23 = {
+		name = "Zhenzong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -633,13 +642,14 @@
 	culture = han
 	father = 217723 # Emperor Zhenzong
 	#mother = # consort Li
+	trait = "thrifty_clerk" #did not deviate much from his father's policy
+	trait = "kind" #known for gentle qualities
+	trait = "humble" #known for frugality
 	1010.5.30 = {
 		birth = yes
 	}
-	1022.3.24 = {
-		name = "Renzong"
-	}
 	1063.3.30 = {
+		name = "Renzong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -651,6 +661,8 @@
 	culture = han
 	#father = X # Zhao Yunrang (996-1059)
 	#mother = # Ren
+	trait = "thrifty_clerk"
+	trait = "weak" #died young
 	1032.2.16 = {
 		birth = yes
 	}
@@ -658,10 +670,8 @@
 		name = "Shu"
 		father = 217724 # Adopted by Emperor Renzong
 	}
-	1063.5.1 = {
-		name = "Yinzong"
-	}
 	1069.1.25 = {
+		name = "Yinzong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -673,13 +683,13 @@
 	culture = han
 	father = 217725 # Emperor Yinzong
 	#mother = # Empress Gao
+	trait = "thrifty_clerk" #supported Wang Anshi's political reforms, but with many backlashes
+	trait = "diligent" #but tried consistently
 	1048.5.25 = {
 		birth = yes
 	}
-	1067.1.25 = {
-		name = "Shenzong"
-	}
 	1085.4.1 = {
+		name = "Shenzong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -691,13 +701,13 @@
 	culture = han
 	father = 217726 # Emperor Shenzong
 	#mother = 
+	trait = "thrifty_clerk" #victim of polarized political scenes from his father's reign
+	trait = "weak" #died young
 	1076.1.4 = {
 		birth = yes
 	}
-	1085.4.1 = {
-		name = "Zhezong"
-	}
 	1100.2.23 = {
+		name = "Zhezong"
 		death = { death_reason = death_offmap }
 	}
 }
@@ -709,24 +719,28 @@
 	culture = han
 	father = 217726 # Emperor Shenzong
 	#mother = # Empress Chen
+	trait = "indulgent_wastrel" #indeed wasteful
+	trait = "greedy" #exploitation of the populace to support his artistic efforts
+	trait = "poet" #inarguably the most talented emperor-artist of the Song dynasty
+	trait = "trusting" #rampant favoritism in his court
+	trait = "slothful" #rampant favoritism in his court
+	trait = "perceptive" #inarguably the most talented emperor-artist of the Song dynasty
 	1082.6.7 = {
 		birth = yes
 	}
-	1100.2.23 = {
-		name = "Huizong"
-	}
 	#1126.1.18 = {} abdicated
 	1135.6.4 = {
+		name = "Huizong"
 		death = {
 			#death_reason = death_dungeon
 			death_reason = death_offmap # Has to die this way to count as a previous emperor
-			killer = 217729 #Emperor Taizong of Jin
+			#killer = 217729 #Emperor Taizong of Jin
 		}
 	}
 }
 
 ### Chinese Western Protectorate ###
-244001 = { # (762â€“787)
+244001 = { # (762–787)
 	dynasty = 1055001 #Guo
 	name = "Xin"
 	religion = taoist
@@ -736,25 +750,25 @@
 	730.7.28 = {
 		birth = yes
 	}
-	769.1.1 = {
-		add_claim = d_kumul
-		add_claim = c_yungguan
-		add_claim = c_kumtag
-		add_claim = c_lopnor
-		add_claim = c_loulan
-		add_claim = c_yuni
-		add_claim = c_charkliq
-		add_claim = c_cherchen
-		add_claim = c_cadota
-		add_claim = c_mingoi
-		add_claim = c_karashar
-		add_claim = c_yumen
-	}
+	#769.1.1 = {
+	#	add_claim = d_kumul
+	#	add_claim = c_yungguan
+	#	add_claim = c_kumtag
+	#	add_claim = c_lopnor
+	#	add_claim = c_loulan
+	#	add_claim = c_yuni
+	#	add_claim = c_charkliq
+	#	add_claim = c_cherchen
+	#	add_claim = c_cadota
+	#	add_claim = c_mingoi
+	#	add_claim = c_karashar
+	#	add_claim = c_yumen
+	#}
 	787.9.16 = {
 		death = yes
 	}	
 }
-244002 = { # (actually 747â€“751)
+244002 = { # (actually 747–751)
 	dynasty = 1055002 #Gao
 	name = "Xianzhi"
 	religion = taoist
@@ -767,7 +781,7 @@
 		death = yes
 	}	
 }
-244003 = { # (actually 741â€“747)
+244003 = { # (actually 741–747)
 	dynasty = 1055003 #Ye
 	name = "Wenguan"
 	religion = taoist
@@ -820,308 +834,9 @@
 		death = yes
 	}	
 }
-244007 = { # fictitious
-	dynasty = 1055013 #Zhong
-	name = "Shao"
-	religion = taoist
-	culture = han
+#244007 unused
 
-	1025.1.1 = {
-		birth = yes
-	}
-	1110.1.1 = {
-		death = yes
-	}	
-}
-244020 = {
-	dynasty = 1055005 # WANG
-	name = "Shao"
-	religion = taoist
-	culture = han
-
-	1035.1.1 = {
-		birth = yes
-	}
-	1095.1.1 = {
-		death = yes
-	}
-}
-
-244021 = {
-	dynasty = 1055002 # GAO
-	name = "Zunyu"
-	religion = taoist
-	culture = han
-
-	1050.1.1 = {
-		birth = yes
-	}
-	1110.1.1 = {
-		death = yes
-	}
-}
-244022 = {
-	dynasty = 1055006 # ZHANG
-	name = "Shen"
-	religion = taoist
-	culture = han
-
-	1045.1.1 = {
-		birth = yes
-	}
-	1105.1.1 = {
-		death = yes
-	}
-}
-244023 = {
-	dynasty = 1055007 # ZHAO
-	name = "Ji"
-	religion = taoist
-	culture = han
-
-	1055.1.1 = {
-		birth = yes
-	}
-	1125.1.1 = {
-		death = yes
-	}
-}
-244024 = {
-	dynasty = 1055008 # MIAO
-	name = "Shou"
-	religion = taoist
-	culture = han
-
-	1060.1.1 = {
-		birth = yes
-	}
-	1090.1.1 = {
-		death = yes
-	}
-}
-244025 = {
-	dynasty = 1055009 # LIU
-	name = "Shunqin"
-	religion = taoist
-	culture = han
-
-	1057.1.1 = {
-		birth = yes
-	}
-	1105.1.1 = {
-		death = yes
-	}
-}
-244026 = {
-	dynasty = 1055010 # FAN
-	name = "Yu"
-	religion = taoist
-	culture = han
-
-	1067.1.1 = {
-		birth = yes
-	}
-	1110.1.1 = {
-		death = yes
-	}
-}
-244027 = {
-	dynasty = 1055011 # JIANG
-	name = "Zhiqi"
-	religion = taoist
-	culture = han
-
-	1050.1.1 = {
-		birth = yes
-	}
-	1115.1.1 = {
-		death = yes
-	}
-}
-244028 = {
-	dynasty = 1055012 # WANG
-	name = "Wenyu"
-	religion = taoist
-	culture = han
-
-	1075.1.1 = {
-		birth = yes
-	}
-	1155.1.1 = {
-		death = yes
-	}
-}
-
-244029 = {
-	dynasty = 1055013 # ZHONG
-	name = "Fu"
-	religion = taoist
-	culture = han
-
-	1065.1.1 = {
-		birth = yes
-	}
-	1145.1.1 = {
-		death = yes
-	}
-}
-244030 = {
-	dynasty = 1055014 # ZHANG
-	name = "Xun"
-	religion = taoist
-	culture = han
-
-	1070.1.1 = {
-		birth = yes
-	}
-	1125.1.1 = {
-		death = yes
-	}
-}
-244031 = {
-	dynasty = 1055015 # SUN
-	name = "La"
-	religion = taoist
-	culture = han
-
-	1075.1.1 = {
-		birth = yes
-	}
-	1150.1.1 = {
-		death = yes
-	}
-}
-244032 = {
-	dynasty = 1055005 # WANG
-	name = "Hou"
-	religion = taoist
-	culture = han
-	father = 244020 #WANG Shao
-
-	1060.1.1 = {
-		birth = yes
-	}
-	1139.1.1 = {
-		death = yes
-	}
-}
-244033 = {
-	dynasty = 1055016 # LI
-	name = "Dan"
-	religion = taoist
-	culture = han
-
-	1065.1.1 = {
-		birth = yes
-	}
-	1140.1.1 = {
-		death = yes
-	}
-}
-244034 = {
-	dynasty = 1055017 # YAO
-	name = "Xiong"
-	religion = taoist
-	culture = han
-
-	1085.1.1 = {
-		birth = yes
-	}
-	1145.1.1 = {
-		death = yes
-	}
-}
-244035 = {
-	dynasty = 1055018 # WU
-	name = "Zeren"
-	religion = taoist
-	culture = han
-
-	1082.1.1 = {
-		birth = yes
-	}
-	1165.1.1 = {
-		death = yes
-	}
-}
-244036 = {
-	dynasty = 1055009 # LIU
-	name = "Fa"
-	religion = taoist
-	culture = han
-
-	1089.1.1 = {
-		birth = yes
-	}
-	1155.1.1 = {
-		death = yes
-	}
-}
-244037 = {
-	dynasty = 1055009 # LIU
-	name = "Zhongwu"
-	religion = taoist
-	culture = han
-
-	1095.1.1 = {
-		birth = yes
-	}
-	1175.1.1 = {
-		death = yes
-	}
-}
-244038 = {
-	dynasty = 1055007 # ZHAO
-	name = "Yu"
-	religion = taoist
-	culture = han
-
-	1099.1.1 = {
-		birth = yes
-	}
-	1161.1.1 = {
-		death = yes
-	}
-}
-244039 = {
-	dynasty = 1055017 # YAO
-	name = "Gu"
-	religion = taoist
-	culture = han
-
-	1098.1.1 = {
-		birth = yes
-	}
-	1165.1.1 = {
-		death = yes
-	}
-}
-244040 = {
-	dynasty = 1055019 # QIAN
-	name = "Gai"
-	religion = taoist
-	culture = han
-
-	1099.1.1 = {
-		birth = yes
-	}
-	1155.1.1 = {
-		death = yes
-	}
-}
-244041 = {
-	dynasty = 1055012 # WANG
-	name = "Yi"
-	religion = taoist
-	culture = han
-
-	1105.1.1 = {
-		birth = yes
-	}
-	1180.1.1 = {
-		death = yes
-	}
-}
+#244020-244041 unused
 
 ######## /END OF PROTECTOR GENERALS ##############
 
@@ -1239,292 +954,13 @@
 
 #Qocho
 
-248079 = {
-	name="Kongzhi"
-	dynasty=1055042
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	trait=adventurer
-	trait=organizer
-	1240.1.1={
-		birth=yes
-	}
-	1282.1.1={
-		trait=brilliant_strategist # new supplies
-		remove_trait=tough_soldier
-		trait=wroth  # authority to punish
-	}
-	1286.1.1={
-		death=yes # captured in battle, fate unknown
-	}
-}
-
-242100 = {
-	name="Puyo" 
-	dynasty=1055042
-	religion="taoist"
-	culture="han"
-	trait=skilled_tactician
-	trait=brave
-	trait=sympathy_pagans
-	trait=sympathy_christendom
-	1150.1.1={
-		birth=yes
-	}
-	1215.1.1 = {
-		employer = 125501
-	}
-	1218.1.1={
-		death=yes
-	}
-}
-
-242101 = {
-	name="Chengsi" # unknown
-	dynasty=1055001
-	religion="taoist"
-	culture="han"
-	trait=skilled_tactician
-	trait=brave
-	trait=sympathy_pagans
-	trait=sympathy_christendom
-	father=242100
-	1170.1.1={
-		birth=yes
-	}
-	1215.1.1 = {
-		employer = 125501
-	}
-	1228.1.1 = {
-		employer = 172005
-	}
-	1236.1.1={
-		death=yes 
-	}
-}
-
-242102 = {
-	name="Kan"
-	dynasty=1055001
-	religion="taoist"
-	culture="han"
-	trait=brilliant_strategist
-	trait=brave
-	trait=sympathy_pagans
-	trait=sympathy_christendom
-	trait=siege_leader
-	father=242101 
-	1217.1.1={
-		birth=yes
-	}
-	1234.1.1 = {
-		employer = 172005
-	}
-	1239.1.1 = {
-		employer = 34850
-	}
-	1242.1.1 = {
-		employer = 478011
-	}
-	1243.1.1={
-     effect={add_friend=478011}
-   }
-	1259.8.11={
-		death=yes # went to court of Kublai and conquered China
-	}
-}
+#248079 unused
+#242100 unused
+#242101-242102 unused
 
 #Governors and military advisors in 769 start
 
-248148 = {
-	name="Yuanzhong"
-	dynasty=1055016  
-	religion="buddhist"
-	culture="sogdian"
-	trait=tough_soldier
-	trait=desert_terrain_leader
-	trait=brave
-	martial = 10
-	trait="mahayana_buddhist"
-	730.1.1={
-		birth=yes
-	}
-	768.1.1={
-		culture=han # imperial surname awarded
-	}
-	790.1.1={
-		death=yes
-	}
-}
-
-248149 = {
-	name="Ding" # governor of Hexi corridor who fled here
-	dynasty=1055021
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	trait=organizer
-	martial = 10
-	730.1.1={
-		birth=yes
-	}
-	769.1.1={
-		add_claim = c_fuqi
-		add_claim = c_maqen 
-	}
-	790.1.1={
-		death=yes
-	}
-}
-
-248150 = {
-	name="Xigu"
-	dynasty=1053301
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	trait=brave
-	martial = 10
-	732.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166731
-		add_claim = c_kara_khoja # Jiedushi
-	}
-	789.1.1={
-		death=yes
-	}
-}
-
-248151 = {
-	name="Quan"
-	dynasty=1053302
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	trait=patient
-	martial = 10
-	731.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166725
-		add_claim = c_luntai # Jiedushi
-	}
-	787.1.1={
-		death=yes
-	}
-}
-
-248152 = {
-	name="Ju"
-	dynasty=1055022
-	religion="taoist"
-	culture="han"
-	trait=skilled_tactician
-	trait=brave
-	martial = 10
-	709.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166665
-	}
-	770.1.1={
-		death=yes
-	}
-}
-248153 = {
-	name="Yang"
-	dynasty=1055055
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	martial = 10
-	731.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166691
-		add_claim = c_kashgar # Jiedushi
-	}
-	787.1.1={
-		death=yes
-	}
-}
-248154 = {
-	name="Cen"
-	dynasty=1055049
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	martial = 10
-	731.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166703
-		add_claim = c_aksu # Jiedushi
-	}
-	787.1.1={
-		death=yes
-	}
-}
-248155 = {
-	name="Riyou"
-	dynasty=1053304
-	religion="taoist"
-	culture="han"
-	trait=tough_soldier
-	martial = 10
-	731.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166713
-		add_claim = c_kucha # Jiedushi
-	}
-	787.1.1={
-		death=yes
-	}
-}
-248156 = {
-	name="Jing"
-	dynasty=1055022
-	religion="taoist"
-	culture="han"
-	father=248152
-	trait=tough_soldier
-	martial = 10
-	731.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166665
-	}
-	787.1.1={
-		death=yes
-	}
-}
-248157 = {
-	name="Huinan"
-	female = yes
-	dynasty=1055022
-	religion="taoist"
-	culture="han"
-	father=248152
-	739.1.1={
-		birth=yes
-	}
-	769.1.1={
-		employer=166665
-	}
-	790.1.1={
-		death=yes
-	}
-}
+#248148-248157 unused
 
 #marriages to Tuyuhun heirs in exile
 247722 = {
@@ -1566,7 +1002,7 @@
 	culture = han
 	trait = diligent
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	# spouse = Dugu Qieluo, Empress Wenxian
 	541.7.21 = {
 		birth = yes
@@ -1660,7 +1096,7 @@
 	religion = buddhist
 	culture = han
 	father = 247729 #Yang Zhen, Duke of Sui
-	# spouse = LÃ¼ Gutao
+	# spouse = Lü Gutao
 	507.1.1 = {
 		birth = yes
 	}
@@ -1684,13 +1120,13 @@
 		death = { death_reason = death_in_china_historic }
 	}
 } 
-247732 = { # LÃ¼ Gutao
+247732 = { # Lü Gutao
 	female=yes
-	dynasty = 1055033 # LÃ¼
+	dynasty = 1055033 # Lü
 	name = "Gutao" 
 	religion = taoist
 	culture = han
-	# father = LÃ¼ Shangzhou
+	# father = Lü Shangzhou
 	# mother = Lady Yao
 	# spouse = Yang Zhong, Duke of Sui
 	519.1.1 = {
@@ -1706,7 +1142,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	# spouse = Princess Shunyang
 	549.1.1 = {
 		birth = yes
@@ -1721,7 +1157,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	553.1.1 = {
 		birth = yes
 	}
@@ -1735,7 +1171,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	563.1.1 = {
 		birth = yes
 	}
@@ -1775,7 +1211,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	564.1.1 = {
 		birth = yes
 	}
@@ -1790,7 +1226,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	# spouse = Dou Rongding
 	548.1.1 = {
 		birth = yes
@@ -1806,7 +1242,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	# spouse = Dou Lukuan
 	558.1.1 = {
 		birth = yes
@@ -1822,7 +1258,7 @@
 	religion = buddhist
 	culture = han
 	father = 247730 #Yang Zhong, Duke of Sui
-	mother = 247732 #LÃ¼ Gutao
+	mother = 247732 #Lü Gutao
 	# spouse = Li Licheng
 	560.1.1 = {
 		birth = yes
@@ -2162,7 +1598,7 @@
 	528.1.1 = {
 		birth = yes
 	}
-	546.1.1 = {
+	528.1.1 = {
 		add_spouse = 247744 #Lady Dugu
 	}
 	572.1.1 = {
@@ -3407,7 +2843,7 @@
 	culture = han
 	father = 217700 # Emperor Gaozu
 	mother = 247831 # Empress Dou
-	# spouse = Chai Shao (588â€“638)
+	# spouse = Chai Shao (588–638)
 	598.1.1 = {
 		birth = yes
 	}
@@ -5762,1026 +5198,31 @@
 		death=yes
 	}
 }
-# Outlaws
-242300 = {
-	name="Jiang"
-	dynasty = 1053100 # Song
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	martial=14
-	trait = grey_eminence
-	trait = peasant_leader
-	trait = shrewd
-	trait = just
-	trait = humble
-	trait = patient
-	trait = diligent
-	trait = gregarious
-	trait = ambitious
-	trait = master_of_flame
-	trait = inspiring_leader
-	trait = administrator
-	1030.1.1={
-		birth=yes
-		give_nickname = the_timely_rain
-		prestige = 500
-	}
-	1127.1.1={
-		death=yes
-	}
-}
+# Outlaws - easter eggs (removed)
 
-242301 = {
-	name="Junyi"
-	dynasty = 1053101 # Lu
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = strong
-	trait = master_of_flame
-	trait = diligent
-	trait = just
-	trait = inspiring_leader
-	1030.1.1={
-		birth=yes
-		give_nickname = the_jade_unicorn
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
 
-242302 = {
-	name="Yong"
-	dynasty = 1053102 # Wu
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = trickster
-	trait = logistics_expert
-	trait = genius
-	trait = strategist
-	trait = deceitful
-	trait = patient
-	1030.1.1={
-		birth=yes
-		give_nickname = the_wizard
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
+#242300-242348 unused
 
-242303 = {
-	name="Sheng"
-	dynasty = 1053103 # Gongshun
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = mastermind_theologian
-	trait = mystic
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
+#Shi Jingtang, 892-942, Gaozu
 
-242304 = {
-	name="Sheng"
-	dynasty = 1053104 # Guan
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = strong
-	trait = robust
-	trait = logistics_expert
-	1030.1.1={
-		birth=yes
-		give_nickname = the_big_halberd
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
+#Shi Chonggui, 914-974, Chu/Shao
 
-242305 = {
-	name="Chong"
-	dynasty = 1053105 # Lin
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = master_of_flame
-	trait = cavalry_leader
-	trait = brave
-	1030.1.1={
-		birth=yes
-		give_nickname = the_panther_head
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242306 = {
-	name="Ming"
-	dynasty = 1053106 # Qin
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = duelist
-	trait = logistics_expert
-	trait = robust
-	trait = holy_warrior
-	1030.1.1={
-		birth=yes
-		give_nickname = the_thunderbolt
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242307 = {
-	name="Zhuo"
-	dynasty = 1053107 # Huyan
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = duelist
-	trait = logistics_expert
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242308 = {
-	name="Rong"
-	dynasty = 1053108 # Hua
-	religion="taoist"
-	culture="han"
-	martial = 15
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = master_of_flame
-	trait = hunter
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242309 = {
-	name="Jin"
-	dynasty = 1053109 # Chai
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = charismatic_negotiator
-	trait = diligent
-	trait = charitable
-	1030.1.1={
-		birth=yes
-		give_nickname = the_whirlwind
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242310 = {
-	name="Yin"
-	dynasty = 1053110 # Li
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = misguided_warrior
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242311 = {
-	name="Tong"
-	dynasty = 1053111 # Zhu
-	religion="taoist"
-	culture="han"
-	dna="chlcczfbbbv" # Magnificent black beard
-	prp="cb0cdk00000000ab00"
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = patient
-	trait = brave
-	trait = sapper
-	1030.1.1={
-		birth=yes
-		give_nickname = beautiful_beard
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242312 = {
-	name="Da"
-	dynasty = 1053112 # Lu
-	religion="taoist"
-	culture="han"
-	martial = 14
-	disallow_random_traits = yes
-	trait = brilliant_strategist
-	trait = drunkard
-	trait = gluttonous
-	trait = shrewd
-	trait = wroth
-	trait = robust
-	trait = strong
-	trait = logistics_expert
-	1030.1.1={
-		birth=yes
-		give_nickname = the_tattooed_monk
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242313 = {
-	name="Song"
-	dynasty = 1053113 # Wu
-	religion="taoist"
-	culture="han"
-	martial = 17
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = drunkard
-	trait = cannibal_trait
-	trait = just
-	trait = wroth
-	trait = strong
-	trait = chaste
-	1030.1.1={
-		birth=yes
-		give_nickname = nick_the_pilgrim
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242314 = {
-	name="Ping"
-	dynasty = 1053114 # Dong
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = wroth
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242315 = {
-	name="Qin"
-	dynasty = 1053115 # Zhang
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = trickster
-	trait = feeble
-	trait = deceitful
-	trait = shrewd
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242316 = {
-	name="Zhi"
-	dynasty = 1053116 # Yang
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = humble
-	trait = master_of_flame
-	trait = robust
-	trait = duelist
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242317 = {
-	name="Ning"
-	dynasty = 1053117 # Xu
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242318 = {
-	name="Chao"
-	dynasty = 1053118 # Suo
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = robust
-	trait = wroth
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242319 = {
-	name="Zong"
-	dynasty = 1053119 # Dai
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	trait = charismatic_negotiator
-	trait = zealous
-	trait = patient
-	trait = quick
-	trait = mystic
-	trait = sapper
-	1030.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242320 = {
-	name="Tang"
-	dynasty = 1053120 # Liu
-	religion="taoist"
-	culture="tangut"
-	dna="daceacaebal"
-	prp="cl0cbd000000000000"
-	disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = deceitful
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242321 = {
-	name="Kui"
-	dynasty = 1053121 # Li
-	religion="taoist"
-	culture="han"
-	disallow_random_traits = yes
-	martial = 20
-	trait = tough_soldier
-	trait = drunkard
-	trait = gluttonous
-	trait = shrewd
-	trait = wroth
-	trait = robust
-	trait = strong
-	trait = cruel
-	trait = lunatic
-	trait = trusting
-	trait = brave
-	trait = aggressive_leader
-	1030.1.1={
-		birth=yes
-		give_nickname = the_black_whirlwind
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242322 = {
-	name="Jin"
-	dynasty = 1053122 # Shi
-	religion="taoist"
-	culture="han"
-	martial = 13
-	disallow_random_traits = yes
-	trait = misguided_warrior
-	trait = duelist
-	trait = wroth
-	trait = master_of_flame
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242323 = {
-	name="Hong"
-	dynasty = 1053123 # Mu
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = drunkard
-	trait = robust
-	1040.1.1={
-		birth=yes
-		give_nickname = the_unrestrained
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242324 = {
-	name="Heng"
-	dynasty = 1053124 # Lei
-	religion="taoist"
-	culture="han"
-	martial = 10
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = just
-	trait = robust
-	trait = gregarious
-	1040.1.1={
-		birth=yes
-		give_nickname = the_winged_tiger
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242325 = {
-	name="Jun"
-	dynasty = 1053125 # Li
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = master_of_flame
-	trait = greedy
-	trait = deceitful
-	1040.1.1={
-		birth=yes
-		give_nickname = the_turbulent_river_dragon
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242326 = { # Ruan the second
-	name="Xiao'er"
-	dynasty = 1053126 # Ruan
-	religion="taoist"
-	culture="han"
-	father=242332
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	1034.1.1={
-		birth=yes
-		give_nickname = the_ferocious_giant
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242327 = {
-	name="Heng"
-	dynasty = 1053127 # Zhang
-	religion="taoist"
-	culture="han"
-	father = 242330
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242328 = { # Ruan the fifth
-	name="Xiaowu"
-	dynasty = 1053126 # Ruan
-	religion="taoist"
-	culture="han"
-	father=242332
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	1037.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242329 = {
-	name="Shun"
-	dynasty = 1053127 # Zhang
-	religion="taoist"
-	culture="han"
-	father = 242330
-	disallow_random_traits = yes
-	trait = tough_soldier
-	trait = strong
-	trait = cruel
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242330 = { 
-	name="Chuke"
-	dynasty = 1053127 # Zhang
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1000.1.1={
-		birth=yes
-	}
-	1045.1.1={
-		death=yes
-	}
-}
-
-242331 = { # Ruan the seventh
-	name="Xiaoqi"
-	dynasty = 1053126 # Ruan
-	religion="taoist"
-	culture="han"
-	father=242332
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1039.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242332 = {
-	name="Gai"
-	dynasty = 1053126 # Ruan
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1000.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1060.1.1={
-		death=yes
-	}
-}
-
-242333 = {
-	name="Xiong"
-	dynasty = 1053129 # Yang
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = master_of_flame
-	trait = fair
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242334 = {
-	name="Xiu"
-	dynasty = 1053130 # Shi
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = fair
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242335 = {
-	name="Zhen"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	father=242338
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242336 = {
-	name="Bao"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	father=242338
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	trait = master_of_flame
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242337 = {
-	name="Qing"
-	dynasty = 1053132 # Yan
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = charismatic_negotiator
-	trait = duelist
-	trait = gregarious
-	trait = fair
-	trait = shrewd
-	1040.1.1={
-		birth=yes
-		give_nickname = the_prodigy
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242338 = {
-	name="Wuji"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	father=242340
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1000.1.1={
-		birth=yes
-	}
-	1045.1.1={
-		death=yes
-	}
-}
-
-242339 = {
-	name="Xuanling"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	father=242340
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	1000.1.1={
-		birth=yes
-	}
-	1045.1.1={
-		death=yes
-	}
-}
-
-242340 = {
-	name="Shilian"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	#disallow_random_traits = yes
-	trait = tough_soldier
-	960.1.1={
-		birth=yes
-	}
-	1020.1.1={
-		death=yes
-	}
-}
-
-242341 = {
-	name="Gu"
-	dynasty = 1053131 # Xie
-	religion="taoist"
-	culture="han"
-	female=yes
-	father=242339
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = schemer
-	trait = master_of_flame
-	1040.1.1={
-		birth=yes
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242342 = {
-	name="San Nian"
-	dynasty = 1053133 # Hu
-	religion="taoist"
-	culture="han"
-	female=yes
-	#disallow_random_traits = yes
-	trait = skilled_tactician
-	trait = strong
-	1040.1.1={
-		birth=yes
-		effect = {
-			set_character_flag = special_marshal
-		}
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242343 = {
-	name="Er Niang"
-	dynasty = 1053134 # Sun
-	religion="taoist"
-	culture="han"
-	female=yes
-	#disallow_random_traits = yes
-	trait = charismatic_negotiator
-	trait = mystic
-	trait = cannibal_trait
-	trait = shrewd
-	1040.1.1={
-		birth=yes
-		give_nickname = nick_the_witch
-		effect = {
-			set_character_flag = special_marshal
-		}
-	}
-	1066.1.1 = {
-		employer=242300
-	}
-	1127.1.1={
-		death=yes
-	}
-}
-
-242344 = {
-	name="Bi"
-	religion="taoist"
-	culture="han"
-	trait = brilliant_strategist
-	trait = master_of_flame
-	740.1.1={
-		birth=yes
-	}
-	820.1.1 = {
-		death=yes
-	}
-}
-
-242345 = {
-	name="Zhou"
-	religion="taoist"
-	culture="han"
-	trait = brilliant_strategist
-	trait = master_of_flame
-	840.1.1={
-		birth=yes
-	}
-	910.1.1 = {
-		death=yes
-	}
-}
-
-242346 = {
-	name="Gun"
-	religion="taoist"
-	culture="han"
-	trait = brilliant_strategist
-	trait = master_of_flame
-	1107.1.1={
-		birth=yes
-	}
-	1197.1.1 = {
-		death=yes
-	}
-}
-
-242347 = {
-	name="Xuanling"
-	religion="taoist"
-	culture="han"
-	trait = brilliant_strategist
-	trait = master_of_flame
-	1177.1.1={
-		birth=yes
-	}
-	1267.1.1 = {
-		death=yes
-	}
-}
-
-242348 = {
-	name="Yu"
-	religion="taoist"
-	culture="han"
-	trait = brilliant_strategist
-	trait = master_of_flame
-	1247.1.1={
-		birth=yes
-	}
-	1337.1.1 = {
-		death=yes
-	}
-}
 261132 = {
-	name = "Li Keyong"
-	dynasty = 1062562
+	name = "Keyong"
+	dynasty = 105819
 	religion = taoist
-	culture = han
+	culture = karluk
 	851.1.1 = {
 		birth = yes
+		culture = han
 	}
 	908.1.1 = {
-		death = { death_reason = death_offmap }
+		death = { death_reason = death_in_china_historic }
 	}
 }
 261133 = {
-	name = "Zhuangzong"
-	dynasty = 1062562
+	name = "Cunxu"
+	dynasty = 105819
 	religion = taoist
 	culture = han
 	father = 261132
@@ -6789,25 +5230,27 @@
 		birth = yes
 	}
 	926.1.1 = {
-		death = { death_reason = death_offmap }
+		name = "Zhuangzong"
+		death = { death_reason = death_offmap } #murdered by the Palace Guard
 	}
 }
 261134 = {
-	name = "Mingzong"
-	dynasty = 1062562
+	name = "Siyuan"
+	dynasty = 105819
 	religion = taoist
 	culture = han
-	father = 261132
-	867.1.1 = {
+	father = 261132 #adopted
+	867.10.10 = {
 		birth = yes
 	}
 	933.1.1 = {
+		name = "Mingzong"
 		death = { death_reason = death_offmap }
 	}
 }
 261135 = {
-	name = "Min"
-	dynasty = 1062562
+	name = "Conghou"
+	dynasty = 105819
 	religion = taoist
 	culture = han
 	father = 261134
@@ -6815,12 +5258,16 @@
 		birth = yes
 	}
 	934.1.1 = {
-		death = { death_reason = death_offmap }
+		name = "Min"
+		death = {
+			death_reason = death_offmap
+			killer= 261136
+		}
 	}
 }
 261136 = {
-	name = "Mo"
-	dynasty = 1062562
+	name = "Congke"
+	dynasty = 105819
 	religion = taoist
 	culture = han
 	father = 261134
@@ -6828,9 +5275,11 @@
 		birth = yes
 	}
 	937.1.1 = {
-		death = { death_reason = death_offmap }
+		name = "Mo"
+		death = { death_reason = death_offmap } #killed himself
 	}
 }
+
 # Cao family
 1059714 = {
 	name="Yijin"
@@ -6839,10 +5288,10 @@
 	culture="han"
 	trait = brilliant_strategist
 	trait = ambitious
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
-	865.1.1={
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
+	868.1.1={
 		birth=yes
 	}
 	935.1.1 = {
@@ -6856,15 +5305,15 @@
 	religion="taoist"
 	culture="han"
 	father=1059714
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
 	905.1.1={
 		birth=yes
 	}
-	926.1.1={
-		add_spouse=166768 # not really but this gives realm alliance and some staying power
-	}
+	#926.1.1={
+	#	add_spouse=166768 # not really but this gives realm alliance and some staying power
+	#}
 	937.1.1 = {
 		death=yes
 	}
@@ -6876,30 +5325,30 @@
 	culture="han"
 	father=1059714
 	trait=tough_soldier
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
 	890.1.1={
 		birth=yes
 	}
-	936.1.1={ # historical claims toward Qocho
-		add_claim = c_lopnor
-		add_claim = c_kumtag
-		add_claim = c_kumul
-		effect = {
-			spawn_unit = {
-				province = 1448 # Dunhuang
-				owner = ROOT
-				troops = {
-					light_infantry = { 600 600 }
-					heavy_infantry = { 300 300 }
-				}
-				attrition = 1
-			}
-		}
-		
-	}
-	939.1.1 = {
+	#936.1.1={ # historical claims toward Qocho
+	#	add_claim = c_lopnor
+	#	add_claim = c_kumtag
+	#	add_claim = c_kumul
+	#	effect = {
+	#		spawn_unit = {
+	#			province = 1448 # Dunhuang
+	#			owner = ROOT
+	#			troops = {
+	#				light_infantry = { 600 600 }
+	#				heavy_infantry = { 300 300 }
+	#			}
+	#			attrition = 1
+	#		}
+	#	}
+	#	
+	#}
+	942.1.1 = {
 		death=yes
 	}
 }
@@ -6909,9 +5358,9 @@
 	religion="taoist"
 	culture="han"
 	father=1059714
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
 	892.1.1={
 		birth=yes
 	}
@@ -6927,10 +5376,10 @@
 	father=1059714
 	trait=charismatic_negotiator
 	trait=quick
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
-	trait=theravada_buddhist
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
+	trait=mahayana_buddhist
 	920.1.1={
 		birth=yes # maybe
 	}
@@ -6945,9 +5394,9 @@
 	religion="taoist"
 	culture="han"
 	father=1059714
-	trait=sympathy_zoroastrianism
-	trait=sympathy_islam
-	trait=sympathy_christendom
+	#trait=sympathy_zoroastrianism
+	#trait=sympathy_islam
+	#trait=sympathy_christendom
 	912.1.1={
 		birth=yes
 	}
@@ -6977,7 +5426,7 @@
 	dynasty=1055036
 	religion="taoist"
 	culture="han"
-	father=1059716
+	father=1059718
 	938.1.1={
 		birth=yes
 	}
@@ -6990,7 +5439,7 @@
 	dynasty=1055036
 	religion="taoist"
 	culture="han"
-	father=1059718
+	father=1059721
 	trait=quick
 	968.1.1={
 		birth=yes # maybe
@@ -7000,12 +5449,12 @@
 	}
 }
 1059723 = {
-	name="Zongshou" 
+	name="Xianshun" 
 	dynasty=1055036
 	religion="taoist"
 	culture="han"
 	father=1059722
-	trait=quick
+	#trait=quick
 	988.1.1={
 		birth=yes # maybe
 	}

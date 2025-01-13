@@ -1,33 +1,30 @@
+# -*- ck2.history.provinces -*-
+
 # 2 - Austisland
 
 # County Title
 title = c_austisland
 
 # Settlements
-max_settlements = 2
-b_valpjotstadur = tribal
+max_settlements = 1
 
-#b_kirkjubaer = castle
+b_seydifsjord = tribal
+#b_glaumbaer = castle
+
+
+
 
 # Misc
 culture = norse
 religion = norse_pagan
-terrain = arctic
 
 # History
-620.1.1 = {
-	religion = norse_pagan
-	b_valpjotstadur = temple
-}
 867.1.1 = {
-	b_valpjotstadur = tribal
-	b_valpjotstadur = tb_shipyard_1
-	culture = norse
-	religion = norse_pagan
+	b_seydifsjord = tb_shipyard_1
 }
-1000.1.1 = {
-	culture = norwegian
-	religion = catholic
-	b_valpjotstadur = castle
-	b_valpjotstadur = ca_shipyard_1
-}
+1015.1.1 = { religion = catholic } 
+1035.1.1 = { 
+culture = icelandic 	
+b_seydifsjord = castle
+b_seydifsjord = ca_shipyard_1
+} 

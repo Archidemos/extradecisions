@@ -4,44 +4,30 @@
 title = c_mecklemburg
 
 # Settlements
-max_settlements = 4
-b_mecklemburg = tribal
+max_settlements = 5
 
+b_mecklemburg = tribal
+b_rerik = city
+b_sternberg = temple # Rethra
+
+#b_butzow = castle
 #b_wismar = city
-#b_gevezin = temple
-#b_lutzow = castle
-#b_grevesmuhlen = castle
-#b_parchim = temple
-#b_hagenow = castle
+#b_parchim = city
+
+#b_pressentin = castle 
+#b_weltzien = castle 
 
 # Misc
-culture = old_saxon
+culture = pommeranian
 religion = slavic_pagan
 
 # History
-766.1.1={
-	culture = pommeranian
-}
-800.1.1 = {
-	b_mecklemburg = castle
-	b_wismar = city
-	b_gevezin = temple
-
-	b_mecklemburg = ca_keep_1
-	b_mecklemburg = ca_militia_barracks_1
-	b_mecklemburg = ca_wall_1
-	b_mecklemburg = ca_wall_q_1
-	b_wismar = ct_barracks_1
-	b_gevezin = tp_barracks_1
-}
-
-1160.8.2={ religion=catholic }
-
-1167.1.1 = { b_schwerin = castle }
-
-1200.1.1= { culture=german } 
-
+1043.1.1 = { remove_settlement = b_rerik}
+1147.1.1 = { b_wismar = city }
+1160.8.2 = { b_mecklemburg = castle } #Niklot slain.
+1160.8.2 = { religion=catholic }
+1171.1.1 = { b_butzow = castle } 
+1225.1.1= { b_parchim = castle } #Richtenberg-Parchim
+1230.1.1= { culture= low_german } 
 1235.1.1 = { trade_post = b_bardewik }
-
-
-
+1255.1.1= { b_parchim = city } 

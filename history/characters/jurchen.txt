@@ -1,7 +1,7 @@
 217729 = { # Emperor Shizu of Jin (lived 1039-1092)(reigned )
 	dynasty = 1051153 # Wanyan - ruling Jin dynasty
 	name = "Helibo"
-	religion = taoist
+	religion = tengri_pagan
 	culture = jurchen
 	#father = X # Emperor
 	#mother = 
@@ -19,7 +19,7 @@
 217730 = { # Emperor Taizu of Jin (lived 1068-1123)(reigned )
 	dynasty = 1051153 # Wanyan - ruling Jin dynasty
 	name = "Aguda"
-	religion = taoist
+	religion = tengri_pagan
 	culture = jurchen
 	father = 217729 # Wanyan Helibo - posthumously honoured as Emperor Shizu
 	#mother = Lady Nalan - Empress Yijian
@@ -37,11 +37,13 @@
 217731 = { # Emperor Taizong of Jin (lived 1075-1135)(reigned 1123-1135)
 	dynasty = 1051153 # Wanyan - ruling Jin dynasty
 	name = "Wuqimai" # sinicised Sheng
-	religion = taoist
+	religion = tengri_pagan
 	culture = jurchen
 	father = 217729 # Wanyan Helibo - posthumously honoured as Emperor Shizu
 	#mother =  # Lady Nalan - Empress Yijian
 	#spouse = # Lady Tangkuo - Empress Qinren
+	trait = brilliant_strategist
+	trait = proud
 	1075.11.25 = {
 		birth = yes
 	}
@@ -61,6 +63,7 @@
 	culture = jurchen
 	father = 217733 # Wanyan Shengguo
 	#mother = 
+	trait = thrifty_clerk
 	1119.2.28 = {
 		birth = yes
 	}
@@ -68,7 +71,10 @@
 		name = "Xizong"
 	}
 	1150.1.9 = {
-		death = { death_reason = death_offmap }
+		death = {
+			death_reason = death_offmap
+			killer = 217734
+		}
 	}
 }
 
@@ -109,6 +115,10 @@
 	culture = jurchen
 	father = 215599 # Wanyan Zonggan
 	#mother = 
+	trait = indulgent_wastrel
+	trait = lustful
+	trait = cruel
+	trait = deceitful
 	1122.2.24 = {
 		birth = yes
 	}
@@ -116,7 +126,7 @@
 	#	name = X
 	#}
 	1161.12.15 = {
-		death = { death_reason = death_offmap }
+		death = { death_reason = death_offmap } #murdered by one of his generals
 	}
 }
 
@@ -142,6 +152,11 @@
 	culture = jurchen
 	father = 215597 # Wanyan Eliduo
 	#mother = 
+	trait = midas_touched
+	trait = humble
+	trait = charitable
+	trait = just
+	trait = kind
 	1123.3.29 = {
 		birth = yes
 	}
@@ -175,6 +190,8 @@
 	culture = jurchen
 	father = 215598 # Grandfather was Emperor Shizong
 	#mother = 
+	trait = martial_cleric
+	trait = poet
 	1168.8.31 = {
 		birth = yes
 	}
@@ -193,6 +210,9 @@
 	culture = jurchen
 	father = 217735 # Emperor Shizong
 	#mother = # Empress Guangxian
+	trait = naive_appeaser
+	trait = fair
+	trait = tall
 	1189.1.1 = { # unknown birth date
 		birth = yes
 	}
@@ -214,6 +234,7 @@
 	culture = jurchen
 	father = 215598 # Wanyan Yungong
 	#mother = # Empress Zhaosheng
+	trait = naive_appeaser
 	1163.4.18 = {
 		birth = yes
 	}
@@ -232,6 +253,7 @@
 	culture = jurchen
 	father = 217738 # Emperor Xuanzong
 	#mother = # Empress Minghui
+	trait = underhanded_rogue #at least he tried
 	1198.9.25 = {
 		birth = yes
 	}
@@ -239,11 +261,11 @@
 		name = "Aizong"
 	}
 	1234.2.9 = {
-		death = { death_reason = death_offmap }
+		death = { death_reason = death_offmap } #suicide
 	}
 }
 
-217740 = { # Emperor Mo of Jin (lived ?-1234)(reigned 1234)
+217740 = { # Emperor Zhaozong/Modi of Jin (lived ?-1234)(reigned 1234)
 	dynasty = 1051153 # Wanyan - ruling Jin dynasty
 	name = "Hudun" # sinicised Chenglin
 	religion = taoist
@@ -255,10 +277,13 @@
 		birth = yes
 	}
 	1234.2.9 = {
-		name = "Mo"
+		name = "Zhaozong"
 	}
-	1234.2.9 = {
-		death = { death_reason = death_offmap }
+	1234.2.10 = { #actually died on the same day he was enthroned
+		death = {
+			death_reason = death_offmap
+			killer=172005
+		}
 	}
 }
 

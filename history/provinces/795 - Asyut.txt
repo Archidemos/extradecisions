@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 795 - Asyut
 
 # County Title
@@ -6,21 +8,24 @@ title = c_asyut
 # Settlements
 max_settlements = 4
 b_asyut = castle
-b_kusai = city
-b_durunka = temple
-b_wannina = castle
+b_shutb = city
+b_butij = temple
 
+b_bawit = temple
+
+#b_kusai = city
+#b_durunka = temple
+#b_egypthebes = castle
 #b_egypabydos = city
 #b_beitkhallaf = castle
 #b_wannina = castle
-#b_luxor = temple
 #b_meir = castle
 
 # Misc
 culture = coptic
 religion = miaphysite
-terrain = farmlands
+
 # History
-766.1.1 = { religion = miaphysite }
-1065.1.1 = { religion = shiite }
-# 1171.1.1 = { religion = sunni}
+1075.1.1 = { culture = egyptian_arabic religion = sunni }
+1173.1.1 = { remove_settlement = b_bawit } #Shams al-Dawla b. Ayyub destroys Bawit
+ 

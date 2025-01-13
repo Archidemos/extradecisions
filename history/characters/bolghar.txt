@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 3500 = {
 	name="Masgut"
 	dynasty=591
@@ -66,10 +68,13 @@
 	dynasty=1029155
 	father=160150
 	842.1.1={
-		birth=yes
+		birth = yes
+	}
+	861.1.1={
+		add_spouse=159128
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -81,76 +86,50 @@
 	father=160160
 	mother=160161
 	841.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=160156
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 6858 = {
 	name="Yeçtirek"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=160142
 	mother=160143
 	845.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=160152
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 20923 = {
 	name="Okhotur"
-	dynasty=5062094
+	dynasty=1029155
 	martial=7
 	diplomacy=8
 	intrigue=8
 	stewardship=7
-	religion="tengri_pagan"
+	religion="sunni"
 	culture=bolghar
 	trait="tough_soldier"
+	father=1233352
 	1030.1.1={
 		birth=yes
 	}
 	1120.1.1={
-		death=yes
-	}
-}
-194394 = {
-	name="Okors"
-	dynasty=5062094
-	religion="tengri_pagan"
-	culture=bolghar
-	father=20923
-	1050.1.1={
-		birth=yes
-	}
-	1120.1.1={
-		death=yes
-	}
-}
-194395 = {
-	name="Sarä"
-	female=yes
-	dynasty=5062094
-	religion="tengri_pagan"
-	culture=bolghar
-	father=20923
-	1052.1.1={
-		birth=yes
-	}
-	1120.1.1={
-		death=yes
+		death="1120.1.1"
 	}
 }
 
@@ -293,33 +272,6 @@
 		death="1345.1.1"
 	}
 }
-194418 = {
-	name="Tsog"
-	dynasty=591
-	religion="sunni"
-	culture="bolghar"
-	father=34944
-	1318.1.1={
-		birth=yes
-	}
-	1345.1.1={
-		death="1345.1.1"
-	}
-}
-194419 = {
-	name="Mala"
-	female=yes
-	dynasty=591
-	religion="sunni"
-	culture="bolghar"
-	father=34944
-	1320.1.1={
-		birth=yes
-	}
-	1345.1.1={
-		death="1345.1.1"
-	}
-}
 
 41417 = {
 	name="Mohammed"
@@ -375,27 +327,6 @@
 	}
 	1118.1.2={
 		death="1118.1.2"
-	}
-}
-
-70370 = {
-	name="Horca"
-	dynasty=8635
-	martial=8
-	diplomacy=7
-	intrigue=4
-	stewardship=4
-	religion="tengri_pagan"
-	culture="bolghar"
-	trait="honest"
-	trait="just"
-	trait="tough_soldier"
-	father=159141
-	910.1.1={
-		birth="910.1.1"
-	}
-	958.1.1={
-		death="958.1.1"
 	}
 }
 
@@ -534,10 +465,10 @@
 	culture="bolghar"
 	father=125607
 	1150.1.1={
-		birth="1150.1.1"
+		birth = yes
 	}
-	1236.1.2={
-		death="1236.1.2"
+	1236.9.1={
+		death = yes
 	}
 }
 
@@ -552,70 +483,6 @@
 	}
 	858.1.1={
 		add_spouse=6856
-	}
-	
-	867.1.1 = {
-		# Boost the initial strength of the Bolghars
-		effect = {
-			spawn_unit = {
-				province = 610 # Bulgar
-				owner = ROOT
-				#leader = ROOT
-				troops = {
-					light_cavalry = { 127 127 }
-					horse_archers = { 48 48 }
-				}
-				attrition = 0.5
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 23
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 610 # Bulgar
-					owner = ROOT
-					#leader = ROOT
-					troops = {
-						light_cavalry = { 127 127 }
-						horse_archers = { 48 48 }
-					}
-					attrition = 0.5
-				}
-			}
-			create_character = {
-				random_traits = yes
-				dynasty = random
-				religion = ROOT
-				culture = ROOT
-				female = no
-				age = 27
-				attributes = {
-					martial = 6
-				}
-				trait = skilled_tactician
-			}
-			new_character = {
-				spawn_unit = {
-					province = 610 # Bulgar
-					owner = ROOT
-					#leader = ROOT
-					troops = {
-						light_cavalry = { 127 127 }
-						horse_archers = { 48 48 }
-					}
-					attrition = 0.5
-				}
-			}
-		}
 	}
 	
 	
@@ -639,25 +506,6 @@
 	}
 }
 
-159141 = {
-	name="Bayan" #placeholder name
-	dynasty=591
-	religion="tengri_pagan"
-	culture="bolghar"
-	father=159128
-	mother=6856
-	865.1.2={
-		birth="865.1.2"
-	}
-	920.1.1={
-		name="Gyula"
-		dynasty=8635
-	}
-	935.1.2={
-		death="935.1.2"
-	}
-}
-
 159117 = {
 	name="Kubrat"
 	dynasty=591
@@ -665,10 +513,6 @@
 	culture="bolghar"
 	600.1.2={
 		birth="600.1.2"
-		create_bloodline = {
-			type = attila
-			has_dlc = "Holy Fury"
-		}
 	}
 	665.1.2={
 		death="665.1.2"
@@ -759,10 +603,10 @@
 
 159123 = {
 	name="Krum"
-	dynasty=591
+	dynasty=8636
 	religion="tengri_pagan"
 	culture="bolghar"
-	father=145939
+#	father=145939 #Highly Questionable ancestry
 	trait="ambitious"
 	trait="diligent"
 	trait="brave"
@@ -773,6 +617,10 @@
 
 	750.1.2={
 		birth="750.1.2"
+		create_bloodline = {
+			type = krum
+			has_dlc = "Holy Fury"
+		}		
 	}
 	814.1.2={
 		death="814.1.2"
@@ -781,7 +629,7 @@
 
 159124 = {
 	name="Omortag"
-	dynasty=591
+	dynasty=8636
 	religion="tengri_pagan"
 	culture="bolghar"
 	father=159123
@@ -795,7 +643,7 @@
 
 159125 = {
 	name="Malamir"
-	dynasty=591
+	dynasty=8636
 	religion="tengri_pagan"
 	culture="bolghar"
 	father=159124
@@ -891,37 +739,21 @@
 	}
 }
 
-159138 = {
-	name="Ügyek"
-	dynasty=591
-	religion="tengri_pagan"
-	culture="bolghar"
-	father=159131
-	773.2.2={
-		birth="773.2.2"
-	}
-	800.1.1={
-		add_spouse=159139
-	}
-	845.1.2={
-		death="845.1.2"
-	}
-}
 
 160142 = {
 	name="Araslan"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=160167
 	824.1.1={
-		birth=yes
+		birth = yes
 	}
 	840.1.1={
 		add_spouse=160143
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160143 = {
@@ -938,7 +770,7 @@
 		add_spouse=160142
 	}
 	865.1.1={
-		death=yes
+		death = yes
 	}
 }
 160144 = {
@@ -955,38 +787,38 @@
 		add_spouse=160147
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160145 = {
 	name="Mugel"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=160142
 	mother=160143
 	846.1.1={
-		birth=yes
+		birth = yes
 	}
 	866.1.1={
 		add_spouse=160166
 	}
 	899.1.1={
-		death=yes
+		death = yes
 	}
 }
 160146 = {
 	name="Kordil"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=160142
 	mother=160143
 	847.1.1={
-		birth=yes
+		birth = yes
 	}
 	899.1.1={
-		death=yes
+		death = yes
 	}
 }
 160147 = {
@@ -996,13 +828,13 @@
 	dynasty=1029155
 	father=160151
 	820.1.1={
-		birth=yes
+		birth = yes
 	}
 	840.1.1={
 		add_spouse=160144
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160148 = {
@@ -1013,13 +845,13 @@
 	father=160147
 	mother=160144
 	840.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=160165
 	}
 	896.1.1={
-		death=yes
+		death = yes
 	}
 }
 160149 = {
@@ -1030,10 +862,10 @@
 	father=160147
 	mother=160144
 	841.1.1={
-		birth=yes
+		birth = yes
 	}
 	898.1.1={
-		death=yes
+		death = yes
 	}
 }
 160150 = {
@@ -1043,10 +875,10 @@
 	dynasty=1029155
 	father=160151
 	820.1.1={
-		birth=yes
+		birth = yes
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160151 = {
@@ -1055,10 +887,10 @@
 	culture=bolghar
 	dynasty=1029155
 	790.1.1={
-		birth=yes
+		birth = yes
 	}
 	850.1.1={
-		death=yes
+		death = yes
 	}
 }
 160152 = {
@@ -1069,55 +901,55 @@
 	dynasty=1029155
 	father=160150
 	846.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=6858
 	}
 	890.1.1={
-		death=yes
+		death = yes
 	}
 }
 160153 = {
 	name="Tähtaman"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=6858
 	mother=160152
-	861.1.1={
-		birth=yes
+	862.1.1={
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 160154 = {
 	name="Pakhtiyar"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=6858
 	mother=160152
-	862.1.1={
-		birth=yes
+	864.1.1={
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 160155 = {
 	name="Buzan"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=6858
 	mother=160152
-	863.1.1={
-		birth=yes
+	867.1.1={
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 160156 = {
@@ -1129,13 +961,13 @@
 	father=160147
 	mother=160144
 	842.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=6857
 	}
 	898.1.1={
-		death=yes
+		death = yes
 	}
 }
 160157 = {
@@ -1145,11 +977,11 @@
 	dynasty=1029152
 	father=6857
 	mother=160156
-	861.1.1={
-		birth=yes
+	862.1.1={
+		birth = yes
 	}
 	920.1.1={
-		death=yes
+		death = yes
 	}
 }
 160158 = {
@@ -1159,11 +991,11 @@
 	dynasty=1029152
 	father=6857
 	mother=160156
-	862.1.1={
-		birth=yes
+	864.1.1={
+		birth = yes
 	}
 	925.1.1={
-		death=yes
+		death = yes
 	}
 }
 160159 = {
@@ -1173,11 +1005,11 @@
 	dynasty=1029152
 	father=6857
 	mother=160156
-	862.1.1={
-		birth=yes
+	867.1.1={
+		birth = yes
 	}
 	923.1.1={
-		death=yes
+		death = yes
 	}
 }
 160160 = {
@@ -1187,10 +1019,10 @@
 	dynasty=1029152
 	father=188860
 	810.1.1={
-		birth=yes
+		birth = yes
 	}
 	865.1.1={
-		death=yes
+		death = yes
 	}
 }
 160161 = {
@@ -1207,7 +1039,7 @@
 		add_spouse=160160
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160162 = {
@@ -1261,13 +1093,13 @@
 	father=160160
 	mother=160161
 	841.1.1={
-		birth=yes
+		birth = yes
 	}
 	861.1.1={
 		add_spouse=160148
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 160166 = {
@@ -1279,26 +1111,26 @@
 	father=160160
 	mother=160161
 	847.1.1={
-		birth=yes
+		birth = yes
 	}
 	866.1.1={
 		add_spouse=160145
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 160167 = {
 	name="Kälaç"
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=188790
 	790.1.1={
-		birth=yes
+		birth = yes
 	}
 	846.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -1309,10 +1141,10 @@
 	dynasty=1029157
 	father=188802
 	800.1.1={
-		birth=yes
+		birth = yes
 	}
 	860.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -1373,30 +1205,30 @@
 	father=160160
 	mother=160161
 	842.1.1={
-		birth=yes
+		birth = yes
 	}
 	866.1.1={
 		add_spouse=160171
 	}
 	895.1.1={
-		death=yes
+		death = yes
 	}
 }
 160173 = {
 	name="Çeçek"
 	female = yes
 	religion="tengri_pagan"
-	culture=pecheneg
+	culture=bashkir
 	dynasty=1029159
 	father=160167
 	824.1.1={
-		birth=yes
+		birth = yes
 	}
 	840.1.1={
 		add_spouse=160170
 	}
 	866.1.1={
-		death=yes
+		death = yes
 	}
 }
 160174 = {
@@ -1426,21 +1258,6 @@
 	895.1.2={
 		death="895.1.2"
 		name="Batir-Mu'min"
-	}
-}
-194373 = {
-	name="Lärkka"
-	female = yes
-	dynasty=591
-	religion="tengri_pagan"
-	culture="bolghar"
-	father=159128
-	mother=6856
-	858.1.1={
-		birth=yes
-	}
-	895.1.2={
-		death="895.1.2"
 	}
 }
 145934 = {
@@ -1790,12 +1607,12 @@
 	name="Taridin"
 	dynasty=1029159
 	religion="tengri_pagan"
-	culture="pecheneg" # bashkiri
-	735.1.1={
-		birth=yes
+	culture="bashkir"
+	740.1.1={
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -1803,27 +1620,13 @@
 	name="Oshi"
 	dynasty=1029159
 	religion="tengri_pagan"
-	culture="pecheneg" # bashkiri
+	culture="bashkir"
 	father=188789
-	754.1.1={
-		birth=yes
+	764.1.1={
+		birth = yes
 	}
 	810.1.1={
-		death=yes
-	}
-}
-194357 = {
-	name="Ipek"
-	female = yes
-	dynasty=1029159
-	religion="tengri_pagan"
-	culture="pecheneg" # bashkiri
-	father=188789
-	755.1.1={
-		birth=yes
-	}
-	810.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -1832,11 +1635,11 @@
 	dynasty=1029157
 	religion="tengri_pagan"
 	culture="bolghar"
-	733.1.1={
-		birth=yes
+	743.1.1={
+		birth = yes
 	}
 	790.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -1846,55 +1649,137 @@
 	religion="tengri_pagan"
 	culture="bolghar"
 	father=188801
-	750.1.1={
-		birth=yes
+	768.1.1={
+		birth = yes
 	}
 	820.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188858 = {
 	name="Islivan" # fictitious
+	dynasty=1029152
 	religion="tengri_pagan"
 	culture=bolghar
-	dynasty=1029152
 	735.1.1={
-		birth=yes
+		birth = yes
 	}
 	780.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188859 = {
 	name="Kormisosh" # fictitious
+	dynasty=1029152
 	religion="tengri_pagan"
 	culture=bolghar
-	dynasty=1029152
 	father=188858
-	754.1.1={
-		birth=yes
+	760.1.1={
+		birth = yes
 	}
 	810.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 188860 = {
 	name="Dizeng" # fictitious
+	dynasty=1029152
 	religion="tengri_pagan"
 	culture=bolghar
-	dynasty=1029152
 	father=188859
 	785.1.1={
-		birth=yes
+		birth = yes
 	}
 	830.1.1={
-		death=yes
+		death = yes
 	}
 }
-
+194394 = {
+	name="Okors"
+	dynasty=1029155
+	religion="sunni"
+	culture=bolghar
+	father=20923
+	1050.1.1={
+		birth = yes
+	}
+	1120.1.1={
+		death = yes
+	}
+}
+194395 = {
+	name="Sarä"
+	female=yes
+	dynasty=1029155
+	religion="sunni"
+	culture=bolghar
+	father=20923
+	1052.1.1={
+		birth = yes
+	}
+	1120.1.1={
+		death = yes
+	}
+}
+194418 = {
+	name="Tsog"
+	dynasty=591
+	religion="sunni"
+	culture="bolghar"
+	father=34944
+	1318.1.1={
+		birth = yes
+	}
+	1345.1.1={
+		death="1345.1.1"
+	}
+}
+194419 = {
+	name="Mala"
+	female=yes
+	dynasty=591
+	religion="sunni"
+	culture="bolghar"
+	father=34944
+	1320.1.1={
+		birth = yes
+	}
+	1345.1.1={
+		death="1345.1.1"
+	}
+}
+194373 = {
+	name="Lärkka"
+	female = yes
+	dynasty=591
+	religion="tengri_pagan"
+	culture="bolghar"
+	father=159128
+	mother=6856
+	858.1.1={
+		birth = yes
+	}
+	895.1.2={
+		death="895.1.2"
+	}
+}
+194357 = {
+	name="Ipek"
+	female = yes
+	dynasty=1029159
+	religion="tengri_pagan"
+	culture="bolghar" # bashkiri
+	father=188789
+	755.1.1={
+		birth = yes
+	}
+	810.1.1={
+		death = yes
+	}
+}
 194182 = {
 	name="Ilgam"
 	dynasty=591
@@ -1908,7 +1793,6 @@
 		death = yes
 	}
 }
-
 194183 = {
 	name="Ilgam"
 	dynasty=591
@@ -1920,45 +1804,6 @@
 	}
 	1234.1.1={
 		death = yes
-	}
-}
-
-229002 = {
-	name="Bugra"
-	dynasty=5062096
-	martial=5
-	diplomacy=6
-	intrigue=4
-	stewardship=6
-	religion="sunni"
-	culture="bolghar"
-	trait="thrifty_clerk"
-	1150.1.1={
-		birth="1150.1.1"
-	}
-	1200.1.1={
-		death="1200.1.1"
-	}
-}
-
-229007 = {
-	name="Savur"
-	dynasty=1053011
-	martial=7
-	diplomacy=6
-	intrigue=4
-	stewardship=7
-	religion="sunni"
-	culture="bolghar"
-	trait="diligent"
-	trait="proud"
-	trait="temperate"
-	trait="amateurish_plotter"
-	1150.1.1={
-		birth="1150.1.1"
-	}
-	1200.1.1={
-		death="1200.1.1"
 	}
 }
 217339 = { # fictional
@@ -1984,79 +1829,6 @@
 		birth = yes
 	}
 	1245.7.4 = {
-		death = yes
-	}
-}
-258095 = {
-	name="Okhsi"
-	dynasty=1100017
-	religion="sunni"
-	culture="bolghar"
-	1036.1.1={
-		birth=yes
-	}
-	1087.1.1={
-		death=yes
-	}
-}
-258096 = {
-	name="Kormesiy"
-	dynasty=1100018
-	religion="sunni"
-	culture="bolghar"
-	1035.1.1={
-		birth=yes
-	}
-	1087.1.1={
-		death=yes
-	}
-}
-145818 = {
-	name="Senko"
-	dynasty=1022274
-	religion="slavic_pagan"
-	culture="bolghar"
-
-	733.1.1={
-		birth="733.1.1"
-	}
-	791.1.1={
-		death="791.1.1"
-	}
-}
-260705 = {
-	name = "Isbul"
-	dynasty = 1062331
-	religion = tengri_pagan
-	culture = bolghar
-	902.1.1 = {
-		birth = yes
-	}
-	963.1.1 = {
-		death = yes
-	}
-}
-260706 = {
-	name = "Goleda"
-	dynasty = 1062332
-	religion = tengri_pagan
-	culture = bolghar
-	907.1.1 = {
-		birth = yes
-	}
-	956.1.1 = {
-		death = yes
-	}
-}
-260707 = {
-	name = "Magotin"
-	dynasty = 1062333
-	religion = sunni
-	culture = bolghar
-	918.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
 		death = yes
 	}
 }

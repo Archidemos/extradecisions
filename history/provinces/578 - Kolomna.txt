@@ -1,4 +1,6 @@
-# 578 - Kolomna		#Renamed to Tula
+# -*- ck2.history.provinces -*-
+
+# 578 - Kolomna
 
 # County Title
 title = c_kolomna
@@ -6,30 +8,21 @@ title = c_kolomna
 # Settlements
 max_settlements = 4
 
-b_tula	= tribal	#1146
+b_kolomna = tribal
+#b_tula = castle
+#b_zaratysk = city
+#b_ozery = city
+#b_venev = city
+#b_dedilovo = temple
 
-#b_rostislavl	#1153
-#b_veniov		#XIIth
-#b_kochira		#1356
-#b_laptevo		#XVth
-#b_ozherelye	#1578
-#b_konchinka
 
-#Misc
-culture = meshchera
+# Misc
+culture = mordvin
 religion = finnish_pagan
-terrain = plains
 
 # History
-867.1.1 = {
-	culture = russian
-	religion = slavic_pagan
-}
-988.1.1 = {
-	religion = orthodox
-}
-1150.1.1 = {
-	b_tula = castle
-	b_rostislavl = city
-	b_veniov = temple
-}
+1025.1.1 = { b_kolomna = castle
+b_tula = castle }
+1130.1.1 = { religion = orthodox }
+1130.1.1 = { culture = russian }
+

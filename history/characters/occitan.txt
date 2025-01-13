@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 10030 = {
 	name="Bertrand" #Bertrand II de Gévaudan
 	dynasty=100219
@@ -146,10 +148,9 @@
 	stewardship=7
 	religion="catholic"
 	culture="occitan"
-	father=330
-	mother=40263
+	father=1227213
 	953.1.1 = {
-		birth="953.1.1"
+		birth=yes
 	}
 	980.4.16 = {
 		death="980.4.16"
@@ -177,18 +178,22 @@
 	}
 }
 
-110591={
+110591 = {
 	name="Guisla"
 	female=yes
-
-	religion=catholic
-	culture=occitan
-
-	980.1.1={
-		birth=yes
+	dynasty=391
+	martial=5
+	diplomacy=5
+	intrigue=8
+	stewardship=5
+	religion="catholic"
+	culture="occitan"
+	trait="thrifty_clerk"
+	980.1.1 = {
+		birth="980.1.1"
 	}
-	1047.1.1={
-		death=yes
+	1047.1.1 = {
+		death="1047.1.1"
 	}
 }
 
@@ -206,12 +211,11 @@
 	trait="underhanded_rogue"
 	father=40202
 	mother=40071
-	1034.1.1 = {
-		birth="1034.1.1"
+	1020.1.1 = {
+		birth="1020.1.1"
 	}
-	#Gets married in 1050 to 110520 Ramon Berenguer 'el Vell'
-	1065.6.29 = {
-		death="1065.6.29"
+	1050.6.29 = {
+		death="1050.6.29"
 	}
 }
 
@@ -219,7 +223,7 @@
 	name="Ermessentz" #de Carcassonne
 	# AKA: Ermesinda
 	female=yes
-	dynasty=100213 #was 684 de Foix
+	dynasty=386 #was 684 de Foix
 	religion="catholic"
 	culture="occitan"
 	father=40182 #Rogier I de Comminges
@@ -241,8 +245,8 @@
 	culture="occitan"
 	father=410
 	mother=403 #Etiennette de Marseille
-	1051.1.1 = {
-		birth="1051.1.1"
+	1050.1.1 = {
+		birth="1050.1.1"
 	}
 	1085.1.1 = {
 		death="1085.1.1"
@@ -395,7 +399,7 @@
 }
 
 127008 = {
-	name="Raimond" #Raimond III de Toulouse
+	name="Raimond" #Raimond IV de Toulouse
 	dynasty=727
 	martial=7
 	diplomacy=7
@@ -403,10 +407,9 @@
 	stewardship=5
 	religion="catholic"
 	culture="occitan"
-	father=330
-	#mother=40263
-	925.1.1 = {
-		birth="925.1.1"
+	father=1227213
+	945.1.1 = {
+		birth=yes
 	}
 	975.1.1 = {
 		add_spouse=127009
@@ -425,7 +428,6 @@
 	culture="occitan"
 	father=410
 	mother=403 #Etiennette de Marseille
-	trait = legit_bastard
 	1046.1.1 = {
 		birth="1046.1.1"
 	}
@@ -506,9 +508,9 @@
 		death="871.1.1"
 	}
 }
-
+######
 127025 = {
-	name="Acfred"
+	name="Acfred" # comte of Razès from 837 and Carcasonne from 877
 	dynasty=100213
 	martial=7
 	diplomacy=6
@@ -516,8 +518,9 @@
 	stewardship=7
 	religion="catholic"
 	culture="occitan"
-	840.1.1 = {
-		birth="840.1.1"
+        father=1227202
+	820.1.1 = {
+		birth="820.1.1"
 	}
 	885.1.1 = {
 		add_spouse=127024
@@ -526,7 +529,7 @@
 		death="906.2.18"
 	}
 }
-
+######
 127026 = {
 	name="Guilhèm" #Guillaume II d'Aquitaine
 	# AKA: Guilhem
@@ -1286,17 +1289,19 @@
 	stewardship=7
 	religion="catholic"
 	culture="occitan"
-	trait=fair
 	trait="diligent"
 	trait="just"
 	trait="proud"
 	trait="patient"
 	trait="brave"
 	trait="charismatic_negotiator"
+	health = 7
 	father=205731
 	mother=205732
 	1122.1.1 = {
 		birth="1122.1.1"
+	}
+	1137.4.9 = {
 		create_bloodline = {
 			type = alienor_of_aquitaine
 			has_dlc = "Holy Fury"
@@ -1371,12 +1376,14 @@
 	trait="proud"
 	trait="patient"
 	trait="brave"
-	trait="poet"
 	trait="charismatic_negotiator"
 	father=240
 	mother=221
 	1071.10.22 = {
 		birth="1071.10.22"
+	}
+	1087.10.22 = {
+		add_trait="poet"
 	}
 	1089.1.1 = {
 		add_spouse=127016
@@ -1496,7 +1503,7 @@
 }
 
 228 = {
-	name="Ebles" #Eudes d'Aquitaine
+	name="Eudon" #Eudes d'Aquitaine
 	dynasty=413
 	martial=8
 	diplomacy=7
@@ -1507,8 +1514,8 @@
 	trait="amateurish_plotter"
 	father=234
 	mother=127017
-	1012.1.1 = {
-		birth="1012.1.1"
+	1010.1.1 = {
+		birth=yes
 	}
 	1039.3.10 = {
 		death="1039.3.10"
@@ -1727,8 +1734,8 @@
 	trait="charismatic_negotiator"
 	father=238
 	mother=6639
-	1049.1.2 = {
-		birth="1049.1.2"
+	1043.1.2 = {
+		birth="1043.1.2"
 	}
 	1093.1.2 = {
 		death="1093.1.2"
@@ -1749,8 +1756,8 @@
 	trait="cynical"
 	father=234
 	mother=275
-	1025.1.1 = {
-		birth="1025.1.1"
+	1023.1.1 = {
+		birth="1023.1.1"
 	}
 	1058.12.1 = {
 		add_spouse=327
@@ -1817,6 +1824,9 @@
 	father=40234
 	900.1.1 = {
 		birth="900.1.1"
+	}
+	922.1.1 = {
+		add_spouse=1235543
 	}
 	944.1.1 = {
 		death="944.1.1"
@@ -2009,13 +2019,12 @@
 	dynasty=100209
 	religion="catholic"
 	culture="occitan"
-	father=70152 #Guillaume de Barcelona
-	mother=127039 #Gersende de Toulouse
+	father=1235541
 	940.1.1 = {
 		birth="940.1.1"
 	}
-	1010.1.1 = {
-		death="1010.1.1"
+	995.1.1 = {
+		death=yes
 	}
 }
 
@@ -2135,8 +2144,8 @@
 	culture="occitan"
 	father=40128 #Robert I d'Auvergne
 	mother=40235 #Ermengarde de Toulouse
-	1000.1.1 = {
-		birth="1000.1.1"
+	1001.1.1 = {
+		birth=yes
 	}
 	1023.1.1 = {
 		add_spouse=40261 #Philippa de Gévaudan
@@ -2162,23 +2171,25 @@
 }
 
 402 = {
-	name="Guilhèm"
+	name="Guilhèm" #William the Liberator, younger brother of Rotboald, co-ruler with his brother of Provence, so lets give him some provinces eh
 	# AKA: Guilhem
 	dynasty=7052
 	martial=8
-	diplomacy=4
-	intrigue=7
+	diplomacy=5
+	intrigue=6
 	stewardship=6
 	religion="catholic"
 	culture="occitan"
-	trait="amateurish_plotter"
+	trait="tough_soldier"
+	trait="brave"
+	trait="humble"	
 	father=40800
 	mother=7922
-	957.1.2 = {
-		birth="957.1.2"
+	955.1.1 = {
+		birth=yes
 	}
-	993.1.2 = {
-		death="993.1.2"
+	993.8.29 = {
+		death=yes
 	}
 }
 
@@ -2244,9 +2255,9 @@
 	dynasty=727
 	religion="catholic"
 	culture="occitan"
-	father=332
-	975.1.2 = {
-		birth="975.1.2"
+	father=127008
+	978.1.1 = {
+		birth=yes
 	}
 	#1020 maried Robert I d'Auvergne
 	1032.1.2 = {
@@ -2299,13 +2310,10 @@
 	religion="catholic"
 	culture="occitan"
 	trait="tough_soldier"
-	father=402
+	father=40803
 	mother=373
 	979.1.2 = {
 		birth="979.1.2"
-	}
-	1002.1.1 = {
-		add_spouse=273
 	}
 	1037.1.2 = {
 		death="1037.1.2"
@@ -2391,8 +2399,8 @@
 	trait="tough_soldier"
 	father=40541
 	mother=40542
-	1054.1.2 = {
-		birth="1054.1.2"
+	1049.1.2 = {
+		birth="1049.1.2"
 	}
 	1140.1.1 = {
 		death="1140.1.1"
@@ -2454,7 +2462,7 @@
 	religion="catholic"
 	culture="occitan"
 	trait="amateurish_plotter"
-	father=404
+	father=40804
 	mother=273
 	1005.1.2 = {
 		birth="1005.1.2"
@@ -2526,15 +2534,17 @@
 	stewardship=6
 	religion="catholic"
 	culture="occitan"
-	father=40803
-	990.1.2 = {
+	trait="amateurish_plotter"
+	father=402
+	mother=373	
+	982.1.1 = {
 		birth=yes
 	}
-	1006.1.1 = {
-		trait="amateurish_plotter"
-	}
-	1040.1.2 = {
-		death=yes #after 1037
+	1002.1.1 = {
+		add_spouse=273
+	}	
+	1018.1.1 = {
+		death=yes
 	}
 }
 
@@ -2549,10 +2559,10 @@
 	religion="catholic"
 	culture="occitan"
 	trait="amateurish_plotter"
-	father=404
+	father=40804
 	mother=273
-	1003.1.2 = {
-		birth="1003.1.2"
+	1000.1.2 = {
+		birth="1000.1.2"
 	}
 	1030.1.2 = {
 		death="1030.1.2"
@@ -2592,13 +2602,13 @@
 	father=40807
 	mother=71637
 	1140.1.1 = {
-		birth=yes
+		birth="1140.1.1"
 	}
-	1161.11.17 = {
+	1166.1.1 = {
 		add_spouse=221529
 	}
 	1166.1.1 = {
-		death=yes
+		death="1166.1.1"
 	}
 }
 
@@ -2624,7 +2634,7 @@
 	dynasty=7052
 	religion="catholic"
 	culture="occitan"
-	father=404
+	father=40804
 	mother=273
 	1006.1.2 = {
 		birth="1006.1.2"
@@ -2644,7 +2654,6 @@
 	culture="occitan"
 	father=410
 	mother=403 #Etiennette de Marseille
-	trait = legit_bastard
 	1047.1.2 = {
 		birth="1047.1.2"
 	}
@@ -2825,18 +2834,32 @@
 	}
 }
 
-71587={
+71581 = {
+	name="Talesa"
+	dynasty=442
+	female=yes
+	religion="catholic"
+	culture="occitan"
+	father=110515
+	mother=71587
+	1112.1.1 = {
+		birth="1112.1.1"
+	}
+	1168.1.1 = {
+		death="1168.1.1"
+	}
+}
+
+71587 = {
 	name="Talesa"
 	female=yes
-
-	religion=catholic
-	culture=occitan
-
-	1051.1.1={
-		birth=yes
+	religion="catholic"
+	culture="occitan"
+	1091.1.1 = {
+		birth="1091.1.1"
 	}
-	1146.1.1={
-		death=yes
+	1146.1.1 = {
+		death="1146.1.1"
 	}
 }
 
@@ -2878,22 +2901,19 @@
 	}
 }
 
-71620={
+71620 = {
 	name="Navar" #Navarra/Navarrine de Dax
-	female=yes
+	# AKA: Navar
 	dynasty=8757
-
+	female=yes
+	religion="catholic"
+	culture="occitan"
 	father=71619
-	mother=205562
-
-	religion=catholic
-	culture=occitan
-
-	1172.1.1={
-		birth=yes
+	1155.1.1 = {
+		birth="1155.1.1"
 	}
-	1203.1.1={
-		death=yes
+	1203.1.1 = {
+		death="1203.1.1"
 	}
 }
 
@@ -3033,13 +3053,17 @@
 	}
 	1250.1.1 = {
 	give_nickname=nick_the_fat
+		effect={
+			set_variable = { which = physique_variable value = 15 }
+		}
+		add_trait="is_fat"
 	}
 	1257.1.1 = {
 	remove_trait="naive_appeaser"
 	trait="detached_priest"
 	}
 	1264.10.2 = {
-	name="Clemens"
+	name="Clement"
 	# AKA: Gui
 	}
 	1268.11.29 = {
@@ -3066,7 +3090,7 @@
 		birth="1264.1.1"
 	}
 	1304.7.7 = {
-		name="Clemens"
+		name="Clement"
 	}
 	1309.3.1 = {
 		capital="c_venaissin"
@@ -3130,21 +3154,21 @@
 }
 
 32515 = {
-	name="Raimond"
+	name="Raimond" # Raimond I, son of Guillaume I, 3rd lord of Baux.
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
 	father=20283
 	1075.1.1 = {
-		birth="1075.1.1"
+		birth=yes
 	}
 	1150.1.1 = {
-		death="1150.1.1"
+		death=yes
 	}
 }
 
 32516 = {
-	name="Bertrand" #Prince of Orange
+	name="Bertrand" #Bertand I, son of Raimond, 4th lord of Baux and Prince of Orange
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
@@ -3178,7 +3202,7 @@
 }
 
 32518 = {
-	name="Ugues"
+	name="Ugues" # Hugues III, son of Bertrand I, viscomte de Marsaille(by the right of his wife Barale de Marsaille since 1192) and lord of Baux
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
@@ -3187,6 +3211,9 @@
 	1160.1.1 = {
 		birth="1160.1.1"
 	}
+	1191.1.1 = {
+		add_spouse=1227242
+	}	
 	1239.4.9 = {
 		death="1239.4.9"
 	}
@@ -3249,35 +3276,35 @@
 }
 
 32523 = {
-	name="Barral"
+	name="Barral" # Barral IV, son of Ugo III. 1. conte di Avellino, viscount of Marsaille and lord of Baux 
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
 	father=32518
-	1200.1.1 = {
-		birth="1200.1.1"
+	mother=1227242
+	1192.1.1 = {
+		birth=yes
 	}
 	1268.10.12 = {
-		death="1268.10.12"
+		death=yes
 	}
 }
-
 32524 = {
-	name="Bertrand" #count of Benevento 1266-1305
+	name="Bertrand" #Bertrand son of Barral IV, conte di Avellino 1266-1305, viscount of Marsaille and lord of Baux 
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
 	father=32523
-	1240.1.1 = {
-		birth="1240.1.1"
+	1230.1.1 = {
+		birth=yes
 	}
 	1305.9.25 = {
-		death="1305.9.25"
+		death=yes
 	}
 }
 
 32525 = {
-	name="Raimond" #count of Benevento 1309-1321
+	name="Raimond" #Raymond son of Bertrand, conte di Avellino, viscount of Marsaille and lord of Baux 
 	dynasty=5117
 	religion="catholic"
 	culture="occitan"
@@ -3289,7 +3316,23 @@
 		death="1321.1.1"
 	}
 }
-
+32530 = {
+	name="Ugues" #Ugo son of Raymond, conte di Avellino 1321-1351, viscount of Marsaille and lord of Baux 
+	dynasty=5117
+	religion="catholic"
+	culture="occitan"
+	father=32525
+	1295.1.1 = {
+		birth="1295.1.1"
+	}
+	1332.1.1 = {
+		add_spouse=32780
+	} 
+	1351.1.1 = {
+		death="1351.1.1"
+	}
+}
+##
 32526 = {
 	name="Ugues" 
 	dynasty=5117
@@ -3317,7 +3360,7 @@
 		death="1331.1.1"
 	}
 }
-
+#
 32529 = {
 	name="Beatritz" 
 	female=yes
@@ -3484,7 +3527,7 @@
 	1010.1.1 = {
 		birth="1010.1.1"
 	}
-	1033.1.1 = {
+	1036.1.1 = {
 		add_spouse=40071 #Rangearde de la marche
 	}
 	1060.1.1 = {
@@ -3518,7 +3561,6 @@
 	culture="occitan"
 	father=40070 #Boson I
 	mother=40083 #Emma de Périgord
-	trait = legit_bastard
 	946.1.1 = {
 		birth="946.1.1"
 	}
@@ -3687,7 +3729,6 @@
 	culture="occitan"
 	father=205601 #Boson IV de Périgord
 	mother=205556 # Brunichilde de Foix
-	trait = legit_bastard
 	1135.1.1 = {
 		birth=yes
 	}
@@ -3704,8 +3745,8 @@
 	culture="occitan"
 	father=205601 #Boson IV de Périgord
 	mother=205556 # Brunichilde de Foix
-	1141.1.1 = {
-		birth="1141.1.1" 
+	1136.1.1 = {
+		birth="1136.1.1" 
 	}
 	#1167 Raymonde de Turenne (if 1187 then Helie VII is not his son)
 	1205.1.1 = {
@@ -4724,7 +4765,6 @@
 	culture="occitan"
 	father=205605 #Archambaud V de Comborn 
 	mother=205604 #Jourdaine de Périgord
-	trait = legit_bastard
 	1150.1.1 = {
 		birth="1150.1.1"
 	}
@@ -5618,8 +5658,8 @@
 	religion="catholic"
 	culture="occitan"
 	father=138148 #Guillaume II Astenove de Fézensac
-	1060.1.1 = {
-		 birth = yes
+	1050.1.1 = {
+		birth="1050.1.1" #unknown
 	}
 	1098.1.1 = {
 		death="1098.1.1"
@@ -5719,6 +5759,7 @@
 	dynasty=40021
 	religion="catholic"
 	culture="occitan"
+	father=1093022 #Barnard-Aton II
 	980.1.2 = {
 		birth="980.1.2"
 	}
@@ -5736,7 +5777,6 @@
 	culture="frankish"
 	father=40202 #Bernard Aton III Trencavel
 	mother=40071 #Rangearde de la marche
-	trait = legit_bastard
 	1033.1.2 = {
 		birth="1033.1.2"
 	}
@@ -5754,8 +5794,8 @@
 	culture="occitan"
 	father=40202
 	mother=40071
-	1037.1.2 = {
-		birth="1037.1.2"
+	1030.1.2 = {
+		birth="1030.1.2"
 	}
 	1062.1.3 = {
 		add_spouse=40187 #Ermengarde de Carcassone/comminges
@@ -5772,8 +5812,8 @@
 	religion="catholic"
 	culture="occitan"
 	father=40204
-	1063.1.1 = {
-		birth="1063.1.1"
+	1046.1.1 = {
+		birth="1046.1.1"
 	}
 	1083.1.1 = {
 		add_spouse=422
@@ -5807,10 +5847,12 @@
 	religion="catholic"
 	culture="occitan"
 	father=138188 #Aznar III de Comminges
-	920.1.1 = {
-		birth="920.1.1"
+	910.1.1 = {
+		birth="910.1.1"
 	}
-	#married Arsinde de Carcassonne
+        933.1.1 = {
+		add_spouse=1227206   #married Arsinde de Carcassonne
+	}
 	957.11.27 = {
 		death="957.11.27"
 	}
@@ -5822,6 +5864,7 @@
 	dynasty=386 #was 684 de Foix
 	religion="catholic"
 	culture="occitan"
+        mother=1227206 #Arsenda de Carcasonne
 	father=40180 #Arnaud I de Comminges
 	950.1.1 = {
 		birth="950.1.1"
@@ -5866,6 +5909,7 @@
 	dynasty=386 #was 684 de Foix
 	religion="catholic"
 	culture="occitan"
+        mother=1227206 #Arsenda de Carcasonne
 	father=40180 #Arnaud I de Comminges
 	give_nickname = nick_the_old
 	950.1.1 = {
@@ -5893,7 +5937,7 @@
 }
 
 1078 = {
-	name="Bernat-Rogier"
+	name="Bernat-Rogier" # De Foix
 	dynasty=684
 	martial=4
 	diplomacy=6
@@ -6313,10 +6357,12 @@
 	religion="catholic"
 	culture="occitan"
 	father=138154 #Roger IV de Foix
-	trait="poet"
 	trait="ambitious"
 	1235.1.1 = {
 		birth="1235.1.1"
+	}
+	1251.1.1 = {
+		add_trait="poet"
 	}
 	#1252.10.14 married Marguerite de Béarn too young so postoned to 1262
 	1262.10.14 = {
@@ -6724,34 +6770,30 @@
 	}
 }
 
-138186={
+138186 = {
 	name="Gaston" #Gaston VII de Béarn
+	# AKA: Guillaume
 	dynasty=336 #de Montcada
-
-	father=138184 #Guillaume Ramon I de Moncade
-	mother=71647 #Gersenda de Barcelona
-
-	religion=catholic
-	culture=occitan
-
+	religion="catholic"
+	culture="occitan"
+	father=205543 #Guillaume Ramon I de Moncade
 	give_nickname = nick_the_quarreller #Froissard
-	trait=tough_soldier
-	trait=wroth
-
-	1225.1.1={
-		birth=yes
+	trait="tough_soldier"
+	trait="wroth"
+	1221.1.1 = {
+		birth="1221.1.1"
 	}
-	1240.1.1={
+	1240.1.1 = {
 		add_spouse=138187 #Mathe de Bigorre
 	}
-	1252.3.1={
+	1252.3.1 = {
 		trait=excommunicated
 	}
-	1273.4.2={
+	1273.4.2 = {
 		add_spouse=70911 #Béatrix de Savoie
 	}
-	1290.4.26={
-		death=yes
+	1290.4.26 = {
+		death="1290.4.26"
 	}
 }
 
@@ -6861,6 +6903,7 @@
 	religion="catholic"
 	culture="occitan"
 	father=40180 #Arnaud I de Comminges
+        mother=1227206 #Arsenda de Carcasonne
 	950.1.1 = {
 		birth="950.1.1"
 	}
@@ -7069,8 +7112,8 @@
 	culture="occitan"
 	father=205564 #Roger de Couserans 
 	mother=205555 #Sybille de Foix
-	1182.1.1 = {
-		birth="1182.1.1"
+	1180.1.1 = {
+		birth="1180.1.1"
 	}
 	1230.1.1 = {
 		death="1230.1.1"
@@ -7717,8 +7760,8 @@
 	trait="flamboyant_schemer"
 	father=205981
 	mother=205990
-	1136.1.1 = {
-		birth="1136.1.1"
+	1132.1.1 = {
+		birth="1132.1.1"
 	}
 	1158.1.1 = {
 		add_spouse=205995
@@ -7789,8 +7832,8 @@
 	trait="flamboyant_schemer"
 	father=205981
 	mother=205990
-	1136.1.1 = {
-		birth="1136.1.1"
+	1130.1.1 = {
+		birth="1130.1.1"
 	}
 	1207.5.13 = {
 		death="1207.5.13"
@@ -7811,8 +7854,8 @@
 	trait="underhanded_rogue"
 	father=205981
 	mother=205990
-	1137.1.1 = {
-		birth="1137.1.1"
+	1134.1.1 = {
+		birth="1134.1.1"
 	}
 	1219.6.19 = {
 		death="1219.6.19"
@@ -7849,6 +7892,7 @@
 	dynasty=13104 #was 100210 de Gévaudan
 	religion="catholic"
 	culture="occitan"
+	father=1227223	
 	1030.1.1 = {
 		birth="1030.1.1"
 	}
@@ -7866,7 +7910,6 @@
 	culture="occitan"
 	father=372
 	mother=413
-	trait = legit_bastard
 	960.1.1 = {
 		birth = yes
 	}
@@ -7891,18 +7934,18 @@
 }
 
 40258 = {
-	name="Bertrand" #Bertrand I de Gévaudan
+	name="Bertran" #Bertrand I de Gévaudan
 	dynasty=100219 
 	religion="catholic"
 	culture="occitan"
 	father=32274 #Héraclius de Gévaudan
 	#or father=40256 Etienne I de Gévaudan
-	890.1.1 = {
-		birth = yes
+	902.1.1 = {
+		birth=yes
 	}
 	#married Emilde de Brioude
-	993.1.1 = {
-		death="993.1.1"
+	954.1.1 = {
+		death=yes
 	}
 }
 
@@ -7914,8 +7957,8 @@
 	religion="catholic"
 	culture="occitan"
 	father=40258 #Betrand I de Gévaudan
-	950.1.1 = {
-		birth="950.1.1"
+	940.1.1 = {
+		birth=yes
 	}
 	#married Roubaud II de Provence
 	1002.1.1 = {
@@ -7930,14 +7973,14 @@
 	religion="catholic"
 	culture="occitan"
 	father=40258 #Bertrand I de Gévaudan
-	920.1.1 = {
-		birth="920.1.1"
+	935.1.1 = {
+		birth = yes
 	}
 	966.1.1 = {
 		add_spouse=127009 #Adélais d'Anjou
 	}
-	982.1.1 = {
-		death="982.1.1"
+	975.1.1 = {
+		death=yes
 	}
 }
 
@@ -8757,8 +8800,8 @@
 	culture="occitan"
 	father=205581
 	mother=205595
-	1158.1.1={
-		birth="1158.1.1"
+	1157.1.1={
+		birth="1157.1.1"
 	}
 	1174.1.1={
 		add_spouse=215505 #Eudoxie Comnène
@@ -8879,7 +8922,6 @@
 	culture="occitan"
 	father=206033 #Guillaume VII d'Auvergne
 	mother=205716 #Anne de Nevers
-	trait = legit_bastard
 	1135.1.1 = {
 		birth="1135.1.1"
 	}
@@ -9312,13 +9354,13 @@
 	culture="occitan"
 	father=138364 #Aner I d'Oloron/Dax
 	960.1.1 = {
-		birth="960.1.1"
+		birth=yes
 	}
 	985.1.1 = {
 		add_spouse=138345 #Sybille d'Armagnac
 	}
-	1000.1.1 = {
-		death="1000.1.1" #unknown
+	1028.11.1 = {
+		death=yes
 	}
 }
 
@@ -9346,11 +9388,11 @@
 	father=138344 #Arnaud Loup I de Dax
 	mother=138345 #Sybille d'Armagnac
 	985.1.1 = {
-		birth="985.1.1"
+		birth=yes
 	}
 	#1010.1.1 married Comtesse de Lomagne
-	1028.11.1 = {
-		death="1028.11.1" 
+	1050.1.1 = {
+		death=yes
 	}	
 }
 
@@ -9493,11 +9535,11 @@
 	dynasty=100223
 	religion="catholic"
 	culture="occitan"
-	1039.1.1 = {
-		birth="1039.1.1" #unknown
+	1009.1.1 = {
+		birth=yes
 	}
-	1089.1.1 = {
-		death="1089.1.1" #unknown
+	1070.1.1 = {
+		death=yes
 	}
 }
 
@@ -9695,6 +9737,7 @@
 	religion="catholic"
 	culture="occitan"
 	dynasty=5103
+	father=1093042 #Bertrand d'Anduze	
 	1150.1.1 = {
 		birth="1150.1.1" 
 	}
@@ -9943,8 +9986,8 @@
 	religion="catholic"
 	culture="occitan"
 	father=40258 #Bertrand I de Gévaudan
-	952.1.2 = {
-		birth="952.1.2"
+	942.1.1 = {
+		birth=yes
 	}
 	1007.1.7 = {
 		death="1007.1.7"
@@ -10047,18 +10090,17 @@
 	}
 }
 
-72437={
+72437 = {
 	name="Margarida"
+	dynasty = 5073
 	female=yes
-
-	religion=catholic
-	culture=occitan
-
+	religion="catholic"
+	culture="occitan"
 	1203.1.1={
-		birth=yes
+		birth="1203.1.1"
 	}
 	1230.8.7={
-		death=yes
+		death="1230.8.7"
 	}
 }
 
@@ -10108,27 +10150,21 @@
 	}
 }
 
-72441={
+72441 = {
 	name="Amalric"
-	dynasty=776
-
+	dynasty = 776
+	religion="catholic"
+	culture="occitan"
 	father=72432
 	mother=72439
-
-	religion=catholic
-	culture=occitan
-
 	1234.1.1={
-		birth=yes
+		birth="1234.1.1"
 	}
-	1271.3.24={
+	1271.3.24 = {
 		add_spouse=138311
 	}
-	1281.1.1={
-		add_spouse=31037
-	}
 	1302.1.11={
-		death=yes
+		death="1302.1.11"
 	}
 }
 
@@ -10206,8 +10242,8 @@
 	culture="occitan"
 	father=72440
 	mother=138153
-	1273.1.1={
-		birth="1273.1.1"
+	1267.1.1={
+		birth="1267.1.1"
 	}
 	1338.1.1={
 		death="1338.1.1"
@@ -10588,8 +10624,8 @@
 	955.1.10= {
 		add_spouse=7922
 	}
-	968.1.2 = {
-		death="968.1.2"
+	968.1.1 = {
+		death=yes
 	}
 }
 
@@ -10605,12 +10641,11 @@
 	trait="flamboyant_schemer"
 	father=40800
 	mother=7922
-	trait = legit_bastard
-	940.1.2 = {
-		birth="940.1.2"
+	945.1.1 = {
+		birth=yes
 	}
-	1010.1.2 = {
-		death="1010.1.2"
+	1008.1.1 = {
+		death=yes
 	}
 }
 
@@ -11105,9 +11140,9 @@
 }
 
 91149 = {
-	name="Gui" #Guy III de Thiern/Chalon
+	name="Gui" #Guy III de Thiers/Chalon
 	# AKA: Guy
-	dynasty=736 #was 733 Auvergne
+	dynasty=13113 #was 733 Auvergne
 	religion="catholic"
 	culture="occitan"
 	father=40142 #Guillaume II de Thiern
@@ -11122,7 +11157,7 @@
 
 205691 = {
 	name="Guilhèm" #Guillaume I de Chalon
-	dynasty=736 #was 733 Auvergne
+	dynasty=13113 #was 733 Auvergne
 	religion="catholic"
 	culture="occitan"
 	father=91149 #Guy III de Thiers	
@@ -11136,7 +11171,7 @@
 
 205690 = {
 	name="Guilhèm" #Guillaume II de Chalon
-	dynasty=736 #was 733 Auvergne
+	dynasty=13113 #was 733 Auvergne
 	religion="catholic"
 	culture="occitan"
 	father=205691 #Guillaume I de Chalon
@@ -11150,7 +11185,7 @@
 
 138432 = {
 	name="Guilhèm" #Guillaume III de Chalon
-	dynasty=736 #was 733 Auvergne
+	dynasty=13113 #was 733 Auvergne
 	religion="catholic"
 	culture="occitan"
 	father=205690 #Guillaume II de Chalon
@@ -11168,7 +11203,7 @@
 205692 = {
 	name="Beatritz" #Béatrice de Chalon
 	female=yes
-	dynasty=736 #was 733 Auvergne
+	dynasty=13113 #was 733 Auvergne
 	religion="catholic"
 	culture="occitan"
 	father=138432 #Guillaume III de Chalon
@@ -11205,8 +11240,8 @@
 	935.1.1 = {
 		birth="935.1.1" #unknown
 	}
-	985.1.1 = {
-		death="985.1.1"
+	989.1.1 = {
+		death="989.1.1"
 	}
 }
 
@@ -11217,10 +11252,10 @@
 	religion="catholic"
 	culture="occitan"
 	father=40126 #Guillaume IV d'Auvergne
-	985.1.1 = {
-		birth="985.1.1" #unknown
+	980.1.1 = {
+		birth=yes
 	}
-	1020.1.1 = {
+	1000.1.1 = {
 		add_spouse=40235 #Ermengarde de Toulouse
 	}
 	1032.1.1 = {
@@ -11252,8 +11287,8 @@
 	culture="occitan"
 	father=40130 #Guillaume V d'Auvergne
 	mother=40261 #Philippa de Gévaudan
-	1024.1.1 = {
-		birth="1024.1.1" 
+	1023.1.1 = {
+		birth="1023.1.1" 
 	}
 	#1048 married Archambaud de Bourbon
 	1070.1.1 = {
@@ -11268,7 +11303,6 @@
 	culture="occitan"
 	father=206033 #Guillaume d'Auvergne the Old
 	mother=205716 #Anne de Bachaumont
-	trait = legit_bastard
 	1130.1.1 = {
 		birth="1130.1.1"
 	}
@@ -11463,8 +11497,8 @@
 	culture="occitan"
 	father=7471 #Robert VII d'Auvergne
 	mother=7472 #Blanche de Clermont
-	1304.4.1 = {
-		birth="1304.4.1"
+	1303.4.1 = {
+		birth="1303.4.1"
 	}
 	1325.1.1 = {
 		add_spouse=455822 #Marguerite d'Evreux
@@ -11532,10 +11566,8 @@
 	dynasty=733
 	religion="catholic"
 	culture="occitan"
-	trait="poet"
 	trait="lustful"
 	trait="gregarious"
-	give_nickname=nick_the_troubadour
 	father=206040
 	mother=206039 #Marquise d'Albon
 	1151.1.1 = {
@@ -11543,6 +11575,10 @@
 	}
 	1166.1.1 = {
 		add_spouse=205607 #Guillemette de Comborn
+	}
+	1167.1.1 = {
+		add_trait="poet"
+		give_nickname=nick_the_troubadour
 	}
 	1235.3.22 = {
 		death="1235.3.22"
@@ -11783,7 +11819,6 @@
 	culture="occitan"
 	father=212802 #Guigues VI d'Albon
 	mother=7584 #Clémence de Macon
-	trait = legit_bastard
 	1115.1.1 = {
 		birth="1115.1.1"
 	}
@@ -12193,23 +12228,39 @@
 	}
 }
 
+
 7493 = {
-	name="Guigues" #Guigues VIII/X de Viennois
-	dynasty=57 #de la Tour du Pin
-	religion="catholic"
-	culture="occitan"
-	father=7497
-	mother=7494
-	1309.1.1 = {
-		birth="1309.1.1"
-	}
+	
+name="Guigues" 
+#Guigues VIII/X de Viennois
+	
+dynasty=57 #de la Tour du Pin
+	
+religion="catholic"
+	
+culture="occitan"
+	
+father=7497
+	
+mother=7494
+	
+1309.1.1 = {
+		
+birth="1309.1.1"
+	
+}
+
 	1328.1.1 = { # 1323.5.23 IRL
 		add_spouse=455411 # Isabella of France
-	}
-	1333.7.28 = {
-		death="1333.7.28"
-	}
+	}	
+1333.7.28 = {
+		
+death="1333.7.28"
+	
 }
+
+}
+
 
 138411 = {
 	name="Godafres" #Geoffroy de Vergy Bishop of Lyon/St Jean Baptiste
@@ -12410,7 +12461,6 @@
 	culture="occitan"
 	father=20290 #Artaud IV de Forez
 	mother=10039 #Ida de Beauffremont
-	trait = legit_bastard
 	1060.1.1 = {
 		birth="1060.1.1"
 	}
@@ -12458,20 +12508,8 @@
 	885.1.1 = {
 		birth="885.1.1"
 	}
-	911.1.1={
-		add_spouse=168005
-	}
-	936.1.1={
-		add_claim = d_toscana
-	}
-	936.1.1={
-		add_claim = c_firenze
-	}
-	936.1.1={
-		employer=1144 #Rudolf of Burgundy
-	}
-	940.1.1 = {
-		death="940.1.1"
+	936.1.1 = {
+		death="936.1.1"
 	}
 }
 
@@ -12481,13 +12519,8 @@
 	religion="catholic"
 	culture="occitan"
 	father=7923
-	mother=190533
-	trait=bastard
 	920.1.1 = {
 		birth="920.1.1"
-	}
-	945.1.1 = {
-		add_spouse=167983
 	}
 	967.9.15 = {
 		death="967.9.15"
@@ -12495,17 +12528,13 @@
 }
 
 7925 = {
-	name="Ugo"
+	name="Uc"
 	dynasty=7052
 	religion="catholic"
 	culture="occitan"
 	father=7924
-	mother=167983
 	950.1.1 = {
 		birth="950.1.1"
-	}
-	968.1.1 = {
-		add_spouse=167983
 	}
 	1001.1.1 = {
 		death="1001.1.1"
@@ -12542,8 +12571,8 @@
 	trait="amateurish_plotter"
 	father=234
 	mother=275
-	1026.1.2 = {
-		birth="1026.1.2"
+	1020.1.2 = {
+		birth="1020.1.2"
 	}
 	1070.1.2 = {
 		death="1070.1.2"
@@ -13473,10 +13502,10 @@
 	culture=occitan
 
 	1223.1.1={
-		birth=yes
+		birth = yes
 	}
 	1288.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13491,13 +13520,13 @@
 	culture=occitan
 
 	1182.1.1={
-		birth=yes
+		birth = yes
 	}
 	1206.1.1={
 		add_spouse=72083
 	}
 	1240.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13512,7 +13541,7 @@
 	culture=occitan
 
 	1207.1.1={
-		birth=yes
+		birth = yes
 	}
 	1223.1.1={
 		add_spouse=72138
@@ -13521,7 +13550,7 @@
 		add_spouse=200112
 	}
 	1257.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13533,10 +13562,10 @@
 	culture=occitan
 
 	1233.1.1={
-		birth=yes
+		birth = yes
 	}
 	1300.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13551,15 +13580,15 @@
 	culture=occitan
 
 	1251.1.1={
-		birth=yes
+		birth = yes
 	}
 	1295.1.1={
-		death=yes
+		death = yes
 	}
 }
 
 200114={
-	name="Arnaut"
+	name="Arnaut-Roger"
 	dynasty=386
 
 	father=200111
@@ -13569,13 +13598,13 @@
 	culture=occitan
 
 	1253.1.1={
-		birth=yes
+		birth = yes
 	}
-	1273.1.1={
-		add_spouse=200121
+	1272.1.1={
+		add_spouse=1237060
 	}
 	1288.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13591,10 +13620,10 @@
 	culture=occitan
 
 	1255.1.1={
-		birth=yes
+		birth = yes
 	}
 	1320.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13610,10 +13639,10 @@
 	culture=occitan
 
 	1257.1.1={
-		birth=yes
+		birth = yes
 	}
 	1324.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13623,16 +13652,16 @@
 	dynasty=386
 
 	father=200114
-	mother=200121
+	mother=1237060
 
 	religion=catholic
 	culture=occitan
 
-	1275.1.1={
-		birth=yes
+	1273.1.1={
+		birth = yes
 	}
 	1330.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13642,16 +13671,16 @@
 	dynasty=386
 
 	father=200114
-	mother=200121
+	mother=1237060
 
 	religion=catholic
 	culture=occitan
 
-	1277.1.1={
-		birth=yes
+	1284.1.1={
+		birth = yes
 	}
 	1310.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13661,16 +13690,16 @@
 	dynasty=386
 
 	father=200114
-	mother=200121
+	mother=1237060
 
 	religion=catholic
 	culture=occitan
 
-	1279.1.1={
-		birth=yes
+	1285.1.1={
+		birth = yes
 	}
 	1330.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13685,13 +13714,13 @@
 	culture=occitan
 
 	1183.1.1={
-		birth=yes
+		birth = yes
 	}
 	1199.1.1={
 		add_matrilineal_spouse=72092
 	}
 	1227.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13707,10 +13736,10 @@
 	culture=occitan
 
 	1117.1.1={
-		birth=yes
+		birth = yes
 	}
 	1156.1.1={
-		death=yes
+		death = yes
 	}
 }
 
@@ -13725,10 +13754,10 @@
 	culture=occitan
 
 	1233.1.1={
-		birth=yes
+		birth = yes
 	}
 	1270.1.1={
-		death=yes
+		death = yes
 	}
 }
 190477 = {
@@ -13736,11 +13765,11 @@
 	dynasty=1044111 #Louping
 	religion="catholic"
 	culture="occitan"
-	633.1.1={
-		birth=yes
+	635.1.1={
+		birth = yes
 	}
 	677.1.1={
-		death=yes
+		death = yes
 	}
 }
 190478 = {
@@ -13750,10 +13779,10 @@
 	culture="occitan"
 	father=190477
 	658.1.1={
-		birth=yes
+		birth = yes
 	}
 	707.1.1={
-		death=yes
+		death = yes
 	}
 }
 190479 = {
@@ -13763,13 +13792,13 @@
 	culture="occitan"
 	father=190478
 	681.1.1={
-		birth=yes
+		birth = yes
 	}
 	697.1.1={
 		add_spouse=190452 #Waltrude Karling
 	}
 	735.1.1={
-		death=yes
+		death = yes
 	}
 }
 190480 = {
@@ -13785,7 +13814,7 @@
 	father=190479
 	mother=190452
 	716.1.1={
-		birth=yes
+		birth = yes
 	}
 	769.1.1 = {
 		effect = {
@@ -13808,7 +13837,7 @@
 		}
 	}
 	774.1.1={
-		death=yes
+		death = yes
 	}
 }
 190481 = {
@@ -13818,13 +13847,13 @@
 	culture="occitan"
 	father=190480
 	732.1.1={
-		birth=yes
+		birth = yes
 	}
 	768.1.1={
 		add_spouse=190493 #Adela Louping
 	}
 	768.6.2={
-		death=yes
+		death = yes
 	}
 }
 190482 = {
@@ -13835,10 +13864,10 @@
 	father=190481
 	mother=190493
 	768.1.1={
-		birth=yes
+		birth = yes
 	}
 	790.6.2={
-		death=yes
+		death = yes
 	}
 }
 190483 = {
@@ -13849,10 +13878,10 @@
 	father=190479
 	mother=190452
 	719.1.1={
-		birth=yes
+		birth = yes
 	}
 	759.1.1={
-		death=yes
+		death = yes
 	}
 }
 190484 = {
@@ -13862,7 +13891,7 @@
 	culture="occitan"
 	father=190483
 	736.1.1={
-		birth=yes
+		birth = yes
 	}
 	769.1.1 = {
 		effect = {
@@ -13885,7 +13914,7 @@
 		}
 	}
 	775.1.1={
-		death=yes
+		death = yes
 	}
 }
 190485 = {
@@ -13895,10 +13924,10 @@
 	culture="occitan"
 	father=190484
 	753.1.1={
-		birth=yes
+		birth = yes
 	}
 	800.1.1={
-		death=yes
+		death = yes
 	}
 }
 190486 = {
@@ -13908,10 +13937,10 @@
 	culture="occitan"
 	father=190485
 	769.1.1={
-		birth=yes
+		birth = yes
 	}
 	816.1.1={
-		death=yes
+		death = yes
 	}
 }
 190487 = {
@@ -13921,10 +13950,10 @@
 	culture="occitan"
 	father=190486
 	790.1.1={
-		birth=yes
+		birth = yes
 	}
 	815.1.1={
-		death=yes
+		death = yes
 	}
 }
 190488 = {
@@ -13934,10 +13963,10 @@
 	culture="occitan"
 	father=190485
 	771.1.1={
-		birth=yes
+		birth = yes
 	}
 	812.1.1={
-		death=yes
+		death = yes
 	}
 }
 190489 = {
@@ -13947,10 +13976,10 @@
 	culture="occitan"
 	father=190488
 	792.1.1={
-		birth=yes
+		birth = yes
 	}
 	820.1.1={
-		death=yes
+		death = yes
 	}
 }
 190490 = {
@@ -13960,10 +13989,10 @@
 	culture="occitan"
 	father=190489
 	814.1.1={
-		birth=yes
+		birth = yes
 	}
 	863.1.1={
-		death=yes
+		death = yes
 	}
 }
 190491 = {
@@ -13973,10 +14002,10 @@
 	culture="occitan"
 	father=190489
 	819.1.1={
-		birth=yes
+		birth = yes
 	}
 	844.1.1={
-		death=yes
+		death = yes
 	}
 }
 190492 = {
@@ -13986,10 +14015,10 @@
 	culture="occitan"
 	father=190484
 	754.1.1={
-		birth=yes
+		birth = yes
 	}
 	792.1.1={
-		death=yes
+		death = yes
 	}
 }
 190493 = {
@@ -14000,10 +14029,10 @@
 	culture="occitan"
 	father=190484
 	752.1.1={
-		birth=yes
+		birth = yes
 	}
 	807.1.1={
-		death=yes
+		death = yes
 	}
 }
 190494 = {
@@ -14013,10 +14042,10 @@
 	culture="occitan"
 	father=190483
 	740.1.1={
-		birth=yes
+		birth = yes
 	}
 	791.1.1={
-		death=yes
+		death = yes
 	}
 }
 190495 = {
@@ -14026,10 +14055,10 @@
 	culture="occitan"
 	father=190483
 	742.1.1={
-		birth=yes
+		birth = yes
 	}
 	792.1.1={
-		death=yes
+		death = yes
 	}
 }
 190496 = {
@@ -14040,10 +14069,10 @@
 	father=190479
 	mother=190452
 	723.1.1={
-		birth=yes
+		birth = yes
 	}
 	768.1.1={
-		death=yes
+		death = yes
 	}
 }
 190497 = {
@@ -14055,10 +14084,10 @@
 	father=190479
 	mother=190452
 	727.1.1={
-		birth=yes
+		birth = yes
 	}
 	731.1.1={
-		death=yes
+		death = yes
 	}
 }
 190498 = {
@@ -14068,10 +14097,10 @@
 	culture="occitan"
 	father=190478
 	685.1.1={
-		birth=yes
+		birth = yes
 	}
 	740.1.1={
-		death=yes
+		death = yes
 	}
 }
 190499 = {
@@ -14080,10 +14109,10 @@
 	religion="catholic"
 	culture="occitan"
 	739.1.1={
-		birth=yes
+		birth = yes
 	}
 	780.1.1={
-		death=yes
+		death = yes
 	}
 }
 190500 = {
@@ -14093,10 +14122,10 @@
 	culture="occitan"
 	father=190499
 	761.1.1={
-		birth=yes
+		birth = yes
 	}
 	839.1.1={
-		death=yes
+		death = yes
 	}
 }
 190501 = {
@@ -14106,10 +14135,10 @@
 	culture="occitan"
 	father=190500
 	800.1.1={
-		birth=yes
+		birth = yes
 	}
 	848.1.1={
-		death=yes
+		death = yes
 	}
 }
 190502 = {
@@ -14118,10 +14147,10 @@
 	religion="catholic"
 	culture="occitan"
 	742.1.1={
-		birth=yes
+		birth = yes
 	}
 	801.1.1={
-		death=yes
+		death = yes
 	}
 }
 190503 = {
@@ -14131,10 +14160,10 @@
 	culture="occitan"
 	father=190502
 	765.1.1={
-		birth=yes
+		birth = yes
 	}
 	817.1.1={
-		death=yes
+		death = yes
 	}
 }
 190504 = {
@@ -14143,10 +14172,10 @@
 	religion="catholic"
 	culture="occitan"
 	745.1.1={
-		birth=yes
+		birth = yes
 	}
 	806.1.1={
-		death=yes
+		death = yes
 	}
 }
 190505 = {
@@ -14156,10 +14185,10 @@
 	culture="occitan"
 	father=190504
 	766.1.1={
-		birth=yes
+		birth = yes
 	}
 	822.1.1={
-		death=yes
+		death = yes
 	}
 }
 190506 = {
@@ -14168,10 +14197,10 @@
 	religion="catholic"
 	culture="occitan"
 	721.1.1={
-		birth=yes
+		birth = yes
 	}
 	770.1.1={
-		death=yes
+		death = yes
 	}
 }
 190507 = {
@@ -14181,10 +14210,10 @@
 	culture="occitan"
 	father=190506
 	742.1.1={
-		birth=yes
+		birth = yes
 	}
 	819.1.1={
-		death=yes
+		death = yes
 	}
 }
 190508 = {
@@ -14194,10 +14223,10 @@
 	culture="occitan"
 	father=190507
 	803.1.1={
-		birth=yes
+		birth = yes
 	}
 	863.1.1={
-		death=yes
+		death = yes
 	}
 }
 190509 = {
@@ -14207,10 +14236,10 @@
 	culture="occitan"
 	father=190508
 	827.1.1={
-		birth=yes
+		birth = yes
 	}
 	864.1.1={
-		death=yes
+		death = yes
 	}
 }
 190510 = {
@@ -14219,254 +14248,9 @@
 	religion="catholic"
 	culture="occitan"
 	747.1.1={
-		birth=yes
+		birth = yes
 	}
 	798.1.1={
-		death=yes
-	}
-}
-260600 = {
-	name = "Richard"
-	religion = catholic
-	culture = occitan
-	888.1.1 = {
-		birth = yes
-	}
-	950.1.1 = {
 		death = yes
-	}
-}
-260601 = {
-	name = "Aznar"
-	dynasty = 1062257
-	religion = catholic
-	culture = occitan
-	902.1.1 = {
-		birth = yes
-	}
-	953.1.1 = {
-		death = yes
-	}
-}
-
-400 = {
-	name="Rotbold"
-	dynasty=7052
-	martial=5
-	diplomacy=5
-	intrigue=8
-	stewardship=6
-	religion="catholic"
-	culture="occitan"
-	trait="gluttonous"
-	trait="craven"
-	trait="flamboyant_schemer"
-	father=7980
-	900.1.2 = {
-		birth="900.1.2"
-	}
-	948.1.2 = {
-		death="948.1.2"
-	}
-}
-
-7923 = {
-	name="Hugues"
-	dynasty=7052
-	martial=6
-	diplomacy=7
-	intrigue=8
-	stewardship=8
-	religion="catholic"
-	culture="occitan"
-	trait="diligent"
-	trait="patient"
-	trait="zealous"
-	trait="charismatic_negotiator"
-	father=7921
-	mother=7920
-	885.1.1 = {
-		birth="885.1.1"
-	}
-	913.1.1 = {
-	 	add_spouse=7983 # Willa
-	}
-	924.1.1 = {
-	 	remove_spouse=7983 # Willa
-	}
-	924.1.1 = {
-	 	add_spouse=190532 # Hilda
-	}
-	931.1.1 = {
-	 	remove_spouse=7983 # Hilda
-	}
-	932.1.1 = {
-	 	add_spouse=7915 # Marozia
-	}
-	937.1.1 = {
-	 	remove_spouse=7915 # Marozia
-	}
-	937.12.12 = {
-	 	add_spouse=7958 # Bertha
-	}
-	948.4.10 = {
-		death="948.4.10"
-	}
-}
-
-167000 = {
-	name="Lothaire"
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father=7923
-	mother=190532
-	928.1.1 = {
-		birth="928.1.1"
-	}
-	946.1.1 = {
-		add_spouse=1159
-	}
-	950.11.22 = {
-		death="950.11.22"
-	}
-}
-7928 = {
-	name="Alda"
-	female=yes
-	dynasty=7052
-	martial=6
-	diplomacy=7
-	intrigue=8
-	stewardship=8
-	religion="catholic"
-	culture="occitan"
-	trait="diligent"
-	trait="patient"
-	trait="zealous"
-	trait="charismatic_negotiator"
-	father=7923
-	mother=190532
-	920.2.1 = {
-		birth="920.2.1"
-	}
-	967.9.15 = {
-		death="967.9.15"
-	}
-}
-190533 = {
-	name="Wandelmoda" #wife of Hugh of Italy
-	female=yes
-	religion="catholic"
-	culture="occitan"
-	901.1.1={
-		birth=yes
-	}
-	931.1.1={
-		death=yes
-	}
-}
-260629 = {
-	name = "Manasses"
-	dynasty=796
-	religion = catholic
-	culture = occitan
-	father = 144971
-	mother = 144972
-	902.1.1 = {
-		birth = yes
-	}
-	957.1.1 = {
-		death = yes
-	}
-}
-190545 = {
-	name="Tedald" #Duke of Spoleto
-	dynasty=796
-	religion="catholic"
-	culture="occitan"
-	father = 144971
-	mother = 144972
-	904.1.1 = {
-		birth=yes
-	}
-	936.1.1 = {
-		death=yes
-	}
-}
-190546 = {
-	name="Berta" #Daughter of Boso
-	female=yes
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father = 7980
-	mother = 168005
-	912.1.1 = {
-		birth=yes
-	}
-	965.8.18 = {
-		death=yes
-	}
-}
-190547 = {
-	name="Willa" #wife of Berengar ii
-	female=yes
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father = 7980
-	mother = 168005
-	913.1.1 = {
-		birth=yes
-	}
-	964.1.1 = {
-		death=yes
-	}
-}
-190548 = {
-	name="Richilde" #Daughter of Boso
-	female=yes
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father = 7980
-	mother = 168005
-	919.1.1 = {
-		birth=yes
-	}
-	967.1.1 = {
-		death=yes
-	}
-}
-190549 = {
-	name="Gisela" #Daughter of Boso
-	female=yes
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father = 7980
-	mother = 168005
-	924.1.1 = {
-		birth=yes
-	}
-	970.1.1 = {
-		death=yes
-	}
-}
-167907 = {
-	name="Ermengarde"
-	female=yes
-	dynasty=7052
-	religion="catholic"
-	culture="occitan"
-	father=7921
-	mother=7920
-	885.1.1 = {
-		birth="904.1.1"
-	}
-	
-	932.2.28 = {
-		death="932.2.28"
 	}
 }

@@ -1,3 +1,5 @@
+# -*- ck2.history.characters -*-
+
 20479 = {
 	name="Radomir"
 	dynasty=702
@@ -12,8 +14,12 @@
 	1036.1.1={
 		birth="1036.1.1"
 	}
-	1093.1.1={
-		death="1093.1.1"
+	1042.1.1={
+		dynasty=1000102839
+		culture="greek"			
+	}	
+	1097.1.1={
+		death=yes
 	}
 }
 
@@ -33,6 +39,10 @@
 	father=722
 	1012.1.1={
 		birth="1012.1.1"
+	}
+	1042.1.1={
+		dynasty=1000102839
+		culture="greek"			
 	}
 	1060.1.1={
 		death="1060.1.1"
@@ -551,10 +561,7 @@
 		add_spouse=34419 #Maria Kantakouzenos
 	}
 	1277.9.1={
-		death = {
-			death_reason = death_battle
-			killer = 31192
-		}
+		death="1277.9.1"
 	}
 }
 
@@ -611,8 +618,6 @@
 	dynasty=7204
 	religion="orthodox"
 	culture="bulgarian"
-	trait="peasant_leader"
-	trait="skilled_tactician"
 	1240.1.1={
 		birth="1240.1.1"
 	}
@@ -620,10 +625,7 @@
 		add_spouse=34419
 	}
 	1280.1.1={
-		death = {
-			death_reason = death_murder
-			killer = 125518
-		}
+		death="1280.1.1"
 	}
 }
 
@@ -634,16 +636,15 @@
 	religion="orthodox"
 	culture="bulgarian"
 	father=467530
-	mother=170494
-	1260.1.1={
-		birth=yes
+	1265.1.1={
+		birth="1265.1.1"
 	}
 	#married Efrosina ??
 	1320.1.1={
 		add_spouse=465515
 	} 
 	1322.1.1={
-		death=yes
+		death="1322.1.1"
 	}
 }
 
@@ -654,13 +655,12 @@
 	religion="orthodox"
 	culture="bulgarian"
 	father=467530
-	mother=170494
-	1261.1.1={
-		birth=yes
+	1263.1.1={
+		birth="1263.1.1"
 	}
 	#married 125519 Chaka son of Nogai Khan
 	1300.1.1={
-		death=yes
+		death="1300.1.1"
 	}
 }
 
@@ -744,8 +744,8 @@
 	1266.1.2={
 		birth="1266.1.2"
 	}
-	1298.1.2={
-		death="1298.1.2"
+	1325.1.1={
+		death=yes
 	}
 }
 
@@ -773,6 +773,7 @@
 	religion="orthodox"
 	culture="bulgarian"
 	father=728
+	mother=1500425	
 	982.1.2={
 		birth="982.1.2"
 	}
@@ -791,7 +792,8 @@
 	stewardship=6
 	religion="orthodox"
 	culture="bulgarian"
-	father=720
+	father=728
+	mother=1500425	
 	980.1.1={
 		birth="980.1.1"
 	}
@@ -1254,6 +1256,10 @@
 467530 = {
 	name="Georgi"
 	dynasty=40
+	martial=7
+	diplomacy=7
+	intrigue=6
+	stewardship=6
 	religion="orthodox"
 	culture="bulgarian"
 	trait="flamboyant_schemer"
@@ -1261,32 +1267,11 @@
 	1240.1.1={
 		birth="1240.1.1"
 	}
-	1259.1.1={
-		add_spouse=170494
-	}
-	1280.1.1={
-		remove_spouse=170494
+	1266.1.1={
 		add_spouse=31183
-	}
-	1283.1.1={
-		remove_spouse=31183
-		add_spouse=170494
 	}
 	1308.1.1={
 		death="1308.1.1"
-	}
-}
-
-170494 = {
-	name="Maria"
-	female=yes
-	religion="orthodox"
-	culture="bulgarian"
-	1243.1.1={
-		birth=yes
-	}
-	1310.1.1={
-		death=yes
 	}
 }
 
@@ -1294,18 +1279,22 @@
 	name="Anna"
 	female = yes
 	dynasty=40
+	martial=5
+	diplomacy=5
+	intrigue=7
+	stewardship=8
 	religion="orthodox"
 	culture="bulgarian"
 	trait="patient"
 	trait="stutter"
 	trait="flamboyant_schemer"
 	father=467530
-	mother=170494
-	1262.1.1={
-		birth=yes
+	mother=31183
+	1265.1.1={
+		birth="1265.1.1"
 	}
 	1299.1.1={
-		death=yes
+		death="1299.1.1"
 	}
 }
 
@@ -1443,17 +1432,21 @@
 468550 = {
 	name="Ivan"
 	dynasty=40
+	martial=4
+	diplomacy=5
+	intrigue=7
+	stewardship=6
 	religion="orthodox"
 	culture="bulgarian"
 	trait="zealous"
 	trait="tough_soldier"
 	father=468555
 	mother=467542
-	1302.1.1={
-		birth=yes
+	1300.1.2={
+		birth="1300.1.2"
 	}
-	1350.1.1={
-		death=yes
+	1350.1.2={
+		death="1350.1.2"
 	}
 }
 
@@ -1493,11 +1486,14 @@
 	trait="content"
 	trait="charismatic_negotiator"
 	father=722
-	1008.1.1={
-		birth="1008.1.1"
+	996.1.1={
+		birth=yes
 	}
 	1030.1.1={
-		death="1030.1.1"
+		add_trait = blinded
+	}	
+	1031.1.1={
+		death="1031.1.1"
 	}
 }
 
@@ -1509,15 +1505,20 @@
 	intrigue=5
 	stewardship=6
 	religion="orthodox"
-	culture="bulgarian"
+	culture="armenian"
 	trait="ambitious"
 	trait="proud"
 	trait="tough_soldier"
+
 	915.1.1={
-		birth="938.1.1"
+		birth=yes
+		culture="bulgarian"
 	}
+	936.1.1={
+		add_spouse="1501228" #Hripsime
+	}	
 	976.1.1={
-		death="976.1.1"
+		death=yes
 	}
 }
 
@@ -1559,14 +1560,12 @@
 	culture="bulgarian"
 	trait="patient"
 	trait="temperate"
+	trait="zealous"
 	trait="thrifty_clerk"
 	father=70382
 	mother=168075
 	845.1.1={
 		birth="845.1.1"
-	}
-	889.1.1={
-		religion="tengri_pagan"	
 	}
 	893.1.1={
 		death="893.1.1"
@@ -1593,29 +1592,29 @@
 		death="852.1.1"
 	}
 }
-
-70385 = {
-	name="Miroslava"
-	female=yes
-	dynasty=8636
-	martial=4
-	diplomacy=7
-	intrigue=8
-	stewardship=6
-	religion="orthodox"
-	culture="bulgarian"
-	trait="greedy"
-	trait="bastard"
-	trait="underhanded_rogue"
-	father=70382
-	
-	906.1.1={
-		birth="920.1.1"
-	}
-	973.1.1={
-		death="973.1.1"
-	}
-}
+# Invented connection between the Kometopouloi and Krum family
+#70385 = {
+#	name="Miroslava"
+#	female=yes
+#	dynasty=8636
+#	martial=4
+#	diplomacy=7
+#	intrigue=8
+#	stewardship=6
+#	religion="orthodox"
+#	culture="bulgarian"
+#	trait="greedy"
+#	trait="bastard"
+#	trait="underhanded_rogue"
+#	father=712
+#	
+#	888.1.1={
+#		birth=yes
+#	}
+#	933.1.1={
+#		death=yes
+#	}
+#}
 
 712 = {
 	name="Simeon"
@@ -1624,20 +1623,17 @@
 	diplomacy=6
 	intrigue=4
 	stewardship=6
-	religion="tengri_pagan"	
+	religion="orthodox"	
 	culture="bulgarian"
 	trait="deceitful"
-	trait="kind"
-	trait="cynical"
-	trait="lisp"
-	trait="tough_soldier"
+	trait="ambitious"
+	trait="wroth"
+	trait="erudite"
+	trait="skilled_tactician"
 	father=70382
 	mother=168075
-	850.1.1={
-		birth="850.1.1"
-	}
 	864.1.1={
-		religion="orthodox"
+		birth=yes
 	}
 	927.5.27={
 		death="927.5.27"
@@ -1647,24 +1643,24 @@
 714 = {
 	name="Petar"
 	dynasty=8636
-	learning=3
-	martial=5
-	diplomacy=6
-	intrigue=4
-	stewardship=8
+	martial=7
+	diplomacy=4
+	intrigue=5
+	stewardship=5
 	religion="orthodox"
 	culture="bulgarian"
-	trait="content"
-	trait="charitable"
-	trait="kind"
-	trait="deceitful"
-	trait="proud"
-	trait="fortune_builder"
+	trait="wroth"
+	#trait="patient"
+	trait="honest"
+	trait="flamboyant_schemer"
 	father=712
-	mother = 262335
-	910.1.1={
-		birth="912.1.1"
+	mother=262335
+	905.1.1={
+		birth=yes
 	}
+	927.1.1={
+		add_spouse = "1500435"
+	}	
 	969.1.30={
 		death="969.1.30"
 	}
@@ -1682,12 +1678,12 @@
 	trait="deceitful"
 	trait="amateurish_plotter"
 	father=714
-	mother=262237
-	931.1.1={
-		birth = yes
+	mother=1500435
+	940.1.1={
+		birth="940.1.1"
 	}
-	986.1.1={
-		death="986.1.1"
+	977.1.1={
+		death=yes
 	}
 }
 
@@ -1703,10 +1699,13 @@
 	trait="gluttonous"
 	trait="skilled_tactician"
 	father=714
-	mother=262237
-	934.1.1={
-		birth = yes
+	mother=1500435	
+	945.1.1={
+		birth="945.1.1"
 	}
+	971.5.1={
+		trait="eunuch" #was castrated in captivity
+	}	
 	998.1.1={
 		death="998.1.1"
 	}
@@ -1725,6 +1724,7 @@
 	trait="hunchback"
 	trait="flamboyant_schemer"
 	father=70381
+	mother=1501228	
 	940.1.1={
 		birth="940.1.1"
 	}
@@ -1767,8 +1767,12 @@
 	trait="honest"
 	trait="tough_soldier"
 	father=722
-	1010.1.1={
-		birth="1010.1.1"
+	1000.1.1={
+		birth="1000.1.1"
+	}
+	1042.1.1={
+		dynasty=1000102818
+		culture="greek"		
 	}
 	1071.8.26={
 		death="1071.8.26"
@@ -1790,8 +1794,9 @@
 	1031.1.1={
 		birth="1031.1.1"
 	}
-	1066.1.1={
-		employer=724
+	1042.1.1={
+		dynasty=1000102818
+		culture="greek"			
 	}
 	1069.1.1={
 		death="1069.1.1"
@@ -1813,6 +1818,10 @@
 	father=724
 	1032.1.1={
 		birth="1032.1.1"
+	}
+	1042.1.1={
+		dynasty=1000102818
+		culture="greek"			
 	}
 	1065.1.1={
 		death="1065.1.1"
@@ -1873,9 +1882,13 @@
 	trait="just"
 	trait="skilled_tactician"
 	father=70381
+	mother=1501228
 	945.1.1={
 		birth="945.1.1"
 	}
+	970.1.1={
+		add_spouse = "1500425"
+	}	
 	1014.10.6={
 		death="1014.10.6"
 	}
@@ -1915,13 +1928,14 @@
 	trait="wroth"
 	trait="skilled_tactician"
 	father=728
-	969.1.2={
-		birth="969.1.2"
+	mother=1500425	
+	971.1.1={
+		birth=yes
 	}
-	987.1.1={
+	1008.1.1={
 		add_spouse=492
 	}
-	988.1.1={
+	1009.1.2={
 		remove_spouse=492
 	}
 	1015.10.1={
@@ -1944,8 +1958,8 @@
 	trait="tough_soldier"
 	father=730
 	mother=492
-	989.1.1={
-		birth="989.1.1"
+	1009.1.1={
+		birth="1009.1.1"
 	}
 	1041.1.1={
 		death="1041.1.1"
@@ -1990,7 +2004,7 @@
 
 159126 = {
 	name="Zvinica" #father of Presian I
-	dynasty=591
+	dynasty=8636
 	religion="tengri_pagan"
 	culture="bulgarian"
 	father=159124
@@ -1999,6 +2013,24 @@
 	}
 	830.1.2={
 		death="830.1.2"
+	}
+}
+
+168066 = {
+	name="Rasate"
+	dynasty=8636
+	religion="tengri_pagan"
+	culture="bulgarian"
+	father=70382
+	mother=168075
+	847.1.1={
+		birth="847.1.1"
+	}
+	864.1.1={
+		religion="orthodox"
+	}
+	896.1.1={
+		death="896.1.1"
 	}
 }
 
@@ -2136,8 +2168,8 @@
 	culture="bulgarian"
 	father=70382
 	mother=168075
-	851.1.1={
-		birth="851.1.1"
+	852.1.1={
+		birth="852.1.1"
 	}
 	864.1.1={
 		religion="orthodox"
@@ -2153,8 +2185,8 @@
 	trait="skilled_tactician"
 	religion="tengri_pagan"
 	culture="bulgarian"
-	850.1.1 = {
-		birth="850.1.1"
+	867.1.1 = {
+		birth="867.1.1"
 	}
 	893.1.1 = {
 		religion = "orthodox"
@@ -2170,8 +2202,8 @@
 	trait="skilled_tactician"
 	religion="tengri_pagan"
 	culture="bulgarian"
-	850.1.1 = {
-		birth="850.1.1"
+	861.1.1 = {
+		birth=yes
 	}
 	893.1.1 = {
 		religion = "orthodox"
@@ -2183,20 +2215,20 @@
 
 
 168289 = {
-	name="Mostich"
+	name="Mostich" #served Simeon I and Peter I
 	#placeholder
 	dynasty=9583
 	trait="tough_soldier"
 	religion="tengri_pagan"
 	culture="bulgarian"
-	845.1.1 = {
-		birth="845.1.1"
+	876.1.1 = {
+		birth=yes
 	}
 	893.1.1 = {
 		religion = "orthodox"
 	}
-	915.1.1 = {
-		death="915.1.1"
+	945.1.1 = {
+		death="945.1.1"
 	}
 }
 
@@ -2216,19 +2248,20 @@
 
 168291 = {
 	name="Petar"
-	dynasty=38
+	dynasty=8636
 	trait="charismatic_negotiator"
 	religion="orthodox"
 	culture="bulgarian"
-	850.1.1 = {
-		birth="850.1.1"
+	father=1501214
+	840.1.1 = {
+		birth="840.1.1"
 	}
 	889.1.1 = {
 		death="889.1.1"
 	}
 }
 260669 = {
-	name = "Ivan"
+	name = "Ivan" #partook in rebellion against Petar and later fled to the Empire
 	dynasty = 8636
 	religion = orthodox
 	culture = bulgarian
@@ -2242,7 +2275,7 @@
 	}
 }
 260670 = {
-	name = "Benjamin"
+	name = "Bajan" #aka. Benjamin
 	dynasty = 8636
 	religion = orthodox
 	culture = bulgarian
@@ -2264,7 +2297,7 @@
 	897.1.1 = {
 		birth = yes
 	}
-	928.1.1 = {
+	931.1.1 = {
 		death = yes
 	}
 }
@@ -2281,7 +2314,7 @@
 	}
 }
 262334 = {
-	name = "George"
+	name = "Georgi"
 	dynasty = 1063569
 	religion = orthodox
 	culture = bulgarian
@@ -2304,98 +2337,10 @@
 	886.1.1 = {
 		birth = yes
 	}
-	906.1.1 = {
+	904.1.1 = {
 		add_spouse = 712
 	}
 	951.1.1 = {
-		death = yes
-	}
-}
-262336 = {
-	name = "Anna"
-	dynasty = 8636
-	female = yes
-	religion = orthodox
-	culture = bulgarian
-	father = 712
-	904.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
-		death = yes
-	}
-}
-260671 = {
-	name = "Dan"
-	dynasty = 1062299
-	religion = orthodox
-	culture = bulgarian
-	911.1.1 = {
-		birth = yes
-	}
-	975.1.1 = {
-		death = yes
-	}
-}
-260672 = {
-	name = "Aleksii"
-	dynasty = 1062300
-	religion = orthodox
-	culture = bulgarian
-	891.1.1 = {
-		birth = yes
-	}
-	934.1.1 = {
-		death = yes
-	}
-}
-260673 = {
-	name = "Balin"
-	dynasty = 1062300
-	religion = orthodox
-	culture = bulgarian
-	father = 260672
-	919.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-260674 = {
-	name = "Dominik"
-	dynasty = 1062300
-	religion = orthodox
-	culture = bulgarian
-	father = 260672
-	920.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-260676 = {
-	name = "Grgur"
-	dynasty = 1062302
-	religion = orthodox
-	culture = bulgarian
-	915.1.1 = {
-		birth = yes
-	}
-	968.1.1 = {
-		death = yes
-	}
-}
-260677 = {
-	name = "Hranimir"
-	dynasty = 1062303 
-	religion = orthodox
-	culture = bulgarian
-	909.1.1 = {
-		birth = yes
-	}
-	958.1.1 = {
 		death = yes
 	}
 }
@@ -2411,123 +2356,29 @@
 		death = yes
 	}
 }
-260679 = {
-	name = "Ognen"
-	dynasty = 1062305
+260683 = {
+	name = "Dionisii" # Menikos/Minikas the Kavkhan. Present at the battle of Pegae in 922 and at the peace settlement in 927. No mention of his death date, so i´m making him a placeholder in 936. Better than the Vanilla alternative
+	dynasty = 1000101431
 	religion = orthodox
 	culture = bulgarian
-	898.1.1 = {
-		birth = yes
-	}
-	941.1.1 = {
-		death = yes
-	}
-}
-260682 = {
-	name = "Slavac"
-	dynasty = 1062308
-	religion = orthodox
-	culture = bulgarian	
 	892.1.1 = {
 		birth = yes
 	}
-	947.1.1 = {
+	953.1.1 = {
 		death = yes
 	}
 }
-260683 = {
-	name = "Dionisii"
-	dynasty = 1062309
+262336 = {
+	name = "Anna"
+	dynasty = 8636
+	female = yes
 	religion = orthodox
 	culture = bulgarian
-	907.1.1 = {
-		birth = yes
-	}
-	967.1.1 = {
-		death = yes
-	}
-}
-260684 = {
-	name = "Bozidar"
-	dynasty = 1062310
-	religion = orthodox
-	culture = bulgarian
-	914.1.1 = {
-		birth = yes
-	}
-	956.1.1 = {
-		death = yes
-	}
-}
-260685 = {
-	name = "Bogoris"
-	dynasty = 1062311
-	religion = orthodox
-	culture = bulgarian
-	918.1.1 = {
-		birth = yes
-	}
-	963.1.1 = {
-		death = yes
-	}
-}
-260686 = {
-	name = "Kozma"
-	dynasty = 1062312
-	religion = orthodox
-	culture = bulgarian
+	father = 712
 	904.1.1 = {
 		birth = yes
 	}
-	939.1.1 = {
-		death = yes
-	}
-}
-260687 = {
-	name = "Radu"
-	dynasty = 1062313
-	religion = orthodox
-	culture = bulgarian
-	910.1.1 = {
-		birth = yes
-	}
-	947.1.1 = {
-		death = yes
-	}
-}
-260689 = {
-	name = "Bernardin"
-	dynasty = 1062315
-	religion = orthodox
-	culture = bulgarian
-	915.1.1 = {
-		birth = yes
-	}
-	956.1.1 = {
-		death = yes
-	}
-}
-260690 = {
-	name = "Prijezda"
-	dynasty = 1062316
-	religion = orthodox
-	culture = bulgarian
-	905.1.1 = {
-		birth = yes
-	}
-	948.1.1 = {
-		death = yes
-	}
-}
-260693 = {
-	name = "Kresimir"
-	dynasty = 1062319 
-	religion = orthodox
-	culture = bulgarian
-	893.1.1 = {
-		birth = yes
-	}
-	954.1.1 = {
+	958.1.1 = {
 		death = yes
 	}
 }

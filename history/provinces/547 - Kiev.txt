@@ -1,4 +1,7 @@
+# -*- ck2.history.provinces -*-
+
 # 547 - Kiev
+# Tweaked b_churchofthetithes
 
 # County Title
 title = c_kiev
@@ -6,58 +9,38 @@ title = c_kiev
 # Settlements
 max_settlements = 7
 
-b_kiev = tribal			#Vth century
-b_zhytomyr = temple		#884
+b_kiev = tribal
+#b_vyshhorod= castle
+#b_podol = city
+b_bilohorodka = temple
+#b_churchofthetithes = temple
+#b_kanevkievskij = city
+#b_vasylkiv = castle
 
-#b_vyshhorod = city		#946
-
-#b_vasykliv = castle	#988
-#b_yuriev = castle		#1032  #Today called "Bila Tserkva"
-#b_kaniv = castle		#1078
-#b_fastiv = castle		#1390
+#b_trypillya = castle
+#b_gorodeckievskij = city
+#b_svjatopolc = city
+#b_zarub = city
+#b_berestovocchurchquarter = temple
 
 # Misc
-culture = volhynian
+culture = russian
 religion = slavic_pagan
-terrain = farmlands
 
 # History
-633.1.1 = {
-	culture = severian
-}
-769.1.1 = {
-	b_kiev = tb_hillfort_1
-	b_kiev = tb_market_town_1
-}
-867.1.1 = {
-	culture = russian
-}
+940.1.1 = { b_podol = city }
+988.1.1 = {religion = orthodox }
 988.1.1 = {
-	religion = orthodox
-	b_kiev = castle
-	b_vyshhorod = city
-	b_vasykliv = castle
+b_kiev = castle
+b_bilohorodka = castle
+#b_vyshhorod= castle
+b_churchofthetithes = temple
+b_kanevkievskij = city
+b_vasylkiv = castle }
+1169.1.1 = { remove_settlement = b_vasylkiv } #sacked by Andrey Bogolyubsky
+#1240.1.1 = { remove_settlement = b_vyshhorod } #sacked by Mongols
+1241.1.2 = { #sacked by Mongols
+	remove_settlement = b_bilohorodka
+	remove_settlement = b_churchofthetithes
+}
 
-	b_kiev = ca_keep_1
-	b_kiev = ca_wall_1
-	b_kiev = ca_barracks_1
-	b_kiev = ca_militia_barracks_1
-	b_kiev = ca_stable_1
-	b_vyshhorod = ct_marketplace_1
-	b_vyshhorod = ct_wall_1
-	b_vyshhorod = ct_wall_q_1
-	b_vyshhorod = ct_training_grounds_1
-	b_vyshhorod = ct_barracks_1
-	b_vyshhorod = ct_guard_1
-	b_vasykliv = ca_keep_1
-	b_vasykliv = ca_wall_1
-	b_vasykliv = ca_barracks_1
-	b_vasykliv = ca_militia_barracks_1
-	b_vasykliv = ca_stable_1
-}
-1032.1.1 = {
-	b_yuriev = castle
-}
-1078.1.1 = {
-	b_kaniv = castle
-}

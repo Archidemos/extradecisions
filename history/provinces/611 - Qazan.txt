@@ -1,27 +1,32 @@
-# 611 - Qazan
+# -*- ck2.history.provinces -*-
+
+# 611 - Qazan # Qazan/Kazan
 
 # County Title
 title = c_qazan
 
 # Settlements
-max_settlements = 4
+max_settlements = 5
 
-b_qazan = tribal
-#b_usttuntor = city
-#b_uymuzh = temple
+b_qasan = tribal
+#b_qazan = city
+#b_brjahimov = tribal
+#b_kermenchuk = city
+#b_arsk = tribal
 
-#b_krmayak = castle
-#b_pal = castle
-#b_uymuzh = castle
-#b_belyaevka = castle
-#b_pakli = castle
 
 # Misc
 culture = bolghar
 religion = tengri_pagan
-terrain = steppe
+terrain = forest
 
 # History
-923.1.1 = { religion = sunni } 
-
-#1337.1.1 = { b_osa = castle }  
+923.1.1 = { religion = sunni }
+923.1.1 = { b_qasan = castle } 
+923.1.1 = { b_brjahimov = city }
+923.1.1 = { b_kermenchuk = temple }
+1250.1.1 = {
+	b_qazan = castle
+	capital = b_qazan
+} 
+ 

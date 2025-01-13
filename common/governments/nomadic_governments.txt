@@ -1,3 +1,5 @@
+# -*- ck2.governments -*-
+
 nomadic_governments = {
 	
 	nomadic_government = {
@@ -10,6 +12,14 @@ nomadic_governments = {
 			nomadic_government
 		}
 		forced_contract = {
+			feudal_government
+			muslim_government
+			theocracy_government
+			merchant_republic_government
+			republic_government
+			tribal_government
+			theocratic_feudal_government
+			chinese_imperial_government
 		}
 		ignore_in_vassal_limit_calculation = {
 			nomadic_government
@@ -25,6 +35,7 @@ nomadic_governments = {
 					religion = norse_pagan_reformed
 					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
 				}
+				religion = paulician
 			}
 			is_patrician = no
 			mercenary = no
@@ -48,31 +59,7 @@ nomadic_governments = {
 		can_build_temple = yes
 		can_demand_religious_conversion = no
 		marriage_ignore_religion = yes
-
-		character_modifier = {
-			threat_decay_speed = -0.20
-			knights_offensive = -0.2
-			knights_morale = -0.2
-			knights_defensive = -0.2
-			light_cavalry_offensive = -0.2
-			light_cavalry_morale = -0.2
-			light_cavalry_defensive = -0.2
-			horse_archers_offensive = -0.2
-			horse_archers_morale = -0.2
-			horse_archers_defensive = -0.2
-		}
 		
-		unit_modifier = {
-			knights_offensive = -0.2
-			knights_morale = -0.2
-			knights_defensive = -0.2
-			light_cavalry_offensive = -0.2
-			light_cavalry_morale = -0.2
-			light_cavalry_defensive = -0.2
-			horse_archers_offensive = -0.2
-			horse_archers_morale = -0.2
-			horse_archers_defensive = -0.2
-		}			
 		vassal_limit = -10
 		commander_limit = -4
 		capital_move_delay = 120

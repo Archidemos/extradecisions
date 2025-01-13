@@ -1,24 +1,22 @@
+# -*- ck2.history.provinces -*-
+
 # 633 - Gurgan
 
 # County Title
 title = c_gurgan
 
 # Settlements
-max_settlements = 5
+max_settlements = 4
 b_gurgan = castle
-b_gonbadeqabus = city
-b_komishdepa = temple
+b_astarabad = temple
+b_ribat-i-hafs = city
 
-#b_ramian = city
-#b_kordkuy = castle
-#b_aqqala = castle
-#b_minudasht = castle
-#b_khanbebin = castle
+b_abaskun = city
 
 # Misc
-culture = persian
+culture = daylamite
 religion = zoroastrian
-terrain = farmlands
+
 # History
 651.1.1 = {
 	b_gurgan = ca_town_1
@@ -28,11 +26,11 @@ terrain = farmlands
 	b_gurgan = ca_keep_1
 	b_gurgan = ca_militia_barracks_1
 	b_gurgan = ca_barracks_1
-	b_gonbadeqabus = ct_marketplace_1
-	b_komishdepa = tp_town_1
+	b_ribat-i-hafs = ct_marketplace_1
+	b_astarabad = tp_town_1
 }
-930.1.1 = { religion = sunni } 
-1065.1.1 = { religion = sunni } 
-1187.1.1 = {
-	religion = shiite
+
+960.1.1 = {
+	religion = zaydi
 }
+1221.1.1 = { remove_settlement = b_astarabad }

@@ -5,17 +5,29 @@ title = c_anhalt
 
 # Settlements
 max_settlements = 5
-b_zerbst = tribal
+
+b_bernburg = tribal
+
+#b_zerbst = city
+#b_gernrode = temple 
+#b_aschersleben = city 
+#b_anhalt = castle 
+
+#b_lindau_sachsen = castle 
+#b_barby = castle 
 
 # Misc
 culture = pommeranian
 religion = slavic_pagan
 
 # History
-800.1.1 = {
-	b_zerbst = castle
-	b_dessau = city
-	b_lindau_zeist = temple
-}
-1100.1.1 = { culture = german } 
-1100.1.1 = { religion = catholic } 
+929.1.1 = { 
+b_bernburg = castle
+b_zerbst = city}
+937.1.1 = { religion = catholic }
+950.1.1 = { culture = thuringian } 
+959.1.1= { b_gernrode = temple } 
+1000.1.1= { b_aschersleben = city } 
+1123.1.1= { b_anhalt = castle } 
+1123.1.1 = { capital = b_anhalt }
+1170.1.1 = { culture = german } 

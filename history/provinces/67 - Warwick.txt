@@ -1,41 +1,31 @@
+# -*- ck2.history.provinces -*-
+
+# 67 - Warwick
+
 # County Title
 title = c_warwick
+
 # Settlements
 max_settlements = 4
-# b_tamworth = tribal
-b_warwick = tribal
+
+b_warwick = castle
+b_coventry = temple
+#b_birmingham = city
+#b_kenilworth = castle
+#b_merevale = temple
+#b_maxstoke = castle
+#b_dudley = castle
+#b_neueaton = temple
+#b_hartshill
+
+
 # Misc
 culture = saxon
-religion = norse_pagan
-################################################################################
+religion = catholic
+
 # History
-################################################################################
-633.1.1 = { 
-    capital = b_warwick
-    remove_settlement = b_tamworth
-    b_warwick = tb_hillfort_1
-    b_warwick = tb_market_town_1
-    b_warwick = tb_war_camp_1
-}
+1070.1.1 = { b_dudley = castle }
+1086.1.1 = { b_kenilworth = castle }
+1100.11.11 = { culture = english }
+1160.1.1 = { b_birmingham = city } # marketcharter granted, was very small before
 
-760.1.1 = { b_warwick = castle } 
-769.1.1 = { b_coventry = temple b_stafford = city religion = catholic } 
-################################################################################
-# 900.1.1 = { remove_settlement = b_tamworth }
-################################################################################
-1100.11.11 = { culture = english } 
-################################################################################
-# 67 - Warwick
-################################################################################
-
-################################################################################
-# b_coventry = temple
-################################################################################
-
-################################################################################
-# b_lichfield = castle
-# b_stafford = city
-# b_kenilworth = castle
-# b_tutbury = castle
-# b_dudley = castle
-################################################################################

@@ -1,32 +1,36 @@
+# -*- ck2.history.provinces -*-
+
 # 62 - Leicester
 
 # County Title
 title = c_leicester
 
 # Settlements
-max_settlements = 5
-b_leicester = tribal
+max_settlements = 4
 
-#b_nottingham = city
-#b_southwell = castle
-#b_newark = castle
-#b_hucknall = castle
-#b_worksop = castle
-#b_tickhill = castle
-b_newstead = temple
+b_leicester = castle
+b_melton_mowbray = city
+#b_sapcote = castle
+#b_castle_donington = castle
+#b_belvoir_leicester = castle
+#b_leicester_abbey = temple
+#b_ashby_de_la_zouch = castle
+#b_market_harborough = city
+#b_loughborough = city
+#b_groby = castle
+#b_mountsorrel = city
+
 
 # Misc
 culture = saxon
 religion = catholic
-terrain = farmlands
+
 # History
-633.1.1={ religion = norse_pagan }
-760.1.1={
-	b_leicester=castle
-}
-769.1.1 = {
-	b_southwell = castle
-	b_nottingham = city
-}
-760.1.1 = { religion = catholic }
+880.1.1 = { culture = norse } # Danes settle down
+880.1.1 = { religion = norse_pagan } # Danes settle down
+900.1.1 = { religion = catholic } # Danes starts converting relatively quickly
+917.1.1 = { 
+	culture = anglonorse
+} # Taken by Wessex
 1100.11.11 = { culture = english }
+1258.1.1 = { b_belvoir_leicester = castle }

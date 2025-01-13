@@ -1,35 +1,29 @@
+# -*- ck2.history.provinces -*-
+
+# 52 - Northumberland
+
 # County Title
 title = c_northumberland
+
 # Settlements
-max_settlements = 4
-b_bamburgh = tribal
+max_settlements = 5
+
+b_bamburgh = castle # Uthred!
+b_newcastle = city
+b_hexham = temple 
+b_lindisfarne = temple
+#b_warkworth = castle
+#b_alnwick = castle
+#b_norham = castle
+#b_morpeth = city
+#b_harbottle = castle
+#b_dunstanburgh = castle
+
 # Misc
 culture = saxon
 religion = catholic
-################################################################################
+
 # History
-################################################################################
-633.1.1 = { 
-    b_bamburgh = tb_hillfort_1
-    b_bamburgh = tb_market_town_1
-    b_bamburgh = tb_war_camp_1
-    religion = catholic
-}
-
-760.1.1 = { b_bamburgh = castle } 
-760.1.1 = { religion = catholic } 
-769.1.1 = { b_lindisfarne = temple b_newcastle = city } 
-1100.11.11 = { culture = english } 
-################################################################################
-# 52 - Northumberland
-################################################################################
-
-################################################################################
-# b_norham = castle
-# b_morpeth = castle
-# b_hexham = castle
-# b_newcastle = city
-# b_alnwick = castle
-# b_lindisfarne = temple
-# b_mitford = castle
-################################################################################
+875.1.1 = { remove_settlement = b_lindisfarne } # burned brightly
+1093.1.1 = { b_lindisfarne = temple } # rebuilt
+1100.11.11 = { culture = english }

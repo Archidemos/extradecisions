@@ -1,30 +1,32 @@
-# 334 - Napoli
+# -*- ck2.history.provinces -*-
+
+# 334 - Napoli # Acerra
 
 # County Title
 title = c_napoli
 
 # Settlements
-max_settlements = 5
-b_aversa = castle
-b_napoli = city
-b_cumae = temple
-b_portici = castle
+max_settlements = 6
 
-#b_pozzuoli = temple
+b_accera = castle
+b_pozzuoli = temple
+b_napoli = city
+#b_procida = castle
 #b_ischia = castle
-#b_turris_octava=city
-#b_afragola=city
+#b_barbato = castle
+
+
 
 # Misc
 culture = greek
 religion = orthodox
-terrain = farmlands
+terrain=farmlands
 # History
-769.1.1 = {
-	build_wonder = wonder_university_naples
-	set_wonder_stage = 1
-}
-#867.1.1 = { trade_post = b_polkarios }
+769.1.1 = { build_wonder = wonder_university_naples set_wonder_stage = 1 }
+1040.1.1 = { b_procida = castle }
 1092.1.1 = { trade_post = b_alliata }
-1154.4.1 = { culture = italian religion = catholic }
+1130.1.1 = { b_ischia = castle }
+1140.1.1 = { culture = neapolitan }
+1140.1.1 = { religion = catholic }
 1285.1.1  = { trade_post = b_spinola }
+1327.1.1 = { b_barbato = castle }

@@ -1,37 +1,32 @@
+# -*- ck2.history.provinces -*-
+
 # 534 - Peremyshl
 
 # County Title
 title = c_peremyshl
 
 # Settlements
-max_settlements = 6
-
-b_peremyshl = tribal			#Przemysl in Polish
+max_settlements = 5
+b_peremyshl = tribal
 #b_sanok = city
-#b_jaroslav = temple			#Jaroslaw in Polish
+b_jaroslav = temple
+#b_sudovavyshnia = city
 
-#b_rasiv = castle				#Rzeszów in Polish
-#b_liubachiv = castle			#Lubaczow in Polish
-#b_lezhaisk = castle			#Leżajsk in Polish
-#b_ustryky_dolishni = castle	#Ustrzyki Dolne in Polish
+#b_sambir = castle
+#b_drohobych = castle
+#b_rzeszow = city
+
 
 # Misc
-culture = volhynian
+culture = russian
 religion = slavic_pagan
 
 # History
-633.1.1 = {
-	culture = polish
-}
-867.1.1 = {
-	culture = russian
-}
-989.1.1 = {
-	religion = orthodox
+989.1.1 = { religion = orthodox }
+995.1.1 = {
 	b_peremyshl = castle
 	b_sanok = city
-	b_jaroslav = temple
+	b_sudovavyshnia = city
 }
-1187.1.1 = {
-	b_rasiv = castle
-}
+1187.1.1 = { b_rzeszow = city }
+

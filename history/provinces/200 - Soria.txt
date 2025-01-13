@@ -1,32 +1,28 @@
+# -*- ck2.history.provinces -*-
+
+# 200 - Soria
+
 # County Title
 title = c_soria
+
 # Settlements
 max_settlements = 4
-b_soria = castle
-b_almazan = city
 b_gormaz = castle
-# b_castromoro = castle
-# b_medinacelli = castle
-# b_sanleonardodeyague = castle
-# b_covaleda = castle
-culture = visigothic
-religion = catholic # 633 change
-633.1.1 = { religion = adoptionist } 
-################################################################################
-# History
-################################################################################
-760.1.1 = { religion = sunni } 
-769.1.1 = { religion = adoptionist } 
-860.1.1 = { religion = catholic } 
-930.1.1 = { religion = adoptionist }
-1060.1.1 = { religion = catholic }
-867.1.1 = { 
-    b_soria = ca_keep_1
-    b_soria = ca_stable_1
-    b_soria = ca_militia_barracks_1
-    b_soria = ca_wall_1
-    b_soria = ca_wall_2
-    religion = catholic
-}
+b_soria = city
+b_osma = temple
+#b_medinaceli = castle
+#b_almazan = city
+#b_huerta = temple
 
-950.1.1 = { culture = castillan } 
+culture = castillan
+religion = catholic
+
+# History
+
+867.1.1 = { 
+	b_gormaz = ca_keep_1
+	b_gormaz = ca_stable_1
+	b_gormaz = ca_militia_barracks_1
+	b_gormaz = ca_wall_1
+	b_gormaz = ca_wall_2
+}

@@ -1,32 +1,39 @@
+# -*- ck2.history.provinces -*-
+
 # 824 - Tell Atlas
 
 # County Title
 title = c_tell_atlas
 
 # Settlements
-max_settlements = 3
+max_settlements = 5
 
-b_setif = castle
-b_ikjan = city
+b_tabna = castle
+#b_masila = castle
 
-#b_zaoula = temple
+b_bilizma = city
+b_maqqara = city
+#b_batna = castle
+
+#b_sidinhar = castle
+#b_msila = city
+#b_mirabeau = castle
 #b_nacina = castle
 #b_draaelmizan = castle
 #b_tagoughalt = castle
 #b_mechreck = castle
 
 # Misc
-culture = maghreb_arabic
-religion = ibadi
+culture = sanhaja
+religion = sunni
 
-633.1.1 = {
-	culture = maghreb_arabic
-	religion = catholic
-}
-760.1.1={
-	religion = sunni
-}
 # History
-930.1.1 = { religion = kharijite }
-1065.1.1 = { religion = sunni }
-1187.1.1 = { b_mechreck = castle }
+927.1.1 = { b_masila = castle }
+1057.1.1 = { #was 1068
+	b_masila = tribal
+	capital = b_masila
+	remove_settlement = b_tabna
+}
+1152.1.1 = { b_masila = castle }
+
+

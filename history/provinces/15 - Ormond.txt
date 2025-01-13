@@ -1,32 +1,29 @@
-# 15 - Ormond
+# -*- ck2.history.provinces -*-
+
+# 15 - Ormond # aka Waterford
 
 # County Title
 title = c_ormond
 
 # Settlements
-max_settlements = 4
-b_waterford = tribal
-#b_nenagh = city
-b_cashel = temple
+max_settlements = 3
 
-#b_cahir = castle
-#b_clonmel = castle
+b_waterford = tribal
 #b_lismore = temple
-#b_roscrea = castle
-#b_fethard = castle
+
+#b_clonmel = city
+
 
 # Misc
-culture = irish
+culture = norsegaelic
 religion = catholic
-terrain = farmlands
+
 # History
-633.1.1={ religion = celtic_christian }
-769.1.1 = {
-	culture = irish
-	religion = celtic_christian
+867.1.1 = {
+	b_waterford = tb_shipyard_1
 }
-1000.1.1 = {
+1172.1.1 = { 
 	b_waterford = castle
-	b_nenagh = city
+	b_waterford = ca_shipyard_1
+	culture = english
 }
-1060.1.1 = { religion = catholic }

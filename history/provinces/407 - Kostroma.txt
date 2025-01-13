@@ -1,3 +1,5 @@
+# -*- ck2.history.provinces -*-
+
 # 407 - Kostroma
 
 # County Title
@@ -5,27 +7,20 @@ title = c_kostroma
 
 # Settlements
 max_settlements = 3
+
 b_kostroma = tribal
+#b_sudislavl = castle
 
-#b_plyos = city
-#b_sudislavl = temple
+#b_soligalich = city
 
-#b_nerektha = castle
-#b_apraksino = castle
-#b_kosmynino = castle
-#b_zavolzhsk = castle
-#b_nekrasoskoye = castle
 
-culture = mordvin
+# Misc
+culture = mari
 religion = finnish_pagan
-terrain = forest
 
 # History
-1087.1.2 = {
-	religion = orthodox
-	culture = russian
-}
-1152.1.1 = {
-	b_kostroma = castle  #city of Kostroma founded
-	b_plyos = city
-}
+1152.1.1 = { b_kostroma = castle
+b_sudislavl = castle } 
+1152.1.1 = { culture = russian } 
+1152.1.1 = { religion = orthodox } 
+1250.1.1 = { b_soligalich = city }

@@ -1,28 +1,31 @@
+# -*- ck2.history.provinces -*-
+
 # 531 - Sandomierskie
 
 # County Title
 title = c_sandomierskie
 
 # Settlements
-max_settlements = 5
-b_sandomierz = tribal
-#b_radom = city
-#b_kielce = temple
+max_settlements = 6
 
-#b_olescnica = castle
-#b_wislica = castle
-#b_opoczno = castle
-#b_opatow = castle
+b_sandomierz = tribal
+#b_radom = castle
+#b_koprzywnica = temple
+#b_zarnow = castle
+#b_lublin = city
+#b_lukow = city
+#b_sieciechow = castle
+
+
 
 # Misc
 culture = polish
 religion = slavic_pagan
 
 # History
-999.7.1 = {
-	religion = catholic
-	b_sandomierz = castle
-	b_radom = city
-	b_kielce = temple
-	b_olescnica = castle
-}
+999.7.1 = { religion = catholic 
+b_sandomierz = castle}
+1111.1.1 = { b_zarnow = castle}
+1185.1.1 = { b_koprzywnica = temple}
+1198.1.1 = { b_lublin = city}
+1233.1.1 = { b_radom = castle}
