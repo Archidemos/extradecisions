@@ -126,3 +126,271 @@ province_event = {
 		culture = anglo_norse
 	}
 }
+
+character_event = { # Danegeld
+	id = NOR.3
+	title = TITLE_NOR3
+	desc = DESC_NOR3
+	picture = GFX_evt_longships_at_sea_oldgods
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_character_flag = betrayed_danegeld }
+		had_character_flag = { 
+			flag = got_danegeld
+			years <= 10
+		}
+		culture = anglo_norse
+		religion_group = pagan
+		FROM = {
+			NOT = {
+				has_province_modifier = settled_adventurer
+			}
+			owner = { top_liege = { religion_group = christian } }
+			region = custom_england
+		}
+		
+	}
+	
+	option = {
+		name = A_NOR3
+		FROM = {
+			owner = {
+				top_liege = {
+					character_event = { id = NOR.4 days = 3 }
+				}
+			}
+		}
+		ai_chance = {
+			modifier = {
+				factor = 70
+			}
+		}
+	}
+
+	option = {
+		name = B_NOR3
+		prestige = 100
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 1.3
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.3
+				trait = proud
+			}
+			modifier = {
+				factor = 1.3
+				trait = berserk
+			}
+		}
+	}
+}
+
+character_event = {
+	id = NOR.4
+	title = T_NOR4
+	desc = D_NOR4
+	picture = GFX_evt_longships_at_sea_oldgods
+
+	is_triggered_only = yes
+
+	option = {
+		name = A_NOR4
+		hidden_effect = {
+			FROM = {
+				character_event = { id = NOR.5 days = 5 }
+				set_character_flag = got_danegeld
+				random = {
+					chance = 30
+					add_friend = ROOT
+					character_event = { id = NOR.10 years = 3 random = 3650 }
+				}
+			}
+		}
+		
+		trigger_switch = {
+			on_trigger = tier
+			EMPEROR = {
+				transfer_scaled_wealth = {
+					to = FROM
+					value = 2
+					min = 350
+					max = 1500
+				}
+			}
+			KING = {
+				transfer_scaled_wealth = {
+					to = FROM
+					value = 1.5
+					min = 250
+					max = 800
+				}
+			}
+			DUKE = {
+				transfer_scaled_wealth = {
+					to = FROM
+					value = 1
+					min = 150
+					max = 500
+				}
+			}
+			COUNT = {
+				transfer_scaled_wealth = {
+					to = FROM
+					value = 0.5
+					min = 50
+					max = 250
+				}
+			}
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		name = B_NOR4
+		prestige = -300
+		FROM = {
+			character_event = { id = NOR.6 days = 30 }
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				FROM = {
+					martial <= 14
+				}
+			} 
+		}
+	}
+}
+
+character_event = {
+	id = NOR.5
+	title = T_NOR5
+	desc = D_NOR5
+	picture = GFX_evt_longships_at_sea_oldgods
+
+	is_triggered_only = yes
+
+	option = {
+		name = A_NOR5
+		hidden_effect = {
+			FROM = {
+				any_realm_province = {
+					add_province_modifier = {
+						name = settled_adventurer
+						years = 10
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = B_NOR5
+		tooltip_info = intrigue
+		set_character_flag = betrayed_danegeld
+		trigger = {
+			OR = {
+				intrigue = 15
+				AND = {
+					intrigue = 10
+					trait = arbitrary
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = NOR.6
+	title = T_NOR6
+	desc = D_NOR6
+	picture = GFX_evt_burning_castle_hf
+
+	is_triggered_only = yes
+
+	option = { # burn the settlement
+		name = A_NOR6
+		prestige = -200
+		random_list = {
+			60 = {
+				wealth = 50
+				FROMFROMFROM = { #province?
+					capital_scope = {
+						while = {
+							count = 2
+							destroy_random_building = yes
+						}
+					}
+				}
+			}
+			20 = {
+				wealth = 100
+				FROMFROMFROM = { #province?
+					capital_scope = {
+						while = {
+							count = 3
+							destroy_random_building = yes
+						}
+					}
+				}
+			}
+			20 = {
+				wealth = 150
+				FROMFROMFROM = { #province?
+					capital_scope = {
+						while = {
+							count = 4
+							destroy_random_building = yes
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+
+	#option = { # war! -- lazy to implement new cb
+	#	name = B_NOR6
+	#	prestige = 100
+	#	ai_chance = {
+	#		factor = 15
+	#	}
+	#}
+
+	option = { # nothing ever happens
+		name = C_NOR6
+		piety = 100
+		random = {
+			chance = 15
+			add_trait = patient
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+character_event = {
+	id = NOR.10
+	title = T_NOR10
+	desc = D_NOR10
+	picture = GFX_evt_culture_change
+
+	is_triggered_only = yes
+
+	option = { # baptise
+		name = A_NOR10
+		piety = 100
+		religion = FROM
+	}
+}
