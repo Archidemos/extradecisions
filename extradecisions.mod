@@ -1,4 +1,4 @@
-name="Extra Decisions and Events"
+name="Archi's Vanilla Expansion"
 path="mod/extradecisions"
 tags=
 {
