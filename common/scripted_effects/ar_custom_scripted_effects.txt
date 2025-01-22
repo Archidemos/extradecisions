@@ -1,0 +1,271 @@
+normal_conqueror_spawn_effect = {
+	random_independent_ruler = {
+		limit = {
+			ai = yes
+			is_landed = yes
+			higher_tier_than = BARON
+			NOT = {
+				controls_religion = yes
+			}
+			NOR = {
+				any_independent_ruler = {
+					has_character_flag = great_conqueror
+					NOT = {
+						distance_from_realm = { who = PREV value = 400 }
+					}
+				}
+				any_neighbor_independent_ruler = {
+					ai = no
+				}
+			}
+		}
+		preferred_limit = {
+			is_adult = yes
+			NOT = {
+				age = 40
+			}
+		}
+		preferred_limit = {
+			is_adult = yes
+			NOT = {
+				age = 60
+			}
+		}
+		preferred_limit = {
+			is_adult = yes
+		}
+		if = {
+			limit = {
+				is_female = yes
+			}
+			create_bloodline = {
+				type = great_conqueror_female
+			}
+			new_bloodline = {
+				set_description = "bloodline_desc_great_conqueror"
+			}
+		}
+		if = {
+			limit = {
+				is_female = no
+			}
+			create_bloodline = {
+				type = great_conqueror_male
+			}
+			new_bloodline = {
+				set_description = "bloodline_desc_great_conqueror"
+			}
+		}
+		save_event_target_as = great_conqueror
+		set_character_flag = great_conqueror
+		prestige = 2000
+		piety = 1000
+		wealth = 500
+		health = 1
+		fertility = 0.5
+		add_trait = great_conquerer
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = content
+		remove_trait = shy
+		remove_trait = slothful
+		add_trait = diligent
+		add_trait = ambitious
+		random_list = {
+			20 = {
+				add_trait = strong
+				add_trait = sturdy
+			}
+			20 = {
+				add_trait = strong
+				add_trait = genius
+			}
+			20 = {
+				add_trait = strong
+				add_trait = shrewd
+			}
+			20 = {
+				add_trait = strong
+				add_trait = robust
+			}
+			20 = {
+				add_trait = genius
+				add_trait = robust
+			}
+		}
+		random = {
+			chance = 10
+			remove_trait = dwarf
+			add_trait = giant
+		}
+		if = {
+			limit = {
+				graphical_culture = horsegfx
+			}
+			random = {
+				chance = 10
+				add_artifact = crown_unicorn_helmet
+			}
+		}
+		add_artifact = sword_great_conqueror
+		new_artifact = {
+			set_name = conqueror_sword_name
+			set_description = conqueror_sword_desc
+		}
+		if = {
+			limit = {
+				is_nomadic = no
+			}
+			while = {
+				count = 3
+				capital_scope = {
+					event_target:great_conqueror = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = event_target:great_conqueror
+							attrition = 0.25
+							reinforces = yes
+							reinforce_rate_multiplier = 0.25
+							troops = {
+								archers = { 1500 1500 }
+								light_cavalry = { 1500 1500 }
+								knights = { 500 500 }
+								light_infantry = { 2500 2500 }
+								heavy_infantry = { 1000 1000 }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_nomadic = yes
+			}
+			while = {
+				count = 3
+				capital_scope = {
+					event_target:great_conqueror = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = event_target:great_conqueror
+							attrition = 0.25
+							reinforces = yes
+							reinforce_rate_multiplier = 0.25
+							troops = {
+								light_cavalry = { 700 700 }
+								horse_archers = { 500 500 }
+								knights = { 100 100 }
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					port = yes
+				}
+			}
+			spawn_fleet = {
+				province = closest
+				owner = event_target:great_conqueror
+				troops = {
+					galleys = { 150 150 }
+				}
+			}
+		}
+		random_list = {
+			10 = {
+				give_nickname = nick_the_lawgiver
+			}
+			10 = {
+				give_nickname = nick_the_hammer
+			}
+			10 = {
+				give_nickname = nick_the_conqueror
+			}
+			10 = {
+				give_nickname = nick_the_avenger
+			}
+			10 = {
+				give_nickname = nick_the_fearless
+			}
+			10 = {
+				give_nickname = nick_the_glorious
+			}
+			10 = {
+				give_nickname = nick_the_stranger
+			}
+			10 = {
+				give_nickname = nick_the_legendary
+			}
+			10 = {
+				give_nickname = nick_the_destroyer
+			}
+			10 = {
+				give_nickname = nick_the_world_burner
+			}
+			10 = {
+				give_nickname = nick_the_bear
+			}
+			10 = {
+				give_nickname = nick_the_boar
+			}
+			10 = {
+				give_nickname = nick_the_ironside
+			}
+			10 = {
+				give_nickname = nick_the_lion
+			}
+			10 = {
+				give_nickname = nick_the_lionheart
+			}
+			10 = {
+				give_nickname = nick_the_magnificent
+			}
+			10 = {
+				give_nickname = nick_the_dragon
+			}
+			10 = {
+				give_nickname = nick_the_great
+			}
+			10 = {
+				give_nickname = nick_the_wolf
+			}
+			10 = {
+				give_nickname = nick_the_giant
+				add_trait = giant
+				remove_trait = dwarf
+			}
+			10 = {
+				give_nickname = nick_the_cyclops
+				add_trait = one_eyed
+				add_trait = giant
+				remove_trait = dwarf
+			}
+			10 = {
+				give_nickname = nick_the_roaring_flame
+				set_character_flag = taught_chinese_strategy
+				add_trait = master_of_flame
+			}
+			10 = {
+				save_event_target_as = nick_target_the_shield_of_capital
+				give_nickname = nick_the_shield_of_capital
+
+			}
+			10 = {
+				give_nickname = nick_the_goliath
+				add_trait = giant
+			}
+			20 = {
+				give_nickname = nick_the_mythological_creature
+			}
+		}
+	}
+}

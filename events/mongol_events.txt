@@ -4569,6 +4569,7 @@ character_event = {
 			trait = zealous
 			trait = ambitious
 			trait = adventurer
+			trait="great_conquerer"
 		}
 		new_character = {
 			if = {
@@ -5530,6 +5531,7 @@ character_event = {
 			trait = quick
 			trait = clubfooted
 			trait = adventurer
+			trait="great_conquerer"
 		}
 		
 		new_character = {
@@ -6776,6 +6778,7 @@ character_event = {
 			trait = proud
 			trait = quick
 			trait = adventurer
+			trait="great_conquerer"
 		}
 		
 		new_character = {
@@ -7620,7 +7623,7 @@ narrative_event = {
 	border = "GFX_event_narrative_frame_war"
 	
 	only_playable = yes
-	religion = miaphysite
+	religion = catholic
 	min_age = 16
 	portrait = event_target:mongol_china_invader
 	
@@ -7640,7 +7643,14 @@ narrative_event = {
 					value = delayed_random
 				}
 				year = 1000
-				total_years_played = 50
+				total_years_played < 50
+			}
+			AND = {
+				has_game_rule = {
+					name = mongol_invasion
+					value = test
+				}
+				year = 769
 			}
 		}
 		NOR = { 
@@ -7650,10 +7660,14 @@ narrative_event = {
 				value = off
 			}
 		}
-		has_landed_title = d_miaphysite
-		NOR = {
-			has_global_flag = il_khanate_arrival # Backwards compatibility
-			has_global_flag = golden_horde_arrival # Backwards compatibility
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+		#has_landed_title = d_miaphysite
+		#NOR = {
+		#	has_global_flag = il_khanate_arrival # Backwards compatibility
+		#	has_global_flag = golden_horde_arrival # Backwards compatibility
+		#	has_global_flag = mongol_empire_arrival
+		#}
+		NOT = {
 			has_global_flag = mongol_empire_arrival
 		}
 	}
@@ -7800,6 +7814,7 @@ narrative_event = {
 						trait = ambitious
 						trait = diligent
 						trait = brave
+						trait="great_conquerer"
 					}
 					new_character = {
 						if = {
@@ -7876,6 +7891,7 @@ narrative_event = {
 					trait="hunter"
 					trait="cavalry_leader"
 					trait="brilliant_strategist"
+					trait="great_conquerer"
 				}
 				new_character = {
 					set_character_flag = is_temujin

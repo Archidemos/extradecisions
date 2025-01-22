@@ -28,7 +28,7 @@ tributary_client_cb = {
 						}
 					}
 				}
-				prestige = 750
+				prestige = 350
 				TECH_MAJESTY = 3
 				diplomacy = 10
 			}
@@ -38,7 +38,7 @@ tributary_client_cb = {
 						region = world_europe
 					}
 				}
-				prestige = 1000
+				prestige = 500
 				TECH_MAJESTY = 3
 				diplomacy = 11
 			}
@@ -201,7 +201,7 @@ tributary_client_cb = {
 		FROM = {
 			show_scope_change = no
 			save_event_target_as = target_loser
-			prestige = -1000
+			prestige = -400
 			custom_tooltip = {
 				text = "REMOVE_PREVIOUS_SUZERAIN"
 				hidden_tooltip = {
@@ -390,8 +390,9 @@ tributary_client_roman_cb = { # Special Tributary CB for the West Rome event cha
 						}
 					}
 				}
-				prestige = 1000
-				TECH_MAJESTY = 1
+				prestige = 350
+				TECH_MAJESTY = 3
+				diplomacy = 10
 			}
 			conditional_tooltip = {
 				trigger = {
@@ -399,8 +400,9 @@ tributary_client_roman_cb = { # Special Tributary CB for the West Rome event cha
 						region = world_europe
 					}
 				}
-				prestige = 1000
-				TECH_MAJESTY = 1
+				prestige = 500
+				TECH_MAJESTY = 3
+				diplomacy = 11
 			}
 		}
 	}

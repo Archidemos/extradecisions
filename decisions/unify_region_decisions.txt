@@ -28,19 +28,23 @@ decisions = {
 			war = no
 			NOT = {	trait = incapable }
 			prestige = 1000
+			ruled_years >= 5
 			OR = {
 				AND = {
 					OR = {
-						has_landed_title = k_wesphalia
-						has_landed_title = k_thuringian
-						has_landed_title = k_swabia
+						has_landed_title = k_saxony
+						has_landed_title = k_schwaben
+						has_landed_title = k_franconia
 					}
 					AND = {
-						completely_controls = k_wesphalia
-						completely_controls = k_thuringian
-						completely_controls = k_swabia
+						completely_controls = k_saxony
+						completely_controls = k_schwaben
 						completely_controls = k_franconia
 					}
+					#trigger_if = {
+					#	limit = { k_franconia = { is_titular = no } }
+					#	completely_controls = k_franconia
+					#}
 				}
 				has_landed_title = k_germany
 			}

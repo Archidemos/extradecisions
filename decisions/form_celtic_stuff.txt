@@ -24,7 +24,7 @@ decisions = {
 			completely_controls = k_wales
 			completely_controls = k_brittany
 			culture_group = celtic
-			religion = celtic_christian
+			religion_group = christian
 		}
 		
 		effect = {
@@ -108,7 +108,8 @@ decisions = {
 			has_landed_title = e_celtic_empire
 			prestige = 2000
 			diplomacy = 12
-			religion = celtic_christian
+			religion_group = christian
+			NOT = { religion = catholic }
 			any_playable_ruler = {
 				AND = {
 					OR = {
@@ -241,8 +242,8 @@ decisions = {
 		allow = {
 			completely_controls = k_sweden
 			completely_controls = k_finland
-			completely_controls = k_rus
-			completely_controls = k_estonia
+			completely_controls = k_novgorod
+			completely_controls = k_terra
 			OR = {
 				religion = orthodox
 				religion = slavic_pagan

@@ -17,7 +17,7 @@
 
 nerf_realm_rule = {
 	name = "RULE_NERF_REALM"
-	group = "STRIPED_MP_GROUP"
+	group = "AR_DIFFICULT_GROUP"
 	alt_start_default = off
 	option = {
 		name = on
@@ -29,6 +29,23 @@ nerf_realm_rule = {
 		achievements = no
 		text = "RULE_OPTION_OFF"
 		desc = "RULE_NERF_REALM_OFF_DESC"
+	}
+}
+
+normal_great_conqueres = {
+	name = "RULE_GREAT_CONQUERS"
+	group = "AR_DIFFICULT_GROUP"
+	alt_start_default = off
+	option = {
+		name = enabled
+		text = "RULE_OPTION_ON"
+		desc = "RULE_GREAT_CONQUERS_ON_DESC"
+	}
+	option = {
+		name = disabled
+		achievements = no
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_GREAT_CONQUERS_OFF_DESC"
 	}
 }
 

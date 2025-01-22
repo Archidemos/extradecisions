@@ -12809,14 +12809,14 @@ pagan_county_conquest = {
 	
 	can_use = {
 		NOT = { holder_scope = { government = ar_confederation_government } }
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		ROOT = {
 			mercenary = no
 		}
@@ -15573,25 +15573,25 @@ manifest_destiny_invasion = {
 	
 	can_use_gui = {
 		check_if_crusader_trigger = yes
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 	}
 
 	can_use = {
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		ROOT = {
 			OR = {
 				ai = yes
@@ -17184,14 +17184,14 @@ nomad_dispute = {
 	can_use = {
 		has_dlc = "Horse Lords"
 		
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		
 		FROM = {
 			is_nomadic = yes
@@ -17809,14 +17809,14 @@ nomad_subjugation = {
 	}
 	
 	can_use = {
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		ROOT = {
 			OR = {
 				ai = yes
@@ -18140,11 +18140,11 @@ nomad_invasion = {
 	sort_priority = 1000
 	
 	can_use_gui = {
-		ROOT = {
-			NOT = { has_landed_title = e_golden_horde }
-			NOT = { has_landed_title = e_il-khanate }
-			NOT = { has_landed_title = e_timurids }
-		}
+		#ROOT = {
+		#	NOT = { has_landed_title = e_golden_horde }
+		#	NOT = { has_landed_title = e_il-khanate }
+		#	NOT = { has_landed_title = e_timurids }
+		#}
 		ROOT = {
 			prestige = 100
 			population = 30000
@@ -18165,14 +18165,14 @@ nomad_invasion = {
 	}
 
 	can_use = {
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		ROOT = {
 			is_nomadic = yes
 			OR = {
@@ -18563,14 +18563,14 @@ nomad_expansion = {
 	}
 
 	can_use = {
-		NOT = {
-			OR = {
-				ROOT = { has_landed_title = e_il-khanate }
-				ROOT = { has_landed_title = e_golden_horde }
-				ROOT = { has_landed_title = e_timurids }
-				ROOT = { has_landed_title = e_mongol_empire }
-			}
-		}
+		#NOT = {
+		#	OR = {
+		#		ROOT = { has_landed_title = e_il-khanate }
+		#		ROOT = { has_landed_title = e_golden_horde }
+		#		ROOT = { has_landed_title = e_timurids }
+		#		ROOT = { has_landed_title = e_mongol_empire }
+		#	}
+		#}
 		ROOT = {
 			is_nomadic = yes
 			NOT = { same_realm = FROM }

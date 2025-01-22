@@ -1179,6 +1179,39 @@ character_event = {
 }
 
 character_event = {
+    id = MP.042
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		is_shattered_world = no
+		is_save_game = no
+		has_game_rule = { name = normal_great_conqueres value = enabled }
+		NOT = { has_global_flag = conquerors_setup }
+	}
+
+ 	immediate = {
+		set_global_flag = conquerors_setup
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+		normal_conqueror_spawn_effect = yes
+	}
+}
+
+character_event = {
     id = MP.099
     hide_window = yes
     is_triggered_only = yes

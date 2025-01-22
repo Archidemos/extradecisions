@@ -53,6 +53,13 @@ k_danelaw = {
 	norse = "Danelagr"
 	
 	culture = anglo_norse
+	allow = {
+		trigger_if = {
+			limit = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
 }
 
 e_plc = {
@@ -80,6 +87,13 @@ e_plc = {
 	
 	culture = polish
 	short_name = yes
+	allow = {
+		trigger_if = {
+			limit = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
 }
 
 k_ragusa = {
