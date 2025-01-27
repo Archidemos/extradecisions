@@ -38,7 +38,6 @@ faction_succ_seniority = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = {
@@ -155,7 +154,6 @@ faction_succ_seniority = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			
 			NOT = { religion_group = muslim }	
@@ -759,7 +757,6 @@ faction_succ_primogeniture = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = { 
@@ -876,7 +873,6 @@ faction_succ_primogeniture = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			
 			NOT = { religion_group = muslim }	
@@ -1462,7 +1458,6 @@ faction_succ_gavelkind = {
 					NOT = { primary_title = { has_law = war_voting_power_1 } }
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = { 
@@ -1577,7 +1572,6 @@ faction_succ_gavelkind = {
 						NOT = { primary_title = { has_law = war_voting_power_1 } }
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			
 			NOT = { religion_group = muslim }	
@@ -1590,11 +1584,6 @@ faction_succ_gavelkind = {
 	# AI creation weight
 	chance = {
 		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.2
@@ -1861,11 +1850,6 @@ faction_succ_gavelkind = {
 	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
 	membership = {
 		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.5
@@ -2233,7 +2217,6 @@ faction_succ_feudal_elective = {
 					primary_title = { has_title_flag = alternate_hre }
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = {
@@ -2376,7 +2359,6 @@ faction_succ_feudal_elective = {
 						NOT = { primary_title = { has_law = war_voting_power_1 } }
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			
 			NOT = { religion_group = muslim }	
@@ -2389,11 +2371,6 @@ faction_succ_feudal_elective = {
 	# AI creation weight
 	chance = {
 		factor = 1
-		
-		modifier = {
-			factor = 3
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 1.5
@@ -2676,11 +2653,6 @@ faction_succ_feudal_elective = {
 	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
 	membership = {
 		factor = 1
-		
-		modifier = {
-			factor = 3
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.5
@@ -3116,11 +3088,6 @@ faction_lower_crown_authority = {
 		factor = 1
 		
 		modifier = {
-			factor = 3
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
-		
-		modifier = {
 			factor = 0.5
 			liege = {  
 				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
@@ -3332,11 +3299,6 @@ faction_lower_crown_authority = {
 	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
 	membership = {
 		factor = 1
-		
-		modifier = {
-			factor = 3
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.5
@@ -4247,7 +4209,6 @@ faction_independence = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		
 		NOT = { trait = incapable }
@@ -4366,7 +4327,6 @@ faction_independence = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			OR = {
 				is_nomadic = no
@@ -5213,7 +5173,6 @@ faction_claimant = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = {
@@ -5328,7 +5287,6 @@ faction_claimant = {
 			OR = {
 				ROOT = { has_law = succ_feudal_elective }
 				ROOT = { has_law = succ_hre_elective }
-				has_minor_title = title_mayor_of_the_palace
 				has_claim = ROOT
 			}
 			
@@ -5391,7 +5349,6 @@ faction_claimant = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			
 			# Can't join factions when in blood oath with liege
@@ -6618,7 +6575,6 @@ faction_antiking = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		OR = {
 			religion = catholic
@@ -6702,7 +6658,6 @@ faction_antiking = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 		}
 	}	
@@ -7125,7 +7080,6 @@ faction_overthrow = {
 					#has_council = no
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = {
@@ -7184,7 +7138,6 @@ faction_overthrow = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 			#NOT = {
 			#	blood_brother = {
@@ -8053,7 +8006,6 @@ faction_increase_council_power = {
 					NOT = { primary_title = { has_law = war_voting_power_1 } }
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = { 
@@ -8147,7 +8099,6 @@ faction_increase_council_power = {
 						NOT = { primary_title = { has_law = war_voting_power_1 } }
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 		}
 	}		
@@ -8155,11 +8106,6 @@ faction_increase_council_power = {
 	# AI creation weight
 	chance = {
 		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.5
@@ -8394,12 +8340,7 @@ faction_increase_council_power = {
 	
 	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
 	membership = {
-		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
+		factor = 1			
 		
 		modifier = {
 			factor = 0.5
@@ -8789,7 +8730,6 @@ faction_powerful_vassal_takeover = {
 					NOT = { primary_title = { has_law = war_voting_power_1 } }
 				}
 			}
-			has_minor_title = title_mayor_of_the_palace
 		}
 		NOT = { trait = incapable }
 		liege = {
@@ -8870,7 +8810,6 @@ faction_powerful_vassal_takeover = {
 						#has_council = no
 					}
 				}
-				has_minor_title = title_mayor_of_the_palace
 			}
 		}
 	}		
@@ -8878,11 +8817,6 @@ faction_powerful_vassal_takeover = {
 	# AI creation weight
 	chance = {
 		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 		
 		modifier = {
 			factor = 0.5
@@ -9084,11 +9018,6 @@ faction_powerful_vassal_takeover = {
 	# AI membership weight: ROOT is the prospective member. FROM is the faction leader. FROMFROM is the target title or character.
 	membership = {
 		factor = 1
-		
-		modifier = {
-			factor = 2
-			FROM = { has_minor_title = title_mayor_of_the_palace }
-		}
 
 		modifier = {
 			factor = 0.5

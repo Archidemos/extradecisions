@@ -27,36 +27,8 @@ title_regent = {
 	monthly_prestige = 1.50
 	
 	gain_effect = {
-		if = {
-			limit = {
-				FROM = { has_law = mayor_of_the_palace_2 }
-			}
-			liege = {
-				any_courtier_or_vassal = {
-					limit = {
-						has_minor_title = title_mayor_of_the_palace
-					}
-					remove_title = title_mayor_of_the_palace
-				}
-			}
-			give_minor_title = title_mayor_of_the_palace
-		}
 	}
 	lose_effect = {
-		if = {
-			limit = {
-				FROM = { has_law = mayor_of_the_palace_2 }
-			}
-			remove_title = title_mayor_of_the_palace
-		}
-	}
-	retire_effect = {
-		if = {
-			limit = {
-				FROM = { has_law = mayor_of_the_palace_2 }
-			}
-			remove_title = title_mayor_of_the_palace
-		}
 	}
 
 	message = yes
@@ -82,10 +54,6 @@ title_appointed_regent = {
 	
 	allowed_to_grant = {
 		has_regent = no
-		NAND = {
-			culture = old_frankish
-			NOT = { has_law = mayor_of_the_palace_0 }
-		}
 		NOT = {
 			has_game_rule = {
 				name = regencies
@@ -95,21 +63,6 @@ title_appointed_regent = {
 	}
 	revoke_trigger = {
 		FROM = { has_regent = no }
-		FROM = {
-			OR = {
-				NOT = {
-					culture = old_frankish
-					dynasty = 542
-				}
-				primary_title = {
-					has_title_flag = mayors_abolished
-				}
-				has_game_rule = {
-					name = regencies
-					value = off
-				}
-			}
-		}
 	}
 
 	gain_effect = {
