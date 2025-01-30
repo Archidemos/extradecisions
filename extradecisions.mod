@@ -5,3 +5,5 @@ tags=
 	Multiplayer Decisions Flavor Events Gameplay Map 
 }
 picture="extradecision.jpg"
+
+replace_path="history/provinces"
