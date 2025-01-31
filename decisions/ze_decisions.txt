@@ -4,21 +4,22 @@ targetted_decisions = {
 		filter = home_court
 		ai_target_filter = home_court
 		ai_check_interval = 60
+		diplomacy_icon = GFX_trait_inspiring_leader
 		
 		from_potential = {
 			is_playable = yes
 			is_landed = yes
 			mercenary = no
 			holy_order = no
-			has_dlc = "Zeus"
+			#has_dlc = "Zeus"
 		
 			OR = {
 				ai = no
 				AND = {
-					OR = {
-						trait = brilliant_strategist
-						trait = fortune_builder
-					}
+					#OR = {
+					#	trait = brilliant_strategist
+					#	trait = fortune_builder
+					#}
 					OR = {
 						higher_tier_than = COUNT
 						AND = {
@@ -56,13 +57,33 @@ targetted_decisions = {
 		allow = {
 			can_be_mercenary_leader_allow_trigger = yes
 			FROM = {
-				NOT = { has_mercenary_band = yes }
-				wealth = 50
+				#NOT = { has_mercenary_band = yes }
+				NOT = { has_character_modifier = recently_created_merc }
+				wealth = 100
+				TECH_NOBLE_CUSTOMS = 3
+				custom_tooltip = {
+					text = "Does not have more than 3 Mercenary Companies"
+					check_variable = { which = made_merc value < 3 }
+				}
 			}
 		}
 		effect = {
 			FROM = {
-				wealth = -50
+				if = {
+					limit = { check_variable = { which = made_merc value >= 1 } }
+					change_variable = { which = made_merc value = 1 }
+				}
+				if = {
+					limit = { check_variable = { which = made_merc value == 0 } }
+					set_variable = { which = made_merc value = 1 }
+				}
+				
+				wealth = -100
+				add_character_modifier = { 
+					name = recently_created_merc
+					years = 2
+					inherit = yes
+				}
 				custom_tooltip = {
 					text = CREATE_DYNAMIC_MERC_TOOLTIP
 					hidden_tooltip = {
@@ -132,6 +153,7 @@ targetted_decisions = {
 		}
 		effect = {
 			character_event = { id = ZE.11020 }
+			FROM = { subtract_variable = { which = made_merc value = 1 } }
 		}
 		revoke_allowed = {
 			always = no
@@ -446,6 +468,7 @@ targetted_decisions = {
 				wealth = 50
 			}
 			replace_mercenary_captain_allow_trigger = yes
+			NOT = { has_character_modifier = depleated_realm }
 		}
 		effect = {
 			character_event = { id = ZE.23105 }
@@ -457,6 +480,71 @@ targetted_decisions = {
 			factor = 0.001
 		}
 	}
+
+	take_gold_merc_band = {
+		only_playable = yes
+		ai_target_filter = dynasty
+		ai_check_interval = 36
+		diplomacy_icon = GFX_trait_inspiring_leader
+		
+		from_potential = {
+			is_playable = yes
+			is_landed = yes
+			has_dlc = "Zeus"
+			has_mercenary_band = yes
+		}
+		potential = {
+			replace_mercenary_captain_potential_trigger = yes
+		}
+		allow = {
+			ROOT = {
+				wealth >= 150
+			}
+			replace_mercenary_captain_allow_trigger = yes
+		}
+		effect = {
+			FROM = { wealth = 100 }
+			ROOT = { wealth = -100 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.001
+		}
+	}
+
+	#vassalize_merc_band = {
+	#	only_playable = yes
+	#	ai_target_filter = dynasty
+	#	ai_check_interval = 36
+	#	diplomacy_icon = GFX_trait_inspiring_leader
+	#	
+	#	from_potential = {
+	#		is_playable = yes
+	#		is_landed = yes
+	#		has_dlc = "Zeus"
+	#		has_mercenary_band = yes
+	#	}
+	#	potential = {
+	#		replace_mercenary_captain_potential_trigger = yes
+	#	}
+	#	allow = {
+	#		FROM = { wealth = 500 }
+	#		replace_mercenary_captain_allow_trigger = yes
+	#	}
+	#	effect = {
+	#		FROM = { wealth = -500 }
+	#		#cut_mercenary_creator_relation = yes
+	#		set_defacto_liege = FROM
+	#	}
+	#	revoke_allowed = {
+	#		always = no
+	#	}
+	#	ai_will_do = {
+	#		factor = 0.001
+	#	}
+	#}
 	
 	introduce_heir = {
 		only_playable = yes

@@ -327,8 +327,8 @@ upgrade_dutch_polders_extended = { # Lighthouse
 	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier = 0.1
-		levy_size = 0.1
+		local_tax_modifier = 0.025
+		levy_size = 0.025
 	}
 }
 
@@ -347,7 +347,7 @@ upgrade_dutch_polders_toll = { # Lighthouse
 	gold_cost_flat = 750
 	gold_cost_ticking = 1
 	local_modifier = {
-		local_tax_modifier = 0.05
+		local_tax_modifier = 0.025
 	}
 	owner_modifier = {
 		stewardship = 2
@@ -950,5 +950,50 @@ upgrade_prauge_castle_cathedral = { # Lighthouse
 		global_revolt_risk = -0.05
 		learning = 1
 		monthly_character_piety = 0.125
+	}
+}
+
+upgrade_venice_arsenal_toll = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_anchor
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 2.5
+		local_tax_modifier = 0.05
+		supply_limit = 0.25
+	}
+}
+
+upgrade_venice_arsenal_towers = { # Lighthouse
+	#....
+	picture = GFX_upgrade_icon_stones
+	
+	potential = { }
+	allow = { }
+	active = { }
+
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 750
+	gold_cost_ticking = 1
+	local_modifier = {
+		archers = 300
+		fort_level = 1
+	}
+	owner_modifier = {
+		siege_defence = 0.2	
+		martial = 2
 	}
 }

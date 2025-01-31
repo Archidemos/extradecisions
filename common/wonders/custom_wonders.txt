@@ -957,7 +957,6 @@ wonder_dutch_polders = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			local_tax_modifier = 0.02
 		}
 		owner_modifier = {
 			build_cost_modifier = -0.02
@@ -976,9 +975,9 @@ wonder_dutch_polders = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			trade_route_value = 10
-			trade_route_wealth = 10
-			local_tax_modifier = 0.03
+			trade_route_value = 5
+			trade_route_wealth = 5
+			local_tax_modifier = 0.02
 		}
 		owner_modifier = {
 			build_cost_modifier = -0.03
@@ -999,7 +998,7 @@ wonder_dutch_polders = {
 		local_modifier = {
 			trade_route_value = 10
 			trade_route_wealth = 10	
-			local_tax_modifier = 0.05
+			local_tax_modifier = 0.03
 		}
 		owner_modifier = {
 			build_cost_modifier = -0.05
@@ -4258,6 +4257,135 @@ wonder_prauge_castle = {
 			diplomacy = 2
 			threat_decay_speed = 0.2
 			vassal_opinion = 5
+		}
+	}
+}
+
+wonder_venice_arsenal = {
+		picture = GFX_wonder_strip_grand_walls
+		allow_construction = no
+		show_model = yes
+		is_in_water = yes
+		model = wonder_wall
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+				has_landed_title = k_venice
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_venice_arsenal_toll
+			upgrade_venice_arsenal_towers
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+			is_historical
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2500
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			fort_level = 3
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			levy_size = 0.025
+			fort_level = 0.25
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+		}
+		local_modifier = {
+			local_tax_modifier = 0.1
+			levy_size = 0.025
+			fort_level = 0.25
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.05
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+			levy_size = 0.025
+			fort_level = 0.25
+			trade_route_value = 10
+			trade_route_wealth = 10
+		}
+		owner_modifier = {
+			monthly_character_piety = 0.3
+			build_time_modifier = -0.10
 		}
 	}
 }

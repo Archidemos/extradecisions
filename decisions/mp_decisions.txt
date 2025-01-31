@@ -314,72 +314,72 @@ targetted_decisions = {
 			}
 		}
 	}
-	prestige_to_gold = {
-		filter = self
-		ai_target_filter = self
-		ai = no
-		diplomacy_icon = GFX_sacrifice_decision
-		
-		potential = {
-			character = FROM
-			is_playable = yes
-			is_landed = yes
-			is_adult = yes
-			government = pirate_republic_government
-		}
-
-		allow = {
-			prestige = 1000
-			owner = {
-				show_scope_change = no
-			}
-			NOT = { has_character_modifier = cooldown_pp_gold }
-		}
-		
-		effect = {
-			prestige = -1000
-			owner = {
-				show_scope_change = no
-				scaled_wealth = { value = 5 }
-			}
-			FROM = {
-				add_character_modifier = { modifier = cooldown_pp_gold years = 2 }
-			}
-		}
-	}
-	piety_to_gold = {
-		filter = self
-		ai_target_filter = self
-		ai = no
-		diplomacy_icon = GFX_sacrifice_decision
-		
-		potential = {
-			character = FROM
-			is_playable = yes
-			is_landed = yes
-			is_adult = yes
-			government = pirate_republic_government
-		}
-
-		allow = {
-			piety = 1000
-			owner = {
-				show_scope_change = no
-			}
-			NOT = { has_character_modifier = cooldown_pp_gold }
-		}
-		
-		effect = {
-			piety = -1000
-			owner = {
-				show_scope_change = no
-				scaled_wealth = { value = 5 }
-			}
-			FROM = {
-				add_character_modifier = { modifier = cooldown_pp_gold years = 2 }
-			}
-		}
-	}
+	#prestige_to_gold = {
+	#	filter = self
+	#	ai_target_filter = self
+	#	ai = no
+	#	diplomacy_icon = GFX_sacrifice_decision
+	#	
+	#	potential = {
+	#		character = FROM
+	#		is_playable = yes
+	#		is_landed = yes
+	#		is_adult = yes
+	#		government = pirate_republic_government
+	#	}
+	#
+	#	allow = {
+	#		prestige = 1000
+	#		owner = {
+	#			show_scope_change = no
+	#		}
+	#		NOT = { has_character_modifier = cooldown_pp_gold }
+	#	}
+	#	
+	#	effect = {
+	#		prestige = -1000
+	#		owner = {
+	#			show_scope_change = no
+	#			scaled_wealth = { value = 1 }
+	#		}
+	#		FROM = {
+	#			add_character_modifier = { modifier = cooldown_pp_gold years = 2 }
+	#		}
+	#	}
+	#}
+	#piety_to_gold = {
+	#	filter = self
+	#	ai_target_filter = self
+	#	ai = no
+	#	diplomacy_icon = GFX_sacrifice_decision
+	#	
+	#	potential = {
+	#		character = FROM
+	#		is_playable = yes
+	#		is_landed = yes
+	#		is_adult = yes
+	#		government = pirate_republic_government
+	#	}
+	#
+	#	allow = {
+	#		piety = 1000
+	#		owner = {
+	#			show_scope_change = no
+	#		}
+	#		NOT = { has_character_modifier = cooldown_pp_gold }
+	#	}
+	#	
+	#	effect = {
+	#		piety = -1000
+	#		owner = {
+	#			show_scope_change = no
+	#			scaled_wealth = { value = 1 }
+	#		}
+	#		FROM = {
+	#			add_character_modifier = { modifier = cooldown_pp_gold years = 2 }
+	#		}
+	#	}
+	#}
 }
 
 decisions = {

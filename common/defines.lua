@@ -1328,10 +1328,10 @@ NMilitary = {
 
 	TERRAIN_SPEC_BONUS = 0.2,						-- Bonus to fighting in this terrain if you have that terrain as your
 													-- terrain specialization ( gained through combat events in that terrain )
-	MAX_LEADERSHIP_TRAITS = 2,
+	MAX_LEADERSHIP_TRAITS = 4,
 
-	MAX_COMMANDERS_BARON = 1,
-	MAX_COMMANDERS_COUNT = 2,						-- How many commanders can a count have ( can also always assign self and marshal )
+	MAX_COMMANDERS_BARON = 2,
+	MAX_COMMANDERS_COUNT = 3,						-- How many commanders can a count have ( can also always assign self and marshal )
 	MAX_COMMANDERS_DUKE = 4,
 	MAX_COMMANDERS_KING = 6,
 	MAX_COMMANDERS_EMPEROR = 8,
