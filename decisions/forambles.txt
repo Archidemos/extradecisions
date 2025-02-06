@@ -11,14 +11,14 @@ decisions = {
 				culture = bedouin_arabic
 				culture = andalusian_arabic
 			}
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			capital_scope = {
 				OR = {
 					de_jure_liege = d_alger
 					de_jure_liege = d_kabylia
-					de_jure_liege = d_mzab
+					#de_jure_liege = d_mzab
 					de_jure_liege = d_tlemcen
-					de_jure_liege = d_tahert
+					#de_jure_liege = d_tahert
 				}
 			}
 		}
@@ -26,11 +26,12 @@ decisions = {
 		allow = {
 			completely_controls = d_alger
 			completely_controls = d_kabylia
-			OR = {
-				completely_controls = d_tlemcen
-				completely_controls = d_tahert
-				completely_controls = d_mzab
-			}
+			completely_controls = d_tlemcen
+			#OR = {
+				#completely_controls = d_tlemcen
+				#completely_controls = d_tahert
+				#completely_controls = d_mzab
+			#}
 			independent = yes
 			wealth = 250
 			prestige = 500
@@ -43,9 +44,9 @@ decisions = {
 			hidden_effect = {
 				d_alger = { de_jure_liege = k_algeria }
 				d_kabylia = { de_jure_liege = k_algeria }
-				d_mzab = { de_jure_liege = k_algeria }
+				#d_mzab = { de_jure_liege = k_algeria }
 				d_tlemcen = { de_jure_liege = k_algeria }
-				d_tahert = { de_jure_liege = k_algeria }
+				#d_tahert = { de_jure_liege = k_algeria }
 				k_algeria = { de_jure_liege = e_maghreb }
 			}
 			
@@ -68,7 +69,7 @@ decisions = {
 		
 		potential = {
 			culture = turkish
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			NOT = { start_date = 1077.1.1 }
 			NOT = { has_global_flag = rum_formed }
 			any_realm_province = {
@@ -123,7 +124,7 @@ decisions = {
 				culture = lithuanian
 			}
 			NOT = { has_global_flag = commonwealth_formed }
-			LOWER_REAL_TIER_THAN = EMPEROR
+			lower_real_tier_than = EMPEROR
 		}
 		
 		allow = {
@@ -132,7 +133,7 @@ decisions = {
 			has_landed_title = k_poland
 			has_landed_title = k_lithuania
 			has_landed_title = k_ruthenia
-			has_landed_title = k_galicia-volhynia
+			has_landed_title = k_galicia
 		}
 		
 		effect = {
@@ -508,7 +509,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			has_landed_title = d_ragusa
 			is_republic = yes
 		}
@@ -573,7 +574,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			has_landed_title = d_gotland
 			is_republic = yes
 		}
@@ -617,7 +618,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			has_landed_title = d_pechina
 			is_republic = yes
 		}
@@ -668,7 +669,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
-			LOWER_REAL_TIER_THAN = KING
+			lower_real_tier_than = KING
 			has_landed_title = d_ancona
 			is_republic = yes
 		}

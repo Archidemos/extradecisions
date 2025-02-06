@@ -133,13 +133,13 @@ old_german_dejure_effect = {
 		
 		##Swabia
 		
-		k_swabia = { de_jure_liege = e_germany }
+		k_schwaben = { de_jure_liege = e_germany }
 		
-		d_swabia = { de_jure_liege = k_swabia }
-		d_thurgau = { de_jure_liege = k_swabia }
-		d_baden = { de_jure_liege = k_swabia }
-		d_alsace = { de_jure_liege = k_swabia }
-		d_raetia = { de_jure_liege = k_swabia }
+		d_swabia = { de_jure_liege = k_schwaben }
+		d_thurgau = { de_jure_liege = k_schwaben }
+		d_baden = { de_jure_liege = k_schwaben }
+		d_alsace = { de_jure_liege = k_schwaben }
+		d_ratien = { de_jure_liege = k_schwaben }
 		
 		##Thuringia
 		
@@ -203,10 +203,10 @@ old_german_dejure_effect = {
 				if  = {
 					limit = {
 						capital_scope = {
-							de_jure_liege_or_above = k_swabia
+							de_jure_liege_or_above = k_schwaben
 						}
 					}
-					k_swabia = {
+					k_schwaben = {
 						grant_title_no_opinion = THIS
 						copy_title_laws = k_germany
 						make_primary_title = yes
