@@ -1,0 +1,133 @@
+namespace = RN
+
+narrative_event = { # FALL OF CONSTANTINOPLE
+    id = RN.1
+    title = T_RN1
+    desc = D_RN1
+    picture = GFX_evt_hagia_sofia_muslim
+
+    is_triggered_only = yes
+    major = yes
+
+    trigger = {
+        NOT = { has_global_flag = constantinople_fallen }
+        ROOT = {
+            NOT = { religion_group = christian }
+        }
+        FROM = {
+            title = c_byzantion
+        }
+        FROMFROM = {
+            religion_group = christian
+        }
+    }
+
+    immediate = {
+        set_global_flag = constantinople_fallen
+        if = {
+            limit = {
+                e_byzantium = { realm_size < 100 }
+            }
+            destroy_landed_title = e_byzantium
+        }
+    }
+
+    option = {
+        name = A_RN1
+        trigger = { religion_group = christian }
+    }
+
+    option = {
+        name = B_RN1
+        prestige = 1000 # only grants to root despite being major = yes right?
+        piety = 500
+        trigger = { NOT = { religion_group = christian } }
+    }
+}
+
+character_event = { # Renaissance Spawn
+    id = RN.100
+
+    hide_window = yes
+    only_playable = yes
+    is_triggered_only = yes # every five years
+
+    culture = italian
+
+    trigger = {
+        has_global_flag = constantinople_fallen
+        religion_group = christian
+    }
+
+    immediate = {
+        random_list = {
+            1 = { # Italian
+                create_character = {
+                    random_traits = yes
+                    dynasty = random
+                    religion = ROOT
+                    culture = italian
+                    female = no
+
+                    attributes = {
+                        martial = 5
+                        diplomacy = 5
+                        stewardship = 6
+                        intrigue = 5
+                        learning = 7
+                    }
+                }
+
+                new_character = { # Italian specific changes
+                    random_list = {
+                        9 = {}
+                        1 = { culture = sardinian }
+                        1 = { culture = dalmatian }
+                    }
+                    random_list = {
+                        9 = {}
+                        1 = { religion = cathar }
+                        1 = { religion = fraticelli }
+                        1 = { religion = waldensian }
+                    }
+                }
+            }
+            1 = {
+                create_character = {
+                    random_traits = yes
+                    dynasty = random
+                    religion = orthodox
+                    culture = greek
+                    female = no
+
+                    attributes = {
+                        martial = 5
+                        diplomacy = 5
+                        stewardship = 5
+                        intrigue = 5
+                        learning = 8
+                    }
+                }
+
+                new_character = { # Greek specific changes
+                    random_list = {
+                        6 = {}
+                        1 = { culture = crimean_gothic }
+                        1 = { culture = arberian }
+                    }
+                    random_list = {
+                        8 = {}
+                        1 = { religion = bogomilist }
+                        1 = { religion = paulician }
+                    }
+                }
+            }
+        }
+
+        new_character = { # General stats
+
+        }
+
+        repeat_event = { id = RN.101 }
+    }
+}
