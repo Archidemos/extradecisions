@@ -119,36 +119,36 @@ character_event = { #pass imperial flag
     }
 }
 
-character_event = { # clean-up flag
-    id = HRE.7
-    hide_window = yes
-
-    is_triggered_only = yes # on_decade
-
-    only_independent = yes
-
-    trigger = {
-        real_tier = KING
-    }
-
-    immediate = {
-        primary_title = {
-            empire = {
-                limit = {
-                    has_title_flag = imperial_title
-                    has_holder = no
-                    NOR = {
-                        title = e_hre
-                        title = e_byzantium
-                        title = e_west_rome
-                        title = e_roman_empire
-                    }
-                }
-                clr_title_flag = imperial_title 
-            }
-        }
-    }
-}
+#character_event = { # clean-up flag
+#    id = HRE.7
+#    hide_window = yes
+#
+#    is_triggered_only = yes # on_decade
+#
+#    only_independent = yes
+#
+#    trigger = {
+#        real_tier = KING
+#    }
+#
+#    immediate = {
+#        primary_title = {
+#            empire = {
+#                limit = {
+#                    has_title_flag = imperial_title
+#                    has_holder = no
+#                    NOR = {
+#                        title = e_hre
+#                        title = e_byzantium
+#                        title = e_west_rome
+#                        title = e_roman_empire
+#                    }
+#                }
+#                clr_title_flag = imperial_title 
+#            }
+#        }
+#    }
+#}
 
 
 ## IMPERIAL AUTHORITY 100-199

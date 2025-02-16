@@ -31,7 +31,7 @@ character_event = {
     is_triggered_only = yes # on_new_holder_inheritance
 
     trigger = {
-        start_date >= 1066.1.1
+        start_date >= 1034.1.1
         NOR = {
             has_global_flag = ggh_start 
             has_dynasty_flag = hre_starting_dyn
@@ -70,8 +70,10 @@ narrative_event = { # CONCORDAT OF WORMS (?)
         }
         any_vassal = {
             limit = {
-                de_jure_liege_or_above = e_italy
-                NOT = { has_character_flag = guelph_leader } #ghibbeline leader is emperor
+                NOR = {
+                    has_character_flag = guelph_leader
+                    tier = BARON
+                } #ghibbeline leader is emperor
             }
             narrative_event = { id = GGH.3 }
         }
@@ -177,7 +179,7 @@ narrative_event = {
             text = ggh_neutral_tt
         }
         ai_chance = {
-            factor = 75
+            factor = 50
             modifier = {
                 factor = 0.3
                 trait = ambitious
