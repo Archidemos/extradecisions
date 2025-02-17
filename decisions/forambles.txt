@@ -530,37 +530,37 @@ decisions = {
 			}
 			
 			activate_title = {
-				title = k_ragusa
+				title = k_serene_ragusa
 				status = yes
 			}
 			
-			k_ragusa = {
+			k_serene_ragusa = {
 				show_scope_change = no
 				grant_title = ROOT
 				copy_title_laws = event_target:formable
 			}
 			
-			d_ragusa = { de_jure_liege = k_ragusa }
+			d_ragusa = { de_jure_liege = k_serene_ragusa }
 			
 			hidden_tooltip = {
 				if = {
 					limit = {
 						has_landed_title = d_dalmatia
 					}
-					d_dalmatia = { de_jure_liege = k_ragusa }
+					d_dalmatia = { de_jure_liege = k_serene_ragusa }
 					d_dalmatia = { set_name = "Dalmatia" }
 				}
 				if = {
 					limit = {
 						has_landed_title = d_croatia
 					}
-					d_croatia = { de_jure_liege = k_ragusa }
+					d_croatia = { de_jure_liege = k_serene_ragusa }
 				}
 				else_if = {
 					limit = {
 						has_landed_title = d_dioclea
 					}
-					d_dioclea = { de_jure_liege = k_ragusa }
+					d_dioclea = { de_jure_liege = k_serene_ragusa }
 				}
 			}
 			

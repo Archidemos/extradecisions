@@ -18,27 +18,27 @@ character_event = {
 
 		if = {
 			limit = { check_variable = { which = experienced_commander value == 5 } }
-			add_trait = battle_expierenced_5
+			add_trait = battle_experienced_5
 		}
 		else_if = {
 			limit = { check_variable = { which = experienced_commander value == 15 } }
-			add_trait = battle_expierenced_10
-			remove_trait = battle_expierenced_5
+			add_trait = battle_experienced_10
+			remove_trait = battle_experienced_5
 		}
 		else_if = {
 			limit = { check_variable = { which = experienced_commander value == 25 } }
-			add_trait = battle_expierenced_15
-			remove_trait = battle_expierenced_10
+			add_trait = battle_experienced_15
+			remove_trait = battle_experienced_10
 		}
 		else_if = {
 			limit = { check_variable = { which = experienced_commander value == 35 } }
-			add_trait = battle_expierenced_20
-			remove_trait = battle_expierenced_15
+			add_trait = battle_experienced_20
+			remove_trait = battle_experienced_15
 		}
 		else_if = {
 			limit = { check_variable = { which = experienced_commander value == 45 } }
 			add_trait = battle_expierenced_25
-			remove_trait = battle_expierenced_20
+			remove_trait = battle_experienced_20
 		}
 	}
 }
