@@ -1,0 +1,51 @@
+namespace = NW
+
+# 1-100 Mechanics
+# 200-300 Flavour
+# 500-600 History
+
+### MECHANICS ###
+# HOW DOES IT WORK?
+# Every single "Region" gets its own eventWindow aswell as background
+# I can set button Gfx to the corrosponding region's shape
+# Along with variables and tooltips I can display information such as: value, owner, ect
+# Other relevant information is shown inside the offmap GUI
+
+# Event tooltip borders can be used to indicate certain status, i.e. owned, war, neutral
+
+character_event = {
+    id = NW.1
+    title = CONTINENTS_NW1
+    desc = D_NW1 # will i use?
+    #picture =
+    window = EventWindowNewWorld
+    background = GFX_event_nw_bg
+
+    trigger = {
+        NOT = { has_character_flag = opened_nw_window }
+    }
+
+    immediate = {
+        set_character_flag = opened_nw_window
+    }
+
+    option = {
+        name = NORTH_AMERICA #canada-america
+        repeat_event = NW.2
+    }
+
+    option = {
+        name = CENTRAL_AMERICA #mexico-panama
+        #repeat_event = NW.2
+    }
+
+    option = {
+        name = CARRIBEAN #self explanatory
+        #repeat_event = NW.2
+    }
+
+    option = {
+        name = SOUTH_AMERICA # Gran Columbia/Peru-Bolivia/Brazil/Argentina
+        #repeat_event = NW.2
+    }
+}
