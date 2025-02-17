@@ -11,134 +11,34 @@ character_event = {
 	}
 	
 	immediate = {
-		if = {
-			limit = { has_character_flag = experienced_commander_19 }
-			clr_character_flag = experienced_commander_19
-			set_character_flag = experienced_commander_20
-			remove_trait = battle_experienced_15
-			add_trait = battle_experienced_20
+		change_variable = {
+			which = experienced_commander
+			value = 1
 		}
+
 		if = {
-			limit = { has_character_flag = experienced_commander_18 }
-			clr_character_flag = experienced_commander_18
-			set_character_flag = experienced_commander_19
+			limit = { check_variable = { which = experienced_commander value == 5 } }
+			add_trait = battle_expierenced_5
 		}
-		if = {
-			limit = { has_character_flag = experienced_commander_17 }
-			clr_character_flag = experienced_commander_17
-			set_character_flag = experienced_commander_18
+		else_if = {
+			limit = { check_variable = { which = experienced_commander value == 15 } }
+			add_trait = battle_expierenced_10
+			remove_trait = battle_expierenced_5
 		}
-		if = {
-			limit = { has_character_flag = experienced_commander_16 }
-			clr_character_flag = experienced_commander_16
-			set_character_flag = experienced_commander_17
+		else_if = {
+			limit = { check_variable = { which = experienced_commander value == 25 } }
+			add_trait = battle_expierenced_15
+			remove_trait = battle_expierenced_10
 		}
-		if = {
-			limit = { has_character_flag = experienced_commander_15 }
-			clr_character_flag = experienced_commander_15
-			set_character_flag = experienced_commander_16
+		else_if = {
+			limit = { check_variable = { which = experienced_commander value == 35 } }
+			add_trait = battle_expierenced_20
+			remove_trait = battle_expierenced_15
 		}
-		if = {
-			limit = { has_character_flag = experienced_commander_14 }
-			clr_character_flag = experienced_commander_14
-			set_character_flag = experienced_commander_15
-			remove_trait = battle_experienced_10
-			add_trait = battle_experienced_15
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_13 }
-			clr_character_flag = experienced_commander_13
-			set_character_flag = experienced_commander_14
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_12 }
-			clr_character_flag = experienced_commander_12
-			set_character_flag = experienced_commander_13
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_11 }
-			clr_character_flag = experienced_commander_11
-			set_character_flag = experienced_commander_12
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_10 }
-			clr_character_flag = experienced_commander_10
-			set_character_flag = experienced_commander_11
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_9 }
-			clr_character_flag = experienced_commander_9
-			set_character_flag = experienced_commander_10
-			remove_trait = battle_experienced_5
-			add_trait = battle_experienced_10
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_8 }
-			clr_character_flag = experienced_commander_8
-			set_character_flag = experienced_commander_9
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_7 }
-			clr_character_flag = experienced_commander_7
-			set_character_flag = experienced_commander_8
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_6 }
-			clr_character_flag = experienced_commander_6
-			set_character_flag = experienced_commander_7
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_5 }
-			clr_character_flag = experienced_commander_5
-			set_character_flag = experienced_commander_6
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_4 }
-			clr_character_flag = experienced_commander_4
-			set_character_flag = experienced_commander_5
-			add_trait = battle_experienced_5
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_3 }
-			clr_character_flag = experienced_commander_3
-			set_character_flag = experienced_commander_4
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_2 }
-			clr_character_flag = experienced_commander_2
-			set_character_flag = experienced_commander_3
-		}
-		if = {
-			limit = { has_character_flag = experienced_commander_1 }
-			clr_character_flag = experienced_commander_1
-			set_character_flag = experienced_commander_2
-		}
-		if = {
-			limit = {
-				NOR = {
-					has_character_flag = experienced_commander_1
-					has_character_flag = experienced_commander_2
-					has_character_flag = experienced_commander_3
-					has_character_flag = experienced_commander_4
-					has_character_flag = experienced_commander_5
-					has_character_flag = experienced_commander_6
-					has_character_flag = experienced_commander_7
-					has_character_flag = experienced_commander_8
-					has_character_flag = experienced_commander_9
-					has_character_flag = experienced_commander_10
-					has_character_flag = experienced_commander_11
-					has_character_flag = experienced_commander_12
-					has_character_flag = experienced_commander_13
-					has_character_flag = experienced_commander_14
-					has_character_flag = experienced_commander_15
-					has_character_flag = experienced_commander_16
-					has_character_flag = experienced_commander_17
-					has_character_flag = experienced_commander_18
-					has_character_flag = experienced_commander_19
-					has_character_flag = experienced_commander_20
-				}
-			}
-			set_character_flag = experienced_commander_1
+		else_if = {
+			limit = { check_variable = { which = experienced_commander value == 45 } }
+			add_trait = battle_expierenced_25
+			remove_trait = battle_expierenced_20
 		}
 	}
 }
