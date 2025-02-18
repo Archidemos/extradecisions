@@ -6803,45 +6803,45 @@ astrology_very_bad_omen = {
 
 cannibal_haruspicy_sacrifice = {
 	icon = 81
-	combat_rating = 20
+	combat_rating = 30
 	command_modifier = {
 		morale_offence = 0.35
 	}
 }
 martial_haruspicy_sacrifice = {
 	icon = 79
-	martial = 2
+	martial = 3
 	command_modifier = {
-		religious_enemy = 0.2
-		morale_defence = 0.2
+		religious_enemy = 0.25
+		morale_defence = 0.25
 	}
 }
 intrigue_def_haruspicy_sacrifice = {
 	icon = 79
-	intrigue = 2
-	plot_discovery_chance = 0.25
-	defensive_plot_power_modifier = 0.25
+	intrigue = 3
+	plot_discovery_chance = 0.45
+	defensive_plot_power_modifier = 0.35
 }
 intrigue_att_haruspicy_sacrifice = {
 	icon = 79
-	intrigue = 2
-	arrest_chance_modifier = 0.25
-	plot_power_modifier = 0.25
+	intrigue = 3
+	arrest_chance_modifier = 0.35
+	plot_power_modifier = 0.35
 }
 stewardship_haruspicy_sacrifice = {
 	icon = 79
-	stewardship = 2
-	local_tax_modifier = 0.1
-	local_revolt_risk = -0.01
+	stewardship = 3
+	local_tax_modifier = 0.2
+	local_revolt_risk = -0.05
 }
 negative_haruspicy_sacrifice = {
 	icon = 80
-	local_tax_modifier = -0.05
+	local_tax_modifier = -0.15
 	local_revolt_risk = 0.05
 }
 religious_blood_haruspicy_sacrifice = {
 	icon = 79
-	martial = 2
+	martial = 3
 	command_modifier = {
 		religious_enemy = 0.5
 	}
@@ -6854,52 +6854,80 @@ bloodthirsty_games_cooldown = {
 }
 fearless_potion = {
 	icon = 83
+	diplomacy = 1
 	combat_rating = 20
 }
 poisoned_weapons = {
 	icon = 83
+	intrigue = 1
 	combat_rating = 10
 }
 gladiatorial_equipment = {
 	icon = 13
+	martial = 1
 	combat_rating = 10
 }
 survived_blood_games = {
 	icon = 13
-	diplomacy = -1
+	diplomacy = -2
+	martial = 3
+	learning = 2
+	health = 0.5
 	combat_rating = 15
+	infidel_opinion = -5
 }
 bloodthirsty_mass_sacrifice_province_1 = {
-	local_tax_modifier = -0.05
+	local_tax_modifier = 0.05
+	land_morale = 0.05
+	siege_defence = 0.1
+	local_revolt_risk = -0.5
+	
 	levy_reinforce_rate = -0.05
 	garrison_size = -0.1
-	supply_limit = -0.5
+	supply_limit = -1.0
 	disease_defence = 0.1
 	icon = 42
 }
 bloodthirsty_mass_sacrifice_province_2 = {
-	local_tax_modifier = -0.1
+	local_tax_modifier = 0.1
+	land_morale = 0.1
+	siege_defence = 0.2
+	local_revolt_risk = -0.75
+	
 	levy_reinforce_rate = -0.1
 	garrison_size = -0.2
-	supply_limit = -1.0
+	supply_limit = -1.5
 	disease_defence = 0.2
 	icon = 42
 }
 bloodthirsty_mass_sacrifice_bonus_1 = {
 	icon = 41
-	land_morale = 0.10
+	land_morale = 0.20
+	martial = 2
+	health = 0.25
+	infidel_opinion = -5
 }
 bloodthirsty_mass_sacrifice_bonus_2 = {
 	icon = 41
-	land_morale = 0.20
+	land_morale = 0.30
+	martial = 2
+	learning = 2
+	health = 0.5
+	infidel_opinion = -10
 }
 bloodthirsty_mass_sacrifice_bonus_3 = {
 	icon = 41
-	land_morale = 0.30
+	land_morale = 0.50
+	martial = 3
+	learning = 3
+	health = 1
+	infidel_opinion = -15
 }
 enemy_made_mass_sacrifice = {
 	icon = 41
 	land_morale = -0.10
+	martial = 1
+	health = 0.25
 }
 bloodthirsty_mass_sacrifice_cooldown = {
 	icon = 41

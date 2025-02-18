@@ -1,18 +1,24 @@
 # County Title
 title = c_covasna
 # Settlements
-max_settlements = 4
+max_settlements = 3
 b_vizpart = tribal
+#b_harmonikas = city
 # Misc
 culture = romanian
 religion = slavic_pagan
 ################################################################################
 # History
 ################################################################################
-800.1.1 = { b_vizpart = castle b_harmonikas = city b_fenykep = temple } 
-856.1.1 = { b_vizpart = tribal culture = romanian religion = orthodox } 
+800.1.1 = { b_vizpart = castle b_fenykep = temple } 
+856.1.1 = { 
+	b_vizpart = tribal 
+	culture = romanian 
+	religion = orthodox
+	remove_settlement = b_fenykep
+} 
 930.1.1 = { culture = hungarian religion = tengri_pagan } 
-950.1.1 = { 
+950.1.1 = {
     religion = catholic
     b_vizpart = castle
     b_harmonikas = city

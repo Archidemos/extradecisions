@@ -7653,7 +7653,7 @@ narrative_event = {
 				year = 769
 			}
 		}
-		NOR = { 
+		NOR = {
 			year = 1218
 			has_game_rule = {
 				name = mongol_invasion
@@ -7770,6 +7770,8 @@ narrative_event = {
 						wealth = 15000
 						prestige = 10000
 						set_character_flag = horde_invader
+						character_event = { id = MONE.1 days = 30 }
+						character_event = { id = MONE.2 days = 30 }
 						character_event = { id = 60510 } # Spawn troops
 						character_event = { id = 60515 days = 1 } # Spawn population
 						save_event_target_as = mongol_china_invader
@@ -7805,6 +7807,7 @@ narrative_event = {
 						dynasty = 11100
 						religion = tengri_pagan
 						culture = mongol
+						health = 7
 						female = no
 						age = 24
 						attributes = {
@@ -7833,6 +7836,7 @@ narrative_event = {
 						e_mongol_empire = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
+							save_event_target_as = mongol_playable
 							grant_title = PREV
 						}
 						set_defacto_liege = THIS
@@ -7851,6 +7855,8 @@ narrative_event = {
 						wealth = 15000
 						prestige = 10000
 						set_character_flag = horde_invader
+						character_event = { id = MONE.1 days = 30 }
+						character_event = { id = MONE.2 days = 30 }
 						character_event = { id = 60509 } # Spawn courtiers
 						character_event = { id = 60510 } # Spawn troops
 						character_event = { id = 60515 days = 1 } # Spawn population
@@ -7880,7 +7886,7 @@ narrative_event = {
 						intrigue=8
 						stewardship=9
 					}
-					health = 6
+					health = 7
 					fertility = 0.7
 					religion="tengri_pagan"
 					culture="mongol"
@@ -7929,11 +7935,14 @@ narrative_event = {
 					wealth = 15000
 					prestige = 10000
 					set_character_flag = horde_invader
+					character_event = { id = MONE.1 days = 30 }
+					character_event = { id = MONE.2 days = 30 }
 					character_event = { id = 60505 } # Spawn Temujins generals
 					character_event = { id = 60509 } # Spawn courtiers
 					character_event = { id = 60510 } # Spawn troops
 					character_event = { id = 60515 days = 1 } # Spawn population
 					save_event_target_as = mongol_china_invader
+					save_event_target_as = genghis_khan_temujin_himself
 				}
 			}
 			if = {
@@ -7963,7 +7972,7 @@ narrative_event = {
 						e_mongol_empire = {
 							holder_scope = {
 								unsafe_war = {
-									casus_belli = tribal_invasion
+									casus_belli = mongol_empire_special_cb
 									target = PREVPREVPREV # The top liege of the owner of the province
 									thirdparty_title = PREVPREV # The de jure kingdom
 								}
@@ -8157,108 +8166,520 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+				# Yesugei, Temujin's father
+		create_character = {
+			name = "Yesugei"
+			age = 68
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			female = no
+			trait = skilled_tactician
+			random_traits = yes
+		}
+		new_character = {
+			save_event_target_as = temujin_father
+			ROOT = { set_father = PREV }
+		}
+		
+		event_target:temujin_father = { death = { death_reason = death_battle } }
+
+		# Hoelun, Temujin's mother
+		create_character = {
+			name = "Hoelun"
+			age = 54
+			dynasty = 101946
+			religion="tengri_pagan"
+			culture="mongol"
+			female = yes
+			health = 7.5
+			random_traits = yes
+		}
+		new_character = {
+			save_event_target_as = temujin_mother
+			ROOT = { set_mother = PREV }
+			add_spouse = event_target:temujin_father
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+		}
+
+		# Hasar, Temujin's brother
+		create_character = {
+			random_traits = yes
+			name = "Hasar"
+			age = 38
+			female = no
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				martial = 8
+			}
+			trait = skilled_tactician
+		}
+		new_character = {
+			dynasty = 1051210
+			set_father = event_target:temujin_father
+			set_mother = event_target:temujin_mother
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			ROOT = {
+				create_character = {
+					name = "Yesungge"
+					random_traits = yes
+					dynasty=1051210
+					religion="tengri_pagan"
+					culture="mongol"
+					female = no
+					age = 0
+				}
+				new_character = {
+					set_father = PREVPREV
+					opinion = { who = ROOT modifier = opinion_loyal_servant }
+				}
+			}
+		}
+
+		# Hachiun, Temujin's second brother
+		create_character = {
+			random_traits = yes
+			name = "Hachiun"
+			age = 36
+			female = no
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				martial = 8
+			}
+			trait = skilled_tactician
+		}
+		new_character = {
+			dynasty = 1051210
+			set_father = event_target:temujin_father
+			set_mother = event_target:temujin_mother
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+		}
+
+		# Temuge, Temujin's youngest brother
+		create_character = {
+			random_traits = yes
+			name = "Temuge"
+			age = 33
+			female = no
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			health = 7.0
+			trait = slothful
+		}
+		new_character = {
+			dynasty = 1051210
+			
+			set_father = event_target:temujin_father
+			set_mother = event_target:temujin_mother
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			ROOT = {
+				create_character = {
+					name = "Jibugan"
+					random_traits = yes
+					dynasty=1051210
+					religion="tengri_pagan"
+					culture="mongol"
+					female = no
+					age = 9
+				}
+				new_character = {
+					dynasty = 1051210
+					set_father = PREVPREV
+					opinion = { who = ROOT modifier = opinion_loyal_servant }
+				}
+			}
+		}
+
+		# Belgutei, Temujin's half-brother
+		create_character = {
+			random_traits = yes
+			name = "Belgutei"
+			age = 33
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				diplomacy = 8
+			}
+			trait = charismatic_negotiator
+			trait = child_of_consort
+		}
+		new_character = {
+			set_father = event_target:temujin_father
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+		}
+
+		# Borte, Temujin's wife
 		create_character = {
 			name = "Borte"
-			age = 49
+			age = 45
 			dynasty = 1041000
-			religion = tengri_pagan
-			culture = mongol
+			religion="tengri_pagan"
+			culture="mongol"
 			female = yes
 			random_traits = yes
 		}
 		new_character = {
 			save_event_target_as = borte
 			add_spouse = ROOT
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
 		}
+
+		# Subutai, Temujin's primary general
 		create_character = {
-			name="Subutai"
-			age = 35
+			name = "Subutai"
+			age = 31
+			dynasty = 172001
+			health = 8
 			religion="tengri_pagan"
 			culture="mongol"
 			attributes = {
-				martial=10
-				diplomacy=4
-				intrigue=6
-				stewardship=6
+				martial = 10
+				diplomacy = 4
+				intrigue = 6
+				stewardship = 6
 			}
-			trait="brave"
-			trait="strong"
-			trait="quick"
-			trait="diligent"
-			trait="brilliant_strategist"
-			trait="trickster"
-		}
-		create_character = {
-			name="Chagatai" 
-			age = 27
-			dynasty=1051210
-			religion="tengri_pagan"
-			culture="mongol"
-			trait="skilled_tactician"
-			trait="wroth"
-			trait="just"
-			trait="drunkard"
+			trait = brave
+			trait = strong
+			trait = quick
+			trait = diligent
+			trait = brilliant_strategist
+			trait = trickster
 		}
 		new_character = {
-			set_father = ROOT
-			set_mother = event_target:borte
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
 		}
-		create_character = {
-			name="Ögedei" # Ögedei Khan
-			age = 24
-			dynasty=1051210
-			religion="tengri_pagan"
-			culture="mongol"
-			trait="skilled_tactician"
-			trait="gregarious"
-			trait="just"
-		}
-		new_character = {
-			set_father = ROOT
-			set_mother = event_target:borte
-		}
-		create_character = {
-			name="Jochi"
-			age = 29
-			dynasty=1051210
-			religion="tengri_pagan"
-			culture="mongol"
-			trait="skilled_tactician"
-			trait="hunter"
-			trait="kind"
-			trait="patient"
-		}
-		new_character = {
-			set_father = ROOT
-			set_mother = event_target:borte
-		}
-		create_character = {
-			name="Tolui"
-			age = 18
-			dynasty=1051210
-			religion="tengri_pagan"
-			culture="mongol"
-			random_traits = yes
-		}
-		new_character = {
-			set_father = ROOT
-			set_mother = event_target:borte
-		}
+
+		# Chepe, Temujin's secondary general
 		create_character = {
 			name="Jebe"
-			#AKA Chepe
-			age = 50
-			dynasty = random
+			dynasty = 7317
+			age = 46
+			health = 8
 			religion="tengri_pagan"
 			culture="mongol"
 			attributes = {
-				martial=10
-				diplomacy=5
-				intrigue=5
-				stewardship=4
+				martial = 10
+				diplomacy = 5
+				intrigue = 5
+				stewardship = 4
 			}
-			trait="skilled_tactician"
-			trait="brave"
+			trait = skilled_tactician
+			trait = brave
+		}
+		new_character = {
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+		}
+
+		# Jochi, eldest son
+		create_character = {
+			random_traits = no
+			name = "Jochi"
+			age = 24
+			health = 8
+			dynasty=1051210
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				martial = 8
+			}
+			trait = skilled_tactician
+			trait = hunter
+			trait = kind
+			trait = patient
+		}
+		new_character = {
+			prestige = 500
+			
+			set_father = ROOT
+			set_mother = event_target:borte
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			save_event_target_as = jochi_son_temujin
+			set_character_flag = line_of_jochi
+			event_target:chagatai_son_temujin = {
+				add_rival = PREV
+			}
+			ROOT = {
+				create_character = {
+					name = "Sarkan"
+					random_traits = yes
+					dynasty = 1041002
+					religion="tengri_pagan"
+					culture="mongol"
+					female = yes
+					age = 16
+				}
+				new_character = {
+					
+					add_spouse = PREVPREV
+					opinion = { who = ROOT modifier = opinion_loyal_servant }
+					ROOT = {
+						create_character = {
+							name = "Batu"
+							random_traits = yes
+							dynasty=1051210
+							religion="tengri_pagan"
+							culture="mongol"
+							female = no
+							age = 1
+							attributes = {
+								martial = 4
+							}
+						}
+						new_character = {
+							set_father = PREVPREVPREVPREV
+							set_mother = PREVPREV
+							opinion = { who = ROOT modifier = opinion_loyal_servant }
+						}
+					}
+				}
+			}
+		}
+
+		# Chagatai, second son
+		create_character = {
+			random_traits = no
+			name = "Chagatai"
+			dynasty=1051210
+			religion="tengri_pagan"
+			culture="mongol"
+			age = 22
+			health = 8
+			trait = skilled_tactician
+			trait = wroth
+			trait = just
+			trait = drunkard
+		}
+		new_character = {
+			prestige = 500
+			set_father = ROOT
+			set_mother = event_target:borte
+			set_character_flag = line_of_chagatai
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			save_event_target_as = chagatai_son_temujin
+			event_target:jochi_son_temujin = {
+				add_rival = PREV
+			}
+			ROOT = {
+				create_character = {
+					name = "Ebuskun"
+					random_traits = yes
+					dynasty = 1041001
+					religion="tengri_pagan"
+					culture="mongol"
+					female = yes
+					age = 17
+					trait = quick
+				}
+				new_character = {
+					
+					add_spouse = PREVPREV
+					opinion = { who = ROOT modifier = opinion_loyal_servant }
+					ROOT = {
+						create_character = {
+							name = "Moetuken"
+							random_traits = yes
+							dynasty=1051210
+							religion="tengri_pagan"
+							culture="mongol"
+							female = no
+							trait = conscientious
+							attributes = {
+								martial = 6
+								intrigue = 3
+							}
+							age = 2
+						}
+						new_character = {
+							set_mother = PREVPREV
+							set_father = PREVPREVPREVPREV
+							opinion = { who = ROOT modifier = opinion_loyal_servant }
+						}
+						create_character = {
+							name = "Yesu Mongke"
+							random_traits = yes
+							dynasty=1051210
+							religion="tengri_pagan"
+							culture="mongol"
+							female = no
+							age = 1
+							trait = rowdy
+							trait = quick
+							attributes = {
+								martial = 4
+								diplomacy = 3
+							}
+						}
+						new_character = {
+							set_mother = PREVPREV
+							set_father = PREVPREVPREVPREV
+							opinion = { who = ROOT modifier = opinion_loyal_servant }
+						}
+						
+						create_character = {
+							name = "Baidar"
+							random_traits = yes
+							dynasty=1051210
+							religion="tengri_pagan"
+							culture="mongol"
+							female = no
+							age = 0
+							attributes = {
+								martial = 4
+								diplomacy = 3
+							}
+						}
+						new_character = {
+							set_mother = PREVPREV
+							set_father = PREVPREVPREVPREV
+							opinion = { who = ROOT modifier = opinion_loyal_servant }
+						}
+					}
+				}
+			}
+		}
+
+		# Ogedei, third son
+		create_character = {
+			random_traits = no
+			name = "Ogedei"
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			age = 19
+			attributes = {
+				diplomacy = 8
+			}
+			trait = skilled_tactician
+			trait = gregarious
+			trait = just
+			trait = hunter
+			trait = ambitious
+		}
+		new_character = {
+			prestige = 500
+			
+			set_father = ROOT
+			set_mother = event_target:borte
+			set_character_flag = line_of_ogodei
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			save_event_target_as = ogedei_son_temujin
+			add_friend = event_target:tolui_son_temujin
+			event_target:tolui_son_temujin = {
+				add_friend = PREV
+			}
+			ROOT = {
+				create_character = {
+					name = "TÃ¶regene"
+					random_traits = yes
+					dynasty = 1041001
+					religion="tengri_pagan"
+					culture="mongol"
+					female = yes
+					age = 16
+				}
+				new_character = {
+					
+					add_spouse = PREVPREV
+					opinion = { who = ROOT modifier = opinion_loyal_servant }
+					ROOT = {
+						create_character = {
+							name = "Guyug"
+							random_traits = yes
+							dynasty=1051210
+							religion="tengri_pagan"
+							culture="mongol"
+							female = no
+							age = 0
+							trait = affectionate
+						}
+						new_character = {
+							set_mother = PREVPREV
+							set_father = PREVPREVPREVPREV
+							opinion = { who = ROOT modifier = opinion_loyal_servant }
+						}
+					}
+				}
+			}
+		}
+
+		# Tolui, fourth son
+		create_character = {
+			name = "Tolui"
+			random_traits = yes
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			attributes = {
+				martial = 4
+				stewardship = 8
+			}
+			age = 15
+			trait = conscientious
+			trait = timid
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:borte
+			set_character_flag = line_of_tolui
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+			save_event_target_as = tolui_son_temujin
+			event_target:ogedei_son_temujin = {
+				add_friend = PREV
+			}
+		}
+
+		# Daughters
+		create_character = {
+			name = "Khochen"
+			random_traits = yes
+			female = yes
+			dynasty=1051210
+			religion="tengri_pagan"
+			culture="mongol"
+			age = 20
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:borte
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
+		}
+		create_character = {
+			name = "Alakhai"
+			random_traits = yes
+			female = yes
+			dynasty=1051210
+			health = 8
+			religion="tengri_pagan"
+			culture="mongol"
+			age = 14
+			trait = strong
+			trait = fair
+			attributes = {
+				martial = 4
+				diplomacy = 6
+			  
+				stewardship = 6
+			}
+							
+				
+		}
+		new_character = {
+			set_father = ROOT
+			set_mother = event_target:borte
+			opinion = { who = ROOT modifier = opinion_loyal_servant }
 		}
 	}
 }
@@ -8422,6 +8843,316 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 1571 # SWMH: Almaliq
+			earmark = horde_invasion
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
 		spawn_unit = {
 			province = 1571 # SWMH: Almaliq
 			earmark = horde_invasion

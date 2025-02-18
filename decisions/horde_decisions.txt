@@ -1,525 +1,863 @@
 decisions = {
-	create_russia_gold = {
-		ai_check_interval = 24
+	#create_russia_gold = {
+	#	ai_check_interval = 24
+	#	is_high_prio = yes
+	#	
+	#	potential = {
+	#		has_landed_title = e_golden_horde
+	#		NOT = { has_global_flag = gold_formed_russia }
+	#	}
+	#	
+	#	allow = {
+	#		e_golden_horde = { holder_scope = { completely_controls = e_russia } }
+	#	}
+	#
+	#	effect = {
+	#		set_global_flag = gold_formed_russia
+	#		create_character = {
+	#			random_traits = yes
+	#			religion = tengri_pagan
+	#			culture = russian
+	#			female = no
+	#			age = 30
+	#			attributes = {
+	#				martial = 12
+	#			}
+	#			trait = brilliant_strategist
+	#			trait = ambitious
+	#			trait = diligent
+	#			trait = brave
+	#		}
+	#		new_character = {
+	#			wealth = 5000
+	#			prestige = 5000
+	#			c_zaozerye = {
+	#				grant_title = PREV
+	#			}
+	#			c_chud = {
+	#				grant_title = PREV
+	#			}
+	#			c_vologda = {
+	#				grant_title = PREV
+	#			}
+	#			c_kostroma = {
+	#				grant_title = PREV
+	#			}
+	#			c_beloozero = {
+	#				grant_title = PREV
+	#			}
+	#			c_bezhetsky_verh = {
+	#				grant_title = PREV
+	#			}
+	#			c_toropets = {
+	#				grant_title = PREV
+	#			}
+	#			c_torzhok = {
+	#				grant_title = PREV
+	#			}
+	#			c_pskov = {
+	#				grant_title = PREV
+	#			}
+	#			c_novgorod = {
+	#				grant_title = PREV
+	#			}
+	#			c_velikiye_luki = {
+	#				grant_title = PREV
+	#			}
+	#			c_vitebsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_orsha = {
+	#				grant_title = PREV
+	#			}
+	#			c_polotsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_podlasie = {
+	#				grant_title = PREV
+	#			}
+	#			c_peremyshl = {
+	#				grant_title = PREV
+	#			}
+	#			c_vladimir_volynsky = {
+	#				grant_title = PREV
+	#			}
+	#			c_galich = {
+	#				grant_title = PREV
+	#			}
+	#			c_korsun = {
+	#				grant_title = PREV
+	#			}
+	#			c_terebovl = {
+	#				grant_title = PREV
+	#			}
+	#			c_kiev = {
+	#				grant_title = PREV
+	#			}
+	#			c_pinsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_beresty = {
+	#				grant_title = PREV
+	#			}
+	#			c_minsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_mstislavl = {
+	#				grant_title = PREV
+	#			}
+	#			c_turov = {
+	#				grant_title = PREV
+	#			}
+	#			c_lyubech = {
+	#				grant_title = PREV
+	#			}
+	#			c_chernigov = {
+	#				grant_title = PREV
+	#			}
+	#			c_pereyaslavl = {
+	#				grant_title = PREV
+	#			}
+	#			c_chortitza = {
+	#				grant_title = PREV
+	#			}
+	#			c_novgorod_seversky = {
+	#				grant_title = PREV
+	#			}
+	#			c_smolensk = {
+	#				grant_title = PREV
+	#			}
+	#			c_vyazma = {
+	#				grant_title = PREV
+	#			}
+	#			c_tver = {
+	#				grant_title = PREV
+	#			}
+	#			c_uglich = {
+	#				grant_title = PREV
+	#			}
+	#			c_yaroslavl = {
+	#				grant_title = PREV
+	#			}
+	#			c_pereyaslavl_zalessky = {
+	#				grant_title = PREV
+	#			}
+	#			c_rostov = {
+	#				grant_title = PREV
+	#			}
+	#			c_moskva = {
+	#				grant_title = PREV
+	#			}
+	#			c_bryansk = {
+	#				grant_title = PREV
+	#			}
+	#			c_pronsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_kolomna = {
+	#				grant_title = PREV
+	#			}
+	#			c_ryazan = {
+	#				grant_title = PREV
+	#			}
+	#			c_murom = {
+	#				grant_title = PREV
+	#			}
+	#			c_vladimir = {
+	#				grant_title = PREV
+	#			}
+	#			c_suzdal = {
+	#				grant_title = PREV
+	#			}
+	#			c_nizhny_novgorod = {
+	#				grant_title = PREV
+	#			}
+	#			c_gorodez = {
+	#				grant_title = PREV
+	#			}
+	#			c_mozhaysk = {
+	#				grant_title = PREV
+	#			}
+	#			c_roslavl = {
+	#				grant_title = PREV
+	#			}
+	#			c_lepiel = {
+	#				grant_title = PREV
+	#			}
+	#			c_zaslav = {
+	#				grant_title = PREV
+	#			}
+	#			c_belz = {
+	#				grant_title = PREV
+	#			}
+	#			c_lutsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_novosil = {
+	#				grant_title = PREV
+	#			}
+	#			c_cherven = {
+	#				grant_title = PREV
+	#			}
+	#			c_zvenyhorod = {
+	#				grant_title = PREV
+	#			}
+	#			c_ushytsia = {
+	#				grant_title = PREV
+	#			}
+	#			c_medjybij = {
+	#				grant_title = PREV
+	#			}
+	#			c_korosten = {
+	#				grant_title = PREV
+	#			}
+	#			c_vorotynsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_vozviahel = {
+	#				grant_title = PREV
+	#			}
+	#			c_borovichi = {
+	#				grant_title = PREV
+	#			}
+	#			c_slutsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_novogrodek = {
+	#				grant_title = PREV
+	#			}
+	#			c_volkovysk = {
+	#				grant_title = PREV
+	#			}
+	#			c_starodub = {
+	#				grant_title = PREV
+	#			}
+	#			c_voin = {
+	#				grant_title = PREV
+	#			}
+	#			c_hradyzk = {
+	#				grant_title = PREV
+	#			}
+	#			c_drutsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_chlisselbourg = {
+	#				grant_title = PREV
+	#			}
+	#			c_gdov = {
+	#				grant_title = PREV
+	#			}
+	#			c_rusa = {
+	#				grant_title = PREV
+	#			}
+	#			c_izborsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_tikhvine = {
+	#				grant_title = PREV
+	#			}
+	#			c_yelets = {
+	#				grant_title = PREV
+	#			}
+	#			c_karachev = {
+	#				grant_title = PREV
+	#			}
+	#			c_kholm = {
+	#				grant_title = PREV
+	#			}
+	#			c_rzheva = {
+	#				grant_title = PREV
+	#			}
+	#			c_kashin = {
+	#				grant_title = PREV
+	#			}
+	#			c_bezichy = {
+	#				grant_title = PREV
+	#			}
+	#			c_rylsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_zoubtsov = {
+	#				grant_title = PREV
+	#			}
+	#			c_priluk = {
+	#				grant_title = PREV
+	#			}
+	#			c_kromy = {
+	#				grant_title = PREV
+	#			}
+	#			c_naro-fominsk = {
+	#				grant_title = PREV
+	#			}
+	#			c_orekhovo-zouievo = {
+	#				grant_title = PREV
+	#			}
+	#			c_serpukhov = {
+	#				grant_title = PREV
+	#			}
+	#			c_yuryev = {
+	#				grant_title = PREV
+	#			}
+	#			c_kursk = {
+	#				grant_title = PREV
+	#			}
+	#			c_kozelsk = {
+	#				grant_title = PREV
+	#			}
+	#			e_russia = {
+	#				grant_title = PREV
+	#				add_law = succ_gavelkind
+	#			}
+	#			set_government_type = feudal_government
+	#			if = {
+	#				limit = {
+	#					NOT = { religion_group = muslim }
+	#					NAND = {
+	#						culture_group = tibetan_group
+	#						OR = {
+	#							religion = bon
+	#							religion = bon_reformed
+	#							religion = buddhist
+	#						}
+	#						higher_tier_than = BARON
+	#					}
+	#				}
+	#				
+	#				if = {
+	#					limit = {
+	#						ai = no
+	#					}
+	#					chronicle = {
+	#						entry = CHRONICLE_ADOPTED_FEUDALISM
+	#						picture = GFX_evt_castle_construction
+	#					}
+	#				}
+	#				set_government_type = feudal_government
+	#			}
+	#			
+	#			if = {
+	#				limit = {
+	#					religion_group = muslim
+	#				}
+	#				
+	#				if = {
+	#					limit = {
+	#						ai = no
+	#					}
+	#					chronicle = {
+	#						entry = CHRONICLE_ADOPTED_IQTA
+	#						picture = GFX_evt_castle_construction
+	#					}
+	#				}
+	#				set_government_type = muslim_government
+	#			}
+	#			
+	#			if = {
+	#				limit = {
+	#					culture_group = tibetan_group
+	#					OR = {
+	#						religion = bon
+	#						religion = bon_reformed
+	#						religion = buddhist
+	#					}
+	#					higher_tier_than = BARON
+	#				}
+	#				
+	#				if = {
+	#					limit = {
+	#						ai = no
+	#					}
+	#					chronicle = {
+	#						entry = CHRONICLE_ADOPTED_FEUDALISM
+	#						picture = GFX_evt_castle_construction
+	#					}
+	#				}
+	#				set_government_type = theocratic_feudal_government
+	#			}
+	#			
+	#			hidden_tooltip = {
+	#				if = {
+	#					limit = {
+	#						capital_holding = {
+	#							holding_type = tribal
+	#							ROOT = { NOT = { tier = BARON } }
+	#						}
+	#						capital_scope = {
+	#							any_province_holding = {
+	#								holding_type = castle
+	#								holder_scope = {
+	#									OR = {
+	#										character = ROOT
+	#										is_liege_or_above = ROOT
+	#									}
+	#								}
+	#							}
+	#						}
+	#					}
+	#					
+	#					capital_scope = {
+	#						random_province_holding = {
+	#							limit = {
+	#								holding_type = castle
+	#								holder_scope = {
+	#									OR = {
+	#										character = ROOT
+	#										is_liege_or_above = ROOT
+	#									}
+	#								}
+	#							}
+	#							if = {
+	#								limit = {
+	#									NOT = { holder = ROOT }
+	#								}
+	#								usurp_title = ROOT
+	#							}
+	#							make_capital_holding = yes
+	#							ROOT = { set_character_flag = feudalize_handled_capital }
+	#						}
+	#					}
+	#				}
+	#				
+	#				any_demesne_title = {
+	#					limit = {
+	#						tier = baron
+	#						holding_type = tribal
+	#						location = {
+	#							capital_holding = {
+	#								NOT = { holding_type = castle }
+	#							}
+	#						}
+	#					}
+	#					convert_to = CASTLE
+	#					refill_holding_levy = yes
+	#					location = { #Clear Tribal Great Pillars
+	#						clr_province_flag = flag_great_pillar_norse
+	#						clr_province_flag = flag_great_pillar_tengri
+	#						clr_province_flag = flag_great_pillar_slavic
+	#						clr_province_flag = flag_great_pillar_baltic
+	#						clr_province_flag = flag_great_pillar_finnish
+	#						clr_province_flag = flag_great_pillar_west_african
+	#						clr_province_flag = flag_great_pillar_aztec
+	#						clr_province_flag = flag_great_pillar_bon
+	#						clr_province_flag = flag_great_pillar_zun
+	#						clr_province_flag = flag_great_pillar_hellenic
+	#					}
+	#					
+	#					if = {
+	#						limit = {
+	#							dejure_liege_title = {
+	#								holder = ROOT
+	#								location = {
+	#									num_of_empty_holdings = 2
+	#								}
+	#								NOT = {
+	#									any_direct_de_jure_vassal_title = {
+	#										holding_type = city
+	#									}
+	#								}
+	#							}
+	#						}
+	#						location = {
+	#							build_holding = {
+	#								type = city
+	#							}
+	#						}
+	#					}
+	#					if = {
+	#						limit = {
+	#							dejure_liege_title = {
+	#								holder = ROOT
+	#								location = {
+	#									num_of_empty_holdings = 2
+	#								}
+	#								NOT = {
+	#									any_direct_de_jure_vassal_title = {
+	#										holding_type = temple
+	#									}
+	#								}
+	#							}
+	#						}
+	#						location = {
+	#							build_holding = {
+	#								type = temple
+	#							}
+	#						}
+	#					}
+	#				}
+	#				character_event = { id = HFP.41090 days = 1 }
+	#			}
+	#		}
+	#		e_russia = { 
+	#			holder_scope = { 
+	#				save_event_target_as = golden_horde_trib_russia
+	#			}
+	#		}
+	#		e_golden_horde = { 
+	#			holder_scope = { 
+	#				make_tributary = {
+	#					who = event_target:golden_horde_trib_russia
+	#					tributary_type = mongol_state 
+	#				}
+	#			}
+	#		}
+	#		any_player = { narrative_event = { id = GOL.105 days = 1 } }			
+	#	}
+	#	ai_will_do = {
+	#		factor = 0.1
+	#		
+	#		modifier = {
+	#			factor = 10000
+	#			ROOT = {
+	#				primary_title = { title = e_golden_horde }
+	#			}
+	#		}
+	#	}
+	#}
+
+	tributize_mongol_states = {
+		ai_check_interval = 1
 		is_high_prio = yes
 		
 		potential = {
-			has_landed_title = e_golden_horde
-			NOT = { has_global_flag = gold_formed_russia }
+			OR = {
+				has_global_flag = division_of_the_mongol_empire
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+			has_landed_title = e_mongol_empire
+			NOT = { has_character_flag = is_temujin }
+			NOT = { has_global_flag = mongols_tributized }
 		}
 		
 		allow = {
-			e_golden_horde = { holder_scope = { completely_controls = e_russia } }
+			has_landed_title = e_mongol_empire
 		}
-
+		
 		effect = {
-			set_global_flag = gold_formed_russia
-			create_character = {
-				random_traits = yes
-				religion = tengri_pagan
-				culture = russian
-				female = no
-				age = 30
-				attributes = {
-					martial = 12
-				}
-				trait = brilliant_strategist
-				trait = ambitious
-				trait = diligent
-				trait = brave
-			}
-			new_character = {
-				wealth = 5000
-				prestige = 5000
-				c_zaozerye = {
-					grant_title = PREV
-				}
-				c_chud = {
-					grant_title = PREV
-				}
-				c_vologda = {
-					grant_title = PREV
-				}
-				c_kostroma = {
-					grant_title = PREV
-				}
-				c_beloozero = {
-					grant_title = PREV
-				}
-				c_bezhetsky_verh = {
-					grant_title = PREV
-				}
-				c_toropets = {
-					grant_title = PREV
-				}
-				c_torzhok = {
-					grant_title = PREV
-				}
-				c_pskov = {
-					grant_title = PREV
-				}
-				c_novgorod = {
-					grant_title = PREV
-				}
-				c_velikiye_luki = {
-					grant_title = PREV
-				}
-				c_vitebsk = {
-					grant_title = PREV
-				}
-				c_orsha = {
-					grant_title = PREV
-				}
-				c_polotsk = {
-					grant_title = PREV
-				}
-				c_podlasie = {
-					grant_title = PREV
-				}
-				c_peremyshl = {
-					grant_title = PREV
-				}
-				c_vladimir_volynsky = {
-					grant_title = PREV
-				}
-				c_galich = {
-					grant_title = PREV
-				}
-				c_korsun = {
-					grant_title = PREV
-				}
-				c_terebovl = {
-					grant_title = PREV
-				}
-				c_kiev = {
-					grant_title = PREV
-				}
-				c_pinsk = {
-					grant_title = PREV
-				}
-				c_beresty = {
-					grant_title = PREV
-				}
-				c_minsk = {
-					grant_title = PREV
-				}
-				c_mstislavl = {
-					grant_title = PREV
-				}
-				c_turov = {
-					grant_title = PREV
-				}
-				c_lyubech = {
-					grant_title = PREV
-				}
-				c_chernigov = {
-					grant_title = PREV
-				}
-				c_pereyaslavl = {
-					grant_title = PREV
-				}
-				c_chortitza = {
-					grant_title = PREV
-				}
-				c_novgorod_seversky = {
-					grant_title = PREV
-				}
-				c_smolensk = {
-					grant_title = PREV
-				}
-				c_vyazma = {
-					grant_title = PREV
-				}
-				c_tver = {
-					grant_title = PREV
-				}
-				c_uglich = {
-					grant_title = PREV
-				}
-				c_yaroslavl = {
-					grant_title = PREV
-				}
-				c_pereyaslavl_zalessky = {
-					grant_title = PREV
-				}
-				c_rostov = {
-					grant_title = PREV
-				}
-				c_moskva = {
-					grant_title = PREV
-				}
-				c_bryansk = {
-					grant_title = PREV
-				}
-				c_pronsk = {
-					grant_title = PREV
-				}
-				c_kolomna = {
-					grant_title = PREV
-				}
-				c_ryazan = {
-					grant_title = PREV
-				}
-				c_murom = {
-					grant_title = PREV
-				}
-				c_vladimir = {
-					grant_title = PREV
-				}
-				c_suzdal = {
-					grant_title = PREV
-				}
-				c_nizhny_novgorod = {
-					grant_title = PREV
-				}
-				c_gorodez = {
-					grant_title = PREV
-				}
-				c_mozhaysk = {
-					grant_title = PREV
-				}
-				c_roslavl = {
-					grant_title = PREV
-				}
-				c_lepiel = {
-					grant_title = PREV
-				}
-				c_zaslav = {
-					grant_title = PREV
-				}
-				c_belz = {
-					grant_title = PREV
-				}
-				c_lutsk = {
-					grant_title = PREV
-				}
-				c_novosil = {
-					grant_title = PREV
-				}
-				c_cherven = {
-					grant_title = PREV
-				}
-				c_zvenyhorod = {
-					grant_title = PREV
-				}
-				c_ushytsia = {
-					grant_title = PREV
-				}
-				c_medjybij = {
-					grant_title = PREV
-				}
-				c_korosten = {
-					grant_title = PREV
-				}
-				c_vorotynsk = {
-					grant_title = PREV
-				}
-				c_vozviahel = {
-					grant_title = PREV
-				}
-				c_borovichi = {
-					grant_title = PREV
-				}
-				c_slutsk = {
-					grant_title = PREV
-				}
-				c_novogrodek = {
-					grant_title = PREV
-				}
-				c_volkovysk = {
-					grant_title = PREV
-				}
-				c_starodub = {
-					grant_title = PREV
-				}
-				c_voin = {
-					grant_title = PREV
-				}
-				c_hradyzk = {
-					grant_title = PREV
-				}
-				c_drutsk = {
-					grant_title = PREV
-				}
-				c_chlisselbourg = {
-					grant_title = PREV
-				}
-				c_gdov = {
-					grant_title = PREV
-				}
-				c_rusa = {
-					grant_title = PREV
-				}
-				c_izborsk = {
-					grant_title = PREV
-				}
-				c_tikhvine = {
-					grant_title = PREV
-				}
-				c_yelets = {
-					grant_title = PREV
-				}
-				c_karachev = {
-					grant_title = PREV
-				}
-				c_kholm = {
-					grant_title = PREV
-				}
-				c_rzheva = {
-					grant_title = PREV
-				}
-				c_kashin = {
-					grant_title = PREV
-				}
-				c_bezichy = {
-					grant_title = PREV
-				}
-				c_rylsk = {
-					grant_title = PREV
-				}
-				c_zoubtsov = {
-					grant_title = PREV
-				}
-				c_priluk = {
-					grant_title = PREV
-				}
-				c_kromy = {
-					grant_title = PREV
-				}
-				c_naro-fominsk = {
-					grant_title = PREV
-				}
-				c_orekhovo-zouievo = {
-					grant_title = PREV
-				}
-				c_serpukhov = {
-					grant_title = PREV
-				}
-				c_yuryev = {
-					grant_title = PREV
-				}
-				c_kursk = {
-					grant_title = PREV
-				}
-				c_kozelsk = {
-					grant_title = PREV
-				}
-				e_russia = {
-					grant_title = PREV
-					add_law = succ_gavelkind
-				}
-				set_government_type = feudal_government
-				if = {
+			set_global_flag = mongols_tributized
+			any_war = {
 					limit = {
-						NOT = { religion_group = muslim }
-						NAND = {
-							culture_group = tibetan_group
-							OR = {
-								religion = bon
-								religion = bon_reformed
-								religion = buddhist
-							}
-							higher_tier_than = BARON
-						}
+						attacker = { character = ROOT }
 					}
-					
-					if = {
-						limit = {
-							ai = no
-						}
-						chronicle = {
-							entry = CHRONICLE_ADOPTED_FEUDALISM
-							picture = GFX_evt_castle_construction
-						}
-					}
-					set_government_type = feudal_government
-				}
-				
-				if = {
-					limit = {
-						religion_group = muslim
-					}
-					
-					if = {
-						limit = {
-							ai = no
-						}
-						chronicle = {
-							entry = CHRONICLE_ADOPTED_IQTA
-							picture = GFX_evt_castle_construction
-						}
-					}
-					set_government_type = muslim_government
-				}
-				
-				if = {
-					limit = {
-						culture_group = tibetan_group
-						OR = {
-							religion = bon
-							religion = bon_reformed
-							religion = buddhist
-						}
-						higher_tier_than = BARON
-					}
-					
-					if = {
-						limit = {
-							ai = no
-						}
-						chronicle = {
-							entry = CHRONICLE_ADOPTED_FEUDALISM
-							picture = GFX_evt_castle_construction
-						}
-					}
-					set_government_type = theocratic_feudal_government
-				}
-				
-				hidden_tooltip = {
-					if = {
-						limit = {
-							capital_holding = {
-								holding_type = tribal
-								ROOT = { NOT = { tier = BARON } }
-							}
-							capital_scope = {
-								any_province_holding = {
-									holding_type = castle
-									holder_scope = {
-										OR = {
-											character = ROOT
-											is_liege_or_above = ROOT
-										}
-									}
-								}
-							}
-						}
-						
-						capital_scope = {
-							random_province_holding = {
-								limit = {
-									holding_type = castle
-									holder_scope = {
-										OR = {
-											character = ROOT
-											is_liege_or_above = ROOT
-										}
-									}
-								}
-								if = {
-									limit = {
-										NOT = { holder = ROOT }
-									}
-									usurp_title = ROOT
-								}
-								make_capital_holding = yes
-								ROOT = { set_character_flag = feudalize_handled_capital }
-							}
-						}
-					}
-					
-					any_demesne_title = {
-						limit = {
-							tier = baron
-							holding_type = tribal
-							location = {
-								capital_holding = {
-									NOT = { holding_type = castle }
-								}
-							}
-						}
-						convert_to = CASTLE
-						refill_holding_levy = yes
-						location = { #Clear Tribal Great Pillars
-							clr_province_flag = flag_great_pillar_norse
-							clr_province_flag = flag_great_pillar_tengri
-							clr_province_flag = flag_great_pillar_slavic
-							clr_province_flag = flag_great_pillar_baltic
-							clr_province_flag = flag_great_pillar_finnish
-							clr_province_flag = flag_great_pillar_west_african
-							clr_province_flag = flag_great_pillar_aztec
-							clr_province_flag = flag_great_pillar_bon
-							clr_province_flag = flag_great_pillar_zun
-							clr_province_flag = flag_great_pillar_hellenic
-						}
-						
-						if = {
-							limit = {
-								dejure_liege_title = {
-									holder = ROOT
-									location = {
-										num_of_empty_holdings = 2
-									}
-									NOT = {
-										any_direct_de_jure_vassal_title = {
-											holding_type = city
-										}
-									}
-								}
-							}
-							location = {
-								build_holding = {
-									type = city
-								}
-							}
-						}
-						if = {
-							limit = {
-								dejure_liege_title = {
-									holder = ROOT
-									location = {
-										num_of_empty_holdings = 2
-									}
-									NOT = {
-										any_direct_de_jure_vassal_title = {
-											holding_type = temple
-										}
-									}
-								}
-							}
-							location = {
-								build_holding = {
-									type = temple
-								}
-							}
-						}
-					}
-					character_event = { id = HFP.41090 days = 1 }
-				}
+				end_war = invalid
 			}
-			e_russia = { 
-				holder_scope = { 
-					save_event_target_as = golden_horde_trib_russia
-				}
-			}
-			e_golden_horde = { 
-				holder_scope = { 
-					make_tributary = {
-						who = event_target:golden_horde_trib_russia
-						tributary_type = mongol_state 
-					}
-				}
-			}
-			any_player = { narrative_event = { id = GOL.105 days = 1 } }			
-		}
-		ai_will_do = {
-			factor = 0.1
 			
-			modifier = {
-				factor = 10000
-				ROOT = {
-					primary_title = { title = e_golden_horde }
+			### Chagatai ###
+			e_chagatai = { holder_scope = { save_event_target_as = chagatai_ruler } }
+	
+			make_tributary = {
+				who = event_target:chagatai_ruler 
+				tributary_type = mongol_state 
+			}
+
+			opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:chagatai_ruler
+			}
+				
+			reverse_opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:chagatai_ruler
+			}
+			
+			add_pressed_claim = e_chagatai
+			
+			event_target:chagatai_ruler = { 
+				show_scope_change = no
+				add_pressed_claim = e_golden_horde 
+				add_pressed_claim = e_mongol_empire 
+			}
+			
+			### Ilkhanate ###
+			e_il-khanate = { holder_scope = { save_event_target_as = ilkhanate_ruler } }
+	
+			make_tributary = {
+				who = event_target:ilkhanate_ruler 
+				tributary_type = mongol_state 
+			}
+
+			opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:ilkhanate_ruler
+			}
+				
+			reverse_opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:ilkhanate_ruler
+			}
+			
+			add_pressed_claim = e_il-khanate
+			
+			event_target:ilkhanate_ruler = { 
+				show_scope_change = no
+				add_pressed_claim = e_golden_horde 
+				add_pressed_claim = e_mongol_empire 
+			}
+			
+			### Golden Horde ###
+			e_golden_horde = { holder_scope = { save_event_target_as = golden_horde_ruler } }
+	
+			make_tributary = {
+				who = event_target:golden_horde_ruler 
+				tributary_type = mongol_state 
+			}
+
+			opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:golden_horde_ruler
+			}
+				
+			reverse_opinion = {
+				name = in_non_aggression_pact
+				years = 50
+				who = event_target:golden_horde_ruler
+			}
+			
+			add_pressed_claim = e_golden_horde
+			
+			event_target:golden_horde_ruler = { 
+				show_scope_change = no
+				add_pressed_claim = e_il-khanate 
+				add_pressed_claim = e_mongol_empire 
+			}
+			hidden_effect = {
+				any_player = { narrative_event = { id = MP.049 days = 5 } }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+    }
+	
+	declare_first_war_mog = {
+		ai_check_interval = 1
+		is_high_prio = yes
+		
+		potential = {
+			#ai = yes
+			war = no
+			has_character_flag = is_temujin
+			has_landed_title = e_mongol_empire
+			NOT = { has_global_flag = first_war_trigger_mog }
+		}
+		
+		allow = {
+			has_landed_title = e_mongol_empire
+		}
+		
+		effect = {
+			set_global_flag = first_war_trigger_mog
+			random_province = {
+				limit = {
+					owner = {
+						NOR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					region = world_steppe_east
+					any_neighbor_province = {
+						owner = {
+							OR = {
+								character = ROOT
+								is_liege_or_above = ROOT
+							}
+						}
+					}
+				}
+				top_liege = {
+					ROOT = {
+						unsafe_war = {
+							casus_belli = mongol_empire_special_cb
+							target = PREV
+							thirdparty_title = PREVPREV
+							tier = KING
+						}
+					}
 				}
 			}
 		}
-	}
-	
+		
+		ai_will_do = {
+			factor = 10000
+		}
+    }
+
+	declare_first_war_ilk = {
+		ai_check_interval = 1
+		is_high_prio = yes
+		
+		potential = {
+			#ai = yes
+			war = no
+			has_character_flag = khan_of_ilkhanate
+			has_landed_title = e_il-khanate
+			NOT = { has_global_flag = first_war_trigger_mog }
+		}
+		
+		allow = {
+			has_landed_title = e_il-khanate
+		}
+		
+		effect = {
+			set_global_flag = first_war_trigger_ilk
+			random_province = {
+				limit = {
+					owner = {
+						NOR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					region = world_middle_east_mesopotamia
+					any_neighbor_province = {
+						owner = {
+							OR = {
+								character = ROOT
+								is_liege_or_above = ROOT
+							}
+						}
+					}
+				}
+				top_liege = {
+					ROOT = {
+						unsafe_war = {
+							casus_belli = illkhanate_special_cb
+							target = PREV
+							thirdparty_title = PREVPREV
+							tier = KING
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+    }
+
+	declare_first_war_gold = {
+		ai_check_interval = 1
+		is_high_prio = yes
+		
+		potential = {
+			#ai = yes
+			war = no
+			has_character_flag = khan_of_golden_horde
+			has_landed_title = e_golden_horde
+			NOT = { has_global_flag = first_war_trigger_gold }
+		}
+		
+		allow = {
+			has_landed_title = e_golden_horde
+		}
+		
+		effect = {
+			set_global_flag = first_war_trigger_gold
+			random_province = {
+				limit = {
+					owner = {
+						NOR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					region = world_europe_east
+					any_neighbor_province = {
+						owner = {
+							OR = {
+								character = ROOT
+								is_liege_or_above = ROOT
+							}
+						}
+					}
+				}
+				top_liege = {
+					ROOT = {
+						unsafe_war = {
+							casus_belli = golden_horde_special_cb
+							target = PREV
+							thirdparty_title = PREVPREV
+							tier = KING
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+    }
+
+	declare_first_war_tim = {
+		ai_check_interval = 1
+		is_high_prio = yes
+		
+		potential = {
+			#ai = yes
+			war = no
+			has_character_flag = timur_himself
+			has_landed_title = e_timurids
+			NOT = { has_global_flag = first_war_trigger_tim }
+		}
+		
+		allow = {
+			has_landed_title = e_timurids
+		}
+		
+		effect = {
+			set_global_flag = first_war_trigger_tim
+			random_province = {
+				limit = {
+					owner = {
+						NOR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					region = world_persia
+					any_neighbor_province = {
+						owner = {
+							OR = {
+								character = ROOT
+								is_liege_or_above = ROOT
+							}
+						}
+					}
+				}
+				top_liege = {
+					ROOT = {
+						unsafe_war = {
+							casus_belli = mongol_empire_special_cb
+							target = PREV
+							thirdparty_title = PREVPREV
+							tier = KING
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+    }
+
 	reform_timurids = {
 		ai_check_interval = 24
 		is_high_prio = yes
 		
 		potential = {
+			has_global_flag = timur_defeated
 			ROOT = {
+				NOT = { has_character_flag = timur_himself }
 				OR = {
 					has_character_flag = is_timur_jahan
 					has_character_flag = is_timur_umar
@@ -532,8 +870,9 @@ decisions = {
 		
 		allow = {
 			completely_controls = k_khorasan
-			completely_controls = k_khiva
-			completely_controls = k_baluchistan
+			completely_controls = k_mavarannahr
+			completely_controls = k_khwarezmia
+			completely_controls = k_sistan
 			completely_controls = k_persia
 		}
 		
@@ -544,58 +883,28 @@ decisions = {
 				copy_title_laws = PREV
 			}
 			ROOT = {
-				prestige = 5000
-				piety = 5000
+				prestige = 2500
+				piety = 2500
+				add_claim = d_diyareast
+				add_claim = d_jazira
+				add_claim = d_aleppo
+				add_claim = d_edessa
+				add_claim = d_vaspurakan
 			}
-			spawn_unit = {
-				province = 902 # Khilok
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 902 # Tuul
+					attrition = 0
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
 				}
 			}
-			spawn_unit = {
-				province = 902 # Khilok
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
-			}
-			spawn_unit = {
-				province = 902 # Khilok
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
-			}
-			spawn_unit = {
-				province = 902 # Khilok
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
-			}
-			spawn_unit = {
-				province = 902 # Khilok
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
+			any_player = {
+				narrative_event = { id = TIMUEX.200 }
 			}
 		}
 		

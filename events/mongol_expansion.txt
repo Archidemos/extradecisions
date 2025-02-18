@@ -1,0 +1,512 @@
+namespace = MONE
+
+# Mongol Expansion Guide
+
+character_event = {
+	id = MONE.1
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			NOT = { completely_controls_region = world_steppe_east }
+			NOT = { has_global_flag = world_steppe_east_conquered_mong }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = MONE.2 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer the Steppe
+	id = MONE.2
+	desc = "Onwards to our next target in the Steppe"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			limit = {
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                }
+				region = world_steppe_east
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+			}
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = mongol_empire_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MONE.3
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			NOT = { completely_controls_region = world_persia }
+			NOT = { has_global_flag = world_persia_conquered_mong }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = MONE.4 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer Persia
+	id = MONE.4
+	desc = "Onwards to our next target in Persia"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			limit = {
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                }
+				region = world_persia
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+			}
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = mongol_empire_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MONE.5
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			NOT = { completely_controls_region = world_steppe_west }
+			NOT = { has_global_flag = world_steppe_west_conquered_mong }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = MONE.6 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer the far west Steppe
+	id = MONE.6
+	desc = "Onwards to our next target in the far west Steppe"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			limit = {
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                }
+				region = world_steppe_west
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+			}
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = mongol_empire_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MONE.7
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			NOT = { completely_controls_region = world_steppe_tarim }
+			NOT = { has_global_flag = world_steppe_tarim_conquered_mong }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = MONE.8 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer Tarim
+	id = MONE.8
+	desc = "Onwards to our next target in Tarim"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			limit = {
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                }
+				region = world_steppe_tarim
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+			}
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = mongol_empire_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+character_event = {
+	id = MONE.9
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			NOT = { completely_controls_region = world_himalayas }
+			NOT = { has_global_flag = world_himalayas_conquered_mong }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = MONE.10 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer Tibet
+	id = MONE.10
+	desc = "Onwards to our next target in Tibet"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			limit = {
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                }
+				region = world_himalayas
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+			}
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = mongol_empire_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MONE.11
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			completely_controls_region = world_steppe_east
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_steppe_east_conquered_mong
+	}
+}
+
+character_event = {
+	id = MONE.12
+
+    is_triggered_only = yes
+	hide_window = yes
+	ai = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			completely_controls_region = world_persia
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_persia_conquered_mong
+	}
+}
+
+character_event = {
+	id = MONE.13
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			completely_controls_region = world_steppe_west
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_steppe_west_conquered_mong
+	}
+}
+
+character_event = {
+	id = MONE.14
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			completely_controls_region = world_steppe_tarim
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_steppe_tarim_conquered_mong
+	}
+}
+
+character_event = {
+	id = MONE.15
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_mongol_empire
+			has_character_flag = is_temujin
+			completely_controls_region = world_himalayas
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_himalayas_conquered_mong
+	}
+}
+
+character_event = {
+	id = MONE.99
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_mongol_empire
+			ai = yes
+			NOT = { has_global_flag = temujin_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = MONE.100 } }
+		set_global_flag = temujin_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to Temujin in Singleplayer
+	id = MONE.100
+	title = "The Dream of Power"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of the Great Khan.."
+    is_triggered_only = yes
+	
+	portrait = e_mongol_empire
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = temujin_playable }
+	}
+
+	immediate = { e_mongol_empire = { holder_scope = { save_event_target_as = play_as_temujin } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_mongol_empire = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_temujin
+		set_global_flag = temujin_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = temujin_playable
+	}
+}

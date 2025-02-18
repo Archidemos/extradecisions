@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 namespace = GOL
 
 narrative_event = {
@@ -1007,3 +1008,1014 @@ narrative_event = { #Event for everyone about the Ilkhanate turning to Feudalism
 		name = GOLDOPT1
 	}
 }
+=======
+#namespace = GOL
+#
+#narrative_event = {
+#	id = GOL.100
+#	title = "EVTNAME60002"
+#	desc = "EVTDESC60002"
+#	major = yes
+#	hide_from = yes
+#	is_triggered_only = yes
+#	sound = ar_army_marching
+#	
+#	picture = "GFX_evt_mongols"
+#	border = "GFX_event_narrative_frame_war"
+#	
+#	only_playable = yes
+#	religion = catholic
+#	min_age = 16
+#	portrait = event_target:mongol_china_invader
+#
+#	
+#	trigger = {
+#		OR = {
+#			AND = {
+#				has_game_rule = {
+#					name = gold_horde_invasion
+#					value = random
+#				}
+#				total_years_played = 50
+#			}
+#			AND = {
+#				has_game_rule = {
+#					name = gold_horde_invasion
+#					value = delayed_random
+#				}
+#				year = 1230
+#				total_years_played < 50
+#			}
+#			AND = {
+#				has_game_rule = {
+#					name = gold_horde_invasion
+#					value = historical
+#				}
+#				year = 1225
+#			}
+#			AND = {
+#				has_game_rule = {
+#					name = gold_horde_invasion
+#					value = test
+#				}
+#				year = 769
+#			}
+#		}
+#		NOT = { has_global_flag = golden_horde_arrival }
+#		NOT = {
+#			has_game_rule = {
+#				name = gold_horde_invasion
+#				value = off
+#			}
+#		}
+#		controls_religion = yes # Let it happen for the Pope. He's always around.
+#	}
+#	
+#	immediate = {
+#			set_global_flag = golden_horde_arrival
+#			activate_title = { title = e_golden_horde status = yes }
+#			
+#			if = {
+#				limit = {
+#					has_global_flag = golden_horde_born
+#				}
+#				if = {
+#					limit = {
+#						any_independent_ruler = {
+#							has_character_flag = golden_horde_himself
+#							demesne_size = 1
+#							ai = yes
+#						}
+#					}
+#					log = "Temujin exists as independent ai"
+#					random_independent_ruler = {
+#						limit = {
+#							has_character_flag = golden_horde_himself
+#							ai = yes
+#						}
+#						any_demesne_title = {
+#							limit = {
+#								tier = EMPEROR
+#							}
+#							set_title_flag = to_be_destroyed
+#						}
+#						e_golden_horde = {
+#							grant_title = PREV
+#							add_law = succ_mongol_succession
+#						}
+#						any_demesne_title = {
+#							limit = {
+#								has_title_flag = to_be_destroyed
+#							}
+#							activate_title = { title = THIS status = no }
+#							destroy_landed_title = THIS
+#						}
+#						wealth = 20000
+#						prestige = 10000
+#						set_character_flag = is_special_character
+#						set_character_flag = golden_horde_invader
+#						character_event = { id = GOL.103 } # Spawn troops
+#						character_event = { id = GOL.104 days = 1 } # Spawn population
+#						if = {
+#							limit = {
+#								has_dlc = "Holy Fury"
+#								NOT = {
+#									any_owned_bloodline = {
+#										has_bloodline_flag = genghis_khan_line
+#									}
+#								}
+#							}
+#							create_bloodline = {
+#								type = genghis_khan
+#							}
+#						}
+#					}
+#					break = yes
+#				}
+#				if = {
+#					limit = {
+#						NOT = {
+#							e_golden_horde = {
+#								holder_scope = {
+#									always = yes
+#								}
+#							}
+#						}
+#					}
+#					log = "Real Temujin didn't recieve title"
+#					create_character = {
+#						random_traits = yes
+#						dynasty=7379
+#						religion = tengri_pagan
+#						culture = mongol
+#						female = no
+#						age = 18
+#						attributes = {
+#							martial = 12
+#						}
+#						trait = brilliant_strategist
+#						trait = diligent
+#						trait = humble
+#						trait = gregarious
+#						trait = just
+#						trait="great_conquerer"
+#					}
+#					new_character = {
+#						if = {
+#							limit = {
+#								has_dlc = "Holy Fury"
+#								NOT = {
+#									any_owned_bloodline = {
+#										has_bloodline_flag = genghis_khan_line
+#									}
+#								}
+#							}
+#							create_bloodline = {
+#								type = genghis_khan
+#							}
+#						}
+#						e_golden_horde = {
+#							set_title_landless = { title = THIS status = yes }
+#							set_title_flag = temporary_landless_title
+#							grant_title = PREV
+#							add_law = succ_mongol_succession
+#						}
+#						set_defacto_liege = THIS
+#						if = {
+#							limit = {
+#								has_dlc = "Horse Lords"
+#							}
+#							set_government_type = nomadic_government
+#						}
+#						if = {
+#							limit = {
+#								NOT = { has_dlc = "Horse Lords" }
+#							}
+#							set_government_type = tribal_government
+#						}
+#						wealth = 20000
+#						prestige = 10000
+#						set_character_flag = golden_horde_invader
+#						character_event = { id = GOL.102 } # Spawn courtiers
+#						character_event = { id = GOL.103 } # Spawn troops
+#						character_event = { id = GOL.104 days = 1 } # Spawn population
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					NOT = {
+#						e_golden_horde = {
+#							holder_scope = { always = yes }
+#						}
+#					}
+#				}
+#				log = "Spawning Temujin for invasion"
+#				create_character = {
+#					name="Batu"
+#					dynasty=7379
+#					age = 33
+#					attributes = {
+#						martial=9
+#						diplomacy=8
+#						intrigue=5
+#						stewardship=7
+#					}
+#					health = 6
+#					fertility = 0.7
+#					religion="tengri_pagan"
+#					culture=mongol
+#					trait = brilliant_strategist
+#					trait = flat_terrain_leader
+#					trait = rough_terrain_leader
+#					trait = quick
+#					trait = ambitious
+#					trait = shrewed
+#					trait = cruel
+#					trait="great_conquerer"
+#				}
+#				new_character = {
+#					set_character_flag = golden_horde_himself
+#					set_character_flag = is_special_character
+#					if = {
+#						limit = {
+#							has_dlc = "Holy Fury"
+#							NOT = {
+#								any_owned_bloodline = {
+#									has_bloodline_flag = genghis_khan_line
+#								}
+#							}
+#						}
+#						create_bloodline = {
+#							type = genghis_khan
+#						}
+#					}
+#					e_golden_horde = {
+#						set_title_landless = { title = THIS status = yes }
+#						grant_title = PREV
+#						add_law = succ_mongol_succession
+#					}
+#					set_defacto_liege = THIS
+#					if = {
+#						limit = {
+#							has_dlc = "Horse Lords"
+#						}
+#						set_government_type = nomadic_government
+#					}
+#					if = {
+#						limit = {
+#							NOT = { has_dlc = "Horse Lords" }
+#						}
+#						set_government_type = tribal_government
+#					}
+#					wealth = 20000
+#					prestige = 10000
+#					piety = 5000
+#					population = 50000
+#					set_character_flag = golden_horde_invader
+#					character_event = { id = GOL.101 } # Spawn Temujins generals
+#					character_event = { id = GOL.102 } # Spawn courtiers
+#					character_event = { id = GOL.103 } # Spawn troops
+#					character_event = { id = GOL.104 days = 1 } # Spawn population
+#				}
+#			}			
+#			556 = {
+#				kingdom = {
+#					e_golden_horde = {
+#						holder_scope = {
+#							unsafe_war = {
+#								casus_belli = golden_horde_special_cb
+#								target = PREVPREVPREV
+#								thirdparty_title = PREVPREV
+#							}
+#						}
+#					}
+#				}
+#			}
+#		any_playable_ruler = {
+#			limit = { ai = no }
+#			if = {
+#				limit = {
+#					OR = {
+#						has_power_omen_modifier_trigger = yes
+#						has_battle_omen_modifier_trigger = yes
+#					}
+#				}
+#				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+#			}
+#		}
+#	}
+#	option = {
+#		name = "EVTOPTA60500"
+#		trigger = {
+#			OR = {
+#				religion_group = christian
+#				religion_group = muslim
+#				religion_group = pagan_group
+#			}
+#			NOT = { government = nomadic_government }
+#			has_power_omen_modifier_trigger = no
+#			has_battle_omen_modifier_trigger = no
+#		}
+#	}
+#	
+#	option = {
+#		name = "EVTOPTB60500"
+#		trigger = {
+#			NOT = { religion_group = christian }
+#			NOT = { religion_group = muslim }
+#			NOT = { religion_group = pagan_group }
+#			NOT = { government = nomadic_government }
+#			has_power_omen_modifier_trigger = no
+#			has_battle_omen_modifier_trigger = no
+#		}
+#	}
+#	
+#	option = {
+#		name = "EVTOPTC60500"
+#		trigger = {
+#			government = nomadic_government
+#			has_power_omen_modifier_trigger = no
+#			has_battle_omen_modifier_trigger = no
+#		}
+#	}
+#
+#	option = { # scrying omen included
+#		name = "EVTOPTA60500"
+#
+#		if = { #in case this does not run in the immediate due to "major = yes"
+#			limit = {
+#				OR = {
+#					has_power_omen_modifier_trigger = yes
+#					has_battle_omen_modifier_trigger = yes
+#				}
+#			}
+#			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+#		}
+#
+#		calculate_scrying_outcome_effect = yes
+#		remove_scrying_omen_modifiers_effect = yes
+#		tooltip_info = yes
+#
+#		trigger = {
+#			OR = {
+#				religion_group = christian
+#				religion_group = muslim
+#				religion_group = pagan_group
+#			}
+#			NOT = { government = nomadic_government }
+#			OR = {
+#				has_power_omen_modifier_trigger = yes
+#				has_battle_omen_modifier_trigger = yes
+#			}
+#		}
+#	}
+#	
+#	option = { # scrying omen included
+#		name = "EVTOPTB60500"
+#
+#		if = { #in case this does not run in the immediate due to "major = yes"
+#			limit = {
+#				OR = {
+#					has_power_omen_modifier_trigger = yes
+#					has_battle_omen_modifier_trigger = yes
+#				}
+#			}
+#			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+#		}
+#		
+#		calculate_scrying_outcome_effect = yes
+#		remove_scrying_omen_modifiers_effect = yes
+#		tooltip_info = yes
+#
+#		trigger = {
+#			NOT = { religion_group = christian }
+#			NOT = { religion_group = muslim }
+#			NOT = { religion_group = pagan_group }
+#			NOT = { government = nomadic_government }
+#			OR = {
+#				has_power_omen_modifier_trigger = yes
+#				has_battle_omen_modifier_trigger = yes
+#			}
+#		}
+#	}
+#	
+#	option = { # scrying omen included
+#		name = "EVTOPTC60500"
+#
+#		if = { #in case this does not run in the immediate due to "major = yes"
+#			limit = {
+#				OR = {
+#					has_power_omen_modifier_trigger = yes
+#					has_battle_omen_modifier_trigger = yes
+#				}
+#			}
+#			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+#		}
+#
+#		calculate_scrying_outcome_effect = yes
+#		remove_scrying_omen_modifiers_effect = yes
+#		tooltip_info = yes
+#
+#		trigger = {
+#			government = nomadic_government
+#			OR = {
+#				has_power_omen_modifier_trigger = yes
+#				has_battle_omen_modifier_trigger = yes
+#			}
+#		}
+#	}
+#}
+#
+#character_event = {
+#	id = GOL.101
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		create_character = {
+#			name = "Bayarmaa"
+#			age = 49
+#			dynasty = random
+#			religion = tengri_pagan
+#			culture = mongol
+#			female = yes
+#			random_traits = yes
+#		}
+#		new_character = {
+#			save_event_target_as = bayarmaa
+#			add_spouse = ROOT
+#		}
+#		create_character = {
+#			name="Sartaq"
+#			age = 35
+#			dynasty = 7379
+#			religion="tengri_pagan"
+#			culture=mongol
+#			attributes = {
+#				martial=10
+#				diplomacy=4
+#				intrigue=6
+#				stewardship=6
+#			}
+#			trait="brave"
+#			trait="strong"
+#			trait="quick"
+#			trait="diligent"
+#			trait="brilliant_strategist"
+#			trait="trickster"
+#		}
+#		new_character = {
+#			set_father = ROOT
+#			set_mother = event_target:bayarmaa
+#		}
+#		create_character = {
+#			age = 27
+#			dynasty = 7379
+#			religion="tengri_pagan"
+#			culture=mongol
+#			trait="skilled_tactician"
+#			trait="wroth"
+#			trait="just"
+#			trait="drunkard"
+#		}
+#		new_character = {
+#			set_father = ROOT
+#			set_mother = event_target:bayarmaa
+#		}
+#		create_character = {
+#			age = 24
+#			dynasty = 7379
+#			religion="tengri_pagan"
+#			culture=mongol
+#			trait="skilled_tactician"
+#			trait="gregarious"
+#			trait="just"
+#		}
+#		new_character = {
+#			set_father = ROOT
+#			set_mother = event_target:bayarmaa
+#		}
+#		create_character = {
+#			age = 29
+#			dynasty = 7379
+#			religion="tengri_pagan"
+#			culture=mongol
+#			trait="skilled_tactician"
+#			trait="hunter"
+#			trait="kind"
+#			trait="patient"
+#		}
+#		new_character = {
+#			set_father = ROOT
+#			set_mother = event_target:bayarmaa
+#		}
+#	}
+#}
+## Spawn extra courtiers
+#character_event = {
+#	id = GOL.102
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 16
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 18
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 18
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 20
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 25
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 26
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 28
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = yes
+#			age = 16
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = yes
+#			age = 17
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = yes
+#			age = 18
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = yes
+#			age = 18
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = yes
+#			age = 20
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 27
+#			attributes = {
+#				martial = 12
+#			}
+#			trait = brilliant_strategist
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 51
+#			attributes = {
+#				martial = 12
+#			}
+#			trait = brilliant_strategist
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 44
+#			attributes = {
+#				martial = 12
+#			}
+#			trait = brilliant_strategist
+#		}
+#		create_character = {
+#			random_traits = yes
+#			dynasty = none
+#			religion = tengri_pagan
+#			culture = ROOT
+#			female = no
+#			age = 24
+#			attributes = {
+#				martial = 12
+#			}
+#			trait = brilliant_strategist
+#		}
+#	}
+#}
+## Spawn mongol troops
+#character_event = {
+#	id = GOL.103
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 592 # Tuul
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#		spawn_unit = {
+#			province = 593 # Khilok
+#			attrition = 0
+#			troops =
+#			{
+#				light_cavalry = { 2750 2750 }
+#				horse_archers = { 2250 2250 }
+#				knights = { 500 500 }
+#			}
+#		}
+#	}
+#}
+#
+#character_event = {
+#	id = GOL.104
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		population = 120000
+#		add_character_modifier = {
+#			modifier = invading_population_halt
+#			duration = 10950
+#			hidden = yes
+#		}
+#		character_event = {
+#			id = 60516
+#			days = 365
+#		}
+#	}
+#}
+#
+#narrative_event = { #Event for everyone about the Ilkhanate turning to Feudalism
+#	id = GOL.105
+#	title = EVTNAMEGOL105
+#	desc = EVTDESCGOL105
+#	
+#	picture = GFX_evt_mongols
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = GOLDOPT1
+#	}
+#}
+>>>>>>> Stashed changes

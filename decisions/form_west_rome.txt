@@ -19,6 +19,12 @@ decisions = {
 				religion_group = christian
 				religion = hellenic_pagan
 			}
+			NOT = {
+				OR = {
+					government = merchant_republic_government
+					government = ar_republic_government
+				}
+			}
 			NOT = { has_global_flag = west_rome_formed }
 			capital_scope = {
 				OR = {
@@ -52,75 +58,15 @@ decisions = {
 				culture = greek
 				culture_group = latin
 				culture_group = iberian
+				culture_group = italian
 			}
 		}
 		
 		effect = {
-			prestige = -2000
-			activate_title = { title = e_west_rome status = yes }
-			primary_title = {
-				e_west_rome = {
-					grant_title = ROOT
-					copy_title_laws = PREV
-					copy_title_history = PREV
-				}
-			}
-			set_global_flag = west_rome_formed		
-			
-			ROOT = {
-				any_demesne_title = {
-					limit = { 
-						tier = EMPEROR
-						NOT = { title = e_west_rome }
-					}
-					unsafe_destroy_landed_title = THIS
-				}
-			}
-			e_west_rome = {
-				add_law = succ_byzantine_elective
-			}
-			
-			give_nickname = nick_the_restorer
-			
-			custom_tooltip = {
-				text = rome_move_capital
-				hidden_tooltip = {
-					ROOT = {
-						c_roma = {
-							grant_title = PREV
-							usurp_title = PREV
-							ROOT = { capital = PREV }
-						}
-						
-						b_tusculum = {
-							grant_title = PREV
-							usurp_title = PREV
-						}
-						
-						b_tivoli = {
-							grant_title = PREV
-							usurp_title = PREV
-							make_capital_holding = yes
-						}
-					}
-					if = {
-						limit = { government = merchant_republic_government }
-						b_viterbo = {
-							grant_title = PREV
-							usurp_title = PREV
-							ROOT = { capital = PREV }
-						}				
-					}
-				}
-			}
-			create_bloodline = {
-				type = west_rome_blood
-			}
-			
-			hidden_tooltip = {
-				any_player = {
-					narrative_event = { id = ROM.100 }
-				}
+			set_global_flag = west_rome_formed
+			custom_tooltip = { 
+				text = "The preperations of the new governance will begin.."
+				ROOT = { narrative_event = { id = ROM.99 } }
 			}
 		}
 		ai_will_do = {
@@ -333,6 +279,138 @@ decisions = {
 			always = no
 		}
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_roman_republic = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			NOT = { has_landed_title = k_papal_state }
+			OR = {
+				culture = greek
+				culture_group = latin
+				culture_group = iberian
+				culture_group = italian
+			}
+			OR = {
+				religion_group = christian
+				religion = hellenic_pagan
+			}
+			NOT = { has_global_flag = west_rome_formed }
+			OR = {
+				government = merchant_republic_government
+				government = ar_republic_government
+			}
+			capital_scope = {
+				OR = {
+					region = world_europe_west
+					region = world_europe_south_italy
+				}
+			}
+		}
+		
+		allow = {
+			NOT = { has_landed_title = e_byzantium }
+			prestige = 2000
+			has_landed_title = e_italy
+			has_landed_title = c_roma
+			completely_controls = k_italy
+			completely_controls = k_valencia
+			completely_controls = k_aragon
+			#completely_controls = k_carinthia
+			#completely_controls = d_tunis
+			trigger_if = {
+				limit = { k_romagna = { is_titular = no } }
+				completely_controls = k_romagna
+			}
+			trigger_if = {
+				limit = { k_papacy = { is_titular = no } }
+				completely_controls = k_papacy
+			}
+			completely_controls = k_sicily
+			completely_controls = k_sardinia
+			OR = {
+				culture = greek
+				culture_group = latin
+				culture_group = iberian
+			}
+		}
+		
+		effect = {
+			prestige = -2000
+			activate_title = { title = e_west_rome status = yes }
+			primary_title = {
+				e_west_rome = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+					copy_title_history = PREV
+				}
+			}
+			set_global_flag = west_rome_formed		
+			
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						tier = EMPEROR
+						NOT = { title = e_west_rome }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			e_west_rome = {
+				#add_law = succ_byzantine_elective
+				set_name = "Senatus Populusque Romanus"
+				adjective = "Roman Republican"
+			}		
+			give_nickname = nick_the_restorer
+			
+			custom_tooltip = {
+				text = rome_move_capital
+				hidden_tooltip = {
+					ROOT = {
+						c_roma = {
+							grant_title = PREV
+							usurp_title = PREV
+							ROOT = { capital = PREV }
+						}
+						
+						b_tusculum = {
+							grant_title = PREV
+							usurp_title = PREV
+						}
+						
+						b_tivoli = {
+							grant_title = PREV
+							usurp_title = PREV
+							#make_capital_holding = yes
+						}
+						b_cittadiroma = {
+							grant_title = PREV
+							usurp_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+			}
+			create_bloodline = {
+				type = west_rome_blood
+			}
+			
+			hidden_tooltip = {
+				any_player = {
+					narrative_event = { id = ROM.100 }
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 1
 		}

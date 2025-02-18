@@ -32,14 +32,14 @@ narrative_event = {
 					name = timur_invasion
 					value = delayed_random
 				}
-				year >= 1175
+				year >= 1290
 			}
 			AND = {
 				has_game_rule = {
 					name = timur_invasion
 					value = historical
 				}
-				year = 1170
+				year = 1300
 			}
 			AND = {
 				has_game_rule = {
@@ -222,6 +222,7 @@ narrative_event = {
 				new_character = {
 					set_character_flag = timur_himself
 					set_character_flag = is_special_character
+					
 					if = {
 						limit = {
 							has_dlc = "Holy Fury"
@@ -262,8 +263,9 @@ narrative_event = {
 					character_event = { id = TIME.102 } # Spawn courtiers
 					character_event = { id = TIME.103 } # Spawn troops
 					character_event = { id = TIME.104 days = 1 } # Spawn population
+					character_event = { id = TIMUEX.1 }
 				}
-			}			
+			}
 			903 = {
 				kingdom = {
 					e_timurids = {
@@ -433,6 +435,7 @@ character_event = {
 		create_character = {
 			name="Umar Shaikh"
 			age = 27
+			health = 8
 			dynasty = 800
 			religion="sunni"
 			culture=turkish
@@ -457,6 +460,7 @@ character_event = {
 		create_character = {
 			name="Jahangir" 
 			age = 26
+			health = 8
 			dynasty = 800
 			religion="sunni"
 			culture=turkish
@@ -473,6 +477,7 @@ character_event = {
 		create_character = {
 			name="Miran Shah"
 			age = 24
+			health = 8
 			dynasty = 800
 			religion="sunni"
 			culture=turkish
@@ -488,6 +493,7 @@ character_event = {
 		create_character = {
 			name="Shah Rukh"
 			age = 29
+			health = 8
 			dynasty = 800
 			religion="sunni"
 			culture=turkish
@@ -664,7 +670,7 @@ character_event = {
 	
 	immediate = {
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -674,7 +680,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -684,7 +690,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -694,7 +700,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -704,7 +710,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -714,7 +720,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 902 # Khilok
+			province = 903 # Khilok
 			attrition = 0
 			troops =
 			{
@@ -724,7 +730,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -734,7 +740,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -744,7 +750,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -754,7 +760,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -764,7 +770,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -774,7 +780,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -784,7 +790,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -794,7 +800,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -804,7 +810,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -814,7 +820,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -824,7 +830,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -834,7 +840,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -844,7 +850,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -854,7 +860,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -864,7 +870,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -874,7 +880,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -884,7 +890,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -894,7 +900,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -904,7 +910,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -914,7 +920,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -924,7 +930,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -934,7 +940,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -944,7 +950,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -954,7 +960,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 1181 # Tuul
+			province = 1557 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -1381,7 +1387,7 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 				piety = 5000
 				population = 50000
 				set_character_flag = qara_yusuf_invader
-				character_event = { id = TIME.110 } # Spawn Temujins generals
+				#character_event = { id = TIME.110 } # Spawn Temujins generals
 				character_event = { id = TIME.102 } # Spawn courtiers
 				character_event = { id = TIME.109 } # Spawn troops
 				character_event = { id = TIME.104 days = 1 } # Spawn population
@@ -1796,7 +1802,7 @@ character_event = {
 		create_character = {
 			name="Shah Muhammad"
 			age = 27
-			dynasty = 800
+			#dynasty = 800
 			religion="shiite"
 			culture=turkish
 			attributes = {
@@ -1819,7 +1825,7 @@ character_event = {
 		create_character = {
 			name="Qara Iskander" 
 			age = 26
-			dynasty = 800
+			#dynasty = 800
 			religion="shiite"
 			culture=turkish
 			trait="skilled_tactician"
@@ -1834,7 +1840,7 @@ character_event = {
 		create_character = {
 			name="Jahan Shah"
 			age = 24
-			dynasty = 800
+			#dynasty = 800
 			religion="shiite"
 			culture=turkish
 			trait="skilled_tactician"
@@ -1848,7 +1854,7 @@ character_event = {
 		create_character = {
 			name="Abu Said"
 			age = 29
-			dynasty = 800
+			#dynasty = 800
 			religion="shiite"
 			culture=turkish
 			trait="skilled_tactician"

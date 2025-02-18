@@ -1,0 +1,1077 @@
+namespace = OTT
+
+##################################
+# Rise of the Ottomans
+##################################
+
+#Osman's Character ID - 476501
+
+# Osman distinguishes himself in a Turkish court
+character_event = {
+	id = OTT.98700
+	desc = EVTDESCOTT.98700
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	culture_group = altaic
+	
+	trigger = {
+		NOT = {
+			has_game_rule = {
+				name = turkic_invasions
+				value = off
+			}
+		}
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = turkic_invasions
+					value = historical
+				}
+				year = 1276
+				NOT = { year = 1320 }
+			}
+			AND = {
+				has_game_rule = {
+					name = turkic_invasions
+					value = random
+				}
+				year = 1200
+				NOT = { year = 1400 }
+			}
+		}
+		NOT = { has_global_flag = osman_spawned }
+		any_realm_province = {
+			region = world_asia_minor
+		}
+		OR = {
+			religion_group = muslim
+			capital_scope = {
+				culture_group = altaic
+			}
+			capital_scope = {
+				religion_group = muslim
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		create_character = {
+			random_traits = yes
+			historical = yes
+			dynasty = 1500150
+			dna = yellfbazdtx
+			prp = ei0abc00000000
+			name = Osman
+			culture = turkish
+			religion = sunni
+			age = 18
+			attributes = {
+				martial=8
+				diplomacy=6
+				intrigue=5
+				stewardship=6
+			}
+			health = 7
+			fertility = 0.8
+			trait = gluttonous
+			trait = skilled_tactician
+			trait = adventurer
+		}
+		new_character = {
+			if = {
+				limit = {
+					has_dlc = "Holy Fury"
+				}
+				create_bloodline = {
+					type = ottoman
+				}
+			}
+			character_event = {
+				id = OTT.98701
+				days = 1095
+				random = 730
+			}
+			set_character_flag = osman_himself
+		}
+	}
+	
+	option = { # A most capable young man
+		name = EVTOPTAOTT.98700
+		
+		set_global_flag = osman_spawned
+		set_global_flag = osman_spawned_by_event
+		
+		tooltip = {
+			create_character = {
+				random_traits = yes
+				historical = yes
+				dynasty = 1500150
+				dna = yellfbazdtx
+				prp = ei0abc00000000
+				name = Osman
+				culture = turkish
+				religion = sunni
+				female = no
+				age = 18
+				attributes = {
+					martial=8
+					diplomacy=6
+					intrigue=5
+					stewardship=6
+				}
+				health = 7
+				fertility = 0.8
+				trait = gluttonous
+				trait = skilled_tactician
+				trait = adventurer
+			}
+		}
+	}
+}
+
+# Osman and his men consider starting an adventure
+character_event = {
+	id = OTT.98701
+	desc = EVTDESCOTT.98701
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+		
+		OR = {
+			748 = { # Laodikeia
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			753 = { # Ankrya
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			742 = { # Prusa
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+	}
+	
+	option = { # Laodikeia it is!
+		name = EVTOPTAOTT.98701
+		trigger = {
+			748 = { # Laodikeia
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		748 = {
+			province_event = {
+				id = OTT.98702
+				days = 2
+			}
+		}
+	}
+	option = { # Ankrya
+		name = EVTOPTBOTT.98701
+		trigger = {
+			753 = { # Ankrya
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100000
+		}
+		
+		753 = {
+			province_event = {
+				id = OTT.98702
+				days = 2
+			}
+		}
+	}
+	option = { # Prusa
+		name = EVTOPTCOTT.98701
+		trigger = {
+			742 = { # Prusa
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		742 = {
+			province_event = {
+				id = OTT.98702
+				days = 2
+			}
+		}
+	}
+}
+
+# Ping the target province
+province_event = {
+	id = OTT.98702
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = yes
+				}
+			}
+			FROM = {
+				character_event = {
+					id = OTT.98704
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = no
+				}
+			}
+			FROM = {
+				character_event = {
+					id = OTT.98703
+				}
+			}
+		}
+	}
+	
+	option = { #so the event goes away hopefully
+		name = EVTOPTAOTT.98702		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# The landless Osman and his men start an adventure
+character_event = {
+	id = OTT.98703
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = OTT.98705
+				days = 1
+			}
+		}
+		
+		liege = {
+			capital_scope = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								set_defacto_liege = ROOT
+								create_title = {
+									tier = DUKE
+									landless = yes
+									temporary = yes
+									culture = ROOT
+									name = "CLAIMANT_ADVENTURE"
+									holder = ROOT
+								}
+								
+								set_character_flag = duchy_adventurer
+							
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								war = {
+									target = PREV
+									casus_belli = duchy_adventure
+									thirdparty_title = PREVPREVPREV
+									tier = DUKE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { religion_group = muslim }
+			}
+			religion = sunni
+		}
+		
+		# Create some characters
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 18
+		}
+		
+		log = "OTT.98703: Osman starts his first war as a landless character!"
+	}
+	
+	option = { #so the event goes away hopefully
+		name = EVTOPTAOTT.98703
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# The landed Osman and his men start an adventure
+character_event = {
+	id = OTT.98704
+	desc = EVTDESCOTT.98704
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				tier = BARON
+			}
+			abdicate = yes
+			character_event = { id = OTT.98703 }
+			break = yes
+		}
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = OTT.98705
+				days = 1
+			}
+		}
+		
+		FROM = {
+			owner = {
+				top_liege = {
+					ROOT = {
+						capital_scope = {
+							ROOT = {
+								set_character_flag = duchy_adventurer
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 1.50
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+							}
+						}
+						
+						war = {
+							target = PREV
+							casus_belli = duchy_adventure
+							thirdparty_title = PREVPREVPREV
+							tier = DUKE
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { religion_group = muslim }
+			}
+			religion = sunni
+		}
+		
+		# Create some characters
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = sunni
+			culture = turkish
+			female = yes
+			age = 18
+		}
+		
+		log = "OTT.98704: Osman starts his first war as a landed character!"
+	}
+	
+	option = {
+		name = EVTOPTAOTT.98704
+	}
+}
+
+# Notify Osman's old liege
+character_event = {
+	id = OTT.98705
+	desc = EVTDESCOTT.98705
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_ruler = yes } # The DoW worked and the adventurer has a temporary title
+	}
+	
+	option = {
+		name = EVTOPTAOTT.98705
+	}
+}
+
+# Osman is successful!
+# Fired from the duchy_adventure CB
+narrative_event = {
+	id = OTT.98706
+	title = EVTNAMEOTT.98706
+	desc = EVTDESCOTT.98706
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					liege = {
+						ai = yes
+					}
+				}
+			}
+			set_defacto_liege = ROOT
+			activate_title = { title = k_ottoman status = yes }
+			k_ottoman = {
+				grant_title = ROOT
+			}
+		}
+		
+		if = {
+			limit = {
+				uses_decadence = yes
+			}
+			decadence = -25
+		}
+		
+		prestige = 1000
+		
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+			}
+		}
+		
+		log = "OTT.98706: Osman wins his first war!"
+	}
+	
+	option = {
+		name = EVTOPTAOTT.98706
+		trigger = {
+			has_character_flag = osman_himself
+		}
+	}
+	option = {
+		name = EVTOPTBOTT.98706
+		trigger = {
+			NOT = { has_character_flag = osman_himself }
+			culture_group = altaic
+		}
+	}
+	option = {
+		name = EVTOPTCOTT.98706
+		trigger = {
+			NOT = { has_character_flag = osman_himself }
+			NOT = { culture_group = altaic }
+		}
+	}
+}
+
+# Osman's successor revitalizes the new state
+character_event = {
+	id = OTT.98707
+	desc = EVTDESCOTT.98707
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	only_playable = yes
+	only_independent = yes
+	has_global_flag = osman_spawned_by_event
+	
+	trigger = {
+		year = 1200
+		NOT = { year = 1500 }
+		uses_decadence = yes
+		
+		OR = {
+			dynasty = 1500150
+			dynasty = 7
+		}
+		
+		higher_tier_than = duke
+		
+		martial = 7
+		
+		NOT = { has_character_flag = osman_himself }
+		NOT = { has_character_flag = osman_reinforcements }
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			martial = 9
+		}
+		modifier = {
+			factor = 0.5
+			martial = 11
+		}
+		modifier = {
+			factor = 0.5
+			martial = 13
+		}
+	}
+	
+	immediate = {
+		set_character_flag = osman_reinforcements
+		
+		decadence = -75
+		
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						light_cavalry = { 2000 2000 }
+						horse_archers = { 1500 1500 }
+						knights = { 50 50 }
+					}
+				}
+				if = {
+					limit = {
+						martial = 9
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							light_infantry = { 2250 2250 }
+							light_cavalry = { 2000 2000 }
+							horse_archers = { 1500 1500 }
+							knights = { 50 50 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						martial = 11
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							light_infantry = { 2250 2250 }
+							light_cavalry = { 2000 2000 }
+							horse_archers = { 1500 1500 }
+							knights = { 50 50 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						martial = 13
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							light_infantry = { 2250 2250 }
+							light_cavalry = { 2000 2000 }
+							horse_archers = { 1500 1500 }
+							knights = { 50 50 }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTAOTT.98707
+	}
+}
+
+#Ottoman title destroyed if Ottoman dynasty is no longer ruler
+character_event = {
+	id = OTT.98708
+	desc = EVTDESCOTT.98708
+	
+	picture = GFX_evt_bad_news
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		has_landed_title = k_ottoman
+		NOT = {
+			OR = {
+				dynasty = 1500150
+				dynasty = 7
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = EVTOPTAOTT.98708
+		k_ottoman = {
+			destroy_landed_title = THIS
+		}
+	}
+}

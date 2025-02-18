@@ -41,14 +41,46 @@ on_major_battle_won_leader = {
 
 on_war_ended_victory = {
 	events = {
-		HA.6 # Rurik
-		HA.10 # Dyre
-		HA.15 # Hauteville
-		HA.18 # Saladin
-		HA.21 # Whiteshirt
-		HA.24 # Ivar Boneless
-		HA.27 # Ubbe
-		HYW.2 # Norway win 1066
+		MONE.1 		# The Mongols getting guided in the Eastern Steppes
+		MONE.3		# The Mongols getting guided in Persia
+		MONE.5		# The Mongols getting guided in the Western Steppes
+		MONE.7		# The Mongols getting guided in Tarim
+		MONE.9		# The Mongols getting guided in Tibet
+		MONE.11		# The Mongol AI being stopped from getting guided in the Eastern Steppe
+		MONE.12 	# The Mongol AI being stopped from getting guided in Persia
+		MONE.13 	# The Mongol AI being stopped from getting guided in the Western Steppe
+		MONE.14 	# The Mongol AI being stopped from getting guided in Tarim
+		MONE.15 	# The Mongol AI being stopped from getting guided in Tibet
+		
+		MONE.99 #Giving the possibility to switch to Temujin in Singleplayer
+		
+		TIMUEX.1	#Timur being guided to conquer Persia
+		TIMUEX.3	#Timur being guided to conquer Mesopotamia
+		TIMUEX.5	#Timur being guided to conquer Asia Minor
+		TIMUEX.8	#The Timurid AI being stopped from getting guided in Persia
+		TIMUEX.9	#The Timurid AI being stopped from getting guided in Mesopotamia
+		TIMUEX.10	#The Timurid AI being stopped from getting guided in Asia Minor
+
+		TIMUEX.99	#Giving the possibility to switch to Timur in Singleplayer
+		
+		GOLDEX.1	# The Golden Horde getting guided in Eastern Europe
+		GOLDEX.3	# The Golden Horde AI being stopped from getting guided in Eastern Europe
+		
+		ILKE.1		# The Ilkhanate getting guided in Mesopotamia
+		ILKE.3		# The Ilkhanate getting guided in Jerusalem
+		ILKE.5		# The Ilkhanate getting guided in Asia Minor
+		ILKE.7		# The Ilkhanate AI being stopped from getting guided in Jerusalem
+		ILKE.8		# The Ilkhanate AI being stopped from getting guided in Jerusalem
+		ILKE.9		# The Ilkhanate AI being stopped from getting guided in Mesopotamia
+		
+		HA.6 		# Rurik
+		HA.10 		# Dyre
+		HA.15 		# Hauteville
+		HA.18 		# Saladin
+		HA.21 		# Whiteshirt
+		HA.24 		# Ivar Boneless
+		HA.27 		# Ubbe
+		HYW.2 		# Norway win 1066
 	}
 }
 
@@ -80,5 +112,32 @@ on_major_battle_lost = {
 on_major_battle_lost_leader = {
 	events = {
 		BEX.1
+	}
+}
+on_death = {
+	events = {
+		#KHA.98901 # Division of the Mongol Empire
+		MOGDIV.1
+	}
+}
+
+on_new_holder = {
+	events = {
+		#KHA.98901 # Division of the Mongol Empire
+		#MOGDIV.1
+	}
+}
+
+on_new_holder_inheritance = {
+	events = {
+		#KHA.98901 # Division of the Mongol Empire
+		#MOGDIV.1
+	}
+}
+
+on_new_holder_usurpation = {
+	events = {
+		#KHA.98901 # Division of the Mongol Empire
+		#MOGDIV.1
 	}
 }

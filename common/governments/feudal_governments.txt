@@ -709,6 +709,13 @@ feudal_governments = {
 					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
 				}
 			}
+			AND = { 
+				is_save_game = no
+				has_game_started = no
+				primary_title = { 
+					title = e_russian_empire
+				}
+			}
 			NOT = {	religion_group = muslim	}
 			NOT = { is_government_potential = roman_imperial_government }
 			NOT = { is_government_potential = order_government }

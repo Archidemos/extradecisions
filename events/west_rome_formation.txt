@@ -1,5 +1,154 @@
 namespace = ROM
 
+narrative_event = { #Event to choose between Imperial or Republic
+	id = ROM.99
+	title = EVTNAMEROM.99
+	desc = EVTDESCROM.99
+	sound = ar_army_marching
+	
+	picture = GFX_evt_rome_restored_byzantine
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "I shall be Western Roman Emperor"
+		ai_chance = { factor = 50 }
+		prestige = -2000
+		activate_title = { title = e_west_rome status = yes }
+		primary_title = {
+			e_west_rome = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}	
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = EMPEROR
+					NOT = { title = e_west_rome }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		e_west_rome = {
+			add_law = succ_byzantine_elective
+		}
+		
+		give_nickname = nick_the_restorer
+		
+		custom_tooltip = {
+			text = rome_move_capital
+			hidden_tooltip = {
+				ROOT = {
+					c_roma = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}
+					
+					b_tusculum = {
+						grant_title = PREV
+						usurp_title = PREV
+					}
+					
+					b_tivoli = {
+						grant_title = PREV
+						usurp_title = PREV
+						make_capital_holding = yes
+					}
+				}
+				if = {
+					limit = { government = merchant_republic_government }
+					b_viterbo = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}				
+				}
+			}
+		}
+		create_bloodline = {
+			type = west_rome_blood
+		}
+		
+		hidden_tooltip = {
+			any_player = {
+				narrative_event = { id = ROM.100 }
+			}
+		}
+	}
+
+	option = {
+		name = "We shall establish a Roman Republic"
+		ai_chance = { factor = 50 }
+		prestige = -2000
+		activate_title = { title = e_west_rome status = yes }
+		primary_title = {
+			e_west_rome = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = EMPEROR
+					NOT = { title = e_west_rome }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		create_family_palace = yes
+		set_government_type = merchant_republic_government
+		
+		e_west_rome = {
+			set_name = "Senatus Populusque Romanus"
+			adjective = "Roman Republican"
+		}		
+		give_nickname = nick_the_restorer
+		
+		custom_tooltip = {
+			text = rome_move_capital
+			hidden_tooltip = {
+				ROOT = {
+					c_roma = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}
+					
+					b_tusculum = {
+						grant_title = PREV
+						usurp_title = PREV
+					}
+					
+					b_cittadiroma = {
+						grant_title = PREV
+						usurp_title = PREV
+						make_capital_holding = yes
+					}
+				}
+			}
+		}
+		create_bloodline = {
+			type = west_rome_blood
+		}
+		
+		hidden_tooltip = {
+			any_player = {
+				narrative_event = { id = ROM.100 }
+			}
+		}
+	}
+}
+
 narrative_event = { #Event for everyone about the formation
 	id = ROM.100
 	title = EVTNAMEROM.100

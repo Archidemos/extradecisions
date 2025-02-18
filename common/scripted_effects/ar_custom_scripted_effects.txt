@@ -116,10 +116,13 @@ normal_conqueror_spawn_effect = {
 		}
 		if = {
 			limit = {
-				is_nomadic = no
+				AND = {
+					date < 1200.1.1
+					is_nomadic = no
+				}
 			}
 			while = {
-				count = 3
+				count = 5
 				capital_scope = {
 					event_target:great_conqueror = {
 						spawn_unit = {
@@ -143,10 +146,13 @@ normal_conqueror_spawn_effect = {
 		}
 		else_if = {
 			limit = {
-				is_nomadic = yes
+				AND = {
+					date < 1200.1.1
+					is_nomadic = yes
+				}
 			}
 			while = {
-				count = 3
+				count = 5
 				capital_scope = {
 					event_target:great_conqueror = {
 						spawn_unit = {
@@ -166,6 +172,65 @@ normal_conqueror_spawn_effect = {
 				}
 			}
 		}
+		else_if = {
+			limit = {
+				AND = {
+					date >= 1200.1.1
+					is_nomadic = no
+				}
+			}
+			while = {
+				count = 10
+				capital_scope = {
+					event_target:great_conqueror = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = event_target:great_conqueror
+							attrition = 0.25
+							reinforces = yes
+							reinforce_rate_multiplier = 0.25
+							troops = {
+								archers = { 1500 1500 }
+								light_cavalry = { 1500 1500 }
+								knights = { 500 500 }
+								light_infantry = { 2500 2500 }
+								heavy_infantry = { 1000 1000 }
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = {
+					date >= 1200.1.1
+					is_nomadic = yes
+				}
+			}
+			while = {
+				count = 10
+				capital_scope = {
+					event_target:great_conqueror = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = event_target:great_conqueror
+							attrition = 0.25
+							reinforces = yes
+							reinforce_rate_multiplier = 0.25
+							troops = {
+								light_cavalry = { 700 700 }
+								horse_archers = { 500 500 }
+								knights = { 100 100 }
+							}
+						}
+					}
+				}
+			}
+		}
+
 		if = {
 			limit = {
 				capital_scope = {

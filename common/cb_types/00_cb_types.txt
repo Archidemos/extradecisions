@@ -10505,6 +10505,16 @@ pagan_subjugation = {
 	
 	sort_priority = 2000
 	
+	can_use_gui = {
+	#higher_tier_than between ROOT and FROM would be better but its tooltip doesn't say anything about comparing character tiers
+		ROOT = {
+			NOT = { has_landed_title = e_golden_horde }
+			NOT = { has_landed_title = e_il-khanate }
+			NOT = { has_landed_title = e_timurids }
+			NOT = { has_landed_title = e_mongol_empire }
+		}
+	}
+	
 	can_use = {
 		NOT = { holder_scope = { government = ar_confederation_government } }
 		ROOT = {

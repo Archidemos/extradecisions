@@ -1,0 +1,360 @@
+namespace = MOGDIV
+
+narrative_event = {
+	id = MOGDIV.1
+	title = "Partitioning a Empire"
+	desc = "The previous Khan, upon his death, dictated the division of the empire. As successor, I am expected to follow through on this to maintain stability. Despite the succession of new Khan's to their respective regions, they must answer to me."
+	
+	picture = GFX_evt_nomad_camp
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		has_landed_title = e_mongol_empire
+		NOT = { has_global_flag = fully_divided_mongol_empire }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = fully_divided_mongol_empire
+		set_global_flag = world_steppe_tarim_conquered_mong
+		set_global_flag = world_himalayas_conquered_mong
+		set_global_flag = world_steppe_west_conquered_mong
+		set_global_flag = world_persia_conquered_mong
+		set_global_flag = world_steppe_east_conquered_mong
+		set_character_flag = fully_divided_mongol_empire_successor_great_khan
+	}
+	option = {	# Original with all Khanates
+		name = EVTOPTAKHA.98901
+		
+		#Ilkhanate
+		random_dynasty_member = {
+			limit = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+				is_alive = yes
+				is_offmap_ruler = no
+				any_owned_bloodline = { has_bloodline_flag = genghis_khan_line }
+				NOT = { has_character_flag = khan_of_ilkhanate }
+				NOT = { has_landed_title = e_mongol_empire }
+			}
+			e_il-khanate = { grant_title = PREV }
+			wealth = 10000
+			prestige = 5000
+			piety = 2500
+			while = {
+				count = 20
+				spawn_unit = {
+					province = 630
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
+			}
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = e_il-khanate
+							de_jure_liege_or_above = k_khorasan	
+							de_jure_liege_or_above = k_persia
+							de_jure_liege_or_above = k_sistan
+							de_jure_liege_or_above = k_daylam
+							de_jure_liege_or_above = k_khwarezmia
+							de_jure_liege_or_above = k_kafarestan
+							region = world_middle_east_arabia
+							region = world_middle_east_jerusalem
+							region = world_africa
+						}
+						OR = {
+							owner = { is_liege_or_above = e_mongol_empire }
+							owner = { has_landed_title = e_mongol_empire }
+						}
+					}
+					grant_title = PREV
+				}
+				set_character_flag = khan_of_ilkhanate
+			}
+		}
+		
+		#Golden Horde
+		random_dynasty_member = {
+			limit = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+				is_alive = yes
+				is_offmap_ruler = no
+				any_owned_bloodline = { has_bloodline_flag = genghis_khan_line }
+				NOT = { has_character_flag = khan_of_golden_horde }
+				NOT = { has_landed_title = e_mongol_empire }
+			}
+			e_golden_horde = { grant_title = PREV }
+			wealth = 10000
+			prestige = 5000
+			piety = 2500
+			while = {
+				count = 15
+				spawn_unit = {
+					province = 897
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
+			}
+			add_population_scaled = 0.9
+			manpower = 10000
+			set_government_type = nomadic_government
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = e_golden_horde
+							de_jure_liege_or_above = k_turkestan_west
+							region = world_europe_east
+							region = world_steppe_west
+							region = world_europe
+						}
+						OR = {
+							owner = { is_liege_or_above = e_mongol_empire }
+							owner = { has_landed_title = e_mongol_empire }
+						}
+					}
+					grant_title = PREV
+				}
+			}
+			set_character_flag = khan_of_golden_horde
+		}
+		
+		#Chagatai Khanate
+		random_dynasty_member = {
+			limit = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+				is_alive = yes
+				is_offmap_ruler = no
+				any_owned_bloodline = { has_bloodline_flag = genghis_khan_line }
+				NOT = { has_character_flag = khan_of_chagatai }
+				NOT = { has_landed_title = e_mongol_empire }
+			}
+			e_chagatai = { grant_title = PREV }
+			wealth = 10000
+			prestige = 5000
+			piety = 2500
+			while = {
+				count = 5
+				spawn_unit = {
+					province = 1568
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
+			}
+			add_population_scaled = 0.9
+			manpower = 10000
+			set_government_type = nomadic_government
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = e_chagatai
+							de_jure_liege_or_above = k_mavarannahr
+							region = world_himalayas
+							region = world_steppe_tarim
+						}
+						OR = {
+							owner = { is_liege_or_above = e_mongol_empire }
+							owner = { has_landed_title = e_mongol_empire }
+						}
+					}
+					grant_title = PREV
+				}
+			}
+			set_character_flag = khan_of_chagatai
+		}
+		
+		e_mongol_empire = {
+			holder_scope = {
+				set_character_flag = new_mongol_emp
+				disband_event_forces = yes
+				while = {
+					count = 5
+					spawn_unit = {
+						province = 1571
+						troops = {
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = MOGDIV.2
+	title = EVTTITLEKHA.98902
+	desc = EVTDESCKHA.98902
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = no
+	}
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_mongol_empire
+			}
+			save_event_target_as = mongol_khanates_genghis_khan
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_chagatai
+			}
+			save_event_target_as = mongol_khanates_chagatai
+			if = {
+				limit = {
+					NOT = {
+						has_character_flag = khan_of_chagatai
+					}
+				}
+				set_character_flag = khan_of_chagatai
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_golden_horde
+			}
+			save_event_target_as = mongol_khanates_golden_horde
+			if = {
+				limit = {
+					NOT = {
+						has_character_flag = khan_of_golden_horde
+					}
+				}
+				set_character_flag = khan_of_golden_horde
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_il-khanate
+			}
+			save_event_target_as = mongol_khanates_ilkhanate
+			if = {
+				limit = {
+					NOT = {
+						has_character_flag = khan_of_ilkhanate
+					}
+				}
+				set_character_flag = khan_of_ilkhanate
+			}
+		}
+	}
+	
+	option = {	# Stay as Khagan of the Mongol Empire
+		name = EVTOPTAKHA.98902
+	}
+	option = {	# Switch to Khan of the Golden Horde
+		name = EVTOPTBKHA.98902
+		trigger = {
+			has_global_flag = division_of_the_mongol_empire
+			NOT = {
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+    		event_target:mongol_khanates_golden_horde = {
+    			dynasty = ROOT
+    		}
+		}
+		tooltip_info = yes
+
+    	custom_tooltip = {
+    		text = switch_to_golden_horde_mongol_khanates_TT
+    		if = {
+    			limit = {
+    				event_target:mongol_khanates_golden_horde = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:mongol_khanates_golden_horde
+			}
+    	}
+	}
+	option = {	# Switch to Khan of Chagatai Khanate
+		name = EVTOPTCKHA.98902
+		trigger = {
+			OR = {
+				has_global_flag = division_of_the_mongol_empire
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+    		event_target:mongol_khanates_chagatai = {
+    			dynasty = ROOT
+    		}
+		}
+		
+		tooltip_info = yes
+		
+		custom_tooltip = {
+    		text = switch_to_chagatai_mongol_khanates_TT
+    		if = {
+    			limit = {
+    				event_target:mongol_khanates_chagatai = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:mongol_khanates_chagatai
+			}
+    	}
+	}
+	option = {	# Switch to Khan of the Ilkhanate
+		name = EVTOPTDKHA.98902
+		trigger = {
+			OR = {
+				has_global_flag = division_of_the_mongol_empire
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+    		event_target:mongol_khanates_ilkhanate = {
+    			dynasty = ROOT
+    		}
+		}
+		
+		tooltip_info = yes
+		
+		custom_tooltip = {
+    		text = switch_to_ilkhanate_mongol_khanates_TT
+    		if = {
+    			limit = {
+    				event_target:mongol_khanates_ilkhanate = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:mongol_khanates_ilkhanate
+			}
+    	}
+	}
+}

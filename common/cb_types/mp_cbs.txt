@@ -1,0 +1,172 @@
+infamy_cb = { #CB to shatter realm with high Threat
+	name = CB_NAME_INFAMY_CB
+	war_name = WAR_NAME_INFAMY_CB
+	sprite = 7
+	sort_priority = 100000
+	truce_days = 3650
+	is_permanent = yes
+	hostile_against_others = no
+	#allow_whitepeace = no
+	allow_distant = no
+	#display_on_map = no
+	#infamy_modifier = 3
+	
+	allowed_to_target_tributaries = yes
+	
+	#check_de_jure_tier = EMPEROR
+	check_all_titles = no
+	
+	attacker_ai_victory_worth = { factor = -1 }
+	attacker_ai_defeat_worth = { factor = 100 } 
+	defender_ai_victory_worth = { factor = -1 }
+	defender_ai_defeat_worth = { factor = 100 }
+	
+	battle_warscore_mult = 1.2
+	att_ticking_war_score_multiplier = 0.7
+	def_ticking_war_score_multiplier = 3.0
+	max_attacker_occupation_score = 50
+	max_attacker_battle_score = 75
+	defender_unoccupied_warscore = yes
+	
+	can_use = {
+		FROM = {
+			infamy >= 70
+		}
+	}
+	
+	
+	can_use_gui = {
+		check_if_crusader_trigger = yes
+		#ROOT = {
+		#	prestige = 100
+		#}
+		FROM = { 
+			OR = {
+				tier = EMPEROR
+				tier = KING
+			}
+		}
+	}
+
+	#can_use_title = {
+	#	location = {
+	#		any_neighbor_province = {
+	#			owner = {
+	#				OR = {
+	#					character = ROOT
+	#					is_liege_or_above = ROOT
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
+	
+	is_valid = {
+		always = yes
+	}
+	
+	on_add = {
+		if = {
+			limit = {
+				ROOT = { ai = yes }
+				FROM = {
+					NOT = {
+						any_war = {
+							attacker = { NOT = { character = ROOT } }
+							using_cb = infamy_cb
+						}
+					}
+				}
+			}
+			ROOT = {
+				spawn_unit = {
+					owner = THIS
+					province = capital_scope
+					home = capital_scope
+					
+					match_character = FROM
+					match_mult = 1.0
+					
+					#troops = {
+					#	knights = { 500 500 }
+					#	archers = { 500 500 }
+					#	light_cavalry = { 500 500 }
+					#	light_infantry = { 2500 2500 }
+					#	heavy_infantry = { 1000 1000 }
+					#}
+	
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+	}
+	
+	on_success = {
+		FROM = {
+			change_infamy = {
+				value = -10
+				localisation = "Threat Reduced after Shatter Realm CB"
+			}
+			prestige = -1000
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 5
+				min = 1000
+			}
+		}
+	}
+	
+	on_success_title = {
+		FROM = {
+			any_demesne_title = {
+				limit = { 
+					OR = {
+						tier = EMPEROR
+						tier = KING
+					}
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+	}
+
+	on_invalidation = {
+		ROOT = {
+			show_scope_change = no
+			piety = 100
+		}
+	}
+
+	on_fail = {
+		ROOT = { prestige = -50 }
+	}
+	
+	on_reverse_demand = {
+		ROOT = {
+			prestige = -1000
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 5
+				min = 1000
+			}
+		}
+		FROM = {
+			prestige = 1000
+			change_infamy = {
+				value = -10
+				localisation = "Threat Reduced after Shatter Realm CB"
+			}
+		}
+	}
+	
+	on_attacker_leader_death = { end_war = invalid } 
+	
+	ai_will_do = {
+		factor = 1
+		
+		modifier = {
+			factor = 100
+		}
+	}
+}

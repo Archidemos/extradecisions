@@ -1,0 +1,35 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	group = "TEXT_KEY_FOR_GROUP"					# Used for filtering. A single rule can be in multiple groups 
+#	option = {										# please note that the first option is always the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		achievements = no							# by default achievements = yes, allows or disallows achievements
+#	}
+# }
+
+norse_invaders_rules = {
+	name = "RULE_NORSEINVADERS"
+	group = "RULE_GROUP_RAILROADING"
+	group = "RULE_GROUP_HEP"
+	option = {
+		name = historical
+		text = "RULE_NORSEINVADERS_HISTORICAL"
+		desc = "RULE_NORSEINVADERS_HISTORICAL_DESC"
+	}
+	option = {
+		name = random
+		text = "RULE_NORSEINVADERS_RANDOM"
+		desc = "RULE_NORSEINVADERS_RANDOM_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_NORSEINVADERS_OFF"
+		desc = "RULE_NORSEINVADERS_OFF_DESC"
+	}
+}

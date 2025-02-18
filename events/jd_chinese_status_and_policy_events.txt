@@ -28,100 +28,232 @@ character_event = {
 	immediate = {
 		FROMFROM = {
 			set_offmap_flag = no_policy_news # Don't fire the News event in 'on_offmap_policy_changed'
-			random_list = {
-				100 = { # OPEN
-					modifier = {
-						factor = 1.5
-						has_status = china_stable
+			#Historical List
+			if = {
+				limit = {
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
 					}
-					modifier = {
-						factor = 5
-						has_policy = china_open
-						NOT = { days_since_policy_change = 10950 } #30 years
-					}
-					set_policy = china_open
-					log = "-------------------------------------"
-					log = "China Policy Logging:"
-					log = "Chinas new Policy is now OPEN"
-					log = "-------------------------------------"
 				}
-				20 = { # ISOLATIONIST
-					trigger = {
-						OR = {
-							NOT = { has_offmap_tmp_flag = china_forced_open }
-							had_offmap_tmp_flag = { flag = china_forced_open years = 50 }
+				random_list = {
+					100 = { # OPEN
+						modifier = {
+							factor = 0
+							has_status = china_civil_war
+							year = 905
+							NOT = {
+								year = 959
+							}
 						}
+						modifier = {
+							factor = 1.5
+							has_status = china_stable
+						}
+						modifier = {
+							factor = 5
+							has_policy = china_open
+							NOT = { days_since_policy_change = 10950 } #30 years
+						}
+						set_policy = china_open
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now OPEN"
+						log = "-------------------------------------"
 					}
-					modifier = {
-						factor = 10
-						has_offmap_flag = china_isolationist_trend
+					20 = { # ISOLATIONIST
+						trigger = {
+							OR = {
+								NOT = { has_offmap_tmp_flag = china_forced_open }
+								had_offmap_tmp_flag = { flag = china_forced_open years = 50 }
+							}
+						}
+						modifier = {
+							factor = 0
+							year = 765
+							NOT = {
+								year = 905
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_status = china_civil_war
+							year = 905
+							NOT = {
+								year = 959
+							}
+						}
+						modifier = {
+							factor = 0
+							year = 959
+							NOT = {
+								year = 1330
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_status = china_plague
+							offmap_china = { has_offmap_name = yuan_china }
+							year = 1330
+							NOT = {
+								year = 1350
+							}
+						}
+						modifier = {
+							factor = 1000
+							has_status = china_civil_war
+							offmap_china = { has_offmap_name = yuan_china }
+							year = 1350
+							NOT = {
+								year = 1370
+							}
+						}
+						modifier = {
+							factor = 1
+							year = 1435
+						}
+						set_policy = china_isolationist
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now ISOLATIONIST"
+						log = "-------------------------------------"
+						clr_offmap_flag = china_isolationist_trend
+						clr_offmap_tmp_flag = china_forced_open
 					}
-					modifier = { # Hard times... (negative Status)
-						factor = 2
-						china_is_suffering_trigger = yes
+					10 = { # EXPANSIONIST
+						modifier = {
+							factor = 0
+							NOT = {
+								offmap_china = { has_offmap_name = yuan_china }
+							}
+						}
+						modifier = {
+							factor = 1000
+							offmap_china = { has_offmap_name = yuan_china }
+							NOT = {
+								has_global_flag = fully_divided_mongol_empire
+							}
+							NOT = {
+								year = 1300
+							}
+						}
+						if = {
+							limit = { NOT = { has_policy = china_expansionist } }
+							change_variable = { which = "global_china_change_to_expansionist_count" value = 1 }
+						}
+						set_policy = china_expansionist
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now EXPANSIONIST"
+						log = "-------------------------------------"
+						clr_offmap_flag = china_expansionist_trend
 					}
-					modifier = {
-						factor = 0.5
-						has_status = china_golden_age
-					}
-					modifier = {
-						factor = 5
-						has_policy = china_isolationist
-						NOT = { days_since_policy_change = 10950 } #30 years
-					}
-					set_policy = china_isolationist
-					log = "-------------------------------------"
-					log = "China Policy Logging:"
-					log = "Chinas new Policy is now ISOLATIONIST"
-					log = "-------------------------------------"
-					clr_offmap_flag = china_isolationist_trend
-					clr_offmap_tmp_flag = china_forced_open
 				}
-				10 = { # EXPANSIONIST
-					trigger = {
-						NOT = { has_offmap_flag = china_badly_beaten_3 }
-						NOT = { check_variable = { which = "global_china_change_to_expansionist_count" value = 6 } }
+			}
+			
+			#Vanilla list
+			if = {
+				limit = {
+					has_game_rule = {
+						name = china_history_rules
+						value = random
 					}
-					modifier = {
-						factor = 20
-						has_offmap_flag = china_expansionist_trend
+				}
+				random_list = {
+					100 = { # OPEN
+						modifier = {
+							factor = 1.5
+							has_status = china_stable
+						}
+						modifier = {
+							factor = 5
+							has_policy = china_open
+							NOT = { days_since_policy_change = 10950 } #30 years
+						}
+						set_policy = china_open
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now OPEN"
+						log = "-------------------------------------"
 					}
-					modifier = {
-						factor = 2
-						has_status = china_golden_age
+					20 = { # ISOLATIONIST
+						trigger = {
+							OR = {
+								NOT = { has_offmap_tmp_flag = china_forced_open }
+								had_offmap_tmp_flag = { flag = china_forced_open years = 50 }
+							}
+						}
+						modifier = {
+							factor = 10
+							has_offmap_flag = china_isolationist_trend
+						}
+						modifier = { # Hard times... (negative Status)
+							factor = 2
+							china_is_suffering_trigger = yes
+						}
+						modifier = {
+							factor = 0.5
+							has_status = china_golden_age
+						}
+						modifier = {
+							factor = 5
+							has_policy = china_isolationist
+							NOT = { days_since_policy_change = 10950 } #30 years
+						}
+						set_policy = china_isolationist
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now ISOLATIONIST"
+						log = "-------------------------------------"
+						clr_offmap_flag = china_isolationist_trend
+						clr_offmap_tmp_flag = china_forced_open
 					}
-					modifier = {
-						factor = 0.75
-						has_offmap_flag = china_badly_beaten_1
+					10 = { # EXPANSIONIST
+						trigger = {
+							NOT = { has_offmap_flag = china_badly_beaten_3 }
+							NOT = { check_variable = { which = "global_china_change_to_expansionist_count" value = 6 } }
+						}
+						modifier = {
+							factor = 20
+							has_offmap_flag = china_expansionist_trend
+						}
+						modifier = {
+							factor = 2
+							has_status = china_golden_age
+						}
+						modifier = {
+							factor = 0.75
+							has_offmap_flag = china_badly_beaten_1
+						}
+						modifier = {
+							factor = 0.5
+							has_offmap_flag = china_badly_beaten_2
+						}
+						modifier = {
+							factor = 10
+							has_policy = china_expansionist
+							NOT = { days_since_policy_change = 14600 } #40 years
+						}
+						modifier = {
+							factor = 0.1
+							has_policy = china_expansionist
+							days_since_policy_change = 32850 #90 years
+						}
+						modifier = {
+							factor = 0.2
+							check_variable = { which = "global_china_change_to_expansionist_count" value = 3 }
+						}
+						if = {
+							limit = { NOT = { has_policy = china_expansionist } }
+							change_variable = { which = "global_china_change_to_expansionist_count" value = 1 }
+						}
+						set_policy = china_expansionist
+						log = "-------------------------------------"
+						log = "China Policy Logging:"
+						log = "Chinas new Policy is now EXPANSIONIST"
+						log = "-------------------------------------"
+						clr_offmap_flag = china_expansionist_trend
 					}
-					modifier = {
-						factor = 0.5
-						has_offmap_flag = china_badly_beaten_2
-					}
-					modifier = {
-						factor = 10
-						has_policy = china_expansionist
-						NOT = { days_since_policy_change = 14600 } #40 years
-					}
-					modifier = {
-						factor = 0.1
-						has_policy = china_expansionist
-						days_since_policy_change = 32850 #90 years
-					}
-					modifier = {
-						factor = 0.2
-						check_variable = { which = "global_china_change_to_expansionist_count" value = 3 }
-					}
-					if = {
-						limit = { NOT = { has_policy = china_expansionist } }
-						change_variable = { which = "global_china_change_to_expansionist_count" value = 1 }
-					}
-					set_policy = china_expansionist
-					log = "-------------------------------------"
-					log = "China Policy Logging:"
-					log = "Chinas new Policy is now EXPANSIONIST"
-					log = "-------------------------------------"
-					clr_offmap_flag = china_expansionist_trend
 				}
 			}
 		}
@@ -569,8 +701,160 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 750
+			NOT = {
+				year = 810
+			}
+		}
+		modifier = { #Tang Dynasty recovery from An Lushan Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_unrest
+				has_offmap_flag = china_had_unrest
+			}
+			year = 810
+			NOT = {
+				year = 860
+			}
+		}
+		modifier = { #Unrest and further decline of Tang after Huang Chao Rebellion
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 860
+			NOT = {
+				year = 960
+			}
+		}
+		modifier = { #Song Dynasty consolidation of China after 5 Dynasties, 10 Kingdom's Period
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_civil_war
+				has_offmap_flag = china_civil_war
+			}
+			year = 960
+			NOT = {
+				year = 1125
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1125
+			NOT = {
+				year = 1127
+			}
+		}
+		
+		modifier = { #Jin consolidation of Northern China
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_jurchen_invasion
+				has_offmap_flag = china_jurchen_invasion
+			}
+			year = 1127
+			NOT = {
+				year = 1215
+			}
+		}
+		
+		modifier = { #Yuan Dynasty Peace
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_mongol_invasion
+				has_offmap_flag = china_mongol_invasion
+			}
+			year = 1215
+			NOT = {
+				year = 1304
+			}
+		}
+		
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1304
+			NOT = {
+				year = 1350
+			}
+		}
+		
+		modifier = { #Ming Dynasty consolidation
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_civil_war
+				has_offmap_flag = china_civil_war
+			}
+			year = 1370
+			NOT = {
+				year = 1400
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1400
+			NOT = {
+				year = 1435
+			}
+		}
+		modifier = { #After Ming Golden Age, beginning of decline (continued in EU4)
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_golden_age
+				has_offmap_flag = china_had_golden_age
+			}
+			year = 1435
+		}
+		
 		modifier = { # Unrest last for at least 2 years before becoming Stable/Civil War
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -581,6 +865,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -589,6 +877,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -597,6 +889,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -605,6 +901,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -613,6 +913,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -621,6 +925,10 @@ character_event = {
 		}
 		modifier = { # Famines last for at least 4 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -631,6 +939,10 @@ character_event = {
 		}
 		modifier = { # Plagues last for at least 2 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -641,6 +953,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -649,6 +965,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -657,6 +977,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -665,6 +989,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -673,6 +1001,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -681,6 +1013,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -689,6 +1025,10 @@ character_event = {
 		}
 		modifier = { # Golden ages last at least 50 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -699,6 +1039,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -707,6 +1051,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -715,6 +1063,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -756,18 +1108,64 @@ character_event = {
     
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 883
+			}
+		}
+		modifier = { #After Huang Chao Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_civil_war
+				has_offmap_flag = china_civil_war
+			}
+			year = 880
+			NOT = {
+				year = 910
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 910
+		}
 		modifier = { # Slightly less likely to get unrest if things are fine
 			factor = 0.75
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_stable
 			}
 		}
 		modifier = { # Golden ages are very unlikely to end with Unrest
 			factor = 0.01
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_status = china_golden_age }
 		}
 		modifier = { # Famines last for at least 4 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -778,6 +1176,10 @@ character_event = {
 		}
 		modifier = { # Plagues last for at least 2 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -788,6 +1190,10 @@ character_event = {
 		}
 		modifier = { # Slightly more likely to get Unrest if non-Chinese emperor
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				NOT = {
 					culture_group = chinese_group
@@ -796,6 +1202,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -804,6 +1214,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -812,6 +1226,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -820,6 +1238,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -828,6 +1250,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -836,6 +1262,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -881,8 +1311,60 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 1211
+			}
+		}
+		modifier = {	#Genghis Khan's invasion of China
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			e_mongol_empire = {
+				holder_scope = {
+					OR = {
+						dynasty = 11100
+						dynasty = 1051210
+					}
+				}
+			}
+			has_global_flag = mongol_empire_arrival
+			NOT = { offmap_china = { has_offmap_name = yuan_china } }
+			year = 1211
+			NOT = {
+				year = 1300
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1300
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = yuan_china }
+		}
 		modifier = { # Unrest increases the chance of an invasion
 			factor = 3
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -891,6 +1373,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -899,6 +1385,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -907,6 +1397,10 @@ character_event = {
 		}
 		modifier = { # Famines last for at least 4 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -917,6 +1411,10 @@ character_event = {
 		}
 		modifier = { # Plagues last for at least 2 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -927,6 +1425,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -935,6 +1437,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -943,6 +1449,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -951,6 +1461,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -959,6 +1473,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -967,6 +1485,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -983,24 +1505,44 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.3
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			NOT = { 
 				has_global_flag = mongol_empire_arrival
 			}
 		}
 		modifier = {
 			factor = 0.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_status = china_golden_age }
 		}
 		modifier = {
 			factor = 0.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_1 }
 		}
 		modifier = {
 			factor = 0.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_2 }
 		}
 		modifier = {
 			factor = 0.1
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_3 }
 		}
 	}
@@ -1106,20 +1648,66 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = { # Genghis Khan's Invasion of China
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1206
+			NOT = {
+				year = 1234
+			}
+		}
+		modifier = { # Genghis Khan's Invasion of China
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1230
+			NOT = {
+				year = 1300
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1300
+		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_mongol_invasion years = 2 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_mongol_invasion years = 4 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_mongol_invasion years = 8 } }
 		}
 		modifier = {
 			factor = 5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_mongol_invasion years = 10 } }
 		}
 	}
@@ -1128,9 +1716,50 @@ character_event = {
 		random_list = {
 			100 = { # China won!
 				modifier = {
-					factor = 3
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
 					FROM = {
 						prev_status = china_golden_age
+					}
+				}
+				modifier = {
+					factor = 3
+					has_game_rule = {
+						name = china_history_rules
+						value = random
+					}
+					FROM = {
+						prev_status = china_golden_age
+					}
+				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					e_mongol_empire = {
+						holder_scope = {
+							OR = {
+								dynasty = 11100
+								dynasty = 1051210
+							}
+						}
+					}
+					year = 1206
+					has_global_flag = mongol_empire_arrival
+				}
+				modifier = {
+					factor = 100
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					NOT = {
+						year = 1200
 					}
 				}
 				
@@ -1175,7 +1804,7 @@ character_event = {
 					}
 				}
 				modifier = { # The Borjigins are more likely to win
-					factor = 5
+					factor = 1000
 					NOT = {
 						has_global_flag = borjigin_china
 					}
@@ -1185,14 +1814,28 @@ character_event = {
 							dynasty = 1051210
 						}
 						has_landed_title = e_mongol_empire
-						ai = yes
 					}
 				}
 				
 				FROM = {
 					set_offmap_flag = no_status_news
-					set_status = china_unrest
-					set_offmap_flag = china_had_unrest
+					if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 1200
+							NOT = {
+								year = 1300
+							}
+						}
+						set_status = china_stable
+					}
+					else = {
+						set_status = china_unrest
+						set_offmap_flag = china_had_unrest
+					}
 					clr_offmap_flag = no_status_news
 				
 					set_offmap_flag = china_expansionist_trend # Likely for the new ruler to pick Expansionist policy
@@ -1241,7 +1884,6 @@ character_event = {
 								dynasty = 1051210
 							}
 							has_landed_title = e_mongol_empire
-							ai = yes
 						}
 					}
 					random_independent_ruler = {
@@ -1251,7 +1893,6 @@ character_event = {
 								dynasty = 1051210
 							}
 							has_landed_title = e_mongol_empire
-							ai = yes
 						}
 						save_event_target_as = mongol_china_invader
 					}
@@ -1269,8 +1910,13 @@ character_event = {
 								NOT = {
 									has_global_flag = borjigin_china
 								}
-								event_target:mongol_china_invader = {
-									is_alive = yes
+								OR = {
+									event_target:mongol_china_invader = {
+										is_alive = yes
+									}
+									event_target:mongol_china_invader = {
+										is_alive = no
+									}
 								}
 							}
 							random_list = {
@@ -1911,8 +2557,45 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 1123
+			}
+		}
+		modifier = { # Jurchen invasion of Song Dynasty
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_stable
+			}
+			year = 1123
+			NOT = {
+				year = 1130
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1130
+		}
 		modifier = { # Unrest increases the chance of an invasion
 			factor = 3
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -1921,6 +2604,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -1929,6 +2616,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -1937,6 +2628,10 @@ character_event = {
 		}
 		modifier = { # Famines last for at least 4 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -1947,6 +2642,10 @@ character_event = {
 		}
 		modifier = { # Plagues last for at least 2 years
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -1957,6 +2656,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -1965,6 +2668,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -1973,6 +2680,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -1981,6 +2692,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -1989,6 +2704,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_famine
 				has_offmap_flag = china_had_famine
@@ -1997,6 +2716,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_plague
 				has_offmap_flag = china_had_plague
@@ -2013,18 +2736,34 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_status = china_golden_age }
 		}
 		modifier = {
 			factor = 0.5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_1 }
 		}
 		modifier = {
 			factor = 0.25
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_2 }
 		}
 		modifier = {
 			factor = 0.1
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_offmap_flag = china_mongols_won_3 }
 		}
 	}
@@ -2129,20 +2868,48 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = { # Jurchen invasion of Song Dynasty
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = { had_offmap_tmp_flag = { flag = china_jurchen_invasion years = 1 } }
+			year = 1123
+			NOT = {
+				year = 1130
+			}
+		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_jurchen_invasion years = 2 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_jurchen_invasion years = 4 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_jurchen_invasion years = 8 } }
 		}
 		modifier = {
 			factor = 5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_jurchen_invasion years = 10 } }
 		}
 	}
@@ -2153,8 +2920,41 @@ character_event = {
 				#trigger = { always = no }
 				modifier = {
 					factor = 3
+					has_game_rule = {
+						name = china_history_rules
+						value = random
+					}
 					FROM = {
 						prev_status = china_golden_age
+					}
+				}
+				modifier = { # The Jurchens are less likely to win before 1120
+					factor = 100
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					NOT = {
+						year = 1120
+					}
+				}
+				modifier = { # The Jurchens are less likely to win after 1200
+					factor = 100
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					year = 1200
+				}
+				modifier = { # The Jurchens are more likely to win between 1120 and 1200
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					year = 1120
+					NOT = {
+						year = 1200
 					}
 				}
 				
@@ -2190,6 +2990,10 @@ character_event = {
 			100 = { # Jurchen won!
 				modifier = {
 					factor = 3
+					has_game_rule = {
+						name = china_history_rules
+						value = random
+					}
 					FROM = {
 						OR = {
 							prev_status = china_unrest
@@ -2197,12 +3001,46 @@ character_event = {
 							prev_status = china_plague
 						}
 					}
+					modifier = { # The Jurchens are more likely to win between 1120 and 1200
+						factor = 1000
+						has_game_rule = {
+							name = china_history_rules
+							value = historical
+						}
+						year = 1120
+						NOT = {
+							year = 1200
+						}
+					}
+					modifier = { # The Jurchens are less likely to win after 1200
+						factor = 0
+						has_game_rule = {
+							name = china_history_rules
+							value = historical
+						}
+						year = 1200
+					}
 				}
 				
 				FROM = {
 					set_offmap_flag = no_status_news
-					set_status = china_unrest
-					set_offmap_flag = china_had_unrest
+					if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 1120
+							NOT = {
+								year = 1200
+							}
+						}
+						set_status = china_stable
+					}
+					else = {
+						set_status = china_unrest
+						set_offmap_flag = china_had_unrest
+					}
 					clr_offmap_flag = no_status_news
 				
 					clr_offmap_flag = china_badly_beaten_3
@@ -2458,8 +3296,46 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 1330
+			}
+		}
+		modifier = { # Famine at the end of the Yuan Dynasty
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_golden_age
+				has_offmap_flag = china_had_golden_age
+			}
+			year = 1330
+			NOT = {
+				year = 1340
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1340
+		}
 		modifier = { # Famines don't tend to happen too close to each other
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_offmap_flag = china_had_famine
 				NOT = {
@@ -2469,6 +3345,10 @@ character_event = {
 		}
 		modifier = { # Golden Ages tend to not end with a Famine or Plague
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -2479,6 +3359,10 @@ character_event = {
 		}
 		modifier = { # Slightly less likely to get unrest if things are fine
 			factor = 0.75
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				OR = {
 					has_status = china_stable
@@ -2522,7 +3406,45 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
-		modifier = { # Famines don't tend to happen too close to each other
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 1336
+			}
+		}
+		modifier = { # The Black Death
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_famine
+				has_offmap_flag = china_had_famine
+			}
+			year = 1336
+			NOT = {
+				year = 1350
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1350
+		}
+		modifier = { # Plagues don't tend to happen too close to each other
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			factor = 0
 			FROM = {
 				has_offmap_flag = china_had_plague
@@ -2533,6 +3455,10 @@ character_event = {
 		}
 		modifier = { # Golden Ages tend to not end with a Famine or Plague
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_golden_age
 				has_offmap_flag = china_had_golden_age
@@ -2543,6 +3469,10 @@ character_event = {
 		}
 		modifier = { # Slightly less likely to get unrest if things are fine
 			factor = 0.75
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				OR = {
 					has_status = china_stable
@@ -2581,8 +3511,70 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 1300
+			}
+		}
+		modifier = { # Pax Mongolica
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_stable
+			}
+			year = 1300
+			NOT = {
+				year = 1333
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1333
+			NOT = {
+				year = 1400
+			}
+		}
+		modifier = { # Ming Golden Era under Yongle Emperor
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_stable
+			}
+			year = 1400
+			NOT = {
+				year = 1435
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1435
+		}
 		modifier = { # China tend to not enter Golden Ages frequently
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_offmap_flag = china_had_golden_age
 				NOT = {
@@ -2592,6 +3584,10 @@ character_event = {
 		}
 		modifier = { # But they tend to have one at least every 250 years
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_offmap_flag = china_had_golden_age
 				had_offmap_tmp_flag = { flag = china_had_golden_age years = 250 }
@@ -2636,8 +3632,101 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 765
+			NOT = {
+				year = 865
+			}
+		}
+		modifier = { # Huang Chao Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_stable
+			}
+			year = 865
+			NOT = {
+				year = 890
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 890
+			NOT = {
+				year = 905
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			OR = {
+				offmap_china = { has_offmap_name = tang_china }
+				offmap_china = { has_offmap_name = liang_china }
+				offmap_china = { has_offmap_name = jin_china }
+				offmap_china = { has_offmap_name = han_china }
+				offmap_china = { has_offmap_name = zhou_china }
+			}
+			NOT = { offmap_china = { has_offmap_name = song_china } }
+			year = 905
+			NOT = {
+				year = 960
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 960
+			NOT = {
+				year = 1350
+			}
+		}
+		modifier = { # Red Turban Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			FROM = {
+				has_status = china_plague
+				has_offmap_flag = china_had_plague
+			}
+			year = 1350
+			NOT = {
+				year = 1370
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1370
+		}
 		modifier = { # Unrest last for at least 2 years before becoming Stable/Civil War
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				has_status = china_unrest
 				has_offmap_flag = china_had_unrest
@@ -2648,14 +3737,26 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.01
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_status = china_golden_age }
 		}
 		modifier = {
 			factor = 0.1
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { has_status = china_stable }
 		}
 		modifier = {
 			factor = 0.1
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { NOT = { has_status = china_unrest } }
 		}
 	}
@@ -2743,8 +3844,263 @@ character_event = {
 	
 	weight_multiplier = {
 		factor = 1
+		modifier = { # Huang Chao Rebellion
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 860
+			NOT = {
+				year = 884
+			}
+		}
+		modifier = { # Huang Chao Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 884
+			NOT = {
+				year = 890
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 891
+			NOT = {
+				year = 906
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Tang to end and to begin Later Liang
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			NOT = {
+				offmap_china = { has_offmap_name = liang_china }
+			}
+			year = 905
+			NOT = {
+				year = 910
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Liang Civil War before 910
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = liang_china }
+			year = 905
+			NOT = {
+				year = 910
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Cannot end due to ongoing Civil War during Later Liang
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 910
+			NOT = {
+				year = 921
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Later Liang and to begin Later Tang
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			NOT = {
+				offmap_china = { has_offmap_name = tang_china }
+			}
+			year = 921
+			NOT = {
+				year = 925
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Tang Civil War before 925
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = tang_china }
+			year = 921
+			NOT = {
+				year = 925
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Cannot end due to ongoing Civil War during Later Tang
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 925
+			NOT = {
+				year = 936
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Later Tang and to begin Later Jin
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			NOT = {
+				offmap_china = { has_offmap_name = jin_china }
+			}
+			year = 936
+			NOT = {
+				year = 940
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Jin Civil War before 940
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = jin_china }
+			year = 936
+			NOT = {
+				year = 940
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Cannot end due to ongoing Civil War during Later Jin
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 940
+			NOT = {
+				year = 946
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Later Jin and to begin Later Han
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			NOT = {
+				offmap_china = { has_offmap_name = han_china }
+			}
+			year = 946
+			NOT = {
+				year = 948
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Han Civil War before 948
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = han_china }
+			year = 946
+			NOT = {
+				year = 948
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Cannot end due to ongoing Civil War during Later Han
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 948
+			NOT = {
+				year = 951
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Later Han and to begin Later Zhou
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			NOT = {
+				offmap_china = { has_offmap_name = zhou_china }
+			}
+			year = 951
+			NOT = {
+				year = 954
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Zhou Civil War before 954
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			offmap_china = { has_offmap_name = zhou_china }
+			year = 951
+			NOT = {
+				year = 954
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, Cannot end due to ongoing Civil War during Later Zhou
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 955
+			NOT = {
+				year = 960
+			}
+		}
+		modifier = { # 5 Dynasties, 10 Kingdoms Period, End Civil War for Later Zhou and to begin Northern Song
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 960
+			NOT = {
+				year = 1000
+			}
+		}
+		modifier = { # Red Turban Rebellion
+			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1350
+			NOT = {
+				year = 1367
+			}
+		}
+		modifier = { # Red Turban Rebellion
+			factor = 1000
+			has_game_rule = {
+				name = china_history_rules
+				value = historical
+			}
+			year = 1368
+			NOT = {
+				year = 1400
+			}
+		}
 		modifier = {
 			factor = 0
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = {
 				NOT = {
 					had_offmap_tmp_flag = { flag = china_civil_war years = 2 }
@@ -2753,18 +4109,34 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_civil_war years = 3 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_civil_war years = 5 } }
 		}
 		modifier = {
 			factor = 2
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_civil_war years = 8 } }
 		}
 		modifier = {
 			factor = 5
+			has_game_rule = {
+				name = china_history_rules
+				value = random
+			}
 			FROM = { had_offmap_tmp_flag = { flag = china_civil_war years = 10 } }
 		}
 	}
@@ -2773,9 +4145,95 @@ character_event = {
 		clr_offmap_flag = china_civil_war
 		random_list = {
 			70 = { # The loyalists won!
+				modifier = {
+					factor = 1000
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = tang_china }
+					year = 750
+					NOT = {
+						year = 900
+					}
+				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					OR = {
+						offmap_china = { has_offmap_name = tang_china }
+						offmap_china = { has_offmap_name = liang_china }
+						offmap_china = { has_offmap_name = jin_china }
+						offmap_china = { has_offmap_name = han_china }
+						offmap_china = { has_offmap_name = zhou_china }
+					}
+					year = 900
+					NOT = {
+						year = 1000
+					}
+				}
+				modifier = {
+					factor = 1000
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = song_china }
+					year = 960
+					NOT = {
+						year = 1000
+					}
+				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = yuan_china }
+					year = 1300
+				}
 				FROM = {
 					set_offmap_flag = no_status_news
-					set_status = china_stable
+					if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 880
+							NOT = {
+								year = 890
+							}
+						}
+						set_status = china_unrest 
+						set_offmap_flag = china_had_unrest
+					}
+					else_if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 960
+							NOT = {
+								year = 1000
+							}
+						}
+						set_status = china_stable
+					}
+					else_if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = random
+							}
+						}
+						set_status = china_stable
+					}
 					clr_offmap_flag = no_status_news
 				}
 				
@@ -2830,12 +4288,178 @@ character_event = {
 						}
 					}
 				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = tang_china }
+					year = 750
+					NOT = {
+						year = 900
+					}
+				}
+				modifier = {
+					factor = 1000
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					OR = {
+						offmap_china = { has_offmap_name = tang_china }
+						offmap_china = { has_offmap_name = liang_china }
+						offmap_china = { has_offmap_name = jin_china }
+						offmap_china = { has_offmap_name = han_china }
+						offmap_china = { has_offmap_name = zhou_china }
+					}
+					year = 900
+					NOT = {
+						year = 1000
+					}
+				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = song_china }
+					year = 960
+					NOT = {
+						year = 1000
+					}
+				}
+				
+				modifier = {
+					factor = 1000
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					offmap_china = { has_offmap_name = yuan_china }
+					year = 1300
+				}
 				
 				FROM = {
 					set_offmap_flag = no_status_news
-					random_list = {
-						50 = { set_status = china_stable }
-						50 = { set_status = china_unrest set_offmap_flag = china_had_unrest }
+					if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 900
+							NOT = {
+								year = 960
+							}
+							NOT = {
+								offmap_china = { has_offmap_name = song_china }
+							}
+						}
+						set_status = china_civil_war 
+						set_offmap_flag = china_civil_war
+					}
+					else_if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 959
+							NOT = {
+								year = 1000
+							}
+						}
+						set_status = china_stable
+					}
+					else_if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = historical
+							}
+							year = 1350
+							NOT = {
+								year = 1400
+							}
+						}
+						set_status = china_stable
+						offmap_china = {
+							governor = {
+								if = {
+									limit = {
+										1513 = { # Jiuquan
+											owner = {
+												same_realm = PREVPREV
+											}
+										}
+									}
+									c_jiuquan = {
+										set_title_flag = ming_governer_jiuquan
+									}
+								}
+							}
+						}
+						any_character = {
+							limit = {
+								is_landed = yes
+								any_liege = {
+									has_landed_title = e_china_west_governor
+								}
+								lower_tier_than = emperor
+							}
+							set_defacto_liege = THIS
+						}
+						offmap_china = {
+							governor = {
+								any_war = {
+									limit = {
+										defender = {
+											character = PREVPREV
+										}
+										attacker = {
+											liege_before_war = {
+												character = PREVPREV 
+											}
+										}
+									}
+									any_attacker = {
+										end_war = invalid
+									}
+								}
+								#if = {
+								#	limit = {
+								#		c_jiuquan = {
+								#			has_title_flag = ming_governer_jiuquan
+								#		}
+								#	}
+								#	c_jiuquan = {
+								#		grant_title = PREV
+								#		make_capital_holding = yes
+								#		PREVPREV = {
+								#			capital = c_jiuquan
+								#		}
+								#	}
+								#}
+								character_event = {
+									id = KHA.98912
+									days = 1
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							has_game_rule = {
+								name = china_history_rules
+								value = random
+							}
+						}
+						random_list = {
+							50 = { set_status = china_stable }
+							50 = { set_status = china_unrest set_offmap_flag = china_had_unrest }
+						}
 					}
 					clr_offmap_flag = no_status_news
 					
@@ -2946,10 +4570,21 @@ character_event = {
 			70 = { # The rebels won - old Dynasty pretender
 				modifier = {
 					factor = 0.5
+					has_game_rule = {
+						name = china_history_rules
+						value = random
+					}
 					FROM = {
 						holder_scope = {
 							NOT = { culture_group = chinese_group }
 						}
+					}
+				}
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
 					}
 				}
 				
@@ -3383,14 +5018,10 @@ character_event =  { # Clean up living members of the chinese dynasty
 						NOR = {
 							is_offmap_ruler = yes
 							is_ruler = yes
-							any_close_relative = { is_ruler = yes }
-							dynasty = 1000054550
+							dynasty = 11100
 							dynasty = 1051210
 						}
 					}
-					death = { death_reason = death_went_back_to_china }
-				}
-				spouse = {
 					death = { death_reason = death_went_back_to_china }
 				}
 			}
@@ -3400,19 +5031,10 @@ character_event =  { # Clean up living members of the chinese dynasty
 						NOR = {
 							is_offmap_ruler = yes
 							is_ruler = yes
-							any_close_relative = { is_ruler = yes }
-							dynasty = 1000054550
+							dynasty = 11100
 							dynasty = 1051210
-							AND = {
-								#dynasty = 1000102400 #for some reason this doesn't seem to work
-								culture = khitan
-								year = 1132
-							}
 						}
 					}
-					death = { death_reason = death_went_back_to_china }
-				}
-				spouse = {
 					death = { death_reason = death_went_back_to_china }
 				}
 			}

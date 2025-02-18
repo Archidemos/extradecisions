@@ -1,597 +1,598 @@
-namespace = MAKED
-
-narrative_event = { #Event for everyone about the formation
-	id = MAKED.100
-	title = EVTNAMEMAKED.100
-	desc = EVTDESCMAKED.100
-	sound = ar_army_marching
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = { #At last
-		name = EVTOPTCEL.001
-	}
-}
-
-narrative_event = { #Event for Macedonia to either Declare war against the Emperor or not
-    id = MAKED.101
-	title = EVTNAMEMAKED.101
-	desc = EVTDESCMAKED.101
-
-    picture = GFX_evt_large_army
-    border = GFX_event_narrative_frame_war
-	
-	has_character_flag = is_greek_revolter
-	
-    is_triggered_only = yes
-    portrait = event_target:byzemperor
-    only_playable = yes
-    prisoner = no
-    war = no
-
-    trigger = {
-        NOT = { has_character_flag = greek_rebellion }
-        any_character = {
-            has_character_flag = is_byz_emperor
-        }
-    }
-
-    immediate = {
-        set_character_flag = greek_rebellion
-        random_character = {
-            limit = {
-                has_character_flag = is_byz_emperor
-            }
-            save_event_target_as = byz_emperor
-        }
-    }
-
-    option = { #Let us declare war
-        name = EVTOPTMAKED.1
-		set_defacto_liege = THIS
-        unsafe_war = {
-            target = event_target:byz_emperor
-            casus_belli = greek_rebelion
-        }
-        event_target:byz_emperor = {
-            set_character_flag = greek_rebellion_event
-            any_vassal = {
-                limit = {
-                    higher_tier_than = BARON
-                    government = feudal_government
-                    OR = {
-                        de_jure_liege = k_byzantium
-                        de_jure_liege = k_anatolia
-                    }
-                }
-                narrative_event = { id = MAKED.102 }
-            }
-        }
-		if = {
-			limit = { ai = yes }
-			add_random_commander_trait_effect = yes
-			spawn_unit = {
-				owner = ROOT
-				province = capital_scope
-				home = ROOT
-				match_character = 1282
-				match_mult = 0.5
-				
-				attrition = 1.0
-				disband_on_peace = yes
-				maintenance = no
-			}
-		}
-
-		any_player = {
-			limit = { has_landed_title = e_byzantium }
-			narrative_event = { id = MAKED.103 } 
-		}
-		
-		ai_chance = { factor = 80 }
-    }
-
-    option = { #Maybe now is not the time
-        name = EVTOPTMAKED.2
-		
-		set_defacto_liege = event_target:byz_emperor
-		
-		ai_chance = { factor = 20 }
-    }
-}
-
-narrative_event = { #If Declared war, Eastern Roman Dukes will be invited to fight for the Macedonian King
-    id = MAKED.102
-	title = EVTNAMEMAKED.102
-	desc = EVTDESCMAKED.102
-	
-    picture = GFX_evt_large_army
-    border = GFX_event_narrative_frame_war
-	
-    is_triggered_only = yes
-    only_playable = yes
-    prisoner = no
-
-    trigger = {
-    }
-
-    immediate = {
-        random_character = {
-            limit = {
-                has_character_flag = is_greek_revolter
-            }
-            save_event_target_as = greek_revolter
-        }
-    }
-
-    option = { #We are with the Macedonian King
-        name = EVTOPTMAKED.3
-        set_defacto_liege = this
-        join_attacker_wars = event_target:greek_revolter
-        ai_chance = {
-            factor = 60
-            modifier = {
-                factor = 1.5
-                tier = DUKE
-            }
-            modifier = {
-                factor = 2
-                trait = ambitious
-            }
-            modifier = {
-                factor = 1
-                likes_better_than = {
-                    who = event_target:greek_revolter
-                    than = event_target:byz_emperor
-                }
-            }
-        }
-    }
-
-    option = { #We stay loyal to the Eastern Roman Empire
-        trigger = {
-            OR = {
-                ai = no
-                NOR = {
-                    has_landed_title = d_franconia
-                    has_landed_title = c_ostfriesland
-                }
-            }
-        }
-        name = EVTOPTMAKED.4
-        ai_chance = {
-            factor = 40
-            modifier = {
-                factor = 1.5
-                tier = COUNT
-            }
-            modifier = {
-                factor = 1.5
-                trait = content
-            }
-            modifier = {
-                factor = 1.5
-                likes_better_than = {
-                    who = event_target:byz_emperor
-                    than = event_target:greek_revolter
-                }
-            }
-        }
-    }
-}
-
-narrative_event = { #Event informing the ERE Emperor about the rebelion
-	id = MAKED.103
-	title = EVTNAMEMAKED.103
-	desc = EVTDESCMAKED.103
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTMAKED.5
-	}
-}
-
-narrative_event = { #The Greek Rebelion won
-	id = MAKED.104
-	title = EVTNAMEMAKED.104
-	desc = EVTDESCMAKED.104
-	
-    picture = GFX_evt_magnificent_castle
-    border = GFX_event_narrative_frame_war
-	
-    is_triggered_only = yes
-
-    trigger = {
-    }
-
-    option = { #Title management and Event Units for the new Greek Kingdoms
-        name = EVTOPTMAKED.6
-        trigger = {
-            ai = no
-        }
-        prestige = 500
-		wealth = 500
-		add_claim = k_thrace
-		add_claim = k_anatolia
-		add_claim = k_trebizond
-		
-        custom_tooltip = { text = EVTOPTMAKED.6SPECIAL }
-        hidden_tooltip = {
-			spawn_unit = {
-				owner = event_target:macedonian_king
-				province = capital_scope
-
-				troops = {
-					archers = { 350 350 }
-					light_infantry = { 1500 1500 }
-					heavy_infantry = { 500 500 }
-					light_cavalry = { 150 150 }
-					war_elephants = { 75 75 }
-				}
-
-				attrition = 1.0
-				disband_on_peace = no
-				cannot_inherit = no
-				maintenance_multiplier = 0
-			}
-
-            any_playable_ruler = {
-                limit = {
-                    is_within_diplo_range = ROOT
-                }
-                narrative_event = { id = MAKED.108 days = 1 }       
-            }
-
-            e_byzantium = {
-                any_direct_de_jure_vassal_title = {
-                    de_jure_liege = e_macedonia
-                }
-            }
-
-            if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = d_nikaea
-                    }
-                }
-                d_nikaea = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_thrace
-                        save_event_target_as = thrace_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_thrace
-                    }
-					c_byzantion = {
-						grant_title = event_target:thrace_king
-						usurp_title = event_target:thrace_king
-					}
-                    set_defacto_liege = event_target:thrace_king
-                }
-            }
-            else_if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = c_prusa
-                    }
-                }
-                c_prusa = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_thrace
-                        save_event_target_as = thrace_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_thrace
-                    }
-					c_byzantion = {
-						grant_title = event_target:thrace_king
-						usurp_title = event_target:thrace_king
-					}
-                    set_defacto_liege = event_target:thrace_king
-                }
-            }
-
-            if = {
-                limit = {
-                    any_playable_ruler = {
-						AND = {
-							tier = DUKE
-							has_landed_title = d_adrianopolis
-						}
-                    }
-                }
-                d_adrianopolis = {
-                    holder_scope = {
-                        save_event_target_as = d_adrianopolis_holder
-                    }
-
-                }
-                any_playable_ruler = {
-                    limit = {
-						tier = DUKE
-                        has_landed_title = d_adrianopolis
-                    }
-					c_thrake = {
-						grant_title = event_target:d_adrianopolis_holder
-						usurp_title = event_target:d_adrianopolis_holder
-					}
-					
-					c_kaliopolis = {
-						grant_title = event_target:d_adrianopolis_holder
-						usurp_title = event_target:d_adrianopolis_holder
-					}
-
-                    set_defacto_liege = event_target:d_adrianopolis_holder
-                }
-            }
-
-            if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = d_samos
-                    }
-                }
-                d_samos = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_anatolia
-                        save_event_target_as = anatolian_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_anatolia
-                    }
-                    set_defacto_liege = event_target:anatolian_king
-                }
-            }
-            else_if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = c_ikonion
-                    }
-                }
-                c_ikonion = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_anatolia
-                        save_event_target_as = anatolian_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_anatolia
-                    }
-                    set_defacto_liege = event_target:anatolian_king
-                }
-            }
-
-            if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = d_trebizond
-                    }
-                }
-                d_trebizond = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_trebizond
-                        save_event_target_as = trebizond_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_trebizond
-                    }
-                    set_defacto_liege = event_target:trebizond_king
-                }
-            }
-            else_if = {
-                limit = {
-                    any_playable_ruler = {
-                        has_landed_title = c_sinope
-                    }
-                }
-                c_sinope = {
-                    holder_scope = {
-                        grant_title_no_opinion = k_trebizond
-                        save_event_target_as = trebizond_king
-                    }
-                }
-                any_playable_ruler = {
-                    limit = {
-                        de_jure_liege = k_trebizond
-                    }
-                    set_defacto_liege = event_target:trebizond_king
-                }
-            }
-			
-			event_target:anatolian_king = {
-				wealth = 500
-				add_claim = k_macedonia
-				add_claim = k_thrace
-				add_claim = k_trebizond
-				spawn_unit = {
-					owner = event_target:anatolian_king
-					province = capital_scope
-
-					troops = {
-						archers = { 350 350 }
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						light_cavalry = { 150 150 }
-						war_elephants = { 75 75 }
-					}
-
-					attrition = 1.0
-					disband_on_peace = no
-					cannot_inherit = no
-					maintenance_multiplier = 0
-				}
-			}
-			
-			event_target:trebizond_king = {
-				wealth = 500
-				add_claim = k_macedonia
-				add_claim = k_thrace
-				add_claim = k_anatolia
-				spawn_unit = {
-					owner = event_target:trebizond_king
-					province = capital_scope
-
-					troops = {
-						archers = { 350 350 }
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						light_cavalry = { 150 150 }
-						war_elephants = { 75 75 }
-					}
-
-					attrition = 1.0
-					disband_on_peace = no
-					cannot_inherit = no
-					maintenance_multiplier = 0
-				}
-			}
-			
-			event_target:thrace_king = {
-				wealth = 500
-				add_claim = k_macedonia
-				add_claim = k_anatolia
-				add_claim = k_trebizond
-				spawn_unit = {
-					owner = event_target:thrace_king
-					province = capital_scope
-
-					troops = {
-						archers = { 350 350 }
-						light_infantry = { 1500 1500 }
-						heavy_infantry = { 500 500 }
-						light_cavalry = { 150 150 }
-						war_elephants = { 75 75 }
-					}
-
-					attrition = 1.0
-					disband_on_peace = no
-					cannot_inherit = no
-					maintenance_multiplier = 0
-				}
-			}
-			
-			hidden_effect = {
-				any_playable_ruler = {
-					limit = {
-						has_landed_title = e_byzantium
-					}
-					narrative_event = { id = MAKED.106 days = 1 }
-				}
-			}
-        }
-    }
-}
-
-narrative_event = { #Event about the ERE being destoryed
-	id = MAKED.105
-	title = EVTNAMEMAKED.105
-	desc = EVTDESCMAKED.105
-	sound = ar_army_marching
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTCEL.001
-	}
-}
-
-narrative_event = { #Event for the Eastern Roman Emperor to change some De-Jures and to destory and disable the ERE
-	id = MAKED.106
-	title = EVTNAMEMAKED.106
-	desc = EVTDESCMAKED.106
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = { #This is it
-		name = EVTOPTCEL.010
-		
-		ai_chance = { factor = 100 }
-		
-		k_naples = { de_jure_liege = e_italy }
-		k_sicily = { de_jure_liege = e_italy }			
-		d_adrianopolis = { de_jure_liege = k_macedonia }
-		d_aegean_islands = { de_jure_liege = k_macedonia }
-		d_thrace = { de_jure_liege = k_macedonia }
-		
-		ROOT = {
-			any_demesne_title = {
-				limit = { 
-					tier = EMPEROR
-				}
-				unsafe_destroy_landed_title = THIS
-			}
-		}
-		
-		activate_title = {
-			title = e_macedonia
-			status = yes
-		}		
-		activate_title = {
-			title = e_byzantium
-			status = no
-		}
-		
-        set_global_flag = byz_removed
-	}
-}
-
-narrative_event = { #Event about the Greek Rebelion being defeated
-	id = MAKED.107
-	title = EVTNAMEMAKED.107
-	desc = EVTDESCMAKED.107
-	sound = ar_army_marching
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = { #At last
-		name = EVTOPTCEL.001
-	}
-}
-
-narrative_event = { #Event about the Greek Rebelion being defeated
-	id = MAKED.108
-	title = EVTNAMEMAKED.108
-	desc = EVTDESCMAKED.108
-	sound = ar_army_marching
-	
-	picture = GFX_evt_large_army
-	
-	border = GFX_event_narrative_frame_war
-	
-	is_triggered_only = yes
-	
-	option = { #At last
-		name = EVTOPTCEL.001
-	}
-}
-
+#namespace = MAKED
+#
+#narrative_event = { #Event for everyone about the formation
+#	id = MAKED.100
+#	title = EVTNAMEMAKED.100
+#	desc = EVTDESCMAKED.100
+#	sound = ar_army_marching
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = EVTOPTCEL.001
+#	}
+#}
+#
+#narrative_event = { #Event for Macedonia to either Declare war against the Emperor or not
+#    id = MAKED.101
+#	title = EVTNAMEMAKED.101
+#	desc = EVTDESCMAKED.101
+#
+#    picture = GFX_evt_large_army
+#    border = GFX_event_narrative_frame_war
+#	
+#	has_character_flag = is_greek_revolter
+#	
+#    is_triggered_only = yes
+#    portrait = event_target:byzemperor
+#    only_playable = yes
+#    prisoner = no
+#    war = no
+#
+#    trigger = {
+#        NOT = { has_character_flag = greek_rebellion }
+#        any_character = {
+#            has_character_flag = is_byz_emperor
+#        }
+#    }
+#
+#    immediate = {
+#        set_character_flag = greek_rebellion
+#        random_character = {
+#            limit = {
+#                has_character_flag = is_byz_emperor
+#            }
+#            save_event_target_as = byz_emperor
+#        }
+#    }
+#
+#    option = { #Let us declare war
+#        name = EVTOPTMAKED.1
+#		set_defacto_liege = THIS
+#        unsafe_war = {
+#            target = event_target:byz_emperor
+#            casus_belli = greek_rebelion
+#        }
+#        event_target:byz_emperor = {
+#            set_character_flag = greek_rebellion_event
+#            any_vassal = {
+#                limit = {
+#                    higher_tier_than = BARON
+#                    government = feudal_government
+#                    OR = {
+#                        de_jure_liege = k_byzantium
+#                        de_jure_liege = k_anatolia
+#                    }
+#                }
+#                narrative_event = { id = MAKED.102 }
+#            }
+#        }
+#		if = {
+#			limit = { ai = yes }
+#			add_random_commander_trait_effect = yes
+#			spawn_unit = {
+#				owner = ROOT
+#				province = capital_scope
+#				home = ROOT
+#				match_character = 1282
+#				match_mult = 0.5
+#				
+#				attrition = 1.0
+#				disband_on_peace = yes
+#				maintenance = no
+#			}
+#		}
+#
+#		any_player = {
+#			limit = { has_landed_title = e_byzantium }
+#			narrative_event = { id = MAKED.103 } 
+#		}
+#		
+#		ai_chance = { factor = 80 }
+#    }
+#
+#    option = { #Maybe now is not the time
+#        name = EVTOPTMAKED.2
+#		
+#		set_defacto_liege = event_target:byz_emperor
+#		
+#		ai_chance = { factor = 20 }
+#    }
+#}
+#
+#narrative_event = { #If Declared war, Eastern Roman Dukes will be invited to fight for the Macedonian King
+#    id = MAKED.102
+#	title = EVTNAMEMAKED.102
+#	desc = EVTDESCMAKED.102
+#	
+#    picture = GFX_evt_large_army
+#    border = GFX_event_narrative_frame_war
+#	
+#    is_triggered_only = yes
+#    only_playable = yes
+#    prisoner = no
+#
+#    trigger = {
+#    }
+#
+#    immediate = {
+#        random_character = {
+#            limit = {
+#                has_character_flag = is_greek_revolter
+#            }
+#            save_event_target_as = greek_revolter
+#        }
+#    }
+#
+#    option = { #We are with the Macedonian King
+#        name = EVTOPTMAKED.3
+#        set_defacto_liege = this
+#        join_attacker_wars = event_target:greek_revolter
+#        ai_chance = {
+#            factor = 60
+#            modifier = {
+#                factor = 1.5
+#                tier = DUKE
+#            }
+#            modifier = {
+#                factor = 2
+#                trait = ambitious
+#            }
+#            modifier = {
+#                factor = 1
+#                likes_better_than = {
+#                    who = event_target:greek_revolter
+#                    than = event_target:byz_emperor
+#                }
+#            }
+#        }
+#    }
+#
+#    option = { #We stay loyal to the Eastern Roman Empire
+#        trigger = {
+#            OR = {
+#                ai = no
+#                NOR = {
+#                    has_landed_title = d_franconia
+#                    has_landed_title = c_ostfriesland
+#                }
+#            }
+#        }
+#        name = EVTOPTMAKED.4
+#        ai_chance = {
+#            factor = 40
+#            modifier = {
+#                factor = 1.5
+#                tier = COUNT
+#            }
+#            modifier = {
+#                factor = 1.5
+#                trait = content
+#            }
+#            modifier = {
+#                factor = 1.5
+#                likes_better_than = {
+#                    who = event_target:byz_emperor
+#                    than = event_target:greek_revolter
+#                }
+#            }
+#        }
+#    }
+#}
+#
+#narrative_event = { #Event informing the ERE Emperor about the rebelion
+#	id = MAKED.103
+#	title = EVTNAMEMAKED.103
+#	desc = EVTDESCMAKED.103
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = EVTOPTMAKED.5
+#	}
+#}
+#
+#narrative_event = { #The Greek Rebelion won
+#	id = MAKED.104
+#	title = EVTNAMEMAKED.104
+#	desc = EVTDESCMAKED.104
+#	
+#    picture = GFX_evt_magnificent_castle
+#    border = GFX_event_narrative_frame_war
+#	
+#    is_triggered_only = yes
+#
+#    trigger = {
+#    }
+#
+#    option = { #Title management and Event Units for the new Greek Kingdoms
+#        name = EVTOPTMAKED.6
+#        trigger = {
+#            ai = no
+#        }
+#        prestige = 500
+#		wealth = 500
+#		add_claim = k_thrace
+#		add_claim = k_anatolia
+#		add_claim = k_trebizond
+#		
+#        custom_tooltip = { text = EVTOPTMAKED.6SPECIAL }
+#        hidden_tooltip = {
+#			spawn_unit = {
+#				owner = event_target:macedonian_king
+#				province = capital_scope
+#
+#				troops = {
+#					archers = { 350 350 }
+#					light_infantry = { 1500 1500 }
+#					heavy_infantry = { 500 500 }
+#					light_cavalry = { 150 150 }
+#					war_elephants = { 75 75 }
+#				}
+#
+#				attrition = 1.0
+#				disband_on_peace = no
+#				cannot_inherit = no
+#				maintenance_multiplier = 0
+#			}
+#
+#            any_playable_ruler = {
+#                limit = {
+#                    is_within_diplo_range = ROOT
+#                }
+#                narrative_event = { id = MAKED.108 days = 1 }       
+#            }
+#
+#            e_byzantium = {
+#                any_direct_de_jure_vassal_title = {
+#                    de_jure_liege = e_macedonia
+#                }
+#            }
+#
+#            if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = d_nikaea
+#                    }
+#                }
+#                d_nikaea = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_thrace
+#                        save_event_target_as = thrace_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_thrace
+#                    }
+#					c_byzantion = {
+#						grant_title = event_target:thrace_king
+#						usurp_title = event_target:thrace_king
+#					}
+#                    set_defacto_liege = event_target:thrace_king
+#                }
+#            }
+#            else_if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = c_prusa
+#                    }
+#                }
+#                c_prusa = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_thrace
+#                        save_event_target_as = thrace_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_thrace
+#                    }
+#					c_byzantion = {
+#						grant_title = event_target:thrace_king
+#						usurp_title = event_target:thrace_king
+#					}
+#                    set_defacto_liege = event_target:thrace_king
+#                }
+#            }
+#
+#            if = {
+#                limit = {
+#                    any_playable_ruler = {
+#						AND = {
+#							tier = DUKE
+#							has_landed_title = d_adrianopolis
+#						}
+#                    }
+#                }
+#                d_adrianopolis = {
+#                    holder_scope = {
+#                        save_event_target_as = d_adrianopolis_holder
+#                    }
+#
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#						tier = DUKE
+#                        has_landed_title = d_adrianopolis
+#                    }
+#					c_thrake = {
+#						grant_title = event_target:d_adrianopolis_holder
+#						usurp_title = event_target:d_adrianopolis_holder
+#					}
+#					
+#					c_kaliopolis = {
+#						grant_title = event_target:d_adrianopolis_holder
+#						usurp_title = event_target:d_adrianopolis_holder
+#					}
+#
+#                    set_defacto_liege = event_target:d_adrianopolis_holder
+#                }
+#            }
+#
+#            if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = d_samos
+#                    }
+#                }
+#                d_samos = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_anatolia
+#                        save_event_target_as = anatolian_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_anatolia
+#                    }
+#                    set_defacto_liege = event_target:anatolian_king
+#                }
+#            }
+#            else_if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = c_ikonion
+#                    }
+#                }
+#                c_ikonion = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_anatolia
+#                        save_event_target_as = anatolian_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_anatolia
+#                    }
+#                    set_defacto_liege = event_target:anatolian_king
+#                }
+#            }
+#
+#            if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = d_trebizond
+#                    }
+#                }
+#                d_trebizond = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_trebizond
+#                        save_event_target_as = trebizond_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_trebizond
+#                    }
+#                    set_defacto_liege = event_target:trebizond_king
+#                }
+#            }
+#            else_if = {
+#                limit = {
+#                    any_playable_ruler = {
+#                        has_landed_title = c_sinope
+#                    }
+#                }
+#                c_sinope = {
+#                    holder_scope = {
+#                        grant_title_no_opinion = k_trebizond
+#                        save_event_target_as = trebizond_king
+#                    }
+#                }
+#                any_playable_ruler = {
+#                    limit = {
+#                        de_jure_liege = k_trebizond
+#                    }
+#                    set_defacto_liege = event_target:trebizond_king
+#                }
+#            }
+#			
+#			event_target:anatolian_king = {
+#				wealth = 500
+#				add_claim = k_macedonia
+#				add_claim = k_thrace
+#				add_claim = k_trebizond
+#				spawn_unit = {
+#					owner = event_target:anatolian_king
+#					province = capital_scope
+#
+#					troops = {
+#						archers = { 350 350 }
+#						light_infantry = { 1500 1500 }
+#						heavy_infantry = { 500 500 }
+#						light_cavalry = { 150 150 }
+#						war_elephants = { 75 75 }
+#					}
+#
+#					attrition = 1.0
+#					disband_on_peace = no
+#					cannot_inherit = no
+#					maintenance_multiplier = 0
+#				}
+#			}
+#			
+#			event_target:trebizond_king = {
+#				wealth = 500
+#				add_claim = k_macedonia
+#				add_claim = k_thrace
+#				add_claim = k_anatolia
+#				spawn_unit = {
+#					owner = event_target:trebizond_king
+#					province = capital_scope
+#
+#					troops = {
+#						archers = { 350 350 }
+#						light_infantry = { 1500 1500 }
+#						heavy_infantry = { 500 500 }
+#						light_cavalry = { 150 150 }
+#						war_elephants = { 75 75 }
+#					}
+#
+#					attrition = 1.0
+#					disband_on_peace = no
+#					cannot_inherit = no
+#					maintenance_multiplier = 0
+#				}
+#			}
+#			
+#			event_target:thrace_king = {
+#				wealth = 500
+#				add_claim = k_macedonia
+#				add_claim = k_anatolia
+#				add_claim = k_trebizond
+#				spawn_unit = {
+#					owner = event_target:thrace_king
+#					province = capital_scope
+#
+#					troops = {
+#						archers = { 350 350 }
+#						light_infantry = { 1500 1500 }
+#						heavy_infantry = { 500 500 }
+#						light_cavalry = { 150 150 }
+#						war_elephants = { 75 75 }
+#					}
+#
+#					attrition = 1.0
+#					disband_on_peace = no
+#					cannot_inherit = no
+#					maintenance_multiplier = 0
+#				}
+#			}
+#			
+#			hidden_effect = {
+#				any_playable_ruler = {
+#					limit = {
+#						has_landed_title = e_byzantium
+#					}
+#					narrative_event = { id = MAKED.106 days = 1 }
+#				}
+#			}
+#        }
+#    }
+#}
+#
+#narrative_event = { #Event about the ERE being destoryed
+#	id = MAKED.105
+#	title = EVTNAMEMAKED.105
+#	desc = EVTDESCMAKED.105
+#	sound = ar_army_marching
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = EVTOPTCEL.001
+#	}
+#}
+#
+#narrative_event = { #Event for the Eastern Roman Emperor to change some De-Jures and to destory and disable the ERE
+#	id = MAKED.106
+#	title = EVTNAMEMAKED.106
+#	desc = EVTDESCMAKED.106
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #This is it
+#		name = EVTOPTCEL.010
+#		
+#		ai_chance = { factor = 100 }
+#		
+#		k_naples = { de_jure_liege = e_italy }
+#		k_sicily = { de_jure_liege = e_italy }			
+#		d_adrianopolis = { de_jure_liege = k_macedonia }
+#		d_aegean_islands = { de_jure_liege = k_macedonia }
+#		d_thrace = { de_jure_liege = k_macedonia }
+#		
+#		ROOT = {
+#			any_demesne_title = {
+#				limit = { 
+#					tier = EMPEROR
+#				}
+#				unsafe_destroy_landed_title = THIS
+#			}
+#		}
+#		
+#		activate_title = {
+#			title = e_macedonia
+#			status = yes
+#		}		
+#		activate_title = {
+#			title = e_byzantium
+#			status = no
+#		}
+#		
+#        set_global_flag = byz_removed
+#	}
+#}
+#
+#narrative_event = { #Event about the Greek Rebelion being defeated
+#	id = MAKED.107
+#	title = EVTNAMEMAKED.107
+#	desc = EVTDESCMAKED.107
+#	sound = ar_army_marching
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = EVTOPTCEL.001
+#	}
+#}
+#
+#narrative_event = { #Event about the Greek Rebelion being defeated
+#	id = MAKED.108
+#	title = EVTNAMEMAKED.108
+#	desc = EVTDESCMAKED.108
+#	sound = ar_army_marching
+#	
+#	picture = GFX_evt_large_army
+#	
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = EVTOPTCEL.001
+#	}
+#}
+#
+#

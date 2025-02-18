@@ -1,0 +1,864 @@
+namespace = RUR
+
+##################################
+# Rurik's Invasion of Russia
+##################################
+
+#Rurik's Character ID - 40605
+
+# Rurik distinguishes himself in a Norse court
+character_event = {
+	id = RUR.98750
+	desc = EVTDESCRUR.98750
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	only_playable = yes
+	culture = norse
+	
+	trigger = {
+		NOT = {
+			start_date = 867.1.1
+		}
+		NOT = {
+			has_game_rule = {
+				name = norse_invaders_rules
+				value = off
+			}
+		}
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = norse_invaders_rules
+					value = historical
+				}
+				year = 850
+				NOT = { year = 875 }
+			}
+			AND = {
+				has_game_rule = {
+					name = norse_invaders_rules
+					value = random
+				}
+				year = 830
+				NOT = { year = 920 }
+			}
+		}
+		higher_tier_than = count
+		NOT = { has_global_flag = rurik_spawned }
+		any_realm_province = {
+			region = world_europe_north
+		}
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		create_character = {
+			historical = yes
+			dynasty = 705
+			dna = tczeyfghtom
+			prp = th0ebd000000
+			name = Rurik
+			culture = norse
+			religion = ROOT
+			age = 21
+			attributes = {
+				diplomacy=12
+				martial=8
+				stewardship=8
+				intrigue=6
+				learning = 3
+			}
+			health = 7
+			fertility = 0.8
+			trait=gregarious
+			trait=ambitious
+			trait=just
+			trait=quick
+			trait=brilliant_strategist
+			trait=brave
+		}
+		new_character = {
+			if = {
+				limit = {
+					has_dlc = "Holy Fury"
+				}
+				create_bloodline = {
+					type = rurik
+				}
+			}
+			character_event = {
+				id = RUR.98751
+				days = 1095
+				random = 730
+			}
+			set_character_flag = rurik_himself
+		}
+	}
+	
+	option = { # A most capable young man
+		name = EVTOPTARUR.98750
+		
+		set_global_flag = rurik_spawned
+		set_global_flag = rurik_spawned_by_event
+		
+		tooltip = {
+			create_character = {
+				historical = yes
+				dynasty = 705
+				dna = tczeyfghtom
+				prp = th0ebd000000
+				name = Rurik
+				culture = norse
+				religion = ROOT
+				age = 21
+				attributes = {
+					diplomacy=12
+					martial=8
+					stewardship=8
+					intrigue=6
+					learning = 3
+				}
+				health = 7
+				fertility = 0.8
+				trait=gregarious
+				trait=ambitious
+				trait=just
+				trait=quick
+				trait=brilliant_strategist
+				trait=brave
+			}
+		}
+	}
+}
+
+# Rurik and his men consider starting an adventure
+character_event = {
+	id = RUR.98751
+	desc = EVTDESCRUR.98751
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+		
+		OR = {
+			408 = { # Beloozero
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			414 = { # Novgorod
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+			570 = { # Tver
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+	}
+	
+	option = { # Beloozero it is!
+		name = EVTOPTARUR.98751
+		trigger = {
+			408 = { # Beloozero
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		408 = {
+			province_event = {
+				id = RUR.98752
+				days = 2
+			}
+		}
+	}
+	option = { # Novgorod
+		name = EVTOPTBRUR.98751
+		trigger = {
+			414 = { # Novgorod
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100000
+		}
+		
+		414 = {
+			province_event = {
+				id = RUR.98752
+				days = 2
+			}
+		}
+	}
+	option = { # Tver
+		name = EVTOPTCRUR.98751
+		trigger = {
+			570 = { # Tver
+				owner = {
+					NOT = { same_realm = ROOT }
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+		
+		570 = {
+			province_event = {
+				id = RUR.98752
+				days = 2
+			}
+		}
+	}
+}
+
+# Ping the target province
+province_event = {
+	id = RUR.98752
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = yes
+				}
+			}
+			FROM = {
+				character_event = {
+					id = RUR.98754
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_ruler = no
+				}
+			}
+			FROM = {
+				character_event = {
+					id = RUR.98753
+				}
+			}
+		}
+	}
+	
+	option = { #so the event goes away hopefully
+		name = EVTOPTARUR.98752		
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# The landless Rurik and his men start an adventure
+character_event = {
+	id = RUR.98753
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = RUR.98755
+				days = 1
+			}
+		}
+		
+		liege = {
+			capital_scope = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								set_defacto_liege = ROOT
+								create_title = {
+									tier = DUKE
+									landless = yes
+									temporary = yes
+									culture = ROOT
+									name = "CLAIMANT_ADVENTURE"
+									holder = ROOT
+								}
+								
+								set_character_flag = duchy_adventurer
+							
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								war = {
+									target = PREV
+									casus_belli = duchy_adventure
+									thirdparty_title = PREVPREVPREV
+									tier = DUKE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { 
+					OR = {
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		
+		# Create some characters
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		log = "RUR.98753: rurik starts his first war as a landless character!"
+	}
+	
+	option = { #so the event goes away hopefully
+		name = EVTOPTARUR.98753
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# The landed Rurik and his men start an adventure
+character_event = {
+	id = RUR.98754
+	desc = EVTDESCRUR.98754
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				tier = BARON
+			}
+			abdicate = yes
+			character_event = { id = RUR.98753 }
+			break = yes
+		}
+		wealth = 500
+		
+		any_liege = {
+			character_event = {
+				id = RUR.98755
+				days = 1
+			}
+		}
+		
+		FROM = {
+			owner = {
+				top_liege = {
+					ROOT = {
+						capital_scope = {
+							ROOT = {
+								set_character_flag = duchy_adventurer
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									#leader = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = THIS
+									match_character = PREVPREVPREV
+									match_mult = 0.33
+									match_min = 500
+									match_max = 10000
+									attrition = 0.25
+								}
+							}
+						}
+						
+						war = {
+							target = PREV
+							casus_belli = duchy_adventure
+							thirdparty_title = PREVPREVPREV
+							tier = DUKE
+						}
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { 
+					OR = {
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		
+		# Create some characters
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 18
+		}
+		
+		log = "RUR.98754: Rurik starts his first war as a landed character!"
+	}
+	
+	option = {
+		name = EVTOPTARUR.98754
+	}
+}
+
+# Notify Rurik's old liege
+character_event = {
+	id = RUR.98755
+	desc = EVTDESCRUR.98755
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_ruler = yes } # The DoW worked and the adventurer has a temporary title
+	}
+	
+	option = {
+		name = EVTOPTARUR.98755
+	}
+}
+
+# Rurik is successful!
+# Fired from the duchy_adventure CB
+narrative_event = {
+	id = RUR.98756
+	title = EVTNAMERUR.98756
+	desc = EVTDESCRUR.98756
+	picture = GFX_evt_throne_room_norse_pagan
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					liege = {
+						ai = yes
+					}
+				}
+			}
+			set_defacto_liege = ROOT
+		}
+		
+		prestige = 1000
+		add_claim = c_novgorod
+		
+		capital_scope = {
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						heavy_infantry = { 2500 2500 }
+						light_cavalry = { 500 500 }
+					}
+				}
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					troops = {
+						light_infantry = { 2250 2250 }
+						heavy_infantry = { 2500 2500 }
+						light_cavalry = { 500 500 }
+					}
+				}
+			}
+		}
+		
+		log = "RUR.98756: Rurik wins his first war!"
+	}
+	
+	option = {
+		name = EVTOPTARUR.98756
+		trigger = {
+			has_character_flag = rurik_himself
+		}
+	}
+	option = {
+		name = EVTOPTBRUR.98756
+		trigger = {
+			NOT = { has_character_flag = rurik_himself }
+			OR = {
+				culture = norse
+				culture = swedish
+				culture = norwegian
+				culture = danish
+			}
+		}
+	}
+	option = {
+		name = EVTOPTCRUR.98756
+		trigger = {
+			NOT = { has_character_flag = rurik_himself }
+			NOT = {
+				OR = {
+					culture = norse
+					culture = swedish
+					culture = norwegian
+					culture = danish
+				}
+			}
+		}
+	}
+}

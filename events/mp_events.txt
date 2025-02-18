@@ -708,53 +708,53 @@ province_event = { #Province event that will trigger the Rum Invasion
 	}
 }
 
-##Instantly Golden_Horde Empire Spawn
-
-character_event = { #Character Event to delay the Province event to trigger the Golden_Horde Invasion for Instant Game rule
-	id = MP.027
-
-	hide_window = yes
-	is_triggered_only = yes
-	
-	only_playable = yes
-	religion = catholic
-
-	trigger = {
-		has_game_rule = {
-			name = gold_horde_invasion
-			value = test
-		}
-		NOT = { has_global_flag = golden_instant_invader_part_1 }
-		is_save_game = no
-		controls_religion = yes
-	}
-
-	
-	immediate = {
-		random_province = {
-			limit = { has_owner = yes }
-			province_event = { id = MP.028 days = 13 }
-		}
-		set_global_flag = golden_instant_invader_part_1
-	}
-}
-
-province_event = { #Province event that will trigger the Golden_Horde Invasion
-	id = MP.028
-
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_global_flag = golden_instant_invader_part_2 }
-	}
-	
-	immediate = {
-		set_global_flag = golden_instant_invader_part_2
-		k_papal_state = { holder_scope = { narrative_event = { id = GOL.100 } } }
-	}
-}
-
+###Instantly Golden_Horde Empire Spawn
+#
+#character_event = { #Character Event to delay the Province event to trigger the Golden_Horde Invasion for Instant Game rule
+#	id = MP.027
+#
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	only_playable = yes
+#	religion = catholic
+#
+#	trigger = {
+#		has_game_rule = {
+#			name = gold_horde_invasion
+#			value = test
+#		}
+#		NOT = { has_global_flag = golden_instant_invader_part_1 }
+#		is_save_game = no
+#		controls_religion = yes
+#	}
+#
+#	
+#	immediate = {
+#		random_province = {
+#			limit = { has_owner = yes }
+#			province_event = { id = MP.028 days = 13 }
+#		}
+#		set_global_flag = golden_instant_invader_part_1
+#	}
+#}
+#
+#province_event = { #Province event that will trigger the Golden_Horde Invasion
+#	id = MP.028
+#
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_global_flag = golden_instant_invader_part_2 }
+#	}
+#	
+#	immediate = {
+#		set_global_flag = golden_instant_invader_part_2
+#		k_papal_state = { holder_scope = { narrative_event = { id = GOL.100 } } }
+#	}
+#}
+#
 ##Events for the Golden Horde and the Mongol Empire to not clash with eachother
 
 character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
@@ -782,56 +782,60 @@ character_event = { #Event for the Pope to send the Golden Horde tributary propo
 	}
 }
 
-narrative_event = { #Event to make the Golden Horde a tributary of the Mongol Empire to avoid a clash between them
-	id = MP.030
-	title = MOGGOLDCLASH.100
-	desc = MOGGOLDCLASHDESC.100
-	
-	picture = "GFX_evt_mongols"
-	border = "GFX_event_narrative_frame_war"
-
-	is_triggered_only = yes
-	
-	trigger = {
-		NOT = { has_global_flag = anti_golden_mongol_clash_2 }
-	}
-	
-	option = { #We will tributise the Golden Horde
-		name = MOGGOLDOPT1
-		ai_chance = { factor = 100 }
-		e_golden_horde = { holder_scope = { save_event_target_as = golden_horde_ruler } }
-
-		make_tributary = { 
-			who = event_target:golden_horde_ruler 
-			tributary_type = mongol_state 
-		}
-
-		opinion = {
-			name = in_non_aggression_pact
-			years = 50
-			who = event_target:golden_horde_ruler
-		}
-			
-		reverse_opinion = {
-			name = in_non_aggression_pact
-			years = 50
-			who = event_target:golden_horde_ruler
-		}
-
-		e_mongol_empire = { holder_scope = { add_pressed_claim = e_golden_horde } }
-		e_golden_horde = { holder_scope = { add_pressed_claim = e_il-khanate add_pressed_claim = e_mongol_empire } }
-		
-		set_global_flag = anti_golden_mongol_clash_2
-		hidden_effect = {
-			any_player = { narrative_event = { id = MP.031 days = 5 } }
-		}
-	}
-	
-	option = { #We refuse
-		name = MOGGOLDOPT2
-		ai_chance = { factor = 0 }
-	}
-}
+#narrative_event = { #Event to make the Golden Horde a tributary of the Mongol Empire to avoid a clash between them
+#    id = MP.030
+#    title = MOGGOLDCLASH.100
+#    desc = MOGGOLDCLASHDESC.100
+#    
+#    picture = GFX_evt_mongols
+#    border = GFX_event_narrative_frame_war
+#
+#    is_triggered_only = yes
+#    
+#    trigger = {
+#        NOT = { has_global_flag = anti_gold_mongol_clash_2 }
+#    }
+#    
+#    option = { #We will tributise the Golden Horde
+#        name = MOGGOLDOPT1
+#        ai_chance = { factor = 100 }
+#        e_golden_horde = { holder_scope = { save_event_target_as = golden_horde_ruler } }
+#
+#        make_tributary = {
+#            who = event_target:golden_horde_ruler 
+#            tributary_type = mongol_state 
+#        }
+#
+#        opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:golden_horde_ruler
+#        }
+#            
+#        reverse_opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:golden_horde_ruler
+#        }
+#        
+#        add_pressed_claim = e_golden_horde
+#        
+#        event_target:golden_horde_ruler = { 
+#            show_scope_change = no
+#            add_pressed_claim = e_il-khanate 
+#            add_pressed_claim = e_mongol_empire 
+#        }
+#        
+#        set_global_flag = anti_gold_mongol_clash_2
+#        hidden_effect = {
+#            any_player = { narrative_event = { id = MP.031 days = 5 } }
+#        }
+#    }
+#    option = { #We refuse
+#        name = MOGGOLDOPT2
+#        ai_chance = { factor = 0 }
+#    }
+#}
 
 narrative_event = { #Event for everyone about the formation
 	id = MP.031
@@ -848,53 +852,53 @@ narrative_event = { #Event for everyone about the formation
 	}
 }
 
-##Instantly Ilkhanate Empire Spawn
-
-character_event = { #Character Event to delay the Province event to trigger the Ilkhanate Invasion for Instant Game rule
-	id = MP.032
-
-	hide_window = yes
-	is_triggered_only = yes
-	
-	only_playable = yes
-	religion = catholic
-
-	trigger = {
-		has_game_rule = {
-			name = ilkhanate_invasion
-			value = test
-		}
-		NOT = { has_global_flag = ilkhanate_instant_invader_part_1 }
-		is_save_game = no
-		controls_religion = yes
-	}
-
-	
-	immediate = {
-		random_province = {
-			limit = { has_owner = yes }
-			province_event = { id = MP.033 days = 14 }
-		}
-		set_global_flag = ilkhanate_instant_invader_part_1
-	}
-}
-
-province_event = { #Province event that will trigger the Ilkhanate Invasion
-	id = MP.033
-
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		NOT = { has_global_flag = ilkhanate_instant_invader_part_2 }
-	}
-	
-	immediate = {
-		set_global_flag = ilkhanate_instant_invader_part_2
-		k_papal_state = { holder_scope = { narrative_event = { id = ILKH.100 } } }
-	}
-}
-
+###Instantly Ilkhanate Empire Spawn
+#
+#character_event = { #Character Event to delay the Province event to trigger the Ilkhanate Invasion for Instant Game rule
+#	id = MP.032
+#
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	only_playable = yes
+#	religion = catholic
+#
+#	trigger = {
+#		has_game_rule = {
+#			name = ilkhanate_invasion
+#			value = test
+#		}
+#		NOT = { has_global_flag = ilkhanate_instant_invader_part_1 }
+#		is_save_game = no
+#		controls_religion = yes
+#	}
+#
+#	
+#	immediate = {
+#		random_province = {
+#			limit = { has_owner = yes }
+#			province_event = { id = MP.033 days = 14 }
+#		}
+#		set_global_flag = ilkhanate_instant_invader_part_1
+#	}
+#}
+#
+#province_event = { #Province event that will trigger the Ilkhanate Invasion
+#	id = MP.033
+#
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_global_flag = ilkhanate_instant_invader_part_2 }
+#	}
+#	
+#	immediate = {
+#		set_global_flag = ilkhanate_instant_invader_part_2
+#		k_papal_state = { holder_scope = { narrative_event = { id = ILKH.100 } } }
+#	}
+#}
+#
 ##Events for the Ilkhanate and the Mongol Empire to not clash with eachother
 
 character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
@@ -922,51 +926,60 @@ character_event = { #Event for the Pope to send the Golden Horde tributary propo
 	}
 }
 
-narrative_event = { #Event to make the Ilkhanate a tributary of the Mongol Empire to avoid a clash between them
-	id = MP.035
-	title = MOGILLCLASH.100
-	desc = MOGILLCLASHDESC.100
-	
-	picture = "GFX_evt_mongols"
-	border = "GFX_event_narrative_frame_war"
-
-	is_triggered_only = yes
-	
-	trigger = {
-		NOT = { has_global_flag = anti_ilkhanate_mongol_clash_2 }
-	}
-	
-	option = { #We will tributise the Golden Horde
-		name = MOGGOLDOPT1
-		ai_chance = { factor = 100 }
-		e_il-khanate = { holder_scope = { save_event_target_as = illkhanate_ruler } }
-
-		make_tributary = { 
-			who = event_target:illkhanate_ruler 
-			tributary_type = mongol_state 
-		}
-
-		opinion = {
-			name = in_non_aggression_pact
-			years = 50
-			who = event_target:illkhanate_ruler
-		}
-			
-		reverse_opinion = {
-			name = in_non_aggression_pact
-			years = 50
-			who = event_target:illkhanate_ruler
-		}
-		
-		e_mongol_empire = { holder_scope = { add_pressed_claim = e_il-khanate } }
-		e_il-khanate = { holder_scope = { add_pressed_claim = e_golden_horde add_pressed_claim = e_mongol_empire } }
-		
-		set_global_flag = anti_ilkhanate_mongol_clash_2
-		hidden_effect = {
-			any_player = { narrative_event = { id = MP.036 days = 5 } }
-		}
-	}
-}
+#narrative_event = { #Event to make the Ilkhanate a tributary of the Mongol Empire to avoid a clash between them
+#    id = MP.035
+#    title = MOGILLCLASH.100
+#    desc = MOGILLCLASHDESC.100
+#    
+#    picture = GFX_evt_mongols
+#    border = GFX_event_narrative_frame_war
+#
+#    is_triggered_only = yes
+#    
+#    trigger = {
+#        NOT = { has_global_flag = anti_ilkhanate_mongol_clash_2 }
+#    }
+#    
+#    option = { #We will tributise the Golden Horde
+#        name = MOGGOLDOPT1
+#        ai_chance = { factor = 100 }
+#        e_il-khanate = { holder_scope = { save_event_target_as = ilkhanate_ruler } }
+#
+#        make_tributary = {
+#            who = event_target:ilkhanate_ruler 
+#            tributary_type = mongol_state 
+#        }
+#
+#        opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:ilkhanate_ruler
+#        }
+#            
+#        reverse_opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:ilkhanate_ruler
+#        }
+#        
+#        add_pressed_claim = e_il-khanate
+#        
+#        event_target:ilkhanate_ruler = { 
+#            show_scope_change = no
+#            add_pressed_claim = e_golden_horde 
+#            add_pressed_claim = e_mongol_empire 
+#        }
+#        
+#        set_global_flag = anti_ilkhanate_mongol_clash_2
+#        hidden_effect = {
+#            any_player = { narrative_event = { id = MP.036 days = 5 } }
+#        }
+#    }
+#    option = { #We refuse
+#        name = MOGGOLDOPT2
+#        ai_chance = { factor = 0 }
+#    }
+#}
 
 narrative_event = { #Event for everyone about the formation
 	id = MP.036
@@ -1150,6 +1163,10 @@ character_event = {
 				limit = { has_wonder = wonder_baku_ateshgah }
 				ROOT = { add_character_modifier = { name = wonder_mosque_mecca years = -1 } }
 			}
+			#else_if = {
+			#	limit = { has_wonder = wonder_cathedral_hagia_sophia }
+			#	ROOT = { add_character_modifier = { name = hagia_sophia_keeper years = -1 } }
+			#}
 		}
 	}
 }
@@ -1176,9 +1193,177 @@ character_event = {
 		normal_conqueror_spawn_effect = yes
 		normal_conqueror_spawn_effect = yes
 		normal_conqueror_spawn_effect = yes
-		normal_conqueror_spawn_effect = yes
-		normal_conqueror_spawn_effect = yes
-		normal_conqueror_spawn_effect = yes
+	}
+}
+
+#character_event = {
+#    id = MP.043
+#	desc = "EVTDESCMP43"
+#    is_triggered_only = yes
+#	picture = "GFX_evt_diplomatic_greeting"
+#	border = "GFX_event_normal_frame_war"
+#
+# 	option = {
+#		name = "To war!"
+#		ROOT = {
+#			spawn_unit = {
+#				owner = THIS
+#				province = capital_scope
+#				home = capital_scope
+#
+#				troops = {
+#					knights = { 500 500 }
+#					archers = { 500 500 }
+#					light_cavalry = { 500 500 }
+#					light_infantry = { 2500 2500 }
+#					heavy_infantry = { 1000 1000 }
+#				}
+#
+#				attrition = 1.0
+#				disband_on_peace = yes
+#			}
+#		}
+#	}
+#}
+
+#character_event = { #Event about you developing the county
+#    id = MP.044
+#	desc = "EVTDESCMP44"
+#    is_triggered_only = yes
+#	picture = "GFX_evt_noble_haughty_talking_to_peasants_ze"
+#	border = "GFX_event_normal_frame_war"
+#
+# 	option = {
+#		name = "Wonderfull!"
+#	}
+#}
+
+##Events for the Chagatai Khanate and the Mongol Empire to not clash with eachother
+
+character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
+	id = MP.045
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		e_mongol_empire = { holder_scope = { is_landed = yes } }
+		e_chagatai = { holder_scope = { is_landed = yes } }
+		has_global_flag = mongol_empire_arrival
+		has_global_flag = chagatai_arrival
+		controls_religion = yes
+		NOT = { has_global_flag = anti_chagatai_mongol_clash_1 }
+	}
+
+	
+	immediate = {
+		set_global_flag = anti_chagatai_mongol_clash_1
+		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.046 } } }
+	}
+}
+
+#narrative_event = { #Event to make the Chagatai Khanate a tributary of the Mongol Empire to avoid a clash between them
+#    id = MP.046
+#    title = MOGCHAGCLASH.100
+#    desc = MOGCHAGCLASHDESC.100
+#    
+#    picture = GFX_evt_mongols
+#    border = GFX_event_narrative_frame_war
+#
+#    is_triggered_only = yes
+#    
+#    trigger = {
+#        NOT = { has_global_flag = anti_chagatai_mongol_clash_2 }
+#    }
+#    
+#    option = { #We will tributise the Golden Horde
+#        name = MOGGOLDOPT1
+#        ai_chance = { factor = 100 }
+#        e_chagatai = { holder_scope = { save_event_target_as = chagatai_ruler } }
+#
+#        make_tributary = {
+#            who = event_target:chagatai_ruler 
+#            tributary_type = mongol_state 
+#        }
+#
+#        opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:chagatai_ruler
+#        }
+#            
+#        reverse_opinion = {
+#            name = in_non_aggression_pact
+#            years = 50
+#            who = event_target:chagatai_ruler
+#        }
+#        
+#        add_pressed_claim = e_chagatai
+#        
+#        event_target:chagatai_ruler = { 
+#            show_scope_change = no
+#            add_pressed_claim = e_golden_horde 
+#            add_pressed_claim = e_mongol_empire 
+#        }
+#        
+#        set_global_flag = anti_chagatai_mongol_clash_2
+#        hidden_effect = {
+#            any_player = { narrative_event = { id = MP.047 days = 5 } }
+#        }
+#    }
+#    option = { #We refuse
+#        name = MOGGOLDOPT2
+#        ai_chance = { factor = 0 }
+#    }
+#}
+
+narrative_event = { #Event for everyone about the formation
+	id = MP.047
+	title = MOGCHAGCLASH.101
+	desc = MOGCHAGCLASHDESC.101
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = MOGGOLDOPT3
+	}
+}
+
+#character_event = {
+#	id = MP.048
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		NOT = { has_global_flag = mongol_tributes_sent }
+#	}
+#
+#	immediate = {
+#		set_global_flag = mongol_tributes_sent
+#		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.030 } } }
+#		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.035 } } }
+#		e_mongol_empire = { holder_scope = { narrative_event = { id = MP.046 } } }
+#	}
+#}
+
+narrative_event = { #Event for everyone about the formation
+	id = MP.049
+	title = MOGUNITE.100
+	desc = MOGUNITEHDESC.100
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = "Curious..."
 	}
 }
 

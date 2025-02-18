@@ -1,0 +1,1020 @@
+decisions = {
+	ilkhanate_formation = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = ilkhanate_mongol_empire_formation
+			culture = mongol
+			NOT = {
+				OR = {
+					has_landed_title = e_mongol_empire
+					has_landed_title = e_golden_horde
+					has_landed_title = e_il-khanate
+					has_landed_title = e_chagatai
+					has_landed_title = e_timurids
+				}
+			}
+			NOT = {
+				any_independent_ruler = { has_landed_title = e_il-khanate }
+			}
+		}
+		allow = {
+			prisoner = no
+			culture = mongol
+			independent = yes
+			is_tributary = no
+			OR = {
+				completely_controls = k_persia
+				has_landed_title = k_persia
+				AND = {
+					any_vassal = {
+						has_landed_title = k_persia
+					}
+				}
+			}
+			OR = {
+				completely_controls = k_khorasan
+				has_landed_title = k_khorasan
+				AND = {
+					any_vassal = {
+						has_landed_title = k_khorasan
+					}
+				}
+			}
+			realm_size = 75
+		}
+		effect = {
+			activate_title = { title = e_il-khanate status = yes }
+			prestige = 1000
+			e_il-khanate = {
+				grant_title = PREV
+				make_primary_title = yes
+			}
+			set_character_flag = khan_of_ilkhanate
+			set_global_flag = reunited_ilkhanate
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	golden_horde_formation = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = golden_horde_mongol_empire_formation
+			culture_group = altaic
+			NOT = {
+				OR = {
+					has_landed_title = e_mongol_empire
+					has_landed_title = e_golden_horde
+					has_landed_title = e_il-khanate
+					has_landed_title = e_chagatai
+					has_landed_title = e_timurids
+				}
+			}
+			NOT = {
+				any_independent_ruler = { has_landed_title = e_golden_horde }
+			}
+		}
+		allow = {
+			prisoner = no
+			culture_group = altaic
+			independent = yes
+			is_tributary = no
+			619 = { # Saray
+				owner = {
+					OR = {
+						is_liege_or_above = ROOT
+						character = ROOT
+					}
+				}
+			}
+			realm_size = 75
+		}
+		effect = {
+			activate_title = { title = e_golden_horde status = yes }
+			prestige = 1000
+			e_golden_horde = {
+				grant_title = PREV
+				make_primary_title = yes
+			}
+			set_government_type = nomadic_government
+			set_character_flag = khan_of_golden_horde
+			set_global_flag = reunited_golden_horde
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	chagatai_formation = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = chagatai_mongol_empire_formation
+			culture_group = altaic
+			NOT = {
+				OR = {
+					has_landed_title = e_mongol_empire
+					has_landed_title = e_golden_horde
+					has_landed_title = e_il-khanate
+					has_landed_title = e_chagatai
+					has_landed_title = e_timurids
+				}
+			}
+			NOT = {
+				any_independent_ruler = { has_landed_title = e_chagatai }
+			}
+		}
+		allow = {
+			prisoner = no
+			culture_group = altaic
+			independent = yes
+			is_tributary = no
+			OR = {
+				completely_controls = k_khotan
+				has_landed_title = k_khotan
+				AND = {
+					any_vassal = {
+						has_landed_title = k_khotan
+					}
+				}
+			}
+			OR = {
+				completely_controls = k_zhetysu
+				has_landed_title = k_zhetysu
+				AND = {
+					any_vassal = {
+						has_landed_title = k_zhetysu
+					}
+				}
+			}
+			903 = { # Samarkand
+				owner = {
+					OR = {
+						is_liege_or_above = ROOT
+						character = ROOT
+					}
+				}
+			}
+			realm_size = 75
+		}
+		effect = {
+			activate_title = { title = e_chagatai status = yes }
+			prestige = 1000
+			e_chagatai = {
+				grant_title = PREV
+				make_primary_title = yes
+			}
+			set_government_type = nomadic_government
+			set_character_flag = khan_of_chagatai
+			set_global_flag = reunited_chagatai_khanate
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	
+	
+	ilkhanate_formation_mongol_empire = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = mongol_empire_de_jure
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				any_liege = { has_landed_title = e_il-khanate }
+			}
+			NOT = {
+				has_global_flag = ilkhanate_mongol_empire_formation
+			}
+			NOT = {
+				has_global_flag = persian_empire_restored
+			}
+		}
+		allow = {
+			prisoner = no
+			has_landed_title = e_mongol_empire
+			OR = {
+				completely_controls = k_persia
+				has_landed_title = k_persia
+				AND = {
+					any_vassal = {
+						has_landed_title = k_persia
+					}
+				}
+			}
+			OR = {
+				completely_controls = k_khorasan
+				has_landed_title = k_khorasan
+				AND = {
+					any_vassal = {
+						has_landed_title = k_khorasan
+					}
+				}
+			}
+			realm_size = 50
+		}
+		effect = {
+			activate_title = { title = e_il-khanate status = yes }
+			prestige = 1000
+			e_il-khanate = {
+				grant_title = PREV
+			}
+			set_character_flag = khan_of_independence
+			#hidden_tooltip = {
+			#	any_title = {
+			#		limit = {
+			#			OR = {
+			#				de_jure_liege_or_above = e_persia
+			#				region = region_mongol_phase_2
+			#			}
+			#		}
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_mesopotamia = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_iraq = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_persia = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_daylam = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_khorasan = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_sistan = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#	k_afghanistan = {
+			#		de_jure_liege = e_il-khanate
+			#	}
+			#}
+			custom_tooltip = { text = replace_persia_ilkhanate_tooltip }
+			set_global_flag = ilkhanate_mongol_empire_formation
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	#persian_empire_restored = {
+	#	only_playable = yes
+	#	is_high_prio = yes
+	#	
+	#	potential = {
+	#		OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+	#		NOT = {
+	#			has_landed_title = e_mongol_empire
+	#		}
+	#		OR = {
+	#			tier = duke
+	#			tier = king
+	#			tier = emperor
+	#		}
+	#		OR = {
+	#			culture_group = iranian
+	#			capital_scope = {
+	#				OR = {
+	#					region = world_persia
+	#					region = world_middle_east
+	#					region = world_asia_minor
+	#				}
+	#			}
+	#		}
+	#		NOT = {
+	#			has_global_flag = persian_empire_restored
+	#		}
+	#		NOR = {
+	#			culture = mongol
+	#			has_landed_title = e_il-khanate
+	#		}
+	#		has_global_flag = ilkhanate_mongol_empire_formation
+	#	}
+	#	allow = {
+	#		prisoner = no
+	#		independent = yes
+	#		primary_title = {
+	#			de_jure_liege_or_above = e_il-khanate
+	#		}
+	#		capital_scope = {
+	#			OR = {
+	#				region = world_persia
+	#				region = world_middle_east
+	#				region = world_asia_minor
+	#			}
+	#		}
+	#		OR = {
+	#			NOT = {
+	#				any_independent_ruler = { has_landed_title = e_il-khanate }
+	#			}
+	#			e_il-khanate = {
+	#				holder_scope = {
+	#					relative_realm_size = {
+	#						who = ROOT
+	#						size < 0.75
+	#					}
+	#				}
+	#			}
+	#		}
+	#		realm_size = 75
+	#	}
+	#	effect = {
+	#		prestige = 1000
+	#		if = {
+	#			limit = {
+	#				has_landed_title = e_il-khanate
+	#			}
+	#			e_persia = {
+	#				grant_title = PREV
+	#				make_primary_title = yes
+	#			}
+	#		}
+	#		if = {
+	#			limit = {
+	#				NOT = {
+	#					e_persia = {
+	#						holder_scope = { always = yes }
+	#					}
+	#				}
+	#			}
+	#			any_demesne_title = {
+	#				limit = {
+	#					tier = EMPEROR
+	#					title = e_il-khanate
+	#				}
+	#				set_title_flag = to_be_destroyed
+	#			}
+	#			any_demesne_title = {
+	#				limit = {
+	#					has_title_flag = to_be_destroyed
+	#				}
+	#				destroy_landed_title = THIS
+	#			}
+	#		}
+	#		hidden_tooltip = {
+	#			any_title = {
+	#				limit = {
+	#					de_jure_liege_or_above = e_il-khanate
+	#				}
+	#				de_jure_liege = e_persia
+	#			}
+	#		}
+	#			k_mesopotamia = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_iraq = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_persia = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_daylam = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_khorasan = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_sistan = {
+	#				de_jure_liege = e_persia
+	#			}
+	#			k_afghanistan = {
+	#				de_jure_liege = e_persia
+	#			}
+	#		custom_tooltip = { text = replace_ilkhanate_persia_tooltip }
+	#		set_global_flag = persian_empire_restored
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 10000
+	#	}
+	#}
+	
+	golden_horde_formation_mongol_empire = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = mongol_empire_de_jure
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				any_liege = { has_landed_title = e_golden_horde }
+			}
+			NOT = {
+				has_global_flag = golden_horde_mongol_empire_formation
+			}
+		}
+		allow = {
+			prisoner = no
+			has_landed_title = e_mongol_empire
+			OR = {
+				has_landed_title = c_uzens
+				AND = {
+					any_vassal = {
+						has_landed_title = c_uzens
+					}
+				}
+			}
+			realm_size = 50
+		}
+		effect = {
+			activate_title = { title = e_golden_horde status = yes }
+			prestige = 1000
+			e_golden_horde = {
+				grant_title = PREV
+			}
+			set_character_flag = khan_of_independence
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						de_jure_liege_or_above = e_pontic_steppe
+					}
+					de_jure_liege = e_golden_horde
+				}
+			}
+			k_cuman = {
+				de_jure_liege = e_golden_horde
+			}
+			k_sibir = {
+				de_jure_liege = e_golden_horde
+			}
+			k_turkestan = {
+				de_jure_liege = e_golden_horde
+			}
+			custom_tooltip = { text = replace_steppe_golden_horde_tooltip }
+			set_global_flag = golden_horde_mongol_empire_formation
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	chagatai_formation_mongol_empire = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			has_global_flag = mongol_empire_de_jure
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				any_liege = { has_landed_title = e_chagatai }
+			}
+			NOT = {
+				has_global_flag = chagatai_mongol_empire_formation
+			}
+		}
+		allow = {
+			prisoner = no
+			has_landed_title = e_mongol_empire
+			OR = {
+				completely_controls = k_khotan
+				has_landed_title = k_khotan
+				completely_controls = d_karashar
+				AND = {
+					any_vassal = {
+						has_landed_title = k_khotan
+					}
+				}
+			}
+			#OR = {
+			#	completely_controls = k_zhetysu
+			#	has_landed_title = k_zhetysu
+			#	AND = {
+			#		any_vassal = {
+			#			has_landed_title = k_zhetysu
+			#		}
+			#	}
+			#}
+			realm_size = 50
+		}
+		effect = {
+			activate_title = { title = e_chagatai status = yes }
+			prestige = 1000
+			e_chagatai = {
+				grant_title = PREV
+			}
+			set_character_flag = khan_of_independence
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						de_jure_liege_or_above = e_turkestan
+					}
+					de_jure_liege = e_chagatai
+				}
+			}
+			custom_tooltip = { text = replace_central_asia_chagatai_tooltip }
+			set_global_flag = chagatai_mongol_empire_formation
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	mongol_empire_de_jure_formation = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				any_liege = { has_landed_title = e_chagatai }
+			}
+			NOT = {
+				has_global_flag = mongol_empire_de_jure
+			}
+		}
+		allow = {
+			has_landed_title = e_mongol_empire
+			realm_size = 50
+		}
+		effect = {
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						de_jure_liege_or_above = e_tartaria
+					}
+					de_jure_liege = e_mongol_empire
+				}
+			}
+			custom_tooltip = { text = replace_tartaria_mongol_empire_tooltip }
+			set_global_flag = mongol_empire_de_jure
+			if = {
+				limit = {
+					NOT = {
+						e_mongol_empire = {
+							holder_scope = { always = yes }
+						}
+						e_il-khanate = {
+							holder_scope = { always = yes }
+						}
+						e_golden_horde = {
+							holder_scope = { always = yes }
+						}
+						e_chagatai = {
+							holder_scope = { always = yes }
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+					}
+					set_title_flag = to_be_destroyed
+				}
+				any_demesne_title = {
+					limit = {
+						has_title_flag = to_be_destroyed
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	divide_mongol_empire = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			culture = mongol
+			NOT = {
+				has_global_flag = division_of_the_mongol_empire
+			}
+			NOT = {
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+			NOT = {
+				has_character_flag = divided_the_mongol_empire
+			}
+		}
+		allow = {
+			has_landed_title = e_mongol_empire
+			has_landed_title = e_golden_horde
+			has_landed_title = e_il-khanate
+			has_landed_title = e_chagatai
+			any_dynasty_member = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+			}
+		}
+		effect = {
+			custom_tooltip = { text = division_mongol_empire_tooltip }
+			any_dynasty_member = {
+				limit = {
+					is_female = no
+					is_landed = no
+					is_adult = yes
+				}
+				set_character_flag = potential_division_inheritance
+			}
+			set_character_flag = divided_the_mongol_empire
+			set_global_flag = division_of_the_mongol_empire
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+	
+	divide_mongol_empire_no_gh = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			year = 1260
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			has_landed_title = e_il-khanate
+			has_landed_title = e_chagatai
+			NOT = {
+				has_landed_title = e_golden_horde
+			}
+			NOT = {
+				has_global_flag = golden_horde_mongol_empire_formation
+			}
+			NOT = {
+				has_global_flag = division_of_the_mongol_empire
+			}
+			NOT = {
+				has_global_flag = division_of_the_mongol_empire_no_gh
+			}
+			NOT = {
+				has_character_flag = divided_the_mongol_empire
+			}
+		}
+		allow = {
+			has_landed_title = e_mongol_empire
+			has_landed_title = e_il-khanate
+			has_landed_title = e_chagatai
+			any_dynasty_member = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+			}
+		}
+		effect = {
+			custom_tooltip = { text = division_mongol_empire_tooltip }
+			any_dynasty_member = {
+				limit = {
+					is_female = no
+					is_landed = no
+					is_adult = yes
+				}
+				set_character_flag = potential_division_inheritance
+			}
+			set_character_flag = divided_the_mongol_empire
+			set_global_flag = division_of_the_mongol_empire_no_gh
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1000
+				year = 1280
+			}
+		}
+	}
+	
+	reinforce_genghis_khan = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			OR = { has_global_flag = mongol_empire_arrival has_global_flag = mongol_horde_arrival }
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				year = 1260
+			}
+			OR = {
+				AND = {
+					year = 1210
+					NOT = {
+						year = 1230
+					}
+					NOT = {
+						has_global_flag = first_reinforcement_wave_mongol_empire
+					}
+				}
+				AND = {
+					year = 1230
+					NOT = {
+						year = 1250
+					}
+					NOT = {
+						has_global_flag = second_reinforcement_wave_mongol_empire
+					}
+				}
+				AND = {
+					year = 1250
+					NOT = {
+						year = 1260
+					}
+					NOT = {
+						has_global_flag = third_reinforcement_wave_mongol_empire
+					}
+				}
+			}
+		}
+		allow = {
+			culture = mongol
+			has_landed_title = e_mongol_empire
+			NOT = {
+				year = 1260
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					year = 1210
+					NOT = {
+						year = 1230
+					}
+				}
+				set_global_flag = first_reinforcement_wave_mongol_empire
+			}
+			if = {
+				limit = {
+					year = 1230
+					NOT = {
+						year = 1250
+					}
+				}
+				set_global_flag = second_reinforcement_wave_mongol_empire
+			}
+			if = {
+				limit = {
+					year = 1250
+					NOT = {
+						year = 1260
+					}
+				}
+				set_global_flag = third_reinforcement_wave_mongol_empire
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						troops =
+						{
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						troops =
+						{
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						troops =
+						{
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						troops =
+						{
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10000
+		}
+	}
+}

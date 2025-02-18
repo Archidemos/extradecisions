@@ -1,0 +1,190 @@
+namespace = FCR
+
+#No this isn't my old Fourth Crusade events... (RIP)
+#Just events that help the Byzantines reclaim the Empire
+
+##################################
+# The Fourth Crusade Cleanup Events
+##################################
+
+# Byzantines always have claim on Constantinople
+character_event = {
+	id = FCR.98530
+	desc = EVTDESCFCR.98530
+	
+	picture = GFX_evt_hagia_sofia
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		has_global_flag = fourth_crusade_launched
+		religion = orthodox
+		culture = greek
+		independent = yes
+		OR = {
+			tier = emperor
+			tier = king
+			tier = duke
+		}
+		capital_scope = {
+			de_jure_liege_or_above = e_byzantium
+		}
+		496 = { # Constantinople
+			owner = {
+				OR = {
+					has_landed_title = e_latin_empire
+					NOT = {
+						religion = orthodox
+					}
+				}
+			}
+		}
+		NOT = {
+			has_strong_claim = c_byzantion
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = EVTOPTAFCR.98530
+		add_claim = c_byzantion
+	}
+}
+
+# Latin Empire destroyed if Constantinople is lost
+character_event = {
+	id = FCR.98531
+	desc = EVTDESCFCR.98531
+	
+	picture = GFX_evt_hagia_sofia
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		religion = catholic
+		has_landed_title = e_latin_empire
+		496 = { # Constantinople
+			owner = {
+				NOT = { same_realm = ROOT }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = EVTOPTAFCR.98531
+		prestige = -2000
+		e_latin_empire = {
+			destroy_landed_title = THIS
+		}
+	}
+}
+
+# Constantinople always remains Greek Orthodox if Latin Empire Catholics control it after Fourth Crusade
+character_event = {
+	id = FCR.98555
+	desc = EVTDESCFCR.98555
+	
+	picture = GFX_evt_hagia_sofia
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		has_global_flag = fourth_crusade_launched
+		has_landed_title = c_byzantion
+		religion = catholic
+		496 = { # Constantinople
+			owner = {
+				same_realm = ROOT
+			}
+			OR = {
+				NOT = {
+					religion = orthodox
+				}
+				NOT = {
+					culture = greek
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = EVTOPTAFCR.98555
+		if = {
+			limit = {
+				496 = { # Constantinople
+					NOT = {
+						religion = orthodox
+					}
+				}
+			}
+			496 = { # Constantinople
+				religion = orthodox
+			}
+		}
+		if = {
+			limit = {
+				496 = { # Constantinople
+					NOT = {
+						culture = greek
+					}
+				}
+			}
+			496 = { # Constantinople
+				culture = greek
+			}
+		}
+	}
+}
+
+# Sack of Constantinople News Event
+narrative_event = {
+	id = FCR.98509
+	title = EVTNAMEFCR.98509
+	desc = EVTDESCFCR.98509
+
+	picture = GFX_evt_siege
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = EVTOPTAFCR.98509 # Catholics
+		trigger = {
+			religion = catholic
+		}
+	}
+	option = {
+		name = EVTOPTBFCR.98509 # Orthodox
+		trigger = {
+			religion = orthodox
+		}
+	}
+	option = {
+		name = EVTOPTCFCR.98509 # All Christians who aren't Catholic or Orthodox
+		trigger = {
+			religion_group = christian
+			NOR = {
+				religion_group = catholic
+				religion_group = orthodox
+			}
+		}
+	}
+	option = {
+		name = EVTOPTDFCR.98509 # All Non-Christians
+		trigger = {
+			NOT = {
+				religion_group = christian
+			}
+		}
+	}
+}

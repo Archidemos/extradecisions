@@ -1,7 +1,7 @@
 # County Title
 title = c_mures
 # Settlements
-max_settlements = 5
+max_settlements = 4
 b_napsugar = tribal
 # Misc
 culture = romanian
@@ -10,7 +10,13 @@ religion = slavic_pagan
 # History
 ################################################################################
 800.1.1 = { b_napsugar = castle b_csondvaros = city b_feketevar = temple } 
-856.1.1 = { culture = romanian religion = orthodox b_napsugar = tribal } 
+856.1.1 = { 
+	culture = romanian 
+	religion = orthodox 
+	b_napsugar = tribal
+	remove_settlement = b_csondvaros
+	remove_settlement = b_feketevar
+} 
 930.1.1 = { culture = hungarian religion = tengri_pagan } 
 950.1.1 = { 
     religion = catholic

@@ -25,7 +25,8 @@ illkhanate_special_cb = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = ilkhanate_himself
+			has_character_flag = khan_of_ilkhanate
+			has_landed_title = e_il-khanate
 		}
 	}
 	
@@ -317,13 +318,28 @@ illkhanate_special_cb = {
 			ROOT = {
 				primary_title = { title = e_il-khanate }
 			}
-			empire = {
-				OR = {
-					title = e_byzantium
-					title = e_persia
-					title = e_bulgaria
+			OR = {
+				empire = {
+					OR = {
+						title = e_byzantium
+						title = e_persia
+						title = e_arabia
+					}
 				}
+				title = k_georgia
+				title = k_armenia
+				title = k_sistan
+				title = k_persia
+				title = k_khorasan
+				title = k_kafarestan
+				title = k_mavarannahr
+				title = k_daylam
+				title = k_mesopotamia
+				title = k_aljazira
+				title = k_caucasian_albania
+				title = k_antioch
 			}
+			
 			NOT = { title = k_afghanistan }
 			NOT = { title = k_baluchistan }
 			NOT = { title = k_khorasan }
@@ -412,7 +428,8 @@ golden_horde_special_cb = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = golden_horde_himself
+			has_character_flag = khan_of_golden_horde
+			has_landed_title = e_golden_horde
 		}
 	}
 	
@@ -673,12 +690,46 @@ golden_horde_special_cb = {
 			ROOT = {
 				primary_title = { title = e_golden_horde }
 			}
-			empire = {
-				OR = {
-					title = e_pontic_steppe
-					title = e_russia
-					title = e_wendish_empire
+			OR = {
+				empire = {
+					OR = {
+						title = e_khazaria
+						title = e_russia
+						title = e_wendish_empire
+					}
 				}
+				title = k_lithuania
+				title = k_terra
+				title = k_bjarmia
+				title = k_perm
+				title = k_volga_bulgaria
+				title = k_taurica
+				title = k_khazaria
+				title = k_alania
+				title = k_vladimir
+				title = k_ruthenia
+				title = k_galicia
+				title = k_novgorod
+				title = k_poland
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				primary_title = { title = e_golden_horde }
+			}
+			OR = {
+				empire = {
+					OR = {
+						title = e_hre
+						title = e_carpathia
+						title = e_byzantium
+						title = e_rajastan
+					}
+				}
+				title = k_pomerania
+				title = k_bohemia
+				title = k_finland
 			}
 		}
 		modifier = {
@@ -740,6 +791,7 @@ timurids_special_cb = {
 	}
 
 	can_use = {
+		NOT = { has_global_flag = timur_defeated }
 		ROOT = {
 			has_character_flag = timur_himself
 		}
@@ -990,7 +1042,10 @@ timurids_special_cb = {
 				primary_title = { title = e_timurids }
 			}
 			empire = {
-				title = e_persia
+				OR = {
+					title = e_arabia
+					title = e_persia
+				}
 			}
 		}
 		modifier = {
@@ -1073,112 +1128,44 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 			limit = { has_character_flag = is_timur_rukh }
 
 			add_claim = k_khorasan
-			add_claim = k_khiva
+			add_claim = k_daylam
+			add_claim = k_mavarannahr
+			add_claim = k_khwarezmia
 			add_claim = k_baluchistan
 			add_claim = e_timurids
 			
 			wealth = 1000
-			prestige = 2000
-			piety = 2000
+			prestige = 1000
+			piety = 500
 			
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
+			k_persia = { grant_title = PREV copy_title_laws = PREV }
+			
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = k_persia
+							de_jure_liege_or_above = k_daylam
+						}
+						OR = {
+							owner = { is_liege_or_above = e_timurids }
+							owner = { has_landed_title = e_timurids }
+						}
+					}
+					grant_title = PREV
 				}
 			}
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 646 # Tuul
+					attrition = 0
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
 				}
-			}
-
-
-			k_persia = {
-				grant_title = PREV
-				copy_title_laws = PREV
-			}
-			
-			vassalize_or_take_under_title = {
-				title = k_persia
-				enemy = FROM
-				anti_nomad = yes # Vassalize non-nomadic rulers
-				type = invasion
-			}
-			c_lut = {
-				grant_title = PREV
-			}
-			c_sistan = {
-				grant_title = PREV
-			}
-			c_yazd = {
-				grant_title = PREV
-			}
-			c_kerman = {
-				grant_title = PREV
-			}
-			c_sirjan = {
-				grant_title = PREV
-			}
-			c_hormuz = {
-				grant_title = PREV
-			}
-			c_ladistan = {
-				grant_title = PREV
-			}
-			c_fars = {
-				grant_title = PREV
-			}
-			c_shiraz = {
-				grant_title = PREV
-			}
-			c_esfahan = {
-				grant_title = PREV
-			}
-			c_avhaz = {
-				grant_title = PREV
-			}
-			c_khozistan = {
-				grant_title = PREV
-			}
-			c_tigris = {
-				grant_title = PREV
-			}
-			c_luristan = {
-				grant_title = PREV
-			}
-			c_hamadan = {
-				grant_title = PREV
-			}
-			c_qom = {
-				grant_title = PREV
-			}
-			c_rayy = {
-				grant_title = PREV
-			}
-			c_kermanshah = {
-				grant_title = PREV
-			}
-			c_istakhr = {
-				grant_title = PREV
-			}
-			c_kharraqan = {
-				grant_title = PREV
-			}
-			c_shahrazur = {
-				grant_title = PREV
-			}
-			c_bamiyan = {
-				grant_title = PREV
 			}
 			character_event = { id = HFP.41090 days = 1 }
 		}
@@ -1186,173 +1173,133 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 			limit = { has_character_flag = is_timur_umar }
 			
 			add_claim = k_khorasan
-			add_claim = k_khiva
+			add_claim = k_daylam
+			add_claim = k_mavarannahr
+			add_claim = k_khwarezmia
 			add_claim = k_persia
 			add_claim = e_timurids
 
 			wealth = 1000
-			prestige = 2000
-			piety = 2000
-
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
+			prestige = 1000
+			piety = 500
+			
+			k_sistan = { grant_title = PREV copy_title_laws = PREV }
+			
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						de_jure_liege_or_above = k_sistan
+						OR = {
+							owner = { is_liege_or_above = e_timurids }
+							owner = { has_landed_title = e_timurids }
+						}
+					}
+					grant_title = PREV
 				}
 			}
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 906 # Tuul
+					attrition = 0
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
 				}
-			}
-
-			
-			k_baluchistan = {
-				grant_title = PREV
-				copy_title_laws = PREV
-			}
-			
-			vassalize_or_take_under_title = {
-				title = k_baluchistan
-				enemy = FROM
-				anti_nomad = yes # Vassalize non-nomadic rulers
-				type = invasion
-			}
-			c_farrah = {
-				grant_title = PREV
-			}
-			c_zahedan = {
-				grant_title = PREV
-			}
-			c_saravan = {
-				grant_title = PREV
-			}
-			c_tis = {
-				grant_title = PREV
-			}
-			c_chagai = {
-				grant_title = PREV
-			}
-			c_makran = {
-				grant_title = PREV
-			}
-			c_bost = {
-				grant_title = PREV
-			}
-			c_zaranj = {
-				grant_title = PREV
-			}
-			c_armail = {
-				grant_title = PREV
 			}
 			character_event = { id = HFP.41090 days = 1 }
 		}
 		any_character = {
 			limit = { has_character_flag = is_timur_jahan }
 			
-			add_claim = k_baluchistan
-			add_claim = k_khiva
+			add_claim = k_sistan
+			add_claim = k_daylam
+			add_claim = k_mavarannahr
+			add_claim = k_khwarezmia
 			add_claim = k_persia
 			add_claim = e_timurids
 
 			wealth = 1000
-			prestige = 2000
-			piety = 2000
+			prestige = 1000
+			piety = 500
 
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
-			}
-			spawn_unit = {
-				province = 906 # Tuul
-				attrition = 0
-				troops =
-				{
-					light_cavalry = { 2750 2750 }
-					horse_archers = { 2250 2250 }
-					knights = { 500 500 }
-				}
-			}
-
-			k_khorasan = {
-				grant_title = PREV
-				copy_title_laws = PREV
-			}
+			k_khorasan = { grant_title = PREV copy_title_laws = PREV }
 			
-			vassalize_or_take_under_title = {
-				title = k_khorasan
-				enemy = FROM
-				anti_nomad = yes # Vassalize non-nomadic rulers
-				type = invasion
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						de_jure_liege_or_above = k_khorasan
+						OR = {
+							owner = { is_liege_or_above = e_timurids }
+							owner = { has_landed_title = e_timurids }
+						}
+					}
+					grant_title = PREV
+				}
 			}
-			c_konjikala = {
-				grant_title = PREV
-			}
-			c_merv = {
-				grant_title = PREV
-			}
-			c_tus = {
-				grant_title = PREV
-			}
-			c_nishapur = {
-				grant_title = PREV
-			}
-			c_qohistan = {
-				grant_title = PREV
-			}
-			c_balkh = {
-				grant_title = PREV
-			}
-			c_herat = {
-				grant_title = PREV
-			}
-			c_mandesh = {
-				grant_title = PREV
-			}
-			c_maymana = {
-				grant_title = PREV
-			}
-			c_badghis = {
-				grant_title = PREV
-			}
-			c_kanj_rustaq = {
-				grant_title = PREV
-			}
-			c_guzgan = {
-				grant_title = PREV
-			}
-			c_amol = {
-				grant_title = PREV
-			}
-			c_sarakhs = {
-				grant_title = PREV
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 906 # Tuul
+					attrition = 0
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
 			}
 			character_event = { id = HFP.41090 days = 1 }
 		}
 		
 		ROOT = {
+			set_global_flag = timur_defeated
+			disband_event_forces = yes
 			vassalize_or_take_under_title = {
-				title = k_iraq
+				title = k_mesopotamia
 				enemy = FROM
 				same_religion = yes # Only vassalize rulers of my religion
 				is_religious = yes
 				type = invasion
 			}
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = k_mesopotamia
+							de_jure_liege_or_above = k_armenia
+							region = world_middle_east_mesopotamia
+							region = world_steppe_west
+							region = world_europe
+						}
+						OR = {
+							owner = { is_liege_or_above = e_timurids }
+							owner = { has_landed_title = e_timurids }
+						}
+					}
+					grant_title = PREV
+				}
+			}
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 906 # Tuul
+					attrition = 0
+					troops =
+					{
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
+			}
+			add_claim = k_sistan
+			add_claim = k_daylam
+			add_claim = k_mavarannahr
+			add_claim = k_khwarezmia
+			add_claim = k_persia
 			if = {
 				limit = {
 					OR = {
@@ -1377,62 +1324,22 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 				}
 				unsafe_destroy_landed_title = THIS
 			}
-			k_khiva = {
-				grant_title = PREV
-				copy_title_laws = PREV
-			}
-
-			c_khiva = {
-				grant_title = PREV
-			}
-			c_bukhara = {
-				grant_title = PREV
-			}
-			c_dashhowuz = {
-				grant_title = PREV
-			}
-			c_samarkand = {
-				grant_title = PREV
-			}
-			c_oshrusana = {
-				grant_title = PREV
-			}
-			c_khuttal = {
-				grant_title = PREV
-			}
-			c_urgench = {
-				grant_title = PREV
-			}
-			c_fergana = {
-				grant_title = PREV
-			}
-			c_vakhan = {
-				grant_title = PREV
-			}
-			c_chaghaniyan = {
-				grant_title = PREV
-			}
-			c_nakhshab = {
-				grant_title = PREV
-			}
-			c_khojand = {
-				grant_title = PREV
-			}
-			c_badakhshan = {
-				grant_title = PREV
-			}
-			c_khaylam = {
-				grant_title = PREV
-			}
-			c_gurganj = {
-				grant_title = PREV
-			}
-
-			vassalize_or_take_under_title = {
-				title = k_khiva
-				enemy = FROM
-				anti_nomad = yes # Vassalize non-nomadic rulers
-				type = invasion
+			
+			k_daylam = { grant_title = PREV copy_title_laws = PREV }
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						OR = {
+							de_jure_liege_or_above = k_daylam
+							de_jure_liege_or_above = k_caucasian_albania
+						}
+						OR = {
+							owner = { is_liege_or_above = e_timurids }
+							owner = { has_landed_title = e_timurids }
+						}
+					}
+					grant_title = PREV
+				}
 			}
 			
 			add_claim = k_baluchistan
@@ -1442,10 +1349,9 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 			religion = sunni
 			
 			spawn_unit = {
-				province = 906 # Tuul
+				province = 903 # Tuul
 				attrition = 0
-				troops =
-				{
+				troops = {
 					light_cavalry = { 2750 2750 }
 					horse_archers = { 2250 2250 }
 					knights = { 500 500 }
@@ -1453,11 +1359,12 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 			}
 			
 			character_event = { id = HFP.41090 days = 1 }
+			narrative_event = { id = TIMUEX.101 days = 5 }
 			disband_event_forces = yes
 			set_government_type = feudal_government
-			wealth = -5000
+			clear_wealth = yes
 			prestige = -5000
-			piety = -2500
+			piety = -10000
 		}
 	}
 
@@ -1483,6 +1390,7 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 		ROOT = {
 			show_scope_change = no
 			prestige = -2000
+			disband_event_forces = yes
 			transfer_scaled_wealth = {
 				to = FROM
 				value = 4.0
@@ -1521,19 +1429,21 @@ mongol_empire_special_cb = {
 	can_ask_to_join_war = yes
 	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 	
+	infamy_modifier = 0
+	
 	allowed_to_target_tributaries = yes
 	
 	sort_priority = 100000
 
-	can_use_gui = {
-		ROOT = {
-			prestige = 500
-		}
-	}
+	#can_use_gui = {
+	#	ROOT = {
+	#		prestige = 500
+	#	}
+	#}
 	
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		ROOT = { prestige = -500 }
+		#ROOT = { prestige = -500 }
 		if = {
 			limit = { defender = { is_offmap_governor = offmap_china } }
 			attacker = {  
@@ -1816,6 +1726,10 @@ mongol_empire_special_cb = {
 		}
 	}
 
+	on_attacker_leader_death = {
+		end_war = invalid
+	}
+
 	attacker_ai_victory_worth = {
 		factor = 100
 	}
@@ -1829,7 +1743,7 @@ mongol_empire_special_cb = {
 	}
 	
 	defender_ai_defeat_worth = {
-		factor = 150
+		factor = 25
 	}
 	
 	ai_will_do = {
@@ -1839,13 +1753,41 @@ mongol_empire_special_cb = {
 			ROOT = {
 				primary_title = { title = e_mongol_empire }
 			}
-			empire = {
-				OR = {
-					title = e_turkestan
-					title = e_tartaria
-					title = e_idel_ural
+			OR = {
+				empire = {
+					OR = {
+						title = e_khazaria
+						title = e_persia
+						title = e_russia
+						title = e_arabia
+						title = e_byzantium
+					}
 				}
-			}
+				title = k_turkestan_west
+				title = k_khwarezmia
+				title = k_khotan
+				title = k_georgia
+				title = k_armenia
+				title = k_mesopotamia
+				title = k_persia
+				title = k_khorasan
+				title = k_sistan
+				title = k_kafarestan
+				title = k_khwarezmia
+				title = k_mavarannahr
+				title = k_turkestan_east
+				title = k_khotan
+				title = k_daylam
+				title = k_volga_bulgaria
+				title = k_khazaria
+				title = k_alania
+				title = k_taurica
+				title = k_ruthenia
+				title = k_vladimir
+				title = k_novgorod
+				title = k_perm
+				title = k_antioch
+				title = k_caucasian_albania
 		}
 		modifier = {
 			factor = 0
@@ -1873,14 +1815,16 @@ mongol_empire_special_cb = {
 				primary_title = { title = e_mongol_empire }
 			}
 			OR = {
-				empire = {
-					OR = {
-						title = e_tibet
-						title = e_deccan
-						title = e_bengal
-						title = e_rajastan
-					}
-				}
+				#empire = {
+				#	OR = {
+				#		title = e_tibet
+				#		title = e_deccan
+				#		title = e_bengal
+				#		title = e_rajastan
+				#	}
+				#}
+				title = k_kashmir
+				title = k_guge
 			}
 		}
 		modifier = {

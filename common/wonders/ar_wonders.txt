@@ -415,7 +415,6 @@ wonder_lighthouse_alexandria = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			local_tax_modifier = 0.05
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -433,8 +432,8 @@ wonder_lighthouse_alexandria = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			local_tax_modifier = 0.05
-			trade_route_value = 10
+			local_tax_modifier = 0.025
+			trade_route_value = 2.5
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
@@ -452,9 +451,8 @@ wonder_lighthouse_alexandria = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			local_tax_modifier = 0.1
-			trade_route_value = 0.1
-			trade_route_value = 10
+			local_tax_modifier = 0.025
+			trade_route_value = 2.5
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.3
@@ -1053,6 +1051,7 @@ wonder_cathedral_hagia_sophia = {
 		owner_modifier = {
 			monthly_character_prestige = 0.1
 			monthly_character_piety = 0.2
+			learning = 1
 		}
 	}
 	stage = {
@@ -1067,10 +1066,14 @@ wonder_cathedral_hagia_sophia = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			trade_route_wealth = 5
+			trade_route_value = 5
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.2
 			monthly_character_piety = 0.2
+			learning = 1
+			stewardship = 1
 		}
 	}
 }

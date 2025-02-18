@@ -1,0 +1,228 @@
+namespace = KHZ
+
+##################################
+# Khazar conversion to Judaism
+##################################
+
+# Jewish preacher arrives at court
+character_event = {
+	id = KHZ.98850
+	desc = EVTDESCKHZ.98850
+	
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_war
+	
+	only_playable = yes
+	culture = khazar
+	
+	trigger = {
+		AND = {
+			year = 820
+			NOT = { year = 850 }
+		}
+		higher_tier_than = duke
+		government = nomadic_government
+		OR = {
+			AND = {
+				independent = yes
+				NOT = {
+					has_global_flag = khazar_jewish_question
+				}
+			}
+			AND = {
+				independent = no
+				top_liege = {
+					has_character_flag = khazar_ruler_jewish_question
+				}
+			}
+		}
+		NOT = {
+			has_character_flag = khazar_ruler_jewish_question
+		}
+		religion = tengri_pagan
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		set_global_flag = khazar_jewish_question
+		set_character_flag = khazar_ruler_jewish_question
+		create_random_priest = {
+			random_traits = yes
+			dynasty = none
+			culture = ashkenazi
+			religion = jewish
+			age = 51
+			female = no
+			attributes = {
+				diplomacy = 7
+				learning = 12
+			}
+		}
+		new_character = {
+			set_character_flag = khazar_jewish_preacher
+			save_event_target_as = khazar_jewish_preacher
+		}
+	}
+	
+	option = { # Accept Preacher
+		name = EVTOPTAKHZ.98850
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.1
+				religion = tengri_pagan
+				trait = zealous
+			}
+			modifier = {
+				factor = 10
+				trait = sympathy_judaism
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					any_spouse = {
+						religion = FROM
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_consort = {
+						religion = FROM
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_lover = {
+						religion = FROM
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_child = {
+						religion = FROM
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+				}
+			}
+		}
+		character_event = { id = KHZ.98851 days = 1 }
+	}
+	
+	option = { # Imprison Preacher
+		name = EVTOPTBKHZ.98850
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 10
+				religion = tengri_pagan
+				trait = zealous
+			}
+		}
+		set_global_flag = khazars_reject_judaism
+		set_character_flag = reject_judaism
+		event_target:khazar_jewish_preacher = {
+			imprison = THIS
+		}
+	}
+}
+
+# Jewish preacher granted audience by the Khan
+character_event = {
+	id = KHZ.98851
+	desc = EVTDESCKHZ.98851
+	
+	picture = GFX_evt_tengri_throneroom_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { # Convert to Judaism
+		name = EVTOPTAKHZ.98851
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.1
+				religion = tengri_pagan
+				trait = zealous
+			}
+			modifier = {
+				factor = 10
+				trait = sympathy_judaism
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					any_spouse = {
+						religion = jewish
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_consort = {
+						religion = jewish
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_lover = {
+						religion = jewish
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+					any_child = {
+						religion = jewish
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+				}
+			}
+		}
+		set_global_flag = khazars_convert_judaism
+		set_character_flag = convert_to_judaism
+		
+		religion = jewish
+		prestige = -500
+		piety = 250
+		
+		if = {
+			limit = { ai = yes }
+			capital_scope = { religion = jewish }
+		}
+		
+		any_courtier = {
+			limit = { is_close_relative = ROOT }
+			religion = jewish
+		}
+		any_spouse = {
+			limit = { is_consort = no }
+			religion = jewish
+		}
+	}
+	
+	option = { # Imprison Preacher
+		name = EVTOPTBKHZ.98851
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 10
+				religion = tengri_pagan
+				trait = zealous
+			}
+		}
+		set_global_flag = khazars_reject_judaism
+		set_character_flag = reject_judaism
+		event_target:khazar_jewish_preacher = {
+			imprison = THIS
+		}
+	}
+}

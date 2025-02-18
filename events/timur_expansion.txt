@@ -1,0 +1,498 @@
+namespace = TIMUEX
+
+character_event = {
+	id = TIMUEX.1
+
+	hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		log = "TIMUEX.1 Triggered"
+		FROM = {
+			#ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_timurids
+			has_character_flag = timur_himself
+			NOT = { completely_controls_region = world_persia }
+			#NOT = { has_global_flag = world_persia_conquered_tim }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = TIMUEX.2 } }
+		FROM = { character_event = { id = TIMUEX.2 } }
+		log = "TIMUEX.1 Fired"
+	}
+}
+
+character_event = { #Timur being guided to conquer Persia
+	id = TIMUEX.2
+	title = "Timurid Expansion"
+	desc = "Onwards to our next target in Persia"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		log = "TIMUEX.2 Fired"
+		random_province = {
+			log = "TIMUEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_persia
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = timurids_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = TIMUEX.3
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			#ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_timurids
+			has_character_flag = timur_himself
+			NOT = { completely_controls_region = world_middle_east_mesopotamia }
+			#NOT = { has_global_flag = world_middle_east_conquered_tim }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = TIMUEX.4 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer Mesopotamia
+	id = TIMUEX.4
+	desc = "Onwards to our next target in Mesopotamia"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			log = "TIMUEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_middle_east_mesopotamia
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = timurids_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = TIMUEX.5
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			#ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_timurids
+			has_character_flag = timur_himself
+			NOT = { completely_controls_region = world_asia_minor }
+			#NOT = { has_global_flag = world_middle_east_jerusalem_conquered_tim }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = TIMUEX.6 } }
+	}
+}
+
+character_event = { #Timur being guided to conquer Asia Minor
+	id = TIMUEX.6
+	desc = "Onwards to our next target in Asia Minor"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		random_province = {
+			log = "TIMUEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_asia_minor
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = timurids_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = TIMUEX.8
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			#ai = yes
+			has_landed_title = e_timurids
+			#has_character_flag = timur_himself
+			completely_controls_region = world_persia
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_persia_conquered_tim
+	}
+}
+
+character_event = {
+	id = TIMUEX.9
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			#ai = yes
+			has_landed_title = e_timurids
+			#has_character_flag = timur_himself
+			completely_controls_region = world_middle_east_mesopotamia
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_middle_east_mesopotamia_conquered_tim
+	}
+}
+
+character_event = {
+	id = TIMUEX.10
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			#ai = yes
+			has_landed_title = e_timurids
+			#has_character_flag = timur_himself
+			completely_controls_region = world_asia_minor
+		}
+	}
+	
+	immediate = {
+		set_global_flag = world_asia_minor_conquered_tim
+	}
+}
+
+character_event = {
+	id = TIMUEX.99
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_timurids
+			ai = yes
+			NOT = { has_global_flag = timur_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = TIMUEX.100 } }
+		set_global_flag = timur_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to Timur in Singleplayer
+	id = TIMUEX.100
+	title = "Timur's Legacy"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of Timur the Lame.."
+    is_triggered_only = yes
+	
+	portrait = e_timurids
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = timur_playable }
+	}
+
+	immediate = { e_timurids = { holder_scope = { save_event_target_as = play_as_timur } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_timurids = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_timur
+		set_global_flag = timur_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = timur_playable
+	}
+}
+
+narrative_event = {
+	id = TIMUEX.101
+	title = "Timur's defeat"
+	desc = "After the disastrous defeat we have endured, the Timur Empire got shattered and the Qara Qoyunlu have settled in Mesopotamia.... Perhaps there is still hope, maybe one of my sons will rekate my Empire, but who.."
+	picture = GFX_evt_burning_castle_hf
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = no
+	}
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_daylam
+			}
+			save_event_target_as = play_daylam_timur
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_khorasan
+			}
+			save_event_target_as = play_khorasan_timur
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_sistan
+			}
+			save_event_target_as = play_sistan_timur
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_persia
+			}
+			save_event_target_as = play_persia_timur
+		}
+	}
+	
+	option = {	# Stay as Timur of Daylam
+		name = "No.. The Empire dies with me.."
+		hidden_tooltip = {
+			any_war = {
+				limit = {
+					attacker = { character = ROOT }
+				}
+				end_war = invalid
+			}
+		}
+		set_global_flag = world_middle_east_mesopotamia_conquered_tim
+		set_global_flag = world_asia_minor_conquered_tim
+		set_global_flag = world_persia_conquered_tim
+	}
+	option = {	# Switch to Jahan of Khorasan
+		name = "I put my faith on Jahan of Khorasan.."
+		hidden_tooltip = {
+			any_war = {
+				limit = {
+					attacker = { character = ROOT }
+				}
+				end_war = invalid
+			}
+		}
+		set_global_flag = world_middle_east_mesopotamia_conquered_tim
+		set_global_flag = world_asia_minor_conquered_tim
+		set_global_flag = world_persia_conquered_tim
+    	custom_tooltip = {
+    		text = "You will play as Sultan Jahan of Khorasan"
+    		if = {
+    			limit = {
+    				event_target:play_khorasan_timur = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:play_khorasan_timur
+			}
+    	}
+	}
+	option = {	# Switch to Umar of Sistan
+		name = "I put my faith on Umar of Sistan.."
+		hidden_tooltip = {
+			any_war = {
+				limit = {
+					attacker = { character = ROOT }
+				}
+				end_war = invalid
+			}
+		}
+		set_global_flag = world_middle_east_mesopotamia_conquered_tim
+		set_global_flag = world_asia_minor_conquered_tim
+		set_global_flag = world_persia_conquered_tim
+		custom_tooltip = {
+    		text = "You will play as Sultan Umar of Sistan"
+    		if = {
+    			limit = {
+    				event_target:play_sistan_timur = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:play_sistan_timur
+			}
+    	}
+	}
+	option = {	# Switch to Rukh of Persia
+		name = "I put my faith on Rukh of Persia.."	
+		hidden_tooltip = {
+			any_war = {
+				limit = {
+					attacker = { character = ROOT }
+				}
+				end_war = invalid
+			}
+		}
+		set_global_flag = world_middle_east_mesopotamia_conquered_tim
+		set_global_flag = world_asia_minor_conquered_tim
+		set_global_flag = world_persia_conquered_tim
+		custom_tooltip = {
+    		text = "You will play as Sultan Rukh of Persia"
+    		if = {
+    			limit = {
+    				event_target:play_persia_timur = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:play_persia_timur
+			}
+    	}
+	}
+}
+
+narrative_event = { #Event for everyone about the formation
+	id = TIMUEX.200
+	title = "Timur's Empire Reborn"
+	desc = "After the dissolution of the Timurid Empire caused by their rivals, the Qara Qoyunlu. Chaos erupted in Persia to assume legitimacy and control over the Timurid Empire, this feud is caused between the sons of Timur that have recieved parts of the Empire. However, news goes arround that one of the Sons have suceeded to reunite lost borders and have re-established the Empire of Khan Timur."
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_eagle_warriors"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = "Great.. another Timurid on the throne"
+	}
+}
