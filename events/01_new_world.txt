@@ -15,9 +15,6 @@ namespace = NW
 
 character_event = {
     id = NW.1
-    title = CONTINENTS_NW1
-    desc = D_NW1 # will i use?
-    #picture =
     window = EventWindowNewWorld
     background = GFX_event_nw_bg
 
@@ -31,23 +28,23 @@ character_event = {
         set_character_flag = opened_nw_window
     }
 
-    option = {
-        name = NORTH_AMERICA #canada-america
+    option = { # make new clicksound (in .gui), paper?
+        name = "" #canada-america
         repeat_event = NW.2
     }
 
     option = {
-        name = CENTRAL_AMERICA #mexico-panama
+        name = "" #mexico-panama
         #repeat_event = NW.2
     }
 
     option = {
-        name = CARRIBEAN #self explanatory
+        name = "" #self explanatory
         #repeat_event = NW.2
     }
 
     option = {
-        name = SOUTH_AMERICA # Gran Columbia/Peru-Bolivia/Brazil/Argentina
+        name = "" # Gran Columbia/Peru-Bolivia/Brazil/Argentina
         #repeat_event = NW.2
     }
 }
