@@ -26973,29 +26973,11 @@ increase_council_power_effect = {
 }
 
 increase_vassal_freedom_effect = {
-	if = {
-		limit = {
-			crownlaw_title = { title = PREV }
-		}
-		if = {
-			limit = {
-				NOR = {
-					has_law = king_peace_1
-					has_law = king_peace_0
-				}
-				is_law_potential = king_peace_1
-				is_law_allowed = king_peace_1
-			}
-			add_law = king_peace_1
-		}
-		else_if = {
-			limit = {
-				NOT = { has_law = king_peace_0 }
-				is_law_potential = king_peace_0
-				is_law_allowed = king_peace_0
-			}
-			add_law = king_peace_0
-		}
+	trigger_switch = {
+		on_trigger = has_law
+
+		vassal_wars_law_1 = { add_law_w_cooldown = vassal_wars_law_0 }
+		vassal_wars_law_2 = { add_law_w_cooldown = vassal_wars_law_1 }
 	}
 }
 
