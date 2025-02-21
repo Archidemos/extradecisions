@@ -6,7 +6,7 @@ infamy_cb = { #CB to shatter realm with high Threat
 	truce_days = 3650
 	is_permanent = yes
 	hostile_against_others = no
-	#allow_whitepeace = no
+	allow_whitepeace = no
 	allow_distant = no
 	#display_on_map = no
 	#infamy_modifier = 3
@@ -30,7 +30,7 @@ infamy_cb = { #CB to shatter realm with high Threat
 	
 	can_use = {
 		FROM = {
-			infamy >= 70
+			infamy >= 60
 		}
 	}
 	
@@ -66,48 +66,46 @@ infamy_cb = { #CB to shatter realm with high Threat
 	}
 	
 	on_add = {
-		if = {
-			limit = {
-				ROOT = { ai = yes }
-				FROM = {
-					NOT = {
-						any_war = {
-							attacker = { NOT = { character = ROOT } }
-							using_cb = infamy_cb
-						}
-					}
-				}
-			}
-			ROOT = {
-				spawn_unit = {
-					owner = THIS
-					province = capital_scope
-					home = capital_scope
-					
-					match_character = FROM
-					match_mult = 1.0
-					
-					#troops = {
-					#	knights = { 500 500 }
-					#	archers = { 500 500 }
-					#	light_cavalry = { 500 500 }
-					#	light_infantry = { 2500 2500 }
-					#	heavy_infantry = { 1000 1000 }
-					#}
-	
-					attrition = 1.0
-					disband_on_peace = yes
-				}
-			}
-		}
+		#if = {
+		#	limit = {
+		#		ROOT = { ai = yes }
+		#		FROM = {
+		#			NOT = {
+		#				any_war = {
+		#					attacker = { NOT = { character = ROOT } }
+		#					using_cb = infamy_cb
+		#				}
+		#			}
+		#		}
+		#	}
+		#	ROOT = {
+		#		spawn_unit = {
+		#			owner = THIS
+		#			province = capital_scope
+		#			home = capital_scope
+		#			
+		#			match_character = FROM
+		#			match_mult = 1.0
+		#			
+		#			troops = {
+		#				knights = { 500 500 }
+		#				archers = { 500 500 }
+		#				light_cavalry = { 500 500 }
+		#				light_infantry = { 2500 2500 }
+		#				heavy_infantry = { 1000 1000 }
+		#			}
+		#		
+		#			attrition = 1.0
+		#			disband_on_peace = yes
+		#		}
+		#	}
+		#}
+		ROOT = { character_event = { id = MP.043 } }
 	}
 	
 	on_success = {
 		FROM = {
-			change_infamy = {
-				value = -10
-				localisation = "Threat Reduced after Shatter Realm CB"
-			}
+			character_event = { id = MP.051 }
 			prestige = -1000
 			transfer_scaled_wealth = {
 				to = ROOT
@@ -147,16 +145,13 @@ infamy_cb = { #CB to shatter realm with high Threat
 			prestige = -1000
 			transfer_scaled_wealth = {
 				to = FROM
-				value = 5
+				value = 4
 				min = 1000
 			}
 		}
 		FROM = {
 			prestige = 1000
-			change_infamy = {
-				value = -10
-				localisation = "Threat Reduced after Shatter Realm CB"
-			}
+			character_event = { id = MP.050 }
 		}
 	}
 	

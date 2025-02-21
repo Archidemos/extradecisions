@@ -1196,35 +1196,68 @@ character_event = {
 	}
 }
 
-#character_event = {
-#    id = MP.043
-#	desc = "EVTDESCMP43"
-#    is_triggered_only = yes
-#	picture = "GFX_evt_diplomatic_greeting"
-#	border = "GFX_event_normal_frame_war"
-#
-# 	option = {
-#		name = "To war!"
-#		ROOT = {
-#			spawn_unit = {
-#				owner = THIS
-#				province = capital_scope
-#				home = capital_scope
-#
-#				troops = {
-#					knights = { 500 500 }
-#					archers = { 500 500 }
-#					light_cavalry = { 500 500 }
-#					light_infantry = { 2500 2500 }
-#					heavy_infantry = { 1000 1000 }
-#				}
-#
-#				attrition = 1.0
-#				disband_on_peace = yes
-#			}
-#		}
-#	}
-#}
+character_event = {
+    id = MP.043
+	desc = "EVTDESCMP43"
+    is_triggered_only = yes
+	picture = "GFX_evt_diplomatic_greeting"
+	border = "GFX_event_normal_frame_war"
+
+ 	option = {
+		name = "To war!"
+		custom_tooltip = {
+			text = "You will recieve more soldiers to fight this Infamy War"
+			if = {
+				limit = { date < 1200.1.1 }
+				ROOT = {
+					while = {
+						count = 2
+						spawn_unit = {
+							owner = THIS
+							province = capital_scope
+							home = capital_scope
+			
+							troops = {
+								knights = { 500 500 }
+								archers = { 500 500 }
+								light_cavalry = { 500 500 }
+								light_infantry = { 2500 2500 }
+								heavy_infantry = { 1000 1000 }
+							}
+			
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+			else_if = { 
+				limit = { date >= 1200.1.1 }
+				ROOT = {
+					while = {
+						count = 4
+						spawn_unit = {
+							owner = THIS
+							province = capital_scope
+							home = capital_scope
+			
+							troops = {
+								knights = { 500 500 }
+								archers = { 500 500 }
+								light_cavalry = { 500 500 }
+								light_infantry = { 2500 2500 }
+								heavy_infantry = { 1000 1000 }
+							}
+			
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 #character_event = { #Event about you developing the county
 #    id = MP.044
@@ -1364,6 +1397,48 @@ narrative_event = { #Event for everyone about the formation
 	
 	option = {
 		name = "Curious..."
+	}
+}
+
+character_event = { #Event for when u win to the Infamy CB
+	id = MP.050
+	title = "Coalition Defeated"
+	desc = "As you have defeated a realm that wants to take you down for your infamy, you have frightned your neighbours with your power."
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_judged_by_ruler"
+	border = "GFX_event_normal_frame_war"
+	
+	option = {
+		name = "Fear me!"
+		change_infamy = {
+			value = -10
+			localisation = "Threat Reduced with the Decision"
+		}
+	}
+}
+
+character_event = { #Event for when u lose to the Infamy CB
+	id = MP.051
+	title = "Begining of the end"
+	desc = "As you have been defeated by the realm that fought to take you down for your infamy, you are no longer seen as a threat. As your realm is shattered by your enemies, they have declared to also kill you, This is it... your final moments as you witness your people and enemies one more time."
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_died_executed_hanging"
+	border = "GFX_event_normal_frame_war"
+	
+	option = {
+		name = "I am finished.."
+		change_infamy = {
+			value = -40
+			localisation = "Threat Reduced with the Decision"
+		}
+		death = {
+			death_reason = death_execution
+			killer = ROOT
+		}
 	}
 }
 

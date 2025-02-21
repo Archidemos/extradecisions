@@ -153,7 +153,8 @@ illumination = {
 }
 
 aspiring_poet = {
-	diplomacy = 1
+	diplomacy = 2
+	health = 0.25
 	icon = 3
 }
 
@@ -163,7 +164,8 @@ aspiring_duelist = {
 }
 
 aspiring_hunter = {
-	martial = 1
+	martial = 2
+	health = 0.25
 	icon = 1
 }
 
@@ -788,7 +790,7 @@ student_of_language = {
 }
 
 multilingual = {
-	diplomacy = 1
+	diplomacy = 2
 	learning = 1
 	icon = 16
 }
@@ -821,6 +823,7 @@ prepared_home = {
 
 guard_dogs = {
 	defensive_plot_power_modifier = 0.15
+	health = 0.5
 	icon = 45
 }
 
@@ -943,11 +946,13 @@ surge_of_traders = {
 
 aspiring_trader = {
 	stewardship = 1
+	global_tax_modifier = 0.25
 	icon = 4
 }
 
 trader = {
 	stewardship = 2
+	global_tax_modifier = 0.5
 	icon = 4
 }
 
@@ -973,6 +978,7 @@ maze_fountain_extravagant = {
 
 business_contacts = {
 	town_opinion = 10
+	stewardship = 1
 	icon = 4
 }
 
@@ -1841,6 +1847,7 @@ defied_church = {
 annoyed_religious = {
 	icon = 28
 	church_opinion = -10
+	learning = -2
 }
 
 owns_relic = {
@@ -2162,30 +2169,42 @@ zun_judgement = {
 incestuous_adulterer = {
 	general_opinion = -10
 	church_opinion = -10
+	health = -0.5
+	learning = -5
 	icon = 40
 }
 incestuous_adulteress = {
 	general_opinion = -20
 	church_opinion = -20
+	health = -0.5
+	learning = -5
 	icon = 40
 }
 adulterer = {
 	general_opinion = -5
 	church_opinion = -5
+	health = -0.25
+	learning = -3
 	icon = 40
 }
 adulteress = {
 	general_opinion = -10
 	church_opinion = -10
+	health = -0.25
+	learning = -3
 	icon = 40
 }
 known_sodomite = {
 	general_opinion = -10
 	church_opinion = -10
+	health = -0.25
+	learning = -3
 	icon = 40
 }
 known_sodomite_pagan = {
 	general_opinion = -30
+	health = -0.25
+	learning = -3
 	icon = 40
 }
 cradle_robber = {
@@ -2195,6 +2214,8 @@ cradle_robber = {
 adulterous_priest = {
 	general_opinion = -5
 	church_opinion = -10
+	health = -0.25
+	learning = -5
 	icon = 35
 }
 
@@ -2270,6 +2291,7 @@ wol_refused_duel = {
 }
 recent_duel_victory = {
 	monthly_character_prestige = 0.2
+	combat_rating = 5
 	icon = 7
 }
 aspiring_gardener = {
@@ -2293,10 +2315,12 @@ sold_off_land = {
 }
 artisan_workshop = {
 	city_tax_modifier = 0.1
+	stewardship = 1
 	icon = 4
 }
 despised_aristocrat = {
 	town_opinion = -10
+	stewardship = -1
 	icon = 25
 }
 wol_steward_1 = {
@@ -2423,10 +2447,14 @@ epic_hangover = {
 }
 vicious_rumors = {
 	general_opinion = -10
+	diplomacy = -1
+	stewardship = -1
 	icon = 34
 }
 vicious_rumors_2 = {
 	general_opinion = -20
+	diplomacy = -2
+	stewardship = -2
 	icon = 34
 }
 unfaithful_rumors = { # There are rumors about this character not being true to their faith.
@@ -2435,6 +2463,7 @@ unfaithful_rumors = { # There are rumors about this character not being true to 
 }
 known_murderer = {
 	general_opinion = -10
+	intrigue = 2
 	icon = 34
 }
 studying_the_stars = {
@@ -2463,6 +2492,7 @@ failed_escape = {
 ancient_wisdom = {
 	icon = 2
 	learning = 1
+	health = 0.5
 }
 merciless = {
 	icon = 31
@@ -2476,7 +2506,7 @@ apprentice_boardgamer = {
 }
 religious_studies = {
 	icon = 2
-	learning = 1
+	learning = 3
 }
 religious_philosopher = {
 	icon = 2
@@ -2520,7 +2550,10 @@ student_of_strategy = {
 adept_of_strategy = {
 	icon = 2
 	martial = 1
-	stewardship = 1
+	command_modifier = {
+		morale_offence = 0.10
+		morale_defence = 0.10
+	}
 }
 strategic_innovation = {
 	icon = 1
@@ -2615,6 +2648,9 @@ denied_wrestling = {
 nomad_warhorse = {
 	icon = 56
 	monthly_character_prestige = 0.5
+	martial = 1
+	learning = 1
+	health = 0.25
 }
 hidden_extra_tribute = {
 	icon = 22
@@ -2698,6 +2734,7 @@ out_of_patience = { # Making children patient takes a toll on your patience
 	stewardship = -2
 	intrigue = -2
 	learning = -2
+	health = -0.25
 	icon = 42
 }
 chattermouth = {
@@ -2855,6 +2892,8 @@ bad_care = {
 
 in_seclusion = {
 	diplomacy = -5
+	learning = -3
+	health = -0.25
 	icon = 36
 }
 commoners_abandoned = {
@@ -4680,6 +4719,8 @@ the_name_of_the_rose = {
 
 rose_gardens = {
 	monthly_character_prestige = 0.1
+	stewardship = 1
+	learning = 1
 	icon = 87
 }
 
@@ -4747,64 +4788,77 @@ best_laboratory = { #Perfect Laboratory, very rare/expensive.
 
 good_battle_omen = {
 	icon = 79
-	martial = 1
+	martial = 2
+	global_levy_size = 0.5
 	combat_rating = 15
 }
 
 bad_battle_omen = {
 	icon = 80
 	martial = -1
+	global_levy_size = -0.5
 	combat_rating = -10
 }
 
 good_relationship_omen = {
 	icon = 79
-	diplomacy = 1
+	diplomacy = 3
+	health = 0.5
 	fertility = 0.1
 }
 
 bad_relationship_omen = {
 	icon = 80
 	diplomacy = -1
+	health = -0.25
 	fertility = -0.1
 }
 
 good_power_omen = {
 	icon = 79
-	stewardship = 1
-	learning = 1
+	stewardship = 3
+	global_tax_modifier = 0.5
+	learning = 2
 }
 
 bad_power_omen = {
 	icon = 80
-	stewardship = -1
+	stewardship = -2
+	global_tax_modifier = -0.5
 	learning = -1
 }
 
 fulfilled_vision_great = {
 	icon = 79
-	diplomacy = 1
-	martial = 1
-	stewardship = 1
-	learning = 1
-	intrigue = 1
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	learning = 2
+	intrigue = 2
 	monthly_character_prestige = 0.05
 }
 
 fulfilled_vision_ok = {
 	icon = 79
-	diplomacy = 1
-	learning = 1
+	diplomacy = 2
+	stewardship = 2
+	learning = 2
 }
 
 fulfilled_vision_bad = {
 	icon = 79
-	learning = 1
+	learning = -1
+	diplomacy = -1
+	stewardship = -1
 }
 
 fulfilled_vision_worst = {
 	icon = 80
-	learning = -1
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	learning = -2
+	intrigue = -2
 	monthly_character_prestige = -0.05
 }
 
@@ -4815,13 +4869,13 @@ stargazer = {
 
 theoretical_alchemist = {
 	icon = 83
-	learning = 1
+	learning = 2
 	diplomacy = 1
 }
 
 experimenting_alchemist = {
 	icon = 83
-	learning = 1
+	learning = 2
 	stewardship = 1
 }
 
@@ -4840,11 +4894,12 @@ demon_alliance = {
 writing_magnum_opus = {
 	icon = 16
 	monthly_character_prestige = 0.5
+	learning = 1
 }
 
 disappointing_hunt = {
 	icon = 19
-	martial = -1
+	martial = -2
 	diplomacy = -1
 }
 
@@ -5358,14 +5413,16 @@ patron_sangpo_bumtri = {
 }
 jd_master_engineer = {
 	icon = 101
-	martial = 1
-	stewardship = 1
+	martial = 2
+	stewardship = 2
+	health = 1
 }
 
 jd_administrator = {
 	icon = 99
-	stewardship = 1
-	learning = 1
+	stewardship = 3
+	learning = 2
+	health = 1
 }
 
 employing_jd_administrator = {
@@ -5373,71 +5430,78 @@ employing_jd_administrator = {
 	#inherit = yes
 	build_time_modifier = -0.15
 	build_cost_modifier = -0.15
+	stewardship = 1
 }	
 
 employing_jd_administrator_golden_age = {
 	icon = 99
 	#inherit = yes
-	build_time_modifier = -0.3
-	build_cost_modifier = -0.3
+	build_time_modifier = -0.35
+	build_cost_modifier = -0.35
+	stewardship = 2
 }	
 
 peace_deal_with_china = {
 	icon = 95
 	monthly_character_prestige = 1
+	diplomacy = 2
 }
 
 jd_paper_mill = {
 	icon = 97
 	economy_techpoints = 1
 	tech_growth_modifier = 0.5
-	local_tax_modifier = 0.1
+	local_tax_modifier = 0.2
 }
 
 jd_fireworks_guild = {
 	icon = 103
 	military_techpoints = 1
 	garrison_size = 0.25
-	levy_size = 0.1
+	levy_size = 0.25
 }
 
 jd_dry_docks = {
 	icon = 101
 	economy_techpoints = 1
 	galleys_perc = 0.5
-	local_tax_modifier = 0.1
+	local_tax_modifier = 0.2
 }
 
 jd_administrative_outpost = {
 	icon = 101
 	economy_techpoints = 1
 	culture_techpoints = 1
+	local_tax_modifier = 0.15
 }
 
 jd_blast_furnace = {
 	icon = 101
 	military_techpoints = 1
 	levy_reinforce_rate = 0.5
+	levy_size = 0.5
 }
 
 jd_strategist = {
 	icon = 103
-	martial = 1
-	stewardship = 1
+	martial = 3
+	stewardship = 2
 }
 
 jd_prince = {
 	icon = 109
-	diplomacy = 1
-	stewardship = 1
-	learning = 1
+	martial = 1
+	diplomacy = 2
+	stewardship = 2
+	learning = 2
 }
 
 jd_princess = {
 	icon = 109
-	diplomacy = 1
-	stewardship = 1
-	learning = 1
+	martial = 1
+	diplomacy = 2
+	stewardship = 2
+	learning = 2
 }
 
 jd_held_sadah_timer = {
@@ -5706,13 +5770,17 @@ crowned_in_barn = { #Secluded Coronation with no Pope
 	castle_opinion = -5
 	town_opinion = -5
 	church_opinion = 5
+	diplomacy = -1
+	learning = -2
 	monthly_character_prestige = -0.05
 	icon = 25
 }
-crowned_in_war = { 
+crowned_in_war = {
 	church_opinion = -5
-	monthly_character_piety = -0.05
-	icon = 25
+	martial = 1
+	combat_rating = 5
+	monthly_character_prestige = 0.1
+	icon = 7
 }
 #regular_coronation = { #Normal coronation 5 years bonus.
 #	vassal_opinion = 5
@@ -5722,23 +5790,31 @@ crowned_in_war = {
 extravagant_coronation = { #Extravagant coronation 20 years bonus.
 	vassal_opinion = 10
 	monthly_character_prestige = 0.25
+	diplomacy = 1
+	stewardship = 1
 	icon = 7
 }
 uncrowned_modifier = { #On five years pulse
 	vassal_opinion = -2
+	command_modifier = {
+		morale_offence = -0.025
+		morale_defence = -0.025
+	}
+	defensive_plot_power_modifier = -0.025
 	icon = 25
 }
 
 coronation_improved_trade = {
-	local_tax_modifier = 0.05
+	local_tax_modifier = 0.1
+	stewardship = 1
 	local_revolt_risk = -0.01
 	
 	icon = 4
 }
 coronation_peasants_happy = {
-	local_tax_modifier = -0.03
+	local_tax_modifier = -0.05
 	local_revolt_risk = -0.05
-	
+	diplomacy = 3
 	icon = 22
 }
 chancellor_of_uncrowned = { #Applied on ruler.
@@ -6021,17 +6097,18 @@ duel_exp_8 = {
 	icon = 117
 }
 emptied_library = {
-	learning = -1
+	learning = -2
 	icon = 20
 }
 
 duel_experience = {
-	combat_rating = 1
+	combat_rating = 2
 	icon = 123
 }
 
 duelist_renown = {
-	combat_rating = 2
+	combat_rating = 5
+	health = 0.25
 	duelist_opinion = 5
 	sex_appeal_opinion = 5
 	monthly_character_prestige = 0.15

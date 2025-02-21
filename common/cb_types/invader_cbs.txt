@@ -7,7 +7,8 @@ illkhanate_special_cb = {
 	is_permanent = yes
 	can_ask_to_join_war = yes
 	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
-	
+
+	infamy_modifier = 0	
 	allowed_to_target_tributaries = yes
 	
 	sort_priority = 100000
@@ -410,7 +411,8 @@ golden_horde_special_cb = {
 	is_permanent = yes
 	can_ask_to_join_war = yes
 	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
-	
+
+	infamy_modifier = 0	
 	allowed_to_target_tributaries = yes
 	
 	sort_priority = 100000
@@ -774,7 +776,9 @@ timurids_special_cb = {
 	is_permanent = yes
 	can_ask_to_join_war = yes
 	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
-	
+
+	infamy_modifier = 0.01
+
 	allowed_to_target_tributaries = yes
 	
 	sort_priority = 100000
@@ -836,6 +840,12 @@ timurids_special_cb = {
 	}
 
 	on_success = {
+		ROOT = {
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
+		}
 		FROM = {
 			show_scope_change = no
 			prestige = -200
@@ -843,6 +853,10 @@ timurids_special_cb = {
 	}
 	
 	on_success_title = {
+		change_infamy = {
+			value = -50
+			localisation = "Threat Reduced after Invader CB"
+		}
 		custom_tooltip = { 
 			text = other_invasion_succ_tip
 			hidden_tooltip = {
@@ -927,6 +941,10 @@ timurids_special_cb = {
 		ROOT = {
 			show_scope_change = no
 			prestige = -200
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
 		}
 	}
 	
@@ -934,6 +952,10 @@ timurids_special_cb = {
 		ROOT = {
 			show_scope_change = no
 			piety = 2500
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
 		}
 	}
 
@@ -954,6 +976,10 @@ timurids_special_cb = {
 					}
 				}
 				decadence = 10
+			}
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
 			}
 		}
 		FROM = {
@@ -1502,6 +1528,10 @@ mongol_empire_special_cb = {
 
 	on_success = {
 		ROOT = {
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
 			show_scope_change = no
 			prestige = 200
 			hidden_tooltip = {
@@ -1550,6 +1580,12 @@ mongol_empire_special_cb = {
 	}
 	
 	on_success_title = {
+		ROOT = {
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
+		}
 		custom_tooltip = { 
 			text = other_invasion_succ_tip
 			hidden_tooltip = {
@@ -1636,6 +1672,10 @@ mongol_empire_special_cb = {
 		ROOT = {
 			show_scope_change = no
 			prestige = -200
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
 		}
 	}
 	
@@ -1643,6 +1683,10 @@ mongol_empire_special_cb = {
 		ROOT = {
 			show_scope_change = no
 			piety = 2500
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
+			}
 		}
 	}
 
@@ -1663,6 +1707,10 @@ mongol_empire_special_cb = {
 					}
 				}
 				decadence = 10
+			}
+			change_infamy = {
+				value = -50
+				localisation = "Threat Reduced after Invader CB"
 			}
 		}
 		FROM = {
