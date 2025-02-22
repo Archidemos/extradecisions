@@ -3,53 +3,61 @@ decisions = {
 	become_timur = {
 		only_independent = yes
 		is_high_prio = yes
-		ai = no
+		ai_check_interval = 60
 
 		potential = {
 			is_playable = yes
 			independent = yes
-			culture = turkish
+			culture_group = altaic
+			has_dlc = "Horse Lords"
 			government = nomadic_government
-			NOT = { is_title_active = e_timurids }
+			NOT = { has_landed_title = e_timurids }
+			NOT = { has_landed_title = e_mongol_empire }
+			NOT = { has_landed_title = e_il-khanate }
+			NOT = { has_landed_title = e_golden_horde }
+			NOT = { has_global_flag = timur_spawned }
 		}
 		
 		allow = {
 			num_of_count_titles_in_realm = 50
 			prestige = 1500
 			OR = {
-				religion = sunni
-				religion = tengri_pagan
+				culture = turkish
+				culture = turkmen
+				culture = mongol
 			}
 		}
 		
 		effect = {
+			set_global_flag = timur_spawned
 			set_special_character_title = EMIR_TIMUR
 			give_nickname = nick_the_lame
-			spawn_unit = {
-				owner = ROOT
-				province = PREV
-				home = PREV
-				troops = {
-					knights = { 10000 10000 }
-					light_cavalry = { 10000 10000 }
-					horse_archers = { 5000 5000 }
-				}
-					attrition = 0
-				disband_on_peace = no
+			add_claim = k_persia
+			add_claim = d_sistan
+			add_claim = d_gurgan
+			add_claim = d_kumis
+			add_claim = d_fars
+			add_claim = d_kerman
+			add_trait = great_conquerer
+			add_character_modifier = {
+				modifier = iron_khan
+				duration = -1
 			}
-			spawn_unit = {
-				owner = ROOT
-				province = PREV
-				home = PREV
-				troops = {
-					knights = { 10000 10000 }
-					light_cavalry = { 10000 10000 }
-					horse_archers = { 5000 5000 }
-				}
+			while = {
+				count = 5
+				spawn_unit = {
+					owner = ROOT
+					province = PREV
+					home = PREV
+					troops = {
+						knights = { 10000 10000 }
+						light_cavalry = { 10000 10000 }
+						horse_archers = { 5000 5000 }
+					}
 					attrition = 0
-				disband_on_peace = no
+					disband_on_peace = no
+				}
 			}
-			
 			prestige = 1000
 			population = 50000
 
@@ -96,13 +104,7 @@ decisions = {
 					activate_title = { title = THIS status = no }
 					destroy_landed_title = THIS
 				}
-			}
-			
-			add_character_modifier = {
-				modifier = iron_khan
-				duration = -1
-			}
-			
+			}			
 			if = {
 				limit = {
 					ai = yes

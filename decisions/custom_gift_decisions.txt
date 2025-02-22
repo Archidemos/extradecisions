@@ -4,6 +4,7 @@ targetted_decisions = {
 		filter = all
 		ai_target_filter = self
 		ai_check_interval = 1200
+		diplomacy_icon = GFX_borrow_money_jews
 	   
 		allow = {
 			FROM = {
@@ -14,15 +15,30 @@ targetted_decisions = {
 
 		effect = {
 			FROM = { letter_event = { id = CG.1 } }
-			
-			if = {
-				limit = {
-					FROM = { wealth = 50 }
-				}
-				FROM = {
-					letter_event = { id = CG.2 }
-				}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	big_custom_gift = {
+		filter = all
+		ai_target_filter = self
+		ai_check_interval = 1200
+		diplomacy_icon = GFX_borrow_money_jews
+	   
+		allow = {
+			FROM = {
+				show_scope_change = no
+				wealth >= 200
 			}
+		}
+
+		effect = {
+			FROM = { letter_event = { id = CG.2 } }
 		}
 		revoke_allowed = {
 			always = no

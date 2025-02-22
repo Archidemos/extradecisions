@@ -500,10 +500,17 @@ targetted_decisions = {
 			ROOT = {
 				wealth >= 150
 			}
+			FROM = { NOT = { has_character_modifier = take_gold_merc_cd } }
 			replace_mercenary_captain_allow_trigger = yes
 		}
 		effect = {
-			FROM = { wealth = 100 }
+			FROM = { 
+				wealth = 100
+				add_character_modifier = {
+					name = take_gold_merc_cd
+					months = 6
+				}
+			}
 			ROOT = { wealth = -100 }
 		}
 		revoke_allowed = {

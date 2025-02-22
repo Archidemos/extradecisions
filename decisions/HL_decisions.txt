@@ -193,9 +193,10 @@ decisions = {
 		potential = {
 			is_playable = yes
 			independent = yes
-			culture = mongol
+			culture_group = altaic
 			has_dlc = "Horse Lords"
 			government = nomadic_government
+			NOT = { has_landed_title = e_timurids }
 			NOT = { has_landed_title = e_mongol_empire }
 			NOT = { has_landed_title = e_il-khanate }
 			NOT = { has_landed_title = e_golden_horde }
@@ -203,15 +204,33 @@ decisions = {
 		}
 		
 		allow = {
-			num_of_count_titles_in_realm = 35
+			num_of_count_titles_in_realm = 50
 			prestige = 1500
+			culture = mongol
 		}
 		
 		effect = {
 			set_global_flag = mongol_horde_arrival
 			set_global_flag = mongol_horde_united
 			set_special_character_title = GENGHIS_KHAN
-			prestige = 1000
+			prestige = 2000
+			while = {
+				count = 5
+				spawn_unit = {
+					owner = ROOT
+					province = PREV
+					home = PREV
+					troops = {
+						knights = { 10000 10000 }
+						light_cavalry = { 10000 10000 }
+						horse_archers = { 5000 5000 }
+					}
+					attrition = 0
+					disband_on_peace = no
+				}
+			}
+			population = 50000
+			add_trait = great_conquerer
 			add_character_modifier = {
 				modifier = greatest_of_khans
 				duration = -1
@@ -257,13 +276,6 @@ decisions = {
 					activate_title = { title = THIS status = no }
 					destroy_landed_title = THIS
 				}
-			}
-			if = {
-				limit = {
-					ai = yes
-				}
-				character_event = { id = 60530 } # ai reinforcements
-				population = 50000
 			}
 			hidden_tooltip = {
 				any_playable_ruler = {
