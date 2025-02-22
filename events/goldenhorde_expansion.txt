@@ -11,12 +11,12 @@ character_event = {
 	trigger = {
 		log = "GOLDEX.1 Triggered"
 		FROM = {
-			#ai = yes
+			ai = yes
 			NOT = { any_war = { count = 5 } }
 			has_landed_title = e_golden_horde
 			has_character_flag = khan_of_golden_horde
 			NOT = { completely_controls_region = world_europe_east }
-			#NOT = { has_global_flag = world_europe_east_conquered_gold }
+			NOT = { has_global_flag = world_europe_east_conquered_gold }
 		}
 	}
 	immediate = {

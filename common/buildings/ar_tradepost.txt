@@ -78,7 +78,7 @@ trade_post = {
 		build_time = 182
 		ai_creation_factor = 95
 		
-		tradevalue = 2
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -159,7 +159,7 @@ trade_post = {
 		upgrades_from = tr_walls_1
 		ai_creation_factor = 94
 		
-		tradevalue = 3
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -240,7 +240,7 @@ trade_post = {
 		upgrades_from = tr_walls_2
 		ai_creation_factor = 93
 		
-		tradevalue = 4
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -320,7 +320,7 @@ trade_post = {
 		build_time = 182
 		ai_creation_factor = 95
 
-		tax_income = 1		
+		tax_income = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -401,7 +401,7 @@ trade_post = {
 		upgrades_from = tr_market_1
 		ai_creation_factor = 94
 		
-		tax_income = 1
+		tax_income = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -482,7 +482,7 @@ trade_post = {
 		upgrades_from = tr_market_2
 		ai_creation_factor = 93
 		
-		tax_income = 1.5
+		tax_income = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -565,7 +565,7 @@ trade_post = {
 		
 		retinuesize = 20
 		garrison_size = 1.0
-		tradevalue = 1
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -649,7 +649,7 @@ trade_post = {
 		
 		retinuesize = 30
 		garrison_size = 1.5
-		tradevalue = 2
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -733,258 +733,258 @@ trade_post = {
 		
 		retinuesize = 50
 		garrison_size = 2.0
-		tradevalue = 3
+		tradevalue = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
 	
-	tr_headquarters_1 = {
-		potential = {
-			port = yes
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		desc = tr_headquarters_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		gold_cost = 300
-		build_time = 182
-		ai_creation_factor = 95
-		
-		tradevalue = 2
-		tax_income = 1
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_headquarters_2 = {
-		potential = {
-			port = yes
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		desc = tr_headquarters_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		gold_cost = 450
-		build_time = 274
-		upgrades_from = tr_headquarters_1
-		ai_creation_factor = 94
-		
-		tradevalue = 3
-		tax_income = 2
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	
-	tr_headquarters_3 = {
-		potential = {
-			port = yes
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		desc = tr_headquarters_1_desc
-		trigger = { TECH_TRADE_PRACTICES = 4 }
-		gold_cost = 600
-		build_time = 365
-		upgrades_from = tr_headquarters_2
-		ai_creation_factor = 93
-		
-		tradevalue = 4
-		tax_income = 3
-		
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
+	#tr_headquarters_1 = {
+	#	potential = {
+	#		port = yes
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	desc = tr_headquarters_1_desc
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }
+	#	gold_cost = 300
+	#	build_time = 182
+	#	ai_creation_factor = 95
+	#	
+	#	tradevalue = 0.5
+	#	tax_income = 0.5
+	#	
+	#	extra_tech_building_start = 10.0 # Never get at start of game
+	#}
+	#
+	#tr_headquarters_2 = {
+	#	potential = {
+	#		port = yes
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	desc = tr_headquarters_1_desc
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }
+	#	gold_cost = 450
+	#	build_time = 274
+	#	upgrades_from = tr_headquarters_1
+	#	ai_creation_factor = 94
+	#	
+	#	tradevalue = 0.5
+	#	tax_income = 0.5
+	#	
+	#	extra_tech_building_start = 10.0 # Never get at start of game
+	#}
+	#
+	#tr_headquarters_3 = {
+	#	potential = {
+	#		port = yes
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	desc = tr_headquarters_1_desc
+	#	trigger = { TECH_TRADE_PRACTICES = 4 }
+	#	gold_cost = 600
+	#	build_time = 365
+	#	upgrades_from = tr_headquarters_2
+	#	ai_creation_factor = 93
+	#	
+	#	tradevalue = 0.5
+	#	tax_income = 0.5
+	#	
+	#	extra_tech_building_start = 10.0 # Never get at start of game
+	#}
 	
 	tr_spice_merchant_1 = {
 		potential = {
@@ -1145,8 +1145,8 @@ trade_post = {
 		upgrades_from = tr_spice_merchant_1
 		ai_creation_factor = 99
 		
-		tax_income = 1
-		trade_route_wealth = 1
+		tax_income = 0.5
+		trade_route_wealth = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1229,8 +1229,8 @@ trade_post = {
 		upgrades_from = tr_spice_merchant_2
 		ai_creation_factor = 98
 		
-		tax_income = 1
-		trade_route_wealth = 1
+		tax_income = 0.5
+		trade_route_wealth = 0.5
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1392,8 +1392,8 @@ trade_post = {
 		upgrades_from = tr_road_1
 		ai_creation_factor = 94
 		
-		tax_income = 1
-		economy_techpoints = 0.05
+		tax_income = 0.5
+		economy_techpoints = 0.02
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1474,8 +1474,8 @@ trade_post = {
 		upgrades_from = tr_road_2
 		ai_creation_factor = 93
 		
-		tax_income = 1
-		economy_techpoints = 0.075
+		tax_income = 0.5
+		economy_techpoints = 0.02
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1556,7 +1556,7 @@ trade_post = {
 		build_time = 182
 		ai_creation_factor = 100
 		prerequisites = { tr_market_1 }		
-		tax_income = 2
+		tax_income = 0.5
 		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
@@ -1639,8 +1639,8 @@ trade_post = {
 		upgrades_from = tr_jewelry_merchant_1
 		ai_creation_factor = 99
 		prerequisites = { tr_market_2 }		
-		tax_income = 3
-		local_tax_modifier = 0.05
+		tax_income = 0.5
+		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1722,8 +1722,8 @@ trade_post = {
 		upgrades_from = tr_jewelry_merchant_2
 		ai_creation_factor = 98
 		prerequisites = { tr_market_3 }		
-		tax_income = 3.5
-		local_tax_modifier = 0.1
+		tax_income = 0.5
+		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -1802,7 +1802,7 @@ trade_post = {
 		gold_cost = 150
 		build_time = 365
 		
-		local_tax_modifier = 0.05
+		local_tax_modifier = 0.025
 
 
 		trigger = { TECH_TRADE_PRACTICES = 3 }		
@@ -1889,7 +1889,7 @@ trade_post = {
 		trigger = { TECH_TRADE_PRACTICES = 3 }
 		upgrades_from = trade_route_market_1
 		
-		local_tax_modifier = 0.05
+		local_tax_modifier = 0.025
 		
 		ai_creation_factor = 95
 		add_number_to_name = no
@@ -1974,7 +1974,7 @@ trade_post = {
 		trigger = { TECH_TRADE_PRACTICES = 4 }
 		upgrades_from = trade_route_market_2
 		
-		local_tax_modifier = 0.075
+		local_tax_modifier = 0.025
 		
 		ai_creation_factor = 94
 		add_number_to_name = no
@@ -1982,513 +1982,513 @@ trade_post = {
 		extra_tech_building_start = 10.0
 	}
 
-	trade_route_farm_1 = {
-		desc = trade_route_farm_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 250
-		build_time = 365
-		
-		tax_income = 0.5
+	#trade_route_farm_1 = {
+	#	desc = trade_route_farm_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 250
+	#	build_time = 365
+	#	
+	#	tax_income = 0.5
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }
+	#
+	#	ai_creation_factor = 96
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
+	#
+	#trade_route_farm_2 = {
+	#	desc = trade_route_farm_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 350
+	#	build_time = 547
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }
+	#	upgrades_from = trade_route_farm_1
+	#	
+	#	tax_income = 0.5
+	#	
+	#	ai_creation_factor = 95
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
+	#
+	#trade_route_farm_3 = {
+	#	desc = trade_route_farm_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 500
+	#	build_time = 730
+	#
+	#	upgrades_from = trade_route_farm_2
+	#	
+	#	tax_income = 0.5
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 4 }		
+	#	
+	#	ai_creation_factor = 94
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
 
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-	
-		ai_creation_factor = 96
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	trade_route_farm_2 = {
-		desc = trade_route_farm_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 350
-		build_time = 547
-
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		upgrades_from = trade_route_farm_1
-		
-		tax_income = 1
-		
-		ai_creation_factor = 95
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	trade_route_farm_3 = {
-		desc = trade_route_farm_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 500
-		build_time = 730
-
-		upgrades_from = trade_route_farm_2
-		
-		tax_income = 2
-
-		trigger = { TECH_TRADE_PRACTICES = 4 }		
-		
-		ai_creation_factor = 94
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	wool_merchant_1 = {
-		desc = wool_merchant_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 250
-		build_time = 365
-		
-		tax_income = 0.5
-
-		trigger = { TECH_TRADE_PRACTICES = 3 }		
-		ai_creation_factor = 95
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	wool_merchant_2 = {
-		desc = wool_merchant_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 350
-		build_time = 547
-
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		upgrades_from = wool_merchant_1
-		
-		tax_income = 1
-		
-		ai_creation_factor = 94
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
-
-	wool_merchant_3 = {
-		desc = wool_merchant_desc
-		potential = {
-			port = no
-			OR = {
-				AND = {
-					trade_route = silk_road
-					silk_road_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = trans_saharan_trade_route
-					trans_saharan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ATS_English_Route
-					english_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Italian_roads
-					italy_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = German_roads
-					german_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = varangian_route
-					greek_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Venetian_roads
-					venice_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Balkan_roads
-					balkan_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = ViaEgnatia
-					via_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = French_roads
-					french_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Iberian_roads
-					iberia_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Ochsenweg
-					ochsenweg_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Amber_road
-					amber_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = volga_route
-					volga_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Salt_roads
-					salt_trade_post_trigger = yes
-				}
-				AND = {
-					trade_route = Atlantic_trading
-					atlantic_trade_post_trigger = yes
-				}
-			}
-		}
-		gold_cost = 500
-		build_time = 730
-
-		trigger = { TECH_TRADE_PRACTICES = 4 }
-		upgrades_from = wool_merchant_2
-		
-		tax_income = 2
-		
-		ai_creation_factor = 93
-		add_number_to_name = no
-
-		extra_tech_building_start = 10.0
-	}
+	#wool_merchant_1 = {
+	#	desc = wool_merchant_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 250
+	#	build_time = 365
+	#	
+	#	tax_income = 0.5
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }		
+	#	ai_creation_factor = 95
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
+	#
+	#wool_merchant_2 = {
+	#	desc = wool_merchant_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 350
+	#	build_time = 547
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 3 }
+	#	upgrades_from = wool_merchant_1
+	#	
+	#	tax_income = 0.5
+	#	
+	#	ai_creation_factor = 94
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
+	#
+	#wool_merchant_3 = {
+	#	desc = wool_merchant_desc
+	#	potential = {
+	#		port = no
+	#		OR = {
+	#			AND = {
+	#				trade_route = silk_road
+	#				silk_road_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = trans_saharan_trade_route
+	#				trans_saharan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ATS_English_Route
+	#				english_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Italian_roads
+	#				italy_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = German_roads
+	#				german_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = varangian_route
+	#				greek_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Venetian_roads
+	#				venice_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Balkan_roads
+	#				balkan_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = ViaEgnatia
+	#				via_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = French_roads
+	#				french_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Iberian_roads
+	#				iberia_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Ochsenweg
+	#				ochsenweg_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Amber_road
+	#				amber_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = volga_route
+	#				volga_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Salt_roads
+	#				salt_trade_post_trigger = yes
+	#			}
+	#			AND = {
+	#				trade_route = Atlantic_trading
+	#				atlantic_trade_post_trigger = yes
+	#			}
+	#		}
+	#	}
+	#	gold_cost = 500
+	#	build_time = 730
+	#
+	#	trigger = { TECH_TRADE_PRACTICES = 4 }
+	#	upgrades_from = wool_merchant_2
+	#	
+	#	tax_income = 0.5
+	#	
+	#	ai_creation_factor = 93
+	#	add_number_to_name = no
+	#
+	#	extra_tech_building_start = 10.0
+	#}
 
 	trade_route_guard_1 = {
 		desc = trade_route_guard_desc
@@ -2820,7 +2820,7 @@ trade_post = {
 		build_time = 182
 		ai_creation_factor = 100
 		prerequisites = { tr_market_1 }
-		tax_income = 1
+		tax_income = 0.5
 		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
@@ -2903,8 +2903,8 @@ trade_post = {
 		upgrades_from = tr_marble_merchant_1
 		ai_creation_factor = 99
 		prerequisites = { tr_market_2 }		
-		tax_income = 2
-		local_tax_modifier = 0.05
+		tax_income = 0.5
+		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
@@ -2986,8 +2986,8 @@ trade_post = {
 		upgrades_from = tr_marble_merchant_2
 		ai_creation_factor = 98
 		prerequisites = { tr_market_3 }		
-		tax_income = 2.5
-		local_tax_modifier = 0.1
+		tax_income = 0.5
+		local_tax_modifier = 0.025
 		
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}

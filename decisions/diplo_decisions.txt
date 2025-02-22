@@ -75,6 +75,7 @@ decisions = {
 		
 		potential = {
 			is_adult = yes
+			#FROM = { infamy >= 20 }
 		}
 		
 		allow = {
@@ -82,6 +83,7 @@ decisions = {
 				wealth = 250
 				prestige = 250
 				diplomacy = 12
+				infamy >= 20
 				NOT = { has_character_modifier = lowered_threat }
 			}
 		}

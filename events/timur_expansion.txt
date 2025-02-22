@@ -9,12 +9,12 @@ character_event = {
 	trigger = {
 		log = "TIMUEX.1 Triggered"
 		FROM = {
-			#ai = yes
+			ai = yes
 			NOT = { any_war = { count = 5 } }
 			has_landed_title = e_timurids
 			has_character_flag = timur_himself
 			NOT = { completely_controls_region = world_persia }
-			#NOT = { has_global_flag = world_persia_conquered_tim }
+			NOT = { has_global_flag = world_persia_conquered_tim }
 		}
 	}
 	
@@ -88,12 +88,12 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			#ai = yes
+			ai = yes
 			NOT = { any_war = { count = 5 } }
 			has_landed_title = e_timurids
 			has_character_flag = timur_himself
 			NOT = { completely_controls_region = world_middle_east_mesopotamia }
-			#NOT = { has_global_flag = world_middle_east_conquered_tim }
+			NOT = { has_global_flag = world_middle_east_conquered_tim }
 		}
 	}
 	
@@ -162,12 +162,12 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			#ai = yes
+			ai = yes
 			NOT = { any_war = { count = 5 } }
 			has_landed_title = e_timurids
 			has_character_flag = timur_himself
 			NOT = { completely_controls_region = world_asia_minor }
-			#NOT = { has_global_flag = world_middle_east_jerusalem_conquered_tim }
+			NOT = { has_global_flag = world_middle_east_jerusalem_conquered_tim }
 		}
 	}
 	
@@ -239,7 +239,7 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			#ai = yes
+			ai = yes
 			has_landed_title = e_timurids
 			#has_character_flag = timur_himself
 			completely_controls_region = world_persia
@@ -262,7 +262,7 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			#ai = yes
+			ai = yes
 			has_landed_title = e_timurids
 			#has_character_flag = timur_himself
 			completely_controls_region = world_middle_east_mesopotamia
@@ -285,7 +285,7 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			#ai = yes
+			ai = yes
 			has_landed_title = e_timurids
 			#has_character_flag = timur_himself
 			completely_controls_region = world_asia_minor
