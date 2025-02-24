@@ -1,7 +1,7 @@
 namespace = NW
 
-# 1-100 Mechanics
-# 200-300 Flavour
+# 1-200 Mechanics
+# 300-400 Flavour
 # 500-600 History
 
 ### MECHANICS ###
@@ -15,6 +15,8 @@ namespace = NW
 
 character_event = {
     id = NW.1
+    title = ""
+    desc = ""
     window = EventWindowNewWorld
     background = GFX_event_nw_bg
 
@@ -28,23 +30,62 @@ character_event = {
         set_character_flag = opened_nw_window
     }
 
-    option = { # make new clicksound (in .gui), paper?
-        name = "" #canada-america
-        repeat_event = NW.2
+    option = {
+        name = "" #canada-america 2/3/4/5/6
+        custom_tooltip = { text = NORTH_AMERICA_TT } # .gui wont let me use pdx_tooltip(_delayed)??
+        repeat_event =  { id = NW.2 }
     }
 
     option = {
         name = "" #mexico-panama
-        #repeat_event = NW.2
+        custom_tooltip = { text = CENTRAL_AMERICA_TT }
+        repeat_event =  { id = NW.7 } #7/8/9/10/11
     }
 
     option = {
-        name = "" #self explanatory
-        #repeat_event = NW.2
+        name = "" # cuba hispaniola jamaica islands
+        custom_tooltip = { text = CARRIBEAN_TT }
+        repeat_event =  { id = NW.12 } #12/13/14/15/16
     }
 
     option = {
         name = "" # Gran Columbia/Peru-Bolivia/Brazil/Argentina
-        #repeat_event = NW.2
+        custom_tooltip = { text = SOUTH_AMERICA_TT }
+        repeat_event =  { id = NW.17 } # 17/18/19/20/21
+    }
+}
+
+character_event = { #north america
+    id = NW.2
+    title = ""
+    desc = ""
+    window = EventWindowNorthAmerica 
+    #background =
+
+    is_triggered_only = yes
+
+    option = {
+        # If d_vinland has owner, then show portrait of colonial govenor or top liege?
+        name = "" # Vinland
+        custom_tooltip = { text = VINLAND_TT }
+        repeat_event = { id = NW.3 }
+    }
+
+    option = {
+        name = "" # Canada
+        custom_tooltip = { text = CANADA_TT }
+        repeat_event = { id = NW.4 }
+    }
+
+    option = {
+        name = "" # Eastern Seaboard
+        custom_tooltip = { text = SEABOARD_TT }
+        repeat_event = { id = NW.5 }
+    }
+
+    option = {
+        name = "" # Louisiana
+        custom_tooltip = { text = LOUISIANA_TT }
+        repeat_event = { id = NW.6 }
     }
 }
