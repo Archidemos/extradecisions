@@ -1,0 +1,71 @@
+# -*- ck2.scripted_effects -*-
+
+
+emf_destroy_title = {
+	if = {
+		limit = { has_holder = yes }
+		hidden_effect = { # This stops the `log` commands from executing when just generating a tooltip
+			owner = {
+				log = "DEBUG: emf_destroy_title: [Prev.EMF_GetDebugTitleNameWithDeJureLieges], held by [This.EMF_GetDebugName]"
+			}
+		}
+	}
+	hidden_effect = { emf_clear_standard_title_state = yes }
+	destroy_landed_title = THIS
+	hidden_effect = {
+		if = {
+			limit = { has_holder = yes }
+			log = "---> ERROR: title could not be destroyed for some reason"
+		}
+	}
+}
+
+emf_unsafe_destroy_title = {
+	if = {
+		limit = { has_holder = yes }
+		hidden_effect = { # This stops the `log` commands from executing when just generating a tooltip
+			owner = {
+				log = "DEBUG: emf_unsafe_destroy_title: [Prev.EMF_GetDebugTitleNameWithDeJureLieges], held by [This.EMF_GetDebugName]"
+			}
+		}
+	}
+	hidden_effect = { emf_clear_standard_title_state = yes }
+	unsafe_destroy_landed_title = THIS
+	hidden_effect = {
+		if = {
+			limit = { has_holder = yes }
+			log = "---> ERROR: title could not be destroyed for some reason"
+		}
+	}
+}
+
+emf_clear_standard_title_state = {
+	if = {
+		limit = { has_flag = viceroy_exemption }
+		owner = {
+			primary_title = { set_flag = viceroy_exemption }
+		}
+	}
+	clr_flag = has_imperial_administration
+	clr_flag = viceroy_exemption
+	clr_flag = emf_autodestroy
+	# if = {
+		# limit = { tier = EMPEROR }
+		# owner = {
+			# if = {
+				# limit = {
+					# NOT = {
+						# any_demesne_title = {
+							# tier = PREVPREV
+							# NOT = { title = PREVPREV }
+						# }
+					# }
+				# }
+				# emf_remove_decay_modifier = yes
+			# }
+		# }
+		# set_variable = { which = "imperial_decay" value = 0 }
+		# set_variable = { which = "imperial_decay_change" value = 0 }
+		# set_variable = { which = "imperial_dynasty_count" value = 0 }
+	# }
+}

@@ -1,0 +1,25 @@
+# -*- ck2.traits -*-
+
+# This trait is for any pseudo-character that should always live in the court of Isis. These "characters" tend
+# to be more like storage devices. They're the only courtiers spared the wrath of Isis; they are excluded from
+# almost everything from which Isis is excluded (plots, etc.) via the emf_isolated_character trigger; they are
+# immortal (though custom events to handle their reincarnation are required upon an implementation-dependent
+# basis); if they are detected as somehow exiting Isis's court, they will be moved back to it shortly; they
+# cannot marry, inherit, or hold any titles.
+emf_isis_courtier = {
+	immortal = yes
+	cannot_marry = yes
+	cannot_inherit = yes
+	can_hold_titles = no
+
+	ai_ambition = -200
+	ai_honor = 200
+	ai_rationality = 200
+	ai_greed = -200
+	ai_zeal = 200
+	
+	is_visible = { emf_hidden = yes }
+
+	customizer = no
+	random = no
+}

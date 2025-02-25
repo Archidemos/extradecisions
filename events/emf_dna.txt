@@ -1,0 +1,10068 @@
+# -*- ck2.events -*-
+# Originally written by Crimson9 for the HIP version of Improved Genetics 2.0
+
+namespace = emf_dna
+
+# emf_dna.10 -- Initialize a character's genetic traits. [Character]
+#
+# Called from the emf_new_character effect as well as from emf_dna.0 on campaign initialization and emf_dna.1 when
+# discovering a new randomly-generated courtier (or a character that was spawned by script but for some reason lacked a call
+# to the emf_new_character effect).
+#
+# NOTE: When generating new characters for which you want to assign your own congenital traits and/or disable any further
+# random congenital trait assignment, set_flag = emf_dna_check before calling emf_new_character = yes (or any of its
+# wrappers, e.g., emf_new_character_noble = yes). Likewise, if you want them to inherit from the traits of a spawned mother
+# and father as if they'd been born the normal way unto them, ensure that the mother and father are alive and assigned as
+# mother and father (set_mother, set_father/set_real_father) for the character before calling emf_new_character.
+character_event = {
+	id = emf_dna.10
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_flag = emf_dna_check }
+	}
+
+	immediate = {
+		# If only one parent is alive, use a DNA placeholder parent.
+		if = {
+			limit = {
+				mother = {
+					character = yes
+					is_alive = yes
+				}
+				NOR = {
+					father = { is_alive = yes }
+					real_father = { is_alive = yes }
+				}
+			}
+			father_even_if_dead = { save_event_target_as = emf_prior_dad }
+			real_father_even_if_dead = { save_event_target_as = emf_prior_real_dad }
+			event_target:emf_global_dna_dad = {
+				emf_dna_randomize_male = yes
+			}
+			if = {
+				limit = { event_target:emf_prior_real_dad = { character = yes } }
+				# We prefer the stand-in to be the real father here since it will be prioritized by the inheritance code
+				# as well:
+				set_real_father = event_target:emf_global_dna_dad
+			}
+			else = {
+				set_father = event_target:emf_global_dna_dad
+			}
+		}
+		else_if = { # Only one parent position can have a placeholder stand-in
+			limit = {
+				trigger_if = {
+					limit = { is_father_real_father = yes }
+					father = {
+						character = yes
+						is_alive = yes
+					}
+				}
+				trigger_else = {
+					real_father = {
+						character = yes
+						is_alive = yes
+					}
+				}
+				NOT = { mother = { is_alive = yes } }
+			}
+			mother_even_if_dead = { save_event_target_as = emf_prior_mom }
+			event_target:emf_global_dna_mom = {
+				emf_dna_randomize_female = yes
+			}
+			set_mother = event_target:emf_global_dna_mom
+		}
+		# If we can do proper genetic inheritance instead of applying a randomized trait distribution (i.e., at
+		# least one parent was alive when this event was invoked), then do that:
+		if = {
+			limit = {
+				mother = {
+					character = yes
+					is_alive = yes
+				}
+				trigger_if = {
+					limit = { is_father_real_father = yes }
+					father = {
+						character = yes
+						is_alive = yes
+					}
+				}
+				trigger_else = {
+					real_father = {
+						character = yes
+						is_alive = yes
+					}
+				}
+			}
+			# Since father and mother are alive already, then skip random DNA initialization and use on_birth DNA
+			# inheritance and mutation instead:
+			character_event = { id = emf_dna.1000 }
+			# Restore the prior real_father or father, if they were dead and we're using a DNA placeholder parent;
+			# handle restoration of an undefined father as well:
+			if = {
+				limit = {
+					OR = {
+						real_father = { character = event_target:emf_global_dna_dad }
+						father = { character = event_target:emf_global_dna_dad }
+					}
+				}
+				if = {
+					limit = { event_target:emf_prior_real_dad = { character = yes } }
+					set_real_father = event_target:emf_prior_real_dad
+				}
+				else_if = {
+					limit = { event_target:emf_prior_dad = { character = yes } }
+					set_father = event_target:emf_prior_dad
+				}
+				else = {
+					set_father = 0
+				}
+			}
+			else_if = { # Now do the same for the mother in case she was the stand-in (both cannot be):
+				limit = {
+					mother = { character = event_target:emf_global_dna_mom }
+				}
+				if = {
+					limit = { event_target:emf_prior_mom = { character = yes } }
+					set_mother = event_target:emf_prior_mom
+				}
+				else = {
+					set_mother = 0
+				}
+			}
+			break = yes
+		}
+		set_flag = emf_dna_check
+		if = {
+			limit = {
+				NOR = {
+					trait = bright
+					trait = quick
+					trait = genius
+					trait = imbecile
+					trait = slow
+					trait = dim
+				}
+			}
+			# Chances are out of 100000
+			random_list = {
+				114 = {
+					add_trait = genius
+				}
+				351 = {
+					add_trait = quick
+				}
+				781 = {
+					add_trait = bright
+				}
+				781 = {
+					add_trait = dim
+				}
+				351 = {
+					add_trait = slow
+				}
+				114 = {
+					add_trait = imbecile
+				}
+				7508 = {
+					## Nothing
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = strong
+					trait = burly
+					trait = delicate
+					trait = weak
+				}
+			}
+			# Chances are out of 100000
+			random_list = {
+				445 = {
+					add_trait = strong
+				}
+				781 = {
+					add_trait = burly
+				}
+				781 = {
+					add_trait = delicate
+				}
+				445 = {
+					add_trait = weak
+				}
+				7548 = {
+					## Nothing
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = fair
+					trait = comely
+					trait = homely
+					trait = ugly
+				}
+			}
+			# Chances are out of 100000
+			random_list = {
+				445 = {
+					add_trait = fair
+				}
+				781 = {
+					add_trait = comely
+				}
+				781 = {
+					add_trait = homely
+				}
+				445 = {
+					add_trait = ugly
+				}
+				7548 = {
+					## Nothing
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = giant
+					trait = tall
+					trait = short
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			# Chances are out of 100000
+			random_list = {
+				202 = {
+					add_trait = giant
+				}
+				793 = {
+					add_trait = tall
+				}
+				793 = {
+					add_trait = short
+				}
+				202 = {
+					add_trait = tiny
+				}
+				8010 = {
+					## Nothing
+				}
+			}
+		}
+		# Chances are out of 100000
+		random_list = {
+			27 = {
+				add_trait = dwarf
+			}
+			9973 = {
+			}
+		}
+		# Chances are out of 100000
+		random_list = {
+			60 = {
+				add_trait = hunchback
+			}
+			9940 = {
+			}
+		}
+		random_list = {
+			60 = {
+				add_trait = harelip
+			}
+			9940 = {
+			}
+		}
+		random_list = {
+			60 = {
+				add_trait = stutter
+			}
+			9940 = {
+			}
+		}
+		random_list = {
+			60 = {
+				add_trait = lisp
+			}
+			9940 = {
+			}
+		}
+		random_list = {
+			60 = {
+				add_trait = clubfooted
+			}
+			9940 = {
+			}
+		}
+		## HIP traits: Wrymouth, Deaf, Perceptive, Absentminded
+		random_list = {
+			55 = {
+				add_trait = wrymouth
+			}
+			9945 = {
+			}
+		}
+		random_list = {
+			55 = {
+				add_trait = deaf
+			}
+			9945 = {
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			# Chances are out of 100000
+			random_list = {
+				454 = {
+					add_trait = perceptive
+				}
+				454 = {
+					add_trait = absentminded
+				}
+				9092 = {
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = lefthanded
+				}
+				1 = {
+					add_trait = ambidextrous
+				}
+				89 = {
+				}
+			}
+		}
+		# Immediately set genetic flags for this character
+		character_event = { id = emf_dna.15 }
+	}
+}
+
+# emf_dna.15 -- set player genes on startup. unless a phenotype is already present, we give them average genes
+# subject only to a slight amount of chance (tilted toward slightly less likelihood of negative Mendelian
+# trait expression in offspring). this reduces un-fun surprises among other things.
+character_event = {
+	id = emf_dna.15
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_flag = emf_dna_check
+		emf_dna_clear_flags_for_int = yes
+		emf_dna_clear_flags_for_str = yes
+		emf_dna_clear_flags_for_hgt = yes
+		emf_dna_clear_flags_for_attr = yes
+		emf_dna_clear_flags_for_dwarf = yes
+		emf_dna_clear_flags_for_clubfooted = yes
+		emf_dna_clear_flags_for_hunchback = yes
+		emf_dna_clear_flags_for_harelip = yes
+		emf_dna_clear_flags_for_lisp = yes
+		emf_dna_clear_flags_for_stutter = yes
+		emf_dna_clear_flags_for_deaf = yes
+		emf_dna_clear_flags_for_wrymouth = yes
+		emf_dna_clear_flags_for_handedness = yes
+		# Intelligence
+		if = {
+			limit = { trait = genius }
+			emf_dna_set_flags_for_genius = yes
+		}
+		else_if = {
+			limit = { trait = quick }
+			emf_dna_set_flags_for_quick = yes
+		}
+		else_if = {
+			limit = { trait = bright }
+			emf_dna_set_flags_for_bright = yes
+		}
+		else_if = {
+			limit = { trait = dim }
+			emf_dna_set_flags_for_dim = yes
+		}
+		else_if = {
+			limit = { trait = slow }
+			emf_dna_set_flags_for_slow = yes
+		}
+		else_if = {
+			limit = { trait = imbecile }
+			emf_dna_set_flags_for_imbecile = yes
+		}
+		else = {
+			emf_dna_set_flags_for_average_intelligence = yes
+		}
+		# Strength
+		if = {
+			limit = { trait = strong }
+			emf_dna_set_flags_for_strong = yes
+		}
+		else_if = {
+			limit = { trait = burly }
+			emf_dna_set_flags_for_burly = yes
+		}
+		else_if = {
+			limit = { trait = delicate }
+			emf_dna_set_flags_for_delicate = yes
+		}
+		else_if = {
+			limit = { trait = weak }
+			emf_dna_set_flags_for_weak = yes
+		}
+		else = {
+			emf_dna_set_flags_for_average_strength = yes
+		}
+		# Height
+		if = {
+			limit = { trait = giant }
+			emf_dna_set_flags_for_giant = yes
+		}
+		else_if = {
+			limit = { trait = tall }
+			emf_dna_set_flags_for_tall = yes
+		}
+		else_if = {
+			limit = { trait = short }
+			emf_dna_set_flags_for_short = yes
+		}
+		else_if = {
+			limit = { trait = tiny }
+			emf_dna_set_flags_for_tiny = yes
+		}
+		else = {
+			emf_dna_set_flags_for_average_height = yes
+		}
+		# Attractiveness
+		if = {
+			limit = { trait = fair }
+			emf_dna_set_flags_for_fair = yes
+		}
+		else_if = {
+			limit = { trait = comely }
+			emf_dna_set_flags_for_comely = yes
+		}
+		else_if = {
+			limit = { trait = homely }
+			emf_dna_set_flags_for_homely = yes
+		}
+		else_if = {
+			limit = { trait = ugly }
+			emf_dna_set_flags_for_ugly = yes
+		}
+		else = {
+			emf_dna_set_flags_for_average_attractiveness = yes
+		}
+		# Perceptiveness
+		if = {
+			limit = { trait = perceptive }
+			emf_dna_set_flags_for_perceptive = yes
+		}
+		else_if = {
+			limit = { trait = absentminded }
+			emf_dna_set_flags_for_absentminded = yes
+		}
+		else = {
+			emf_dna_set_flags_for_average_perceptiveness = yes
+		}
+		# Handedness
+		if = {
+			limit = { trait = lefthanded }
+			emf_dna_set_flags_for_lefthanded = yes
+		}
+		else_if = {
+			limit = { trait = ambidextrous }
+			emf_dna_set_flags_for_ambidextrous = yes
+		}
+		else = {
+			emf_dna_set_flags_for_handedness_if_no_trait = yes
+		}
+		# Mendelian traits
+		if = {
+			limit = { trait = dwarf }
+			emf_dna_set_flags_for_dwarf = yes
+		}
+		else = {
+			emf_dna_set_flags_for_dwarf_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = clubfooted }
+			emf_dna_set_flags_for_clubfooted = yes
+		}
+		else = {
+			emf_dna_set_flags_for_clubfooted_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = hunchback }
+			emf_dna_set_flags_for_hunchback = yes
+		}
+		else = {
+			emf_dna_set_flags_for_hunchback_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = harelip }
+			emf_dna_set_flags_for_harelip = yes
+		}
+		else = {
+			emf_dna_set_flags_for_harelip_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = lisp }
+			emf_dna_set_flags_for_lisp = yes
+		}
+		else = {
+			emf_dna_set_flags_for_lisp_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = stutter }
+			emf_dna_set_flags_for_stutter = yes
+		}
+		else = {
+			emf_dna_set_flags_for_stutter_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = deaf }
+			emf_dna_set_flags_for_deaf = yes
+		}
+		else = {
+			emf_dna_set_flags_for_deaf_if_no_trait = yes
+		}
+		if = {
+			limit = { trait = wrymouth }
+			emf_dna_set_flags_for_wrymouth = yes
+		}
+		else = {
+			emf_dna_set_flags_for_wrymouth_if_no_trait = yes
+		}
+		## Health Effects
+		if = {
+			limit = {
+				NOR = {
+					has_flag = hl_AA
+					has_flag = hl_Aa
+					has_flag = hl_aa
+					has_flag = hl_BB
+					has_flag = hl_Bb
+					has_flag = hl_bb
+					has_flag = hl_CC
+					has_flag = hl_Cc
+					has_flag = hl_cc
+				}
+			}
+			emf_dna_set_flags_for_new_character_health = yes
+			emf_dna_apply_effects_health = yes
+		}
+	}
+}
+
+#############################
+#### GENETIC INHERITANCE ####
+#############################
+
+## Intelligence [Start of on_birth chain]
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1000
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		NOT = { has_flag = emf_dna_check }
+		mother = {
+			character = yes
+			is_alive = yes
+		}
+		trigger_if = {
+			limit = { is_father_real_father = yes }
+			father = {
+				character = yes
+				is_alive = yes
+			}
+		}
+		trigger_else = {
+			real_father = {
+				character = yes
+				is_alive = yes
+			}
+		}
+	}
+
+	immediate = {
+		# Mark this character as having received a DNA check so that they're not later mistaken for a randomly-generated courtier:
+		set_flag = emf_dna_check
+		# Save the correct father scope to event_target:emf_dna_dad. All other inheritance events are chained from here, so we never need
+		# to do this again (the event target will remain valid until the chain fully completes). Why not use the true_father scope
+		# added in patch 2.8, allegedly? Because, despite the vanilla changelog indicating how and that it works, using it
+		# throughout this module initially caused millions of lines of script asserts to be written to the error log re: triggers
+		# and effects inside the true_father scope. Thus, we'll just use a tried and true event target.
+		if = {
+			limit = { is_father_real_father = yes }
+			father = {
+				save_event_target_as = emf_dna_dad
+			}
+		}
+		else = {
+			real_father = {
+				save_event_target_as = emf_dna_dad
+			}
+		}
+		## 1. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = i_AA
+						has_flag = i_Aa
+						has_flag = i_aa
+						has_flag = i_BB
+						has_flag = i_Bb
+						has_flag = i_bb
+						has_flag = i_CC
+						has_flag = i_Cc
+						has_flag = i_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = genius
+					}
+					emf_dna_set_flags_for_genius = yes
+				}
+				else_if = {
+					limit = {
+						trait = quick
+					}
+					emf_dna_set_flags_for_quick = yes
+				}
+				else_if = {
+					limit = {
+						trait = bright
+					}
+					emf_dna_set_flags_for_bright = yes
+				}
+				else_if = {
+					limit = {
+						trait = dim
+					}
+					emf_dna_set_flags_for_dim = yes
+				}
+				else_if = {
+					limit = {
+						trait = slow
+					}
+					emf_dna_set_flags_for_slow = yes
+				}
+				else_if = {
+					limit = {
+						trait = imbecile
+					}
+					emf_dna_set_flags_for_imbecile = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_intelligence = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = i_AA
+						has_flag = i_Aa
+						has_flag = i_aa
+						has_flag = i_BB
+						has_flag = i_Bb
+						has_flag = i_bb
+						has_flag = i_CC
+						has_flag = i_Cc
+						has_flag = i_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = genius
+					}
+					emf_dna_set_flags_for_genius = yes
+				}
+				else_if = {
+					limit = {
+						trait = quick
+					}
+					emf_dna_set_flags_for_quick = yes
+				}
+				else_if = {
+					limit = {
+						trait = bright
+					}
+					emf_dna_set_flags_for_bright = yes
+				}
+				else_if = {
+					limit = {
+						trait = dim
+					}
+					emf_dna_set_flags_for_dim = yes
+				}
+				else_if = {
+					limit = {
+						trait = slow
+					}
+					emf_dna_set_flags_for_slow = yes
+				}
+				else_if = {
+					limit = {
+						trait = imbecile
+					}
+					emf_dna_set_flags_for_imbecile = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_intelligence = yes
+				}
+			}
+		}
+		## 2. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_AA
+				}
+				mother = {
+					has_flag = i_AA
+				}
+			}
+			set_flag = i_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_AA
+				}
+				mother = {
+					has_flag = i_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Aa
+				}
+				mother = {
+					has_flag = i_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Aa
+				}
+				mother = {
+					has_flag = i_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = i_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = i_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_AA
+				}
+				mother = {
+					has_flag = i_aa
+				}
+			}
+			set_flag = i_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_aa
+				}
+				mother = {
+					has_flag = i_AA
+				}
+			}
+			set_flag = i_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Aa
+				}
+				mother = {
+					has_flag = i_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_aa
+				}
+				mother = {
+					has_flag = i_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_aa
+				}
+				mother = {
+					has_flag = i_aa
+				}
+			}
+			set_flag = i_aa
+		}
+		else = {
+			set_flag = i_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_BB
+				}
+				mother = {
+					has_flag = i_BB
+				}
+			}
+			set_flag = i_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_BB
+				}
+				mother = {
+					has_flag = i_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Bb
+				}
+				mother = {
+					has_flag = i_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Bb
+				}
+				mother = {
+					has_flag = i_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = i_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = i_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_BB
+				}
+				mother = {
+					has_flag = i_bb
+				}
+			}
+			set_flag = i_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_bb
+				}
+				mother = {
+					has_flag = i_BB
+				}
+			}
+			set_flag = i_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Bb
+				}
+				mother = {
+					has_flag = i_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_bb
+				}
+				mother = {
+					has_flag = i_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_bb
+				}
+				mother = {
+					has_flag = i_bb
+				}
+			}
+			set_flag = i_bb
+		}
+		else = {
+			set_flag = i_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_CC
+				}
+				mother = {
+					has_flag = i_CC
+				}
+			}
+			set_flag = i_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_CC
+				}
+				mother = {
+					has_flag = i_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Cc
+				}
+				mother = {
+					has_flag = i_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Cc
+				}
+				mother = {
+					has_flag = i_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = i_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = i_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = i_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_CC
+				}
+				mother = {
+					has_flag = i_cc
+				}
+			}
+			set_flag = i_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_cc
+				}
+				mother = {
+					has_flag = i_CC
+				}
+			}
+			set_flag = i_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_Cc
+				}
+				mother = {
+					has_flag = i_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_cc
+				}
+				mother = {
+					has_flag = i_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = i_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = i_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = i_cc
+				}
+				mother = {
+					has_flag = i_cc
+				}
+			}
+			set_flag = i_cc
+		}
+		else = {
+			set_flag = i_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 3. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				30 = {
+					add_trait = genius
+				}
+				50 = {
+					add_trait = quick
+				}
+				20 = {
+					add_trait = bright
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				5 = {
+					add_trait = genius
+				}
+				20 = {
+					add_trait = quick
+				}
+				50 = {
+					add_trait = bright
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = quick
+				}
+				8 = {
+					add_trait = bright
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = slow
+				}
+				8 = {
+					add_trait = dim
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				5 = {
+					add_trait = imbecile
+				}
+				20 = {
+					add_trait = slow
+				}
+				50 = {
+					add_trait = dim
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = genius
+					trait = quick
+					trait = imbecile
+					trait = slow
+					trait = bright
+					trait = dim
+				}
+			}
+			random_list = {
+				30 = {
+					add_trait = imbecile
+				}
+				50 = {
+					add_trait = slow
+				}
+				20 = {
+					add_trait = dim
+				}
+			}
+		}
+		character_event = { id = emf_dna.1010 }
+	}
+}
+
+## Attractiveness
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1010
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		## 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = a_AA
+						has_flag = a_Aa
+						has_flag = a_aa
+						has_flag = a_BB
+						has_flag = a_Bb
+						has_flag = a_bb
+						has_flag = a_CC
+						has_flag = a_Cc
+						has_flag = a_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = fair
+					}
+					emf_dna_set_flags_for_fair = yes
+				}
+				else_if = {
+					limit = {
+						trait = comely
+					}
+					emf_dna_set_flags_for_comely = yes
+				}
+				else_if = {
+					limit = {
+						trait = homely
+					}
+					emf_dna_set_flags_for_homely = yes
+				}
+				else_if = {
+					limit = {
+						trait = ugly
+					}
+					emf_dna_set_flags_for_ugly = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_attractiveness = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = a_AA
+						has_flag = a_Aa
+						has_flag = a_aa
+						has_flag = a_BB
+						has_flag = a_Bb
+						has_flag = a_bb
+						has_flag = a_CC
+						has_flag = a_Cc
+						has_flag = a_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = fair
+					}
+					emf_dna_set_flags_for_fair = yes
+				}
+				else_if = {
+					limit = {
+						trait = comely
+					}
+					emf_dna_set_flags_for_comely = yes
+				}
+				else_if = {
+					limit = {
+						trait = homely
+					}
+					emf_dna_set_flags_for_homely = yes
+				}
+				else_if = {
+					limit = {
+						trait = ugly
+					}
+					emf_dna_set_flags_for_ugly = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_attractiveness = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_AA
+				}
+				mother = {
+					has_flag = a_AA
+				}
+			}
+			set_flag = a_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_AA
+				}
+				mother = {
+					has_flag = a_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Aa
+				}
+				mother = {
+					has_flag = a_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Aa
+				}
+				mother = {
+					has_flag = a_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = a_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = a_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_AA
+				}
+				mother = {
+					has_flag = a_aa
+				}
+			}
+			set_flag = a_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_aa
+				}
+				mother = {
+					has_flag = a_AA
+				}
+			}
+			set_flag = a_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Aa
+				}
+				mother = {
+					has_flag = a_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_aa
+				}
+				mother = {
+					has_flag = a_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_aa
+				}
+				mother = {
+					has_flag = a_aa
+				}
+			}
+			set_flag = a_aa
+		}
+		else = {
+			set_flag = a_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_BB
+				}
+				mother = {
+					has_flag = a_BB
+				}
+			}
+			set_flag = a_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_BB
+				}
+				mother = {
+					has_flag = a_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Bb
+				}
+				mother = {
+					has_flag = a_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_BB
+				}
+				mother = {
+					has_flag = a_bb
+				}
+			}
+			set_flag = a_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_bb
+				}
+				mother = {
+					has_flag = a_BB
+				}
+			}
+			set_flag = a_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Bb
+				}
+				mother = {
+					has_flag = a_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = a_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = a_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Bb
+				}
+				mother = {
+					has_flag = a_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_bb
+				}
+				mother = {
+					has_flag = a_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_bb
+				}
+				mother = {
+					has_flag = a_bb
+				}
+			}
+			set_flag = a_bb
+		}
+		else = {
+			set_flag = a_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_CC
+				}
+				mother = {
+					has_flag = a_CC
+				}
+			}
+			set_flag = a_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_CC
+				}
+				mother = {
+					has_flag = a_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Cc
+				}
+				mother = {
+					has_flag = a_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Cc
+				}
+				mother = {
+					has_flag = a_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = a_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = a_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = a_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_CC
+				}
+				mother = {
+					has_flag = a_cc
+				}
+			}
+			set_flag = a_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_cc
+				}
+				mother = {
+					has_flag = a_CC
+				}
+			}
+			set_flag = a_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_Cc
+				}
+				mother = {
+					has_flag = a_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_cc
+				}
+				mother = {
+					has_flag = a_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = a_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = a_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = a_cc
+				}
+				mother = {
+					has_flag = a_cc
+				}
+			}
+			set_flag = a_cc
+		}
+		else = {
+			set_flag = a_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = fair
+				}
+				20 = {
+					add_trait = comely
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = fair
+				}
+				50 = {
+					add_trait = comely
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = fair
+				}
+				8 = {
+					add_trait = comely
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = ugly
+				}
+				8 = {
+					add_trait = homely
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = ugly
+				}
+				50 = {
+					add_trait = homely
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = fair
+					trait = ugly
+					trait = comely
+					trait = homely
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = ugly
+				}
+				20 = {
+					add_trait = homely
+				}
+			}
+		}
+		character_event = { id = emf_dna.1020 }
+	}
+}
+
+## Strength
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1020
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		## 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = st_AA
+						has_flag = st_Aa
+						has_flag = st_aa
+						has_flag = st_BB
+						has_flag = st_Bb
+						has_flag = st_bb
+						has_flag = st_CC
+						has_flag = st_Cc
+						has_flag = st_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = strong
+					}
+					emf_dna_set_flags_for_strong = yes
+				}
+				else_if = {
+					limit = {
+						trait = burly
+					}
+					emf_dna_set_flags_for_burly = yes
+				}
+				else_if = {
+					limit = {
+						trait = delicate
+					}
+					emf_dna_set_flags_for_delicate = yes
+				}
+				else_if = {
+					limit = {
+						trait = weak
+					}
+					emf_dna_set_flags_for_weak = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_strength = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = st_AA
+						has_flag = st_Aa
+						has_flag = st_aa
+						has_flag = st_BB
+						has_flag = st_Bb
+						has_flag = st_bb
+						has_flag = st_CC
+						has_flag = st_Cc
+						has_flag = st_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = strong
+					}
+					emf_dna_set_flags_for_strong = yes
+				}
+				else_if = {
+					limit = {
+						trait = burly
+					}
+					emf_dna_set_flags_for_burly = yes
+				}
+				else_if = {
+					limit = {
+						trait = delicate
+					}
+					emf_dna_set_flags_for_delicate = yes
+				}
+				else_if = {
+					limit = {
+						trait = weak
+					}
+					emf_dna_set_flags_for_weak = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_strength = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_AA
+				}
+				mother = {
+					has_flag = st_AA
+				}
+			}
+			set_flag = st_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_AA
+				}
+				mother = {
+					has_flag = st_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Aa
+				}
+				mother = {
+					has_flag = st_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Aa
+				}
+				mother = {
+					has_flag = st_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = st_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = st_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_AA
+				}
+				mother = {
+					has_flag = st_aa
+				}
+			}
+			set_flag = st_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_aa
+				}
+				mother = {
+					has_flag = st_AA
+				}
+			}
+			set_flag = st_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Aa
+				}
+				mother = {
+					has_flag = st_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_aa
+				}
+				mother = {
+					has_flag = st_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_aa
+				}
+				mother = {
+					has_flag = st_aa
+				}
+			}
+			set_flag = st_aa
+		}
+		else = {
+			set_flag = st_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_BB
+				}
+				mother = {
+					has_flag = st_BB
+				}
+			}
+			set_flag = st_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_BB
+				}
+				mother = {
+					has_flag = st_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Bb
+				}
+				mother = {
+					has_flag = st_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_BB
+				}
+				mother = {
+					has_flag = st_bb
+				}
+			}
+			set_flag = st_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_bb
+				}
+				mother = {
+					has_flag = st_BB
+				}
+			}
+			set_flag = st_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Bb
+				}
+				mother = {
+					has_flag = st_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = st_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = st_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Bb
+				}
+				mother = {
+					has_flag = st_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_bb
+				}
+				mother = {
+					has_flag = st_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_bb
+				}
+				mother = {
+					has_flag = st_bb
+				}
+			}
+			set_flag = st_bb
+		}
+		else = {
+			set_flag = st_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_CC
+				}
+				mother = {
+					has_flag = st_CC
+				}
+			}
+			set_flag = st_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_CC
+				}
+				mother = {
+					has_flag = st_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Cc
+				}
+				mother = {
+					has_flag = st_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Cc
+				}
+				mother = {
+					has_flag = st_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = st_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = st_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = st_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_CC
+				}
+				mother = {
+					has_flag = st_cc
+				}
+			}
+			set_flag = st_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_cc
+				}
+				mother = {
+					has_flag = st_CC
+				}
+			}
+			set_flag = st_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_Cc
+				}
+				mother = {
+					has_flag = st_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_cc
+				}
+				mother = {
+					has_flag = st_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = st_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = st_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = st_cc
+				}
+				mother = {
+					has_flag = st_cc
+				}
+			}
+			set_flag = st_cc
+		}
+		else = {
+			set_flag = st_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = strong
+				}
+				20 = {
+					add_trait = burly
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = strong
+				}
+				50 = {
+					add_trait = burly
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = strong
+				}
+				8 = {
+					add_trait = burly
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = weak
+				}
+				8 = {
+					add_trait = delicate
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = weak
+				}
+				50 = {
+					add_trait = delicate
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = strong
+					trait = weak
+					trait = burly
+					trait = delicate
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = weak
+				}
+				20 = {
+					add_trait = delicate
+				}
+			}
+		}
+		character_event = { id = emf_dna.1030 }
+	}
+}
+
+## Height
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1030
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		## 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = ht_AA
+						has_flag = ht_Aa
+						has_flag = ht_aa
+						has_flag = ht_BB
+						has_flag = ht_Bb
+						has_flag = ht_bb
+						has_flag = ht_CC
+						has_flag = ht_Cc
+						has_flag = ht_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = giant
+					}
+					emf_dna_set_flags_for_giant = yes
+				}
+				else_if = {
+					limit = {
+						trait = tall
+					}
+					emf_dna_set_flags_for_tall = yes
+				}
+				else_if = {
+					limit = {
+						trait = short
+					}
+					emf_dna_set_flags_for_short = yes
+				}
+				else_if = {
+					limit = {
+						trait = tiny
+					}
+					emf_dna_set_flags_for_tiny = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_height = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = ht_AA
+						has_flag = ht_Aa
+						has_flag = ht_aa
+						has_flag = ht_BB
+						has_flag = ht_Bb
+						has_flag = ht_bb
+						has_flag = ht_CC
+						has_flag = ht_Cc
+						has_flag = ht_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = giant
+					}
+					emf_dna_set_flags_for_giant = yes
+				}
+				else_if = {
+					limit = {
+						trait = tall
+					}
+					emf_dna_set_flags_for_tall = yes
+				}
+				else_if = {
+					limit = {
+						trait = short
+					}
+					emf_dna_set_flags_for_short = yes
+				}
+				else_if = {
+					limit = {
+						trait = tiny
+					}
+					emf_dna_set_flags_for_tiny = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_height = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_AA
+				}
+				mother = {
+					has_flag = ht_AA
+				}
+			}
+			set_flag = ht_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_AA }
+						mother = { has_flag = ht_Aa }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Aa }
+						mother = { has_flag = ht_AA }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_Aa
+				}
+				mother = {
+					has_flag = ht_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ht_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = ht_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_AA }
+						mother = { has_flag = ht_aa }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_aa }
+						mother = { has_flag = ht_AA }
+					}
+				}
+			}
+			set_flag = ht_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Aa }
+						mother = { has_flag = ht_aa }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_aa }
+						mother = { has_flag = ht_Aa }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = ht_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_aa
+				}
+				mother = {
+					has_flag = ht_aa
+				}
+			}
+			set_flag = ht_aa
+		}
+		else = {
+			set_flag = ht_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_BB
+				}
+				mother = {
+					has_flag = ht_BB
+				}
+			}
+			set_flag = ht_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_BB }
+						mother = { has_flag = ht_Bb }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Bb }
+						mother = { has_flag = ht_BB }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_Bb
+				}
+				mother = {
+					has_flag = ht_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ht_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = ht_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_BB }
+						mother = { has_flag = ht_bb }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_bb }
+						mother = { has_flag = ht_BB }
+					}
+				}
+			}
+			set_flag = ht_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Bb }
+						mother = { has_flag = ht_bb }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_bb }
+						mother = { has_flag = ht_Bb }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = ht_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_bb
+				}
+				mother = {
+					has_flag = ht_bb
+				}
+			}
+			set_flag = ht_bb
+		}
+		else = {
+			set_flag = ht_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_CC
+				}
+				mother = {
+					has_flag = ht_CC
+				}
+			}
+			set_flag = ht_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_CC }
+						mother = { has_flag = ht_Cc }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Cc }
+						mother = { has_flag = ht_CC }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_CC }
+						mother = { has_flag = ht_cc }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_cc }
+						mother = { has_flag = ht_CC }
+					}
+				}
+			}
+			set_flag = ht_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_Cc
+				}
+				mother = {
+					has_flag = ht_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ht_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = ht_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = ht_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_Cc }
+						mother = { has_flag = ht_cc }
+					}
+					AND = {
+						event_target:emf_dna_dad = { has_flag = ht_cc }
+						mother = { has_flag = ht_Cc }
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ht_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = ht_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ht_cc
+				}
+				mother = {
+					has_flag = ht_cc
+				}
+			}
+			set_flag = ht_cc
+		}
+		else = {
+			set_flag = ht_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				60 = {
+					add_trait = giant
+				}
+				40 = {
+					add_trait = tall
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = giant
+				}
+				50 = {
+					add_trait = tall
+				}
+				40 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				8 = {
+					add_trait = tall
+				}
+				92 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				8 = {
+					add_trait = short
+				}
+				92 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				10 = {
+					add_trait = tiny
+				}
+				50 = {
+					add_trait = short
+				}
+				40 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = tall
+					trait = short
+					trait = giant
+					trait = tiny
+					trait = dwarf
+				}
+			}
+			random_list = {
+				60 = {
+					add_trait = tiny
+				}
+				40 = {
+					add_trait = short
+				}
+			}
+		}
+		character_event = { id = emf_dna.1040 }
+	}
+}
+
+## Dwarf
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1040
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = dwarf
+					NOR = {
+						has_flag = dw_aa
+						has_flag = dw_bb
+						has_flag = dw_cc
+					}
+				}
+				emf_dna_clear_flags_for_dwarf = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = dwarf
+					NOR = {
+						has_flag = dw_aa
+						has_flag = dw_bb
+						has_flag = dw_cc
+					}
+				}
+				emf_dna_clear_flags_for_dwarf = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = dw_AA
+						has_flag = dw_Aa
+						has_flag = dw_aa
+						has_flag = dw_BB
+						has_flag = dw_Bb
+						has_flag = dw_bb
+						has_flag = dw_CC
+						has_flag = dw_Cc
+						has_flag = dw_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = dwarf
+					}
+					emf_dna_set_flags_for_dwarf = yes
+				}
+				else = {
+					emf_dna_set_flags_for_dwarf_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = dw_AA
+						has_flag = dw_Aa
+						has_flag = dw_aa
+						has_flag = dw_BB
+						has_flag = dw_Bb
+						has_flag = dw_bb
+						has_flag = dw_CC
+						has_flag = dw_Cc
+						has_flag = dw_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = dwarf
+					}
+					emf_dna_set_flags_for_dwarf = yes
+				}
+				else = {
+					emf_dna_set_flags_for_dwarf_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_AA
+				}
+				mother = {
+					has_flag = dw_AA
+				}
+			}
+			set_flag = dw_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_AA
+				}
+				mother = {
+					has_flag = dw_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_AA
+				}
+				50 = {
+					set_flag = dw_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Aa
+				}
+				mother = {
+					has_flag = dw_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_AA
+				}
+				50 = {
+					set_flag = dw_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Aa
+				}
+				mother = {
+					has_flag = dw_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = dw_AA
+				}
+				50 = {
+					set_flag = dw_Aa
+				}
+				25 = {
+					set_flag = dw_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_AA
+				}
+				mother = {
+					has_flag = dw_aa
+				}
+			}
+			set_flag = dw_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_aa
+				}
+				mother = {
+					has_flag = dw_AA
+				}
+			}
+			set_flag = dw_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Aa
+				}
+				mother = {
+					has_flag = dw_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Aa
+				}
+				50 = {
+					set_flag = dw_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_aa
+				}
+				mother = {
+					has_flag = dw_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Aa
+				}
+				50 = {
+					set_flag = dw_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_aa
+				}
+				mother = {
+					has_flag = dw_aa
+				}
+			}
+			set_flag = dw_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = dw_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_BB
+				}
+				mother = {
+					has_flag = dw_BB
+				}
+			}
+			set_flag = dw_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_BB
+				}
+				mother = {
+					has_flag = dw_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_BB
+				}
+				50 = {
+					set_flag = dw_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Bb
+				}
+				mother = {
+					has_flag = dw_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_BB
+				}
+				50 = {
+					set_flag = dw_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Bb
+				}
+				mother = {
+					has_flag = dw_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = dw_BB
+				}
+				50 = {
+					set_flag = dw_Bb
+				}
+				25 = {
+					set_flag = dw_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_BB
+				}
+				mother = {
+					has_flag = dw_bb
+				}
+			}
+			set_flag = dw_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_bb
+				}
+				mother = {
+					has_flag = dw_BB
+				}
+			}
+			set_flag = dw_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Bb
+				}
+				mother = {
+					has_flag = dw_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Bb
+				}
+				50 = {
+					set_flag = dw_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_bb
+				}
+				mother = {
+					has_flag = dw_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Bb
+				}
+				50 = {
+					set_flag = dw_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_bb
+				}
+				mother = {
+					has_flag = dw_bb
+				}
+			}
+			set_flag = dw_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = dw_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_CC
+				}
+				mother = {
+					has_flag = dw_CC
+				}
+			}
+			set_flag = dw_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_CC
+				}
+				mother = {
+					has_flag = dw_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_CC
+				}
+				50 = {
+					set_flag = dw_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Cc
+				}
+				mother = {
+					has_flag = dw_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_CC
+				}
+				50 = {
+					set_flag = dw_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Cc
+				}
+				mother = {
+					has_flag = dw_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = dw_CC
+				}
+				50 = {
+					set_flag = dw_Cc
+				}
+				25 = {
+					set_flag = dw_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_CC
+				}
+				mother = {
+					has_flag = dw_cc
+				}
+			}
+			set_flag = dw_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_cc
+				}
+				mother = {
+					has_flag = dw_CC
+				}
+			}
+			set_flag = dw_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_Cc
+				}
+				mother = {
+					has_flag = dw_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Cc
+				}
+				50 = {
+					set_flag = dw_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_cc
+				}
+				mother = {
+					has_flag = dw_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = dw_Cc
+				}
+				50 = {
+					set_flag = dw_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = dw_cc
+				}
+				mother = {
+					has_flag = dw_cc
+				}
+			}
+			set_flag = dw_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = dw_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = dwarf }
+			}
+			add_trait = dwarf
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = dwarf }
+			}
+			random_list = {
+				10 = {
+					add_trait = dwarf
+				}
+				90 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = dwarf }
+			}
+			random_list = {
+				1 = {
+					add_trait = dwarf
+				}
+				99 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1050 }
+	}
+}
+
+## Clubfooted
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1050
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = clubfooted
+					NOR = {
+						has_flag = c_aa
+						has_flag = c_bb
+						has_flag = c_cc
+					}
+				}
+				emf_dna_clear_flags_for_clubfooted = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = clubfooted
+					NOR = {
+						has_flag = c_aa
+						has_flag = c_bb
+						has_flag = c_cc
+					}
+				}
+				emf_dna_clear_flags_for_clubfooted = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = c_AA
+						has_flag = c_Aa
+						has_flag = c_aa
+						has_flag = c_BB
+						has_flag = c_Bb
+						has_flag = c_bb
+						has_flag = c_CC
+						has_flag = c_Cc
+						has_flag = c_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = clubfooted
+					}
+					emf_dna_set_flags_for_clubfooted = yes
+				}
+				else = {
+					emf_dna_set_flags_for_clubfooted_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = c_AA
+						has_flag = c_Aa
+						has_flag = c_aa
+						has_flag = c_BB
+						has_flag = c_Bb
+						has_flag = c_bb
+						has_flag = c_CC
+						has_flag = c_Cc
+						has_flag = c_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = clubfooted
+					}
+					emf_dna_set_flags_for_clubfooted = yes
+				}
+				else = {
+					emf_dna_set_flags_for_clubfooted_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_AA
+				}
+				mother = {
+					has_flag = c_AA
+				}
+			}
+			set_flag = c_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_AA
+				}
+				mother = {
+					has_flag = c_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_AA
+				}
+				50 = {
+					set_flag = c_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Aa
+				}
+				mother = {
+					has_flag = c_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_AA
+				}
+				50 = {
+					set_flag = c_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Aa
+				}
+				mother = {
+					has_flag = c_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = c_AA
+				}
+				50 = {
+					set_flag = c_Aa
+				}
+				25 = {
+					set_flag = c_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_AA
+				}
+				mother = {
+					has_flag = c_aa
+				}
+			}
+			set_flag = c_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_aa
+				}
+				mother = {
+					has_flag = c_AA
+				}
+			}
+			set_flag = c_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Aa
+				}
+				mother = {
+					has_flag = c_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Aa
+				}
+				50 = {
+					set_flag = c_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_aa
+				}
+				mother = {
+					has_flag = c_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Aa
+				}
+				50 = {
+					set_flag = c_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_aa
+				}
+				mother = {
+					has_flag = c_aa
+				}
+			}
+			set_flag = c_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = c_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_BB
+				}
+				mother = {
+					has_flag = c_BB
+				}
+			}
+			set_flag = c_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_BB
+				}
+				mother = {
+					has_flag = c_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_BB
+				}
+				50 = {
+					set_flag = c_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Bb
+				}
+				mother = {
+					has_flag = c_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_BB
+				}
+				50 = {
+					set_flag = c_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Bb
+				}
+				mother = {
+					has_flag = c_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = c_BB
+				}
+				50 = {
+					set_flag = c_Bb
+				}
+				25 = {
+					set_flag = c_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_BB
+				}
+				mother = {
+					has_flag = c_bb
+				}
+			}
+			set_flag = c_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_bb
+				}
+				mother = {
+					has_flag = c_BB
+				}
+			}
+			set_flag = c_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Bb
+				}
+				mother = {
+					has_flag = c_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Bb
+				}
+				50 = {
+					set_flag = c_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_bb
+				}
+				mother = {
+					has_flag = c_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Bb
+				}
+				50 = {
+					set_flag = c_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_bb
+				}
+				mother = {
+					has_flag = c_bb
+				}
+			}
+			set_flag = c_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = c_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_CC
+				}
+				mother = {
+					has_flag = c_CC
+				}
+			}
+			set_flag = c_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_CC
+				}
+				mother = {
+					has_flag = c_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_CC
+				}
+				50 = {
+					set_flag = c_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Cc
+				}
+				mother = {
+					has_flag = c_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_CC
+				}
+				50 = {
+					set_flag = c_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Cc
+				}
+				mother = {
+					has_flag = c_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = c_CC
+				}
+				50 = {
+					set_flag = c_Cc
+				}
+				25 = {
+					set_flag = c_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_CC
+				}
+				mother = {
+					has_flag = c_cc
+				}
+			}
+			set_flag = c_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_cc
+				}
+				mother = {
+					has_flag = c_CC
+				}
+			}
+			set_flag = c_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_Cc
+				}
+				mother = {
+					has_flag = c_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Cc
+				}
+				50 = {
+					set_flag = c_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_cc
+				}
+				mother = {
+					has_flag = c_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = c_Cc
+				}
+				50 = {
+					set_flag = c_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = c_cc
+				}
+				mother = {
+					has_flag = c_cc
+				}
+			}
+			set_flag = c_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = c_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = clubfooted }
+			}
+			random_list = {
+				75 = {
+					add_trait = clubfooted
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = clubfooted }
+			}
+			random_list = {
+				15 = {
+					add_trait = clubfooted
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = clubfooted }
+			}
+			random_list = {
+				1 = {
+					add_trait = clubfooted
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1100 }
+	}
+}
+
+## Hunchback
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1100
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = hunchback
+					NOR = {
+						has_flag = hu_aa
+						has_flag = hu_bb
+						has_flag = hu_cc
+					}
+				}
+				emf_dna_clear_flags_for_hunchback = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = hunchback
+					NOR = {
+						has_flag = hu_aa
+						has_flag = hu_bb
+						has_flag = hu_cc
+					}
+				}
+				emf_dna_clear_flags_for_hunchback = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = hu_AA
+						has_flag = hu_Aa
+						has_flag = hu_aa
+						has_flag = hu_BB
+						has_flag = hu_Bb
+						has_flag = hu_bb
+						has_flag = hu_CC
+						has_flag = hu_Cc
+						has_flag = hu_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = hunchback
+					}
+					emf_dna_set_flags_for_hunchback = yes
+				}
+				else = {
+					emf_dna_set_flags_for_hunchback_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = hu_AA
+						has_flag = hu_Aa
+						has_flag = hu_aa
+						has_flag = hu_BB
+						has_flag = hu_Bb
+						has_flag = hu_bb
+						has_flag = hu_CC
+						has_flag = hu_Cc
+						has_flag = hu_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = hunchback
+					}
+					emf_dna_set_flags_for_hunchback = yes
+				}
+				else = {
+					emf_dna_set_flags_for_hunchback_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_AA
+				}
+				mother = {
+					has_flag = hu_AA
+				}
+			}
+			set_flag = hu_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_AA
+				}
+				mother = {
+					has_flag = hu_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_AA
+				}
+				50 = {
+					set_flag = hu_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Aa
+				}
+				mother = {
+					has_flag = hu_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_AA
+				}
+				50 = {
+					set_flag = hu_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Aa
+				}
+				mother = {
+					has_flag = hu_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hu_AA
+				}
+				50 = {
+					set_flag = hu_Aa
+				}
+				25 = {
+					set_flag = hu_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_AA
+				}
+				mother = {
+					has_flag = hu_aa
+				}
+			}
+			set_flag = hu_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_aa
+				}
+				mother = {
+					has_flag = hu_AA
+				}
+			}
+			set_flag = hu_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Aa
+				}
+				mother = {
+					has_flag = hu_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Aa
+				}
+				50 = {
+					set_flag = hu_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_aa
+				}
+				mother = {
+					has_flag = hu_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Aa
+				}
+				50 = {
+					set_flag = hu_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_aa
+				}
+				mother = {
+					has_flag = hu_aa
+				}
+			}
+			set_flag = hu_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = hu_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_BB
+				}
+				mother = {
+					has_flag = hu_BB
+				}
+			}
+			set_flag = hu_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_BB
+				}
+				mother = {
+					has_flag = hu_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_BB
+				}
+				50 = {
+					set_flag = hu_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Bb
+				}
+				mother = {
+					has_flag = hu_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_BB
+				}
+				50 = {
+					set_flag = hu_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Bb
+				}
+				mother = {
+					has_flag = hu_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hu_BB
+				}
+				50 = {
+					set_flag = hu_Bb
+				}
+				25 = {
+					set_flag = hu_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_BB
+				}
+				mother = {
+					has_flag = hu_bb
+				}
+			}
+			set_flag = hu_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_bb
+				}
+				mother = {
+					has_flag = hu_BB
+				}
+			}
+			set_flag = hu_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Bb
+				}
+				mother = {
+					has_flag = hu_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Bb
+				}
+				50 = {
+					set_flag = hu_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_bb
+				}
+				mother = {
+					has_flag = hu_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Bb
+				}
+				50 = {
+					set_flag = hu_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_bb
+				}
+				mother = {
+					has_flag = hu_bb
+				}
+			}
+			set_flag = hu_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = hu_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_CC
+				}
+				mother = {
+					has_flag = hu_CC
+				}
+			}
+			set_flag = hu_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_CC
+				}
+				mother = {
+					has_flag = hu_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_CC
+				}
+				50 = {
+					set_flag = hu_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Cc
+				}
+				mother = {
+					has_flag = hu_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_CC
+				}
+				50 = {
+					set_flag = hu_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Cc
+				}
+				mother = {
+					has_flag = hu_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hu_CC
+				}
+				50 = {
+					set_flag = hu_Cc
+				}
+				25 = {
+					set_flag = hu_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_CC
+				}
+				mother = {
+					has_flag = hu_cc
+				}
+			}
+			set_flag = hu_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_cc
+				}
+				mother = {
+					has_flag = hu_CC
+				}
+			}
+			set_flag = hu_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_Cc
+				}
+				mother = {
+					has_flag = hu_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Cc
+				}
+				50 = {
+					set_flag = hu_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_cc
+				}
+				mother = {
+					has_flag = hu_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hu_Cc
+				}
+				50 = {
+					set_flag = hu_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hu_cc
+				}
+				mother = {
+					has_flag = hu_cc
+				}
+			}
+			set_flag = hu_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = hu_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = hunchback }
+			}
+			random_list = {
+				75 = {
+					add_trait = hunchback
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = hunchback }
+			}
+			random_list = {
+				15 = {
+					add_trait = hunchback
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = hunchback }
+			}
+			random_list = {
+				1 = {
+					add_trait = hunchback
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1110 }
+	}
+}
+
+## Harelip
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1110
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = harelip
+					NOR = {
+						has_flag = ha_aa
+						has_flag = ha_bb
+						has_flag = ha_cc
+					}
+				}
+				emf_dna_clear_flags_for_harelip = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = harelip
+					NOR = {
+						has_flag = ha_aa
+						has_flag = ha_bb
+						has_flag = ha_cc
+					}
+				}
+				emf_dna_clear_flags_for_harelip = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = ha_AA
+						has_flag = ha_Aa
+						has_flag = ha_aa
+						has_flag = ha_BB
+						has_flag = ha_Bb
+						has_flag = ha_bb
+						has_flag = ha_CC
+						has_flag = ha_Cc
+						has_flag = ha_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = harelip
+					}
+					emf_dna_set_flags_for_harelip = yes
+				}
+				else = {
+					emf_dna_set_flags_for_harelip_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = ha_AA
+						has_flag = ha_Aa
+						has_flag = ha_aa
+						has_flag = ha_BB
+						has_flag = ha_Bb
+						has_flag = ha_bb
+						has_flag = ha_CC
+						has_flag = ha_Cc
+						has_flag = ha_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = harelip
+					}
+					emf_dna_set_flags_for_harelip = yes
+				}
+				else = {
+					emf_dna_set_flags_for_harelip_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_AA
+				}
+				mother = {
+					has_flag = ha_AA
+				}
+			}
+			set_flag = ha_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_AA
+				}
+				mother = {
+					has_flag = ha_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_AA
+				}
+				50 = {
+					set_flag = ha_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Aa
+				}
+				mother = {
+					has_flag = ha_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_AA
+				}
+				50 = {
+					set_flag = ha_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Aa
+				}
+				mother = {
+					has_flag = ha_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ha_AA
+				}
+				50 = {
+					set_flag = ha_Aa
+				}
+				25 = {
+					set_flag = ha_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_AA
+				}
+				mother = {
+					has_flag = ha_aa
+				}
+			}
+			set_flag = ha_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_aa
+				}
+				mother = {
+					has_flag = ha_AA
+				}
+			}
+			set_flag = ha_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Aa
+				}
+				mother = {
+					has_flag = ha_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Aa
+				}
+				50 = {
+					set_flag = ha_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_aa
+				}
+				mother = {
+					has_flag = ha_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Aa
+				}
+				50 = {
+					set_flag = ha_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_aa
+				}
+				mother = {
+					has_flag = ha_aa
+				}
+			}
+			set_flag = ha_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = ha_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_BB
+				}
+				mother = {
+					has_flag = ha_BB
+				}
+			}
+			set_flag = ha_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_BB
+				}
+				mother = {
+					has_flag = ha_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_BB
+				}
+				50 = {
+					set_flag = ha_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Bb
+				}
+				mother = {
+					has_flag = ha_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_BB
+				}
+				50 = {
+					set_flag = ha_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Bb
+				}
+				mother = {
+					has_flag = ha_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ha_BB
+				}
+				50 = {
+					set_flag = ha_Bb
+				}
+				25 = {
+					set_flag = ha_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_BB
+				}
+				mother = {
+					has_flag = ha_bb
+				}
+			}
+			set_flag = ha_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_bb
+				}
+				mother = {
+					has_flag = ha_BB
+				}
+			}
+			set_flag = ha_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Bb
+				}
+				mother = {
+					has_flag = ha_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Bb
+				}
+				50 = {
+					set_flag = ha_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_bb
+				}
+				mother = {
+					has_flag = ha_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Bb
+				}
+				50 = {
+					set_flag = ha_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_bb
+				}
+				mother = {
+					has_flag = ha_bb
+				}
+			}
+			set_flag = ha_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = ha_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_CC
+				}
+				mother = {
+					has_flag = ha_CC
+				}
+			}
+			set_flag = ha_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_CC
+				}
+				mother = {
+					has_flag = ha_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_CC
+				}
+				50 = {
+					set_flag = ha_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Cc
+				}
+				mother = {
+					has_flag = ha_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_CC
+				}
+				50 = {
+					set_flag = ha_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Cc
+				}
+				mother = {
+					has_flag = ha_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = ha_CC
+				}
+				50 = {
+					set_flag = ha_Cc
+				}
+				25 = {
+					set_flag = ha_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_CC
+				}
+				mother = {
+					has_flag = ha_cc
+				}
+			}
+			set_flag = ha_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_cc
+				}
+				mother = {
+					has_flag = ha_CC
+				}
+			}
+			set_flag = ha_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_Cc
+				}
+				mother = {
+					has_flag = ha_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Cc
+				}
+				50 = {
+					set_flag = ha_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_cc
+				}
+				mother = {
+					has_flag = ha_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = ha_Cc
+				}
+				50 = {
+					set_flag = ha_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = ha_cc
+				}
+				mother = {
+					has_flag = ha_cc
+				}
+			}
+			set_flag = ha_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = ha_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = harelip }
+			}
+			random_list = {
+				75 = {
+					add_trait = harelip
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = harelip }
+			}
+			random_list = {
+				15 = {
+					add_trait = harelip
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = harelip }
+			}
+			random_list = {
+				1 = {
+					add_trait = harelip
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1120 }
+	}
+}
+
+## Lisp
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1120
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = lisp
+					NOR = {
+						has_flag = l_aa
+						has_flag = l_bb
+						has_flag = l_cc
+					}
+				}
+				emf_dna_clear_flags_for_lisp = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = lisp
+					NOR = {
+						has_flag = l_aa
+						has_flag = l_bb
+						has_flag = l_cc
+					}
+				}
+				emf_dna_clear_flags_for_lisp = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = l_AA
+						has_flag = l_Aa
+						has_flag = l_aa
+						has_flag = l_BB
+						has_flag = l_Bb
+						has_flag = l_bb
+						has_flag = l_CC
+						has_flag = l_Cc
+						has_flag = l_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = lisp
+					}
+					emf_dna_set_flags_for_lisp = yes
+				}
+				else = {
+					emf_dna_set_flags_for_lisp_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = l_AA
+						has_flag = l_Aa
+						has_flag = l_aa
+						has_flag = l_BB
+						has_flag = l_Bb
+						has_flag = l_bb
+						has_flag = l_CC
+						has_flag = l_Cc
+						has_flag = l_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = lisp
+					}
+					emf_dna_set_flags_for_lisp = yes
+				}
+				else = {
+					emf_dna_set_flags_for_lisp_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_AA
+				}
+				mother = {
+					has_flag = l_AA
+				}
+			}
+			set_flag = l_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_AA
+				}
+				mother = {
+					has_flag = l_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_AA
+				}
+				50 = {
+					set_flag = l_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Aa
+				}
+				mother = {
+					has_flag = l_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_AA
+				}
+				50 = {
+					set_flag = l_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Aa
+				}
+				mother = {
+					has_flag = l_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = l_AA
+				}
+				50 = {
+					set_flag = l_Aa
+				}
+				25 = {
+					set_flag = l_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_AA
+				}
+				mother = {
+					has_flag = l_aa
+				}
+			}
+			set_flag = l_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_aa
+				}
+				mother = {
+					has_flag = l_AA
+				}
+			}
+			set_flag = l_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Aa
+				}
+				mother = {
+					has_flag = l_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Aa
+				}
+				50 = {
+					set_flag = l_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_aa
+				}
+				mother = {
+					has_flag = l_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Aa
+				}
+				50 = {
+					set_flag = l_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_aa
+				}
+				mother = {
+					has_flag = l_aa
+				}
+			}
+			set_flag = l_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = l_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_BB
+				}
+				mother = {
+					has_flag = l_BB
+				}
+			}
+			set_flag = l_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_BB
+				}
+				mother = {
+					has_flag = l_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_BB
+				}
+				50 = {
+					set_flag = l_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Bb
+				}
+				mother = {
+					has_flag = l_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_BB
+				}
+				50 = {
+					set_flag = l_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Bb
+				}
+				mother = {
+					has_flag = l_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = l_BB
+				}
+				50 = {
+					set_flag = l_Bb
+				}
+				25 = {
+					set_flag = l_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_BB
+				}
+				mother = {
+					has_flag = l_bb
+				}
+			}
+			set_flag = l_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_bb
+				}
+				mother = {
+					has_flag = l_BB
+				}
+			}
+			set_flag = l_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Bb
+				}
+				mother = {
+					has_flag = l_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Bb
+				}
+				50 = {
+					set_flag = l_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_bb
+				}
+				mother = {
+					has_flag = l_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Bb
+				}
+				50 = {
+					set_flag = l_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_bb
+				}
+				mother = {
+					has_flag = l_bb
+				}
+			}
+			set_flag = l_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = l_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_CC
+				}
+				mother = {
+					has_flag = l_CC
+				}
+			}
+			set_flag = l_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_CC
+				}
+				mother = {
+					has_flag = l_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_CC
+				}
+				50 = {
+					set_flag = l_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Cc
+				}
+				mother = {
+					has_flag = l_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_CC
+				}
+				50 = {
+					set_flag = l_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Cc
+				}
+				mother = {
+					has_flag = l_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = l_CC
+				}
+				50 = {
+					set_flag = l_Cc
+				}
+				25 = {
+					set_flag = l_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_CC
+				}
+				mother = {
+					has_flag = l_cc
+				}
+			}
+			set_flag = l_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_cc
+				}
+				mother = {
+					has_flag = l_CC
+				}
+			}
+			set_flag = l_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_Cc
+				}
+				mother = {
+					has_flag = l_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Cc
+				}
+				50 = {
+					set_flag = l_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_cc
+				}
+				mother = {
+					has_flag = l_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = l_Cc
+				}
+				50 = {
+					set_flag = l_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = l_cc
+				}
+				mother = {
+					has_flag = l_cc
+				}
+			}
+			set_flag = l_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = l_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = lisp }
+			}
+			random_list = {
+				75 = {
+					add_trait = lisp
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = lisp }
+			}
+			random_list = {
+				15 = {
+					add_trait = lisp
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = lisp }
+			}
+			random_list = {
+				1 = {
+					add_trait = lisp
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1130 }
+	}
+}
+
+## Stutter
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1130
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = stutter
+					NOR = {
+						has_flag = sr_aa
+						has_flag = sr_bb
+						has_flag = sr_cc
+					}
+				}
+				emf_dna_clear_flags_for_stutter = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = stutter
+					NOR = {
+						has_flag = sr_aa
+						has_flag = sr_bb
+						has_flag = sr_cc
+					}
+				}
+				emf_dna_clear_flags_for_stutter = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = sr_AA
+						has_flag = sr_Aa
+						has_flag = sr_aa
+						has_flag = sr_BB
+						has_flag = sr_Bb
+						has_flag = sr_bb
+						has_flag = sr_CC
+						has_flag = sr_Cc
+						has_flag = sr_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = stutter
+					}
+					emf_dna_set_flags_for_stutter = yes
+				}
+				else = {
+					emf_dna_set_flags_for_stutter_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = sr_AA
+						has_flag = sr_Aa
+						has_flag = sr_aa
+						has_flag = sr_BB
+						has_flag = sr_Bb
+						has_flag = sr_bb
+						has_flag = sr_CC
+						has_flag = sr_Cc
+						has_flag = sr_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = stutter
+					}
+					emf_dna_set_flags_for_stutter = yes
+				}
+				else = {
+					emf_dna_set_flags_for_stutter_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_AA
+				}
+				mother = {
+					has_flag = sr_AA
+				}
+			}
+			set_flag = sr_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_AA
+				}
+				mother = {
+					has_flag = sr_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_AA
+				}
+				50 = {
+					set_flag = sr_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Aa
+				}
+				mother = {
+					has_flag = sr_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_AA
+				}
+				50 = {
+					set_flag = sr_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Aa
+				}
+				mother = {
+					has_flag = sr_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = sr_AA
+				}
+				50 = {
+					set_flag = sr_Aa
+				}
+				25 = {
+					set_flag = sr_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_AA
+				}
+				mother = {
+					has_flag = sr_aa
+				}
+			}
+			set_flag = sr_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_aa
+				}
+				mother = {
+					has_flag = sr_AA
+				}
+			}
+			set_flag = sr_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Aa
+				}
+				mother = {
+					has_flag = sr_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Aa
+				}
+				50 = {
+					set_flag = sr_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_aa
+				}
+				mother = {
+					has_flag = sr_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Aa
+				}
+				50 = {
+					set_flag = sr_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_aa
+				}
+				mother = {
+					has_flag = sr_aa
+				}
+			}
+			set_flag = sr_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = sr_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_BB
+				}
+				mother = {
+					has_flag = sr_BB
+				}
+			}
+			set_flag = sr_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_BB
+				}
+				mother = {
+					has_flag = sr_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_BB
+				}
+				50 = {
+					set_flag = sr_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Bb
+				}
+				mother = {
+					has_flag = sr_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_BB
+				}
+				50 = {
+					set_flag = sr_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Bb
+				}
+				mother = {
+					has_flag = sr_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = sr_BB
+				}
+				50 = {
+					set_flag = sr_Bb
+				}
+				25 = {
+					set_flag = sr_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_BB
+				}
+				mother = {
+					has_flag = sr_bb
+				}
+			}
+			set_flag = sr_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_bb
+				}
+				mother = {
+					has_flag = sr_BB
+				}
+			}
+			set_flag = sr_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Bb
+				}
+				mother = {
+					has_flag = sr_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Bb
+				}
+				50 = {
+					set_flag = sr_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_bb
+				}
+				mother = {
+					has_flag = sr_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Bb
+				}
+				50 = {
+					set_flag = sr_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_bb
+				}
+				mother = {
+					has_flag = sr_bb
+				}
+			}
+			set_flag = sr_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = sr_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_CC
+				}
+				mother = {
+					has_flag = sr_CC
+				}
+			}
+			set_flag = sr_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_CC
+				}
+				mother = {
+					has_flag = sr_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_CC
+				}
+				50 = {
+					set_flag = sr_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Cc
+				}
+				mother = {
+					has_flag = sr_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_CC
+				}
+				50 = {
+					set_flag = sr_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Cc
+				}
+				mother = {
+					has_flag = sr_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = sr_CC
+				}
+				50 = {
+					set_flag = sr_Cc
+				}
+				25 = {
+					set_flag = sr_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_CC
+				}
+				mother = {
+					has_flag = sr_cc
+				}
+			}
+			set_flag = sr_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_cc
+				}
+				mother = {
+					has_flag = sr_CC
+				}
+			}
+			set_flag = sr_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_Cc
+				}
+				mother = {
+					has_flag = sr_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Cc
+				}
+				50 = {
+					set_flag = sr_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_cc
+				}
+				mother = {
+					has_flag = sr_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = sr_Cc
+				}
+				50 = {
+					set_flag = sr_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = sr_cc
+				}
+				mother = {
+					has_flag = sr_cc
+				}
+			}
+			set_flag = sr_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = sr_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = stutter }
+			}
+			random_list = {
+				75 = {
+					add_trait = stutter
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = stutter }
+			}
+			random_list = {
+				15 = {
+					add_trait = stutter
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = stutter }
+			}
+			random_list = {
+				1 = {
+					add_trait = stutter
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1210 }
+	}
+}
+
+## Deaf
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1210
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = deaf
+					NOR = {
+						has_flag = de_aa
+						has_flag = de_bb
+						has_flag = de_cc
+					}
+				}
+				emf_dna_clear_flags_for_deaf = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = deaf
+					NOR = {
+						has_flag = de_aa
+						has_flag = de_bb
+						has_flag = de_cc
+					}
+				}
+				emf_dna_clear_flags_for_deaf = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = de_AA
+						has_flag = de_Aa
+						has_flag = de_aa
+						has_flag = de_BB
+						has_flag = de_Bb
+						has_flag = de_bb
+						has_flag = de_CC
+						has_flag = de_Cc
+						has_flag = de_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = deaf
+					}
+					emf_dna_set_flags_for_deaf = yes
+				}
+				else = {
+					emf_dna_set_flags_for_deaf_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = de_AA
+						has_flag = de_Aa
+						has_flag = de_aa
+						has_flag = de_BB
+						has_flag = de_Bb
+						has_flag = de_bb
+						has_flag = de_CC
+						has_flag = de_Cc
+						has_flag = de_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = deaf
+					}
+					emf_dna_set_flags_for_deaf = yes
+				}
+				else = {
+					emf_dna_set_flags_for_deaf_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_AA
+				}
+				mother = {
+					has_flag = de_AA
+				}
+			}
+			set_flag = de_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_AA
+				}
+				mother = {
+					has_flag = de_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_AA
+				}
+				50 = {
+					set_flag = de_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Aa
+				}
+				mother = {
+					has_flag = de_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_AA
+				}
+				50 = {
+					set_flag = de_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Aa
+				}
+				mother = {
+					has_flag = de_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = de_AA
+				}
+				50 = {
+					set_flag = de_Aa
+				}
+				25 = {
+					set_flag = de_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_AA
+				}
+				mother = {
+					has_flag = de_aa
+				}
+			}
+			set_flag = de_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_aa
+				}
+				mother = {
+					has_flag = de_AA
+				}
+			}
+			set_flag = de_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Aa
+				}
+				mother = {
+					has_flag = de_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Aa
+				}
+				50 = {
+					set_flag = de_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_aa
+				}
+				mother = {
+					has_flag = de_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Aa
+				}
+				50 = {
+					set_flag = de_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_aa
+				}
+				mother = {
+					has_flag = de_aa
+				}
+			}
+			set_flag = de_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = de_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_BB
+				}
+				mother = {
+					has_flag = de_BB
+				}
+			}
+			set_flag = de_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_BB
+				}
+				mother = {
+					has_flag = de_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_BB
+				}
+				50 = {
+					set_flag = de_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Bb
+				}
+				mother = {
+					has_flag = de_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_BB
+				}
+				50 = {
+					set_flag = de_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Bb
+				}
+				mother = {
+					has_flag = de_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = de_BB
+				}
+				50 = {
+					set_flag = de_Bb
+				}
+				25 = {
+					set_flag = de_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_BB
+				}
+				mother = {
+					has_flag = de_bb
+				}
+			}
+			set_flag = de_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_bb
+				}
+				mother = {
+					has_flag = de_BB
+				}
+			}
+			set_flag = de_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Bb
+				}
+				mother = {
+					has_flag = de_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Bb
+				}
+				50 = {
+					set_flag = de_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_bb
+				}
+				mother = {
+					has_flag = de_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Bb
+				}
+				50 = {
+					set_flag = de_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_bb
+				}
+				mother = {
+					has_flag = de_bb
+				}
+			}
+			set_flag = de_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = de_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_CC
+				}
+				mother = {
+					has_flag = de_CC
+				}
+			}
+			set_flag = de_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_CC
+				}
+				mother = {
+					has_flag = de_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_CC
+				}
+				50 = {
+					set_flag = de_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Cc
+				}
+				mother = {
+					has_flag = de_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_CC
+				}
+				50 = {
+					set_flag = de_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Cc
+				}
+				mother = {
+					has_flag = de_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = de_CC
+				}
+				50 = {
+					set_flag = de_Cc
+				}
+				25 = {
+					set_flag = de_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_CC
+				}
+				mother = {
+					has_flag = de_cc
+				}
+			}
+			set_flag = de_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_cc
+				}
+				mother = {
+					has_flag = de_CC
+				}
+			}
+			set_flag = de_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_Cc
+				}
+				mother = {
+					has_flag = de_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Cc
+				}
+				50 = {
+					set_flag = de_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_cc
+				}
+				mother = {
+					has_flag = de_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = de_Cc
+				}
+				50 = {
+					set_flag = de_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = de_cc
+				}
+				mother = {
+					has_flag = de_cc
+				}
+			}
+			set_flag = de_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = de_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = deaf }
+			}
+			random_list = {
+				75 = {
+					add_trait = deaf
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = deaf }
+			}
+			random_list = {
+				15 = {
+					add_trait = deaf
+				}
+				185 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = deaf }
+			}
+			random_list = {
+				1 = {
+					add_trait = deaf
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1220 }
+	}
+}
+
+## Wrymouth
+## Mendelian Inheritance
+character_event = {
+	id = emf_dna.1220
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 1. Before we check flags for parents, check if they potentially have the wrong flag
+		event_target:emf_dna_dad = {
+			if = {
+				limit = {
+					trait = wrymouth
+					NOR = {
+						has_flag = w_aa
+						has_flag = w_bb
+						has_flag = w_cc
+					}
+				}
+				emf_dna_clear_flags_for_wrymouth = yes
+			}
+		}
+		mother = {
+			if = {
+				limit = {
+					trait = wrymouth
+					NOR = {
+						has_flag = w_aa
+						has_flag = w_bb
+						has_flag = w_cc
+					}
+				}
+				emf_dna_clear_flags_for_wrymouth = yes
+			}
+		}
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = w_AA
+						has_flag = w_Aa
+						has_flag = w_aa
+						has_flag = w_BB
+						has_flag = w_Bb
+						has_flag = w_bb
+						has_flag = w_CC
+						has_flag = w_Cc
+						has_flag = w_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = wrymouth
+					}
+					emf_dna_set_flags_for_wrymouth = yes
+				}
+				else = {
+					emf_dna_set_flags_for_wrymouth_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = w_AA
+						has_flag = w_Aa
+						has_flag = w_aa
+						has_flag = w_BB
+						has_flag = w_Bb
+						has_flag = w_bb
+						has_flag = w_CC
+						has_flag = w_Cc
+						has_flag = w_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = wrymouth
+					}
+					emf_dna_set_flags_for_wrymouth = yes
+				}
+				else = {
+					emf_dna_set_flags_for_wrymouth_if_no_trait = yes
+				}
+			}
+		}
+	#### 3. Genetic Inheritance
+		set_variable = { which = local_r_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_AA
+				}
+				mother = {
+					has_flag = w_AA
+				}
+			}
+			set_flag = w_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_AA
+				}
+				mother = {
+					has_flag = w_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_AA
+				}
+				50 = {
+					set_flag = w_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Aa
+				}
+				mother = {
+					has_flag = w_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_AA
+				}
+				50 = {
+					set_flag = w_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Aa
+				}
+				mother = {
+					has_flag = w_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = w_AA
+				}
+				50 = {
+					set_flag = w_Aa
+				}
+				25 = {
+					set_flag = w_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_AA
+				}
+				mother = {
+					has_flag = w_aa
+				}
+			}
+			set_flag = w_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_aa
+				}
+				mother = {
+					has_flag = w_AA
+				}
+			}
+			set_flag = w_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Aa
+				}
+				mother = {
+					has_flag = w_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Aa
+				}
+				50 = {
+					set_flag = w_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_aa
+				}
+				mother = {
+					has_flag = w_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Aa
+				}
+				50 = {
+					set_flag = w_aa
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_aa
+				}
+				mother = {
+					has_flag = w_aa
+				}
+			}
+			set_flag = w_aa
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = w_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_BB
+				}
+				mother = {
+					has_flag = w_BB
+				}
+			}
+			set_flag = w_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_BB
+				}
+				mother = {
+					has_flag = w_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_BB
+				}
+				50 = {
+					set_flag = w_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Bb
+				}
+				mother = {
+					has_flag = w_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_BB
+				}
+				50 = {
+					set_flag = w_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Bb
+				}
+				mother = {
+					has_flag = w_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = w_BB
+				}
+				50 = {
+					set_flag = w_Bb
+				}
+				25 = {
+					set_flag = w_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_BB
+				}
+				mother = {
+					has_flag = w_bb
+				}
+			}
+			set_flag = w_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_bb
+				}
+				mother = {
+					has_flag = w_BB
+				}
+			}
+			set_flag = w_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Bb
+				}
+				mother = {
+					has_flag = w_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Bb
+				}
+				50 = {
+					set_flag = w_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_bb
+				}
+				mother = {
+					has_flag = w_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Bb
+				}
+				50 = {
+					set_flag = w_bb
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_bb
+				}
+				mother = {
+					has_flag = w_bb
+				}
+			}
+			set_flag = w_bb
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = w_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_CC
+				}
+				mother = {
+					has_flag = w_CC
+				}
+			}
+			set_flag = w_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_CC
+				}
+				mother = {
+					has_flag = w_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_CC
+				}
+				50 = {
+					set_flag = w_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Cc
+				}
+				mother = {
+					has_flag = w_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_CC
+				}
+				50 = {
+					set_flag = w_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Cc
+				}
+				mother = {
+					has_flag = w_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = w_CC
+				}
+				50 = {
+					set_flag = w_Cc
+				}
+				25 = {
+					set_flag = w_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_CC
+				}
+				mother = {
+					has_flag = w_cc
+				}
+			}
+			set_flag = w_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_cc
+				}
+				mother = {
+					has_flag = w_CC
+				}
+			}
+			set_flag = w_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_Cc
+				}
+				mother = {
+					has_flag = w_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Cc
+				}
+				50 = {
+					set_flag = w_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_cc
+				}
+				mother = {
+					has_flag = w_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = w_Cc
+				}
+				50 = {
+					set_flag = w_cc
+					change_variable = { which = local_r_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = w_cc
+				}
+				mother = {
+					has_flag = w_cc
+				}
+			}
+			set_flag = w_cc
+			change_variable = { which = local_r_alleles value = 1 }
+		}
+		else = {
+			set_flag = w_Cc
+		}
+		### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 3 }
+				NOT = { trait = wrymouth }
+			}
+			random_list = {
+				75 = {
+					add_trait = wrymouth
+				}
+				25 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 2 }
+				NOT = { trait = wrymouth }
+			}
+			random_list = {
+				15 = { # 7.5
+					add_trait = wrymouth
+				}
+				185 = { # 92.5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_r_alleles value = 1 }
+				NOT = { trait = wrymouth }
+			}
+			random_list = {
+				1 = {
+					add_trait = wrymouth
+				}
+				199 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1230 }
+	}
+}
+
+## For Perceptiveness
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1230
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = p_AA
+						has_flag = p_Aa
+						has_flag = p_aa
+						has_flag = p_BB
+						has_flag = p_Bb
+						has_flag = p_bb
+						has_flag = p_CC
+						has_flag = p_Cc
+						has_flag = p_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = perceptive
+					}
+					emf_dna_set_flags_for_perceptive = yes
+				}
+				else_if = {
+					limit = {
+						trait = absentminded
+					}
+					emf_dna_set_flags_for_absentminded = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_perceptiveness = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = p_AA
+						has_flag = p_Aa
+						has_flag = p_aa
+						has_flag = p_BB
+						has_flag = p_Bb
+						has_flag = p_bb
+						has_flag = p_CC
+						has_flag = p_Cc
+						has_flag = p_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = perceptive
+					}
+					emf_dna_set_flags_for_perceptive = yes
+				}
+				else_if = {
+					limit = {
+						trait = absentminded
+					}
+					emf_dna_set_flags_for_absentminded = yes
+				}
+				else = {
+					emf_dna_set_flags_for_average_perceptiveness = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_AA
+				}
+				mother = {
+					has_flag = p_AA
+				}
+			}
+			set_flag = p_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_AA
+				}
+				mother = {
+					has_flag = p_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Aa
+				}
+				mother = {
+					has_flag = p_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Aa
+				}
+				mother = {
+					has_flag = p_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = p_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = p_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_AA
+				}
+				mother = {
+					has_flag = p_aa
+				}
+			}
+			set_flag = p_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_aa
+				}
+				mother = {
+					has_flag = p_AA
+				}
+			}
+			set_flag = p_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Aa
+				}
+				mother = {
+					has_flag = p_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_aa
+				}
+				mother = {
+					has_flag = p_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_aa
+				}
+				mother = {
+					has_flag = p_aa
+				}
+			}
+			set_flag = p_aa
+		}
+		else = {
+			set_flag = p_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_BB
+				}
+				mother = {
+					has_flag = p_BB
+				}
+			}
+			set_flag = p_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_BB
+				}
+				mother = {
+					has_flag = p_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Bb
+				}
+				mother = {
+					has_flag = p_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_BB
+				}
+				mother = {
+					has_flag = p_bb
+				}
+			}
+			set_flag = p_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_bb
+				}
+				mother = {
+					has_flag = p_BB
+				}
+			}
+			set_flag = p_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Bb
+				}
+				mother = {
+					has_flag = p_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = p_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = p_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Bb
+				}
+				mother = {
+					has_flag = p_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_bb
+				}
+				mother = {
+					has_flag = p_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_bb
+				}
+				mother = {
+					has_flag = p_bb
+				}
+			}
+			set_flag = p_bb
+		}
+		else = {
+			set_flag = p_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_CC
+				}
+				mother = {
+					has_flag = p_CC
+				}
+			}
+			set_flag = p_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_CC
+				}
+				mother = {
+					has_flag = p_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Cc
+				}
+				mother = {
+					has_flag = p_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Cc
+				}
+				mother = {
+					has_flag = p_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = p_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = p_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = p_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_CC
+				}
+				mother = {
+					has_flag = p_cc
+				}
+			}
+			set_flag = p_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_cc
+				}
+				mother = {
+					has_flag = p_CC
+				}
+			}
+			set_flag = p_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_Cc
+				}
+				mother = {
+					has_flag = p_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_cc
+				}
+				mother = {
+					has_flag = p_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = p_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = p_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = p_cc
+				}
+				mother = {
+					has_flag = p_cc
+				}
+			}
+			set_flag = p_cc
+		}
+		else = {
+			set_flag = p_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = perceptive
+				}
+				20 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = perceptive
+				}
+				75 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = perceptive
+				}
+				98 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				2 = {
+					add_trait = absentminded
+				}
+				98 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				25 = {
+					add_trait = absentminded
+				}
+				75 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = perceptive
+					trait = absentminded
+				}
+			}
+			random_list = {
+				80 = {
+					add_trait = absentminded
+				}
+				20 = {
+				}
+			}
+		}
+		character_event = { id = emf_dna.1240 }
+	}
+}
+
+## Health
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1240
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#### 2. Initialization. Only executes for characters without flags
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = hl_AA
+						has_flag = hl_Aa
+						has_flag = hl_aa
+						has_flag = hl_BB
+						has_flag = hl_Bb
+						has_flag = hl_bb
+						has_flag = hl_CC
+						has_flag = hl_Cc
+						has_flag = hl_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				emf_dna_set_flags_for_new_character_health = yes
+				# Since health flags are not set, this means we have not processed Health effects for this character (i.e. this event is running for the child before it has run for the parent)
+				emf_dna_apply_effects_health = yes
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = hl_AA
+						has_flag = hl_Aa
+						has_flag = hl_aa
+						has_flag = hl_BB
+						has_flag = hl_Bb
+						has_flag = hl_bb
+						has_flag = hl_CC
+						has_flag = hl_Cc
+						has_flag = hl_cc
+					}
+				}
+			}
+			mother = {
+				emf_dna_set_flags_for_new_character_health = yes
+				# Since health flags are not set, this means we have not processed Health effects for this character (i.e. this event is running for the child before it has run for the parent)
+				emf_dna_apply_effects_health = yes
+			}
+		}
+		#### 3. Genetic Inheritance
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_AA
+				}
+				mother = {
+					has_flag = hl_AA
+				}
+			}
+			set_flag = hl_AA
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_AA
+				}
+				mother = {
+					has_flag = hl_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_AA
+				}
+				50 = {
+					set_flag = hl_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Aa
+				}
+				mother = {
+					has_flag = hl_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_AA
+				}
+				50 = {
+					set_flag = hl_Aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Aa
+				}
+				mother = {
+					has_flag = hl_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hl_AA
+				}
+				50 = {
+					set_flag = hl_Aa
+				}
+				25 = {
+					set_flag = hl_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_AA
+				}
+				mother = {
+					has_flag = hl_aa
+				}
+			}
+			set_flag = hl_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_aa
+				}
+				mother = {
+					has_flag = hl_AA
+				}
+			}
+			set_flag = hl_Aa
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Aa
+				}
+				mother = {
+					has_flag = hl_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Aa
+				}
+				50 = {
+					set_flag = hl_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_aa
+				}
+				mother = {
+					has_flag = hl_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Aa
+				}
+				50 = {
+					set_flag = hl_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_aa
+				}
+				mother = {
+					has_flag = hl_aa
+				}
+			}
+			set_flag = hl_aa
+		}
+		else = {
+			set_flag = hl_Aa
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_BB
+				}
+				mother = {
+					has_flag = hl_BB
+				}
+			}
+			set_flag = hl_BB
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_BB
+				}
+				mother = {
+					has_flag = hl_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_BB
+				}
+				50 = {
+					set_flag = hl_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Bb
+				}
+				mother = {
+					has_flag = hl_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_BB
+				}
+				50 = {
+					set_flag = hl_Bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Bb
+				}
+				mother = {
+					has_flag = hl_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hl_BB
+				}
+				50 = {
+					set_flag = hl_Bb
+				}
+				25 = {
+					set_flag = hl_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_BB
+				}
+				mother = {
+					has_flag = hl_bb
+				}
+			}
+			set_flag = hl_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_bb
+				}
+				mother = {
+					has_flag = hl_BB
+				}
+			}
+			set_flag = hl_Bb
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Bb
+				}
+				mother = {
+					has_flag = hl_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Bb
+				}
+				50 = {
+					set_flag = hl_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_bb
+				}
+				mother = {
+					has_flag = hl_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Bb
+				}
+				50 = {
+					set_flag = hl_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_bb
+				}
+				mother = {
+					has_flag = hl_bb
+				}
+			}
+			set_flag = hl_bb
+		}
+		else = {
+			set_flag = hl_Bb
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_CC
+				}
+				mother = {
+					has_flag = hl_CC
+				}
+			}
+			set_flag = hl_CC
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_CC
+				}
+				mother = {
+					has_flag = hl_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_CC
+				}
+				50 = {
+					set_flag = hl_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Cc
+				}
+				mother = {
+					has_flag = hl_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_CC
+				}
+				50 = {
+					set_flag = hl_Cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_CC
+				}
+				mother = {
+					has_flag = hl_cc
+				}
+			}
+			set_flag = hl_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_cc
+				}
+				mother = {
+					has_flag = hl_CC
+				}
+			}
+			set_flag = hl_Cc
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Cc
+				}
+				mother = {
+					has_flag = hl_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = hl_CC
+				}
+				50 = {
+					set_flag = hl_Cc
+				}
+				25 = {
+					set_flag = hl_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_Cc
+				}
+				mother = {
+					has_flag = hl_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Cc
+				}
+				50 = {
+					set_flag = hl_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_cc
+				}
+				mother = {
+					has_flag = hl_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = hl_Cc
+				}
+				50 = {
+					set_flag = hl_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = hl_cc
+				}
+				mother = {
+					has_flag = hl_cc
+				}
+			}
+			set_flag = hl_cc
+		}
+		else = {
+			set_flag = hl_Cc
+		}
+		### 4. Trait Assignment
+		emf_dna_apply_effects_health = yes
+		
+		character_event = { id = emf_dna.1250 }
+	}
+}
+
+## For Handedness
+## Polygenic Inheritance
+character_event = {
+	id = emf_dna.1250
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					NOR = {
+						has_flag = lh_AA
+						has_flag = lh_Aa
+						has_flag = lh_aa
+						has_flag = lh_BB
+						has_flag = lh_Bb
+						has_flag = lh_bb
+						has_flag = lh_CC
+						has_flag = lh_Cc
+						has_flag = lh_cc
+					}
+				}
+			}
+			event_target:emf_dna_dad = {
+				if = {
+					limit = {
+						trait = lefthanded
+					}
+					emf_dna_set_flags_for_lefthanded = yes
+				}
+				else_if = {
+					limit = {
+						trait = ambidextrous
+					}
+					emf_dna_set_flags_for_ambidextrous = yes
+				}
+				else = {
+					emf_dna_set_flags_for_handedness_if_no_trait = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOR = {
+						has_flag = lh_AA
+						has_flag = lh_Aa
+						has_flag = lh_aa
+						has_flag = lh_BB
+						has_flag = lh_Bb
+						has_flag = lh_bb
+						has_flag = lh_CC
+						has_flag = lh_Cc
+						has_flag = lh_cc
+					}
+				}
+			}
+			mother = {
+				if = {
+					limit = {
+						trait = lefthanded
+					}
+					emf_dna_set_flags_for_lefthanded = yes
+				}
+				else_if = {
+					limit = {
+						trait = ambidextrous
+					}
+					emf_dna_set_flags_for_ambidextrous = yes
+				}
+				else = {
+					emf_dna_set_flags_for_handedness_if_no_trait = yes
+				}
+			}
+		}
+		#### 3. Genetic Inheritance
+		set_variable = { which = local_alleles value = 0 }
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_AA
+				}
+				mother = {
+					has_flag = lh_AA
+				}
+			}
+			set_flag = lh_AA
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_AA
+				}
+				mother = {
+					has_flag = lh_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Aa
+				}
+				mother = {
+					has_flag = lh_AA
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Aa
+				}
+				mother = {
+					has_flag = lh_Aa
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = lh_AA
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = lh_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_AA
+				}
+				mother = {
+					has_flag = lh_aa
+				}
+			}
+			set_flag = lh_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_aa
+				}
+				mother = {
+					has_flag = lh_AA
+				}
+			}
+			set_flag = lh_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Aa
+				}
+				mother = {
+					has_flag = lh_aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_aa
+				}
+				mother = {
+					has_flag = lh_Aa
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Aa
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_aa
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_aa
+				}
+				mother = {
+					has_flag = lh_aa
+				}
+			}
+			set_flag = lh_aa
+		}
+		else = {
+			set_flag = lh_Aa
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_BB
+				}
+				mother = {
+					has_flag = lh_BB
+				}
+			}
+			set_flag = lh_BB
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_BB
+				}
+				mother = {
+					has_flag = lh_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Bb
+				}
+				mother = {
+					has_flag = lh_BB
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_BB
+				}
+				mother = {
+					has_flag = lh_bb
+				}
+			}
+			set_flag = lh_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_bb
+				}
+				mother = {
+					has_flag = lh_BB
+				}
+			}
+			set_flag = lh_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Bb
+				}
+				mother = {
+					has_flag = lh_Bb
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = lh_BB
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = lh_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Bb
+				}
+				mother = {
+					has_flag = lh_bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_bb
+				}
+				mother = {
+					has_flag = lh_Bb
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Bb
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_bb
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_bb
+				}
+				mother = {
+					has_flag = lh_bb
+				}
+			}
+			set_flag = lh_bb
+		}
+		else = {
+			set_flag = lh_Bb
+			change_variable = { which = local_alleles value = 1 }
+		}
+		if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_CC
+				}
+				mother = {
+					has_flag = lh_CC
+				}
+			}
+			set_flag = lh_CC
+			change_variable = { which = local_alleles value = 2 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_CC
+				}
+				mother = {
+					has_flag = lh_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Cc
+				}
+				mother = {
+					has_flag = lh_CC
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Cc
+				}
+				mother = {
+					has_flag = lh_Cc
+				}
+			}
+			random_list = {
+				25 = {
+					set_flag = lh_CC
+					change_variable = { which = local_alleles value = 2 }
+				}
+				50 = {
+					set_flag = lh_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				25 = {
+					set_flag = lh_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_CC
+				}
+				mother = {
+					has_flag = lh_cc
+				}
+			}
+			set_flag = lh_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_cc
+				}
+				mother = {
+					has_flag = lh_CC
+				}
+			}
+			set_flag = lh_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_Cc
+				}
+				mother = {
+					has_flag = lh_cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_cc
+				}
+				mother = {
+					has_flag = lh_Cc
+				}
+			}
+			random_list = {
+				50 = {
+					set_flag = lh_Cc
+					change_variable = { which = local_alleles value = 1 }
+				}
+				50 = {
+					set_flag = lh_cc
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:emf_dna_dad = {
+					has_flag = lh_cc
+				}
+				mother = {
+					has_flag = lh_cc
+				}
+			}
+			set_flag = lh_cc
+		}
+		else = {
+			set_flag = lh_Cc
+			change_variable = { which = local_alleles value = 1 }
+		}
+		#### 4. Trait Assignment
+		if = {
+			limit = {
+				check_variable = { which = local_alleles value = 6 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 5 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 4 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				5 = {
+					add_trait = ambidextrous
+				}
+				995 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 3 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				1 = {
+					add_trait = ambidextrous
+				}
+				99 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 2 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				50 = {
+					add_trait = lefthanded
+				}
+				5 = {
+					add_trait = ambidextrous
+				}
+				945 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = local_alleles value = 1 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				65 = {
+					add_trait = lefthanded
+				}
+				35 = {
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				is_variable_equal = { which = local_alleles value = 0 }
+				NOR = {
+					trait = lefthanded
+					trait = ambidextrous
+				}
+			}
+			random_list = {
+				65 = {
+					add_trait = lefthanded
+				}
+				35 = {
+				}
+			}
+		}
+		# We're done with genetic inheritance. Now, proceed to random genetic mutations which take precedence over
+		# inheritance:
+		character_event = { id = emf_dna.2000 }
+	}
+}
+
+
+#################################
+#### RANDOM GENETIC MUTATION ####
+#################################
+
+# These events follow the genetic inheritance events, in the same chain, in order to let random genetic mutations take
+# precedence over inherited genetics. Further, they proceed in the reverse order of inheritance (e.g., intelligence is the
+# first inheritance event and the last mutation event) to help reduce any possible bias that may be caused by any of these
+# phenotypes being opposite traits of each other and thus potentially removing a previously expressed trait when they
+# themselves express as a trait.
+#
+# NOTE: The base health phenotype is currently excluded from random genetic mutation.
+
+
+# emf_dna.2000 -- Perceptiveness
+character_event = {
+	id = emf_dna.2000
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		set_flag = emf_dna_check
+		random_list = {
+			50 = {
+				emf_dna_add_trait_perceptive = yes
+			}
+			50 = {
+				emf_dna_add_trait_absentminded = yes
+			}
+			9900 = {
+			}
+		}
+		character_event = { id = emf_dna.2010 }
+	}
+}
+
+
+# emf_dna.2010 -- Wrymouth
+character_event = {
+	id = emf_dna.2010
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			15 = {
+				emf_dna_add_trait_wrymouth = yes
+			}
+			9985 = {
+			}
+		}
+		character_event = { id = emf_dna.2020 }
+	}
+}
+
+
+# emf_dna.2020 -- Deafness
+character_event = {
+	id = emf_dna.2020
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			15 = {
+				emf_dna_add_trait_deaf = yes
+			}
+			9985 = {
+			}
+		}
+		character_event = { id = emf_dna.2030 }
+	}
+}
+
+
+# emf_dna.2030 -- Stutter
+character_event = {
+	id = emf_dna.2030
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				emf_dna_add_trait_stutter = yes
+			}
+			9980 = {
+			}
+		}
+		character_event = { id = emf_dna.2040 }
+	}
+}
+
+
+# emf_dna.2040 -- Lisp
+character_event = {
+	id = emf_dna.2040
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				emf_dna_add_trait_lisp = yes
+			}
+			9980 = {
+			}
+		}
+		character_event = { id = emf_dna.2050 }
+	}
+}
+
+
+# emf_dna.2050 -- Harelip
+character_event = {
+	id = emf_dna.2050
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				emf_dna_add_trait_harelip = yes
+			}
+			9980 = {
+			}
+		}
+		character_event = { id = emf_dna.2060 }
+	}
+}
+
+
+# emf_dna.2060 -- Hunchback
+character_event = {
+	id = emf_dna.2060
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				emf_dna_add_trait_hunchback = yes
+			}
+			9980 = {
+			}
+		}
+		character_event = { id = emf_dna.2070 }
+	}
+}
+
+
+# emf_dna.2070 -- Clubfooted
+character_event = {
+	id = emf_dna.2070
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			20 = {
+				emf_dna_add_trait_clubfooted = yes
+			}
+			9980 = {
+			}
+		}
+		character_event = { id = emf_dna.2080 }
+	}
+}
+
+
+# emf_dna.2080 -- Dwarfism
+character_event = {
+	id = emf_dna.2080
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			5 = {
+				emf_dna_add_trait_dwarf = yes
+			}
+			9995 = {
+			}
+		}
+		character_event = { id = emf_dna.2090 }
+	}
+}
+
+
+# emf_dna.2090 -- Height
+character_event = {
+	id = emf_dna.2090
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Birth rates (per 10000):
+		# Giant: 15
+		# Tall:  80
+		# Short: 80
+		# Tiny:  15
+		random_list = {
+			15 = {
+				if = {
+					limit = { trait = dwarf }
+					emf_dna_clear_flags_for_hgt = yes
+					emf_dna_set_flags_for_giant = yes
+				}
+				else = {
+					emf_dna_add_trait_giant = yes
+				}
+			}
+			80 = {
+				if = {
+					limit = { trait = dwarf }
+					emf_dna_clear_flags_for_hgt = yes
+					emf_dna_set_flags_for_tall = yes
+				}
+				else = {
+					emf_dna_add_trait_tall = yes
+				}
+			}
+			80 = {
+				if = {
+					limit = { trait = dwarf }
+					emf_dna_clear_flags_for_hgt = yes
+					emf_dna_set_flags_for_short = yes
+				}
+				else = {
+					emf_dna_add_trait_short = yes
+				}
+			}
+			15 = {
+				if = {
+					limit = { trait = dwarf }
+					emf_dna_clear_flags_for_hgt = yes
+					emf_dna_set_flags_for_tiny = yes
+				}
+				else = {
+					emf_dna_add_trait_tiny = yes
+				}
+			}
+			9810 = {
+			}
+		}
+		character_event = { id = emf_dna.2100 }
+	}
+}
+
+
+# emf_dna.2100 -- Strength
+character_event = {
+	id = emf_dna.2100
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Birth rates (per 10000):
+		# Strong:   40
+		# Burly:    100
+		# Delicate: 100
+		# Weak:     40
+		random_list = {
+			40 = {
+				emf_dna_add_trait_strong = yes
+			}
+			100 = {
+				emf_dna_add_trait_burly = yes
+			}
+			100 = {
+				emf_dna_add_trait_delicate = yes
+			}
+			40 = {
+				emf_dna_add_trait_weak = yes
+			}
+			9720 = {
+			}
+		}
+		character_event = { id = emf_dna.2110 }
+	}
+}
+
+
+# emf_dna.2110 -- Attractiveness
+character_event = {
+	id = emf_dna.2110
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Birth rates (per 10000):
+		# Fair:   40
+		# Comely: 100
+		# Homely: 100
+		# Ugly:   40
+		random_list = {
+			40 = {
+				emf_dna_add_trait_fair = yes
+			}
+			100 = {
+				emf_dna_add_trait_comely = yes
+			}
+			100 = {
+				emf_dna_add_trait_homely = yes
+			}
+			40 = {
+				emf_dna_add_trait_ugly = yes
+			}
+			9720 = {
+			}
+		}
+		character_event = { id = emf_dna.2120 }
+	}
+}
+
+
+# emf_dna.2120 -- Intelligence
+character_event = {
+	id = emf_dna.2120
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Birth rates (per 10000):
+		# Genius:   20
+		# Quick:    40
+		# Bright:   100
+		# Dim:      100
+		# Slow:     40
+		# Imbecile: 20
+		random_list = {
+			20 = {
+				emf_dna_add_trait_genius = yes
+			}
+			40 = {
+				emf_dna_add_trait_quick = yes
+			}
+			100 = {
+				emf_dna_add_trait_bright = yes
+			}
+			100 = {
+				emf_dna_add_trait_dim = yes
+			}
+			40 = {
+				emf_dna_add_trait_slow = yes
+			}
+			20 = {
+				emf_dna_add_trait_imbecile = yes
+			}
+			9680 = {
+			}
+		}
+		character_event = { id = emf_dna.2130 }
+		# Done! End of event chain.
+	}
+}
+
+# emf_dna.2130 -- Handedness
+character_event = {
+	id = emf_dna.2130
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Birth rates (per 10000):
+		# Lefthanded:   250    Note: extraordinarily high mutation rate is intended
+		# Ambidextrous: 50
+		random_list = {
+			250 = {
+				emf_dna_add_trait_lefthanded = yes
+			}
+			50 = {
+				emf_dna_add_trait_ambidextrous = yes
+			}
+			9700 = {
+			}
+		}
+		# Done! End of event chain.
+	}
+}
