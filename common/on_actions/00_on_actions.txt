@@ -53,12 +53,12 @@ on_startup = {
 		MP.017 			#For Timurids to spawn instantly
 		MP.019 			#For Seljuks to spawn instantly
 		MP.021 			#For Rum to spawn instantly
-		#MP.027 			#For Golden Horde to spawn instantly
-		#MP.032 			#For Ilkhanate to spawn instantly
+		#MP.027 		#For Golden Horde to spawn instantly
+		#MP.032 		#For Ilkhanate to spawn instantly
 		
 		MP.038 			#Grant Independence to the Patriarch (so that ERE doesnt get the crusader land that easy)
 		MP.101 			#For Roman America to spawn instantly
-		#MP.104 			#To give the Adventurer trait to who ever has the Pirate Republic Government
+		#MP.104 		#To give the Adventurer trait to who ever has the Pirate Republic Government
 		MP.105 			#Event to trigger the Gotland conversion event after a few days
 
 		
@@ -132,11 +132,14 @@ on_yearly_pulse = {
 		
 		MP.041
 		
+		NERF.50		#Event to remove Realm Nerf Modifiers on AI
+		NERF.51		#Event to remove Realm Nerf Modifiers on non-independent characters
+		
 		UMM.20
 		UMM.21
 		
-		#MP.029 #Special event if Mongols and Golden Horde spawn at once
-		#MP.034 #Special event if Mongols and Ilkhanate spawn at once
+		#MP.029 	#Special event if Mongols and Golden Horde spawn at once
+		#MP.034 	#Special event if Mongols and Ilkhanate spawn at once
 	}
 	
     random_events = {
@@ -2943,6 +2946,9 @@ on_new_holder = {
 		UMM.4
 		UMM.20
 		UMM.21
+
+		NERF.50
+		NERF.51
 		
 		MP.037
 		#ILKH.105
@@ -2999,6 +3005,9 @@ on_new_holder_inheritance = {
 		UMM.4
 		UMM.20
 		UMM.21
+
+		NERF.50
+		NERF.51
 
 		CONFED.02
 		CONFED.03
@@ -3059,6 +3068,9 @@ on_new_holder_usurpation = {
 		UMM.20
 		UMM.21
 		
+		NERF.50
+		NERF.51
+		
 		CONFED.02
 		CONFED.03
 		CONFED.04
@@ -3082,6 +3094,8 @@ on_unlanded = {
 		HL.130 #Landless nomad clean-up.
 		HFP.44008 # Livonian Order disappears
 		HFP.44009 # Teutonic State reverts to Teutonic Order
+		NERF.50
+		NERF.51
 	}
 }
 

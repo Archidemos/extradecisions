@@ -76,8 +76,9 @@ focus_rulership = {
 	}
 	
 	# MODIFIERS
-	stewardship = 3
-	martial = 1
+	stewardship = 2
+	martial = 2
+	demesne_size = 1
 }
 
 focus_business = {
@@ -148,10 +149,10 @@ focus_business = {
 	}
 	
 	# MODIFIERS
-	stewardship = 2
-	martial = -2
+	stewardship = 3
+	martial = -1
 	health = -0.5
-	town_opinion = 20
+	general_opinion = 5
 }
 
 focus_seduction = {
@@ -314,8 +315,9 @@ focus_seduction = {
 	# MODIFIERS
 	intrigue = 3
 	learning = 2
-	fertility = 0.25
 	sex_appeal_opinion = 10
+	fertility = 0.25
+	plot_discovery_chance = 0.1
 }
 
 focus_intrigue = {
@@ -422,6 +424,7 @@ focus_intrigue = {
 	# MODIFIERS
 	intrigue = 3
 	martial = 2
+	combat_rating = 5
 	plot_power_modifier = 0.1
 }
 
@@ -499,8 +502,9 @@ focus_hunting = {
 	
 	# MODIFIERS
 	martial = 2
-	stewardship = -2
-	#health = 1
+	diplomacy = 2
+	stewardship = 1
+	general_opinion = 10
 }
 
 focus_war = {
@@ -603,9 +607,10 @@ focus_war = {
 	}
 	
 	# MODIFIERS
-	martial = 3
-	learning = -2
-	health = -0.25
+	martial = 4
+	diplomacy = -2
+	learning = -1
+	health = -1
 	combat_rating = 10
 }
 
@@ -693,7 +698,9 @@ focus_carousing = {
 	
 	# MODIFIERS
 	diplomacy = 3
-	stewardship = 3
+	stewardship = 2
+	learning = 2
+	general_opinion = 10
 }
 
 focus_family = {
@@ -805,9 +812,10 @@ focus_family = {
 	}
 	
 	# MODIFIERS
-	diplomacy = 2
+	diplomacy = 4
 	health = 1
-	learning = 2
+	vassal_opinion = 20
+	demesne_size = 1
 	fertility = 0.25
 }
 
@@ -900,8 +908,9 @@ focus_scholarship = {
 	}
 	
 	# MODIFIERS
-	learning = 4
+	learning = 3
 	stewardship = 2
+	health = 0.5
 }
 
 focus_theology = {
@@ -1009,7 +1018,5 @@ focus_theology = {
 	# MODIFIERS
 	learning = 2
 	diplomacy = 2
-	martial = -2
-	church_opinion = 20
-	#health = 1.0
+	martial = -1
 }

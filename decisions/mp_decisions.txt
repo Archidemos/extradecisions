@@ -655,7 +655,10 @@ decisions = {
 		
 		potential = {
 			is_feudal = yes
-			has_character_modifier = realm_nerf_0
+			OR = {
+				has_character_modifier = realm_nerf_0
+				#has_character_modifier = realm_nerf_1
+			}
 			NOT = { has_landed_title = k_celtic_christian }
 			NOT = { has_landed_title = k_papal_state }
 		}
@@ -676,22 +679,52 @@ decisions = {
 		}
 		
 		effect = {
-			capital_scope = {
-				ROOT = {
-					spawn_unit = {
-						owner = ROOT
-						province = PREV
-						home = PREV
-						troops = {
-							archers = { 500 500 }
-							light_infantry = { 1000 1000 }
-							light_cavalry = { 500 500 }
+			if = {
+				limit = {
+					AND = {
+						date < 1200.1.1
+					}
+				}
+				capital_scope = {
+					ROOT = {
+						spawn_unit = {
+							owner = ROOT
+							province = PREV
+							home = PREV
+							troops = {
+								archers = { 1000 1000 }
+								light_infantry = { 2000 2000 }
+								light_cavalry = { 1000 1000 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
 						}
-						attrition = 1.0
-						disband_on_peace = yes
 					}
 				}
 			}
+			else_if = {
+				limit = {
+					AND = {
+						date >= 1200.1.1
+					}
+				}
+				capital_scope = {
+					ROOT = {
+						spawn_unit = {
+							owner = ROOT
+							province = PREV
+							home = PREV
+							troops = {
+								archers = { 3000 3000 }
+								light_infantry = { 6000 4000 }
+								light_cavalry = { 3000 3000 }
+							}
+							attrition = 1.0
+							disband_on_peace = yes
+						}
+					}
+				}
+			}			
 			#ROOT = {
 			#	add_character_modifier = {
 			#		modifier = tiny_realm_exhaustion

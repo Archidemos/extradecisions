@@ -1448,6 +1448,28 @@ character_event = { #Event for when u lose to the Infamy CB
 	}
 }
 
+character_event = { #Event to activate d_shiite
+	id = MP.052
+    hide_window = yes
+	hide_from = yes
+
+    is_triggered_only = yes
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		NOT = { has_global_flag = shiite_active }
+		start_date >= 633.1.1
+		is_save_game = no
+		controls_religion = yes
+	}
+	
+	immediate = {
+		set_global_flag = shiite_active
+		activate_title = { title = d_shiite status = yes }
+	}
+}
+
 character_event = {
     id = MP.099
     hide_window = yes

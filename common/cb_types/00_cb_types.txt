@@ -12818,7 +12818,6 @@ pagan_county_conquest = {
 	sort_priority = 700
 	
 	can_use = {
-		holder_scope = { government = ar_confederation_government }
 		#NOT = {
 		#	OR = {
 		#		ROOT = { has_landed_title = e_il-khanate }
@@ -12841,6 +12840,7 @@ pagan_county_conquest = {
 					}
 				}
 			}
+			holder_scope = { government = ar_confederation_government }
 			AND = {
 				ROOT = {
 					religion_group = pagan_group

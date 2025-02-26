@@ -7,9 +7,15 @@ character_event = { #Event to give all Kings/Emperors a Event Target and proceed
 	hide_window = yes
 	
 	trigger = {
-		has_game_rule = {
-			name = nerf_realm_rule
-			value = on
+		OR = {
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = on
+			}
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = player_only	
+			}
 		}
 		OR = {
 			real_tier = KING
@@ -48,16 +54,22 @@ character_event = { #Event to give all Kings/Emperors a Event Target and proceed
 }
 
 
-character_event = { # Set the character's modifier based on their Realm Size
+character_event = { #Set the character's modifier based on their Realm Size
     id = NERF.2
     only_rulers = yes
     is_triggered_only = yes
 	hide_window = yes
 
     trigger = {
-		has_game_rule = {
-			name = nerf_realm_rule
-			value = on
+		OR = {
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = on
+			}
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = player_only	
+			}
 		}
 		NOT = { has_landed_title = k_papal_state }
 		is_nomadic = no
@@ -68,6 +80,10 @@ character_event = { # Set the character's modifier based on their Realm Size
     immediate = {
         if = {
             limit = {
+				has_game_rule = {
+					name = nerf_realm_rule
+					value = on
+				}
 				OR = {
 					tier = KING
 					tier = EMPEROR
@@ -81,12 +97,31 @@ character_event = { # Set the character's modifier based on their Realm Size
                 days = 1
             }
         }
+		else_if = {
+            limit = {
+				has_game_rule = {
+					name = nerf_realm_rule
+					value = player_only
+				}
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+            }
+            primary_title = {
+                save_event_target_as = nerf_value_title
+            }
+            character_event = {
+                id = NERF.5
+                days = 1
+            }
+		}
         clear_event_target = nerf_trigger_now
     }
    
 }
 
-character_event = {
+character_event = { #Event to grant landed character with a Kingdom and or Empire title a Realm Nerf
     id = NERF.3
     only_rulers = yes
     is_triggered_only = yes
@@ -141,19 +176,19 @@ character_event = {
 					add_character_modifier = { name = realm_nerf_4 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 350 realm_size < 550 } }
+					limit = { ROOT = { realm_size >= 350 realm_size < 700 } }
 					add_character_modifier = { name = realm_nerf_5 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 550 realm_size < 800 } }
+					limit = { ROOT = { realm_size >= 700 realm_size < 900 } }
 					add_character_modifier = { name = realm_nerf_6 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 800 realm_size < 850 } }
+					limit = { ROOT = { realm_size >= 900 realm_size < 1000 } }
 					add_character_modifier = { name = realm_nerf_7 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 850 } }
+					limit = { ROOT = { realm_size >= 1000 } }
 					add_character_modifier = { name = realm_nerf_8 duration = -1 }
 				}
             }
@@ -165,7 +200,7 @@ character_event = {
     }
 }
 
-character_event = {
+character_event = { #Event to update the Realm Nerf Modifiers based on their size
     id = NERF.4
     desc = EVTDESCNERF1
     only_rulers = yes
@@ -206,20 +241,256 @@ character_event = {
 			add_character_modifier = { name = realm_nerf_4 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 350 realm_size < 550 } }
+			limit = { ROOT = { realm_size >= 350 realm_size < 700 } }
 			add_character_modifier = { name = realm_nerf_5 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 550 realm_size < 650 } }
+			limit = { ROOT = { realm_size >= 700 realm_size < 900 } }
 			add_character_modifier = { name = realm_nerf_6 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 650 realm_size < 850 } }
+			limit = { ROOT = { realm_size >= 900 realm_size < 1000 } }
 			add_character_modifier = { name = realm_nerf_7 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 850 } }
+			limit = { ROOT = { realm_size >= 1000 } }
 			add_character_modifier = { name = realm_nerf_8 duration = -1 }
 		}
     }
+}
+
+character_event = { # Set the character's modifier based on their Realm Size
+    id = NERF.5
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = player_only
+		}
+		NOT = { has_landed_title = k_papal_state }
+		is_nomadic = no
+		is_tribal = no
+        has_landed_title = event_target:nerf_trigger_now
+    }
+
+    immediate = {
+        if = {
+            limit = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+            }
+            primary_title = {
+                save_event_target_as = nerf_value_title
+            }
+            character_event = {
+                id = NERF.6
+                days = 1
+            }
+        }
+        clear_event_target = nerf_trigger_now
+    }
+}
+
+character_event = { #Event to give Players or only Small Realms their Realm Nerfs
+    id = NERF.6
+    only_rulers = yes
+    is_triggered_only = yes
+	hide_window = yes
+
+    trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = player_only
+		}
+		NOT = { has_landed_title = k_papal_state }
+		is_nomadic = no
+		is_tribal = no
+		NOT = { government = merchant_republic_government }
+		#NOT = { government = pirate_republic_government }
+		NOT = { has_character_modifier = byz_curse_1 }
+		NOT = { has_character_modifier = byz_curse_2 }
+		NOT = { has_character_modifier = byz_curse_3 }
+		
+		NOT = { has_character_modifier = hre_curse_1 }
+		NOT = { has_character_modifier = hre_curse_2 }
+		NOT = { has_character_modifier = hre_curse_3 }
+		NOT = { has_character_modifier = hre_curse_4 }
+
+		NOT = { has_character_modifier = umayyad_curse_1 }
+		NOT = { has_character_modifier = umayyad_curse_2 }
+		NOT = { has_character_modifier = umayyad_curse_3 }
+        has_landed_title = event_target:nerf_value_title
+    }
+
+    immediate = {
+        event_target:nerf_value_title = {
+            holder_scope = {
+				if = {
+					limit = { ROOT = { realm_size < 20 } }
+					add_character_modifier = { name = realm_nerf_0 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+					add_character_modifier = { name = realm_nerf_1 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 65 realm_size < 150 ai = no } }
+					add_character_modifier = { name = realm_nerf_2 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 150 realm_size < 250 ai = no } }
+					add_character_modifier = { name = realm_nerf_3 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 250 realm_size < 350 ai = no } }
+					add_character_modifier = { name = realm_nerf_4 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 350 realm_size < 700 ai = no } }
+					add_character_modifier = { name = realm_nerf_5 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 700 realm_size < 900 ai = no } }
+					add_character_modifier = { name = realm_nerf_6 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 900 realm_size < 1000 ai = no } }
+					add_character_modifier = { name = realm_nerf_7 duration = -1 }
+				}
+				if = {
+					limit = { ROOT = { realm_size >= 1000 ai = no } }
+					add_character_modifier = { name = realm_nerf_8 duration = -1 }
+				}
+            }
+        }
+        character_event = {
+            id = NERF.7
+        }
+        clear_event_target = nerf_value_title
+    }
+}
+
+character_event = { #Event to update the Realm Nerf Modifiers based on their size
+    id = NERF.7
+    desc = EVTDESCNERF1
+    only_rulers = yes
+	hide_window = yes
+    is_triggered_only = yes
+    notification = yes
+
+    immediate = {
+        # Remove any existing modifiers (optional)
+		remove_character_modifier = realm_nerf_0
+        remove_character_modifier = realm_nerf_1
+        remove_character_modifier = realm_nerf_2
+        remove_character_modifier = realm_nerf_3
+        remove_character_modifier = realm_nerf_4
+        remove_character_modifier = realm_nerf_5
+        remove_character_modifier = realm_nerf_6
+        remove_character_modifier = realm_nerf_7
+		remove_character_modifier = realm_nerf_8
+
+		if = {
+			limit = { ROOT = { realm_size < 20 } }
+			add_character_modifier = { name = realm_nerf_0 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+			add_character_modifier = { name = realm_nerf_1 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 65 realm_size < 150 ai = no } }
+			add_character_modifier = { name = realm_nerf_2 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 150 realm_size < 250 ai = no } }
+			add_character_modifier = { name = realm_nerf_3 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 250 realm_size < 350 ai = no } }
+			add_character_modifier = { name = realm_nerf_4 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 350 realm_size < 700 ai = no } }
+			add_character_modifier = { name = realm_nerf_5 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 700 realm_size < 900 ai = no } }
+			add_character_modifier = { name = realm_nerf_6 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 900 realm_size < 1000 ai = no } }
+			add_character_modifier = { name = realm_nerf_7 duration = -1 }
+		}
+		if = {
+			limit = { ROOT = { realm_size >= 1000 ai = no } }
+			add_character_modifier = { name = realm_nerf_8 duration = -1 }
+		}
+    }
+}
+
+character_event = { #Removes the decadence modifiers when you convert
+    id = NERF.50
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		has_game_rule = {
+			name = nerf_realm_rule
+			value = player_only
+		}		
+        ai = yes
+    }
+
+    immediate = {
+		remove_character_modifier = realm_nerf_0
+        remove_character_modifier = realm_nerf_1
+        remove_character_modifier = realm_nerf_2
+        remove_character_modifier = realm_nerf_3
+        remove_character_modifier = realm_nerf_4
+        remove_character_modifier = realm_nerf_5
+        remove_character_modifier = realm_nerf_6
+        remove_character_modifier = realm_nerf_7
+		remove_character_modifier = realm_nerf_8
+	}
+}
+
+character_event = { #Removes the decadence modifiers when you convert
+    id = NERF.51
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		OR = {
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = on
+			}
+			has_game_rule = {
+				name = nerf_realm_rule
+				value = player_only	
+			}
+		}
+		OR = {
+			independent = no
+			is_landed = no
+		}
+    }
+
+    immediate = {
+		remove_character_modifier = realm_nerf_0
+        remove_character_modifier = realm_nerf_1
+        remove_character_modifier = realm_nerf_2
+        remove_character_modifier = realm_nerf_3
+        remove_character_modifier = realm_nerf_4
+        remove_character_modifier = realm_nerf_5
+        remove_character_modifier = realm_nerf_6
+        remove_character_modifier = realm_nerf_7
+		remove_character_modifier = realm_nerf_8
+	}
 }
