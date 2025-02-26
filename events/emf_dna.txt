@@ -3,6 +3,65 @@
 
 namespace = emf_dna
 
+# Original comments by Crimson9:
+#################################### IMPROVED GENETICS EVENT CHAIN - HIP VERSION ###########################################
+# How it works: After the on_birth on action event, this event chain fires, it gives every character in the game a flag.   #
+# The flags assign each character with one of three allele pairs: AA, Aa, or aa. These flags both determine the likelihood #
+# of the trait manifesting in the character, and the likelihood that they will pass on this 'gene.' Gene inheritance is    #
+# roughly modeled based on a simplistic model of Mendelian inheritance. The child will inherit an allele pair from their   #
+# parents based on a Punnett Square. Genes don't necessarily become traits, that is decided by a random genotype to pheno- #
+# type chance. Some traits are 'Polygenic Inheritance.' These traits use 3 allele pairs,and the number of dominant alleles #
+# capitals) determine the likelihood that the gene will be realized into a trait.Other genes are based on normal Mendelian #
+# inheritance. These generally use two allele pairs, and if one of the pairs is recessive (two lower case) then there is a #
+# chance for the character to get the negative trait.																	   #
+############################################################################################################################
+
+
+# emf_dna.0 -- Initialize randomly-generated start-of-game characters' traits. [Isis]
+character_event = {
+	id = emf_dna.0
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		# Create dummy placeholder parents for single-parent inheritance:
+		character_event = { id = emf_dna.2 }
+		# Express phenotypes for randomly-generated characters:
+		any_character = {
+			limit = { emf_dna_is_subject_to_startup_randomization = yes }
+			character_event = { id = emf_dna.10 }
+			
+			# Remove 67% of Lefthanded traits (though not the genetics for it) due to education
+			if = {
+				limit = { trait = lefthanded }
+				random = {
+					chance = 67
+					remove_trait = lefthanded
+				}
+			}
+		}
+		# And flag the approximately-complement set of characters as possibly historical characters (notably, characters
+		# that we don't want to later think were a randomly-generated courtier after game start). Note that isolated
+		# characters are allowed to be marked maybe-historical.
+		any_character = {
+			limit = { emf_dna_is_subject_to_startup_randomization = no }
+			if = {
+				limit = { is_lowborn = no }
+				set_dynasty_flag = emf_maybe_historical
+			}
+			else = {
+				set_flag = emf_maybe_historical
+			}
+		}
+		# Initialize player gene flags (we also call this from our hook which catches Ruler Designer characters,
+		# since they aren't dropped into the game until after the on_startup on_action):
+		any_player = {
+			character_event = { id = emf_dna.15 }
+		}
+	}
+}
+
 # emf_dna.10 -- Initialize a character's genetic traits. [Character]
 #
 # Called from the emf_new_character effect as well as from emf_dna.0 on campaign initialization and emf_dna.1 when

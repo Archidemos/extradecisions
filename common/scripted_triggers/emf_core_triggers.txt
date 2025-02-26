@@ -3,6 +3,22 @@
 
 #### EMF CORE PROPERTIES TRIGGERS ####
 
+emf_isolated_character = {
+	custom_tooltip = {
+		text = IS_ISOLATED_CHARACTER
+		OR = {
+			character = event_target:isis
+			trait = emf_isis_courtier
+		}
+	}
+}
+emf_not_isolated_character = { # Use this for tooltips instead of <trigger> = no
+	custom_tooltip = {
+		text = IS_ISOLATED_CHARACTER_NOT
+		emf_isolated_character = no
+	}
+}
+
 # for modifier/trait `is_visible` blocks:
 emf_hidden = {
 	OR = {
