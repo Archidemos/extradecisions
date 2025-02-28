@@ -587,6 +587,14 @@ child_personality_diplomacy_trigger = {
 	}
 }
 
+has_diplomat_skill_trigger = {
+	OR = {
+		trait = novice_diplomat
+		trait = trained_diplomat
+		trait = skilled_diplomat
+		trait = master_diplomat
+	}
+}
 
 ##MARTIAL##
 
@@ -614,6 +622,15 @@ child_personality_martial_trigger = {
 	OR = {
 		trait = haughty
 		trait = rowdy
+	}
+}
+
+has_warrior_skill_trigger = {
+	OR = {
+		trait = poor_warrior
+		trait = trained_warrior
+		trait = skilled_warrior
+		trait = master_warrior
 	}
 }
 

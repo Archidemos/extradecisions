@@ -32,20 +32,6 @@ character_event = {
 		# Initialize genetics on randomly-generated rulers:
 		character_event = { id = emf_dna.0 }
 
-		if = {
-			limit = { is_alternate_start = no }
-			k_magyar = { set_flag = emf_autodestroy_exemption }
-		}
-
-		# Run the [unnecessary] titular title autodestruction code upon every playable ruler now
-		any_playable_ruler = {
-			limit = {
-				ai = yes
-				war = no
-			}
-			character_event = { id = emf_core.100 }
-		}
-
 		# Combat & diplo trait distribution
 		any_character = {
 			character_event = { id = emf_startup.10 }
