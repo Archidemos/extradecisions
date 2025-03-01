@@ -19,14 +19,6 @@ character_event = {
 
 	immediate = {
 		# The EMF flag should not be set until this event is done.
-		# The EMF_prestartup flag is set via title history if the HIP installer was used to compile EMF, however.
-		if = {
-			limit = { has_global_flag = EMF }
-			log = "CRITICAL ERROR: emf_startup.0: global flag EMF was already set before startup event; aborting game after error event!"
-			any_player = { narrative_event = { id = emf_startup.2 } }
-			break = yes
-		}
-
 		set_global_flag = emf_game_start_v11_1_BETA # SAVE-COMPAT / FIXME / TODO: CHANGE UPON RELEASE
 
 		# Initialize genetics on randomly-generated rulers:
