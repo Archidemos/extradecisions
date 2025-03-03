@@ -7,12 +7,19 @@ is_de_jure_title = {
 	custom_tooltip = {
 		text = IS_DE_JURE_TITLE_TT
 		trigger_if = {
-			limit = { lower_tier_than = KING }
-			is_titular = no
-		}
-		trigger_else = {
+			limit = { higher_tier_than = DUKE }
 			any_de_jure_vassal_title = { tier = COUNT }
 		}
+		trigger_else_if = {
+			limit = { tier = DUKE }
+			is_titular = no
+		}
+		trigger_else_if = {
+			limit = { is_landless_type_title = yes }
+			always = no
+		}
+		# if none of the above -- a landed county or barony, trigger will correctly return true so as to be considered a
+		# de jure title.
 	}
 }
 
@@ -20,10 +27,18 @@ is_titular_title = {
 	custom_tooltip = {
 		text = IS_TITULAR_TITLE_TT
 		hidden_tooltip = {
-			NOR = {
-				lower_tier_than = DUKE
-				AND = { tier = DUKE is_titular = no }
-				any_de_jure_vassal_title = { tier = COUNT }
+			is_de_jure_title = no
+		}
+	}
+}
+
+is_primary_war_participant = {
+	custom_tooltip = {
+		text = IS_PRIMARY_WAR_PARTICIPANT_TT
+		hidden_tooltip = {
+			OR = {
+				is_primary_war_attacker = yes
+				is_primary_war_defender = yes
 			}
 		}
 	}
@@ -59,6 +74,28 @@ under_FROMFROM = {
 			OR = {
 				character = FROMFROM
 				is_liege_or_above = FROMFROM
+			}
+		}
+	}
+}
+under_FROMFROMFROM = {
+	custom_tooltip = {
+		text = UNDER_FROMFROMFROM_TT
+		hidden_tooltip = {
+			OR = {
+				character = FROMFROMFROM
+				is_liege_or_above = FROMFROMFROM
+			}
+		}
+	}
+}
+under_FROMFROMFROMFROM = {
+	custom_tooltip = {
+		text = UNDER_FROMFROMFROMFROM_TT
+		hidden_tooltip = {
+			OR = {
+				character = FROMFROMFROMFROM
+				is_liege_or_above = FROMFROMFROMFROM
 			}
 		}
 	}
@@ -148,6 +185,32 @@ owner_under_FROMFROM = {
 		}
 	}
 }
+owner_under_FROMFROMFROM = {
+	custom_tooltip = {
+		text = OWNER_UNDER_FROMFROMFROM_TT
+		hidden_tooltip = {
+			owner = {
+				OR = {
+					character = FROMFROMFROM
+					is_liege_or_above = FROMFROMFROM
+				}
+			}
+		}
+	}
+}
+owner_under_FROMFROMFROMFROM = {
+	custom_tooltip = {
+		text = OWNER_UNDER_FROMFROMFROMFROM_TT
+		hidden_tooltip = {
+			owner = {
+				OR = {
+					character = FROMFROMFROMFROM
+					is_liege_or_above = FROMFROMFROMFROM
+				}
+			}
+		}
+	}
+}
 owner_under_PREV = {
 	custom_tooltip = {
 		text = OWNER_UNDER_PREV_TT
@@ -201,12 +264,81 @@ owner_under_target_ruler = {
 	}
 }
 
+# Alternate Start helper triggers to reduce boilerplate & continual lookup of setting, parameter, and value names:
+has_random_religion_names = {
+	has_alternate_start_parameter = { key = religion_names value = random }
+}
+
+has_random_culture_names = {
+	has_alternate_start_parameter = { key = culture_names value = random }
+}
+
+has_random_religion_or_culture_names = {
+	OR = {
+		has_alternate_start_parameter = { key = religion_names value = random }
+		has_alternate_start_parameter = { key = culture_names value = random }
+	}
+}
+
+has_random_religions = {
+	OR = {
+		has_alternate_start_parameter = { key = religion value = random }
+		has_alternate_start_parameter = { key = religion value = full_random }
+	}
+}
+
+has_random_cultures = {
+	OR = {
+		has_alternate_start_parameter = { key = culture value = random }
+		has_alternate_start_parameter = { key = culture value = full_random }
+	}
+}
+
+has_random_religions_or_cultures = {
+	OR = {
+		has_alternate_start_parameter = { key = religion value = random }
+		has_alternate_start_parameter = { key = culture value = random }
+		has_alternate_start_parameter = { key = religion value = full_random }
+		has_alternate_start_parameter = { key = culture value = full_random }
+	}
+}
+
+has_random_religion_features = {
+	has_alternate_start_parameter = { key = religion_features value = random }
+}
+
+has_random_title_names = {
+	OR = {
+		has_alternate_start_setting = { setting = title_names option = random }
+		has_alternate_start_setting = { setting = title_names option = random_including_duchies }
+	}
+}
+
+has_random_dejure_or_title_names = {
+	OR = {
+		has_alternate_start_parameter = { key = dejure_kingdoms value = random }
+		has_alternate_start_parameter = { key = dejure_empires value = random }
+		has_alternate_start_setting = { setting = title_names option = random }
+		has_alternate_start_setting = { setting = title_names option = random_including_duchies }
+	}
+}
+
+has_random_dejure = {
+	OR = {
+		has_alternate_start_parameter = { key = dejure_kingdoms value = random }
+		has_alternate_start_parameter = { key = dejure_empires value = random }
+	}
+}
+
+has_dejure_empires = {
+	NOT = { has_alternate_start_parameter = { key = dejure_empires value = none } }
+}
 
 # PREV is the character that's suppose to own THIS, the title about which we're inquiring. [Wish there was a better way.]
 # ROOT is the liege of the (sub)realm against which we're testing for most immediate de jure pretension over the title THIS.
 #
 # define: best de jure liege title: the lowest-tier, held title which is a de jure liege of the given title.
-#         if you add "under ROOT," then our test is whether ROOT's realm contains that best de jure liege title.
+#		 if you add "under ROOT," then our test is whether ROOT's realm contains that best de jure liege title.
 #
 # for any given non-independent ruler (whom has a realm of titles under them), it's not uncommon to have multiple "best de
 # jure lieges," because they have multiple landed titles (i.e., tier <= COUNT) in their realm, and naturally, it's possible

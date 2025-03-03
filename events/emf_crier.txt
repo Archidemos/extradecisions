@@ -1,0 +1,66 @@
+# -*- ck2.events -*-
+
+namespace = emf_crier
+
+# Announce empire destruction
+# FROM = former holder, event_target:emf_crier_dead_title = title
+narrative_event = {
+	id = emf_crier.253
+	title = emf_crier.253.title
+	picture = GFX_evt_shadowy_cabal
+
+	desc = { # Not HRE, ERE
+		text = emf_crier.253.desc
+		trigger = {
+			event_target:emf_crier_dead_title = {
+				NOR = {
+					title = e_hre
+					title = e_byzantium
+				}
+			}
+		}
+	}
+	desc = { # HRE
+		text = emf_crier.253.desc_hre
+		trigger = {
+			event_target:emf_crier_dead_title = { title = e_hre }
+		}
+	}
+	desc = { # ERE
+		text = emf_crier.253.desc_byz
+		trigger = {
+			event_target:emf_crier_dead_title = { title = e_byzantium }
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { # Send sympathy
+		trigger = { religion = FROM }
+		name = emf_crier.253.a
+	}
+	option = { # Alas...
+		trigger = { NOT = { religion = FROM } }
+		name = emf_crier.253.b
+	}
+	option = { # I'm glad its dead
+		trigger = {
+			NOT = {
+				primary_title = {
+					lower_tier_than = EMPEROR
+					empire = { title = event_target:emf_crier_dead_title }
+				}
+			}
+		}
+		name = emf_crier.253.c
+	}
+	option = { # Perhaps a new emperor will rise...
+		trigger = {
+			primary_title = {
+				lower_tier_than = EMPEROR
+				empire = { title = event_target:emf_crier_dead_title }
+			}
+		}
+		name = emf_crier.253.d
+	}
+}
