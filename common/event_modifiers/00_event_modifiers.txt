@@ -5826,6 +5826,7 @@ chancellor_of_uncrowned = { #Applied on ruler.
 impressive_treasury = {
 	monthly_character_prestige = 0.5
 	vassal_opinion = 5
+	global_tax_modifier = 0.05
 	
 	icon = 4
 }
@@ -6226,8 +6227,22 @@ luxurious_crown_modifier = {
 
 popular_modifier = {
 	general_opinion = 5
-	Diplomacy = 2
+	diplomacy = 2
+	threat_decay_speed = 0.1
 	icon = 3
+}
+
+become_king_modifier = {
+	demesne_size = 1
+	stewardship = 1
+	martial = 1
+	icon = 7
+}
+
+become_heir_modifier = {
+	plot_power_modifier = 0.2
+	intrigue = 1
+	icon = 7
 }
 
 divination_crit_success = {

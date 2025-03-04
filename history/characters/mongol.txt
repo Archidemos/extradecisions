@@ -44,6 +44,7 @@
 	diplomacy=8
 	intrigue=8
 	stewardship=9
+	health = 8
 	religion="tengri_pagan"
 	culture="mongol"
 	trait="brave"
@@ -54,12 +55,14 @@
 	trait="hunter"
 	trait="cavalry_leader"
 	trait="brilliant_strategist"
+	trait="great_conquerer"
 	father=93055
 	mother=172003
 	1162.1.1={
 		birth="1162.1.1"
 		effect = {
 			set_character_flag = is_temujin
+			set_character_flag = no_court_invites
 			set_global_flag = temujin_born
 		}
 	}
@@ -127,6 +130,9 @@
 	trait="patient"
 	1181.1.1={
 		birth="1181.1.1"
+		effect = {
+			set_character_flag = no_court_invites
+		}
 	}
 	1198.1.1={
      effect = {c_93062 = { add_rival = PREV } } #Becomes rivals with Chagatai
@@ -2672,6 +2678,9 @@
 	mother=172003
 	1164.1.1={
 		birth="1164.1.1"
+		effect = {
+			set_character_flag = no_court_invites
+		}
 	}
 	1171.1.1={
 		  #employer= d_miaphysite
@@ -2768,10 +2777,13 @@
 	trait="stubborn"
 	1183.1.1={
 		birth="1183.1.1"
+		effect = {
+			set_character_flag = no_court_invites
+		}
 	}
 	1198.1.1={
-     effect = {c_125502 = { add_rival = PREV } } #Becomes rivals with Jochi
-   }
+		effect = {c_125502 = { add_rival = PREV } } #Becomes rivals with Jochi
+	}
    1199.1.1 = { #?
 		add_spouse = 166899
    }
@@ -3524,6 +3536,9 @@
 	#trait="drunkard"
 	1186.1.1={
 		birth="1186.1.1"
+		effect = {
+			set_character_flag = no_court_invites
+		}
 	}
 	1200.1.1={
 		add_spouse=166909
@@ -4328,6 +4343,9 @@
 	father = 93055
 	mother=166851
 	1151.1.1 = {
+		effect = {
+			set_character_flag = no_court_invites
+		}
 		birth = yes
 	}
 	1251.9.1 = {

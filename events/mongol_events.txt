@@ -7740,14 +7740,27 @@ narrative_event = {
 				}
 				if = {
 					limit = {
-						any_courtier = {
+						any_character = {
 							has_character_flag = is_temujin
 						}
 					}
 					log = "Temujin exists as courtier ai"
-					random_courtier = {
+					any_character = {
 						limit = {
 							has_character_flag = is_temujin
+						}
+						if = {
+							limit = {
+								has_dlc = "Holy Fury"
+								NOT = {
+									any_owned_bloodline = {
+										has_bloodline_flag = genghis_khan_line
+									}
+								}
+							}
+							create_bloodline = {
+								type = genghis_khan
+							}
 						}
 						e_mongol_empire = {
 							set_title_landless = { title = THIS status = yes }
@@ -7772,32 +7785,20 @@ narrative_event = {
 						set_character_flag = horde_invader
 						character_event = { id = MONE.1 days = 30 }
 						character_event = { id = MONE.2 days = 30 }
+						character_event = { id = 60505 } # Spawn Temujins generals
 						character_event = { id = 60510 } # Spawn troops
 						character_event = { id = 60515 days = 1 } # Spawn population
+						character_event = { id = MP.202 } #Temp fix for exsisting Temujin not starting with a war
 						save_event_target_as = mongol_china_invader
-						if = {
-							limit = {
-								has_dlc = "Holy Fury"
-								NOT = {
-									any_owned_bloodline = {
-										has_bloodline_flag = genghis_khan_line
-									}
-								}
-							}
-							create_bloodline = {
-								type = genghis_khan
-							}
-						}
+						save_event_target_as = genghis_khan_temujin_himself
 					}
 					break = yes
 				}
 				if = {
 					limit = {
 						NOT = {
-							e_mongol_empire = {
-								holder_scope = {
-									always = yes
-								}
+							any_character = {
+								has_character_flag = is_temujin
 							}
 						}
 					}
@@ -7807,7 +7808,7 @@ narrative_event = {
 						dynasty = 11100
 						religion = tengri_pagan
 						culture = mongol
-						health = 7
+						health = 8
 						female = no
 						age = 24
 						attributes = {
@@ -7886,7 +7887,7 @@ narrative_event = {
 						intrigue=8
 						stewardship=9
 					}
-					health = 7
+					health = 8
 					fertility = 0.7
 					religion="tengri_pagan"
 					culture="mongol"
@@ -7966,7 +7967,7 @@ narrative_event = {
 			if = {
 				limit = {
 					NOT = { has_dlc = "Horse Lords" }
-				}				
+				}	
 				1571 = { # SWMH: Almaliq
 					kingdom = {
 						e_mongol_empire = {

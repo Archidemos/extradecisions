@@ -1716,3 +1716,26 @@ character_event = { #Removes the realm nerf modifiers when you get usurped for W
 		}
 	}
 }
+
+character_event = {
+    id = MP.202
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+		1571 = {
+			kingdom = {
+				e_mongol_empire = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = mongol_empire_special_cb
+							target = PREVPREVPREV # The top liege of the owner of the province
+							thirdparty_title = PREVPREV # The de jure kingdom
+						}
+					}
+				}
+			}
+		}
+    }
+}
