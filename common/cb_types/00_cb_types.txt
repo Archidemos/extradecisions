@@ -3576,13 +3576,21 @@ tribal_invasion = {
 				}
 			}
 			OR = {
-				empire = {
-					NOT = {
-						OR = {
+				AND = {
+					empire = {
+						NOR = {
 							title = e_persia
 							title = e_byzantium
+							title = e_west_rome
 							title = e_arabia
 						}
+					}
+					NOT = { # SWMH kingdom titles that have no empire but should be conquered
+						title = k_aljazira
+						title = k_armenia
+						title = k_syria
+						title = k_antioch
+						title = k_jerusalem
 					}
 				}
 				FROM = {
@@ -3601,9 +3609,15 @@ tribal_invasion = {
 					OR = {
 						title = e_persia
 						title = e_byzantium
+						title = e_west_rome
 						title = e_arabia
 					}
 				}
+				title = k_aljazira
+				title = k_armenia
+				title = k_syria
+				title = k_antioch
+				title = k_jerusalem
 				FROM = {
 					primary_title = { title = e_il-khanate }
 					NOT = { year = 1300 }
@@ -3621,11 +3635,11 @@ tribal_invasion = {
 					}
 				}
 			}
-			empire = {
-				OR = {
-					title = e_tartaria
-					title = e_russia
-				}
+			OR = {
+				empire = { title = e_russia }
+				title = k_taurica
+				title = k_galicia
+				title = k_poland
 			}
 		}
 		modifier = {
@@ -5063,6 +5077,13 @@ new_crusade = {
 					# Find a Catholic/Fraticelli lord for Cyprus
 					if = {
 						limit = {
+							c_nicosia = {
+								owner = {
+									religion = FROM
+									culture = FROM
+									ai = yes
+								}
+							}
 							c_famagusta = {
 								owner = {
 									religion = FROM
@@ -5091,6 +5112,7 @@ new_crusade = {
 								}
 							}
 							crusade_beneficiary = {
+								grant_title_no_opinion = c_nicosia
 								grant_title_no_opinion = c_famagusta
 								grant_title_no_opinion = c_limisol
 								grant_title_no_opinion = d_cyprus
