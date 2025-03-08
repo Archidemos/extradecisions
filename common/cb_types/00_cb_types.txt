@@ -12369,11 +12369,11 @@ pagan_holy_war = {
 					}
 				}
 			}
-			empire = {
-				OR = {
-					title = e_tartaria
-					title = e_russia
-				}
+			OR = {
+				empire = { title = e_russia }
+				title = k_taurica
+				title = k_galicia
+				title = k_poland
 			}
 		}
 	}
@@ -18500,11 +18500,11 @@ nomad_invasion = {
 					}
 				}
 			}
-			empire = {
-				OR = {
-					title = e_tartaria
-					title = e_russia
-				}
+			OR = {
+				empire = { title = e_russia }
+				title = k_taurica
+				title = k_galicia
+				title = k_poland
 			}
 		}
 		modifier = {
@@ -18512,15 +18512,15 @@ nomad_invasion = {
 			ROOT = {
 				primary_title = { title = e_mongol_empire }
 			}
-			empire = {
-				OR = {
-					title = e_tartaria
-					title = e_turkestan
-					title = e_pontic_steppe
-					title = e_idel_ural
-					title = e_russia
-					title = e_persia
-				}
+			OR = {
+				title = k_taurica
+				title = k_galicia
+				title = k_poland
+				title = e_turkestan
+				title = e_pontic_steppe
+				title = e_idel_ural
+				title = e_russia
+				title = e_persia
 			}
 		}
 		modifier = {

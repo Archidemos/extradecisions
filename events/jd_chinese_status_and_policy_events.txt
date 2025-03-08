@@ -3001,25 +3001,25 @@ character_event = {
 							prev_status = china_plague
 						}
 					}
-					modifier = { # The Jurchens are more likely to win between 1120 and 1200
-						factor = 1000
-						has_game_rule = {
-							name = china_history_rules
-							value = historical
-						}
-						year = 1120
-						NOT = {
-							year = 1200
-						}
+				}
+				modifier = { # The Jurchens are more likely to win between 1120 and 1200
+					factor = 1000
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
 					}
-					modifier = { # The Jurchens are less likely to win after 1200
-						factor = 0
-						has_game_rule = {
-							name = china_history_rules
-							value = historical
-						}
+					year = 1120
+					NOT = {
 						year = 1200
 					}
+				}
+				modifier = { # The Jurchens are less likely to win after 1200
+					factor = 0
+					has_game_rule = {
+						name = china_history_rules
+						value = historical
+					}
+					year = 1200
 				}
 				
 				FROM = {
