@@ -4409,10 +4409,11 @@ faction_independence = {
 							ROOT = { is_reformed_religion = yes }
 						}
 					}
-					AND = {
-						de_jure_vassal_or_below = ROOT
-						NOT = { ROOT = { tier = KING } }
-					}
+					NOT = { ROOT = { tier = KING } }
+					#AND = {
+					#	de_jure_vassal_or_below = ROOT
+					#	NOT = { ROOT = { tier = KING } }
+					#}
 				}
 			}
 		}
@@ -4458,11 +4459,11 @@ faction_independence = {
 						is_primary_holder_title = yes
 						higher_tier_than = DUKE
 					}
-					ROOT = {
-						primary_title = {
-							de_jure_liege_or_above = PREVPREV
-						}
-					}
+					#ROOT = {
+					#	primary_title = {
+					#		de_jure_liege_or_above = PREVPREV
+					#	}
+					#}
 					any_claimant = {
 						culture = ROOT
 						religion = ROOT
@@ -4728,10 +4729,11 @@ faction_independence = {
 							}
 						}
 					}
-					AND = {
-						de_jure_vassal_or_below = ROOT
-						NOT = { ROOT = { tier = KING } }
-					}
+					NOT = { ROOT = { tier = KING } }
+					#AND = {
+					#	de_jure_vassal_or_below = ROOT
+					#	NOT = { ROOT = { tier = KING } }
+					#}
 				}
 			}
 			NOT = {	
@@ -4800,11 +4802,11 @@ faction_independence = {
 						is_primary_holder_title = yes
 						higher_tier_than = DUKE
 					}
-					ROOT = {
-						primary_title = {
-							de_jure_liege_or_above = PREVPREV
-						}
-					}
+					#ROOT = {
+					#	primary_title = {
+					#		de_jure_liege_or_above = PREVPREV
+					#	}
+					#}
 					any_claimant = {
 						culture = ROOT
 						religion = ROOT
