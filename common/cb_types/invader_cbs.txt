@@ -342,13 +342,13 @@ illkhanate_special_cb = {
 			}
 			
 			NOT = { title = k_afghanistan }
-			NOT = { title = k_baluchistan }
 			NOT = { title = k_khorasan }
 			NOT = { title = k_sicily }
 			NOT = { title = k_naples }
 			NOT = { title = k_serbia }
 			NOT = { title = k_epirus }
-			NOT = { title = k_byzantium }
+			NOT = { title = k_nikaea }
+			NOT = { title = k_achaea }
 			NOT = { title = k_thrace }
 			NOT = { title = k_georgia }
 			NOT = { title = k_daylam }
@@ -1157,7 +1157,7 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 			add_claim = k_daylam
 			add_claim = k_mavarannahr
 			add_claim = k_khwarezmia
-			add_claim = k_baluchistan
+			add_claim = k_sistan
 			add_claim = e_timurids
 			
 			wealth = 1000
@@ -1368,7 +1368,7 @@ qara_special_cb = { #CB for Qara Qoyunlu to invade when Timurids reach a certain
 				}
 			}
 			
-			add_claim = k_baluchistan
+			add_claim = k_sistan
 			add_claim = k_khorasan
 			add_claim = k_persia
 			add_claim = e_timurids
@@ -1821,10 +1821,8 @@ mongol_empire_special_cb = {
 				title = k_khorasan
 				title = k_sistan
 				title = k_kafarestan
-				title = k_khwarezmia
 				title = k_mavarannahr
 				title = k_turkestan_east
-				title = k_khotan
 				title = k_daylam
 				title = k_volga_bulgaria
 				title = k_khazaria
@@ -1918,7 +1916,8 @@ imperial_kingdom_reconquest = {
 				ROOT = { has_landed_title = e_west_rome }
 				ROOT = { has_character_flag = is_roman_america_invader }
 			}
-			de_jure_liege_or_above = k_byzantium
+			de_jure_liege_or_above = k_nikaea
+			de_jure_liege_or_above = k_achaea
 			de_jure_liege_or_above = k_thrace
 			de_jure_liege_or_above = k_anatolia
 			de_jure_liege_or_above = k_epirus
@@ -1941,7 +1940,6 @@ imperial_kingdom_reconquest = {
 			de_jure_liege_or_above = k_aragon
 			de_jure_liege_or_above = k_castille
 			de_jure_liege_or_above = k_andalusia
-			de_jure_liege_or_above = k_badajoz
 			de_jure_liege_or_above = k_valencia
 			de_jure_liege_or_above = k_leon
 			de_jure_liege_or_above = k_spanish_galicia
@@ -2116,7 +2114,7 @@ imperial_kingdom_reconquest = {
 						title = e_italy
 						title = e_byzantium
 						title = e_arabia
-						title = e_maghreb
+						title = e_africa
 						title = e_carpathia
 					}
 				}
@@ -2141,9 +2139,9 @@ imperial_kingdom_reconquest = {
 				}
 				title = k_lotharingia
 				title = k_frisia
-				title = k_dacia
+				title = k_wallachia
 				title = k_hungary
-				title = k_haasa
+				title = k_oman
 				title = k_yemen
 				title = k_arabia
 			}
@@ -2449,18 +2447,17 @@ roman_extermination_cb = {
 						title = e_italy
 						title = e_byzantium
 						title = e_arabia
-						title = e_maghreb
+						title = e_africa
 						title = e_carpathia
 					}
 				}
 				title = k_carinthia
 				title = k_aquitaine
-				title = k_narbonensis
+				title = k_burgundy
 				title = k_navarra
 				title = k_castille
 				title = k_leon
 				title = k_spanish_galicia
-				title = k_badajoz
 				title = k_andalusia
 				title = k_valencia
 				title = k_naples
@@ -2481,9 +2478,9 @@ roman_extermination_cb = {
 					}
 					title = k_lotharingia
 					title = k_frisia
-					title = k_dacia
+					title = k_wallachia
 					title = k_hungary
-					title = k_haasa
+					title = k_oman
 					title = k_yemen
 					title = k_arabia
 					title = k_ireland
@@ -2511,9 +2508,9 @@ roman_extermination_cb = {
 				}
 				title = k_lotharingia
 				title = k_frisia
-				title = k_dacia
+				title = k_wallachia
 				title = k_hungary
-				title = k_haasa
+				title = k_oman
 				title = k_yemen
 				title = k_arabia
 				title = k_ireland
