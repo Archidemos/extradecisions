@@ -5150,7 +5150,13 @@ new_crusade = {
 									ai = yes
 								}
 								preferred_limit = {
-									de_jure_liege = k_byzantium
+									de_jure_liege = k_nikaea
+								}
+								preferred_limit = {
+									de_jure_liege = k_epirus
+								}
+								preferred_limit = {
+									de_jure_liege = k_achaea
 								}
 								preferred_limit = {
 									de_jure_liege = k_anatolia
@@ -6527,10 +6533,7 @@ religious = {
 				culture = turkish
 			}
 			empire = {
-				OR = {
-					title = e_persia
-					title = e_rajastan
-				}
+				title = e_persia
 			}
 		}
 	}
@@ -9679,7 +9682,13 @@ imperial_reconquest = {
 
 	can_use_title = {
 		OR = {
+<<<<<<< HEAD
 			de_jure_liege_or_above = k_byzantium
+=======
+			ROOT = { has_landed_title = e_west_rome }
+			de_jure_liege_or_above = k_nikaea
+			de_jure_liege_or_above = k_achaea
+>>>>>>> 1b80d56227e1f03fd4fa0b586cc222335c82c44c
 			de_jure_liege_or_above = k_thrace
 			de_jure_liege_or_above = k_anatolia
 			de_jure_liege_or_above = k_epirus
@@ -9702,7 +9711,6 @@ imperial_reconquest = {
 			de_jure_liege_or_above = k_aragon
 			de_jure_liege_or_above = k_castille
 			de_jure_liege_or_above = k_andalusia
-			de_jure_liege_or_above = k_badajoz
 			de_jure_liege_or_above = k_valencia
 			de_jure_liege_or_above = k_leon
 			de_jure_liege_or_above = k_spanish_galicia
@@ -9865,16 +9873,16 @@ imperial_reconquest = {
 					title = e_italy
 					title = e_byzantium
 					title = e_arabia
-					title = e_maghreb
+					title = e_africa
 					title = e_carpathia
 				}
 			}
 			title = k_carinthia
 			NOT = { title = k_arabia }
 			NOT = { title = k_yemen }
-			NOT = { title = k_haasa }
+			NOT = { title = k_oman }
 			NOT = { title = k_hungary }
-			NOT = { title = k_dacia }	
+			NOT = { title = k_wallachia }	
 		}
 	}
 }
