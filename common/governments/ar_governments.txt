@@ -1,0 +1,815 @@
+feudal_governments = {
+
+	satrap_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_tiers = {
+			duke
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		vassal_call_to_arms = {		
+		}
+		frame_suffix = "_satrap"
+		potential = {
+			OR = {
+				controls_religion = no
+				religion_group = zoroastrian_group
+				has_religion_feature = religion_temporal_head
+				AND = {
+					religion = norse_pagan_reformed
+					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
+				}
+			}
+			NOT = {	religion_group = muslim	}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			religion_group = zoroastrian_group
+			NAND = { 
+				tier = EMPEROR
+				primary_title = { has_title_flag = pretender_chinese_empire }
+				OR = {
+					culture_group = chinese_group
+					culture = khitan
+					culture = tangut
+					culture = jurchen
+					has_character_flag = chinese_imperial_government_preserve
+				}
+			}
+		}
+		
+		color = { 140 22 22 }
+		
+		uses_piety_for_law_change = yes
+		barons_need_dynasty = yes
+		have_gender_laws = no
+		allows_matrilineal_marriage = no
+		free_retract_vassalage = yes
+
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		
+		unit_modifier = {
+			#levy_size = 0.1
+		}
+		
+		character_modifier = {
+			castle_vassal_min_levy = 0.15
+			castle_vassal_max_levy = 0.15
+			castle_vassal_tax_modifier = 0.1
+			city_vassal_tax_modifier = 0.1
+			vassal_opinion = -5
+		}
+		capital_move_delay = 600
+	}
+	caliphate_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE
+			TEMPLE
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_tiers = {
+			duke
+			king
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_iqta"
+		potential = {
+			any_demesne_title = { has_flag = forced_caliphate_government }
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NOT = { is_government_potential = chinese_imperial_government }
+		}
+		color = { 51 89 65 }
+		
+		uses_decadence = yes
+		uses_piety_for_law_change = yes
+		
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+		have_gender_laws = no
+		allows_matrilineal_marriage = no
+
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		character_modifier = {
+			castle_vassal_min_levy = 0.1
+			castle_vassal_max_levy = 0.1
+			global_tax_modifier = 0.05
+		}
+
+		capital_move_delay = 2000
+		gets_religion_opinion_penalties = no
+		gives_religion_opinion_penalties = no
+		free_retract_vassalage = yes
+		can_create_empires = no
+		vassal_government_opinion_penalties = no
+
+		## Modifiers
+		court_size_modifier = 10
+	}
+
+	tsardom_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = {
+			TRIBAL
+		}
+		accepts_liege_governments = {
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}	
+		vassal_call_to_arms = {
+			tribal_government
+			feudal_government
+		}	
+		frame_suffix = "_romanimperial"	
+		potential = {
+			OR = {
+				AND = { 
+					is_save_game = no
+					has_game_started = no
+					primary_title = { 
+						title = e_russian_empire
+					}
+				}
+				any_demesne_title = { has_flag = forced_tsardom_government }
+			}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+		}
+		capital_move_delay = 2000
+		color = { 143 12 125 }
+
+		unit_modifier = {
+			levy_size = 0.1
+		}
+		
+		character_modifier = {
+			land_morale = -0.1
+			levy_size = 0.1
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
+		}
+	}
+	indian_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE 
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			muslim_government
+			theocracy_government
+			feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_theocraticfeudal"
+		potential = {
+			OR = {
+				controls_religion = no
+				religion_group = muslim
+				has_religion_feature = religion_temporal_head
+				AND = {
+					religion = norse_pagan_reformed
+					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
+				}
+			}
+			NOT = {	religion_group = muslim	}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			AND = { 
+				OR = {
+					culture_group = indo_aryan_group
+					culture_group = dravidian_group
+				}
+				OR = {
+					religion = buddhist
+					religion = hindu
+					religion = jain
+				}
+				higher_tier_than = BARON
+			}
+			NAND = { 
+				tier = EMPEROR
+				primary_title = { has_title_flag = pretender_chinese_empire }
+				OR = {
+					culture_group = chinese_group
+					culture = khitan
+					culture = tangut
+					culture = jurchen
+					has_character_flag = chinese_imperial_government_preserve
+				}
+			}
+		}
+		color = { 209 118 33 }
+		
+		uses_piety_for_law_change = yes
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 600
+		vassal_limit = 5
+		tech_growth_modifier = 0.05
+		character_modifier = {
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
+			war_elephants_offensive = 0.10
+			demesne_size = 1
+			vassal_limit = 5
+		}
+	}
+    
+    ar_republic_government = {
+		preferred_holdings = { CITY }
+		allowed_holdings = { 
+			CITY
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Accepts other republics
+			merchant_republic_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_republic"
+		title_prefix = "city_"
+		potential = {
+			is_patrician = no
+			mercenary = no
+			NAND = {
+				controls_religion = yes
+				NOT = { religion_group = muslim }
+			}
+			holy_order = no
+			#higher_tier_than = BARON
+		}
+	
+		color = { 209 125 130 }
+
+		character_modifier = {
+			stewardship = 1
+			global_tax_modifier = 0.05
+			town_opinion = 5
+			city_vassal_min_levy = 0.2
+			city_vassal_max_levy = 0.2
+		}
+		
+		vassal_limit = -10
+		can_create_empires = no
+		can_build_tribal = no     
+		capital_move_delay = 600		
+	}
+
+   ar_theocracy_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = {
+			TEMPLE
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		accepts_liege_governments = {
+			feudal_government
+			muslim_government
+			republic_government
+			merchant_republic_government
+		}
+		frame_suffix = "_theocracy"
+		title_prefix = "temple_"
+		potential = {
+			mercenary = no
+			NOT = {	religion_group = muslim }
+			is_patrician = no
+			higher_tier_than = BARON
+		}
+		
+		color = { 220 220 220 }
+		
+		have_gender_laws = no
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+
+		character_modifier = {
+			learning = 1
+			monthly_character_piety  = 0.2
+			church_opinion = 5
+			fertility = -10
+			temple_vassal_min_levy = 0.30
+			temple_vassal_max_levy = 0.30
+		}
+
+		vassal_limit = -10
+
+		can_create_empires = no
+		can_build_tribal = no
+		capital_move_delay = 600
+		allows_matrilineal_marriage = no
+	}
+	
+	ar_confederation_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = {
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = {
+			TRIBAL
+		}
+		accepts_liege_governments = {
+			feudal_government
+			muslim_government
+			theocratic_feudal_government
+		}
+		free_revoke_on_tiers = {
+			duke
+		}
+		free_revoke_on_governments_religion = {
+			tribal_government
+		}
+		vassal_call_to_arms = {
+			tribal_government
+			feudal_government
+		}	
+		frame_suffix = "_nomadic"
+		title_prefix = "confederate_"
+		potential = {
+			any_demesne_title = { has_flag = forced_confed_government }
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NOT = { is_government_potential = chinese_imperial_government }
+		}
+		
+		color = { 158 112 55 }
+
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 200
+		
+		can_usurp_kingdoms_and_empires = no
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_demand_religious_conversion = no
+		gets_religion_opinion_penalties = no
+		gives_religion_opinion_penalties = no
+		vassal_government_opinion_penalties = no
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		free_retract_vassalage = yes
+		marriage_ignore_religion = yes
+		
+		vassal_limit = 10
+		
+		unit_modifier = {
+			levy_size = -1
+		}
+		
+		character_modifier = {
+			levy_size = -1
+			demesne_size = 2
+		}
+	}
+	
+	pirate_republic_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			TRADE_POST
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+		}
+		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		accepts_liege_governments = { # Accepts other republics
+			pirate_republic_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		vassal_call_to_arms = {
+			pirate_republic_government
+		}
+		title_prefix = "pirate_"
+		frame_suffix = "_piraterepublic"
+		potential = {
+			OR = {
+				any_demesne_title = { has_flag = forced_pirate_government }
+				top_liege = {
+					government = pirate_republic_government
+				}
+			}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NOT = { is_government_potential = chinese_imperial_government }
+		}
+		
+		color = { 51 51 51 }
+
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 2000
+
+		allow_looting = yes
+		can_usurp_kingdoms_and_empires = no
+		can_imprison_without_reason = no
+		can_create_kingdoms = no
+		can_create_empires = no
+		vassal_government_opinion_penalties = no
+		can_grant_kingdoms_and_empires_to_other_government_group = yes
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+		free_retract_vassalage = yes
+
+		vassal_limit = 20
+		
+		unit_modifier = {
+			levy_size = -0.75
+		}
+		
+		character_modifier = {
+			castle_vassal_min_levy = -0.3
+			castle_vassal_max_levy = -0.3
+			siege_speed = 0.2
+			retinue_maintenence_cost = -0.3
+			retinuesize_perc = 2
+			levy_size = -0.75
+		}
+	}
+	
+	chinese_government = {
+		offmap_power = offmap_china
+		preferred_holdings = { CASTLE CITY }
+		allowed_holdings = {
+			CASTLE
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		forced_contract = {
+			feudal_government
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+			theocracy_government
+			tribal_government
+			merchant_republic_government
+			republic_government
+		}
+		gets_religion_opinion_penalties = no
+		vassal_government_opinion_penalties = no
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_confucian"
+		potential = {
+			is_offmap_tag = offmap_china
+		}
+		
+		color = { 94 187 185 }
+		
+		can_imprison_without_reason = no
+		can_revoke_without_reason = no
+		
+		can_build_tribal = no
+		
+		capital_move_delay = 600
+		
+		aggression = 0 # AI only attacks by script
+		can_create_kingdoms = no
+		can_create_empires = no
+		can_demand_religious_conversion = no
+		can_inherit = no
+
+		## Modifiers
+		court_size_modifier = 10
+		
+		unit_modifier = {
+			levy_size = 0.15
+		}
+		
+		character_modifier = {
+			#castle_vassal_min_levy = -0.2
+			#castle_vassal_max_levy = -0.2
+			levy_size = 0.15
+			global_tax_modifier = 0.1
+			demesne_size = 2
+		}
+	}
+	
+	normal_chinese_government = {
+		preferred_holdings = { CASTLE CITY }
+		allowed_holdings = { 
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_tiers = {
+			duke
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		vassal_call_to_arms = {		
+		}
+		frame_suffix = "_chineseimperial"
+		potential = {
+			religion = taoist
+			OR = {
+				controls_religion = no
+				religion_group = muslim
+				has_religion_feature = religion_temporal_head
+				AND = {
+					religion = norse_pagan_reformed
+					has_religion_features = no # Old saves, and campaigns without HF, need the Fylkirate to continue working
+				}
+			}
+			NOT = {	religion_group = muslim	}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NAND = { 
+				tier = EMPEROR
+				primary_title = { has_title_flag = pretender_chinese_empire }
+				OR = {
+					culture = khitan
+					culture = tangut
+					culture = jurchen
+					has_character_flag = chinese_imperial_government_preserve
+				}
+			}
+			is_patrician = no
+		}
+		
+		color = { 118 255 163 }
+		
+		uses_piety_for_law_change = yes
+		barons_need_dynasty = yes
+		can_demand_religious_conversion = no
+		vassal_government_opinion_penalties = no
+		have_gender_laws = no
+		allows_matrilineal_marriage = no
+		free_retract_vassalage = yes
+
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		
+		unit_modifier = {
+			levy_size = 0.15
+		}
+		
+		character_modifier = {
+			castle_vassal_min_levy = -0.15
+			castle_vassal_max_levy = -0.15
+			castle_vassal_tax_modifier = -0.1
+			levy_size = 0.05
+			global_tax_modifier = -0.1
+			demesne_size = 2
+		}
+		capital_move_delay = 600
+	}
+	
+	warrior_order_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			TRADE_POST
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+		}
+		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		accepts_liege_governments = {
+			warrior_order_government
+		}
+		free_revoke_on_governments = {
+			warrior_order_government
+		}
+		vassal_call_to_arms = {
+			warrior_order_government
+		}
+		free_revoke_on_tiers = {
+			BARON
+		}
+		#forced_contract = {
+		#	warrior_order_government
+		#}
+		
+		title_prefix = "warriororder_"
+		frame_suffix = "_warriororder"
+		potential = {
+			OR = {
+				any_demesne_title = { has_flag = forced_warrior_order }
+				top_liege = {
+					government = warrior_order_government
+				}
+			}
+			NOT = { is_government_potential = roman_imperial_government }
+			NOT = { is_government_potential = order_government }
+			NOT = { is_government_potential = chinese_imperial_government }
+		}
+		
+		color = { 36 6 6 }
+
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 600
+
+		have_gender_laws = no
+		can_create_kingdoms = no
+		can_create_empires = no
+		allow_looting = yes
+		can_usurp_kingdoms_and_empires = no
+		can_imprison_without_reason = no
+		dukes_called_kings = yes
+		can_usurp_kingdoms_and_empires = no
+		can_grant_kingdoms_and_empires_to_other_government = no
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+		free_retract_vassalage = yes
+
+		#vassal_limit = 20
+		
+		unit_modifier = {
+			land_morale = 0.15
+		}
+		character_modifier = {
+			martial = 4
+			land_morale = 0.15
+			city_vassal_tax_modifier = -0.10
+			temple_vassal_tax_modifier = -0.10
+			global_tax_modifier = -0.2
+			retinuesize_perc = 2
+		}
+	}
+
+	ar_mercenary_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE 
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}	
+		accepts_liege_governments = {
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_governments = {
+			tribal_government
+		}
+		#forced_contract = {
+		#	ar_mercenary_government
+		#}
+		
+		title_prefix = "warriororder_"
+		frame_suffix = "_nomadic"
+		potential = {
+			clan = no
+			is_nomadic = no
+			mercenary = yes
+		}
+		
+		color = { 36 6 6 }
+
+		barons_need_dynasty = yes
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 600
+
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+
+		#vassal_limit = 20
+		
+		unit_modifier = {
+			land_morale = 0.05
+			siege_speed = 0.10
+		}
+		character_modifier = {
+			martial = 3
+			land_morale = 0.05
+			siege_speed = 0.10
+		}
+	}
+}

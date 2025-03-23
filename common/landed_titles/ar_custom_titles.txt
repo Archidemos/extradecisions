@@ -1,3 +1,94 @@
+d_legion_italia = {
+	color={ 120 0 145 }
+
+	graphical_culture = orthodoxholygfx
+	
+	capital = 333 # Rome
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	mercenary = yes
+	
+	landless = yes
+	
+	allow = {
+		has_landed_title = e_west_rome
+	}
+	
+	mercenary_type = legion_italia_composition
+	
+	culture = greek
+	
+	religion = orthodox
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	monthly_income = 10
+}
+
+d_swiss_guard = {
+	color={ 207 56 45 }
+
+	graphical_culture = holygfx
+	
+	capital = 244 # Bern
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	mercenary = yes
+	
+	landless = yes
+	
+	allow = {
+		has_landed_title = k_switzerland
+	}
+	
+	mercenary_type = papal_guard_composition
+	
+	culture = german
+	
+	religion = catholic
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	monthly_income = 10
+}
+
+d_prussia_guard = {
+	color={ 207 56 45 }
+
+	graphical_culture = holygfx
+	
+	capital = 371 # Bern
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	mercenary = yes
+	
+	landless = yes
+	
+	allow = {
+		has_landed_title = k_prussia
+	}
+	
+	mercenary_type = papal_guard_composition
+	
+	culture = german
+	
+	religion = catholic
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	monthly_income = 10
+}
+
+
 e_yugoslavia = {
 	color = { 26 35 89 }
 	
@@ -163,6 +254,40 @@ e_north_sea = {
 	religion = norse_pagan
 }
 
+k_prussia = {
+	color={ 5 5 8 }
+	
+	#short_name = yes
+	
+	capital = 371
+	
+	allow = {
+		always = no
+	}
+	
+	bavarian = "Preusen"
+	swabian = "Preusen"
+	german = "Preusen"
+	franconian = "Preusen"
+	low_saxon = "Preusen"
+	thuringian = "Preusen"
+	frisian = "Prusen"
+	dutch = "Pruisen"
+	polish = "Prusy"
+	lithuanian = "Prusija"
+	bohemian = "Prusija"
+	slovieni = "Prusija"
+	russian = "Prussiya"
+	prussian = "Prusija"
+	pommeranian = "Prusija"
+	lettigallish = "Preisimaa"
+	livonian = "Preisimaa"
+	ugricbaltic = "Preisimaa"
+	
+	culture = prussian
+	religion = catholic
+}
+
 e_god_kingdom = {
 	color={ 237 209 133 }
 	
@@ -307,6 +432,74 @@ e_macedonia = {
 	allow = {
 		always = no
 	}
+}
+
+e_white_horde = {
+	color = { 222 231 255 }
+
+	short_name = yes
+
+	capital = 619
+
+	culture = mongol
+	allow = {
+		always = no
+	}
+	mongol = "Batu Ulus"
+	turkish = "Beyaz Orda"
+	cuman = "Beyaz Orda"
+	oghuz = "Beyaz Orda"
+	turkmen = "Beyaz Orda"
+	uyghur = "Beyaz Orda"
+	khwarezmi = "Beyaz Orda"
+	pecheneg = "Beyaz Orda"
+	kasogi = "Beyaz Orda"
+	bolghar = "Beyaz Orda"
+	bashkir = "Beyaz Orda"
+	maghreb_arabic = "Alhashd Al Abyad"
+	zanata = "Alhashd Al Abyad"
+	sanhaja = "Alhashd Al Abyad"
+	tagelmust = "Alhashd Al Abyad"
+	masmuda = "Alhashd Al Abyad"
+	levantine_arabic = "Alhashd Al Abyad"
+	hijazi = "Alhashd Al Abyad"
+	bedouin_arabic = "Alhashd Al Abyad"
+	yemeni = "Alhashd Al Abyad"
+	egyptian_arabic = "Alhashd Al Abyad"
+}
+
+e_blue_horde = {
+	color = { 110 152 194 }
+
+	short_name = yes
+
+	capital = 900
+
+	culture = mongol
+	allow = {
+		always = no
+	}
+	mongol = "Orda Ulus"
+	turkish = "Mavi Orda"
+	cuman = "Mavi Orda"
+	oghuz = "Mavi Orda"
+	turkmen = "Mavi Orda"
+	uyghur = "Mavi Orda"
+	khwarezmi = "Mavi Orda"
+	pecheneg = "Mavi Orda"
+	kasogi = "Mavi Orda"
+	bolghar = "Mavi Orda"
+	bashkir = "Mavi Orda"
+	maghreb_arabic = "Alhashd Al Azraq"
+	zanata = "Alhashd Al Azraq"
+	sanhaja = "Alhashd Al Azraq"
+	tagelmust = "Alhashd Al Azraq"
+	masmuda = "Alhashd Al Azraq"
+	levantine_arabic = ""Alhashd Al Azraq"
+	hijazi = "Alhashd Al Azraq"
+	bedouin_arabic = "Alhashd Al Azraq"
+	yemeni = "Alhashd Al Azraq"
+	egyptian_arabic = "Alhashd Al Azraq"
 }
 
 k_dutch_republic = {

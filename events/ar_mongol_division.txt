@@ -27,7 +27,7 @@ narrative_event = {
 	}
 	option = {	# Original with all Khanates
 		name = EVTOPTAKHA.98901
-		
+		e_mongol_empire = { holder_scope = { narrative_event = {  id = MOGDIV.2  days = 1 } } }
 		#Ilkhanate
 		random_dynasty_member = {
 			limit = {
@@ -68,6 +68,8 @@ narrative_event = {
 							de_jure_liege_or_above = k_kafarestan
 							region = world_middle_east_arabia
 							region = world_middle_east_jerusalem
+							region = world_asia_minor
+							region = world_middle_east_mesopotamia
 							region = world_africa
 						}
 						OR = {
@@ -184,19 +186,19 @@ narrative_event = {
 		
 		e_mongol_empire = {
 			holder_scope = {
-				set_character_flag = new_mongol_emp
+				set_character_flag = khan_of_mongol_empire
 				disband_event_forces = yes
-				while = {
-					count = 5
-					spawn_unit = {
-						province = 1571
-						troops = {
-							light_cavalry = { 2750 2750 }
-							horse_archers = { 2250 2250 }
-							knights = { 500 500 }
-						}
-					}
-				}
+				#while = {
+				#	count = 5
+				#	spawn_unit = {
+				#		province = 1571
+				#		troops = {
+				#			light_cavalry = { 2750 2750 }
+				#			horse_archers = { 2250 2250 }
+				#			knights = { 500 500 }
+				#		}
+				#	}
+				#}
 			}
 		}
 	}

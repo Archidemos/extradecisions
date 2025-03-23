@@ -1785,10 +1785,10 @@ decisions = {
 				culture = italian
 				culture = lombard
 			}
-			OR = {
-				has_landed_title = d_thurgau
-				has_landed_title = d_raetia
-			}
+			#OR = {
+			#	has_landed_title = d_thurgau
+			#	has_landed_title = d_raetia
+			#}
 			NOT = { has_landed_title = k_burgundy }
 			k_switzerland = {
 				has_holder = no
@@ -1833,7 +1833,6 @@ decisions = {
 
 		effect = {
 			wealth = -500
-			set_government_type = ar_confederation_government
 			custom_tooltip = { text = custom_create_switzerland_tooltip }
 			hidden_tooltip = {
 				d_upper_burgundy = {
@@ -1852,11 +1851,13 @@ decisions = {
 				primary_title = {
 					k_switzerland = {
 						copy_title_laws = PREV
+						set_flag = forced_confed_government
 					}
 				}
 				k_switzerland = {
 					grant_title_no_opinion = ROOT
 				}
+				set_government_type = ar_confederation_government
 				ROOT = {
 					add_law = law_voting_power_1
 					add_law = war_voting_power_1
@@ -1877,7 +1878,15 @@ decisions = {
 				d_swiss = {
 					de_jure_liege = k_switzerland
 				}
-
+				ROOT = {
+					any_demesne_title = {
+						limit = {
+							NOT = { title = k_switzerland }
+							NOT = { title = d_swiss }
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
 				e_hre = {
 					owner = {
 						any_realm_character = {
@@ -1885,7 +1894,7 @@ decisions = {
 						}
 					}
 				}
-
+				set_defacto_liege = THIS
 				narrative_event = { id = HFP.40010 }
 			}
 			custom_tooltip = {

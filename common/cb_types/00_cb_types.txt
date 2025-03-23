@@ -9679,7 +9679,6 @@ imperial_reconquest = {
 
 	can_use_title = {
 		OR = {
-			ROOT = { has_landed_title = e_west_rome }
 			de_jure_liege_or_above = k_byzantium
 			de_jure_liege_or_above = k_thrace
 			de_jure_liege_or_above = k_anatolia
@@ -12066,6 +12065,7 @@ pagan_holy_war = {
 				religion = aztec
 				religion = west_african_pagan_reformed
 				religion = zun_pagan_reformed
+				government = warrior_order_government
 			}
 			NOT = { has_religion_feature = religion_peaceful }
 			NOT = { government = ar_confederation_government }
@@ -12153,6 +12153,7 @@ pagan_holy_war = {
 				religion = aztec
 				religion = west_african_pagan_reformed
 				religion = zun_pagan_reformed
+				government = warrior_order_government
 			}
 			NOT = { same_realm = FROM }
 			NOT = { religion = FROM }
@@ -18172,11 +18173,13 @@ nomad_invasion = {
 	sort_priority = 1000
 	
 	can_use_gui = {
-		#ROOT = {
-		#	NOT = { has_landed_title = e_golden_horde }
-		#	NOT = { has_landed_title = e_il-khanate }
-		#	NOT = { has_landed_title = e_timurids }
-		#}
+		FROM = {
+			NOT = { has_landed_title = e_golden_horde }
+			NOT = { has_landed_title = e_il-khanate }
+			NOT = { has_landed_title = e_timurids }
+			NOT = { has_landed_title = e_blue_horde }
+			NOT = { has_landed_title = e_white_horde }
+		}
 		ROOT = {
 			prestige = 100
 			population = 30000

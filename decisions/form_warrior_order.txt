@@ -1,0 +1,146 @@
+decisions = {
+	form_warrior_order = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { government = warrior_order_government }
+			NOT = { tier = EMPEROR }
+			is_feudal = yes
+			independent = yes
+			ai = no
+		}
+
+		allow = {
+			ROOT = { realm_size <= 300 }
+			ROOT = { OR = { tier = DUKE tier = KING } }
+			wealth = 500
+			martial = 10
+			independent = yes
+		}
+		
+		effect = {
+			wealth = -500
+			#ROOT = {
+			#	any_demesne_title = {
+			#		limit = { 
+			#			tier = KING
+			#		}
+			#		unsafe_destroy_landed_title = THIS
+			#	}
+			#}
+			primary_title = {
+				create_title = {
+					tier = KING
+					landless = yes
+					temporary = no
+					custom_created = yes
+					culture = ROOT
+					holder = ROOT
+					base_title = THIS
+					copy_title_laws = yes
+				}
+				new_title = {
+					copy_title_history = PREV
+					set_preferred_capital = PREV
+					set_random_coa_effect = yes
+					religion = ROOT
+					set_flag = forced_warrior_order
+					set_name = "Order of [Root.Capital.GetName]"
+					adjective = [Prev.GetAdjective]
+					make_primary_title = yes
+				}
+			}
+			hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
+			custom_tooltip = {
+				text = "You will also unlock a new Retinue type, special to the Military Order"
+				set_government_type = warrior_order_government
+			}
+			piety = -100
+			wealth = -200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_kingdom_prussia = {
+		ai = no
+		is_high_prio = yes
+		only_playable = yes
+		
+		potential = {
+			NOT = { government = warrior_order_government }
+			NOT = { tier = EMPEROR }
+			NOT = { has_global_flag = yugoslavia_formed }
+			capital_scope = {
+				OR = {
+					region = world_europe_east
+					region = world_europe_west_germania
+				}
+			}
+			independent = yes
+		}
+
+		allow = {
+			NOT = { tier = EMPEROR }
+			religion_group = christian
+			OR = {
+				culture_group = west_slavic
+				culture_group = baltic
+			}
+			completely_controls = d_prussia
+			completely_controls = d_pomeralia
+			completely_controls = d_pommerania
+			wealth = 300
+			prestige = 350
+			martial = 10
+			independent = yes
+		}
+		
+		effect = {
+			custom_tooltip = {
+				text = "You will get the option to decide to become a Military Order or a Kingdom"
+				hidden_tooltip = {
+					ROOT = { narrative_event = { id = PRUS.102 } }
+				}
+			}
+		}
+	}
+}
+
+targetted_decisions = {
+	convert_to_warrior_order = {
+		diplomacy_icon = GFX_icon_warrior_order_government
+		ai_check_interval = 12
+		ai_target_filter = vassals
+
+		potential = {
+			ROOT = {
+				AND = {
+					vassal_of = FROM
+					is_ruler = yes
+				}
+			}
+		}
+	
+		from_potential = {
+			ROOT = { government = warrior_order_government }
+		}
+
+		allow = {
+			NOT = { government = warrior_order_government }
+			FROM = { NOT = { has_character_modifier = recently_made_warrior_order } }
+		}
+		
+		effect = {
+			set_government_type = warrior_order_government
+			#FROM = { add_character_modifier = { modifier = recently_made_warrior_order years = 3 } }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

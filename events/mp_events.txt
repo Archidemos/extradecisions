@@ -1470,6 +1470,21 @@ character_event = { #Event to activate d_shiite
 	}
 }
 
+narrative_event = { #Event for everyone about the formation
+	id = MP.053
+	title = "Division of the Golden Horde"
+	desc = "As the Golden Horde dominates the Eastern Steppes. It has become a huge influence to the people of the Slavic lands and people. With this great power comes a cost however. It seems that the Golden Horde has reached its final moments and have exploded, spewing out their two biggest clans that will dominate the former Golden Hordic lands. The Blue Horde that will be responsible for the Steppe lands, and the White Horde which will be controling the Slavic lands."
+
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	
+	option = {
+		name = MOGGOLDOPT3
+	}
+}
+
 character_event = {
     id = MP.099
     hide_window = yes
@@ -1737,5 +1752,152 @@ character_event = {
 				}
 			}
 		}
+    }
+}
+
+character_event = { #Event for everyone about the formation
+	id = MP.202
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_nomadic = yes
+		independent = yes
+		NOT = { has_landed_title = e_mongol_empire }
+		NOT = { has_landed_title = e_golden_horde }
+	}
+	
+	immediate = {
+		current_heir = { character_event = { id = MP.203 days = 2 } }
+	}
+}
+
+character_event = {
+	id = MP.203
+	title = "Nomadic Succession"
+	desc = "After the death of your predicesor, your rivals clans have been growing ever so ambitious and figured that now is the time to strike."
+	
+	picture = GFX_evt_nomad_camp
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	#trigger = {
+	#	is_nomadic = yes
+	#	independent = yes
+	#	NOT = { has_landed_title = e_mongol_empire }
+	#	NOT = { has_landed_title = e_golden_horde }
+	#}
+	
+	immediate = {
+		current_heir = { save_event_target_as = horde_defender }
+	}
+
+	option = {
+		name = "To arms!"
+		scaled_prestige = {
+			value = -2
+		}
+		add_character_modifier = {
+			name = horde_succession
+			years = 2
+			inherit = yes
+		}
+		create_character = {
+			culture = ROOT
+			religion = ROOT
+			age = 25
+			dynasty = random
+			add_trait = adventurer
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		event_target:horde_defender = {
+			random_realm_province = {
+				new_character = {
+					save_event_target_as = rival_clan_succession
+					wealth = 100
+					prestige = 200
+					piety = 200
+					remove_trait = slow
+					remove_trait = imbecile
+					remove_trait = weak
+					remove_trait = feeble
+					
+					create_title = {
+						name = "RIVAL_CLAN_SUCCESSION_ARMY"
+						tier = KING
+						landless = yes
+						temporary = yes
+						rebel = yes
+						culture = ROOT
+						holder = THIS
+						nomad = yes
+					}
+					spawn_unit = {
+						owner = event_target:rival_clan_succession
+						province = PREV
+						home = PREV
+	
+						match_character = ROOT
+						match_mult = 2
+						
+						troops = {
+							light_cavalry = { 275 275 }
+							horse_archers = { 225 225 }
+							knights = { 150 150 }
+						}
+					}
+					set_government_type = nomadic_government
+					unsafe_war = {
+						casus_belli = nomad_succession_cb
+						target = event_target:horde_defender
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+    id = MP.204
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		government = warrior_order_government
+    }
+
+    immediate = {
+		add_trait = order_vet
+		any_courtier = {
+			limit = {
+				is_female = no
+				prisoner = no
+				NOT = { government = feudal_government }
+				NOT = { government = tribal_government }
+				NOT = { government = theocracy_government }
+				NOT = { government = republic_government }
+				NOT = { government = ar_theocracy_government }
+				NOT = { government = ar_republic_government }
+				NOT = { government = ar_mercenary_government }
+				NOT = { government = pirate_republic_government }
+				NOT = { government = muslim_government }
+				NOT = { government = normal_chinese_government }
+				NOT = { government = satrap_government }
+				NOT = { government = indian_government }
+			}
+			add_trait = order_vet
+		}
+		#add_character_modifier = {
+		#	name = warrior_order_holder
+		#	years = -1
+		#}
     }
 }

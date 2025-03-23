@@ -9,22 +9,53 @@ decisions = {
 			NOT = { government = ar_confederation_government }
 			NOT = { is_tributary = yes }
 			NOT = { tier = EMPEROR }
-			higher_tier_than = DUKE
-			is_tribal = no
+			is_feudal = yes
 			ai = no
 		}
 		
 		allow = {
-			NOT = { tier = EMPEROR }
+			tier = KING
 			wealth = 1000
 			prestige = 1000
-			diplomacy = 13
+			diplomacy = 10
 			ROOT = { realm_size <= 100 }
 			NOT = { government = ar_confederation_government }
 			independent = yes
 		}
 		
 		effect = {
+			primary_title = {
+				create_title = {
+					tier = KING
+					landless = yes
+					temporary = no
+					custom_created = yes
+					culture = ROOT
+					holder = ROOT
+					base_title = THIS
+					copy_title_laws = yes
+				}
+				new_title = {
+					copy_title_history = PREV
+					set_preferred_capital = PREV
+					set_random_coa_effect = yes
+					religion = ROOT
+					set_flag = forced_confed_government
+					set_name = "Confederation of [Root.Capital.GetName]"
+					adjective = [Prev.GetAdjective]
+					make_primary_title = yes
+				}
+			}
+			hidden_tooltip = {
+				ROOT = {
+					any_demesne_title = {
+						limit = { 
+							NOT = { is_primary_holder_title = yes }
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
+			}
 			custom_tooltip = {
 				text = warning_no_war
 				set_government_type = ar_confederation_government

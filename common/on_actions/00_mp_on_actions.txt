@@ -1,13 +1,19 @@
 on_startup = {
 	events = {
 		MP.052
+		MP.204
 	}
 }
-
+on_yearly_pulse = {
+	events = {
+		MP.204
+	}
+}
 on_bi_yearly_pulse = {
 	random_events = {
 		90 = 0
 		10 = INV.3
+		MP.204
 	}
 }
 on_character_ask_to_join_society = {
@@ -124,6 +130,8 @@ on_death = {
 	events = {
 		#KHA.98901 # Division of the Mongol Empire
 		MOGDIV.1
+		GODDIV.1
+		MP.202
 	}
 }
 
@@ -138,6 +146,8 @@ on_new_holder_inheritance = {
 	events = {
 		#KHA.98901 # Division of the Mongol Empire
 		#MOGDIV.1
+		#MP.203
+		MP.204
 	}
 }
 

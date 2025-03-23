@@ -15,33 +15,36 @@ tributary_client_cb = {
 	
 	can_use_gui = {
 		check_if_crusader_trigger = yes
-		ROOT = {
-			relative_realm_size = {
-				who = FROM 
-				size > 1.5
-			}
-			conditional_tooltip = {
-				trigger = {
-					capital_scope = {
-						NOT = {
+		OR = {
+			ROOT = {
+				relative_realm_size = {
+					who = FROM 
+					size > 1.5
+				}
+				conditional_tooltip = {
+					trigger = {
+						capital_scope = {
+							NOT = {
+								region = world_europe
+							}
+						}
+					}
+					prestige = 350
+					TECH_MAJESTY = 3
+					diplomacy = 10
+				}
+				conditional_tooltip = {
+					trigger = {
+						capital_scope = {
 							region = world_europe
 						}
 					}
+					prestige = 500
+					TECH_MAJESTY = 3
+					diplomacy = 11
 				}
-				prestige = 350
-				TECH_MAJESTY = 3
-				diplomacy = 10
 			}
-			conditional_tooltip = {
-				trigger = {
-					capital_scope = {
-						region = world_europe
-					}
-				}
-				prestige = 500
-				TECH_MAJESTY = 3
-				diplomacy = 11
-			}
+			ROOT = { government = ar_confederation_government }
 		}
 	}
 	

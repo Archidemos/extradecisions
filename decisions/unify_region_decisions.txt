@@ -64,56 +64,73 @@ decisions = {
 			add_claim = k_italy
 			ROOT = {
 				any_demesne_title = {
-					limit = { 
-						tier = KING
-						NOT = { title = k_germany }
+					limit = {
+						title = k_germany
+						title = k_wesphalia
+						title = k_thuringian
+						title = k_schwaben
+						title = k_franconia
 					}
 					unsafe_destroy_landed_title = THIS
 				}
 			}
-			hidden_effect = {	
-				d_alsace = { de_jure_liege = k_germany }
-				d_angria = { de_jure_liege = k_germany }
-				d_baden	 = { de_jure_liege = k_germany }
-				d_brandenburg = { de_jure_liege = k_germany }
-				d_bremen = { de_jure_liege = k_germany }
-				d_brunswick = { de_jure_liege = k_germany }
-				d_franconia = { de_jure_liege = k_germany }
-				d_hesse = { de_jure_liege = k_germany }
-				d_lausitz = { de_jure_liege = k_germany }
-				d_meissen = { de_jure_liege = k_germany }
-				d_munster_germany = { de_jure_liege = k_germany }
-				d_raetia = { de_jure_liege = k_germany }
-				d_rhine = { de_jure_liege = k_germany }
-				d_saxony = { de_jure_liege = k_germany }
-				d_swabia = { de_jure_liege = k_germany }
-				d_thuringia = { de_jure_liege = k_germany }
-				d_thurgau = { de_jure_liege = k_germany }
-				d_fulda = { de_jure_liege = k_germany }
-				d_hamburg = { de_jure_liege = k_germany }
-				d_koln = { de_jure_liege = k_germany }
-				d_holstein = { de_jure_liege = k_denmark }
-				d_mecklemburg = { de_jure_liege = k_germany }
-				
-				activate_title = {
-					title = k_germany
-					status = yes
-				}
-				activate_title = {
-					title = k_wesphalia
-					status = no
-				}
-				activate_title = {
-					title = k_thuringian
-					status = no
-				}
-				activate_title = {
-					title = k_schwaben
-					status = no
-				}
-				activate_title = {
-					title = k_franconia
-					status = no
+			custom_tooltip = {
+				text = "All the German De Jure titles will be united under the Kingdom of Germany"
+				hidden_effect = {
+					d_rheinfranken = { de_jure_liege = k_germany }
+					d_hessen = { de_jure_liege = k_germany }
+					d_ostfranken = { de_jure_liege = k_germany }
+					d_nuremberg = { de_jure_liege = k_germany }
+					d_lauenburg = { de_jure_liege = k_germany }
+					d_westfalen = { de_jure_liege = k_germany }
+					d_saxewittenberg = { de_jure_liege = k_germany }
+					d_tubingen = { de_jure_liege = k_germany }
+					d_teck = { de_jure_liege = k_germany }
+					d_burgau = { de_jure_liege = k_germany }
+					d_ratien = { de_jure_liege = k_germany }
+					d_alsace = { de_jure_liege = k_germany }
+					d_angria = { de_jure_liege = k_germany }
+					d_baden	 = { de_jure_liege = k_germany }
+					d_brandenburg = { de_jure_liege = k_germany }
+					d_bremen = { de_jure_liege = k_germany }
+					d_brunswick = { de_jure_liege = k_germany }
+					d_franconia = { de_jure_liege = k_germany }
+					d_hesse = { de_jure_liege = k_germany }
+					d_lausitz = { de_jure_liege = k_germany }
+					d_meissen = { de_jure_liege = k_germany }
+					d_munster_germany = { de_jure_liege = k_germany }
+					d_raetia = { de_jure_liege = k_germany }
+					d_rhine = { de_jure_liege = k_germany }
+					d_saxony = { de_jure_liege = k_germany }
+					d_swabia = { de_jure_liege = k_germany }
+					d_thuringia = { de_jure_liege = k_germany }
+					d_thurgau = { de_jure_liege = k_germany }
+					d_fulda = { de_jure_liege = k_germany }
+					d_hamburg = { de_jure_liege = k_germany }
+					d_koln = { de_jure_liege = k_germany }
+					d_holstein = { de_jure_liege = k_denmark }
+					d_mecklemburg = { de_jure_liege = k_germany }
+					
+					activate_title = {
+						title = k_germany
+						status = yes
+					}
+					activate_title = {
+						title = k_wesphalia
+						status = no
+					}
+					activate_title = {
+						title = k_thuringian
+						status = no
+					}
+					activate_title = {
+						title = k_schwaben
+						status = no
+					}
+					activate_title = {
+						title = k_franconia
+						status = no
+					}
 				}
 			}
 			if = {

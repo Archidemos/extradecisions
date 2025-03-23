@@ -1,28 +1,67 @@
 decisions = {
 	form_pirate_republic = {
-		ai = no
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 12
 		
 		potential = {
 			NOT = { government = pirate_republic_government }
 			ROOT = { NOR = { tier = EMPEROR tier = KING } }
 			independent = yes
-			capital_scope = {
-				port = yes
-			}
 		}
 
 		allow = {
 			realm_size <= 40
-			ROOT = { NOR = { tier = EMPEROR tier = KING } }
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			wealth = 500
 			independent = yes
+			capital_scope = {
+				port = yes
+			}
 		}
 		
 		effect = {
 			wealth = -500
+			#ROOT = {
+			#	any_demesne_title = {
+			#		limit = { 
+			#			tier = KING
+			#		}
+			#		unsafe_destroy_landed_title = THIS
+			#	}
+			#}
+			primary_title = {
+				create_title = {
+					tier = KING
+					landless = yes
+					temporary = no
+					custom_created = yes
+					culture = ROOT
+					holder = ROOT
+					base_title = THIS
+					copy_title_laws = yes
+				}
+				new_title = {
+					copy_title_history = PREV
+					set_preferred_capital = PREV
+					set_random_coa_effect = yes
+					religion = ROOT
+					set_flag = forced_pirate_government
+					set_name = "Pirate Realm of [Root.Capital.GetName]"
+					adjective = [Prev.GetAdjective]
+					make_primary_title = yes
+				}
+			}
+			hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
+			set_government_type = pirate_republic_government
+			piety = -100
+			wealth = -200
 			set_government_type = pirate_republic_government
 			add_trait = adventurer
 			add_trait = pirate_commander
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }

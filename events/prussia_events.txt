@@ -1,0 +1,345 @@
+namespace = PRUS
+
+narrative_event = { #Event for everyone about the formation of the Order of Prussia
+	id = PRUS.100
+	title = "The Order of Prussia"
+	desc = "Concerning news, the newly formed Prussian Kingdom has instead chosen the way of Knighthood and formed a Military Order instead. This is concerning as these brutal Military Orders are unpredictable with their way of ruling and conquering, as well as their dangerously disiplined army that are feared all across Europe. Who knows what they will do next.."
+	
+	picture = GFX_evt_crusaders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We beware of this threat.."
+	}
+}
+
+narrative_event = { #Event for everyone about the Kingdom of Prussia
+	id = PRUS.101
+	title = "The Kingdom of Prussia"
+	desc = "At last, it seems that the Prussians finally ended their conflicts and wars and have united under one banner. These Prussians are no joke, as their quallity of men are feared all across Europe. Only time will tell what they will do next."
+	
+	picture = GFX_evt_crusaders
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Peace at last!"
+	}
+}
+
+narrative_event = {
+	id = PRUS.102
+	title = "The Fate of Prussia"
+	desc =  "At last, after besting our enemies and defeating them. We now can proclaim the Kingdom of Prussia. However, we should choose which type of way we should lead Prussia. Do we take the traditional path of a Monarch and proclaim a Feudal Kingdom, or do we lead our new kingdom more Militaristic and reform into a Military Order?"
+	
+	is_triggered_only = yes	
+	
+	picture = GFX_evt_crusaders
+	
+	option = { #Become a Prussian Order
+		name = "May the army lead us!"
+		ai_chance = { factor = 50 }
+		add_character_modifier = {
+			name = warrior_order_holder
+			years = -1
+		}		
+		activate_title = { title = k_prussia status = yes }
+		primary_title = {
+			k_prussia = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		hidden_tooltip = {
+			k_prussia = {
+				set_short_name = yes
+				set_name = "Order of Prussia"
+			}
+		}
+		d_prussia = { de_jure_liege = k_prussia }
+		d_pomeralia = { de_jure_liege = k_prussia }
+		d_pommerania = { de_jure_liege = k_prussia }
+		d_lubusz = { de_jure_liege = k_prussia }
+		k_prussia = { de_jure_liege = e_null }
+		k_prussia = {
+			set_title_landless = { title = THIS status = yes }
+			set_flag = forced_warrior_order
+		}
+		any_demesne_title = { gender_succ = true_cognatic }
+		set_government_type = warrior_order_government
+		add_trait = order_vet
+		piety = -100
+		wealth = -200
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = KING
+					NOT = { title = k_prussia }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		custom_tooltip = {
+			text = "You will unlock two new Retinue type, special to the Military Order and to the Title of Prussia"
+		}
+		custom_tooltip = {
+			text = "As Prussia, you are able to create a specialized Guard ready for your service"
+			activate_title = { title = d_prussia_guard status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					religion = ROOT
+					culture = german
+					female = no
+					age = 33
+					trait = brilliant_strategist
+					trait = zealous
+					trait = humble
+					trait = ambitious
+					trait = strategist
+					trait = mountain_terrain_leader
+				}
+				new_character = {
+					wealth = 500
+					d_prussia_guard = {
+						grant_title = PREV
+						add_law = {
+							law = succ_open_elective
+							opinion_effect = no
+						}							
+					}
+					set_government_type = warrior_order_government
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 20
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 25
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 26
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 28
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 17
+					}
+				}
+				d_prussia_guard = {
+					holder_scope = {
+						set_defacto_liege = ROOT
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			any_player = {
+				narrative_event = { id = PRUS.100 }
+			}
+		}
+	}
+	
+	option = { #Become a Prussian Kingdom
+		name = "Prussia needs a ruler!"
+		ai_chance = { factor = 50 }
+		
+		activate_title = { title = k_prussia status = yes }
+		primary_title = {
+			k_prussia = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		d_prussia = { de_jure_liege = k_prussia }
+		d_pomeralia = { de_jure_liege = k_prussia }
+		d_pommerania = { de_jure_liege = k_prussia }
+		d_lubusz = { de_jure_liege = k_prussia }
+		k_prussia = { de_jure_liege = e_null }
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = KING
+					NOT = { title = k_prussia }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		custom_tooltip = {
+			text = "You will unlock a new Retinue type, special to the Title of Prussia"
+		}
+		custom_tooltip = {
+			text = "As Prussia, you are able to create a specialized Guard ready for your service"
+			activate_title = { title = d_prussia_guard status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					religion = ROOT
+					culture = german
+					female = no
+					age = 33
+					trait = brilliant_strategist
+					trait = zealous
+					trait = humble
+					trait = ambitious
+					trait = strategist
+					trait = mountain_terrain_leader
+				}
+				new_character = {
+					wealth = 500
+					d_prussia_guard = {
+						grant_title = PREV
+						add_law = {
+							law = succ_open_elective
+							opinion_effect = no
+						}							
+					}
+					set_government_type = warrior_order_government
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 20
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 25
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 26
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 28
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 17
+					}
+				}
+				d_prussia_guard = {
+					holder_scope = {
+						set_defacto_liege = ROOT
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			any_player = {
+				narrative_event = { id = PRUS.101 }
+			}
+		}
+	}
+}

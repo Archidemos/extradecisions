@@ -1,0 +1,234 @@
+namespace = GODDIV
+
+narrative_event = {
+	id = GODDIV.1
+	title = "Fall of the Golden Horde"
+	desc = "The previous Khan, upon his death, dictated the division of the empire. As successor, I am expected to follow through on this to maintain stability. Despite the succession of new Khan's to their respective regions, they must answer to me."
+	
+	picture = GFX_evt_nomad_camp
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		has_landed_title = e_golden_horde
+		has_character_flag = khan_of_golden_horde
+		has_global_flag = fully_divided_mongol_empire
+		NOT = { has_global_flag = fully_divided_golden_horde }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = fully_divided_golden_horde
+		set_global_flag = world_europe_east_conquered_gold
+		set_character_flag = fully_divided_golden_horde_successor
+		e_golden_horde = { holder_scope = { save_event_target_as = gold_horde_end_war } }
+		e_blue_horde = { holder_scope = { save_event_target_as = blue_horde_end_war } }
+	}
+	option = {	# Original with all Khanates
+		name = EVTOPTAKHA.98901
+		e_golden_horde = { holder_scope = { narrative_event = {  id = GODDIV.2  days = 1 } } }
+		e_golden_horde = {
+			holder_scope = {
+				any_tributary = {
+					remove_tributary = PREV
+				}
+				any_suzerain = {
+					remove_tributary = PREV
+				}
+				any_war = {
+					limit = {
+						attacker = { character = event_target:gold_horde_end_war }
+					}
+					end_war = invalid
+				}
+				disband_event_forces = yes
+				while = {
+					count = 2
+					spawn_unit = {
+						province = 1571
+						troops = {
+							light_cavalry = { 2750 2750 }
+							horse_archers = { 2250 2250 }
+							knights = { 500 500 }
+						}
+					}
+				}
+				grant_title = e_blue_horde
+				e_blue_horde = { grant_title = PREV }
+				set_government_type = nomadic_government
+				hidden_tooltip = {
+					any_title = {
+						limit = {
+							OR = {
+								de_jure_liege_or_above = e_blue_horde
+								de_jure_liege_or_above = k_turkestan_west
+							}
+							OR = {
+								owner = { is_liege_or_above = e_golden_horde }
+								owner = { has_landed_title = e_golden_horde }
+							}
+						}
+						grant_title = PREV
+					}
+				}
+			}
+		}
+		#White Horde
+		random_dynasty_member = {
+			limit = {
+				is_female = no
+				is_landed = no
+				is_adult = yes
+				is_alive = yes
+				is_offmap_ruler = no
+				#any_owned_bloodline = { has_bloodline_flag = genghis_khan_line }
+				NOT = { has_character_flag = khan_of_golden_horde }
+				NOT = { has_landed_title = e_golden_horde }
+			}
+			e_white_horde = { grant_title = PREV }
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 897
+					troops = {
+						light_cavalry = { 2750 2750 }
+						horse_archers = { 2250 2250 }
+						knights = { 500 500 }
+					}
+				}
+			}
+			add_population_scaled = 0.9
+			manpower = 10000
+			wealth = 250
+			set_government_type = nomadic_government
+			hidden_tooltip = {
+				any_title = {
+					limit = {
+						NOT = { title = e_golden_horde }
+						OR = {
+							de_jure_liege_or_above = e_white_horde
+							region = world_europe_east
+							region = world_steppe_west
+							region = world_europe
+						}
+						OR = {
+							owner = { is_liege_or_above = e_golden_horde }
+							owner = { has_landed_title = e_golden_horde }
+						}
+					}
+					grant_title = PREV
+				}
+			}
+		}
+		unsafe_destroy_landed_title = e_golden_horde
+		hidden_effect = {
+			any_player = { narrative_event = { id = MP.053 days = 5 } }
+		}
+	}
+}
+
+narrative_event = {
+	id = GODDIV.2
+	title = "Division of the Golden Horde"
+	desc = EVTDESCKHA.98902
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = no
+	}
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_blue_horde
+			}
+			save_event_target_as = mongol_khanates_blue_horde
+			if = {
+				limit = {
+					NOT = {
+						has_character_flag = khan_of_blue_horde
+					}
+				}
+				set_character_flag = khan_of_blue_horde
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_white_horde
+			}
+			save_event_target_as = mongol_khanates_white_horde
+			if = {
+				limit = {
+					NOT = {
+						has_character_flag = khan_of_white_horde
+					}
+				}
+				set_character_flag = khan_of_white_horde
+			}
+		}
+	}
+	
+	option = {	# Stay as Khagan of the Blue Horde
+		name = "I will remain as Khagan of the Blue Horde"
+		hidden_tooltip = {
+			e_blue_horde = {
+				holder_scope = {
+					any_war = {
+						limit = {
+							attacker = { character = PREVPREV }
+						}
+						end_war = invalid
+					}
+				}
+			}
+		}
+	}
+	option = {	# Switch to Khan of the White Horde
+		name = "I will become the Khagan of the White Horde"
+		trigger = {
+    		event_target:mongol_khanates_white_horde = {
+    			dynasty = ROOT
+    		}
+		}
+		
+		tooltip_info = yes
+		
+		custom_tooltip = {
+    		text = "You will switch to play as the White Horde"
+    		if = {
+    			limit = {
+    				event_target:mongol_khanates_white_horde = {
+    					is_alive = yes
+    					ai = yes
+    					any_demesne_title = {
+    						tier = COUNT
+    					}
+    				}
+    			}
+    			set_player_character = event_target:mongol_khanates_white_horde
+			}
+    	}
+	}
+}
+
+#character_event = { #Event for everyone about the formation
+#	id = GODDIV.3
+#    hide_window = yes
+#    is_triggered_only = yes
+#	
+#	immediate = {
+#		e_blue_horde = {
+#			holder_scope = {
+#				any_war = {
+#					limit = {
+#						attacker = { character = PREVPREV }
+#					}
+#					end_war = invalid
+#				}
+#			}
+#		}
+#	}
+#}

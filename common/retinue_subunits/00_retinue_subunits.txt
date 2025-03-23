@@ -1665,6 +1665,52 @@ RETTYPE_K_DUTCH_REPUBLIC =
 	}
 }
 
+RETTYPE_WARRIOR_ORDER = 
+{
+	first_type = 1
+	first_amount = 200
+	second_type = 4
+	second_amount = 200
+	
+	potential = {
+		is_nomadic = no
+		government = warrior_order_government
+	}
+	
+	maintenance_multiplier = 4.5
+	
+	modifier = {
+		heavy_infantry_offensive = 0.15
+		heavy_infantry_morale = 0.1
+		knights_offensive = 0.15
+		knights_morale = 0.1
+	}
+}
+
+RETTYPE_K_PRUSSIA = 
+{
+	first_type = 1
+	first_amount = 200
+	second_type = 2
+	second_amount = 200
+	
+	potential = {
+		is_nomadic = no
+		AND = {
+			ROOT = { has_landed_title = k_prussia }
+		}
+	}
+	
+	maintenance_multiplier = 4.5
+	
+	modifier = {
+		heavy_infantry_offensive = 0.15
+		heavy_infantry_morale = 0.15
+		pikemen_offensive = 0.15
+		pikemen_morale = 0.15
+	}
+}
+
 RETTYPE_GOTHS = 
 {
 	first_type = 0

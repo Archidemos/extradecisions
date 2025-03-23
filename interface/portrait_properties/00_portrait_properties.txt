@@ -1262,6 +1262,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 			NOT = { is_offmap_tag_including_dead = offmap_china }
 		}
@@ -1299,6 +1301,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 			NOT = { is_offmap_tag_including_dead = offmap_china }
 		}
@@ -1336,6 +1340,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 			NOT = { is_offmap_tag_including_dead = offmap_china }
 		}
@@ -1373,6 +1379,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 		}
 		modifier = {
@@ -1410,6 +1418,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 		}
 		modifier = {
@@ -1447,6 +1457,8 @@
 				trait = peasant_leader
 				trait = heresiarch
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 			}
 		}
 		modifier = {
@@ -1485,6 +1497,8 @@
 			OR = {
 				is_ruler = yes
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				has_minor_title = title_prince
 				spouse = { real_tier = emperor }
 				spouse = { real_tier = king }
@@ -1521,6 +1535,8 @@
 			NOT = { trait = heresiarch }
 			OR = {
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				is_or_was_offmap_power_ruler = yes
 				is_ruler = yes
 				has_minor_title = title_prince
@@ -1554,6 +1570,8 @@
 			NOT = { trait = heresiarch }
 			OR = {
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				is_or_was_offmap_power_ruler = yes
 				is_ruler = yes
 				has_minor_title = title_prince
@@ -1581,6 +1599,8 @@
 			factor = 0
 			OR = {
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				real_tier = king
 				real_tier = emperor
 				AND = {
@@ -1598,6 +1618,8 @@
 			NOT = { has_job_title = job_spymaster }
 			OR = {
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				real_tier = duke
 				NOT = { intrigue = 10 }
 			}
@@ -1625,6 +1647,8 @@
 			}
 			NOR = {
 				government = order_government
+				government = warrior_order_government
+				government = ar_mercenary_government
 				primary_title = {
 					OR = {
 						title = d_knights_hospitaler
@@ -1655,7 +1679,11 @@
 			#	real_tier = king
 			#	real_tier = emperor
 				AND = {
-					NOT = { government = order_government }
+					OR = {
+						NOT = { government = order_government }
+						NOT = { government = warrior_order_government }
+						NOT = { government = ar_mercenary_government }
+					}
 					real_tier = duke
 					NAND = { 
 						in_command = yes 
@@ -3021,6 +3049,8 @@
 			factor = 20000
 			OR = { 
 				government = order_government 
+				government = warrior_order_government
+				government = ar_mercenary_government
 				primary_title = { #Holy Orders in peace time should wear martial clothes, but not the helmet.
 					OR = {
 						title = d_knights_hospitaler
@@ -3046,6 +3076,8 @@
 			NOT = { trait = saint }
 			NOT = { is_republic = yes }
 			NOT = { government = order_government }
+			NOT = { government = warrior_order_government }
+			NOT = { government = ar_mercenary_government }
 			OR = {
 				real_tier = emperor
 				real_tier = king
