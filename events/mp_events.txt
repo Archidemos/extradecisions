@@ -1006,7 +1006,7 @@ character_event = {
 
     trigger = {
         government = republic_government
-        
+        higher_tier_than = COUNT
         # Non-patrician requirements to turn into a merchant republic
         capital_scope = { is_coastal = yes }
         
@@ -1878,6 +1878,7 @@ character_event = {
 		add_trait = order_vet
 		any_courtier = {
 			limit = {
+				is_adult = yes
 				is_female = no
 				prisoner = no
 				NOT = { government = feudal_government }

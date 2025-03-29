@@ -2,26 +2,29 @@ decisions = {
 	form_warrior_order = {
 		only_independent = yes
 		is_high_prio = yes
-		ai_check_interval = 12
+		ai_check_interval = 50
 		
 		potential = {
 			NOT = { government = warrior_order_government }
 			NOT = { tier = EMPEROR }
 			is_feudal = yes
 			independent = yes
-			ai = no
 		}
 
 		allow = {
 			ROOT = { realm_size <= 300 }
 			ROOT = { OR = { tier = DUKE tier = KING } }
-			wealth = 500
+			wealth = 1000
+			prestige = 500
+			piety = 400
 			martial = 10
 			independent = yes
 		}
 		
 		effect = {
-			wealth = -500
+			wealth = -1000
+			prestige = -500
+			piety = -400
 			#ROOT = {
 			#	any_demesne_title = {
 			#		limit = { 
@@ -42,6 +45,7 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
+					add_law = succ_open_elective
 					copy_title_history = PREV
 					set_preferred_capital = PREV
 					set_random_coa_effect = yes
@@ -69,19 +73,19 @@ decisions = {
 		ai = no
 		is_high_prio = yes
 		only_playable = yes
+		only_independent = yes
 		
 		potential = {
 			is_feudal = yes
 			NOT = { government = warrior_order_government }
 			NOT = { tier = EMPEROR }
-			NOT = { has_global_flag = yugoslavia_formed }
+			NOT = { has_global_flag = prussia_formed }
 			capital_scope = {
 				OR = {
 					region = world_europe_east
 					region = world_europe_west_germania
 				}
 			}
-			independent = yes
 		}
 
 		allow = {
@@ -94,15 +98,16 @@ decisions = {
 			completely_controls = d_prussia
 			completely_controls = d_pomeralia
 			completely_controls = d_pommerania
-			wealth = 300
-			prestige = 350
-			martial = 10
+			wealth = 400
+			prestige = 500
+			martial = 12
 			independent = yes
 		}
 		
 		effect = {
 			custom_tooltip = {
 				text = "You will get the option to decide to become a Military Order or a Kingdom"
+				set_global_flag = prussia_formed
 				hidden_tooltip = {
 					ROOT = { narrative_event = { id = PRUS.102 } }
 				}

@@ -2,10 +2,11 @@ decisions = {
 	form_pirate_republic = {
 		only_independent = yes
 		is_high_prio = yes
-		ai_check_interval = 12
+		ai_check_interval = 50
 		
 		potential = {
 			NOT = { government = pirate_republic_government }
+			is_feudal = yes
 			ROOT = { NOR = { tier = EMPEROR tier = KING } }
 			independent = yes
 		}
@@ -13,7 +14,10 @@ decisions = {
 		allow = {
 			realm_size <= 40
 			ROOT = { OR = { tier = DUKE tier = KING } }
-			wealth = 500
+			wealth = 1000
+			prestige = 500
+			piety = 400
+			intrigue = 10
 			independent = yes
 			capital_scope = {
 				port = yes
@@ -21,7 +25,9 @@ decisions = {
 		}
 		
 		effect = {
-			wealth = -500
+			wealth = -1000
+			prestige = -500
+			piety = -400
 			#ROOT = {
 			#	any_demesne_title = {
 			#		limit = { 
@@ -42,6 +48,7 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
+					add_law = succ_feudal_elective
 					copy_title_history = PREV
 					set_preferred_capital = PREV
 					set_random_coa_effect = yes
