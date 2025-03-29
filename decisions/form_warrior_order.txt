@@ -71,6 +71,7 @@ decisions = {
 		only_playable = yes
 		
 		potential = {
+			is_feudal = yes
 			NOT = { government = warrior_order_government }
 			NOT = { tier = EMPEROR }
 			NOT = { has_global_flag = yugoslavia_formed }
@@ -121,6 +122,7 @@ targetted_decisions = {
 				AND = {
 					vassal_of = FROM
 					is_ruler = yes
+					NOT = { government = warrior_order_government }
 				}
 			}
 		}
@@ -130,13 +132,14 @@ targetted_decisions = {
 		}
 
 		allow = {
+			is_feudal = yes
 			NOT = { government = warrior_order_government }
 			FROM = { NOT = { has_character_modifier = recently_made_warrior_order } }
 		}
 		
 		effect = {
 			set_government_type = warrior_order_government
-			#FROM = { add_character_modifier = { modifier = recently_made_warrior_order years = 3 } }
+			FROM = { add_character_modifier = { modifier = recently_made_warrior_order years = 2 } }
 		}
 		
 		ai_will_do = {

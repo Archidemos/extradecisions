@@ -599,7 +599,7 @@ decisions = {
 		potential = {
 			government = ar_republic_government
 			ai = yes
-			NOT = { tier = COUNT }
+			NOR = { tier = COUNT tier = BARON }
 		}
 		
 		allow = {
@@ -1022,7 +1022,7 @@ decisions = {
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
@@ -1053,7 +1053,7 @@ decisions = {
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
@@ -1087,7 +1087,7 @@ decisions = {
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
@@ -1107,7 +1107,7 @@ decisions = {
 						}
 						else = {
 							while = {
-								count = 3
+								count = 2
 								spawn_unit = {
 									province = PREV
 									home = PREV
