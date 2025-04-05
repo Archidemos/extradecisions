@@ -7,6 +7,7 @@ decisions = {
 		potential = {
 			NOT = { religion_group = muslim }
 			NOT = { government = ar_confederation_government }
+			NOT = { trait = great_conquerer }
 			NOT = { is_tributary = yes }
 			NOT = { tier = EMPEROR }
 			is_feudal = yes
@@ -26,6 +27,7 @@ decisions = {
 		effect = {
 			primary_title = {
 				create_title = {
+					dynasty_title_names = no
 					tier = KING
 					landless = yes
 					temporary = no
@@ -36,6 +38,7 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
+					dynasty_title_names = no
 					add_law = succ_feudal_elective
 					copy_title_history = PREV
 					set_preferred_capital = PREV

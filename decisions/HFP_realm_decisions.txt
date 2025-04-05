@@ -2668,7 +2668,15 @@ decisions = {
 		ai_check_interval = 120
 		
 		potential = {
-			culture = russian
+			#culture = russian
+			OR = {
+				culture_group = east_slavic
+				culture_group = finno_ugric
+				AND = {
+					capital_scope = { region = world_europe_south_east }
+					culture_group = north_germanic
+				}
+			}
 			has_landed_title = e_russia
 			NOT = { has_landed_title = e_russian_empire }
 		}

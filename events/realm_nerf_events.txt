@@ -160,11 +160,11 @@ character_event = { #Event to grant landed character with a Kingdom and or Empir
         event_target:nerf_value_title = {
             holder_scope = {
 				if = {
-					limit = { ROOT = { realm_size < 20 } }
+					limit = { ROOT = { realm_size < 15 } }
 					add_character_modifier = { name = realm_nerf_0 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+					limit = { ROOT = { realm_size >= 15 realm_size < 65 } }
 					add_character_modifier = { name = realm_nerf_1 duration = -1 }
 				}
 				if = {
@@ -225,11 +225,11 @@ character_event = { #Event to update the Realm Nerf Modifiers based on their siz
 		remove_character_modifier = realm_nerf_8
 
 		if = {
-			limit = { ROOT = { realm_size < 20 } }
+			limit = { ROOT = { realm_size < 15 } }
 			add_character_modifier = { name = realm_nerf_0 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+			limit = { ROOT = { realm_size >= 15 realm_size < 65 } }
 			add_character_modifier = { name = realm_nerf_1 duration = -1 }
 		}
 		if = {
@@ -339,11 +339,11 @@ character_event = { #Event to give Players or only Small Realms their Realm Nerf
         event_target:nerf_value_title = {
             holder_scope = {
 				if = {
-					limit = { ROOT = { realm_size < 20 } }
+					limit = { ROOT = { realm_size < 15 } }
 					add_character_modifier = { name = realm_nerf_0 duration = -1 }
 				}
 				if = {
-					limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+					limit = { ROOT = { realm_size >= 15 realm_size < 65 } }
 					add_character_modifier = { name = realm_nerf_1 duration = -1 }
 				}
 				if = {
@@ -404,11 +404,11 @@ character_event = { #Event to update the Realm Nerf Modifiers based on their siz
 		remove_character_modifier = realm_nerf_8
 
 		if = {
-			limit = { ROOT = { realm_size < 20 } }
+			limit = { ROOT = { realm_size < 15 } }
 			add_character_modifier = { name = realm_nerf_0 duration = -1 }
 		}
 		if = {
-			limit = { ROOT = { realm_size >= 20 realm_size < 65 } }
+			limit = { ROOT = { realm_size >= 15 realm_size < 65 } }
 			add_character_modifier = { name = realm_nerf_1 duration = -1 }
 		}
 		if = {

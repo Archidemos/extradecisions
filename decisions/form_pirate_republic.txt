@@ -6,6 +6,7 @@ decisions = {
 		
 		potential = {
 			NOT = { government = pirate_republic_government }
+			NOT = { trait = great_conquerer }
 			is_feudal = yes
 			ROOT = { NOR = { tier = EMPEROR tier = KING } }
 			independent = yes
@@ -38,6 +39,7 @@ decisions = {
 			#}
 			primary_title = {
 				create_title = {
+					dynasty_title_names = no
 					tier = KING
 					landless = yes
 					temporary = no
@@ -48,6 +50,7 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
+					dynasty_title_names = no
 					add_law = succ_feudal_elective
 					copy_title_history = PREV
 					set_preferred_capital = PREV

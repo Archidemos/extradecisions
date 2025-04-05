@@ -6,6 +6,7 @@ decisions = {
 		
 		potential = {
 			NOT = { government = warrior_order_government }
+			NOT = { trait = great_conquerer }
 			NOT = { tier = EMPEROR }
 			is_feudal = yes
 			independent = yes
@@ -16,7 +17,7 @@ decisions = {
 			ROOT = { OR = { tier = DUKE tier = KING } }
 			wealth = 1000
 			prestige = 500
-			piety = 400
+			piety = 500
 			martial = 10
 			independent = yes
 		}
@@ -24,7 +25,7 @@ decisions = {
 		effect = {
 			wealth = -1000
 			prestige = -500
-			piety = -400
+			piety = -500
 			#ROOT = {
 			#	any_demesne_title = {
 			#		limit = { 
@@ -35,6 +36,7 @@ decisions = {
 			#}
 			primary_title = {
 				create_title = {
+					dynasty_title_names = no
 					tier = KING
 					landless = yes
 					temporary = no
@@ -45,6 +47,7 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
+					dynasty_title_names = no
 					add_law = succ_open_elective
 					copy_title_history = PREV
 					set_preferred_capital = PREV

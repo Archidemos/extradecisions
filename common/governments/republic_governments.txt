@@ -35,6 +35,7 @@ republic_governments = {
 				religion = paulician
 			}
 			#is_female = no
+			capital_scope = { port = yes }
 			OR = {
 				AND = {
 					is_patrician = yes
@@ -126,12 +127,15 @@ republic_governments = {
 		potential = {
 			NAND = {
 				controls_religion = yes
-				NOT = { religion_group = muslim }
-				NOT = { religion = norse_pagan_reformed }
-				NOT = { religion = paulician }
+				OR = {
+					NOT = { religion_group = muslim }
+					NOT = { religion = norse_pagan_reformed }
+					NOT = { religion = paulician }
+				}
 			}
 			NOT = { is_government_potential = merchant_republic_government }
 			holy_order = no
+			tier = BARON
 		}
 		
 		color = { 209 125 130 }

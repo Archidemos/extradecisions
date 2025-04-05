@@ -12,8 +12,14 @@ decisions = {
 		allow = {
 			war = no
 			has_landed_title = e_russian_empire
-			culture = russian
-			religion = orthodox
+			OR = {
+				culture_group = east_slavic
+				culture_group = finno_ugric
+				AND = {
+					capital_scope = { region = world_europe_south_east }
+					culture_group = north_germanic
+				}
+			}
 			prestige = 2500
 			wealth = 1000
 		}
@@ -57,8 +63,14 @@ decisions = {
 		allow = {
 			war = no
 			has_landed_title = e_russian_empire
-			culture = russian
-			religion = orthodox
+			OR = {
+				culture_group = east_slavic
+				culture_group = finno_ugric
+				AND = {
+					capital_scope = { region = world_europe_south_east }
+					culture_group = north_germanic
+				}
+			}
 			completely_controls = k_perm
 			completely_controls = k_volga_bulgaria
 			completely_controls = k_bjarmia
