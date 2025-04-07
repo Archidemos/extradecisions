@@ -1,7 +1,7 @@
 targetted_decisions = {
 	convert_to_tribal_vassal = {
 		diplomacy_icon = GFX_trait_administrator
-		ai_check_interval = 12
+		ai_check_interval = 5
 		ai_target_filter = vassals
 
 		potential = {
@@ -19,8 +19,10 @@ targetted_decisions = {
 		}
 
 		allow = {
-			NOT = { government = tribal_government }
-			FROM = { NOT = { has_character_modifier = recently_made_tribal } }
+			FROM = {
+				NOT = { government = tribal_government }
+				NOT = { has_character_modifier = recently_made_tribal } 
+			}
 			ROOT = { capital_scope = { has_building = tb_hillfort_4 } }
 			custom_tooltip = {
 				text = no_north_korea

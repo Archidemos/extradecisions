@@ -1,42 +1,35 @@
 decisions = {
 	form_pirate_republic = {
 		only_independent = yes
-		is_high_prio = yes
-		ai_check_interval = 50
+		is_high_prio = no
+		ai_check_interval = 60
 		
 		potential = {
 			NOT = { government = pirate_republic_government }
 			NOT = { trait = great_conquerer }
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			is_feudal = yes
-			ROOT = { NOR = { tier = EMPEROR tier = KING } }
+			is_landed = yes
 			independent = yes
 		}
 
 		allow = {
-			realm_size <= 40
+			is_adult = yes
+			prisoner = no
 			ROOT = { OR = { tier = DUKE tier = KING } }
-			wealth = 1000
-			prestige = 500
-			piety = 400
+			ROOT = { realm_size <= 40 }
+			wealth = 400
+			prestige = 350
+			piety = 200
 			intrigue = 10
 			independent = yes
-			capital_scope = {
-				port = yes
-			}
+			capital_scope = { port = yes }
 		}
 		
 		effect = {
-			wealth = -1000
-			prestige = -500
-			piety = -400
-			#ROOT = {
-			#	any_demesne_title = {
-			#		limit = { 
-			#			tier = KING
-			#		}
-			#		unsafe_destroy_landed_title = THIS
-			#	}
-			#}
+			wealth = -400
+			prestige = -350
+			piety = -200
 			primary_title = {
 				create_title = {
 					dynasty_title_names = no
@@ -62,10 +55,16 @@ decisions = {
 					make_primary_title = yes
 				}
 			}
-			hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
 			set_government_type = pirate_republic_government
-			piety = -100
-			wealth = -200
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						NOT = { has_title_flag = forced_pirate_government }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
 			add_trait = adventurer
 			add_trait = pirate_commander
 		}

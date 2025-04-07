@@ -1,39 +1,35 @@
 decisions = {
 	form_warrior_order = {
 		only_independent = yes
-		is_high_prio = yes
-		ai_check_interval = 50
+		is_high_prio = no
+		ai_check_interval = 60
 		
 		potential = {
 			NOT = { government = warrior_order_government }
 			NOT = { trait = great_conquerer }
-			NOT = { tier = EMPEROR }
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			is_feudal = yes
+			is_landed = yes
 			independent = yes
 		}
 
 		allow = {
-			ROOT = { realm_size <= 300 }
+			war = no
+			is_adult = yes
+			prisoner = no
 			ROOT = { OR = { tier = DUKE tier = KING } }
-			wealth = 1000
-			prestige = 500
-			piety = 500
+			ROOT = { realm_size <= 300 }
+			wealth = 500
+			prestige = 300
+			piety = 200
 			martial = 10
 			independent = yes
 		}
 		
 		effect = {
-			wealth = -1000
-			prestige = -500
-			piety = -500
-			#ROOT = {
-			#	any_demesne_title = {
-			#		limit = { 
-			#			tier = KING
-			#		}
-			#		unsafe_destroy_landed_title = THIS
-			#	}
-			#}
+			wealth = -450
+			prestige = -300
+			piety = -200
 			primary_title = {
 				create_title = {
 					dynasty_title_names = no
@@ -59,13 +55,19 @@ decisions = {
 					make_primary_title = yes
 				}
 			}
+			ROOT = {
+				any_demesne_title = {
+					limit = { 
+						NOT = { has_title_flag = forced_warrior_order }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
 			hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
 			custom_tooltip = {
 				text = "You will also unlock a new Retinue type, special to the Military Order"
 				set_government_type = warrior_order_government
 			}
-			piety = -100
-			wealth = -200
 		}
 		ai_will_do = {
 			factor = 1
@@ -80,29 +82,30 @@ decisions = {
 		
 		potential = {
 			is_feudal = yes
+			is_landed = yes
 			NOT = { government = warrior_order_government }
-			NOT = { tier = EMPEROR }
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			NOT = { has_global_flag = prussia_formed }
-			capital_scope = {
-				OR = {
-					region = world_europe_east
-					region = world_europe_west_germania
-				}
+			OR = {
+				capital_scope = { region = custom_eastern_baltic }
+				capital_scope = { region = world_europe_west_germania }
+			}
+			OR = {
+				culture_group = north_germanic
+				culture_group = west_slavic
+				culture_group = baltic
 			}
 		}
 
 		allow = {
-			NOT = { tier = EMPEROR }
+			is_adult = yes
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			religion_group = christian
-			OR = {
-				culture_group = west_slavic
-				culture_group = baltic
-			}
 			completely_controls = d_prussia
 			completely_controls = d_pomeralia
 			completely_controls = d_pommerania
 			wealth = 400
-			prestige = 500
+			prestige = 300
 			martial = 12
 			independent = yes
 		}
@@ -122,7 +125,7 @@ decisions = {
 targetted_decisions = {
 	convert_to_warrior_order = {
 		diplomacy_icon = GFX_icon_warrior_order_government
-		ai_check_interval = 12
+		ai_check_interval = 20
 		ai_target_filter = vassals
 
 		potential = {

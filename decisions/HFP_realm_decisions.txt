@@ -1774,21 +1774,17 @@ decisions = {
 
 		potential = {
 			religion_group = christian
-			NOT = {
-				higher_tier_than = DUKE
+			lower_tier_than = KING
+			NOT = { tier = KING }
+			OR = {
+				capital_scope = { region = world_europe_west_germania }
+				capital_scope = { region = world_europe_west_francia }
 			}
 			OR = {
-				culture = german
-				culture = old_frankish
-				culture = frankish
-				culture = occitan
-				culture = italian
+				culture_group = latin
+				culture_group = central_germanic
 				culture = lombard
 			}
-			#OR = {
-			#	has_landed_title = d_thurgau
-			#	has_landed_title = d_raetia
-			#}
 			NOT = { has_landed_title = k_burgundy }
 			k_switzerland = {
 				has_holder = no
@@ -1813,22 +1809,34 @@ decisions = {
 		}
 
 		allow = {
-			is_adult = yes
 			war = no
+			is_adult = yes
+			prisoner = no
 			prestige = 3000
 			wealth = 500
-			AND = {
-				completely_controls = c_bern
-				completely_controls = c_schwyz
-				completely_controls = c_neuchatel
-				completely_controls = c_zurichgau
-				completely_controls = c_aargau
-				completely_controls = c_st_gallen
-				completely_controls = c_vaud
-				completely_controls = c_chur
+			OR = {
+				culture = swabian
+				culture = franconian
+				culture = old_frankish
+				culture = frankish
+				culture = occitan
+				culture = italian
+				culture = lombard
+				culture = arpitan
 			}
-			has_landed_title = d_thurgau
+			has_landed_title = d_zahringen
 			has_landed_title = d_raetia
+			AND = {
+				completely_controls = c_vaud
+				completely_controls = c_neuchatel
+				completely_controls = c_basel
+				completely_controls = c_rheinfelden
+				completely_controls = c_gruyere
+				completely_controls = c_chur
+				completely_controls = c_thurgau
+				completely_controls = c_schwyz
+				completely_controls = c_aargau
+			}
 		}
 
 		effect = {
@@ -2673,19 +2681,27 @@ decisions = {
 				culture_group = east_slavic
 				culture_group = finno_ugric
 				AND = {
-					capital_scope = { region = world_europe_south_east }
 					culture_group = north_germanic
+					capital_scope = { region = world_europe_south_east }
 				}
 			}
-			has_landed_title = e_russia
+			any_demesne_title = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
 			NOT = { has_landed_title = e_russian_empire }
 		}
 		
 		allow = {
+			war = no
+			is_adult = yes
+			has_landed_title = e_russia
 			completely_controls = k_galicia
 			completely_controls = k_ruthenia
-			completely_controls = k_chernigov
-			completely_controls = k_rus
+			completely_controls = k_novgorod
+			completely_controls = k_polotsk
 			completely_controls = k_vladimir
 			completely_controls = k_alania
 		}

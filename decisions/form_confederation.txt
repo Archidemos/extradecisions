@@ -9,22 +9,29 @@ decisions = {
 			NOT = { government = ar_confederation_government }
 			NOT = { trait = great_conquerer }
 			NOT = { is_tributary = yes }
-			NOT = { tier = EMPEROR }
+			ROOT = { OR = { tier = DUKE tier = KING } }
 			is_feudal = yes
+			is_landed = yes
+			independent = yes
 			ai = no
 		}
 		
 		allow = {
-			tier = KING
+			war = no
+			is_adult = yes
+			prisoner = no
+			ROOT = { OR = { tier = DUKE tier = KING } }
+			ROOT = { realm_size <= 100 }
 			wealth = 1000
 			prestige = 1000
 			diplomacy = 10
-			ROOT = { realm_size <= 100 }
 			NOT = { government = ar_confederation_government }
 			independent = yes
 		}
 		
 		effect = {
+			wealth = -1000
+			prestige = -1000
 			primary_title = {
 				create_title = {
 					dynasty_title_names = no
@@ -54,7 +61,7 @@ decisions = {
 				ROOT = {
 					any_demesne_title = {
 						limit = { 
-							NOT = { is_primary_holder_title = yes }
+							NOT = { has_title_flag = forced_confed_government }
 						}
 						unsafe_destroy_landed_title = THIS
 					}
@@ -64,8 +71,6 @@ decisions = {
 				text = warning_no_war
 				set_government_type = ar_confederation_government
 			}
-			wealth = -1000
-			prestige = -1000
 			
 			ROOT = {
 				add_law = law_voting_power_1

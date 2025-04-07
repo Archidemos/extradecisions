@@ -4,8 +4,9 @@ narrative_event = { #Event for everyone about the formation of the Order of Prus
 	id = PRUS.100
 	title = "The Order of Prussia"
 	desc = "Concerning news, the newly formed Prussian Kingdom has instead chosen the way of Knighthood and formed a Military Order instead. This is concerning as these brutal Military Orders are unpredictable with their way of ruling and conquering, as well as their dangerously disiplined army that are feared all across Europe. Who knows what they will do next.."
+	sound = ar_army_marching
 	
-	picture = GFX_evt_crusaders
+	picture = GFX_evt_camaraderie
 	
 	is_triggered_only = yes
 	
@@ -18,6 +19,7 @@ narrative_event = { #Event for everyone about the Kingdom of Prussia
 	id = PRUS.101
 	title = "The Kingdom of Prussia"
 	desc = "At last, it seems that the Prussians finally ended their conflicts and wars and have united under one banner. These Prussians are no joke, as their quallity of men are feared all across Europe. Only time will tell what they will do next."
+	sound = ar_army_marching
 	
 	picture = GFX_evt_crusaders
 	
@@ -40,6 +42,7 @@ narrative_event = {
 	option = { #Become a Prussian Order
 		name = "May the army lead us!"
 		ai_chance = { factor = 50 }
+		
 		add_character_modifier = {
 			name = warrior_order_holder
 			years = -1
