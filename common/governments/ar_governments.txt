@@ -299,6 +299,7 @@ feudal_governments = {
 		potential = {
 			is_patrician = no
 			mercenary = no
+			rebel = no
 			NAND = {
 				controls_religion = yes
 				NOT = { religion_group = muslim }
@@ -348,6 +349,7 @@ feudal_governments = {
 		title_prefix = "temple_"
 		potential = {
 			mercenary = no
+			rebel = no
 			NOT = {	religion_group = muslim }
 			is_patrician = no
 			higher_tier_than = BARON
@@ -789,8 +791,6 @@ feudal_governments = {
 		
 		color = { 36 6 6 }
 
-		barons_need_dynasty = yes
-
 		can_build_tribal = no
 		
 		ignore_in_vassal_limit_calculation = {
@@ -811,6 +811,59 @@ feudal_governments = {
 			martial = 3
 			land_morale = 0.05
 			siege_speed = 0.10
+		}
+	}
+
+	ar_rebel_government = {
+		preferred_holdings = { CASTLE }
+		allowed_holdings = { 
+			CASTLE 
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}	
+		accepts_liege_governments = {
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_governments = {
+			tribal_government
+		}
+		#forced_contract = {
+		#	ar_mercenary_government
+		#}
+		
+		#title_prefix = "warriororder_"
+		#frame_suffix = "_nomadic"
+		potential = {
+			clan = no
+			is_patrician = no
+			is_nomadic = no
+			rebel = yes
+		}
+		
+		color = { 0 0 0 }
+
+		can_build_tribal = no
+		
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+		capital_move_delay = 5000
+
+		dukes_called_kings = yes
+		barons_need_dynasty = yes
+
+		#vassal_limit = 20
+		
+		unit_modifier = {
+			land_morale = 0.05
+		}
+		character_modifier = {
+			land_morale = 0.05
 		}
 	}
 }

@@ -12048,8 +12048,20 @@ pagan_holy_war = {
 				detract_grace_super_huge_effect = yes 
 			}
 		}
+		ROOT = {
+			add_character_modifier = {
+				name = war_cooldown
+				years = 2
+				#hidden = yes
+				inherit = yes
+			}
+		}
 	}
-
+	
+	can_use_gui = {
+		ROOT = { NOT = { has_character_modifier = war_cooldown } }
+	}
+	
 	can_use = {
 		ROOT = {
 			NOT = { religion = taoist }

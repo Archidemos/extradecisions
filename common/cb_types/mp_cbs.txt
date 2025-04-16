@@ -31,7 +31,8 @@ infamy_cb = { #CB to shatter realm with high Threat
 	can_use = {
 		FROM = {
 			infamy >= 60
-			ai = no
+			#ai = no
+			shares_realm_border_with = ROOT
 		}
 	}
 	
@@ -41,30 +42,21 @@ infamy_cb = { #CB to shatter realm with high Threat
 		#ROOT = {
 		#	prestige = 100
 		#}
-		FROM = { 
+		FROM = {
 			OR = {
 				tier = EMPEROR
 				tier = KING
 			}
+			is_within_diplo_range = ROOT
 		}
 	}
 
-	#can_use_title = {
-	#	location = {
-	#		any_neighbor_province = {
-	#			owner = {
-	#				OR = {
-	#					character = ROOT
-	#					is_liege_or_above = ROOT
-	#				}
-	#			}
-	#		}
-	#	}
-	#}
+	can_use_title = {
+	}
 	
 	is_valid = {
 		always = yes
-	}
+	}	
 	
 	on_add = {
 		#if = {

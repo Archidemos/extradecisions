@@ -1777,8 +1777,13 @@ decisions = {
 			lower_tier_than = KING
 			NOT = { tier = KING }
 			OR = {
-				capital_scope = { region = world_europe_west_germania }
-				capital_scope = { region = world_europe_west_francia }
+				de_jure_vassal_or_below = k_burgundy
+				de_jure_vassal_or_below = k_schwaben
+				de_jure_vassal_or_below = k_upper_lorraine
+				de_jure_vassal_or_below = d_burgundy
+				de_jure_vassal_or_below = d_burbon
+				#capital_scope = { region = world_europe_west_germania }
+				#capital_scope = { region = world_europe_west_francia }
 			}
 			OR = {
 				culture_group = latin

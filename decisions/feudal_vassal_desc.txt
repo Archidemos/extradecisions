@@ -115,16 +115,23 @@ targetted_decisions = {
 					prestige = 1000
 				}
 				has_regent = no
-				NOT = { has_character_modifier = recently_released_vassal }
+				NOT = { has_character_modifier = annexed_vassal }
 			}
         }
 
         effect = {
-            prestige = -1000
 			custom_tooltip = {
 				text = "ENVOY_ANNEX_SENT"
 				FROM = { save_event_target_as = tribute_annexer }
 				hidden_tooltip = { narrative_event = { id = TRIB.001 days = 5 } }
+			}
+			FROM = {
+				prestige = -1000
+				add_character_modifier = {
+					modifier = annexed_vassal
+					years = 2
+					inherit = yes
+				}
 			}
         }
 
