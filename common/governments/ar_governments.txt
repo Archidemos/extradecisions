@@ -298,6 +298,7 @@ feudal_governments = {
 		title_prefix = "city_"
 		potential = {
 			is_patrician = no
+			is_landed = yes
 			mercenary = no
 			rebel = no
 			NAND = {
@@ -349,10 +350,20 @@ feudal_governments = {
 		title_prefix = "temple_"
 		potential = {
 			mercenary = no
+			holy_order = no
 			rebel = no
 			NOT = {	religion_group = muslim }
 			is_patrician = no
 			higher_tier_than = BARON
+			NOT = { is_government_potential = feudal_government }
+			OR = {
+				is_female = no
+				religion_allows_female_temple_holders = yes
+			}
+			OR = {
+				is_female = yes
+				religion_allows_male_temple_holders = yes
+			}
 		}
 		
 		color = { 220 220 220 }
