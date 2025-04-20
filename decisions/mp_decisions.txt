@@ -605,6 +605,8 @@ decisions = {
 		}
 		
 		allow = {
+			government = ar_republic_government
+			capital_scope = { port = yes }
 		}
 		
 		effect = {
@@ -1308,10 +1310,6 @@ title_decisions = {
 		
 			modifier = {
 				factor = 0
-				war = yes
-			}
-			modifier = {
-				factor = 0
 				wealth < 250
 			}
 			modifier = {
@@ -1336,7 +1334,7 @@ title_decisions = {
 		}
 		
 		allow = {
-			FROM = { 
+			FROM = {
 				wealth = 250
 				martial = 15
 				TECH_POPULAR_CUSTOMS = 3
@@ -1485,10 +1483,6 @@ title_decisions = {
 		ai_will_do = {
 			factor = 0.1
 		
-			modifier = {
-				factor = 0
-				war = yes
-			}
 			modifier = {
 				factor = 0
 				wealth < 250
