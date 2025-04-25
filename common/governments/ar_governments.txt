@@ -308,6 +308,9 @@ feudal_governments = {
 			NOT = { is_government_potential = merchant_republic_government }
 			holy_order = no
 			higher_tier_than = BARON
+			capital_holding = {
+				holding_type = city
+			}
 		}
 	
 		color = { 209 125 130 }
@@ -319,11 +322,13 @@ feudal_governments = {
 			city_vassal_min_levy = 0.2
 			city_vassal_max_levy = 0.2
 		}
-		
+		capital_holding = {
+			holding_type = city
+		}
 		vassal_limit = -10
+		can_build_tribal = no
 		can_create_empires = no
-		can_build_tribal = no     
-		capital_move_delay = 600		
+		capital_move_delay = 600
 	}
 	
 	ar_confederation_government = {
