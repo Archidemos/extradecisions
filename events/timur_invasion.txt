@@ -32,21 +32,22 @@ narrative_event = {
 					name = timur_invasion
 					value = delayed_random
 				}
-				year >= 1290
+				year >= 1170
+				total_years_played = 50
 			}
 			AND = {
 				has_game_rule = {
 					name = timur_invasion
 					value = historical
 				}
-				year = 1300
+				year = 1170
 			}
 			AND = {
 				has_game_rule = {
 					name = timur_invasion
 					value = test
 				}
-				year = 769
+				total_years_played = 1
 			}
 		}
 		NOT = { has_global_flag = timur_spawned }
