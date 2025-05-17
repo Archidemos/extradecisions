@@ -23,14 +23,15 @@ character_event = { #Pope event to trigger the first Player Event
 					name = roman_invasion
 					value = delayed_random
 				}
-				year >= 1000
+				year >= 1250
+				total_years_played = 50
 			}
 			AND = {
 				has_game_rule = {
 					name = roman_invasion
 					value = test
 				}
-				year = 769
+				total_years_played = 1
 			}
 		}
 		NOT = { has_global_flag = roman_america_part_1_triggered }
