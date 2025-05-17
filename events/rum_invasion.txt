@@ -102,6 +102,8 @@ narrative_event = {
 						prestige = 10000
 						set_character_flag = is_special_character
 						set_character_flag = rum_invader
+						add_claim = d_thrace
+						add_claim = c_byzantion
 						character_event = { id = RUME.103 } # Spawn troops
 						character_event = { id = RUME.104 days = 1 } # Spawn population
 						if = {
@@ -182,6 +184,8 @@ narrative_event = {
 						}
 						wealth = 12000
 						prestige = 10000
+						add_claim = d_thrace
+						add_claim = c_byzantion
 						set_character_flag = rum_invader
 						character_event = { id = RUME.102 } # Spawn courtiers
 						character_event = { id = RUME.103 } # Spawn troops
@@ -257,6 +261,8 @@ narrative_event = {
 					prestige = 10000
 					piety = 5000
 					population = 50000
+					add_claim = d_thrace
+					add_claim = c_byzantion
 					set_character_flag = rum_invader
 					character_event = { id = RUME.101 } # Spawn Temujins generals
 					character_event = { id = RUME.102 } # Spawn courtiers
@@ -658,7 +664,7 @@ character_event = {
 	
 	immediate = {
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -668,7 +674,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -678,7 +684,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -688,7 +694,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -698,7 +704,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -708,7 +714,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -718,7 +724,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -728,7 +734,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Hisn Kayfa
 			attrition = 0
 			troops =
 			{
@@ -738,7 +744,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 906 # Tuul
+			province = 1482 # Tuul
 			attrition = 0
 			troops =
 			{
@@ -748,7 +754,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 635 # Khilok
+			province = 701 # Taron
 			attrition = 0
 			troops =
 			{
@@ -758,7 +764,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 635 # Khilok
+			province = 701 # Taron
 			attrition = 0
 			troops =
 			{
@@ -768,7 +774,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 635 # Khilok
+			province = 701 # Taron
 			attrition = 0
 			troops =
 			{
@@ -778,7 +784,7 @@ character_event = {
 			}
 		}
 		spawn_unit = {
-			province = 635 # Khilok
+			province = 701 # Taron
 			attrition = 0
 			troops =
 			{
@@ -807,5 +813,59 @@ character_event = {
 			id = 60516
 			days = 365
 		}
+	}
+}
+
+character_event = {
+	id = RUME.300
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = k_rum
+			ai = yes
+			NOT = { has_global_flag = rum_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = RUME.301 } }
+		set_global_flag = rum_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to the Rum in Singleplayer
+	id = RUME.301
+	title = "The Dream of Power"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of this mighty Conquerer.."
+    is_triggered_only = yes
+	
+	portrait = k_rum
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = rum_playable }
+	}
+
+	immediate = { k_rum = { holder_scope = { save_event_target_as = play_as_rum } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { k_rum = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_rum
+		set_global_flag = rum_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = rum_playable
 	}
 }

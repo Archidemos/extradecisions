@@ -1,0 +1,108 @@
+namespace = RLARP
+
+character_event = { #Event for everyone about the Rum reaching Constantinople
+	id = RLARP.1
+
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = k_rum
+		FROM = { title = c_byzantion }
+		NOT = { has_global_flag = rum_byzantion_conquered }
+	}
+	
+	immediate = {
+		set_global_flag = rum_byzantion_conquered
+		k_rum = { holder_scope = { narrative_event = { id = RLARP.2 days = 5 } } }
+	}
+}
+
+
+narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinople, they will break the Byzantines
+	id = RLARP.2
+	title = "The Conquest of Constantinople"
+	desc = "As we have finally conquered the City of the World's Desire. It is time to consider its fate and our possition in this matter. Is it perhaps time to proclaim our solidification of our claim of the Roman Throne?"
+	is_triggered_only = yes
+	
+	picture = GFX_evt_jerusalem_captured_muslims
+	border = "GFX_event_narrative_frame_war"
+
+	only_independent = yes
+
+	#trigger = {
+	#	has_landed_title = k_rum
+	#	FROM = { title = c_byzantion }
+	#	NOT = { has_global_flag = rum_byzantion_conquered }
+	#}
+	
+	option = { #Rum usurps Byzantium
+		name = "Spread the word, tell them the true Heir of Rome has arived."
+		ai_chance = { factor = 10 }
+		
+		unsafe_destroy_landed_title = e_byzantium
+		add_artifact = crown_byzantine
+		wealth = 1000
+		prestige = 4000
+		piety = 3000
+
+		c_byzantion = {
+			location = {
+				religion = FROM
+				remove_province_modifier = nerf_constantinople
+				add_province_modifier = {
+					name = religious_tension
+					years = 2
+				}
+			}
+		}
+		grant_title = e_byzantium
+		any_player = { narrative_event = { id = RLARP.3 days = 1 } }
+	}
+	
+	option = { #Rum usurps and destroys Byzantium and converts the lands
+		name = "Rome is nothing before God himself!"
+		ai_chance = { factor = 90 }
+		
+		unsafe_destroy_landed_title = e_byzantium
+		destroy_artifact = crown_byzantine
+		wealth = 2500
+		prestige = 2000
+		piety = 1500
+	
+		c_byzantion = {
+			location = {
+				religion = FROM
+				#wonder = { set_wonder_damaged = yes }
+				add_province_modifier = {
+					name = religious_tension
+					years = 2
+				}
+			}
+		}
+		while = {
+			count = 10
+			random_realm_province = {
+				location = {
+					religion = FROM
+					culture = turkish
+				}
+			}
+		}
+		any_player = { narrative_event = { id = RLARP.3 days = 1 } }
+	}
+}
+
+narrative_event = { #Event for everyone about the Rum reaching Constantinople
+	id = RLARP.3
+	title = "The Conquest of Constantinople"
+	desc = "As the Rum Sultanate has caused havoic within Anatolia while claiming to be the true successor to the Romans, the Sultanate of Rum went ahead and conquered the city of the world's desire, Constantinople. Their goal was to solidify their claim by conquering the last city of the Romans. While this is shocking to all, not everyone agrees with the claim of the Rum Sultanate and consider this the end of the Empire of Romans."
+	
+	picture = GFX_evt_rome_falls	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "At last, the Eagle dies."
+	}
+}
