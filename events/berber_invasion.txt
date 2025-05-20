@@ -47,7 +47,7 @@ narrative_event = {
 					name = umayyad_invasion
 					value = test
 				}
-				total_years_played = 1
+				total_years_played <= 1
 			}
 		}
 		NOT = { has_global_flag = umayyads_invades }
@@ -103,6 +103,7 @@ narrative_event = {
 						wealth = 10000
 						prestige = 5000
 						piety = 10000
+						add_claim = c_cordoba
 						set_character_flag = hisham_invader
 						character_event = { id = BBR.103 } # Spawn troops
 						character_event = { id = BBR.104 days = 1 } # Spawn population
@@ -164,6 +165,7 @@ narrative_event = {
 								type = bloodline_umayyad_invader
 							}
 						}
+						add_claim = c_cordoba
 						e_cordoba = {
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
@@ -223,6 +225,7 @@ narrative_event = {
 				}
 				new_character = {
 					set_character_flag = is_hisham
+					add_claim = c_cordoba
 					if = {
 						limit = {
 							has_dlc = "Holy Fury"
@@ -731,6 +734,32 @@ character_event = {
 				knights = { 500 500 }
 			}
 		}
+		spawn_unit = {
+			province = 182 # Tuul
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 182 # Tuul
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_fleet = {
+			province = 1727 # Strait of Gibraltar
+			#owner = ROOT
+
+			troops = {
+				galleys = { 400 400 }
+			}
+		}
 	}
 }
 
@@ -751,5 +780,375 @@ character_event = {
 			id = 60516
 			days = 365
 		}
+	}
+}
+
+narrative_event = { #Event for the Umayyads to either Restore Order, or continue their conquest
+	id = BBR.105
+	title = "Muslim Dominance in Hispania"
+	desc = "We conquered far and wide, our roots going back all the way to Persia and Arabia. At long last, we have finalized our dream of restoring Hispania from the Christians that took the lands of my ancestors. This will not be faced with hospitality, the world still hates us, yet we will stand strong and tall in the name of Islam.\n\n Now is the time to decide what we will do from this point. Do we continue our expansion and perhaps avenge the Battle of Tours, or do we solidify our position in Hispania and make it a stronghold for Islam..."
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+
+	only_independent = yes
+
+	trigger = {
+		has_landed_title = e_cordoba
+		trait = great_conquerer
+		FROM = {
+			title = c_asturias_de_oviedo
+		}
+		NOT = { has_global_flag = umayyad_solidified }
+	}
+	
+	option = { #Lets coexsist with the Spanish
+		name = "Let's be better than our enemies"
+		ai_chance = { factor = 50 }
+		set_global_flag = umayyad_solidified
+		
+		add_character_modifier = {
+			modifier = umayyad_peace
+			duration = -1
+		}
+		
+		prestige = 500
+		piety = 500
+		
+		character_event = { id = HFP.41090 days = 1 }
+		any_player = { narrative_event = { id = BBR.106 days = 1 } }
+		ROOT = { character_event = { id = BBR.108 days = 5 } }
+	}
+	
+	option = { #Expel the Christians and continue
+		name = "The Christians shall pay for this, onwards!"
+		ai_chance = { factor = 50 }
+		religion_authority = {
+			modifier = umayyad_victory
+			years = 10
+		}
+		wealth = 1000
+		custom_tooltip = {
+			text = "You will convert some provinces to Sunni Islam"
+			while = {
+				count = 10
+				random_realm_province = {
+					location = {
+						religion = FROM
+					}
+				}
+			}
+		}
+		spawn_unit = {
+			province = 181 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 181 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 181 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 181 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		any_player = { narrative_event = { id = BBR.107 days = 1 } }
+		ROOT = { character_event = { id = BBR.109 days = 5 } }
+	}
+}
+
+narrative_event = { #Event for everyone about the Umayyads taking a peacefull approach
+	id = BBR.106
+	title = "The Muslims unite Hispania"
+	desc = "It has been tought that the Reconquistas will surely put an end to Muslim dominance within Spain, however this is not the case. After the Umayyads have risen again, they have cause rampage within Hispania. \n\n At long last, the Umayyads that were defeated many times against the Spanish, have no once again reclaimed Hispania for themselfs"
+	
+	picture = GFX_evt_council_speaker	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "May Allah grant peace at last"
+		trigger = {
+			religion_group = muslim
+		}
+	}
+	option = {
+		name = "We have to recover Spain!"
+		trigger = {
+			religion_group = christian
+		}
+	}
+	option = {
+		name = "This is none of our concern.."
+		trigger = {
+			NOR = { religion_group = muslim religion_group = christian }
+		}
+	}
+}
+
+narrative_event = { #Event for everyone about the Umayyads continuing their conquest
+	id = BBR.107
+	title = "The Conquest of the Andalusians"
+	desc = "It has been tought that the Reconquistas will surely put an end to Muslim dominance within Spain, however this is not the case. After the Umayyads have risen again, they have cause rampage within Hispania. \n\n After they have united Hispania under Muslim rule, their ambitions does not end here as they swore revenge against the Crusaders that were within Hispania. Who knows what their next move is against the Christian World.."
+	
+	picture = GFX_evt_heads_on_pikes_hf	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Allah Akbar!"
+		trigger = {
+			religion_group = muslim
+		}
+	}
+	option = {
+		name = "We have to stop them!"
+		trigger = {
+			religion_group = christian
+		}
+	}
+	option = {
+		name = "This is none of our concern.."
+		trigger = {
+			NOR = { religion_group = muslim religion_group = christian }
+		}
+	}
+}
+
+narrative_event = { #When taking the peacefull approach, you will get a event to buff Cordoba
+	id = BBR.108
+	title = "Great Mosque of Cordoba"
+	picture = GFX_evt_hagia_sofia
+	desc = "As we have mostly made peace with the Spanish, we do not have to focus on supressing and maintaining order. Perhaps this is a good time to start with some renovations on the Great Mosque of Cordoba. However, the population within Cordoba might not like this. We could take a easier approach and only renovate the Mosque, but we can also choose to bring changes to Cordoba itself. What shall we do?"
+	border = GFX_event_narrative_frame_religion
+
+    is_triggered_only = yes
+
+    only_independent = yes
+
+    immediate = {
+    	job_spiritual = {
+    		save_event_target_as = target_chaplain
+    	}
+    }
+
+    option = { #Convert
+		name = "Cordoba must fold under the cloak of Islam once more!"
+		piety = 200
+		reverse_opinion = {
+			modifier = opinion_religious_tract
+			who = event_target:target_chaplain
+			years = 5
+		}
+		c_cordoba = {
+			show_scope_change = no
+			location = {
+				religion = FROM
+				add_province_modifier = { modifier = religious_tension years = 5 }
+				add_province_modifier = { modifier = cordoba_renovations years = -1 }
+			}
+		}
+	}
+    option = { #Not Convert
+		name = "We should keep the peace and only renovate the Mosque"
+		piety = -50
+		reverse_opinion = {
+			modifier = opinion_angry
+			who = event_target:target_chaplain
+			years = 5
+		}
+		c_cordoba = {
+			show_scope_change = no
+			location = {
+				add_province_modifier = { modifier = cordoba_renovations years = -1 }
+			}
+		}
+	}
+}
+
+narrative_event = { #When taking the aggresive approach, you will get to choose to invade Sicily or France
+	id = BBR.109
+	title = "The Next Campaign"
+	picture = GFX_evt_camaraderie
+	desc = "Now that Hispania is under Umayyad control, it is time to plan our next invasion. We could avenge the Battle of Tours by invading France and create a new Muslim presence there. However, we could also support our Muslim brothers in Sicily and create a proper foothold. Where do we attack next.."
+	border = GFX_event_narrative_frame_religion
+
+    is_triggered_only = yes
+
+    only_independent = yes
+
+    option = { #Invade France
+		name = "We will avenge the Battle of Tours, on to France!"
+		add_claim = d_aquitaine
+		add_claim = d_gascogne
+		add_claim = d_foix
+		add_claim = d_septimania
+		add_claim = d_toulouse
+		add_claim = d_poitou
+		add_claim = d_limousin
+		ROOT = { character_event = { id = BBR.110 days = 2 } }
+	}
+    option = { #Invade Sicily
+		name = "We should support our brothers in Sicily!"
+		add_claim = d_sicily
+		add_claim = d_calabria
+		add_claim = d_salerno
+		add_claim = d_apulia
+		add_claim = d_benevento
+		ROOT = { character_event = { id = BBR.111 days = 2 } }
+	}
+}
+
+character_event = { #Event for AI, to trigger a war for France
+	id = BBR.110
+	desc = "We have finalized the preperations of the invasion of France. In the name of Allah, we will win this."
+	
+    is_triggered_only = yes
+	
+	picture = GFX_evt_armory
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		151 = {
+			duchy = {
+				e_cordoba = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = claim
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = { #Event for AI, to trigger a war for Sicily
+	id = BBR.111
+	desc = "We have finalized the preperations of the invasion of Sicily. In the name of Allah, we will win this."
+	
+    is_triggered_only = yes
+	
+	picture = GFX_evt_armory
+	border = GFX_event_normal_frame_war
+
+	option = {
+		name = "Onwards!"
+		340 = {
+			duchy = {
+				e_cordoba = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = claim
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+		spawn_unit = {
+			province = 340 # Tuul
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 340 # Tuul
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = BBR.300
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_cordoba
+			ai = yes
+			NOT = { has_global_flag = umayyads_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = BBR.301 } }
+		set_global_flag = umayyads_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to the Umayyads in Singleplayer
+	id = BBR.301
+	title = "The Dream of Power"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of this mighty Conquerer.."
+    is_triggered_only = yes
+	
+	portrait = e_cordoba
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = umayyads_playable }
+	}
+
+	immediate = { e_cordoba = { holder_scope = { save_event_target_as = play_as_umayyads } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_cordoba = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_umayyads
+		set_global_flag = umayyads_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = umayyads_playable
 	}
 }

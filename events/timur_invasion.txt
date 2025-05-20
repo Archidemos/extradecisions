@@ -47,7 +47,7 @@ narrative_event = {
 					name = timur_invasion
 					value = test
 				}
-				total_years_played = 1
+				total_years_played <= 1
 			}
 		}
 		NOT = { has_global_flag = timur_spawned }
@@ -1883,5 +1883,59 @@ narrative_event = { #Event for everyone about the Timurids being defeated by Qar
 	
 	option = {
 		name = TIMEOPT11
+	}
+}
+
+character_event = {
+	id = TIME.300
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_timurids
+			ai = yes
+			NOT = { has_global_flag = timur_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = TIME.301 } }
+		set_global_flag = timur_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to the Rum in Singleplayer
+	id = TIME.301
+	title = "The Dream of Power"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of this mighty Conquerer.."
+    is_triggered_only = yes
+	
+	portrait = e_timurids
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = timur_playable }
+	}
+
+	immediate = { e_timurids = { holder_scope = { save_event_target_as = play_as_timur } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_timurids = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_timur
+		set_global_flag = timur_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = timur_playable
 	}
 }

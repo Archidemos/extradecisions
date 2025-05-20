@@ -342,9 +342,11 @@ decisions = {
 			OR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_west_rome
+				has_landed_title = e_god_kingdom
 			}
 			OR = { 
-				religion_group = christian 
+				religion_group = christian
+				religion_group = muslim
 				religion = hellenic_pagan 
 				religion = hellenic_pagan_reformed
 			}
@@ -381,6 +383,7 @@ decisions = {
 		}
 		effect = {
 			set_global_flag = rome_restored
+			set_government_type = roman_imperial_government
 			narrative_event = { id = LoR.20 tooltip = EVTTOOLTIPLoR.20 }
 		}
 		ai_will_do = {
