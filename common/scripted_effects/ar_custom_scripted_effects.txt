@@ -4,6 +4,9 @@ normal_conqueror_spawn_effect = {
 			ai = yes
 			is_landed = yes
 			higher_tier_than = BARON
+			any_player = {
+					distance_from_realm = { who = PREV value <= 700 }
+				}
 			NOT = {
 				controls_religion = yes
 			}
@@ -16,6 +19,11 @@ normal_conqueror_spawn_effect = {
 				}
 				any_neighbor_independent_ruler = {
 					ai = no
+				}
+				any_player = {
+					NOT = {
+						distance_from_realm = { who = PREV value = 200 }
+					}
 				}
 			}
 		}
