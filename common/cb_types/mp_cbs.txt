@@ -29,9 +29,12 @@ infamy_cb = { #CB to shatter realm with high Threat
 	defender_unoccupied_warscore = yes
 	
 	can_use = {
+		ROOT = {
+			independent = yes
+		}
 		FROM = {
 			infamy >= 60
-			#ai = no
+			ai = no
 			shares_realm_border_with = ROOT
 		}
 	}
@@ -39,6 +42,8 @@ infamy_cb = { #CB to shatter realm with high Threat
 	
 	can_use_gui = {
 		check_if_crusader_trigger = yes
+		NOT = { any_character = { has_character_modifier = coallition_expelled_2 } }
+		any_player = { NOT = { any_war = { using_cb = infamy_cb } } }
 		#ROOT = {
 		#	prestige = 100
 		#}
@@ -136,6 +141,10 @@ infamy_cb = { #CB to shatter realm with high Threat
 	on_reverse_demand = {
 		ROOT = {
 			prestige = -1000
+			add_character_modifier = {
+				name = coallition_expelled_2
+				years = 2
+			}
 			transfer_scaled_wealth = {
 				to = FROM
 				value = 4
@@ -314,5 +323,177 @@ nomad_succession_cb = { #CB to shatter realm with high Threat
 		modifier = {
 			factor = 100
 		}
+	}
+}
+
+overextention_cb = { #CB to shatter realm with a too big realm
+	name = CB_NAME_OVEREXTENTION_CB
+	war_name = WAR_NAME_OVEREXTENTION_CB
+	sprite = 7
+	sort_priority = 100000
+	truce_days = 3650
+	is_permanent = yes
+	hostile_against_others = no
+	allow_whitepeace = no
+	allow_distant = no
+	#display_on_map = no
+	#infamy_modifier = 3
+	
+	allowed_to_target_tributaries = yes
+	
+	#check_de_jure_tier = EMPEROR
+	check_all_titles = no
+	
+	attacker_ai_victory_worth = { factor = -1 }
+	attacker_ai_defeat_worth = { factor = 100 } 
+	defender_ai_victory_worth = { factor = -1 }
+	defender_ai_defeat_worth = { factor = 100 }
+	
+	battle_warscore_mult = 1.2
+	att_ticking_war_score_multiplier = 0.7
+	def_ticking_war_score_multiplier = 3.0
+	max_attacker_occupation_score = 50
+	max_attacker_battle_score = 75
+	defender_unoccupied_warscore = yes
+	
+	can_use = {
+		FROM = {
+			realm_size >= 700
+			ai = no
+			shares_realm_border_with = ROOT
+		}
+		ROOT = {
+			independent = yes
+		}
+	}
+	
+	
+	can_use_gui = {
+		check_if_crusader_trigger = yes
+		any_player = { NOT = { any_war = { using_cb = overextention_cb } } }
+		any_player = { NOT = { has_character_modifier = coallition_expelled } }
+		#ROOT = {
+		#	prestige = 100
+		#}
+		FROM = {
+			OR = {
+				tier = EMPEROR
+				tier = KING
+			}
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	can_use_title = {
+	}
+	
+	is_valid = {
+		always = yes
+	}	
+	
+	on_add = {
+		#if = {
+		#	limit = {
+		#		ROOT = { ai = yes }
+		#		FROM = {
+		#			NOT = {
+		#				any_war = {
+		#					attacker = { NOT = { character = ROOT } }
+		#					using_cb = infamy_cb
+		#				}
+		#			}
+		#		}
+		#	}
+		#	ROOT = {
+		#		spawn_unit = {
+		#			owner = THIS
+		#			province = capital_scope
+		#			home = capital_scope
+		#			
+		#			match_character = FROM
+		#			match_mult = 1.0
+		#			
+		#			troops = {
+		#				knights = { 500 500 }
+		#				archers = { 500 500 }
+		#				light_cavalry = { 500 500 }
+		#				light_infantry = { 2500 2500 }
+		#				heavy_infantry = { 1000 1000 }
+		#			}
+		#		
+		#			attrition = 1.0
+		#			disband_on_peace = yes
+		#		}
+		#	}
+		#}
+		ROOT = { character_event = { id = MP.043 } }
+	}
+	
+	on_success = {
+		FROM = {
+			character_event = { id = MP.051 }
+			prestige = -1000
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 3	
+				min = 1000
+				max = 5000
+			}
+		}
+	}
+	
+	on_success_title = {
+		FROM = {
+			any_demesne_title = {
+				limit = { 
+					OR = {
+						tier = EMPEROR
+						tier = KING
+					}
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+	}
+
+	on_invalidation = {
+		ROOT = {
+			show_scope_change = no
+			piety = 100
+		}
+	}
+
+	on_fail = {
+		ROOT = { prestige = -50 }
+	}
+	
+	on_reverse_demand = {
+		ROOT = {
+			prestige = -1000
+			add_character_modifier = {
+				name = coallition_expelled
+				years = 2
+			}
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 3
+				min = 1000
+				max = 5000
+			}
+		}
+		FROM = {
+			prestige = 1000
+			#character_event = { id = MP.050 }
+		}
+	}
+	
+	on_attacker_leader_death = { end_war = invalid } 
+	
+	ai_will_do = {
+		factor = 0
+		
+		#modifier = {
+		#	factor = 100
+		#}
 	}
 }

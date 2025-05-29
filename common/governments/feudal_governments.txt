@@ -130,7 +130,10 @@ feudal_governments = {
 			rebel = no
 			NOT = {	religion_group = muslim }
 			is_patrician = no
-			higher_tier_than = BARON
+			OR = {
+				higher_tier_than = BARON
+				has_landed_title = k_papal_state
+			}
 			OR = {
 				is_female = no
 				religion_allows_female_temple_holders = yes

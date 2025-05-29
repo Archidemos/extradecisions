@@ -1272,7 +1272,7 @@ character_event = {
  	option = {
 		name = "To war!"
 		custom_tooltip = {
-			text = "You will recieve more soldiers to fight this Infamy War"
+			text = "You will recieve more soldiers to fight this war"
 			if = {
 				limit = { date < 1200.1.1 }
 				ROOT = {
@@ -1469,7 +1469,7 @@ narrative_event = { #Event for everyone about the formation
 character_event = { #Event for when u win to the Infamy CB
 	id = MP.050
 	title = "Coalition Defeated"
-	desc = "As you have defeated a realm that wants to take you down for your infamy, you have frightned your neighbours with your power."
+	desc = "As you have defeated a realm that wants to take you down for our rightfull conquests, you have frightned your neighbours with your army and strategy."
 
 	is_triggered_only = yes
 	
@@ -1488,7 +1488,7 @@ character_event = { #Event for when u win to the Infamy CB
 character_event = { #Event for when u lose to the Infamy CB
 	id = MP.051
 	title = "Begining of the end"
-	desc = "As you have been defeated by the realm that fought to take you down for your infamy, you are no longer seen as a threat. As your realm is shattered by your enemies, they have declared to also kill you, This is it... your final moments as you witness your people and enemies one more time."
+	desc = "As you have been defeated by the realm that fought to take you down for our massive span of land we control, you are no longer seen as a threat. As your realm is shattered by your enemies, they have declared to also kill you, This is it... your final moments as you witness your people and enemies one more time."
 
 	is_triggered_only = yes
 	
@@ -1505,6 +1505,7 @@ character_event = { #Event for when u lose to the Infamy CB
 			death_reason = death_execution
 			killer = ROOT
 		}
+		ROOT = { disband_event_forces = yes }
 	}
 }
 
