@@ -2,7 +2,7 @@ infamy_cb = { #CB to shatter realm with high Threat
 	name = CB_NAME_INFAMY_CB
 	war_name = WAR_NAME_INFAMY_CB
 	sprite = 7
-	sort_priority = 100000
+	sort_priority = 10000
 	truce_days = 3650
 	is_permanent = yes
 	hostile_against_others = no
@@ -30,10 +30,11 @@ infamy_cb = { #CB to shatter realm with high Threat
 	
 	can_use = {
 		ROOT = {
+			#ai = yes
 			independent = yes
 		}
 		FROM = {
-			infamy >= 60
+			infamy >= 70
 			ai = no
 			shares_realm_border_with = ROOT
 		}
@@ -163,7 +164,7 @@ infamy_cb = { #CB to shatter realm with high Threat
 		factor = 1
 		
 		modifier = {
-			factor = 100
+			factor = 10
 		}
 	}
 }
@@ -357,13 +358,13 @@ overextention_cb = { #CB to shatter realm with a too big realm
 	defender_unoccupied_warscore = yes
 	
 	can_use = {
-		FROM = {
-			realm_size >= 700
-			ai = no
-			shares_realm_border_with = ROOT
-		}
 		ROOT = {
 			independent = yes
+		}
+		FROM = {
+			realm_size >= 1200
+			ai = no
+			shares_realm_border_with = ROOT
 		}
 	}
 	
@@ -483,6 +484,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 		}
 		FROM = {
 			prestige = 1000
+			disband_event_forces = yes
 			#character_event = { id = MP.050 }
 		}
 	}

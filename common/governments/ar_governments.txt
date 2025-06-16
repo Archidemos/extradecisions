@@ -276,7 +276,100 @@ feudal_governments = {
 			vassal_limit = 5
 		}
 	}
-    
+
+	ar_theocracy_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = {
+			TEMPLE
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		accepts_liege_governments = {
+			feudal_government
+			muslim_government
+			republic_government
+			merchant_republic_government
+		}
+		frame_suffix = "_theocracy"
+		title_prefix = "temple_"
+		potential = {
+			mercenary = no
+			holy_order = no
+			rebel = no
+			is_patrician = no
+			NOT = {	religion_group = muslim }
+			OR = {
+				higher_tier_than = BARON
+				primary_title = { 
+					OR = { 
+						title = k_papal_state
+						title = k_orthodox
+						title = d_apostolic
+						title = d_paulician
+						title = d_maronite
+						title = d_syriac
+						title = d_fraticelli
+						title = d_monothelite
+						title = d_paulician
+						title = d_nestorian
+						title = d_monophysite
+						title = d_miaphysite
+						title = d_iconoclast
+						title = d_jewish
+						title = d_norse_pagan_reformed
+						title = d_tengri_pagan_reformed
+						title = d_baltic_pagan_reformed
+						title = d_finnish_pagan_reformed
+						title = d_slavic_pagan_reformed
+						title = d_aztec_reformed
+						title = d_west_african_pagan_reformed
+						title = d_zun_pagan_reformed
+						title = d_bon_reformed
+					}
+				}
+				capital_holding = {
+					holding_type = temple
+				}
+			}
+			OR = {
+				is_female = no
+				religion_allows_female_temple_holders = yes
+			}
+			OR = {
+				is_female = yes
+				religion_allows_male_temple_holders = yes
+			}
+		}
+		
+		color = { 220 220 220 }
+		
+		have_gender_laws = no
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+
+		character_modifier = {
+			learning = 1
+			monthly_character_piety  = 0.2
+			church_opinion = 5
+			fertility = -10
+			temple_vassal_min_levy = 0.30
+			temple_vassal_max_levy = 0.30
+		}
+
+		vassal_limit = -10
+
+		can_create_empires = no
+		can_build_tribal = no
+		capital_move_delay = 600
+		allows_matrilineal_marriage = no
+	}
+   
     ar_republic_government = {
 		preferred_holdings = { CITY }
 		allowed_holdings = { 

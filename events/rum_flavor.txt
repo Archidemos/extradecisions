@@ -22,7 +22,7 @@ character_event = { #Event for everyone about the Rum reaching Constantinople
 narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinople, they will break the Byzantines
 	id = RLARP.2
 	title = "The Conquest of Constantinople"
-	desc = "As we have finally conquered the City of the World's Desire. It is time to consider its fate and our possition in this matter. Is it perhaps time to proclaim our solidification of our claim of the Roman Throne?"
+	desc = "As we have finally conquered the City of the World's Desire. It is time to consider its fate and our possition in this matter. Is it perhaps time to proclaim our solidification of our claim of the Roman Throne... Or do we stay true to Allah and drop this redicilous claim as there is no one more higher than Allah himself.."
 	is_triggered_only = yes
 	
 	picture = GFX_evt_jerusalem_captured_muslims
@@ -45,8 +45,10 @@ narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinop
 		wealth = 1000
 		prestige = 4000
 		piety = 3000
-
 		c_byzantion = {
+			grant_title = PREV
+			usurp_title = PREV
+			ROOT = { capital = PREV }
 			location = {
 				religion = FROM
 				remove_province_modifier = nerf_constantinople
@@ -56,6 +58,7 @@ narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinop
 				}
 			}
 		}
+		set_global_flag = constantinople_buffed
 		grant_title = e_byzantium
 		any_player = { narrative_event = { id = RLARP.3 days = 1 } }
 	}
@@ -65,11 +68,11 @@ narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinop
 		ai_chance = { factor = 90 }
 		
 		unsafe_destroy_landed_title = e_byzantium
+		add_artifact = crown_byzantine
 		destroy_artifact = crown_byzantine
 		wealth = 2500
 		prestige = 2000
 		piety = 1500
-	
 		c_byzantion = {
 			location = {
 				religion = FROM
@@ -95,10 +98,11 @@ narrative_event = { #Event for the Rum Sultanate. when they conquer Constantinop
 
 narrative_event = { #Event for everyone about the Rum reaching Constantinople
 	id = RLARP.3
-	title = "The Conquest of Constantinople"
-	desc = "As the Rum Sultanate has caused havoic within Anatolia while claiming to be the true successor to the Romans, the Sultanate of Rum went ahead and conquered the city of the world's desire, Constantinople. Their goal was to solidify their claim by conquering the last city of the Romans. While this is shocking to all, not everyone agrees with the claim of the Rum Sultanate and consider this the end of the Empire of Romans."
+	title = RLARPTITLE.3
+	desc = RLARPTEXT.3
 	
 	picture = GFX_evt_rome_falls	
+	border = GFX_event_narrative_frame_war
 	
 	is_triggered_only = yes
 	
