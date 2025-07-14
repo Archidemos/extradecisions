@@ -97,6 +97,16 @@ decisions = {
 		
 		potential = {
 			has_landed_title = e_celtic_empire
+			any_playable_ruler = {
+				AND = {
+					OR = {
+						has_landed_title = c_roma
+						has_landed_title = c_orbetello
+						has_landed_title = c_orvieto
+					}
+					has_landed_title = k_papal_state
+				}
+			}
 			NOT = { has_global_flag = pope_celtic_conflict }
 			NOT = { has_landed_title = k_celtic_christian }
 			NOT = {
@@ -110,16 +120,6 @@ decisions = {
 			diplomacy = 12
 			religion_group = christian
 			NOT = { religion = catholic }
-			any_playable_ruler = {
-				AND = {
-					OR = {
-						has_landed_title = c_roma
-						has_landed_title = c_orbetello
-						has_landed_title = c_orvieto
-					}
-					has_landed_title = k_papal_state
-				}
-			}
 			completely_controls = k_france
 			completely_controls = k_aquitaine
 			completely_controls = k_burgundy
@@ -382,6 +382,7 @@ decisions = {
 		
 		potential = {
 			has_landed_title = e_north_sea
+			any_playable_ruler = { has_landed_title = e_hre }
 			independent = yes
 			NOT = { has_global_flag = hre_north_sea_conflict }
 			NOT = {
@@ -424,6 +425,7 @@ decisions = {
 
 		potential = {
 			has_landed_title = e_varingian
+			any_playable_ruler = { has_landed_title = e_byzantium }
 			NOT = { has_global_flag = varingian_invades_byz }
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }

@@ -64,6 +64,7 @@ decisions = {
 		
 		effect = {
 			set_global_flag = west_rome_formed
+			set_global_flag = west_rome_formed_normal
 			custom_tooltip = { 
 				text = "The preperations of the new governance will begin.."
 				ROOT = { narrative_event = { id = ROM.99 } }
@@ -81,6 +82,7 @@ decisions = {
 		
 		potential = {
 			has_landed_title = e_west_rome
+			any_playable_ruler = { has_landed_title = e_hre }
 			independent = yes
 			NOT = { has_global_flag = hre_rome_conflict }
 			NOT = {
@@ -92,7 +94,6 @@ decisions = {
 			has_landed_title = e_west_rome
 			prestige = 2000
 			diplomacy = 14
-			any_playable_ruler = { has_landed_title = e_hre }
 		}
 		
 		effect = {
@@ -115,6 +116,7 @@ decisions = {
 		
 		potential = {
 			has_landed_title = e_west_rome
+			any_playable_ruler = { has_landed_title = e_byzantium }
 			independent = yes
 			NOT = { has_global_flag = byz_rome_conflict }
 			NOT = {
@@ -126,7 +128,6 @@ decisions = {
 			has_landed_title = e_west_rome
 			prestige = 2000
 			diplomacy = 10
-			any_playable_ruler = { has_landed_title = e_byzantium }
 		}
 		
 		effect = {
