@@ -1228,8 +1228,6 @@ decisions = {
 						picture = GFX_evt_busy_trading_dock_republic
 					}
 				}
-				
-				set_government_type = merchant_republic_government
 
 				e_hre = {
 					owner = {
@@ -1325,8 +1323,8 @@ decisions = {
 			completely_controls = d_salzburg
 			completely_controls = d_bavaria
 			completely_controls = d_carinthia
-			completely_controls = d_friuli
-			completely_controls = d_carniola
+			completely_controls = d_merania
+			completely_controls = d_aquileia
 			completely_controls = d_tyrol
 		}
 
@@ -1696,7 +1694,7 @@ decisions = {
 					has_landed_title = c_kaliopolis
 				}
 			}
-			completely_controls = d_nikaea
+			completely_controls = d_neopatras
 			completely_controls = d_abydos
 			completely_controls = d_adrianopolis
 		}
@@ -1876,9 +1874,9 @@ decisions = {
 					add_law = war_voting_power_1
 				}
 				destroy_landed_title = d_raetia
-				destroy_landed_title = d_thurgau
+				destroy_landed_title = d_ratien
 				grant_title_no_opinion = d_swiss
-				d_thurgau = {
+				d_ratien = {
 					any_direct_de_jure_vassal_title = {
 						de_jure_liege = d_swiss
 					}
@@ -2430,13 +2428,13 @@ decisions = {
 					province = 315
 					AND = {
 						province = 245
-						d_thurgau = {
+						d_ratien = {
 							is_titular = no
 						}
 					}
 					AND = {
 						province = 248
-						d_thurgau = {
+						d_ratien = {
 							is_titular = no
 						}
 					}
@@ -2484,7 +2482,7 @@ decisions = {
 			completely_controls = c_sundgau
 			conditional_tooltip = {
 				trigger = {
-					d_thurgau = {
+					d_ratien = {
 						is_titular = no
 					}
 				}
@@ -2492,7 +2490,7 @@ decisions = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					d_thurgau = {
+					d_ratien = {
 						is_titular = no
 					}
 				}
@@ -2536,11 +2534,11 @@ decisions = {
 				}
 				if = {
 					limit = {
-						d_thurgau = {
+						d_ratien = {
 							is_titular = no
 						}
 					}
-					d_thurgau = {
+					d_ratien = {
 						de_jure_liege = k_schwaben
 					}
 				}
