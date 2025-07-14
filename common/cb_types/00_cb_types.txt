@@ -5910,7 +5910,8 @@ religious = {
 	sort_priority = 800
 
 	can_use = {
-		NOT = { holder_scope = { government = ar_confederation_government } }
+		NOT = { holder_scope = { government = ar_confederation_government }}
+		NOT = { holder_scope = { government = merchant_republic_government }}
 	}
 	
 	can_use_gui = {
@@ -5918,7 +5919,7 @@ religious = {
 			OR = {
 				NOT = { religion = buddhist }
 				piety = 250
-			}
+			}			
 		}
 	}
 	
@@ -6054,7 +6055,7 @@ religious = {
 	
 	can_use_title = {
 		# The attacker needs at least one county in the target kingdom, or a border, or be only two sea zones away from one of your counties
-		any_direct_de_jure_vassal_title = {
+			any_direct_de_jure_vassal_title = {
 			OR = {
 				holder_scope = {
 					OR = {
@@ -12083,6 +12084,7 @@ pagan_holy_war = {
 				religion = zun_pagan_reformed
 				government = warrior_order_government
 			}
+			NOT = { holder_scope = { government = merchant_republic_government }}
 			NOT = { has_religion_feature = religion_peaceful }
 			NOT = { government = ar_confederation_government }
 			NOT = { same_realm = FROM }
