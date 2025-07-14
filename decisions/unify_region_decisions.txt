@@ -65,11 +65,13 @@ decisions = {
 			ROOT = {
 				any_demesne_title = {
 					limit = {
-						title = k_germany
-						title = k_wesphalia
-						title = k_thuringian
-						title = k_schwaben
-						title = k_franconia
+						OR = {
+							title = k_germany
+							title = k_wesphalia
+							title = k_thuringian
+							title = k_schwaben
+							title = k_franconia
+						}
 					}
 					unsafe_destroy_landed_title = THIS
 				}
