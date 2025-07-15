@@ -5122,6 +5122,12 @@ character_event = {
 	
 	trigger = {
 		uses_new_crusade = yes
+		NOT = {
+			has_game_rule = {
+							name = crusade_nerf
+							value = enabled
+						}
+		}
 	}
 
     immediate = {
