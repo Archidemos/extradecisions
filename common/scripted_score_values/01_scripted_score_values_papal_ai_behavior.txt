@@ -3,9 +3,9 @@
 # ROOT is the asker, FROM is the Pope, FROMFROM is the target
 ask_for_excommunication_chance = {
 	additive_modifier = {
-		value = -50
-		localisation_key = AIREASON_BASE_RELUCTANCE
-		always = yes
+			value = -50
+			localisation_key = AIREASON_BASE_RELUCTANCE
+			always = yes
 	}
 	additive_modifier = { #Slow down the AI
 		value = -25
@@ -8254,9 +8254,25 @@ ask_for_claim_chance = {
 		}
 	}
 	additive_modifier = {
+			value = -50
+			localisation_key = AIREASON_BASE_RELUCTANCE
+			always = yes
+	}
+	additive_modifier = {
+		value = -100
+		localisation_key = AIREASON_BASE_RELUCTANCE
+		has_game_rule = {
+					name = request_claim_nerf
+					value = big
+				}
+	}
+	additive_modifier = {
 		value = -50
 		localisation_key = AIREASON_BASE_RELUCTANCE
-		always = yes
+		has_game_rule = {
+					name = request_claim_nerf
+					value = enabled
+				}
 	}
 	additive_modifier = {
 		value = -25

@@ -4731,8 +4731,197 @@ new_crusade = {
 						else = {
 							set_crusade_pot_multiplier = 0
 						}
+						if = {
+							limit = {
+								has_game_rule = {
+									name = crusade_nerf
+									value = disabled
+								}
+							}
 						set_crusader_king = THIS
 						set_character_flag = crusader_king_flag
+						}
+						else = {
+							if = {
+								limit = {
+									most_participating_crusader = {
+										any_crusade_participant = {
+											is_alive = yes
+											is_landed = yes
+											holy_order = no
+											mercenary = no
+											crusade_beneficiary = {
+												is_alive = yes
+												is_landed = no
+												holy_order = no
+												NOT = {
+													any_heir_title = { 
+														always = yes
+													}
+												}
+												age = 12
+											}
+										}
+									}
+								}
+								most_participating_crusader = {
+									random_crusade_participant = {
+										limit = {
+											is_alive = yes
+											is_landed = yes
+											holy_order = no
+											mercenary = no
+											crusade_beneficiary = {
+												is_alive = yes
+												is_landed = no
+												holy_order = no
+												NOT = {
+													any_heir_title = { 
+														always = yes
+													}
+												}
+												age = 12
+											}
+										}
+										preferred_limit = {
+											tier = EMPEROR
+										}
+										preferred_limit = {
+											tier = KING
+										}
+										crusade_beneficiary = {
+											set_crusader_king = THIS
+											set_character_flag = crusader_king_flag
+										}
+									}
+								}
+							}
+							# Find any random Beneficiary, if possible
+							else_if = {
+								limit = {
+									most_participating_crusader = {
+										any_crusade_participant = {
+											crusade_beneficiary = {
+												is_alive = yes
+												is_landed = no
+												holy_order = no
+												NOT = {
+													any_heir_title = {
+														always = yes
+													}
+												}
+											}
+										}
+									}
+								}
+								most_participating_crusader = {
+									random_crusade_participant = {
+										limit = {
+											crusade_beneficiary = {
+												is_alive = yes
+												is_landed = no
+												holy_order = no
+												NOT = {
+													any_heir_title = {
+														always = yes
+													}
+												}
+											}
+										}
+										crusade_beneficiary = {
+											set_crusader_king = THIS
+											set_character_flag = crusader_king_flag
+										}
+									}
+								}
+							}
+							# Find a logical "Beneficiary" from any playable Catholic/Fraticelli ruler, if all else fails
+							else = {
+								most_participating_crusader = {
+									# Try to find a Catholic/Fraticelli ruler
+									if = {
+										limit = {
+											any_playable_ruler = {
+												religion = PREV
+												any_dynasty_member = {
+													is_alive = yes
+													is_dying = no
+													mercenary = no
+													holy_order = no
+													age = 12
+													NOT = {
+														any_heir_title = {
+															always = yes
+														}
+													}
+												}
+											}
+										}
+										random_playable_ruler = {
+											limit = {
+												religion = PREV
+												any_dynasty_member = {
+													is_alive = yes
+													is_dying = no
+													mercenary = no
+													holy_order = no
+													age = 12
+													NOT = {
+														any_heir_title = {
+															always = yes
+														}
+													}
+												}
+											}
+											preferred_limit = {
+												tier = EMPEROR
+												culture = PREV
+											}
+											preferred_limit = {
+												tier = EMPEROR
+											}
+											preferred_limit = {
+												tier = KING
+												culture = PREV
+											}
+											preferred_limit = {
+												tier = KING
+											}
+											preferred_limit = {
+												tier = DUKE
+												culture = PREV
+											}
+											preferred_limit = {
+												tier = DUKE
+											}
+											preferred_limit = {
+												culture = PREV
+											}
+											random_dynasty_member = {
+												limit = {
+													religion = PREV
+													is_alive = yes
+													is_dying = no
+													mercenary = no
+													holy_order = no
+													age = 12
+													NOT = {
+														any_heir_title = {
+															always = yes
+														}
+													}
+												}
+												set_crusader_king = THIS
+											}
+										}
+									}
+									# If every other option fails, make the Holy Order Grandmaster the Crusader King
+									else = {
+										set_crusader_king = THIS
+									}
+								}
+							}
+						}
 					}
 				}
 			}

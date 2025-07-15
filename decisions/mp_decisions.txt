@@ -406,6 +406,40 @@ decisions = {
 	#		}
 	#	}
 	#}
+	claim_roma = {
+		only_independent = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_nomadic = no
+			is_playable = yes
+			AND = {
+				has_landed_title = e_west_rome
+				has_global_flag = west_rome_formed_normal
+			}
+			NOT = { has_landed_title = c_roma }
+			any_realm_lord = { 
+				ai = yes
+				has_landed_title = c_roma 
+			}
+		}
+		allow = {
+			NOT = { has_landed_title = c_roma }
+			any_realm_lord = { 
+				has_landed_title = c_roma 
+			}
+		}
+		effect = {
+			ROOT = {
+				c_roma = {
+					usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	buff_constantinople = {
 		only_independent = yes
 		is_high_prio = yes
@@ -594,6 +628,7 @@ decisions = {
 			factor = 1
 		}
 	}
+
 	become_merchant_republic_ar = {
 		is_high_prio = yes
 		ai_check_interval = 1
@@ -618,6 +653,7 @@ decisions = {
 			factor = 100
 		}
 	}
+  
 	become_merchant_republic_feudal = {
 		is_high_prio = yes
 		ai_check_interval = 1200
@@ -676,6 +712,7 @@ decisions = {
 			factor = 0
 		}
 	}
+
 	develop_tech_capital = {
 		is_high_prio = yes
 		ai_check_interval = 12
@@ -740,6 +777,9 @@ decisions = {
 			OR = {
 				has_character_modifier = realm_nerf_0
 				#has_character_modifier = realm_nerf_1
+				#trait = crusader_king
+				#trait = crusader_queen
+				#trait = jihad_sultan
 			}
 			NOT = { has_landed_title = k_celtic_christian }
 			NOT = { has_landed_title = k_orthodox }

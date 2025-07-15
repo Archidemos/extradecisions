@@ -127,15 +127,10 @@ republic_governments = {
 		potential = {
 			NAND = {
 				controls_religion = yes
-				OR = {
-					NOT = { religion_group = muslim }
-					NOT = { religion = norse_pagan_reformed }
-					NOT = { religion = paulician }
-				}
+				NOT = { religion_group = muslim }
 			}
 			NOT = { is_government_potential = merchant_republic_government }
 			holy_order = no
-			tier = BARON
 		}
 		
 		color = { 209 125 130 }
@@ -149,7 +144,6 @@ republic_governments = {
 
 		## Modifiers
 		court_size_modifier = 5
-		vassal_limit = -5
 	}
 	
 	#confucian_bureaucracy = {

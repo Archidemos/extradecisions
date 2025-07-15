@@ -300,51 +300,33 @@ feudal_governments = {
 		frame_suffix = "_theocracy"
 		title_prefix = "temple_"
 		potential = {
-			mercenary = no
-			holy_order = no
-			rebel = no
-			is_patrician = no
 			NOT = {	religion_group = muslim }
-			OR = {
-				higher_tier_than = BARON
-				primary_title = { 
-					OR = { 
-						title = k_papal_state
-						title = k_orthodox
-						title = d_apostolic
-						title = d_paulician
-						title = d_maronite
-						title = d_syriac
-						title = d_fraticelli
-						title = d_monothelite
-						title = d_paulician
-						title = d_nestorian
-						title = d_monophysite
-						title = d_miaphysite
-						title = d_iconoclast
-						title = d_jewish
-						title = d_norse_pagan_reformed
-						title = d_tengri_pagan_reformed
-						title = d_baltic_pagan_reformed
-						title = d_finnish_pagan_reformed
-						title = d_slavic_pagan_reformed
-						title = d_aztec_reformed
-						title = d_west_african_pagan_reformed
-						title = d_zun_pagan_reformed
-						title = d_bon_reformed
-					}
+			primary_title = {
+				OR = {
+					title = k_papal_state
+					title = k_orthodox
+					title = d_apostolic
+					title = d_paulician
+					title = d_maronite
+					title = d_syriac
+					title = d_fraticelli
+					title = d_monothelite
+					title = d_paulician
+					title = d_nestorian
+					title = d_monophysite
+					title = d_miaphysite
+					title = d_iconoclast
+					title = d_jewish
+					title = d_norse_pagan_reformed
+					title = d_tengri_pagan_reformed
+					title = d_baltic_pagan_reformed
+					title = d_finnish_pagan_reformed
+					title = d_slavic_pagan_reformed
+					title = d_aztec_reformed
+					title = d_west_african_pagan_reformed
+					title = d_zun_pagan_reformed
+					title = d_bon_reformed
 				}
-				capital_holding = {
-					holding_type = temple
-				}
-			}
-			OR = {
-				is_female = no
-				religion_allows_female_temple_holders = yes
-			}
-			OR = {
-				is_female = yes
-				religion_allows_male_temple_holders = yes
 			}
 		}
 		
@@ -352,7 +334,7 @@ feudal_governments = {
 		
 		have_gender_laws = no
 		can_be_granted_kingdoms_and_empires_by_other_government = no
-
+	
 		character_modifier = {
 			learning = 1
 			monthly_character_piety  = 0.2
@@ -361,68 +343,68 @@ feudal_governments = {
 			temple_vassal_min_levy = 0.30
 			temple_vassal_max_levy = 0.30
 		}
-
+	
 		vassal_limit = -10
-
+	
 		can_create_empires = no
 		can_build_tribal = no
 		capital_move_delay = 600
 		allows_matrilineal_marriage = no
 	}
-   
-    ar_republic_government = {
-		preferred_holdings = { CITY }
-		allowed_holdings = { 
-			CITY
-			CASTLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Accepts other republics
-			merchant_republic_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		frame_suffix = "_republic"
-		title_prefix = "city_"
-		potential = {
-			is_patrician = no
-			is_landed = yes
-			mercenary = no
-			rebel = no
-			NAND = {
-				controls_religion = yes
-				NOT = { religion_group = muslim }
-			}
-			NOT = { is_government_potential = merchant_republic_government }
-			holy_order = no
-			higher_tier_than = BARON
-			capital_holding = {
-				holding_type = city
-			}
-		}
 	
-		color = { 209 125 130 }
-
-		character_modifier = {
-			stewardship = 1
-			global_tax_modifier = 0.05
-			town_opinion = 5
-			city_vassal_min_levy = 0.2
-			city_vassal_max_levy = 0.2
-		}
-		capital_holding = {
-			holding_type = city
-		}
-		vassal_limit = -10
-		can_build_tribal = no
-		can_create_empires = no
-		capital_move_delay = 600
-	}
+    #ar_republic_government = {
+	#	preferred_holdings = { CITY }
+	#	allowed_holdings = { 
+	#		CITY
+	#		CASTLE
+	#		FORT
+	#		HOSPITAL
+	#	}
+	#	allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+	#		TRIBAL
+	#	}
+	#	accepts_liege_governments = { # Accepts other republics
+	#		merchant_republic_government
+	#	}
+	#	free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+	#		tribal_government
+	#	}
+	#	frame_suffix = "_republic"
+	#	title_prefix = "city_"
+	#	potential = {
+	#		is_patrician = no
+	#		is_landed = yes
+	#		mercenary = no
+	#		rebel = no
+	#		NAND = {
+	#			controls_religion = yes
+	#			NOT = { religion_group = muslim }
+	#		}
+	#		NOT = { is_government_potential = merchant_republic_government }
+	#		holy_order = no
+	#		higher_tier_than = BARON
+	#		capital_holding = {
+	#			holding_type = city
+	#		}
+	#	}
+	#
+	#	color = { 209 125 130 }
+	#
+	#	character_modifier = {
+	#		stewardship = 1
+	#		global_tax_modifier = 0.05
+	#		town_opinion = 5
+	#		city_vassal_min_levy = 0.2
+	#		city_vassal_max_levy = 0.2
+	#	}
+	#	capital_holding = {
+	#		holding_type = city
+	#	}
+	#	vassal_limit = -10
+	#	can_build_tribal = no
+	#	can_create_empires = no
+	#	capital_move_delay = 600
+	#}
 	
 	ar_confederation_government = {
 		preferred_holdings = { CASTLE }
