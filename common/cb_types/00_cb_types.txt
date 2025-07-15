@@ -6100,6 +6100,7 @@ religious = {
 
 	can_use = {
 		NOT = { holder_scope = { government = ar_confederation_government } }
+		NOT = { holder_scope = { government = merchant_republic_government }}
 	}
 	
 	can_use_gui = {
@@ -12274,6 +12275,7 @@ pagan_holy_war = {
 			}
 			NOT = { has_religion_feature = religion_peaceful }
 			NOT = { government = ar_confederation_government }
+			NOT = { holder_scope = { government = merchant_republic_government }}
 			NOT = { same_realm = FROM }
 			NOT = { religion = FROM }
 			top_liege = {
