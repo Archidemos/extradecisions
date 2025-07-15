@@ -629,30 +629,30 @@ decisions = {
 		}
 	}
 
-	become_merchant_republic_ar = {
-		is_high_prio = yes
-		ai_check_interval = 1
-		
-		potential = {
-			government = ar_republic_government
-			ai = yes
-			NOR = { tier = COUNT tier = BARON }
-		}
-		
-		allow = {
-			government = ar_republic_government
-			capital_scope = { port = yes }
-		}
-		
-		effect = {
-			create_family_palace = yes
-			set_government_type = merchant_republic_government
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}
-	}
+	#become_merchant_republic_ar = {
+	#	is_high_prio = yes
+	#	ai_check_interval = 1
+	#	
+	#	potential = {
+	#		government = ar_republic_government
+	#		ai = yes
+	#		NOR = { tier = COUNT tier = BARON }
+	#	}
+	#	
+	#	allow = {
+	#		government = ar_republic_government
+	#		capital_scope = { port = yes }
+	#	}
+	#	
+	#	effect = {
+	#		create_family_palace = yes
+	#		set_government_type = merchant_republic_government
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 100
+	#	}
+	#}
   
 	become_merchant_republic_feudal = {
 		is_high_prio = yes
@@ -670,9 +670,9 @@ decisions = {
 			tier = COUNT
 			OR = {
 				liege = {
-				OR = {tier = KING tier = EMPEROR}
-			}
-			independent = yes
+					OR = { tier = KING tier = EMPEROR }
+				}
+				independent = yes
 			}
 			wealth = 300
 			
