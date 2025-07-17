@@ -6,7 +6,7 @@
 title = c_kerak
 
 # Settlements
-max_settlements = 4
+max_settlements = 4 #old 4
 b_krakdemoab = castle
 b_kerak = city
 b_tafila = temple
@@ -23,8 +23,91 @@ religion = sunni
 
 # History
 
+# EDITMOD 867
+867.1.1 = {
+	b_krakdemoab = castle
+	b_krakdemoab = ca_barracks_1
+	b_krakdemoab = ca_barracks_2
+	b_krakdemoab = ca_wall_1
+	b_krakdemoab = ca_keep_1
+	b_krakdemoab = ca_militia_barracks_1
+	b_krakdemoab = ca_training_grounds_1
+	b_krakdemoab = ca_stable_1
+	b_krakdemoab = ca_stable_2
+	b_krakdemoab = ca_town_1
+	b_krakdemoab = ca_wall_q_1
+	b_krakdemoab = castle_tower_1
+	b_krakdemoab = castle_smith_1
+	b_krakdemoab = stone_mine_1
+	b_syrdibban = castle
+	b_syrdibban = ca_barracks_1
+	b_syrdibban = ca_barracks_2
+	b_syrdibban = ca_wall_1
+	b_syrdibban = ca_keep_1
+	b_syrdibban = ca_militia_barracks_1
+	b_syrdibban = ca_training_grounds_1
+	b_syrdibban = ca_stable_1
+	b_syrdibban = ca_stable_2
+	b_syrdibban = ca_town_1
+	b_syrdibban = ca_wall_q_1
+	b_syrdibban = castle_tower_1
+	b_syrdibban = castle_smith_1
+	b_syrdibban = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_syrdibban
+}
+
+# EDITMOD 936
+936.1.1 = {
+	b_krakdemoab = castle
+	b_krakdemoab = ca_barracks_1
+	b_krakdemoab = ca_barracks_2
+	b_krakdemoab = ca_wall_1
+	b_krakdemoab = ca_wall_2
+	b_krakdemoab = ca_keep_1
+	b_krakdemoab = ca_keep_2
+	b_krakdemoab = ca_militia_barracks_1
+	b_krakdemoab = ca_militia_barracks_2
+	b_krakdemoab = ca_training_grounds_1
+	b_krakdemoab = ca_training_grounds_2
+	b_krakdemoab = ca_stable_1
+	b_krakdemoab = ca_stable_2
+	b_krakdemoab = ca_town_1
+	b_krakdemoab = ca_town_2
+	b_krakdemoab = ca_wall_q_1
+	b_krakdemoab = castle_tower_1
+	b_krakdemoab = castle_smith_1
+	b_krakdemoab = stone_mine_1
+	b_syrdibban = castle
+	b_syrdibban = ca_barracks_1
+	b_syrdibban = ca_barracks_2
+	b_syrdibban = ca_wall_1
+	b_syrdibban = ca_wall_2
+	b_syrdibban = ca_keep_1
+	b_syrdibban = ca_keep_2
+	b_syrdibban = ca_militia_barracks_1
+	b_syrdibban = ca_militia_barracks_2
+	b_syrdibban = ca_training_grounds_1
+	b_syrdibban = ca_training_grounds_2
+	b_syrdibban = ca_stable_1
+	b_syrdibban = ca_stable_2
+	b_syrdibban = ca_town_1
+	b_syrdibban = ca_town_2
+	b_syrdibban = ca_wall_q_1
+	b_syrdibban = castle_tower_1
+	b_syrdibban = castle_smith_1
+	b_syrdibban = stone_mine_1
+}
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_syrdibban
+}
+
 974.1.1 = { remove_settlement = b_tafila culture = bedouin_arabic } #Tribalisation/Nomadization of al-Urdunn
 974.1.1 = { b_krakdemoab = tribal } #Tribalisation/Nomadization of al-Urdunn
+# EDITMOD 1066
 1066.1.1 = {
 	b_krakdemoab = castle
 	b_krakdemoab = ca_barracks_1
@@ -107,6 +190,11 @@ religion = sunni
 	b_tafila = castle_smith_1
 	b_tafila = castle_smith_2
 	b_tafila = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
+	remove_settlement = b_syrdibban
+	remove_settlement = b_tafila
 }
 
 1115.1.1 = { b_tafila = temple } #Crusader Conquest

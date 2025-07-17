@@ -6,7 +6,7 @@
 title = c_acre
 
 # Settlements
-max_settlements = 6
+max_settlements = 6 #old 6
 
 b_castellumregis = castle
 b_acre = city
@@ -23,15 +23,90 @@ religion = orthodox
 
 # History
 
-867.1.1 = { 
-	b_acre = ct_wall_1
-	b_acre = ct_barracks_1
-        b_acre = ct_training_grounds_1
-        b_acre = ct_port_1
-	b_acre = ct_marketplace_1
 
-} 
+# EDITMOD 867
+867.1.1 = {
+	b_castellumregis = castle
+	b_castellumregis = ca_barracks_1
+	b_castellumregis = ca_barracks_2
+	b_castellumregis = ca_wall_1
+	b_castellumregis = ca_keep_1
+	b_castellumregis = ca_militia_barracks_1
+	b_castellumregis = ca_training_grounds_1
+	b_castellumregis = ca_stable_1
+	b_castellumregis = ca_stable_2
+	b_castellumregis = ca_town_1
+	b_castellumregis = ca_wall_q_1
+	b_castellumregis = castle_tower_1
+	b_castellumregis = castle_smith_1
+	b_castellumregis = stone_mine_1
+	b_haifa = castle
+	b_haifa = ca_barracks_1
+	b_haifa = ca_barracks_2
+	b_haifa = ca_wall_1
+	b_haifa = ca_keep_1
+	b_haifa = ca_militia_barracks_1
+	b_haifa = ca_training_grounds_1
+	b_haifa = ca_stable_1
+	b_haifa = ca_stable_2
+	b_haifa = ca_town_1
+	b_haifa = ca_wall_q_1
+	b_haifa = castle_tower_1
+	b_haifa = castle_smith_1
+	b_haifa = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_haifa
+}
 
+# EDITMOD 936
+936.1.1 = {
+	b_castellumregis = castle
+	b_castellumregis = ca_barracks_1
+	b_castellumregis = ca_barracks_2
+	b_castellumregis = ca_wall_1
+	b_castellumregis = ca_wall_2
+	b_castellumregis = ca_keep_1
+	b_castellumregis = ca_keep_2
+	b_castellumregis = ca_militia_barracks_1
+	b_castellumregis = ca_militia_barracks_2
+	b_castellumregis = ca_training_grounds_1
+	b_castellumregis = ca_training_grounds_2
+	b_castellumregis = ca_stable_1
+	b_castellumregis = ca_stable_2
+	b_castellumregis = ca_town_1
+	b_castellumregis = ca_town_2
+	b_castellumregis = ca_wall_q_1
+	b_castellumregis = castle_tower_1
+	b_castellumregis = castle_smith_1
+	b_castellumregis = stone_mine_1
+	b_haifa = castle
+	b_haifa = ca_barracks_1
+	b_haifa = ca_barracks_2
+	b_haifa = ca_wall_1
+	b_haifa = ca_wall_2
+	b_haifa = ca_keep_1
+	b_haifa = ca_keep_2
+	b_haifa = ca_militia_barracks_1
+	b_haifa = ca_militia_barracks_2
+	b_haifa = ca_training_grounds_1
+	b_haifa = ca_training_grounds_2
+	b_haifa = ca_stable_1
+	b_haifa = ca_stable_2
+	b_haifa = ca_town_1
+	b_haifa = ca_town_2
+	b_haifa = ca_wall_q_1
+	b_haifa = castle_tower_1
+	b_haifa = castle_smith_1
+	b_haifa = stone_mine_1
+}
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_haifa
+}
+
+# EDITMOD 1066
 1066.1.1 = {
 	b_castellumregis = castle
 	b_castellumregis = ca_barracks_1
@@ -114,6 +189,11 @@ religion = orthodox
 	b_scandelon = castle_smith_1
 	b_scandelon = castle_smith_2
 	b_scandelon = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
+	remove_settlement = b_haifa
+	remove_settlement = b_scandelon
 }
 
 1099.1.1 = { b_haifa = castle } # lordship of Haifa

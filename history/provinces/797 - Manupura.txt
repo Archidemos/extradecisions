@@ -6,7 +6,7 @@
 title = c_manupura  #Bahnasa
 
 # Settlements
-max_settlements = 6
+max_settlements = 6 #old 6
 b_manuf = castle
 b_quwaysina = city
 b_ibyar = city #or Abyar, a noted linen production site
@@ -28,16 +28,124 @@ terrain = farmlands
 
 # History
 
-867.1.1 = { 
+# EDITMOD 867
+867.1.1 = {
+	b_manuf = castle
+	b_manuf = ca_barracks_1
+	b_manuf = ca_barracks_2
+	b_manuf = ca_wall_1
 	b_manuf = ca_keep_1
+	b_manuf = ca_militia_barracks_1
 	b_manuf = ca_training_grounds_1
 	b_manuf = ca_stable_1
+	b_manuf = ca_stable_2
+	b_manuf = ca_town_1
+	b_manuf = ca_wall_q_1
+	b_manuf = castle_tower_1
+	b_manuf = castle_smith_1
+	b_manuf = stone_mine_1
+	b_almahallah = castle
+	b_almahallah = ca_barracks_1
+	b_almahallah = ca_barracks_2
+	b_almahallah = ca_wall_1
+	b_almahallah = ca_keep_1
+	b_almahallah = ca_militia_barracks_1
+	b_almahallah = ca_training_grounds_1
+	b_almahallah = ca_stable_1
+	b_almahallah = ca_stable_2
+	b_almahallah = ca_town_1
+	b_almahallah = ca_wall_q_1
+	b_almahallah = castle_tower_1
+	b_almahallah = castle_smith_1
+	b_almahallah = stone_mine_1
+	b_shatanul = castle
+	b_shatanul = ca_barracks_1
+	b_shatanul = ca_barracks_2
+	b_shatanul = ca_wall_1
+	b_shatanul = ca_keep_1
+	b_shatanul = ca_militia_barracks_1
+	b_shatanul = ca_training_grounds_1
+	b_shatanul = ca_stable_1
+	b_shatanul = ca_stable_2
+	b_shatanul = ca_town_1
+	b_shatanul = ca_wall_q_1
+	b_shatanul = castle_tower_1
+	b_shatanul = castle_smith_1
+	b_shatanul = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_shatanul
+}
+
+# EDITMOD 936
+936.1.1 = {
+	b_manuf = castle
+	b_manuf = ca_barracks_1
+	b_manuf = ca_barracks_2
 	b_manuf = ca_wall_1
 	b_manuf = ca_wall_2
+	b_manuf = ca_keep_1
+	b_manuf = ca_keep_2
 	b_manuf = ca_militia_barracks_1
+	b_manuf = ca_militia_barracks_2
+	b_manuf = ca_training_grounds_1
+	b_manuf = ca_training_grounds_2
+	b_manuf = ca_stable_1
+	b_manuf = ca_stable_2
+	b_manuf = ca_town_1
+	b_manuf = ca_town_2
+	b_manuf = ca_wall_q_1
+	b_manuf = castle_tower_1
+	b_manuf = castle_smith_1
+	b_manuf = stone_mine_1
+	b_almahallah = castle
+	b_almahallah = ca_barracks_1
+	b_almahallah = ca_barracks_2
+	b_almahallah = ca_wall_1
+	b_almahallah = ca_wall_2
+	b_almahallah = ca_keep_1
+	b_almahallah = ca_keep_2
+	b_almahallah = ca_militia_barracks_1
+	b_almahallah = ca_militia_barracks_2
+	b_almahallah = ca_training_grounds_1
+	b_almahallah = ca_training_grounds_2
+	b_almahallah = ca_stable_1
+	b_almahallah = ca_stable_2
+	b_almahallah = ca_town_1
+	b_almahallah = ca_town_2
+	b_almahallah = ca_wall_q_1
+	b_almahallah = castle_tower_1
+	b_almahallah = castle_smith_1
+	b_almahallah = stone_mine_1
+	b_shatanul = castle
+	b_shatanul = ca_barracks_1
+	b_shatanul = ca_barracks_2
+	b_shatanul = ca_wall_1
+	b_shatanul = ca_wall_2
+	b_shatanul = ca_keep_1
+	b_shatanul = ca_keep_2
+	b_shatanul = ca_militia_barracks_1
+	b_shatanul = ca_militia_barracks_2
+	b_shatanul = ca_training_grounds_1
+	b_shatanul = ca_training_grounds_2
+	b_shatanul = ca_stable_1
+	b_shatanul = ca_stable_2
+	b_shatanul = ca_town_1
+	b_shatanul = ca_town_2
+	b_shatanul = ca_wall_q_1
+	b_shatanul = castle_tower_1
+	b_shatanul = castle_smith_1
+	b_shatanul = stone_mine_1
 }
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_shatanul
+}
+
 955.1.1 = { culture = egyptian_arabic religion = sunni } 
 
+# EDITMOD 1066
 1066.1.1 = {
 	b_manuf = castle
 	b_manuf = ca_barracks_1
@@ -147,4 +255,9 @@ terrain = farmlands
 	b_zagazig = castle_smith_1
 	b_zagazig = castle_smith_2
 	b_zagazig = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
+	remove_settlement = b_shatanul
+	remove_settlement = b_zagazig
 }

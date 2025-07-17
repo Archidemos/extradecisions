@@ -6,7 +6,7 @@
 title = c_delta
 
 # Settlements
-max_settlements = 5
+max_settlements = 5 #old 4
 b_damietta = castle
 #b_mansura = castle
 b_shata = temple
@@ -24,15 +24,90 @@ religion = sunni
 
 # History
 
-867.1.1 = { 
+
+# EDITMOD 867
+867.1.1 = {
+	b_damietta = castle
+	b_damietta = ca_barracks_1
+	b_damietta = ca_barracks_2
+	b_damietta = ca_wall_1
 	b_damietta = ca_keep_1
+	b_damietta = ca_militia_barracks_1
 	b_damietta = ca_training_grounds_1
 	b_damietta = ca_stable_1
-	b_damietta = ca_wall_1
-	b_damietta = ca_wall_2
-	b_damietta = ca_militia_barracks_1
+	b_damietta = ca_stable_2
+	b_damietta = ca_town_1
+	b_damietta = ca_wall_q_1
+	b_damietta = castle_tower_1
+	b_damietta = castle_smith_1
+	b_damietta = stone_mine_1
+	b_mansura = castle
+	b_mansura = ca_barracks_1
+	b_mansura = ca_barracks_2
+	b_mansura = ca_wall_1
+	b_mansura = ca_keep_1
+	b_mansura = ca_militia_barracks_1
+	b_mansura = ca_training_grounds_1
+	b_mansura = ca_stable_1
+	b_mansura = ca_stable_2
+	b_mansura = ca_town_1
+	b_mansura = ca_wall_q_1
+	b_mansura = castle_tower_1
+	b_mansura = castle_smith_1
+	b_mansura = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_mansura
 }
 
+# EDITMOD 936
+936.1.1 = {
+	b_damietta = castle
+	b_damietta = ca_barracks_1
+	b_damietta = ca_barracks_2
+	b_damietta = ca_wall_1
+	b_damietta = ca_wall_2
+	b_damietta = ca_keep_1
+	b_damietta = ca_keep_2
+	b_damietta = ca_militia_barracks_1
+	b_damietta = ca_militia_barracks_2
+	b_damietta = ca_training_grounds_1
+	b_damietta = ca_training_grounds_2
+	b_damietta = ca_stable_1
+	b_damietta = ca_stable_2
+	b_damietta = ca_town_1
+	b_damietta = ca_town_2
+	b_damietta = ca_wall_q_1
+	b_damietta = castle_tower_1
+	b_damietta = castle_smith_1
+	b_damietta = stone_mine_1
+	b_mansura = castle
+	b_mansura = ca_barracks_1
+	b_mansura = ca_barracks_2
+	b_mansura = ca_wall_1
+	b_mansura = ca_wall_2
+	b_mansura = ca_keep_1
+	b_mansura = ca_keep_2
+	b_mansura = ca_militia_barracks_1
+	b_mansura = ca_militia_barracks_2
+	b_mansura = ca_training_grounds_1
+	b_mansura = ca_training_grounds_2
+	b_mansura = ca_stable_1
+	b_mansura = ca_stable_2
+	b_mansura = ca_town_1
+	b_mansura = ca_town_2
+	b_mansura = ca_wall_q_1
+	b_mansura = castle_tower_1
+	b_mansura = castle_smith_1
+	b_mansura = stone_mine_1
+}
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_mansura
+}
+
+# EDITMOD 1066
 1066.1.1 = {
 	b_damietta = castle
 	b_damietta = ca_barracks_1
@@ -115,6 +190,11 @@ religion = sunni
 	b_baramun = castle_smith_1
 	b_baramun = castle_smith_2
 	b_baramun = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
+	remove_settlement = b_mansura
+	remove_settlement = b_baramun
 }
 
 1219.1.1 = { b_mansura = castle }

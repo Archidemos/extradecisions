@@ -6,7 +6,7 @@
 title = c_amman
 
 # Settlements
-max_settlements = 6
+max_settlements = 6 #old 6
 
 b_qastal = castle
 #b_jebalalqala = castle
@@ -26,10 +26,93 @@ religion = sunni
 
 # History
 
+# EDITMOD 867
+867.1.1 = {
+	b_qastal = castle
+	b_qastal = ca_barracks_1
+	b_qastal = ca_barracks_2
+	b_qastal = ca_wall_1
+	b_qastal = ca_keep_1
+	b_qastal = ca_militia_barracks_1
+	b_qastal = ca_training_grounds_1
+	b_qastal = ca_stable_1
+	b_qastal = ca_stable_2
+	b_qastal = ca_town_1
+	b_qastal = ca_wall_q_1
+	b_qastal = castle_tower_1
+	b_qastal = castle_smith_1
+	b_qastal = stone_mine_1
+	b_dhiban = castle
+	b_dhiban = ca_barracks_1
+	b_dhiban = ca_barracks_2
+	b_dhiban = ca_wall_1
+	b_dhiban = ca_keep_1
+	b_dhiban = ca_militia_barracks_1
+	b_dhiban = ca_training_grounds_1
+	b_dhiban = ca_stable_1
+	b_dhiban = ca_stable_2
+	b_dhiban = ca_town_1
+	b_dhiban = ca_wall_q_1
+	b_dhiban = castle_tower_1
+	b_dhiban = castle_smith_1
+	b_dhiban = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_dhiban
+}
+
+# EDITMOD 936
+936.1.1 = {
+	b_qastal = castle
+	b_qastal = ca_barracks_1
+	b_qastal = ca_barracks_2
+	b_qastal = ca_wall_1
+	b_qastal = ca_wall_2
+	b_qastal = ca_keep_1
+	b_qastal = ca_keep_2
+	b_qastal = ca_militia_barracks_1
+	b_qastal = ca_militia_barracks_2
+	b_qastal = ca_training_grounds_1
+	b_qastal = ca_training_grounds_2
+	b_qastal = ca_stable_1
+	b_qastal = ca_stable_2
+	b_qastal = ca_town_1
+	b_qastal = ca_town_2
+	b_qastal = ca_wall_q_1
+	b_qastal = castle_tower_1
+	b_qastal = castle_smith_1
+	b_qastal = stone_mine_1
+	b_dhiban = castle
+	b_dhiban = ca_barracks_1
+	b_dhiban = ca_barracks_2
+	b_dhiban = ca_wall_1
+	b_dhiban = ca_wall_2
+	b_dhiban = ca_keep_1
+	b_dhiban = ca_keep_2
+	b_dhiban = ca_militia_barracks_1
+	b_dhiban = ca_militia_barracks_2
+	b_dhiban = ca_training_grounds_1
+	b_dhiban = ca_training_grounds_2
+	b_dhiban = ca_stable_1
+	b_dhiban = ca_stable_2
+	b_dhiban = ca_town_1
+	b_dhiban = ca_town_2
+	b_dhiban = ca_wall_q_1
+	b_dhiban = castle_tower_1
+	b_dhiban = castle_smith_1
+	b_dhiban = stone_mine_1
+}
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_dhiban
+}
+
 974.1.1 = { remove_settlement = b_salt culture = bedouin_arabic } #Tribalisation/Nomadization of al-Urdunn
 974.1.1 = { b_qastal = tribal } #Tribalisation/Nomadization of al-Urdunn
 
 
+# EDITMOD 1066
 1066.1.1 = {
 	b_qastal = castle
 	b_qastal = ca_barracks_1
@@ -112,4 +195,9 @@ religion = sunni
 	b_salt = castle_smith_1
 	b_salt = castle_smith_2
 	b_salt = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
+	remove_settlement = b_dhiban
+	remove_settlement = b_salt
 }

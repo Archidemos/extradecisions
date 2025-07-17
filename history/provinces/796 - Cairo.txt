@@ -6,7 +6,7 @@
 title = c_cairo
 
 # Settlements
-max_settlements = 7
+max_settlements = 7 #old 7
 #b_cairo = castle
 b_fustat = castle
 #b_alazhar = temple         #al-Azhar
@@ -25,16 +25,88 @@ culture = egyptian_arabic
 religion = sunni
 
 # History
-867.1.1 = { 
+# EDITMOD 867
+867.1.1 = {
+	b_fustat = castle
+	b_fustat = ca_barracks_1
+	b_fustat = ca_barracks_2
+	b_fustat = ca_wall_1
 	b_fustat = ca_keep_1
+	b_fustat = ca_militia_barracks_1
 	b_fustat = ca_training_grounds_1
 	b_fustat = ca_stable_1
+	b_fustat = ca_stable_2
+	b_fustat = ca_town_1
+	b_fustat = ca_wall_q_1
+	b_fustat = castle_tower_1
+	b_fustat = castle_smith_1
+	b_fustat = stone_mine_1
+	b_cairo = castle
+	b_cairo = ca_barracks_1
+	b_cairo = ca_barracks_2
+	b_cairo = ca_wall_1
+	b_cairo = ca_keep_1
+	b_cairo = ca_militia_barracks_1
+	b_cairo = ca_training_grounds_1
+	b_cairo = ca_stable_1
+	b_cairo = ca_stable_2
+	b_cairo = ca_town_1
+	b_cairo = ca_wall_q_1
+	b_cairo = castle_tower_1
+	b_cairo = castle_smith_1
+	b_cairo = stone_mine_1
+}
+# EDITMOD 867
+868.1.1 = {
+	remove_settlement = b_cairo
+}
+
+# EDITMOD 936
+936.1.1 = {
+	b_fustat = castle
+	b_fustat = ca_barracks_1
+	b_fustat = ca_barracks_2
 	b_fustat = ca_wall_1
 	b_fustat = ca_wall_2
+	b_fustat = ca_keep_1
+	b_fustat = ca_keep_2
 	b_fustat = ca_militia_barracks_1
-	b_helwan = ct_wall_1
-	b_helwan = ct_barracks_1
+	b_fustat = ca_militia_barracks_2
+	b_fustat = ca_training_grounds_1
+	b_fustat = ca_training_grounds_2
+	b_fustat = ca_stable_1
+	b_fustat = ca_stable_2
+	b_fustat = ca_town_1
+	b_fustat = ca_town_2
+	b_fustat = ca_wall_q_1
+	b_fustat = castle_tower_1
+	b_fustat = castle_smith_1
+	b_fustat = stone_mine_1
+	b_cairo = castle
+	b_cairo = ca_barracks_1
+	b_cairo = ca_barracks_2
+	b_cairo = ca_wall_1
+	b_cairo = ca_wall_2
+	b_cairo = ca_keep_1
+	b_cairo = ca_keep_2
+	b_cairo = ca_militia_barracks_1
+	b_cairo = ca_militia_barracks_2
+	b_cairo = ca_training_grounds_1
+	b_cairo = ca_training_grounds_2
+	b_cairo = ca_stable_1
+	b_cairo = ca_stable_2
+	b_cairo = ca_town_1
+	b_cairo = ca_town_2
+	b_cairo = ca_wall_q_1
+	b_cairo = castle_tower_1
+	b_cairo = castle_smith_1
+	b_cairo = stone_mine_1
 }
+# EDITMOD 936
+937.1.1 = {
+	remove_settlement = b_cairo
+}
+
 970.1.1 = {
 	religion = ismaili
 	b_cairo = castle
@@ -54,6 +126,7 @@ religion = sunni
 	b_alazhar = tp_barracks_1
 }
 975.1.1 = { b_ain_shams = castle } #Caliph al-'Aziz builds castles in Ayn Shams
+# EDITMOD 1066
 1066.1.1 = {
 	b_fustat = castle
 	b_fustat = ca_barracks_1
@@ -136,33 +209,9 @@ religion = sunni
 	b_ain_shams = castle_smith_1
 	b_ain_shams = castle_smith_2
 	b_ain_shams = stone_mine_1
-	 = castle
-	 = ca_barracks_1
-	 = ca_barracks_2
-	 = ca_barracks_3
-	 = ca_wall_1
-	 = ca_wall_2
-	 = ca_keep_1
-	 = ca_keep_2
-	 = ca_keep_3
-	 = ca_militia_barracks_1
-	 = ca_militia_barracks_2
-	 = ca_militia_barracks_3
-	 = ca_training_grounds_1
-	 = ca_training_grounds_2
-	 = ca_stable_1
-	 = ca_stable_2
-	 = ca_stable_3
-	 = ca_town_1
-	 = ca_town_2
-	 = ca_town_3
-	 = ca_wall_q_1
-	 = ca_wall_q_2
-	 = castle_tower_1
-	 = castle_tower_2
-	 = castle_smith_1
-	 = castle_smith_2
-	 = stone_mine_1
+}
+# EDITMOD 1066
+1067.1.1 = {
 }
 
 1100.1.1 = { remove_settlement = b_ain_shams } #Castles in Ayn Shams fall into disrepair
