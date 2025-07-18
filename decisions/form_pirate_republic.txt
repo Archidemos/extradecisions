@@ -15,9 +15,17 @@ decisions = {
 		}
 
 		allow = {
+			war = no
 			is_adult = yes
 			prisoner = no
-			ROOT = { OR = { tier = DUKE tier = KING } }
+			trigger_if = {
+				limit = { ai = yes }
+				ROOT = { tier = DUKE }
+			}
+			trigger_if = {
+				limit = { ai = no }
+				ROOT = { OR = { tier = DUKE tier = KING } }
+			}
 			ROOT = { realm_size <= 40 }
 			wealth = 400
 			prestige = 350
