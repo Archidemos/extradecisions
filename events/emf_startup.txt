@@ -28,3 +28,79 @@ character_event = {
 		set_global_flag = EMF
 	}
 }
+
+# Variety religion buff if chosen in game rules (runs only upon new campaign)
+character_event = {
+	id = emf_startup.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_save_game = no
+		NOT = {
+			has_game_rule = {
+				name = religion_variety
+				value = vanilla
+			}
+		}	
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_game_rule = {
+				name = religion_variety
+				value = catholic
+				}
+			}
+			catholic = {
+					set_unit_modifier = {
+					levy_size = 0.3
+					key = OFF_RELIGION
+					}
+				}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+				name = religion_variety
+				value = sunni
+				}
+			}
+			sunni = {
+					set_unit_modifier = {
+					levy_size = 0.3
+					key = OFF_RELIGION
+					}
+				}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+				name = religion_variety
+				value = orthodox
+				}
+			}
+			orthodox = {
+					set_unit_modifier = {
+					levy_size = 0.4
+					key = OFF_RELIGION
+					}
+				}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+				name = religion_variety
+				value = ismaili
+				}
+			}
+			ismaili = {
+					set_unit_modifier = {
+					levy_size = 0.4
+					key = OFF_RELIGION
+					}
+				}
+		}
+	}
+}
