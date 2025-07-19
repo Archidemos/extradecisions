@@ -1829,6 +1829,20 @@ gender_laws = {
 			
 			is_primary_type_title = no
 		}
+		allow = {
+			OR = {
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = statistical
+					}
+				}
+				AND = {
+					has_dlc = "Zeus"
+					holder_scope = { primary_title = { has_law = status_of_women_4 } }
+				}
+			}
+		}
 		
 		effect = {
 			gender_succ = cognatic
@@ -1840,6 +1854,13 @@ gender_laws = {
 		default = yes
 		default_selection = {
 			factor = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					name = gender
+					value = statistical
+				}
+			}
 		}
 	}
 	agnatic_succession = {
