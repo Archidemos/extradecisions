@@ -815,11 +815,14 @@ decisions = {
 	create_hungary = {
 		only_playable = yes
 		is_high_prio = yes
-		ai_check_interval = 24
+		ai_check_interval = 6
 		potential = {
-			NOT = { has_dlc = "Horse Lords" }
+			#NOT = { has_dlc = "Horse Lords" }
 			is_playable = yes
-			culture = hungarian
+			OR = {
+				culture = hungarian
+				culture = old_hungarian
+			}
 			has_landed_title = k_magyar
 			k_hungary = {
 				has_holder = no
@@ -830,7 +833,6 @@ decisions = {
 		}
 		allow = {
 			war = no
-			completely_controls = d_pest
 			OR = {
 				completely_controls = d_transylvania
 				completely_controls = d_ungvar
@@ -880,11 +882,30 @@ decisions = {
 				}
 				attrition = 0.5
 			}
+			522 = {
+				add_holding_slot = 1
+			}
+			522 = {
+				capital_holding = {
+					convert_to = CASTLE
+					add_building = ca_wall_q_1
+					add_building = ca_wall_1
+					add_building = ca_keep_1
+					add_building = ca_militia_barracks_1
+					add_building = ca_training_grounds_1
+					add_building = ca_barracks_1
+					add_building = ca_stable_1
+					add_building = ca_town_1
+				}
+			}
 			custom_tooltip = {
 				text = EVTOPTA62910_CUSTOM
 			}
 			prestige = 1000
 			wealth = 1000
+			add_claim = c_zemplen
+			add_claim = c_abauj
+			add_claim = c_szepes
 			narrative_event = { id = 62910 tooltip = EVTTOOLTIP62910 }
 		}
 		ai_will_do = {
