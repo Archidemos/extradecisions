@@ -17216,36 +17216,43 @@ free_tributary_cb = {
 		}
 	}
 
-	ai_will_do = { 
-		factor = 1
+	ai_will_do = {
+		factor = 50
 		
 		modifier = {
 			factor = 1.5
 		}
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				OR = {
-					religion = catholic
-					religion = fraticelli
-				}
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
+		modifier = {
+			factor = 1.5
+			ROOT= {
+				relative_power = { who = FROM value >= 1}
+			}
+		}
+		modifier = {
+			factor = 2
+			ROOT= {
+				relative_power = { who = FROM value >= 1.5}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			ROOT= {
+				relative_power = { who = FROM value <= 0.5}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			ROOT= {
+				opinion = { who = FROM value >= 25}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			ROOT= {
+				opinion = { who = FROM value <= 25}
 			}
 		}
 
-		modifier = {
-			factor = 4
-			ROOT = {
-				trait = greedy
-			}
-		}
 		
 		modifier = {
 			factor = 2
