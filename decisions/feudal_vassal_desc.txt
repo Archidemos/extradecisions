@@ -55,14 +55,17 @@ targetted_decisions = {
     }
 
     annex_tributary = {
+		only_playable = yes
+		only_independent = yes
 		filter = independent_rulers
 		ai_target_filter = independent_rulers
-		ai = no
+		ai_check_interval = 24
+		is_high_prio = yes
 		diplomacy_icon = GFX_trait_gamer
 		
 		from_potential = {
 			higher_tier_than = COUNT
-			ai = no
+			prestige >= 1000
 			NOT = { religion_group = zoroastrian_group }
 		}
 		
@@ -100,20 +103,16 @@ targetted_decisions = {
 			}
 			FROM = {
 				war = no
-				conditional_tooltip = {
-					trigger = {
-						NOT = { religion_group = christian }
-					}
-					diplomacy = 10
-					prestige = 1500
-				}
-				conditional_tooltip = {
-					trigger = {
-						religion_group = christian
-					}
-					diplomacy = 13
-					prestige = 1000
-				}
+				#conditional_tooltip = {
+				#	trigger = {
+				#		NOT = { religion_group = christian }
+				#	}
+				#	diplomacy = 10
+				#	prestige = 1500
+				#}
+				#separate event with prestige and gold requirements
+				diplomacy = 13
+				prestige = 1000
 				has_regent = no
 				NOT = { has_character_modifier = annexed_vassal }
 				NOT = { has_character_modifier = recently_released_vassal }
@@ -141,7 +140,7 @@ targetted_decisions = {
             always = no
         }
 		ai_will_do = {
-			factor = 0
+			factor = 1
 		}
     }
 
