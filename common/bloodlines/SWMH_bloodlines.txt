@@ -1,5 +1,7 @@
 abaoji = {
 	combat_rating = 5
+	health = 0.5
+	learning = 1
 	monthly_character_prestige = 0.2
 	altaic_opinion = 5
 	inheritance = patrilineal
@@ -11,7 +13,8 @@ abaoji = {
 	}
 }
 gorm = {
-	combat_rating = 5
+	combat_rating = 15
+	martial = 1
 	anglonorse_opinion = 5
 	danish_opinion = 5
 	#norse_opinion = 5 #the Knytlings receive this bonus through Ragnarr's bloodline
@@ -27,11 +30,12 @@ gorm = {
 	}
 }
 bav = {
-	#combat_rating = 5
+	combat_rating = 5
 	pahlavi_opinion = 5
 	daylamite_opinion = 5
 	monthly_character_prestige = 0.1
-	#bloodline_effect_great_heroes_appear = 1
+	martial = 2
+	bloodline_effect_great_heroes_appear = 1
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_zoroastrian
@@ -45,6 +49,8 @@ bav = {
 }
 cisse = {
 	monthly_character_prestige = 0.1
+	stewardship = 1
+	build_cost_modifier = -0.15
 	soninke_opinion = 5
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -56,8 +62,10 @@ cisse = {
 }
 satuq_bughra = {
 	combat_rating = 5
-	karluk_opinion = 5
-	monthly_character_prestige = 0.1
+	muslim_opinion = 5
+	martial = 1
+	learning = 2
+	monthly_character_prestige = 0.2
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_horse
@@ -67,8 +75,9 @@ satuq_bughra = {
 	}
 }
 nemanja = {
-	serbian_opinion = 5
-	monthly_character_prestige = 0.1
+	general_opinion = 5
+	learning = 2
+	monthly_character_prestige = 0.2
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_placeholder_symbol_2
@@ -79,6 +88,8 @@ nemanja = {
 }
 pratihara = {
 	rajput_opinion = 5
+	stewardship = 2
+	build_cost_modifier = -0.05
 	monthly_character_prestige = 0.2
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -90,6 +101,7 @@ pratihara = {
 }
 prithviraja = {
 	combat_rating = 5
+	diplomacy = 2
 	rajput_opinion = 5
 	monthly_character_prestige = 0.1
 	inheritance = patrilineal
@@ -102,6 +114,7 @@ prithviraja = {
 }
 bhoja = {
 	combat_rating = 5
+	martial = 2
 	rajput_opinion = 5
 	monthly_character_prestige = 0.1
 	inheritance = patrilineal
@@ -114,6 +127,8 @@ bhoja = {
 }
 candradeva = {
 	combat_rating = 5
+	learning = 1
+	diplomacy = 1
 	hindustani_opinion = 5
 	monthly_character_prestige = 0.1
 	inheritance = patrilineal
@@ -127,8 +142,9 @@ candradeva = {
 robert_brus = {
 	combat_rating = 5
 	scottish_opinion = 5
+	martial = 1
 	command_modifier = {
-		morale_defence = 0.05
+		morale_defence = 0.1
 	}
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -140,6 +156,7 @@ robert_brus = {
 }
 david_dunkeld = {
 	scottish_opinion = 5
+	stewardship = 1
 	monthly_character_prestige = 0.2
 	inheritance = patrilineal
 	allow_bastards = yes
@@ -151,6 +168,7 @@ david_dunkeld = {
 }
 rashtrakuta = {
 	hindu_opinion = 5
+	martial = 1
 	war_elephants_morale = 0.05
 	monthly_character_prestige = 0.1
 	bloodline_effect_faster_hindu = 1
