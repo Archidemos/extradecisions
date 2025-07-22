@@ -116,6 +116,7 @@ targetted_decisions = {
 				}
 				has_regent = no
 				NOT = { has_character_modifier = annexed_vassal }
+				NOT = { has_character_modifier = recently_released_vassal }
 			}
         }
 
@@ -124,7 +125,6 @@ targetted_decisions = {
 				text = "ENVOY_ANNEX_SENT"
 				ROOT = { save_event_target_as = tributary }
 				FROM = { save_event_target_as = tribute_annexer }
-				#FROM = { character_event = { id = TRIB.005 } }
 				event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.005 } } }
 				
 			}

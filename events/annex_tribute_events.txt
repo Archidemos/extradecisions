@@ -136,7 +136,7 @@ narrative_event = {	#Assess the price of the annexation
 			}
 			multiply_variable = {
 				which = annex_cost
-				value = 50
+				value = 25
 			}
 			export_to_variable = {
 				which = annex_price
@@ -145,7 +145,20 @@ narrative_event = {	#Assess the price of the annexation
 			}
 			multiply_variable = {
 				which = annex_price
-				value = -50
+				value = -25
+			}
+			if = {
+				limit = {
+					tier = EMPEROR
+				}
+				multiply_variable = {
+					which = annex_cost
+					value = 2
+				}
+				multiply_variable = {
+					which = annex_price
+					value = 2
+				}
 			}
 		}
 		ROOT = { character_event = { id = TRIB.004 days = 5 } }
