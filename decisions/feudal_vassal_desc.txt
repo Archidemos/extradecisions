@@ -122,14 +122,16 @@ targetted_decisions = {
         effect = {
 			custom_tooltip = {
 				text = "ENVOY_ANNEX_SENT"
+				ROOT = { save_event_target_as = tributary }
 				FROM = { save_event_target_as = tribute_annexer }
-				hidden_tooltip = { narrative_event = { id = TRIB.001 days = 5 } }
+				#FROM = { character_event = { id = TRIB.005 } }
+				event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.005 } } }
+				
 			}
 			FROM = {
-				prestige = -1000
 				add_character_modifier = {
 					modifier = annexed_vassal
-					years = 2
+					years = 1
 					inherit = yes
 				}
 			}

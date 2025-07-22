@@ -75,3 +75,79 @@ narrative_event = {	#Rebelious Tributary gets news about Overlord giving up
 		ai_chance = { factor = 100 }
     }
 }
+
+narrative_event = { # check if enough gold/prestige to annex
+	id = TRIB.004
+	title = EVTNAMETRIB.4
+	desc = EVTDESCTRIB.4
+
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+    
+    only_playable = yes
+
+	option = { #enough gold/prestige
+		name = EVTOPTTRIB.6
+		trigger = {
+			prestige >= annex_cost
+			wealth >= annex_cost
+		}
+		ai_chance = { factor = 100 }
+		prestige = annex_price
+		wealth = annex_price
+		event_target:tributary = { hidden_tooltip = { narrative_event = { id = TRIB.001 days = 5 } } }
+		set_variable = {
+				which = annex_cost
+				value = 0
+			}
+		set_variable = {
+				which = annex_price
+				value = 0
+			}
+	}
+
+	option = { #im too poor
+		name = EVTOPTTRIB.7
+		ai_chance = { factor = 1 }
+	}
+
+}
+
+narrative_event = {	#Assess the price of the annexation
+	id = TRIB.005
+	title = EVTNAMETRIB.5
+	desc = EVTDESCTRIB.5
+
+	picture = GFX_evt_feast
+
+	is_triggered_only = yes
+	
+	only_playable = yes
+	
+	option = { #Assess
+		name = EVTOPTTRIB.8
+		ai_chance = { factor = 100 }
+		ROOT = {
+			export_to_variable = {
+				which = annex_cost
+				value = realm_size
+				who = event_target:tributary
+			}
+			multiply_variable = {
+				which = annex_cost
+				value = 50
+			}
+			export_to_variable = {
+				which = annex_price
+				value = realm_size
+				who = event_target:tributary
+			}
+			multiply_variable = {
+				which = annex_price
+				value = -50
+			}
+		}
+		ROOT = { character_event = { id = TRIB.004 days = 5 } }
+	}
+}
