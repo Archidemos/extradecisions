@@ -105,7 +105,7 @@ decisions = {
 	form_danelaw = {
 		is_high_prio = yes
 		only_rulers = yes
-		ai_check_interval = 12
+		ai_check_interval = 6
 		
 		potential = {
 			culture_group = north_germanic
@@ -124,8 +124,8 @@ decisions = {
 		allow = {
 			wealth = 400
 			completely_controls = d_york
-			completely_controls = d_hereford
-			completely_controls = d_northumberland
+			#completely_controls = d_hereford
+			#completely_controls = d_northumberland
 			completely_controls = c_lancaster
 			completely_controls = c_lincoln
 			religion_group = pagan_group
@@ -153,11 +153,14 @@ decisions = {
 				copy_title_laws = event_target:formable
 			}
 			
-			hidden_effect = {	
+			hidden_effect = {
 				d_york = { de_jure_liege = k_danelaw }
-				d_northumberland = { de_jure_liege = k_danelaw }
+				d_lancaster = { de_jure_liege = k_danelaw }
+				d_fivebouroughs = { de_jure_liege = k_danelaw }
 				d_cumbria = { de_jure_liege = k_danelaw }
 				k_danelaw = { de_jure_liege = e_britannia }
+				
+				#d_northumberland = { de_jure_liege = k_danelaw }
 			}
 			set_global_flag = danelaw_formed
 		}
