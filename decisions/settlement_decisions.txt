@@ -365,11 +365,12 @@ settlement_decisions = {
 		}
 		allow = {
 			FROM = {
-				OR = {
-					AND = {
-						is_merchant_republic = no
-						is_nomadic = no
-					}
+				is_nomadic = no
+				#OR = {
+					#AND = {
+						#is_merchant_republic = no
+						#is_nomadic = no
+					#}
 					#capital_scope = {
 						#ROOT = {
 							#location = {
@@ -377,7 +378,7 @@ settlement_decisions = {
 							#}
 						#}
 					#}
-				}
+				#}
 			}
 		}
 		effect = {
