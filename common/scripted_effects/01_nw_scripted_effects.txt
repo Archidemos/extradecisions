@@ -1,0 +1,74 @@
+
+region_setup_effect = { # THIS = d_[region]
+    THIS = {
+        set_variable = {
+            which = offmap_yearly_income #aka tax
+            value = 12
+        }
+        set_variable = { # ik this will default to nil, but its so I know what variable name it is
+            which = offmap_settlers
+            value = 0
+        }
+        set_variable = {
+            which = offmap_native_resistance # TBD (to be determined)
+            value = 10
+        }
+        set_variable = {
+            which = offmap_settler_resistance # revolt/flee chance
+            value = 0
+        }
+        set_variable = {
+            which = offmap_taxrate
+            value = 5 # 5% // As unlanded/offmap they obviously dont have a real income and therefore manual taxing will be needed
+        }
+        set_variable = {
+            which = offmap_garrison
+            value = 0
+        }
+
+        if = {
+            limit = {
+                OR = { 
+                    title = d_aztec
+                    title = d_inca
+                    title = d_maya
+                }
+            }
+            set_variable = {
+                which = offmap_garrison
+                value = 10000 #TBD
+            }
+            set_title_flag = region_settled # blah blah all america has natives blahhhh // SEPERATE NATIVE MECHANIC TBD
+        }
+    }
+}
+
+increase_tax_effect_nw = { # THIS = d_[region]
+    THIS = {
+        change_variable = {
+            which = offmap_taxrate
+            value = 5
+        }
+        change_variable = {
+            which = offmap_settler_resistance
+            value = 10
+        }
+    }
+}
+
+decrease_tax_effect_nw = {
+    THIS = {
+        change_variable = {
+            which = offmap_taxrate
+            value = -5
+        }
+        change_variable = {
+            which = offmap_settler_resistance
+            value = -5
+        }
+    }
+}
+
+send_settlers_effect_nw = {
+    
+}

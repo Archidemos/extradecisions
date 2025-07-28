@@ -1,17 +1,37 @@
 namespace = NW
 
+##### Written by Striped (@striped_) for AVE (Archi's Vanilla Expansion) #####
+
+# scripted effects: 01_nw_scripted_effects.txt
+# scripted triggers: 01_nw_triggers.txt
+# loc: 01_new_world.csv & 01_nw_rules.csv
+# interface: eventwindowNW.gui & eventwindowStriped.gfx
+# decisions: new_world_decisions.txt
+
 # 1-200 Mechanics
 # 300-400 Flavour
-# 500-600 History
+# 500-600 History ???
+
+# 1000-1200 Aztecs/Incas/Mayans extra content (DONT FORGET DLC CHECK FOR AZTECS!!!) ?playable unlanded aztecs
 
 ### MECHANICS ###
-# HOW DOES IT WORK?
-# Every single "Region" gets its own eventWindow aswell as background
+# HOW DOES THE SPECIAL WINDOW WORK?
+# Every single "Region" gets its own eventWindow (aswell as background, though not needed if youre making seperate EventWindows)
 # I can set button Gfx to the corrosponding region's shape
 # Along with variables and tooltips I can display information such as: value, owner, ect
-# Other relevant information is shown inside the offmap GUI
 
-# Event tooltip borders can be used to indicate certain status, i.e. owned, war, neutral
+## TODO:
+# Make all event windows for super regions (dread)
+# Basic Region Mechanics:
+# Resources (eu4 tradegood) + base stats
+# distance to player (?)
+# settling and ownership
+# discovering and road to unlock mechanics??
+
+# Things viewed on window: Yearly tax / Resource price/Trade power (tax mult) / Amount of settlers (yearly mult) / Garrison
+# Options: Increase/Decrease Tax/Send Settlers   Exit
+
+# High taxes makes natural settler growth slow and increases chance of settlers leaving
 
 character_event = {
     id = NW.1
@@ -31,7 +51,7 @@ character_event = {
     }
 
     option = {
-        name = "" #canada-america 2/3/4/5/6
+        name = "" #canada-america
         custom_tooltip = { text = NORTH_AMERICA_TT } # .gui wont let me use pdx_tooltip(_delayed)??
         repeat_event =  { id = NW.2 }
     }
@@ -39,19 +59,19 @@ character_event = {
     option = {
         name = "" #mexico-panama
         custom_tooltip = { text = CENTRAL_AMERICA_TT }
-        repeat_event =  { id = NW.7 } #7/8/9/10/11
+        repeat_event =  { id = NW.3 }
     }
 
     option = {
         name = "" # cuba hispaniola jamaica islands
         custom_tooltip = { text = CARRIBEAN_TT }
-        repeat_event =  { id = NW.12 } #12/13/14/15/16
+        repeat_event =  { id = NW.4 }
     }
 
     option = {
         name = "" # Gran Columbia/Peru-Bolivia/Brazil/Argentina
         custom_tooltip = { text = SOUTH_AMERICA_TT }
-        repeat_event =  { id = NW.17 } # 17/18/19/20/21
+        repeat_event =  { id = NW.5 }
     }
 }
 
@@ -65,27 +85,108 @@ character_event = { #north america
     is_triggered_only = yes
 
     option = {
-        # If d_vinland has owner, then show portrait of colonial govenor or top liege?
+        # If d_vinland has owner, then show portrait of colonial govenor or top liege? maybe both and forget ROOT OR USE EXIT PORTRAIT
         name = "" # Vinland
-        custom_tooltip = { text = VINLAND_TT }
-        repeat_event = { id = NW.3 }
+        custom_tooltip = {
+            text = VINLAND_TT
+            d_vinland = { save_event_target_as = selected_nw_region }
+            repeat_event = { id = NW.100 }
+        }
+        
     }
 
     option = {
         name = "" # Canada
-        custom_tooltip = { text = CANADA_TT }
-        repeat_event = { id = NW.4 }
+        #custom_tooltip = {
+        #    text = CANADA_TT
+        #    d_canada = { save_event_target_as = selected_nw_region }
+        #    repeat_event = { id = NW.100 }
+        #}
     }
 
     option = {
         name = "" # Eastern Seaboard
-        custom_tooltip = { text = SEABOARD_TT }
-        repeat_event = { id = NW.5 }
+        #custom_tooltip = {
+        #    text = SEABOARD_TT
+        #    d_seaboard = { save_event_target_as = selected_nw_region }
+        #    repeat_event = { id = NW.100 }
+        #}
     }
 
     option = {
         name = "" # Louisiana
-        custom_tooltip = { text = LOUISIANA_TT }
-        repeat_event = { id = NW.6 }
+        #custom_tooltip = {
+        #    text = LOUISIANA_TT
+        #    d_louisiana = { save_event_target_as = selected_nw_region }
+        #    repeat_event = { id = NW.100 }
+        #}
+    }
+}
+
+character_event = { # Region Interaction Event
+    id = NW.100
+    title = NW_GetRegionNameKey
+    desc = ""
+    window = EventWindowNWRegion
+    #background = -- could be like different background per continent or super region // requires seperate events
+
+    # OTHER INTERACTIONS SHOULD BE HANDLED VIA TARGETTED_DECISIONS!!
+
+    option = { # First cause it should default in multiplayer countdown
+        name = EXIT
+    }
+
+    option = { # Increase Tax
+        trigger = {
+            event_target:selected_nw_region = {
+                own_nw_region_trigger = yes
+                check_variable = {
+                    which = offmap_taxrate
+                    value <= 95
+                }
+            }
+        }
+        name  = ""
+        custom_tooltip = {
+            text = INCREASE_TAX_NW
+            event_target:selected_nw_region = {
+                increase_tax_effect_nw = yes
+            }
+        }
+    }
+
+    option = { # Decrease Tax
+        trigger = {
+            event_target:selected_nw_region = {
+                own_nw_region_trigger = yes
+                check_variable = {
+                    which = offmap_taxrate
+                    value >= 5
+                }
+            }
+        }
+        name  = ""
+        custom_tooltip = {
+            text = DECREASE_TAX_NW
+            event_target:selected_nw_region = {
+                decrease_tax_effect_nw = yes
+            }
+
+        }
+    }
+
+    option = { # Send Settlers
+        trigger = {
+            event_target:selected_nw_region = {
+                own_nw_region_trigger = yes
+            }
+        }
+        name  = ""
+        custom_tooltip = {
+            text = SEND_SETTLERS_NW
+            event_target:selected_nw_region = {
+                send_settlers_effect_nw = yes
+            }
+        }
     }
 }

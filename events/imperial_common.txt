@@ -272,14 +272,15 @@ character_event = { #check bloodline
         }
         has_imperial_trait = yes
         has_law = centralization_4
-        trigger_if = {
-            limit = { NOT = { has_dlc = "Zeus" } } # Conclave
-            has_law = crown_authority_4
-        }
-        trigger_else = {
-            has_law = law_voting_power_0
-        }
-
+        #trigger_if = {
+        #    limit = { NOT = { has_dlc = "Zeus" } } # Conclave
+        #    has_law = crown_authority_4
+        #}
+        #trigger_else = {
+        #   has_law = law_voting_power_0 
+        #}
+        has_law = law_voting_power_0
+        
         OR = {
             stewardship = 18
             diplomacy = 18
@@ -535,9 +536,8 @@ character_event = {
 	immediate = {
 		set_global_flag = imperial_warning_fired
 		any_player = {
-				limit = { is_multiplayer_host_character = yes }
-				narrative_event = { id = HRE.199 days = 2 
-			} 
+            limit = { is_multiplayer_host_character = yes }
+            narrative_event = { id = HRE.199 days = 2 } 
 		}
 	}
 }
