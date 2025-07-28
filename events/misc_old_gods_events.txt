@@ -606,36 +606,178 @@ letter_event = {
 	id = 62800
 	desc = EVTDESC62800
 	
-	border = GFX_event_letter_frame_religion
+	border = GFX_event_letter_frame_war
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTA62800
-		if = {
-			limit = {
-				FROM = { tier = COUNT }
+		name = "We accept these terms."
+		ai_chance = { factor = 50 }
+		FROM = { piety = -500 }
+		hidden_tooltip = {
+			any_war = {
+				limit = {
+					defender = { character = ROOT }
+					attacker = {
+						NOT = { religion = ROOT }
+						religion_authority = 0.5
+						OR = {
+							NOT = { religion_group = pagan_group }
+							is_reformed_religion = yes
+						}
+					}
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+						using_cb = religious
+						using_cb = muslim_invasion
+						using_cb = buddhist_holy_war
+						using_cb = pagan_holy_war
+					}
+				}
+				attacker = {
+					save_event_target_as = enemy_attacker
+				}
 			}
-			piety = 50
 		}
+
+		#If possible, perform mass baptism.
 		if = {
-			limit = {
-				FROM = { tier = DUKE }
+			limit = { 
+				has_dlc = "Holy Fury"
+				is_tribal = yes
+				religion_group = pagan_group 
+				higher_real_tier_than = count 		
+				NOT = { trait = incapable }
+				NOT = { is_reformed_religion = yes }
+				NOT = { has_character_flag = flag_converting_baptism }
+				NOT = { has_character_modifier = baptism_request_cooldown } 
+				independent = yes 
+				prisoner = no
+				has_regent = no
+				primary_title = { 
+					OR = { 
+						has_law = tribal_organization_2 
+						has_law = tribal_organization_3 
+						has_law = tribal_organization_4 
+					} 
+				}
+				any_war = {
+					using_cb = new_crusade 
+					defender = { character = ROOT }
+					attacker = { #Special case.
+						religion = catholic 
+						NOT = { has_character_flag = flag_sponsoring_baptism }
+					}
+				}
 			}
-			piety = 100
-		}
-		if = {
-			limit = {
-				FROM = { tier = KING }
+			hidden_effect = {
+				add_character_modifier = {
+					name = baptism_request_cooldown
+					months = 1
+					hidden = yes
+				}
+				event_target:enemy_attacker = {
+					add_character_modifier = {
+						name = baptism_request_cooldown
+						months = 1
+						hidden = yes
+					}
+				}
+				opinion = {
+					modifier = opinion_baptism_sponsor_target
+					years = 20
+					who = event_target:enemy_attacker
+					origin_description = EVTTOOLTIPHFA20005
+				}
+				event_target:enemy_attacker = {
+					opinion = {
+						modifier = opinion_baptism_sponsor_target
+						years = 20
+						who = ROOT
+						origin_description = EVTTOOLTIPHFB20005
+					}
+				}
 			}
-			piety = 300
+			event_target:enemy_attacker = { show_scope_change = no letter_event = { id = HF.20000 tooltip = tooltip_mass_convert_during_crusade } }
 		}
-		if = {
-			limit = {
-				FROM = { tier = EMPEROR }
+		else = {
+			if = {
+				limit = { event_target:enemy_attacker = { NOT = { religion_group = ROOT } } }
+				if = {
+					limit = { religion_group = pagan_group }
+					add_trait = sympathy_pagans
+				}
+				
+				if = {
+					limit = { religion_group = zoroastrian_group }
+					add_trait = sympathy_zoroastrianism
+				}
+				
+				if = {
+					limit = { religion_group = christian }
+					add_trait = sympathy_christendom
+				}
+				
+				if = {
+					limit = { religion_group = muslim }
+					add_trait = sympathy_islam
+				}
+				
+				if = {
+					limit = { religion_group = jewish_group }
+					add_trait = sympathy_judaism
+				}
+				
+				if = {
+					limit = { religion_group = indian_group }
+					add_trait = sympathy_indian
+				}
 			}
-			piety = 1000
+			event_target:enemy_attacker = {
+				make_tributary = {
+					who = FROM
+					tributary_type = client
+				}
+				hidden_tooltip = {
+					FROM = {
+						any_courtier = {
+							limit = {
+								religion = FROM
+								employer = { character = FROM }
+							}
+							religion = PREVPREV
+						}
+						any_vassal = {
+							limit = {
+								is_playable = no
+								religion = FROM
+							}
+							religion = PREVPREV
+						}
+						capital_scope = {
+							if = {
+								limit = { religion = FROM }
+								religion = PREVPREV
+							}
+						}
+					}
+				}
+				hidden_tooltip = {
+					religion_authority = {
+						modifier = ruler_converted_to
+					}
+				}
+				reverse_religion = FROM 
+			}
+			religion_authority = {
+				modifier = ruler_converted_from
+			}
 		}
+	}
+	option = {
+		name = "We dont make peace with infidels!"
+		ai_chance = { factor = 50 }
 	}
 }
 

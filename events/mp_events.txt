@@ -1925,41 +1925,263 @@ character_event = {
 	}
 }
 
-character_event = {
-    id = MP.204
-    only_playable = yes
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-		government = warrior_order_government
-    }
-
-    immediate = {
-		add_trait = order_vet
-		any_courtier = {
-			limit = {
-				is_adult = yes
-				is_female = no
-				prisoner = no
-				NOT = { government = feudal_government }
-				NOT = { government = tribal_government }
-				NOT = { government = theocracy_government }
-				NOT = { government = republic_government }
-				NOT = { government = ar_theocracy_government }
-				NOT = { government = ar_republic_government }
-				NOT = { government = ar_mercenary_government }
-				NOT = { government = pirate_republic_government }
-				NOT = { government = muslim_government }
-				NOT = { government = normal_chinese_government }
-				NOT = { government = satrap_government }
-				NOT = { government = indian_government }
-			}
-			add_trait = order_vet
-		}
-		#add_character_modifier = {
-		#	name = warrior_order_holder
-		#	years = -1
-		#}
-    }
-}
+#character_event = {
+#    id = MP.204
+#    only_playable = yes
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#		government = warrior_order_government
+#    }
+#
+#    immediate = {
+#		add_trait = order_vet
+#		any_courtier = {
+#			limit = {
+#				is_adult = yes
+#				is_female = no
+#				prisoner = no
+#				NOT = { government = feudal_government }
+#				NOT = { government = tribal_government }
+#				NOT = { government = theocracy_government }
+#				NOT = { government = republic_government }
+#				NOT = { government = ar_theocracy_government }
+#				NOT = { government = ar_republic_government }
+#				NOT = { government = ar_mercenary_government }
+#				NOT = { government = pirate_republic_government }
+#				NOT = { government = muslim_government }
+#				NOT = { government = normal_chinese_government }
+#				NOT = { government = satrap_government }
+#				NOT = { government = indian_government }
+#			}
+#			add_trait = order_vet
+#		}
+#		#add_character_modifier = {
+#		#	name = warrior_order_holder
+#		#	years = -1
+#		#}
+#    }
+#}
+#
+#character_event = { #The Envoy has been recieved by the defenders of the Holy War
+#	id = MP.205
+#	title = "Religious Submision"
+#	desc = "We have recieved an envoy from [From.GetTitledFirstName]. The ruler has asked for perhaps a peacefull sollution. All they wish is for us to submit by giving tribute and converting to their religion."
+#	
+#	picture = "GFX_evt_elder_council"
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = "Let u negociate"
+#		ai_chance = { factor = 100 }
+#		ROOT = { character_event = { id = MP.206 days = 5 } }
+#	}
+#	option = { #At last
+#		name = "We wont make peace with infidels!"
+#		ai_chance = { factor = 20 }
+#	}
+#}
+#
+#character_event = { #The Envoy returns with good news
+#	id = MP.206
+#	title = "Religious Submision"
+#	desc = "The Envoy returned with good news, the enemy is willing to submit. Do we accept their peacefull surrender."
+#	
+#	picture = "GFX_evt_state_diplomacy"
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = "Lets end this war"
+#		FROM = { character_event = { id = MP.207 days = 5 } }
+#		ai_chance = { factor = 100 }
+#	}
+#	option = { #At last
+#		name = "Their heretic lands shall be clensed!"
+#		ai_chance = { factor = 0 }
+#	}
+#}
+#
+#character_event = { #The defender will do what the attacker asks
+#	id = MP.207
+#	title = "Religious Submision"
+#	desc = "An envoy arrived [From.GetTitledFirstName]. The ruler has asked for the submission of our lands by giving tribute and converting to their religion."
+#	
+#	picture = "GFX_evt_mass_baptism"
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	option = { #At last
+#		name = "We got no choice"
+#		ai_chance = { factor = 100 }
+#        event_target:defender_holy_war_pagan = {
+#            make_tributary = {
+#                who = ROOT
+#                tributary_type = client
+#            }
+#			religion = ROOT
+#		}
+#		hidden_tooltip = {
+#			any_war = {
+#				limit = {
+#					defender = { character = ROOT }
+#					attacker = {
+#						NOT = { religion = ROOT }
+#						religion_authority = 0.5
+#						OR = {
+#							NOT = { religion_group = pagan_group }
+#							is_reformed_religion = yes
+#						}
+#					}
+#					OR = {
+#						using_cb = crusade
+#						using_cb = new_crusade
+#						using_cb = religious
+#						using_cb = muslim_invasion
+#						using_cb = buddhist_holy_war
+#						using_cb = pagan_holy_war
+#					}
+#				}
+#				attacker = {
+#					save_event_target_as = enemy_attacker
+#				}
+#			}
+#		}
+#
+#		#If possible, perform mass baptism.
+#		if = {
+#			limit = { 
+#				has_dlc = "Holy Fury"
+#				is_tribal = yes
+#				religion_group = pagan_group 
+#				higher_real_tier_than = count 		
+#				NOT = { trait = incapable }
+#				NOT = { is_reformed_religion = yes }
+#				NOT = { has_character_flag = flag_converting_baptism }
+#				NOT = { has_character_modifier = baptism_request_cooldown } 
+#				independent = yes 
+#				prisoner = no
+#				has_regent = no
+#				primary_title = { 
+#					OR = { 
+#						has_law = tribal_organization_2 
+#						has_law = tribal_organization_3 
+#						has_law = tribal_organization_4 
+#					} 
+#				}
+#				any_war = {
+#					using_cb = new_crusade 
+#					defender = { character = ROOT }
+#					attacker = { #Special case.
+#						religion = catholic 
+#						NOT = { has_character_flag = flag_sponsoring_baptism }
+#					}
+#				}
+#			}
+#			hidden_effect = {
+#				add_character_modifier = {
+#					name = baptism_request_cooldown
+#					months = 1
+#					hidden = yes
+#				}
+#				event_target:enemy_attacker = {
+#					add_character_modifier = {
+#						name = baptism_request_cooldown
+#						months = 1
+#						hidden = yes
+#					}
+#				}
+#				opinion = {
+#					modifier = opinion_baptism_sponsor_target
+#					years = 20
+#					who = event_target:enemy_attacker
+#					origin_description = EVTTOOLTIPHFA20005
+#				}
+#				event_target:enemy_attacker = {
+#					opinion = {
+#						modifier = opinion_baptism_sponsor_target
+#						years = 20
+#						who = ROOT
+#						origin_description = EVTTOOLTIPHFB20005
+#					}
+#				}
+#			}
+#			event_target:enemy_attacker = { show_scope_change = no letter_event = { id = HF.20000 tooltip = tooltip_mass_convert_during_crusade } }
+#		}
+#		else = {
+#			if = {
+#				limit = { event_target:enemy_attacker = { NOT = { religion_group = ROOT } } }
+#				if = {
+#					limit = { religion_group = pagan_group }
+#					add_trait = sympathy_pagans
+#				}
+#				
+#				if = {
+#					limit = { religion_group = zoroastrian_group }
+#					add_trait = sympathy_zoroastrianism
+#				}
+#				
+#				if = {
+#					limit = { religion_group = christian }
+#					add_trait = sympathy_christendom
+#				}
+#				
+#				if = {
+#					limit = { religion_group = muslim }
+#					add_trait = sympathy_islam
+#				}
+#				
+#				if = {
+#					limit = { religion_group = jewish_group }
+#					add_trait = sympathy_judaism
+#				}
+#				
+#				if = {
+#					limit = { religion_group = indian_group }
+#					add_trait = sympathy_indian
+#				}
+#			}
+#			event_target:enemy_attacker = {
+#				hidden_tooltip = {
+#					letter_event = { id = 62800 }
+#					ROOT = {
+#						any_courtier = {
+#							limit = {
+#								religion = ROOT
+#								employer = { character = ROOT }
+#							}
+#							religion = PREVPREV
+#						}
+#						any_vassal = {
+#							limit = {
+#								is_playable = no
+#								religion = ROOT
+#							}
+#							religion = PREVPREV
+#						}
+#						capital_scope = {
+#							if = {
+#								limit = { religion = ROOT }
+#								religion = PREVPREV
+#							}
+#						}
+#					}
+#				}
+#				hidden_tooltip = {
+#					religion_authority = {
+#						modifier = ruler_converted_to
+#					}
+#				}
+#				reverse_religion = ROOT 
+#			}
+#			religion_authority = {
+#				modifier = ruler_converted_from
+#			}
+#		}
+#	}
+#}

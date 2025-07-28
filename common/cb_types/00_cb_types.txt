@@ -12370,6 +12370,15 @@ pagan_holy_war = {
 		}
 	}
 	
+	on_add = {
+		FROM = {
+			show_scope_change = no
+			save_event_target_as = defender_holy_war_pagan
+			set_character_flag = pagan_surrender_holy_war
+			character_event = { id = MP.205 days = 5 tooltip = "An Envoy will be sent to the enemy for perhaps a peacefull sollution to end the war." }
+		}
+	}
+	
 	on_success = {
 		any_attacker = {
 			limit = { NOT = { character = ROOT } }

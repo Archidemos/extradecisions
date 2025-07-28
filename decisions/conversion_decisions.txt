@@ -2938,13 +2938,22 @@ decisions = {
 		}
 		
 		allow = {
+			prestige = 150
+			NOT = { has_character_modifier = surrender_holy_war }
 			NOT = { trait = zealous }
 		}
 		
 		effect = {
-			prestige = -500
-			piety = 100
+			prestige = -150
 			abdicate_holy_order_if_religion_changes_effect = yes
+			
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = surrender_holy_war
+					hidden = yes
+					months = 6
+				}
+			}
 			
 			hidden_tooltip = {
 				any_war = {
@@ -2972,135 +2981,9 @@ decisions = {
 					}
 				}
 			}
-
-			#If possible, perform mass baptism.
-			if = {
-				limit = { 
-					has_dlc = "Holy Fury"
-					is_tribal = yes
-					religion_group = pagan_group 
-					higher_real_tier_than = count 		
-					NOT = { trait = incapable }
-					NOT = { is_reformed_religion = yes }
-					NOT = { has_character_flag = flag_converting_baptism }
-					NOT = { has_character_modifier = baptism_request_cooldown } 
-					independent = yes 
-					prisoner = no
-					has_regent = no
-					primary_title = { 
-						OR = { 
-							has_law = tribal_organization_2 
-							has_law = tribal_organization_3 
-							has_law = tribal_organization_4 
-						} 
-					}
-					any_war = {
-						using_cb = new_crusade 
-						defender = { character = ROOT }
-						attacker = { #Special case.
-							religion = catholic 
-							NOT = { has_character_flag = flag_sponsoring_baptism }
-						}
-					}
-				}
-				hidden_effect = {
-					add_character_modifier = {
-						name = baptism_request_cooldown
-						months = 1
-						hidden = yes
-					}
-					event_target:enemy_attacker = {
-						add_character_modifier = {
-							name = baptism_request_cooldown
-							months = 1
-							hidden = yes
-						}
-					}
-					opinion = {
-						modifier = opinion_baptism_sponsor_target
-						years = 20
-						who = event_target:enemy_attacker
-						origin_description = EVTTOOLTIPHFA20005
-					}
-					event_target:enemy_attacker = {
-						opinion = {
-							modifier = opinion_baptism_sponsor_target
-							years = 20
-							who = ROOT
-							origin_description = EVTTOOLTIPHFB20005
-						}
-					}
-				}
-				event_target:enemy_attacker = { show_scope_change = no letter_event = { id = HF.20000 tooltip = tooltip_mass_convert_during_crusade } }
-			}
-			else = {
-				if = {
-					limit = { event_target:enemy_attacker = { NOT = { religion_group = ROOT } } }
-					if = {
-						limit = { religion_group = pagan_group }
-						add_trait = sympathy_pagans
-					}
-					
-					if = {
-						limit = { religion_group = zoroastrian_group }
-						add_trait = sympathy_zoroastrianism
-					}
-					
-					if = {
-						limit = { religion_group = christian }
-						add_trait = sympathy_christendom
-					}
-					
-					if = {
-						limit = { religion_group = muslim }
-						add_trait = sympathy_islam
-					}
-					
-					if = {
-						limit = { religion_group = jewish_group }
-						add_trait = sympathy_judaism
-					}
-					
-					if = {
-						limit = { religion_group = indian_group }
-						add_trait = sympathy_indian
-					}
-				}
-				event_target:enemy_attacker = {
-					hidden_tooltip = {
-						letter_event = { id = 62800 }
-						ROOT = {
-							any_courtier = {
-								limit = {
-									religion = ROOT
-									employer = { character = ROOT }
-								}
-								religion = PREVPREV
-							}
-							any_vassal = {
-								limit = {
-									is_playable = no
-									religion = ROOT
-								}
-								religion = PREVPREV
-							}
-							capital_scope = {
-								if = {
-									limit = { religion = ROOT }
-									religion = PREVPREV
-								}
-							}
-						}
-					}
-					hidden_tooltip = {
-						religion_authority = {
-							modifier = ruler_converted_to
-						}
-					}
-					reverse_religion = ROOT 
-				}
-				religion_authority = {
-					modifier = ruler_converted_from
+			event_target:enemy_attacker = {	
+				hidden_tooltip = {
+					letter_event = { id = 62800 days = 5 }
 				}
 			}
 		}
