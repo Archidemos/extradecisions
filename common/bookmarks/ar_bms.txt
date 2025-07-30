@@ -1,9 +1,42 @@
 bm_rome_fall = {
 	name = "BM_ROME_FALL"
 	desc = "BM_ROME_FALL_DESC"
-	date = 395.1.1
+	date = 395.1.18
+	
+	era = yes						## Will be shown on Era screen.
+	picture = GFX_pick_era_image_fall_rome
 	
 	selectable_character = {
+		id = 145227 # Honorius
+		age = 10
+		name = ERA_CHAR_NAME_145227
+		title = e_west_rome
+		title_name = e_west_rome
+
+		character = {
+			dna = mtexrtaqvmy
+			properties = abt0b000000000000000000000000000000000
+			religion="catholic"
+			culture="roman"
+			government = feudal_government
+			dynasty=1022191
+		}
+	}
+	selectable_character = {
+		id = 70519 # Arcadius
+		age = 17
+		name = ERA_CHAR_NAME_70519
+		title = e_byzantium
+		title_name = e_byzantium
+
+		character = {
+			dna = cribrifsted
+			properties = ai0000000000000000bb000000000000000000
+			religion="catholic"
+			culture="roman"
+			government = feudal_government
+			dynasty=1022191
+		}
 	}
 }
 
