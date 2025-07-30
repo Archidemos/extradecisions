@@ -20,10 +20,7 @@ decisions = {
 				religion = hellenic_pagan
 			}
 			NOT = {
-				OR = {
-					government = merchant_republic_government
-					government = ar_republic_government
-				}
+				government = merchant_republic_government
 			}
 			NOT = { has_global_flag = west_rome_formed }
 			capital_scope = {
@@ -58,7 +55,6 @@ decisions = {
 				culture = greek
 				culture_group = latin
 				culture_group = iberian
-				culture_group = italian
 			}
 		}
 		
@@ -300,17 +296,13 @@ decisions = {
 				culture = greek
 				culture_group = latin
 				culture_group = iberian
-				culture_group = italian
 			}
 			OR = {
 				religion_group = christian
 				religion = hellenic_pagan
 			}
 			NOT = { has_global_flag = west_rome_formed }
-			OR = {
-				government = merchant_republic_government
-				government = ar_republic_government
-			}
+			government = merchant_republic_government
 			capital_scope = {
 				OR = {
 					region = world_europe_west
