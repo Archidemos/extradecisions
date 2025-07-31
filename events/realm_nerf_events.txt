@@ -5,6 +5,7 @@ character_event = { #Event to give all Kings/Emperors a Event Target and proceed
     only_rulers = yes
     notification = yes
 	hide_window = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
@@ -44,7 +45,7 @@ character_event = { #Event to give all Kings/Emperors a Event Target and proceed
 		NOT = { has_character_modifier = umayyad_curse_3 }
 	}
 	
-	mean_time_to_happen = { months = 1 }
+	#mean_time_to_happen = { months = 1 }
 	
     immediate = {
         primary_title = {
