@@ -48,4 +48,87 @@ settlement_decisions = {
 			factor = 0
 		}
 	}
+	destroy_military_buildings = {
+		filter = realm_owned
+		ai = no
+		only_independent = yes
+		filter = owned
+
+		from_potential = {
+			is_playable = yes
+			OR = {
+				is_feudal = yes
+				is_merchant_republic = yes
+			}
+		}
+		
+		potential = {
+		}
+
+		allow = {
+			NOT = { has_holding_modifier = recently_burnt_the_land }
+			holder_scope = {
+				character = FROM
+			}
+			has_siege = no
+			custom_tooltip = {
+				text = stop_pillaging_custom_tooltip
+				hidden_tooltip = {
+					NOT = { has_holding_modifier = stop_burning_land }
+				}
+			}
+		}
+		
+		effect = {
+			save_event_target_as = destroying_baron
+
+			event_target:destroying_baron = {
+				remove_building = ca_militia_barracks_1
+				remove_building = ca_militia_barracks_2
+				remove_building = ca_militia_barracks_3
+				remove_building = ca_militia_barracks_4
+				remove_building = ca_barracks_1
+				remove_building = ca_barracks_2
+				remove_building = ca_barracks_3
+				remove_building = ca_barracks_4
+				remove_building = ca_barracks_5
+				remove_building = ca_barracks_6
+				remove_building = ca_stable_1
+				remove_building = ca_stable_2
+				remove_building = ca_stable_3
+				remove_building = ca_stable_4
+				remove_building = ca_stable_5
+				remove_building = ca_stable_6
+				remove_building = castle_tower_1
+				remove_building = castle_tower_2
+				remove_building = castle_tower_3
+				remove_building = castle_tower_4
+				remove_building = castle_tower_5
+				remove_building = castle_smith_1
+				remove_building = castle_smith_2
+				remove_building = castle_smith_3
+				remove_building = castle_smith_4
+				remove_building = castle_smith_5
+				remove_building = castle_headquarters_1
+				remove_building = castle_headquarters_2
+				remove_building = castle_headquarters_3
+				remove_building = castle_headquarters_4
+				remove_building = castle_headquarters_5
+				remove_building = stone_mine_1
+				remove_building = stone_mine_2
+				remove_building = stone_mine_3
+				remove_building = stone_mine_4
+				remove_building = stone_mine_5
+				remove_building = feudal_desert_camp_1
+				remove_building = feudal_desert_camp_2
+				remove_building = feudal_desert_camp_3
+				remove_building = feudal_desert_camp_4
+				remove_building = feudal_desert_camp_5
+			}
+			clear_event_target = destroying_baron
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }
