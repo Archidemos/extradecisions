@@ -20,18 +20,18 @@ namespace = NW
 # I can set button Gfx to the corrosponding region's shape
 # Along with variables and tooltips I can display information such as: value, owner, ect
 
-## TODO:
-# Make all event windows for super regions (dread)
-# Basic Region Mechanics:
-# Resources (eu4 tradegood) + base stats
-# distance to player (?)
-# settling and ownership
-# discovering and road to unlock mechanics??
-
-# Things viewed on window: Yearly tax / Resource price/Trade power (tax mult) / Amount of settlers (yearly mult) / Garrison
+# Things viewed on window: Yearly tax / Trade power/value (tax mult) / Amount of settlers (yearly mult) / Garrison
 # Options: Increase/Decrease Tax/Send Settlers   Exit
 
 # High taxes makes natural settler growth slow and increases chance of settlers leaving
+
+# Colonial Govenor per realm -> unlanded vassal title that stores all the variables
+# Seperate set of variables per colonial goveror per region which are exported from the region's base value
+# (Make seperate govenor trait so I can scope them easily via cache)
+
+# Exploration via events and Master Explorer -> pay for expeditions at chance to discover and get random events
+# Expeditions unlocked after closure of silk road or if youre a viking going to vinland (expensive and risky!!!)
+# Shipbuilding tech will be important!!!!
 
 character_event = {
     id = NW.1
@@ -90,7 +90,7 @@ character_event = { #north america
         custom_tooltip = {
             text = VINLAND_TT
             d_vinland = { save_event_target_as = selected_nw_region }
-            repeat_event = { id = NW.100 }
+            repeat_event = { id = NW.10 }
         }
         
     }
@@ -100,7 +100,7 @@ character_event = { #north america
         #custom_tooltip = {
         #    text = CANADA_TT
         #    d_canada = { save_event_target_as = selected_nw_region }
-        #    repeat_event = { id = NW.100 }
+        #    repeat_event = { id = NW.10 }
         #}
     }
 
@@ -109,7 +109,7 @@ character_event = { #north america
         #custom_tooltip = {
         #    text = SEABOARD_TT
         #    d_seaboard = { save_event_target_as = selected_nw_region }
-        #    repeat_event = { id = NW.100 }
+        #    repeat_event = { id = NW.10 }
         #}
     }
 
@@ -118,62 +118,165 @@ character_event = { #north america
         #custom_tooltip = {
         #    text = LOUISIANA_TT
         #    d_louisiana = { save_event_target_as = selected_nw_region }
-        #    repeat_event = { id = NW.100 }
+        #    repeat_event = { id = NW.10 }
         #}
     }
 }
 
-character_event = { # Region Interaction Event
+character_event = {
+    id = NW.10
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                event_target:selected_nw_region = {
+                    has_title_flag = region_settled
+                }
+            }
+            repeat_event = { id = NW.100 }
+        }
+        else = {
+            repeat_event = { id = NW.101 }
+        }
+    }
+}
+
+character_event = { # UNSETTLED Region Interaction Event
     id = NW.100
     title = NW_GetRegionNameKey
     desc = ""
     window = EventWindowNWRegion
     #background = -- could be like different background per continent or super region // requires seperate events
+    is_triggered_only = yes
 
     # OTHER INTERACTIONS SHOULD BE HANDLED VIA TARGETTED_DECISIONS!!
 
     option = { # First cause it should default in multiplayer countdown
-        name = EXIT
+        name = "" #EXIT
     }
 
-    option = { # Increase Tax
-        trigger = {
-            event_target:selected_nw_region = {
-                own_nw_region_trigger = yes
-                check_variable = {
-                    which = offmap_taxrate
-                    value <= 95
+    option = { # Create Colony // ## STAGE 1: SETUP / STAGE 2: SETTLED
+        name  = ""
+        conditional_tooltip = {
+            trigger = {
+                NOT = {
+                    any_vassal = {
+                        primary_title = {
+                            has_title_flag = colonial_title
+                        }
+                    }
+                }
+            }
+            text = NO_COLONIAL_TITLE_AVAILABLE # Send to creation event IF THEYRE ELIGIBLE!
+            if = {
+                limit = { can_create_colonial_title_trigger = yes }
+                # character_event = { id = NW.}
+            }
+        }
+        conditional_tooltip = { # Stage 1
+            trigger = {
+                any_vassal = {
+                    primary_title = {
+                        has_title_flag = colonial_title
+                        NOT = {
+                            event_target:selected_nw_region = {
+                                PREV = { has_title_flag = settling_@THIS }
+                            }
+                        }
+                    }
+                }
+            }
+            text = SETTLE_REGION_TT
+            any_vassal = {
+                limit = {
+                    primary_title = {
+                        has_title_flag = colonial_title
+                        NOT = {
+                            event_target:selected_nw_region = {
+                                log = "[Prev.GetName] is [This.GetName]?" # idk if this is correct, chekc later
+                                PREV = { has_title_flag = settling_@THIS }
+                            }
+                        }
+                    }
                 }
             }
         }
+    }
+
+    option = { # Send Settlers
         name  = ""
         custom_tooltip = {
-            text = INCREASE_TAX_NW
+            text = SEND_SETTLERS_NW
             event_target:selected_nw_region = {
-                increase_tax_effect_nw = yes
+                send_settlers_effect_nw = yes
             }
         }
     }
 
-    option = { # Decrease Tax
-        trigger = {
-            event_target:selected_nw_region = {
-                own_nw_region_trigger = yes
-                check_variable = {
-                    which = offmap_taxrate
-                    value >= 5
-                }
-            }
-        }
+    option = { # Abondon Colony
         name  = ""
         custom_tooltip = {
-            text = DECREASE_TAX_NW
+            text = ABONDON_COLONY_NW
             event_target:selected_nw_region = {
-                decrease_tax_effect_nw = yes
+                clear_colony_effect_nw = yes
             }
-
         }
     }
+}
+
+character_event = { # SETTLED Region Interaction Event
+    id = NW.101
+    title = NW_GetRegionNameKey
+    desc = ""
+    window = EventWindowNWRegion
+    #background = -- could be like different background per continent or super region // requires seperate events
+    is_triggered_only = yes
+
+    # OTHER INTERACTIONS SHOULD BE HANDLED VIA TARGETTED_DECISIONS!!
+
+    option = { # First cause it should default in multiplayer countdown
+        name = "" #EXIT
+    }
+
+    #option = { # Increase Tax
+    #    trigger = {
+    #        event_target:selected_nw_region = {
+    #            own_nw_region_trigger = yes
+    #            check_variable = {
+    #                which = offmap_taxrate
+    #                value <= 95
+    #            }
+    #        }
+    #    }
+    #    name  = ""
+    #    custom_tooltip = {
+    #        text = INCREASE_TAX_NW
+    #        event_target:selected_nw_region = {
+    #            increase_tax_effect_nw = yes
+    #        }
+    #    }
+    #}
+#
+    #option = { # Decrease Tax
+    #    trigger = {
+    #        event_target:selected_nw_region = {
+    #            own_nw_region_trigger = yes
+    #            check_variable = {
+    #                which = offmap_taxrate
+    #                value >= 5
+    #            }
+    #        }
+    #    }
+    #    name  = ""
+    #    custom_tooltip = {
+    #        text = DECREASE_TAX_NW
+    #        event_target:selected_nw_region = {
+    #            decrease_tax_effect_nw = yes
+    #        }
+    #    }
+    #}
 
     option = { # Send Settlers
         trigger = {
@@ -189,4 +292,8 @@ character_event = { # Region Interaction Event
             }
         }
     }
+}
+
+character_event = {
+
 }

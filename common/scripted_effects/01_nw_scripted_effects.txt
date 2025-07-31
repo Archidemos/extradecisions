@@ -1,14 +1,14 @@
-
+# EXPORT BASE REGION VALUES TO A NEW COLONY -> need seperate event to set all the region values to make them unique and different
 region_setup_effect = { # THIS = d_[region]
     THIS = {
         set_variable = {
             which = offmap_yearly_income #aka tax
             value = 12
         }
-        set_variable = { # ik this will default to nil, but its so I know what variable name it is
-            which = offmap_settlers
-            value = 0
-        }
+        #set_variable = { # ik this will default to nil, but its so I know what variable name it is
+        #    which = offmap_settlers
+        #    value = 0
+        #}
         set_variable = {
             which = offmap_native_resistance # TBD (to be determined)
             value = 10
@@ -20,6 +20,10 @@ region_setup_effect = { # THIS = d_[region]
         set_variable = {
             which = offmap_taxrate
             value = 5 # 5% // As unlanded/offmap they obviously dont have a real income and therefore manual taxing will be needed
+        }
+        set_variable = {
+            which = offmap_trade_value
+            value = 10
         }
         set_variable = {
             which = offmap_garrison
@@ -34,7 +38,7 @@ region_setup_effect = { # THIS = d_[region]
                     title = d_maya
                 }
             }
-            set_variable = {
+            change_variable = {
                 which = offmap_garrison
                 value = 10000 #TBD
             }
@@ -43,32 +47,36 @@ region_setup_effect = { # THIS = d_[region]
     }
 }
 
-increase_tax_effect_nw = { # THIS = d_[region]
-    THIS = {
+increase_tax_effect_nw = {
+    #THIS = {
         change_variable = {
-            which = offmap_taxrate
+            which = offmap_taxrate_@THIS
             value = 5
         }
         change_variable = {
-            which = offmap_settler_resistance
+            which = offmap_settler_resistance_@THIS
             value = 10
         }
-    }
+    #}
 }
 
 decrease_tax_effect_nw = {
-    THIS = {
+    #THIS = {
         change_variable = {
-            which = offmap_taxrate
+            which = offmap_taxrate_@THIS
             value = -5
         }
         change_variable = {
-            which = offmap_settler_resistance
+            which = offmap_settler_resistance_@THIS
             value = -5
         }
-    }
+    #}
 }
 
 send_settlers_effect_nw = {
     
+}
+
+clear_colony_effect_nw = {
+
 }

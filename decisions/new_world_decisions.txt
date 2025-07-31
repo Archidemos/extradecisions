@@ -1,5 +1,74 @@
 decisions = {
+    send_exploration_expedition = {
+        is_high_prio = yes
+        ai_check_interval = 60
 
+        potential = {
+            real_tier_greater_than = DUKE
+            independent = yes
+            OR = {
+                has_global_flag = silk_road_closed
+                AND = {
+                    has_global_flag = vinland_discovered
+                    culture_group = north_germanic
+                }
+            }
+        }
+
+        allow = {
+            trigger_switch = {
+                on_trigger = culture_group
+                north_germanic = {
+                    scaled_wealth = {
+                        value = 0.7
+                        min = 150
+                        max = 1000
+                    }
+                }
+                fallback = {
+                    scaled_wealth = {
+                        value = 1
+                        min = 250
+                        max = 1500
+                    }
+                }
+            }
+            any_courtier_or_vassal = {
+                has_minor_title = master_exporer
+                incapable = no # check later i dont have internet to check this conditions
+                prisoner = no
+            }
+        }
+
+        effect = {
+            trigger_switch = {
+                on_trigger = culture_group
+                north_germanic = {
+                    scaled_wealth = {
+                        value = -0.7
+                        min = 150
+                        max = 1000
+                    }
+                }
+                fallback = {
+                    scaled_wealth = {
+                        value = -1
+                        min = 250
+                        max = 1500
+                    }
+                }
+            }
+        }
+    }
+
+    establish_colonial_title = {
+        is_high_prio = yes
+        ai_check_interval = 60
+
+        potential = {
+
+        }
+    }
 }
 
 targetted_decisions = {
