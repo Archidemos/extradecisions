@@ -21,6 +21,14 @@ culture = italian #moved from the march of Verona to the (stem) duchy of Bavaria
 religion = catholic
 
 # History
-400.1.1 = { b_trento = tribal }
-600.1.1 = { b_trento = temple }
+400.1.1 = {
+	b_trento = tribal
+	remove_settlement = b_riva
+	remove_settlement = b_rovereto
+}
+600.1.1 = {
+	b_trento = temple
+	b_riva = city
+	b_rovereto = castle
+}
 1000.1.1 = { b_arco = castle }

@@ -28,8 +28,18 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_ilchester = tribal }
-600.1.1 = { b_ilchester = castle }
+400.1.1 = {
+	b_ilchester = tribal
+	remove_settlement = b_taunton
+	remove_settlement = b_wells
+	remove_settlement = b_bath
+}
+600.1.1 = {
+	b_ilchester = castle
+	b_taunton = city
+	b_wells = temple
+	b_bath = temple
+}
 
 1100.11.11 = { culture = english }
 

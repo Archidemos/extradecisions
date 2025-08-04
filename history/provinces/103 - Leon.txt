@@ -19,8 +19,16 @@ culture = breton
 religion = catholic
 
 # History
-400.1.1 = { b_st_pol_de_leon = tribal }
-600.1.1 = { b_st_pol_de_leon = castle }
+400.1.1 = {
+	b_st_pol_de_leon = tribal
+	remove_settlement = b_brest
+	remove_settlement = b_st_meen
+}
+600.1.1 = {
+	b_st_pol_de_leon = castle
+	b_brest = city
+	b_st_meen = temple
+}
 1066.10.14 = {
 	trade_post = b_de_criol
 }

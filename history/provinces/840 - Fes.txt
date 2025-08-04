@@ -30,8 +30,20 @@ culture = sanhaja # Awraba
 religion = sunni
 
 # History
-400.1.1 = { b_fes = tribal }
-600.1.1 = { b_fes = castle }
+400.1.1 = {
+	b_fes = tribal
+	remove_settlement = b_meknes
+	remove_settlement = b_sefrou
+	remove_settlement = b_walila
+	remove_settlement = b_qarawiyyin
+}
+600.1.1 = {
+	b_fes = castle
+	b_meknes = city
+	b_sefrou = city
+	b_walila = castle
+	b_qarawiyyin = temple
+}
 
 # EDITMOD 867
 867.1.1 = {

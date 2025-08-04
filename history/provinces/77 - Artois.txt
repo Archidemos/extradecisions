@@ -24,6 +24,14 @@ culture = frankish # originally had some Low Frankish areas in the north
 religion = catholic
 
 # History
-400.1.1 = { b_bethune = tribal }
-600.1.1 = { b_bethune = castle }
+400.1.1 = {
+	b_bethune = tribal
+	remove_settlement = b_arras
+	remove_settlement = b_therouanne
+}
+600.1.1 = {
+	b_bethune = castle
+	b_arras = city
+	b_therouanne = temple
+}
 

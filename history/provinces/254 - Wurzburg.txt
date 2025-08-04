@@ -21,8 +21,18 @@ culture = franconian
 religion = catholic
 
 # History
-400.1.1 = { b_karlsburg = tribal }
-600.1.1 = { b_karlsburg = castle }
+400.1.1 = {
+	b_karlsburg = tribal
+	remove_settlement = b_wurzburg
+	remove_settlement = b_ochsenfurt
+	remove_settlement = b_schluchtern
+}
+600.1.1 = {
+	b_karlsburg = castle
+	b_wurzburg = temple
+	b_ochsenfurt = city
+	b_schluchtern = temple
+}
 950.1.1 = {
 	capital = b_wurzburg
 }

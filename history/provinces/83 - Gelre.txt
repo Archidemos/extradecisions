@@ -21,8 +21,14 @@ culture = low_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_geldern = tribal }
-600.1.1 = { b_geldern = castle }
+400.1.1 = {
+	b_geldern = tribal
+	remove_settlement = b_roermond
+}
+600.1.1 = {
+	b_geldern = castle
+	b_roermond = city
+}
 972.1.1 = { b_thorn_gelre = temple }
 1020.1.1 = { b_wassenberg = castle }
 1020.1.1 = { capital = b_wassenberg } 

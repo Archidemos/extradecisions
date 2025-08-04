@@ -23,8 +23,16 @@ religion = catholic
 culture = basque
 
 # History
-400.1.1 = { b_dax = tribal }
-600.1.1 = { b_dax = castle }
+400.1.1 = {
+	b_dax = tribal
+	remove_settlement = b_bayonne
+	remove_settlement = b_aire
+}
+600.1.1 = {
+	b_dax = castle
+	b_bayonne = city
+	b_aire = temple
+}
 #1152.1.1  = { b_dax = temple }
 1269.1.1 = { trade_post = b_embriaco }
 1318.7.27  = { trade_post = b_da_mare }

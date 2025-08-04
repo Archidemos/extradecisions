@@ -19,8 +19,16 @@ culture = frankish
 religion = catholic
 
 # History
-400.1.1 = { b_avranches = tribal }
-600.1.1 = { b_avranches = castle }
+400.1.1 = {
+	b_avranches = tribal
+	remove_settlement = b_percy
+	remove_settlement = b_granville
+}
+600.1.1 = {
+	b_avranches = castle
+	b_percy = castle
+	b_granville = city
+}
 911.1.1 = { # Viking takeover
 	remove_settlement = b_percy
 	remove_settlement = b_granville

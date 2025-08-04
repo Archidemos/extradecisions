@@ -20,8 +20,16 @@ culture = arpitan
 religion = catholic
 
 # History
-400.1.1 = { b_sitten = tribal }
-600.1.1 = { b_sitten = temple }
+400.1.1 = {
+	b_sitten = tribal
+	remove_settlement = b_gestelnburg
+	remove_settlement = b_leuk
+}
+600.1.1 = {
+	b_sitten = temple
+	b_gestelnburg = castle
+	b_leuk = city
+}
 1150.1.1 = { b_raron = castle }
 1200.1.1 = { culture = german }
 1256.1.1 = { b_leuk = city }

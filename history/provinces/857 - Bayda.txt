@@ -18,8 +18,18 @@ culture = yemeni
 religion = sunni
 
 # History
-400.1.1 = { b_qalatzabid = tribal }
-600.1.1 = { b_qalatzabid = castle }
+400.1.1 = {
+	b_qalatzabid = tribal
+	remove_settlement = b_zabid
+	remove_settlement = b_mahjam
+	remove_settlement = b_mocha
+}
+600.1.1 = {
+	b_qalatzabid = castle
+	b_zabid = city
+	b_mahjam = castle
+	b_mocha = temple
+}
 1200.1.1 = { 
 	religion = shiite
 }

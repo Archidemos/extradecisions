@@ -9,7 +9,7 @@ title = c_lugo
 max_settlements = 4
 b_lugo = castle
 b_villalba = city
-b_mondonedo= temple
+b_mondonedo = temple
 #b_sarria = castle
 #b_ribadeo = city
 #b_ocebreiro= temple
@@ -20,8 +20,16 @@ culture = galician
 religion = catholic
 
 # History
-400.1.1 = { b_lugo = tribal }
-600.1.1 = { b_lugo = castle }
+400.1.1 = {
+	b_lugo = tribal
+	remove_settlement = b_villalba
+	remove_settlement = b_mondonedo
+}
+600.1.1 = {
+	b_lugo = castle
+	b_villalba = city
+	b_mondonedo = temple
+}
 867.1.1 = { 
 	b_lugo = ca_keep_1
 	b_lugo = ca_wall_1

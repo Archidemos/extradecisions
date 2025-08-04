@@ -22,8 +22,16 @@ culture = arpitan
 religion = catholic
 
 # History
-400.1.1 = { b_montmelian = tribal }
-600.1.1 = { b_montmelian = castle }
+400.1.1 = {
+	b_montmelian = tribal
+	remove_settlement = b_moutiers_tarentaise
+	remove_settlement = b_belley
+}
+600.1.1 = {
+	b_montmelian = castle
+	b_moutiers_tarentaise = temple
+	b_belley = city
+}
 1014.1.1 = { b_miolans = castle }
 1125.1.1 = { b_hautecombe = temple }
 #1232.1.1 = { b_ciamberi = city }

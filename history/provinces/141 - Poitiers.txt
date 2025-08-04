@@ -22,8 +22,16 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_poitiers = tribal }
-600.1.1 = { b_poitiers = castle }
+400.1.1 = {
+	b_poitiers = tribal
+	remove_settlement = b_chatellerault
+	remove_settlement = b_stsavin
+}
+600.1.1 = {
+	b_poitiers = castle
+	b_chatellerault = city
+	b_stsavin = temple
+}
 #1090.1.1 = { b_moncontour = temple }
 1214.1.1 = {
 	culture = frankish

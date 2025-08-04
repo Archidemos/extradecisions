@@ -21,8 +21,18 @@ religion = catholic
 terrain = mountain
 
 # History
-400.1.1 = { b_sort = tribal }
-600.1.1 = { b_sort = castle }
+400.1.1 = {
+	b_sort = tribal
+	remove_settlement = b_tremp
+	remove_settlement = b_lladorre
+	remove_settlement = b_llorda
+}
+600.1.1 = {
+	b_sort = castle
+	b_tremp = city
+	b_lladorre = castle
+	b_llorda = castle
+}
 1010.1.1 = { remove_settlement = b_tremp }
 1010.1.1 = { b_pallars_jussa = castle }
 1192.1.1 = { remove_settlement = b_pallars_jussa }

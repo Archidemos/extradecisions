@@ -24,8 +24,20 @@ religion = catholic
 
 
 # History
-400.1.1 = { b_westminster = tribal }
-600.1.1 = { b_westminster = castle }
+400.1.1 = {
+	b_westminster = tribal
+	remove_settlement = b_london
+	remove_settlement = b_st_pauls
+	remove_settlement = b_isleworth
+	remove_settlement = b_fullham
+}
+600.1.1 = {
+	b_westminster = castle
+	b_london = city
+	b_st_pauls = temple
+	b_isleworth = city
+	b_fullham = castle
+}
 769.1.1 = { build_wonder = wonder_london_bridge set_wonder_stage = 1 }
 1078.1.1 = { b_tower_of_london = castle }
 1100.11.11 = { culture = english }

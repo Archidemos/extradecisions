@@ -27,8 +27,18 @@ culture = cornish
 religion = catholic
 
 # History
-400.1.1 = { b_totnes = tribal }
-600.1.1 = { b_totnes = castle }
+400.1.1 = {
+	b_totnes = tribal
+	remove_settlement = b_exeter
+	remove_settlement = b_crediton
+	remove_settlement = b_lydford
+}
+600.1.1 = {
+	b_totnes = castle
+	b_exeter = city
+	b_crediton = temple
+	b_lydford = city
+}
 
 1050.1.1 = { remove_settlement = b_crediton } # bishop seat(909-1050) moved to Exeter and the town wasn't otherwise important.
 1050.1.1={ b_exeter = temple }

@@ -26,8 +26,16 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_pevensey = tribal }
-600.1.1 = { b_pevensey = castle }
+400.1.1 = {
+	b_pevensey = tribal
+	remove_settlement = b_chichester
+	remove_settlement = b_selsey
+}
+600.1.1 = {
+	b_pevensey = castle
+	b_chichester = city
+	b_selsey = temple
+}
 1067.11.11 = { b_arundel = castle } 
 1069.11.11 = { b_lewes = castle } 
 1069.11.11 = { capital = b_lewes } 

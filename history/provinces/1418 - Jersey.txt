@@ -17,8 +17,16 @@ culture = breton
 religion = catholic
 
 # History
-400.1.1 = { b_gorey = tribal }
-600.1.1 = { b_gorey = castle }
+400.1.1 = {
+	b_gorey = tribal
+	remove_settlement = b_st_peter_port
+	remove_settlement = b_st_helier
+}
+600.1.1 = {
+	b_gorey = castle
+	b_st_peter_port = city
+	b_st_helier = temple
+}
 867.1.1 = { b_st_peter_port = ct_port_1 } 
 933.11.11 = { culture = norman }
 1066.10.14 = {

@@ -27,8 +27,16 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_ipswich = tribal }
-600.1.1 = { b_ipswich = castle }
+400.1.1 = {
+	b_ipswich = tribal
+	remove_settlement = b_dunwich
+	remove_settlement = b_bury_st_edmunds
+}
+600.1.1 = {
+	b_ipswich = castle
+	b_dunwich = city
+	b_bury_st_edmunds = temple
+}
 869.1.1 = { culture = norse } # Fall of East Anglia
 869.1.1 = { religion = norse_pagan } # Fall of East Anglia
 879.1.1 = { religion = catholic } # Guthrum becomes Æþelstan

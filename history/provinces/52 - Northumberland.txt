@@ -24,8 +24,18 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_bamburgh = tribal }
-600.1.1 = { b_bamburgh = castle }
+400.1.1 = {
+	b_bamburgh = tribal
+	remove_settlement = b_newcastle
+	remove_settlement = b_hexham
+	remove_settlement = b_lindisfarne
+}
+600.1.1 = {
+	b_bamburgh = castle
+	b_newcastle = city
+	b_hexham = temple
+	b_lindisfarne = temple
+}
 875.1.1 = { remove_settlement = b_lindisfarne } # burned brightly
 1093.1.1 = { b_lindisfarne = temple } # rebuilt
 1100.11.11 = { culture = english }

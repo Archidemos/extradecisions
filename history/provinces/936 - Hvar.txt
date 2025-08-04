@@ -19,8 +19,16 @@ culture = serbian
 religion = slavic_pagan
 
 # History
-400.1.1 = { b_nerezisca = tribal }
-600.1.1 = { b_nerezisca = castle }
+400.1.1 = {
+	b_nerezisca = tribal
+	remove_settlement = b_vis
+	remove_settlement = b_hvar_stari_grad
+}
+600.1.1 = {
+	b_nerezisca = castle
+	b_vis = city
+	b_hvar_stari_grad = temple
+}
 
 900.1.1 = { religion = catholic }
 1010.1.1 = { culture = croatian }

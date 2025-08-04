@@ -21,8 +21,18 @@ culture = andalusian_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_mora_de_rubielos = tribal }
-600.1.1 = { b_mora_de_rubielos = castle }
+400.1.1 = {
+	b_mora_de_rubielos = tribal
+	remove_settlement = b_teruel
+	remove_settlement = b_alpuente
+	remove_settlement = b_hijar
+}
+600.1.1 = {
+	b_mora_de_rubielos = castle
+	b_teruel = city
+	b_alpuente = city
+	b_hijar = temple
+}
 867.1.1 = { 
 	#b_teruel = ca_keep_1
 	b_teruel = ct_wall_1

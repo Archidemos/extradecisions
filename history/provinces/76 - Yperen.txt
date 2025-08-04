@@ -22,8 +22,16 @@ culture = low_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_cassel = tribal }
-600.1.1 = { b_cassel = castle }
+400.1.1 = {
+	b_cassel = tribal
+	remove_settlement = b_wervik
+	remove_settlement = b_sint_winoksbergen
+}
+600.1.1 = {
+	b_cassel = castle
+	b_wervik = city
+	b_sint_winoksbergen = temple
+}
 1000.1.1 = { b_belle = castle }
 1066.1.1 = { b_ypres = city }
 1150.1.1 = { culture = dutch }

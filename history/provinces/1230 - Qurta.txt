@@ -20,8 +20,20 @@ culture = nubian
 religion = miaphysite
 
 # History
-400.1.1 = { b_qurta = tribal }
-600.1.1 = { b_qurta = castle }
+400.1.1 = {
+	b_qurta = tribal
+	remove_settlement = b_ikhmindi
+	remove_settlement = b_sabagura
+	remove_settlement = b_philae
+	remove_settlement = b_talmis
+}
+600.1.1 = {
+	b_qurta = castle
+	b_ikhmindi = castle
+	b_sabagura = city
+	b_philae = temple
+	b_talmis = temple
+}
 
 1050.1.1 = { remove_settlement = b_ikhmindi }
 1100.1.1 = { remove_settlement = b_sabagura }

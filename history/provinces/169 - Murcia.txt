@@ -24,8 +24,18 @@ culture = andalusian_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_murcia = tribal }
-600.1.1 = { b_murcia = castle }
+400.1.1 = {
+	b_murcia = tribal
+	remove_settlement = b_cartagena
+	remove_settlement = b_lorca
+	remove_settlement = b_orihuela
+}
+600.1.1 = {
+	b_murcia = castle
+	b_cartagena = city
+	b_lorca = temple
+	b_orihuela = city
+}
 # EDITMOD 867
 867.1.1 = {
 	b_murcia = castle

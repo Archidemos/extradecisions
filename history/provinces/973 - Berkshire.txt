@@ -24,8 +24,18 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_windsor = tribal }
-600.1.1 = { b_windsor = castle }
+400.1.1 = {
+	b_windsor = tribal
+	remove_settlement = b_wallingford
+	remove_settlement = b_reading
+	remove_settlement = b_abingdon
+}
+600.1.1 = {
+	b_windsor = castle
+	b_wallingford = castle
+	b_reading = city
+	b_abingdon = temple
+}
 1071.1.1 = { capital = b_wallingford } # d'Olliy
 1100.11.11 = { culture = english } 
 1121.11.11 = { b_reading = temple } 

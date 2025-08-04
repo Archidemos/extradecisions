@@ -22,8 +22,16 @@ culture = andalusian_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_leiria = tribal }
-600.1.1 = { b_leiria = castle }
+400.1.1 = {
+	b_leiria = tribal
+	remove_settlement = b_batalha
+	remove_settlement = b_alcobaca
+}
+600.1.1 = {
+	b_leiria = castle
+	b_batalha = castle
+	b_alcobaca = temple
+}
 
 1150.1.1 = { culture = portuguese }
 1150.1.1 = { religion = catholic }

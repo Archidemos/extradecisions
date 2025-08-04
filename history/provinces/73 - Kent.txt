@@ -32,8 +32,20 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_dover = tribal }
-600.1.1 = { b_dover = castle }
+400.1.1 = {
+	b_dover = tribal
+	remove_settlement = b_canterbury
+	remove_settlement = b_rochester
+	remove_settlement = b_sandwich
+	remove_settlement = b_saltwood
+}
+600.1.1 = {
+	b_dover = castle
+	b_canterbury = temple
+	b_rochester = temple
+	b_sandwich = city
+	b_saltwood = castle
+}
 973.5.15 = { capital = b_canterbury }
 1013.12.25 = { capital = b_dover }
 1066.10.14 = {

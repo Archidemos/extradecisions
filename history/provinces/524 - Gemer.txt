@@ -24,8 +24,16 @@ culture = slovieni
 religion = catholic 
 
 # History
-400.1.1 = { b_gyor = tribal }
-600.1.1 = { b_gyor = tribal }
+400.1.1 = {
+	b_gyor = tribal
+	remove_settlement = b_gyorszentmarton
+	remove_settlement = b_moson
+}
+600.1.1 = {
+	b_gyor = tribal
+	b_gyorszentmarton = temple
+	b_moson = city
+}
 950.1.1 = { 
 	culture = old_hungarian 
 	religion = tengri_pagan 

@@ -19,8 +19,16 @@ culture = andalusian_arabic
 religion = catholic # Not 100% provable that it had a Christian majority, but it is mentioned loads of places as having a strong Christian presence
 
 # History
-400.1.1 = { b_aitona = tribal }
-600.1.1 = { b_aitona = castle }
+400.1.1 = {
+	b_aitona = tribal
+	remove_settlement = b_lleida
+	remove_settlement = b_cervera
+}
+600.1.1 = {
+	b_aitona = castle
+	b_lleida = temple
+	b_cervera = city
+}
 
 867.1.1 = { 
 	b_aitona = ca_keep_1

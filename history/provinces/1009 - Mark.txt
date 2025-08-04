@@ -20,8 +20,16 @@ culture = low_saxon
 religion = catholic
 
 # History
-400.1.1 = { b_altena = tribal }
-600.1.1 = { b_altena = castle }
+400.1.1 = {
+	b_altena = tribal
+	remove_settlement = b_dortmund
+	remove_settlement = b_essen
+}
+600.1.1 = {
+	b_altena = castle
+	b_dortmund = city
+	b_essen = temple
+}
 983.1.1 = { b_hoevel = castle }
 1100.1.1 = { culture = low_german }
 1141.1.1 = { b_bilstein = castle }

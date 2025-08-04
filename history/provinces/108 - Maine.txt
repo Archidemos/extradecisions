@@ -21,8 +21,18 @@ culture = old_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_le_mans = tribal }
-600.1.1 = { b_le_mans = castle }
+400.1.1 = {
+	b_le_mans = tribal
+	remove_settlement = b_beaumont
+	remove_settlement = b_evron
+	remove_settlement = b_laval
+}
+600.1.1 = {
+	b_le_mans = castle
+	b_beaumont = castle
+	b_evron = temple
+	b_laval = city
+}
 790.1.1 = { culture = frankish }
 867.1.1 = { 
 	b_le_mans = ca_keep_1

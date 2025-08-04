@@ -21,8 +21,16 @@ culture = frisian
 religion = catholic
 
 # History
-400.1.1 = { b_franeker = tribal }
-600.1.1 = { b_franeker = castle }
+400.1.1 = {
+	b_franeker = tribal
+	remove_settlement = b_stavoren
+	remove_settlement = b_dokkum
+}
+600.1.1 = {
+	b_franeker = castle
+	b_stavoren = city
+	b_dokkum = temple
+}
 1101.1.1 = { capital = b_stavoren }
 1197.1.1 = { b_kuinre = castle }
 1234.1.1 = { b_harlingen = city }

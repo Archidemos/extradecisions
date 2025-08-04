@@ -10,8 +10,16 @@ culture = croatian
 religion = slavic_pagan
 ################################################################################
 # History
-400.1.1 = { b_sitnica = tribal }
-600.1.1 = { b_sitnica = castle }
+400.1.1 = {
+	b_sitnica = tribal
+	remove_settlement = b_novosel
+	remove_settlement = b_brestovac
+}
+600.1.1 = {
+	b_sitnica = castle
+	b_novosel = city
+	b_brestovac = temple
+}
 ################################################################################
 633.1.1 = { culture = croatian religion = slavic_pagan } 
 766.1.1 = { culture = croatian } 

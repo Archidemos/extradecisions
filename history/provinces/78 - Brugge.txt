@@ -21,8 +21,20 @@ culture = low_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_aardenburg = tribal }
-600.1.1 = { b_aardenburg = castle }
+400.1.1 = {
+	b_aardenburg = tribal
+	remove_settlement = b_brugge
+	remove_settlement = b_torhout
+	remove_settlement = b_oostende
+	remove_settlement = b_male
+}
+600.1.1 = {
+	b_aardenburg = castle
+	b_brugge = city
+	b_torhout = temple
+	b_oostende = city
+	b_male = castle
+}
 1084.1.1 = { b_oudenburg = temple }
 1127.1.1 = { b_wijnendale = castle }
 1150.1.1 = { culture = dutch }

@@ -26,8 +26,16 @@ culture = maghreb_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_cueta = tribal }
-600.1.1 = { b_cueta = castle }
+400.1.1 = {
+	b_cueta = tribal
+	remove_settlement = b_tetouan
+	remove_settlement = b_kasrsaghir
+}
+600.1.1 = {
+	b_cueta = castle
+	b_tetouan = castle
+	b_kasrsaghir = city
+}
 # EDITMOD 867
 867.1.1 = {
 	b_cueta = castle

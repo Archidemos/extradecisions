@@ -21,8 +21,16 @@ culture = swabian
 religion = catholic
 
 # History
-400.1.1 = { b_staufen = tribal }
-600.1.1 = { b_staufen = castle }
+400.1.1 = {
+	b_staufen = tribal
+	remove_settlement = b_esslingen
+	remove_settlement = b_ellwangen
+}
+600.1.1 = {
+	b_staufen = castle
+	b_esslingen = city
+	b_ellwangen = temple
+}
 1102.1.1 = { b_lorch = temple }
 1162.1.1 = { b_schwabisch_gmund = city }
 1170.1.1 = { culture = german }

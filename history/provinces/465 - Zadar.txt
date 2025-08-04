@@ -19,8 +19,16 @@ culture = dalmatian
 religion = catholic
 
 # History
-400.1.1 = { b_obrovac = tribal }
-600.1.1 = { b_obrovac = castle }
+400.1.1 = {
+	b_obrovac = tribal
+	remove_settlement = b_zadar
+	remove_settlement = b_nin
+}
+600.1.1 = {
+	b_obrovac = castle
+	b_zadar = city
+	b_nin = temple
+}
 1050.1.1 = { trade_post = b_de_guzzei }
 1066.1.1 = {trade_post = b_silvio}
 1084.1.2 = { trade_post = b_de_guzzei } # should first rebel from venetians in 1183 if strictly dogmatic

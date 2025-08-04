@@ -31,8 +31,16 @@ culture = carantanian
 religion = catholic 
 
 # History
-400.1.1 = { b_ikervar = tribal }
-600.1.1 = { b_ikervar = tribal }
+400.1.1 = {
+	b_ikervar = tribal
+	remove_settlement = b_sopron
+	remove_settlement = b_vasvar
+}
+600.1.1 = {
+	b_ikervar = tribal
+	b_sopron = city
+	b_vasvar = city
+}
 950.1.1 = { 
 	culture = old_hungarian 
 	religion = tengri_pagan 

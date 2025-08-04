@@ -5,7 +5,7 @@ title = c_praha
 
 # Settlements
 max_settlements = 7
-b_levyhradec= castle
+b_levyhradec = castle
 b_praha = castle
 b_stare_mesto = city
 b_brevnov = temple
@@ -20,6 +20,22 @@ culture = bohemian
 religion = slavic_pagan
 
 # History
+400.1.1 = {
+	b_levyhradec = tribal
+	remove_settlement = b_praha
+	remove_settlement = b_stare_mesto
+	remove_settlement = b_brevnov
+	remove_settlement = b_slany
+	remove_settlement = b_sazava
+}
+600.1.1 = {
+	b_levyhradec = castle
+	b_praha = castle
+	b_stare_mesto = city
+	b_brevnov = temple
+	b_slany = city
+	b_sazava = temple
+}
 883.1.1 = { religion = catholic }
 883.1.1 = { capital = b_praha }
 900.1.1 = {

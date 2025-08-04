@@ -21,8 +21,16 @@ culture = frankish
 religion = catholic
 
 # History
-400.1.1 = { b_noyers = tribal }
-600.1.1 = { b_noyers = castle }
+400.1.1 = {
+	b_noyers = tribal
+	remove_settlement = b_tonnerre
+	remove_settlement = b_saintflorentin
+}
+600.1.1 = {
+	b_noyers = castle
+	b_tonnerre = city
+	b_saintflorentin = temple
+}
 814.1.1 = { capital = b_saintflorentin }
 954.1.1 = { capital = b_noyers } #title of comte de Tonnere seperated from the bishop see of Langres
 

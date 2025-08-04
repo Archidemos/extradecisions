@@ -20,8 +20,16 @@ religion = catholic
 culture = franconian
 
 # History
-400.1.1 = { b_henneberg = tribal }
-600.1.1 = { b_henneberg = castle }
+400.1.1 = {
+	b_henneberg = tribal
+	remove_settlement = b_fulda
+	remove_settlement = b_schweinfurt
+}
+600.1.1 = {
+	b_henneberg = castle
+	b_fulda = temple
+	b_schweinfurt = city
+}
 1119.1.1 = { b_bibra = castle }
 1123.1.1 = { b_wiltberg = castle }
 1170.1.1 = { culture = german }

@@ -21,8 +21,18 @@ culture = low_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_gravensteencastle = tribal }
-600.1.1 = { b_gravensteencastle = castle }
+400.1.1 = {
+	b_gravensteencastle = tribal
+	remove_settlement = b_gent
+	remove_settlement = b_saintbavo
+	remove_settlement = b_deinze
+}
+600.1.1 = {
+	b_gravensteencastle = castle
+	b_gent = city
+	b_saintbavo = temple
+	b_deinze = castle
+}
 965.1.1= { b_beveren = castle } 
 1150.1.1 = { culture = dutch }
 1190.1.1= { b_kortrijk = city } 

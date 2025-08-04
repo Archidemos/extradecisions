@@ -21,8 +21,16 @@ culture = frankish
 religion = catholic
 
 # History
-400.1.1 = { b_alencon = tribal }
-600.1.1 = { b_alencon = castle }
+400.1.1 = {
+	b_alencon = tribal
+	remove_settlement = b_sees
+	remove_settlement = b_argentan
+}
+600.1.1 = {
+	b_alencon = castle
+	b_sees = temple
+	b_argentan = city
+}
 960.1.1 = { culture = norman }
 
 1100.11.11 = { culture = frankish }

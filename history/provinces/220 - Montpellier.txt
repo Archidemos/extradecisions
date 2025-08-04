@@ -24,8 +24,18 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_melgueil = tribal }
-600.1.1 = { b_melgueil = castle }
+400.1.1 = {
+	b_melgueil = tribal
+	remove_settlement = b_montpellier
+	remove_settlement = b_brissac
+	remove_settlement = b_lodeve
+}
+600.1.1 = {
+	b_melgueil = castle
+	b_montpellier = city
+	b_brissac = castle
+	b_lodeve = temple
+}
 1029.1.1 = { trade_post = b_grimaldi }
 1211.1.1  = {
 	b_maguelone = temple

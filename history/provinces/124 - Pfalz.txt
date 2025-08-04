@@ -21,8 +21,16 @@ culture = franconian
 religion = catholic
 
 # History
-400.1.1 = { b_heidelberg = tribal }
-600.1.1 = { b_heidelberg = castle }
+400.1.1 = {
+	b_heidelberg = tribal
+	remove_settlement = b_speyer
+	remove_settlement = b_annweiler
+}
+600.1.1 = {
+	b_heidelberg = castle
+	b_speyer = temple
+	b_annweiler = city
+}
 1148.1.1 = { b_erbach = castle }
 1170.1.1 = { culture = german }
 1219.1.1 = { b_annweiler = city }

@@ -22,8 +22,16 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_saintes = tribal }
-600.1.1 = { b_saintes = castle }
+400.1.1 = {
+	b_saintes = tribal
+	remove_settlement = b_royan
+	remove_settlement = b_stjeandangely
+}
+600.1.1 = {
+	b_saintes = castle
+	b_royan = city
+	b_stjeandangely = temple
+}
 1214.1.1 = {
 	culture = frankish
 }

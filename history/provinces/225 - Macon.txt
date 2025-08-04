@@ -22,6 +22,14 @@ culture = old_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_macon = tribal }
-600.1.1 = { b_macon = castle }
+400.1.1 = {
+	b_macon = tribal
+	remove_settlement = b_cluny
+	remove_settlement = b_beaujeu
+}
+600.1.1 = {
+	b_macon = castle
+	b_cluny = temple
+	b_beaujeu = city
+}
 790.1.1 = { culture = arpitan }

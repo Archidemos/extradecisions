@@ -24,5 +24,13 @@ culture = breton
 religion = catholic
 terrain = forest
 # History
-400.1.1 = { b_porhoet = tribal }
-600.1.1 = { b_porhoet = castle }
+400.1.1 = {
+	b_porhoet = tribal
+	remove_settlement = b_st_malo
+	remove_settlement = b_gael
+}
+600.1.1 = {
+	b_porhoet = castle
+	b_st_malo = temple
+	b_gael = city
+}

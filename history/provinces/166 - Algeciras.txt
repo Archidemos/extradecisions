@@ -26,8 +26,18 @@ culture = andalusian_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_algeciras = tribal }
-600.1.1 = { b_algeciras = castle }
+400.1.1 = {
+	b_algeciras = tribal
+	remove_settlement = b_gibraltar
+	remove_settlement = b_medinasidonia
+	remove_settlement = b_jerez
+}
+600.1.1 = {
+	b_algeciras = castle
+	b_gibraltar = castle
+	b_medinasidonia = city
+	b_jerez = city
+}
 # EDITMOD 867
 867.1.1 = {
 	b_algeciras = castle

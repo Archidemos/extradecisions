@@ -28,8 +28,20 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_winchester = tribal }
-600.1.1 = { b_winchester = castle }
+400.1.1 = {
+	b_winchester = tribal
+	remove_settlement = b_southampton
+	remove_settlement = b_wolvesey
+	remove_settlement = b_andover
+	remove_settlement = b_carisbrooke
+}
+600.1.1 = {
+	b_winchester = castle
+	b_southampton = city
+	b_wolvesey = temple
+	b_andover = city
+	b_carisbrooke = castle
+}
 1066.10.14 = {
 	trade_post = b_de_magminot
 }     

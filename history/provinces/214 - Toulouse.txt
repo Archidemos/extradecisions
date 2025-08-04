@@ -25,8 +25,18 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_castelnaudary = tribal }
-600.1.1 = { b_castelnaudary = castle }
+400.1.1 = {
+	b_castelnaudary = tribal
+	remove_settlement = b_toulouse
+	remove_settlement = b_lombez
+	remove_settlement = b_lislejourdain
+}
+600.1.1 = {
+	b_castelnaudary = castle
+	b_toulouse = city
+	b_lombez = temple
+	b_lislejourdain = castle
+}
 1144.1.1 = { b_montauban = city }
 1150.1.1 = { religion = cathar }
 1244.3.16 = { religion = catholic}

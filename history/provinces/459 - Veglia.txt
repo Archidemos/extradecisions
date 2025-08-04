@@ -22,8 +22,16 @@ culture = dalmatian
 religion = catholic
 
 # History
-400.1.1 = { b_krk = tribal }
-600.1.1 = { b_krk = castle }
+400.1.1 = {
+	b_krk = tribal
+	remove_settlement = b_cres
+	remove_settlement = b_osor
+}
+600.1.1 = {
+	b_krk = castle
+	b_cres = castle
+	b_osor = temple
+}
 
 1050.1.1 = { culture = croatian }
 1146.1.1 = {b_vrbnik_krk = city }

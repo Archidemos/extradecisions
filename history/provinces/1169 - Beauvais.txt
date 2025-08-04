@@ -18,8 +18,16 @@ culture = frankish
 religion = catholic
 
 # History
-400.1.1 = { b_beauvais = tribal }
-600.1.1 = { b_beauvais = temple }
+400.1.1 = {
+	b_beauvais = tribal
+	remove_settlement = b_breteuil
+	remove_settlement = b_clermont
+}
+600.1.1 = {
+	b_beauvais = temple
+	b_breteuil = city
+	b_clermont = castle
+}
 #1123.1.1  = { b_xxx = castle }
 #1153.1.1  = { b_xxx = city }
 #1225.1.1  = { b_xxx = temple }

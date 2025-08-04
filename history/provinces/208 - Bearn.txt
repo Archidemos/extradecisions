@@ -22,8 +22,16 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_morlaas = tribal }
-600.1.1 = { b_morlaas = castle }
+400.1.1 = {
+	b_morlaas = tribal
+	remove_settlement = b_lescar
+	remove_settlement = b_pau
+}
+600.1.1 = {
+	b_morlaas = castle
+	b_lescar = temple
+	b_pau = city
+}
 #1101.1.1   = {
 #	b_morlaas = castle
 #	capital = b_morlaas

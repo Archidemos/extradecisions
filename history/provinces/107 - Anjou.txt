@@ -22,8 +22,18 @@ culture = old_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_angers = tribal }
-600.1.1 = { b_angers = castle }
+400.1.1 = {
+	b_angers = tribal
+	remove_settlement = b_saumur
+	remove_settlement = b_cholet
+	remove_settlement = b_fontevraud
+}
+600.1.1 = {
+	b_angers = castle
+	b_saumur = city
+	b_cholet = castle
+	b_fontevraud = temple
+}
 790.1.1 = { culture = frankish }
 
 

@@ -21,8 +21,16 @@ culture = franconian
 religion = catholic
 
 # History
-400.1.1 = { b_hochlach = tribal }
-600.1.1 = { b_hochlach = castle }
+400.1.1 = {
+	b_hochlach = tribal
+	remove_settlement = b_ohringen
+	remove_settlement = b_rothenburg
+}
+600.1.1 = {
+	b_hochlach = castle
+	b_ohringen = temple
+	b_rothenburg = city
+}
 1057.1.1 = { b_castell = castle }
 1170.1.1 = { culture = german }
 1172.1.1 = { b_dinkelsbuhl = city }

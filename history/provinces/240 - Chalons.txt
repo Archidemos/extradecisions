@@ -24,8 +24,16 @@ culture = old_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_chalon = tribal }
-600.1.1 = { b_chalon = castle }
+400.1.1 = {
+	b_chalon = tribal
+	remove_settlement = b_tournus
+	remove_settlement = b_seurre
+}
+600.1.1 = {
+	b_chalon = castle
+	b_tournus = temple
+	b_seurre = city
+}
 790.1.1 = { culture = frankish }
 1187.1.1 = { b_brancion = castle }
 

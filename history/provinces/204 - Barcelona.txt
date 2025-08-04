@@ -22,8 +22,18 @@ culture = catalan
 religion = catholic
 
 # History
-400.1.1 = { b_barcelona = tribal }
-600.1.1 = { b_barcelona = castle }
+400.1.1 = {
+	b_barcelona = tribal
+	remove_settlement = b_manresa
+	remove_settlement = b_vich
+	remove_settlement = b_osona
+}
+600.1.1 = {
+	b_barcelona = castle
+	b_manresa = city
+	b_vich = temple
+	b_osona = castle
+}
 
 867.1.1 = {
 	#b_montcada = ca_town_1

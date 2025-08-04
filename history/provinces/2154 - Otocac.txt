@@ -10,8 +10,16 @@ culture = serbian
 religion = slavic_pagan
 ################################################################################
 # History
-400.1.1 = { b_borovacai = tribal }
-600.1.1 = { b_borovacai = castle }
+400.1.1 = {
+	b_borovacai = tribal
+	remove_settlement = b_zelengrad
+	remove_settlement = b_novolan
+}
+600.1.1 = {
+	b_borovacai = castle
+	b_zelengrad = city
+	b_novolan = temple
+}
 ################################################################################
 633.1.1 = { culture = dalmatian religion = orthodox } 
 766.1.1 = { culture = croatian } 

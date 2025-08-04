@@ -25,8 +25,16 @@ culture = saxon
 religion = catholic
 
 # History
-400.1.1 = { b_wilton = tribal }
-600.1.1 = { b_wilton = castle }
+400.1.1 = {
+	b_wilton = tribal
+	remove_settlement = b_sarum
+	remove_settlement = b_malmesbury
+}
+600.1.1 = {
+	b_wilton = castle
+	b_sarum = city
+	b_malmesbury = temple
+}
 1.1.1 = {
 	build_wonder = wonder_pagan_stones_stonehenge
 	set_wonder_stage = 3

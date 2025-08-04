@@ -20,6 +20,14 @@ culture = old_frankish
 religion = catholic
 
 # History
-400.1.1 = { b_vendome = tribal }
-600.1.1 = { b_vendome = castle }
+400.1.1 = {
+	b_vendome = tribal
+	remove_settlement = b_lavardin
+	remove_settlement = b_cloyes
+}
+600.1.1 = {
+	b_vendome = castle
+	b_lavardin = city
+	b_cloyes = temple
+}
 790.1.1 = { culture = frankish }

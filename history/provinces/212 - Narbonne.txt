@@ -22,8 +22,18 @@ religion = catholic
 culture = occitan
 
 # History
-400.1.1 = { b_cruzycastle = tribal }
-600.1.1 = { b_cruzycastle = castle }
+400.1.1 = {
+	b_cruzycastle = tribal
+	remove_settlement = b_narbonne_temple
+	remove_settlement = b_durbancorbires
+	remove_settlement = b_fabrezan
+}
+600.1.1 = {
+	b_cruzycastle = castle
+	b_narbonne_temple = temple
+	b_durbancorbires = castle
+	b_fabrezan = city
+}
 1079.1.1 = { trade_post = b_grimaldi }
 1150.1.1 = { religion = cathar }
 1244.3.16 = { religion = catholic}

@@ -21,8 +21,16 @@ culture = bavarian
 religion = catholic
 
 # History
-400.1.1 = { b_tirol = tribal }
-600.1.1 = { b_tirol = castle }
+400.1.1 = {
+	b_tirol = tribal
+	remove_settlement = b_brixen
+	remove_settlement = b_innsbruck
+}
+600.1.1 = {
+	b_tirol = castle
+	b_brixen = temple
+	b_innsbruck = city
+}
 #1078.1.1 = { b_amras = castle }
 1078.1.1 = { b_eppan = castle }
 1170.1.1 = { culture = german }

@@ -20,7 +20,15 @@ culture = cumbric
 religion = catholic
 
 # History
-400.1.1 = { b_appleby = tribal }
-600.1.1 = { b_appleby = castle }
+400.1.1 = {
+	b_appleby = tribal
+	remove_settlement = b_kendal
+	remove_settlement = b_brough
+}
+600.1.1 = {
+	b_appleby = castle
+	b_kendal = castle
+	b_brough = castle
+}
 #1068.1.1 = { culture = saxon } # held by Scotland and therefor not affected by the Harrying.
 1100.11.11 = { culture = english }

@@ -10,8 +10,16 @@ culture = croatian
 religion = slavic_pagan
 ################################################################################
 # History
-400.1.1 = { b_vrtnik = tribal }
-600.1.1 = { b_vrtnik = castle }
+400.1.1 = {
+	b_vrtnik = tribal
+	remove_settlement = b_krizic
+	remove_settlement = b_junakovac
+}
+600.1.1 = {
+	b_vrtnik = castle
+	b_krizic = city
+	b_junakovac = temple
+}
 ################################################################################
 633.1.1 = { 
     #culture = ostrogothic

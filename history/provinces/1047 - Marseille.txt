@@ -23,8 +23,16 @@ culture = occitan
 religion = catholic
 
 # History
-400.1.1 = { b_trets = tribal }
-600.1.1 = { b_trets = castle }
+400.1.1 = {
+	b_trets = tribal
+	remove_settlement = b_arles
+	remove_settlement = b_marseille
+}
+600.1.1 = {
+	b_trets = castle
+	b_arles = temple
+	b_marseille = city
+}
 970.1.1 = { b_fos_sur_mer = castle }
 970.1.1 = { b_porcellets = castle }
 981.1.1 = { b_baux = castle }

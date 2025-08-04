@@ -21,8 +21,16 @@ culture = bavarian
 religion = catholic
 
 # History
-400.1.1 = { b_wittelsbach = tribal }
-600.1.1 = { b_wittelsbach = castle }
+400.1.1 = {
+	b_wittelsbach = tribal
+	remove_settlement = b_dachau
+	remove_settlement = b_freising
+}
+600.1.1 = {
+	b_wittelsbach = castle
+	b_dachau = castle
+	b_freising = temple
+}
 1158.1.1 = { b_munchen = city }
 1170.1.1 = { culture = german }
 1250.1.1 = { b_inglostadt = city }

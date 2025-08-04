@@ -21,8 +21,16 @@ culture = swabian
 religion = catholic
 
 # History
-400.1.1 = { b_beuren = tribal }
-600.1.1 = { b_beuren = castle }
+400.1.1 = {
+	b_beuren = tribal
+	remove_settlement = b_augsburg
+	remove_settlement = b_fussen
+}
+600.1.1 = {
+	b_beuren = castle
+	b_augsburg = temple
+	b_fussen = temple
+}
 864.1.1 = { capital = b_augsburg }
 982.1.1= { b_ronsberg = castle }
 1158.1.1= { b_memmingen = city }

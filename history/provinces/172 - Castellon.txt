@@ -21,8 +21,16 @@ culture = andalusian_arabic
 religion = sunni
 
 # History
-400.1.1 = { b_castellon = tribal }
-600.1.1 = { b_castellon = castle }
+400.1.1 = {
+	b_castellon = tribal
+	remove_settlement = b_burriana
+	remove_settlement = b_segorbe
+}
+600.1.1 = {
+	b_castellon = castle
+	b_burriana = city
+	b_segorbe = temple
+}
 1095.1.1 = { trade_post = b_fieschi }
 1248.1.1 = { culture = catalan }
 1248.1.1 = { religion = catholic }
