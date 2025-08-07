@@ -447,9 +447,12 @@ succession_laws = {
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
 			}
-			has_game_rule = {
-				name = gavelkind_only
-				value = off
+			OR = {
+				has_game_rule = {
+					name = gavelkind_only
+					value = off
+				}
+				is_patrician = yes
 			}
 		}
 		
