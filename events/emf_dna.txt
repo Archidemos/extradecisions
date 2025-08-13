@@ -262,7 +262,7 @@ character_event = {
 		if = {
 			limit = {
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = comely
 					trait = homely
 					trait = ugly
@@ -271,7 +271,7 @@ character_event = {
 			# Chances are out of 100000
 			random_list = {
 				445 = {
-					add_trait = fair
+					add_trait = attractive
 				}
 				781 = {
 					add_trait = comely
@@ -511,7 +511,7 @@ character_event = {
 		}
 		# Attractiveness
 		if = {
-			limit = { trait = fair }
+			limit = { trait = attractive }
 			emf_dna_set_flags_for_fair = yes
 		}
 		else_if = {
@@ -1451,7 +1451,7 @@ character_event = {
 			event_target:emf_dna_dad = {
 				if = {
 					limit = {
-						trait = fair
+						trait = attractive
 					}
 					emf_dna_set_flags_for_fair = yes
 				}
@@ -1497,7 +1497,7 @@ character_event = {
 			mother = {
 				if = {
 					limit = {
-						trait = fair
+						trait = attractive
 					}
 					emf_dna_set_flags_for_fair = yes
 				}
@@ -1987,7 +1987,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 6 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -1995,7 +1995,7 @@ character_event = {
 			}
 			random_list = {
 				80 = {
-					add_trait = fair
+					add_trait = attractive
 				}
 				20 = {
 					add_trait = comely
@@ -2006,7 +2006,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 5 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -2014,7 +2014,7 @@ character_event = {
 			}
 			random_list = {
 				25 = {
-					add_trait = fair
+					add_trait = attractive
 				}
 				50 = {
 					add_trait = comely
@@ -2027,7 +2027,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 4 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -2035,7 +2035,7 @@ character_event = {
 			}
 			random_list = {
 				2 = {
-					add_trait = fair
+					add_trait = attractive
 				}
 				8 = {
 					add_trait = comely
@@ -2048,7 +2048,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 3 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -2059,7 +2059,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 2 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -2080,7 +2080,7 @@ character_event = {
 			limit = {
 				check_variable = { which = local_alleles value = 1 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
@@ -2101,7 +2101,7 @@ character_event = {
 			limit = {
 				is_variable_equal = { which = local_alleles value = 0 }
 				NOR = {
-					trait = fair
+					trait = attractive
 					trait = ugly
 					trait = comely
 					trait = homely
