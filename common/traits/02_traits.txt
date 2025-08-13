@@ -62,70 +62,6 @@ augustus = {
 	female_compliment = COMPL_AUGUSTUS
 }
 
-flat_terrain_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		terrain = plains
-		terrain = farmlands
-		terrain = steppe
-	}
-}
-
-rough_terrain_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		terrain = forest
-		terrain = hills
-	}
-}
-
-mountain_terrain_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		terrain = mountain
-	}
-}
-
-desert_terrain_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		terrain = desert
-	}
-
-	male_insult = INSULT_DESERT_RAT
-	female_insult = INSULT_DESERT_RAT
-}
-
-holy_warrior = {
-	leader = yes
-	
-	command_modifier = {
-		religious_enemy = 0.15
-	}
-	
-	male_compliment = COMPL_HOLY_WARRIOR
-	female_compliment = COMPL_HOLY_WARRIOR
-	male_insult = INSULT_FANATIC
-	female_insult = INSULT_FANATIC
-}
-
-unyielding_leader = {
-	leader = yes
-	
-	command_modifier = {
-		morale_defence = 0.15
-		defence = 0.1
-	}
-}
-
 child_of_consort = {
 	diplomacy = -2
 
@@ -620,14 +556,6 @@ bad_priest_aztec = {
 	child_insult_adj = INSULT_CRUMMY
 }
 
-narrow_flank_leader = {
-	leader = yes
-	
-	command_modifier = {
-		narrow_flank = 0.5
-	}
-}
-
 brahmin = {
 	potential = {
 		OR = {
@@ -933,29 +861,6 @@ reincarnation = {
 	learning = 2
 }
 
-war_elephant_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		war_elephants = 0.2
-		morale_offence = 0.1
-	}
-}
-
-jungle_terrain_leader = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		terrain = jungle
-		terrain = forest
-	}
-
-	male_insult = INSULT_JUNGLE_SNAKE
-	female_insult = INSULT_JUNGLE_SNAKE
-}
-
 in_hiding = {
 	potential = {
 		prisoner = no
@@ -974,16 +879,6 @@ in_hiding = {
 	female_insult = INSULT_COWARD
 	male_insult_adj = INSULT_SNEAKING
 	female_insult_adj = INSULT_SNEAKING
-}
-
-winter_soldier = {
-	leader = yes
-	random = no
-	
-	command_modifier = {
-		winter_supply = 4
-		winter_combat = 0.5
-	}	
 }
 
 adventurer = {
@@ -5807,73 +5702,6 @@ cat = {
 	}
 }
 
-master_of_flame = { # Way of the Dragon
-	leader = yes
-	potential = {
-		OR = {
-			culture = han
-			has_character_flag = taught_chinese_strategy
-			has_character_flag = originated_from_chinese_court
-		}
-	}
-	
-	command_modifier = {
-		damage = 0.2
-		morale_offence = 0.1
-	}
-}
-
-logistics_expert = { # Way of the Dog
-	leader = yes
-	potential = {
-		OR = {
-			culture = han
-			has_character_flag = taught_chinese_strategy
-			has_character_flag = originated_from_chinese_court
-		}
-	}
-	attrition = -0.5
-	days_of_supply = 30
-
-	command_modifier = {
-		center = 0.2
-	}
-}
-
-levy_coordinator = { # Way of the Tiger
-	leader = yes
-	potential = {
-		OR = {
-			culture = han
-			has_character_flag = taught_chinese_strategy
-			has_character_flag = originated_from_chinese_court
-		}
-	}
-
-	command_modifier = {
-		flank = 0.2
-		speed = 0.2
-		retreat = 0.2
-	}
-}
-
-sapper = { # Way of the Leopard
-	leader = yes
-	potential = {
-		OR = {
-			culture = han
-			has_character_flag = taught_chinese_strategy
-			has_character_flag = originated_from_chinese_court
-		}
-	}
-
-	command_modifier = {
-		terrain = forest
-		terrain = hills
-		siege = 0.3
-	}
-}
-
 # Tiered kinslaying traits
 # Kinslayer in 00_traits = Parents, Grandparents and above, Siblings, Children, Grandchildren and below
 # Familial Kinslayer = Aunts/Uncles (blood only), cousins, nieces/nephews
@@ -6276,93 +6104,6 @@ baptized_by_patriarch = { #Same as Pope, only used to prevent localization from 
 	religious = yes
 	customizer = no
 	random = no
-}
-
-
-### Warrior Lodge specific leader traits ###
-norse_leader = {
-	leader = yes
-	random = no
-	trait_effect_capture_commanders = 1 #Bonus to capturing commanders
-	command_modifier = {
-		heavy_infantry = 0.1
-	}
-}
-tengri_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = steppe
-		terrain = plains
-		terrain = farmlands
-		light_cavalry = 0.15
-		knights = 0.1
-	}
-}
-baltic_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = forest
-		defence = 0.15
-		flank = 0.2
-	}
-}
-finnish_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = arctic
-		winter_combat = 0.1
-		winter_supply = 2
-		defence = 0.1
-	}
-}
-slavic_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = plains
-		defence = 0.1
-		morale_defence = 0.1
-	}
-}
-west_african_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = desert
-		light_infantry = 0.1
-		light_cavalry = 0.1
-	}
-}
-zun_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = mountain
-		siege = 0.1
-		speed = 0.1
-	}
-}
-bon_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		terrain = mountain
-		terrain = hills
-		speed = 0.1
-		light_infantry = 0.1
-	}
-}
-hellenic_leader = {
-	leader = yes
-	random = no
-	command_modifier = {
-		speed = 0.05
-		defence = 0.1
-		morale_defence = 0.1
-	}
 }
 
 pagan_branch_1 = {
