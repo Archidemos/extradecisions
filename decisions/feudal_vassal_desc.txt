@@ -65,7 +65,7 @@ targetted_decisions = {
 		
 		from_potential = {
 			higher_tier_than = COUNT
-			prestige >= 1000
+			prestige >= 500
 			NOT = { religion_group = zoroastrian_group }
 		}
 		
@@ -111,11 +111,8 @@ targetted_decisions = {
 				#	prestige = 1500
 				#}
 				#separate event with prestige and gold requirements
-				diplomacy = 13
-				prestige = 1000
-				has_regent = no
+				prestige = 500
 				NOT = { has_character_modifier = annexed_vassal }
-				NOT = { has_character_modifier = recently_released_vassal }
 			}
         }
 
