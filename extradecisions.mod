@@ -6,4 +6,5 @@ tags=
 }
 picture="extradecision.jpg"
 
+replace_path = "common/scripted_effects"
 replace_path="history/provinces"
