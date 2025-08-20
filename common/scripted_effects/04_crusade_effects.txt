@@ -1486,20 +1486,20 @@ alternate_crusade_artifact_distribution_effect = {
 				religion_group = christian
 			}
 			random_list = {
-				#Crusade Weapons
+				# Crusade Weapons
 				20 = {
-					modifier = {
-						factor = 0
-						religion_group = muslim
-					}
-					modifier = {
-						factor = 0
-						OR = {
+					trigger = {
+						NOR = {
 							has_artifact = sword_tier_2_new
 							has_artifact = sword_tier_3_vengeance
 						}
 					}
 					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+
+					mult_modifier = {
 						factor = 0.05
 						OR = {
 							has_artifact = lance_tier_2_new
@@ -1527,18 +1527,17 @@ alternate_crusade_artifact_distribution_effect = {
 					clr_character_flag = sword_tier_1
 				}
 				20 = {
-					modifier = {
-						factor = 0
-						religion_group = muslim
-					}
-					modifier = {
-						factor = 0
-						OR = {
+					trigger = {
+						NOR = {
 							has_artifact = lance_tier_2_new
 							has_artifact = lance_tier_3_impaler
 						}
 					}
 					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					mult_modifier = {
 						factor = 0.05
 						OR = {
 							has_artifact = sword_tier_2_new
@@ -1566,18 +1565,17 @@ alternate_crusade_artifact_distribution_effect = {
 					clr_character_flag = lance_tier_2
 				}
 				20 = {
-					modifier = {
-						factor = 0
-						religion_group = muslim
-					}
-					modifier = {
-						factor = 0
-						OR = {
+					trigger = {
+						NOR = {
 							has_artifact = axe_tier_2_new
 							has_artifact = axe_tier_3_ravager
 						}
 					}
 					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					mult_modifier = {
 						factor = 0.05
 						OR = {
 							has_artifact = sword_tier_2_new
@@ -1605,18 +1603,17 @@ alternate_crusade_artifact_distribution_effect = {
 					clr_character_flag = axe_tier_2
 				}
 				20 = {
-					modifier = {
-						factor = 0
-						religion_group = muslim
-					}
-					modifier = {
-						factor = 0
-						OR = {
+					trigger = {
+						NOR = {
 							has_artifact = mace_tier_2_new
 							has_artifact = mace_tier_3_bone_breaker
 						}
 					}
 					modifier = {
+						factor = 0
+						religion_group = muslim
+					}
+					mult_modifier = {
 						factor = 0.05
 						OR = {
 							has_artifact = sword_tier_2_new
@@ -1643,25 +1640,20 @@ alternate_crusade_artifact_distribution_effect = {
 					}
 					clr_character_flag = mace_tier_2
 				}
-				#Random Christian associated artifacts
-				5 = {
-					add_artifact = fragment_of_true_cross
-				}
-				5 = {
-					add_artifact = holy_foreskin
-				}
-				5 = {
-					add_artifact = weeping_statue
-				}
-				#Crusade Armor
+
+				# Random Christian associated artifacts
+				5 = { add_artifact = fragment_of_true_cross }
+				5 = { add_artifact = holy_foreskin }
+				5 = { add_artifact = weeping_statue }
+
+				# Crusade Armor
 				20 = {
-					modifier = {
-						factor = 0
-						religion_group = muslim
+					trigger = {
+						NOT = { has_artifact = armor_tier_2 }
 					}
 					modifier = {
 						factor = 0
-						has_artifact = armor_tier_2
+						religion_group = muslim
 					}
 					set_character_flag = armor_tier_2
 					if = {
@@ -2457,4 +2449,292 @@ check_if_reconquista_finished_effect = {
 check_war_effect = {
 	check_if_reconquista_finished_effect = yes
 	check_holy_order_donation_effect = yes
+}
+
+move_childrens_crusade_region_effect = {
+	if = { # If at any point during the preparation Jerusalem is no longer a valid target, or a real Crusade starts, stop everything
+		limit = {
+			OR = {
+				k_jerusalem = {
+					trigger_if = {
+						limit = { has_holder = yes }
+
+						holder_scope = {
+							religion_group = christian
+						}
+					}
+				}
+
+				c_jerusalem = {
+					holder_scope = {
+						OR = {
+							religion_group = christian
+							is_crusade_target = yes
+						}
+					}
+				}
+
+				religion_head = {
+					OR = {
+						is_preparing_crusade = yes
+
+						any_war = {
+							OR = {
+								using_cb = crusade
+								using_cb = new_crusade
+							}
+						}
+					}
+				}
+			}
+		}
+
+		any_player = {
+			limit = {
+				religion_group = christian
+				NOT = { character = ROOT }
+			}
+
+			narrative_event = {
+				id = HF.25819 # Notify everyone that the crusade has flopped
+				days = 30
+			}
+		}
+
+		activate_title = {
+			title = primary_title
+			status = no
+		}
+
+		destroy_landed_title = primary_title
+		clr_character_flag = flag_childrens_crusade_leader
+		add_trait = lunatic
+		piety = -150
+		remove_trait = disinherited
+
+		set_variable = {
+			which = children_crusade_forces
+			value = 0
+		}
+
+		set_variable = {
+			which = children_crusade_morale
+			value = 0
+		}
+
+		set_variable = {
+			which = children_crusade_heavy_troops
+			value = 0
+		}
+
+		any_courtier = {
+			remove_trait = disinherited
+			clr_character_flag = no_court_invites
+		}
+	}
+	else_if = { # Move to Genoa first
+		limit = { has_character_flag = flag_children_at_beginning }
+
+		primary_title = {
+			set_preferred_capital = c_genoa # Historically traveled here
+		}
+
+		change_variable = {
+			which = children_crusade_forces
+			value = 1
+		}
+
+		change_variable = {
+			which = children_crusade_morale
+			value = -1
+		}
+
+		clr_character_flag = flag_children_at_beginning
+		set_character_flag = flag_children_at_genoa
+
+		if = {
+			limit = {
+				persistent_event_target:childrens_crusade_sponsor_per = { is_alive = no }
+			}
+
+			change_variable = {
+				which = children_crusade_morale
+				value = -2
+			}
+		}
+
+		any_player = {
+			limit = {
+				NOT = { character = ROOT }
+				religion_group = christian
+			}
+
+			narrative_event = {
+				id = HF.25815 # Notify everyone that the crusade has reached Genoa and the sea did not part before them
+				days = 30
+			}
+		}
+
+		narrative_event = {
+			id = HF.25808 # Ping back to main event to check travel progress
+			days = 50
+			random = 100
+		}
+	}
+	else_if = { # Then shipwreck to Achaia
+		limit = { has_character_flag = flag_children_at_genoa }
+
+		primary_title = {
+			set_preferred_capital = c_achaia
+		}
+
+		change_variable = {
+			which = children_crusade_morale
+			value = -1
+		}
+
+		clr_character_flag = flag_children_at_genoa
+		set_character_flag = flag_children_at_achaia
+
+		any_player = {
+			limit = {
+				religion_group = christian
+				NOT = { character = ROOT }
+			}
+
+			narrative_event = {
+				id = HF.25816 # Notify everyone that the crusade has shipwrecked into Achaia
+				days = 30
+			}
+		}
+
+		if = {
+			limit = {
+				persistent_event_target:childrens_crusade_sponsor_per = { is_alive = no }
+			}
+
+			random = {
+				chance = 25
+
+				change_variable = {
+					which = children_crusade_forces
+					value = -1
+				}
+			}
+		}
+
+		narrative_event = {
+			id = HF.25808 # Ping back to main event to check travel progress
+			days = 50
+			random = 100
+		}
+	}
+	else_if = { # Then crawl to Nikaea
+		limit = { has_character_flag = flag_children_at_achaia }
+
+		primary_title = {
+			set_preferred_capital = c_nikaea
+		}
+
+		clr_character_flag = flag_children_at_achaia
+		set_character_flag = flag_children_at_nikaea
+
+		# Base forces score is 3 = circa 15.000 poorly armed troops
+		change_variable = {
+			which = children_crusade_forces
+			value = 1
+		}
+
+		any_player = {
+			limit = {
+				religion_group = christian
+				NOT = { character = ROOT }
+			}
+
+			narrative_event = {
+				id = HF.25817 # Notify everyone that the crusade has crawled its way to Nikaea
+				days = 30
+			}
+		}
+
+		narrative_event = {
+			id = HF.25808 # Ping back to main event to check travel progress
+			days = 50
+			random = 100
+		}
+	}
+	else_if = { # We actually got there. Start the war
+		limit = { has_character_flag = flag_children_at_nikaea }
+
+		primary_title = {
+			set_preferred_capital = c_antioch # Where the troops will spawn
+		}
+
+		clr_character_flag = flag_children_at_nikaea
+		set_character_flag = flag_children_at_antioch
+
+		narrative_event = {
+			id = HF.25820 # START THE CRUSADE
+			days = 25
+		}
+
+		any_player = {
+			limit = {
+				religion_group = christian
+				NOT = { character = ROOT }
+			}
+
+			narrative_event = {
+				id = HF.25818 # Notify everyone that the crusade has actually reached Antioch and is ready to engage
+				days = 30
+			}
+		}
+	}
+	else = { # Move directly to Antioch in case something went wrong
+		primary_title = {
+			set_preferred_capital = c_antioch # Historically traveled here
+		}
+
+		clr_character_flag = flag_children_at_achaia
+		clr_character_flag = flag_children_at_nikaea
+		clr_character_flag = flag_children_at_genoa
+		set_character_flag = flag_children_at_antioch
+
+		change_variable = {
+			which = children_crusade_forces
+			value = 1
+		}
+		change_variable = {
+			which = children_crusade_morale
+			value = -1
+		}
+
+		if = {
+			limit = {
+				persistent_event_target:childrens_crusade_sponsor_per = { is_alive = no }
+			}
+
+			change_variable = {
+				which = children_crusade_morale
+				value = -2
+			}
+		}
+
+		narrative_event = {
+			id = HF.25820 # START THE CRUSADE
+			days = 25
+		}
+
+		any_player = {
+			limit = {
+				religion_group = christian
+				NOT = { character = ROOT }
+			}
+
+			narrative_event = {
+				id = HF.25818 # Notify everyone that the crusade has actually reached Antioch and is ready to engage
+				days = 30
+			}
+		}
+	}
 }
