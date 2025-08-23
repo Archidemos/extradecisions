@@ -96,6 +96,12 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
+			NOT = {
+				has_game_rule = {
+					name = no_larp_rules
+					value = off
+				}
+			}
 			has_landed_title = e_celtic_empire
 			any_playable_ruler = {
 				AND = {
@@ -381,6 +387,12 @@ decisions = {
 		ai_check_interval = 120
 		
 		potential = {
+			NOT = {
+				has_game_rule = {
+					name = no_larp_rules
+					value = off
+				}
+			}
 			has_landed_title = e_north_sea
 			any_playable_ruler = { has_landed_title = e_hre }
 			independent = yes
@@ -424,6 +436,12 @@ decisions = {
 		ai_check_interval = 120
 
 		potential = {
+			NOT = {
+				has_game_rule = {
+					name = no_larp_rules
+					value = off
+				}
+			}
 			has_landed_title = e_varingian
 			any_playable_ruler = { has_landed_title = e_byzantium }
 			NOT = { has_global_flag = varingian_invades_byz }
