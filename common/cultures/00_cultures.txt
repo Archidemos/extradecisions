@@ -2275,6 +2275,26 @@ byzantine = {
 		modifier = albanian_culture_modifier
 	}
 
+	ilyrian = { #Ilyrian
+		graphical_cultures = { westernslavicgfx easterngfx }
+		color = { 0.1 0.4 0.4 }
+		male_names = {
+			Agron_Agron Aplis_Aplis Audax_Audax Bato_Bato Breuci_Carvus Bryzos_Carvos
+			Dasius Dardan Dazomenos Delminios Epulon_Gaius Etuta Grabos Gentius_Genthius
+			Longarus_Monunius Lydra Medaurus Mytilos Myrtilos Pleuratos Pleurias Plator Platios
+			Scenaius Scilus Skerdilaidas Teutaurius Teuticus Vendo Verzo Zalmoxis
+		}
+		
+		female_names = {
+			Andia_Ballai Anzotica_Aphrodita Birgit_Brigit Boria Breza Cela_Daiza Diza Epula
+			Labeatia Monounia Plania Platoria Rheda Rhoemetalces Scervia Sirdica Surra
+			Teuta_Teuta Trita Vibia Vendoa Vezina Vinda Virdunia Volca Volumna
+		}
+		from_dynasty_prefix = "e "
+		disinherit_from_blinding = yes
+		modifier = ilyrian_culture_modifier
+	}
+
 	georgian = {
 		graphical_cultures = { byzantinegfx }
 		color = { 0.6 0.3 0.8 }
@@ -4900,6 +4920,37 @@ iranian = {
 		modifier = persian_culture_modifier
 	}
 
+	parthian = {
+		graphical_cultures = { persiangfx }
+		secondary_event_pictures = bedouin_arabic
+		color = { 0.4 0.6 0.1 }
+		male_names = {
+			Abrocomas Abdagases Andragoras Ardarban_Ardavan Arsaces_Arsakes Artabanus_Artaban Arsam Arsamnes
+			Aspandiar Astyages_Astyages Bagayash Bahram_Bahram Barzanes Bistun Boddo Borzmihr Chosroes_Khosrau
+			Dareios_Darius Datames Fraates_Phraates Fravarti Fravardin Gotarzes_Godarzes Hystaspes_Vishtasp
+			Izates Kamnaskires Khosro_Khusro Manochihr_Minochihr Mithradates_Mehrdad Narseh Narsai
+			Ochus Orodes Oxyartes Pacorus Pakoros Peucestas Phraortes_Pharavarti Phriapites Rostam_Rostam
+			Sanatruces Sinatruces Sogdianos Spandadates Surena Suren Tiridates Tirdad Tigranes
+			Vardanes Varaz Varazdat Vologases_Balagash Vonones Yazdegerd
+		}
+		
+		female_names = {
+			Anzaze Ariazate Arezoo Ashkhen Azarmidokht Bagana Banu BanuChichak
+			Dushmanara Eurenis Firozeh Fravartish Gurdofarid Khwarrahdokht Mahin Mahnaz Mihrnaz
+			Mithrakana Nahid Nanaya Nikatanu Orontid Pantea Parinaz Parvaneh_Parvaneh
+			Rakhshanda Rhodogune Roxana_Roxane Satrapis Shahdokht Shapurdukht Shirin Sinope Sura
+			Tiridokht Tisbah Tisparis Tryphaina Vistana Zarmandukht Zarineh Zariadresdokht
+		}
+		from_dynasty_suffix = "í"
+		#dynasty_title_names = yes
+		founder_named_dynasties = yes
+		male_patronym = "per"
+		female_patronym = "dukht"
+		prefix = no
+		modifier = parthian_culture_modifier
+		allow_looting = yes
+	}
+
 	khwarezmi = {
 		graphical_cultures = { persiangfx }
 		secondary_event_pictures = bedouin_arabic
@@ -7025,6 +7076,691 @@ italian_group = {
 		mother_name_chance = 0
 		disinherit_from_blinding = yes
 		modifier = roman_culture_modifier
+	}
+
+	roman_gallo = { #Romano Gaulic
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_gallo_culture_modifier
+	}
+
+	roman_spain = { #Romano Hispanic
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_spain_culture_modifier
+	}
+
+	roman_ilyrian = { #Romano Ilyrian
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_ilyrian_culture_modifier
+	}
+	roman_african = { #Romano African
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_african_culture_modifier
+	}
+	roman_african = { #Romano African
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_african_culture_modifier
+	}
+	roman_mauretanian = { #Romano Mauretanian
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_mauretanian_culture_modifier
+	}
+	roman_british = { #Romano British
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_british_culture_modifier
+	}
+	roman_thraco = { #Romano Thraco
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_thraco_culture_modifier
+	}
+	roman_german = { #Romano Germanic
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_german_culture_modifier
+	}
+	roman_greek = { #Romano Greco
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_greek_culture_modifier
+	}
+	roman_egyptian = { #Romano Egypto
+		graphical_cultures = { romangfx southerngfx }
+		color = { 0.7 0.5 0.7 }
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		used_for_random = no
+		male_names = {
+			Agricola Agrippa Albinus_Albinus Albus Antadus Anterus Antius Antonius_Antonius Appius Aratus Asina
+			Aulianius Aulimius Aulus Aurianius Auspex Balbus Barbatus Bibulus Brutus_Brutus Bubo Buteo Caelus
+			Caesar_Caesar Calvinus Calvus Caradius Caranius Cato_Cato Catulus Cethegus Cicero Cinna Claudelius
+			Claudonius Cornelus Cornonius Cornorius Cotta Crispian Curio Dama Damasus Decimus Decinius Decius
+			Deconius Dentatus Dives Dolabella Donatus_Donatus Draco Drusus Emeritus Eugenius_Eugene Euphemius
+			Falco Falx Faustus_Faustus Felix_Felix Fimbria Flaccus Flavorius Florelius Florerius Florus Fronto
+			Gaius_Gaius Gala Galerus Galinius Gemellus Gnaeus Gorgonius Gracchus Gracilis Habitus Hadradius
+			Hadrianus_Hadrianus Hadrimius Herma Hilarius_Hilarius Honadius Honanus Honelus Honerius Honimus
+			Horatius_Horatius Ignatius_Ignatius Iuba Julorius Justadus Labeo Laenas Lentulus Lepidus Leptis
+			Liberius Libius_Libius Libo Longinus Longus Lucan Lucinus Lucius Lucullus Lupius Macelius Macorus
+			Macro Mamercus Manius_Manius Maranius Marcius_Marcius Marcus Marinus_Marinus Martialis Marullus
+			Maxerius Maximus_Maximus Maxus Memmius Mercator Messalla Mettius Montanus Murena Mus Nasica Numerius
+			Oceanus Octavianus_Octavianus Opis Optatus Otho Paenula Pantera Pavo Peregrinus_Peregrinus Pertinax
+			Petronax Pictor Pilatus Polus Primus_Primus Prisca Procyon Publius_Publius Pulcher Quarto_Quarto
+			Quintianius Quintorius Quintus_Quintus Quiricus Regillus Remus_Remus Romanus_Romanus Romulus_Romulus
+			Rufus Ruso Sabinus_Sabinus Salinator Scaevola Scipio Scrofa Secundus_Secundus Seneca Senna Septanius
+			Septerius Septimus_Septimus Septinus Servius Severus_Severus Sevinus Sevonius Sevorus Sextus_Sextus
+			Sorex Spurius Statius Strabo Super Superbus Tacitus Tertius Tertulus Theodadius Theodinius Theodonus
+			Tibanius Tibelus Tiberius_Tiberius Tibinius Tiborus Tibullus Titonius Titus_Titus Trajanus_Trajanus Trebonius
+			Tullius_Tullius Ursinus Ursus Valens_Valens Varro Varus Vergilius_Vergilius Viator Victor_Victor
+			Vindex Virilis Vitalis_Vitalis Vitus_Vitus Zeno Zoilus Zosimus_Zosimus
+		}
+		female_names = {
+			Achaica Aconia Adelpha Aelia Aemilia Agape Agrippina Airlea Akantha Alexis Alfidia Alkyone Alypia
+			Ancharia Anethencia Annamaria Annia Antigone Antistia Antonia_Antonia Apollonia Aquila_Aquila
+			Aquilia_Aquila Aristomache Arrecina Arria Artemisia Aspacia Athenais Atia Attica Aurelia_Aurelia
+			Baebiana Barbia Berenice_Berenice Betitia Bruttia Caecilia Caesonia Calpurnia Calvina Ceacilia Charis
+			Clara_Clara Claudia_Claudia Cleopatra Clodia Cornelia_Cornelia Crispina Cynna Davina Decima Demetria
+			Dianna_Diana Diantha Didia Dionysia Domitia Domitilla Domna Drusilla Dryantilla Duodecima Eirene
+			Elpis Etruscilla Eudocia Eunice Euphemia_Euphemia Eurydice Euthalia Eutropia Evgenia Fabia Fadia
+			Fadilla Faltonia Fannia Fausta_Fausta Faustina Flacilla Flavia_Flavia Fulvia_Fulvia Fundania Furnilla
+			Galeria Galla Gnaea Gratidia Helen Helena Helvia Herennia Hispulla Honoria Hostia Hypatia Iulia Julia
+			Junia Justina_Justina Kandake Kassandra Laodice Leontia_Leontia Lepida Licinia Livia_Livia Livilla
+			Lollia Longina Lucilia Lucilla Maecia Magia Magna Manlia Marcella_Marcella Marcia_Marcia Marciana
+			Mariniara Matidia Matina Megaira Melaina Mellisa Messalina Metella Minervina Mucia Mummia Munatia
+			Narkissa Nona Nysa Ocellina Octava Octavia_Octavia Olympia Orbiana Orestilla Otacilia Paccia Paetina
+			Papianilla Papiria Paula Paulina Phila Phile Placidia Plancina Plautia Plautilla Plotina Pompeia
+			Popillia Poppaea Porcia Prima Prisca Proba Ptolema Pulcheria Pulchra Quarta Quinta Sabina_Sabina
+			Sallustia Salonina Scantilla Secunda Seia Sempronia Septa Septima Servilia Severa Severina
+			Sofia_Sophia Sostrate Statilia Stratonice Sulpicia Supera Terentia Tertia Tertulla Thais Theodora
+			Theophila Thessaloniki Thetima Thorakis Timo Titiana Tranquillina_Tranquillina Tullia_Tullia Turia
+			Ulpia Undecima Urbica Urgulania Urgulanilla Urgunalla Valeria_Valeria Verina_Vera Vesta Vibia
+			Violentilla Vipsania Vistilia Xanthe Xene Xenia Zoe Zona
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = roman_egyptian_culture_modifier
 	}
 }
 
