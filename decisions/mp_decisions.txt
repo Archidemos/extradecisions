@@ -316,6 +316,31 @@ targetted_decisions = {
 			}
 		}
 	}
+	create_cadet_branch = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+		
+		potential = {
+			character = FROM
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			higher_tier_than = BARON
+		}
+
+		allow = {
+			always = yes
+		}
+		
+		effect = {
+			FROM = {
+				dynasty = father_bastard
+				recalc_succession = yes
+			}
+		}
+	}
+
 	#prestige_to_gold = {
 	#	filter = self
 	#	ai_target_filter = self
