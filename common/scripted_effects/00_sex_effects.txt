@@ -68,7 +68,7 @@ venereal_disease_effect = {
 		}
 
 		if = {
-			limit = { trait = aztec_disease }
+			limit = { trait = has_aztec_disease }
 			FROM = { give_aztec_disease_effect = yes }
 		}
 	}
@@ -88,7 +88,7 @@ venereal_disease_effect = {
 		}
 
 		if = {
-			limit = { FROM = { trait = aztec_disease } }
+			limit = { FROM = { trait = has_aztec_disease } }
 			give_aztec_disease_effect = yes
 		}
 	}
@@ -144,7 +144,7 @@ venereal_disease_effect_event_target = {
 		}
 
 		if = {
-			limit = { trait = aztec_disease }
+			limit = { trait = has_aztec_disease }
 			event_target:sex_partner = { give_aztec_disease_effect = yes }
 		}
 	}
@@ -164,7 +164,7 @@ venereal_disease_effect_event_target = {
 		}
 
 		if = {
-			limit = { event_target:sex_partner = { trait = aztec_disease } }
+			limit = { event_target:sex_partner = { trait = has_aztec_disease } }
 			give_aztec_disease_effect = yes
 		}
 	}

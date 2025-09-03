@@ -956,43 +956,43 @@ remove_disease_trait_effect = {
 	}
 
 	if = {
-		limit = { trait = consumption }
-		remove_trait = consumption
+		limit = { trait = has_tuberculosis }
+		remove_trait = has_tuberculosis
 	}
 
 	if = {
-		limit = { trait = slow_fever }
-		remove_trait = slow_fever
+		limit = { trait = has_typhoid_fever }
+		remove_trait = has_typhoid_fever
 	}
 
 	if = {
-		limit = { trait = camp_fever }
-		remove_trait = camp_fever
+		limit = { trait = has_typhus }
+		remove_trait = has_typhus
 	}
 
 	if = {
-		limit = { trait = bubonic_plague }
-		remove_trait = bubonic_plague
+		limit = { trait = has_bubonic_plague }
+		remove_trait = has_bubonic_plague
 	}
 
 	if = {
-		limit = { trait = measles }
-		remove_trait = measles
+		limit = { trait = has_measles }
+		remove_trait = has_measles
 	}
 
 	if = {
-		limit = { trait = smallpox }
-		remove_trait = smallpox
+		limit = { trait = has_small_pox }
+		remove_trait = has_small_pox
 	}
 
 	if = {
-		limit = { trait = aztec_disease }
-		remove_trait = aztec_disease
+		limit = { trait = has_aztec_disease }
+		remove_trait = has_aztec_disease
 	}
 
 	if = {
-		limit = { trait = great_pox }
-		remove_trait = great_pox
+		limit = { trait = syphilitic }
+		remove_trait = syphilitic
 	}
 
 	if = {
@@ -1093,7 +1093,7 @@ add_disease_level_effect = {
 
 			mult_modifier = {
 				factor = 2
-				trait = brawny
+				trait = robust
 			}
 
 			custom_tooltip = {
@@ -1109,7 +1109,7 @@ add_disease_level_effect = {
 		10 = {
 			mult_modifier = {
 				factor = 1.5
-				trait = frail
+				trait = feeble
 			}
 
 			mult_modifier = {
@@ -1124,7 +1124,7 @@ add_disease_level_effect = {
 
 			mult_modifier = {
 				factor = 0.5
-				trait = brawny
+				trait = robust
 			}
 
 			mult_modifier = {
@@ -1164,7 +1164,7 @@ add_disease_level_effect = {
 
 			mult_modifier = {
 				factor = 2
-				trait = frail
+				trait = feeble
 			}
 
 			mult_modifier = {
@@ -1179,7 +1179,7 @@ add_disease_level_effect = {
 
 			mult_modifier = {
 				factor = 0.5
-				trait = brawny
+				trait = robust
 			}
 
 			mult_modifier = {
@@ -1284,7 +1284,7 @@ give_consumption_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_consumption
-				trait = consumption
+				trait = has_tuberculosis
 			}
 		}
 
@@ -1293,7 +1293,7 @@ give_consumption_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = consumption
+			add_trait = has_tuberculosis
 		}
 
 		else_if = {
@@ -1304,7 +1304,7 @@ give_consumption_effect = {
 				}
 			}
 
-			tooltip = { add_trait = consumption }
+			tooltip = { add_trait = has_tuberculosis }
 
 			set_character_flag = got_consumption
 			set_character_flag = developing_illness
@@ -1323,7 +1323,7 @@ give_slow_fever_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_slow_fever
-				trait = slow_fever
+				trait = has_typhoid_fever
 			}
 		}
 
@@ -1332,7 +1332,7 @@ give_slow_fever_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = slow_fever
+			add_trait = has_typhoid_fever
 		}
 
 		else_if = {
@@ -1343,7 +1343,7 @@ give_slow_fever_effect = {
 				}
 			}
 
-			tooltip = { add_trait = slow_fever }
+			tooltip = { add_trait = has_typhoid_fever }
 
 			set_character_flag = got_slow_fever
 			set_character_flag = developing_illness
@@ -1362,7 +1362,7 @@ give_bubonic_plague_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_bubonic_plague
-				trait = bubonic_plague
+				trait = has_bubonic_plague
 			}
 		}
 
@@ -1371,7 +1371,7 @@ give_bubonic_plague_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = bubonic_plague
+			add_trait = has_bubonic_plague
 		}
 
 		else_if = {
@@ -1382,7 +1382,7 @@ give_bubonic_plague_effect = {
 				}
 			}
 
-			tooltip = { add_trait = bubonic_plague }
+			tooltip = { add_trait = has_bubonic_plague }
 
 			set_character_flag = got_bubonic_plague
 			set_character_flag = developing_illness
@@ -1401,7 +1401,7 @@ give_measles_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_measles
-				trait = measles
+				trait = has_measles
 			}
 		}
 
@@ -1410,7 +1410,7 @@ give_measles_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = measles
+			add_trait = has_measles
 		}
 
 		else_if = {
@@ -1421,7 +1421,7 @@ give_measles_effect = {
 				}
 			}
 
-			tooltip = { add_trait = measles }
+			tooltip = { add_trait = has_measles }
 
 			set_character_flag = got_measles
 			set_character_flag = developing_illness
@@ -1440,7 +1440,7 @@ give_smallpox_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_smallpox
-				trait = smallpox
+				trait = has_small_pox
 			}
 		}
 
@@ -1449,7 +1449,7 @@ give_smallpox_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = smallpox
+			add_trait = has_small_pox
 		}
 
 		else_if = {
@@ -1460,7 +1460,7 @@ give_smallpox_effect = {
 				}
 			}
 
-			tooltip = { add_trait = smallpox }
+			tooltip = { add_trait = has_small_pox }
 
 			set_character_flag = got_smallpox
 			set_character_flag = developing_illness
@@ -1479,7 +1479,7 @@ give_aztec_disease_effect = {
 		limit = {
 			NOR = {
 				has_character_flag = immune_aztec_disease
-				trait = aztec_disease
+				trait = has_aztec_disease
 			}
 		}
 
@@ -1488,7 +1488,7 @@ give_aztec_disease_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = aztec_disease
+			add_trait = has_aztec_disease
 		}
 
 		else_if = {
@@ -1499,7 +1499,7 @@ give_aztec_disease_effect = {
 				}
 			}
 
-			tooltip = { add_trait = aztec_disease }
+			tooltip = { add_trait = has_aztec_disease }
 
 			set_character_flag = got_aztec_disease
 			set_character_flag = developing_illness
@@ -1516,7 +1516,7 @@ give_aztec_disease_effect = {
 give_great_pox_effect = {
 	if = {
 		limit = {
-			NOT = { trait = great_pox }
+			NOT = { trait = syphilitic }
 		}
 
 		if = {
@@ -1524,7 +1524,7 @@ give_great_pox_effect = {
 				NOT = { has_dlc = "Reapers" }
 			}
 
-			add_trait = great_pox
+			add_trait = syphilitic
 		}
 
 		else_if = {
@@ -1535,7 +1535,7 @@ give_great_pox_effect = {
 				}
 			}
 
-			tooltip = { add_trait = great_pox }
+			tooltip = { add_trait = syphilitic }
 
 			set_character_flag = got_syphilis
 			set_character_flag = developing_illness
@@ -1765,7 +1765,7 @@ remove_random_disease_effect = {
 		}
 
 		20 = {
-			trigger = { trait = measles }
+			trigger = { trait = has_measles }
 			set_character_flag = removing_measles
 		}
 
@@ -1800,7 +1800,7 @@ remove_random_disease_effect = {
 		}
 
 		10 = {
-			trigger = { trait = great_pox }
+			trigger = { trait = syphilitic }
 			set_character_flag = removing_great_pox
 		}
 
@@ -1814,37 +1814,37 @@ remove_random_disease_effect = {
 remove_random_epidemic_disease_effect = {
 	random_list = {
 		10 = {
-			trigger = { trait = consumption }
+			trigger = { trait = has_tuberculosis }
 			set_character_flag = removing_consumption
 		}
 
 		10 = {
-			trigger = { trait = aztec_disease }
+			trigger = { trait = has_aztec_disease }
 			set_character_flag = removing_aztec_disease
 		}
 
 		10 = {
-			trigger = { trait = smallpox }
+			trigger = { trait = has_small_pox }
 			set_character_flag = removing_smallpox
 		}
 
 		10 = {
-			trigger = { trait = bubonic_plague }
+			trigger = { trait = has_bubonic_plague }
 			set_character_flag = removing_bubonic_plague
 		}
 
 		10 = {
-			trigger = { trait = camp_fever }
+			trigger = { trait = has_typhus }
 			set_character_flag = removing_camp_fever
 		}
 
 		10 = {
-			trigger = { trait = slow_fever }
+			trigger = { trait = has_typhoid_fever }
 			set_character_flag = removing_slow_fever
 		}
 
 		10 = {
-			trigger = { trait = measles }
+			trigger = { trait = has_measles }
 			set_character_flag = removing_measles
 		}
 	}

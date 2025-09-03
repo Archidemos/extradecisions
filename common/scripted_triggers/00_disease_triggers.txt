@@ -42,13 +42,13 @@ physician_good_trigger = {
 
 has_epidemic_disease_trigger = {
 	OR = {
-		trait = consumption
-		trait = slow_fever
-		trait = camp_fever
-		trait = bubonic_plague
-		trait = measles
-		trait = smallpox
-		trait = aztec_disease
+		trait = has_tuberculosis
+		trait = has_typhoid_fever
+		trait = has_typhus
+		trait = has_bubonic_plague
+		trait = has_measles
+		trait = has_small_pox
+		trait = has_aztec_disease
 	}
 }
 
@@ -71,12 +71,12 @@ is_sick_or_injured_trigger = {
 		trait = flu
 		trait = food_poisoning
 		trait = gout
-		trait = bubonic_plague
-		trait = measles
-		trait = smallpox
-		trait = consumption
-		trait = slow_fever
-		trait = camp_fever
+		trait = has_bubonic_plague
+		trait = has_measles
+		trait = has_small_pox
+		trait = has_tuberculosis
+		trait = has_typhoid_fever
+		trait = has_typhus
 		is_incapable = yes
 		trait = infirm
 		trait = leper
