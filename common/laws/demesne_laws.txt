@@ -84,8 +84,7 @@ laws = {
 					OR = {
 						AND = {
 							has_law = centralization_1
-							over_vassal_limit = -1
-							over_max_demesne_size = -1
+							over_vassal_limit >= 1
 						}
 						AND = {
 							has_law = centralization_2
@@ -161,13 +160,11 @@ laws = {
 					OR = {
 						AND = {
 							has_law = centralization_0
-							over_vassal_limit = -1
-							over_max_demesne_size = 1
+							over_vassal_limit <= -10
 						}
 						AND = {
 							has_law = centralization_2
-							over_vassal_limit = 1
-							over_max_demesne_size = -1
+							over_vassal_limit >= 1
 						}
 						AND = {
 							has_law = centralization_3
@@ -229,6 +226,9 @@ laws = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 0.9
+			}
+			modifier = {
 				factor = 0
 				NOT = {
 					OR = {
@@ -239,13 +239,11 @@ laws = {
 						}
 						AND = {
 							has_law = centralization_1
-							over_vassal_limit = -1
-							over_max_demesne_size = 1
+							over_vassal_limit <= -10
 						}
 						AND = {
 							has_law = centralization_3
-							over_vassal_limit = 1
-							over_max_demesne_size = -1
+							over_vassal_limit >= 1
 						}
 						AND = {
 							has_law = centralization_4
@@ -319,13 +317,11 @@ laws = {
 						}
 						AND = {
 							has_law = centralization_2
-							over_vassal_limit = -1
-							over_max_demesne_size = 1
+							over_vassal_limit <= -10
 						}
 						AND = {
 							has_law = centralization_4
-							over_vassal_limit = 1
-							over_max_demesne_size = -1
+							over_vassal_limit >= 1
 						}					
 					}
 				}
@@ -394,8 +390,7 @@ laws = {
 						}
 						AND = {
 							has_law = centralization_3
-							over_vassal_limit = -1
-							over_max_demesne_size = 1
+							over_vassal_limit <= -10
 						}					
 					}
 				}

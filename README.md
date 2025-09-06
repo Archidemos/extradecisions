@@ -1,4 +1,5 @@
-
+## Combat Tactics changes
+This mod uses Redtide's Adjustments to Combat Tactics mod (https://steamcommunity.com/sharedfiles/filedetails/?id=1422052089). Once you download this repository/extract the Steam Workshop package, you can check out the modified wiki page by opening the combatTacticsMod.html file in the main directory.
 
 ## Visual/UI improvement mods that we tested and you can play them together with our mod for your improved comfort:
 
@@ -24,3 +25,4 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2235236515
 ## CREDITS
 
 Brightgalrs: Map border for SWMH
+Redtide: Adjustments to Combat Tactics mod

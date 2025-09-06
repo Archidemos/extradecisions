@@ -247,7 +247,6 @@ character_event = {
 			limit = {
 				OR = {
 					holder_scope = { government = ar_theocracy_government }
-					holder_scope = { government = ar_republic_government }
 					holder_scope = { government = republic_government }
 					holder_scope = { has_landed_title = d_papal_guards }
 					holder_scope = { has_landed_title = d_scholae_palatinae }
@@ -259,7 +258,6 @@ character_event = {
 				limit = {
 					OR = {
 						holder_scope = { government = ar_theocracy_government }
-						holder_scope = { government = ar_republic_government }
 						holder_scope = { government = republic_government }
 						holder_scope = { has_landed_title = d_papal_guards }
 						holder_scope = { has_landed_title = d_scholae_palatinae }
@@ -491,50 +489,50 @@ character_event = {
 
 ##Instant Mughal Invasion Spawn
 
-character_event = { #Character Event to delay the Province event to trigger the Mughal Invasion for Instant Game rule
-	id = MP.011
+# character_event = { #Character Event to delay the Province event to trigger the Mughal Invasion for Instant Game rule
+	# id = MP.011
 
-	hide_window = yes
-	is_triggered_only = yes
+	# hide_window = yes
+	# is_triggered_only = yes
 	
-	only_playable = yes
-	religion = catholic
+	# only_playable = yes
+	# religion = catholic
 
-	trigger = {
-		has_game_rule = {
-			name = mughal_invasion
-			value = test
-		}
-		NOT = { has_global_flag = instant_invader_part_1 }
-		is_save_game = no
-		controls_religion = yes
-	}
+	# trigger = {
+		# has_game_rule = {
+			# name = mughal_invasion
+			# value = test
+		# }
+		# NOT = { has_global_flag = instant_invader_part_1 }
+		# is_save_game = no
+		# controls_religion = yes
+	# }
 
 	
-	immediate = {
-		random_province = {
-			limit = { has_owner = yes }
-			province_event = { id = MP.012 days = 5 }
-		}
-		set_global_flag = instant_invader_part_1
-	}
-}
+	# immediate = {
+		# random_province = {
+			# limit = { has_owner = yes }
+			# province_event = { id = MP.012 days = 5 }
+		# }
+		# set_global_flag = instant_invader_part_1
+	# }
+# }
 
-province_event = { #Province event that will trigger the Mughal Invasion
-	id = MP.012
+# province_event = { #Province event that will trigger the Mughal Invasion
+	# id = MP.012
 
-	hide_window = yes
-	is_triggered_only = yes
+	# hide_window = yes
+	# is_triggered_only = yes
 
-	trigger = {
-		NOT = { has_global_flag = instant_invader_part_2 }
-	}
+	# trigger = {
+		# NOT = { has_global_flag = instant_invader_part_2 }
+	# }
 	
-	immediate = {
-		set_global_flag = instant_invader_part_2
-		#k_papal_state = { holder_scope = { narrative_event = { id = MUG.100 } } }
-	}
-}
+	# immediate = {
+		# set_global_flag = instant_invader_part_2
+		# #k_papal_state = { holder_scope = { narrative_event = { id = MUG.100 } } }
+	# }
+# }
 
 ##Instant Umayyad Invasion Spawn
 

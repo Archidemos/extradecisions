@@ -40,6 +40,7 @@ decisions = {
 						completely_controls = k_saxony
 						completely_controls = k_schwaben
 						completely_controls = k_franconia
+						completely_controls = k_bavaria
 					}
 					#trigger_if = {
 					#	limit = { k_franconia = { is_titular = no } }
@@ -66,7 +67,7 @@ decisions = {
 				any_demesne_title = {
 					limit = {
 						OR = {
-							title = k_germany
+							#title = k_germany
 							title = k_wesphalia
 							title = k_thuringian
 							title = k_schwaben
@@ -83,9 +84,7 @@ decisions = {
 					d_hessen = { de_jure_liege = k_germany }
 					d_ostfranken = { de_jure_liege = k_germany }
 					d_nuremberg = { de_jure_liege = k_germany }
-					d_lauenburg = { de_jure_liege = k_germany }
 					d_westfalen = { de_jure_liege = k_germany }
-					d_saxewittenberg = { de_jure_liege = k_germany }
 					d_tubingen = { de_jure_liege = k_germany }
 					d_teck = { de_jure_liege = k_germany }
 					d_burgau = { de_jure_liege = k_germany }
@@ -93,12 +92,12 @@ decisions = {
 					d_alsace = { de_jure_liege = k_germany }
 					d_angria = { de_jure_liege = k_germany }
 					d_baden	 = { de_jure_liege = k_germany }
-					d_brandenburg = { de_jure_liege = k_germany }
+					#d_brandenburg = { de_jure_liege = k_germany }
 					d_bremen = { de_jure_liege = k_germany }
 					d_brunswick = { de_jure_liege = k_germany }
 					d_franconia = { de_jure_liege = k_germany }
 					d_hesse = { de_jure_liege = k_germany }
-					d_lausitz = { de_jure_liege = k_germany }
+					#d_lausitz = { de_jure_liege = k_germany }
 					d_meissen = { de_jure_liege = k_germany }
 					d_munster_germany = { de_jure_liege = k_germany }
 					d_raetia = { de_jure_liege = k_germany }
@@ -111,7 +110,19 @@ decisions = {
 					d_hamburg = { de_jure_liege = k_germany }
 					d_koln = { de_jure_liege = k_germany }
 					d_holstein = { de_jure_liege = k_denmark }
-					d_mecklemburg = { de_jure_liege = k_germany }
+					#d_mecklemburg = { de_jure_liege = k_germany }
+					
+					#Bavarian Land
+					d_nordgau = { de_jure_liege = k_germany }
+					d_niederbayern = { de_jure_liege = k_germany }
+					d_oberbayern = { de_jure_liege = k_germany }
+					d_tyrol = { de_jure_liege = k_germany }
+					d_osterreich = { de_jure_liege = k_germany }
+
+					#To Pommerania
+					d_lauenburg = { de_jure_liege = k_pomerania }
+					d_saxewittenberg = { de_jure_liege = k_pomerania }
+					d_meissen = { de_jure_liege = k_pomerania }
 					
 					activate_title = {
 						title = k_germany
@@ -131,6 +142,14 @@ decisions = {
 					}
 					activate_title = {
 						title = k_franconia
+						status = no
+					}
+					activate_title = {
+						title = k_saxony
+						status = no
+					}
+					activate_title = {
+						title = k_bavaria
 						status = no
 					}
 				}

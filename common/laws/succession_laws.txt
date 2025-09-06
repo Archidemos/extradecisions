@@ -56,6 +56,10 @@ succession_laws = {
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
 			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
+			}
 		}
 		allow = {
 			holder_scope = {
@@ -308,6 +312,10 @@ succession_laws = {
 				holder_scope = { government = chinese_imperial_government }
 				holder_scope = { government = ar_theocracy_government }
 			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
+			}
 		}
 		allow = {
 			conditional_tooltip = {
@@ -442,6 +450,13 @@ succession_laws = {
 			NOR = {
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
+			}
+			OR = {
+				has_game_rule = {
+					name = gavelkind_only
+					value = off
+				}
+				is_patrician = yes
 			}
 		}
 		
@@ -597,6 +612,10 @@ succession_laws = {
 				holder_scope = { government = ar_republic_government }
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
+			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
 			}
 		}
 		allow = {
@@ -791,6 +810,10 @@ succession_laws = {
 			NOR = {  #Special Elective.
 				title = e_hre 
 				has_title_flag = alternate_hre
+			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
 			}
 		}
 		allow = {
@@ -1056,6 +1079,10 @@ succession_laws = {
 				holder_scope = { government = chinese_imperial_government }
 				holder_scope = { government = ar_theocracy_government }
 			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
+			}
 
 		}
 		allow = {
@@ -1202,6 +1229,10 @@ succession_laws = {
 				holder_scope = { government = ar_republic_government }
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
+			}
+			has_game_rule = {
+				name = gavelkind_only
+				value = off
 			}
 		}
 		allow = {
