@@ -1735,3 +1735,187 @@ RETTYPE_GOTHS =
 		light_infantry_morale = 0.1
 	}
 }
+
+RETTYPE_LINF = 
+{
+	first_type = 0
+	first_amount = 400
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_HINF = 
+{
+	first_type = 1
+	first_amount = 300
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_PIKE = 
+{
+	first_type = 2
+	first_amount = 300
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_LCAV = 
+{
+	first_type = 3
+	first_amount = 300
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_HCAV = 
+{
+	first_type = 4
+	first_amount = 150
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_ARCH = 
+{
+	first_type = 5
+	first_amount = 400
+	
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		NOT = {
+				has_game_rule = {
+				name = pure_retinues_rule
+				value = off
+			}
+		}
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_HA = 
+{
+	first_type = 6
+	first_amount = 200
+	
+	special_troops = horse_archers
+
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		has_game_rule = {
+			name = pure_retinues_rule
+			value = all
+		}
+
+	}
+	
+	modifier = {
+	}
+}
+
+RETTYPE_CAMEL = 
+{
+	first_type = 6
+	first_amount = 300
+	
+	special_troops = camel_cavalry
+
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		has_game_rule = {
+			name = pure_retinues_rule
+			value = all
+		}
+	}
+	
+	modifier = {
+		camel_cavalry_offensive = -0.1
+		camel_cavalry_defensive = -0.1
+		camel_cavalry_morale = -0.1
+	}
+}
+
+RETTYPE_ELEPH = 
+{
+	first_type = 6
+	first_amount = 40
+	
+	special_troops = war_elephants
+
+	potential = {
+		ai = no
+		is_nomadic = no is_tribal = no
+		has_game_rule = {
+			name = pure_retinues_rule
+			value = all
+		}
+	}
+	
+	modifier = {
+	}
+}
