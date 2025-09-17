@@ -229,7 +229,7 @@ first_rashudin_invasion = {
 				FROM = { set_defacto_liege = ROOT }
 			}
 			ROOT = { character_event = { id = HFP.41090 days = 1 } }
-			hidden_effect = { any_player = { narrative_event = { id = RASHD.200 days = 1 } } }
+			#hidden_effect = { any_player = { narrative_event = { id = RASHD.200 days = 1 } } }
 		}
 		ROOT = { disband_event_forces = yes }
 		while = {
@@ -341,7 +341,7 @@ rashudin_invasion_cb = {
 			}
 			
 			ROOT = { character_event = { id = ROMA.999 days = 1 } }
-			ROOT = { character_event = { id = RASHD.400 days = 10 } }
+			#ROOT = { character_event = { id = RASHD.400 days = 10 } }
 			ROOT = { character_event = { id = HFP.41090 days = 1 } }
 		}
 	}
@@ -532,7 +532,7 @@ rashudin_invasion_cb = {
 				}
 			}
 		}
-		ROOT = { character_event = { id = RASHD.400 days = 10 } }
+		#ROOT = { character_event = { id = RASHD.400 days = 10 } }
 	}
 
 	attacker_ai_victory_worth = {
@@ -646,7 +646,7 @@ umayyad_rashudin_war = {
 			adjective = "Umayyad"
 		}
 		ROOT = { set_character_flag = rashudin_expander }
-		ROOT = { narrative_event = { id = RASHD.113 } }
+		#ROOT = { narrative_event = { id = RASHD.113 } }
 	}
 	
 	on_fail = {
@@ -686,7 +686,7 @@ umayyad_rashudin_war = {
 				decadence = 10
 			}
 		}
-		FROM = { narrative_event = { id = RASHD.113 } }
+		#FROM = { narrative_event = { id = RASHD.113 } }
 	}
 
 	attacker_ai_victory_worth = {
@@ -849,7 +849,7 @@ abbasid_umayyad_war = {
 				decadence = 10
 			}
 		}
-		FROM = { narrative_event = { id = RASHD.113 } }
+		#FROM = { narrative_event = { id = RASHD.113 } }
 	}
 
 	attacker_ai_victory_worth = {
