@@ -1,0 +1,188 @@
+namespace = ROMANFR
+
+character_event = {
+	id = ROMANFR.98
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date <= 936.8.7
+		is_save_game = no
+		NOT = { has_global_flag = west_roman_player_event_fired }
+    }
+	
+	immediate = {
+		set_global_flag = west_roman_player_event_fired
+		any_player = { narrative_event = { id = ROMANFR.99 days = 5 } }
+		e_west_rome = {
+			save_event_target_as = character_rome_crisis
+		}
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.99
+	title = "A Fragmenting Rome"
+	desc = "For centuries, the Roman Empire has been standing tall as the beacon of civilization. The Roman Empire endured many crisises and always prevailed, however now it seems the empire is getting to its end. Will the Roman Empire still have hope, or will it meet its end..."
+    is_triggered_only = yes
+	
+	portrait = character_rome_crisis
+	picture = GFX_evt_rome_falls
+	sound = ar_arabs_lose
+	
+    trigger = {
+		start_date <= 400.1.1
+		is_save_game = no
+    }
+	
+	immediate = {
+		clear_event_target = character_rome_crisis
+	}	
+	
+	option = {
+		name = EVTOPUMM.6
+	}
+}
+
+character_event = {
+    id = ROMANFR.100
+    only_rulers = yes
+	desc = "As the construction of the bathhouse is finished, will this be a public or a private bathhouse?"
+	picture = GFX_evt_construction_site
+	border = GFX_event_normal_frame_diplomacy
+    is_triggered_only = yes
+	
+	option = {
+		name = "This bathouse is for me and my friends"
+		add_character_modifier = {
+			name = roman_bathhouse_private
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+	option = {
+		name = "Let the people use it and pay!"
+		add_character_modifier = {
+			name = roman_bathhouse_public
+			duration = -1
+		}
+		clr_character_flag = selecting_icon
+	}
+}
+
+narrative_event = {
+    id = ROMANFR.101
+    only_rulers = yes
+	
+	title = "Abandoning Britania"
+	desc = "Will all thee chaos and instability, it is time for us to abandon Britania, this island has been causing us trouble and is therefore too hard to manage. We shall import everything we have there back to the mainland."
+	
+	picture = GFX_evt_depopulated_town
+	border = GFX_event_narrative_frame_diplomacy
+    is_triggered_only = yes
+	
+	option = {
+		name = "Vale Britannia.."
+		wealth = 2000
+		prestige = -1000
+		e_britannia = {
+			any_de_jure_vassal = {
+				limit = {
+					higher_tier_than = DUKE
+				}
+				set_defacto_liege = THIS
+			}
+		}
+	}
+}
+
+character_event = { #West Rome gets his crisis modifiers
+	id = ROMANFR.1000
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date <= 400.1.1
+		is_save_game = no
+		has_landed_title = e_west_rome
+	}
+	
+	immediate = {
+		set_global_flag = rome_crisis_1
+		set_global_flag = rome_crisis_2
+		set_global_flag = rome_crisis_3
+		add_character_modifier = { name = rome_crisis_1 duration = -1 }
+		add_character_modifier = { name = rome_crisis_2 duration = -1 }
+		add_character_modifier = { name = rome_crisis_3 duration = -1 }
+	}
+}
+
+character_event = { #Western Roman Emperor getting his modifier 1 after his death
+	id = ROMANFR.1001
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		start_date <= 400.1.1
+		has_landed_title = e_west_rome
+		has_global_flag = rome_crisis_1
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_west_rome
+			}
+			add_character_modifier = { name = rome_crisis_1 duration = -1 }
+	    }
+    }
+}
+
+character_event = { #Western Roman Emperor getting his modifier 2 after his death
+	id = ROMANFR.1002
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		start_date <= 400.1.1
+		has_landed_title = e_west_rome
+		has_global_flag = rome_crisis_2
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_west_rome
+			}
+			add_character_modifier = { name = rome_crisis_2 duration = -1 }
+	    }
+    }
+}
+
+character_event = { #Western Roman Emperor getting his modifier 2 after his death
+	id = ROMANFR.1003
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		start_date <= 400.1.1
+		has_landed_title = e_west_rome
+		has_global_flag = rome_crisis_3
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_west_rome
+			}
+			add_character_modifier = { name = rome_crisis_3 duration = -1 }
+	    }
+    }
+}

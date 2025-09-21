@@ -1,0 +1,97 @@
+decisions = {
+	create_roman_bathhouse = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			OR = {
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+			NOR = {
+				has_character_modifier = roman_bathhouse_private	#Health/Diplo
+				has_character_modifier = roman_bathhouse_public		#Stewardship/Income
+			}
+			NOT = { has_character_flag = built_roman_bathhouse }
+		}
+		allow = {
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			is_playable = yes
+			wealth = 250
+			prestige = 100
+		}
+		effect = {
+			wealth = -250
+			set_character_flag = built_roman_bathhouse
+			hidden_tooltip = { character_event = { id = ROMANFR.100 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+	
+	abandon_britania = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = left_britain }
+			start_date = 400.1.1
+		}
+		allow = {
+			has_landed_title = e_west_rome
+		}
+		effect = {
+			set_global_flag = left_britain
+			custom_tooltip = { 
+				text = "the Roman Province of Britania will be abandoned" 
+				hidden_tooltip = { character_event = { id = ROMANFR.101 } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+}
