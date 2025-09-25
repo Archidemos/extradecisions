@@ -1,7 +1,7 @@
 decisions = {
 	create_roman_bathhouse = {
 		only_playable = yes
-		is_high_prio = yes
+		is_high_prio = no
 		ai_check_interval = 36
 		
 		potential = {
@@ -58,11 +58,146 @@ decisions = {
 			}
 		}
 	}
+
+	end_roman_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_1_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_1
+			has_global_flag = roman_crisis_1
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500			
+			clr_global_flag = roman_crisis_1
+			set_global_flag = roman_crisis_1_taken
+			set_global_flag = roman_crisis_finished_1
+			remove_character_modifier = rome_crisis_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_roman_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_2_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_2
+			has_global_flag = roman_crisis_2
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			diplomacy = 11
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = roman_crisis_2
+			set_global_flag = roman_crisis_2_taken
+			set_global_flag = roman_crisis_finished_2
+			remove_character_modifier = rome_crisis_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_roman_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_3_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_3
+			has_global_flag = roman_crisis_3
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			martial = 13
+			ROOT = { has_landed_title = e_west_rome }
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = roman_crisis_3
+			set_global_flag = roman_crisis_3_taken
+			set_global_flag = roman_crisis_finished_3
+			remove_character_modifier = rome_crisis_3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_roman_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_done }
+			OR = {
+				NOT = { has_global_flag = roman_crisis_1 }
+				NOT = { has_global_flag = roman_crisis_2 }
+				NOT = { has_global_flag = roman_crisis_3 }
+			}
+			AND = {
+				has_landed_title = e_west_rome
+				has_global_flag = roman_crisis_finished_1
+				has_global_flag = roman_crisis_finished_2
+				has_global_flag = roman_crisis_finished_3
+			}
+		}
+
+		allow = {
+			independent = yes
+			
+		}
+
+		effect = {
+			set_global_flag = roman_crisis_done
+			set_global_flag = roman_barbarians_dealt
+			clr_global_flag = roman_crisis_finished_1
+			clr_global_flag = roman_crisis_finished_2
+			clr_global_flag = roman_crisis_finished_3
+			ROOT = { narrative_event = { id = ROMANFR.1008 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	abandon_britania = {
 		only_playable = yes
 		is_high_prio = yes
-		ai_check_interval = 36
+		ai_check_interval = 12
 		
 		potential = {
 			has_landed_title = e_west_rome

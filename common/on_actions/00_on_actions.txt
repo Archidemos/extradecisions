@@ -138,14 +138,17 @@ on_yearly_pulse = {
 		
 		MP.041
 		
-		NERF.50		#Event to remove Realm Nerf Modifiers on AI
-		NERF.51		#Event to remove Realm Nerf Modifiers on non-independent characters
+		NERF.50			#Event to remove Realm Nerf Modifiers on AI
+		NERF.51			#Event to remove Realm Nerf Modifiers on non-independent characters
 		
 		UMM.20
 		UMM.21
+		ROMANFR.1005
+		ROMANFR.1006	#Hunnic Ultimatum for 400
+		ROMANFR.1007	#If West Rome loses Rome, Roman Empire shatters
 		
-		#MP.029 	#Special event if Mongols and Golden Horde spawn at once
-		#MP.034 	#Special event if Mongols and Ilkhanate spawn at once
+		#MP.029 		#Special event if Mongols and Golden Horde spawn at once
+		#MP.034 		#Special event if Mongols and Ilkhanate spawn at once
 
 		#mod events
 		NERF.1
@@ -164,6 +167,8 @@ on_yearly_pulse = {
 			100 = ROMA.96		#The Preperation of the Roman Invasion starts.
 			1000 = 0
         }
+		
+		10 = ROMANFR.1004
 		
 		# Feudal Life Events
 		100 = 4000
@@ -802,6 +807,7 @@ on_bi_yearly_pulse = {
 		SoA.5304 # Zoroastrian becoming an immoral priest
 		SoA.5305 # Aztec becoming an unworthy priest
 		HF.15098 # African Rain/Drought delayed weather change event (HF.15120 is the actual tombola)
+		
 	}
 	
 	
@@ -2955,6 +2961,7 @@ on_new_holder = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
 
 		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
 		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
@@ -3024,6 +3031,7 @@ on_new_holder_inheritance = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
 
 		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
 		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
@@ -3090,6 +3098,7 @@ on_new_holder_usurpation = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
 		
 		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
 		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
