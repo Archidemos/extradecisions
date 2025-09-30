@@ -3450,13 +3450,6 @@ invasion_barbarians_400 = {
 				participation_scaled_decadence = -20
 			}
 		}
-		ROOT = {
-			change_infamy = {
-				value = -50
-				localisation = "Threat Reduced after Invader CB"
-			}
-			set_government_type = tribal_government
-		}
 		FROM = {
 			show_scope_change = no
 			prestige = -200
@@ -3487,12 +3480,21 @@ invasion_barbarians_400 = {
 			show_scope_change = no
 			prestige = -200
 		}
+		hidden_tooltip = { ROOT = { set_government_type = tribal_government } }
 	}
 	
 	on_success_title = {
-		change_infamy = {
-			value = -50
-			localisation = "Threat Reduced after Invader CB"
+		if = { # Claim the targeted Kingdom if it is held by the target
+			limit = {
+				controls_religion = no
+				holder_scope = {
+					OR = {
+						character = FROM
+						is_liege_or_above = FROM
+					}
+				}
+			}
+			usurp_title = { target = ROOT type = invasion }
 		}
 		custom_tooltip = { 
 			text = other_invasion_succ_tip

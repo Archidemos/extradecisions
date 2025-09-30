@@ -197,20 +197,28 @@ decisions = {
 	abandon_britania = {
 		only_playable = yes
 		is_high_prio = yes
-		ai_check_interval = 12
+		ai_check_interval = 6
 		
 		potential = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = left_britain }
 			start_date = 400.1.1
+			NOT = {
+				AND = {
+					has_global_flag = roman_crisis_finished_1
+					has_global_flag = roman_crisis_finished_2
+					has_global_flag = roman_crisis_finished_3
+				}
+			}
 		}
 		allow = {
 			has_landed_title = e_west_rome
+			NOT = { has_landed_title = k_england }
 		}
 		effect = {
 			set_global_flag = left_britain
 			custom_tooltip = { 
-				text = "the Roman Province of Britania will be abandoned" 
+				text = "the Roman Province of Britania will be abandoned, this could make the our current sittuations less severe for a little bit." 
 				hidden_tooltip = { character_event = { id = ROMANFR.101 } }
 			}
 		}
@@ -227,6 +235,40 @@ decisions = {
 				factor = 0.5
 				trait = cynical
 			}
+		}
+	}
+
+	establish_frankish_kingdom = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_francia }
+			culture = low_frankish
+		}
+		allow = {
+			date >= 481.1.1
+			ROOT = { tier = KING }
+			AND = {
+				completly_controls = k_france
+				completly_controls = k_lower_lorraine
+				completly_controls = k_frisia
+			}
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_francia
+			ROOT = { gain_title = e_france }
+			prestige = 1000
+			give_nickname = nick_the_great 
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1014 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }
