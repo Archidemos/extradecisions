@@ -262,10 +262,100 @@ decisions = {
 			ROOT = { gain_title = e_france }
 			prestige = 1000
 			give_nickname = nick_the_great 
-			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1014 } } }
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1030 } } }
 		}
 		revoke_allowed = {
 			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	revive_west_rome = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			start_date = 400.1.1
+			has_global_flag = roman_barbarians_dealt
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			NOT = { has_landed_title = k_papal_state }
+			OR = {
+				culture = greek
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+			OR = {
+				religion_group = christian
+				religion = hellenic_pagan
+			}
+			NOT = {
+				government = merchant_republic_government
+			}
+			NOT = { has_global_flag = west_rome_formed_again }
+			capital_scope = {
+				OR = {
+					region = world_europe_west
+					region = world_europe_south_italy
+				}
+			}
+		}
+		
+		allow = {
+			NOT = { has_landed_title = e_byzantium }
+			prestige = 1000
+			has_landed_title = c_roma
+			completely_controls = k_italy
+			completely_controls = k_valencia
+			completely_controls = k_aragon
+			completely_controls = k_aquitaine
+			trigger_if = {
+				limit = { k_romagna = { is_titular = no } }
+				completely_controls = k_romagna
+			}
+			trigger_if = {
+				limit = { k_papacy = { is_titular = no } }
+				completely_controls = k_papacy
+			}
+			completely_controls = k_sicily
+			completely_controls = k_sardinia
+			OR = {
+				culture = greek
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+		}
+		
+		effect = {
+			set_global_flag = west_rome_formed_again
+			set_global_flag = west_rome_formed_normal
+			custom_tooltip = { 
+				text = "The preperations of the new governance will begin.."
+				any_player = { narrative_event = { id = ROMANFR.1031 days = 5 } }
+			}
 		}
 		ai_will_do = {
 			factor = 1

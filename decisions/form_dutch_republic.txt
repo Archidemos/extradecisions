@@ -5,7 +5,11 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
-			culture = dutch
+			date >= 700.1.1
+			OR = {
+				culture = dutch
+				culture = frisian
+			}
 			religion_group = christian
 			NOT = { has_global_flag = dutch_formed }
 		}
@@ -17,7 +21,10 @@ decisions = {
 			stewardship = 15
 			religion = catholic
 			has_landed_title = k_frisia
-			culture = dutch
+			OR = {
+				culture = dutch
+				culture = frisian
+			}
 		}
 		
 		effect = {

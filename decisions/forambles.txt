@@ -6,6 +6,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
+			date >= 700.1.1
 			OR = {
 				culture = maghreb_arabic
 				culture = bedouin_arabic
@@ -68,6 +69,7 @@ decisions = {
 		ai_check_interval = 12
 		
 		potential = {
+			date >= 700.1.1
 			culture = turkish
 			lower_real_tier_than = KING
 			NOT = { start_date = 1077.1.1 }
@@ -115,6 +117,7 @@ decisions = {
 		only_rulers = yes
 		
 		potential = {
+			date >= 700.1.1
 			OR = {
 				has_landed_title = k_poland
 				has_landed_title = k_lithuania
@@ -225,6 +228,7 @@ decisions = {
 		ai_check_interval = 12
 
 		potential = {
+			date >= 700.1.1
 			religion_group = christian
 			has_global_flag = hre_removed
 			is_republic = yes
@@ -233,11 +237,18 @@ decisions = {
 				higher_tier_than = KING
 			}
 			OR = {
-				culture = german
+				culture = low_saxon
+				culture = low_frankish
+				culture = franconian
+				culture = thuringian
+				culture = swabian
+				culture = bavarian
 				culture = old_saxon
 				culture = pommeranian
 				culture = dutch
+				culture = german
 				culture = danish
+				culture = frisian
 			}
 			has_landed_title = d_holstein
 			k_hansa = {
@@ -669,6 +680,7 @@ decisions = {
 		ai_check_interval = 24
 		
 		potential = {
+			date >= 700.1.1
 			lower_real_tier_than = KING
 			has_landed_title = d_ancona
 			is_republic = yes
@@ -719,8 +731,15 @@ decisions = {
 			NOT = { dynasty = 25061 }
 			is_title_active = e_hre
 			OR = {
+				culture = low_saxon
+				culture = low_frankish
+				culture = franconian
+				culture = thuringian
+				culture = swabian
+				culture = bavarian
 				culture = german
 				culture = dutch
+				culture = frisian
 			}
 			trigger_if = {
 				limit = { e_hre = { has_holder = yes } } 

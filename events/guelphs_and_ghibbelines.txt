@@ -59,7 +59,15 @@ narrative_event = { # CONCORDAT OF WORMS (?)
         add_trait = ghibbeline
         random_vassal = {
             preferred_limit = {
-                culture = german
+				OR = {
+					culture = german
+					culture = low_saxon
+					culture = low_frankish
+					culture = franconian
+					culture = thuringian
+					culture = swabian
+					culture = bavarian
+				}
                 piety = 0
             }
             preferred_limit = {

@@ -114,20 +114,28 @@ narrative_event = {
 				set_defacto_liege = THIS
 			}
 		}
+		any_tributary = {
+			#limit = {
+			#	de_jure_liege = e_britannia
+			#	NOT = { title = k_brittany }
+			#}
+			limit = { NOT = { has_landed_title = k_brittany } }
+			remove_tributary = suzerain
+		}
 		hidden_tooltip = {
 			k_england = {
 				holder_scope = {
 					save_event_target_as = england_ruler_400
 					set_truce = {
 						who = ROOT
-						days = 5475
+						years = 3
 					}
 				}
 			}
 			ROOT = {
 				set_truce = {
 					who = event_target:england_ruler_400
-					days = 5475
+					years = 3
 				}
 			}
 		}
@@ -317,6 +325,7 @@ narrative_event = {
 				NOT = { completely_controls = c_cordoba }
 			}
 		}
+		NOT = { has_global_flag = roman_barbarians_dealt }
 	}
 	
 	option = {
@@ -386,7 +395,7 @@ narrative_event = {
 	}
 }
 
-character_event = {	#The event to spawn the barbarian invaders NORTH Franks Saxons
+character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 	id = ROMANFR.1009
 	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
 	
@@ -399,200 +408,98 @@ character_event = {	#The event to spawn the barbarian invaders NORTH Franks Saxo
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 10 } }
 			start_date <= 400.1.1
 		}
 	}	
 	option = {
 		name = "Onwards!"
-		random_list = {
-			1 = {	#Frankish
-				create_character = {
-					#name="Rodrigo"
-					culture = low_frankish
-					religion = germanic_pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Frankish Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					spawn_unit = {
-						province = 1017
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 1017
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 1017
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 1017
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					unsafe_war = {
-						casus_belli = invasion_barbarians_400
-						target = ROOT
-						thirdparty_title = k_france
-					}
-					set_government_type = tribal_government
+		#Saxons
+		create_character = {
+			#name="Rodrigo"
+			culture = low_saxon
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Saxon Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
-			1 = {	#Saxons
-				create_character = {
-					#name="Rodrigo"
-					culture = low_saxon
-					religion = germanic_pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Saxon Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}					
-					spawn_unit = {
-						province = 259
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
 		
-					spawn_unit = {
-						province = 259
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 259
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 259
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					random_list = {
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_upper_lorraine
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_lower_lorraine
-							}
-						}
-					}
-					set_government_type = tribal_government
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_upper_lorraine
+			}
+			set_government_type = tribal_government
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -609,9 +516,9 @@ character_event = {	#The event to spawn the barbarian invaders NORTH Franks Saxo
 	}
 }
 
-character_event = {	#The event to spawn the barbarian invaders NORTH Schwabians Bavarians
+character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 	id = ROMANFR.1010
-	desc = "My Ceasar, we have gotten a report that more Gothic hordes are coming from the north to invade."
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
 	
 	picture = "GFX_evt_viking_battle_oldgods"
 	border = GFX_event_normal_frame_war
@@ -622,202 +529,98 @@ character_event = {	#The event to spawn the barbarian invaders NORTH Schwabians 
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 10 } }
 			start_date <= 400.1.1
 		}
 	}	
 	option = {
 		name = "Onwards!"
-		random_list = {
-			1 = {	#Schwaben
-				create_character = {
-					#name="Rodrigo"
-					culture = swabian
-					religion = germanic_pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Germanic Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 251
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 251
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 251
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 251
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					random_list = {
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_burgundy
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_schwaben
-							}
-						}
-					}
-					set_government_type = tribal_government
+		#Saxons
+		create_character = {
+			#name="Rodrigo"
+			culture = low_saxon
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Saxon Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
-			1 = {	#Bavarians
-				create_character = {
-					#name="Rodrigo"
-					culture = bavarian
-					religion = germanic_pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Germanic Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 361
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
 		
-					spawn_unit = {
-						province = 361
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 361
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 361
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					unsafe_war = {
-						casus_belli = invasion_barbarians_400
-						target = ROOT
-						thirdparty_title = k_bavaria
-					}
-					set_government_type = tribal_government
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_lower_lorraine
+			}
+			set_government_type = tribal_government
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -834,9 +637,130 @@ character_event = {	#The event to spawn the barbarian invaders NORTH Schwabians 
 	}
 }
 
-character_event = {	#The event to spawn the barbarian invaders SOUTH Vandals Aznags
+character_event = {	#The event to spawn the Franks invaders k_france
+	id = ROMANFR.1011
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}	
+	option = {
+		name = "Onwards!"
+		#Frankish
+		create_character = {
+			#name="Rodrigo"
+			culture = low_frankish
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Frankish Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			spawn_unit = {
+				province = 1017
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1017
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1017
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1017
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_france
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Schwabians invaders k_burgundy
 	id = ROMANFR.1012
-	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
 	
 	picture = "GFX_evt_viking_battle_oldgods"
 	border = GFX_event_normal_frame_war
@@ -847,191 +771,99 @@ character_event = {	#The event to spawn the barbarian invaders SOUTH Vandals Azn
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 10 } }
 			start_date <= 400.1.1
 		}
 	}	
 	option = {
 		name = "Onwards!"
-		random_list = {
-			1 = {	#Vandals
-				create_character = {
-					#name="Rodrigo"
-					culture = pommeranian
-					religion = germanic_pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Vandal Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 2180
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 2180
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 2180
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 2180
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					unsafe_war = {
-						casus_belli = invasion_barbarians_400
-						target = ROOT
-						thirdparty_title = k_africa
-					}
-					set_government_type = tribal_government
+		#Schwaben
+		create_character = {
+			#name="Rodrigo"
+			culture = swabian
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Germanic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
-			1 = {	#Aznag
-				create_character = {
-					#name="Rodrigo"
-					culture = sanhaja
-					religion = pagan
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Berber Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 1362
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
 		
-					spawn_unit = {
-						province = 1362
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 1362
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 1362
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					unsafe_war = {
-						casus_belli = invasion_barbarians_400
-						target = ROOT
-						thirdparty_title = k_africa
-					}
-					set_government_type = tribal_government
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_burgundy
+			}
+			set_government_type = tribal_government
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1048,8 +880,498 @@ character_event = {	#The event to spawn the barbarian invaders SOUTH Vandals Azn
 	}
 }
 
-character_event = {	#The event to spawn the barbarian invaders SOUTH Goths
+character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 	id = ROMANFR.1013
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}	
+	option = {
+		name = "Onwards!"
+		#Schwaben
+		create_character = {
+			#name="Rodrigo"
+			culture = swabian
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Germanic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 251
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_schwaben
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Bavarians invaders k_burgundy
+	id = ROMANFR.1014
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}	
+	option = {
+		name = "Onwards!"
+		#Bavarians
+		create_character = {
+			#name="Rodrigo"
+			culture = bavarian
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Germanic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 361
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 361
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 361
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 361
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_bavaria
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+
+character_event = {	#The event to spawn the Vandals invaders k_africa
+	id = ROMANFR.1015
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}	
+	option = {
+		name = "Onwards!"
+		#Vandals
+		create_character = {
+			#name="Rodrigo"
+			culture = pommeranian
+			religion = germanic_pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Vandal Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 2180
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 2180
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2180
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 2180
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_africa
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Aznag invaders k_maghreb
+	id = ROMANFR.1016
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}	
+	option = {
+		name = "Onwards!"
+		#Aznag
+		create_character = {
+			#name="Rodrigo"
+			culture = sanhaja
+			religion = pagan
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Berber Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1362
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1362
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1362
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1362
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_maghreb
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+
+character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
+	id = ROMANFR.1017
 	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
 	
 	picture = "GFX_evt_viking_battle_oldgods"
@@ -1061,277 +1383,1562 @@ character_event = {	#The event to spawn the barbarian invaders SOUTH Goths
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 10 } }
 			start_date <= 400.1.1
 		}
 	}
 	option = {
 		name = "Onwards!"
-		random_list = {
-			1 = {	#Ostrogoths
-				create_character = {
-					#name="Rodrigo"
-					culture = ostrogothic
-					religion = arian
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Ostrogothic Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 444
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 444
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 444
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 444
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					
-					random_list = {
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_italy
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_papacy
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_croatia
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_sicily
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_hungary
-							}
-						}
-					}
-					set_government_type = tribal_government
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
-			1 = {	#Visigoths
-				create_character = {
-					#name="Rodrigo"
-					culture = visigothic
-					religion = arian
-					age = 32
-					dynasty = random
-					#add_trait = crusader
-					random_traits = yes
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-				}
-				new_character = {
-					wealth = 1500
-					prestige = 1000
-					piety = 1000
-					remove_trait = slow
-					remove_trait = imbecile
-					remove_trait = weak
-					remove_trait = feeble
-					
-					create_title = {
-						name = "Visigothic Horde"
-						#adventurer = yes
-						tier = KING
-						landless = yes
-						temporary = yes
-						#custom_created = yes
-						culture = THIS
-						holder = THIS
-						#base_title = THIS
-					}
-					new_title = {
-						dynasty_title_names = no
-						set_preferred_capital = PREV
-						set_random_coa_effect = yes
-						religion = ROOT
-						set_flag = forced_pirate_government
-						#set_name = "Tribe of [Root.Capital.GetName]"
-						#adjective = [Prev.GetAdjective]
-						make_primary_title = yes
-					}
-					
-					spawn_unit = {
-						province = 1188
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
 		
-					spawn_unit = {
-						province = 1188
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					spawn_unit = {
-						province = 1188
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-		
-					spawn_unit = {
-						province = 1188
-						troops = {
-							light_cavalry = { 1000 1000 }
-							light_infantry = { 2500 2500 }
-							knights = { 1500 1500 }
-						}
-					}
-					random_list = {
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_aquitaine
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_aragon
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_valencia
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_castille
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_navarra
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_andalusia
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_spanish_galicia
-							}
-						}
-						1 = {
-							unsafe_war = {
-								casus_belli = invasion_barbarians_400
-								target = ROOT
-								thirdparty_title = k_asturias
-							}
-						}
-					}
-					set_government_type = tribal_government
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
 				}
 			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_aquitaine
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_aragon
+	id = ROMANFR.1018
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_aragon
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_valencia
+	id = ROMANFR.1019
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_valencia
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_castille
+	id = ROMANFR.1020
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_castille
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_navarra
+	id = ROMANFR.1021
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_navarra
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+character_event = {	#The event to spawn the Visigoths invaders k_andalusia
+	id = ROMANFR.1022
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_andalusia
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
+	id = ROMANFR.1023
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_spanish_galicia
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Visigoths invaders k_asturias
+	id = ROMANFR.1024
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Visigoths
+		create_character = {
+			#name="Rodrigo"
+			culture = visigothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_asturias
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Ostrogoths invaders k_italy
+	id = ROMANFR.1025
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Ostrogoths
+		create_character = {
+			#name="Rodrigo"
+			culture = ostrogothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_italy
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Ostrogoths invaders k_papacy
+	id = ROMANFR.1026
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Ostrogoths
+		create_character = {
+			#name="Rodrigo"
+			culture = ostrogothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_papacy
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
+	id = ROMANFR.1027
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Ostrogoths
+		create_character = {
+			#name="Rodrigo"
+			culture = ostrogothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_croatia
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
+	id = ROMANFR.1028
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Ostrogoths
+		create_character = {
+			#name="Rodrigo"
+			culture = ostrogothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_sicily
+			}
+			set_government_type = tribal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
+	id = ROMANFR.1029
+	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
+	
+	picture = "GFX_evt_viking_battle_oldgods"
+	border = GFX_event_normal_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_barbarians_dealt }
+			NOT = { any_war = { count = 10 } }
+			start_date <= 400.1.1
+		}
+	}
+	option = {
+		name = "Onwards!"
+		#Ostrogoths
+		create_character = {
+			#name="Rodrigo"
+			culture = ostrogothic
+			religion = arian
+			age = 32
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}
+			
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 1188
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_hungary
+			}
+			set_government_type = tribal_government
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1349,7 +2956,7 @@ character_event = {	#The event to spawn the barbarian invaders SOUTH Goths
 }
 
 narrative_event = {
-	id = ROMANFR.1014
+	id = ROMANFR.1030
 	title = "The Frankish Kingdom"
 	desc = ROMANFRDESC.1014
 	
@@ -1361,5 +2968,34 @@ narrative_event = {
 	
 	option = {
 		name = "Concerning."
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1031
+	title = "Risen from the Ash"
+	desc = ROMANFRDESC.1031
+	
+	picture = "GFX_evt_rome_restored_byzantine"
+	border = GFX_event_narrative_frame_war	
+	sound = ar_crusade_shout
+
+    is_triggered_only = yes
+	
+	#trigger = {
+	#	ROOT = {
+	#		has_landed_title = e_west_rome
+	#		AND = {
+	#			NOT = { completely_controls = c_roma }
+	#			NOT = { completely_controls = c_ile_de_france }
+	#			NOT = { completely_controls = c_knin }
+	#			NOT = { completely_controls = c_cordoba }
+	#		}
+	#	}
+	#	NOT = { has_global_flag = roman_barbarians_dealt }
+	#}
+	
+	option = {
+		name = "Roma Invicta!"
 	}
 }
