@@ -444,7 +444,7 @@
 	religion = "tengri_pagan"
 	culture = "cuman"
 	
-	350.1.1 = {
+	370.1.1 = {
 		birth = yes
 	}
 	412.1.1 = {
@@ -639,7 +639,8 @@
 3000403 = { #franks
 	name = "Alaric I"
 	religion = "germanic_pagan"
-	culture = "low_frankish"
+	culture = "old_frankish"
+	#culture = "low_frankish"
 	
 	370.1.1 = {
 		birth = yes
@@ -819,13 +820,38 @@
 	}
 }
 
-3000504 = { #rugians
+3000504 = { #gepid
 	name = "Alaric I"
 	religion = "slavic_pagan"
 	culture = "bohemian"
 	
 	370.1.1 = {
 		birth = yes
+		add_claim = d_csanad
+		add_claim = d_pest
+		add_claim = d_bacs
+		add_claim = c_fejer
+		add_claim = c_komarom
+		effect = {
+			spawn_unit = {
+				province = 444 # Eszergom
+				owner = ROOT
+				troops = {
+					light_infantry = { 2000 2000 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = {
+				province = 444 # Eszergom
+				owner = ROOT
+				troops = {
+					light_infantry = { 2000 2000 }
+					archers = { 1000 1000 }
+					light_cavalry = { 500 500 }
+				}
+			}
+		}
 	}
 	411.1.1 = {
 		death = yes

@@ -245,24 +245,109 @@ decisions = {
 		
 		potential = {
 			NOT = { has_global_flag = formed_francia }
-			culture = low_frankish
+			culture = old_frankish
 		}
 		allow = {
 			date >= 481.1.1
+			religion_group = christian
 			ROOT = { tier = KING }
-			AND = {
-				completly_controls = k_france
-				completly_controls = k_lower_lorraine
-				completly_controls = k_frisia
-			}
+			has_landed_title = k_france
+			completely_controls = k_france
+			completely_controls = k_upper_lorraine
+			completely_controls = k_lower_lorraine
 			prestige = 1500
 		}
 		effect = {
 			set_global_flag = formed_francia
 			ROOT = { gain_title = e_france }
+			ROOT = { dynasty = 542 }
 			prestige = 1000
-			give_nickname = nick_the_great 
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = creator_francia
+			}
+			e_france = {
+				set_name = "Francia"
+				adjective = "Frankish"
+			}
+			k_france = {
+				set_name = "Francia"
+				adjective = "Frankish"
+			}
+			add_claim = d_poitou
+			add_claim = d_limousin
+			add_claim = d_auvergne
+			add_claim = c_rennes
+			add_claim = c_nantes
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
 			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1030 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unite_german_tribes = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_germania }
+			culture_group = central_germanic
+			NOT = { culture = old_frankish }
+		}
+		allow = {
+			date >= 481.1.1
+			ROOT = { tier = KING }
+			completely_controls = k_franconia
+			completely_controls = k_saxony
+			completely_controls = k_frisia
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_germania
+			ROOT = { gain_title = e_germany }
+			prestige = 1000
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = unified_germania
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1031 } } }
 		}
 		revoke_allowed = {
 			always = no

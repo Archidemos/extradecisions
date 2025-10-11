@@ -6,7 +6,7 @@ character_event = {
     is_triggered_only = yes
 	
     trigger = {
-		start_date <= 936.8.7
+		start_date <= 600.1.1
 		is_save_game = no
 		NOT = { has_global_flag = west_roman_player_event_fired }
     }
@@ -16,14 +16,16 @@ character_event = {
 		set_global_flag = roman_america_part_1_triggered
 		
 		any_player = { narrative_event = { id = ROMANFR.99 days = 5 } }
-		e_west_rome = {
-			save_event_target_as = character_rome_crisis
-		}
+		e_west_rome = { save_event_target_as = character_rome_crisis }
 		hidden_tooltip = {
 			e_west_rome = {
 				holder_scope = {
 					remove_claim = e_byzantium
 				}
+			}
+			k_hungary = {
+				set_name = "Gepids"
+				adjective = "Gepid"
 			}
 		}
 	}
@@ -104,7 +106,7 @@ narrative_event = {
 		prestige = -1000
 		add_character_modifier = {
 			name = rome_crisis_help
-			months = 6
+			years = 3
 		}
 		e_britannia = {
 			any_de_jure_vassal = {
@@ -316,6 +318,7 @@ narrative_event = {
     is_triggered_only = yes
 	
 	trigger = {
+		has_global_flag = west_roman_player_event_fired
 		ROOT = {
 			has_landed_title = e_west_rome
 			AND = {
@@ -455,7 +458,7 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -576,7 +579,7 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -659,7 +662,7 @@ character_event = {	#The event to spawn the Franks invaders k_france
 		#Frankish
 		create_character = {
 			#name="Rodrigo"
-			culture = low_frankish
+			culture = old_frankish
 			religion = germanic_pagan
 			age = 32
 			dynasty = random
@@ -697,7 +700,7 @@ character_event = {	#The event to spawn the Franks invaders k_france
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -818,7 +821,7 @@ character_event = {	#The event to spawn the Schwabians invaders k_burgundy
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -940,7 +943,7 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1062,7 +1065,7 @@ character_event = {	#The event to spawn the Bavarians invaders k_burgundy
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1185,7 +1188,7 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1307,7 +1310,7 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				set_flag = forced_pirate_government
+				#set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1430,7 +1433,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1552,7 +1555,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aragon
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1674,7 +1677,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1796,7 +1799,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_castille
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -1918,7 +1921,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_navarra
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2039,7 +2042,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2161,7 +2164,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2283,7 +2286,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2405,7 +2408,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2527,7 +2530,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_papacy
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2649,7 +2652,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2771,7 +2774,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2893,7 +2896,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
 				set_preferred_capital = PREV
 				set_random_coa_effect = yes
 				religion = ROOT
-				#set_flag = forced_pirate_government
+				##set_flag = forced_pirate_government
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
@@ -2962,7 +2965,6 @@ narrative_event = {
 	
 	picture = GFX_evt_coronation
 	border = GFX_event_narrative_frame_diplomacy
-	sound = ar_crusade_shout
 
     is_triggered_only = yes
 	
@@ -2997,5 +2999,592 @@ narrative_event = {
 	
 	option = {
 		name = "Roma Invicta!"
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1031
+	title = "Germania United"
+	desc = ROMANFRDESC.1015
+	
+	picture = GFX_evt_end_of_days
+	border = GFX_event_narrative_frame_diplomacy
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#The Franks invade France if no one formed it trough the decision
+	id = ROMANFR.1032
+	title = "The Frankish Invasion"
+	desc = "My Ceasar, we have gotten a report that more a bunch of Frankish nomads have reached Gaul and have started to occupy it. We must act quickely."
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			OR = {
+				has_landed_title = k_france
+				completely_controls = c_ile_de_france
+			}
+			NOT = { has_global_flag = formed_francia }
+			date = 470.1.1
+		}
+	}
+	
+	option = {
+		name = "Crush the Franks!"
+		#Saxons
+		create_character = {
+			#name="Rodrigo"
+			culture = old_frankish
+			religion = nicene_christian
+			age = 24
+			dynasty = 542
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Frankish Tribe"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+
+			spawn_unit = {
+				province = 259
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400_frankish_sp
+				target = ROOT
+				thirdparty_title = k_france
+			}
+			#112 = {
+			#	kingdom = {
+			#		k_rum = {
+			#			holder_scope = {
+			#				unsafe_war = {
+			#					casus_belli = invasion_barbarians_400
+			#					target = PREVPREVPREV
+			#					thirdparty_title = k_france
+			#				}
+			#			}
+			#		}
+			#	}
+			#}
+			set_government_type = feudal_government
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+narrative_event = { #Event when the Frankish win the war
+	id = ROMANFR.1033
+	title = "The Frankish Kingdom"
+	desc = "After wining the war against our foe that holds these lands, it is time to settle our people in these lands and establish the Kingdom of Francia."
+	
+	picture = GFX_evt_large_army
+	border = GFX_event_narrative_frame_war
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "Francia it is..."
+		set_global_flag = formed_francia
+		ROOT = { gain_title = k_france }
+		#ROOT = { gain_title = e_france }
+		give_nickname = nick_the_great
+		create_bloodline = {
+			type = creator_francia
+		}
+		e_france = {
+			set_name = "Francia"
+			adjective = "Frankish"
+		}
+		k_france = {
+			set_name = "Francia"
+			adjective = "Frankish"
+			vice_royalty = no
+		}
+		c_ile_de_france = {
+			grant_title = PREV
+			usurp_title = PREV
+			ROOT = { capital = PREV }
+		}
+		add_claim = d_poitou
+		add_claim = d_limousin
+		add_claim = d_auvergne
+		add_claim = c_rennes
+		add_claim = c_nantes
+		set_government_type = feudal_government
+		any_player = { narrative_event = { id = ROMANFR.1030 } }
+	}
+}
+
+
+narrative_event = {	#The Saxons invade England
+	id = ROMANFR.1032
+	title = "The Anglo-Saxon Invasion"
+	desc = "My Liege, we have gotten a report that a bunch of Saxon raiders have landed on our coast and have started to occupy it. However, why would the Saxons even be here... Regardless, we must act quickely."
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		ROOT = {
+			OR = {
+				has_landed_title = k_england
+				completely_controls = c_middlesex
+			}
+			NOT = { has_global_flag = saxons_invaded_england }
+			date = 450.1.1
+		}
+	}
+	
+	option = {
+		name = "Crush the Saxons!"
+		###English Angles###
+		create_character = {
+			#name="Rodrigo"
+			culture = saxon
+			religion = germanic_pagan
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			add_claim = d_fivebouroughs
+			
+			create_title = {
+				name = "Anglish Tribe"
+				#adventurer = yes
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 71
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_fleet = {
+				province = 1769 # The Wash
+				#owner = ROOT
+				troops = {
+					galleys = { 100 100 }
+				}
+				disband_on_peace = yes
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = d_norfolk
+			}
+			set_government_type = tribal_government
+			set_global_flag = saxons_invaded_england
+		}
+		###English Saxons###
+		create_character = {
+			#name="Rodrigo"
+			culture = saxon
+			religion = germanic_pagan
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			add_claim = d_bedford
+			
+			create_title = {
+				name = "Saxon Tribe"
+				#adventurer = yes
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 72
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_fleet = {
+				province = 1769 # The Wash
+				#owner = ROOT
+				troops = {
+					galleys = { 100 100 }
+				}
+				disband_on_peace = yes
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = d_essex
+			}
+			set_government_type = tribal_government
+			set_global_flag = saxons_invaded_england
+		}
+		###English Jutes###
+		create_character = {
+			#name="Rodrigo"
+			culture = saxon
+			religion = germanic_pagan
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			add_claim = d_somerset
+			
+			create_title = {
+				name = "Jutic Tribe"
+				#adventurer = yes
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				#set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}					
+			spawn_unit = {
+				province = 73
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_fleet = {
+				province = 1738 # Strait of Dover
+				#owner = ROOT
+				troops = {
+					galleys = { 100 100 }
+				}
+				disband_on_peace = yes
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = d_canterbury
+			}
+			set_government_type = tribal_government
+			set_global_flag = saxons_invaded_england
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+		any_player = { narrative_event = { id = ROMANFR.1033 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1033
+	title = "The Anglo-Saxon Invasion"
+	desc = "Word goes arround that the Saxon, Jutic and Anglic tribes from the north have suddenly launched an invasion on Britania. A massive fleet with many warriors inside of them was spotted crossing the seas. This means that they were heading to Britania. Time will only tell what will happen to Britania and its fate."
+	
+	picture = GFX_evt_longships_at_sea_oldgods
+	border = GFX_event_narrative_frame_war
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#The Saxons invade England
+	id = ROMANFR.1034
+	title = "Odoacer's Invasion"
+	desc = "My Liege, we have gotten a report that a bunch of Scirian raiders have arrived in Italy, they mustve swept trough the Alpes. Now they are causing havoc and chaos within Italy. we must act quickely before we lose our beloved Rome."
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		ROOT = {
+			OR = {
+				has_landed_title = k_italy
+				completely_controls = c_pavia
+			}
+			NOT = { culture = visigothic }
+			NOT = { has_global_flag = odoacer_invaded_italy }
+			date = 470.1.1
+		}
+	}
+	
+	option = {
+		name = "We must defeat Odoacer!"			
+		create_character = {
+			name="Odoacer"
+			culture = visigothic
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			k_odoacer = {
+				grant_title = PREV
+				set_title_landless = { title = THIS status = yes }
+			}				
+			spawn_unit = {
+				province = 357
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 357
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_italy
+			}
+			set_government_type = tribal_government
+			set_global_flag = odoacer_invaded_italy		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1035 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1035
+	title = "Odoacer's Italy"
+	desc = "Word goes arround that an certain barbarian general named Odoacer has suddenly launched an invasion on Italy with his Scirian army. This massive army was spotted crossing the Alps. This means that they were heading to Italy and to Rome itself. Time will only tell what will happen to Rome and its fate."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
 	}
 }
