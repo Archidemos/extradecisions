@@ -863,13 +863,14 @@ character_event = {
 	}
 }
 
-character_event = {
+character_event = { #Ayyubid
 	id = HA.16
 	hide_window = yes
 	
 	only_playable = yes
 	
 	trigger = {
+		NOT = { start_date = 400.1.1 }
 		start_date < 1080.1.1
 		NOT = { has_global_flag = saladin_spawned }
 		has_landed_title = k_papal_state # new trigger to slow event down, who's triggering doesn't matter in theory..? (unless the war somehow doesnt't fire then he'll be at the pope's service)
