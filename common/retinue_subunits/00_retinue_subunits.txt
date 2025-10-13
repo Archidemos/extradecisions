@@ -363,6 +363,7 @@ RETTYPE_CUL_ALTAIC =
 	
 	potential = {
 		is_nomadic = no
+		NOT = { culture = old_parthian }
 		OR = {
 			culture_group = altaic
 			culture_group = iranian
@@ -477,7 +478,19 @@ RETTYPE_CUL_ROMAN =
 	
 	potential = {
 		is_nomadic = no
-		culture = roman
+		OR = {
+			culture = roman
+			culture = roman_gallo
+			culture = roman_spain
+			culture = roman_ilyrian
+			culture = roman_african
+			culture = roman_mauretanian
+			culture = roman_british
+			culture = roman_thraco
+			culture = roman_german
+			culture = roman_greek
+			culture = roman_egyptian
+		}
 	}
 	
 	modifier = {
@@ -487,6 +500,25 @@ RETTYPE_CUL_ROMAN =
 		heavy_infantry_offensive = 0.25
 		heavy_infantry_defensive = 0.25
 		heavy_infantry_morale = 0.2
+	}
+}
+
+RETTYPE_CUL_ILY = 
+{
+	first_type = 0
+	first_amount = 200
+	second_type = 1
+	second_amount = 100
+	
+	potential = {
+		is_nomadic = no
+		culture = ilyrian
+	}
+	
+	modifier = {
+		heavy_infantry_offensive = 0.2
+		heavy_infantry_defensive = 0.1
+		heavy_infantry_morale = 0.1
 	}
 }
 
@@ -622,6 +654,7 @@ RETTYPE_CUL_BYZ =
 		NOT = { culture = alan }
 		NOT = { culture = assyrian }
 		NOT = { culture = arberian }
+		NOT = { culture = ilyrian }
 	}
 	
 	modifier = {
@@ -1175,7 +1208,10 @@ HORDE_RETTYPE_ZOROASTRIAN =
 	
 	potential = {
 		is_nomadic = yes
-		religion_group = zoroastrian_group
+		OR = {
+			religion_group = zoroastrian_group
+			culture = old_parthian
+		}
 	}
 	modifier = {
 		heavy_infantry_defensive = 0.25
@@ -1375,6 +1411,31 @@ RETTYPE_CUL_JURCHEN =
 		light_cavalry_morale = 0.1
 		knights_offensive = 0.1
 		knights_defensive = 0.1
+	}
+}
+
+RETTYPE_CUL_PART =
+{
+	first_type = 1
+	first_amount = 125
+	second_type = 6
+	second_amount = 125
+	
+	special_troops = horse_archers
+	
+	hire_cost = 75
+	#costs_piety = yes
+	
+	#maintenance_multiplier = 0.75
+	
+	potential = {
+		is_nomadic = no
+		culture = old_parthian
+	}
+	modifier = {
+		heavy_infantry_offensive = 0.25
+		horse_archers_offensive = 0.25
+		horse_archers_defensive = 0.5
 	}
 }
 
@@ -1733,6 +1794,49 @@ RETTYPE_GOTHS =
 		light_infantry_defensive = 0.2
 		light_infantry_offensive = 0.15
 		light_infantry_morale = 0.1
+	}
+}
+
+RETTYPE_VAN = 
+{
+	first_type = 3
+	first_amount = 100
+	second_type = 4
+	second_amount = 50
+	
+	potential = {
+		is_nomadic = no
+		culture = vandal
+	}
+	
+	modifier = {
+		knights_defensive = 0.1
+		knights_offensive = 0.15
+		knights_morale = 0.1
+		light_cavalry_defensive = 0.1
+		light_cavalry_offensive = 0.15
+		light_infantry_morale = 0.1
+	}
+}
+
+RETTYPE_PUN = 
+{
+	first_type = 6
+	first_amount = 50
+
+	hire_cost = 250
+	maintenance_multiplier = 1.5
+
+	special_troops = war_elephants
+	
+	potential = {
+		is_nomadic = no
+		culture = punic
+	}
+	
+	modifier = {
+		war_elephants_offensive = 0.2
+		war_elephants_defensive = -0.1
 	}
 }
 

@@ -141,6 +141,14 @@ central_germanic = {
 			martial = 1
 		}
 	}
+	vandal = {
+		modifier = lombard_culture_modifier
+		character_modifier = {
+			knights_offensive = 0.1
+			global_revolt_risk = -0.05
+			martial = 1
+		}
+	}
 	old_frankish = {
 		modifier = frankish_culture_modifier
 		character_modifier = {
@@ -348,7 +356,7 @@ latin = {
 	roman = {
 		modifier = roman_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.1
+			global_tax_modifier = 0.05
 			martial = 2
 			pikemen_offensive = 0.2
 			pikemen_defensive = 0.2
@@ -357,7 +365,7 @@ latin = {
 	roman_gallo = {
 		modifier = roman_gallo_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -366,7 +374,7 @@ latin = {
 	roman_spain = {
 		modifier = roman_spain_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -375,7 +383,7 @@ latin = {
 	roman_ilyrian = {
 		modifier = roman_ilyrian_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -384,7 +392,7 @@ latin = {
 	roman_african = {
 		modifier = roman_african_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -393,7 +401,7 @@ latin = {
 	roman_mauretanian = {
 		modifier = roman_mauretanian_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -402,7 +410,7 @@ latin = {
 	roman_british = {
 		modifier = roman_british_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -411,7 +419,7 @@ latin = {
 	roman_thraco = {
 		modifier = roman_thraco_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -420,7 +428,7 @@ latin = {
 	roman_german = {
 		modifier = roman_german_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -429,7 +437,7 @@ latin = {
 	roman_greek = {
 		modifier = roman_greek_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -438,7 +446,7 @@ latin = {
 	roman_egyptian = {
 		modifier = roman_egyptian_culture_modifier
 		character_modifier = {
-			global_tax_modifier = 0.05
+			global_tax_modifier = 0.025
 			martial = 1
 			pikemen_offensive = 0.1
 			pikemen_defensive = 0.1
@@ -617,6 +625,15 @@ byzantine = {
 			learning = 1
 			heavy_infantry_offensive = 0.05
 			heavy_infantry_defensive = 0.05
+		}
+	}
+	punic = {
+		modifier = punic_culture_modifier
+		character_modifier = {
+			war_elephants_offensive = 0.05
+			horse_archers_offensive = 0.05
+			light_cavalry_offensive = 0.05
+			stewardship = 1
 		}
 	}
 	coptic = {
@@ -1035,6 +1052,14 @@ arabic = {
 			monthly_character_piety = 1
 		}
 	}
+	old_arabic = { 
+		modifier = old_arabic_culture_modifier
+		character_modifier = {
+			camel_cavalry_offensive = 0.1
+			martial = 1
+			monthly_character_piety = 1
+		}
+	}
 	bedouin_arabic = { 
 		modifier = bedouin_culture_modifier
 		character_modifier = {
@@ -1337,6 +1362,15 @@ iranian = {
 			castle_vassal_max_levy = 0.1
 			horse_archers_offensive = 0.2
 			siege_defence = 0.1
+		}
+	}
+	old_parthian = {
+		modifier = parthia_culture_modifier
+		character_modifier = {
+			castle_vassal_min_levy = 0.05
+			castle_vassal_max_levy = 0.05
+			horse_archers_offensive = 0.1
+			siege_defence = 0.05
 		}
 	}
 	parthian = {

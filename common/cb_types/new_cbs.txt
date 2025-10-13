@@ -3447,6 +3447,7 @@ invasion_barbarians_400 = {
 				}
 				participation_scaled_decadence = -20
 			}
+			character_event = { id = ROMANFR.1100 days = 2 }
 		}
 		FROM = {
 			show_scope_change = no
@@ -3496,8 +3497,8 @@ invasion_barbarians_400 = {
 					gain_settlements_under_title = {
 						title = PREV
 						enemy = FROM
-						same_religion = yes # Only vassalize rulers of my religion
-						is_religious = yes
+						#same_religion = yes # Only vassalize rulers of my religion
+						#is_religious = yes
 						type = invasion
 					}
 					if = {
@@ -3531,6 +3532,14 @@ invasion_barbarians_400 = {
 							}
 							culture = ROOT
 							religion = ROOT
+						}
+					}
+				}
+				ROOT = {
+					capital_scope = {
+						location = {
+							religion = ROOT
+							culture = ROOT
 						}
 					}
 				}
@@ -3589,11 +3598,25 @@ invasion_barbarians_400 = {
 			limit = { NOT = { character = FROM } }
 			hidden_tooltip = { participation_scaled_prestige = 100 }
 		}
+		ROOT = {
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
+		}
 	}
 	
 	on_invalidation = {
 		ROOT = {
 			show_scope_change = no
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
 		}
 	}
 
@@ -3614,6 +3637,12 @@ invasion_barbarians_400 = {
 					}
 				}
 				decadence = 10
+			}
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
 			}
 		}
 		FROM = {
@@ -3907,15 +3936,15 @@ invasion_barbarians_400_frankish_sp = {
 			}
 			usurp_title = { target = ROOT type = invasion }
 		}
-		custom_tooltip = { 
+		custom_tooltip = {
 			text = other_invasion_succ_tip
 			hidden_tooltip = {
 				ROOT = {
 					gain_settlements_under_title = {
 						title = PREV
 						enemy = FROM
-						same_religion = yes # Only vassalize rulers of my religion
-						is_religious = yes
+						#same_religion = yes # Only vassalize rulers of my religion
+						#is_religious = yes
 						type = invasion
 					}
 					if = {
@@ -4003,6 +4032,14 @@ invasion_barbarians_400_frankish_sp = {
 			}
 			participation_scaled_prestige = 100
 		}
+		ROOT = {
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
+		}
 		any_defender = {
 			limit = { NOT = { character = FROM } }
 			hidden_tooltip = { participation_scaled_prestige = 100 }
@@ -4012,6 +4049,12 @@ invasion_barbarians_400_frankish_sp = {
 	on_invalidation = {
 		ROOT = {
 			show_scope_change = no
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
 		}
 	}
 
@@ -4032,6 +4075,12 @@ invasion_barbarians_400_frankish_sp = {
 					}
 				}
 				decadence = 10
+			}
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
 			}
 		}
 		FROM = {

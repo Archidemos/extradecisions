@@ -178,7 +178,6 @@ decisions = {
 
 		allow = {
 			independent = yes
-			
 		}
 
 		effect = {
@@ -328,6 +327,8 @@ decisions = {
 			ROOT = { gain_title = e_germany }
 			prestige = 1000
 			give_nickname = nick_the_great
+			add_claim = k_italy
+			add_claim = k_france
 			create_bloodline = {
 				type = unified_germania
 			}
@@ -346,8 +347,88 @@ decisions = {
 						#maintenance = 0
 					}	
 				}
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
 			}
 			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1031 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unite_arabian_tribes = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_arabia }
+			culture = old_arabic
+		}
+		allow = {
+			date >= 481.1.1
+			ROOT = { tier = KING }
+			completely_controls = k_oman
+			completely_controls = k_yemen
+			completely_controls = k_arabia
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_arabia
+			ROOT = { gain_title = e_arabia }
+			prestige = 1000
+			give_nickname = nick_the_great
+			add_claim = k_egypt
+			add_claim = k_syria
+			add_claim = k_jerusalem
+			create_bloodline = {
+				type = unified_arabia
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1039 } } }
 		}
 		revoke_allowed = {
 			always = no
@@ -441,6 +522,70 @@ decisions = {
 				text = "The preperations of the new governance will begin.."
 				any_player = { narrative_event = { id = ROMANFR.1031 days = 5 } }
 			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_carthage_kingdom = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_carthage }
+			culture = punic
+		}
+		allow = {
+			#date >= 481.1.1
+			OR = {
+				religion_group = christian
+				religion = pagan
+			}
+			has_landed_title = k_africa
+			completely_controls = k_africa
+			prestige = 1500
+			independent = yes
+			is_capital = c_tunis
+		}
+		effect = {
+			set_global_flag = formed_carthage
+			ROOT = { gain_title = e_carthage }
+			prestige = 1000
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = creator_carthage
+			}
+			d_sicily = { de_jure_liege = k_africa }
+			k_africa = { de_jure_liege = e_carthage }
+			k_maghreb = { de_jure_liege = e_carthage }
+			k_mauretania = { de_jure_liege = e_carthage }
+			k_sardinia = { de_jure_liege = e_carthage }
+			add_claim = d_sardinia
+			add_claim = k_maghreb
+			add_claim = d_mallorca
+			add_claim = d_sicily
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1038 } } }
+		}
+		revoke_allowed = {
+			always = no
 		}
 		ai_will_do = {
 			factor = 1
