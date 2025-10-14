@@ -3478,6 +3478,7 @@ invasion_barbarians_400 = {
 	}
 	
 	on_success_title = {
+		clr_title_flag = currently_invaded_bar_400
 		if = { # Claim the targeted Kingdom if it is held by the target
 			limit = {
 				controls_religion = no
@@ -3488,7 +3489,6 @@ invasion_barbarians_400 = {
 					}
 				}
 			}
-			clr_title_flag = currently_invaded_bar_400
 		}
 		custom_tooltip = { 
 			text = other_invasion_succ_tip
