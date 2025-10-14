@@ -3489,6 +3489,7 @@ invasion_barbarians_400 = {
 				}
 			}
 			usurp_title = { target = ROOT type = invasion }
+			clr_title_flag = currently_invaded_bar_400
 		}
 		custom_tooltip = { 
 			text = other_invasion_succ_tip
@@ -3598,25 +3599,39 @@ invasion_barbarians_400 = {
 			limit = { NOT = { character = FROM } }
 			hidden_tooltip = { participation_scaled_prestige = 100 }
 		}
-		ROOT = {
-			any_demesne_title = {
-				unsafe_destroy_landed_title = THIS
-			}
-			death = {
-				death_reason = death_missing
+		hidden_tooltip = {
+			ROOT = {
+				any_demesne_title = {
+					unsafe_destroy_landed_title = THIS
+				}
+				death = {
+					death_reason = death_missing
+				}
+				wealth = -5000
 			}
 		}
 	}
 	
+	on_fail_title = {
+		clr_title_flag = currently_invaded_bar_400
+	}
+	
 	on_invalidation = {
-		ROOT = {
-			any_demesne_title = {
-				unsafe_destroy_landed_title = THIS
-			}
-			death = {
-				death_reason = death_missing
+		hidden_tooltip = {
+			ROOT = {
+				any_demesne_title = {
+					unsafe_destroy_landed_title = THIS
+				}
+				death = {
+					death_reason = death_missing
+				}
+				wealth = -5000
 			}
 		}
+	}
+
+	on_invalidation_title = {
+		clr_title_flag = currently_invaded_bar_400
 	}
 
 	on_reverse_demand = {
@@ -3637,11 +3652,16 @@ invasion_barbarians_400 = {
 				}
 				decadence = 10
 			}
-			any_demesne_title = {
-				unsafe_destroy_landed_title = THIS
-			}
-			death = {
-				death_reason = death_missing
+			hidden_tooltip = {
+				ROOT = {
+					any_demesne_title = {
+						unsafe_destroy_landed_title = THIS
+					}
+					death = {
+						death_reason = death_missing
+					}
+					wealth = -5000
+				}
 			}
 		}
 		FROM = {
@@ -3704,7 +3724,11 @@ invasion_barbarians_400 = {
 			}
 		}
 	}
-
+	
+	on_reverse_demand_title = {
+		clr_title_flag = currently_invaded_bar_400
+	}
+	
 	attacker_ai_victory_worth = {
 		factor = 100
 	}
