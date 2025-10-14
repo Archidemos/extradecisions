@@ -280,7 +280,6 @@ government_flavor = {
 		OR = {
 			government = feudal_government
 			government = theocratic_feudal_government
-			government = indian_government
 		}
 		NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
 		mercenary = no
@@ -1275,21 +1274,8 @@ government_flavor = {
 		OR = {
 			has_landed_title = e_roman_empire
 			has_landed_title = e_byzantium
-			has_landed_title = e_west_rome
 		}
 	}	
-}
-government_flavor = {
-	name = gov_roman_imperial_government
-	graphics = GFX_evt_victory_arch_byzantine
-	priority = 3
-	trigger = {
-		is_landed = yes
-		AND = {
-			has_landed_title = e_russian_empire
-			government = tsardom_government
-		}
-	}
 }
 government_flavor = {
 	name = gov_roman_imperial_government_decayed
@@ -2307,7 +2293,6 @@ government_flavor = {
 		OR = {
 			government = feudal_government
 			government = theocratic_feudal_government
-			government = satrap_government
 		}
 		NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
 		mercenary = no
@@ -2369,7 +2354,7 @@ government_flavor = {
 		is_vice_royalty = yes
 		tier = KING
 		NOT = { culture_group = byzantine }
-		NOR = { 
+		NOR = {
 			culture = roman
 			culture = roman_gallo
 			culture = roman_spain
@@ -2414,17 +2399,19 @@ government_flavor = {
 	trigger = {
 		is_vice_royalty = yes
 		tier = DUKE
-		culture = roman
-		culture = roman_gallo
-		culture = roman_spain
-		culture = roman_ilyrian
-		culture = roman_african
-		culture = roman_mauretanian
-		culture = roman_british
-		culture = roman_thraco
-		culture = roman_german
-		culture = roman_greek
-		culture = roman_egyptian
+		OR = {
+			culture = roman
+			culture = roman_gallo
+			culture = roman_spain
+			culture = roman_ilyrian
+			culture = roman_african
+			culture = roman_mauretanian
+			culture = roman_british
+			culture = roman_thraco
+			culture = roman_german
+			culture = roman_greek
+			culture = roman_egyptian
+		}
 	}
 }
 government_flavor = {
@@ -2434,17 +2421,19 @@ government_flavor = {
 	trigger = {
 		is_vice_royalty = yes
 		tier = KING
-		culture = roman
-		culture = roman_gallo
-		culture = roman_spain
-		culture = roman_ilyrian
-		culture = roman_african
-		culture = roman_mauretanian
-		culture = roman_british
-		culture = roman_thraco
-		culture = roman_german
-		culture = roman_greek
-		culture = roman_egyptian
+		OR = {
+			culture = roman
+			culture = roman_gallo
+			culture = roman_spain
+			culture = roman_ilyrian
+			culture = roman_african
+			culture = roman_mauretanian
+			culture = roman_british
+			culture = roman_thraco
+			culture = roman_german
+			culture = roman_greek
+			culture = roman_egyptian
+		}
 	}
 }
 
@@ -2933,5 +2922,87 @@ government_flavor = {
 	priority = 0
 	trigger = {
 		always = yes
+	}
+}
+
+government_flavor = {
+	name = gov_hereditary_zoro
+	graphics = GFX_evt_sun_temple
+	priority = 2
+	trigger = {
+		is_landed = yes
+		government = satrap_government
+	}
+}
+
+government_flavor = {
+	name = gov_roman_imperial_government
+	graphics = GFX_evt_victory_arch_byzantine
+	priority = 3
+	trigger = {
+		is_landed = yes
+		AND = {
+			has_landed_title = e_russian_empire
+			government = tsardom_government
+		}
+	}
+}
+
+government_flavor = {
+	name = gov_hereditary_aristocratic_monarchy_indian
+	graphics = GFX_evt_throne_room_indo_aryan_group
+	priority = 2
+	trigger = {
+		is_landed = yes
+		government = indian_government
+	}
+}
+
+government_flavor = {
+	name = gov_confederation
+	graphics = GFX_evt_war_planning
+	priority = 2
+	trigger = {
+		is_landed = yes
+		government = ar_confederation_government
+	}
+}
+
+government_flavor = {
+	name = gov_pirate
+	graphics = GFX_evt_norse_tempest
+	priority = 2
+	trigger = {
+		is_landed = yes
+		government = pirate_republic_government
+	}
+}
+
+government_flavor = {
+	name = gov_warrior_order
+	graphics = GFX_evt_teaching_moment
+	priority = 2
+	trigger = {
+		is_landed = yes
+		government = warrior_order_government
+	}
+}
+
+government_flavor = {
+	name = gov_mercenaries
+	graphics = GFX_evt_merchant_caravan
+	priority = 2
+	trigger = {
+		government = ar_mercenary_government
+	}
+}
+
+government_flavor = {
+	name = gov_muslim_caliphate
+	graphics = GFX_jerusalem_captured_muslims_soa
+	priority = 2
+	trigger = {
+		religion_group = muslim
+		government = caliphate_government
 	}
 }
