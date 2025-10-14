@@ -280,6 +280,7 @@ government_flavor = {
 		OR = {
 			government = feudal_government
 			government = theocratic_feudal_government
+			government = indian_government
 		}
 		NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
 		mercenary = no
@@ -1274,8 +1275,21 @@ government_flavor = {
 		OR = {
 			has_landed_title = e_roman_empire
 			has_landed_title = e_byzantium
+			has_landed_title = e_west_rome
 		}
 	}	
+}
+government_flavor = {
+	name = gov_roman_imperial_government
+	graphics = GFX_evt_victory_arch_byzantine
+	priority = 3
+	trigger = {
+		is_landed = yes
+		AND = {
+			has_landed_title = e_russian_empire
+			government = tsardom_government
+		}
+	}
 }
 government_flavor = {
 	name = gov_roman_imperial_government_decayed
@@ -2293,6 +2307,7 @@ government_flavor = {
 		OR = {
 			government = feudal_government
 			government = theocratic_feudal_government
+			government = satrap_government
 		}
 		NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
 		mercenary = no
@@ -2330,7 +2345,19 @@ government_flavor = {
 		is_vice_royalty = yes
 		tier = DUKE
 		NOT = { culture_group = byzantine }
-		NOT = { culture = roman }
+		NOR = { 
+			culture = roman
+			culture = roman_gallo
+			culture = roman_spain
+			culture = roman_ilyrian
+			culture = roman_african
+			culture = roman_mauretanian
+			culture = roman_british
+			culture = roman_thraco
+			culture = roman_german
+			culture = roman_greek
+			culture = roman_egyptian
+		}
 	}
 }
 
@@ -2342,7 +2369,19 @@ government_flavor = {
 		is_vice_royalty = yes
 		tier = KING
 		NOT = { culture_group = byzantine }
-		NOT = { culture = roman }
+		NOR = { 
+			culture = roman
+			culture = roman_gallo
+			culture = roman_spain
+			culture = roman_ilyrian
+			culture = roman_african
+			culture = roman_mauretanian
+			culture = roman_british
+			culture = roman_thraco
+			culture = roman_german
+			culture = roman_greek
+			culture = roman_egyptian
+		}
 	}
 }
 
@@ -2376,6 +2415,16 @@ government_flavor = {
 		is_vice_royalty = yes
 		tier = DUKE
 		culture = roman
+		culture = roman_gallo
+		culture = roman_spain
+		culture = roman_ilyrian
+		culture = roman_african
+		culture = roman_mauretanian
+		culture = roman_british
+		culture = roman_thraco
+		culture = roman_german
+		culture = roman_greek
+		culture = roman_egyptian
 	}
 }
 government_flavor = {
@@ -2386,6 +2435,16 @@ government_flavor = {
 		is_vice_royalty = yes
 		tier = KING
 		culture = roman
+		culture = roman_gallo
+		culture = roman_spain
+		culture = roman_ilyrian
+		culture = roman_african
+		culture = roman_mauretanian
+		culture = roman_british
+		culture = roman_thraco
+		culture = roman_german
+		culture = roman_greek
+		culture = roman_egyptian
 	}
 }
 
@@ -2835,7 +2894,10 @@ government_flavor = {
 	graphics = GFX_evt_chinese_emissary
 	priority = 4
 	trigger = {
-		government = chinese_government
+		OR = {
+			government = chinese_government
+			government = normal_chinese_government
+		}
 	}
 }
 
