@@ -7,7 +7,7 @@ title = c_bremen
 max_settlements = 5
 b_bremen = temple
 b_verden = temple
-b_versfleth	= castle
+b_versfleth = castle
 #b_rotenburg = city
 #b_vorde = castle
 #b_achim = city
@@ -18,5 +18,21 @@ culture = low_saxon
 religion = catholic
 
 # History
+399.1.1 = {
+	religion = germanic_pagan
+}
+400.1.1 = {
+	b_bremen = tribal
+	remove_settlement = b_verden
+	remove_settlement = b_versfleth
+}
+600.1.1 = {
+	b_bremen = temple
+	b_verden = temple
+	b_versfleth = castle
+}
+601.1.1 = {
+	religion = catholic
+}
 1100.1.1 = { culture = low_german }
 1122.1.1 = { b_voerde = castle }

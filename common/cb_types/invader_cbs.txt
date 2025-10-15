@@ -2221,13 +2221,16 @@ roman_extermination_cb = {
 
 	can_use = {
 		ROOT = {
-			has_landed_title = e_west_rome
-			has_character_flag = roman_america_invader
+			AND = {
+				has_landed_title = e_west_rome
+				has_character_flag = roman_america_invader
+			}
 		}
 	}
 	
 	can_use_title = {
 		OR = {
+			de_jure_liege = e_britannia
 			de_jure_liege = e_france
 			de_jure_liege = e_spain
 			de_jure_liege = e_italy
@@ -2259,7 +2262,7 @@ roman_extermination_cb = {
 					usurp_title = PREV
 				}
 				while = {
-					count = 15
+					count = 5
 					ROOT = {
 						random_realm_province = {
 							limit = {

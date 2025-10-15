@@ -52,13 +52,16 @@ character_event = { #Pope event to trigger the first Player Event
 					culture = saxon
 					culture = english
 					culture = scottish
+					culture = cumbric
+					culture = anglonorse
 				}
 			}
 			save_event_target_as = random_britanian_spotted_romans
 		}
 		any_player = { narrative_event = { id = ROMA.97 } }
+		any_player = { set_character_flag = test_roman_americans_part_1 }
 		set_global_flag = roman_america_part_1_triggered
-		ROOT = { character_event = { id = ROMA.98 years = 1 } }
+		ROOT = { character_event = { id = ROMA.98 days = 1 } }
 	}
 }
 
@@ -98,13 +101,16 @@ character_event = { #Pope event to trigger the seccond Player Event
 					culture = saxon
 					culture = english
 					culture = scottish
+					culture = cumbric
+					culture = anglonorse
 				}
 			}
 			save_event_target_as = random_britanian_spotted_romans
 		}
 		any_player = { narrative_event = { id = ROMA.99 } }
+		any_player = { set_character_flag = test_roman_americans_part_2 }
 		set_global_flag = roman_america_part_2_triggered
-		ROOT = { character_event = { id = ROMA.100 years = 1 } }
+		ROOT = { character_event = { id = ROMA.100 days = 1 } }
 	}
 }
 
@@ -179,6 +185,8 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 						}
 						e_west_rome = {
 							grant_title = PREV
+							#activate_title = { title = THIS status = yes }
+							set_title_landless = { title = THIS status = yes }
 							add_law = succ_byzantine_elective
 						}
 						any_demesne_title = {
@@ -252,6 +260,7 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 							}
 						}
 						e_west_rome = {
+							#activate_title = { title = THIS status = yes }
 							set_title_landless = { title = THIS status = yes }
 							set_title_flag = temporary_landless_title
 							grant_title = PREV
@@ -327,6 +336,7 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 						}
 					}
 					e_west_rome = {
+						#activate_title = { title = THIS status = yes }
 						set_title_landless = { title = THIS status = yes }
 						set_title_flag = west_rome_england_invade
 						grant_title = PREV
@@ -356,7 +366,7 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 					#character_event = { id = ROMA.104 days = 1 } # Spawn population
 				}
 			}
-			59 = {
+			32 = {
 				kingdom = {
 					e_west_rome = {
 						holder_scope = {
@@ -381,6 +391,7 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+		e_west_rome = { holder_scope = { culture = roman } }
 	}
 	option = {
 		name = "EVTOPTA60500"

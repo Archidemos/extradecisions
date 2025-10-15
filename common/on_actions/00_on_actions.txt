@@ -65,6 +65,9 @@ on_startup = {
 		UMM.1 			#Gives out the Umayyad Crisis Modifiers
 		UMM.10 			#Announcement about the Crisis in Muslim Spain
 		
+		ROMANFR.1000	#Gives out the West Rome Crisis Modifiers
+		ROMANFR.98		#Announcement about the Western Roman Crisis
+		
 		isldecadent.99 	#Starts the loophole Decadence system
 		NERF.1			#Starts the Stability system
 		
@@ -135,14 +138,46 @@ on_yearly_pulse = {
 		
 		MP.041
 		
-		NERF.50		#Event to remove Realm Nerf Modifiers on AI
-		NERF.51		#Event to remove Realm Nerf Modifiers on non-independent characters
+		NERF.50			#Event to remove Realm Nerf Modifiers on AI
+		NERF.51			#Event to remove Realm Nerf Modifiers on non-independent characters
 		
 		UMM.20
 		UMM.21
+		ROMANFR.1005
+		ROMANFR.1006	#Hunnic Ultimatum for 400
+		ROMANFR.1007	#If West Rome loses Rome, Roman Empire shatters
+
+		ROMANFR.1009		#The Saxons invade West Rome k_upper_lorraine
+		ROMANFR.1010		#The Saxons invade West Rome k_lower_lorraine
+
+		ROMANFR.1011		#The Franks invade West Rome k_france
+
+		ROMANFR.1012		#The Schwabians invade West Rome k_burgundy
+		ROMANFR.1013		#The Schwabians invade West Rome k_schwaben
 		
-		#MP.029 	#Special event if Mongols and Golden Horde spawn at once
-		#MP.034 	#Special event if Mongols and Ilkhanate spawn at once
+		ROMANFR.1014		#The Bavarians invade West Rome k_burgundy
+
+		ROMANFR.1015		#The Vandals invade West Rome k_africa
+
+		ROMANFR.1016		#The Aznag invade West Rome k_maghreb
+		
+		ROMANFR.1017		#The Visigoths invade West Rome k_aquitaine
+		#ROMANFR.1018		#The Visigoths invade West Rome k_aragon
+		ROMANFR.1019		#The Visigoths invade West Rome k_valencia
+		#ROMANFR.1020		#The Visigoths invade West Rome k_castille
+		#ROMANFR.1021		#The Visigoths invade West Rome k_navarra
+		ROMANFR.1022		#The Visigoths invade West Rome k_andalusia
+		ROMANFR.1023		#The Visigoths invade West Rome k_spanish_galicia
+		ROMANFR.1024		#The Visigoths invade West Rome k_asturias
+
+		ROMANFR.1025		#The Ostrogoths invade West Rome k_italy
+		#ROMANFR.1026		#The Ostrogoths invade West Rome k_papacy
+		ROMANFR.1027		#The Ostrogoths invade West Rome k_croatia
+		ROMANFR.1028		#The Ostrogoths invade West Rome k_sicily
+		ROMANFR.1029		#The Ostrogoths invade West Rome k_hungary
+		
+		#MP.029 		#Special event if Mongols and Golden Horde spawn at once
+		#MP.034 		#Special event if Mongols and Ilkhanate spawn at once
 
 		#mod events
 		NERF.1
@@ -161,6 +196,14 @@ on_yearly_pulse = {
 			100 = ROMA.96		#The Preperation of the Roman Invasion starts.
 			1000 = 0
         }
+		
+		400_invaders = {
+			100 = ROMANFR.1032	#The Franks start invading in France at 470
+			100 = ROMANFR.1032	#The Anglo-Saxons start invading England 450
+			100 = ROMANFR.1034	#The Ostrogoths starts invading Italy at 490
+			100 = ROMANFR.1036	#The Vandals starts invading Italy at 435
+			1000 = 0
+		}
 		
 		# Feudal Life Events
 		100 = 4000
@@ -799,6 +842,7 @@ on_bi_yearly_pulse = {
 		SoA.5304 # Zoroastrian becoming an immoral priest
 		SoA.5305 # Aztec becoming an unworthy priest
 		HF.15098 # African Rain/Drought delayed weather change event (HF.15120 is the actual tombola)
+		
 	}
 	
 	
@@ -2952,6 +2996,11 @@ on_new_holder = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
+
+		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
+		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
+		ROMANFR.1003	#The Western Roman Emperor keeps getting his 3rd modifier (unless solved)
 
 		NERF.50
 		NERF.51
@@ -3017,6 +3066,11 @@ on_new_holder_inheritance = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
+
+		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
+		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
+		ROMANFR.1003	#The Western Roman Emperor keeps getting his 3rd modifier (unless solved)
 
 		NERF.50
 		NERF.51
@@ -3079,6 +3133,11 @@ on_new_holder_usurpation = {
 		UMM.4
 		UMM.20
 		UMM.21
+		ROMANFR.1005
+		
+		ROMANFR.1001	#The Western Roman Emperor keeps getting his 1st modifier (unless solved)
+		ROMANFR.1002	#The Western Roman Emperor keeps getting his 2nd modifier (unless solved)
+		ROMANFR.1003	#The Western Roman Emperor keeps getting his 3rd modifier (unless solved)
 		
 		NERF.50
 		NERF.51

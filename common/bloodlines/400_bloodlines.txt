@@ -1,0 +1,51 @@
+unified_germania = {
+	combat_rating = 15
+	martial = 1	
+	command_modifier = {
+		religious_enemy = 0.05
+		light_infantry_morale = 0.15
+	}
+	bloodline_effect_great_heroes_appear = 1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_generic_pagan
+	flags = { bloodline_heroes }
+}
+
+unified_arabia = {
+	combat_rating = 15
+	martial = 1	
+	command_modifier = {
+		religious_enemy = 0.05
+		camel_cavalry_offensive = 0.15
+	}
+	bloodline_effect_great_heroes_appear = 1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_generic_pagan
+	flags = { bloodline_heroes }
+}
+
+creator_francia = {
+	martial = 1
+	diplomacy = 1
+	combat_rating = 10
+	bloodline_effect_castellan = 1 
+	bloodline_effect_great_heroes_appear = 1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { bloodline_heroes bloodline_castellan }
+}
+
+creator_carthage = {
+	stewardship = 2
+	combat_rating = 10
+	bloodline_effect_castellan = 1
+	city_vassal_tax_modifier = 0.1
+	build_time_modifier = -0.1
+	inheritance = patrilineal	
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_architect
+	flags = { bloodline_heroes bloodline_castellan }
+}

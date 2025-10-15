@@ -27,20 +27,23 @@
 70519 = {
 	name="Arcadius"
 	# Flavius Arcadius Augustus
-	dynasty=1022191
+	#dynasty=1022191
+	dynasty=2000000000
 	martial=4
 	diplomacy=4
 	intrigue=4
 	stewardship=4
-	religion="orthodox"
+	religion="nicene_christian"
 	culture="roman"
 	trait="humble"
 	trait="shy"
 	trait="indulgent_wastrel"
-	father=70534
+	#father=70534
+	#mother=2999999
 	
 	377.12.1={
 		birth="377.12.1"
+		add_claim = e_roman_empire
 	}
 	408.5.1={
 		death="408.5.1"
@@ -263,6 +266,9 @@
 	347.1.11={
 		birth="347.1.11"
 	}
+	376.1.1 = {
+		add_spouse=2999999
+	}
 	395.1.17={
 		death="395.1.17"
 	}
@@ -292,15 +298,22 @@
 145227 = {
 	name="Honorius"
 	# Flavius Honorius Augustus
-	dynasty=1022191
-	religion="catholic"
+	#dynasty=1022191
+	dynasty=2000000001
+	religion="nicene_christian"
 	culture="roman"
 	trait="arbitrary"
 	trait="slothful"
 	trait="indulgent_wastrel"
-	father=70534
+	#father=70534
+	#mother=2999999
 	384.9.9={
 		birth="384.9.9"
+		remove_claim = e_byzantium
+		add_claim = e_roman_empire
+	}
+	400.1.1 = {
+		remove_claim = e_byzantium
 	}
 	423.8.25={
 		death="423.8.25"

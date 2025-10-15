@@ -1,0 +1,594 @@
+decisions = {
+	create_roman_bathhouse = {
+		only_playable = yes
+		is_high_prio = no
+		ai_check_interval = 36
+		
+		potential = {
+			OR = {
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+			NOR = {
+				has_character_modifier = roman_bathhouse_private	#Health/Diplo
+				has_character_modifier = roman_bathhouse_public		#Stewardship/Income
+			}
+			NOT = { has_character_flag = built_roman_bathhouse }
+		}
+		allow = {
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			is_playable = yes
+			wealth = 250
+			prestige = 100
+		}
+		effect = {
+			wealth = -250
+			set_character_flag = built_roman_bathhouse
+			hidden_tooltip = { character_event = { id = ROMANFR.100 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+
+	end_roman_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_1_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_1
+			has_global_flag = roman_crisis_1
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500			
+			clr_global_flag = roman_crisis_1
+			set_global_flag = roman_crisis_1_taken
+			set_global_flag = roman_crisis_finished_1
+			remove_character_modifier = rome_crisis_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_roman_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_2_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_2
+			has_global_flag = roman_crisis_2
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			diplomacy = 11
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = roman_crisis_2
+			set_global_flag = roman_crisis_2_taken
+			set_global_flag = roman_crisis_finished_2
+			remove_character_modifier = rome_crisis_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_roman_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_3_taken }
+			has_landed_title = e_west_rome
+			has_character_modifier = rome_crisis_3
+			has_global_flag = roman_crisis_3
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			martial = 13
+			ROOT = { has_landed_title = e_west_rome }
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = roman_crisis_3
+			set_global_flag = roman_crisis_3_taken
+			set_global_flag = roman_crisis_finished_3
+			remove_character_modifier = rome_crisis_3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_roman_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			start_date = 400.1.1
+			NOT = { has_global_flag = roman_crisis_done }
+			OR = {
+				NOT = { has_global_flag = roman_crisis_1 }
+				NOT = { has_global_flag = roman_crisis_2 }
+				NOT = { has_global_flag = roman_crisis_3 }
+			}
+			AND = {
+				has_landed_title = e_west_rome
+				has_global_flag = roman_crisis_finished_1
+				has_global_flag = roman_crisis_finished_2
+				has_global_flag = roman_crisis_finished_3
+			}
+		}
+
+		allow = {
+			independent = yes
+		}
+
+		effect = {
+			set_global_flag = roman_crisis_done
+			set_global_flag = roman_barbarians_dealt
+			clr_global_flag = roman_crisis_finished_1
+			clr_global_flag = roman_crisis_finished_2
+			clr_global_flag = roman_crisis_finished_3
+			ROOT = { narrative_event = { id = ROMANFR.1008 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	abandon_britania = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			has_landed_title = e_west_rome
+			NOT = { has_global_flag = left_britain }
+			start_date = 400.1.1
+			NOT = {
+				AND = {
+					has_global_flag = roman_crisis_finished_1
+					has_global_flag = roman_crisis_finished_2
+					has_global_flag = roman_crisis_finished_3
+				}
+			}
+		}
+		allow = {
+			has_landed_title = e_west_rome
+			NOT = { has_landed_title = k_england }
+		}
+		effect = {
+			set_global_flag = left_britain
+			custom_tooltip = { 
+				text = "the Roman Province of Britania will be abandoned, this could make the our current sittuations less severe for a little bit." 
+				hidden_tooltip = { character_event = { id = ROMANFR.101 } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+
+	establish_frankish_kingdom = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_francia }
+			culture = old_frankish
+		}
+		allow = {
+			date >= 481.1.1
+			religion_group = christian
+			ROOT = { tier = KING }
+			has_landed_title = k_france
+			completely_controls = k_france
+			completely_controls = k_upper_lorraine
+			completely_controls = k_lower_lorraine
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_francia
+			ROOT = { gain_title = e_france }
+			ROOT = { dynasty = 542 }
+			prestige = 1000
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = creator_francia
+			}
+			e_france = {
+				set_name = "Francia"
+				adjective = "Frankish"
+			}
+			k_france = {
+				set_name = "Francia"
+				adjective = "Frankish"
+			}
+			add_claim = d_poitou
+			add_claim = d_limousin
+			add_claim = d_auvergne
+			add_claim = c_rennes
+			add_claim = c_nantes
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1030 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unite_german_tribes = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_germania }
+			culture_group = central_germanic
+			NOT = { culture = old_frankish }
+		}
+		allow = {
+			date >= 481.1.1
+			ROOT = { tier = KING }
+			completely_controls = k_franconia
+			completely_controls = k_saxony
+			completely_controls = k_frisia
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_germania
+			ROOT = { gain_title = e_germany }
+			prestige = 1000
+			give_nickname = nick_the_great
+			add_claim = k_italy
+			add_claim = k_france
+			create_bloodline = {
+				type = unified_germania
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1031 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	unite_arabian_tribes = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_arabia }
+			culture = old_arabic
+		}
+		allow = {
+			date >= 481.1.1
+			ROOT = { tier = KING }
+			completely_controls = k_oman
+			completely_controls = k_yemen
+			completely_controls = k_arabia
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = formed_arabia
+			ROOT = { gain_title = e_arabia }
+			prestige = 1000
+			give_nickname = nick_the_great
+			add_claim = k_egypt
+			add_claim = k_syria
+			add_claim = k_jerusalem
+			create_bloodline = {
+				type = unified_arabia
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1039 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	revive_west_rome = {
+		only_playable = yes
+		only_independent = yes
+		ai_check_interval = 24
+		is_high_prio = yes
+		
+		potential = {
+			start_date = 400.1.1
+			has_global_flag = roman_barbarians_dealt
+			NOT = { has_landed_title = e_hre }
+			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_roman_empire }
+			NOT = { has_landed_title = k_papal_state }
+			OR = {
+				culture = greek
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+			OR = {
+				religion_group = christian
+				religion = hellenic_pagan
+			}
+			NOT = {
+				government = merchant_republic_government
+			}
+			NOT = { has_global_flag = west_rome_formed_again }
+			capital_scope = {
+				OR = {
+					region = world_europe_west
+					region = world_europe_south_italy
+				}
+			}
+		}
+		
+		allow = {
+			NOT = { has_landed_title = e_byzantium }
+			prestige = 1000
+			has_landed_title = c_roma
+			completely_controls = k_italy
+			completely_controls = k_valencia
+			completely_controls = k_aragon
+			completely_controls = k_aquitaine
+			trigger_if = {
+				limit = { k_romagna = { is_titular = no } }
+				completely_controls = k_romagna
+			}
+			trigger_if = {
+				limit = { k_papacy = { is_titular = no } }
+				completely_controls = k_papacy
+			}
+			completely_controls = k_sicily
+			completely_controls = k_sardinia
+			OR = {
+				culture = greek
+				culture = roman
+				culture = roman_gallo
+				culture = roman_spain
+				culture = roman_ilyrian
+				culture = roman_african
+				culture = roman_mauretanian
+				culture = roman_british
+				culture = roman_thraco
+				culture = roman_german
+				culture = roman_greek
+				culture = roman_egyptian
+			}
+		}
+		
+		effect = {
+			set_global_flag = west_rome_formed_again
+			set_global_flag = west_rome_formed_normal
+			custom_tooltip = { 
+				text = "The preperations of the new governance will begin.."
+				any_player = { narrative_event = { id = ROMANFR.1031 days = 5 } }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_carthage_kingdom = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			NOT = { has_global_flag = formed_carthage }
+			culture = punic
+		}
+		allow = {
+			#date >= 481.1.1
+			OR = {
+				religion_group = christian
+				religion = pagan
+			}
+			has_landed_title = k_africa
+			completely_controls = k_africa
+			prestige = 1500
+			independent = yes
+			is_capital = c_tunis
+		}
+		effect = {
+			set_global_flag = formed_carthage
+			ROOT = { gain_title = e_carthage }
+			prestige = 1000
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = creator_carthage
+			}
+			d_sicily = { de_jure_liege = k_africa }
+			k_africa = { de_jure_liege = e_carthage }
+			k_maghreb = { de_jure_liege = e_carthage }
+			k_mauretania = { de_jure_liege = e_carthage }
+			k_sardinia = { de_jure_liege = e_carthage }
+			add_claim = d_sardinia
+			add_claim = k_maghreb
+			add_claim = d_mallorca
+			add_claim = d_sicily
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = ROMANFR.1038 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
