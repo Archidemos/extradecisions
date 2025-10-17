@@ -4458,7 +4458,7 @@ character_event = {
 narrative_event = {
 	id = ROMANFR.1200
 	title = "The Roman Church"
-	desc = "XXX."
+	desc = "Your Holiness, many rulers from accross Europe have been starting to think about our Roman Catholic Church. It seems that they are losing interest and are questioning the Nicene Creed. Perhaps we should send missionaries and convert these lands to the true way of Christ. What shall we do."
 	
 	picture = GFX_evt_great_schism
 	border = GFX_event_narrative_frame_war
@@ -4466,7 +4466,7 @@ narrative_event = {
     is_triggered_only = yes
     trigger = {
 		has_landed_title = k_papal_state
-		start_date = 400.1.1
+		start_date == 400.1.1
 		date = 500.1.1
 		NOT = { has_global_flag = nicene_converted }
     }
@@ -4508,14 +4508,14 @@ narrative_event = {
 narrative_event = {
 	id = ROMANFR.1201
 	title = "The Catholic Church"
-	desc = "XXX."
+	desc = "Many realms have been converting to the Roman Catholic church, it seems that the ideas of Nicene Christianity are wavering and became unpopulair. Perhaps we should join in, what shall we do sire."
 	
 	picture = GFX_evt_bishop_byzantine
 	
 	is_triggered_only = yes
 	
 	option = { # Yes
-		name = EVTOPTAIsls.005
+		name = "We do as the Pope commands!"
 		ai_chance = { factor = 75 }
 		religion = catholic
 		any_courtier = {
@@ -4530,15 +4530,15 @@ narrative_event = {
 		}
 	}
 	option = { # No
-		name = EVTOPTBIsls.006
+		name = "Blasphemy.."
 		ai_chance = { factor = 25 }
 	}
 }
 
 narrative_event = {
 	id = ROMANFR.1202
-	title = "The Great Schism"
-	desc = "XXX."
+	title = "The Roman Catholic Church"
+	desc = ROMANFRPAPDESC.1
 	
 	picture = GFX_evt_great_schism
 	
@@ -4553,7 +4553,7 @@ narrative_event = {
 narrative_event = {
 	id = ROMANFR.1203
 	title = "Papal Restoration"
-	desc = "XXX."
+	desc = "With the rise of Roman Catholicism, a new era awaits us. An Era that shows uncertainty, we have to be carefull and defend our faith from whatever has to come. Therefore, it perhaps would not be such a bad idea if we gave more land to the Pope so that our Holiness stands tall as a Beacon of Christianity. Is this wise?"
 	
 	picture = GFX_evt_pope
 	border = GFX_event_narrative_frame_war
@@ -4562,13 +4562,13 @@ narrative_event = {
     trigger = {
 		religion_group = christian
 		completely_controls = c_roma
-		start_date = 400.1.1
+		start_date == 400.1.1
 		date = 750.1.1
 		NOT = { has_global_flag = gave_land_pope }
     }
 	
 	option = {
-		name = "Spread the word!"
+		name = "Deus Vult!"
 		if = {
 			limit = {
 				religion = catholic
@@ -4643,7 +4643,7 @@ narrative_event = {
 narrative_event = {
 	id = ROMANFR.1204
 	title = "Papal Restoration"
-	desc = "XXX."
+	desc = "Roman Catholicism is rising and we have to stay strong and united. The future proofs to be uncertain, God knows what awaits us and it is a scary tought. Therefore, it is wise to grant our Holiness the Pope some more lands arround Rome so that our Holiness and the Holy See stand stronger and will stay strong for the rest of time."
 	
 	picture = GFX_evt_pope
 	
