@@ -3819,9 +3819,9 @@ narrative_event = { #The Rise of Islam
 	major = yes
 	hide_from = yes
 	is_triggered_only = yes
-	sound = ar_army_marching
+	sound = ar_arab_army_shout
 	
-	picture = "GFX_evt_mongols"
+	picture = "GFX_evt_islam_army_march"
 	border = "GFX_event_narrative_frame_war"
 	
 	only_playable = yes
@@ -3838,350 +3838,112 @@ narrative_event = { #The Rise of Islam
 	}
 	
 	immediate = {
-			set_global_flag = rashudin_spawned
-			activate_title = { title = e_arabia status = yes }
-			
-			if = {
-				limit = {
-					has_global_flag = rashudin_born
-				}
-				if = {
-					limit = {
-						any_independent_ruler = {
-							has_character_flag = rashudin_himself
-							demesne_size = 1
-							ai = yes
-						}
-					}
-					log = "Temujin exists as independent ai"
-					random_independent_ruler = {
-						limit = {
-							has_character_flag = rashudin_himself
-							ai = yes
-						}
-						any_demesne_title = {
-							limit = {
-								tier = EMPEROR
-							}
-							set_title_flag = to_be_destroyed
-						}
-						e_arabia = {
-							grant_title = PREV
-							add_law = succ_turkish_succession
-						}
-						d_sunni = {
-							grant_title = PREV
-						}
-						any_demesne_title = {
-							limit = {
-								has_title_flag = to_be_destroyed
-							}
-							activate_title = { title = THIS status = no }
-							destroy_landed_title = THIS
-						}
-						wealth = 12000
-						prestige = 10000
-						set_character_flag = is_special_character
-						set_character_flag = rashudin_invader
-						#add_claim = d_thrace
-						#add_claim = c_byzantion
-						character_event = { id = ROMANFR.1047 } # Spawn troops
-						character_event = { id = ROMANFR.1048 days = 1 } # Spawn population
-						if = {
-							limit = {
-								has_dlc = "Holy Fury"
-								NOT = {
-									any_owned_bloodline = {
-										has_bloodline_flag = seljuk_line #rumeuk
-									}
-								}
-							}
-							#create_bloodline = {
-							#	type = seljuk #rumeuk
-							#}
-						}
-					}
-					break = yes
-				}
-				if = {
-					limit = {
-						NOT = {
-							e_arabia = {
-								holder_scope = {
-									always = yes
-								}
-							}
-						}
-					}
-					log = "Real Temujin didn't recieve title"
-					create_character = {
-						random_traits = yes
-						dynasty=7296
-						religion = sunni
-						culture = bedouin_arabic
-						female = no
-						age = 59
-						attributes = {
-							martial = 12
-						}
-						trait = brilliant_strategist
-						trait = ambitious
-						trait = diligent
-						trait = brave
-						trait="great_conquerer"
-					}
-					new_character = {
-						if = {
-							limit = {
-								has_dlc = "Holy Fury"
-								NOT = {
-									any_owned_bloodline = {
-										has_bloodline_flag = seljuk_line
-									}
-								}
-							}
-							#create_bloodline = {
-							#	type = seljuk
-							#}
-						}
-						e_arabia = {
-							set_title_landless = { title = THIS status = yes }
-							set_title_flag = temporary_landless_title
-							grant_title = PREV
-							add_law = succ_turkish_succession
-						}
-						d_sunni = {
-							grant_title = PREV
-						}
-						set_defacto_liege = THIS
-						if = {
-							limit = {
-								has_dlc = "Horse Lords"
-							}
-							set_government_type = muslim_government
-						}
-						if = {
-							limit = {
-								NOT = { has_dlc = "Horse Lords" }
-							}
-							set_government_type = tribal_government
-						}
-						wealth = 12000
-						prestige = 10000
-						add_claim = d_thrace
-						add_claim = c_byzantion
-						set_character_flag = rashudin_invader
-						character_event = { id = ROMANFR.1046 } # Spawn courtiers
-						character_event = { id = ROMANFR.1047 } # Spawn troops
-						character_event = { id = ROMANFR.1048 days = 1 } # Spawn population
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						e_arabia = {
-							holder_scope = { always = yes }
-						}
-					}
-				}
-				log = "Spawning Temujin for invasion"
-				create_character = {
-					name="Abu Bakr"
-					dynasty=7296
-					age = 59
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-					health = 6
-					fertility = 0.7
-					religion="sunni"
-					culture=bedouin_arabic
-					trait="brave"
-					trait="ambitious"
-					trait="diligent"
-					trait="cavalry_leader"
-					trait="brilliant_strategist"
-					trait="great_conquerer"
-				}
-				new_character = {
-					set_character_flag = rashudin_himself
-					set_character_flag = is_special_character
-					if = {
-						limit = {
-							has_dlc = "Holy Fury"
-							NOT = {
-								any_owned_bloodline = {
-									has_bloodline_flag = seljuk_line
-								}
-							}
-						}
-						#create_bloodline = {
-						#	type = seljuk
-						#}
-					}
-					e_arabia = {
-						set_title_landless = { title = THIS status = yes }
-						grant_title = PREV
-						add_law = succ_turkish_succession
-					}
-					d_sunni = {
-						grant_title = PREV
-					}
-					set_defacto_liege = THIS
-					if = {
-						limit = {
-							has_dlc = "Horse Lords"
-						}
-						set_government_type = muslim_government
-					}
-					if = {
-						limit = {
-							NOT = { has_dlc = "Horse Lords" }
-						}
-						set_government_type = tribal_government
-					}
-					wealth = 12000
-					prestige = 10000
-					piety = 5000
-					population = 50000
-					#add_claim = d_thrace
-					#add_claim = c_byzantion
-					set_character_flag = rashudin_invader
-					character_event = { id = ROMRASH.1 days = 30 }
-					character_event = { id = ROMRASH.4 days = 30 }
-					character_event = { id = ROMANFR.1045 } # Spawn Temujins generals
-					character_event = { id = ROMANFR.1046 } # Spawn courtiers
-					character_event = { id = ROMANFR.1047 } # Spawn troops
-					character_event = { id = ROMANFR.1048 days = 1 } # Spawn population
-				}
-			}			
-			719 = {
-				kingdom = {
-					e_arabia = {
-						holder_scope = {
-							unsafe_war = {
-								casus_belli = rashudin_invasion_cb
-								target = PREVPREVPREV
-								thirdparty_title = PREVPREV
-							}
-						}
-					}
-				}
-			}
-		any_playable_ruler = {
-			limit = { ai = no }
-			if = {
-				limit = {
-					OR = {
-						has_power_omen_modifier_trigger = yes
-						has_battle_omen_modifier_trigger = yes
-					}
-				}
-				set_character_flag = negative_event_flag # For the scrying outcome calculation...
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTA60500"
-		trigger = {
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-				religion_group = pagan_group
-			}
-			NOT = { government = nomadic_government }
-			has_power_omen_modifier_trigger = no
-			has_battle_omen_modifier_trigger = no
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB60500"
-		trigger = {
-			NOT = { religion_group = christian }
-			NOT = { religion_group = muslim }
-			NOT = { religion_group = pagan_group }
-			NOT = { government = nomadic_government }
-			has_power_omen_modifier_trigger = no
-			has_battle_omen_modifier_trigger = no
-		}
-	}
-	
-	option = {
-		name = "EVTOPTC60500"
-		trigger = {
-			government = nomadic_government
-			has_power_omen_modifier_trigger = no
-			has_battle_omen_modifier_trigger = no
-		}
-	}
-
-	option = { # scrying omen included
-		name = "EVTOPTA60500"
-
-		if = { #in case this does not run in the immediate due to "major = yes"
-			limit = {
-				OR = {
-					has_power_omen_modifier_trigger = yes
-					has_battle_omen_modifier_trigger = yes
-				}
-			}
-			set_character_flag = negative_event_flag # For the scrying outcome calculation...
-		}
-
-		calculate_scrying_outcome_effect = yes
-		remove_scrying_omen_modifiers_effect = yes
-		tooltip_info = yes
-
-		trigger = {
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-				religion_group = pagan_group
-			}
-			NOT = { government = nomadic_government }
-			OR = {
-				has_power_omen_modifier_trigger = yes
-				has_battle_omen_modifier_trigger = yes
-			}
-		}
-	}
-	
-	option = { # scrying omen included
-		name = "EVTOPTB60500"
-
-		if = { #in case this does not run in the immediate due to "major = yes"
-			limit = {
-				OR = {
-					has_power_omen_modifier_trigger = yes
-					has_battle_omen_modifier_trigger = yes
-				}
-			}
-			set_character_flag = negative_event_flag # For the scrying outcome calculation...
-		}
+		set_global_flag = rashudin_spawned
+		activate_title = { title = e_rashudin status = yes }
 		
-		calculate_scrying_outcome_effect = yes
-		remove_scrying_omen_modifiers_effect = yes
-		tooltip_info = yes
-
+		if = {
+			limit = {
+				NOT = {
+					e_rashudin = {
+						holder_scope = { always = yes }
+					}
+				}
+			}
+			create_character = {
+				name="Abu Bakr"
+				dynasty=7296
+				age = 49
+				attributes = {
+					martial=9
+					diplomacy=8
+					intrigue=5
+					stewardship=7
+				}
+				health = 7
+				fertility = 0.7
+				religion="sunni"
+				culture=bedouin_arabic
+				trait="brave"
+				trait="ambitious"
+				trait="diligent"
+				trait="cavalry_leader"
+				trait="brilliant_strategist"
+				trait="great_conquerer"
+			}
+			new_character = {
+				set_character_flag = rashudin_himself
+				set_character_flag = is_special_character
+				e_rashudin = {
+					set_title_landless = { title = THIS status = yes }
+					grant_title = PREV
+					add_law = succ_turkish_succession
+				}
+				d_sunni = { grant_title = PREV }
+				set_defacto_liege = THIS
+				wealth = 12000
+				prestige = 10000
+				piety = 5000
+				population = 50000
+				set_character_flag = rashudin_invader
+				character_event = { id = ROMRASH.1 days = 30 }
+				character_event = { id = ROMRASH.4 days = 30 }
+				character_event = { id = ROMANFR.1045 } # Spawn Temujins generals
+				character_event = { id = ROMANFR.1046 } # Spawn courtiers
+				character_event = { id = ROMANFR.1047 } # Spawn troops
+				character_event = { id = ROMANFR.1048 days = 1 } # Spawn population
+			}
+		}			
+		719 = {
+			kingdom = {
+				e_rashudin = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = rashudin_invasion_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA60500"
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = pagan_group
+			}
+			NOT = { government = nomadic_government }
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB60500"
 		trigger = {
 			NOT = { religion_group = christian }
 			NOT = { religion_group = muslim }
 			NOT = { religion_group = pagan_group }
 			NOT = { government = nomadic_government }
-			OR = {
-				has_power_omen_modifier_trigger = yes
-				has_battle_omen_modifier_trigger = yes
-			}
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
 		}
 	}
 	
-	option = { # scrying omen included
+	option = {
 		name = "EVTOPTC60500"
+		trigger = {
+			government = nomadic_government
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+
+	option = { # scrying omen included
+		name = "EVTOPTA60500"
 
 		if = { #in case this does not run in the immediate due to "major = yes"
 			limit = {
@@ -4198,7 +3960,12 @@ narrative_event = { #The Rise of Islam
 		tooltip_info = yes
 
 		trigger = {
-			government = nomadic_government
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = pagan_group
+			}
+			NOT = { government = nomadic_government }
 			OR = {
 				has_power_omen_modifier_trigger = yes
 				has_battle_omen_modifier_trigger = yes
@@ -4457,9 +4224,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4467,9 +4234,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4477,9 +4244,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4487,9 +4254,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4497,9 +4264,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4507,9 +4274,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4517,9 +4284,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4527,9 +4294,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4537,9 +4304,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4547,9 +4314,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4557,9 +4324,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4567,9 +4334,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 		spawn_unit = {
@@ -4577,9 +4344,9 @@ character_event = {
 			attrition = 0
 			troops =
 			{
-				light_cavalry = { 2750 2750 }
-				horse_archers = { 2250 2250 }
-				knights = { 500 500 }
+				light_infantry = { 2750 2750 }
+				light_cavalry = { 2250 2250 }
+				horse_archers = { 500 500 }
 			}
 		}
 	}
@@ -4615,7 +4382,7 @@ character_event = {
 	
 	trigger = {
 		FROM = {
-			has_landed_title = e_arabia
+			has_landed_title = e_rashudin
 			ai = yes
 			NOT = { has_global_flag = rashudin_playable_triggered }
 		}
@@ -4623,7 +4390,7 @@ character_event = {
 
 	immediate = {
 		any_player = { narrative_event = { id = ROMANFR.1050 } }
-		set_global_flag = rum_playable_triggered
+		set_global_flag = rashudin_playable_triggered
 	}
 }
 
@@ -4633,7 +4400,7 @@ narrative_event = { #Giving the possibility to switch to the Rashudins in Single
 	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of this mighty Conquerer.."
     is_triggered_only = yes
 	
-	portrait = e_arabia
+	portrait = e_rashudin
 	picture = GFX_evt_mongols
 	border = GFX_event_narrative_frame_war
 	
@@ -4643,12 +4410,12 @@ narrative_event = { #Giving the possibility to switch to the Rashudins in Single
 		NOT = { has_global_flag = rashudin_playable_triggered }
 	}
 
-	immediate = { e_arabia = { holder_scope = { save_event_target_as = play_as_rum } } }
+	immediate = { e_rashudin = { holder_scope = { save_event_target_as = play_as_rum } } }
 	
 	option = {
 		name = "If only it could be me.."
 		
-		trigger = { e_arabia = { holder_scope = { ai = yes } } }
+		trigger = { e_rashudin = { holder_scope = { ai = yes } } }
 		set_player_character = event_target:play_as_rum
 		set_global_flag = rashudin_playable_triggered
 	}

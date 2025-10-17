@@ -154,241 +154,76 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 	}
 	
 	immediate = {
-			set_global_flag = rome_invades
-			set_global_flag = west_rome_formed
-			
-			activate_title = { title = e_west_rome status = yes }
-			
-			if = {
-				limit = {
-					has_global_flag = rome_born
-				}
-				if = {
-					limit = {
-						any_independent_ruler = {
-							has_character_flag = is_roman_america_invader
-							demesne_size = 1
-							ai = yes
-						}
-					}
-					log = "Temujin exists as independent ai"
-					random_independent_ruler = {
-						limit = {
-							has_character_flag = is_roman_america_invader
-							ai = yes
-						}
-						any_demesne_title = {
-							limit = {
-								tier = EMPEROR
-							}
-							set_title_flag = to_be_destroyed
-						}
-						e_west_rome = {
-							grant_title = PREV
-							#activate_title = { title = THIS status = yes }
-							set_title_landless = { title = THIS status = yes }
-							add_law = succ_byzantine_elective
-						}
-						any_demesne_title = {
-							limit = {
-								has_title_flag = to_be_destroyed
-							}
-							activate_title = { title = THIS status = no }
-							destroy_landed_title = THIS
-						}
-						wealth = 12000
-						prestige = 10000
-						set_character_flag = is_special_character
-						set_character_flag = roman_america_invader
-						character_event = { id = ROMA.103 } # Spawn troops
-						#character_event = { id = ROMA.104 days = 1 } # Spawn population
-						if = {
-							limit = {
-								has_dlc = "Holy Fury"
-								NOT = {
-									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_roman_line
-									}
-								}
-							}
-							create_bloodline = {
-								type = bloodline_roman
-							}
-						}
-					}
-					break = yes
-				}
-				if = {
-					limit = {
-						NOT = {
-							e_west_rome = {
-								holder_scope = {
-									always = yes
-								}
-							}
-						}
-					}
-					log = "Real Temujin didn't recieve title"
-					create_character = {
-						random_traits = yes
-						dynasty=1069093
-						religion = hellenic_pagan
-						culture = roman
-						female = no
-						age = 30
-						attributes = {
-							martial = 12
-						}
-						trait = brilliant_strategist
-						trait = ambitious
-						trait = diligent
-						trait = brave
-						trait="great_conquerer"
-					}
-					new_character = {
-						if = {
-							limit = {
-								has_dlc = "Holy Fury"
-								NOT = {
-									any_owned_bloodline = {
-										has_bloodline_flag = bloodline_roman_line
-									}
-								}
-							}
-							create_bloodline = {
-								type = bloodline_roman
-							}
-						}
-						e_west_rome = {
-							#activate_title = { title = THIS status = yes }
-							set_title_landless = { title = THIS status = yes }
-							set_title_flag = temporary_landless_title
-							grant_title = PREV
-							add_law = succ_byzantine_elective
-						}
-						set_defacto_liege = THIS
-						if = {
-							limit = {
-								has_dlc = "Horse Lords"
-							}
-							set_government_type = roman_imperial_government
-						}
-						if = {
-							limit = {
-								NOT = { has_dlc = "Horse Lords" }
-							}
-							set_government_type = feudal_government
-						}
-						wealth = 12000
-						prestige = 10000
-						set_character_flag = roman_america_invader
-						character_event = { id = ROMA.102 } # Spawn courtiers
-						character_event = { id = ROMA.103 } # Spawn troops
-						#character_event = { id = ROMA.104 days = 1 } # Spawn population
+		set_global_flag = rome_invades
+		set_global_flag = west_rome_formed
+		
+		activate_title = { title = e_west_rome status = yes }
+		if = {
+			limit = {
+				NOT = {
+					e_west_rome = {
+						holder_scope = { always = yes }
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						e_west_rome = {
-							holder_scope = { always = yes }
-						}
-					}
+			create_character = {
+				dynasty=random
+				dna=random
+				properties=random
+				age = 30
+				attributes = {
+					martial=9
+					diplomacy=8
+					intrigue=5
+					stewardship=7
 				}
-				log = "Spawning Temujin for invasion"
-				create_character = {
-					dynasty=random
-					dna=random
-					properties=random
-					age = 30
-					attributes = {
-						martial=9
-						diplomacy=8
-						intrigue=5
-						stewardship=7
-					}
-					health = 7
-					fertility = 0.7
-					religion="hellenic_pagan"
-					culture="roman"
-					trait="brave"
-					trait="ambitious"
-					trait="diligent"
-					trait="cavalry_leader"
-					trait="brilliant_strategist"
-					trait="great_conquerer"
-				}
+				health = 7
+				fertility = 0.7
+				religion="hellenic_pagan"
+				culture="roman"
+				trait="brave"
+				trait="ambitious"
+				trait="diligent"
+				trait="cavalry_leader"
+				trait="brilliant_strategist"
+				trait="great_conquerer"
+			}
 
-				new_character = {
-					set_character_flag = is_roman_america_invader
-					if = {
-						limit = {
-							has_dlc = "Holy Fury"
-							NOT = {
-								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_roman_line
-								}
-							}
-						}
-						create_bloodline = {
-							type = bloodline_roman
-						}
-					}
-					e_west_rome = {
-						#activate_title = { title = THIS status = yes }
-						set_title_landless = { title = THIS status = yes }
-						set_title_flag = west_rome_england_invade
-						grant_title = PREV
-						add_law = succ_byzantine_elective
-					}
-					set_defacto_liege = THIS
-					if = {
-						limit = {
-							has_dlc = "Horse Lords"
-						}
-						set_government_type = roman_imperial_government
-					}
-					if = {
-						limit = {
-							NOT = { has_dlc = "Horse Lords" }
-						}
-						set_government_type = feudal_government
-					}
-					wealth = 12000
-					prestige = 10000
-					piety = 5000
-					population = 50000
-					set_character_flag = roman_america_invader
-					character_event = { id = ROMA.101 } # Spawn Temujins generals
-					character_event = { id = ROMA.102 } # Spawn courtiers
-					character_event = { id = ROMA.103 } # Spawn troops
-					#character_event = { id = ROMA.104 days = 1 } # Spawn population
+			new_character = {
+				set_character_flag = is_roman_america_invader
+				create_bloodline = {
+					type = bloodline_roman
 				}
+				e_west_rome = {
+					#activate_title = { title = THIS status = yes }
+					set_title_landless = { title = THIS status = yes }
+					set_title_flag = west_rome_england_invade
+					grant_title = PREV
+					add_law = succ_byzantine_elective
+				}
+				set_defacto_liege = THIS
+				wealth = 12000
+				prestige = 10000
+				piety = 5000
+				population = 50000
+				set_character_flag = roman_america_invader
+				character_event = { id = ROMA.101 } # Spawn Temujins generals
+				character_event = { id = ROMA.102 } # Spawn courtiers
+				character_event = { id = ROMA.103 } # Spawn troops
+				#character_event = { id = ROMA.104 days = 1 } # Spawn population
 			}
-			32 = {
-				kingdom = {
-					e_west_rome = {
-						holder_scope = {
-							unsafe_war = {
-								casus_belli = roman_extermination_cb
-								target = PREVPREVPREV
-								thirdparty_title = PREVPREV
-							}
+		}
+		32 = {
+			kingdom = {
+				e_west_rome = {
+					holder_scope = {
+						unsafe_war = {
+							casus_belli = roman_extermination_cb
+							target = PREVPREVPREV
+							thirdparty_title = PREVPREV
 						}
 					}
 				}
-			}
-		any_playable_ruler = {
-			limit = { ai = no }
-			if = {
-				limit = {
-					OR = {
-						has_power_omen_modifier_trigger = yes
-						has_battle_omen_modifier_trigger = yes
-					}
-				}
-				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
 		e_west_rome = { holder_scope = { culture = roman } }
@@ -425,92 +260,6 @@ narrative_event = { #The Event about the Roman Fleet invading Britania
 			government = nomadic_government
 			has_power_omen_modifier_trigger = no
 			has_battle_omen_modifier_trigger = no
-		}
-	}
-
-	option = { # scrying omen included
-		name = "EVTOPTA60500"
-
-		if = { #in case this does not run in the immediate due to "major = yes"
-			limit = {
-				OR = {
-					has_power_omen_modifier_trigger = yes
-					has_battle_omen_modifier_trigger = yes
-				}
-			}
-			set_character_flag = negative_event_flag # For the scrying outcome calculation...
-		}
-
-		calculate_scrying_outcome_effect = yes
-		remove_scrying_omen_modifiers_effect = yes
-		tooltip_info = yes
-
-		trigger = {
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-				religion_group = pagan_group
-			}
-			NOT = { government = nomadic_government }
-			OR = {
-				has_power_omen_modifier_trigger = yes
-				has_battle_omen_modifier_trigger = yes
-			}
-		}
-	}
-	
-	option = { # scrying omen included
-		name = "EVTOPTB60500"
-
-		if = { #in case this does not run in the immediate due to "major = yes"
-			limit = {
-				OR = {
-					has_power_omen_modifier_trigger = yes
-					has_battle_omen_modifier_trigger = yes
-				}
-			}
-			set_character_flag = negative_event_flag # For the scrying outcome calculation...
-		}
-		
-		calculate_scrying_outcome_effect = yes
-		remove_scrying_omen_modifiers_effect = yes
-		tooltip_info = yes
-
-		trigger = {
-			NOT = { religion_group = christian }
-			NOT = { religion_group = muslim }
-			NOT = { religion_group = pagan_group }
-			NOT = { government = nomadic_government }
-			OR = {
-				has_power_omen_modifier_trigger = yes
-				has_battle_omen_modifier_trigger = yes
-			}
-		}
-	}
-	
-	option = { # scrying omen included
-		name = "EVTOPTC60500"
-
-		if = { #in case this does not run in the immediate due to "major = yes"
-			limit = {
-				OR = {
-					has_power_omen_modifier_trigger = yes
-					has_battle_omen_modifier_trigger = yes
-				}
-			}
-			set_character_flag = negative_event_flag # For the scrying outcome calculation...
-		}
-
-		calculate_scrying_outcome_effect = yes
-		remove_scrying_omen_modifiers_effect = yes
-		tooltip_info = yes
-
-		trigger = {
-			government = nomadic_government
-			OR = {
-				has_power_omen_modifier_trigger = yes
-				has_battle_omen_modifier_trigger = yes
-			}
 		}
 	}
 }

@@ -10,7 +10,7 @@ character_event = {
 		log = "ROMRASH.1 Triggered"
 		FROM = {
 			is_alternate_start = no
-			has_landed_title = e_arabia
+			has_landed_title = e_rashudin
 			has_character_flag = rashudin_invader
 			religion_group = muslim
 			NOT = { has_global_flag = world_middle_east_conquered_rash }
@@ -91,7 +91,7 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 #				has_character_flag = rashudin_himself
 #				has_character_flag = rashudin_invader
 #			}
-#			completely_controls_region = world_middle_east_arabia
+#			completely_controls_region = world_middle_east
 #		}
 #	}
 #	
@@ -109,7 +109,7 @@ character_event = {
 	trigger = {
 		FROM = {
 			is_alternate_start = no
-			has_landed_title = e_arabia
+			has_landed_title = e_rashudin
 			has_character_flag = rashudin_invader
 			religion_group = muslim
 			NOT = { completely_controls_region = world_africa_egypt }
@@ -192,5 +192,105 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 #	
 #	immediate = {
 #		set_global_flag = world_africa_egypt_conquered_rash
+#	}
+#}
+
+character_event = {
+	id = ROMRASH.7
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		log = "ROMRASH.1 Triggered"
+		FROM = {
+			is_alternate_start = no
+			has_landed_title = e_rashudin
+			has_character_flag = rashudin_invader
+			religion_group = muslim
+			NOT = { has_global_flag = world_persia_conquered_rash }
+			NOT = { completely_controls_region = world_persia }
+		}
+	}
+	immediate = {
+		FROM = { character_event = { id = ROMRASH.8 days = 2 } }
+		FROM = { character_event = { id = ROMRASH.8 days = 2 } }
+		log = "ROMRASH.1 Fired"
+	}
+}
+
+character_event = { #Mongols being guided to conquer Eastern Europe
+	id = ROMRASH.8
+	title = "Rashudin Expansion"
+	desc = "Onwards to our next target in Eastern Europe"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+		log = "ROMRASH.2 Fired"
+		random_province = {
+			log = "ROMRASH.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_persia
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = rashudin_invasion_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+#character_event = {
+#	id = ROMRASH.9
+#
+#    is_triggered_only = yes
+#	hide_window = yes
+#	
+#	picture = GFX_evt_mongols
+#	border = GFX_event_normal_frame_war
+#	
+#	trigger = {
+#		FROM = {
+#			#ai = yes
+#			OR = {
+#				has_character_flag = rashudin_himself
+#				has_character_flag = rashudin_invader
+#			}
+#			completely_controls_region = world_persia
+#		}
+#	}
+#	
+#	immediate = {
+#		set_global_flag = world_persia_conquered_rash
 #	}
 #}
