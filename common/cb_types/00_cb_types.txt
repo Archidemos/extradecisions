@@ -9914,6 +9914,17 @@ imperial_reconquest = {
 				NOT = { same_realm = FROM }
 				mercenary = no
 			}
+			ROOT = {
+				has_character_flag = roman_fall_restorer
+				independent = yes
+				OR = {
+					religion_group = christian
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+				NOT = { same_realm = FROM }
+				mercenary = no
+			}
 		}
 		FROM = {
 			NOT = { religion_group = muslim }
