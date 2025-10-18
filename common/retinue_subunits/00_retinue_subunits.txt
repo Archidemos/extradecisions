@@ -305,13 +305,96 @@ RETTYPE_CUL_ENG =
 		is_nomadic = no
 		OR = {
 			culture = english
-			culture = welsh
+			culture = cornish
 		}
 	}
 	
 	modifier = {
 		archers_offensive = 0.2
 		archers_defensive = 0.1
+	}
+}
+
+RETTYPE_CUL_WELSH = {
+	first_type = 5
+	first_amount = 250
+	
+	potential = {
+		is_nomadic = no	
+		OR = {		
+			culture = cumbric
+			culture = welsh
+        }
+	}
+	
+	modifier = {
+		archers_offensive = 0.2
+	}
+}
+
+RETTYPE_CUL_CORNISH = 
+{
+	first_type = 4
+	first_amount = 300
+	
+	second_type = 3
+	second_amount = 200
+	
+	potential = {	
+	is_nomadic = no	
+	culture = cornish
+        }
+	
+	modifier = {
+		knights_offensive = 0.15
+		light_cavalry_offensive = 0.15
+	}
+}
+
+RETTYPE_CUL_NOR = 
+{
+	first_type = 1
+	first_amount = 150
+	
+	potential = {
+		is_nomadic = no
+		culture = norse
+		culture = icelandic
+	}
+	
+	modifier = {
+		heavy_infantry_offensive = 0.2
+	}
+}
+
+RETTYPE_CUL_ANGLONORSE = 
+{
+	first_type = 1
+	first_amount = 150
+	
+	potential = {	
+	is_nomadic = no		
+	culture = anglonorse
+        }
+	
+	modifier = {
+		heavy_infantry_offensive = 0.2
+		heavy_infantry_morale = 0.2
+	}
+}
+
+RETTYPE_CUL_NORSEGAELIC =
+{
+	first_type = 1
+	first_amount = 150
+
+	potential = {
+		is_nomadic = no
+		culture = norsegaelic
+	}
+
+	modifier = {
+		heavy_infantry_defensive = 0.2
 	}
 }
 
@@ -322,7 +405,7 @@ RETTYPE_CUL_SCOT =
 	
 	potential = {
 		is_nomadic = no
-		culture = scottish
+		culture = cumbric
 	}
 	
 	modifier = {
@@ -415,6 +498,12 @@ RETTYPE_CUL_FRANK_NOR_GER =
 			culture = occitan
 			culture = norman
 			culture = german
+			culture = bavarian
+			culture = swabian
+			culture = franconian
+			culture = low_frankish
+			culture = low_saxon
+			culture = thuringian
 			culture = breton
 		}
 	}
@@ -423,6 +512,23 @@ RETTYPE_CUL_FRANK_NOR_GER =
 		knights_offensive = 0.2
 		knights_defensive = 0.1
 		knights_morale = 0.2
+	}
+}
+
+RETTYPE_CUL_BRETTON = {
+	first_type = 4
+	first_amount = 200
+	
+	second_type = 3
+	second_amount = 150
+	
+	potential = {
+		is_nomadic = no		
+		culture = breton
+	}
+	
+	modifier = {
+		knights_offensive = 0.3
 	}
 }
 
@@ -466,6 +572,125 @@ RETTYPE_CUL_ITA =
 		pikemen_offensive = 0.3
 		pikemen_defensive = 0.2
 		pikemen_morale = 0.3
+	}
+}
+
+RETTYPE_CUL_LIGURIAN = {
+	first_type = 5
+	first_amount = 250
+	
+	potential = {	
+		is_nomadic = no	
+		culture = ligurian
+	}
+	
+	modifier = {
+		archers_offensive = 0.2
+        archers_defensive = 0.2
+	}
+}
+
+RETTYPE_CUL_CENTRAL_ITALIAN = {
+	first_type = 5
+	first_amount = 300
+
+	second_type = 2
+	second_amount = 200
+	
+	potential = {	
+		is_nomadic = no	
+		OR = {
+			culture = laziale
+			culture = umbrian
+		}
+	}
+	
+	modifier = {
+		pikemen_offensive = 0.3
+	}
+}
+
+RETTYPE_CUL_ARPITAN = 
+{
+	first_type = 4
+	first_amount = 300
+	
+	second_type = 3
+	second_amount = 200
+	
+	potential = {	
+		is_nomadic = no	
+		culture = arpitan
+	}
+	
+	modifier = {
+		knights_offensive = 0.15
+		knights_defensive = 0.15
+	}
+}
+
+RETTYPE_CUL_NEAPOLITAN = {	
+
+    first_type = 4
+	first_amount = 300
+
+    second_type = 3
+	second_amount = 200
+	
+	potential = {	
+		is_nomadic = no	
+		culture = neapolitan
+	}
+	
+	modifier = {
+		knights_defensive = 0.25
+	}
+}
+
+RETTYPE_CUL_VENETIAN = {
+	first_type = 2
+	first_amount = 400
+	
+	potential = {
+		is_nomadic = no	
+		culture = tuscan
+	}
+	
+	modifier = {
+		pikemen_defensive = 0.35
+	}
+}
+
+RETTYPE_CUL_VENETIAN = {
+	first_type = 2
+	first_amount = 400
+	
+	potential = {
+		is_nomadic = no	
+		OR = {
+			culture = venetian
+			culture = dalmatian
+		}
+	}
+	
+	modifier = {
+		pikemen_offensive = 0.35
+		pikemen_morale = 0.35
+	}
+}
+
+RETTYPE_CUL_LANGOBARDISCH = {
+	first_type = 4
+	first_amount = 150
+	
+	potential = {	
+		is_nomadic = no	
+		culture = langobardisch
+	}
+	
+	modifier = {
+		knights_offensive = 0.15
+		knights_morale = 0.15
 	}
 }
 
@@ -550,13 +775,31 @@ RETTYPE_CUL_NORTHGER =
 			culture_group = north_germanic
 			culture = saxon
 			culture = old_saxon
-			culture = frisian
 		}
 	}
 	
 	modifier = {
 		heavy_infantry_offensive = 0.4
 		heavy_infantry_morale = 0.2
+	}
+}
+
+RETTYPE_CUL_FRISIAN = 
+{
+	first_type = 0
+	first_amount = 300
+	
+	second_type = 2
+	second_amount = 200
+	
+	potential = {	
+	is_nomadic = no		
+	culture = frisian
+        }
+	
+	modifier = {
+		light_infantry_offensive = 0.2
+		pikemen_offensive = 0.2
 	}
 }
 
@@ -568,6 +811,7 @@ RETTYPE_CUL_HUNG =
 	potential = {
 		is_nomadic = no
 		OR = {
+			culture = old_hungarian
 			culture = hungarian
 			culture_group = west_slavic
 		}
