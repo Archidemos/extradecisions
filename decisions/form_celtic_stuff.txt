@@ -38,12 +38,6 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
-			if = {
-				limit = {
-					has_landed_title = k_celtic_christian
-				}
-				e_celtic_empire = { add_law = succ_open_elective }
-			}
 			add_claim = k_northumberland
 			add_claim = k_wessex
 			add_claim = k_mercia
@@ -94,7 +88,6 @@ decisions = {
 		only_playable = yes
 		is_high_prio = yes
 		ai_check_interval = 120
-		is_high_prio = yes
 		
 		potential = {
 			date >= 700.1.1
@@ -116,7 +109,6 @@ decisions = {
 				}
 			}
 			NOT = { has_global_flag = pope_celtic_conflict }
-			NOT = { has_landed_title = k_celtic_christian }
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}

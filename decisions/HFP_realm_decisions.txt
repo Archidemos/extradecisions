@@ -1789,7 +1789,7 @@ decisions = {
 				de_jure_vassal_or_below = k_schwaben
 				de_jure_vassal_or_below = k_upper_lorraine
 				de_jure_vassal_or_below = d_burgundy
-				de_jure_vassal_or_below = d_burbon
+				de_jure_vassal_or_below = d_bourbon
 				#capital_scope = { region = world_europe_west_germania }
 				#capital_scope = { region = world_europe_west_francia }
 			}
@@ -1838,7 +1838,7 @@ decisions = {
 				culture = arpitan
 			}
 			has_landed_title = d_zahringen
-			has_landed_title = d_raetia
+			has_landed_title = d_ratien
 			AND = {
 				completely_controls = c_vaud
 				completely_controls = c_neuchatel
@@ -1883,15 +1883,9 @@ decisions = {
 					add_law = law_voting_power_1
 					add_law = war_voting_power_1
 				}
-				destroy_landed_title = d_raetia
 				destroy_landed_title = d_ratien
 				grant_title_no_opinion = d_swiss
 				d_ratien = {
-					any_direct_de_jure_vassal_title = {
-						de_jure_liege = d_swiss
-					}
-				}
-				d_raetia = {
 					any_direct_de_jure_vassal_title = {
 						de_jure_liege = d_swiss
 					}
@@ -2449,13 +2443,13 @@ decisions = {
 					}
 					AND = {
 						province = 246
-						d_raetia = {
+						d_ratien = {
 							is_titular = no
 						}
 					}
 					AND = {
 						province = 247
-						d_raetia = {
+						d_ratien = {
 							is_titular = no
 						}
 					}
@@ -2495,7 +2489,7 @@ decisions = {
 						is_titular = no
 					}
 				}
-				completely_controls = c_st_gallen
+				completely_controls = c_montfort
 			}
 			conditional_tooltip = {
 				trigger = {
@@ -2503,11 +2497,11 @@ decisions = {
 						is_titular = no
 					}
 				}
-				completely_controls = c_zurichgau
+				completely_controls = c_thurgau
 			}
 			conditional_tooltip = {
 				trigger = {
-					d_raetia = {
+					d_ratien = {
 						is_titular = no
 					}
 				}
@@ -2515,11 +2509,19 @@ decisions = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					d_raetia = {
+					d_ratien = {
 						is_titular = no
 					}
 				}
 				completely_controls = c_schwyz
+			}
+			conditional_tooltip = {
+				trigger = {
+					d_ratien = {
+						is_titular = no
+					}
+				}
+				completely_controls = c_aargau
 			}
 		}
 		effect = {
@@ -2548,16 +2550,6 @@ decisions = {
 						}
 					}
 					d_ratien = {
-						de_jure_liege = k_schwaben
-					}
-				}
-				if = {
-					limit = {
-						d_raetia = {
-							is_titular = no
-						}
-					}
-					d_raetia = {
 						de_jure_liege = k_schwaben
 					}
 				}

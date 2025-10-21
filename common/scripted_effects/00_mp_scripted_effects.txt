@@ -115,40 +115,31 @@ old_german_dejure_effect = {
 		## Saxony
 
 		
-		k_wesphalia = { de_jure_liege = e_germany }
+		k_saxony = { de_jure_liege = e_germany }
 		
-		d_saxony = { de_jure_liege = k_wesphalia }
-		d_brunswick = { de_jure_liege = k_wesphalia }
-		d_angria = { de_jure_liege = k_wesphalia }
-		d_munster_germany = { de_jure_liege = k_wesphalia }
-		d_bremen = { de_jure_liege = k_wesphalia }
+		d_brandenburg = { de_jure_liege = k_saxony }
+		d_brunswick = { de_jure_liege = k_saxony }
+		d_angria = { de_jure_liege = k_saxony }
+		d_westfalen = { de_jure_liege = k_saxony }
 		
 		## Franconia
 		
 		k_franconia = { de_jure_liege = e_germany }
 		
 		d_franconia = { de_jure_liege = k_franconia }
-		d_hesse = { de_jure_liege = k_franconia }
-		d_rhine = { de_jure_liege = k_franconia }
+		d_hessen = { de_jure_liege = k_franconia }
+		d_pfalz = { de_jure_liege = k_franconia }
+		d_mainz = { de_jure_liege = k_franconia }
+		d_thuringia = { de_jure_liege = k_franconia }
+		d_rheinfranken = { de_jure_liege = k_franconia }
 		
 		##Swabia
 		
 		k_schwaben = { de_jure_liege = e_germany }
 		
 		d_swabia = { de_jure_liege = k_schwaben }
-		d_thurgau = { de_jure_liege = k_schwaben }
 		d_baden = { de_jure_liege = k_schwaben }
 		d_alsace = { de_jure_liege = k_schwaben }
-		d_ratien = { de_jure_liege = k_schwaben }
-		
-		##Thuringia
-		
-		d_thuringia = { de_jure_liege = k_thuringian }
-		
-		activate_title = {
-			title = k_thuringian
-			status = yes
-		}
 		
 		## Austria
 		k_austria = { de_jure_liege = e_germany }
@@ -166,8 +157,7 @@ old_german_dejure_effect = {
 			status = yes
 		}
 		
-		d_thurgau = { de_jure_liege = k_switzerland }
-		d_raetia = { de_jure_liege = k_switzerland }
+		d_ratien = { de_jure_liege = k_switzerland }
 		d_upper_burgundy = { de_jure_liege = k_switzerland }
 		
 		## Eastern Marches (k. of austria)
@@ -227,22 +217,10 @@ old_german_dejure_effect = {
 				else_if  = {
 					limit = {
 						capital_scope = {
-							de_jure_liege_or_above = k_thuringian
+							de_jure_liege_or_above = k_saxony
 						}
 					}
-					k_thuringian = {
-						grant_title_no_opinion = THIS
-						copy_title_laws = k_germany
-						make_primary_title = yes
-					}
-				}
-				else_if  = {
-					limit = {
-						capital_scope = {
-							de_jure_liege_or_above = k_wesphalia
-						}
-					}
-					k_wesphalia = {
+					k_saxony = {
 						grant_title_no_opinion = THIS
 						copy_title_laws = k_germany
 						make_primary_title = yes

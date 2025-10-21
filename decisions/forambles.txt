@@ -319,13 +319,13 @@ decisions = {
 								}
 							}
 						}
-						b_ratzeburg = {
+						b_eutin = {
 							holding_type = city
 						}
-						is_title_active = b_ratzeburg
+						is_title_active = b_eutin
 					}
 					ROOT = {
-						b_ratzeburg = {
+						b_eutin = {
 							grant_title = PREV
 							make_capital_holding = yes
 						}
@@ -361,13 +361,13 @@ decisions = {
 								}
 							}
 						}
-						b_schlutup = {
+						b_gosevelde = {
 							holding_type = city
 						}
-						is_title_active = b_schlutup
+						is_title_active = b_gosevelde
 					}
 					ROOT = {
-						b_schlutup = {
+						b_gosevelde = {
 							grant_title = PREV
 							make_capital_holding = yes
 						}
@@ -382,13 +382,13 @@ decisions = {
 								}
 							}
 						}
-						b_starigard = {
+						b_snykrode = {
 							holding_type = city
 						}
-						is_title_active = b_starigard
+						is_title_active = b_snykrode
 					}
 					ROOT = {
-						b_starigard = {
+						b_snykrode = {
 							grant_title = PREV
 							make_capital_holding = yes
 						}
@@ -403,13 +403,34 @@ decisions = {
 								}
 							}
 						}
-						b_weslo = {
+						b_scharbeutz = {
 							holding_type = city
 						}
-						is_title_active = b_weslo
+						is_title_active = b_scharbeutz
 					}
 					ROOT = {
-						b_weslo = {
+						b_scharbeutz = {
+							grant_title = PREV
+							make_capital_holding = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							c_lubeck = {
+								capital_holding = {
+									holding_type = city
+								}
+							}
+						}
+						b_ahrensbok = {
+							holding_type = city
+						}
+						is_title_active = b_ahrensbok
+					}
+					ROOT = {
+						b_ahrensbok = {
 							grant_title = PREV
 							make_capital_holding = yes
 						}
@@ -431,26 +452,6 @@ decisions = {
 					}
 					ROOT = {
 						b_bucu = {
-							grant_title = PREV
-							make_capital_holding = yes
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						NOT = {
-							c_lubeck = {
-								capital_holding = {
-									holding_type = city
-								}
-							}
-						}
-						b_wulfsdorf = {
-							holding_type = city
-						}
-					}
-					ROOT = {
-						b_wulfsdorf = {
 							grant_title = PREV
 							make_capital_holding = yes
 						}
