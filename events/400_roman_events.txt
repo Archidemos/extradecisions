@@ -6,7 +6,7 @@ character_event = {
     is_triggered_only = yes
 	
     trigger = {
-		start_date <= 600.1.1
+		start_date == 400.1.1
 		is_save_game = no
 		NOT = { has_global_flag = west_roman_player_event_fired }
     }
@@ -42,7 +42,7 @@ narrative_event = {
 	sound = ar_arabs_lose
 	
     trigger = {
-		start_date <= 400.1.1
+		start_date == 400.1.1
 		is_save_game = no
     }
 	
@@ -152,7 +152,7 @@ character_event = { #West Rome gets his crisis modifiers
     is_triggered_only = yes
 	
 	trigger = {
-		start_date <= 400.1.1
+		start_date == 400.1.1
 		is_save_game = no
 		has_landed_title = e_west_rome
 	}
@@ -174,7 +174,7 @@ character_event = { #Western Roman Emperor getting his modifier 1 after his deat
     is_triggered_only = yes
 
     trigger = {
-		start_date <= 400.1.1
+		start_date == 400.1.1
 		has_landed_title = e_west_rome
 		has_global_flag = rome_crisis_1
 		independent = yes
@@ -197,7 +197,7 @@ character_event = { #Western Roman Emperor getting his modifier 2 after his deat
     is_triggered_only = yes
 
     trigger = {
-		start_date <= 400.1.1
+		start_date == 400.1.1
 		has_landed_title = e_west_rome
 		has_global_flag = rome_crisis_2
 		independent = yes
@@ -220,7 +220,7 @@ character_event = { #Western Roman Emperor getting his modifier 2 after his deat
     is_triggered_only = yes
 
     trigger = {
-		start_date <= 400.1.1
+		start_date == 400.1.1
 		has_landed_title = e_west_rome
 		has_global_flag = rome_crisis_3
 		independent = yes
@@ -244,7 +244,7 @@ character_event = {
     trigger = {
 		independent = no
 		NOT = { has_landed_title = e_west_rome }
-		start_date <= 400.1.1
+		start_date == 400.1.1
     }
 
     immediate = {
@@ -265,6 +265,7 @@ narrative_event = {
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		has_landed_title = e_west_rome
 		NOT = { has_global_flag = huns_defeated }
 		date >= 410.1.1
@@ -404,11 +405,11 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_upper_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -518,11 +519,11 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_lower_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -632,11 +633,11 @@ character_event = {	#The event to spawn the Franks invaders k_france
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_france = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -748,11 +749,11 @@ character_event = {	#The event to spawn the Schwabians invaders k_burgundy
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_burgundy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -863,11 +864,11 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_schwaben = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -978,11 +979,11 @@ character_event = {	#The event to spawn the Bavarians invaders k_bavaria
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_bavaria = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1094,11 +1095,11 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_africa = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1212,11 +1213,11 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_maghreb = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1328,11 +1329,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_aquitaine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -1450,7 +1451,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
 #			#NOT = { any_war = { count = 10 } }
-#			start_date <= 400.1.1
+#		start_date == 400.1.1
 #		}
 #	}
 #	option = {
@@ -1568,11 +1569,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_valencia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -1690,7 +1691,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
 #			#NOT = { any_war = { count = 10 } }
-#			start_date <= 400.1.1
+#		start_date == 400.1.1
 #		}
 #	}
 #	option = {
@@ -1812,7 +1813,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
 #			#NOT = { any_war = { count = 10 } }
-#			start_date <= 400.1.1
+#		start_date == 400.1.1
 #		}
 #	}
 #	option = {
@@ -1930,11 +1931,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_andalusia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2048,11 +2049,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_spanish_galicia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2163,11 +2164,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_asturias = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2281,11 +2282,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_italy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2411,7 +2412,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
 #			#NOT = { any_war = { count = 10 } }
-#			start_date <= 400.1.1
+#		start_date == 400.1.1
 #		}
 #	}
 #	option = {
@@ -2529,11 +2530,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_croatia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2654,11 +2655,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_sicily = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2778,11 +2779,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
 			#NOT = { any_war = { count = 10 } }
-			start_date <= 400.1.1
 			k_hungary = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2947,6 +2948,8 @@ narrative_event = {	#The Franks invade France if no one formed it trough the dec
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
+		date = 470.1.1
 		ROOT = {
 			OR = {
 				has_landed_title = k_france
@@ -2954,7 +2957,6 @@ narrative_event = {	#The Franks invade France if no one formed it trough the dec
 			}
 			NOT = { culture = old_frankish }
 			NOT = { has_global_flag = formed_francia }
-			date = 470.1.1
 		}
 	}
 	
@@ -3164,6 +3166,8 @@ narrative_event = {	#The Saxons invade England
 
     is_triggered_only = yes
 	trigger = {
+		start_date == 400.1.1
+		date = 450.1.1
 		ROOT = {
 			OR = {
 				has_landed_title = k_england
@@ -3171,7 +3175,6 @@ narrative_event = {	#The Saxons invade England
 			}
 			NOT = { has_global_flag = saxons_invaded_england }
 			NOT = { culture = saxon }
-			date = 450.1.1
 		}
 	}
 	
@@ -3481,6 +3484,8 @@ narrative_event = {	#The Ostrogothic invade Italy
     is_triggered_only = yes
 	
 	trigger = {
+		start_date == 400.1.1
+		date = 490.1.1
 		ROOT = {
 			OR = {
 				has_landed_title = k_italy
@@ -3488,7 +3493,6 @@ narrative_event = {	#The Ostrogothic invade Italy
 			}
 			NOT = { culture = ostrogothic }
 			NOT = { has_global_flag = odoacer_invaded_italy }
-			date = 490.1.1
 		}
 	}
 	
@@ -3606,6 +3610,8 @@ narrative_event = {	#The Vandals invade Africa
     is_triggered_only = yes
 	
 	trigger = {
+		start_date == 400.1.1
+		date = 435.1.1
 		ROOT = {
 			OR = {
 				has_landed_title = k_africa
@@ -3613,7 +3619,6 @@ narrative_event = {	#The Vandals invade Africa
 			}
 			NOT = { culture = vandal }
 			NOT = { has_global_flag = vandals_invaded_africa }
-			date = 435.1.1
 		}
 	}
 	
@@ -3816,7 +3821,7 @@ narrative_event = { #The Rise of Islam
 
 	
 	trigger = {
-		start_date = 400.1.1
+		start_date == 400.1.1
 		date = 633.1.1
 		NOT = { has_global_flag = rashudin_spawned }
 		controls_religion = yes # Let it happen for the Pope. He's always around.
@@ -4465,9 +4470,9 @@ narrative_event = {
 
     is_triggered_only = yes
     trigger = {
-		has_landed_title = k_papal_state
 		start_date == 400.1.1
 		date = 500.1.1
+		has_landed_title = k_papal_state
 		NOT = { has_global_flag = nicene_converted }
     }
 	
@@ -4560,10 +4565,10 @@ narrative_event = {
 
     is_triggered_only = yes
     trigger = {
-		religion_group = christian
-		completely_controls = c_roma
 		start_date == 400.1.1
 		date = 750.1.1
+		religion_group = christian
+		completely_controls = c_roma
 		NOT = { has_global_flag = gave_land_pope }
     }
 	
