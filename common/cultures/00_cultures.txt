@@ -605,6 +605,60 @@ central_germanic = {
 		modifier = default_culture_modifier
 	}
 
+	burgundian = {
+		graphical_cultures = { germangfx }
+		alternate_start = {
+			has_alternate_start_parameter = { key = culture value = full_random }
+		}
+		color = { 235 231 157 }
+		used_for_random = no
+		male_names = {
+			Adalgis_Adalgis Adaloald Adhemar_Adhemar Ado Agelmund Agilof_Agilulf Agilulf_Agilulf Agiprand Ago
+			Ahthari Aimeric_Aymeric Aistulf Aiulf_Aiulf Ajo_Aiulf Alahis Alboin_Alwin Aldihoc Alo_Adolf
+			Altpert_Albert Amefrith Anselm_Anselm Ansfrid_Ansfrid Ansfrith_Ansfrid Ansprand Ardoin_Ardoin Arechis
+			Ariald_Harold Aribert_Herbert Arichis Aripert_Herbert Ariulf Arnefrith Arnifrid Artavasdas Atenulf
+			Atto Audelahis Audoin_Alwin Aunepert Ausfrid Authari_Ottar Berin_Berin Bernard_Bernard Birinus_Berin
+			Cleph Corvulus Daufer Desiderius_Desiderius Donnolo Erchempert Erchinoald Erlembald Ewin Fara Faroald
+			Ferdulf Gacco Garibald_Gerald Gisulf Godehoc Godepert Godescalc_Gottschalk Grasulf Grimoald
+			Guaifer_Guaifer Guaimar_Guaimar Gumpert Gundo_Gundoald Gundoald_Gundoald Hermenfred
+			Hildeprand_Hildebrand Hilderic Hildigis Hilmagis Hrodgaud_Rodgand Hucpert_Hugh Ibor_Ivar Ildiches
+			Indulf_Adolf Ingoald Ioann_John Irnerius_Werner Kakko Kunibert Laiamicho Laidulf Lambert_Lambert
+			Landari Landenulf Lando_Lando Landulf_Landolf Lantpert Laudari Liutbald_Leopold Liutbrand
+			Liutpert_Lutbert Liutprand Liutward Lupus_Lupo Maginulf Manso Munichis Nordepert_Norbert Odilo
+			Odoaker Odoin_Otwin Orson Pandenulf Pandulf_Randolph Pemmo Penno Perctarit_Berthold Petrus_Peter
+			Poppo Radelchis Radelgar Radgis_Radgis Radwald Raginpert Ratchis_Radgis Reccared_Richard Risiulf
+			Rochus_Rochus Rodgand_Rodgand Rodoald_Rodwald Rodolf_Rolf Rodwald_Rodwald Romuald Rothari Saxo
+			Sico_Sicco Siconulf Sigibuld Sigisbert_Sigisbert Sigisbrand Sikard_Sigurd Sinibald_Sinibald Taino
+			Taso Theodelap Theoderich_Theoderic Theodicius Theodo_Dieter Theodorich_Thierry Theotpert Theudoald
+			Thrasimund Unichis Unigild Unulf Ursus_Ursus Vacho Waifar_Guaifer Waimar_Guaimar Waldchis Waldipert
+			Walthari_Walter Wechthari Wido_Guy Zotto Zuchilo
+		}
+		female_names = {
+			Adelberga Adelchisa_Adalchisa Adelgrima Adelperga Altruda_Adeltrudis Amalasuintha Amalberga Amalfrida
+			Ansa_Ansa Anselberga Anselperga Ansia Appa Areagne Aurona Chlotsuintha Cotani Cunigunda_Kunigunde
+			Desiderata_Avelina Ereleuva Erelieva Gaatha Gaila Gaitelgrima Gambara Geila Gemma_Gemma
+			Geretrudis_Gertrude Gerperga_Gerberga Giseltrude_Gisela Giso Glismoda Gudeliva Gundeperga
+			Guntrud_Gudrun Helchen Hermelinda_Herlinda Hunila Imma_Emma Kriemhild Liutberga Liutperga Liutpirc
+			Maria_Maria Marozia Matasuntha Menia Pilitrud Rodelinda Rosamund Rotrude Rumetruda
+			Serenahilt_Serhilda Sichelgaita Sunigilda Sunilda Swanahild_Swanahild Theodarada Theodelinda
+			Theodorada Theodota Theuderada Thiudigotho Uta_Ute Vadamerca Valdamerca Walderada Wilgefortis
+			Wisigarda
+		}
+		from_dynasty_prefix = "de "
+		male_patronym = "ric"
+		female_patronym = "mir"
+		grammar_transform = french
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 25
+		mat_grf_name_chance = 5
+		father_name_chance = 40
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 5
+		mother_name_chance = 25
+		modifier = default_culture_modifier
+	}
+
 	vandal = {
 		graphical_cultures = { germangfx }
 		alternate_start = {

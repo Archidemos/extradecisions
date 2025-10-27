@@ -324,7 +324,7 @@ narrative_event = {
 			has_landed_title = e_west_rome
 			AND = {
 				NOT = { completely_controls = c_roma }
-				NOT = { completely_controls = c_ile_de_france }
+				#NOT = { completely_controls = c_ile_de_france }
 				NOT = { completely_controls = c_knin }
 				NOT = { completely_controls = c_cordoba }
 			}
@@ -406,10 +406,11 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_upper_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -520,10 +521,11 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_lower_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -634,10 +636,11 @@ character_event = {	#The event to spawn the Franks invaders k_france
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_france = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -739,7 +742,7 @@ character_event = {	#The event to spawn the Franks invaders k_france
 	}
 }
 
-character_event = {	#The event to spawn the Schwabians invaders k_burgundy
+character_event = {	#The event to spawn the Burgundians invaders k_burgundy
 	id = ROMANFR.1012
 	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the north to invade."
 	
@@ -750,10 +753,11 @@ character_event = {	#The event to spawn the Schwabians invaders k_burgundy
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_burgundy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -762,7 +766,7 @@ character_event = {	#The event to spawn the Schwabians invaders k_burgundy
 		#Schwaben
 		create_character = {
 			#name="Rodrigo"
-			culture = swabian
+			culture = burgundian
 			religion = germanic_pagan
 			age = 32
 			dynasty = random
@@ -865,10 +869,11 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_schwaben = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -980,10 +985,11 @@ character_event = {	#The event to spawn the Bavarians invaders k_bavaria
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_bavaria = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1096,10 +1102,11 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_africa = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1214,10 +1221,11 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_maghreb = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
@@ -1330,10 +1338,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_aquitaine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -1450,7 +1459,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 #		ROOT = {
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
-#			#NOT = { any_war = { count = 10 } }
+#			NOT = { any_war = { count = 5 } }
 #		start_date == 400.1.1
 #		}
 #	}
@@ -1570,10 +1579,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_valencia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -1690,7 +1700,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 #		ROOT = {
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
-#			#NOT = { any_war = { count = 10 } }
+#			NOT = { any_war = { count = 5 } }
 #		start_date == 400.1.1
 #		}
 #	}
@@ -1812,7 +1822,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 #		ROOT = {
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
-#			#NOT = { any_war = { count = 10 } }
+#			NOT = { any_war = { count = 5 } }
 #		start_date == 400.1.1
 #		}
 #	}
@@ -1932,10 +1942,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_andalusia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2039,7 +2050,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 	}
 }
 
-character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
+character_event = {	#The event to spawn the Suebi invaders k_spanish_galicia
 	id = ROMANFR.1023
 	desc = "My Ceasar, we have gotten a report that more barbarian hordes are coming from the south to invade."
 	
@@ -2050,10 +2061,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_spanish_galicia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2062,7 +2074,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
 		#Visigoths
 		create_character = {
 			#name="Rodrigo"
-			culture = visigothic
+			culture = suebi
 			religion = arian
 			age = 32
 			dynasty = random
@@ -2085,7 +2097,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_spanish_galicia
 			remove_trait = feeble
 			
 			create_title = {
-				name = "Visigothic Horde"
+				name = "Suebian Horde"
 				#adventurer = yes
 				tier = KING
 				landless = yes
@@ -2165,10 +2177,11 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_asturias = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2283,10 +2296,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_italy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2411,7 +2425,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 #		ROOT = {
 #			has_landed_title = e_west_rome
 #			NOT = { has_global_flag = roman_barbarians_dealt }
-#			#NOT = { any_war = { count = 10 } }
+#			NOT = { any_war = { count = 5 } }
 #		start_date == 400.1.1
 #		}
 #	}
@@ -2531,10 +2545,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_croatia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2656,10 +2671,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_sicily = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -2780,10 +2796,11 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
     is_triggered_only = yes
 	trigger = {
 		start_date == 400.1.1
+		date = 407.1.1
 		ROOT = {
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = roman_barbarians_dealt }
-			#NOT = { any_war = { count = 10 } }
+			NOT = { any_war = { count = 5 } }
 			k_hungary = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
@@ -4453,6 +4470,721 @@ narrative_event = {
 	picture = GFX_evt_end_of_days
 	border = GFX_event_narrative_frame_diplomacy
 
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#Alaric Visigoth invade Africa
+	id = ROMANFR.1052
+	title = "The Visigothic Invasion"
+	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 400.1.1
+		date = 401.1.1
+		ROOT = {
+			OR = {
+				has_landed_title = k_italy
+				completely_controls = c_pavia
+			}
+			NOT = { culture = visigothic }
+			NOT = { has_global_flag = visigoths_invade_italy }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Visigoths!"			
+		create_character = {
+			name="Alaric"
+			culture = visigothic
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			#add_claim = d_sardinia
+			#add_claim = d_sicily
+			#add_claim = d_mallorca
+			
+			create_title = {
+				name = "Visigothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				##set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}		
+			spawn_unit = {
+				province = 444
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 444
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 444
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 444
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			#spawn_fleet = {
+			#	province = 1801 # The Wash
+			#	#owner = ROOT
+			#	troops = {
+			#		galleys = { 100 100 }
+			#	}
+			#	disband_on_peace = yes
+			#}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_italy
+			}
+			set_government_type = tribal_government
+			set_global_flag = visigoths_invade_italy		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1053 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1053
+	title = "The Kingdom of Alaric"
+	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_roman_army_march
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#Burgundians invade Africa
+	id = ROMANFR.1054
+	title = "The Burgundian Invasion"
+	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 400.1.1
+		date = 406.1.1
+		ROOT = {
+			OR = {
+				has_landed_title = k_burgundy
+				completely_controls = c_marseille
+			}
+			NOT = { culture = burgundian }
+			NOT = { has_global_flag = burgundians_invade_burgundy }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Burgundians!"			
+		create_character = {
+			name="Gundahar"
+			culture = burgundian
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			#add_claim = d_sardinia
+			#add_claim = d_sicily
+			#add_claim = d_mallorca
+			
+			create_title = {
+				name = "Burgundian Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				##set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}			
+			spawn_unit = {
+				province = 253
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 253
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 253
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 253
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_fleet = {
+				province = 1801 # The Wash
+				#owner = ROOT
+				troops = {
+					galleys = { 100 100 }
+				}
+				disband_on_peace = yes
+			}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_burgundy
+			}
+			set_government_type = tribal_government
+			set_global_flag = burgundians_invade_burgundy		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1055 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1055
+	title = "The Burgundian Invasion"
+	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_roman_army_march
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#Vandals invade Schwaben
+	id = ROMANFR.1056
+	title = "The Vandal Invasion"
+	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 400.1.1
+		date = 406.1.1
+		ROOT = {
+			OR = {
+				has_landed_title = k_schwaben
+				completely_controls = c_nellenburg
+			}
+			NOT = { culture = vandal }
+			NOT = { has_global_flag = burgundians_invade_burgundy }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Burgundians!"			
+		create_character = {
+			name="Gundahar"
+			culture = vandal
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			#add_claim = d_sardinia
+			#add_claim = d_sicily
+			#add_claim = d_mallorca
+			
+			create_title = {
+				name = "Vandal Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				##set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}			
+			spawn_unit = {
+				province = 2274
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2274
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2274
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2274
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			#spawn_fleet = {
+			#	province = 1801 # The Wash
+			#	#owner = ROOT
+			#	troops = {
+			#		galleys = { 100 100 }
+			#	}
+			#	disband_on_peace = yes
+			#}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_schwaben
+			}
+			set_government_type = tribal_government
+			set_global_flag = burgundians_invade_burgundy		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1057 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1057
+	title = "The Vandal Invasion"
+	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_roman_army_march
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#Suebi invade Bavaria
+	id = ROMANFR.1058
+	title = "The Suebian Invasion"
+	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 400.1.1
+		date = 406.1.1
+		ROOT = {
+			OR = {
+				has_landed_title = k_bavaria
+				completely_controls = c_abensberg
+			}
+			NOT = { culture = suebi }
+			NOT = { has_global_flag = suebi_invade_bavaria }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Burgundians!"			
+		create_character = {
+			name="Gundahar"
+			culture = suebi
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			#add_claim = d_sardinia
+			#add_claim = d_sicily
+			#add_claim = d_mallorca
+			
+			create_title = {
+				name = "Suebian Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				##set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}			
+			spawn_unit = {
+				province = 2272
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2272
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2272
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 2272
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			#pawn_fleet = {
+			#	province = 1801 # The Wash
+			#	#owner = ROOT
+			#	troops = {
+			#		galleys = { 100 100 }
+			#	}
+			#	disband_on_peace = yes
+			#
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_bavaria
+			}
+			set_government_type = tribal_government
+			set_global_flag = suebi_invade_bavaria		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1059 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1059
+	title = "The Suebian Invasion"
+	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_roman_army_march
+    is_triggered_only = yes
+	
+	option = {
+		name = "Concerning."
+	}
+}
+
+narrative_event = {	#Ostrogoths invade Carinthia
+	id = ROMANFR.1060
+	title = "The Ostrogothic Invasion"
+	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 400.1.1
+		date = 405.1.1
+		ROOT = {
+			OR = {
+				has_landed_title = k_carinthia
+				completely_controls = c_kranten
+			}
+			NOT = { culture = ostrogothic }
+			NOT = { has_global_flag = ostrogothic_invade_carinthia }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Burgundians!"			
+		create_character = {
+			name="Radagaisus"
+			culture = ostrogothic
+			religion = arian
+			age = 24
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+		new_character = {
+			wealth = 1500
+			prestige = 1000
+			piety = 1000
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			#add_claim = d_sardinia
+			#add_claim = d_sicily
+			#add_claim = d_mallorca
+			
+			create_title = {
+				name = "Ostrogothic Horde"
+				#adventurer = yes
+				tier = KING
+				landless = yes
+				temporary = yes
+				#custom_created = yes
+				culture = THIS
+				holder = THIS
+				#base_title = THIS
+			}
+			new_title = {
+				dynasty_title_names = no
+				set_preferred_capital = PREV
+				set_random_coa_effect = yes
+				religion = ROOT
+				##set_flag = forced_pirate_government
+				#set_name = "Tribe of [Root.Capital.GetName]"
+				#adjective = [Prev.GetAdjective]
+				make_primary_title = yes
+			}			
+			spawn_unit = {
+				province = 445
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 445
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 445
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			spawn_unit = {
+				province = 445
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+			#spawn_fleet = {
+			#	province = 1801 # The Wash
+			#	#owner = ROOT
+			#	troops = {
+			#		galleys = { 100 100 }
+			#	}
+			#	disband_on_peace = yes
+			#}
+			unsafe_war = {
+				casus_belli = invasion_barbarians_400
+				target = ROOT
+				thirdparty_title = k_carinthia
+			}
+			set_government_type = tribal_government
+			set_global_flag = ostrogothic_invade_carinthia		
+		}
+		
+		any_player = { narrative_event = { id = ROMANFR.1061 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1061
+	title = "The Ostrogothic Invasion"
+	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_roman_army_march
     is_triggered_only = yes
 	
 	option = {
