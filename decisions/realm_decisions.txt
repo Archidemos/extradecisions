@@ -560,46 +560,38 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
+			is_nomadic = no
 			is_playable = yes
-			ai = no
 			has_dlc = "Legacy of Rome"
 			OR = {
 				has_landed_title = e_roman_empire
 				has_landed_title = e_west_rome
 			}
-			capital_scope = {
-				NOT = { province_id = 333 }
-			}
+			NOT = { has_landed_title = c_roma }
 			any_realm_lord = { 
 				ai = yes
 				has_landed_title = c_roma 
 			}
-			any_realm_lord = { 
-				ai = yes
-				has_landed_title = b_tivoli
-			}
 		}
 		allow = {
-			OR = {
-				has_landed_title = e_roman_empire
-				has_landed_title = e_west_rome
+			NOT = { has_landed_title = c_roma }
+			any_realm_lord = { 
+				has_landed_title = c_roma 
 			}
-			any_realm_lord = { has_landed_title = c_roma }
 		}
 		effect = {
 			custom_tooltip = {
 				text = rome_capital
 				hidden_tooltip = {
-					b_tivoli = { province_capital = yes }
 					ROOT = {
-						b_tivoli = {
-							usurp_title = PREV
+						c_roma = {
+							usurp_title_plus_barony_if_unlanded_and_vassals = PREV
+							ROOT = { capital = PREV }
 						}
-					}
-					#b_roma = { set_name = Lateran }
-					b_tivoli = { 
-						set_name = Rome 
-						ROOT = { capital = PREV }
+						b_cittadiroma = {
+							usurp_title = PREV
+							make_capital_holding = yes
+						}
 					}
 				}
 			}

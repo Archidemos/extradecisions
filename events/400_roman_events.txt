@@ -4456,10 +4456,10 @@ narrative_event = {
 	}
 }
 
-narrative_event = {	#Alaric Visigoth invade Africa
+narrative_event = {	#Alaric Visigoth invade Italia
 	id = ROMANFR.1052
 	title = "The Visigothic Invasion"
-	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	desc = "Troubling news, the Barbarian King Alaric and his Visigothic Army have just reached Italia and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
 	
 	picture = "GFX_evt_end_of_days"
 	border = GFX_event_narrative_frame_war
@@ -4471,6 +4471,7 @@ narrative_event = {	#Alaric Visigoth invade Africa
 		start_date == 400.1.1
 		date = 401.1.1
 		ROOT = {
+			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_italy
 				completely_controls = c_pavia
@@ -4481,103 +4482,147 @@ narrative_event = {	#Alaric Visigoth invade Africa
 	}
 	
 	option = {
-		name = "We must defeat the Visigoths!"			
-		create_character = {
-			name="Alaric"
-			culture = visigothic
-			religion = arian
-			age = 24
-			dynasty = random
-			#add_trait = crusader
-			random_traits = yes
-			attributes = {
-				martial=9
-				diplomacy=8
-				intrigue=5
-				stewardship=7
+		name = "We must defeat the Visigoths!"
+		if = {
+			limit = {
+				any_playable_ruler = { has_landed_title = k_visigoths }
+			}
+			k_visigoths = {
+				holder_scope = {
+					wealth = 1500
+					prestige = 1000
+					piety = 1000
+					remove_trait = slow
+					remove_trait = imbecile
+					remove_trait = weak
+					remove_trait = feeble
+					#add_claim = d_sardinia
+					#add_claim = d_sicily
+					#add_claim = d_mallorca
+						
+					spawn_unit = {
+						province = 444
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							knights = { 1500 1500 }
+						}
+					}
+					spawn_unit = {
+						province = 444
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							knights = { 1500 1500 }
+						}
+					}
+					#spawn_fleet = {
+					#	province = 1801 # The Wash
+					#	#owner = ROOT
+					#	troops = {
+					#		galleys = { 100 100 }
+					#	}
+					#	disband_on_peace = yes
+					#}
+					unsafe_war = {
+						casus_belli = invasion_barbarians_400
+						target = ROOT
+						thirdparty_title = k_italy
+					}
+					set_government_type = tribal_government
+					set_global_flag = visigoths_invade_italy		
+				}
 			}
 		}
-		new_character = {
-			wealth = 1500
-			prestige = 1000
-			piety = 1000
-			remove_trait = slow
-			remove_trait = imbecile
-			remove_trait = weak
-			remove_trait = feeble
-			#add_claim = d_sardinia
-			#add_claim = d_sicily
-			#add_claim = d_mallorca
-			
-			create_title = {
-				name = "Visigothic Horde"
-				#adventurer = yes
-				tier = KING
-				landless = yes
-				temporary = yes
-				#custom_created = yes
-				culture = THIS
-				holder = THIS
-				#base_title = THIS
-			}
-			new_title = {
-				set_preferred_capital = PREV
-				set_random_coa_effect = yes
-				religion = ROOT
-				##set_flag = forced_pirate_government
-				#set_name = "Tribe of [Root.Capital.GetName]"
-				#adjective = [Prev.GetAdjective]
-				make_primary_title = yes
-			}		
-			spawn_unit = {
-				province = 444
-				troops = {
-					light_cavalry = { 1000 1000 }
-					light_infantry = { 2500 2500 }
-					knights = { 1500 1500 }
+		else = {
+			create_character = {
+				name="Alaric"
+				culture = visigothic
+				religion = arian
+				age = 24
+				dynasty = random
+				#add_trait = crusader
+				random_traits = yes
+				attributes = {
+					martial=9
+					diplomacy=8
+					intrigue=5
+					stewardship=7
 				}
 			}
-			spawn_unit = {
-				province = 444
-				troops = {
-					light_cavalry = { 1000 1000 }
-					light_infantry = { 2500 2500 }
-					knights = { 1500 1500 }
+			new_character = {
+				wealth = 1500
+				prestige = 1000
+				piety = 1000
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = weak
+				remove_trait = feeble
+				#add_claim = d_sardinia
+				#add_claim = d_sicily
+				#add_claim = d_mallorca
+				
+				create_title = {
+					name = "Visigothic Horde"
+					#adventurer = yes
+					tier = KING
+					landless = yes
+					temporary = yes
+					#custom_created = yes
+					culture = THIS
+					holder = THIS
+					#base_title = THIS
 				}
-			}
-			spawn_unit = {
-				province = 444
-				troops = {
-					light_cavalry = { 1000 1000 }
-					light_infantry = { 2500 2500 }
-					knights = { 1500 1500 }
+				new_title = {
+					set_preferred_capital = PREV
+					set_random_coa_effect = yes
+					religion = ROOT
+					##set_flag = forced_pirate_government
+					#set_name = "Tribe of [Root.Capital.GetName]"
+					#adjective = [Prev.GetAdjective]
+					make_primary_title = yes
 				}
-			}
-			spawn_unit = {
-				province = 444
-				troops = {
-					light_cavalry = { 1000 1000 }
-					light_infantry = { 2500 2500 }
-					knights = { 1500 1500 }
+				spawn_unit = {
+					province = 444
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						knights = { 1500 1500 }
+					}
 				}
+				spawn_unit = {
+					province = 444
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						knights = { 1500 1500 }
+					}
+				}
+				spawn_unit = {
+					province = 444
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						knights = { 1500 1500 }
+					}
+				}
+				#spawn_fleet = {
+				#	province = 1801 # The Wash
+				#	#owner = ROOT
+				#	troops = {
+				#		galleys = { 100 100 }
+				#	}
+				#	disband_on_peace = yes
+				#}
+				unsafe_war = {
+					casus_belli = invasion_barbarians_400
+					target = ROOT
+					thirdparty_title = k_italy
+				}
+				set_government_type = tribal_government
+				set_global_flag = visigoths_invade_italy		
 			}
-			#spawn_fleet = {
-			#	province = 1801 # The Wash
-			#	#owner = ROOT
-			#	troops = {
-			#		galleys = { 100 100 }
-			#	}
-			#	disband_on_peace = yes
-			#}
-			unsafe_war = {
-				casus_belli = invasion_barbarians_400
-				target = ROOT
-				thirdparty_title = k_italy
-			}
-			set_government_type = tribal_government
-			set_global_flag = visigoths_invade_italy		
 		}
-		
 		any_player = { narrative_event = { id = ROMANFR.1053 } }
 	}
 }
@@ -4585,7 +4630,7 @@ narrative_event = {	#Alaric Visigoth invade Africa
 narrative_event = {
 	id = ROMANFR.1053
 	title = "The Kingdom of Alaric"
-	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	desc = "Troubling news in Italia, it seems that the Barbarian King Alaric and his Visigothic Army have invaded the area with their massive invasion force."
 	
 	picture = GFX_evt_viking_battle_oldgods
 	border = GFX_event_narrative_frame_war
@@ -4598,10 +4643,10 @@ narrative_event = {
 	}
 }
 
-narrative_event = {	#Burgundians invade Africa
+narrative_event = {	#Burgundians invade Burgundy
 	id = ROMANFR.1054
 	title = "The Burgundian Invasion"
-	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	desc = "Troubling news, the Burgundians have just reached Burgundy and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
 	
 	picture = "GFX_evt_end_of_days"
 	border = GFX_event_narrative_frame_war
@@ -4613,6 +4658,7 @@ narrative_event = {	#Burgundians invade Africa
 		start_date == 400.1.1
 		date = 406.1.1
 		ROOT = {
+			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_burgundy
 				completely_controls = c_marseille
@@ -4727,7 +4773,7 @@ narrative_event = {	#Burgundians invade Africa
 narrative_event = {
 	id = ROMANFR.1055
 	title = "The Burgundian Invasion"
-	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	desc = "Troubling news in Burgundy, it seems that the Burgundians have invaded the area with their massive invasion force."
 	
 	picture = GFX_evt_viking_battle_oldgods
 	border = GFX_event_narrative_frame_war
@@ -4743,7 +4789,7 @@ narrative_event = {
 narrative_event = {	#Vandals invade Schwaben
 	id = ROMANFR.1056
 	title = "The Vandal Invasion"
-	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	desc = "Troubling news, the Vandals have just reached Swabia and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
 	
 	picture = "GFX_evt_end_of_days"
 	border = GFX_event_narrative_frame_war
@@ -4755,6 +4801,7 @@ narrative_event = {	#Vandals invade Schwaben
 		start_date == 400.1.1
 		date = 406.1.1
 		ROOT = {
+			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_schwaben
 				completely_controls = c_nellenburg
@@ -4869,7 +4916,7 @@ narrative_event = {	#Vandals invade Schwaben
 narrative_event = {
 	id = ROMANFR.1057
 	title = "The Vandal Invasion"
-	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	desc = "Troubling news in Swabia, it seems that the Vandals have invaded the area with their massive invasion force."
 	
 	picture = GFX_evt_viking_battle_oldgods
 	border = GFX_event_narrative_frame_war
@@ -4885,7 +4932,7 @@ narrative_event = {
 narrative_event = {	#Suebi invade Bavaria
 	id = ROMANFR.1058
 	title = "The Suebian Invasion"
-	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	desc = "Troubling news, the Suebi have just reached Bavaria and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
 	
 	picture = "GFX_evt_end_of_days"
 	border = GFX_event_narrative_frame_war
@@ -4897,6 +4944,7 @@ narrative_event = {	#Suebi invade Bavaria
 		start_date == 400.1.1
 		date = 406.1.1
 		ROOT = {
+			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_bavaria
 				completely_controls = c_abensberg
@@ -5011,7 +5059,7 @@ narrative_event = {	#Suebi invade Bavaria
 narrative_event = {
 	id = ROMANFR.1059
 	title = "The Suebian Invasion"
-	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	desc = "Troubling news in Bavaria, it seems that the Suebi have invaded the area with their massive invasion force."
 	
 	picture = GFX_evt_viking_battle_oldgods
 	border = GFX_event_narrative_frame_war
@@ -5027,7 +5075,7 @@ narrative_event = {
 narrative_event = {	#Ostrogoths invade Carinthia
 	id = ROMANFR.1060
 	title = "The Ostrogothic Invasion"
-	desc = "Troubling news, the Vandals have just reached Africa and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
+	desc = "Troubling news, the Ostrogoths have just reached Carinthia and started their invasion, we cannot let these Germans win these lands that we have held on for so long. We must act now!"
 	
 	picture = "GFX_evt_end_of_days"
 	border = GFX_event_narrative_frame_war
@@ -5039,6 +5087,7 @@ narrative_event = {	#Ostrogoths invade Carinthia
 		start_date == 400.1.1
 		date = 405.1.1
 		ROOT = {
+			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_carinthia
 				completely_controls = c_kranten
@@ -5096,14 +5145,6 @@ narrative_event = {	#Ostrogoths invade Carinthia
 				#set_name = "Tribe of [Root.Capital.GetName]"
 				#adjective = [Prev.GetAdjective]
 				make_primary_title = yes
-			}			
-			spawn_unit = {
-				province = 445
-				troops = {
-					light_cavalry = { 1000 1000 }
-					light_infantry = { 2500 2500 }
-					knights = { 1500 1500 }
-				}
 			}
 			spawn_unit = {
 				province = 445
@@ -5153,7 +5194,7 @@ narrative_event = {	#Ostrogoths invade Carinthia
 narrative_event = {
 	id = ROMANFR.1061
 	title = "The Ostrogothic Invasion"
-	desc = "Troubling news in Africa, it seems that the Vandals have invaded the area with their massive invasion force and fleet."
+	desc = "Troubling news in Carinthia, it seems that the Ostrogoths have invaded the area with their massive invasion force."
 	
 	picture = GFX_evt_viking_battle_oldgods
 	border = GFX_event_narrative_frame_war
