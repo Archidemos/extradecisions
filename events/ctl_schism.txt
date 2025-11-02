@@ -20,20 +20,19 @@ narrative_event = {
 	title = EVTNAMECATSCM.001
 	desc = EVTDESCCATSCM.001
 	
-	picture = "GFX_evt_crusaders"
+	picture = "GFX_evt_pope"
+	sound = ar_crusade_shout
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = EVTOPTCATSCM.002
 
-
 		if = {
 			limit = { religion = catholic }
 			set_parent_religion = { religion = orthodox parent = catholic }
 			set_parent_religion = { religion = iconoclast parent = catholic }
 		}
-
 
 		set_global_flag = isl_schism_mended
 		give_nickname = nick_the_saint
@@ -47,14 +46,15 @@ narrative_event = {
 					narrative_event = { id = CATSCM.002 }	
 				}
 		}
+		any_player = { narrative_event = { id = CATSCM.003 } }
 	}
 }
 
 # Convert or Not?
 narrative_event = {
 	id = CATSCM.002
-	title = EVTNAMECATSCM.002
-	desc = EVTDESCCATSCM.002
+	title = "A Papal Envoy"
+	desc = "My Liege, we have recieved an envoy from the Papacy. It seems that the schism between the Patriarchy and the Papacy has ended with the favor to Roman Catholisism. We have been asked to convert to the Catholic Faith of Rome or to stay an infidel. How shall we respond?"
 	
 	picture = "GFX_evt_crusaders"
 	
@@ -77,6 +77,7 @@ narrative_event = {
 	}
 	option = { # No
 		name = EVTOPTCATSCM.004
+		add_trait = excommunicated
 		ai_chance = { factor = 25 }
 	}
 }
@@ -86,7 +87,8 @@ narrative_event = { #The World knows about the Schism
 	title = EVTNAMECATSCM.003
 	desc = EVTDESCCATSCM.003
 	
-	picture = "GFX_evt_crusaders"
+	picture = GFX_evt_great_schism
+	sound = ar_papal_hymn
 	
 	is_triggered_only = yes
 	

@@ -200,3 +200,130 @@ character_event = {
 		}
 	}
 }
+
+character_event = {
+	id = INV.4
+	title = TITLE_INV1
+	desc = DESC_INV1
+	picture = GFX_evt_emissary_byzantine
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:invited_diplomat = {
+			random_list = {
+				10 = {
+					change_diplomacy = 7
+				}
+				20 = {
+					change_diplomacy = 6
+				}
+				30 = {
+					change_diplomacy = 5
+				}
+				40 = {
+					change_diplomacy = 4
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OPTA_INV1
+		trigger = {
+			OR = {
+				NOT = {
+					any_courtier_or_vassal = {
+						has_job_title = job_chancellor
+					}
+				}
+				job_chancellor = {
+					diplomacy <= 10
+				}
+			}
+		}
+		event_target:invited_diplomat = {
+			give_job_title = job_chancellor
+		}
+	}
+	
+	option = {
+		name = OPTB_INV1
+	}
+	
+	option = {
+		name = OPTC_INV1
+		hidden_tooltip = {
+			event_target:invited_diplomat = {
+				death = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = INV.5
+	title = TITLE_INV2
+	desc = DESC_INV2
+	picture = GFX_evt_emissary_byzantine
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:invited_spy = {
+			random_list = {
+				10 = {
+					change_intrigue = 7
+				}
+				20 = {
+					change_intrigue = 6
+				}
+				30 = {
+					change_intrigue = 5
+				}
+				40 = {
+					change_intrigue = 4
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OPTA_INV1
+		trigger = {
+			OR = {
+				NOT = {
+					any_courtier_or_vassal = {
+						has_job_title = job_spymaster
+					}
+				}
+				job_chancellor = {
+					intrigue <= 10
+				}
+			}
+		}
+		event_target:invited_spy = {
+			give_job_title = job_spymaster
+		}
+	}
+	
+	option = {
+		name = OPTB_INV1
+	}
+	
+	option = {
+		name = OPTC_INV1
+		hidden_tooltip = {
+			event_target:invited_diplomat = {
+				death = yes
+			}
+		}
+	}
+}
+
+#character_event = {
+#	id = INV.100
+#	hide_window = yes
+#	
+#	immediate = {
+#		clr_character_flag = ar_inviting_great_character
+#	}
+#}

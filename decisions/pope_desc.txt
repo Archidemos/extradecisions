@@ -56,14 +56,34 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
-			has_landed_title = k_papal_state
-			has_global_flag = end_schism_enacted
+			OR = {
+				has_landed_title = k_papal_state
+				AND = {
+					start_date >= 500.1.1
+					religion = catholic
+					higher_tier_than = DUKE
+				}
+				AND = {
+					start_date == 400.1.1
+					date = 500.1.1
+					religion = catholic
+					higher_tier_than = DUKE
+					has_global_flag = nicene_converted
+				}
+			}
+			NOT = { has_global_flag = end_schism_enacted }
 		}
 		
 		allow = {
-			piety = 2000
+			piety = 1500
 			religion_authority = 0.9
-			has_landed_title = k_papal_state
+			OR = {
+				has_landed_title = k_papal_state
+				AND = {
+					higher_tier_than = KING
+					religion = catholic
+				}
+			}
 			c_jerusalem = {
 				holder_scope = {
 					religion = ROOT
@@ -82,12 +102,17 @@ decisions = {
 		}
 		
 		effect = {
-			clr_global_flag = end_schism_enacted
+			set_global_flag = end_schism_enacted
+			prestige = 1000
+			piety = 1000
+			add_trait = crusader_king
+			give_nickname = nick_the_saint
+			create_bloodline = {
+				type = event_religion_aggressive_bloodline_01
+			}
 			custom_tooltip = {
 				text = catholic_schism
-				ROOT = {
-					narrative_event = { id = CATSCM.001 } # and myself
-				}
+				ROOT = { narrative_event = { id = CATSCM.001 } # and myself }
 			}
 		}
 	}

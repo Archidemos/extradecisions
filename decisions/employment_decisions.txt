@@ -1,5 +1,29 @@
 decisions = {
 
+	invite_character = {
+		only_playable = yes
+		ai_check_interval = 24
+		
+		potential = {
+			NOT = { has_character_flag = ar_inviting_character }
+			NOT = { has_character_flag = picking_character_2_ar }
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			set_character_flag = picking_character_1_ar
+			set_character_flag = ar_inviting_character
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	cancel_invite_character = {
 		only_playable = yes
 		ai_check_interval = 24
@@ -13,6 +37,7 @@ decisions = {
 		
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 		}
 		revoke_allowed = {
 			always = no
@@ -36,6 +61,7 @@ decisions = {
 		
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			scaled_wealth = -0.25
 			create_random_diplomat = {
 				dynasty = random
@@ -76,6 +102,7 @@ decisions = {
 		
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			scaled_wealth = -0.25
 			create_random_intriguer = {
 				dynasty = random
@@ -119,6 +146,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			prestige = -25
 			scaled_wealth = -0.25
 			hidden_tooltip = {
@@ -171,6 +199,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			piety = -25
 			create_random_priest = {
 				random_traits = yes
@@ -295,6 +324,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			piety = -25
 			create_random_priest = {
 				random_traits = yes
@@ -413,6 +443,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			scaled_wealth = -0.25
 			create_random_steward = {
 				random_traits = yes
@@ -540,6 +571,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			scaled_wealth = -0.25
 			create_random_steward = {
 				random_traits = yes
@@ -670,6 +702,7 @@ decisions = {
 		}
 		effect = {
 			clr_character_flag = ar_inviting_character
+			clr_character_flag = picking_character_1_ar
 			scaled_wealth = -0.20
 			create_character = {
 				random_traits = yes
