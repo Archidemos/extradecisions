@@ -64,7 +64,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
-			start_date = 400.1.1
+			start_date == 400.1.1
 			NOT = { has_global_flag = roman_crisis_1_taken }
 			has_landed_title = e_west_rome
 			has_character_modifier = rome_crisis_1
@@ -96,7 +96,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
-			start_date = 400.1.1
+			start_date == 400.1.1
 			NOT = { has_global_flag = roman_crisis_2_taken }
 			has_landed_title = e_west_rome
 			has_character_modifier = rome_crisis_2
@@ -161,7 +161,7 @@ decisions = {
 		ai_check_interval = 1
 
 		potential = {
-			start_date = 400.1.1
+			start_date == 400.1.1
 			NOT = { has_global_flag = roman_crisis_done }
 			OR = {
 				NOT = { has_global_flag = roman_crisis_1 }
@@ -199,9 +199,9 @@ decisions = {
 		ai_check_interval = 6
 		
 		potential = {
+			start_date == 400.1.1
 			has_landed_title = e_west_rome
 			NOT = { has_global_flag = left_britain }
-			start_date = 400.1.1
 			NOT = {
 				AND = {
 					has_global_flag = roman_crisis_finished_1
@@ -247,6 +247,7 @@ decisions = {
 			culture = old_frankish
 		}
 		allow = {
+			start_date == 400.1.1
 			date >= 481.1.1
 			religion_group = christian
 			ROOT = { tier = KING }
@@ -315,6 +316,7 @@ decisions = {
 			NOT = { culture = old_frankish }
 		}
 		allow = {
+			start_date == 400.1.1
 			date >= 481.1.1
 			ROOT = { tier = KING }
 			completely_controls = k_franconia
@@ -382,6 +384,7 @@ decisions = {
 			culture = old_arabic
 		}
 		allow = {
+			start_date == 400.1.1
 			date >= 481.1.1
 			ROOT = { tier = KING }
 			completely_controls = k_oman
@@ -445,7 +448,7 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
-			start_date = 400.1.1
+			start_date == 400.1.1
 			has_global_flag = roman_barbarians_dealt
 			NOT = { has_landed_title = e_hre }
 			NOT = { has_landed_title = e_byzantium }
