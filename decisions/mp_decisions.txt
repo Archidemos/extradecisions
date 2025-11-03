@@ -801,9 +801,17 @@ decisions = {
 			OR = {
 				has_character_modifier = realm_nerf_0
 				#has_character_modifier = realm_nerf_1
-				#trait = crusader_king
-				#trait = crusader_queen
-				#trait = jihad_sultan
+				trait = crusader_king
+				trait = crusader_queen
+				trait = jihad_sultan
+				AND = {
+					difficulty > normal
+					ROOT = {
+						ai = yes
+						independent = yes
+						any_war = { any_attacker = { ai = no } }
+					}
+				}
 			}
 			NOT = { has_landed_title = k_celtic_christian }
 			NOT = { has_landed_title = k_orthodox }
