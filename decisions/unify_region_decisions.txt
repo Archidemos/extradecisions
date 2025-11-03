@@ -68,8 +68,7 @@ decisions = {
 					limit = {
 						OR = {
 							#title = k_germany
-							title = k_wesphalia
-							title = k_thuringian
+							title = k_saxony
 							title = k_schwaben
 							title = k_franconia
 						}
@@ -127,14 +126,6 @@ decisions = {
 					activate_title = {
 						title = k_germany
 						status = yes
-					}
-					activate_title = {
-						title = k_wesphalia
-						status = no
-					}
-					activate_title = {
-						title = k_thuringian
-						status = no
 					}
 					activate_title = {
 						title = k_schwaben
@@ -324,7 +315,7 @@ decisions = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}
 			NOT = { has_global_flag = england_united }
-			NOT = { has_landed_title = k_celtic_christian }
+			#NOT = { has_landed_title = k_celtic_christian }
 			start_date <= 935.1.1
 		}
 		
