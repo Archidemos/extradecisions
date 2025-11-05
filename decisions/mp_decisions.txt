@@ -634,7 +634,7 @@ decisions = {
 		potential = {
 			OR = {
 				government = ar_theocracy_government
-				government = ar_republic_government
+				#government = ar_republic_government
 			}
 			NOT = { has_law = succ_open_elective }
 		}
@@ -717,8 +717,8 @@ decisions = {
 					copy_title_laws = yes
 				}
 				new_title = {
-					dynasty_title_names = no
-					add_law = gavelkind
+					#dynasty_title_names = no
+					add_law = succ_gavelkind
 					copy_title_history = PREV
 					set_preferred_capital = PREV
 					set_random_coa_effect = yes
@@ -813,7 +813,7 @@ decisions = {
 					}
 				}
 			}
-			NOT = { has_landed_title = k_celtic_christian }
+			#NOT = { has_landed_title = k_celtic_christian }
 			NOT = { has_landed_title = k_orthodox }
 			NOT = { has_landed_title = k_papal_state }
 			NOT = { government = normal_chinese_government }

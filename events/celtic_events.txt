@@ -17,258 +17,258 @@ narrative_event = { #Event for everyone about the formation
 	}
 }
 
-narrative_event = { #The Celtic Empire will send a diplomat to the Papacy
-	id = CEL.101
-	title = EVTNAMECEL.101
-	desc = EVTDESCCEL.101
+# narrative_event = { #The Celtic Empire will send a diplomat to the Papacy
+	# id = CEL.101
+	# title = EVTNAMECEL.101
+	# desc = EVTDESCCEL.101
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Send an diplomat to the Papacy!
-		name = EVTOPTCEL.002
-		hidden_effect = {
-			any_playable_ruler = {
-				limit = { 
-					has_landed_title = k_papal_state
-				}
-				narrative_event = { id = CEL.102 days = 5 }
-			}
-		}
-	}
-	option = { #Perhaps revenge is not the answer..
-		name = EVTOPTCEL.003
-	}
-}
+	# option = { #Send an diplomat to the Papacy!
+		# name = EVTOPTCEL.002
+		# hidden_effect = {
+			# any_playable_ruler = {
+				# limit = { 
+					# has_landed_title = k_papal_state
+				# }
+				# narrative_event = { id = CEL.102 days = 5 }
+			# }
+		# }
+	# }
+	# option = { #Perhaps revenge is not the answer..
+		# name = EVTOPTCEL.003
+	# }
+# }
 
-narrative_event = { #The Pope either gives in or refuses
-	id = CEL.102
-	title = EVTNAMECEL.102
-	desc = EVTDESCCEL.102
+# narrative_event = { #The Pope either gives in or refuses
+	# id = CEL.102
+	# title = EVTNAMECEL.102
+	# desc = EVTDESCCEL.102
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #We refuse!
-		name = EVTOPTCEL.004
-		ai_chance = { factor = 95 }
-		hidden_effect = {
-			any_playable_ruler = {
-				limit = { 
-					has_landed_title = e_celtic_empire
-				}
-				narrative_event = { id = CEL.104 days = 5 }
-			}
-		}
-	}
-	option = { #For the sake of Peace..
-		name = EVTOPTCEL.005
-		ai_chance = { factor = 5 }
-        k_celtic_christian = {
-            holder_scope = {
-                save_event_target_as = recipient
-            }
-        }
-        k_papal_state = {
-            holder_scope = {
-                save_event_target_as = pope_losing_titles
-            }
-        }
-        event_target:pope_losing_titles = {
-            any_title_under = {
-                limit = { NOT = { title = k_papal_state } }
-                usurp_title = event_target:recipient
-            }
-        }
-        any_player = {
-            narrative_event = { id = CEL.103 }
-        }
-	}
-}
+	# option = { #We refuse!
+		# name = EVTOPTCEL.004
+		# ai_chance = { factor = 95 }
+		# hidden_effect = {
+			# any_playable_ruler = {
+				# limit = { 
+					# has_landed_title = e_celtic_empire
+				# }
+				# narrative_event = { id = CEL.104 days = 5 }
+			# }
+		# }
+	# }
+	# option = { #For the sake of Peace..
+		# name = EVTOPTCEL.005
+		# ai_chance = { factor = 5 }
+        # k_celtic_christian = {
+            # holder_scope = {
+                # save_event_target_as = recipient
+            # }
+        # }
+        # k_papal_state = {
+            # holder_scope = {
+                # save_event_target_as = pope_losing_titles
+            # }
+        # }
+        # event_target:pope_losing_titles = {
+            # any_title_under = {
+                # limit = { NOT = { title = k_papal_state } }
+                # usurp_title = event_target:recipient
+            # }
+        # }
+        # any_player = {
+            # narrative_event = { id = CEL.103 }
+        # }
+	# }
+# }
 
-narrative_event = { #The Pope accepts
-	id = CEL.103
-	title = EVTNAMECEL.103
-	desc = EVTDESCCEL.103
+# narrative_event = { #The Pope accepts
+	# id = CEL.103
+	# title = EVTNAMECEL.103
+	# desc = EVTDESCCEL.103
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Gone with the Holy See!
-		name = EVTOPTCEL.006
-	}
-}
+	# option = { #Gone with the Holy See!
+		# name = EVTOPTCEL.006
+	# }
+# }
 
-narrative_event = { #The Pope refuses
-	id = CEL.104
-	title = EVTNAMECEL.104
-	desc = EVTDESCCEL.104
+# narrative_event = { #The Pope refuses
+	# id = CEL.104
+	# title = EVTNAMECEL.104
+	# desc = EVTDESCCEL.104
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Then we shall march!
-		name = EVTOPTCEL.007
-		ai_chance = { factor = 95 }
-		custom_tooltip = {
-			text = war_celtic_papacy
-			hidden_effect = {
-				unsafe_war = {
-					casus_belli = depose_pope_celtic
-					target = FROM
-				}
-				any_player = {
-					narrative_event = { id = CEL.105 days = 5 }
-				}
-				any_independent_ruler = {
-					limit = {
-						religion = catholic
-					}
-					narrative_event = { id = CEL.106 days = 10 }
-				}
-			}
-		}
-	}
-	option = { #On a seccond tought..
-		ai_chance = { factor = 5 }
-		name = EVTOPTCEL.008
-	}
-}
+	# option = { #Then we shall march!
+		# name = EVTOPTCEL.007
+		# ai_chance = { factor = 95 }
+		# custom_tooltip = {
+			# text = war_celtic_papacy
+			# hidden_effect = {
+				# unsafe_war = {
+					# casus_belli = depose_pope_celtic
+					# target = FROM
+				# }
+				# any_player = {
+					# narrative_event = { id = CEL.105 days = 5 }
+				# }
+				# any_independent_ruler = {
+					# limit = {
+						# religion = catholic
+					# }
+					# narrative_event = { id = CEL.106 days = 10 }
+				# }
+			# }
+		# }
+	# }
+	# option = { #On a seccond tought..
+		# ai_chance = { factor = 5 }
+		# name = EVTOPTCEL.008
+	# }
+# }
 
-narrative_event = { #Informs everyone about the big Catholic War
-	id = CEL.105
-	title = EVTNAMECEL.105
-	desc = EVTDESCCEL.105
+# narrative_event = { #Informs everyone about the big Catholic War
+	# id = CEL.105
+	# title = EVTNAMECEL.105
+	# desc = EVTDESCCEL.105
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Good Grief..
-		name = EVTOPTCEL.009
-	}
-}
+	# option = { #Good Grief..
+		# name = EVTOPTCEL.009
+	# }
+# }
 
-narrative_event = { #The call to arms to everyone in the Catholic world
-	id = CEL.106
-	title = EVTNAMECEL.106
-	desc = EVTDESCCEL.106
+# narrative_event = { #The call to arms to everyone in the Catholic world
+	# id = CEL.106
+	# title = EVTNAMECEL.106
+	# desc = EVTDESCCEL.106
 	
-    border = GFX_event_narrative_frame_religion
-    is_triggered_only = yes
-    has_dlc = "Holy Fury"
+    # border = GFX_event_narrative_frame_religion
+    # is_triggered_only = yes
+    # has_dlc = "Holy Fury"
 	
-    trigger = {
-        FROMFROM = {
-            has_landed_title = k_papal_state
-            any_war = {
-                using_cb = depose_pope_celtic
-                is_primary_war_defender = yes
-            }
-        }
-    }
+    # trigger = {
+        # FROMFROM = {
+            # has_landed_title = k_papal_state
+            # any_war = {
+                # using_cb = depose_pope_celtic
+                # is_primary_war_defender = yes
+            # }
+        # }
+    # }
 
-    option = { #Support the war to depose the Pope
-        name = EVTOPTCEL.010
-        custom_tooltip = { text = join_war_to_despose_pope_CEL }
-		religion = celtic_christian
-        e_celtic_empire = {
-            holder_scope = {
-                save_event_target_as = attacks_against_papacy
-            }
-        }		
-		event_target:attacks_against_papacy = {
-		show_scope_change = no
-			any_war = {
-				limit = {
-					using_cb = depose_pope_celtic
-				}
-				ROOT = {
-					show_scope_change = no
-					join_attacker_wars = PREV
-				}
-			}
-		}
+    # option = { #Support the war to depose the Pope
+        # name = EVTOPTCEL.010
+        # custom_tooltip = { text = join_war_to_despose_pope_CEL }
+		# religion = celtic_christian
+        # e_celtic_empire = {
+            # holder_scope = {
+                # save_event_target_as = attacks_against_papacy
+            # }
+        # }		
+		# event_target:attacks_against_papacy = {
+		# show_scope_change = no
+			# any_war = {
+				# limit = {
+					# using_cb = depose_pope_celtic
+				# }
+				# ROOT = {
+					# show_scope_change = no
+					# join_attacker_wars = PREV
+				# }
+			# }
+		# }
 
-		ai_chance = { factor = 50 }
-    }
+		# ai_chance = { factor = 50 }
+    # }
 
-    option = { #Support the Pope
-        name = EVTOPTCEL.011
-        custom_tooltip = { text = join_war_to_defend_pope_CEL }
+    # option = { #Support the Pope
+        # name = EVTOPTCEL.011
+        # custom_tooltip = { text = join_war_to_defend_pope_CEL }
 		
-        k_papal_state = {
-            holder_scope = {
-                save_event_target_as = defends_against_celtics
-            }
-        }	
+        # k_papal_state = {
+            # holder_scope = {
+                # save_event_target_as = defends_against_celtics
+            # }
+        # }	
 		
-		event_target:defends_against_celtics = {
-			any_war = {
-				limit = {
-					using_cb = depose_pope_celtic
-				}
-				ROOT = {
-					show_scope_change = no
-					join_defender_wars = PREV
-				}
-			}
-		}
-		ai_chance = { factor = 40 }
-    }
+		# event_target:defends_against_celtics = {
+			# any_war = {
+				# limit = {
+					# using_cb = depose_pope_celtic
+				# }
+				# ROOT = {
+					# show_scope_change = no
+					# join_defender_wars = PREV
+				# }
+			# }
+		# }
+		# ai_chance = { factor = 40 }
+    # }
 
-    option = { #Take neither side
-        name = EVTOPTCEL.012
-        custom_tooltip = { text = join_neither_side_CEL }
-		ai_chance = { factor = 10 }
-    }
-}
+    # option = { #Take neither side
+        # name = EVTOPTCEL.012
+        # custom_tooltip = { text = join_neither_side_CEL }
+		# ai_chance = { factor = 10 }
+    # }
+# }
 
-narrative_event = { #Informs everyone about the Celtics that won
-	id = CEL.107
-	title = EVTNAMECEL.107
-	desc = EVTDESCCEL.107
+# narrative_event = { #Informs everyone about the Celtics that won
+	# id = CEL.107
+	# title = EVTNAMECEL.107
+	# desc = EVTDESCCEL.107
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Ok
-		name = EVTOPTCEL.012
-	}
-}
+	# option = { #Ok
+		# name = EVTOPTCEL.012
+	# }
+# }
 
-narrative_event = { #Informs everyone about the Celtics that lost
-	id = CEL.108
-	title = EVTNAMECEL.108
-	desc = EVTDESCCEL.108
+# narrative_event = { #Informs everyone about the Celtics that lost
+	# id = CEL.108
+	# title = EVTNAMECEL.108
+	# desc = EVTDESCCEL.108
 	
-	picture = GFX_evt_vikings_arriving_oldgods
+	# picture = GFX_evt_vikings_arriving_oldgods
 	
-	border = GFX_event_narrative_frame_war
+	# border = GFX_event_narrative_frame_war
 	
-	is_triggered_only = yes
+	# is_triggered_only = yes
 	
-	option = { #Good Grief..
-		name = EVTOPTCEL.013
-	}
-}
+	# option = { #Good Grief..
+		# name = EVTOPTCEL.013
+	# }
+# }
 
 
 narrative_event = { #Event for everyone about the formation of the North Sea Empire

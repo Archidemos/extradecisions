@@ -1,267 +1,267 @@
-decisions = {
-	celtic_renaissance = {
-		ai_check_interval = 120 #check only once every 120 months.
-		only_playable = yes
-		is_high_prio = yes
+# decisions = {
+	# celtic_renaissance = {
+		# ai_check_interval = 120 #check only once every 120 months.
+		# only_playable = yes
+		# is_high_prio = yes
 		
-		potential = {
-			is_playable = yes
-			OR = { 
-				culture = irish
-				culture = scottish
-				culture = breton
-				culture = welsh
-			}
-			has_dlc = "Holy Fury"
-			has_landed_title = e_celtic_empire
-			NOT = { government = chinese_imperial_government }
-			NOT = { has_global_flag = flag_started_celtic_renaissance }
-			NOT = {
-				has_alternate_start_parameter = { key = culture_names value = random }
-			}
-		}
+		# potential = {
+			# is_playable = yes
+			# OR = { 
+				# culture = irish
+				# culture = scottish
+				# culture = breton
+				# culture = welsh
+			# }
+			# has_dlc = "Holy Fury"
+			# has_landed_title = e_celtic_empire
+			# NOT = { government = chinese_imperial_government }
+			# NOT = { has_global_flag = flag_started_celtic_renaissance }
+			# NOT = {
+				# has_alternate_start_parameter = { key = culture_names value = random }
+			# }
+		# }
 		
-		allow = {
-			show_only_failed_conditions = yes
-			OR = { 
-				religion_group = christian 
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-			capital_scope = { province = 11 }
-			ruled_years >= 10
-			war = no
-		}
+		# allow = {
+			# show_only_failed_conditions = yes
+			# OR = { 
+				# religion_group = christian 
+				# religion = norse_pagan
+				# religion = norse_pagan_reformed
+			# }
+			# capital_scope = { province = 11 }
+			# ruled_years >= 10
+			# war = no
+		# }
 		
-		effect = {
-			set_global_flag = flag_started_celtic_renaissance
-			culture = new_celtic
-			hidden_tooltip = {
-				any_courtier_or_vassal = { 
-					limit = { lower_tier_than = COUNT }
-					culture = new_celtic
-				}
-			}
-			capital_scope = { culture = new_celtic }
-			custom_tooltip = {
-				text = celtic_culture_spreads
-				hidden_tooltip = {
-					any_realm_province = {
-						if = {
-							limit = { any_neighbor_province = { province = 11 } }
-							culture = new_celtic
-						}
-						if = {
-							limit = { 
-								culture = irish
-								NOT = { distance = { where = 11 distance = 100 } } 
-							}
-							random = { 
-								chance = 40 
-								culture = new_celtic 
-							}
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								NOT = { distance = { where = 11 distance = 200 } } 
-							}
-							random = { 
-								chance = 20 
-								culture = new_celtic 
-							}
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								NOT = { distance = { where = 11 distance = 400 } } 
-							}
-							random = { 
-								chance = 5
-								culture = new_celtic 
-							}
-						}
-					}
-				}
-			}
-			hidden_tooltip = {
-				if = { #Hellenic Emperor gets chance to spread Hellenism a bit alongside the culture.
-					limit = { OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } }
-					any_realm_province = {
-						if = {
-							limit = { any_neighbor_province = { province = 11 } }
-							religion = ROOT
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								NOT = { distance = { where = 11 distance = 100 } } 
-							}
-							random = { 
-								chance = 10 
-								religion = ROOT
-							}
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								NOT = { distance = { where = 11 distance = 200 } } 
-							}
-							random = { 
-								chance = 5 
-								religion = ROOT
-							}
-						}
-					}
-				}
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	embrace_new_celtic_culture = {
-		ai_check_interval = 120 #check only once every 120 months.
-		only_playable = yes
+		# effect = {
+			# set_global_flag = flag_started_celtic_renaissance
+			# culture = new_celtic
+			# hidden_tooltip = {
+				# any_courtier_or_vassal = { 
+					# limit = { lower_tier_than = COUNT }
+					# culture = new_celtic
+				# }
+			# }
+			# capital_scope = { culture = new_celtic }
+			# custom_tooltip = {
+				# text = celtic_culture_spreads
+				# hidden_tooltip = {
+					# any_realm_province = {
+						# if = {
+							# limit = { any_neighbor_province = { province = 11 } }
+							# culture = new_celtic
+						# }
+						# if = {
+							# limit = { 
+								# culture = irish
+								# NOT = { distance = { where = 11 distance = 100 } } 
+							# }
+							# random = { 
+								# chance = 40 
+								# culture = new_celtic 
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# NOT = { distance = { where = 11 distance = 200 } } 
+							# }
+							# random = { 
+								# chance = 20 
+								# culture = new_celtic 
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# NOT = { distance = { where = 11 distance = 400 } } 
+							# }
+							# random = { 
+								# chance = 5
+								# culture = new_celtic 
+							# }
+						# }
+					# }
+				# }
+			# }
+			# hidden_tooltip = {
+				# if = { #Hellenic Emperor gets chance to spread Hellenism a bit alongside the culture.
+					# limit = { OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } }
+					# any_realm_province = {
+						# if = {
+							# limit = { any_neighbor_province = { province = 11 } }
+							# religion = ROOT
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# NOT = { distance = { where = 11 distance = 100 } } 
+							# }
+							# random = { 
+								# chance = 10 
+								# religion = ROOT
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# NOT = { distance = { where = 11 distance = 200 } } 
+							# }
+							# random = { 
+								# chance = 5 
+								# religion = ROOT
+							# }
+						# }
+					# }
+				# }
+			# }
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1
+		# }
+	# }
+	# embrace_new_celtic_culture = {
+		# ai_check_interval = 120 #check only once every 120 months.
+		# only_playable = yes
 		
-		potential = {
-			is_playable = yes
-			NOT = { culture = new_celtic }
-			OR = { 
-				culture = irish
-				culture = scottish
-				culture = breton
-				culture = welsh
-			}
-			has_dlc = "Holy Fury"
-			NOT = { government = chinese_imperial_government }
-			has_global_flag = flag_started_celtic_renaissance
-			NOT = {
-				has_alternate_start_parameter = { key = culture_names value = random }
-			}
-			top_liege = { has_landed_title = e_celtic_empire }
-		}
-		allow = {
-			show_only_failed_conditions = yes
-			OR = { 
-				culture = irish
-				culture = scottish
-				culture = breton
-				culture = welsh
-			}
-		}
-		effect = {
-			culture = new_celtic
-			hidden_tooltip = {
-				any_courtier_or_vassal = { 
-					limit = { lower_tier_than = COUNT }
-					culture = new_celtic
-				}
-			}
-			capital_scope = { culture = new_celtic }
-			custom_tooltip = {
-				text = tooltip_celtic_culture_spreads
-				hidden_tooltip = {
-					any_demesne_province = {
-						if = {
-							limit = { any_neighbor_province = { province = 333 } }
-							culture = new_celtic
-						}
-						if = {
-							limit = {
-								culture = irish
-								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
-							}
-							random = { 
-								chance = 40 
-								culture = new_celtic 
-							}
-						}
-						if = {
-							limit = {
-								culture = welsh
-								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
-							}
-							random = { 
-								chance = 40 
-								culture = new_celtic 
-							}
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
-							}
-							random = { 
-								chance = 20 
-								culture = new_celtic 
-							}
-						}
-						if = {
-							limit = { 
-								culture_group = celtic
-								capital_scope = { NOT = { distance = { where = PREV distance = 400 } } } 
-							}
-							random = { 
-								chance = 5
-								culture = new_celtic 
-							}
-						}
-					}
-				}
-			}
-			if = { #Hellenic Emperor gets chance to spread Hellenism a bit alongside the culture.
-				limit = { OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } }
-				hidden_tooltip = {
-					any_demesne_province = {
-						if = {
-							limit = { any_neighbor_province = { province = 333 } }
-							religion = ROOT
-						}
-						if = {
-							limit = { 
-								culture = new_celtic
-								capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
-							}
-							random = { 
-								chance = 10 
-								religion = ROOT
-							}
-						}
-						if = {
-							limit = { 
-								culture = new_celtic
-								capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
-							}
-							random = { 
-								chance = 5 
-								religion = ROOT
-							}
-						}
-					}
-				}
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 3
-				religion = hellenic_pagan_reformed
-			}
-			modifier = {
-				factor = 3
-				capital_scope = { culture = new_celtic } 
-			}
-			modifier = {
-				factor = 0.01 #Would consider it a step down.
-				culture = greek
-			}
-		}
-	}
-}
+		# potential = {
+			# is_playable = yes
+			# NOT = { culture = new_celtic }
+			# OR = { 
+				# culture = irish
+				# culture = scottish
+				# culture = breton
+				# culture = welsh
+			# }
+			# has_dlc = "Holy Fury"
+			# NOT = { government = chinese_imperial_government }
+			# has_global_flag = flag_started_celtic_renaissance
+			# NOT = {
+				# has_alternate_start_parameter = { key = culture_names value = random }
+			# }
+			# top_liege = { has_landed_title = e_celtic_empire }
+		# }
+		# allow = {
+			# show_only_failed_conditions = yes
+			# OR = { 
+				# culture = irish
+				# culture = scottish
+				# culture = breton
+				# culture = welsh
+			# }
+		# }
+		# effect = {
+			# culture = new_celtic
+			# hidden_tooltip = {
+				# any_courtier_or_vassal = { 
+					# limit = { lower_tier_than = COUNT }
+					# culture = new_celtic
+				# }
+			# }
+			# capital_scope = { culture = new_celtic }
+			# custom_tooltip = {
+				# text = tooltip_celtic_culture_spreads
+				# hidden_tooltip = {
+					# any_demesne_province = {
+						# if = {
+							# limit = { any_neighbor_province = { province = 333 } }
+							# culture = new_celtic
+						# }
+						# if = {
+							# limit = {
+								# culture = irish
+								# capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
+							# }
+							# random = { 
+								# chance = 40 
+								# culture = new_celtic 
+							# }
+						# }
+						# if = {
+							# limit = {
+								# culture = welsh
+								# capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
+							# }
+							# random = { 
+								# chance = 40 
+								# culture = new_celtic 
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
+							# }
+							# random = { 
+								# chance = 20 
+								# culture = new_celtic 
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture_group = celtic
+								# capital_scope = { NOT = { distance = { where = PREV distance = 400 } } } 
+							# }
+							# random = { 
+								# chance = 5
+								# culture = new_celtic 
+							# }
+						# }
+					# }
+				# }
+			# }
+			# if = { #Hellenic Emperor gets chance to spread Hellenism a bit alongside the culture.
+				# limit = { OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } }
+				# hidden_tooltip = {
+					# any_demesne_province = {
+						# if = {
+							# limit = { any_neighbor_province = { province = 333 } }
+							# religion = ROOT
+						# }
+						# if = {
+							# limit = { 
+								# culture = new_celtic
+								# capital_scope = { NOT = { distance = { where = PREV distance = 100 } } } 
+							# }
+							# random = { 
+								# chance = 10 
+								# religion = ROOT
+							# }
+						# }
+						# if = {
+							# limit = { 
+								# culture = new_celtic
+								# capital_scope = { NOT = { distance = { where = PREV distance = 200 } } } 
+							# }
+							# random = { 
+								# chance = 5 
+								# religion = ROOT
+							# }
+						# }
+					# }
+				# }
+			# }
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 3
+				# religion = hellenic_pagan_reformed
+			# }
+			# modifier = {
+				# factor = 3
+				# capital_scope = { culture = new_celtic } 
+			# }
+			# modifier = {
+				# factor = 0.01 #Would consider it a step down.
+				# culture = greek
+			# }
+		# }
+	# }
+# }

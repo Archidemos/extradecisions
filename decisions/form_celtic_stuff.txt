@@ -84,62 +84,62 @@ decisions = {
 		}
 	}
 
-	celtic_ultimatum_pope = {
-		only_playable = yes
-		is_high_prio = yes
-		ai_check_interval = 120
+	# celtic_ultimatum_pope = {
+		# only_playable = yes
+		# is_high_prio = yes
+		# ai_check_interval = 120
 		
-		potential = {
-			date >= 700.1.1
-			NOT = {
-				has_game_rule = {
-					name = no_larp_rules
-					value = off
-				}
-			}
-			has_landed_title = e_celtic_empire
-			any_playable_ruler = {
-				AND = {
-					OR = {
-						has_landed_title = c_roma
-						has_landed_title = c_orbetello
-						has_landed_title = c_orvieto
-					}
-					has_landed_title = k_papal_state
-				}
-			}
-			NOT = { has_global_flag = pope_celtic_conflict }
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
-		}
+		# potential = {
+			# date >= 700.1.1
+			# NOT = {
+				# has_game_rule = {
+					# name = no_larp_rules
+					# value = off
+				# }
+			# }
+			# has_landed_title = e_celtic_empire
+			# any_playable_ruler = {
+				# AND = {
+					# OR = {
+						# has_landed_title = c_roma
+						# has_landed_title = c_orbetello
+						# has_landed_title = c_orvieto
+					# }
+					# has_landed_title = k_papal_state
+				# }
+			# }
+			# NOT = { has_global_flag = pope_celtic_conflict }
+			# NOT = {
+				# has_alternate_start_parameter = { key = religion_names value = random }
+			# }
+		# }
 		
-		allow = {
-			has_landed_title = e_celtic_empire
-			prestige = 2000
-			diplomacy = 12
-			religion_group = christian
-			NOT = { religion = catholic }
-			completely_controls = k_france
-			completely_controls = k_aquitaine
-			completely_controls = k_burgundy
-		}
+		# allow = {
+			# has_landed_title = e_celtic_empire
+			# prestige = 2000
+			# diplomacy = 12
+			# religion_group = christian
+			# NOT = { religion = catholic }
+			# completely_controls = k_france
+			# completely_controls = k_aquitaine
+			# completely_controls = k_burgundy
+		# }
 		
-		effect = {
-			set_global_flag = pope_celtic_conflict
-			custom_tooltip = {
-				text = conflict_celtic_pope
-				hidden_tooltip = {
-					ROOT = {
-						narrative_event = { id = CEL.101 }
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+		# effect = {
+			# set_global_flag = pope_celtic_conflict
+			# custom_tooltip = {
+				# text = conflict_celtic_pope
+				# hidden_tooltip = {
+					# ROOT = {
+						# narrative_event = { id = CEL.101 }
+					# }
+				# }
+			# }
+		# }
+		# ai_will_do = {
+			# factor = 1
+		# }
+	# }
 	
 	form_north_sea_empire = {
 		only_playable = yes

@@ -6,10 +6,10 @@ decisions = {
 		
 		potential = {
 			NOT = { has_landed_title = k_papal_state }
-			NOT = { has_landed_title = k_celtic_christian }
+			#NOT = { has_landed_title = k_celtic_christian }
 			OR = {
 				FROM = { government = ar_theocracy_government }
-				FROM = { government = ar_republic_government }
+				#FROM = { government = ar_republic_government }
 			}
 		}
 		
@@ -30,58 +30,58 @@ decisions = {
 		}
 	}
 	
-	become_merchant_republic = {
-		ai = no
-		is_high_prio = yes
+	# become_merchant_republic = {
+		# ai = no
+		# is_high_prio = yes
 		
-		potential = {
-			FROM = { government = ar_republic_government }
-		}
+		# potential = {
+			# FROM = { government = ar_republic_government }
+		# }
 		
-		allow = {
-			wealth = 100
-			AND = {
-				capital_scope = { port = yes }
-				capital_scope = { holding_type = city }
-			}
-		}
+		# allow = {
+			# wealth = 100
+			# AND = {
+				# capital_scope = { port = yes }
+				# capital_scope = { holding_type = city }
+			# }
+		# }
 		
-		effect = {
-			wealth = -100
-			create_family_palace = yes
-			set_government_type = merchant_republic_government
-			if = {
-				limit = {
-					NOT = {
-						num_of_government_vassals = {
-							government = merchant_republic_government
-							value = 1
-						}
-					}
-				}
+		# effect = {
+			# wealth = -100
+			# create_family_palace = yes
+			# set_government_type = merchant_republic_government
+			# if = {
+				# limit = {
+					# NOT = {
+						# num_of_government_vassals = {
+							# government = merchant_republic_government
+							# value = 1
+						# }
+					# }
+				# }
 				
-				any_unique_dynasty_vassal = { # gives random vassals a family palace
-					count = 4
-					limit = {
-						is_female = no
-						OR = {
-							is_republic = yes
-							is_tribal = yes
-						}
-						is_patrician = no
-						prisoner = no
-						NOT = { trait = incapable }
-						is_adult = yes
-						NOT = { 
-							dynasty = none 
-						}
-					}			
+				# any_unique_dynasty_vassal = { # gives random vassals a family palace
+					# count = 4
+					# limit = {
+						# is_female = no
+						# OR = {
+							# is_republic = yes
+							# is_tribal = yes
+						# }
+						# is_patrician = no
+						# prisoner = no
+						# NOT = { trait = incapable }
+						# is_adult = yes
+						# NOT = { 
+							# dynasty = none 
+						# }
+					# }			
 					
-					create_family_palace = yes
-				}
-			}
-		}
-	}
+					# create_family_palace = yes
+				# }
+			# }
+		# }
+	# }
 }
 
 targetted_decisions = {
@@ -238,44 +238,44 @@ title_decisions = {
 }
 
 settlement_decisions = {
-	ar_republic_boon = {
-		ai = no
+	# ar_republic_boon = {
+		# ai = no
 	
-		potential = {
-			controlled_by = FROM
-			FROM = { government = ar_republic_government }
-		}
+		# potential = {
+			# controlled_by = FROM
+			# FROM = { government = ar_republic_government }
+		# }
 		
-		allow = {
-			FROM = {
-				wealth = 250
-				government = ar_republic_government
-			}
-			NOT = { location = { has_province_modifier = ar_republic_bonus } }
-			controlled_by = FROM
-		}
+		# allow = {
+			# FROM = {
+				# wealth = 250
+				# government = ar_republic_government
+			# }
+			# NOT = { location = { has_province_modifier = ar_republic_bonus } }
+			# controlled_by = FROM
+		# }
 		
-		effect = {
-			FROM = {
-				show_scope_change = no
-				wealth = -250
-			}
-			location = {
-				add_province_modifier = {
-					name = ar_republic_bonus
-					years = 5
-				}
-			}
-		}
+		# effect = {
+			# FROM = {
+				# show_scope_change = no
+				# wealth = -250
+			# }
+			# location = {
+				# add_province_modifier = {
+					# name = ar_republic_bonus
+					# years = 5
+				# }
+			# }
+		# }
 		
-		revoke_allowed = {
-			always = no
-		}
+		# revoke_allowed = {
+			# always = no
+		# }
 		
-		ai_will_do = {
-			factor = 0
-		}
-	}
+		# ai_will_do = {
+			# factor = 0
+		# }
+	# }
 
 	pirate_boon = {
 		ai = no
