@@ -27,10 +27,18 @@ title_regent = {
 	monthly_prestige = 1.50
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_regent_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_regent_modifier
 	}
-
+	retire_effect = {
+		remove_character_modifier = title_regent_modifier
+	}
+	
 	message = yes
 }
 
@@ -66,9 +74,16 @@ title_appointed_regent = {
 	}
 
 	gain_effect = {
+		add_character_modifier = {
+			name = title_regent_modifier
+			duration = -1
+		}
 	}
-
 	lose_effect = {
+		remove_character_modifier = title_regent_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_regent_modifier
 	}
 	message = yes
 }
@@ -266,6 +281,10 @@ title_commander = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_commander_modifier
+			duration = -1
+		}
 		if = {
 			limit = {
 				liege = { 
@@ -274,15 +293,16 @@ title_commander = {
 			}
 			character_event = { id = HFP.20805 days = 1 } 
 		}
-		hidden_effect = { # Because this cannot be added in the passive effects, for some code reason
-			add_character_modifier = {
-	        	name = hidden_commander_bonus
-	        	duration = -1
-	        	hidden = yes
-	        }
-		}
+		#hidden_effect = { # Because this cannot be added in the passive effects, for some code reason
+		#	add_character_modifier = {
+	    #    	name = hidden_commander_bonus
+	    #    	duration = -1
+	    #    	hidden = yes
+	    #    }
+		#}
 	}
 	lose_effect = {
+		remove_character_modifier = title_commander_modifier
 		if = {
 			limit = {
 				liege = { has_law = succ_byzantine_elective }
@@ -290,9 +310,12 @@ title_commander = {
 			character_event = { id = HFP.20803 days = 1 } #Make sure the commander is not being made a sub-vassal.
 			
 		}
-		hidden_effect = {
-			remove_character_modifier = hidden_commander_bonus
-		}
+		#hidden_effect = {
+		#	remove_character_modifier = hidden_commander_bonus
+		#}
+	}
+	retire_effect = {
+		remove_character_modifier = title_commander_modifier
 	}
 	
 	message = yes
@@ -335,8 +358,16 @@ title_court_eunuch = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_court_eunuch_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_court_eunuch_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_court_eunuch_modifier
 	}
 
 	message = yes
@@ -466,8 +497,16 @@ title_keeper_of_swans = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_keeper_of_swans_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_keeper_of_swans_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_keeper_of_swans_modifier
 	}
 
 	message = yes
@@ -510,8 +549,16 @@ title_master_of_the_horse = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_master_of_the_horse_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_master_of_the_horse_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_master_of_the_horse_modifier
 	}
 
 	message = yes
@@ -558,8 +605,16 @@ title_master_of_the_hunt = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_master_of_the_hunt_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_master_of_the_hunt_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_master_of_the_hunt_modifier
 	}
 
 	message = yes
@@ -598,8 +653,16 @@ title_high_almoner = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_high_almoner_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_high_almoner_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_high_almoner_modifier
 	}
 
 	message = yes
@@ -690,8 +753,16 @@ title_seneschal = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_seneschal_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_seneschal_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_seneschal_modifier
 	}
 
 	message = yes
@@ -750,6 +821,7 @@ title_despot = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_west_rome
 		}
 		OR = {
 			religion_group = christian
@@ -759,8 +831,16 @@ title_despot = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_despot_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_despot_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_despot_modifier
 	}
 
 	message = yes
@@ -791,6 +871,7 @@ title_sebastokrator = {
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+			has_landed_title = e_west_rome
 		}
 		OR = {
 			religion_group = christian
@@ -800,10 +881,17 @@ title_sebastokrator = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_sebastokrator_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_sebastokrator_modifier
 	}
-
+	retire_effect = {
+		remove_character_modifier = title_sebastokrator_modifier
+	}
 	message = yes
 }
 
@@ -838,8 +926,16 @@ title_caesar = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_caesar_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_caesar_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_caesar_modifier
 	}
 
 	message = yes
@@ -881,8 +977,16 @@ title_kouropalates = {
 	}
 		
 	gain_effect = {
+		add_character_modifier = {
+			name = title_kouropalates_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_kouropalates_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_kouropalates_modifier
 	}
 
 	message = yes
@@ -960,8 +1064,16 @@ title_imperial_eunuch = {
 	}	
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_court_eunuch_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_court_eunuch_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_court_eunuch_modifier
 	}
 
 	message = yes
@@ -1051,8 +1163,16 @@ title_court_calligrapher = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_court_calligrapher_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_court_calligrapher_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_court_calligrapher_modifier
 	}
 
 	message = yes
@@ -1167,8 +1287,16 @@ title_chief_architect = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_chief_architect_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_chief_architect_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_chief_architect_modifier
 	}
 
 	message = yes
@@ -1220,10 +1348,17 @@ title_chief_qadi = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_chief_qadi_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_chief_qadi_modifier
 	}
-
+	retire_effect = {
+		remove_character_modifier = title_chief_qadi_modifier
+	}
 	message = yes
 }
 
@@ -1259,8 +1394,16 @@ title_state_inquisitor = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_state_inquisitor_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_state_inquisitor_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_state_inquisitor_modifier
 	}
 
 	message = yes
@@ -1294,8 +1437,16 @@ title_high_admiral = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_high_admiral_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_high_admiral_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_high_admiral_modifier
 	}
 
 	message = yes
@@ -1329,10 +1480,17 @@ title_high_judge = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_high_judge_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_high_judge_modifier
 	}
-
+	retire_effect = {
+		remove_character_modifier = title_high_judge_modifier
+	}
 	message = yes
 }
 
@@ -3157,10 +3315,16 @@ title_court_physician = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_court_physician_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_court_physician_modifier
 	}
 	retire_effect = {
+		remove_character_modifier = title_court_physician_modifier
 	}
 
 	message = yes
@@ -3441,8 +3605,16 @@ title_teacher = {
 	}
 	
 	gain_effect = {
+		add_character_modifier = {
+			name = title_teacher_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = title_teacher_modifier
+	}
+	retire_effect = {
+		remove_character_modifier = title_teacher_modifier
 	}
 
 	message = yes

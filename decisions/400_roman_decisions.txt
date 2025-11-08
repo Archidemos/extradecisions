@@ -471,6 +471,7 @@ decisions = {
 			OR = {
 				religion_group = christian
 				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
 			}
 			NOT = {
 				government = merchant_republic_government
@@ -519,12 +520,23 @@ decisions = {
 		}
 		
 		effect = {
+			if = {
+				limit = { ROOT = { NOT = { has_landed_title = e_west_rome } } }
+				custom_tooltip = {
+					text = "The preperations of the new governance will begin.."
+					ROOT = { narrative_event = { id = ROMANFR.1062 } }
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_landed_title = e_west_rome } }
+				prestige = 2000
+				custom_tooltip = { 
+					text = "It is time to speak with the people of Rome.."
+					any_player = { narrative_event = { id = ROMANFR.1031 } }
+				}
+			}
 			set_global_flag = west_rome_formed_again
 			set_global_flag = west_rome_formed_normal
-			custom_tooltip = { 
-				text = "The preperations of the new governance will begin.."
-				any_player = { narrative_event = { id = ROMANFR.1031 days = 5 } }
-			}
 		}
 		ai_will_do = {
 			factor = 1

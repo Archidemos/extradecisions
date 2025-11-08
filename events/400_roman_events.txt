@@ -5208,6 +5208,153 @@ narrative_event = {
 }
 
 narrative_event = {
+	id = ROMANFR.1062
+	title = "Western Rome Restored"
+	desc = "Ever since the fall of Western Rome, it was a long struggle for the people of Rome to stand their grounds with their new overlords. No longer do we have to be affraid, as we have reunified some of the borders of our empire. Now is the time to spread the word to every barbarian that has fought against us to let them know that we are still standing and continue to do so as we have done many times in the past. Rome shall never fall. Now is the time how we should reform Rome, should it be a Republic as it once was, or do we continue to stay as an Empire with one holding all the power..."
+	
+	picture = "GFX_evt_rome_restored_byzantine"
+	border = GFX_event_narrative_frame_war	
+	#sound = ar_crusade_shout
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "I shall be Western Roman Emperor"
+		ai_chance = { factor = 50 }
+		prestige = 1500
+		activate_title = { title = e_west_rome status = yes }
+		primary_title = {
+			e_west_rome = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}	
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = EMPEROR
+					NOT = { title = e_west_rome }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		e_west_rome = {
+			add_law = succ_byzantine_elective
+		}
+		
+		give_nickname = nick_the_restorer
+		
+		custom_tooltip = {
+			text = rome_move_capital
+			hidden_tooltip = {
+				ROOT = {
+					c_roma = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}
+					
+					b_tusculum = {
+						grant_title = PREV
+						usurp_title = PREV
+					}
+					
+					b_tivoli = {
+						grant_title = PREV
+						usurp_title = PREV
+						make_capital_holding = yes
+					}
+				}
+				if = {
+					limit = { government = merchant_republic_government }
+					b_viterbo = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}				
+				}
+			}
+		}
+		create_bloodline = {
+			type = west_rome_blood
+		}
+		
+		hidden_tooltip = {
+			any_player = {
+				narrative_event = { id = ROMANFR.1031 }
+			}
+		}
+	}
+
+	option = {
+		name = "We shall establish a Roman Republic"
+		ai_chance = { factor = 50 }
+		wealth = 1500
+		activate_title = { title = e_west_rome status = yes }
+		primary_title = {
+			e_west_rome = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+		}
+		
+		ROOT = {
+			any_demesne_title = {
+				limit = { 
+					tier = EMPEROR
+					NOT = { title = e_west_rome }
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		
+		create_family_palace = yes
+		set_government_type = merchant_republic_government
+		
+		e_west_rome = {
+			set_name = "Senatus Populusque Romanus"
+			adjective = "Roman Republican"
+		}
+		give_nickname = nick_the_restorer
+		
+		custom_tooltip = {
+			text = rome_move_capital
+			hidden_tooltip = {
+				ROOT = {
+					c_roma = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
+					}
+					
+					b_tusculum = {
+						grant_title = PREV
+						usurp_title = PREV
+					}
+					
+					b_cittadiroma = {
+						grant_title = PREV
+						usurp_title = PREV
+						make_capital_holding = yes
+					}
+				}
+			}
+		}
+		create_bloodline = {
+			type = west_rome_blood
+		}
+		hidden_tooltip = {
+			any_player = {
+				narrative_event = { id = ROMANFR.1031 }
+			}
+		}
+	}
+}
+
+narrative_event = {
 	id = ROMANFR.1200
 	title = "The Roman Church"
 	desc = "Your Holiness, many rulers from accross Europe have been starting to think about our Roman Catholic Church. It seems that they are losing interest and are questioning the Nicene Creed. Perhaps we should send missionaries and convert these lands to the true way of Christ. What shall we do."

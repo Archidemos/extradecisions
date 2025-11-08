@@ -48,8 +48,13 @@ job_chancellor = {
 		}
 	}
 	gain_effect = {
+		add_character_modifier = {
+			name = job_chancellor_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = job_chancellor_modifier
 		if = {
 			limit = {
 				FROM = {
@@ -70,6 +75,7 @@ job_chancellor = {
 		}
 	}
 	retire_effect = {
+		remove_character_modifier = job_chancellor_modifier
 		if = {
 			limit = { has_character_flag = relic_hunter }
 			character_event = { id = MNM.9034 }
@@ -138,6 +144,10 @@ job_marshal = {
 		}
 	}
 	gain_effect = {
+		add_character_modifier = {
+			name = job_marshal_modifier
+			duration = -1
+		}
 		if = {
 			limit = {
 				FROM = { 
@@ -207,6 +217,7 @@ job_marshal = {
 		}
 	}
 	lose_effect = {
+		remove_character_modifier = job_marshal_modifier
 		if = {
 			limit = {
 				FROM = {
@@ -228,6 +239,7 @@ job_marshal = {
 		}
 	}
 	retire_effect = {
+		remove_character_modifier = job_marshal_modifier
 		if = {
 			limit = { has_character_flag = relic_hunter }
 			character_event = { id = MNM.9034 }
@@ -298,8 +310,13 @@ job_treasurer = {
 		}
 	}
 	gain_effect = {
+		add_character_modifier = {
+			name = job_treasurer_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = job_treasurer_modifier
 		if = {
 			limit = {
 				FROM = {
@@ -320,6 +337,7 @@ job_treasurer = {
 		}
 	}
 	retire_effect = {
+		remove_character_modifier = job_treasurer_modifier
 		if = {
 			limit = { has_character_flag = relic_hunter }
 			character_event = { id = MNM.9034 }
@@ -390,8 +408,13 @@ job_spymaster = {
 		}
 	}
 	gain_effect = {
+		add_character_modifier = {
+			name = job_spymaster_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = job_spymaster_modifier
 		if = {
 			limit = {
 				FROM = {
@@ -412,6 +435,7 @@ job_spymaster = {
 		}
 	}
 	retire_effect = {
+		remove_character_modifier = job_spymaster_modifier
 		if = {
 			limit = { has_character_flag = relic_hunter }
 			character_event = { id = MNM.9034 }
@@ -486,8 +510,13 @@ job_spiritual = {
 		}
 	}
 	gain_effect = {
+		add_character_modifier = {
+			name = job_spiritual_modifier
+			duration = -1
+		}
 	}
 	lose_effect = {
+		remove_character_modifier = job_spiritual_modifier
 		if = {
 			limit = {
 				FROM = {
@@ -508,6 +537,7 @@ job_spiritual = {
 		}
 	}
 	retire_effect = {
+		remove_character_modifier = job_spiritual_modifier
 		if = {
 			limit = { has_character_flag = relic_hunter }
 			character_event = { id = MNM.9034 }
