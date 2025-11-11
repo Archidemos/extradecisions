@@ -4244,6 +4244,15 @@ faction_independence = {
 				}
 			}
 			
+			# Western Roman Empire has a peace grace for 10 years in 400 AD
+			AND = {
+				has_landed_title = e_west_rome
+				start_date == 400.1.1
+				NOT = {
+					date <= 410.1.1
+				}
+			}
+			
 			# Not allowed to start factions like this if our capital borders the liege's capital
 			NOT = {
 				capital_scope = {
