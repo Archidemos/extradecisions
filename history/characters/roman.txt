@@ -29,15 +29,15 @@
 	# Flavius Arcadius Augustus
 	#dynasty=1022191
 	dynasty=2000000000
-	martial=4
-	diplomacy=4
-	intrigue=4
-	stewardship=4
+	#martial=4
+	#diplomacy=4
+	#intrigue=4
+	#stewardship=4
 	religion="nicene_christian"
 	culture="roman"
-	trait="humble"
-	trait="shy"
-	trait="indulgent_wastrel"
+	#trait="humble"
+	#trait="shy"
+	#trait="indulgent_wastrel"
 	#father=70534
 	#mother=2999999
 	
@@ -302,9 +302,9 @@
 	dynasty=2000000001
 	religion="nicene_christian"
 	culture="roman"
-	trait="arbitrary"
-	trait="slothful"
-	trait="indulgent_wastrel"
+	#trait="arbitrary"
+	#trait="slothful"
+	#trait="indulgent_wastrel"
 	#father=70534
 	#mother=2999999
 	384.9.9={
@@ -314,8 +314,15 @@
 	}
 	400.1.1 = {
 		remove_claim = e_byzantium
+		effect = {
+			add_character_modifier = {
+				name = rome_crisis_help_2
+				years = 5
+			}
+		}
 	}
 	423.8.25={
+		effect = { remove_character_modifier = rome_crisis_help_2 }
 		death="423.8.25"
 	}
 }

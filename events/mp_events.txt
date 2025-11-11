@@ -20,6 +20,41 @@ narrative_event = {
 	
 	immediate = {
 		set_global_flag = crossing_penalty_added
+		c_gizeh = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_cairo = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_itfih = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_bahnasa = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_manfalut = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_asyut = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_ikhmin = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_qus = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+
+		c_aswan = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_qurta = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_qasribrim = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_nubia = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_semna = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_makuria = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_abuhammad = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_atbara = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+
+		c_butana = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_kassala = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_soba = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_wolqayt = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_tigre = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_semien = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_begemder = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_angot = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+
+		c_sennar = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_asosa = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_ankober = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_shewa = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_matamma = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_gojjam = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_kordofan = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+
 		c_guines = { location = { add_province_modifier = { name = crossing_penalty years = -1 } } }
 		c_kent = { location = { add_province_modifier = { name = crossing_penalty years = -1 } } }
 		c_hormuz = { location = { add_province_modifier = { name = crossing_penalty years = -1 } } }
@@ -1815,24 +1850,24 @@ character_event = {
 }
 
 character_event = { #Event for everyone about the formation
-	id = MP.204
+	id = MP.203
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		is_nomadic = yes
-		independent = yes
+		ROOT = { is_nomadic = yes }
+		ROOT = { independent = yes }
 		NOT = { has_landed_title = e_mongol_empire }
 		NOT = { has_landed_title = e_golden_horde }
 	}
 	
 	immediate = {
-		current_heir = { character_event = { id = MP.203 days = 2 } }
+		current_heir = { character_event = { id = MP.204 days = 2 } }
 	}
 }
 
 character_event = {
-	id = MP.203
+	id = MP.204
 	title = "Nomadic Succession"
 	desc = "After the death of your predicesor, your rivals clans have been growing ever so ambitious and figured that now is the time to strike."
 	
@@ -1842,10 +1877,8 @@ character_event = {
 	is_triggered_only = yes
 
 	#trigger = {
-	#	is_nomadic = yes
-	#	independent = yes
-	#	NOT = { has_landed_title = e_mongol_empire }
-	#	NOT = { has_landed_title = e_golden_horde }
+	#	ROOT = { is_nomadic = yes }
+	#	ROOT = { independent = yes }
 	#}
 	
 	immediate = {
@@ -1924,7 +1957,7 @@ character_event = {
 }
 
 #character_event = {
-#    id = MP.204
+#    id = MP.205
 #    only_playable = yes
 #    hide_window = yes
 #    is_triggered_only = yes
@@ -1963,7 +1996,7 @@ character_event = {
 #}
 #
 #character_event = { #The Envoy has been recieved by the defenders of the Holy War
-#	id = MP.205
+#	id = MP.206
 #	title = "Religious Submision"
 #	desc = "We have recieved an envoy from [From.GetTitledFirstName]. The ruler has asked for perhaps a peacefull sollution. All they wish is for us to submit by giving tribute and converting to their religion."
 #	
@@ -1975,7 +2008,7 @@ character_event = {
 #	option = { #At last
 #		name = "Let u negociate"
 #		ai_chance = { factor = 100 }
-#		ROOT = { character_event = { id = MP.206 days = 5 } }
+#		ROOT = { character_event = { id = MP.207 days = 5 } }
 #	}
 #	option = { #At last
 #		name = "We wont make peace with infidels!"
@@ -1984,7 +2017,7 @@ character_event = {
 #}
 #
 #character_event = { #The Envoy returns with good news
-#	id = MP.206
+#	id = MP.207
 #	title = "Religious Submision"
 #	desc = "The Envoy returned with good news, the enemy is willing to submit. Do we accept their peacefull surrender."
 #	
@@ -1995,7 +2028,7 @@ character_event = {
 #	
 #	option = { #At last
 #		name = "Lets end this war"
-#		FROM = { character_event = { id = MP.207 days = 5 } }
+#		FROM = { character_event = { id = MP.208 days = 5 } }
 #		ai_chance = { factor = 100 }
 #	}
 #	option = { #At last
@@ -2005,7 +2038,7 @@ character_event = {
 #}
 #
 #character_event = { #The defender will do what the attacker asks
-#	id = MP.207
+#	id = MP.208
 #	title = "Religious Submision"
 #	desc = "An envoy arrived [From.GetTitledFirstName]. The ruler has asked for the submission of our lands by giving tribute and converting to their religion."
 #	

@@ -301,18 +301,40 @@ nomad_succession_cb = { #CB to shatter realm with high Threat
 
 	on_invalidation = {
 		ROOT = {
-			show_scope_change = no
-			#piety = 100
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
+			clear_wealth = yes
 		}
 	}
 
 	on_fail = {
-		ROOT = { prestige = -50 }
+		ROOT = {
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
+			clear_wealth = yes
+		}
 	}
 	
 	on_reverse_demand = {
 		FROM = {
 			prestige = 150
+		}
+		ROOT = {
+			any_demesne_title = {
+				unsafe_destroy_landed_title = THIS
+			}
+			death = {
+				death_reason = death_missing
+			}
+			clear_wealth = yes
 		}
 	}
 	
