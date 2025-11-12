@@ -335,6 +335,15 @@ targetted_decisions = {
 			FROM = {
 				dynasty = father_bastard
 				recalc_succession = yes
+				any_child = {
+					dynasty = PREV
+					any_child = {
+						dynasty = PREVPREV
+						any_child = {
+							dynasty = PREVPREVPREV
+						}
+					}
+				}
 			}
 		}
 	}
