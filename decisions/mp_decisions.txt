@@ -335,12 +335,30 @@ targetted_decisions = {
 			FROM = {
 				dynasty = father_bastard
 				recalc_succession = yes
-				any_child = {
-					dynasty = PREV
+				father = { # Dynasty of descendants should equal the original dynasty
 					any_child = {
-						dynasty = PREVPREV
+						limit = {
+							dynasty = PREV
+							NOT = { trait = bastard }
+						}
+
+						dynasty = FROM
+
 						any_child = {
-							dynasty = PREVPREVPREV
+							limit = {
+								dynasty = PREVPREV
+								NOT = { trait = bastard }
+							}
+
+							dynasty = FROM
+
+							any_child = {
+								limit = {
+									dynasty = PREVPREVPREV
+									NOT = { trait = bastard }
+								}
+								dynasty = FROM
+							}
 						}
 					}
 				}
