@@ -1710,6 +1710,31 @@ decisions = {
 		}
 
 		effect = {
+			any_artifact = {
+				limit = { artifact_type = crown_byzantine }
+				save_event_target_as = take_crown_byzantine
+			}
+			event_target:take_crown_byzantine = {
+				transfer_artifact = {
+					from = PREV
+					to = ROOT
+				}
+			}
+			
+			add_artifact = crown_byzantine
+			add_claim = d_adrianopolis
+			add_claim = d_strymon
+			add_claim = d_thessalonika
+			prestige = 500
+			give_nickname = nick_the_restorer
+			spawn_unit = {
+				province = 496
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}			
 			custom_tooltip = {
 				text = restore_byzantine_empire_TT
 
@@ -1723,12 +1748,12 @@ decisions = {
 				}
 
 				grant_title = e_byzantium
-
-				c_byzantion = {
-					location = {
-						ROOT = {
-							capital = PREV
-						}
+				
+				ROOT = {
+					c_byzantion = {
+						grant_title = PREV
+						usurp_title = PREV
+						ROOT = { capital = PREV }
 					}
 				}
 

@@ -4,6 +4,7 @@ decisions = {
 		is_high_prio = yes
 
 		potential = {
+			culture_group = central_germanic
 			is_playable = yes
 			primary_title = {
 				higher_tier_than = DUKE
@@ -108,11 +109,11 @@ decisions = {
 					#d_mecklemburg = { de_jure_liege = k_germany }
 					
 					#Bavarian Land
-					d_nordgau = { de_jure_liege = k_germany }
-					d_niederbayern = { de_jure_liege = k_germany }
-					d_oberbayern = { de_jure_liege = k_germany }
-					d_tyrol = { de_jure_liege = k_germany }
-					d_osterreich = { de_jure_liege = k_germany }
+					#d_nordgau = { de_jure_liege = k_germany }
+					#d_niederbayern = { de_jure_liege = k_germany }
+					#d_oberbayern = { de_jure_liege = k_germany }
+					#d_tyrol = { de_jure_liege = k_germany }
+					#d_osterreich = { de_jure_liege = k_germany }
 
 					#To Pommerania
 					d_lauenburg = { de_jure_liege = k_pomerania }
@@ -191,7 +192,7 @@ decisions = {
 			prisoner = no
 			NOT = { trait = incapable }
 			prestige = 1000
-			realm_size = 180
+			realm_size = 250
 			has_landed_title = k_germany
 			conditional_tooltip = {
 				limit = {
@@ -304,7 +305,12 @@ decisions = {
 		is_high_prio = yes
 
 		potential = {
-			NOT = { start_date = 400.1.1 }
+			OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+				culture_group = north_germanic
+			}
+			NOT = { start_date == 400.1.1 }
 			independent = yes
 			capital_scope = { region = world_europe_west_brittania }
 			NOT = {

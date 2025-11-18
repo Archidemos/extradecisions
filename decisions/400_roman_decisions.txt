@@ -128,7 +128,7 @@ decisions = {
 		ai_check_interval = 1
 		
 		potential = {
-			start_date = 400.1.1
+			start_date == 400.1.1
 			NOT = { has_global_flag = roman_crisis_3_taken }
 			has_landed_title = e_west_rome
 			has_character_modifier = rome_crisis_3
@@ -311,13 +311,13 @@ decisions = {
 		ai_check_interval = 12
 		
 		potential = {
+			start_date == 400.1.1
+			date >= 481.1.1
 			NOT = { has_global_flag = formed_germania }
 			culture_group = central_germanic
 			NOT = { culture = old_frankish }
 		}
 		allow = {
-			start_date == 400.1.1
-			date >= 481.1.1
 			ROOT = { tier = KING }
 			completely_controls = k_franconia
 			completely_controls = k_saxony
@@ -380,12 +380,12 @@ decisions = {
 		ai_check_interval = 12
 		
 		potential = {
+			start_date == 400.1.1
+			date >= 481.1.1
 			NOT = { has_global_flag = formed_arabia }
 			culture = old_arabic
 		}
 		allow = {
-			start_date == 400.1.1
-			date >= 481.1.1
 			ROOT = { tier = KING }
 			completely_controls = k_oman
 			completely_controls = k_yemen

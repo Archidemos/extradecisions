@@ -1212,9 +1212,9 @@ NMilitary = {
 	LEVY_MAINTENANCE_FACTOR = 1.5,					-- General maintenance factor for levy troops
 	HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE = 0.30,
 	HOLDING_LEVY_SIZE_OWNER_MARTIAL_MULT = 0.025,	-- Levy size modifier: Each point of the holding owner's Martial skill is multiplied with this and added to HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE
-	MERCENARY_MAINTENANCE_FACTOR = 3.0,				-- Maintenance factor for NORMAL mercenary units
+	MERCENARY_MAINTENANCE_FACTOR = 2.0,				-- Maintenance factor for NORMAL mercenary units
 	MERCENARY_VASSAL_MAINTENANCE_FACTOR = 0.5,		-- Maintenance factor for VASSALIZED mercenary units
-	MERCENARY_HIRE_COST_FACTOR = 0.1,				-- Hire cost factor for mercenary units
+	MERCENARY_HIRE_COST_FACTOR = 0.3,				-- Hire cost factor for mercenary units
 	HOLY_ORDER_HIRE_COST_FACTOR = 0.25,				-- Conversion of nominal gold cost to piety cost when hiring Holy Orders
 	HOLY_ORDER_DYNASTY_HIRE_COST_FACTOR = 0.25,		-- Reduction of cost if the Holy Order is controlled by a dynasty member
 	VASSAL_MERC_HIRE_COST_FACTOR = 0.125,			-- Fraction of nominal hire cost when hiring vassal mercenaries OR Holy Orders
@@ -1345,7 +1345,7 @@ NMilitary = {
 	LIEGE_LEVY_VICE_ROYALTY_MULTIPLIER = 0.8,		-- Liege levy multiplier for viceroy vassals
 
 	LIGHT_INFANTRY_MORALE = 2,
-	LIGHT_INFANTRY_MAINTENANCE = 0.50,
+	LIGHT_INFANTRY_MAINTENANCE = 1,
 	LIGHT_INFANTRY_PHASE_SKIRMISH_ATTACK = 1.25,
 	LIGHT_INFANTRY_PHASE_MELEE_ATTACK = 1,
 	LIGHT_INFANTRY_PHASE_PURSUE_ATTACK = 2,
@@ -1365,7 +1365,7 @@ NMilitary = {
 	HEAVY_INFANTRY_GRAPHICAL_FACTOR = 1.25,
 
 	PIKEMEN_MORALE = 5,
-	PIKEMEN_MAINTENANCE = 3.5,
+	PIKEMEN_MAINTENANCE = 4,
 	PIKEMEN_PHASE_SKIRMISH_ATTACK = 0.1,
 	PIKEMEN_PHASE_MELEE_ATTACK = 4,
 	PIKEMEN_PHASE_PURSUE_ATTACK = 0.2,
@@ -1395,7 +1395,7 @@ NMilitary = {
 	KNIGHTS_GRAPHICAL_FACTOR = 3,
 
 	ARCHERS_MORALE = 2,
-	ARCHERS_MAINTENANCE = 1.5,
+	ARCHERS_MAINTENANCE = 3,
 	ARCHERS_PHASE_SKIRMISH_ATTACK = 4,
 	ARCHERS_PHASE_MELEE_ATTACK = 0.5,
 	ARCHERS_PHASE_PURSUE_ATTACK = 2,
@@ -1405,7 +1405,7 @@ NMilitary = {
 	ARCHERS_GRAPHICAL_FACTOR = 0.1,
 
 	SPECIAL_TROOPS_MORALE = 5,
-	SPECIAL_TROOPS_MAINTENANCE = 2,
+	SPECIAL_TROOPS_MAINTENANCE = 3,
 	SPECIAL_TROOPS_PHASE_SKIRMISH_ATTACK = 4,
 	SPECIAL_TROOPS_PHASE_MELEE_ATTACK = 3,
 	SPECIAL_TROOPS_PHASE_PURSUE_ATTACK = 7,
