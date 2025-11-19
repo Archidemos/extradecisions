@@ -15,13 +15,6 @@ short = {
 
 	combat_rating = -5
 	sex_appeal_opinion = -5
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }
 tiny = {
 	#birth = 15
@@ -59,13 +52,6 @@ comely = {
 	male_compliment = COMPL_CHARMER
 	male_compliment_adj = COMPL_HANDSOME
 	child_compliment_adj = COMPL_PRETTY
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }
 homely = {
 	#birth = 100
@@ -77,13 +63,6 @@ homely = {
 		ugly
 		comely
 		fair
-	}
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
 	}
 }
 
@@ -107,13 +86,6 @@ bright = {
 	learning = 1
 
 	ai_rationality = 7
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }
 dim = {
 	#birth = 100
@@ -134,13 +106,6 @@ dim = {
 	learning = -1
 
 	ai_rationality = -7
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }
 
 # Extra tiers for strength (weak & strong also on spectrum):
@@ -158,13 +123,6 @@ burly = {
 	health = 0.25
 	sex_appeal_opinion = 5
 	tribal_opinion = 5
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }
 delicate = {
 	#birth = 100 # EMF
@@ -180,11 +138,4 @@ delicate = {
 	combat_rating = -10
 	sex_appeal_opinion = -5
 	tribal_opinion = -5
-
-	is_visible = {
-		OR = {
-			emf_hidden = yes
-			has_game_rule = { name = intermediate_genetic_traits value = visible }
-		}
-	}
 }

@@ -358,8 +358,10 @@ RETTYPE_CUL_NOR =
 	
 	potential = {
 		is_nomadic = no
-		culture = norse
-		culture = icelandic
+		OR = {
+			culture = norse
+			culture = icelandic
+		}
 	}
 	
 	modifier = {
@@ -653,28 +655,16 @@ RETTYPE_CUL_VENETIAN = {
 	
 	potential = {
 		is_nomadic = no	
-		culture = tuscan
-	}
-	
-	modifier = {
-		pikemen_defensive = 0.35
-	}
-}
-
-RETTYPE_CUL_VENETIAN = {
-	first_type = 2
-	first_amount = 400
-	
-	potential = {
-		is_nomadic = no	
 		OR = {
 			culture = venetian
 			culture = dalmatian
+			culture = tuscan
 		}
 	}
 	
 	modifier = {
 		pikemen_offensive = 0.35
+		pikemen_defensive = 0.35
 		pikemen_morale = 0.35
 	}
 }
@@ -924,26 +914,26 @@ RETTYPE_CUL_IRISH =
 	}
 }
 
-RETTYPE_CUL_CELTIC = 
-{
-	first_type = 0
-	first_amount = 300
+# RETTYPE_CUL_CELTIC = 
+# {
+	# first_type = 0
+	# first_amount = 300
 	
-	second_type = 2
-	second_amount = 200	
+	# second_type = 2
+	# second_amount = 200	
 	
-	potential = {
-		is_nomadic = no
-		culture = new_celtic
-	}
+	# potential = {
+		# is_nomadic = no
+		# culture = new_celtic
+	# }
 	
-	modifier = {
-		pikemen_offensive = 0.4
-		pikemen_morale = 0.2
-		light_infantry_offensive = 0.4
-		light_infantry_defensive = 0.2
-	}
-}
+	# modifier = {
+		# pikemen_offensive = 0.4
+		# pikemen_morale = 0.2
+		# light_infantry_offensive = 0.4
+		# light_infantry_defensive = 0.2
+	# }
+# }
 
 RETTYPE_CUL_ETHIO = 
 {
