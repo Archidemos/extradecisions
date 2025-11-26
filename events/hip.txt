@@ -469,8 +469,8 @@ character_event = {
 			e_hip = { copy_title_history = e_null }
 			# Abdicate to my new daughter:
 			save_event_target_as = emf_abdicate_real_heir
-			ROOT = { emf_willfully_abdicate = yes }
-			emf_switch_to_feudal_gov = yes
+			#ROOT = { emf_willfully_abdicate = yes }
+			#emf_switch_to_feudal_gov = yes
 			character_event = { id = hip.6 } # Create temporary title and give nickname
 			character_event = { id = hip.7 } # Inherit state from previous Isis
 		}
@@ -498,7 +498,7 @@ character_event = {
 			e_hip = { save_global_event_target_as = duat }
 		}
 
-		add_character_modifier = { name = emf_isis duration = -1 }
+		#add_character_modifier = { name = emf_isis duration = -1 }
 
 		# Create a new temporary title to lock-out most diplomatic actions
 		create_title = {
