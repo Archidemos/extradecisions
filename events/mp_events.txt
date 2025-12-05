@@ -1849,12 +1849,38 @@ character_event = {
     }
 }
 
-character_event = { #Event for everyone about the formation
+character_event = { #Event to grant Nomad Succession Nerf to players
 	id = MP.203
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
+		has_game_rule = {
+			name = nerf_nomad_rule
+			value = player_only
+		}
+		ROOT = { is_nomadic = yes }
+		ROOT = { ai = no }
+		ROOT = { independent = yes }
+		NOT = { has_landed_title = e_mongol_empire }
+		NOT = { has_landed_title = e_golden_horde }
+	}
+	
+	immediate = {
+		current_heir = { character_event = { id = MP.205 days = 2 } }
+	}
+}
+
+character_event = { #Event to grant Nomad Succession Nerf to anyone
+	id = MP.204
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_game_rule = {
+			name = nerf_nomad_rule
+			value = on
+		}
 		ROOT = { is_nomadic = yes }
 		ROOT = { independent = yes }
 		NOT = { has_landed_title = e_mongol_empire }
@@ -1862,12 +1888,12 @@ character_event = { #Event for everyone about the formation
 	}
 	
 	immediate = {
-		current_heir = { character_event = { id = MP.204 days = 2 } }
+		current_heir = { character_event = { id = MP.205 days = 2 } }
 	}
 }
 
 character_event = {
-	id = MP.204
+	id = MP.205
 	title = "Nomadic Succession"
 	desc = "After the death of your predicesor, your rivals clans have been growing ever so ambitious and figured that now is the time to strike."
 	
@@ -1952,6 +1978,79 @@ character_event = {
 					}
 				}
 			}
+		}
+	}
+}
+
+character_event = { #Event to grant Feudal Succession Nerf to players
+	id = MP.206
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_game_rule = {
+			name = nerf_succession_rule
+			value = player_only	
+		}
+		ROOT = { is_nomadic = no }
+		ROOT = { is_feudal = yes }
+		ROOT = { ai = no }
+		ROOT = { higher_tier_than = DUKE }
+	}
+	
+	immediate = {
+		current_heir = { character_event = { id = MP.208 days = 2 } }
+	}
+}
+
+character_event = { #Event to grant Feudal Succession Nerf to anyone
+	id = MP.207
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_game_rule = {
+			name = nerf_succession_rule
+			value = on
+		}
+		ROOT = { is_nomadic = no }
+		ROOT = { is_feudal = yes }
+		ROOT = { higher_tier_than = DUKE }
+	}
+	
+	immediate = {
+		current_heir = { character_event = { id = MP.208 days = 2 } }
+	}
+}
+
+character_event = {
+	id = MP.208
+	title = "Feudal Succession"
+	desc = "After the death of your predicesor, your subjects have been growing ever so weary and are perhaps noticing opportunity."
+	
+	picture = GFX_evt_council_quarrelling
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	#trigger = {
+	#	ROOT = { is_nomadic = yes }
+	#	ROOT = { independent = yes }
+	#}
+	
+	#immediate = {
+	#	current_heir = { save_event_target_as = horde_defender }
+	#}
+
+	option = {
+		name = "Our Dynasty will prevail!"
+		scaled_prestige = {
+			value = -2
+		}
+		add_character_modifier = {
+			name = feudal_succession
+			years = 4
+			inherit = yes
 		}
 	}
 }

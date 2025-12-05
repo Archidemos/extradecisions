@@ -267,7 +267,7 @@ title_commander = {
 							NOT = { has_character_modifier = refusing_to_lead }
 							NOR = {
 								has_job_title = job_chancellor
-								#has_job_title = job_marshal
+								has_job_title = job_marshal
 								has_job_title = job_treasurer
 								has_job_title = job_spymaster
 								has_job_title = job_spiritual
@@ -284,6 +284,38 @@ title_commander = {
 		add_character_modifier = {
 			name = title_commander_modifier
 			duration = -1
+		}
+		if = {
+			limit = {
+				liege = {
+					NOT = {
+						has_assigned_minor_title = {
+							title = title_knight
+							count >= 6
+						}
+					}
+				}
+				can_hold_title = title_knight
+				religion_group = christian
+				NOT = { has_minor_title = title_knight }
+			}
+			give_minor_title = title_knight
+		}
+		if = {
+			limit = {
+				liege = {
+					NOT = {
+						has_assigned_minor_title = {
+							title = title_knight_muslim
+							count >= 6
+						}
+					}
+				}
+				can_hold_title = title_knight_muslim
+				religion_group = muslim
+				NOT = { has_minor_title = title_knight_muslim }
+			}
+			give_minor_title = title_knight_muslim
 		}
 		if = {
 			limit = {

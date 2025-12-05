@@ -7,6 +7,7 @@ decisions = {
 		potential = {
 			NOT = { has_character_flag = ar_inviting_great_character }
 			NOT = { has_character_flag = picking_character_1_ar }
+			NOT = { is_tribal = yes }
 		}
 		
 		allow = {
@@ -56,13 +57,19 @@ decisions = {
 		}
 		
 		allow = {
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 		}
 		
 		effect = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			create_character = {
 				dynasty = random
 				culture = ROOT
@@ -124,13 +131,19 @@ decisions = {
 		}
 		
 		allow = {
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 		}
 		
 		effect = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			create_character = {
 				dynasty = random
 				culture = ROOT
@@ -183,7 +196,10 @@ decisions = {
 		
 		allow = {
 			prestige = 500
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			NOT = {
 				has_character_modifier = in_seclusion
 			}
@@ -192,7 +208,10 @@ decisions = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
 			prestige = -500
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			hidden_tooltip = {
 				random_list = {
 					50 = {
@@ -529,7 +548,10 @@ decisions = {
 			has_character_flag = ar_inviting_great_character
 		}
 		allow = {
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			NOT = {
 				has_character_modifier = in_seclusion
 			}
@@ -537,7 +559,10 @@ decisions = {
 		effect = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			create_character = {
 				random_traits = yes
 				dynasty = random
@@ -678,7 +703,10 @@ decisions = {
 			has_character_flag = ar_inviting_great_character
 		}
 		allow = {
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			NOT = {
 				has_character_modifier = in_seclusion
 			}
@@ -686,7 +714,10 @@ decisions = {
 		effect = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			create_character = {
 				random_traits = yes
 				dynasty = random
@@ -829,7 +860,10 @@ decisions = {
 			}
 		}
 		allow = {
-			scaled_wealth = 1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			NOT = {
 				has_character_modifier = in_seclusion
 			}
@@ -837,7 +871,10 @@ decisions = {
 		effect = {
 			clr_character_flag = ar_inviting_great_character
 			clr_character_flag = picking_character_2_ar
-			scaled_wealth = -1.00
+			scaled_wealth = {
+				value = 1.00
+				min = -350
+			}
 			create_character = {
 				random_traits = yes
 				dynasty = actually_culture
