@@ -12307,17 +12307,33 @@ pagan_holy_war = {
 				detract_grace_super_huge_effect = yes 
 			}
 		}
-		ROOT = {
-			add_character_modifier = {
-				name = war_cooldown
-				years = 2
-				#hidden = yes
-				inherit = yes
+		if = {
+			limit = {
+				has_game_rule = {
+					name = nerf_holy_war_rule
+					value = on
+				}
+			}
+			ROOT = {
+				add_character_modifier = {
+					name = war_cooldown
+					years = 2
+					#hidden = yes
+					inherit = yes
+				}
 			}
 		}
 	}
 	
 	can_use_gui = {
+		ROOT = { 
+			NOT = {
+				has_game_rule = {
+					name = nerf_holy_war_rule
+					value = full_off
+				}
+			}
+		}
 		ROOT = { NOT = { has_character_modifier = war_cooldown } }
 	}
 	
