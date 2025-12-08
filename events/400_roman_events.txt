@@ -3136,7 +3136,7 @@ narrative_event = { #Event when the Frankish win the war
 		k_france = {
 			set_name = "Francia"
 			adjective = "Frankish"
-			vice_royalty = no
+			add_law = vice_royalty_0
 		}
 		c_ile_de_france = {
 			grant_title = PREV
@@ -5092,7 +5092,7 @@ narrative_event = {	#Ostrogoths invade Carinthia
 			has_landed_title = e_west_rome
 			OR = {
 				has_landed_title = k_carinthia
-				completely_controls = c_kranten
+				completely_controls = c_karnten
 			}
 			NOT = { culture = ostrogothic }
 			NOT = { has_global_flag = ostrogothic_invade_carinthia }
