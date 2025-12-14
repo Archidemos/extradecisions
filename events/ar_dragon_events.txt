@@ -1,0 +1,1321 @@
+namespace = DRAG
+
+narrative_event = { #Wondering about Dragon Egg
+	title = "Mythical Creature"
+	desc = "As you are strolling arround your palace and are borred out of your mind, you start thinking about fantasies or myths weither they are true or not, specifically about dragons. You wonder more and more and eventually get the realisation that you perhaps should start trying to find this mythical creature after reading a book about it which faguely explains how to find dragons. You summon your council and propose this redicilous request in which you want to start preperations for this trip."
+	id = DRAG.1
+	border = GFX_event_narrative_frame_religion
+	picture = GFX_evt_bloodlines
+
+	only_playable = yes
+	capable_only = yes
+	prisoner = no
+	min_age = 16
+
+	hide_from = yes
+	hide_new = yes
+
+	trigger = {
+		OR = {
+			ai = no
+			has_game_rule = {
+				name = supernatural_events
+				value = unrestricted
+			}
+		}
+		NOR = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+			has_character_flag = eternal_life_events
+		}
+		is_inaccessible_trigger = no
+	}
+
+	mean_time_to_happen = {
+		months = 9000
+		
+		modifier = {
+			factor = 0.3
+			trait = mystic
+		}
+		modifier = {
+			factor = 0.5
+			trait = shrewd
+		}
+		modifier = {
+			factor = 0.5
+			trait = crusader
+		}
+		modifier = {
+			factor = 0.5
+			trait = berserker
+		}
+		modifier = {
+			factor = 0.5
+			trait = scholar
+		}
+		modifier = {
+			factor = 0.9
+			trait = quick
+		}
+		modifier = {
+			factor = 0.9
+			trait = genius
+		}
+		modifier = {
+			factor = 0.9
+			trait = strong
+		}
+		modifier = {
+			factor = 0.9
+			trait = brave
+		}
+		modifier = {
+			factor = 0.9
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.9
+			trait = lunatic
+		}
+		modifier = {
+			factor = 0.9
+			trait = possessed
+		}
+		modifier = {
+			factor = 0.9
+			trait = hunter
+		}
+	}
+
+	immediate = {
+	}
+
+	option = { 	#Summon the council and prepare the trip
+		name = "Lets try finding this creature"
+		narrative_event = {
+			id = DRAG.2
+			days = 10
+			tooltip = "You summon your council and prepare for the trip"
+		}
+	}
+
+	option = { #You back down
+		name = "I have better things to do"
+		custom_tooltip = { text = EVTOPTC_RIP_21000_TOOLTIP }
+		if = {
+			limit = { NOT = { trait = content } }
+			add_trait = content
+		}
+	}
+}
+
+
+narrative_event = { #Planning a trip
+	title = "Planning the trip"
+	id = DRAG.2
+	desc = "Days went by and it seems that your council members have prepares a small force and supplies for this specific hunt. This is your last chance to back down before you commit yourself into trying to find a dragon."
+	picture = GFX_evt_council
+	
+	border = GFX_event_narrative_frame_religion
+	is_triggered_only = yes
+	hide_from = yes
+
+	option = {
+		name = "I shall find this dragon"
+		narrative_event = { id = DRAG.3 days = 10 }
+	}
+
+	option = { #You back down
+		name = "Maybe it isnt worth it after all"
+		add_trait = craven
+	}
+}
+
+narrative_event = { #Trip starts with army
+	id = DRAG.3
+	title = "The army marches"
+	desc = "You have decided the march forward unknowingly where to go, you search from farmlands to mountains for a cave which could harbor a dragon that is awaiting. However, what if this whole trip is a waste of time and resources. What if we cannot find this dragon. What if this dragon doesnt even exsist. We could turn arround any time, or we march forward to try finding this cave"
+	picture = "GFX_evt_large_army"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "We march forward, no matter what."
+		add_trait = travelling
+		hidden_tooltip = {
+			random_list = {
+				65 = {
+					narrative_event = { id = DRAG.4 days = 30 } #The Cave is found
+				}
+				35 = {
+					narrative_event = { id = DRAG.5 days = 30 } #You get no where
+				}
+			}
+		}
+	}
+	option = { #You back down
+		name = "Turn the army around!"
+		add_trait = craven
+		add_trait = dull
+	}
+}
+
+narrative_event = { #Cave is not found
+	id = DRAG.4
+	title = "A Pointless March"
+	desc = "Days went passed and we got no where. The men are getting hopeless, as are you. This whole trip was all for nothing, this would not make sense. You know these lands and know nothing of a cave exsisting. You turn back home dissapointed, all tought you do question as of where that book even came from and why it even has this information.."
+	picture = "GFX_evt_campfire_hf"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #You back down
+		name = "This is pointless.."
+		hidden_tooltip = { remove_trait = travelling }
+		random_list = {
+			60 = { add_trait = craven }
+			30 = { add_trait = slothful }
+			10 = { add_trait = depressed }
+		}
+		prestige = -250
+	}
+}
+
+narrative_event = { #Cave is found
+	id = DRAG.5
+	title = "The Cave"
+	desc = "After marching for many days, your scouts spot a cave further ahead. However, you swore that there is not a cave here since these lands are very familiar to you. Regardless, you are happy to have found this cave. As you approach the cave, you start to feel uneasy. Perhaps its not worth entering this cave, or you push on to see what is inside this cave. We could find anything in it, what could be inside..."
+	picture = "GFX_evt_sand_desert"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "Stay cautious, and move forward."
+		hidden_tooltip = {
+			random_list = {
+				65 = {
+					narrative_event = { id = DRAG.6 days = 20 } #The Cave is empty
+				}
+				20 = {
+					narrative_event = { id = DRAG.7 days = 20 } #The Cave has dinosaur remains
+				}
+				20 = {
+					narrative_event = { id = DRAG.8 days = 20 } #The Cave has a dragon
+				}
+			}
+		}
+	}
+	option = { #You back down
+		name = "This cave is giving me the creeps."
+		add_trait = craven
+		hidden_tooltip = { remove_trait = travelling }
+		random_list = {
+			60 = { add_trait = depressed }
+			30 = { add_trait = slothful }
+			10 = { add_trait = greedy }
+		}
+		prestige = -500
+	}
+}
+
+narrative_event = { #Cave is empty
+	id = DRAG.6
+	title = "Empty Promises"
+	desc = "At last, it seems that this cave is empty and has nothing inside of it. This whole trip was for nothing. All tought, you could've sworn that you have never seen this cave before... Maybe i was not paying attention that well. Regardless, time to head back home."
+	picture = "GFX_evt_sand_desert"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #You back down
+		name = "Let's go home.."
+		hidden_tooltip = { remove_trait = travelling }
+		random_list = {
+			60 = { add_trait = depressed }
+			30 = { add_trait = stressed }
+			10 = { add_trait = wroth }
+		}
+		
+	}
+}
+
+narrative_event = { #The Cave has dinosaur remains
+	id = DRAG.7
+	title = "An Unusual Skeleton"
+	desc = "As we went deeper in the cave, we have found something at last. Unfortunate, it is not what we are looking for. You have found a skeleton of a massive creature that is unknown in this world. Could it be the skeleton of a dragon, or perhaps of a other creature that used to live a long while ago. Regardless, what shall we do with these remains. We could bring it back hope to have as souvenir, or we could leave the beast be."
+	picture = "GFX_evt_sand_desert"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Take the bones home
+		name = "These bones are amazing, let's take them."
+		prestige = 1000
+		hidden_tooltip = { remove_trait = travelling }
+		add_character_modifier = {
+			name = dinosaur_remains
+			duration = -1
+			inherit = yes
+		}
+	}
+	option = { #You back down
+		name = "It is just a dead beast.."
+		hidden_tooltip = { remove_trait = travelling }
+		piety = 500
+	}
+}
+
+narrative_event = { #Dragon is found
+	id = DRAG.8
+	title = "The Dragon"
+	desc = "You and your men cannot belive your eyes as deeper in the cave, you are face to face with a real dragon. With its warmth surrounding its body, its sharp teeth, and its overal body, this is an actual dragon. The dragon however seems calm, like it is giving us a chance to back off. This could be dangerous and we could most likely fail, or we risk it all and give our lifes for this comming battle. Do we risk fighting this mighty beast?"
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Fight the Dragon
+		name = "We came this far, onwards men!"
+		prestige = 1000
+		hidden_tooltip = {
+			random_list = {
+				65 = {
+					narrative_event = { id = DRAG.9 days = 2 } #Dragon defeats you
+				}
+				20 = {
+					narrative_event = { id = DRAG.11 days = 2 } #Dragon is at your mercy
+				}
+			}
+		}
+	}
+	option = { #Tame the dragon in peace
+		name = "Perhaps it needs gentleness.."
+		piety = 1000
+		trigger = { 
+			learning = 15
+		}
+		tooltip_info = learning
+		
+		hidden_tooltip = {
+			random_list = {
+				60 = {
+					narrative_event = { id = DRAG.10 days = 2 } #Dragon defeats you
+				}
+				30 = {
+					narrative_event = { id = DRAG.11 days = 2 } #Dragon is at your mercy
+				}
+			}
+		}
+	}
+	option = { #Back down
+		name = "We cannot risk our lifes."
+		add_trait = craven
+		hidden_tooltip = { remove_trait = travelling }
+		prestige = -1000
+	}
+}
+
+narrative_event = { #Dragon defeats you
+	id = DRAG.9
+	title = "Hell's Mercy"
+	desc = "Your men and yourself have fought bravely against the dragon but at last to no avail. The Dragon has defeated you and you are not at its mercy. Regardless of you dying or not, you at least die knowing this beast exsists and knowing that you were not crazy after all. You prepare yourself for the worst to come."
+	picture = "GFX_evt_burning_man_hf"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Take the bones home
+		name = "God have mercy..."
+		random_list = {
+			55 = { #You ride the dragon
+				add_trait = wounded
+			}
+			25 = { #You get hurt
+				add_trait = severely_injured
+			}
+			20 = { #You get hurt
+				death = { death_reason = death_accident_generic_beast }
+			}
+		}
+	}
+}
+
+narrative_event = { #Dragon defeats you learning
+	id = DRAG.10
+	title = "Hell's Mercy"
+	desc = "As you have tried to tame the dragon in peace, it seems that the dragon does not budge and gets more aggitated. It starts attacking you and your men from being aggitated. Regardless of you dying or not, you at least die knowing this beast exsists and knowing that you were not crazy after all. You prepare yourself for the worst to come."
+	picture = "GFX_evt_burning_man_hf"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Take the bones home
+		name = "God have mercy..."
+		random_list = {
+			60 = { #You ride the dragon
+				add_trait = wounded
+			}
+			25 = { #You get hurt
+				add_trait = severely_injured
+			}
+			15 = { #You get hurt
+				death = { death_reason = death_accident_generic_beast }
+			}
+		}
+	}
+}
+
+narrative_event = { #Dragon is at your mercy
+	id = DRAG.11
+	title = "Dragon Defeated"
+	desc = "It was no easy task but it is done, after many struggles, it seems that the dragon is finally surrendering itself after this fierce struggle that we miracously won. This mighty beast is now at your mercy, what should be done to this dragon."
+	picture = "GFX_evt_dragon_fire"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "We should tame it"
+		custom_tooltip = {
+			text = "You attempt to tame the dragon which will get you unique rewards"
+			hidden_tooltip = {
+				random_list = {
+					65 = {
+						narrative_event = { id = DRAG.12 days = 5 } #The dragon flees
+					}
+					35 = {
+						narrative_event = { id = DRAG.15 days = 5 } #The dragon submits
+					}
+				}
+			}
+		}
+	}
+	option = { #Slay the dragon
+		name = "Kill this beast from Hell at once!"
+		custom_tooltip = {
+			name = "You will finish off the dragon which will get you unique rewards"
+			narrative_event = { id = DRAG.13 days = 1 } #You kill the dragon
+		}
+	}
+	option = { #Leave the dragon alone
+		name = "Its just an animal, leave it."
+		custom_tooltip = {
+			name = "You let the dragon live"
+			remove_trait = travelling
+		}
+		prestige = 1000
+		wealth = 250
+	}
+}
+
+narrative_event = { #The dragon flees
+	id = DRAG.12
+	title = "The Dragon flees"
+	desc = "Unfortunatly, as we have tried to subdue it and tame it, the dragon doesnt seem to be interested and tries to flee in the night sky. Who knows where he might go to.."
+	picture = "GFX_evt_dragon_fire"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "Unfortunate indeed.."
+		hidden_tooltip = { remove_trait = travelling }
+		add_trait = brave
+		prestige = -250
+	}
+}
+
+narrative_event = { #You slay the dragon
+	id = DRAG.13
+	title = "Dragon Slain"
+	desc = "The risk of having this dragon arround the world is too much. Therefore slaying it and putting an end to it is the better choice so the world can live on without this hellbeast."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "God's World can live on without Hell in it."
+		prestige = 5000
+		piety = 2500
+		wealth = 2500
+		create_bloodline = {
+			type = dragon_slayer_blood
+		}
+		add_trait = dragon_slayer
+		give_nickname = nick_the_dragonslayer
+		narrative_event = { id = DRAG.14 days = 2 }
+	}
+}
+
+narrative_event = { #You take it's remains back
+	id = DRAG.14
+	title = "Dragon Remains"
+	desc = "As your men are preparing to leave the cave, you notice the remains of the dragon and have an idea. Perhaps it could be an idea to bring these remains back home to experiment with it and perhaps create something with them."
+	picture = "GFX_evt_dragon_fire"
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "Lets grab these remains back home."
+		add_character_modifier = {
+			name = dragon_remains
+			duration = -1
+			inherit = yes
+		}
+		hidden_tooltip = { remove_trait = travelling }
+	}
+	option = { #At last
+		name = "It is done, and i will let it be."
+		hidden_tooltip = { remove_trait = travelling }
+	}
+}
+
+narrative_event = { #You tamed the dragon and head home
+	id = DRAG.15
+	title = "Dragon Tamed"
+	desc = "At last, the dragon seemed to have calmed down. After many attempts of trying to subdue it and calm it down, it seems that the dragon is finally willing to listen to you. Taming a dragon is not easy and is an achievement on its own. Now it is the time to head back home with the dragon to have it as a pet.. or more."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #At last
+		name = "Let's head home.."
+		custom_tooltip = {
+			text = "You can now attempt to Ride your Dragon and Rename your Dragon when you right click on your dragon"
+			remove_trait = travelling
+		}
+		create_character = {
+			dynasty = none
+			health = 10
+			age = 20
+			culture = dragon_culture
+			religion = pagan
+			attributes = {
+				martial = 50
+			}
+		}
+		new_character = {
+			add_character_modifier = { name = refusing_to_lead hidden = yes duration = -1 }
+			add_character_modifier = { name = unkillable_ai hidden = yes duration = -1 }
+			set_character_flag = no_court_invites
+			set_character_flag = ai_flag_refuse_conversion
+			add_friend = ROOT
+			add_trait = dragon
+		}
+
+	}
+}
+
+##############################
+### Dragon Rider events
+##############################
+
+character_event = { #You attempt to ride the dragon
+	id = DRAG.100
+	title = "Dragon Rider"
+	desc = "As you have tamed this dragon, perhaps it is time to put it to use instead of having it do nothing all day."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "Let's try.."
+		random_list = {
+			65 = { #You ride the dragon
+				character_event = { id = DRAG.102 days = 3 }
+			}
+			35 = { #You get hurt
+				character_event = { id = DRAG.101 days = 3 } #The Cave has dinosaur remains
+			}
+		}
+	}
+	option = { #You change your mind
+		name = "Maybe another time.."
+	}
+}
+
+character_event = { #The dragon hurts you
+	id = DRAG.101
+	title = "Dragon Rider"
+	desc = "As you have tried riding your dragon, it rejected you and hurt you in the proces. Perhaps its not ready yet."
+	picture = "GFX_evt_burning_man_hf"
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "This dragon could kill me!"
+		random_list = {
+			60 = { #You ride the dragon
+				add_trait = wounded
+			}
+			25 = { #You get hurt
+				add_trait = severely_injured
+			}
+			15 = { #You get hurt
+				death = { death_reason = death_accident_generic_beast }
+			}
+		}
+	}
+}
+
+character_event = { #The dragon wants you
+	id = DRAG.102
+	title = "Dragon Rider"
+	desc = "As you have tried riding your dragon, it accepts you as it trust you and allows you to ride the dragon and growing your bond ever so strong."
+	picture = "GFX_evt_dragon_fire"
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "The world will be mine."
+		give_nickname = nick_the_dragonrider
+		add_trait = dragon_rider
+		create_bloodline = {
+			type = dragon_rider_blood
+		}
+	}
+}
+
+##############################
+### Dragon Artifacts events
+##############################
+
+character_event = { #You grant the materials to your blacksmith
+	id = DRAG.200
+	title = "Dragon Smith"
+	desc = "A Blacksmith has been found that is well advanced with its skill and is willing to forge you your idea."
+	picture = "GFX_evt_weaponsmith"
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+
+    immediate = { #Selecting gender of the weapon smith
+    	hidden_effect = {
+    		job_marshal = {
+    			save_event_target_as = my_helpful_marshal
+    		}
+		    create_random_steward  = {
+				age = 45
+				random_traits = yes
+				female = no
+				dynasty = none
+				attributes = {
+					stewardship = 3
+				}
+				historical = yes
+			}
+		    new_character = {
+				save_event_target_as = smith
+				set_character_flag = ai_flag_refuse_marriage
+				set_character_flag = cannot_marry
+				set_character_flag = no_court_invites
+				will_not_marry_effect = yes
+			}
+			event_target:smith = {
+				health = 3
+        		ROOT = {
+        			trigger_switch = {
+	        			on_trigger = has_character_flag 
+	        			weaponsmith = { PREV = { give_nickname = nick_the_weaponsmith } }
+	        			armorsmith = { PREV = { give_nickname = nick_the_armorsmith } }
+	        		}
+        		}
+        		random_list = { #Stewardship
+        			15 = { change_stewardship = 3 }
+        			25 = { change_stewardship = 5 }
+        			20 = {
+        				change_stewardship = 7
+        				artisan_craftsmen_bloodline_increase_score = yes
+        			}
+        			10 = {
+        				change_stewardship = 10
+        				artisan_craftsmen_bloodline_increase_score = yes
+        			}
+        		}
+        		random_list = { #Personality
+        			1 = { add_trait = greedy }
+        			1 = { add_trait = envious }
+        			1 = {
+        				add_trait = charitable
+        				artisan_craftsmen_bloodline_increase_score = yes
+        			}
+        			1 = {
+        				add_trait = diligent
+        				artisan_craftsmen_bloodline_increase_score = yes
+        			}
+        			1 = { add_trait = deceitful }
+        		}
+        		random = {
+        			chance = 30
+        			modifier = {
+        				factor = 2
+        				trait = indulgent_wastrel
+        			}
+        			artisan_craftsmen_bloodline_increase_score = yes
+        			upgrade_education_effect = yes
+        		}
+			}
+    	}
+
+    	#Province for loc
+    	random_province = { 
+    		limit = { owner = { is_within_diplo_range = ROOT } }
+    		save_event_target_as = neighbor_province
+    	}
+    	random_demesne_province = {
+    		limit = { any_neighbor_province = { NOT = { owner = { character = ROOT } } } }
+    		random_neighbor_province = {
+    			limit = { NOT = { owner = { character = ROOT } } }
+    			save_event_target_as = neighbor_province
+    		}
+    	}
+    }
+
+	
+	option = { #Tame the dragon
+		name = "Give him the material"
+		character_event = { id = DRAG.201 days = 5 }
+	}
+}
+
+character_event = { #You grant the materials to your blacksmith
+	id = DRAG.201
+	desc = "As the Blacksmith has been preparing for the whole day, he is now ready to help and asks you "What would you like me to forge, my lord?""
+    picture = "GFX_evt_weaponsmith"
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { #Dragon Sword
+		name = "Forge me a Dragon Sword"
+		character_event = { id = DRAG.202 days = 10 }
+	}
+	option = { #Drgon Armor
+		name = "Forge me a Dragon Plate Armor"
+		character_event = { id = DRAG.203 days = 10 }
+	}
+	option = { #You change your mind
+		name = "Actually, i changed my mind.."
+	}
+}
+
+character_event = { #You make the Dragon Sword
+	id = DRAG.202
+	desc = "As you have tamed this dragon, perhaps it is time to put it to use instead of having it do nothing all day."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "It is beautifull"
+		remove_character_modifier = dragon_remains
+		add_artifact = dragon_sword
+	}
+}
+
+character_event = { #You make the Dragon Armor
+	id = DRAG.203
+	desc = "As you have tamed this dragon, perhaps it is time to put it to use instead of having it do nothing all day."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { #Tame the dragon
+		name = "It is beautifull"
+		remove_character_modifier = dragon_remains
+		add_artifact = dragon_plate_armor
+	}
+}
+
+##############################
+### Dragon Battle events
+##############################
+
+character_event = { #You command your dragon to breathe fire
+	id = DRAG.300
+	desc = "You stand in front of the battlefield, while one army is clashing onto the other one. We could use your dragon to burn our enemies.."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_friend = {
+			limit = {
+				trait = dragon
+				is_alive = yes
+			}
+			save_event_target_as = the_dragon
+		}
+	}
+	
+	option = { #The dragon attacks
+		name = "Fire!"
+		random_friend = {
+			limit = {
+				trait = dragon
+				is_alive = yes
+			}
+			random_list = {
+				80 = { #You ride the dragon
+					add_trait = wounded
+				}
+				15 = { #You get hurt
+					add_trait = severely_injured
+				}
+				5 = { #You get hurt
+					death = { death_reason = death_battle }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 75
+
+			modifier = { 
+				factor = 4
+				trait = ruthless
+			}
+			modifier = { 
+				factor = 3
+				trait = wroth
+			}
+			modifier = { 
+				factor = 3
+				trait = brave
+			}
+			modifier = { 
+				factor = 3
+				trait = cruel
+			}
+			modifier = { 
+				factor = 3
+				trait = lunatic
+			}
+			modifier = { 
+				factor = 0.25
+				trait = honorable
+			}
+			modifier = { 
+				factor = 0.33
+				trait = patient
+			}
+			modifier = { 
+				factor = 0.33
+				trait = kind
+			}
+			modifier = { 
+				factor = 0.33
+				trait = craven
+			}
+		}
+		if = {
+			limit = { 
+				is_ruler = yes
+				war = yes
+				OR = {
+					is_primary_war_attacker = yes
+					is_primary_war_defender = yes
+					independent = yes
+				}
+			}
+			any_current_enemy = {
+				limit = { 
+					at_location = ROOT
+					in_command = yes
+					prisoner = no
+					NOT = { can_use_dragon_abilities_trigger = yes }
+				}
+				if = {
+					limit = { 
+						ROOT = { martial < 10 }
+					}
+					troops = -0.025
+					morale = -0.15
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 10 martial < 15 }
+					}
+					troops = -0.025
+					morale = -0.2
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 15 martial < 20 }
+					}
+					troops = -0.05
+					morale = -0.25
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 20 martial < 25 }
+					}
+					troops = -0.05
+					morale = -0.3
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 25 martial < 30 }
+					}
+					troops = -0.1
+					morale = -0.35
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 30 martial < 35 }
+					}
+					troops = -0.1
+					morale = -0.4
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 35 martial < 40 }
+					}
+					troops = -0.15
+					morale = -0.45
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 40 martial < 45 }
+					}
+					troops = -0.15
+					morale = -0.5
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 45 martial < 50 }
+					}
+					troops = -0.2
+					morale = -0.55
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 50 martial < 55 }
+					}
+					troops = -0.2
+					morale = -0.6
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 55 }
+					}
+					troops = -0.25
+					morale = -0.65
+				}
+			}	
+			any_current_enemy = {
+				any_realm_character = {
+					limit = { 
+						at_location = ROOT
+						in_command = yes
+						prisoner = no
+						NOT = { can_use_dragon_abilities_trigger = yes }
+						NOT = { has_character_flag = dragon_fof_event }
+					}
+					if = {
+						limit = { 
+							ROOT = { martial < 10 }
+						}
+						troops = -0.025
+						morale = -0.15
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 10 martial < 15 }
+						}
+						troops = -0.025
+						morale = -0.2
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 15 martial < 20 }
+						}
+						troops = -0.05
+						morale = -0.25
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 20 martial < 25 }
+						}
+						troops = -0.05
+						morale = -0.3
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 25 martial < 30 }
+						}
+						troops = -0.1
+						morale = -0.35
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 30 martial < 35 }
+						}
+						troops = -0.1
+						morale = -0.4
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 35 martial < 40 }
+						}
+						troops = -0.15
+						morale = -0.45
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 40 martial < 45 }
+						}
+						troops = -0.15
+						morale = -0.5
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 45 martial < 50 }
+						}
+						troops = -0.2
+						morale = -0.55
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 50 martial < 55 }
+						}
+						troops = -0.2
+						morale = -0.6
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 55 }
+						}
+						troops = -0.25
+						morale = -0.65
+					}
+				}
+			}
+		}	
+		any_liege = {
+			limit = {
+				NOT = { character = ROOT }
+				war = yes
+				OR = {
+					is_primary_war_attacker = yes
+					is_primary_war_defender = yes
+					independent = yes
+				}
+			}
+			any_current_enemy = {
+				limit = { 
+					at_location = ROOT
+					in_command = yes
+					prisoner = no
+					NOT = { can_use_dragon_abilities_trigger = yes }
+					NOT = { has_character_flag = dragon_fof_event }
+				}
+				if = {
+					limit = { 
+						ROOT = { martial < 10 }
+					}
+					troops = -0.025
+					morale = -0.15
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 10 martial < 15 }
+					}
+					troops = -0.025
+					morale = -0.2
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 15 martial < 20 }
+					}
+					troops = -0.05
+					morale = -0.25
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 20 martial < 25 }
+					}
+					troops = -0.05
+					morale = -0.3
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 25 martial < 30 }
+					}
+					troops = -0.1
+					morale = -0.35
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 30 martial < 35 }
+					}
+					troops = -0.1
+					morale = -0.4
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 35 martial < 40 }
+					}
+					troops = -0.15
+					morale = -0.45
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 40 martial < 45 }
+					}
+					troops = -0.15
+					morale = -0.5
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 45 martial < 50 }
+					}
+					troops = -0.2
+					morale = -0.55
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 50 martial < 55 }
+					}
+					troops = -0.2
+					morale = -0.6
+				}
+				if = {
+					limit = { 
+						ROOT = { martial >= 55 }
+					}
+					troops = -0.25
+					morale = -0.65
+				}
+			}	
+			any_current_enemy = {
+				any_realm_character = {
+					limit = { 
+						at_location = ROOT
+						in_command = yes
+						prisoner = no
+						NOT = { can_use_dragon_abilities_trigger = yes }
+						NOT = { has_character_flag = dragon_fof_event }
+					}
+					if = {
+						limit = { 
+							ROOT = { martial < 10 }
+						}
+						troops = -0.025
+						morale = -0.15
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 10 martial < 15 }
+						}
+						troops = -0.025
+						morale = -0.2
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 15 martial < 20 }
+						}
+						troops = -0.05
+						morale = -0.25
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 20 martial < 25 }
+						}
+						troops = -0.05
+						morale = -0.3
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 25 martial < 30 }
+						}
+						troops = -0.1
+						morale = -0.35
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 30 martial < 35 }
+						}
+						troops = -0.1
+						morale = -0.4
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 35 martial < 40 }
+						}
+						troops = -0.15
+						morale = -0.45
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 40 martial < 45 }
+						}
+						troops = -0.15
+						morale = -0.5
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 45 martial < 50 }
+						}
+						troops = -0.2
+						morale = -0.55
+					}
+					if = {
+						limit = { 
+							ROOT = { martial >= 50 martial < 55 }
+						}
+						troops = -0.2
+						morale = -0.6
+					}
+					if = {
+						limit = { ROOT = { martial >= 55 } }
+						troops = -0.25
+						morale = -0.65
+					}
+				}	
+			}
+		}
+		#random = {
+		#	chance = 33
+		#	location = { province_event = { id = dragon.25 } }
+		#}
+	}
+	option = { #Cancel
+		name = "Maybe not"
+	}
+}
+
+character_event = { #You command your dragon to breathe fire on siege
+	id = DRAG.310
+	desc = "You stand in front of the settlement that you're sieging, however this is costing us valuable time. Perhaps it is better to use our dragons to burn down the settlement."
+	picture = "GFX_evt_dragon_fire"
+	sound = ar_dragon_roar
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { #The dragon attacks
+		name = "Burn the walls down!"
+		random_friend = {
+			limit = {
+				trait = dragon
+				is_alive = yes
+			}
+			random_list = {
+				90 = { #You ride the dragon
+					add_trait = wounded
+				}
+				5 = { #You get hurt
+					add_trait = severely_injured
+				}
+				5 = { #You get hurt
+					death = { death_reason = death_battle }
+				}
+			}
+		}
+		siege = {
+			enemy = {
+				if = {
+					limit = { ROOT = { martial < 10 } }
+					morale = -0.2
+					troops = -0.2
+				}
+				if = {
+					limit = { ROOT = { martial >= 10 martial < 15 } }
+					morale = -0.25
+					troops = -0.25
+				}
+				if = {
+					limit = { ROOT = { martial >= 15 martial < 20 } }
+					morale = -0.3
+					troops = -0.3
+				}
+				if = {
+					limit = { ROOT = { martial >= 20 martial < 25 } }
+					morale = -0.35
+					troops = -0.35
+				}
+				if = {
+					limit = { ROOT = { martial >= 25 martial < 30 } }
+					morale = -0.4
+					troops = -0.4 }
+				}
+				if = {
+					limit = { ROOT = { martial >= 30 martial < 35 } }
+					morale = -0.5
+					troops = -0.5
+				}
+				if = {
+					limit = { ROOT = { martial >= 35 martial < 40 } }
+					morale = -0.6
+					troops = -0.6
+				}
+				if = {
+					limit = { ROOT = { martial >= 40 martial < 45 } }
+					morale = -0.7
+					troops = -0.7
+				}
+				if = {
+					limit = { ROOT = { martial >= 45 martial < 50 } }
+					morale = -0.8
+					troops = -0.8
+				}
+				if = {
+					limit = { ROOT = { martial >= 50 martial < 55 } }
+					morale = -0.9
+					troops = -0.9
+				}
+				if = {
+					limit = { ROOT = { martial >= 55 } }
+					morale = -1.0
+					troops = -1.0
+				}
+			}
+		}
+	}
+	option = { #Cancel
+		name = "Maybe not.."
+	}
+}

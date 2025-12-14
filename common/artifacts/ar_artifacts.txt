@@ -1,4 +1,45 @@
 ###########################
+#### Dragon Artifacts #####
+###########################
+dragon_sword = {
+	quality = 4
+	martial = 2
+	monthly_character_prestige = 1
+	vassal_opinion = 5
+	combat_rating = 20
+	command_modifier = {
+		heavy_infantry = 0.15
+		morale_offence = 0.15
+		actual_light_infantry = 0.1
+	}
+	active = {
+		is_adult = yes
+	}
+	flags = { combat_weapon dragon sword created }
+	stacking = no
+	picture = "GFX_zweihander_sword"
+	slot = weapon
+}
+dragon_plate_armor = {
+	quality = 4
+	learning = 1
+	martial = 2
+	combat_rating = 15
+	monthly_character_prestige = 0.25
+	command_modifier = {
+		cavalry = 0.20
+		morale_defence = 0.15 
+	}
+	active = {
+		is_adult = yes
+	}
+	flags = { dragon armor }
+	picture = "GFX_suit_of_armor_gold"
+	stacking = no
+	slot = torso
+}
+
+###########################
 ### Christian Artifacts ###
 ###########################
 

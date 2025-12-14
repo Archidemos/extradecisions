@@ -1,0 +1,333 @@
+namespace = ABB
+
+character_event = {
+	id = ABB.10
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date == 867.1.1
+		is_save_game = no
+		NOT = { has_global_flag = abbasid_player_event_fired }
+    }
+	
+	immediate = {
+		set_global_flag = abbasid_player_event_fired
+		any_player = { narrative_event = { id = ABB.6 days = 5 } }
+		e_arabia = {
+			save_event_target_as = character_abbasid_crisis
+		}
+	}
+}
+
+character_event = {
+	id = ABB.1
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 867.1.1
+		is_save_game = no
+		dynasty = 101727
+		has_landed_title = e_arabia
+		religion_group = muslim
+	}
+	
+	immediate = {
+		set_global_flag = abbasid_crisis_1
+		set_global_flag = abbasid_crisis_2
+		set_global_flag = abbasid_crisis_3
+		add_character_modifier = { name = abbasid_curse_1 duration = -1 }
+		add_character_modifier = { name = abbasid_curse_2 duration = -1 }
+		add_character_modifier = { name = abbasid_curse_3 duration = -1 }
+	}
+}
+
+character_event = {
+	id = ABB.2
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		dynasty = 101727
+		has_landed_title = e_arabia
+		religion_group = muslim
+		has_global_flag = abbasid_crisis_1
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_arabia
+			}
+			add_character_modifier = { name = abbasid_curse_1 duration = -1 }
+	    }
+    }
+}
+
+character_event = {
+	id = ABB.3
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		dynasty = 101727
+		has_landed_title = e_arabia
+		religion_group = muslim
+		has_global_flag = abbasid_crisis_2
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_arabia
+			}
+			add_character_modifier = { name = abbasid_curse_2 duration = -1 }
+	    }
+    }
+}
+
+character_event = {
+	id = ABB.4
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		dynasty = 101727
+		has_landed_title = e_arabia
+		religion_group = muslim
+		has_global_flag = abbasid_crisis_3
+		independent = yes
+    }
+
+    immediate = {
+		if = {
+		    limit = {
+				has_landed_title = e_arabia
+			}
+			add_character_modifier = { name = abbasid_curse_3 duration = -1 }
+	    }
+    }
+}
+
+narrative_event = {
+	id = ABB.5
+	title = "Abbasid Stability"
+	desc = "This is unbelivable, it seems that the Abbasid Dynasty has mediated their internal crisis and are now standing stronger than ever. This could be a big problem for not only the neighbouring Christian realms but also the Muslim ones that could be the target of a Caliphal Subjugation. Who knows what the Abbasids will do next, now that they are united and strong."
+
+    is_triggered_only = yes
+	
+	picture = GFX_jerusalem_captured_muslims_soa
+	
+	option = {
+		name = EVTOPUMM.5
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = {
+	id = ABB.6
+	title = UMMNAME6
+	desc = UMMDESC6
+	hide_window = yes
+    is_triggered_only = yes
+	
+	portrait = character_abbasid_crisis
+	picture = GFX_evt_mecca_falls_soa
+	sound = ar_arabs_lose
+	
+    trigger = {
+		OR = {
+			start_date == 769.1.1
+			start_date == 867.1.1
+			start_date == 936.1.1
+		}
+		is_save_game = no
+    }
+	
+	immediate = {
+		clear_event_target = character_abbasid_crisis
+	}	
+	
+	option = {
+		name = EVTOPUMM.6
+	}
+}
+
+narrative_event = {
+	id = ABB.7
+	title = "Turkish Revolutionaries"
+	desc = "Horrible news my liege, It seems that an army consisting mostly of Turks has crossed Sus. As we are trying to stablize the realm, they have launched an invasion to overthrow you. You must defeat them quick!"
+	
+	picture = "GFX_evt_moors"
+	border = GFX_event_narrative_frame_war
+	sound = ar_crusade_shout
+
+    is_triggered_only = yes
+	
+	option = {
+		name = EVTOPUMM.7
+		create_character = {
+			#name="Rodrigo"
+			culture = turkish
+			religion = sunni
+			age = 28
+			dynasty = random
+			#add_trait = crusader
+			random_traits = yes
+			attributes = {
+				martial=9
+				diplomacy=8
+				intrigue=5
+				stewardship=7
+			}
+		}
+
+		new_character = {
+			save_event_target_as = abbasid_invader_mission
+			wealth = 1000
+			prestige = 500
+			piety = 500
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = weak
+			remove_trait = feeble
+			
+			create_title = {
+				name = "Turkish Coup Army"
+				adventurer = yes
+				tier = DUKE
+				landless = yes
+				culture = THIS
+				holder = THIS
+				temporary = yes
+			}
+			
+			spawn_unit = {
+				province = 2015
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+
+			spawn_unit = {
+				province = 2015
+				troops = {
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+					knights = { 1500 1500 }
+				}
+			}
+		}
+		
+		event_target:abbasid_invader_mission = {
+			unsafe_war = {
+				casus_belli = scripted_invasion_abbasid
+				target = ROOT
+				thirdparty_title = k_mesopotamia
+			}
+		}
+		
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+}
+
+character_event = {
+    id = ABB.20
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		NOT = { dynasty = 101727 }
+		has_landed_title = e_arabia
+    }
+
+    immediate = {
+		remove_character_modifier = abbasid_curse_1
+		remove_character_modifier = abbasid_curse_2
+		remove_character_modifier = abbasid_curse_3
+    }
+}
+character_event = {
+    id = ABB.21
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		dynasty = 101727
+		independent = no
+		NOT = { has_landed_title = e_arabia }
+    }
+
+    immediate = {
+		remove_character_modifier = abbasid_curse_1
+		remove_character_modifier = abbasid_curse_2
+		remove_character_modifier = abbasid_curse_3
+    }
+}
+
+character_event = {
+	id = ABB.100
+	title = "The Death of Al-Mu'tazz"
+	desc = "After the coup that the Turks has happend and refusing their demands, they have deposed you and imprisoned you. However, due to the cruel treatment they gave you. You seem to lose your strength to live from your wounds."
+    is_triggered_only = yes
+	
+	picture = GFX_evt_bloody_man
+	
+    trigger = {
+		start_date == 867.1.1
+		date = 869.1.1
+		character = c_34014
+    }
+	
+	option = {
+		name = "Allah have mercy.."
+		death = { death_reason = death_dungeon }
+		any_player = {
+			limit = {
+				religion_group = muslim 
+			}
+			narrative_event = { id = ABB.101 }
+		}
+	}
+}
+
+narrative_event = {
+	id = ABB.101
+	title = "A Gathering Fury"
+	desc = "It seems that the Caliph Al-Mu'tazz has died of his wounds while imprisoned by some Turks that attempted a coup and deposed of the Caliph. This is grim news for the Caliphate as it already went trough a civil war for the Abbasids to immediatly lose its leader. It seems that the sittuation in the Middle East is about to go worse than it already it."
+    is_triggered_only = yes
+	
+	portrait = character_abbasid_crisis
+	picture = GFX_evt_mecca_falls_soa
+	sound = ar_arabs_lose
+	
+	immediate = { 
+		e_arabia = {
+			save_event_target_as = character_abbasid_crisis
+		}
+	}
+	
+	option = {
+		name = EVTOPUMM.6
+	}
+}

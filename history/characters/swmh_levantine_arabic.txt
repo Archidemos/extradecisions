@@ -189,6 +189,15 @@
 				attrition = 1.0
 				earmark = start_troops
 			}
+			spawn_unit = {
+				province = 1591 # Erbil
+				owner = ROOT
+				#leader = ROOT
+				match_character = ROOT
+				match_mult = 0.24
+				attrition = 1.0
+				earmark = start_troops
+			}
 			create_character = {
 				random_traits = yes
 				dynasty = random
@@ -222,6 +231,30 @@
 				age = 31
 				attributes = {
 					martial = 6
+				}
+				trait = skilled_tactician
+				trait = aggressive_leader
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1591 # Erbil
+					owner = ROOT
+					#leader = THIS
+					match_character = ROOT
+					match_mult = 0.23
+					attrition = 1.0
+					earmark = start_troops
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 35
+				attributes = {
+					martial = 9
 				}
 				trait = skilled_tactician
 				trait = aggressive_leader

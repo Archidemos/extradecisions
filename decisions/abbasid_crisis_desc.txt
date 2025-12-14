@@ -1,0 +1,166 @@
+decisions = {
+	end_abbasid_crisis_1 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = abbasid_crisis_1_taken }
+			independent = yes
+			AND = {
+				OR = {
+					has_landed_title = e_arabia
+					has_character_modifier = abbasid_curse_1
+				}
+				religion_group = muslim
+				has_global_flag = abbasid_crisis_1
+			}
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 500
+			stewardship = 13
+		}
+		
+		effect = {
+			wealth = -1000
+			prestige = -500			
+			clr_global_flag = abbasid_crisis_1
+			set_global_flag = abbasid_crisis_1_taken
+			set_global_flag = abbasid_crisis_finished_1
+			remove_character_modifier = abbasid_curse_1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_abbasid_crisis_2 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = abbasid_crisis_2_taken }
+			independent = yes
+			AND = {
+				OR = {
+					has_landed_title = e_arabia
+					has_character_modifier = abbasid_curse_2
+				}
+				religion_group = muslim
+				has_global_flag = abbasid_crisis_2
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			diplomacy = 11
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = abbasid_crisis_2
+			set_global_flag = abbasid_crisis_2_taken
+			set_global_flag = abbasid_crisis_finished_2
+			remove_character_modifier = abbasid_curse_2
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	end_abbasid_crisis_3 = {
+		is_high_prio = yes
+		ai_check_interval = 1
+		
+		potential = {
+			NOT = { has_global_flag = abbasid_crisis_3_taken }
+			independent = yes
+			AND = {
+				OR = {
+					has_landed_title = e_arabia
+					has_character_modifier = abbasid_curse_3
+				}
+				religion_group = muslim
+				has_global_flag = abbasid_crisis_3
+			}
+		}
+		
+		allow = {
+			prestige = 1000
+			wealth = 400
+			martial = 13
+		}
+		
+		effect = {
+			prestige = -1000
+			wealth = -400
+			clr_global_flag = abbasid_crisis_3
+			set_global_flag = abbasid_crisis_3_taken
+			ROOT = { narrative_event = { id = ABB.7 } }
+			custom_tooltip = {
+				text = umayyad_army_warning
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	finalize_abbasid_crisis = {
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			NOT = { has_global_flag = abbasid_crisis_done }
+			OR = {
+				NOT = { has_global_flag = abbasid_crisis_1 }
+				NOT = { has_global_flag = abbasid_crisis_2 }
+				NOT = { has_global_flag = abbasid_crisis_3 }
+			}
+			AND = {
+				has_landed_title = e_arabia
+				has_global_flag = abbasid_crisis_finished_1
+				has_global_flag = abbasid_crisis_finished_2
+				has_global_flag = abbasid_crisis_finished_3
+			}
+		}
+
+		allow = {
+			independent = yes
+			religion_group = muslim
+		}
+
+		effect = {
+			set_global_flag = abbasid_crisis_done
+			primary_title = {
+				#set_title_landless = { title = THIS status = yes }
+				set_flag = forced_caliphate_government
+				#set_name = "Abbasid Caliphate"
+				#adjective = "Abbasid Caliphate"
+			}
+			set_government_type = caliphate_government
+			create_bloodline = {
+				type = bloodline_abbasid_order
+			}
+			wealth = 3000
+			prestige = 4000
+			add_claim = k_egypt
+			add_claim = k_khorasan
+			add_claim = d_sistan
+			add_claim = k_sistan
+			clr_global_flag = abbasid_crisis_finished_1
+			clr_global_flag = abbasid_crisis_finished_2
+			clr_global_flag = abbasid_crisis_finished_3
+			any_player = { narrative_event = { id = ABB.5 } }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

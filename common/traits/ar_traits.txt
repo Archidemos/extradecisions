@@ -1,3 +1,64 @@
+dragon = {
+	martial = 10
+	learning = -50
+	stewardship = -50
+	diplomacy = -50
+	intrigue = -50
+	combat_rating = 20
+	health = 5
+	inherit_chance = 100
+
+	#command_modifier = {
+	#	morale_offence = 0.5
+	#	damage = 0.25
+	#	cavalry = 0.5
+	#}
+
+	customizer = no
+	random = no
+	
+	immortal = yes
+	cannot_marry = yes
+	cannot_inherit = yes
+	can_hold_titles = no # Hopefully this will block Glitterhoof from becoming pope again
+	ai_ambition = -100
+	
+	potential = {
+		race = dragon_culture
+	}
+}
+
+dragon_slayer = {
+	martial = 5
+	combat_rating = 50
+	general_opinion = -5
+
+	command_modifier = {
+		morale_offence = 0.5
+		morale_defence = 0.5
+	}
+
+	customizer = no
+	random = no
+	ai_ambition = 75
+}
+
+dragon_rider = {
+	martial = 3
+	learning = 2
+	combat_rating = 35
+	church_opinion = -15
+
+	command_modifier = {
+		morale_offence = 0.4
+		morale_defence = 0.4
+	}
+
+	customizer = no
+	random = no
+	ai_ambition = 75
+}
+
 ar_knight_muslim = {
 	martial = 1
 	command_modifier = {

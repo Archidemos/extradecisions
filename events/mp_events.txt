@@ -2047,10 +2047,28 @@ character_event = {
 		scaled_prestige = {
 			value = -2
 		}
-		add_character_modifier = {
-			name = feudal_succession
-			years = 4
-			inherit = yes
+		scaled_wealth = {
+			value -0.5
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = abbasid_curse_1
+					has_character_modifier = abbasid_curse_2
+					has_character_modifier = abbasid_curse_3
+					has_character_modifier = umayyad_curse_1
+					has_character_modifier = umayyad_curse_2
+					has_character_modifier = umayyad_curse_3
+					has_character_modifier = rome_crisis_1
+					has_character_modifier = rome_crisis_2
+					has_character_modifier = rome_crisis_3
+				}
+			}
+			add_character_modifier = {
+				name = feudal_succession
+				years = 4
+				inherit = yes
+			}
 		}
 	}
 }

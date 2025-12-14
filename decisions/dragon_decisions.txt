@@ -1,0 +1,175 @@
+targetted_decisions = {
+	ride_dragon = {
+		diplomacy_icon = GFX_trait_dragon_rider
+		ai_check_interval = 5
+		ai_target_filter = vassals
+		
+		potential = {
+			ROOT = {
+				AND = {
+					is_vassal_or_below_of = FROM
+					culture = dragon_culture
+				}
+			}
+		}
+		from_potential = {
+			ROOT = { 
+				is_ruler = yes 
+				NOT = { trait = dragon_rider } 
+			}
+		}
+		allow = {
+			FROM = {
+				prestige = 1000
+			}
+		}
+		effect = {
+			FROM = { character_event = { id = DRAG.100 } }
+		}
+	}
+	
+	rename_dragon = {
+		diplomacy_icon = GFX_trait_dragon_rider
+		only_playable = yes
+		ai = no
+		potential = {
+			ROOT = {
+				AND = {
+					is_vassal_or_below_of = FROM
+					culture = dragon_culture
+				}
+			}
+		}
+		from_potential = {
+			ROOT = { 
+				is_ruler = yes
+			}
+		}
+		effect = {
+			ROOT = {
+				prompt_name = {
+					player = FROM
+					type = RENAME_ARTIFACT_MESSAGE
+				}
+			}
+		}
+	}
+}
+
+decisions = {
+	create_dragon_artifacts = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			is_playable = yes
+			has_character_modifier = dragon_remains
+			trait = dragon_slayer
+			NOT = { has_character_modifier = employ_a_smith_dragon }
+			#OR = {
+			#	NOT = { has_artifact = dragon_sword }
+			#	NOT = { has_artifact = dragon_plate_armor }
+			#}
+		}
+		
+		allow = {
+			wealth = 1000
+			prestige = 2000
+			trait = dragon_slayer
+		}
+		effect = {
+			wealth = -1000
+			prestige = -2000
+			custom_tooltip = {
+				text = "You will call uppon a blacksmith to forge your dragon weaponry or armory"
+				add_character_modifier = {
+					name = employ_a_smith_dragon
+					hidden = yes
+					years = 2
+				}
+			}
+			hidden_tooltip = { character_event = { id = DRAG.200 } }
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+	make_dragon_fire_battle = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			is_playable = yes
+			in_battle = yes
+			in_command = yes
+			NOT = { has_character_modifier = dragon_exhausted }
+			trait = dragon_rider
+		}
+		
+		allow = {
+			prisoner = no
+			in_battle = yes
+			in_command = yes
+			trait = dragon_rider
+			any_friend = { trait = dragon }
+			NOT = { has_character_modifier = dragon_exhausted }
+		}
+		effect = {
+			add_character_modifier = {
+				name = dragon_exhausted
+				days = 15
+			}
+			custom_tooltip = {
+				text = "You use your dragon to attack the enemy"
+				character_event = { id = DRAG.300 }	
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	make_dragon_fire_siege = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			is_playable = yes
+			in_command = yes
+			siege = { is_attacker = yes }
+			NOT = { has_character_modifier = dragon_exhausted }
+			trait = dragon_rider
+		}
+		
+		allow = {
+			NOT = { in_battle = yes }
+			prisoner = no
+			trait = dragon_rider
+			any_friend = { trait = dragon }
+			NOT = { has_character_modifier = dragon_exhausted }
+		}
+		effect = {
+			add_character_modifier = {
+				name = dragon_exhausted
+				days = 15
+			}
+			custom_tooltip = {
+				text = "You use your dragon to attack the enemy"
+				character_event = { id = DRAG.310 }	
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

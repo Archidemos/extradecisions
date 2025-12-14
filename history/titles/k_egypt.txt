@@ -11,10 +11,17 @@
 	holder = 0
 	liege = 0
 }
-
-881.1.1 = { #Ahmad b. Tulun mints coins in his own name
-	liege = e_arabia
+867.1.1 = {
 	holder = 163115
+	set_tribute_suzerain = {
+		who = e_arabia
+		type = default
+	}
+}
+881.1.1 = { #Ahmad b. Tulun mints coins in his own name
+	#liege = e_arabia
+	holder = 163115
+	clear_tribute_suzerain = e_arabia
 }
 884.3.1 = {
 	holder = 163138

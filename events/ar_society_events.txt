@@ -242,7 +242,7 @@ character_event = { #Priest is happy with you
 			chance = 30
 			add_trait = trusting
 		}
-		if = { limit = { has_trait = depressed } remove_trait = depressed }
+		if = { limit = { trait = depressed } remove_trait = depressed }
 		ROOT = { character_event = { id = ZOROSOC.108 days = 3 } }
 	}
 	option = {
