@@ -1988,6 +1988,7 @@ character_event = { #Event to grant Feudal Succession Nerf to players
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_character_modifier = feudal_succession }
 		has_game_rule = {
 			name = nerf_succession_rule
 			value = player_only	
@@ -2009,6 +2010,7 @@ character_event = { #Event to grant Feudal Succession Nerf to anyone
 	is_triggered_only = yes
 
 	trigger = {
+		NOT = { has_character_modifier = feudal_succession }
 		has_game_rule = {
 			name = nerf_succession_rule
 			value = on
@@ -2044,11 +2046,13 @@ character_event = {
 
 	option = {
 		name = "Our Dynasty will prevail!"
-		scaled_prestige = {
-			value = -2
-		}
-		scaled_wealth = {
-			value -0.5
+		ROOT = {
+			scaled_prestige = {
+				value = -2
+			}
+			scaled_wealth = {
+				value = -0.5
+			}
 		}
 		if = {
 			limit = {
@@ -2068,10 +2072,123 @@ character_event = {
 				name = feudal_succession
 				years = 4
 				inherit = yes
+				stacking = no
 			}
 		}
 	}
 }
+
+character_event = {
+	id = MP.209
+	title = "Feudal Succession"
+	desc = "After the death of your predicesor, your subjects have been growing ever so weary and are perhaps noticing opportunity."
+	
+	picture = GFX_evt_council_quarrelling
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_character_modifier = feudal_succession }
+		has_game_rule = {
+			name = nerf_succession_rule
+			value = player_only	
+		}
+		ROOT = { is_nomadic = no }
+		ROOT = { is_feudal = yes }
+		ROOT = { ai = no }
+		ROOT = { higher_tier_than = DUKE }
+	}
+
+	option = {
+		name = "Our Dynasty will prevail!"
+		ROOT = {
+			scaled_prestige = {
+				value = -2
+			}
+			scaled_wealth = {
+				value = -0.5
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = abbasid_curse_1
+					has_character_modifier = abbasid_curse_2
+					has_character_modifier = abbasid_curse_3
+					has_character_modifier = umayyad_curse_1
+					has_character_modifier = umayyad_curse_2
+					has_character_modifier = umayyad_curse_3
+					has_character_modifier = rome_crisis_1
+					has_character_modifier = rome_crisis_2
+					has_character_modifier = rome_crisis_3
+				}
+			}
+			add_character_modifier = {
+				name = feudal_succession
+				years = 4
+				inherit = yes
+				stacking = no
+			}
+		}
+	}
+}
+
+character_event = {
+	id = MP.210
+	title = "Feudal Succession"
+	desc = "After the death of your predicesor, your subjects have been growing ever so weary and are perhaps noticing opportunity."
+	
+	picture = GFX_evt_council_quarrelling
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_character_modifier = feudal_succession }
+		has_game_rule = {
+			name = nerf_succession_rule
+			value = on
+		}
+		ROOT = { is_nomadic = no }
+		ROOT = { is_feudal = yes }
+		ROOT = { higher_tier_than = DUKE }
+	}
+
+	option = {
+		name = "Our Dynasty will prevail!"
+		ROOT = {
+			scaled_prestige = {
+				value = -2
+			}
+			scaled_wealth = {
+				value = -0.5
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_character_modifier = abbasid_curse_1
+					has_character_modifier = abbasid_curse_2
+					has_character_modifier = abbasid_curse_3
+					has_character_modifier = umayyad_curse_1
+					has_character_modifier = umayyad_curse_2
+					has_character_modifier = umayyad_curse_3
+					has_character_modifier = rome_crisis_1
+					has_character_modifier = rome_crisis_2
+					has_character_modifier = rome_crisis_3
+				}
+			}
+			add_character_modifier = {
+				name = feudal_succession
+				years = 4
+				inherit = yes
+				stacking = no
+			}
+		}
+	}
+}
+
 
 #character_event = {
 #    id = MP.205

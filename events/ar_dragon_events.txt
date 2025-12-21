@@ -28,7 +28,12 @@ narrative_event = { #Wondering about Dragon Egg
 				name = supernatural_events
 				value = off
 			}
-			has_character_flag = eternal_life_events
+			has_character_flag = dragon_quest_events
+		}
+		NOR = {
+			trait = dragon
+			trait = dragon_slayer
+			trait = dragon_rider
 		}
 		is_inaccessible_trigger = no
 	}
@@ -37,23 +42,15 @@ narrative_event = { #Wondering about Dragon Egg
 		months = 9000
 		
 		modifier = {
-			factor = 0.3
-			trait = mystic
-		}
-		modifier = {
-			factor = 0.5
+			factor = 0.9
 			trait = shrewd
 		}
 		modifier = {
-			factor = 0.5
-			trait = crusader
-		}
-		modifier = {
-			factor = 0.5
+			factor = 0.9
 			trait = berserker
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0.9
 			trait = scholar
 		}
 		modifier = {
@@ -63,10 +60,6 @@ narrative_event = { #Wondering about Dragon Egg
 		modifier = {
 			factor = 0.9
 			trait = genius
-		}
-		modifier = {
-			factor = 0.9
-			trait = strong
 		}
 		modifier = {
 			factor = 0.9
@@ -91,6 +84,7 @@ narrative_event = { #Wondering about Dragon Egg
 	}
 
 	immediate = {
+		set_character_flag = dragon_quest_events
 	}
 
 	option = { 	#Summon the council and prepare the trip
