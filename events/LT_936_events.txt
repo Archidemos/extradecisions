@@ -215,6 +215,26 @@ narrative_event = {
 
     option = {
         name = EVTOPTA_LT_40005
+		ai_chance = { factor = 90 }
+		while = {
+			count = 2
+			spawn_unit = {
+				owner = ROOT
+				province = capital
+				home = ROOT
+	
+				troops = {
+					archers = { 300 300 }
+					light_infantry = { 500 500 }
+					heavy_infantry = { 250 250 }
+				}
+	
+				attrition = 1.0
+				disband_on_peace = yes
+				maintenance_multiplier = 0.5
+			}
+		}
+
         unsafe_war = {
             target = event_target:otto
             casus_belli = thankmars_rebellion
@@ -228,6 +248,13 @@ narrative_event = {
                     OR = {
                         de_jure_liege = k_germany
                         de_jure_liege = k_frisia
+						
+                        de_jure_liege = k_franconia
+                        de_jure_liege = k_schwaben
+                        de_jure_liege = k_saxony
+                        de_jure_liege = k_frisia
+						de_jure_liege = k_bavaria
+                        de_jure_liege = k_carinthia
                     }
                 }
                 narrative_event = { id = LT.40006 }
@@ -238,6 +265,7 @@ narrative_event = {
 
     option = {
         name = EVTOPTB_LT_40005
+		ai_chance = { factor = 10 }
         trigger = {
             OR = {
                 ai = no
@@ -416,14 +444,26 @@ narrative_event = {
             d_thuringia = {
                 de_jure_liege = k_thuringia_otto
             }
+            d_meissen = {
+                de_jure_liege = k_thuringia_otto
+            }
+            d_saxewittenberg = {
+                de_jure_liege = k_thuringia_otto
+            }
             # Set De Jure Franconia
-            d_hesse = {
+            d_rheinfranken = {
                 de_jure_liege = k_franconia_otto
             }
-            d_rhine = {
+            d_hessen = {
                 de_jure_liege = k_franconia_otto
             }
-            d_franconia = {
+            d_ostfranken = {
+                de_jure_liege = k_franconia_otto
+            }
+            d_nuremberg = {
+                de_jure_liege = k_franconia_otto
+            }
+            d_mainz = {
                 de_jure_liege = k_franconia_otto
             }
             # Set De Jure Swabia
@@ -440,6 +480,19 @@ narrative_event = {
                 de_jure_liege = k_swabia_otto
             }
             d_raetia = {
+                de_jure_liege = k_swabia_otto
+            }
+
+            d_tubingen = {
+                de_jure_liege = k_swabia_otto
+            }
+            d_teck = {
+                de_jure_liege = k_swabia_otto
+            }
+            d_burgau = {
+                de_jure_liege = k_swabia_otto
+            }
+            d_ratien = {
                 de_jure_liege = k_swabia_otto
             }
             # Move all old kingdoms into Empire of Germania

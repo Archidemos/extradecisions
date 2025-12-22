@@ -643,6 +643,15 @@ decisions = {
 				is_tributary = {
 					type = nomadic
 				}
+				is_tributary = {
+					type = client
+				}
+				is_tributary = {
+					type = norse_colony
+				}
+				is_tributary = {
+					type = pirate_colony
+				}
 			}
 		}
 		allow = {
@@ -655,6 +664,63 @@ decisions = {
 				}
 				suzerain = {
 					independent = no
+				}
+			}
+			conditional_tooltip = {
+				trigger = { 
+					is_tributary = {
+						type = norse_colony
+					}
+				}
+				suzerain = {
+					independent = no
+				}
+			}
+			conditional_tooltip = {
+				trigger = { 
+					is_tributary = {
+						type = pirate_colony
+					}
+				}
+				suzerain = {
+					independent = no
+				}
+			}
+			conditional_tooltip = {
+				trigger = { 
+					is_tributary = {
+						type = client
+					}
+				}
+				suzerain = {
+					OR = {
+						AND = {
+							NOT = {
+								prestige = 0
+							}
+							ROOT = {
+								prestige = 0
+							}
+							custom_tooltip = {
+								text = recently_made_tributary_tt
+								hidden_tooltip = {
+									ROOT = {
+										NOT = {
+											has_opinion_modifier = {
+												modifier = opinion_forced_tributary
+												who = PREV
+											}
+										}
+									}
+								}
+							}
+						}
+						relative_realm_size = {
+							who = ROOT 
+							size < 1
+						}
+						independent = no
+					}
 				}
 			}
 			conditional_tooltip = {
