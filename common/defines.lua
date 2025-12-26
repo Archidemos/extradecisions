@@ -222,12 +222,12 @@ NDiplomacy = {
 	REVOKE_VOTER_TITLE_INTERACTION_MUST_HAVE_COST = 1,				-- Is having prestige/piety >= cost required for this action?
 	REVOKE_VOTER_TITLE_INTERACTION_ENABLED = 1,						-- Should this action be used at all?
 
-	SEND_ASSASSIN_INTERACTION_MONEY = 50,
+	SEND_ASSASSIN_INTERACTION_MONEY = 0,
 	SEND_ASSASSIN_INTERACTION_PIETY = 0,
 	SEND_ASSASSIN_INTERACTION_PRESTIGE = 0,
 	SEND_ASSASSIN_INTERACTION_THRESHOLD_FOR_NO = 0,
 	SEND_ASSASSIN_INTERACTION_THRESHOLD_FOR_YES = 0,
-	SEND_ASSASSIN_INTERACTION_MUST_HAVE_COST = 1,				-- Is having prestige/piety >= cost required for this action?
+	SEND_ASSASSIN_INTERACTION_MUST_HAVE_COST = 0,				-- Is having prestige/piety >= cost required for this action?
 	SEND_ASSASSIN_INTERACTION_ENABLED = 0,						-- Should this action be used at all?
 
 	DECLARE_WAR_INTERACTION_MONEY = 0,
@@ -605,7 +605,7 @@ NDiplomacy = {
 
 	FORM_ALLIANCE_INTERACTION_MONEY = 0,
 	FORM_ALLIANCE_INTERACTION_PIETY = 0,
-	FORM_ALLIANCE_INTERACTION_PRESTIGE = 0,
+	FORM_ALLIANCE_INTERACTION_PRESTIGE = 150,
 	FORM_ALLIANCE_INTERACTION_THRESHOLD_FOR_NO = 25,
 	FORM_ALLIANCE_INTERACTION_THRESHOLD_FOR_YES = 25,
 	FORM_ALLIANCE_INTERACTION_MUST_HAVE_COST = 1,					-- Is having prestige/piety >= cost required for this action?
@@ -613,7 +613,7 @@ NDiplomacy = {
 
 	DISSOLVE_ALLIANCE_INTERACTION_MONEY = 0,
 	DISSOLVE_ALLIANCE_INTERACTION_PIETY = 0,
-	DISSOLVE_ALLIANCE_INTERACTION_PRESTIGE = 0,
+	DISSOLVE_ALLIANCE_INTERACTION_PRESTIGE = 200,
 	DISSOLVE_ALLIANCE_INTERACTION_THRESHOLD_FOR_NO = 0,
 	DISSOLVE_ALLIANCE_INTERACTION_THRESHOLD_FOR_YES = 0,
 	DISSOLVE_ALLIANCE_INTERACTION_MUST_HAVE_COST = 1,				-- Is having prestige/piety >= cost required for this action?
@@ -1114,7 +1114,7 @@ NEconomy = {
 	PATRICIAN_INHERITANCE_FROM_RELATIVE_MULT = 0.5,	-- When a Patrician inherits the wealth of a non-Patrician relative, this multiplier determines the part he actually gets
 	PATRICIAN_GOLD_TO_MONTHLY_PRESTIGE = 0.0005,	-- Prestige that Patricians get each month from their treasury (CFixedPoint64 to support such small numbers)
 	PATRICIAN_CITY_TAX_MULT = 0.5,					-- Patricians don't pay normal City Tax to their liege... (CFixedPoint64)
-	OVER_MAX_DEMESNE_TAX_PENALTY = 0.20,			-- Percent penalty per county over the limit
+	OVER_MAX_DEMESNE_TAX_PENALTY = 0.40,			-- Percent penalty per county over the limit
 	HOLDING_LOOT_LOWER_LIMIT_MULTIPLIER = 3.0,		-- Sets the lower limit of the loot bar based on amount of holdings in a province
 	TAX_TO_LOOT_MULTIPLIER = 1.0,					-- Lootable gold per tax
 	POPULATION_TO_LOOT_MULTIPLIER = 0.005,			-- Lootable gold per nomad population
@@ -1227,8 +1227,8 @@ NMilitary = {
 	BATTLE_WARSCORE_HOSTS_MULTIPLIER = 2,			-- Multiplier applied to the warscore value of major battle if the losing side is a claimant adventurer
 	BATTLE_WARSCORE_LANDLESS_MULTIPLIER = 2,		-- Multiplier applied to the warscore value of major battle if the losing side has no holdings
 	BATTLE_MINIMUM_WARSCORE = 0.2,					-- Battles below this value(in actual percentage) are removed from warscore calculations
-	MIN_LEVY_RAISE_OPINION_THRESHOLD = 0,			-- Below this opinion value you'll get the least amount of troops possible
-	MAX_LEVY_RAISE_OPINION_THRESHOLD = 100,			-- Above this opinion value you'll get the max amount of troops possible
+	MIN_LEVY_RAISE_OPINION_THRESHOLD = 10,			-- Below this opinion value you'll get the least amount of troops possible
+	MAX_LEVY_RAISE_OPINION_THRESHOLD = 90,			-- Above this opinion value you'll get the max amount of troops possible
 	MIN_LEVIES_ABOVE_OPINION_THRESHOLD = 0,			-- The minimum percentage of levies that will be provided if opinion is above threshold
 	LEVY_PERCENT_BEFORE_CAN_RAISE = 1.1,			-- Needs at least this much % of full levy before we can raise it again, not used in vanilla anymore
 	ATTACKER_SIEGE_DAMAGE = 0,						-- Siege attack values are multiplied by this value(when not doing a sally), for attackers
