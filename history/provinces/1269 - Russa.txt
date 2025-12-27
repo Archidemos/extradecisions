@@ -1,40 +1,19 @@
 # -*- ck2.history.provinces -*-
-
 # 1269 - Russa
-
 # County Title
-title = c_russa
-
-# Settlements
+title = c_russa # Settlements
 max_settlements = 4
-
-b_demjanskkholmsky = tribal
-#b_rusa = city
-#b_kholmkholmsky = city
-#b_velilkholmsky = castle
-#b_morevakholmsky = city
-#b_molvoticykholmsky = temple
-#b_berezoveckholmsky = city
-#b_sterzkholmsky = castle
-
-
+b_demjanskkholmsky = tribal # b_rusa = city
+# b_kholmkholmsky = city
+# b_velilkholmsky = castle
+# b_morevakholmsky = city
+# b_molvoticykholmsky = temple
+# b_berezoveckholmsky = city
+# b_sterzkholmsky = castle
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-400.1.1 = {
-	b_demjanskkholmsky = tribal
-}
-600.1.1 = {
-	b_demjanskkholmsky = tribal
-}
-995.1.1 = {religion = orthodox }
-995.1.1 = {
-b_demjanskkholmsky = castle
-b_rusa = city }
-
-
-
-
-
+religion = slavic_pagan # History
+400.1.1 = { b_demjanskkholmsky = tribal religion = finnish_pagan culture = karelian } 
+600.1.1 = { b_demjanskkholmsky = tribal culture = russian religion = slavic_pagan } 
+995.1.1 = { religion = orthodox } 
+995.1.1 = { b_demjanskkholmsky = castle b_rusa = city } 

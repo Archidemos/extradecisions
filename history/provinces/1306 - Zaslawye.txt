@@ -1,30 +1,17 @@
 # -*- ck2.history.provinces -*-
-
 # 1306 - Zaslawye
-
 # County Title
-title = c_zaslawye
-
-# Settlements
+title = c_zaslawye # Settlements
 max_settlements = 3
-
 b_zaslawye = tribal # Izjaslavl' in russian
-#b_mir = city
-#b_vileyka = city
-
+# b_mir = city
+# b_vileyka = city
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-399.1.1 = {
-	religion = slavic_pagan
-}
-601.1.1 = {
-	religion = slavic_pagan
-}
-995.1.1 = {religion = orthodox }
-995.1.1 = {
-b_zaslawye = castle
-b_mir = city }
-
+religion = slavic_pagan # History
+399.1.1 = { religion = slavic_pagan } 
+400.1.1 = { culture = "lithuanian" religion = "baltic_pagan" } 
+600.1.1 = { culture = russian religion = slavic_pagan }
+601.1.1 = { religion = slavic_pagan } 
+995.1.1 = { religion = orthodox } 
+995.1.1 = { b_zaslawye = castle b_mir = city } 

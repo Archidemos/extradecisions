@@ -1,35 +1,22 @@
 # -*- ck2.history.provinces -*-
-
 # 1272 - Volokolamsk
-
 # County Title
-title = c_volokolamsk
-
-# Settlements
+title = c_volokolamsk # Settlements
 max_settlements = 4
-b_zubtsov = tribal
-#b_volokolamsk = city
-#b_dorogobuz = temple
-#b_horvactver = castle
-#b_holmtver = city
-
+b_zubtsov = tribal # b_volokolamsk = city
+# b_dorogobuz = temple
+# b_horvactver = castle
+# b_holmtver = city
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-400.1.1 = {
-	b_zubtsov = tribal
-}
-600.1.1 = {
-	b_zubtsov = tribal
-}
-1040.1.1 = {religion = orthodox }
-1040.1.1 = {b_zubtsov = castle }
-#1040.1.1 = {culture = lithuanian}
-#1040.1.1 = {religion = baltic_pagan}
-#1134.1.1 = {religion = orthodox }
-#1134.1.1 = {culture = russian }
-1134.1.1 = {#b_zubtsov = castle
-b_volokolamsk = city}
-
+religion = slavic_pagan # History
+400.1.1 = { b_zubtsov = tribal culture = "lithuanian" religion = "baltic_pagan" } 
+600.1.1 = { b_zubtsov = tribal culture = russian religion = slavic_pagan } 
+1040.1.1 = { religion = orthodox } 
+1040.1.1 = { b_zubtsov = castle } # 1040.1.1 = {culture = lithuanian}
+################################################################################
+# 1040.1.1 = {religion = baltic_pagan}
+# 1134.1.1 = {religion = orthodox }
+# 1134.1.1 = {culture = russian }
+################################################################################
+1134.1.1 = { b_volokolamsk = city } 

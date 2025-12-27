@@ -1,59 +1,43 @@
 # -*- ck2.history.provinces -*-
-
 # 414 - Novgorod
-
 # County Title
-title = c_novgorod
-
-# Settlements
+title = c_novgorod # Settlements
 max_settlements = 7
-
 b_novgorodkremlin = tribal
-b_novgorod = city
-#b_sanktsophia = temple
-b_peryn = temple
-#b_solcyn = city
-#b_borovichi = city
-#b_lyubytino = city
-#b_yurievmonestary = temple
-#b_antonievmonestary = temple
-#b_tesovnogorod = castle
-#b_holopojgorodok = castle
-#b_krestcy = castle
-#b_okulovka = city
-#b_korostyn = city
-
+b_novgorod = city # b_sanktsophia = temple
+b_peryn = temple # b_solcyn = city
+# b_borovichi = city
+# b_lyubytino = city
+# b_yurievmonestary = temple
+# b_antonievmonestary = temple
+# b_tesovnogorod = castle
+# b_holopojgorodok = castle
+# b_krestcy = castle
+# b_okulovka = city
+# b_korostyn = city
 # Misc
 culture = russian
-religion = slavic_pagan
+religion = slavic_pagan # History
+400.1.1 = { 
+    b_novgorodkremlin = tribal
+    remove_settlement = b_novgorod
+    remove_settlement = b_peryn
+    religion = finnish_pagan
+    culture = karelian
+}
 
-# History
-400.1.1 = {
-	b_novgorodkremlin = tribal
-	remove_settlement = b_novgorod
-	remove_settlement = b_peryn
+600.1.1 = { 
+    b_novgorodkremlin = tribal
+    b_novgorod = city
+    b_peryn = temple
+    culture = russian
+    religion = slavic_pagan
 }
-600.1.1 = {
-	b_novgorodkremlin = tribal
-	b_novgorod = city
-	b_peryn = temple
-}
+
 769.1.1 = { build_wonder = wonder_winter_palace set_wonder_stage = 1 } 
-867.1.1 = {
-	b_novgorodkremlin = tb_shipyard_1
-}
-988.1.1 = {religion = orthodox }
-988.1.1 = {
-b_novgorodkremlin = castle
-b_novgorodkremlin = ca_shipyard_1
-b_sanktsophia = temple }
-1136.1.1 = { b_solcyn = city } #Novgorod republic founded
-1136.1.1 = { capital = b_novgorod }
-1150.1.1 = { b_yurievmonestary = temple }
-
-
-
-
-
-
-
+867.1.1 = { b_novgorodkremlin = tb_shipyard_1 } 
+988.1.1 = { religion = orthodox } 
+988.1.1 = { b_novgorodkremlin = castle b_novgorodkremlin = ca_shipyard_1 b_sanktsophia = temple } 
+1136.1.1 = { b_solcyn = city } # Novgorod republic founded
+1136.1.1 = { capital = b_novgorod } 
+1150.1.1 = { b_yurievmonestary = temple } 

@@ -1,34 +1,20 @@
 # -*- ck2.history.provinces -*-
-
 # 587 - Mozhaysk
-
 # County Title
-title = c_mozhaysk
-
-# Settlements
+title = c_mozhaysk # Settlements
 max_settlements = 4
-b_volgamozhaysk = tribal
-#b_ruza = castle
-#b_zvenigorodmozaskiy = city
-#b_vetca = city
-#b_vereya = castle
-#b_watchinghillmonastaryofstsavva = temple
-
-
+b_volgamozhaysk = tribal # b_ruza = castle
+# b_zvenigorodmozaskiy = city
+# b_vetca = city
+# b_vereya = castle
+# b_watchinghillmonastaryofstsavva = temple
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-400.1.1 = {
-	b_volgamozhaysk = tribal
-}
-600.1.1 = {
-	b_volgamozhaysk = tribal
-}
-1040.1.1 = {culture = lithuanian}
-1040.1.1 = {religion = baltic_pagan}
-1148.1.1 = {culture = russian
-religion = orthodox}
-1148.1.1 = { b_volgamozhaysk = castle }
-1330.1.1 = { b_ruza = castle }
+religion = slavic_pagan # History
+400.1.1 = { b_volgamozhaysk = tribal culture = "lithuanian" religion = "baltic_pagan" } 
+600.1.1 = { b_volgamozhaysk = tribal culture = russian religion = slavic_pagan } 
+1040.1.1 = { culture = lithuanian } 
+1040.1.1 = { religion = baltic_pagan } 
+1148.1.1 = { culture = russian religion = orthodox } 
+1148.1.1 = { b_volgamozhaysk = castle } 
+1330.1.1 = { b_ruza = castle } 

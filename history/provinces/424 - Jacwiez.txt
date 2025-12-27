@@ -1,29 +1,16 @@
 # -*- ck2.history.provinces -*-
-
 # 424 - Jacwiez
-
 # County Title
-title = c_jacwiez
-
-# Settlements
+title = c_jacwiez # Settlements
 max_settlements = 4
-
 b_volkovysk = tribal # capital and newprovince name
-#b_navahrudka = city
-#b_slonim = castle
-#b_lavrashevmonastery = temple
-
+# b_navahrudka = city
+# b_slonim = castle
+# b_lavrashevmonastery = temple
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-1000.1.1  = {
-	religion = orthodox
-	b_volkovysk = castle
-	b_navahrudka = city
-}
-1265.1.1 = {
-	b_lavrashevmonastery = temple
-}
-
+religion = slavic_pagan # History
+400.1.1 = { culture = "lithuanian" religion = "baltic_pagan" } 
+600.1.1 = { culture = russian religion = slavic_pagan }
+1000.1.1 = { religion = orthodox b_volkovysk = castle b_navahrudka = city } 
+1265.1.1 = { b_lavrashevmonastery = temple } 

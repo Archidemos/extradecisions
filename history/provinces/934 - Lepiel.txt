@@ -1,31 +1,17 @@
 # -*- ck2.history.provinces -*-
-
 # 934 - Lepiel aka Lahoysk
-
 # County Title
-title = c_lepiel
-
-# Settlements
+title = c_lepiel # Settlements
 max_settlements = 3
-
-b_lahoysk = tribal
-#b_budslau = temple
-
-#b_vileyka = city
-#b_miadziel = temple
-
-
+b_lahoysk = tribal # b_budslau = temple
+# b_vileyka = city
+# b_miadziel = temple
 # Misc
 culture = russian
-religion = slavic_pagan
-
-# History
-399.1.1 = {
-	religion = slavic_pagan
-}
-601.1.1 = {
-	religion = slavic_pagan
-}
-995.1.1 = {religion = orthodox }
-995.1.1 = {b_lahoysk = castle
-b_budslau = temple }
+religion = slavic_pagan # History
+399.1.1 = { religion = slavic_pagan } 
+400.1.1 = { culture = "lithuanian" religion = "baltic_pagan" } 
+600.1.1 = { culture = russian religion = slavic_pagan }
+601.1.1 = { religion = slavic_pagan } 
+995.1.1 = { religion = orthodox } 
+995.1.1 = { b_lahoysk = castle b_budslau = temple } 

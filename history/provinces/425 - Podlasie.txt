@@ -1,27 +1,19 @@
 # -*- ck2.history.provinces -*-
-
 # 425 - Podlasie
-
 # County Title
-title = c_podlasie
-
-# Settlements
+title = c_podlasie # Settlements
 max_settlements = 4
-
-b_tykocin = tribal
-#b_bielsk = city
-#b_drohiczyn = temple
-#b_bransk = city
-
+b_tykocin = tribal # b_bielsk = city
+# b_drohiczyn = temple
+# b_bransk = city
 # Misc
 culture = lithuanian
-religion = baltic_pagan
-
-# History
-1250.1.1  = {
-	culture = russian
-	religion = orthodox
-	b_tykocin = castle
-	b_bielsk = city
-	b_drohiczyn = temple
+religion = baltic_pagan # History
+600.1.1 = { culture = russian religion = slavic_pagan }
+1250.1.1 = { 
+    culture = russian
+    religion = orthodox
+    b_tykocin = castle
+    b_bielsk = city
+    b_drohiczyn = temple
 }
