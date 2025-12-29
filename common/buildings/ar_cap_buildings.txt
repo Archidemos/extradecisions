@@ -1,0 +1,919 @@
+castle = {
+
+	capital_mint_1 = { #Royal Minter
+		desc =  capital_mint_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 200
+		build_time = 365
+		
+		local_tax_modifier = 0.005
+		tax_income = 2
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_mint_2 = {
+		desc =  capital_mint_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 220
+		build_time = 547
+		
+		upgrades_from = capital_mint_1
+		
+		local_tax_modifier = 0.005
+		tax_income = 2
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_mint_3 = {
+		desc =  capital_mint_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = capital_mint_2
+		
+		local_tax_modifier = 0.005
+		tax_income = 2
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	capital_mint_4 = {
+		desc =  capital_mint_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = capital_mint_3
+		
+		local_tax_modifier = 0.005
+		tax_income = 2
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_mint_5 = {
+		desc =  capital_mint_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 500
+		build_time = 1460
+
+		upgrades_from = capital_mint_4
+		
+		local_tax_modifier = 0.005
+		tax_income = 2
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	###############################
+	###############################
+	###############################
+	
+	capital_treasury_1 = { #Great Treasury
+		desc =  capital_treasury_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 200
+		build_time = 365
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_treasury_2 = {
+		desc =  capital_treasury_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 220
+		build_time = 547
+		
+		upgrades_from = capital_treasury_1
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_treasury_3 = {
+		desc =  capital_treasury_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = capital_treasury_2
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	capital_treasury_4 = {
+		desc =  capital_treasury_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = capital_treasury_3
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_treasury_5 = {
+		desc =  capital_treasury_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 500
+		build_time = 1460
+
+		upgrades_from = capital_treasury_4
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	###############################
+	###############################
+	###############################
+	
+	capital_tax_1 = { #Royal Exchequer
+		desc =  capital_tax_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			owner = { realm_size <= 150 }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 200
+		build_time = 365
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_tax_2 = {
+		desc =  capital_tax_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 220
+		build_time = 547
+		
+		upgrades_from = capital_tax_1
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_tax_3 = {
+		desc =  capital_tax_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = capital_tax_2
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	capital_tax_4 = {
+		desc =  capital_tax_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+		}
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = capital_tax_3
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_tax_5 = {
+		desc =  capital_tax_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 500
+		build_time = 1460
+
+		upgrades_from = capital_tax_4
+		
+		tax_income = 1.5
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	###############################
+	###############################
+	###############################
+
+	capital_army_1 = { #Royal Citadel
+		desc =  capital_army_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 200
+		build_time = 365
+		
+		garrison_size = 0.005
+		pikemen = 50
+		archers = 30
+		heavy_infantry = 20
+
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_army_2 = {
+		desc =  capital_mint_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 220
+		build_time = 547
+		
+		upgrades_from = capital_army_1
+		
+		garrison_size = 0.005
+		pikemen = 60
+		archers = 40
+		heavy_infantry = 30
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_army_3 = {
+		desc =  capital_army_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = capital_army_2
+		
+		garrison_size = 0.005
+		pikemen = 70
+		archers = 50
+		heavy_infantry = 40
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	capital_army_4 = {
+		desc =  capital_army_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = capital_army_3
+		
+		garrison_size = 0.005
+		pikemen = 80
+		archers = 60
+		heavy_infantry = 50
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_army_5 = {
+		desc =  capital_army_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 6
+		}
+
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 500
+		build_time = 1460
+
+		upgrades_from = capital_army_4
+		
+		garrison_size = 0.005
+		pikemen = 90
+		archers = 70
+		heavy_infantry = 60
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	###############################
+	###############################
+	###############################
+	
+	capital_retinue_1 = { #Retinue Quarters
+		desc =  capital_retinue_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 200
+		build_time = 365
+		
+		levy_size = 0.05
+		retinue_maintenence_cost = -0.05
+
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_retinue_2 = {
+		desc =  capital_retinue_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 220
+		build_time = 547
+		
+		upgrades_from = capital_retinue_1
+		
+		levy_size = 0.05
+		retinue_maintenence_cost = -0.05
+
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_retinue_3 = {
+		desc =  capital_retinue_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_capital_expand }
+		gold_cost = 300
+		build_time = 730
+
+		upgrades_from = capital_retinue_2
+		
+		levy_size = 0.05
+		retinue_maintenence_cost = -0.05
+
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	capital_retinue_4 = {
+		desc =  capital_retinue_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 400
+		build_time = 1095
+
+		upgrades_from = capital_retinue_3
+		
+		levy_size = 0.05
+		retinue_maintenence_cost = -0.05
+
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	capital_retinue_5 = {
+		desc =  capital_retinue_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			FROM = { higher_tier_than = COUNT }
+			owner = { realm_size <= 150 }
+			FROMFROM = { is_capital = yes }
+			location = { is_capital = yes }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 6
+		}
+
+		prerequisites = { feudal_capital_expand_2 }
+		gold_cost = 500
+		build_time = 1460
+
+		upgrades_from = capital_retinue_4
+		
+		levy_size = 0.05
+		retinue_maintenence_cost = -0.05
+
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+}

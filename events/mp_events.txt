@@ -2000,7 +2000,7 @@ character_event = { #Event to grant Feudal Succession Nerf to players
 	}
 	
 	immediate = {
-		current_heir = { character_event = { id = MP.208 days = 2 } }
+		player_heir = { character_event = { id = MP.208 days = 2 } }
 	}
 }
 
@@ -2015,13 +2015,14 @@ character_event = { #Event to grant Feudal Succession Nerf to anyone
 			name = nerf_succession_rule
 			value = on
 		}
+		#ROOT = { is_vice_royalty = no }
 		ROOT = { is_nomadic = no }
 		ROOT = { is_feudal = yes }
 		ROOT = { higher_tier_than = DUKE }
 	}
 	
 	immediate = {
-		current_heir = { character_event = { id = MP.208 days = 2 } }
+		player_heir = { character_event = { id = MP.208 days = 2 } }
 	}
 }
 
@@ -2071,7 +2072,7 @@ character_event = {
 			add_character_modifier = {
 				name = feudal_succession
 				years = 4
-				inherit = yes
+				#inherit = yes
 				stacking = no
 			}
 		}

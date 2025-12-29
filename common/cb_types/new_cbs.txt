@@ -21,6 +21,7 @@ tributary_client_cb = {
 					who = FROM 
 					size > 1.5
 				}
+				NOT = { has_character_modifier = recently_released_vassal }
 				conditional_tooltip = {
 					trigger = {
 						capital_scope = {
@@ -31,7 +32,7 @@ tributary_client_cb = {
 					}
 					prestige = 350
 					TECH_MAJESTY = 3
-					diplomacy = 10
+					diplomacy = 15
 				}
 				conditional_tooltip = {
 					trigger = {
@@ -41,7 +42,7 @@ tributary_client_cb = {
 					}
 					prestige = 500
 					TECH_MAJESTY = 3
-					diplomacy = 11
+					diplomacy = 17
 				}
 			}
 			ROOT = { government = ar_confederation_government }
@@ -229,7 +230,7 @@ tributary_client_cb = {
 				limit = { NOT = { has_character_modifier = recently_released_vassal } }
 				add_character_modifier = {
 					modifier = recently_released_vassal
-					years = 15
+					years = 5
 					inherit = yes
 				}
 			}

@@ -137,6 +137,60 @@ castle = {
 
 ### Extra Feudal Buildings ###
 
+	feudal_capital_expand = {
+		desc =  feudal_capital_expand_desc
+		
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 3
+		}
+		prerequisites = { feudal_district_1 }
+		gold_cost = 250
+		build_time = 365
+		
+		levy_size = 0.025
+		tax_income = 1
+		local_tax_modifier = 0.025
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_capital_expand_2 = {
+		desc =  feudal_capital_expand_desc
+
+		potential = {
+			FROM = { higher_tier_than = COUNT }
+		}
+		
+		is_active_trigger = {
+			FROM = { higher_tier_than = COUNT }
+		}
+		
+		trigger = {
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { feudal_district_2 }
+		gold_cost = 400
+		build_time = 365
+		
+		levy_size = 0.025
+		tax_income = 1
+		local_tax_modifier = 0.025
+
+		upgrades_from = feudal_capital_expand
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
 	feudal_library_1 = {
 		desc =  feudal_library_1_desc
 		
@@ -289,7 +343,7 @@ castle = {
 		build_time = 365
 		
 		local_movement_speed = 0.025
-		tax_income = 0.05
+		tax_income = 0.5
 		#culture_techpoints = 0.05
 		
 		ai_creation_factor = 104
@@ -315,7 +369,7 @@ castle = {
 		upgrades_from = medieval_bridge_1
 		
 		local_movement_speed = 0.05
-		tax_income = 0.05
+		tax_income = 0.5
 		#culture_techpoints = 0.05
 
 		
@@ -342,7 +396,7 @@ castle = {
 		upgrades_from = medieval_bridge_2
 		
 		local_movement_speed = 0.075
-		tax_income = 0.05
+		tax_income = 0.5
 		#culture_techpoints = 0.05
 
 		
@@ -369,7 +423,7 @@ castle = {
 		upgrades_from = medieval_bridge_3
 		
 		local_movement_speed = 0.1
-		tax_income = 0.05
+		tax_income = 0.5
 		#culture_techpoints = 0.05
 
 		
@@ -397,7 +451,7 @@ castle = {
 		upgrades_from = medieval_bridge_4
 		
 		local_movement_speed = 0.15
-		tax_income = 0.05
+		tax_income = 0.5
 		#culture_techpoints = 0.05
 
 		
@@ -422,7 +476,7 @@ castle = {
 		build_time = 365
 		
 		local_tax_modifier = 0.005
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 104
 		add_number_to_name = no
@@ -447,7 +501,7 @@ castle = {
 		upgrades_from = castle_marketplace_1
 		
 		local_tax_modifier = 0.005
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -472,7 +526,7 @@ castle = {
 		upgrades_from = castle_marketplace_2
 		
 		local_tax_modifier = 0.005
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -497,7 +551,7 @@ castle = {
 		upgrades_from = castle_marketplace_3
 		
 		local_tax_modifier = 0.005
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -523,7 +577,7 @@ castle = {
 		upgrades_from = castle_marketplace_4
 		
 		local_tax_modifier = 0.005
-		tax_income = 0.5
+		tax_income = 1
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -822,7 +876,7 @@ castle = {
 		
 		local_movement_speed = 0.025
 		local_tax_modifier = 0.005
-		tax_income = 0.05
+		tax_income = 0.5
 		levy_reinforce_rate = 0.015
 		#culture_techpoints = 0.025
 		
@@ -850,7 +904,7 @@ castle = {
 		
 		local_movement_speed = 0.05
 		local_tax_modifier = 0.005
-		tax_income = 0.05
+		tax_income = 0.5
 		levy_reinforce_rate = 0.015		
 		#culture_techpoints = 0.025
 		
@@ -878,7 +932,7 @@ castle = {
 		
 		local_movement_speed = 0.075
 		local_tax_modifier = 0.005
-		tax_income = 0.05
+		tax_income = 0.5
 		levy_reinforce_rate = 0.015
 		#culture_techpoints = 0.025
 		
@@ -906,7 +960,7 @@ castle = {
 		
 		local_movement_speed = 0.1
 		local_tax_modifier = 0.005
-		tax_income = 0.05
+		tax_income = 0.5
 		levy_reinforce_rate = 0.015
 		#culture_techpoints = 0.025
 		
@@ -935,7 +989,7 @@ castle = {
 		
 		local_movement_speed = 0.15
 		local_tax_modifier = 0.005
-		tax_income = 0.05
+		tax_income = 0.5
 		levy_reinforce_rate = 0.015
 		#culture_techpoints = 0.025
 		
@@ -945,350 +999,350 @@ castle = {
 		extra_tech_building_start = 10.0
 	}
 	
-	#mercenary_guild_1 = {
-	#	desc =  mercenary_guild_1_desc
-	#	
-	#	is_active_trigger = {
-	#		is_tribal = no
-	#	}
-	#	
-	#	trigger = {
-	#		TECH_CASTLE_CONSTRUCTION = 2
-	#	}
-	#	prerequisites = { ca_training_grounds_1 }
-	#	gold_cost = 150
-	#	build_time = 365
-	#	
-	#	#levy_size = 0.015
-	#	light_infantry = 40
-	#	light_cavalry = 40
-	#	
-	#	ai_creation_factor = 89
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#mercenary_guild_2 = {
-	#	desc =  mercenary_guild_1_desc
-	#	
-	#	is_active_trigger = {
-	#		is_tribal = no
-	#	}
-	#	
-	#	trigger = {
-	#		TECH_CASTLE_CONSTRUCTION = 3
-	#	}
-	#	prerequisites = { ca_training_grounds_1 }
-	#	gold_cost = 200
-	#	build_time = 547
-	#	
-	#	upgrades_from = mercenary_guild_1
-	#	
-	#	#levy_size = 0.025
-	#	light_infantry = 50
-	#	light_cavalry = 40
-	#	
-	#	ai_creation_factor = 88
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#mercenary_guild_3 = {
-	#	desc =  mercenary_guild_1_desc
-	#	
-	#	is_active_trigger = {
-	#		is_tribal = no
-	#	}
-	#	
-	#	trigger = {
-	#		TECH_CASTLE_CONSTRUCTION = 4
-	#	}
-	#	prerequisites = { ca_training_grounds_1 }
-	#	gold_cost = 300
-	#	build_time = 730
-	#
-	#	upgrades_from = mercenary_guild_2
-	#	
-	#	#levy_size = 0.05
-	#	light_infantry = 50
-	#	light_cavalry = 40
-	#	
-	#	ai_creation_factor = 88
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#mercenary_guild_4 = {
-	#	desc =  mercenary_guild_1_desc
-	#	
-	#	is_active_trigger = {
-	#		is_tribal = no
-	#	}
-	#	
-	#	trigger = {
-	#		TECH_CASTLE_CONSTRUCTION = 5
-	#	}
-	#	prerequisites = { ca_training_grounds_2 }
-	#	gold_cost = 400
-	#	build_time = 1095
-	#
-	#	upgrades_from = mercenary_guild_3
-	#	
-	#	#levy_size = 0.2
-	#	light_infantry = 50
-	#	light_cavalry = 40
-	#	
-	#	ai_creation_factor = 88
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#mercenary_guild_5 = {
-	#	desc =  mercenary_guild_1_desc
-	#
-	#	is_active_trigger = {
-	#		is_tribal = no
-	#	}
-	#	
-	#	trigger = {
-	#		TECH_CASTLE_CONSTRUCTION = 6
-	#	}
-	#
-	#	prerequisites = { ca_training_grounds_3 }
-	#	gold_cost = 500
-	#	build_time = 1460
-	#
-	#	upgrades_from = mercenary_guild_4
-	#	
-	#	#levy_size = 0.3
-	#	light_infantry = 50
-	#	light_cavalry = 40
-	#	
-	#	ai_creation_factor = 88
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
+	mercenary_guild_1 = {
+		desc =  mercenary_guild_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_training_grounds_1 }
+		gold_cost = 150
+		build_time = 365
+		
+		#levy_size = 0.015
+		light_infantry = 40
+		light_cavalry = 20
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
 	
-	#slaughterhouse_1 = {
-	#	desc = slaughterhouse_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 2
-	#		TECH_CONSTRUCTION = 2
-	#	}
-	#	prerequisites = { ca_keep_1 ca_town_3 }
-	#	gold_cost = 250
-	#	build_time = 365
-	#
-	#	#levy_size = 0.05		
-	#	local_tax_modifier = 0.025
-	#	tax_income = 0.1
-	#	
-	#	ai_creation_factor = 104
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#slaughterhouse_2 = {
-	#	desc = slaughterhouse_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 3
-	#		TECH_CONSTRUCTION = 3
-	#	}
-	#	prerequisites = { ca_keep_2 ca_town_3 }
-	#	gold_cost = 350
-	#	build_time = 547
-	#
-	#	upgrades_from = slaughterhouse_1
-	#
-	#	#levy_size = 0.05		
-	#	local_tax_modifier = 0.025
-	#	tax_income = 0.1
-	#	
-	#	ai_creation_factor = 103
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#slaughterhouse_3 = {
-	#	desc = slaughterhouse_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 4
-	#		TECH_CONSTRUCTION = 4
-	#	}
-	#	prerequisites = { ca_keep_3 ca_town_4 }
-	#	gold_cost = 500
-	#	build_time = 730
-	#
-	#	upgrades_from = slaughterhouse_2
-	#
-	#	#levy_size = 0.05		
-	#	local_tax_modifier = 0.025
-	#	tax_income = 0.1
-	#	
-	#	ai_creation_factor = 102
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#slaughterhouse_4 = {
-	#	desc = slaughterhouse_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 5
-	#		TECH_CONSTRUCTION = 5
-	#	}
-	#	prerequisites = { ca_keep_4 ca_town_4 }
-	#	gold_cost = 650
-	#	build_time = 1095
-	#
-	#	upgrades_from = slaughterhouse_3
-	#
-	#	#levy_size = 0.05		
-	#	local_tax_modifier = 0.025
-	#	tax_income = 0.1
-	#	
-	#	ai_creation_factor = 101
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#slaughterhouse_5 = {
-	#	desc = slaughterhouse_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 5
-	#		TECH_CONSTRUCTION = 6
-	#	}
-	#	prerequisites = { ca_keep_4 ca_town_4 }
-	#	gold_cost = 650
-	#	build_time = 1095
-	#
-	#	upgrades_from = slaughterhouse_4
-	#
-	#	#levy_size = 0.05		
-	#	local_tax_modifier = 0.025
-	#	tax_income = 0.1
-	#	
-	#	ai_creation_factor = 100
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
+		extra_tech_building_start = 10.0
+	}
+	
+	mercenary_guild_2 = {
+		desc =  mercenary_guild_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+		}
+		prerequisites = { ca_training_grounds_1 }
+		gold_cost = 200
+		build_time = 547
+		
+		upgrades_from = mercenary_guild_1
+		
+		#levy_size = 0.025
+		light_infantry = 50
+		light_cavalry = 30
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	mercenary_guild_3 = {
+		desc =  mercenary_guild_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_training_grounds_1 }
+		gold_cost = 300
+		build_time = 730
+	
+		upgrades_from = mercenary_guild_2
+		
+		#levy_size = 0.05
+		light_infantry = 60
+		light_cavalry = 30
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	mercenary_guild_4 = {
+		desc =  mercenary_guild_1_desc
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 5
+		}
+		prerequisites = { ca_training_grounds_2 }
+		gold_cost = 400
+		build_time = 1095
+	
+		upgrades_from = mercenary_guild_3
+		
+		#levy_size = 0.2
+		light_infantry = 50
+		light_cavalry = 40
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	mercenary_guild_5 = {
+		desc =  mercenary_guild_1_desc
+	
+		is_active_trigger = {
+			is_tribal = no
+		}
+		
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+		}
+	
+		prerequisites = { ca_training_grounds_3 }
+		gold_cost = 500
+		build_time = 1460
+	
+		upgrades_from = mercenary_guild_4
+		
+		#levy_size = 0.3
+		light_infantry = 60
+		light_cavalry = 40
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	slaughterhouse_1 = {
+		desc = slaughterhouse_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			TECH_CONSTRUCTION = 2
+		}
+		prerequisites = { ca_keep_1 ca_town_3 }
+		gold_cost = 250
+		build_time = 365
+	
+		#levy_size = 0.05		
+		local_tax_modifier = 0.025
+		tax_income = 0.5
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	slaughterhouse_2 = {
+		desc = slaughterhouse_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			TECH_CONSTRUCTION = 3
+		}
+		prerequisites = { ca_keep_2 ca_town_3 }
+		gold_cost = 350
+		build_time = 547
+	
+		upgrades_from = slaughterhouse_1
+	
+		#levy_size = 0.05		
+		local_tax_modifier = 0.025
+		tax_income = 0.5
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	slaughterhouse_3 = {
+		desc = slaughterhouse_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_keep_3 ca_town_4 }
+		gold_cost = 500
+		build_time = 730
+	
+		upgrades_from = slaughterhouse_2
+	
+		#levy_size = 0.05		
+		local_tax_modifier = 0.025
+		tax_income = 0.5
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	slaughterhouse_4 = {
+		desc = slaughterhouse_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { ca_keep_4 ca_town_4 }
+		gold_cost = 650
+		build_time = 1095
+	
+		upgrades_from = slaughterhouse_3
+	
+		#levy_size = 0.05		
+		local_tax_modifier = 0.025
+		tax_income = 0.5
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	slaughterhouse_5 = {
+		desc = slaughterhouse_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_keep_4 ca_town_4 }
+		gold_cost = 650
+		build_time = 1095
+	
+		upgrades_from = slaughterhouse_4
+	
+		#levy_size = 0.05		
+		local_tax_modifier = 0.025
+		tax_income = 0.5
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
 
-	#feudal_farm_1 = {
-	#	desc = feudal_farm_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 3
-	#		TECH_CONSTRUCTION = 3
-	#	}
-	#	prerequisites = { ca_wall_1 ca_wall_q_1 medieval_road_1 }
-	#	gold_cost = 250
-	#	build_time = 365
-	#
-	#	#levy_size = 0.05		
-	#	tax_income = 0.5
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 104
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_farm_2 = {
-	#	desc = feudal_farm_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 4
-	#		TECH_CONSTRUCTION = 4
-	#	}
-	#	prerequisites = { ca_wall_1 ca_wall_q_1 medieval_road_2 }
-	#	gold_cost = 350
-	#	build_time = 547
-	#
-	#	upgrades_from = feudal_farm_1
-	#
-	#	#levy_size = 0.05		
-	#	tax_income = 0.5
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 103
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_farm_3 = {
-	#	desc = feudal_farm_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 5
-	#		TECH_CONSTRUCTION = 5
-	#	}
-	#	prerequisites = { ca_wall_2 ca_wall_q_2 medieval_road_3 }
-	#	gold_cost = 500
-	#	build_time = 730
-	#
-	#	upgrades_from = feudal_farm_2
-	#
-	#	#levy_size = 0.05		
-	#	tax_income = 0.5
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 102
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_farm_4 = {
-	#	desc = feudal_farm_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 6
-	#		TECH_CONSTRUCTION = 6
-	#	}
-	#	prerequisites = { ca_wall_2 ca_wall_q_3 medieval_road_4 }
-	#	gold_cost = 650
-	#	build_time = 1095
-	#
-	#	upgrades_from = feudal_farm_3
-	#
-	#	#levy_size = 0.05		
-	#	tax_income = 0.5
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 101
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_farm_5 = {
-	#	desc = feudal_farm_desc
-	#	trigger = {
-	#		TECH_CITY_CONSTRUCTION = 7
-	#		TECH_CONSTRUCTION = 7
-	#	}
-	#	prerequisites = { ca_wall_3 ca_wall_q_3 medieval_road_5 }
-	#	gold_cost = 650
-	#	build_time = 1095
-	#
-	#	upgrades_from = feudal_farm_4
-	#
-	#	#levy_size = 0.05
-	#	tax_income = 0.5
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 100
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
+	feudal_farm_1 = {
+		desc = feudal_farm_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			TECH_CONSTRUCTION = 3
+		}
+		prerequisites = { ca_wall_1 ca_wall_q_1 medieval_road_1 }
+		gold_cost = 250
+		build_time = 365
+	
+		#levy_size = 0.05	
+		tax_income = 0.5
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_farm_2 = {
+		desc = feudal_farm_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_wall_1 ca_wall_q_1 medieval_road_2 }
+		gold_cost = 350
+		build_time = 547
+	
+		upgrades_from = feudal_farm_1
+	
+		#levy_size = 0.05		
+		tax_income = 0.5
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_farm_3 = {
+		desc = feudal_farm_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { ca_wall_2 ca_wall_q_2 medieval_road_3 }
+		gold_cost = 500
+		build_time = 730
+	
+		upgrades_from = feudal_farm_2
+	
+		#levy_size = 0.05		
+		tax_income = 0.5
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_farm_4 = {
+		desc = feudal_farm_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_wall_2 ca_wall_q_3 medieval_road_4 }
+		gold_cost = 650
+		build_time = 1095
+	
+		upgrades_from = feudal_farm_3
+	
+		#levy_size = 0.05		
+		tax_income = 0.5
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_farm_5 = {
+		desc = feudal_farm_desc
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 7
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_wall_3 ca_wall_q_3 medieval_road_5 }
+		gold_cost = 650
+		build_time = 1095
+	
+		upgrades_from = feudal_farm_4
+	
+		#levy_size = 0.05
+		tax_income = 0.5
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
 	
 	feudal_district_1 = {
 		desc = feudal_district_desc
@@ -1403,116 +1457,116 @@ castle = {
 		extra_tech_building_start = 10.0
 	}
 
-	#feudal_trade_hub_1 = {
-	#	desc = feudal_trade_hub_desc
-	#	trigger = {
-	#		TECH_TRADE_PRACTICES = 3
-	#		TECH_POPULAR_CUSTOMS = 3
-	#	}
-	#	prerequisites = { ca_town_2 ca_wall_2 }
-	#	gold_cost = 450
-	#	build_time = 547
-	#	
-	#	tax_income = 1
-	#	local_tax_modifier = 0.025
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 96
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_trade_hub_2 = {
-	#	desc = feudal_trade_hub_desc
-	#	trigger = {
-	#		TECH_TRADE_PRACTICES = 4
-	#		TECH_POPULAR_CUSTOMS = 4
-	#	}
-	#	prerequisites = { ca_town_3 ca_wall_2 }
-	#	gold_cost = 550
-	#	build_time = 730
-	#
-	#	upgrades_from = feudal_trade_hub_1
-	#	
-	#	tax_income = 1
-	#	local_tax_modifier = 0.025
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 95
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_trade_hub_3 = {
-	#	desc = feudal_trade_hub_desc
-	#	trigger = {
-	#		TECH_TRADE_PRACTICES = 5
-	#		TECH_POPULAR_CUSTOMS = 5
-	#		TECH_CONSTRUCTION = 4
-	#	}
-	#	prerequisites = { ca_town_4 ca_wall_4 }
-	#	gold_cost = 650
-	#	build_time = 2190
-	#
-	#	upgrades_from = feudal_trade_hub_2
-	#	
-	#	tax_income = 1
-	#	local_tax_modifier = 0.025
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 94
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_trade_hub_4 = {
-	#	desc = feudal_trade_hub_desc
-	#	trigger = {
-	#		TECH_TRADE_PRACTICES = 6
-	#		TECH_POPULAR_CUSTOMS = 6
-	#		TECH_CONSTRUCTION = 5
-	#	}
-	#	prerequisites = { ca_town_4 ca_wall_4 }
-	#	gold_cost = 750
-	#	build_time = 2400
-	#
-	#	upgrades_from = feudal_trade_hub_3
-	#	
-	#	tax_income = 1
-	#	local_tax_modifier = 0.025
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 93
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
-	#
-	#feudal_trade_hub_5 = {
-	#	desc = feudal_trade_hub_desc
-	#	trigger = {
-	#		TECH_TRADE_PRACTICES = 7
-	#		TECH_POPULAR_CUSTOMS = 7
-	#		TECH_CONSTRUCTION = 6
-	#	}
-	#	prerequisites = { ca_town_5 ca_wall_5 }
-	#	gold_cost = 850
-	#	build_time = 3190
-	#
-	#	upgrades_from = feudal_trade_hub_4
-	#	
-	#	tax_income = 1
-	#	local_tax_modifier = 0.025
-	#	#economy_techpoints = 0.025
-	#	
-	#	ai_creation_factor = 92
-	#	add_number_to_name = no
-	#
-	#	extra_tech_building_start = 10.0
-	#}
+	feudal_trade_hub_1 = {
+		desc = feudal_trade_hub_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_POPULAR_CUSTOMS = 3
+		}
+		prerequisites = { ca_town_2 ca_wall_2 }
+		gold_cost = 450
+		build_time = 547
+		
+		tax_income = 1
+		local_tax_modifier = 0.025
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 96
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_trade_hub_2 = {
+		desc = feudal_trade_hub_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 4
+			TECH_POPULAR_CUSTOMS = 4
+		}
+		prerequisites = { ca_town_3 ca_wall_2 }
+		gold_cost = 550
+		build_time = 730
+	
+		upgrades_from = feudal_trade_hub_1
+		
+		tax_income = 1
+		local_tax_modifier = 0.025
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 95
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_trade_hub_3 = {
+		desc = feudal_trade_hub_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_POPULAR_CUSTOMS = 5
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_4 ca_wall_4 }
+		gold_cost = 650
+		build_time = 2190
+	
+		upgrades_from = feudal_trade_hub_2
+		
+		tax_income = 1
+		local_tax_modifier = 0.025
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 94
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_trade_hub_4 = {
+		desc = feudal_trade_hub_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			TECH_POPULAR_CUSTOMS = 6
+			TECH_CONSTRUCTION = 5
+		}
+		prerequisites = { ca_town_4 ca_wall_4 }
+		gold_cost = 750
+		build_time = 2400
+	
+		upgrades_from = feudal_trade_hub_3
+		
+		tax_income = 1
+		local_tax_modifier = 0.025
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 93
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_trade_hub_5 = {
+		desc = feudal_trade_hub_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			TECH_POPULAR_CUSTOMS = 7
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_5 ca_wall_5 }
+		gold_cost = 850
+		build_time = 3190
+	
+		upgrades_from = feudal_trade_hub_4
+		
+		tax_income = 1
+		local_tax_modifier = 0.025
+		#economy_techpoints = 0.025
+		
+		ai_creation_factor = 92
+		add_number_to_name = no
+	
+		extra_tech_building_start = 10.0
+	}
 
 	castle_headquarters_1 = {
 		desc = castle_headquarters_desc
@@ -1785,6 +1839,129 @@ castle = {
 		extra_tech_building_start = 10.0
 	}
 
+	customs_post_1 = {
+		desc = customs_post_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { castle_marketplace_1 }
+		gold_cost = 350
+		build_time = 547
+		
+		#levy_size = 0.05
+		tax_income = 0.5
+		
+		ai_creation_factor = 89
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	customs_post_2 = {
+		desc = customs_post_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 4
+			TECH_CONSTRUCTION = 4
+		}
+		gold_cost = 450
+		build_time = 730
+
+		prerequisites = { castle_marketplace_1 }
+		upgrades_from = customs_post_1
+		
+		#levy_size = 0.05
+		tax_income = 0.5
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	customs_post_3 = {
+		desc = customs_post_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 4
+			TECH_CONSTRUCTION = 4
+		}
+		gold_cost = 700
+		build_time = 2190
+
+		prerequisites = { castle_marketplace_2 }
+		upgrades_from = customs_post_2
+		
+		#levy_size = 0.05
+		tax_income = 0.5
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	customs_post_4 = {
+		desc = customs_post_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 4
+			TECH_CONSTRUCTION = 5
+		}
+		gold_cost = 600
+		build_time = 2400
+		
+		prerequisites = { castle_marketplace_2 }
+		upgrades_from = customs_post_3
+		
+		#levy_size = 0.05
+		tax_income = 0.5
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	customs_post_5 = {
+		desc = customs_post_desc
+
+		is_active_trigger = {
+			is_tribal = no
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_CONSTRUCTION = 5
+		}
+		gold_cost = 700
+		build_time = 3190
+
+		prerequisites = { castle_marketplace_3 }
+		upgrades_from = customs_post_4
+		
+		#levy_size = 0.1
+		tax_income = 0.5
+		
+		ai_creation_factor = 88
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
 	#feudal_university_1 = {
 	#	desc = feudal_university_desc
 	#
@@ -1851,8 +2028,14 @@ castle = {
 	#	extra_tech_building_start = 10.0
 	#}
 
+##################################
+##################################
+##################################
 ### Terrain Buildings ###
-	
+##################################
+##################################
+##################################
+
 	feudal_windmill_1 = {
 		desc = feudal_windmill_desc
 		potential = {
@@ -2295,6 +2478,7 @@ castle = {
 		#local_tax_modifier = 0.05
 		#levy_size = 0.025
 		supply_limit = 0.15
+		light_cavalry = 10
 
 		
 		ai_creation_factor = 104
@@ -2323,6 +2507,7 @@ castle = {
 		#local_tax_modifier = 0.05
 		#levy_size = 0.025
 		supply_limit = 0.1
+		light_cavalry = 20
 		
 		ai_creation_factor = 103
 		add_number_to_name = no
@@ -2350,6 +2535,7 @@ castle = {
 		#local_tax_modifier = 0.05
 		#levy_size = 0.025
 		supply_limit = 0.1
+		light_cavalry = 30
 		
 		ai_creation_factor = 102
 		add_number_to_name = no
@@ -2377,6 +2563,7 @@ castle = {
 		#local_tax_modifier = 0.05
 		#levy_size = 0.025
 		supply_limit = 0.1
+		light_cavalry = 40
 		
 		ai_creation_factor = 101
 		add_number_to_name = no
@@ -2404,6 +2591,7 @@ castle = {
 		#local_tax_modifier = 0.05
 		#levy_size = 0.025
 		supply_limit = 0.1
+		light_cavalry = 50
 		
 		ai_creation_factor = 100
 		add_number_to_name = no
@@ -2540,7 +2728,13 @@ castle = {
 		extra_tech_building_start = 10.0
 	}
 
+##################################
+##################################
+##################################
 ### Special Recourses Buildings ###
+##################################
+##################################
+##################################
 
 	eu_gold_mine_1 = {
 		desc = eu_gold_mine_1_desc
@@ -3370,8 +3564,14 @@ castle = {
 		extra_tech_building_start = 2
 	}
 
+##################################
+##################################
+##################################
 ### Specific Special Buildings ###
-	
+##################################
+##################################
+##################################
+
 	rhodos_grand_master_palace = {
 		desc = rhodos_grand_master_palace_desc
 		add_number_to_name = no

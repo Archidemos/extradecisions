@@ -14,6 +14,11 @@ narrative_event = {	#Tributary gets event to give up his lands or to be rebeliou
  	option = { #Gives into the Annexation
         name = EVTOPTTRIB.1
 		ai_chance = { factor = 100 }
+		add_character_modifier = {
+			modifier = annexed_vassal
+			years = 25
+			inherit = yes
+		}
 		set_defacto_liege = event_target:tribute_annexer
 		clear_event_target = tribute_annexer
     }
@@ -100,11 +105,16 @@ narrative_event = { # check if enough gold/prestige to annex
 		set_variable = {
 				which = annex_cost
 				value = 0
-			}
+		}
 		set_variable = {
 				which = annex_price
 				value = 0
-			}
+		}
+		add_character_modifier = {
+			modifier = annexed_vassal
+			years = 25
+			inherit = yes
+		}
 	}
 
 	option = { #im too poor

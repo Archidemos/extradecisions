@@ -113,6 +113,7 @@ targetted_decisions = {
 				#separate event with prestige and gold requirements
 				prestige = 500
 				NOT = { has_character_modifier = annexed_vassal }
+				#NOT = { has_character_modifier = recently_released_vassal }
 			}
         }
 
@@ -124,13 +125,13 @@ targetted_decisions = {
 				event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.005 } } }
 				
 			}
-			FROM = {
-				add_character_modifier = {
-					modifier = annexed_vassal
-					years = 1
-					inherit = yes
-				}
-			}
+			#FROM = {
+			#	add_character_modifier = {
+			#		modifier = annexed_vassal
+			#		years = 15
+			#		inherit = yes
+			#	}
+			#}
         }
 
         revoke_allowed = {
