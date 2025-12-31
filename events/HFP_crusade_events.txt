@@ -2805,12 +2805,38 @@ narrative_event = {
     border = GFX_event_narrative_frame_religion
     picture = GFX_evt_mass_crusade
     is_triggered_only = yes
-
+	
+	#picture = { 
+	#	trigger = { 
+	#		religion_group = muslim
+	#	} 
+	#	picture = GFX_evt_kaaba
+	#}
+	#
+	#picture = { 
+	#	trigger = { 
+	#		religion_group = christian
+	#	} 
+	#	picture = GFX_evt_mass_crusade
+	#}
+	#
+	#picture = { 
+	#	trigger = { 
+	#		NOR = {
+	#			religion_group = christian
+	#			religion_group = muslim
+	#		}
+	#	} 
+	#	picture = GFX_evt_viking_battle_oldgods
+	#}
+	
     trigger = {
     	FROM = {
     		is_preparing_crusade = yes
     	}
     }
+
+
 
     immediate = {
 		
@@ -6615,15 +6641,47 @@ letter_event = {
 narrative_event = {
     id = HFP.41160
     title = EVTTITLE_HFP_41160
-    desc = EVTDESC_HFP_41160
-    picture = GFX_evt_mass_crusade
+    #desc = EVTDESC_HFP_41160
+    #picture = GFX_evt_mass_crusade
     border = GFX_event_narrative_frame_religion
     portrait = event_target:crusade_king_recipient
     is_triggered_only = yes
-    trigger = {
-    
-    }
-
+	desc = { 
+		trigger = { 
+			religion_group = christian
+		} 
+		text = EVTDESC_HFP_41160
+	}
+	desc = { 
+		trigger = { 
+			religion_group = muslim
+		} 
+		text = "Victorious Jihaders"
+	}
+	
+	picture = { 
+		trigger = { 
+			religion_group = muslim
+		} 
+		picture = GFX_evt_kaaba
+	}
+	
+	picture = { 
+		trigger = { 
+			religion_group = christian
+		} 
+		picture = GFX_evt_mass_crusade
+	}
+	
+	picture = { 
+		trigger = { 
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		} 
+		picture = GFX_evt_viking_battle_oldgods
+	}
     immediate = {
         sound_effect = crusade_outcome_positive
     }

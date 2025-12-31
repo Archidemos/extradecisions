@@ -64,54 +64,54 @@ narrative_event = {
 		set_global_flag = seljuk_spawned
 		activate_title = { title = e_seljuk_turks status = yes }
 		
-		if = {
-			limit = {
-				has_global_flag = seljuk_born
-			}
-			if = {
-				limit = {
-					any_independent_ruler = {
-						has_character_flag = seljuk_himself
-						demesne_size = 1
-						ai = yes
-					}
-				}
-				log = "Temujin exists as independent ai"
-				random_independent_ruler = {
-					limit = {
-						has_character_flag = seljuk_himself
-						ai = yes
-					}
-					any_demesne_title = {
-						limit = {
-							tier = EMPEROR
-						}
-						set_title_flag = to_be_destroyed
-					}
-					e_seljuk_turks = {
-						grant_title = PREV
-						add_law = succ_turkish_succession
-					}
-					any_demesne_title = {
-						limit = {
-							has_title_flag = to_be_destroyed
-						}
-						activate_title = { title = THIS status = no }
-						destroy_landed_title = THIS
-					}
-					wealth = 12000
-					prestige = 10000
-					set_character_flag = is_special_character
-					set_character_flag = seljuk_invader
-					character_event = { id = SELJ.103 } # Spawn troops
-					character_event = { id = SELJ.104 days = 1 } # Spawn population
-					create_bloodline = {
-						type = seljuk
-					}
-				}
-				break = yes
-			}
-		}
+		#if = {
+		#	limit = {
+		#		has_global_flag = seljuk_born
+		#	}
+		#	if = {
+		#		limit = {
+		#			any_independent_ruler = {
+		#				has_character_flag = seljuk_himself
+		#				demesne_size = 1
+		#				ai = yes
+		#			}
+		#		}
+		#		log = "Temujin exists as independent ai"
+		#		random_independent_ruler = {
+		#			limit = {
+		#				has_character_flag = seljuk_himself
+		#				ai = yes
+		#			}
+		#			any_demesne_title = {
+		#				limit = {
+		#					tier = EMPEROR
+		#				}
+		#				set_title_flag = to_be_destroyed
+		#			}
+		#			e_seljuk_turks = {
+		#				grant_title = PREV
+		#				add_law = succ_turkish_succession
+		#			}
+		#			any_demesne_title = {
+		#				limit = {
+		#					has_title_flag = to_be_destroyed
+		#				}
+		#				activate_title = { title = THIS status = no }
+		#				destroy_landed_title = THIS
+		#			}
+		#			wealth = 12000
+		#			prestige = 10000
+		#			set_character_flag = is_special_character
+		#			set_character_flag = seljuk_invader
+		#			character_event = { id = SELJ.103 } # Spawn troops
+		#			character_event = { id = SELJ.104 days = 1 } # Spawn population
+		#			create_bloodline = {
+		#				type = seljuk
+		#			}
+		#		}
+		#		break = yes
+		#	}
+		#}
 		if = {
 			limit = {
 				NOT = {

@@ -5194,8 +5194,13 @@ new_crusade = {
 							type = holy_war
 						}
 					}
-					any_playable_ruler = {
-						narrative_event = { id = HFP.41160 }
+					if = {
+						limit = {
+							ROOT = { religion_group = christian }
+						}
+						any_playable_ruler = {
+							narrative_event = { id = HFP.41160 }
+						}
 					}
 				}
 				# If it is a Fourth Crusade
@@ -5529,8 +5534,13 @@ new_crusade = {
 					crusader_king = {
 						save_event_target_as = crusade_king_recipient
 					}
-					any_playable_ruler = {
-						narrative_event = { id = HFP.41160 }
+					if = {
+						limit = {
+							ROOT = { religion_group = christian }
+						}
+						any_playable_ruler = {
+							narrative_event = { id = HFP.41160 }
+						}
 					}
 				}
 				crusader_king = {

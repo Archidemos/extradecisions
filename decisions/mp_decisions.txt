@@ -1324,7 +1324,22 @@ title_decisions = {
 				TECH_TRADE_PRACTICES = 4
 				NOT = { has_character_modifier = develop_cooldown }
 			}
-			location = { has_building = feudal_district_1 }
+			trigger_if = {
+				limit = {
+					FROM = {
+						government = feudal_government
+					}
+				}
+				location = { has_building = feudal_district_1 }
+			}
+			trigger_if = {
+				limit = {
+					FROM = {
+						government = merchant_republic_government
+					}
+				}
+				location = { has_building = republic_district_1 }
+			}
 			NOT = { has_province_modifier = developed_county_tax_10 }
 		}
 		
@@ -1499,6 +1514,22 @@ title_decisions = {
 				TECH_CONSTRUCTION = 4
 				TECH_TRADE_PRACTICES = 4
 				NOT = { has_character_modifier = develop_cooldown }
+			}
+			trigger_if = {
+				limit = {
+					FROM = {
+						government = feudal_government
+					}
+				}
+				location = { has_building = feudal_district_1 }
+			}
+			trigger_if = {
+				limit = {
+					FROM = {
+						government = merchant_republic_government
+					}
+				}
+				location = { has_building = republic_district_1 }
 			}
 			NOT = { has_province_modifier = developed_county_army_10 }
 		}
