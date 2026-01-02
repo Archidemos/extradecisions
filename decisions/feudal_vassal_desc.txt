@@ -65,11 +65,11 @@ targetted_decisions = {
 		
 		from_potential = {
 			higher_tier_than = COUNT
-			prestige >= 500
 			NOT = { religion_group = zoroastrian_group }
 		}
 		
         potential = {
+			FROM = { prestige >= 500 }
 			ROOT = {
 				OR = {
 					is_tributary = {
