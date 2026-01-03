@@ -2736,6 +2736,7 @@ invasion = {
 	}
 	
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		OR = {
 			FROM = {
 				has_landed_title = PREV
@@ -3211,6 +3212,7 @@ tribal_invasion = {
 	}
 
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		ROOT = {
 			OR = {
 				ai = yes
@@ -3803,6 +3805,7 @@ crusade = {
 	}
 
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		FROM = {
 			any_realm_title = {
 				de_jure_liege_or_above = PREVPREV
@@ -4394,6 +4397,7 @@ new_crusade = {
 	}
 
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		FROM = {
 			any_realm_title = {
 				de_jure_liege_or_above = PREVPREV
@@ -9240,6 +9244,7 @@ muslim_invasion = {
 	}
 	
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		# Muslims require the target to have at least 6 counties within the target kingdom
 		FROM = {
 			num_of_realm_counties = {
@@ -10603,6 +10608,7 @@ viking_invasion = {
 	}
 	
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		is_valid_viking_invasion_target = FROM # Checks that FROM holds the right amount of territory in the kingdom
 	}
 	
@@ -15955,6 +15961,7 @@ manifest_destiny_invasion = {
 	}
 	
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		empire = {
 			OR = {
 				title = e_persia
@@ -18550,6 +18557,10 @@ nomad_invasion = {
 				}
 			}
 		}
+	}
+	
+	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 	}
 	
 	is_valid_title = {

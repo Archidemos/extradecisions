@@ -605,7 +605,7 @@ NDiplomacy = {
 
 	FORM_ALLIANCE_INTERACTION_MONEY = 0,
 	FORM_ALLIANCE_INTERACTION_PIETY = 0,
-	FORM_ALLIANCE_INTERACTION_PRESTIGE = 150,
+	FORM_ALLIANCE_INTERACTION_PRESTIGE = 50,
 	FORM_ALLIANCE_INTERACTION_THRESHOLD_FOR_NO = 25,
 	FORM_ALLIANCE_INTERACTION_THRESHOLD_FOR_YES = 25,
 	FORM_ALLIANCE_INTERACTION_MUST_HAVE_COST = 1,					-- Is having prestige/piety >= cost required for this action?
@@ -1212,9 +1212,9 @@ NMilitary = {
 	LEVY_MAINTENANCE_FACTOR = 1.5,					-- General maintenance factor for levy troops
 	HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE = 0.30,
 	HOLDING_LEVY_SIZE_OWNER_MARTIAL_MULT = 0.025,	-- Levy size modifier: Each point of the holding owner's Martial skill is multiplied with this and added to HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE
-	MERCENARY_MAINTENANCE_FACTOR = 2.0,				-- Maintenance factor for NORMAL mercenary units
+	MERCENARY_MAINTENANCE_FACTOR = 3.0,				-- Maintenance factor for NORMAL mercenary units
 	MERCENARY_VASSAL_MAINTENANCE_FACTOR = 0.5,		-- Maintenance factor for VASSALIZED mercenary units
-	MERCENARY_HIRE_COST_FACTOR = 0.3,				-- Hire cost factor for mercenary units
+	MERCENARY_HIRE_COST_FACTOR = 0.1,				-- Hire cost factor for mercenary units
 	HOLY_ORDER_HIRE_COST_FACTOR = 0.25,				-- Conversion of nominal gold cost to piety cost when hiring Holy Orders
 	HOLY_ORDER_DYNASTY_HIRE_COST_FACTOR = 0.25,		-- Reduction of cost if the Holy Order is controlled by a dynasty member
 	VASSAL_MERC_HIRE_COST_FACTOR = 0.125,			-- Fraction of nominal hire cost when hiring vassal mercenaries OR Holy Orders

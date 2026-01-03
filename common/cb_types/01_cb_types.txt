@@ -8114,6 +8114,9 @@ shepherds_crusade_invasion = {
 	can_use = {
 		always = no # Can only be initiated through special means
 	}
+	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
+	}
 	is_valid = {
 		FROM = {
 			NOT = {
@@ -8439,6 +8442,7 @@ northern_crusade_war = {
 		}
 	}
 	can_use_title = {
+		FROM = { NOT = { has_landed_title = e_hip } }
 		kingdom = {
 			has_title_flag = northern_crusade_active_target
 		}
