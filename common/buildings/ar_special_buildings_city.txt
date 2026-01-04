@@ -1,0 +1,26 @@
+city = {
+	
+	#Gotland/Visby Walls (It even has a 3d model in vanilla so why not)
+	visby_wall = {
+		desc = visby_wall_desc
+		add_number_to_name = no
+		potential = {
+			ROOT = { province = c_gotland }
+			FROMFROM = { is_capital = yes }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = swedish
+					culture = norse
+				}
+				is_republic = yes
+			}
+		}
+		gold_cost = 500
+		build_time = 750
+		galleys = 15
+		levy_size = 0.2
+		tradevalue = 15
+	}
+}

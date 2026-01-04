@@ -69,7 +69,6 @@ targetted_decisions = {
 		}
 		
         potential = {
-			FROM = { prestige >= 500 }
 			ROOT = {
 				OR = {
 					is_tributary = {
@@ -103,17 +102,14 @@ targetted_decisions = {
 			}
 			FROM = {
 				war = no
-				#conditional_tooltip = {
-				#	trigger = {
-				#		NOT = { religion_group = christian }
-				#	}
-				#	diplomacy = 10
-				#	prestige = 1500
-				#}
+				TECH_MAJESTY = 4
+				diplomacy = 15
 				#separate event with prestige and gold requirements
 				prestige = 500
-				NOT = { has_character_modifier = annexed_vassal }
-				#NOT = { has_character_modifier = recently_released_vassal }
+				OR = {
+					NOT = { has_character_modifier = release_tributary_cooldown }
+					NOT = { has_character_modifier = annexed_vassal }
+				}
 			}
         }
 
@@ -125,13 +121,13 @@ targetted_decisions = {
 				event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.005 } } }
 				
 			}
-			#FROM = {
-			#	add_character_modifier = {
-			#		modifier = annexed_vassal
-			#		years = 15
-			#		inherit = yes
-			#	}
-			#}
+			FROM = {
+				add_character_modifier = {
+					modifier = release_tributary_cooldown
+					years = 1
+					inherit = yes
+				}
+			}
         }
 
         revoke_allowed = {
@@ -271,6 +267,91 @@ targetted_decisions = {
 			}
         }
 
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    release_feudal_tributary = {
+		ai = no
+		diplomacy_icon = GFX_trait_gamer
+		
+		from_potential = {
+			ai = no
+			is_nomadic = no
+			higher_tier_than = COUNT
+			holder_scope = {
+				NOT = { has_landed_title = e_china_west_governor }
+				OR = {
+					government = feudal_government
+					government = muslim_government
+					government = caliphate_government
+					government = chinese_government
+					government = theocratic_feudal_government
+					government = tsardom_government
+					government = indian_government
+					government = ar_theocracy_government
+					government = pirate_republic_government
+				}
+			}
+		}
+		
+        potential = {
+			vassal_of = FROM 
+				OR = {
+					tier = DUKE
+					tier = KING
+				}
+			is_landed = yes
+        }
+		
+        allow = {
+			FROM = {
+				NOT = { has_character_modifier = release_tributary_cooldown }
+				war = no
+				diplomacy = 13
+				TECH_MAJESTY = 5
+				prestige = 250
+			}
+        }
+		
+        effect = {
+            set_defacto_liege = THIS
+			ROOT = {
+				narrative_event = { id = CEL.116 }
+			}
+            FROM = {
+                make_tributary = {
+                    who = ROOT
+                    tributary_type = client
+                }
+				prestige = -250	
+				add_character_modifier = {
+					modifier = release_tributary_cooldown	
+					years = 1
+					inherit = yes
+				}				
+			}
+			ROOT = {
+				while = {
+					count = 2
+					spawn_unit = {
+						province = ROOT
+						troops = {
+							light_cavalry = { 500 500 }
+							light_infantry = { 1000 1000 }
+							archers = { 500 500 }
+						}
+						attrition=0
+						#maintenance=0
+					}
+				}
+			}
+        }
+		
         revoke_allowed = {
             always = no
         }

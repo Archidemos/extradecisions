@@ -1,0 +1,183 @@
+castle = {
+
+	dutch_polder = {
+		desc = dutch_polder_desc
+		add_number_to_name = no
+		potential = {
+			ROOT = { 
+				OR = {
+					culture = dutch
+					has_building = dutch_polder
+				}
+				OR = {
+					province = c_holland
+					province = c_westfriesland
+				}
+			}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 400
+		build_time = 800
+		
+		tax_income = 4
+		siege_defence = 0.1
+		
+		ai_creation_factor = 80
+		extra_tech_building_start = 2
+	}
+
+	#Cretan Fort
+	fort_crete = {
+		desc = fort_crete_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_chandax }
+		}
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+		trigger = { TECH_CONSTRUCTION = 5 }
+		gold_cost = 350
+		build_time = 785
+		
+		tax_income = 2
+		galleys = 15
+		light_infantry = 150
+		heavy_infantry = 150
+		archers = 100
+		siege_defence = 0.2
+		
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+	
+	rhodos_grand_master_palace = {
+		desc = rhodos_grand_master_palace_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_rhodos }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+
+		gold_cost = 600
+		build_time = 547
+
+		trigger = { TECH_CONSTRUCTION = 5 }		
+		heavy_infantry = 200
+		fort_level = 1
+		siege_defence = 0.2
+		galleys = 150
+		#military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+	
+	malta_fort = {
+		desc = malta_fort_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_malta }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+
+		gold_cost = 500
+		build_time = 547
+
+		trigger = { TECH_CONSTRUCTION = 5 }		
+		heavy_infantry = 250
+		fort_level = 2
+		siege_defence = 0.2
+		galleys = 150
+		#military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+
+	kolossi_fort = {
+		desc = kolossi_fort_desc
+		add_number_to_name = no
+		potential = {
+			FROMFROM = { province = c_limisol }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+			holder_scope = { religion_group = christian }
+		}
+
+		gold_cost = 500
+		build_time = 547
+
+		trigger = { TECH_CONSTRUCTION = 5 }		
+		heavy_infantry = 250
+		fort_level = 2
+		siege_defence = 0.2
+		galleys = 150
+		#military_techpoints = 0.05
+		
+		ai_creation_factor = 99
+		extra_tech_building_start = 0.3
+	}
+
+	#woldys_fort = {
+	#	desc = woldys_fort_desc
+	#	add_number_to_name = no
+	#	potential = {
+	#		ROOT = { province = c_canarias }
+	#		FROMFROM = { is_capital = yes }
+	#	}
+	#	gold_cost = 600
+	#	build_time = 547
+	#
+	#	tax_income = 5
+	#	siege_defence = 0.1
+	#	fort_level = 1
+	#	attrition = 0.10
+	#	global_supply_limit = -0.1
+	#	galleys = 100
+	#	
+	#	ai_creation_factor = 100
+	#	extra_tech_building_start = 0.3
+	#}
+	
+	hadrians_wall = {
+		desc = hadrians_wall_desc
+		add_number_to_name = no
+		potential = {
+			OR = {
+				ROOT = { province = c_cumberland }
+				ROOT = { province = c_northumberland }
+			}
+			FROMFROM = { is_capital = yes }
+		}
+		
+		is_active_trigger = {
+			is_tribal = no
+		}
+
+		trigger = { TECH_CONSTRUCTION = 5 }
+		gold_cost = 600
+		build_time = 547
+		
+		siege_defence = 0.3
+		fort_level = 2
+		garrison_size = 0.2
+		
+		ai_creation_factor = 100
+		extra_tech_building_start = 2
+	}
+
+}

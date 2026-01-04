@@ -1,0 +1,693 @@
+castle = {
+	feudal_windmill_1 = {
+		desc = feudal_windmill_desc
+		potential = {
+			location = { terrain = farmlands }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_2 }
+		gold_cost = 250
+		build_time = 547
+		
+		tax_income = 3
+		#levy_size = 0.015
+		levy_reinforce_rate = 0.02
+		supply_limit = 0.1
+
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_windmill_2 = {
+		desc = feudal_windmill_desc
+		potential = {
+			location = { terrain = farmlands }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 350
+		build_time = 730
+
+		upgrades_from = feudal_windmill_1
+		
+		tax_income = 3.5
+		#levy_size = 0.015
+		levy_reinforce_rate = 0.02
+		supply_limit = 0.05
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_windmill_3 = {
+		desc = feudal_windmill_desc
+		potential = {
+			location = { terrain = farmlands }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 500
+		build_time = 2190
+
+		upgrades_from = feudal_windmill_2
+		
+		tax_income = 3.5
+		#levy_size = 0.015
+		levy_reinforce_rate = 0.02
+		supply_limit = 0.05
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_windmill_4 = {
+		desc = feudal_windmill_desc
+		potential = {
+			location = { terrain = farmlands }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 650
+		build_time = 2400
+
+		upgrades_from = feudal_windmill_3
+		
+		tax_income = 3.5
+		#levy_size = 0.025
+		levy_reinforce_rate = 0.02
+		supply_limit = 0.05
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_windmill_5 = {
+		desc = feudal_windmill_desc
+		potential = {
+			location = { terrain = farmlands }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 8
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 650
+		build_time = 3190
+
+		upgrades_from = feudal_windmill_4
+		
+		tax_income = 3.5
+		#levy_size = 0.025
+		levy_reinforce_rate = 0.02
+		supply_limit = 0.05
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_lumbermil_1 = {
+		desc = feudal_lumbermil_desc
+		potential = {
+			location = { terrain = forest }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_2 }
+		gold_cost = 450
+		build_time = 547
+		
+		tax_income = 2.5
+		local_movement_speed = 0.05
+		local_tax_modifier = 0.05
+		local_build_cost_modifier = -0.1
+		supply_limit = 0.1
+
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_lumbermil_2 = {
+		desc = feudal_lumbermil_desc
+		potential = {
+			location = { terrain = forest }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 550
+		build_time = 730
+
+		upgrades_from = feudal_lumbermil_1
+		
+		tax_income = 2.5
+		local_movement_speed = 0.05
+		local_tax_modifier = 0.05
+		local_build_cost_modifier = -0.05
+		supply_limit = 0.05
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_lumbermil_3 = {
+		desc = feudal_lumbermil_desc
+		potential = {
+			location = { terrain = forest }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 650
+		build_time = 2190
+
+		upgrades_from = feudal_lumbermil_2
+		
+		tax_income = 2.5
+		local_movement_speed = 0.05
+		local_tax_modifier = 0.05
+		local_build_cost_modifier = -0.05
+		supply_limit = 0.05
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_lumbermil_4 = {
+		desc = feudal_lumbermil_desc
+		potential = {
+			location = { terrain = forest }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 800
+		build_time = 2400
+
+		upgrades_from = feudal_lumbermil_3
+		
+		tax_income = 2.5
+		local_movement_speed = 0.05
+		local_tax_modifier = 0.05
+		local_build_cost_modifier = -0.05
+		supply_limit = 0.05
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_lumbermil_5 = {
+		desc = feudal_lumbermil_desc
+		potential = {
+			location = { terrain = forest }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 8
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 900
+		build_time = 3190
+
+		upgrades_from = feudal_lumbermil_4
+		
+		tax_income = 2.5
+		local_movement_speed = 0.05
+		local_tax_modifier = 0.05
+		local_build_cost_modifier = -0.05
+		supply_limit = 0.05
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+
+	feudal_mountain_fort_1 = {
+		desc = feudal_mountain_fort_desc
+		potential = {
+			location = {
+				OR = {
+					terrain = mountain
+					terrain = hills
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_2 castle_tower_1 }
+		gold_cost = 450
+		build_time = 547
+		
+		#levy_size = 0.025
+		siege_defence = 0.25
+		garrison_size = 0.25
+		tax_income = 0.25
+		fort_level = 0.25
+
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_mountain_fort_2 = {
+		desc = feudal_mountain_fort_desc
+		potential = {
+			location = {
+				OR = {
+					terrain = mountain
+					terrain = hills
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_3 castle_tower_1 }
+		gold_cost = 550
+		build_time = 730
+
+		upgrades_from = feudal_mountain_fort_1
+		
+		#levy_size = 0.025
+		siege_defence = 0.25
+		garrison_size = 0.25
+		tax_income = 0.25
+		fort_level = 0.25
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_mountain_fort_3 = {
+		desc = feudal_mountain_fort_desc
+		potential = {
+			location = {
+				OR = {
+					terrain = mountain
+					terrain = hills
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_town_3 castle_tower_2 }
+		gold_cost = 650
+		build_time = 2190
+
+		upgrades_from = feudal_mountain_fort_2
+		
+		#levy_size = 0.025
+		siege_defence = 0.2
+		garrison_size = 0.2
+		tax_income = 0.25
+		fort_level = 0.25
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_mountain_fort_4 = {
+		desc = feudal_mountain_fort_desc
+		potential = {
+			location = {
+				OR = {
+					terrain = mountain
+					terrain = hills
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 7
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 castle_tower_2 }
+		gold_cost = 800
+		build_time = 2400
+
+		upgrades_from = feudal_mountain_fort_3
+		
+		#levy_size = 0.025
+		siege_defence = 0.15
+		garrison_size = 0.15
+		tax_income = 0.25
+		fort_level = 0.25
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_mountain_fort_5 = {
+		desc = feudal_mountain_fort_desc
+		potential = {
+			location = {
+				OR = {
+					terrain = mountain
+					terrain = hills
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 8
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 castle_tower_3 }
+		gold_cost = 900
+		build_time = 3190
+
+		upgrades_from = feudal_mountain_fort_4
+		
+		#levy_size = 0.025
+		siege_defence = 0.10
+		garrison_size = 0.10
+		tax_income = 0.25
+		fort_level = 0.25
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+
+	feudal_livestock_1 = {
+		desc = feudal_livestock_desc
+		potential = {
+			location = { terrain = plains }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_2 }
+		gold_cost = 450
+		build_time = 547
+		
+		tax_income = 1
+		levy_reinforce_rate = 0.1
+		#local_tax_modifier = 0.05
+		#levy_size = 0.025
+		supply_limit = 0.15
+		light_cavalry = 10
+
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_livestock_2 = {
+		desc = feudal_livestock_desc
+		potential = {
+			location = { terrain = plains }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 550
+		build_time = 730
+
+		upgrades_from = feudal_livestock_1
+		
+		tax_income = 1
+		levy_reinforce_rate = 0.15
+		#local_tax_modifier = 0.05
+		#levy_size = 0.025
+		supply_limit = 0.1
+		light_cavalry = 20
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_livestock_3 = {
+		desc = feudal_livestock_desc
+		potential = {
+			location = { terrain = plains }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 650
+		build_time = 2190
+
+		upgrades_from = feudal_livestock_2
+		
+		tax_income = 1
+		levy_reinforce_rate = 0.2
+		#local_tax_modifier = 0.05
+		#levy_size = 0.025
+		supply_limit = 0.1
+		light_cavalry = 30
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_livestock_4 = {
+		desc = feudal_livestock_desc
+		potential = {
+			location = { terrain = plains }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3  }
+		gold_cost = 800
+		build_time = 2400
+
+		upgrades_from = feudal_livestock_3
+		
+		tax_income = 1
+		levy_reinforce_rate = 0.25
+		#local_tax_modifier = 0.05
+		#levy_size = 0.025
+		supply_limit = 0.1
+		light_cavalry = 40
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_livestock_5 = {
+		desc = feudal_livestock_desc
+		potential = {
+			location = { terrain = plains }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 8
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 }
+		gold_cost = 900
+		build_time = 3190
+
+		upgrades_from = feudal_livestock_4
+		
+		tax_income = 1
+		levy_reinforce_rate = 0.3
+		#local_tax_modifier = 0.05
+		#levy_size = 0.025
+		supply_limit = 0.1
+		light_cavalry = 50
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_desert_camp_1 = {
+		desc = feudal_desert_camp_desc
+		potential = {
+			location = { terrain = desert }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			TECH_CONSTRUCTION = 4
+		}
+		prerequisites = { ca_town_2 castle_marketplace_1 }
+		gold_cost = 450
+		build_time = 547
+		
+		tax_income = 0.5
+		light_infantry = 40
+		camel_cavalry = 10
+		supply_limit = -0.15
+
+		
+		ai_creation_factor = 104
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_desert_camp_2 = {
+		desc = feudal_desert_camp_desc
+		potential = {
+			location = { terrain = desert }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			TECH_CONSTRUCTION = 6
+		}
+		prerequisites = { ca_town_3 castle_marketplace_1 }
+		gold_cost = 550
+		build_time = 730
+
+		upgrades_from = feudal_desert_camp_1
+		
+		tax_income = 0.5
+		light_infantry = 50
+		camel_cavalry = 20
+		supply_limit = -0.1
+		
+		ai_creation_factor = 103
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_desert_camp_3 = {
+		desc = feudal_desert_camp_desc
+		potential = {
+			location = { terrain = desert }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			TECH_CONSTRUCTION = 7
+		}
+		prerequisites = { ca_town_3 castle_marketplace_2 }
+		gold_cost = 650
+		build_time = 2190
+
+		upgrades_from = feudal_desert_camp_2
+		
+		tax_income = 0.5
+		light_infantry = 50
+		camel_cavalry = 30
+		supply_limit = -0.1
+		
+		ai_creation_factor = 102
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+
+	feudal_desert_camp_4 = {
+		desc = feudal_desert_camp_desc
+		potential = {
+			location = { terrain = desert }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 castle_marketplace_2 }
+		gold_cost = 800
+		build_time = 2400
+
+		upgrades_from = feudal_desert_camp_3
+		
+		tax_income = 0.5
+		light_infantry = 50
+		camel_cavalry = 40
+		supply_limit = -0.1
+		
+		ai_creation_factor = 101
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+	
+	feudal_desert_camp_5 = {
+		desc = feudal_desert_camp_desc
+		potential = {
+			location = { terrain = desert }
+		}
+		trigger = {
+			TECH_TRADE_PRACTICES = 8
+			TECH_CONSTRUCTION = 8
+		}
+		prerequisites = { ca_town_3 castle_marketplace_3 }
+		gold_cost = 900
+		build_time = 3190
+
+		upgrades_from = feudal_desert_camp_4
+		
+		tax_income = 0.5
+		light_infantry = 50
+		camel_cavalry = 50
+		supply_limit = -0.1
+		
+		ai_creation_factor = 100
+		add_number_to_name = no
+
+		extra_tech_building_start = 10.0
+	}
+}
