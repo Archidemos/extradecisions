@@ -10,6 +10,11 @@ decisions = {
 		}
 		
 		allow = {
+			OR = {
+				liege = { NOT = { religion = ROOT } }
+				liege = { NOT = { culture = ROOT } }
+				liege = { NOT = { government = ROOT } }
+			}
 		}
 		
 		effect = {

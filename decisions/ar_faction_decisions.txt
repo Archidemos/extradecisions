@@ -1,0 +1,136 @@
+plot_decisions = {	
+	faction_dissolution_ultimatum = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 3
+		
+		potential = {
+			is_playable = yes
+			leads_faction = faction_dissolution
+			OR = {
+				NOT = { has_character_flag = faction_dissolution_ultimatum_taken }
+				had_character_flag = { flag = faction_dissolution_ultimatum_taken days = 7 }
+			}
+			liege = {
+				independent = yes
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+			liege = {
+				in_revolt = no
+				NOT = { war_with = ROOT }
+				NOT = { reverse_has_truce = ROOT }
+			}
+			NOT = {
+				any_realm_title = {
+					NOT = { higher_tier_than = count }
+					is_occupied = yes
+				}
+			}
+
+			liege = {
+				OR = {
+					independent = yes
+					AND = {
+						will_liege_enforce_peace = no
+						has_liege_enforced_peace = no
+					}
+				}
+			}
+		}
+		
+		effect = {
+			liege = {
+				letter_event = { id = ARPLT.1 days = 3 tooltip = "EVTTOOLTIP8005" }
+			}
+			hidden_tooltip = {
+				set_character_flag = faction_dissolution_ultimatum_taken
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				liege = {
+					religion_group = ROOT
+					any_war = {
+						defender = { character = PREV }
+						NOT = { attacker = { religion_group = ROOT } }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				liege = {
+					religion = ROOT
+					any_war = {
+						attacker = { character = PREV }
+						NOT = { defender = { religion_group = ROOT } }
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0
+				liege = {
+					religion = ROOT					
+					any_war = {
+						OR = {
+							AND = {
+								defender = { character = PREV }
+								OR = {
+									using_cb = religious
+									using_cb = muslim_invasion
+									using_cb = viking_invasion
+									using_cb = crusade
+									using_cb = new_crusade
+								}
+							}
+							AND = {
+								attacker = { character = PREV }			
+								using_cb = viking_invasion
+							}
+						}
+					}
+				}
+			}			
+			modifier = {
+				factor = 0.1
+				NOT = { 
+					faction_power = 
+					{
+						faction = faction_independence
+						power = 1.0
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { 
+					faction_power = 
+					{
+						faction = faction_independence
+						power = 1.5
+					}
+				}
+			}			
+			modifier = {
+				factor = 0
+				NOT = { 
+					faction_power = 
+					{
+						faction = faction_independence
+						power = 0.75
+					}
+				}
+			}
+		}
+	}
+}

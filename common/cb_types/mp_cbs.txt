@@ -384,8 +384,13 @@ overextention_cb = { #CB to shatter realm with a too big realm
 			independent = yes
 		}
 		FROM = {
-			realm_size >= 1200
-			ai = no
+			#realm_size >= 1200
+			#ai = no
+			OR = {
+				has_character_modifier = realm_nerf_8
+				has_character_modifier = realm_nerf_7
+				has_character_modifier = realm_nerf_6
+			}
 			shares_realm_border_with = ROOT
 		}
 	}
@@ -449,7 +454,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 		#		}
 		#	}
 		#}
-		ROOT = { character_event = { id = MP.043 } }
+		#ROOT = { character_event = { id = MP.043 } }
 	}
 	
 	on_success = {
@@ -495,7 +500,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 			prestige = -1000
 			add_character_modifier = {
 				name = coallition_expelled
-				years = 2
+				years = 1
 			}
 			transfer_scaled_wealth = {
 				to = FROM
@@ -506,7 +511,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 		}
 		FROM = {
 			prestige = 1000
-			disband_event_forces = yes
+			#disband_event_forces = yes
 			#character_event = { id = MP.050 }
 		}
 	}

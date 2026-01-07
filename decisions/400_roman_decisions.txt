@@ -243,12 +243,12 @@ decisions = {
 		ai_check_interval = 12
 		
 		potential = {
+			start_date == 400.1.1
+			date >= 481.1.1
 			NOT = { has_global_flag = formed_francia }
 			culture = old_frankish
 		}
 		allow = {
-			start_date == 400.1.1
-			date >= 481.1.1
 			religion_group = christian
 			ROOT = { tier = KING }
 			has_landed_title = k_france
