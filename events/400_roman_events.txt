@@ -3819,7 +3819,10 @@ narrative_event = { #The Rise of Islam
 
 	
 	trigger = {
-		start_date == 400.1.1
+		OR = {
+			start_date == 400.1.1
+			start_date == 476.1.1
+		}
 		date = 633.1.1
 		NOT = { has_global_flag = rashudin_spawned }
 		controls_religion = yes # Let it happen for the Pope. He's always around.
@@ -5356,9 +5359,63 @@ narrative_event = {
 		}
 	}
 }
+character_event = {
+	id = ROMANFR.1063
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date == 476.1.1
+		is_save_game = no
+		NOT = { has_global_flag = west_roman_player_event_fired_475 }
+    }
+	
+	immediate = {
+		set_global_flag = west_roman_player_event_fired_475
+		set_global_flag = roman_america_part_1_triggered
+		
+		any_player = { narrative_event = { id = ROMANFR.1064 days = 5 } }
+		#e_west_rome = { save_event_target_as = character_rome_crisis }
+		hidden_tooltip = {
+			e_west_rome = {
+				holder_scope = {
+					remove_claim = e_byzantium
+				}
+			}
+			k_hungary = {
+				set_name = "Gepids"
+				adjective = "Gepid"
+			}
+		}
+	}
+}
 
 narrative_event = {
-	id = ROMANFR.1063
+	id = ROMANFR.1064
+	title = "Rome's Final Stance"
+	desc = "For centuries, the Roman Empire has been standing tall as the beacon of civilization. The Roman Empire endured many crisises and always prevailed, however now it seems the empire is getting to its end. Will the Roman Empire still have hope, or will it meet its end..."
+    is_triggered_only = yes
+	
+	portrait = e_west_rome
+	picture = GFX_evt_rome_falls
+	sound = ar_arabs_lose
+	
+    trigger = {
+		start_date == 476.1.1
+		is_save_game = no
+    }
+	
+	#immediate = {
+	#	clear_event_target = character_rome_crisis
+	#}	
+	
+	option = {
+		name = "Rome shall endure!"
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1065
 	title = "Fall of Rome"
 	desc = "Many have have tried invading this once might empire, however this once might empire has fallen. After many decades of turmoil, a instable army and many barbaric invasions, it seems like the Empire for the Romans cannot handle it any longer. They have recently been defeated and lost their crown capital Rome and with it the Roman Empire. This will be a new age, the age of new kingdoms and new cultures. What could this mean for the future of the world.."
 	
@@ -5370,7 +5427,7 @@ narrative_event = {
 	
 	trigger = {
 		start_date == 476.1.1
-		has_global_flag = west_roman_player_event_fired
+		has_global_flag = west_roman_player_event_fired_475
 		ROOT = {
 			has_landed_title = e_west_rome
 			AND = {
@@ -5407,17 +5464,17 @@ narrative_event = {
 			}
 			narrative_event = { id = ROMANFR.1041 days = 5 }
 		}
-		custom_tooltip = {
-			text = "You will no longer be plauged by the crisis."
-			remove_character_modifier = rome_crisis_1
-			remove_character_modifier = rome_crisis_2
-			remove_character_modifier = rome_crisis_3
-			set_global_flag = roman_crisis_done
-			set_global_flag = roman_barbarians_dealt
-			clr_global_flag = roman_crisis_finished_1
-			clr_global_flag = roman_crisis_finished_2
-			clr_global_flag = roman_crisis_finished_3
-		}
+		#custom_tooltip = {
+		#	text = "You will no longer be plauged by the crisis."
+		#	remove_character_modifier = rome_crisis_1
+		#	remove_character_modifier = rome_crisis_2
+		#	remove_character_modifier = rome_crisis_3
+		#	set_global_flag = roman_crisis_done
+		#	set_global_flag = roman_barbarians_dealt
+		#	clr_global_flag = roman_crisis_finished_1
+		#	clr_global_flag = roman_crisis_finished_2
+		#	clr_global_flag = roman_crisis_finished_3
+		#}
 		any_player = { 
 			limit = { NOT = { has_character_flag = defeated_roman_emperor } }
 			narrative_event = { id = ROMANFR.1043 } 
@@ -5435,7 +5492,10 @@ narrative_event = {
 
     is_triggered_only = yes
     trigger = {
-		start_date == 400.1.1
+		OR = {
+			start_date == 400.1.1
+			start_date == 476.1.1
+		}
 		date = 500.1.1
 		has_landed_title = k_papal_state
 		NOT = { has_global_flag = nicene_converted }
@@ -5530,7 +5590,10 @@ narrative_event = {
 
     is_triggered_only = yes
     trigger = {
-		start_date == 400.1.1
+		OR = {
+			start_date == 400.1.1
+			start_date == 476.1.1
+		}
 		date = 750.1.1
 		religion_group = christian
 		completely_controls = c_roma
