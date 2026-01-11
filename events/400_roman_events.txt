@@ -342,6 +342,8 @@ narrative_event = {
 		any_playable_ruler = {
 			limit = {
 				tier = KING
+				NOT = { has_landed_title = k_papal_state }
+				NOT = { has_landed_title = e_byzantium }
 				OR = {
 					culture = roman
 					culture = roman_gallo
@@ -5447,6 +5449,8 @@ narrative_event = {
 		any_playable_ruler = {
 			limit = {
 				tier = KING
+				NOT = { has_landed_title = k_papal_state }
+				NOT = { has_landed_title = e_byzantium }
 				OR = {
 					culture = roman
 					culture = roman_gallo
