@@ -319,6 +319,7 @@ narrative_event = {
     is_triggered_only = yes
 	
 	trigger = {
+		start_date == 400.1.1
 		has_global_flag = west_roman_player_event_fired
 		ROOT = {
 			has_landed_title = e_west_rome
@@ -5352,6 +5353,74 @@ narrative_event = {
 			any_player = {
 				narrative_event = { id = ROMANFR.1031 }
 			}
+		}
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1063
+	title = "Fall of Rome"
+	desc = "Many have have tried invading this once might empire, however this once might empire has fallen. After many decades of turmoil, a instable army and many barbaric invasions, it seems like the Empire for the Romans cannot handle it any longer. They have recently been defeated and lost their crown capital Rome and with it the Roman Empire. This will be a new age, the age of new kingdoms and new cultures. What could this mean for the future of the world.."
+	
+	picture = "GFX_evt_rome_falls"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	
+	trigger = {
+		start_date == 476.1.1
+		has_global_flag = west_roman_player_event_fired
+		ROOT = {
+			has_landed_title = e_west_rome
+			AND = {
+				NOT = { completely_controls = c_roma }
+				realm_size <= 100
+			}
+		}
+		NOT = { has_global_flag = rome_defeated_475 }
+	}
+	
+	option = {
+		name = "We have failed.."
+		prestige = -250
+		ROOT = { unsafe_destroy_landed_title = e_west_rome }
+		set_global_flag = rome_defeated_475
+		set_character_flag = defeated_roman_emperor
+		any_playable_ruler = {
+			limit = {
+				tier = KING
+				OR = {
+					culture = roman
+					culture = roman_gallo
+					culture = roman_spain
+					culture = roman_ilyrian
+					culture = roman_african
+					culture = roman_mauretanian
+					culture = roman_british
+					culture = roman_thraco
+					culture = roman_german
+					culture = roman_greek
+					culture = roman_egyptian
+				}
+				NOT = { liege = { has_landed_title = e_byzantium } }
+			}
+			narrative_event = { id = ROMANFR.1041 days = 5 }
+		}
+		custom_tooltip = {
+			text = "You will no longer be plauged by the crisis."
+			remove_character_modifier = rome_crisis_1
+			remove_character_modifier = rome_crisis_2
+			remove_character_modifier = rome_crisis_3
+			set_global_flag = roman_crisis_done
+			set_global_flag = roman_barbarians_dealt
+			clr_global_flag = roman_crisis_finished_1
+			clr_global_flag = roman_crisis_finished_2
+			clr_global_flag = roman_crisis_finished_3
+		}
+		any_player = { 
+			limit = { NOT = { has_character_flag = defeated_roman_emperor } }
+			narrative_event = { id = ROMANFR.1043 } 
 		}
 	}
 }

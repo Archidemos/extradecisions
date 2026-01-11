@@ -3,10 +3,18 @@
 400.1.1 = {
 	holder = 3000504
 	#historical_nomad = yes
+	name = GEPIDS
+	adjective = GEPIDS_ADJ
 	set_tribute_suzerain = {
 		who = e_hun_empire
 		type = permanent
 	}
+}
+
+470.1.1 = {
+	holder = 4000005
+	liege = 0
+	clear_tribute_suzerain = e_hun_empire
 }
 
 580.1.1 = {
@@ -14,10 +22,11 @@
 	# name = AVAR_KHAGANATE
 	# adjective = AVAR_KHAGANATE_ADJ
 	effect = { set_coa = k_avaria }
-	clear_tribute_suzerain = e_hun_empire
 }
 685.1.1 = {
 	holder = 146154
+	reset_name = yes
+	reset_adjective = yes
 	#law = agnatic_succession
 	#law = succ_seniority
 }

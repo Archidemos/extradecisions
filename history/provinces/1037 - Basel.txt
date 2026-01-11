@@ -6,7 +6,7 @@ title = c_basel
 # Settlements
 max_settlements = 3
 
-b_basel = temple
+b_basel = castle
  
 b_biel = city
 #b_thierstein = castle
@@ -24,6 +24,14 @@ religion = catholic
 399.1.1 = {
 	religion = hellenic_pagan
 	culture = roman_gallo
+}
+450.1.1 = {
+	b_basel = tribal
+	remove_settlement = b_biel
+}
+600.1.1 = {
+	b_basel = castle
+	b_biel = city
 }
 601.1.1 = {
 	religion = catholic

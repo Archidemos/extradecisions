@@ -4016,6 +4016,483 @@ invasion_barbarians_400 = {
 	}
 }
 
+invasion_odoacer_400 = {
+	name = CB_NAME_INVASION_ODOACER_400
+	war_name = WAR_NAME_INVASION_ODOACER_400
+	sprite = 8
+	truce_days = 0
+	hostile_against_others = yes
+	is_permanent = no
+	can_ask_to_join_war = yes
+	check_de_jure_tier = KING # this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
+
+	infamy_modifier = 0	
+	allowed_to_target_tributaries = yes
+	
+	sort_priority = 100000
+
+	on_add = {
+		hidden_tooltip = { fire_haruspicy_event_effect = yes }
+		if = {
+			limit = { defender = { is_offmap_governor = offmap_china } }
+			attacker = {  
+				sound_effect = china_angered_emperor
+				detract_grace_super_huge_effect = yes 
+			}
+		}
+	}
+
+	can_use = {
+		always = yes
+	}
+	
+	can_use_title = {
+		# The attacker needs at least one county in the target kingdom, or a border
+		any_direct_de_jure_vassal_title = {
+			any_direct_de_jure_vassal_title = {
+				OR = {
+					holder_scope = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					location = {
+						any_neighbor_province = {
+							owner = {
+								OR = {
+									character = ROOT
+									is_liege_or_above = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	is_valid = {
+		always = yes
+	}
+	
+	is_valid_title = {
+		FROM = {
+			any_realm_province = {
+				de_jure_liege_or_above = PREVPREV
+			}
+		}
+	}
+
+	on_success = {
+		ROOT = {
+			show_scope_change = no
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_ambition = obj_strengthen_religion
+					}
+					change_variable = { which = strengthen_religion value = 1 }
+				}
+			}
+			if = {
+				limit = {
+					uses_decadence = yes
+					FROM = { NOT = { uses_decadence = yes } }
+				}
+				participation_scaled_decadence = -20
+			}
+			character_event = { id = ROMANFR.1100 days = 2 }
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = -200
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 200 
+				if = {
+					limit = {
+						uses_decadence = yes
+						FROM = { NOT = { uses_decadence = yes } }
+					}
+					participation_scaled_decadence = -20
+				}
+				hidden_tooltip = {
+					if = {
+						limit = {
+							has_ambition = obj_strengthen_religion
+						}
+						change_variable = { which = strengthen_religion value = 1 }
+					}
+				}
+			}
+		}
+		#hidden_tooltip = { ROOT = { set_government_type = tribal_government } }
+	}
+	
+	on_success_title = {
+		if = { # Claim the targeted Kingdom if it is held by the target
+			limit = {
+				controls_religion = no
+				holder_scope = {
+					OR = {
+						character = FROM
+						is_liege_or_above = FROM
+					}
+				}
+			}
+		}
+		custom_tooltip = { 
+			text = other_invasion_succ_tip
+			hidden_tooltip = {
+				ROOT = {
+					gain_settlements_under_title = {
+						title = k_italy
+						enemy = FROM
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_sicily
+						enemy = FROM
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_carinthia
+						enemy = FROM
+						type = invasion
+					}
+					if = {
+						limit = {
+							OR = {
+								this_has_lame_nickname_trigger = yes
+								has_nickname = no
+							}
+						}
+						random_list = {
+							10 = { give_nickname = nick_the_holy }
+							10 = { give_nickname = nick_the_glorious }
+							10 = { give_nickname = nick_the_lionheart }
+							10 = { give_nickname = nick_the_great }
+							10 = { give_nickname = nick_the_hammer }
+							10 = { give_nickname = nick_the_magnificent }
+						}
+					}
+					#set_government_type = tribal_government
+				}
+
+				while = {
+					count = 3
+					ROOT = {
+						random_realm_province = {
+							limit = {
+								de_jure_liege_or_above = PREVPREV
+								OR = {
+									NOT = { culture = ROOT }
+									NOT = { religion = ROOT }
+								}
+							}
+							culture = ROOT
+							religion = ROOT
+						}
+					}
+				}
+				ROOT = {
+					capital_scope = {
+						location = {
+							religion = ROOT
+							culture = ROOT
+						}
+					}
+				}
+			}
+		}
+		add_law = succ_gavelkind
+		usurp_title = { target = ROOT type = invasion }
+		if = {
+			limit = { FROM = { ai = no } }
+			FROM = { set_defacto_liege = ROOT }
+		}
+	}
+
+	on_fail = {
+		FROM = {
+			show_scope_change = no
+			prestige = 100
+		}
+		FROM = {
+			show_scope_change = no
+			if = {
+				limit = {
+					has_dlc = "Legacy of Rome"
+					OR = { 
+						has_landed_title = e_byzantium
+						has_landed_title = e_roman_empire
+					}
+						OR = { 
+							religion_group = christian
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+						}
+				}
+				hidden_tooltip = { character_event = { id = LoR.30 days = 12 } }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							this_has_lame_nickname_trigger = yes
+							has_nickname = no
+						}
+					}
+					random_list = {
+						10 = { give_nickname = nick_the_holy }
+						10 = { give_nickname = nick_the_glorious }
+						10 = { give_nickname = nick_the_lionheart }
+						10 = { give_nickname = nick_the_great }
+						10 = { give_nickname = nick_the_hammer }
+						10 = { give_nickname = nick_the_magnificent }
+						10 = { give_nickname = nick_the_avenger }
+					}
+				}
+			}
+			participation_scaled_prestige = 100
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 100 }
+		}
+		hidden_tooltip = {
+			ROOT = {
+				any_demesne_title = {
+					unsafe_destroy_landed_title = THIS
+				}
+				death = {
+					death_reason = death_missing
+				}
+				clear_wealth = yes
+			}
+		}
+	}
+	
+	on_fail_title = {
+		clr_title_flag = currently_invaded_bar_400
+	}
+	
+	on_invalidation = {
+		hidden_tooltip = {
+			ROOT = {
+				any_demesne_title = {
+					unsafe_destroy_landed_title = THIS
+				}
+				death = {
+					death_reason = death_missing
+				}
+				clear_wealth = yes
+			}
+		}
+	}
+
+	on_invalidation_title = {
+		clr_title_flag = currently_invaded_bar_400
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -200
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 2.0
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_liege = {
+							dynasty = PREV
+						}
+					}
+				}
+				decadence = 10
+			}
+			hidden_tooltip = {
+				ROOT = {
+					any_demesne_title = {
+						unsafe_destroy_landed_title = THIS
+					}
+					death = {
+						death_reason = death_missing
+					}
+					clear_wealth = yes
+				}
+			}
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 200
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_ambition = obj_strengthen_religion
+					}
+					change_variable = { which = strengthen_religion value = 1 }
+				}
+			}
+			if = {
+				limit = { 
+					has_dlc = "Legacy of Rome"
+					OR = { 
+						has_landed_title = e_byzantium
+						has_landed_title = e_roman_empire
+					}
+						OR = { 
+							religion_group = christian
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+						}
+				}
+				hidden_tooltip = { character_event = { id = LoR.30 days = 12 } }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							this_has_lame_nickname_trigger = yes
+							has_nickname = no
+						}
+					}
+					random_list = {
+						10 = { give_nickname = nick_the_holy }
+						10 = { give_nickname = nick_the_glorious }
+						10 = { give_nickname = nick_the_lionheart }
+						10 = { give_nickname = nick_the_great }
+						10 = { give_nickname = nick_the_hammer }
+						10 = { give_nickname = nick_the_magnificent }
+						10 = { give_nickname = nick_the_avenger }
+					}
+				}
+			}
+			participation_scaled_prestige = 200
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 200 }
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_ambition = obj_strengthen_religion
+					}
+					change_variable = { which = strengthen_religion value = 1 }
+				}
+			}
+		}
+	}
+	
+	on_reverse_demand_title = {
+		clr_title_flag = currently_invaded_bar_400
+	}
+	
+	attacker_ai_victory_worth = {
+		factor = 100
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 150
+	}
+	
+	ai_will_do = { 
+		factor = 1
+		
+		modifier = {
+			factor = 200
+			ROOT = {
+				primary_title = { title = e_il-khanate }
+			}
+			OR = {
+				empire = {
+					OR = {
+						title = e_byzantium
+						title = e_persia
+						title = e_arabia
+					}
+				}
+				title = k_georgia
+				title = k_armenia
+				title = k_sistan
+				title = k_persia
+				title = k_khorasan
+				title = k_kafarestan
+				title = k_mavarannahr
+				title = k_daylam
+				title = k_mesopotamia
+				title = k_aljazira
+				title = k_caucasian_albania
+				title = k_antioch
+			}
+			
+			NOT = { title = k_khorasan }
+			NOT = { title = k_sicily }
+			NOT = { title = k_naples }
+			NOT = { title = k_serbia }
+			NOT = { title = k_epirus }
+			NOT = { title = k_nikaea }
+			NOT = { title = k_achaea }
+			NOT = { title = k_thrace }
+			NOT = { title = k_georgia }
+			NOT = { title = k_daylam }
+		}
+		modifier = {
+			factor = 0
+			FROM = {
+				is_nomadic = yes
+			}
+			ROOT = {
+				is_tribal = yes
+			}
+			NOT = {
+				any_direct_de_jure_vassal_title = {
+					any_direct_de_jure_vassal_title = {
+						OR = {
+							holding_type = castle
+							holding_type = city
+							holding_type = tribal
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				primary_title = { title = e_il-khanate }
+			}
+			OR = {
+				title = k_kashmir
+				title = k_guge
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				has_landed_title = e_il-khanate
+				demesne_size = 1
+			}
+			FROM = {
+				has_landed_title = e_china_west_governor
+			}
+		}
+	}
+}
+
 invasion_barbarians_400_frankish_sp = {
 	name = CB_NAME_INVASION_BARBAR_400
 	war_name = WAR_NAME_INVASION_BARBAR_400
