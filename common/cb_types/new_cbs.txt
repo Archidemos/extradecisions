@@ -3619,6 +3619,7 @@ invasion_barbarians_400 = {
 
 	on_success = {
 		ROOT = {
+			disband_event_forces = yes
 			show_scope_change = no
 			hidden_tooltip = {
 				if = {
@@ -3634,6 +3635,23 @@ invasion_barbarians_400 = {
 					FROM = { NOT = { uses_decadence = yes } }
 				}
 				participation_scaled_decadence = -20
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = capital
+				home = ROOT
+	
+				troops = {
+					archers = { 500 500 }
+					light_infantry = { 500 500 }
+					heavy_infantry = { 2000 2000 }
+					light_cavalry = { 500 500 }
+					knights = { 500 500 }
+				}
+	
+				#attrition = 1.0
+				#disband_on_peace = yes
+				#maintenance_multiplier = 0.5
 			}
 			character_event = { id = ROMANFR.1100 days = 2 }
 		}
@@ -3740,6 +3758,7 @@ invasion_barbarians_400 = {
 	}
 
 	on_fail = {
+		ROOT = { disband_event_forces = yes }
 		FROM = {
 			show_scope_change = no
 			prestige = 100
@@ -3806,6 +3825,7 @@ invasion_barbarians_400 = {
 	on_invalidation = {
 		hidden_tooltip = {
 			ROOT = {
+				disband_event_forces = yes
 				any_demesne_title = {
 					unsafe_destroy_landed_title = THIS
 				}
@@ -3823,6 +3843,7 @@ invasion_barbarians_400 = {
 
 	on_reverse_demand = {
 		ROOT = {
+			disband_event_forces = yes
 			show_scope_change = no
 			prestige = -200
 			transfer_scaled_wealth = {
@@ -4085,7 +4106,15 @@ invasion_odoacer_400 = {
 	}
 
 	on_success = {
+		FROM = {
+			capital_scope = {
+				add_province_modifier = { name = plundered_capital years = 2 }
+			}
+		}
 		ROOT = {
+			wealth = 750
+			prestige = 1000
+			disband_event_forces = yes
 			show_scope_change = no
 			hidden_tooltip = {
 				if = {
@@ -4101,6 +4130,23 @@ invasion_odoacer_400 = {
 					FROM = { NOT = { uses_decadence = yes } }
 				}
 				participation_scaled_decadence = -20
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = 333
+				home = ROOT
+	
+				troops = {
+					archers = { 500 500 }
+					light_infantry = { 500 500 }
+					heavy_infantry = { 2000 2000 }
+					light_cavalry = { 500 500 }
+					knights = { 500 500 }
+				}
+	
+				#attrition = 1.0
+				#disband_on_peace = yes
+				#maintenance_multiplier = 0.5
 			}
 			character_event = { id = ROMANFR.1100 days = 2 }
 		}
@@ -4217,6 +4263,7 @@ invasion_odoacer_400 = {
 	}
 
 	on_fail = {
+		ROOT = { disband_event_forces = yes }
 		FROM = {
 			show_scope_change = no
 			prestige = 100
@@ -4283,6 +4330,7 @@ invasion_odoacer_400 = {
 	on_invalidation = {
 		hidden_tooltip = {
 			ROOT = {
+				disband_event_forces = yes
 				any_demesne_title = {
 					unsafe_destroy_landed_title = THIS
 				}
@@ -4300,6 +4348,7 @@ invasion_odoacer_400 = {
 
 	on_reverse_demand = {
 		ROOT = {
+			disband_event_forces = yes
 			show_scope_change = no
 			prestige = -200
 			transfer_scaled_wealth = {

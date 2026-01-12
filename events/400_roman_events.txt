@@ -5444,6 +5444,7 @@ narrative_event = {
 		name = "We have failed.."
 		prestige = -250
 		ROOT = { unsafe_destroy_landed_title = e_west_rome }
+		any_tributary = { remove_tributary = suzerain }
 		set_global_flag = rome_defeated_475
 		set_character_flag = defeated_roman_emperor
 		any_playable_ruler = {

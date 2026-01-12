@@ -50,6 +50,8 @@ narrative_event = {
 	is_triggered_only = yes #on_create_title
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 936.1.1
 		k_england = { is_primary_holder_title = yes }
 		OR = {
@@ -93,6 +95,8 @@ narrative_event = {
 	is_triggered_only = yes #on_create_title
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 1139.1.1
 		k_portugal = { is_primary_holder_title = yes }
 		OR = {
@@ -132,6 +136,8 @@ narrative_event = {
 	is_triggered_only = yes #on_create_title
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 936.1.1
 		k_burgundy = { is_primary_holder_title = yes }
 		OR = {
@@ -171,6 +177,8 @@ narrative_event = {
 	is_triggered_only = yes #on_create_title
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 867.1.1
 		k_hungary = { is_primary_holder_title = yes }
 		culture = hungarian
@@ -224,6 +232,8 @@ narrative_event = {
 	is_triggered_only = yes 
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 1187.1.1
 		OR = {
 			culture_group = arabic
@@ -266,6 +276,8 @@ narrative_event = {
 	is_triggered_only = yes 
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 1066.1.1
 		culture = polish
 		k_poland = { is_primary_holder_title = yes }
@@ -307,6 +319,8 @@ character_event = {
 	war = yes
 	
 	trigger = {
+		NOT = { start_date == 400.1.1 }
+		NOT = { start_date == 476.1.1 }
 		start_date < 1271.1.1
 		NOT = { has_global_flag = wallace_blood_fired }
 		has_game_rule = { name = title_bloodlines_rule value = enabled }

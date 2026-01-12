@@ -34,6 +34,10 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = { 
+			add_weak_claim = e_west_rome
+			add_weak_claim = e_byzantium
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -48,6 +52,7 @@
 	
 	434.1.1 = {
 		birth = yes
+		add_claim = e_west_rome
 	}
 	480.1.1 = {
 		death = yes
@@ -132,6 +137,14 @@
 					}
 				}
 			}
+			spawn_fleet = {
+				province = 1700 # Rouen
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					galleys = { 180 180 }
+				}
+			}
 		}
 	}
 	480.1.1 = {
@@ -175,6 +188,24 @@
 	
 	434.1.1 = {
 		birth = yes
+		add_claim = k_france
+	}
+	435.1.1 = {
+		effect = {
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 1026 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1427,6 +1458,20 @@
 				}
 			}
 		}
+	}
+	480.1.1 = {
+		death = yes
+	}
+}
+
+4000099 = { # d_sicily
+	name = "Oceanus"
+	religion = "hellenic_pagan"
+	culture = "roman"
+	#dynasty = 1500255
+	
+	434.1.1 = {
+		birth = yes
 	}
 	480.1.1 = {
 		death = yes

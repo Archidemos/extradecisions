@@ -1757,7 +1757,7 @@ character_event = { #Removes the realm nerf modifiers when you get usurped
     is_triggered_only = yes
 	
     trigger = {
-		FROMFROM = {
+		ROOT = {
 			NOR = { tier = KING tier = EMPEROR }
 			OR = {
 				has_character_modifier = realm_nerf_0
@@ -1774,7 +1774,7 @@ character_event = { #Removes the realm nerf modifiers when you get usurped
     }
 
     immediate = {
-		FROMFROM = {
+		ROOT = {
 			remove_character_modifier = realm_nerf_0
 			remove_character_modifier = realm_nerf_1
 			remove_character_modifier = realm_nerf_2
