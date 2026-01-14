@@ -9,116 +9,218 @@ succession_laws = {
 		vassal_opinion = 5
 	
 		potential = {
-			NAND = { 
-				has_law = succ_byzantine_elective 
-				OR = { 
-					title = e_byzantium
-					title = e_roman_empire
-					title = e_west_rome
-				}
-			}
-			holder_scope = {
-				OR = {
-					independent = yes
-					NOT = {
-						any_liege = {
-							holy_order = yes
+			OR = {
+				AND = {
+					NAND = { 
+						has_law = succ_byzantine_elective 
+						OR = { 
+							title = e_byzantium
+							title = e_roman_empire
+							title = e_west_rome
 						}
 					}
-				}
-				NOT = { religion_group = muslim }
-				is_merchant_republic = no
-				is_patrician = no
-				OR = {
-					independent = yes
-					NOT = {
-						any_demesne_title = {
-							is_vice_royalty = yes
+					holder_scope = {
+						OR = {
+							independent = yes
+							NOT = {
+								any_liege = {
+									holy_order = yes
+								}
+							}
+						}
+						NOT = { religion_group = muslim }
+						is_merchant_republic = no
+						is_patrician = no
+						OR = {
+							independent = yes
+							NOT = {
+								any_demesne_title = {
+									is_vice_royalty = yes
+								}
+							}
 						}
 					}
+					OR = {
+						is_landless_type_title = no
+						is_tribal_type_title = yes
+						temporary = yes
+					}
+					
+					rebel = no
+					
+					OR = {
+						holder_scope = { is_feudal = yes }
+						holder_scope = { is_tribal = yes }
+					}
+					is_primary_type_title = no
+					NOR = {
+						holder_scope = { government = ar_republic_government }
+						holder_scope = { government = chinese_government }
+						holder_scope = { government = ar_theocracy_government }
+					}
+					has_game_rule = {
+						name = gavelkind_only
+						value = off
+					}
 				}
-			}
-			OR = {
-				is_landless_type_title = no
-				is_tribal_type_title = yes
-				temporary = yes
-			}
-			
-			rebel = no
-			
-			OR = {
-				holder_scope = { is_feudal = yes }
-				holder_scope = { is_tribal = yes }
-			}
-			is_primary_type_title = no
-			NOR = {
-				holder_scope = { government = ar_republic_government }
-				holder_scope = { government = chinese_government }
-				holder_scope = { government = ar_theocracy_government }
-			}
-			has_game_rule = {
-				name = gavelkind_only
-				value = off
+				AND = {
+					NAND = { 
+						has_law = succ_byzantine_elective 
+						OR = { 
+							title = e_byzantium
+							title = e_roman_empire
+							title = e_west_rome
+						}
+					}
+					holder_scope = {
+						is_nomadic = no
+						OR = {
+							independent = yes
+							NOT = {
+								any_liege = {
+									holy_order = yes
+								}
+							}
+						}
+						NOT = { religion_group = muslim }
+						is_merchant_republic = no
+						is_patrician = no
+						OR = {
+							independent = yes
+							NOT = {
+								any_demesne_title = {
+									is_vice_royalty = yes
+								}
+							}
+						}
+					}
+					OR = {
+						is_landless_type_title = no
+						is_tribal_type_title = yes
+						temporary = yes
+					}
+					
+					rebel = no
+					
+					OR = {
+						holder_scope = { is_feudal = yes }
+						holder_scope = { is_tribal = yes }
+					}
+					is_primary_type_title = no
+					NOR = {
+						holder_scope = { government = ar_republic_government }
+						holder_scope = { government = chinese_government }
+						holder_scope = { government = chinese_imperial_government }
+						holder_scope = { government = ar_theocracy_government }
+					}
+				}
 			}
 		}
 		allow = {
-			holder_scope = {
-				show_scope_change = no
-				OR = {
-					is_tribal = no
-					custom_tooltip = { 
-						text = TT_NOT_UNREFORMED_PAGAN
-						hidden_tooltip = {
-							NOR = { 
-								religion = norse_pagan
-								religion = slavic_pagan
-								religion = baltic_pagan
-								religion = finnish_pagan
-								religion = zun_pagan
-								religion = tengri_pagan
-								religion = west_african_pagan
-								religion = aztec
-								religion = pagan
+			OR = {
+				AND = {
+					holder_scope = {
+						show_scope_change = no
+						OR = {
+							is_tribal = no
+							custom_tooltip = { 
+								text = TT_NOT_UNREFORMED_PAGAN
+								hidden_tooltip = {
+									NOR = { 
+										religion = norse_pagan
+										religion = slavic_pagan
+										religion = baltic_pagan
+										religion = finnish_pagan
+										religion = zun_pagan
+										religion = tengri_pagan
+										religion = west_african_pagan
+										religion = aztec
+										religion = pagan
+									}
+								}
+							}
+						}
+						in_revolt = no
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+							has_dlc = "Conclave"
+						}
+						has_law = law_voting_power_0
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+							NOT = { has_dlc = "Conclave" }
+						}
+						has_law = crown_authority_4
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+						}
+						has_law = centralization_4
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_dlc = "Conclave"
+						}
+						custom_tooltip = {
+							text = forced_elective_tt
+							hidden_tooltip = {
+								NAND = { 
+									has_law = succession_voting_power_1
+									OR = { 
+										has_law = succ_feudal_elective
+										has_law = succ_hre_elective
+									}
+								}
 							}
 						}
 					}
 				}
-				in_revolt = no
-			}
-			conditional_tooltip = {
-				trigger = {
-					has_law = succ_hre_elective
-					has_dlc = "Conclave"
-				}
-				has_law = law_voting_power_0
-			}
-			conditional_tooltip = {
-				trigger = {
-					has_law = succ_hre_elective
-					NOT = { has_dlc = "Conclave" }
-				}
-				has_law = crown_authority_4
-			}
-			conditional_tooltip = {
-				trigger = {
-					has_law = succ_hre_elective
-				}
-				has_law = centralization_4
-			}
-			conditional_tooltip = {
-				trigger = {
-					has_dlc = "Conclave"
-				}
-				custom_tooltip = {
-					text = forced_elective_tt
-					hidden_tooltip = {
-						NAND = { 
-							has_law = succession_voting_power_1
-							OR = { 
-								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+				AND = {
+					conditional_tooltip = {
+						trigger = {
+							has_dlc = "Conclave"
+						}
+						custom_tooltip = {
+							text = forced_elective_tt
+							hidden_tooltip = {
+								NAND = { 
+									has_law = succession_voting_power_1
+									OR = { 
+										has_law = succ_feudal_elective
+										has_law = succ_hre_elective
+									}
+								}
 							}
 						}
+					}
+					holder_scope = {
+						show_scope_change = no
+						in_revolt = no
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+							has_dlc = "Conclave"
+						}
+						has_law = law_voting_power_0
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+							NOT = { has_dlc = "Conclave" }
+						}
+						has_law = crown_authority_4
+					}
+					conditional_tooltip = {
+						trigger = {
+							has_law = succ_hre_elective
+						}
+						has_law = centralization_4
 					}
 				}
 			}
@@ -136,6 +238,7 @@ succession_laws = {
 		dynasty_opinion = 5
 	
 		potential = {
+			NOT = { year = 1 }
 			NAND = { 
 				has_law = succ_byzantine_elective 
 				OR = { 

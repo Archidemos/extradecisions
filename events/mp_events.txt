@@ -1750,6 +1750,88 @@ narrative_event = { #Event for everyone about the formation of the PLC
 	}
 }
 
+character_event = {
+	id = MP.108
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		any_realm_province = {
+			limit = {
+				NOT = { has_province_flag = migration_province }
+			}
+			set_province_flag = migration_province
+		}
+	}
+}
+
+character_event = {
+	id = MP.109
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_realm_province = {
+			limit = { has_province_flag = migration_province }
+			county = {
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 20
+				}
+				new_character = {
+					usurp_title_plus_barony_if_unlanded = PREV
+					set_defacto_liege = THIS
+					set_truce = {
+						who = ROOT
+						years = 10
+					}
+					ROOT = {
+						set_truce = {
+							who = PREV
+							years = 10
+						}
+					}
+				}
+			}
+			clr_province_flag = migration_province
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = MP.110
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	    start_date == 476.1.1
+        has_landed_title = d_angles
+		is_save_game = no
+	}	
+	
+	immediate = {
+		war = {
+            target = d_northumberland
+            casus_belli = migration_cb
+        }
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+
 character_event = { #Removes the realm nerf modifiers when you get usurped
     id = MP.200
     only_rulers = yes

@@ -2743,6 +2743,24 @@
 	father=168671
 	430.1.1 = {
 		birth = yes
+		add_claim = k_france
+		effect = {
+			wealth = 1000
+			prestige = 1000
+			while = {
+				count = 5
+				spawn_unit = {
+					province = 1026 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+		}
 	}
 	
 	481.1.1 = {

@@ -67,6 +67,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 1317 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -81,6 +96,20 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 520 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 750 750 }
+						archers = { 150 150 }
+						light_cavalry = { 100 100 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -180,37 +209,40 @@
 	}
 }
 
-4000011 = { # d_ripuria
-	name = "Childeric"
-	religion = "norse_pagan"
-	culture = "old_frankish"
-	#dynasty = 1500255
-	
-	434.1.1 = {
-		birth = yes
-		add_claim = k_france
-	}
-	435.1.1 = {
-		effect = {
-			while = {
-				count = 4
-				spawn_unit = {
-					province = 1026 # Zarand
-					owner = ROOT
-					troops = {
-						light_infantry = { 2000 2000 }
-						archers = { 1000 1000 }
-						light_cavalry = { 500 500 }
-						horse_archers = { 1000 1000 }
-					}
-				}
-			}
-		}
-	}
-	480.1.1 = {
-		death = yes
-	}
-}
+#4000011 = { # d_ripuria Blocked cause Childeric exsists as 168672
+#	name = "Childeric"
+#	health = 7
+#	religion = "norse_pagan"
+#	culture = "old_frankish"
+#	dynasty = 542
+#	
+#	434.1.1 = {
+#		birth = yes
+#		add_claim = k_france
+#	}
+#	435.1.1 = {
+#		effect = {
+#			wealth = 1000
+#			prestige = 1000
+#			while = {
+#				count = 5
+#				spawn_unit = {
+#					province = 1026 # Zarand
+#					owner = ROOT
+#					troops = {
+#						light_infantry = { 2000 2000 }
+#						archers = { 1000 1000 }
+#						light_cavalry = { 500 500 }
+#						horse_archers = { 1000 1000 }
+#					}
+#				}
+#			}
+#		}
+#	}
+#	480.1.1 = {
+#		death = yes
+#	}
+#}
 
 4000012 = { # d_barioa
 	name = "Frenki"
@@ -417,6 +449,29 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 1065 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+			spawn_fleet = {
+				province = 1773 # Rouen
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					galleys = { 180 180 }
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -431,6 +486,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 70 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 75 75 }
+						archers = { 35 35 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 15 15 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -445,6 +515,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 72 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 75 75 }
+						archers = { 35 35 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 15 15 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -459,6 +544,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 73 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 75 75 }
+						archers = { 35 35 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 15 15 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -530,6 +630,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 69 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 75 75 }
+						archers = { 35 35 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 15 15 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1056,6 +1171,21 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 905 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1070,6 +1200,20 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 719 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 750 750 }
+						archers = { 150 150 }
+						light_cavalry = { 100 100 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1084,6 +1228,20 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 1283 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 750 750 }
+						archers = { 150 150 }
+						light_cavalry = { 100 100 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1098,6 +1256,20 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 4
+				spawn_unit = {
+					province = 863 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 750 750 }
+						archers = { 150 150 }
+						light_cavalry = { 100 100 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1241,6 +1413,22 @@
 	
 	434.1.1 = {
 		birth = yes
+		effect = {
+			while = {
+				count = 2
+				spawn_unit = {
+					province = 1570 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 1500 1500 }
+						archers = { 500 500 }
+						pikemen = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						horse_archers = { 1000 1000 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
@@ -1432,6 +1620,7 @@
 
 4000098 = { # k_sciri
 	name = "Odoacer"
+	health = 7
 	religion = "arian"
 	culture = "sciri"
 	#dynasty = 1500255
@@ -1444,8 +1633,10 @@
 	}
 	435.1.1 = {
 		effect = {
+			wealth = 1000
+			prestige = 1000
 			while = {
-				count = 3
+				count = 4
 				spawn_unit = {
 					province = 320 # Zarand
 					owner = ROOT
@@ -1472,6 +1663,35 @@
 	
 	434.1.1 = {
 		birth = yes
+	}
+	480.1.1 = {
+		death = yes
+	}
+}
+
+4000100 = { # d_northumberland
+	name = "Cyngar"
+	religion = "nicene_christian"
+	culture = "welsh"
+	#dynasty = 1500255
+	
+	434.1.1 = {
+		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 52 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 75 75 }
+						archers = { 35 35 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 15 15 }
+					}
+				}
+			}
+		}
 	}
 	480.1.1 = {
 		death = yes
