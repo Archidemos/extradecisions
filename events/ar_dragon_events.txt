@@ -706,7 +706,7 @@ character_event = { #You grant the materials to your blacksmith
 
 character_event = { #You grant the materials to your blacksmith
 	id = DRAG.201
-	desc = "As the Blacksmith has been preparing for the whole day, he is now ready to help and asks you "What would you like me to forge, my lord?""
+	desc = EVTDESC_DRAG_201
     picture = "GFX_evt_weaponsmith"
 	
 	border = GFX_event_normal_frame_economy
@@ -1274,7 +1274,7 @@ character_event = { #You command your dragon to breathe fire on siege
 				if = {
 					limit = { ROOT = { martial >= 25 martial < 30 } }
 					morale = -0.4
-					troops = -0.4 }
+					troops = -0.4 
 				}
 				if = {
 					limit = { ROOT = { martial >= 30 martial < 35 } }
