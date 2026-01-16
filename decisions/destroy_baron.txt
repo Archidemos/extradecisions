@@ -1,6 +1,5 @@
 settlement_decisions = {
 	destroy_baron = {
-		filter = realm_owned
 		ai = no
 		only_independent = yes
 		filter = owned
@@ -17,10 +16,13 @@ settlement_decisions = {
 		}
 
 		allow = {
-			NOT = { has_holding_modifier = recently_burnt_the_land }
-			holder_scope = {
-				character = FROM
+			location = {
+				NOR = {
+					has_province_modifier = baron_destroyed
+					has_province_modifier = mil_buildings_destroyed 
+				}
 			}
+			holder_scope = { character = FROM }
 			has_siege = no
 			custom_tooltip = {
 				text = stop_pillaging_custom_tooltip
@@ -52,7 +54,6 @@ settlement_decisions = {
 		filter = realm_owned
 		ai = no
 		only_independent = yes
-		filter = owned
 
 		from_potential = {
 			is_playable = yes
@@ -66,7 +67,12 @@ settlement_decisions = {
 		}
 
 		allow = {
-			NOT = { has_holding_modifier = recently_burnt_the_land }
+			location = {
+				NOR = {
+					has_province_modifier = baron_destroyed
+					has_province_modifier = mil_buildings_destroyed 
+				}
+			}
 			holder_scope = {
 				character = FROM
 			}
@@ -82,6 +88,13 @@ settlement_decisions = {
 		effect = {
 			save_event_target_as = destroying_baron
 
+			location = {
+				add_province_modifier = {
+					name = mil_buildings_destroyed
+					stacking = yes
+					years = 1
+				}
+			}
 			event_target:destroying_baron = {
 				remove_building = ca_militia_barracks_1
 				remove_building = ca_militia_barracks_2

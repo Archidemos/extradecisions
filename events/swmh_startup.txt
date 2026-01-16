@@ -201,10 +201,24 @@ character_event = {
 	        }
 	    }
     	if = {
-    		limit = { NOT = { year = 895 } }
+    		limit = { start_date == 400.1.1 }
 	        k_hungary = {
-	            set_name = KINGDOM_PANNONIA
-	            adjective = KINGDOM_PANNONIA_ADJ
+	            set_name = GEPIDS
+	            adjective = GEPIDS_ADJ
+	        }
+	    }
+    	if = {
+    		limit = { start_date == 476.1.1 }
+	        k_hungary = {
+	            set_name = GEPIDS
+	            adjective = GEPIDS_ADJ
+	        }
+	    }
+    	if = {
+    		limit = { start_date == 769.1.1 }
+	        k_hungary = {
+	            set_name = AVAR_KHAGANATE
+	            adjective = AVAR_KHAGANATE_ADJ
 	        }
 	    }
     }
