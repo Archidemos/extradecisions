@@ -754,7 +754,7 @@ character_event = {
 
 	trigger = {
 		NAND = {
-			has_global_flag = bp_world_india_broadcasted
+			# has_global_flag = bp_world_india_broadcasted
 			has_global_flag = bp_world_persia_broadcasted
 			has_global_flag = bp_world_middle_east_broadcasted
 			has_global_flag = bp_world_africa_broadcasted
@@ -768,26 +768,26 @@ character_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = {
-				NOT = { has_global_flag = bp_world_india_broadcasted }
-				regional_percentage = {
-					region = world_india
-					percentage = 0.5
-					OR = {
-						has_province_modifier = depopulated_1
-						has_province_modifier = depopulated_2
-						has_province_modifier = depopulated_3
-					}
-				}
-			}
-			set_global_flag = bp_world_india_broadcasted
-			capital_scope = { province_event = { id = RIP.10115 } }
-			chronicle = {
-			entry = CHRONICLE_INDIA_GONE
-			picture = GFX_evt_monk
-			}
-		}
+		# if = {
+			# limit = {
+				# NOT = { has_global_flag = bp_world_india_broadcasted }
+				# regional_percentage = {
+					# region = world_india
+					# percentage = 0.5
+					# OR = {
+						# has_province_modifier = depopulated_1
+						# has_province_modifier = depopulated_2
+						# has_province_modifier = depopulated_3
+					# }
+				# }
+			# }
+			# set_global_flag = bp_world_india_broadcasted
+			# capital_scope = { province_event = { id = RIP.10115 } }
+			# chronicle = {
+			# entry = CHRONICLE_INDIA_GONE
+			# picture = GFX_evt_monk
+			# }
+		# }
 		if = {
 			limit = {
 				NOT = { has_global_flag = bp_world_persia_broadcasted }
@@ -972,13 +972,13 @@ character_event = {
 }
 
 # The Black Death has ravaged india
-province_event = {
-	id = RIP.10115
-	hide_window = yes
-	is_triggered_only = yes
+# province_event = {
+	# id = RIP.10115
+	# hide_window = yes
+	# is_triggered_only = yes
 
-	immediate = { province_event = { id = RIP.10215 days = 10 random = 250 } } 
-}
+	# immediate = { province_event = { id = RIP.10215 days = 10 random = 250 } } 
+# }
 
 province_event = {
 	id = RIP.10215
@@ -1464,15 +1464,15 @@ character_event = {
 			any_province = {
 				disease = bubonic_plague
 			}
-			regional_percentage = {
-				region = world_india
-				percentage = 0.5
-				OR = {
-					has_province_modifier = depopulated_1
-					has_province_modifier = depopulated_2
-					has_province_modifier = depopulated_3
-				}
-			}
+			# regional_percentage = {
+				# region = world_india
+				# percentage = 0.5
+				# OR = {
+					# has_province_modifier = depopulated_1
+					# has_province_modifier = depopulated_2
+					# has_province_modifier = depopulated_3
+				# }
+			# }
 			regional_percentage = {
 				region = world_persia
 				percentage = 0.5
@@ -1559,7 +1559,7 @@ character_event = {
 
 	immediate = {
 		clr_global_flag = black_death_broadcasted
-		clr_global_flag = bp_world_india_broadcasted
+		# clr_global_flag = bp_world_india_broadcasted
 		clr_global_flag = bp_world_persia_broadcasted
 		clr_global_flag = bp_world_middle_east_broadcasted
 		clr_global_flag = bp_world_africa_broadcasted
