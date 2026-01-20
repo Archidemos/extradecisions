@@ -57,33 +57,37 @@ targetted_decisions = {
 		allow = {
 			can_be_mercenary_leader_allow_trigger = yes
 			FROM = {
-				#NOT = { has_mercenary_band = yes }
-				NOT = { has_character_modifier = recently_created_merc }
-				wealth = 100
-				TECH_NOBLE_CUSTOMS = 3
-				custom_tooltip = {
-					text = "Does not have more than 3 Mercenary Companies"
-					check_variable = { which = made_merc value < 3 }
-				}
+				NOT = { has_mercenary_band = yes }
+				wealth = 50
 			}
+			#FROM = {
+			#	#NOT = { has_mercenary_band = yes }
+			#	NOT = { has_character_modifier = recently_created_merc }
+			#	wealth = 100
+			#	TECH_NOBLE_CUSTOMS = 3
+			#	custom_tooltip = {
+			#		text = "Does not have more than 3 Mercenary Companies"
+			#		check_variable = { which = made_merc value < 1 }
+			#	}
+			#}
 		}
 		effect = {
 			FROM = {
-				if = {
-					limit = { check_variable = { which = made_merc value >= 1 } }
-					change_variable = { which = made_merc value = 1 }
-				}
-				if = {
-					limit = { check_variable = { which = made_merc value == 0 } }
-					set_variable = { which = made_merc value = 1 }
-				}
-				
+				#if = {
+				#	limit = { check_variable = { which = made_merc value >= 1 } }
+				#	change_variable = { which = made_merc value = 1 }
+				#}
+				#if = {
+				#	limit = { check_variable = { which = made_merc value == 0 } }
+				#	set_variable = { which = made_merc value = 1 }
+				#}
+				#
+				#add_character_modifier = { 
+				#	name = recently_created_merc
+				#	years = 2
+				#	inherit = yes
+				#}
 				wealth = -100
-				add_character_modifier = { 
-					name = recently_created_merc
-					years = 2
-					inherit = yes
-				}
 				custom_tooltip = {
 					text = CREATE_DYNAMIC_MERC_TOOLTIP
 					hidden_tooltip = {
@@ -153,7 +157,7 @@ targetted_decisions = {
 		}
 		effect = {
 			character_event = { id = ZE.11020 }
-			FROM = { subtract_variable = { which = made_merc value = 1 } }
+			#FROM = { subtract_variable = { which = made_merc value = 1 } }
 		}
 		revoke_allowed = {
 			always = no
