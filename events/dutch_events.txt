@@ -31,7 +31,7 @@ narrative_event = { #Event for everyone about the formation
 narrative_event = {
 	id = DTCH.102
 	title = DTCHNAME1
-	desc =  DTCHDESC1
+	desc = DTCHDESC1
 	
 	is_triggered_only = yes	
 	
@@ -50,15 +50,6 @@ narrative_event = {
 				copy_title_history = PREV
 			}
 		}
-		custom_tooltip = {
-			text = dutch_kingdom_retinue
-			hidden_tooltip = {
-				k_dutch_republic = {
-					set_name = "KINGDOM_DUTCH_REPUBLIC"
-					adjective = "KINGDOM_DUTCH_REPUBLIC_ADJ"
-				}
-			}
-		}
 		
 		ROOT = {
 			any_demesne_title = {
@@ -74,6 +65,7 @@ narrative_event = {
 			d_gelre = { de_jure_liege = k_dutch_republic }
 			d_flanders = { de_jure_liege = k_dutch_republic }
 			d_brabant = { de_jure_liege = k_dutch_republic }
+			d_frisia = { de_jure_liege = k_dutch_republic }
 			if = {
 				limit = { is_title_active = e_hre }
 				k_dutch_republic = { de_jure_liege = e_hre }
@@ -233,6 +225,7 @@ narrative_event = {
 			d_gelre = { de_jure_liege = k_dutch_republic }
 			d_flanders = { de_jure_liege = k_dutch_republic }
 			d_brabant = { de_jure_liege = k_dutch_republic }
+			d_frisia = { de_jure_liege = k_dutch_republic }
 			if = {
 				limit = { is_title_active = e_hre }
 				k_dutch_republic = { de_jure_liege = e_hre }
@@ -263,6 +256,11 @@ narrative_event = {
 					grant_title = PREV
 					usurp_title = PREV
 				}
+				b_dordrecht = {
+					grant_title = PREV
+					usurp_title = PREV
+					convert_to = city
+				}
 				b_dorestad = {
 					grant_title = PREV
 					usurp_title = PREV
@@ -270,20 +268,16 @@ narrative_event = {
 				b_hoorn = {
 					grant_title = PREV
 					usurp_title = PREV
+					convert_to = city
 				}
 				b_vlissingen = {
 					grant_title = PREV
 					usurp_title = PREV
+					convert_to = city
 				}
-				d_holland = {
+				b_holland = {
 					grant_title = PREV
 					usurp_title = PREV
-				}					
-				b_dordrecht = {
-					grant_title = PREV
-					usurp_title = PREV
-					ROOT = { capital = PREV }
-					make_capital_holding = yes
 				}
 			}
 			

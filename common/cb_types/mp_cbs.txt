@@ -531,6 +531,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 migration_cb = { #CB to shatter realm with a too big realm
 	name = CB_NAME_MIGRATION_CB
 	war_name = WAR_NAME_MIGRATION_CB
+	sort_priority = 100000
 	sprite = 8
 	truce_days = 3650
 	hostile_against_others = yes
@@ -573,6 +574,7 @@ migration_cb = { #CB to shatter realm with a too big realm
 			ai = yes # AI checks are done via the event that triggers the war
 			# Conditions for the player
 			AND = {
+				#is_tribal = yes
 				NOT = { year = 800 } # The migration period ended around 800
 				ROOT = {
 					OR = {
@@ -582,7 +584,8 @@ migration_cb = { #CB to shatter realm with a too big realm
 						culture = alan
 					}
 					NOT = { has_character_modifier = launched_migration_war }
-					NOT = { higher_tier_than = KING } # No Emperors
+					NOT = { tier = EMPEROR } # No Emperors
+					#NOT = { higher_tier_than = KING } # No Emperors
 					NOT = { culture = FROM }
 					independent = yes # No vassals
 					war = no # Ensures that the events activate correctly  

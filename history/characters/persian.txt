@@ -5511,6 +5511,20 @@
 	father=188584
 	430.1.1={
 		birth = yes
+		effect = {
+			while = {
+				count = 10
+				spawn_unit = {
+					province = 902 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 750 750 }
+						archers = { 150 150 }
+						light_cavalry = { 100 100 }
+					}
+				}
+			}
+		}
 	}
 	500.1.1={
 		death = yes

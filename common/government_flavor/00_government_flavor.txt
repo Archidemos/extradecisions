@@ -2944,6 +2944,19 @@ government_flavor = {
 	trigger = {
 		is_landed = yes
 		AND = {
+			tier = EMPEROR
+			government = roman_imperial_government
+		}
+	}
+}
+
+government_flavor = {
+	name = gov_roman_imperial_government
+	graphics = GFX_evt_victory_arch_byzantine
+	priority = 3
+	trigger = {
+		is_landed = yes
+		AND = {
 			has_landed_title = e_russian_empire
 			government = tsardom_government
 		}

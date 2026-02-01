@@ -2272,6 +2272,67 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = MP.211
+	only_playable = yes
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		ROOT = { has_landed_title = k_dutch_republic }
+		NOT = { has_character_modifier = dutch_feudal_modifier }
+	}
+
+	immediate = {
+		add_character_modifier = {
+			name = dutch_feudal_modifier
+			duration = -1
+			stacking = no
+		}
+	}
+}
+
+character_event = {
+	id = MP.212
+	only_playable = yes
+	title = "Imperial Governance"
+	desc = "After changing our succession laws towards those that the Roman Empire used, perhaps it is time to change our way of ruling too."
+
+	picture = GFX_evt_rome_restored_byzantine
+	border = GFX_event_normal_frame_diplomacy
+	is_triggered_only = yes
+
+	#trigger = {
+	#	ROOT = { has_landed_title = k_dutch_republic }
+	#	NOT = { has_character_modifier = dutch_feudal_modifier }
+	#}
+
+	option = {
+		name = "As true Romans"
+		set_government_type = roman_imperial_government
+	}
+}
+
+character_event = {
+	id = MP.213
+	only_playable = yes
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		ROOT = { has_landed_title = k_prussia }
+		NOT = { has_character_modifier = prussia_feudal_modifier }
+	}
+
+	immediate = {
+		add_character_modifier = {
+			name = prussia_feudal_modifier
+			duration = -1
+			stacking = no
+		}
+	}
+}
+
 #character_event = {
 #    id = MP.205
 #    only_playable = yes

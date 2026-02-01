@@ -1055,12 +1055,15 @@ succession_laws = {
 		feudal_opinion = -5
 		potential = {
 			holder_scope = {
+				NOT = { has_landed_title = e_hre }
 				OR = {
 					has_landed_title = e_byzantium
 					has_landed_title = e_roman_empire
 					has_landed_title = e_west_rome
+					tier = EMPEROR
 				}
 				NOT = { religion_group = muslim }
+				NOT = { religion_group = zoroastrian }
 				is_nomadic = no
 				is_merchant_republic = no
 				is_patrician = no
@@ -1101,12 +1104,25 @@ succession_laws = {
 					holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
 				}
 			}
+			AND = {
+				holder_scope = {
+					show_scope_change = no
+					TECH_NOBLE_CUSTOMS >= 3
+					TECH_POPULAR_CUSTOMS >= 3
+					TECH_RELIGIOUS_CUSTOMS >= 3
+					primary_title = {
+						show_scope_change = no
+						has_law = ze_administration_laws_2
+					}
+				}
+			}
 		}
 		effect = {
 			succession = {
 				base_type = feudal_elective
 				voting_rules = byzantine_elective
 			}
+			holder_scope = { narrative_event = { id = MP.212 } }
 		}
 		revoke_allowed = {
 			always = no

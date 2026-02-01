@@ -86,7 +86,6 @@ decisions = {
 	}
 
 	form_kingdom_prussia = {
-		#ai = no
 		is_high_prio = yes
 		only_playable = yes
 		only_independent = yes
@@ -100,8 +99,14 @@ decisions = {
 			NOT = { has_global_flag = prussia_formed }
 			OR = {
 				capital_scope = { region = custom_eastern_baltic }
-				de_jure_vassal_or_below = k_pomerania
-				de_jure_vassal_or_below = k_saxony
+				any_realm_province = {
+					is_capital = yes
+					OR = {
+						de_jure_liege_or_above = k_pomerania
+						de_jure_liege_or_above = k_saxony
+						de_jure_liege_or_above = k_poland
+					}
+				}
 			}
 			OR = {
 				culture_group = north_germanic
