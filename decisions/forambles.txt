@@ -770,12 +770,17 @@ decisions = {
 			}
 			diplomacy = 16
 			trait = ambitious
+			war = no
+			ruled_years = 20
+			TECH_NOBLE_CUSTOMS = 4
+			TECH_CULTURE_FLEX = 4
 		}
 		
 		effect = {
 			old_german_dejure_effect = yes
 			set_global_flag = hre_removed
 			prestige = 10000
+			wealth = 1000
 			activate_title = {
 				title = e_germany
 				status = yes
@@ -784,38 +789,52 @@ decisions = {
 				title = e_hre
 				status = no
 			}
-			if = { ##If fully centralised/primo allowed to keep empire within region Germania
-				limit = {
-					has_law = centralization_4
+			create_bloodline = { type = hre_destroyer }
+			unsafe_destroy_artifact = crown_hre 
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							heavy_infantry = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							archers = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
 				}
-				e_germany = {
-					show_scope_change = no
-					grant_title_no_opinion = ROOT
-					copy_title_laws = e_hre
-					make_primary_title = yes
-				}
-				custom_tooltip = {
-					text = tt_release_foreign_territories
-					any_vassal = {
-						limit = {
-							primary_title = {
-								NOT = { de_jure_liege_or_above = e_germany }
+			}
+			custom_tooltip = {
+				text = tt_hre_centralised
+				hidden_tooltip = {
+					if = { ##If fully centralised/primo allowed to keep empire within region Germania
+						limit = { has_law = centralization_4 }
+						e_germany = {
+							show_scope_change = no
+							grant_title_no_opinion = ROOT
+							copy_title_laws = e_hre
+							make_primary_title = yes
+						}
+						custom_tooltip = {
+							text = tt_release_foreign_territories
+							any_vassal = {
+								limit = {
+									primary_title = {
+										NOT = { de_jure_liege_or_above = e_germany }
+									}
+								}
+								set_defacto_liege = THIS
 							}
 						}
-						set_defacto_liege = THIS
+						ROOT = { character_event = { id = FORM.5 days = 2 } }
 					}
 				}
-				if = {
-					limit = {
-						has_law = succ_hre_elective
-					}
-					character_event = { id = FORM.5 }
-				}
-				
 			}
-			hidden_effect = {
-				destroy_landed_title = e_hre
-			}
+			hidden_effect = { destroy_landed_title = e_hre }
+			any_player = { narrative_event = { id = FORM.6 } }
 		}
 	}
 }
