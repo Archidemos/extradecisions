@@ -14,14 +14,9 @@ decisions = {
 				culture = greek
 				culture_group = latin
 				culture_group = iberian
+				culture_group = italian_group
 			}
-			OR = {
-				religion_group = christian
-				religion = hellenic_pagan
-			}
-			NOT = {
-				government = merchant_republic_government
-			}
+			NOT = { government = merchant_republic_government }
 			NOT = { has_global_flag = west_rome_formed }
 			NOT = { has_global_flag = rome_restored }
 			capital_scope = {
@@ -35,6 +30,7 @@ decisions = {
 		allow = {
 			NOT = { has_landed_title = e_byzantium }
 			prestige = 2000
+			wealth = 700
 			has_landed_title = e_italy
 			has_landed_title = c_roma
 			completely_controls = k_italy
@@ -50,12 +46,17 @@ decisions = {
 				limit = { k_papacy = { is_titular = no } }
 				completely_controls = k_papacy
 			}
+			OR = {
+				religion_group = christian
+				religion = hellenic_pagan
+			}
 			completely_controls = k_sicily
 			completely_controls = k_sardinia
 			OR = {
-				culture = greek
+				#culture = greek
 				culture_group = latin
 				culture_group = iberian
+				culture_group = italian_group
 			}
 		}
 		
