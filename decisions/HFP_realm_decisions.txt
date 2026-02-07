@@ -1511,12 +1511,17 @@ decisions = {
 				religion = catholic
 				religion = fraticelli
 			}
-			any_demesne_title = {
+			ROOT = {
 				OR = {
 					tier = KING
 					tier = EMPEROR
 				}
-				region = world_middle_east
+			}
+			capital_scope = { 
+				OR = {
+					region = world_middle_east 
+					region = world_africa_egypt
+				}
 			}
 			NOR = {
 				has_landed_title = e_byzantium
@@ -1550,6 +1555,10 @@ decisions = {
 		}
 
 		effect = {
+			prestige = 2000
+			piety = 2000
+			add_trait = crusader_king
+			add_claim = k_egypt
 			hidden_tooltip = {
 				primary_title = {
 					e_outremer = {
@@ -1617,14 +1626,8 @@ decisions = {
 					}
 					de_jure_liege = e_outremer
 				}
-				if = {
-					limit = {
-						completely_controls = k_egypt 
-					}
-					k_egypt = {
-						de_jure_liege = e_outremer
-					}
-				}
+				
+				k_egypt = {	de_jure_liege = e_outremer }
 
 				ROOT = {
 					narrative_event = { id = HFP.40027 }
