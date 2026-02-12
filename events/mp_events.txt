@@ -2439,6 +2439,47 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = MP.400
+	title = "Inflation"
+	desc = "Our coffers keep filling faster than we spend, we have inflated our currency and need to do something about this quick."
+	picture = GFX_evt_bribe_declined
+	is_triggered_only = yes
+	ai = no
+	
+	trigger = {
+		NOT = { has_character_modifier = inflated_realm }
+		wealth >= 10000
+	}
+	
+	option = {
+		name = "Bring the Steward!"
+		add_character_modifier = {
+			name = inflated_realm
+			duration = -1
+		}
+	}
+}
+
+character_event = {
+	id = MP.401
+	title = "Stable Economy"
+	desc = "We have successfully spent our overflown gold and have our economy under control."
+	picture = GFX_evt_leaning_tower
+	is_triggered_only = yes
+	ai = no
+	
+	trigger = {
+		has_character_modifier = inflated_realm
+		wealth <= 10000
+	}
+	
+	option = {
+		name = "Let us avoid this from now on"
+		remove_character_modifier = inflated_realm
+	}
+}
+
 #character_event = {
 #    id = MP.205
 #    only_playable = yes

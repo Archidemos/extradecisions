@@ -163,10 +163,10 @@ narrative_event = {
 	sound = ar_arabs_lose
 	
     trigger = {
-		OR = {
-			start_date = 769.1.1
-			start_date = 867.1.1
-			start_date = 936.1.1
+		start_date <= 1000.1.1
+		NOR = { 
+			start_date == 400.1.1
+			start_date == 476.1.1
 		}
 		is_save_game = no
     }
