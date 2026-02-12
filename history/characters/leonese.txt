@@ -1570,6 +1570,25 @@
 	953.1.1 = {
 		birth="953.1.1"
 	}
+	954.1.1 = {
+		effect = {
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 191 # Zarand
+					owner = ROOT
+					troops = {
+						light_infantry = { 2000 2000 }
+						heavy_infantry = { 500 500 }
+						archers = { 1000 1000 }
+						light_cavalry = { 500 500 }
+						knights = { 500 500 }
+					}
+					disband_on_peace = yes
+				}
+			}
+		}
+	}
 	984.1.1 = {
 		capital=k_leon
 	}

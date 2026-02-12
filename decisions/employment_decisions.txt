@@ -7,14 +7,15 @@ decisions = {
 		potential = {
 			NOT = { has_character_flag = ar_inviting_character }
 			NOT = { has_character_flag = picking_character_2_ar }
+			NOT = { is_tribal = yes }
 		}
 		
 		allow = {
-			OR = {
-				liege = { NOT = { religion = ROOT } }
-				liege = { NOT = { culture = ROOT } }
-				liege = { NOT = { government = ROOT } }
-			}
+			#OR = { #???
+			#	liege = { NOT = { religion = ROOT } }
+			#	liege = { NOT = { culture = ROOT } }
+			#	liege = { NOT = { government = ROOT } }
+			#}
 		}
 		
 		effect = {
