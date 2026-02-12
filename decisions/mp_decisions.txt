@@ -436,26 +436,38 @@ targetted_decisions = {
 
 decisions = {
 
-	#test_decision = {
-	#	ai = no
-	#	
-	#	potential = {
-	#	}
-	#	
-	#	allow = {
-	#	}
-	#	
-	#	effect = {
-	#		ROOT = {
-	#			any_demesne_title = {
-	#				limit = { 
-	#					NOT = { is_primary_holder_title = yes }
-	#				}
-	#				unsafe_destroy_landed_title = THIS
-	#			}
-	#		}
-	#	}
-	#}
+	change_education = {
+		ai = no
+		only_playable = yes
+		
+		potential = {
+			ROOT = { age > 20 }
+			NOT = { has_character_modifier = changed_education_once }
+		}
+		
+		allow = {
+			prestige = 500
+			wealth = 500
+			custom_tooltip = {
+				text = "You have not already changed your education once"
+				hidden_tooltip = {
+					NOT = { has_character_modifier = changed_education_once }
+				}
+			}
+		}
+		
+		effect = {
+			wealth = -500
+			prestige = -500
+			custom_tooltip = {
+				text = "You will dive into the books again to see what profession does fit you."
+				hidden_tooltip = {
+					ROOT = { character_event = { id = MP.214 } }
+				}
+			}
+		}
+	}
+	
 	claim_roma = {
 		only_independent = yes
 		is_high_prio = yes
@@ -1320,9 +1332,9 @@ title_decisions = {
 			FROM = { 
 				wealth = 250
 				stewardship = 15
-				TECH_POPULAR_CUSTOMS = 4
-				TECH_CONSTRUCTION = 5
-				TECH_TRADE_PRACTICES = 5
+				TECH_POPULAR_CUSTOMS = 3
+				TECH_CONSTRUCTION = 4
+				TECH_TRADE_PRACTICES = 4
 				NOT = { has_character_modifier = develop_cooldown }
 			}
 			trigger_if = {
@@ -1511,9 +1523,9 @@ title_decisions = {
 			FROM = {
 				wealth = 250
 				martial = 15
-				TECH_POPULAR_CUSTOMS = 4
-				TECH_CONSTRUCTION = 5
-				TECH_TRADE_PRACTICES = 5
+				TECH_POPULAR_CUSTOMS = 3
+				TECH_CONSTRUCTION = 4
+				TECH_TRADE_PRACTICES = 4
 				NOT = { has_character_modifier = develop_cooldown }
 			}
 			trigger_if = {

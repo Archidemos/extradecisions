@@ -2302,9 +2302,12 @@ character_event = {
 	border = GFX_event_normal_frame_diplomacy
 	is_triggered_only = yes
 
-	#trigger = {
-	#	ROOT = { has_law = succ_byzantine_elective }
-	#}
+	trigger = {
+		AND = {
+			primary_title = { has_law = succ_byzantine_elective }
+			NOT = { government = roman_imperial_government }
+		}
+	}
 
 	option = {
 		name = "As true Romans"
@@ -2328,6 +2331,110 @@ character_event = {
 			name = prussia_feudal_modifier
 			duration = -1
 			stacking = no
+		}
+	}
+}
+
+character_event = {
+	id = MP.214
+	only_playable = yes
+	title = "A change of path"
+	desc = "You have been studying a few books and got a broader view of what you are missing out on and will now change your profession."
+
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_learning
+	is_triggered_only = yes
+
+	option = {
+		name = "I always like to socialize"
+		hidden_tooltip = { ROOT = { remove_educations = yes } }
+		add_trait = underhanded_rogue
+		add_character_modifier = {
+			name = changed_education_once
+			years = -1
+			hidden = yes
+		}
+	}
+
+	option = {
+		name = "Fighting was always my thing"
+		hidden_tooltip = { ROOT = { remove_educations = yes } }
+		add_trait = tough_soldier
+		add_character_modifier = {
+			name = changed_education_once
+			years = -1
+			hidden = yes
+		}
+	}
+
+	option = {
+		name = "Gold always drew my eyes"
+		hidden_tooltip = { ROOT = { remove_educations = yes } }
+		add_trait = thrifty_clerk
+		add_character_modifier = {
+			name = changed_education_once
+			years = -1
+			hidden = yes
+		}
+	}
+	option = {
+		name = "Hmm, what about these books.."
+		hidden_tooltip = { ROOT = { character_event = { id = MP.215 } } }
+	}
+}
+
+character_event = {
+	id = MP.215
+	only_playable = yes
+	title = "A change of Fate"
+	desc = "You have been studying a few books and got a broader view of what you are missing out on and will now change your profession."
+
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_learning
+	is_triggered_only = yes
+
+	option = {
+		name = "Tricking people was always funny"
+		hidden_tooltip = { ROOT = { remove_educations = yes } }
+		add_trait = flamboyant_schemer
+		add_character_modifier = {
+			name = changed_education_once
+			years = -1
+			hidden = yes
+		}
+	}
+	option = {
+		name = "My faith is my profession"
+		hidden_tooltip = { ROOT = { remove_educations = yes } }
+		add_trait = martial_cleric
+		add_character_modifier = {
+			name = changed_education_once
+			years = -1
+			hidden = yes
+		}
+	}
+	option = {
+		name = "I need more time to think.."
+	}
+}
+
+character_event = {
+	id = MP.216
+	only_playable = yes
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		AND = {
+			primary_title = { has_law = succ_byzantine_elective }
+			NOT = { government = roman_imperial_government }
+		}
+	}
+	
+	immediate = {
+		any_demesne_title = {
+			limit = { tier = KING }
+			add_law = succ_byzantine_elective
 		}
 	}
 }

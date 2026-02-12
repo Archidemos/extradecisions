@@ -52,34 +52,13 @@ decisions = {
 		}
 
 		effect = {
-			prestige = 5000
-			piety = 5000
-			primary_title = {
-				set_title_landless = { title = THIS status = yes }
-				set_flag = forced_caliphate_government
-			}
-			set_government_type = caliphate_government
-			create_bloodline = {
-				type = islam_unifier
-			}
-			add_character_modifier = {
-				modifier = unify_isl
-				duration = -1
-			}
-			give_nickname = nick_the_lion	
-			
-			add_claim = d_sicily
-			add_claim = d_castilla
-			add_claim = d_leon		
-			add_claim = d_barcelona
-			add_claim = d_aragon
-			add_claim = d_galicia
-			add_claim = d_porto	
 			set_global_flag = unified_islam
-			
-			hidden_tooltip = {
-				any_player = {
-					narrative_event = { id = Unii.1000 } # notify the world
+			custom_tooltip = {
+				text = "Preperation for the unification will begin."
+				hidden_tooltip = {
+					ROOT = {
+						narrative_event = { id = UNISL.1 } # notify the world
+					}
 				}
 			}
 		}

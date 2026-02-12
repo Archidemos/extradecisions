@@ -1,0 +1,132 @@
+namespace = UNISL
+
+narrative_event = { #Event to choose between Imperial or Republic
+	id = UNISL.1
+	title = "Al-Islam United"
+	desc = "We have united Islam under one banner, however there is a matter to discuss. We do not know if God has blessed us or that regardless of our conquest, that we should not create a new Caliphate. Many scholars argue this matter, so it is up to us to make a decision. We could proclaim the Caliphate of Islam to truly unite our people under one banner, but we could also simply unite our people under one banner without a Caliphate."
+	sound = ar_army_marching
+	
+	picture = GFX_evt_moors
+	border = GFX_event_narrative_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "The Caliphate will be proclaimed!"
+		ai_chance = { factor = 50 }
+		
+		piety = 5000
+		ROOT = {
+			e_islam = {
+				grant_title = PREV
+				copy_title_laws = PREV
+				set_flag = forced_caliphate_government
+				set_name = "Khilafat al Islam"
+				adjective = "Khilafat al Islam"
+			}
+		}
+		ROOT = {
+			set_government_type = caliphate_government
+			add_character_modifier = {
+				modifier = unify_isl
+				duration = -1
+			}
+			create_bloodline = {
+				type = islam_unifier
+			}
+			give_nickname = nick_the_lion
+			add_claim = d_sicily
+			add_claim = d_castilla
+			add_claim = d_leon		
+			add_claim = d_barcelona
+			add_claim = d_aragon
+			add_claim = d_galicia
+			add_claim = d_porto	
+		}
+		custom_tooltip = {
+			text = "The de-jure of the Muslim World will be reshaped"
+			hidden_tooltip = {
+				activate_title = { title = e_africa status = no }
+				activate_title = { title = e_arabia status = no }
+				k_egypt = { de_jure_liege = e_islam }
+				k_jerusalem = { de_jure_liege = e_islam }
+				k_syria = { de_jure_liege = e_islam }
+				k_antioch = { de_jure_liege = e_islam }
+				k_aljazira = { de_jure_liege = e_islam }
+				k_mesopotamia = { de_jure_liege = e_islam }
+				k_arabia = { de_jure_liege = e_islam }
+				k_yemen = { de_jure_liege = e_islam }
+				k_oman = { de_jure_liege = e_islam }
+				
+				k_africa = { de_jure_liege = e_islam }
+				k_maghreb = { de_jure_liege = e_islam }
+				k_mauretania = { de_jure_liege = e_islam }
+			}
+		}
+		hidden_tooltip = { 
+			any_player = { narrative_event = { id = Unii.1000 days = 2 } } # notify the world
+			ROOT = { narrative_event = { id = UNISL.2 days = 5 } } # Event about Mecca
+		}
+	}
+	option = {
+		name = "We are all human and i am simply its uniter"
+		ai_chance = { factor = 50 }
+		
+		prestige = 5000
+		ROOT = {
+			primary_title = {
+				set_title_landless = { title = THIS status = yes }
+				set_flag = forced_caliphate_government
+			}
+		}
+		
+		ROOT = {
+			set_government_type = caliphate_government
+			add_character_modifier = {
+				modifier = unify_isl
+				duration = -1
+			}
+			create_bloodline = {
+				type = islam_unifier
+			}
+			give_nickname = nick_the_lion
+			add_claim = d_sicily
+			add_claim = d_castilla
+			add_claim = d_leon		
+			add_claim = d_barcelona
+			add_claim = d_aragon
+			add_claim = d_galicia
+			add_claim = d_porto	
+		}
+		hidden_tooltip = { 
+			any_player = { narrative_event = { id = Unii.1000 days = 2 } } # notify the world
+			ROOT = { narrative_event = { id = UNISL.2 days = 5 } } # Event about Mecca
+		}
+	}
+}
+
+narrative_event = { #Event to choose between Imperial or Republic
+	id = UNISL.2
+	title = "The Protector of Makka"
+	desc = "As Islam is united, the final matter left is to decide where the capital of the Caliphate will be. We could could keep our capital as it is, however we could also move the capital to Mecca like the old days."
+	sound = ar_army_marching
+	
+	picture = GFX_evt_council_speaker
+	border = GFX_event_narrative_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Makka shall be the Caliphal Capital"
+		ai_chance = { factor = 50 }
+		c_mecca = {
+			grant_title = ROOT
+			ROOT = { capital = PREV }
+		}
+	}
+	option = {
+		name = "It is not mine, so i will not take it"
+		ai_chance = { factor = 50 }
+		prestige = 500
+	}
+}
