@@ -550,7 +550,10 @@ decisions = {
 		
 		potential = {
 			NOT = { has_global_flag = formed_carthage }
-			culture = punic
+			OR = {
+				culture = punic
+				culture = numidian
+			}
 		}
 		allow = {
 			#date >= 481.1.1
