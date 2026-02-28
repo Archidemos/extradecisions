@@ -235,10 +235,10 @@ society_decisions = {
 						}
 					}
 				}
-				set_character_flag = invited_lodge_soldier
+				set_character_flag = invited_leauge_merchant
 				set_character_flag = lodge_warrior_original_court_@ROOT
                 set_character_flag = no_court_invites
-				save_event_target_as = invited_lodge_soldier
+				save_event_target_as = invited_leauge_merchant
 			}
 			character_event = { id = HF.25000 }
 		}
@@ -506,6 +506,611 @@ society_decisions = {
 		
 		ai_will_do = {
 			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
+		}
+	}
+	
+###############################################
+###############################################	
+############ Merchant Leauge ##################
+###############################################	
+###############################################	
+
+	borrow_money_league = {
+		only_playable = yes
+		ai_check_interval = 30
+		potential = {
+			is_playable = yes
+			is_nomadic = no
+			is_adult = yes
+			society_member_of = merchant_leauge
+			society_rank >= 1
+			NOT = { government = order_government }
+		}
+		
+		allow = {
+			society_member_of = merchant_leauge
+			society_rank >= 1
+			society_currency = 150
+			prisoner = no
+			NOT = { has_character_modifier = borrowed_from_league }
+		}
+		
+		effect = {
+			add_character_modifier = {
+				name = borrowed_from_league
+				duration = -1
+				inherit = yes
+			}
+			wealth = 500
+			change_society_currency = -150
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				wealth = 0
+				war = no
+			}
+			modifier = {
+				factor = 0
+				wealth = 400
+				war = yes
+			}			
+			modifier = {
+				factor = 0.1 # Slow it down
+			}
+		}
+	}
+	
+	repay_money_league = {
+		only_playable = yes
+		ai_check_interval = 6
+		potential = {
+			is_playable = yes
+			has_character_modifier = borrowed_from_league
+			has_dlc = "Sons of Abraham"
+		}
+		
+		allow = {
+			society_member_of = merchant_leauge
+			society_rank >= 1
+			wealth = 550
+		}
+		
+		effect = {
+			remove_character_modifier = borrowed_from_league
+			wealth = -550
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 650 }
+			}
+			modifier = {
+				factor = 0.5 # Slow it down
+			}
+		}
+	}
+
+	
+	league_invite_merchant = {
+		only_playable = yes
+		ai_check_interval = 36 #check only once every 36 months.
+		potential = {
+			has_dlc = "Holy Fury"
+			is_playable = yes
+			is_adult = yes
+			society_member_of = merchant_leauge
+			society_rank >= 2
+		}
+		allow = {
+			society_member_of = merchant_leauge
+			society_currency = 150
+			is_inaccessible_trigger = no
+		}
+		effect = {
+			change_society_currency = -150
+			custom_tooltip = { text = "You will invite a well experienced merchant to the leaugue to work with you" }
+			hidden_tooltip = {
+				if = { 
+					limit = { has_religion_feature = religion_matriarchal }
+					create_random_steward = {
+						random_traits = yes
+						dynasty = random
+						female = yes
+						attributes = {
+							diplomacy = 4
+							learning = 4
+							stewardship = 14
+							intrigue = 4
+							martial = 4
+						}
+					}
+				}
+				if = { 
+					limit = { NOT = { has_religion_feature = religion_matriarchal } }
+					create_random_steward = {
+						random_traits = yes
+						dynasty = random
+						female = no
+						attributes = {
+							diplomacy = 4
+							learning = 4
+							stewardship = 14
+							intrigue = 4
+							martial = 4
+						}
+					}
+				}
+				if = { 
+					limit = { 
+						NOR = { 
+							has_religion_feature = religion_matriarchal 
+							has_religion_feature = religion_patriarchal 
+						} 
+						has_game_rule = {
+							name = gender
+							value = all
+						}
+					}
+					create_random_steward = {
+						random_traits = yes
+						dynasty = random
+						female = 50
+						attributes = {
+							diplomacy = 4
+							learning = 4
+							stewardship = 14
+							intrigue = 4
+							martial = 4
+						}
+					}
+				}
+				if = { 
+					limit = { 
+						NOR = { 
+							has_religion_feature = religion_matriarchal 
+							has_religion_feature = religion_patriarchal 
+							has_game_rule = {
+								name = gender
+								value = all
+							}
+						} 
+					}
+					create_random_steward = {
+						random_traits = yes
+						dynasty = random
+						female = 5
+						attributes = {
+							diplomacy = 4
+							learning = 4
+							stewardship = 14
+							intrigue = 4
+							martial = 4
+						}
+					}
+				}
+				if = {
+					limit = { has_religion_feature = religion_patriarchal }
+					create_random_steward = {
+						random_traits = yes
+						dynasty = random
+						female = no
+						attributes = {
+							diplomacy = 4
+							learning = 4
+							stewardship = 14
+							intrigue = 4
+							martial = 4
+						}
+					}
+				}
+			}
+			new_character = {
+				remove_trait = weak
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = dull
+		
+				remove_trait = mystic
+				remove_trait = socializer
+				remove_trait = gamer
+				remove_trait = hedonist
+				remove_trait = duelist
+				remove_trait = hunter
+				remove_trait = strategist
+				remove_trait = administrator
+				remove_trait = architect
+				remove_trait = gardener
+				remove_trait = schemer
+				remove_trait = impaler
+				remove_trait = seducer
+				remove_trait = seductress
+				remove_trait = theologian
+				remove_trait = scholar
+				if = { 
+					limit = { 
+						is_female = yes 
+						ROOT = { 
+							NOR = { 
+								has_religion_feature = religion_matriarchal 
+								has_religion_feature = religion_patriarchal 
+								has_game_rule = {
+									name = gender
+									value = all
+								}
+							} 
+						} 
+					}
+					set_character_flag = special_marshal
+				}
+		
+				random_list = { # Flavor Randomization
+					35 = { 
+						# Nothing
+					}
+					15 = {
+						change_martial = 2
+					}
+					10 = {
+						add_trait = robust
+					}
+					10 = {
+						add_trait = administrator
+					}
+					10 = {
+						add_trait = architect
+					}
+					5 = {
+						add_trait = gardener
+					}
+					5 = {
+						change_steward = 4
+					}
+					5 = {
+						add_trait = diligent
+					}
+					5 = { 
+						add_trait = shrewd
+					}
+					3 = { 
+						add_trait = quick
+					}
+				}
+				join_society  = merchant_leauge
+				hidden_tooltip = {
+					if = {
+						limit = {
+							has_dharmic_religion_trigger = yes
+						}
+						character_event = { id = RoI.30121 }
+					}
+					if = {
+						limit = {
+							OR = {
+								religion = hellenic_pagan
+								religion = hellenic_pagan_reformed
+								has_religion_feature = religion_astrology
+							}
+						}
+						hidden_tooltip = { add_western_zodiac_trait_effect = yes }
+					}
+					if = {
+						limit = {
+							has_religion_feature = religion_no_leader
+							religion_group = pagan_group
+						}
+						random_list = {  
+							5 = {
+								add_trait = pagan_branch_1
+							}
+							25 = {
+								add_trait = pagan_branch_2
+							}
+							25 = {
+								add_trait = pagan_branch_3
+							}
+							25 = {
+								add_trait = pagan_branch_4
+							}
+						}
+					}
+				}
+				set_character_flag = invited_steward_leaugue
+                set_character_flag = no_court_invites
+				save_event_target_as = invited_leauge_merchant
+			}
+			character_event = { id = MERCSOC.7 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0.5
+				war = no #Only summon in time of need.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { is_member_of_any_warrior_lodge_trigger = yes } #Less likely to invite if there is already someone else at court.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { has_job_title = job_marshal martial = 16 }
+			}
+			modifier = {
+				factor = 0.25 #Fearful to be challenged for leadership.
+				is_tribal = yes
+				trait = paranoid
+			}
+			modifier = {
+				factor = 0 #Only use if empty commander spots.
+           		OR = {
+                	AND = {
+                    	tier = COUNT
+                        any_realm_character = {
+                            count = 2
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+                	AND = {
+                    	tier = DUKE
+                        any_realm_character = {
+                            count = 4
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+                	AND = {
+                    	tier = KING
+                   		 is_nomadic = no
+                        any_realm_character = {
+                            count = 6
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+               		AND = {
+                	    tier = EMPEROR
+                	    is_nomadic = no
+                        any_realm_character = {
+                            count = 8
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+                	AND = {
+                	    tier = KING
+                 	   is_nomadic = yes
+                        any_realm_character = {
+                            count = 2
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+               		AND = {
+                	    tier = EMPEROR
+                	    is_nomadic = yes
+                        any_realm_character = {
+                            count = 4
+                            liege = { character = ROOT }
+                            has_minor_title = title_commander
+                        }
+                	}
+            	}
+			}
+		}
+	}
+	
+	setup_leauge_buisness = {
+		only_playable = yes
+		ai_check_interval = 36 #check only once every 36 months.
+		potential = {
+			NOT = { has_character_flag = has_setup_buisness }
+			has_dlc = "Holy Fury"
+			is_playable = yes
+			is_adult = yes
+			society_member_of = merchant_leauge
+			society_rank >= 2
+		}
+		allow = {
+			society_member_of = merchant_leauge
+			society_currency = 150
+			wealth = 200
+			is_inaccessible_trigger = no
+			NOR = {
+				has_character_modifier = leauge_market
+				has_character_modifier = leauge_buisness
+			}
+		}
+		effect = {
+			set_character_flag = has_setup_buisness
+			wealth = -200
+			custom_tooltip = {
+				text = "You will prepare to claim a spot to set up your new buisness."
+				hidden_tooltip = {
+					character_event = { id = MERCSOC.4 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0.5
+				war = no #Only summon in time of need.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { is_member_of_any_warrior_lodge_trigger = yes } #Less likely to invite if there is already someone else at court.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { has_job_title = job_marshal martial = 16 }
+			}
+			modifier = {
+				factor = 0.25 #Fearful to be challenged for leadership.
+				is_tribal = yes
+				trait = paranoid
+			}
+		}
+	}
+	
+	leauge_lifestyle = {
+		only_playable = yes
+		ai_check_interval = 36 #check only once every 36 months.
+		potential = {
+			has_dlc = "Holy Fury"
+			is_playable = yes
+			is_adult = yes
+			society_member_of = merchant_leauge
+			society_rank >= 4
+			NOT = { has_character_flag = picked_lifestyle_league }
+		}
+		allow = {
+			society_member_of = merchant_leauge
+			society_currency = 300
+			is_inaccessible_trigger = no
+			ROOT = {
+				NOR = {
+					trait = gardener
+					trait = architect
+					trait = administrator
+				}
+			}
+		}
+		effect = {
+			set_character_flag = picked_lifestyle_league
+			change_society_currency = -300
+			character_event = { id = MERCSOC.5 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0.5
+				war = no #Only summon in time of need.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { is_member_of_any_warrior_lodge_trigger = yes } #Less likely to invite if there is already someone else at court.
+			}
+			modifier = {
+				factor = 0.1
+				any_courtier = { has_job_title = job_marshal martial = 16 }
+			}
+			modifier = {
+				factor = 0.25 #Fearful to be challenged for leadership.
+				is_tribal = yes
+				trait = paranoid
+			}
+		}
+	}
+}
+
+settlement_decisions = {
+	leauge_improve_province = {
+		filter = owned
+		ai_target_filter = owned
+		diplomacy_icon = GFX_borrow_money_league
+		
+		from_potential = {
+			is_playable = yes
+			society_member_of = merchant_leauge
+			society_rank >= 4
+		}
+		
+		potential = {
+			controlled_by = FROM
+		}
+		
+		allow = {
+			FROM = { society_currency = 500 }
+			NOT = { location = { has_province_modifier = leauge_province_improvement } }
+		}
+		
+		effect = {
+			FROM = { change_society_currency = -500 }
+			location = {
+				add_province_modifier = {
+					name = leauge_province_improvement
+					years = 10
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+title_decisions = {
+	leauge_upgrade_holding = {
+		ai_check_interval = 12
+		diplomacy_icon = GFX_borrow_money_league
+		
+		potential = {
+			holder = FROM
+			FROM = { society_member_of = merchant_leauge }
+		}
+		
+		allow = {
+			owner = {
+				society_member_of = merchant_leauge
+				society_currency = 300
+				society_rank >= 3
+			}
+			location = {
+				num_of_max_settlements < 7
+				NOT = { has_province_modifier = increased_holding }
+				has_province_modifier = prosperity_modifier_3
+			}
+		}
+		
+		effect = {
+			owner = {
+				show_scope_change = no
+				change_society_currency = -300
+			}
+			location = {
+				add_holding_slot = 1
+				add_province_modifier = {
+					name = increased_holding
+					years = 50
+					hidden = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 50
+			
+			additive_modifier = {
+				value = -25
+				is_tribal = yes
+			}
 		}
 	}
 }

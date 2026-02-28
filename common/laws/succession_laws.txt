@@ -564,7 +564,7 @@ succession_laws = {
 		}
 		
 		allow = {
-			
+			TECH_LEGALISM = 5
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }
@@ -722,6 +722,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			TECH_LEGALISM = 5
 			conditional_tooltip = {
 				trigger = {
 					has_dlc = "Conclave"
@@ -783,7 +784,7 @@ succession_laws = {
 				custom_tooltip = {
 					text = forced_elective_tt
 					hidden_tooltip = {
-						NAND = { 
+						NAND = {
 							has_law = succession_voting_power_1
 							OR = { 
 								has_law = succ_feudal_elective 
@@ -920,6 +921,13 @@ succession_laws = {
 			}
 		}
 		allow = {
+			#custom_tooltip = {
+			#	text = warning_nerf_succ
+			#	OR = {
+			#		TECH_LEGALISM = 5
+			#		date >= 1000.1.1
+			#	}
+			#}
 			custom_tooltip = {
 				text = not_forced_tt
 				hidden_tooltip = {
@@ -1206,6 +1214,7 @@ succession_laws = {
 
 		}
 		allow = {
+			TECH_LEGALISM = 5
 			OR = {
 				holder_scope = { is_feudal = yes }
 				holder_scope = { is_tribal = yes }
@@ -1356,6 +1365,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			TECH_LEGALISM = 5
 			conditional_tooltip = {
 				trigger = {
 					has_dlc = "Conclave"

@@ -1,0 +1,45 @@
+namespace = LEGSOC
+
+character_event = {
+	id = LEGSOC.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+    	FROM = { leader = { society_member_of = legends_guild } }
+    }
+    immediate = {
+    	FROM = { leader = { character_event = { id = LEGSOC.2 } } }
+    }
+}
+
+letter_event = { #redirecting for portraits
+	id = LEGSOC.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			letter_event = { id = LEGSOC.3 }
+		}
+	}
+}
+
+letter_event = {
+	id = LEGSOC.3
+	desc = "As one of the Grandmasters and the leader of the Legends Guild. In the name of the Guild, we hereby accept your application to join the Legends Guild and welcome you"
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { ai = no }
+		name = A_MUSLIM3
+		join_society = legends_guild
+		scaled_wealth = -0.25
+	}
+	
+	option = {
+		trigger = { ai = yes }
+		name = A_MUSLIM3
+		join_society = legends_guild
+	}
+}

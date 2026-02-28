@@ -9,6 +9,7 @@ decisions = {
 			NOT = { has_landed_title = e_hre }
 			NOT = { has_landed_title = e_byzantium }
 			NOT = { has_landed_title = e_roman_empire }
+			#NOT = { has_landed_title = e_west_rome }
 			NOT = { has_landed_title = k_papal_state }
 			OR = {
 				culture = greek
@@ -28,7 +29,9 @@ decisions = {
 		}
 		
 		allow = {
+			any_playable_ruler = { has_landed_title = e_west_rome }
 			NOT = { has_landed_title = e_byzantium }
+			NOT = { has_landed_title = e_hre }
 			prestige = 2000
 			wealth = 700
 			has_landed_title = e_italy

@@ -1,0 +1,411 @@
+namespace = MERCSOC
+
+character_event = {
+	id = MERCSOC.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+    	FROM = { leader = { society_member_of = merchant_leauge } }
+    }
+    immediate = {
+    	FROM = { leader = { character_event = { id = MERCSOC.2 } } }
+    }
+}
+
+letter_event = { #redirecting for portraits
+	id = MERCSOC.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			letter_event = { id = MERCSOC.3 }
+		}
+	}
+}
+
+letter_event = {
+	id = MERCSOC.3
+	desc = "As the Grand Merchant of the Merchant League. In the name of the League, we hereby accept your application to join the Merchant League and we welcome you."
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { ai = no }
+		name = A_MUSLIM3
+		join_society = merchant_leauge
+		scaled_wealth = -0.25
+	}
+	
+	option = {
+		trigger = { ai = yes }
+		name = A_MUSLIM3
+		join_society = merchant_leauge
+	}
+}
+
+character_event = {
+	id = MERCSOC.4
+	name = "Setting up a buisness"
+	desc = "After having enough influence from the League members, we are now allowed to set up a stance or perhaps a small buisness within a realm."
+	picture = GFX_evt_busy_trading_dock_republic
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+	#trigger = {
+    #	FROM = { leader = { society_member_of = merchant_leauge } }
+    #}
+    option = {
+		name = "We shall setup a stance within the busy markets"
+    	ROOT = { 
+			add_character_modifier = {
+				name = leauge_market
+				durration = -1
+			}
+		}
+    }
+    option = {
+		name = "Actually, let us buy a building and setup a buisness"
+    	ROOT = { 
+			add_character_modifier = {
+				name = leauge_buisness
+				durration = -1
+			}
+		}
+    }
+}
+
+
+character_event = {
+	id = MERCSOC.5
+	name = "Merchant Veteran"
+	desc = "As we are a high ranking member of the Merchant League, we are allowed to use their knowledge to perhaps find ourselfs a specialisation within the arts of the Economy. It could be wise to exploit this oppertunity and learn from what the knowledge of the League has the offer."
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+	#trigger = {
+    #	FROM = { leader = { society_member_of = merchant_leauge } }
+    #}
+    option = {
+		name = "It is time for a study."
+    	ROOT = {
+			prestige = 500
+			character_event = { id = MERCSOC.6 days = 10 }
+		}
+    }
+}
+
+character_event = {
+	id = MERCSOC.6
+	name = "Merchant Veteran"
+	desc = "You have been within the League for a long time now and have learned the ways of the economy, despite your profession. It is time to specialise into something and are able to learn this because of our privledge as a high rank member of the League."
+	picture = GFX_evt_doge_republic
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+	#trigger = {
+    #	FROM = { leader = { society_member_of = merchant_leauge } }
+    #}
+    option = {
+		name = "Its not all about the gold but about nature too."
+    	ROOT = { 
+			add_trait = gardener
+		}
+    }
+    option = {
+		name = "Without buildings, there would be no economy."
+    	ROOT = { 
+			add_trait = architect
+		}
+    }
+    option = {
+		name = "In order to track our books is to be bureaucratic."
+    	ROOT = { 
+			add_trait = administrator
+		}
+    }
+}
+
+character_event = {
+    id = MERCSOC.7
+    desc = "After asking around in the Merchant League, we have finally found a merchant willing to join us"
+    picture = GFX_evt_doge_republic
+
+    border = GFX_event_normal_frame_economy
+
+    is_triggered_only = yes
+    
+	option = {
+		name = "You are most welcome."
+		
+		trigger = {
+			OR = { 
+				NOT = { ROOT = { has_law = succ_byzantine_elective } }  #Either not Imperial...
+				NOT = { #...Or there are no valid vassal candidates that can be commanders.
+					any_vassal = { 
+						higher_real_tier_than = BARON
+						NOT = { 
+							primary_title = { temporary = yes } 
+						}
+						OR = {
+							AND = {
+								OR = {
+									male_can_hold_minor_title_trigger = yes
+									female_can_hold_minor_commander_title_trigger = yes
+								}
+								OR = {
+									NOT = { religion = hindu }
+									trait = kshatriya
+								}
+								is_adult = yes
+							}
+							has_character_flag = special_marshal
+						}
+				
+						prisoner = no
+						NOT = { trait = incapable }
+						NOT = { is_inaccessible_trigger = yes }
+						NOT = { has_character_flag = guru }
+						NOT = { has_character_modifier = refusing_to_lead }
+						NOR = {
+							has_job_title = job_chancellor
+							has_job_title = job_marshal
+							has_job_title = job_treasurer
+							has_job_title = job_spymaster
+							has_job_title = job_spiritual
+							has_job_title = job_treasurer
+						}
+					} 
+				}
+			}
+			any_realm_character = {
+				NOT = {
+					higher_tier_than = BARON
+				}
+				liege = { character = ROOT }
+				has_job_title = job_treasurer
+				NOT = {
+					martial = 10
+				}
+			}
+			OR = {
+				AND = {
+					tier = COUNT
+					any_realm_character = {
+						count = 2
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+				AND = {
+					tier = DUKE
+					any_realm_character = {
+						count = 4
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+				AND = {
+					tier = KING
+					is_nomadic = no
+					any_realm_character = {
+						count = 6
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+				AND = {
+					tier = EMPEROR
+					is_nomadic = no
+					any_realm_character = {
+						count = 8
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+				AND = {
+					tier = KING
+					is_nomadic = yes
+					any_realm_character = {
+						count = 2
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+				AND = {
+					tier = EMPEROR
+					is_nomadic = yes
+					any_realm_character = {
+						count = 4
+						liege = { character = ROOT }
+						has_job_title = job_treasurer
+					}
+				}
+			}
+		}
+		
+		random_realm_character = {
+			limit = {
+				NOT = {
+					higher_tier_than = BARON
+				}
+				liege = { character = ROOT }
+				has_job_title = job_treasurer
+				NOT = {
+					martial = 12
+				}
+			}
+			opinion = {
+				modifier = insulted
+				who = ROOT
+				years = 2
+			}
+			remove_title = job_treasurer
+		}
+		
+		event_target:invited_leauge_merchant = {
+			show_scope_change = no
+			opinion = {
+				modifier = opinion_loyal_servant
+				who = ROOT
+				years = 100
+			}
+			give_job_title = job_treasurer
+		}
+	}
+    option = {
+        name = "You will be elivated to Realm Steward."
+        trigger = {
+			OR = { 
+				NOT = { ROOT = { has_law = succ_byzantine_elective } }  #Either not Imperial...
+				NOT = { #...Or there are no valid vassal candidates that can be commanders.
+					any_vassal = { 
+						higher_real_tier_than = BARON
+						NOT = { 
+							primary_title = { temporary = yes } 
+						}
+						OR = {
+							AND = {
+								OR = {
+									male_can_hold_minor_title_trigger = yes
+									female_can_hold_minor_commander_title_trigger = yes
+								}
+								OR = {
+									NOT = { religion = hindu }
+									trait = kshatriya
+								}
+								is_adult = yes
+							}
+							has_character_flag = special_marshal
+						}
+				
+						prisoner = no
+						NOT = { trait = incapable }
+						NOT = { is_inaccessible_trigger = yes }
+						NOT = { has_character_flag = guru }
+						NOT = { has_character_modifier = refusing_to_lead }
+						NOR = {
+							has_job_title = job_chancellor
+							has_job_title = job_marshal
+							has_job_title = job_treasurer
+							has_job_title = job_spymaster
+							has_job_title = job_spiritual
+							has_job_title = job_treasurer
+						}
+					} 
+				}
+			}
+            OR = {
+                AND = {
+                    tier = COUNT
+                    NOT = {
+                        any_realm_character = {
+                            count = 2
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+                AND = {
+                    tier = DUKE
+                    NOT = {
+                        any_realm_character = {
+                            count = 4
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+                AND = {
+                    tier = KING
+                    is_nomadic = no
+                    NOT = {
+                        any_realm_character = {
+                            count = 6
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+                AND = {
+                    tier = EMPEROR
+                    is_nomadic = no
+                    NOT = {
+                        any_realm_character = {
+                            count = 8
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+                AND = {
+                    tier = KING
+                    is_nomadic = yes
+                    NOT = {
+                        any_realm_character = {
+                            count = 2
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+                AND = {
+                    tier = EMPEROR
+                    is_nomadic = yes
+                    NOT = {
+                        any_realm_character = {
+                            count = 4
+                            liege = { character = ROOT }
+                            has_job_title = job_treasurer
+                        }
+                    }
+                }
+            }
+        }
+        
+        event_target:invited_leauge_merchant = {
+			show_scope_change = no
+            opinion = {
+                modifier = opinion_loyal_servant
+                who = ROOT
+                years = 100
+            }
+            give_job_title = job_treasurer
+        }
+    }
+    option = {
+        name = "You are most welcome."
+        event_target:invited_leauge_merchant = { 
+            show_scope_change = no
+            opinion = {
+                modifier = opinion_loyal_servant
+                who = ROOT
+                years = 100
+            }
+        }
+        ai_chance = {    
+            factor = 100
+        }
+    }
+}

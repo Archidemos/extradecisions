@@ -1,0 +1,346 @@
+merchant_leauge = {
+	primary_attribute = stewardship
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	sound = hermetic_society_interface
+	society_ranks_gfx = generic_ranks
+	society_influence = no
+	non_interference = {
+		always = yes
+	}
+	
+	active = {
+		has_dlc = "Mystics"
+	}
+	indestructible = yes
+
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = merchant_leauge
+					rank = 1
+				}
+			}
+			OR = {
+				is_landed = yes
+				is_patrician = yes
+			}
+		}
+		stewardship = 10
+		OR = {
+			has_religion_feature = religion_astrology
+			religion_group = christian
+			religion = arian
+			religion = adoptionist
+			religion_group = muslim
+			religion_group = jewish_group
+			religion_group = zoroastrian_group
+			custom_tooltip = {
+				text = zunist_hermetic_join_tooltip
+				hidden_trigger = {
+					OR = {
+						religion = zun_pagan					
+						religion = zun_pagan_reformed
+					}
+				}
+			}
+			custom_tooltip = {
+				text = hellenic_hermetic_join_tooltip
+
+				OR = {
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+			}
+			religion = taoist
+		}
+		NOR = {
+			is_nomadic = yes
+			is_tribal = yes
+		}
+		hidden_trigger = { mercenary = no }
+		age = 16
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		trigger_if = {
+			limit = { prisoner = yes }
+			prisoner = no
+		}
+	}
+	
+	show_society = {
+		OR = {
+			has_religion_feature = religion_astrology
+			religion_group = christian
+			religion = arian
+			religion = adoptionist
+			religion_group = muslim
+			religion_group = jewish_group
+			religion_group = zoroastrian_group
+			religion = zun_pagan
+			religion = zun_pagan_reformed
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+			religion = taoist
+			society_member_of = merchant_leauge
+		}
+	}
+	
+	potential = {
+		#If something is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
+	}
+	
+	society_rank = {
+		level = 1
+		limit = 100 
+		startup_limit = 10
+		modifier = {
+			global_tax_modifier = 0.025
+		}
+		decisions = {
+			borrow_money_league
+			repay_money_league
+		}
+	}
+	
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 6
+		modifier = { 
+			stewardship = 1
+			global_tax_modifier = 0.05
+		}
+		decisions = {
+			league_invite_merchant
+			setup_leauge_buisness
+		}
+	}
+	
+	society_rank = {
+		level = 3
+		limit = 25 
+		startup_limit = 3
+		modifier = { 
+			stewardship = 2
+			global_tax_modifier = 0.075
+		}
+		decisions = {
+			leauge_upgrade_holding
+			leauge_raid_cb
+		}
+	}
+
+	society_rank = {
+		level = 4
+		limit = 5
+		startup_limit = 1
+		modifier = { 
+			stewardship = 3
+			tradevalue = 5
+			global_tax_modifier = 0.1
+		}
+		decisions = {
+			leauge_improve_province
+			leauge_lifestyle
+		}
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_merchant_leauge
+    	
+    	per_attribute = {
+    		name = stewardship
+    		value = 0.5
+    	}
+		has_trait = {
+			trait = greedy
+			value = 3
+		}
+		has_trait = {
+			trait = ambitious
+			value = 3
+		}
+    	has_trait = {
+			trait = just
+			value = 3
+		}
+		has_trait = {
+			trait = erudite
+			value = 3
+		}
+		has_trait = {
+			trait = proud
+			value = 1
+		}
+		has_trait = {
+			trait = envious
+			value = 1
+		}
+		has_trait = {
+			trait = diligent
+			value = 1
+		}
+		has_trait = {
+			trait = patient
+			value = 1
+		}
+		has_trait = {
+			trait = gardener
+			value = 1
+		}
+		has_trait = {
+			trait = architect
+			value = 1
+		}
+		has_trait = {
+			trait = administrator
+			value = 1
+		}
+		has_trait = {
+			trait = gamer
+			value = 1
+		}
+		has_trait = {
+			trait = shrewd
+			value = 1
+		}
+		has_trait = {
+			trait = gardener
+			value = 1
+		}
+		has_trait = {
+			trait = charitable
+			value = -3
+		}
+		society_rank = {
+			rank = 4
+			value = 10
+		}
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+
+		modifier = {
+			trait = greedy
+			factor = 10
+		}
+		modifier = {
+			trait = ambitious
+			factor = 1.3
+		}
+		modifier = {
+			trait = just
+			factor = 1.3
+		}
+    	modifier = {
+			trait = erudite
+			factor = 1.3
+		}
+		modifier = {
+			trait = proud
+			factor = 1.3
+		}
+		modifier = {
+			trait = envious
+			factor = 1.1
+		}
+		modifier = {
+			trait = diligent
+			factor = 1.1
+		}
+		modifier = {
+			trait = patient
+			factor = 1.1
+		}
+		modifier = {
+			trait = gardener
+			factor = 1.1
+		}
+		modifier = {
+			trait = architect
+			factor = 1.1
+		}
+		modifier = {
+			trait = administrator
+			factor = 1.1
+		}
+		modifier = {
+			trait = gamer
+			factor = 1.1
+		}
+		modifier = {
+			trait = shrewd
+			factor = 1.1
+		}
+		modifier = {
+			trait = gardener
+			factor = 1.1
+		}
+		modifier = {
+			trait = charitable
+			factor = 1.1
+		}
+	}
+	
+	startup_populate = {
+	    trigger = {
+			ai = yes
+	    	controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				NOT = { is_priest = yes }
+				OR = {
+					trait = administrator
+					trait = gamer
+					trait = gardener
+				}
+			}
+			OR = {
+				AND = {
+					is_landed = yes
+					stewardship = 14
+					OR = {
+						trait = envious
+						trait = diligent
+						trait = patient
+						trait = gardener
+						trait = architect
+					}
+				}
+				AND = {
+					stewardship = 18
+					OR = {
+						trait = greedy
+						trait = ambitious
+						trait = just
+						trait = erudite
+						trait = proud
+						stewardship = 20
+					}
+				}
+			}
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = jewish_group
+				religion_group = zoroastrian_group
+				religion = zun_pagan
+				religion = zun_pagan_reformed
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+				religion = taoist
+			}
+		}
+	}
+
+}

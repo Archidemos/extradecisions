@@ -5767,9 +5767,42 @@ west_african = {
 }
 
 north_african = {
-	graphical_cultures = { muslimgfx }
+	#graphical_cultures = { muslimgfx }
 	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
 
+	numidian = {
+		graphical_cultures = { berbergfx southerngfx trueoccitangfx }
+		color = { 0.4 0.3 0.2 }
+		used_for_random = no
+		alternate_start = { has_alternate_start_parameter = { key = culture value = full_random } }
+		male_names = {
+			Adherbal Aderbal Adherbalus Afalawas Afalku Afer Afri Agellid Amastan Amellal
+			Amnay Amastanabal Anir Antalas Aras Ayyur Azrur Baga Bagaia Bagradas
+			Bocchus Capussa Colchas Dabar Dihyael Firmus Frawsen Gaia Galussa
+			Gauda Gildun Gulussa Hampsicora Hiarbas Hiempsal Iarbas Iddibal
+			Ider Ighil Ighider Imazigh Iorfas Isalcas Juba Jugurtha
+			Lacumaces Massensen Mastan Mastanabal Massinissa Massiva Mazigh
+			Micipsa Misagenes Naravas Oxyntas Sabalus Sifax Sifaks
+			Syphax Vermina Yugurtha Yuba Yugerten Ziri Zilalsen Zeggai Bostar Bukkus
+			Siga Mastigas Mazicen Mazir Ighilas Itri Ither Aghilas Aghrul Aksil Amessan
+			Amastigan Azenas Azenkwed Zilal Thugga Thuburn Sabal Iddir Iggur
+			Massnsen Narasen Baggai Bocchar Capus Iddisen Agadir Afraw
+			Zeggour Mazighen Ifran Sarnax Uksis Yirazen Zannas
+		}
+		female_names = {
+			Anzaya Aylal Aghrila Amellalt Amayas Amzigha Azenna Aferya Dihya Dihyana Dihyara
+			Guraya Ghrissa Ganezra Kahina Kella Kenza Kallima Lemta Lunja Lalla Lihya Lemdina
+			Massiva Mernissa Myassa Malya Mazigha Maysuna Nafra Nazzura Nefissa Nighila
+			Sophonisba Samya Silya Sarnaya Sefra Wenza Wazila Werrina Zilgum Zwina Zafira 
+			Zeggaya Zunza Zraya Zelmaya Iyara Ighrisa Ilyena Izza Iffura Yawra Yamina Yessira
+			Tafsut Tafukt Tazirit Tislit Tiziri Tazrurt Tella
+		}
+		modifier = numidian_culture_modifier
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+		allow_looting = yes
+	}
+	
 	berber = {
 		graphical_cultures = { berbergfx arabicgfx muslimgfx }
 		color = { 0.4 0.3 0.2 }

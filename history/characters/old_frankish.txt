@@ -2706,26 +2706,26 @@
 		death="825.1.1"
 	}
 }
-#168670 = {
-#	name="Clodion"
-#	dynasty=542
-#	religion="norse_pagan"
-#	culture="old_frankish"
-#	390.1.1 = {
-#		birth = yes
-#	}
-#	
-#	450.1.1 = {
-#		death = yes
-#	}
-#}
+168670 = {
+	name="Clodion"
+	dynasty=542
+	religion="norse_pagan"
+	culture="old_frankish"
+	390.1.1 = {
+		birth = yes
+	}
+	
+	450.1.1 = {
+		death = yes
+	}
+}
 
 168671 = {
 	name="Mérovech"
 	dynasty=542
 	religion="norse_pagan"
 	culture="old_frankish"
-	#father=168670
+	father=168670
 	410.1.1 = {
 		birth = yes
 	}
@@ -2788,6 +2788,10 @@
 	}
 	499.1.1 = {
 		religion="catholic"
+		create_bloodline = {
+			type = merovingian
+			has_dlc = "Holy Fury"
+		}
 	}
 	511.11.27 = {
 		death = yes
@@ -3333,7 +3337,7 @@
 		birth = yes
 	}
 	
-	760.1.1 = {
+	775.1.1 = {
 		death = yes
 	}
 }
