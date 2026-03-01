@@ -219,6 +219,7 @@ has_religion_matching_warrior_lodge_in_need_of_members_trigger = {
 			}
 			warrior_lodge_tengri = { num_of_society_members < 30 }
 		}
+		legends_guild = { num_of_society_members < 30 }
 	}
 }
 has_religion_matching_empty_warrior_lodge_trigger = {
@@ -259,6 +260,7 @@ has_religion_matching_empty_warrior_lodge_trigger = {
 			religion_openly_hellenic_or_reformed_trigger = yes
 			NOT = { warrior_lodge_hellenic = { society_has_members = yes } }
 		}
+		NOT = { legends_guild = { society_has_members = yes } }
 	}
 }
 
@@ -471,6 +473,9 @@ special_join_warrior_lodge_trigger = {
 						}
 					}
 				}
+			}
+			AND = {
+				FROM = { is_society = legends_guild }
 			}
 		}
 	}

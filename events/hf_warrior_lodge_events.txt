@@ -2901,6 +2901,12 @@ character_event = {
             }
             join_society = warrior_lodge_tengri
         }
+        else_if = {
+            limit = {
+                can_join_society = legends_guild
+            }
+            join_society = legends_guild
+        }
         else = {
             log = "[Root.GetTitledName] failed to join a society in event HF.10051"
             break = yes
