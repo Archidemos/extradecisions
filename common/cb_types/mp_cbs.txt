@@ -180,6 +180,7 @@ emf_ismaili_caliphate_rising = {
 	battle_warscore_mult = 1.5
 
 	can_use = {
+		#emf_cb_can_use = yes
 		ROOT = { has_flag = ismaili_caliphate_pretender }
 	}
 
@@ -192,14 +193,14 @@ emf_ismaili_caliphate_rising = {
 
 	on_add = {
 		log = "CB(emf_ismaili_caliphate_rising): START: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
-		emf_cb_on_add = yes
+		#emf_cb_on_add = yes
 	}
 
 	on_success = {
 		log = "CB(emf_ismaili_caliphate_rising): VICTORY: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
 		clr_global_flag = ismaili_caliphate_revolt_ongoing
-		emf_cb_holy_victory = yes
-		emf_imperial_decay_major_victory = yes
+		#emf_cb_holy_victory = yes
+		#emf_imperial_decay_major_victory = yes
 		set_parent_religion = { religion = ismaili parent = 0 }
 		ROOT = {
 			piety = 500
@@ -294,10 +295,10 @@ emf_ismaili_caliphate_rising = {
 						same_religion = yes
 						type = revolt
 					}
-					character_event = { id = emf_cb.10 days = 1 }
+					#character_event = { id = emf_cb.10 days = 1 }
 					usurp_title = { target = PREV type = revolt }
 				}
-				pf_liege_change_under_title_end_effect = yes
+				#pf_liege_change_under_title_end_effect = yes
 				if = {
 					limit = { FROM = { is_liege_or_above = ROOT } }
 					FROM = { imprison = ROOT }
@@ -306,7 +307,7 @@ emf_ismaili_caliphate_rising = {
 		}
 	}
 
-	on_success_posttitle = { emf_cb_on_success_posttitle = yes }
+	#on_success_posttitle = { emf_cb_on_success_posttitle = yes }
 
 	on_fail = {
 		log = "CB(emf_ismaili_caliphate_rising): WHITEPEACE: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
@@ -321,8 +322,8 @@ emf_ismaili_caliphate_rising = {
 	on_reverse_demand = {
 		log = "CB(emf_ismaili_caliphate_rising): DEFEAT: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
 		clr_global_flag = ismaili_caliphate_revolt_ongoing
-		emf_cb_holy_defeat = yes
-		emf_imperial_decay_major_loss = yes
+		#emf_cb_holy_defeat = yes
+		#emf_imperial_decay_major_loss = yes
 		ROOT = {
 			piety = -500
 			clr_flag = ismaili_caliphate_pretender
