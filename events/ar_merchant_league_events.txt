@@ -45,38 +45,6 @@ letter_event = {
 }
 
 character_event = {
-	id = MERCSOC.4
-	name = "Setting up a buisness"
-	desc = "After having enough influence from the League members, we are now allowed to set up a stance or perhaps a small buisness within a realm."
-	picture = GFX_evt_busy_trading_dock_republic
-	border = GFX_event_normal_frame_economy
-	is_triggered_only = yes
-	
-	#trigger = {
-    #	FROM = { leader = { society_member_of = merchant_leauge } }
-    #}
-    option = {
-		name = "We shall setup a stance within the busy markets"
-    	ROOT = { 
-			add_character_modifier = {
-				name = leauge_market
-				durration = -1
-			}
-		}
-    }
-    option = {
-		name = "Actually, let us buy a building and setup a buisness"
-    	ROOT = { 
-			add_character_modifier = {
-				name = leauge_buisness
-				durration = -1
-			}
-		}
-    }
-}
-
-
-character_event = {
 	id = MERCSOC.5
 	name = "Merchant Veteran"
 	desc = "As we are a high ranking member of the Merchant League, we are allowed to use their knowledge to perhaps find ourselfs a specialisation within the arts of the Economy. It could be wise to exploit this oppertunity and learn from what the knowledge of the League has the offer."
@@ -407,5 +375,79 @@ character_event = {
         ai_chance = {    
             factor = 100
         }
+    }
+}
+
+character_event = {
+	id = MERCSOC.8
+	title = "Setting up a buisness"
+	desc = "After having enough influence from the League members, we are now allowed to set up a stance or perhaps a small buisness within a realm. As we heard this good news, we are starting with the preperations."
+	picture = GFX_evt_market
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+
+    option = {
+		name = "Let us begin!"
+		prestige = 100
+		character_event = { id = MERCSOC.9 days = 10 }
+    }
+}
+
+
+character_event = {
+	id = MERCSOC.9
+	title = "Setting up a buisness"
+	desc = "We have gathered supplies to start the project to build on our spot. Perhaps we could ask arround the marketplaces for able men to work for us to speed up the process, but we could also take our time."
+	picture = GFX_evt_jewish_market
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+
+    option = {
+		name = "Let us finalize this"
+		character_event = { id = MERCSOC.10 days = 15 }
+    }
+    option = {
+		name = "Let's get more helping hands"
+		wealth = -50
+		random_list	= {
+			20 = { add_trait = diligent }
+			20 = { add_trait = ambitious }
+			60 = {}
+		}
+		character_event = { id = MERCSOC.10 days = 5 }
+    }
+}
+
+character_event = {
+	id = MERCSOC.10
+	title = "Setting up a buisness"
+	desc = "Now is the time to open our buisness, what shall we open up with. We could ever open a market in the busy streets, or open up a proper building which could cost a little more."
+	picture = GFX_evt_busy_trading_dock_republic
+	border = GFX_event_normal_frame_economy
+	is_triggered_only = yes
+	
+
+    option = {
+		name = "We shall setup a stance within the busy markets"
+		prestige = 150
+    	ROOT = { 
+			add_character_modifier = {
+				name = leauge_market
+				duration = -1
+			}
+		}
+    }
+    option = {
+		name = "Actually, let us buy a building and setup a buisness"
+		wealth = -100
+		prestige = 250
+    	ROOT = { 
+			add_character_modifier = {
+				name = leauge_buisness
+				duration = -1
+			}
+		}
     }
 }

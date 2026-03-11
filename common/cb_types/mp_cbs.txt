@@ -773,11 +773,10 @@ migration_cb = { #CB to shatter realm with a too big realm
 	
 	can_use = {
 		OR = {
-			ai = yes # AI checks are done via the event that triggers the war
-			# Conditions for the player
+			ai = yes
 			AND = {
-				#is_tribal = yes
-				NOT = { year = 800 } # The migration period ended around 800
+				is_tribal = yes
+				NOT = { year >= 760 }
 				ROOT = {
 					OR = {
 						religion = tengri_pagan
@@ -785,12 +784,11 @@ migration_cb = { #CB to shatter realm with a too big realm
 						religion = germanic_pagan
 						culture = alan
 					}
+					independent = yes
+					war = no
 					NOT = { has_character_modifier = launched_migration_war }
-					NOT = { tier = EMPEROR } # No Emperors
-					#NOT = { higher_tier_than = KING } # No Emperors
+					NOT = { tier = EMPEROR }
 					NOT = { culture = FROM }
-					independent = yes # No vassals
-					war = no # Ensures that the events activate correctly  
 				}
 				FROM = {
 					independent = yes

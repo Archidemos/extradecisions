@@ -4750,6 +4750,7 @@ invasion_odoacer_400 = {
 	}
 
 	on_success = {
+		set_global_flag = roman_barbarians_dealt
 		FROM = {
 			capital_scope = {
 				add_province_modifier = { name = plundered_capital years = 2 }
