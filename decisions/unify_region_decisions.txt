@@ -30,7 +30,7 @@ decisions = {
 			is_tributary = no
 			war = no
 			NOT = {	trait = incapable }
-			prestige = 1000
+			prestige = 1500
 			ruled_years >= 5
 			OR = {
 				AND = {
@@ -50,7 +50,7 @@ decisions = {
 					#	completely_controls = k_franconia
 					#}
 				}
-				has_landed_title = k_germany
+				#has_landed_title = k_germany
 			}
 		}
 
@@ -64,7 +64,7 @@ decisions = {
 				}
 			}
 			piety = 1000
-			prestige = 1000
+			prestige = 1500
 			add_claim = k_italy
 			ROOT = {
 				any_demesne_title = {
@@ -172,6 +172,10 @@ decisions = {
 		potential = {
 			NOT = { has_global_flag = ar_hre_formed }
 			NOT = { has_global_flag = charlemagne_hre }
+			NOR = { 
+				start_date == 769.1.1
+				start_date == 867.1.1
+			}
 			is_playable = yes
 			has_global_flag = germany_united
 			independent = yes
@@ -193,7 +197,7 @@ decisions = {
 			is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
-			prestige = 1000
+			prestige = 2000
 			realm_size = 250
 			has_landed_title = k_germany
 			conditional_tooltip = {

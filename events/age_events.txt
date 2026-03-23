@@ -1,0 +1,293 @@
+namespace = AGE
+
+narrative_event = {
+	id = AGE.1
+	title = "The Dark Ages"
+	desc = "As Christianity is on the rise while the Roman Empire is on the decline. Many wars happend after, from migrations to kingdoms that fell. As kingdoms fall, so do cities and civilisations and their ancient cities and foritifications as well as important history and knowledge of the old world. While these times are dark and grim, it could also be seen as a clense towards a new age and a new world. Perhaps a new chance for society and civilisation for the coming ages."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_burning_castle_hf
+	border = "GFX_event_narrative_frame_war"
+	sound = ar_army_sacking_sound
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+    trigger = {
+		year == 600
+		NOT = { has_global_flag = age_dark }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	immediate = {
+		set_global_flag = age_dark
+	}
+
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_dark_modifier
+			years = 5
+			inherit = yes
+		}
+		prestige = -250
+		piety = -250
+	}
+}
+
+narrative_event = {
+	id = AGE.2
+	title = "Early Middle Ages"
+	desc = "As the old world of the Roman Empire lay in ruins, civilisation still moves on and with it its ambitions. Tribal realms turn to a more centralized and civilised way of living life for its people. It is only a matter of time now before castles will rise up everywhere and the people within going to explore the whole world."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_leaning_tower
+	border = "GFX_event_narrative_frame_economy"
+	sound = ar_prosperity
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+
+	immediate = {
+		set_global_flag = age_early
+	}
+	
+    trigger = {
+		year == 800
+		NOT = { has_global_flag = age_early }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_early_modifier
+			duration = -1
+			inherit = yes
+		}
+		custom_tooltip = {
+			text = "The Prosperity of your capital increases."
+			hidden_tooltip = {
+				capital_scope = { change_variable = { which = prosperity_value value = 50 } }
+			}
+		}
+		prestige = 250
+	}
+}
+
+narrative_event = {
+	id = AGE.3
+	title = "Rise of Feudalism"
+	desc = "As we have entered the Early Middle Ages, the old ways of governing is in the past now. The old ways of calling subjects to arms is in the past now. Instead a new way of calling your subjects to arms is born. Instead of calling your vassals in, you can now siphon a part of their army. Hence why now we are entering an age of a new way of governance of a realm called Feudalism."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_castle_construction
+	border = "GFX_event_narrative_frame_diplomacy"
+	sound = ar_prosperity
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+    trigger = {
+		year == 960
+		NOT = { has_global_flag = age_feudal }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+	
+	immediate = {
+		set_global_flag = age_feudal
+	}
+	
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_feudal_modifier
+			duration = -1
+			inherit = yes
+		}
+		prestige = 250
+	}
+}
+
+narrative_event = {
+	id = AGE.4
+	title = "High Middle Ages"
+	desc = "Many decades passed and many things have happend to the world. As a result of a better interconnection to realms and to the world, trade, communication and sharing cultures because easier to achieve. New cities and castles are being built everywhere and anywhere. Rulers are now ambitious to achieve greater things and to look further out of their own world into many new worlds."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_state_diplomacy
+	border = "GFX_event_narrative_frame_economy"
+	sound = ar_prosperity
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+		
+    trigger = {
+		year == 1000
+		NOT = { has_global_flag = age_high }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	immediate = {
+		set_global_flag = age_high
+	}
+	
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_high_modifier
+			duration = -1
+			inherit = yes
+		}
+		custom_tooltip = {
+			text = "The Prosperity of your capital increases."
+			hidden_tooltip = {
+				capital_scope = { change_variable = { which = prosperity_value value = 50 } }
+			}
+		}
+		prestige = 250
+	}
+}
+
+narrative_event = {
+	id = AGE.5
+	title = "Rise of the Normans"
+	desc = "Ever since the Norman Invasion of England, these nomadic people going from coast to coast have been creating new kingdoms wherever they look. These days it could be our rivals or the Normans invading realms. These warriors are not to be underestimated and to be feared as their power are on the rise."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_longships_at_sea_oldgods
+	border = "GFX_event_narrative_frame_war"
+	sound = ar_army_marching
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+		
+    trigger = {
+		year == 1080
+		NOT = { has_global_flag = age_normans }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	immediate = {
+		set_global_flag = age_normans
+	}
+	
+	option = {
+		name = "Civilisation is progressing..."
+		#add_character_modifier = {
+		#	name = age_normans_modifier
+		#	duration = -1
+		#	inherit = yes
+		#}
+		prestige = 250
+	}
+}
+
+narrative_event = {
+	id = AGE.6
+	title = "Church Reformation"
+	desc = "Ever since the Roman Empire acknowledged Christianity, it always has been under the control of local rulers and always kept it this way. However the Church had enough, now they are starting to be more assertive to their power and have been demanding more recognition from the nobility and hence the Reformation of the Christian Churches has begun. God only knows how much they will demand."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_church_council
+	border = "GFX_event_narrative_frame_religion"
+	sound = ar_prosperity
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+    trigger = {
+		year == 1100
+		NOT = { has_global_flag = age_church }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	immediate = {
+		set_global_flag = age_church
+	}
+	
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_church_modifier
+			duration = -1
+			inherit = yes
+		}
+		prestige = 250
+	}
+}
+
+narrative_event = {
+	id = AGE.7
+	title = "Late Middle Ages"
+	desc = "Civilisation has been growing more and more, and so do the creativity of the people grow. As the world became even more connected with eachother trough Diplomacy, War and Trade so do the minds. As war not only kills but also makes people think. People have been looking for new ways of warfare ever since the Prehistoric Ages where men discovered fire and grew from there. While inovations for war have been created, the rulers of Asia and the Middle East have been eyeing more and more towards the west and will bring many dangers. From war to disease, it will be unclear how the world will look like for its many problems to come."
+	major = yes
+	hide_from = yes
+    is_triggered_only = yes
+	only_independent = yes
+	
+	picture = GFX_evt_victory_arch_byzantine
+	border = "GFX_event_narrative_frame_economy"
+	sound = ar_prosperity
+
+	only_playable = yes
+	religion = catholic
+	min_age = 16
+	
+    trigger = {
+		year == 1300
+		NOT = { has_global_flag = age_late }
+		independent = yes
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+    }
+
+	immediate = {
+		set_global_flag = age_late
+	}
+	
+	option = {
+		name = "Civilisation is progressing..."
+		add_character_modifier = {
+			name = age_late_modifier
+			duration = -1
+			inherit = yes
+		}
+		custom_tooltip = {
+			text = "The Prosperity of your capital increases."
+			hidden_tooltip = {
+				capital_scope = { change_variable = { which = prosperity_value value = 50 } }
+			}
+		}
+		prestige = 250
+	}
+}

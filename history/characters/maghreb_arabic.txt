@@ -5697,33 +5697,21 @@
 		birth="830.1.1"
 	}
 	867.1.1={
+		wealth = 450
+		prestige = 200
+		piety = 200
 		effect = {
-			spawn_unit = {
-				province = 346 # Bari
-				owner = ROOT
-				#leader = ROOT
-				match_character = ROOT
-				match_mult = 0.40
-				attrition = 1.0
-				earmark = start_troops
-			}
-			spawn_unit = {
-				province = 346 # Bari
-				owner = ROOT
-				#leader = THIS
-				match_character = ROOT
-				match_mult = 0.40
-				attrition = 1.0
-				earmark = start_troops
-			}
-			spawn_unit = {
-				province = 346 # Bari
-				owner = ROOT
-				#leader = THIS
-				match_character = ROOT
-				match_mult = 0.40
-				attrition = 1.0
-				earmark = start_troops
+			while = {
+				count = 5
+				spawn_unit = {
+					province = 346 # Bari
+					owner = ROOT
+					#leader = ROOT
+					match_character = ROOT
+					match_mult = 0.40
+					attrition = 1.0
+					earmark = start_troops
+				}
 			}
 		}
 	}

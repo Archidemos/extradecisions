@@ -508,3 +508,29 @@ character_event = { #Removes the decadence modifiers when you convert
 		remove_character_modifier = realm_nerf_8
 	}
 }
+
+character_event = { #Removes the decadence modifiers when you convert
+    id = NERF.52
+	hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		OR = {
+			tier = DUKE
+			tier = COUNT
+			tier = BARON
+		}
+    }
+
+    immediate = {
+		remove_character_modifier = realm_nerf_0
+        remove_character_modifier = realm_nerf_1
+        remove_character_modifier = realm_nerf_2
+        remove_character_modifier = realm_nerf_3
+        remove_character_modifier = realm_nerf_4
+        remove_character_modifier = realm_nerf_5
+        remove_character_modifier = realm_nerf_6
+        remove_character_modifier = realm_nerf_7
+		remove_character_modifier = realm_nerf_8
+	}
+}
