@@ -52,7 +52,10 @@ letter_event = {
 		name = "We will declare independence"
 		ai_chance = { factor = 0 }
 		suzerain = { remove_tributary = ROOT }
-		k_france = { holder_scope = { letter_event = { id = APP.4 days = 5 } } }
+		custom_tooltip = {
+			text = "The Kingdom of France will get claims on your land or declare war to make you an Appanage again."
+			k_france = { holder_scope = { letter_event = { id = APP.4 days = 5 } } }
+		}
 	}
 }
 
@@ -67,9 +70,22 @@ letter_event = {
 	#	k_france = { holder_scope = { save_event_target_as = roi_france_2 } }
 	#}
 
+
+	option = {
+		name = "This means war!"
+		ai_chance = { factor = 50 }
+		custom_tooltip = {
+			text = "You will declare war to regain your Appanage."
+			unsafe_war = {
+				casus_belli = appanage_trib_cb
+				target = FROM
+			}
+		}
+	}
+
 	option = {
 		name = "This is treason!"
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 50 }
 		FROM = {
 			any_demesne_title = {
 				add_claim = ROOT
