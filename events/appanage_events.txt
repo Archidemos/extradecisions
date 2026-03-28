@@ -1,0 +1,84 @@
+namespace = APP
+
+letter_event = {
+	id = APP.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { ROOT = { has_landed_title = k_france } }
+	
+	immediate = {
+		current_heir = { letter_event = { id = APP.2 days = 1 } }
+	}
+}
+
+letter_event = {
+	id = APP.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = { is_tributary = { type = appanage } }
+			letter_event = { id = APP.3 days = 1 }
+		}
+	}
+}
+
+letter_event = {
+	id = APP.3
+	desc = "My Appanage, as your previous Roi has passed away. I demand your oath of fealy once more as your new Roi of France and i therefore expect you in the capital at once."
+	is_triggered_only = yes
+	
+	trigger = { is_tributary = { type = appanage } }
+	
+	immediate = {
+		k_france = { holder_scope = { save_event_target_as = roi_france } }
+	}
+
+	option = {
+		name = "We shall remain an Appanage"
+		ai_chance = { factor = 100 }
+		custom_tooltip = { text = "You will remain as an Appanage tributary." }
+	}
+	
+	option = {
+		name = "We need to swear fealty to the Roi"
+		ai_chance = { factor = 0 }
+		set_defacto_liege = event_target:roi_france
+	}
+	
+	option = {
+		name = "We will declare independence"
+		ai_chance = { factor = 0 }
+		suzerain = { remove_tributary = ROOT }
+		k_france = { holder_scope = { letter_event = { id = APP.4 days = 5 } } }
+	}
+}
+
+letter_event = {
+	id = APP.4
+	desc = "We have served the Crown of France for a long time, but no longer shall we kneel down. We will declare our independence."
+	is_triggered_only = yes
+	
+	trigger = { has_landed_title = k_france }
+	
+	#immediate = {
+	#	k_france = { holder_scope = { save_event_target_as = roi_france_2 } }
+	#}
+
+	option = {
+		name = "This is treason!"
+		ai_chance = { factor = 100 }
+		FROM = {
+			any_demesne_title = {
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "We have to let them go.."
+		ai_chance = { factor = 0 }
+	}
+}

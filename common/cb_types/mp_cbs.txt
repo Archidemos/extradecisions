@@ -745,7 +745,11 @@ migration_cb = { #CB to shatter realm with a too big realm
 	allow_distant = yes # Distant is calculated through the event that fires the CB
 
 	allowed_to_target_tributaries = no
-
+	
+	can_use_gui = {
+		NOT = { year >= 760 }
+	}
+	
 	on_add = {
 		ROOT = {
 			spawn_unit = {
@@ -772,11 +776,11 @@ migration_cb = { #CB to shatter realm with a too big realm
 	}
 	
 	can_use = {
+		NOT = { year >= 760 }
 		OR = {
 			ai = yes
 			AND = {
 				is_tribal = yes
-				NOT = { year >= 760 }
 				ROOT = {
 					OR = {
 						religion = tengri_pagan

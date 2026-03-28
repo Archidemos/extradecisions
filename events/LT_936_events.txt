@@ -750,6 +750,71 @@ narrative_event = {
 
     option = {
         name = EVTOPTA_LT_40011
+		custom_tooltip = {
+			text = "All the German De Jure titles will be united under the Kingdom of Germany"
+			hidden_effect = {
+				d_rheinfranken = { de_jure_liege = k_germany }
+				d_hessen = { de_jure_liege = k_germany }
+				d_ostfranken = { de_jure_liege = k_germany }
+				d_nuremberg = { de_jure_liege = k_germany }
+				d_westfalen = { de_jure_liege = k_germany }
+				d_mainz = { de_jure_liege = k_germany }
+				d_pfalz = { de_jure_liege = k_germany }
+				d_tubingen = { de_jure_liege = k_germany }
+				d_teck = { de_jure_liege = k_germany }
+				d_burgau = { de_jure_liege = k_germany }
+				d_ratien = { de_jure_liege = k_germany }
+				d_alsace = { de_jure_liege = k_germany }
+				d_angria = { de_jure_liege = k_germany }
+				d_baden	 = { de_jure_liege = k_germany }
+				#d_brandenburg = { de_jure_liege = k_germany }
+				d_bremen = { de_jure_liege = k_germany }
+				d_brunswick = { de_jure_liege = k_germany }
+				d_franconia = { de_jure_liege = k_germany }
+				#d_lausitz = { de_jure_liege = k_germany }
+				d_meissen = { de_jure_liege = k_germany }
+				d_rhine = { de_jure_liege = k_germany }
+				d_saxony = { de_jure_liege = k_germany }
+				d_swabia = { de_jure_liege = k_germany }
+				d_thuringia = { de_jure_liege = k_germany }
+				d_koln = { de_jure_liege = k_germany }
+				d_holstein = { de_jure_liege = k_denmark }
+				#d_mecklemburg = { de_jure_liege = k_germany }
+				
+				#Bavarian Land
+				#d_nordgau = { de_jure_liege = k_germany }
+				#d_niederbayern = { de_jure_liege = k_germany }
+				#d_oberbayern = { de_jure_liege = k_germany }
+				#d_tyrol = { de_jure_liege = k_germany }
+				#d_osterreich = { de_jure_liege = k_germany }
+
+				#To Pommerania
+				d_lauenburg = { de_jure_liege = k_pomerania }
+				d_saxewittenberg = { de_jure_liege = k_pomerania }
+				d_meissen = { de_jure_liege = k_pomerania }
+				
+				activate_title = {
+					title = k_germany
+					status = yes
+				}
+				activate_title = {
+					title = k_schwaben
+					status = no
+				}
+				activate_title = {
+					title = k_franconia
+					status = no
+				}
+				activate_title = {
+					title = k_saxony
+					status = no
+				}
+				#activate_title = {
+				#	title = k_bavaria
+				#	status = no
+				#}
+			}
+		}
         prestige = 500
     }
 }

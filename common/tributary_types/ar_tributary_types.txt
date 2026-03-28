@@ -11,7 +11,7 @@ client = {
 	tributaries_can_infight = yes
 	suzerain_can_join_infighting = yes
 	tributaries_can_unite = no
-	breaks_on_realm_change = yes
+	breaks_on_realm_change = no
 	icon = 7
 	cbs_against_suzerain = {
 		free_tributary_cb
@@ -33,6 +33,48 @@ client = {
 	}
 	piety_to_tributary = {
 		value = 0
+	}
+}
+
+appanage = {
+	tributary_name = TRIBUTARY_APPANAGE_NAME
+	tributary_plural = TRIBUTARY_APPANAGE_PLURAL
+	suzerain_name = SUZERAIN_APPANAGE_NAME
+	tribute_name = TRIBUTARY_APPANAGE_TRIBUTE
+	breaks_at_suzerain_death = no
+	breaks_at_tributary_death = no
+	suzerain_must_defend = yes
+	tributary_can_be_summoned = yes
+	tributary_must_defend = yes
+	tributaries_can_infight = yes
+	suzerain_can_join_infighting = no
+	tributaries_can_unite = no
+	breaks_on_realm_change = no
+	icon = 7
+	cbs_against_suzerain = {
+		free_tributary_cb
+	}
+	income_tribute_percentage = {
+		value = 0.20
+	}
+	reinforce_tribute_percentage = {
+		value = 0
+	}
+	prestige_to_suzerain = {
+		value = 0.5
+	}
+	prestige_to_tributary = {
+		value = 0
+	}
+	piety_to_suzerain = {
+		value = 0.2
+	}
+	piety_to_tributary = {
+		value = 0
+	}
+	modifier = {
+		martial = 1
+		global_levy_size = 0.10
 	}
 }
 

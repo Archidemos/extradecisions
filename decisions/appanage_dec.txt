@@ -1,0 +1,52 @@
+#decisions = {    
+#	partly_centralise_france = {
+#		only_playable = yes
+#		only_independent = yes
+#		filter = independent_rulers
+#		ai_target_filter = independent_rulers
+#		ai_check_interval = 24
+#		is_high_prio = yes
+#		diplomacy_icon = GFX_trait_gamer
+#		
+#		
+#        potential = {
+#			year >= 935 
+#			ROOT = { has_landed_title = k_france }
+#			k_france = { NOT = { has_title_flag = appanages_integratable } }
+#        }
+#
+#        allow = {
+#			custom_tooltip = {
+#				text = "NO_ANNEX_SAME_TIER"
+#				FROM = { higher_real_tier_than = ROOT }
+#			}
+#			FROM = {
+#				war = no
+#				TECH_MAJESTY = 4
+#				diplomacy = 13
+#				prestige = 500
+#				scaled_wealth = {
+#					value = 1
+#					min = 250
+#					max = 750
+#				}
+#				OR = {
+#					NOT = { has_character_modifier = release_tributary_cooldown }
+#					NOT = { has_character_modifier = annexed_vassal }
+#				}
+#			}
+#        }
+#
+#        effect = {
+#			prestige = 500
+#			k_france = { set_title_flag = appanages_integratable }
+#        }
+#
+#        revoke_allowed = {
+#            always = no
+#        }
+#		ai_will_do = {
+#			factor = 1
+#		}
+#    }
+#}

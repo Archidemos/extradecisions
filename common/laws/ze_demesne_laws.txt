@@ -20,8 +20,212 @@ law_groups = {
 	confederation_diplo_laws = {
 		law_type = realm
 	}
+	france_appanage_laws = {
+		law_type = realm
+	}
+	france_appanage_laws_vassal = {
+		law_type = realm
+	}
 }
 laws = {
+
+	france_appanage_law_0 = {
+		group = france_appanage_laws
+		default = yes
+		allow = {
+			holder_scope = { has_landed_title = k_france }
+			NOT = { has_law = france_appanage_law_2 }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_1
+				revoke_law = france_appanage_law_2
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_1
+				remove_character_modifier = france_appanage_modifier_2
+			}
+		}
+	}
+	france_appanage_law_1 = {
+		group = france_appanage_laws
+		allow = {
+			holder_scope = { has_landed_title = k_france }
+			NOT = { has_law = france_appanage_law_1_vassal }
+			NOT = { has_law = france_appanage_law_2_vassal }
+			TECH_LEGALISM = 4
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = france_appanage_law_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_0
+				revoke_law = france_appanage_law_2
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_2
+				add_character_modifier = { name = france_appanage_modifier_1 inherit = yes years = -1 }
+			}
+		}
+
+		vassal_opinion = -5
+	}
+	france_appanage_law_2 = {
+		group = france_appanage_laws
+		allow = {
+			holder_scope = { has_landed_title = k_france }
+			NOT = { has_law = france_appanage_law_1_vassal }
+			NOT = { has_law = france_appanage_law_2_vassal }
+			NOT = { has_law = france_appanage_law_0 }
+			TECH_LEGALISM = 5
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_0
+				revoke_law = france_appanage_law_1
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_1
+				add_character_modifier = { name = france_appanage_modifier_2 inherit = yes years = -1 }
+			}
+		}
+
+		vassal_opinion = -10
+	}
+	
+	france_appanage_law_0_vassal = {
+		group = france_appanage_laws_vassal
+		default = yes
+		allow = {
+			holder_scope = { has_landed_title = k_france }
+			NOT = { has_law = france_appanage_law_2_vassal }
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_1_vassal
+				revoke_law = france_appanage_law_2_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_1_vassal
+				remove_character_modifier = france_appanage_modifier_2_vassal
+			}
+		}
+	}
+	france_appanage_law_1_vassal = {
+		group = france_appanage_laws_vassal
+		allow = {
+			holder_scope = { has_landed_title = k_france }
+			NOT = { has_law = france_appanage_law_1 }
+			NOT = { has_law = france_appanage_law_2 }
+			TECH_NOBLE_CUSTOMS = 4
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = satrap_laws_2_vassal
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_0_vassal
+				revoke_law = france_appanage_law_2_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_2_vassal
+				add_character_modifier = { name = france_appanage_modifier_1_vassal inherit = yes years = -1 }
+			}
+		}
+
+		vassal_opinion = 5
+	}
+	
+	france_appanage_law_2_vassal = {
+		group = france_appanage_laws_vassal
+		allow = {
+			NOT = { has_law = france_appanage_law_1 }
+			NOT = { has_law = france_appanage_law_2 }
+			NOT = { has_law = france_appanage_law_0_vassal }
+			holder_scope = { has_landed_title = k_france }
+			TECH_NOBLE_CUSTOMS = 5
+		}
+		potential = {
+			has_dlc = "Zeus"
+			NOT = { holder_scope = { is_nomadic = yes } }
+			holder_scope = { has_landed_title = k_france }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = france_appanage_law_0_vassal
+				revoke_law = france_appanage_law_1_vassal
+			}
+			holder_scope = {
+				remove_character_modifier = france_appanage_modifier_1_vassal
+				add_character_modifier = { name = france_appanage_modifier_2_vassal inherit = yes years = -1 }
+			}
+		}
+
+		vassal_opinion = 10
+	}
+
 	satrap_laws_0 = {
 		group = satrap_laws
 		default = yes
