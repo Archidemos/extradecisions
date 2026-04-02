@@ -33,7 +33,7 @@ decisions = {
 		}
 		
 		allow = {
-			any_playable_ruler = { has_landed_title = e_west_rome }
+			any_playable_ruler = { NOT = { has_landed_title = e_west_rome } }
 			NOT = { has_landed_title = e_byzantium }
 			NOT = { has_landed_title = e_hre }
 			prestige = 2000

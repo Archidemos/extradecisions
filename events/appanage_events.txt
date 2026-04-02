@@ -73,7 +73,7 @@ letter_event = {
 
 	option = {
 		name = "This means war!"
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 90 }
 		custom_tooltip = {
 			text = "You will declare war to regain your Appanage."
 			unsafe_war = {
@@ -83,18 +83,57 @@ letter_event = {
 		}
 	}
 
-	option = {
-		name = "This is treason!"
-		ai_chance = { factor = 50 }
-		FROM = {
-			any_demesne_title = {
-				add_claim = ROOT
-			}
-		}
-	}
+	#option = {
+	#	name = "This is treason!"
+	#	ai_chance = { factor = 50 }
+	#	FROM = {
+	#		any_demesne_title = {
+	#			add_claim = ROOT
+	#		}
+	#	}
+	#}
 	
 	option = {
 		name = "We have to let them go.."
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 10 }
+	}
+}
+
+character_event = { #France gets event to send to appanages still tied to old overlord
+    id = APP.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+    trigger = {
+		has_landed_title = k_france
+    }
+
+    immediate = {
+		any_playable_ruler = {
+			limit = { is_tributary = { type = appanage } }
+			character_event = { id = APP.101 }
+			remove_tributary = FROMFROM
+		}
+	}
+}
+
+character_event = { #France converts appanages to right title
+    id = APP.101
+	hide_window = yes
+	is_triggered_only = yes
+	
+    trigger = {
+		is_tributary = { type = appanage }
+    }
+
+    immediate = {
+		k_france = {
+			holder_scope = {
+				make_tributary = {
+					who = ROOT
+					tributary_type = appanage
+				}
+			}
+		}
 	}
 }

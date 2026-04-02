@@ -155,12 +155,14 @@ character_event = { #West Rome gets his crisis modifiers
 		start_date == 400.1.1
 		is_save_game = no
 		has_landed_title = e_west_rome
+		NOT = { has_global_flag = rome_crisis_set }
 	}
 	
 	immediate = {
-		set_global_flag = rome_crisis_1
-		set_global_flag = rome_crisis_2
-		set_global_flag = rome_crisis_3
+		set_global_flag = rome_crisis_set
+		set_global_flag = roman_crisis_1
+		set_global_flag = roman_crisis_2
+		set_global_flag = roman_crisis_3
 		add_character_modifier = { name = rome_crisis_1 duration = -1 }
 		add_character_modifier = { name = rome_crisis_2 duration = -1 }
 		add_character_modifier = { name = rome_crisis_3 duration = -1 }
@@ -176,7 +178,10 @@ character_event = { #Western Roman Emperor getting his modifier 1 after his deat
     trigger = {
 		start_date == 400.1.1
 		has_landed_title = e_west_rome
-		has_global_flag = rome_crisis_1
+		custom_tooltip = {
+			text = "The first crisis has been dealt with"
+			has_global_flag = roman_crisis_1
+		}
 		independent = yes
     }
 
@@ -199,7 +204,10 @@ character_event = { #Western Roman Emperor getting his modifier 2 after his deat
     trigger = {
 		start_date == 400.1.1
 		has_landed_title = e_west_rome
-		has_global_flag = rome_crisis_2
+		custom_tooltip = {
+			text = "The seccond crisis has been dealt with"
+			has_global_flag = roman_crisis_2
+		}
 		independent = yes
     }
 
@@ -213,7 +221,7 @@ character_event = { #Western Roman Emperor getting his modifier 2 after his deat
     }
 }
 
-character_event = { #Western Roman Emperor getting his modifier 2 after his death
+character_event = { #Western Roman Emperor getting his modifier 3 after his death
 	id = ROMANFR.1003
     only_playable = yes
     hide_window = yes
@@ -222,7 +230,10 @@ character_event = { #Western Roman Emperor getting his modifier 2 after his deat
     trigger = {
 		start_date == 400.1.1
 		has_landed_title = e_west_rome
-		has_global_flag = rome_crisis_3
+		custom_tooltip = {
+			text = "The third crisis has been dealt with"
+			has_global_flag = roman_crisis_3
+		}
 		independent = yes
     }
 
@@ -338,6 +349,7 @@ narrative_event = {
 		prestige = -250
 		ROOT = { unsafe_destroy_landed_title = e_west_rome }
 		set_global_flag = roman_barbarians_dealt
+		set_global_flag = west_rome_revivable
 		set_character_flag = defeated_roman_emperor
 		any_playable_ruler = {
 			limit = {
@@ -363,9 +375,9 @@ narrative_event = {
 		}
 		custom_tooltip = {
 			text = "You will no longer be plauged by the crisis."
-			remove_character_modifier = rome_crisis_1
-			remove_character_modifier = rome_crisis_2
-			remove_character_modifier = rome_crisis_3
+			remove_character_modifier = roman_crisis_1
+			remove_character_modifier = roman_crisis_2
+			remove_character_modifier = roman_crisis_3
 			set_global_flag = roman_crisis_done
 			set_global_flag = roman_barbarians_dealt
 			clr_global_flag = roman_crisis_finished_1
@@ -392,9 +404,6 @@ narrative_event = {
 	
 	option = {
 		name = "Roma Invicta!"
-		wealth = 3000
-		prestige = 4000
-		add_claim = e_byzantium
 	}
 }
 
@@ -417,8 +426,7 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 			k_upper_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
-		name = "Onwards!"
+	immediate = {
 		#Saxons
 		create_character = {
 			#name="Rodrigo"
@@ -496,6 +504,7 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 			}
 			k_upper_lorraine = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -509,6 +518,14 @@ character_event = {	#The event to spawn the Saxons invaders k_upper_lorraine
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -532,7 +549,7 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 			k_lower_lorraine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Saxons
 		create_character = {
@@ -611,6 +628,7 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 			}
 			k_lower_lorraine = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -624,6 +642,14 @@ character_event = {	#The event to spawn the Saxons invaders k_lower_lorraine
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -646,7 +672,7 @@ character_event = {	#The event to spawn the Franks invaders k_france
 			k_france = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Frankish
 		create_character = {
@@ -727,6 +753,7 @@ character_event = {	#The event to spawn the Franks invaders k_france
 			}
 			k_france = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -740,6 +767,14 @@ character_event = {	#The event to spawn the Franks invaders k_france
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -762,7 +797,7 @@ character_event = {	#The event to spawn the Burgundians invaders k_burgundy
 			k_burgundy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Schwaben
 		create_character = {
@@ -842,6 +877,7 @@ character_event = {	#The event to spawn the Burgundians invaders k_burgundy
 			}
 			k_burgundy = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -855,6 +891,14 @@ character_event = {	#The event to spawn the Burgundians invaders k_burgundy
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -877,7 +921,7 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 			k_schwaben = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Schwaben
 		create_character = {
@@ -957,6 +1001,7 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 			}
 			k_schwaben = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -970,6 +1015,14 @@ character_event = {	#The event to spawn the Schwabians invaders k_schwaben
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -992,7 +1045,7 @@ character_event = {	#The event to spawn the Bavarians invaders k_bavaria
 			k_bavaria = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Bavarians
 		create_character = {
@@ -1072,6 +1125,7 @@ character_event = {	#The event to spawn the Bavarians invaders k_bavaria
 			}
 			k_bavaria = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1085,6 +1139,14 @@ character_event = {	#The event to spawn the Bavarians invaders k_bavaria
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -1108,7 +1170,7 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
 			k_africa = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Vandals
 		create_character = {
@@ -1191,6 +1253,7 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
 			}
 			k_africa = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1204,6 +1267,14 @@ character_event = {	#The event to spawn the Vandals invaders k_africa
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -1226,7 +1297,7 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
 			k_maghreb = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}	
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Aznag
 		create_character = {
@@ -1306,6 +1377,7 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
 			}
 			k_maghreb = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1319,6 +1391,14 @@ character_event = {	#The event to spawn the Aznag invaders k_maghreb
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -1342,7 +1422,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 			k_aquitaine = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Visigoths
 		create_character = {
@@ -1425,6 +1505,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 			}
 			k_aquitaine = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1438,6 +1519,14 @@ character_event = {	#The event to spawn the Visigoths invaders k_aquitaine
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -1582,7 +1671,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 			k_valencia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Visigoths
 		create_character = {
@@ -1665,6 +1754,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 			}
 			k_valencia = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -1678,6 +1768,14 @@ character_event = {	#The event to spawn the Visigoths invaders k_valencia
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -1944,7 +2042,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 			k_andalusia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Visigoths
 		create_character = {
@@ -2027,6 +2125,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 			}
 			k_andalusia = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2040,6 +2139,14 @@ character_event = {	#The event to spawn the Visigoths invaders k_andalusia
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2062,7 +2169,7 @@ character_event = {	#The event to spawn the Suebi invaders k_spanish_galicia
 			k_spanish_galicia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Visigoths
 		create_character = {
@@ -2142,6 +2249,7 @@ character_event = {	#The event to spawn the Suebi invaders k_spanish_galicia
 			}
 			k_spanish_galicia = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2155,6 +2263,14 @@ character_event = {	#The event to spawn the Suebi invaders k_spanish_galicia
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2177,7 +2293,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
 			k_asturias = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Visigoths
 		create_character = {
@@ -2260,6 +2376,7 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
 			}
 			k_asturias = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2273,6 +2390,14 @@ character_event = {	#The event to spawn the Visigoths invaders k_asturias
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2295,7 +2420,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 			k_italy = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Ostrogoths
 		create_character = {
@@ -2386,6 +2511,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 			}
 			k_italy = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2399,6 +2525,14 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_italy
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2543,7 +2677,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
 			k_croatia = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Ostrogoths
 		create_character = {
@@ -2633,6 +2767,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
 			}
 			k_croatia = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2646,6 +2781,14 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_croatia
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2668,7 +2811,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
 			k_sicily = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Ostrogoths
 		create_character = {
@@ -2757,6 +2900,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
 			}
 			k_sicily = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2770,6 +2914,14 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_sicily
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2792,7 +2944,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
 			k_hungary = { NOT = { has_title_flag = currently_invaded_bar_400 } }
 		}
 	}
-	option = {
+	immediate = {
 		name = "Onwards!"
 		#Ostrogoths
 		create_character = {
@@ -2881,6 +3033,7 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
 			}
 			k_hungary = { set_title_flag = currently_invaded_bar_400 }
 			set_government_type = tribal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -2894,6 +3047,14 @@ character_event = {	#The event to spawn the Ostrogoths invaders k_hungary
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -2964,7 +3125,7 @@ narrative_event = {	#The Franks invade France if no one formed it trough the dec
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "Crush the Franks!"
 		#Saxons
 		create_character = {
@@ -3097,6 +3258,7 @@ narrative_event = {	#The Franks invade France if no one formed it trough the dec
 			#	}
 			#}
 			set_government_type = feudal_government
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -3110,6 +3272,14 @@ narrative_event = {	#The Franks invade France if no one formed it trough the dec
 				set_character_flag = negative_event_flag # For the scrying outcome calculation...
 			}
 		}
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -3181,7 +3351,7 @@ narrative_event = {	#The Saxons invade England
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "Crush the Saxons!"
 		###English Angles###
 		create_character = {
@@ -3440,6 +3610,7 @@ narrative_event = {	#The Saxons invade England
 			}
 			set_government_type = tribal_government
 			set_global_flag = saxons_invaded_england
+			save_event_target_as = playable_barbarian
 		}
 		any_playable_ruler = {
 			limit = { ai = no }
@@ -3454,6 +3625,14 @@ narrative_event = {	#The Saxons invade England
 			}
 		}
 		any_player = { narrative_event = { id = ROMANFR.1035 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -3496,7 +3675,7 @@ narrative_event = {	#The Ostrogothic invade Italy
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Ostrogoths!"			
 		create_character = {
 			name="Theodoric"
@@ -3576,10 +3755,19 @@ narrative_event = {	#The Ostrogothic invade Italy
 				thirdparty_title = k_italy
 			}
 			set_government_type = tribal_government
-			set_global_flag = odoacer_invaded_italy		
+			set_global_flag = odoacer_invaded_italy
+			save_event_target_as = playable_barbarian			
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1037 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -3622,7 +3810,7 @@ narrative_event = {	#The Vandals invade Africa
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Vandals!"			
 		create_character = {
 			name="Gaiseric"
@@ -3701,10 +3889,19 @@ narrative_event = {	#The Vandals invade Africa
 				thirdparty_title = k_africa
 			}
 			set_government_type = tribal_government
-			set_global_flag = vandals_invaded_africa		
+			set_global_flag = vandals_invaded_africa
+			save_event_target_as = playable_barbarian
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1039 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -4538,7 +4735,7 @@ narrative_event = {	#Alaric Visigoth invade Italia
 						thirdparty_title = k_italy
 					}
 					set_government_type = tribal_government
-					set_global_flag = visigoths_invade_italy		
+					set_global_flag = visigoths_invade_italy				
 				}
 			}
 		}
@@ -4628,7 +4825,7 @@ narrative_event = {	#Alaric Visigoth invade Italia
 					thirdparty_title = k_italy
 				}
 				set_government_type = tribal_government
-				set_global_flag = visigoths_invade_italy		
+				set_global_flag = visigoths_invade_italy			
 			}
 		}
 		any_player = { narrative_event = { id = ROMANFR.1053 } }
@@ -4676,7 +4873,7 @@ narrative_event = {	#Burgundians invade Burgundy
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Burgundians!"			
 		create_character = {
 			name="Gundahar"
@@ -4771,10 +4968,19 @@ narrative_event = {	#Burgundians invade Burgundy
 				thirdparty_title = k_burgundy
 			}
 			set_government_type = tribal_government
-			set_global_flag = burgundians_invade_burgundy		
+			set_global_flag = burgundians_invade_burgundy
+			save_event_target_as = playable_barbarian
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1055 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -4819,7 +5025,7 @@ narrative_event = {	#Vandals invade Schwaben
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Vandals!"			
 		create_character = {
 			name="Gundahar"
@@ -4915,9 +5121,18 @@ narrative_event = {	#Vandals invade Schwaben
 			}
 			set_government_type = tribal_government
 			set_global_flag = vandals_invade_schwaben
+			save_event_target_as = playable_barbarian
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1057 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -4962,7 +5177,7 @@ narrative_event = {	#Suebi invade Bavaria
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Suebi!"			
 		create_character = {
 			name="Gundahar"
@@ -5057,10 +5272,19 @@ narrative_event = {	#Suebi invade Bavaria
 				thirdparty_title = k_bavaria
 			}
 			set_government_type = tribal_government
-			set_global_flag = suebi_invade_bavaria		
+			set_global_flag = suebi_invade_bavaria
+			save_event_target_as = playable_barbarian
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1059 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 
@@ -5105,7 +5329,7 @@ narrative_event = {	#Ostrogoths invade Carinthia
 		}
 	}
 	
-	option = {
+	immediate = {
 		name = "We must defeat the Ostrogoths!"			
 		create_character = {
 			name="Radagaisus"
@@ -5192,10 +5416,19 @@ narrative_event = {	#Ostrogoths invade Carinthia
 				thirdparty_title = k_carinthia
 			}
 			set_government_type = tribal_government
-			set_global_flag = ostrogothic_invade_carinthia		
+			set_global_flag = ostrogothic_invade_carinthia
+			save_event_target_as = playable_barbarian
 		}
 		
 		any_player = { narrative_event = { id = ROMANFR.1061 } }
+	}
+	option = {
+		name = "Onwards!"
+		ai_chance = { factor = 100 }
+	}
+	option = {
+		name = "Perhaps this is all a dream..."
+		set_player_character = event_target:playable_barbarian
 	}
 }
 

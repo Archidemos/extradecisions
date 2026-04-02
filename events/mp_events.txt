@@ -2461,6 +2461,108 @@ character_event = {
 	}
 }
 
+character_event = { #Character Event to delay the Province event to trigger the Berber Invasion for Instant Game rule
+	id = MP.500
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		start_date >= 992.1.1
+		has_game_rule = {
+			name = shatter_hre_rule
+			value = on
+		}
+		NOT = { has_global_flag = shatter_hre_event_fired }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		e_hre = {
+			holder_scope = {
+				any_vassal = {
+					limit = {
+						higher_tier_than = BARON
+						is_landed = yes
+					}
+					set_defacto_liege = THIS
+					if = {
+						limit = {
+							NOT = { is_republic = yes }
+						}
+						e_hre = {
+							holder_scope = {
+								make_tributary = { who = PREVPREV tributary_type = hre_imperial }
+							}
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						OR = {
+							tier = DUKE
+							tier = KING
+						}
+					}
+					any_de_jure_vassal = {
+						limit = {
+							e_hre = {
+								any_tributary = {
+									character = PREVPREVPREV
+									is_tributary = { type = hre_imperial suzerain = PREV }
+								}
+							}
+							NOT = {
+								is_tributary = {
+									type = hre_free_imp_city
+									suzerain = ROOT
+								}
+							}
+							lower_tier_than = PREV
+						}
+						set_defacto_liege = ROOT
+					}
+				}
+				princely_elective_german_elector_setup_effect = yes
+			}
+		}
+		set_global_flag = shatter_hre_event_fired
+		any_player = { narrative_event = { id = MP.501 days = 3 } }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = MP.501
+	title = "The Imperial Decree"
+	desc = "The Holy Roman Emperor has proclaimed that all the Imperial Realms within the Holy Roman Empire shall be given autonomous rule over their lands as long as they swear their loyalty to the Holy Roman Empire. With this ruling, vassals of the Empire will now have more freedom while still tied to the Emperor. As the Holy Roman Empire is already at a unstable state, only time will tell if this truly is the sollution or another failed attempt to keep the Holy Roman Empire strong."
+	
+	portrait = event_target:hre_emperor
+	picture = "GFX_evt_hre_eagle"
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		is_save_game = no
+		NOT = { has_global_flag = hre_shatter_event_fired }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = hre_shatter_event_fired
+		e_hre = { holder_scope = { save_event_target_as = hre_emperor } }
+	}
+	
+	option = { #At last
+		name = "Es lebe der Kaiser!"
+		ai_chance = { factor = 100 }
+	}
+}
+
 character_event = {
 	id = MP.401
 	title = "Stable Economy"
@@ -2478,6 +2580,39 @@ character_event = {
 		name = "Let us avoid this from now on"
 		remove_character_modifier = inflated_realm
 	}
+}
+
+character_event = {
+    id = MP.402
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		has_landed_title = e_west_rome
+		government = merchant_republic_government
+    }
+
+    immediate = {
+		any_playable_ruler = {
+			limit = {
+				AND = {
+					has_landed_title = e_west_rome
+					government = merchant_republic_government
+				}
+			}
+			set_special_character_title = TITLE_E_WEST_ROME_REPUBLIC
+		}
+		any_playable_ruler = {
+			limit = {
+				AND = {
+					de_facto_liege = e_west_rome
+					is_patrician = yes
+				}
+			}
+			set_special_character_title = TITLE_E_WEST_ROME_REPUBLIC
+		}
+    }
 }
 
 #character_event = {

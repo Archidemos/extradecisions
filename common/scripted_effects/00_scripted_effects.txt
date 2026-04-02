@@ -29590,15 +29590,65 @@ princely_elective_german_elector_setup_effect = {
 		#Duchy of Franconia
 		#Duchy of Saxony
 		#Duchy of Brandenburg
-		save_persistent_event_target = { name = hre_title_1_per scope = c_koln }
-		save_persistent_event_target = { name = hre_title_2_per scope = c_mainz }
-		save_persistent_event_target = { name = hre_title_3_per scope = c_trier }
-		save_persistent_event_target = { name = hre_title_4_per scope = d_bohemia }
-		save_persistent_event_target = { name = hre_title_5_per scope = d_franconia }
-		save_persistent_event_target = { name = hre_title_6_per scope = d_saxony }
-		save_persistent_event_target = { name = hre_title_7_per scope = d_brandenburg }
+		
+		if = { #1
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_bavaria } } }
+			save_persistent_event_target = { name = hre_title_1_per scope = c_abensberg }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_1_per scope = d_bavaria }
+		}
+
+		if = { #2
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_mainz } } }
+			save_persistent_event_target = { name = hre_title_2_per scope = c_mainz }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_2_per scope = d_mainz }
+		}
+		
+		if = { #3
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_pfalz } } }
+			save_persistent_event_target = { name = hre_title_3_per scope = c_pfalz }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_3_per scope = d_pfalz }
+		}
+		
+		if = { #4
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_bohemia } } }
+			save_persistent_event_target = { name = hre_title_4_per scope = c_praha }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_4_per scope = d_bohemia }
+		}
+
+		if = { #5
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_nurnberg } } }
+			save_persistent_event_target = { name = hre_title_5_per scope = c_nurnberg }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_5_per scope = d_nurnberg }
+		}
+
+		if = { #6
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_saxony } } }
+			save_persistent_event_target = { name = hre_title_6_per scope = c_luneburg }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_6_per scope = d_saxony }
+		}
+
+		if = { #7
+			limit = { NOT = { any_playable_ruler = { has_landed_title = d_thuringia } } }
+			save_persistent_event_target = { name = hre_title_7_per scope = c_thuringen }
+		}
+		else = {
+			save_persistent_event_target = { name = hre_title_7_per scope = d_thuringia }
+		}
 	}
 }
+
 
 princely_elective_french_elector_setup_effect = {
 	e_hre = { 

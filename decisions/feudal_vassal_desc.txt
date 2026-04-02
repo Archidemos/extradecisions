@@ -165,11 +165,13 @@ targetted_decisions = {
 				text = "NO_ANNEX_SAME_TIER"
 				FROM = { higher_real_tier_than = ROOT }
 			}
-			NOR = { 
-				has_law = france_appanage_law_1_vassal
-				has_law = france_appanage_law_2_vassal
+			k_france = {
+				NOR = { 
+					has_law = france_appanage_law_1_vassal
+					has_law = france_appanage_law_2_vassal
+				}
 			}
-			has_law = france_appanage_law_2
+			k_france = { has_law = france_appanage_law_2 }
 			#custom_tooltip = {
 			#	text = "France has been partly centralised"
 			#	k_france = { has_title_flag = appanages_integratable }
@@ -206,6 +208,89 @@ targetted_decisions = {
 			FROM = {
 				add_character_modifier = {
 					modifier = release_tributary_cooldown
+					years = 1
+					inherit = yes
+				}
+			}
+        }
+
+        revoke_allowed = {
+            always = no
+        }
+		ai_will_do = {
+			factor = 1
+		}
+    }
+
+    annex_imperial_realm = {
+		only_playable = yes
+		only_independent = yes
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		ai_check_interval = 24
+		is_high_prio = yes
+		diplomacy_icon = GFX_trait_gamer
+		
+		from_potential = {
+			has_landed_title = e_hre
+		}
+		
+        potential = {
+			ROOT = {
+				is_tributary = {
+					type = hre_imperial
+					suzerain = FROM
+				}
+			}
+        }
+
+        allow = {
+			custom_tooltip = {
+				text = "NO_ANNEX_SAME_TIER"
+				FROM = { higher_real_tier_than = ROOT }
+			}
+			e_hre = {
+				NOR = { 
+					has_law = imperial_realm_law_1_vassal
+					has_law = imperial_realm_law_2_vassal
+				}
+			}
+			e_hre = { has_law = imperial_realm_law_2 }
+			#custom_tooltip = {
+			#	text = "France has been partly centralised"
+			#	k_france = { has_title_flag = appanages_integratable }
+			#}
+			FROM = {
+				#war = no
+				#TECH_MAJESTY = 4
+				#diplomacy = 13
+				#prestige = 500
+				#scaled_wealth = {
+				#	value = 1
+				#	min = 250
+				#	max = 750
+				#}
+				NOT = { has_character_modifier = annexed_vassal }
+			}
+        }
+
+        effect = {
+			ROOT = {
+				scaled_wealth = {
+					value = -1
+					min = -250
+					max = -750
+				}
+			}
+			custom_tooltip = {
+				text = "ENVOY_ANNEX_SENT"
+				ROOT = { save_event_target_as = tributary }
+				FROM = { save_event_target_as = tribute_annexer }
+				event_target:tribute_annexer = { hidden_tooltip = { narrative_event = { id = TRIB.010 } } }
+			}
+			FROM = {
+				add_character_modifier = {
+					modifier = annexed_vassal
 					years = 1
 					inherit = yes
 				}

@@ -43,7 +43,7 @@ appanage = {
 	tribute_name = TRIBUTARY_APPANAGE_TRIBUTE
 	breaks_at_suzerain_death = no
 	breaks_at_tributary_death = no
-	suzerain_must_defend = yes
+	suzerain_must_defend = no
 	tributary_can_be_summoned = yes
 	tributary_must_defend = yes
 	tributaries_can_infight = yes
@@ -55,7 +55,7 @@ appanage = {
 		free_tributary_cb
 	}
 	income_tribute_percentage = {
-		value = 0.20
+		value = 0.1
 	}
 	reinforce_tribute_percentage = {
 		value = 0
@@ -74,6 +74,48 @@ appanage = {
 	}
 	modifier = {
 		martial = 1
+		global_levy_size = 0.10
+	}
+}
+
+hre_imperial = {
+	tributary_name = TRIBUTARY_HRE_IMPERIAL_NAME
+	tributary_plural = TRIBUTARY_HRE_IMPERIAL_PLURAL
+	suzerain_name = SUZERAIN_HRE_IMPERIAL_NAME
+	tribute_name = TRIBUTARY_HRE_IMPERIAL_TRIBUTE
+	breaks_at_suzerain_death = no
+	breaks_at_tributary_death = no
+	suzerain_must_defend = no
+	tributary_can_be_summoned = yes
+	tributary_must_defend = yes
+	tributaries_can_infight = yes
+	suzerain_can_join_infighting = no
+	tributaries_can_unite = no
+	breaks_on_realm_change = no
+	icon = 7
+	cbs_against_suzerain = {
+		free_tributary_cb
+	}
+	income_tribute_percentage = {
+		value = 0.1
+	}
+	reinforce_tribute_percentage = {
+		value = 0
+	}
+	prestige_to_suzerain = {
+		value = 0.05
+	}
+	prestige_to_tributary = {
+		value = 0
+	}
+	piety_to_suzerain = {
+		value = 0.2
+	}
+	piety_to_tributary = {
+		value = 0
+	}
+	modifier = {
+		martial = 2
 		global_levy_size = 0.10
 	}
 }

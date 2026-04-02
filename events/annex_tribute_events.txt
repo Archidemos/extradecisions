@@ -193,6 +193,22 @@ narrative_event = { # Send the demand
 	}
 }
 
+narrative_event = { # Send the demand
+	id = TRIB.010
+	title = "Imperial Integration"
+	desc = "As we have prepared the council and centralised our personal realm, it has been decided by you to start the integration of this Imperial Realm. An envoy shall be sent soon to offer the ultimatum and have them in our fold once more."
+
+	picture = GFX_evt_hre_eagle
+
+	is_triggered_only = yes
+    
+    only_playable = yes
+
+	option = { #enough gold/prestige
+		name = "Send the envoy!"
+		event_target:tributary = { character_event = { id = TRIB.007 days = 5 } }
+	}
+}
 
 narrative_event = {	#Tributary gets event to give up his lands or to be rebelious
     id = TRIB.007

@@ -1505,7 +1505,7 @@ NMilitary = {
 	CRUSADER_KING_POT_SHARE = 0.1,							-- The Crusader King gets this portion of the pot, plus any remainder
 	CRUSADER_KING_ARTIFACTS = 2,							-- The Crusader King gets this many artifacts
 	CRUSADERS_GET_EXTRA_ARTIFACTS = 2,						-- The top <NUM> participants get one extra artifact each
-	FORT_LEVEL_ASSAULT_THRESHOLD = 6						-- The besieging army cannot assault a Holding with a Fort level above this number (unless the Siege Assault Game Rule is 'unlimited')
+	FORT_LEVEL_ASSAULT_THRESHOLD = 10						-- The besieging army cannot assault a Holding with a Fort level above this number (unless the Siege Assault Game Rule is 'unlimited')
 },
 
 NTechnology = {

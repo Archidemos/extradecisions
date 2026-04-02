@@ -2964,6 +2964,19 @@ government_flavor = {
 }
 
 government_flavor = {
+	name = gov_hre_realm_government
+	graphics = GFX_evt_hre_eagle
+	priority = 3
+	trigger = {
+		is_landed = yes
+		AND = {
+			has_landed_title = e_hre
+			government = hre_realm_government
+		}
+	}
+}
+
+government_flavor = {
 	name = gov_hereditary_aristocratic_monarchy_indian
 	graphics = GFX_evt_throne_room_indo_aryan_group
 	priority = 2

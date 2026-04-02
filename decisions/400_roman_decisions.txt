@@ -181,12 +181,18 @@ decisions = {
 		}
 
 		effect = {
-			set_global_flag = roman_crisis_done
-			set_global_flag = roman_barbarians_dealt
-			clr_global_flag = roman_crisis_finished_1
-			clr_global_flag = roman_crisis_finished_2
-			clr_global_flag = roman_crisis_finished_3
-			ROOT = { narrative_event = { id = ROMANFR.1008 } }
+			custom_tooltip = {
+				text = "The stabilization of the Western Roman Empire will be finalised for good meaning that the crisis of Rome is dealt with for good. Rome will also now be able to deal with the barbarians more efficient, meaning that the barbarians will not invade the main land anymore." 
+				set_global_flag = roman_crisis_done
+				set_global_flag = roman_barbarians_dealt
+				clr_global_flag = roman_crisis_finished_1
+				clr_global_flag = roman_crisis_finished_2
+				clr_global_flag = roman_crisis_finished_3
+				any_player = { narrative_event = { id = ROMANFR.1008 } }
+			}
+			wealth = 3000
+			prestige = 4000
+			add_claim = e_byzantium
 		}
 		ai_will_do = {
 			factor = 1
@@ -201,6 +207,7 @@ decisions = {
 		potential = {
 			start_date == 400.1.1
 			has_landed_title = e_west_rome
+			NOT = { has_global_flag = roman_crisis_done }
 			NOT = { has_global_flag = left_britain }
 			NOT = {
 				AND = {
@@ -461,7 +468,7 @@ decisions = {
 				start_date == 400.1.1
 				start_date == 476.1.1
 			}
-			has_global_flag = roman_barbarians_dealt
+			has_global_flag = west_rome_revivable
 			NOT = { has_landed_title = e_hre }
 			NOT = { has_landed_title = e_byzantium }
 			NOT = { has_landed_title = e_roman_empire }
@@ -549,6 +556,7 @@ decisions = {
 			}
 			set_global_flag = west_rome_formed_again
 			set_global_flag = west_rome_formed_normal
+			clr_global_flag = west_rome_revivable
 		}
 		ai_will_do = {
 			factor = 1

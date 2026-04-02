@@ -1,0 +1,111 @@
+namespace = HREF
+
+character_event = {
+	id = HREF.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		year >= 935
+		has_game_rule = {
+			name = shatter_hre_rule
+			value = on
+		}
+		ROOT = { has_landed_title = e_hre }
+	}
+	
+	immediate = {
+		current_heir = { character_event = { id = HREF.2 days = 1 } }
+	}
+}
+
+
+character_event = {
+    id = HREF.2
+	#hide_window = yes
+	title = "Imperial Succession"
+	desc = "Administrating this massive empire is no easy task and so we have no choice but to give our inherited subjects their semi-independence as a Imperial Realm."
+
+	picture = "GFX_evt_hre_eagle"
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+
+	option = {
+		text = "It shall be done"
+		ai_chance = { factor = 100 }
+		any_playable_ruler = { 
+			limit = {
+				AND = {
+					de_facto_liege = ROOT
+					NOT = { tier = COUNT }
+				}
+			}
+			character_event = { id = HREF.3 }
+		}
+	}
+}
+
+character_event = {
+    id = HREF.3
+	title = "Imperial Succession"
+	desc = "Because of the recent inheritance of some lands after death of the previous emperor and the overwhelming administration of the Holy Roman Empire. The emperor has granted you semi-independence."
+    is_triggered_only = yes
+
+	picture = "GFX_evt_hre_eagle"
+	border = GFX_event_normal_frame_diplomacy
+
+    #trigger = {
+	#	ROOT = { de_facto_liege = e_hre }
+    #}
+
+	immediate = {
+		e_hre = { holder_scope = { save_event_target_as = hre_emperor } }
+	}
+
+	option = {
+		name = "For the Emperor"
+		ai_chance = { factor = 100 }
+		set_defacto_liege = THIS
+		event_target:hre_emperor = { make_tributary = { who = ROOT tributary_type = hre_imperial } }
+	}
+}
+
+character_event = { #France gets event to send to appanages still tied to old overlord
+    id = HREF.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+    trigger = {
+		has_landed_title = e_her
+    }
+
+    immediate = {
+		any_playable_ruler = {
+			limit = { is_tributary = { type = hre_imperial } }
+			character_event = { id = HREF.101 }
+			remove_tributary = FROMFROM
+		}
+	}
+}
+
+character_event = { #France converts appanages to right title
+    id = HREF.101
+	hide_window = yes
+	is_triggered_only = yes
+	
+    trigger = {
+		is_tributary = { type = hre_imperial }
+    }
+
+    immediate = {
+		e_hre = {
+			holder_scope = {
+				make_tributary = {
+					who = ROOT
+					tributary_type = hre_imperial
+				}
+			}
+		}
+	}
+}
