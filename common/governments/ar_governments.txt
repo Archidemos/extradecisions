@@ -587,6 +587,7 @@ feudal_governments = {
 		title_prefix = "pirate_"
 		frame_suffix = "_piraterepublic"
 		potential = {
+			NOT = { tier = BARON }
 			OR = {
 				any_demesne_title = { has_flag = forced_pirate_government }
 				top_liege = {
@@ -821,6 +822,7 @@ feudal_governments = {
 		title_prefix = "warriororder_"
 		frame_suffix = "_warriororder"
 		potential = {
+			NOT = { tier = BARON }
 			OR = {
 				any_demesne_title = { has_flag = forced_warrior_order }
 				top_liege = {
