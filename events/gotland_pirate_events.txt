@@ -1,22 +1,53 @@
 namespace = GOTL
 
+character_event = {
+	id = GOTL.10
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		date >= 1000.1.1
+		is_save_game = no
+		NOT = { has_global_flag = gotland_set }
+	}
+	
+	immediate = {
+		set_global_flag = gotland_set
+		c_gotland = {
+			holder_scope = {
+				narrative_event = { id = GOTL.1 days = 4 }
+			}
+		}
+	}
+}
+
 narrative_event = {
 	id = GOTL.1
 	title = GOTLNAME1
-	desc =  GOTLDESC1
+	desc = GOTLDESC1
 	
 	is_triggered_only = yes	
 	
-	trigger = {
-		date >= 700.1.1
-		is_save_game = no
-	}
+	#trigger = {
+	#	date >= 1000.1.1
+	#	is_save_game = no
+	#}
 	
 	picture = GFX_evt_busy_trading_dock_republic
+	portrait = k_sweden
 
 	option = { #Become a Pirate Republic
 		name = "Hoist the Black Flag!"
 		ai_chance = { factor = 50 }
+
+		hidden_tooltip = {
+			ROOT = {
+				d_gotland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+			}
+		}
 
 		k_sweden = { holder_scope = { save_event_target_as = sweden_ruler } }
 		d_gotland = { holder_scope = { save_event_target_as = gotland_ruler } }
@@ -71,6 +102,15 @@ narrative_event = {
 	option = { #Become a Republic
 		name = "Perhaps a Republican approach is better"
 		ai_chance = { factor = 50 }
+
+		hidden_tooltip = {
+			ROOT = {
+				d_gotland = {
+					grant_title = PREV
+					usurp_title = PREV
+				}
+			}
+		}
 
 		create_family_palace = yes
 			
@@ -127,5 +167,10 @@ narrative_event = {
 				}
 			}
 		}
+	}
+
+	option = { #Stay whatever u are
+		name = "We are what we always were"
+		ai_chance = { factor = 0 }
 	}
 }
