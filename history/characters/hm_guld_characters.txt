@@ -34,11 +34,15 @@
     }
 }
 
+# --- Philip Dad ---
 690002 = {
     name = "Kars"
     religion = norse_pagan
     culture = norse
-    dynasty = 969001
+    dynasty = 969004
+
+    father = 690018
+    mother = 690019
 
     diplomacy = 8
     martial = 5
@@ -62,12 +66,16 @@
     }
 }
 
+# --- Philips Mom ---
 690003 = {
     name = "Essi"
     female = yes
     religion = norse_pagan
     culture = norse
     dynasty = 969001
+
+    father = 690008
+    mother = 690007
 
     diplomacy = 12
     martial = 10
@@ -92,6 +100,7 @@
     }
 }
 
+# --- Philips sister ---
 690004 = {
     name = "Kate"
     female = yes
@@ -207,5 +216,555 @@
     769.1.1 = {
         employer = 690001
         add_spouse = 690003
+    }
+}
+
+# --- Essi's Mother ---
+690007 = {
+    name = "Yendie"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 10
+    martial = 6
+    stewardship = 12
+    intrigue = 9
+    learning = 11
+
+    trait = underhanded_rogue
+    trait = diligent
+    trait = patient
+    trait = temperate
+    trait = shrewd
+
+    704.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690008
+    }
+}
+
+# --- Essi's Father ---
+690008 = {
+    name = "Janick"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    diplomacy = 7
+    martial = 7
+    stewardship = 10
+    intrigue = 7
+    learning = 8
+
+    trait = skilled_tactician
+    trait = brave
+    trait = diligent
+    trait = patient
+    trait = wroth
+    trait = cynical
+    trait = scarred
+
+    708.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690007
+    }
+}
+
+# --- Essi's Sister ---
+690009 = {
+    name = "Freja"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690008
+    mother = 690007
+
+    diplomacy = 4
+    martial = 3
+    stewardship = 5
+    intrigue = 6
+    learning = 3
+
+    trait = naive_appeaser
+    trait = lazy
+    trait = timid
+    trait = humble
+
+    722.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Freja's Ex-Husband ---
+690010 = {
+    name = "Aslak"
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 5
+    martial = 4
+    stewardship = 6
+    intrigue = 4
+    learning = 5
+
+    trait = flamboyant_schemer
+    trait = patient
+    trait = humble
+
+    728.1.1 = {
+        birth = yes
+    }
+}
+
+# --- Freja's Daughter ---
+690011 = {
+    name = "Najds"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690010
+    mother = 690009
+
+    diplomacy = 6
+    martial = 4
+    stewardship = 6
+    intrigue = 5
+    learning = 5
+
+    trait = underhanded_rogue
+    trait = patient
+    trait = humble
+
+    745.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690017
+    }
+}
+
+# --- Freja's Son ---
+690012 = {
+    name = "Steffs"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690010
+    mother = 690009
+
+    diplomacy = 5
+    martial = 5
+    stewardship = 8
+    intrigue = 4
+    learning = 9
+
+    trait = thrifty_clerk
+    trait = quick
+    trait = diligent
+    trait = shrewd
+
+    740.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690014
+    }
+}
+
+# --- Sigrid's Baby ---
+690013 = {
+    name = "Erik"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    mother = 690011
+    father = 690017
+
+    diplomacy = 1
+    martial = 1
+    stewardship = 1
+    intrigue = 1
+    learning = 1
+
+    768.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Leif's Wife ---
+690014 = {
+    name = "Astrid"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 6
+    martial = 4
+    stewardship = 7
+    intrigue = 6
+    learning = 6
+
+    trait = charismatic_negotiator
+    trait = patient
+    trait = kind
+
+    742.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690012
+    }
+}
+
+# --- Stepchild ---
+690015 = {
+    name = "Nanna"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969005
+
+    mother = 690014
+
+    diplomacy = 5
+    martial = 3
+    stewardship = 6
+    intrigue = 6
+    learning = 5
+
+    trait = quick
+    trait = shy
+
+    764.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Leif's Child ---
+690016 = {
+    name = "Bjorn"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690012
+    mother = 690014
+
+    diplomacy = 2
+    martial = 2
+    stewardship = 2
+    intrigue = 2
+    learning = 2
+
+    768.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Sigrid's Husband ---
+690017 = {
+    name = "Einar"
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 6
+    martial = 7
+    stewardship = 6
+    intrigue = 5
+    learning = 5
+
+    trait = skilled_tactician
+    trait = brave
+    trait = diligent
+
+    740.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690011
+    }
+}
+
+# --- Kars Father ---
+690018 = {
+    name = "Harald"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    diplomacy = 6
+    martial = 10
+    stewardship = 7
+    intrigue = 5
+    learning = 5
+
+    trait = skilled_tactician
+    trait = brave
+
+    690.1.1 = {
+        birth = yes
+    }
+
+    750.1.1 = {
+        death = yes
+    }
+}
+
+# --- Kars mother ---
+690019 = {
+    name = "Solveig"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 8
+    martial = 4
+    stewardship = 9
+    intrigue = 7
+    learning = 6
+
+    trait = grey_eminence
+    trait = diligent
+
+    695.1.1 = {
+        birth = yes
+    }
+
+    752.1.1 = {
+        death = yes
+    }
+}
+
+# --- Kars Brother ---
+690020 = {
+    name = "Ragnar"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    father = 690018
+    mother = 690019
+
+    diplomacy = 7
+    martial = 9
+    stewardship = 8
+    intrigue = 6
+    learning = 6
+
+    trait = skilled_tactician
+    trait = brave
+    trait = ambitious
+    trait = proud
+
+    718.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse 690027
+    }
+}
+
+# --- Ragnars Son 1 ---
+690021 = {
+    name = "Bjorn"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    father = 690020
+
+    diplomacy = 6
+    martial = 8
+    stewardship = 7
+    intrigue = 5
+    learning = 5
+
+    trait = skilled_tactician
+    trait = diligent
+
+    740.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690023
+    }
+}
+
+# --- Ragnars Son 2 ---
+690022 = {
+    name = "Ivar"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    father = 690020
+
+    diplomacy = 5
+    martial = 6
+    stewardship = 6
+    intrigue = 7
+    learning = 6
+
+    trait = underhanded_rogue
+    trait = shrewd
+
+    742.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690024
+    }
+}
+
+# --- Ragnar son 1 Wife ---
+690023 = {
+    name = "Astrid"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 6
+    stewardship = 7
+
+    trait = patient
+
+    742.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690021
+    }
+}
+
+# --- Ragnar son 2 Wife ---
+690024 = {
+    name = "Runa"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 7
+    intrigue = 6
+
+    trait = shrewd
+
+    744.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690022
+    }
+}
+
+# ---  Child of Ragnar son 1 ---
+690025 = {
+    name = "Erik"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    father = 690021
+    mother = 690023
+
+    765.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Child of Ragnar son 2 ---
+690026 = {
+    name = "Leif"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969004
+
+    father = 690022
+    mother = 690024
+
+    766.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Ragnar's Wife ---
+690027 = {
+    name = "Thyra"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+
+    diplomacy = 7
+    martial = 5
+    stewardship = 9
+    intrigue = 6
+    learning = 6
+
+    trait = fortune_builder
+    trait = diligent
+    trait = patient
+    trait = proud
+
+    720.1.1 = { birth = yes }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690020
     }
 }
