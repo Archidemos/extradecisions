@@ -1,0 +1,40 @@
+become_actually_great = {
+    is_high_prio = yes
+    only_playable = yes
+
+    potential = {
+        character = 690001
+        is_alive = yes
+        age = 20
+    }
+
+    allow = {
+        prestige = 2000
+        realm_size = 6
+        has_character_flag = guldberg_rise_begun
+        OR = {
+            has_landed_title = k_denmark
+            has_claim = k_denmark
+        }
+    }
+
+    effect = {
+        add_prestige = 500
+
+        if = {
+            limit = { has_character_modifier = guldberg_mild_embarrassment }
+            remove_character_modifier = guldberg_mild_embarrassment
+        }
+
+        add_character_modifier = {
+            name = guldberg_actually_great
+            duration = -1
+        }
+
+        give_nickname = nick_the_great
+    }
+
+    ai_will_do = {
+        factor = 1
+    }
+}
