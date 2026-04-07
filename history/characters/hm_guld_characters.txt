@@ -1,0 +1,211 @@
+# Danish larp
+
+690001 = {
+    name = "Philip"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690002
+    mother = 690003
+
+    diplomacy = 6
+    martial = 8
+    stewardship = 10
+    intrigue = 5
+    learning = 8
+
+    trait = brilliant_strategist
+    trait = strong
+    trait = attractive
+    trait = brave
+    trait = ambitious
+    trait = lustful
+
+    744.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        give_nickname = nick_the_pretty_okay
+        create_bloodline = {
+            type = bloodline_philip_the_pretty_okay
+        }
+    }
+}
+
+690002 = {
+    name = "Kars"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    diplomacy = 8
+    martial = 5
+    stewardship = 10
+    intrigue = 4
+    learning = 8
+
+    trait = midas_touched
+    trait = diligent
+    trait = patient
+    trait = temperate
+    trait = gregarious
+
+    720.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690005
+    }
+}
+
+690003 = {
+    name = "Essi"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    diplomacy = 12
+    martial = 10
+    stewardship = 7
+    intrigue = 12
+    learning = 10
+
+    trait = grey_eminence
+    trait = kind
+    trait = brave
+    trait = diligent
+    trait = gregarious
+    trait = attractive
+
+    722.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690006
+    }
+}
+
+690004 = {
+    name = "Kate"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969001
+
+    father = 690002
+    mother = 690003
+
+    diplomacy = 8
+    martial = 7
+    stewardship = 8
+    intrigue = 15
+    learning = 9
+
+    trait = mastermind_theologian
+    trait = quick
+    trait = gregarious
+    trait = indulgent
+    trait = shrewd
+
+    746.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Kars' NEW WIFE ---
+690005 = {
+    name = "Helena"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969002
+
+    diplomacy = 10
+    martial = 3
+    stewardship = 7
+    intrigue = 9
+    learning = 8
+
+    trait = fortune_builder
+    trait = gregarious
+    trait = deceitful
+    trait = ambitious
+    trait = attractive
+
+    725.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690002
+    }
+}
+
+# --- STEPDAUGHTER ---
+690007 = {
+    name = "Liva"
+    female = yes
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969002
+
+    mother = 690005
+
+    diplomacy = 7
+    martial = 4
+    stewardship = 6
+    intrigue = 8
+    learning = 7
+
+    trait = quick
+    trait = fussy
+
+    750.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+    }
+}
+
+# --- Essi's NEW HUSBAND ---
+690006 = {
+    name = "Bjorn"
+    religion = norse_pagan
+    culture = norse
+    dynasty = 969003
+
+    diplomacy = 9
+    martial = 8
+    stewardship = 6
+    intrigue = 8
+    learning = 6
+
+    trait = skilled_tactician
+    trait = brave
+    trait = diligent
+    trait = wroth
+    trait = honest
+
+    718.1.1 = {
+        birth = yes
+    }
+
+    769.1.1 = {
+        employer = 690001
+        add_spouse = 690003
+    }
+}

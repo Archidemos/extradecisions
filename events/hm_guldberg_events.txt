@@ -1,0 +1,300 @@
+namespace = guldberg
+
+# ---------------------------------------------------
+# Yearly pulse hook for Philip
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.10
+    hide_window = yes
+
+    trigger = {
+        character = 690001
+        is_alive = yes
+        age = 16
+    }
+
+    mean_time_to_happen = {
+        months = 18
+    }
+
+    immediate = {
+        random_list = {
+            40 = { character_event = { id = guldberg.1 } }
+            30 = { character_event = { id = guldberg.2 } }
+            20 = { character_event = { id = guldberg.3 } }
+            5 = { character_event = { id = guldberg.20 } }
+            3 = { character_event = { id = guldberg.21 } }
+            2 = { character_event = { id = guldberg.30 } }
+        }
+    }
+}
+
+# ---------------------------------------------------
+# Pretty Okay event 1
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.1
+    desc = EVTDESC_GULDBERG_1
+    picture = GFX_evt_feast
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_GULDBERG_1
+        add_prestige = 15
+        if = {
+            limit = { martial = 10 }
+            add_character_modifier = {
+                name = guldberg_pretty_okay_confidence
+                duration = 365
+            }
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_1
+        add_prestige = 5
+        if = {
+            limit = { NOT = { trait = proud } }
+            add_trait = proud
+        }
+    }
+}
+
+# ---------------------------------------------------
+# Pretty Okay event 2
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.2
+    desc = EVTDESC_GULDBERG_2
+    picture = GFX_evt_court
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_GULDBERG_2
+        add_prestige = -10
+        add_character_modifier = {
+            name = guldberg_mild_embarrassment
+            duration = 365
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_2
+        add_prestige = 10
+        if = {
+            limit = { NOT = { trait = brave } }
+            add_trait = brave
+        }
+    }
+}
+
+# ---------------------------------------------------
+# Pretty Okay event 3
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.3
+    desc = EVTDESC_GULDBERG_3
+    picture = GFX_evt_tournament
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_GULDBERG_3
+        random_list = {
+            33 = { diplomacy = 1 }
+            34 = { martial = 1 }
+            33 = { stewardship = 1 }
+        }
+        add_prestige = 20
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_3
+        random_list = {
+            33 = { diplomacy = -1 }
+            34 = { martial = -1 }
+            33 = { stewardship = -1 }
+        }
+        add_prestige = 5
+    }
+}
+
+# ---------------------------------------------------
+# Court tension with Bjorn
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.20
+    desc = EVTDESC_GULDBERG_20
+    picture = GFX_evt_angry_council
+
+    is_triggered_only = yes
+
+    trigger = {
+        character = 690001
+        690006 = {
+            is_alive = yes
+            is_incapable = no
+        }
+    }
+
+    option = {
+        name = EVTOPTA_GULDBERG_20
+        add_rival = 690006
+        add_prestige = 10
+        hidden_tooltip = {
+            690006 = {
+                add_rival = 690001
+            }
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_20
+        add_character_modifier = {
+            name = guldberg_tense_court
+            duration = 730
+        }
+    }
+}
+
+# ---------------------------------------------------
+# Rumors about Philip and Helena
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.21
+    desc = EVTDESC_GULDBERG_21
+    picture = GFX_evt_spy
+
+    is_triggered_only = yes
+
+    trigger = {
+        character = 690001
+        690005 = { is_alive = yes }
+        690002 = { is_alive = yes }
+    }
+
+    option = {
+        name = EVTOPTA_GULDBERG_21
+        add_character_modifier = {
+            name = guldberg_scandalous_rumors
+            duration = 730
+        }
+        690002 = {
+            opinion = {
+                who = 690001
+                modifier = opinion_disappointed
+                years = 5
+            }
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_21
+        intrigue = 1
+        add_prestige = -10
+    }
+}
+
+# ---------------------------------------------------
+# Kate thrives in chaos
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.22
+    desc = EVTDESC_GULDBERG_22
+    picture = GFX_evt_intrigue
+
+    is_triggered_only = yes
+
+    trigger = {
+        690004 = { is_alive = yes }
+    }
+
+    option = {
+        name = EVTOPTA_GULDBERG_22
+        690004 = { intrigue = 1 }
+        690001 = {
+            opinion = {
+                who = 690004
+                modifier = opinion_impressed
+                years = 5
+            }
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_22
+        690004 = {
+            if = {
+                limit = { NOT = { trait = deceitful } }
+                add_trait = deceitful
+            }
+        }
+        690001 = { add_prestige = -15 }
+    }
+}
+
+# ---------------------------------------------------
+# Philip's rise arc
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.30
+    desc = EVTDESC_GULDBERG_30
+    picture = GFX_evt_throne_room
+
+    is_triggered_only = yes
+
+    trigger = {
+        character = 690001
+        is_alive = yes
+        age = 20
+        realm_size = 4
+        NOT = { has_character_flag = guldberg_rise_begun }
+    }
+
+    option = {
+        name = EVTOPTA_GULDBERG_30
+        set_character_flag = guldberg_rise_begun
+        add_prestige = 100
+        if = {
+            limit = { NOT = { trait = ambitious } }
+            add_trait = ambitious
+        }
+        gain_title = {
+            title = k_denmark
+            type = claim
+        }
+    }
+    option = {
+        name = EVTOPTB_GULDBERG_30
+        set_character_flag = guldberg_rise_begun
+        add_piety = 50
+        if = {
+            limit = { trait = ambitious }
+            remove_trait = ambitious
+        }
+        if = {
+            limit = { trait = proud }
+            remove_trait = proud
+        }
+    }
+}
+
+# ---------------------------------------------------
+# Bloodline founder event
+# Fire once at start for Philip
+# ---------------------------------------------------
+character_event = {
+    id = guldberg.100
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        character = 690001
+        is_alive = yes
+        NOT = { has_character_flag = guldberg_bloodline_started }
+    }
+
+    immediate = {
+        set_character_flag = guldberg_bloodline_started
+        create_bloodline = {
+            type = bloodline_philip_the_pretty_okay
+        }
+        give_nickname = nick_the_pretty_okay
+    }
+}
