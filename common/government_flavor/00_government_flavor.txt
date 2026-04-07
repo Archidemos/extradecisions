@@ -2977,6 +2977,16 @@ government_flavor = {
 }
 
 government_flavor = {
+	name = gov_greek_city_government
+	graphics = GFX_evt_greek_city
+	priority = 3
+	trigger = {
+		is_landed = yes
+		government = greek_city_government
+	}
+}
+
+government_flavor = {
 	name = gov_hereditary_aristocratic_monarchy_indian
 	graphics = GFX_evt_throne_room_indo_aryan_group
 	priority = 2

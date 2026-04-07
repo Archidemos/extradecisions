@@ -1,0 +1,250 @@
+decisions = {
+
+	form_macedonia = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			date >= 760.1.1
+			NOT = { has_global_flag = unite_greece }
+			culture = greek
+		}
+		allow = {
+			ROOT = { tier = KING }
+			completely_controls = k_thrace
+			completely_controls = k_epirus
+			has_landed_title = c_byzantion
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = unite_greece
+			custom_tooltip = {
+				text = "The Kingdom of Epirus and Thessalonika will unite under one Kingdom"
+				hidden_tooltip = {
+					activate_title = { title = k_macedonia status = yes }
+					d_epirus = { de_jure_liege = k_macedonia }
+					d_cephalonia = { de_jure_liege = k_macedonia }
+					d_neopatras = { de_jure_liege = k_macedonia }
+					d_thessalonika = { de_jure_liege = k_macedonia }
+					d_strymon = { de_jure_liege = k_macedonia }
+					d_thrace = { de_jure_liege = k_macedonia }
+					d_dyrrachion = { de_jure_liege = k_macedonia }
+					d_abydos = { de_jure_liege = k_macedonia }
+					activate_title = { title = k_epirus status = no }
+					activate_title = { title = k_thrace status = no }
+				}
+			}
+			ROOT = { gain_title = k_macedonia }
+			character_event = { id = GREE.4 days = 3 }
+			prestige = 1000
+
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	conquered_alexander_asia = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			date >= 760.1.1
+			NOT = { has_global_flag = alexander_conquered_asia }
+			culture = greek
+			has_global_flag = unite_greece
+		}
+		allow = {
+			ROOT = { tier = KING }
+			has_landed_title = k_macedonia
+			completely_controls = k_nikaea
+			completely_controls = k_cilician
+			completely_controls = k_anatolia
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = alexander_conquered_asia
+			ROOT = { gain_title = e_macedonia }
+			prestige = 1000
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = new_alexander
+			}
+			add_claim = k_persia
+			add_claim = k_egypt
+			add_claim = k_mesopotamia
+			add_claim = k_aljazira
+			add_claim = k_antioch
+			add_claim = k_syria
+			add_claim = k_jerusalem
+			
+			custom_tooltip = {
+				text = "The Kingdoms of Antioch and Al Jazira will be incorperated."
+				hidden_tooltip = {
+					k_aljazira = { de_jure_liege = e_macedonia }
+					k_antioch = { de_jure_liege = e_macedonia }
+				}
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = GREE.2 days = 1 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	conquered_alexander_egypt = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			date >= 760.1.1
+			NOT = { has_global_flag = alexander_conquered_egypt }
+			culture = greek
+			has_global_flag = alexander_conquered_asia
+		}
+		allow = {
+			has_landed_title = e_macedonia
+			completely_controls = k_egypt
+			completely_controls = k_antioch
+			completely_controls = k_jerusalem
+			completely_controls = k_syria
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = alexander_conquered_egypt
+			prestige = 1000
+			custom_tooltip = {
+				text = "The Kingdoms of Jerusalem, Egypt and Syria will be incorperated."
+				hidden_tooltip = {
+					k_egypt = { de_jure_liege = e_macedonia }
+					k_antioch = { de_jure_liege = e_macedonia }
+					k_syria = { de_jure_liege = e_macedonia }
+					k_jerusalem = { de_jure_liege = e_macedonia }
+				}
+			}		
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = GREE.2 days = 1 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	conquered_alexander_persia = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			date >= 760.1.1
+			NOT = { has_global_flag = alexander_conquered_persia }
+			culture = greek
+			has_global_flag = alexander_conquered_asia
+		}
+		allow = {
+			has_landed_title = e_macedonia
+			completely_controls = k_persia
+			completely_controls = k_mesopotamia
+			completely_controls = k_aljazira
+			completely_controls = k_sistan
+			completely_controls = k_khorasan
+			completely_controls = k_kaferistan
+			prestige = 1500
+		}
+		effect = {
+			set_global_flag = alexander_conquered_persia
+			prestige = 1000
+			custom_tooltip = {
+				text = "The Kingdoms of Mesopotamia, Daylam and Persia will be incorperated."
+				hidden_tooltip = {
+					k_persia = { de_jure_liege = e_macedonia }
+					k_mesopotamia = { de_jure_liege = e_macedonia }
+					k_daylam = { de_jure_liege = e_macedonia }
+				}
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 2500 2500 }
+							light_cavalry = { 1000 1000 }
+						}
+						attrition = 1.0
+						#maintenance = 0
+					}	
+				}
+			}
+			hidden_tooltip = { any_player = { character_event = { id = GREE.2 days = 1 } } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

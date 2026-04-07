@@ -112,3 +112,69 @@ character_event = { #France converts appanages to right title
 		}
 	}
 }
+
+character_event = {
+	id = HREF.200
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		year >= 935
+		has_game_rule = {
+			name = shatter_hre_rule
+			value = on
+		}
+		ROOT = { has_landed_title = e_hre }
+		#NOT = { has_global_flag = hre_loyal_triggered }
+	}
+	
+	immediate = {
+		#set_global_flag = hre_loyal_triggered
+		any_playable_ruler = {
+			limit = {
+				is_tributary = { type = hre_imperial }
+			}
+			character_event = { id = HREF.201 days = 5 }
+		}
+	}
+}
+
+character_event = { #France converts appanages to right title
+    id = HREF.201
+	hide_window = yes
+	is_triggered_only = yes
+	
+    trigger = {
+		year >= 935
+		has_game_rule = {
+			name = shatter_hre_rule
+			value = on
+		}
+		is_tributary = { type = hre_imperial }
+		NOT = {
+			has_opinion_modifier = {
+				modifier = hre_loyalty
+				who = ROOT
+			}
+		}
+    }
+
+    immediate = {
+		e_hre = {
+			holder_scope = {
+				save_event_target_as = hre_friend
+				#add_friend = ROOT
+				opinion = {
+					name = hre_loyalty
+					who = ROOT
+					years = 100
+				}
+			}
+		}
+		opinion = {
+			name = hre_loyalty
+			who = event_target:hre_friend
+			years = 100
+		}
+	}
+}	

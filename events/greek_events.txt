@@ -1,0 +1,172 @@
+namespace = GREE
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.1
+	title = "Agread's Legacy"
+	desc = "It seems that the Greek States within the Eastern Roman Empire has won a decicive victory against the emperor. With this victory, the greeks have no proclaimed their independence and the dissolution of the Eastern Roman Empire. Instead of the influence of Rome, the Greeks are now going back to their roots and are looking back at Alexander the Great and his dynasty. Perhaps their ambitions is now to reach Persia once more to reform the Empire of Alexander the Great. Time will only tell what their next move will be."
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_army"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "Oi Symfonies tha yperischysoun"
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.2
+	title = "Destiny of Makedonia"
+	desc = "As the newly formed Macedonian Empire has solidified their control over the Balkans. The Greeks are now eyeing towards the long lost lands of Alexander the Great and perhaps start their push towards Asia and its new foes to be awaited."
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_army"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_2 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_2
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "Carefull.."
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.3
+	title = "Middle Eastern Dominance"
+	desc = "As the newly formed Macedonian Empire has solidified their control over the Balkans and Anatolia. The Greek Empire has pushed further towards the Middle East, conquering Egypt, the Levant and parts of Persia. This new ruler seems to act like Alexander the Great reborn."
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_army"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_2 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_2
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "Carefull.."
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.4
+	title = "The Fate of Rome"
+	desc = "We have united Macedonia under one banner in which our people are happy for. The peasants even call you Agread's heir, but then again you also have your own dynasty to uphold. Perhaps we could proclaim to be the continuation of the Agreads or to glorify your current dynasty. What shall you do?"
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	is_triggered_only = yes
+	
+	
+	option = { #At last
+		name = "The final eagle will now die.."
+		ai_chance = { factor = 100 }
+		activate_title = { title = e_byzantium status = no }
+		activate_title = { title = e_macedonia status = yes }
+		activate_title = { title = e_bulgaria status = yes }
+		
+		custom_tooltip = {
+			text = "The Eastern Roman de-jure will be replaced to Macedonia"
+			hidden_tooltip = {
+				k_macedonia = { de_jure_liege = e_macedonia }
+				k_achaea = { de_jure_liege = e_macedonia }
+				k_candia = { de_jure_liege = e_macedonia }
+				k_nikaea = { de_jure_liege = e_macedonia }
+				k_anatolia = { de_jure_liege = e_macedonia }
+				k_cyprus = { de_jure_liege = e_macedonia }
+				k_trebizond = { de_jure_liege = e_macedonia }
+				k_cilician = { de_jure_liege = e_macedonia }
+				k_cilician = { de_jure_liege = e_macedonia }
+				k_serbia = { de_jure_liege = e_carpathia }
+				k_ragusa = { de_jure_liege = e_macedonia }
+				k_bulgaria = { de_jure_liege = e_bulgaria }
+			}
+		}
+		e_byzantium = { holder_scope = { save_event_target_as = byz_emperor } }
+		event_target:byz_emperor = {
+			any_demesne_title = {
+				limit = { 
+					title = e_byzantium
+				}
+				unsafe_destroy_landed_title = THIS
+			}
+		}
+		add_claim = d_opsikon
+		add_claim = d_samos
+		add_claim = d_thracesia
+		add_claim = d_anatolia
+		add_claim = d_cibyrrhaeot
+		character_event = { id = GREE.5 days = 3 }
+	}
+	
+	option = { #At last
+		name = "We stay with Rome"
+		ai_chance = { factor = 0 }
+		set_defacto_liege = e_byzantium
+		prestige = 500
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.5
+	title = "Macedonian Blood"
+	desc = "We have united Macedonia under one banner in which our people are happy for. The peasants even call you Agread's heir, but then again you also have your own dynasty to uphold. Perhaps we could proclaim to be the continuation of the Agreads or to glorify your current dynasty. What shall you do?"
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	is_triggered_only = yes
+	
+	
+	option = { #At last
+		name = "We are the Agreads reborn.."
+		ai_chance = { factor = 100 }
+		ROOT = { dynasty = 2000030000 }
+		hidden_tooltip = { any_player = { character_event = { id = GREE.1 days = 1 } } }
+	}
+	
+	option = { #At last
+		name = "We will conquer under our own names!"
+		ai_chance = { factor = 0 }
+		prestige = 500
+		hidden_tooltip = { any_player = { character_event = { id = GREE.1 days = 1 } } }
+	}
+}

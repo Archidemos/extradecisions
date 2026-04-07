@@ -427,19 +427,6 @@ k_rhine = {
 	religion = catholic
 }
 
-k_macedonia = {
-	color = { 146 56 181 }
-
-	short_name = yes
-
-	capital = 490
-
-	culture = greek
-	allow = {
-		always = no
-	}
-}
-
 k_slavs = {
 	color = { 53 62 122 }
 
@@ -466,17 +453,36 @@ e_ghaznavid = {
 	}
 }
 
+k_macedonia = {
+	color = { 14 45 94 }
+
+	short_name = no
+
+	capital = 490
+
+	culture = greek
+	
+	greek = "Makedonia"
+	
+	#allow = {
+	#	always = no
+	#}
+}
+
 e_macedonia = {
-	color = { 146 56 181 }
+	color = { 44 86 153 }
 
 	short_name = yes
 
 	capital = 490
 
 	culture = greek
-	allow = {
-		always = no
-	}
+	
+	greek = "Makedonike Arche"
+	
+	#allow = {
+	#	always = no
+	#}
 }
 
 e_white_horde = {
