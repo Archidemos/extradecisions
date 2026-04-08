@@ -5717,6 +5717,12 @@ narrative_event = {
 			limit = { NOT = { has_character_flag = defeated_roman_emperor } }
 			narrative_event = { id = ROMANFR.1043 } 
 		}
+		if = {
+			limit = {
+				start_date == 476.1.1
+			}
+			k_croatia = { holder_scope = { e_west_rome = { grant_title = PREV } } }
+		}
 	}
 }
 

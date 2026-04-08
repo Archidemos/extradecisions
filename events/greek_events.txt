@@ -30,7 +30,7 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
 	id = GREE.2
 	title = "Destiny of Makedonia"
-	desc = "As the newly formed Macedonian Empire has solidified their control over the Balkans. The Greeks are now eyeing towards the long lost lands of Alexander the Great and perhaps start their push towards Asia and its new foes to be awaited."
+	desc = "As the newly formed Macedonian Empire has solidified their control over the Balkans. The Greeks are now eyeing towards the long lost lands of Alexander the Great and perhaps start their push towards Asia and its new foes to be awaited. If they will push on forwards, they will most likely go to the Ptolemaic Kingdom of Egypt and to Alexander's crown jewel, Persia."
 	
 	portrait = event_target:macedonia_emperor
 	picture = "GFX_evt_greek_army"
@@ -65,13 +65,13 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 	sound = ar_army_marching
 	
 	trigger = {
-		NOT = { has_global_flag = byz_shatter_event_fired_2 }
+		NOT = { has_global_flag = byz_shatter_event_fired_3 }
 	}
 	
 	is_triggered_only = yes
 	
 	immediate = { 
-		set_global_flag = byz_shatter_event_fired_2
+		set_global_flag = byz_shatter_event_fired_3
 		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
 	}
 	
@@ -168,5 +168,59 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 		ai_chance = { factor = 0 }
 		prestige = 500
 		hidden_tooltip = { any_player = { character_event = { id = GREE.1 days = 1 } } }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.6
+	title = "Alexander in Persia"
+	desc = "The Conquest of the reborn Empire of Alexander has been going rapidly and have arrived in Persia. There, it seems that they will further their conquest deeper to solidify their control over the area. Now that they are close to having the same land mass as Alexander had, who knows what their next direction will be."
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_persia"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_4 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_4
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "Carefull.."
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.7
+	title = "Ptolemaic Egypt"
+	desc = "It seems that the Macedonian Empire has not rested any longer than they needed and went ahead to conquer the Ancient Kingdom of Egypt. Greece's long lost treasure. As they entered Egypt, they are welcomed as heroes of Greece while some also despises their arrival. Times have changed and things dont stay the same. What will the next step be for this Greek Empire."
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_alexandria"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "Carefull.."
+		ai_chance = { factor = 100 }
 	}
 }

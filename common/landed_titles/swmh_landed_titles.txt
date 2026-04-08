@@ -57333,6 +57333,68 @@ e_africa = {
 	german = "Afrika"
     creation_requires_capital = no
     capital = 815
+	k_canarias = { # Canarias
+		color = { 182 198 176 }
+		color2 = { 255 255 255 }
+		capital = 1365 # Tenerife
+		castillan = "Canarias"
+		basque = "Kanariak"
+		aragonese = "Canarias"
+		catalan = "Canarias"
+		leonese = "Canarias"
+		zanata = "Kanar"
+		galician = "Canárias"
+		portuguese = "Canárias"
+		culture = canarian
+		d_canarias = { # Canarias
+			color = { 24 58 121 }
+			color2 = { 255 255 255 }
+			capital = 1365 # Tenerife
+			castillan = "Canarias"
+			basque = "Kanariak"
+			aragonese = "Canarias"
+			catalan = "Canarias"
+			leonese = "Canarias"
+			zanata = "Kanar"
+			galician = "Canárias"
+			portuguese = "Canárias"
+			c_tenerife = { # Tenerife (1365)
+				color = { 22 174 223 }
+				color2 = { 255 255 255 }
+				castillan = "Tenerife"
+				basque = "Tenerife"
+				aragonese = "Tenerife"
+				catalan = "Tenerife"
+				leonese = "Tenerife"
+				galician = "Tenerife"
+				portuguese = "Tenerife"
+				zanata = "Ašenšen"
+				canarian = "Achinet"
+				b_adeje = {}
+				b_taoro = {}
+				b_guimar = {}
+				b_candelaria = {}
+			}
+			c_canarias = { # Gran Canaria (849)
+				color = { 50 185 243 }
+				color2 = { 255 255 255 }
+				castillan = "Gran Canaria"
+				basque = "Kanaria Handia"
+				aragonese = "Gran Canaria"
+				catalan = "Gran Canaria"
+				leonese = "Gran Canaria"
+				zanata = "Tamãran"
+				canarian = "Tamarán"
+				galician = "Grã Canária"
+				portuguese = "Grã Canária"
+				b_agaldar = {}
+				b_telde = {}
+				b_aguimes = {}
+			}
+			allow = { title_duke_basic_allow = yes }
+		}
+		allow = { title_king_basic_allow = yes }
+	}
     k_africa = {
         color = { 255 204 102 }
         color2 = { 255 255 255 }
@@ -75097,14 +75159,13 @@ d_saruhan = {
 e_seljuk_turks = {
     color = { 99 168 74 }
     capital = 646
-    culture = turkmen
+	culture="turkish"
+	religion="tengri_pagan"
     short_name = yes
-    allow = {
-        FROM = {
-            is_de_jure_title = yes
-        }
-        title_emperor_basic_allow = yes
-    }
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
 }
 d_ahi = {
     color = { 144 66 189 }
