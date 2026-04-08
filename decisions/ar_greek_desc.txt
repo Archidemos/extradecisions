@@ -37,7 +37,22 @@ decisions = {
 					activate_title = { title = k_thrace status = no }
 				}
 			}
-			ROOT = { gain_title = k_macedonia }
+			primary_title = {
+				k_macedonia = {
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+			hidden_tooltip = {
+				ROOT = {
+					any_demesne_title = {
+						limit = {
+							NOT = { title = k_macedonia }
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
+			}
 			character_event = { id = GREE.4 days = 3 }
 			prestige = 1000
 			custom_tooltip = {
