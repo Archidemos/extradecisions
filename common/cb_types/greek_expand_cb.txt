@@ -6,7 +6,7 @@ unify_macedonia = {
 	hostile_against_others = yes
 	is_permanent = yes
 	can_ask_to_join_war = yes
-	check_de_jure_tier = KING this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
+	check_de_jure_tier = KING #this scans all de jure kingdoms for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 	allowed_to_target_tributaries = no
 	
 	sort_priority = 1000
@@ -78,7 +78,7 @@ unify_macedonia = {
 	}
 	
 	on_success_title = {
-		Usurp the target kingdom itself, if the enemy holds it
+		#Usurp the target kingdom itself, if the enemy holds it
 		if = {
 			limit = {
 				holder_scope = {
@@ -90,7 +90,7 @@ unify_macedonia = {
 		}
 		
 		if = {
-			Take the enemy's duchies within the target kingdom, if we are the same or lower tier
+			#Take the enemy's duchies within the target kingdom, if we are the same or lower tier
 			limit = {
 				ROOT = {
 					NOT = { higher_tier_than = FROM }
@@ -110,7 +110,7 @@ unify_macedonia = {
 			}
 		}
 		
-		Have I become the vassal of the loser due to taking a duchy or kingdom?
+		#Have I become the vassal of the loser due to taking a duchy or kingdom?
 		if = {
 			limit = {
 				ROOT = {
@@ -122,12 +122,12 @@ unify_macedonia = {
 			}
 		}
 		
-		Vassalize the rest
+		#Vassalize the rest
 		custom_tooltip = {
 			text = pagan_subjugation_tip
 			hidden_tooltip = {
 				ROOT = {
-					subjugate_or_take_under_title = { If the target only has territory within the kingdom, he is simply vassalized
+					subjugate_or_take_under_title = { #If the target only has territory within the kingdom, he is simply vassalized
 						title = PREV
 						enemy = FROM
 					}
@@ -174,7 +174,7 @@ unify_macedonia = {
 	}
 
 	attacker_ai_victory_worth = {
-		factor = -1 always accept
+		factor = -1 #always accept
 	}
 	
 	attacker_ai_defeat_worth = {
@@ -182,7 +182,7 @@ unify_macedonia = {
 	}
 
 	defender_ai_victory_worth = {
-		factor = -1 always accept
+		factor = -1 #always accept
 	}
 	
 	defender_ai_defeat_worth = {
