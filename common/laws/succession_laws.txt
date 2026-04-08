@@ -564,7 +564,12 @@ succession_laws = {
 		}
 		
 		allow = {
-			TECH_LEGALISM = 5
+			conditional_tooltip = {
+				trigger = {
+					is_patrician = no
+				}
+				TECH_LEGALISM = 5
+			}
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }

@@ -43,20 +43,40 @@
 	name="Jorjani"
 	culture="persian"
 }
-7=
-{
+#7=
+#{
+#	name="Ottoman"
+#	culture="turkish"
+#	religion="sunni"
+#	coat_of_arms=
+#	{
+#		data=
+#		{
+#0 1 0 43 12 3 10 			}
+#		religion="sunni"
+#	}
+#	used_for_random=no
+#}
+
+7 = { #Muslim Frame
 	name="Ottoman"
 	culture="turkish"
 	religion="sunni"
-	coat_of_arms=
-	{
-		data=
-		{
-0 1 0 43 12 3 10 			}
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 3 #ar_dynasties_muslim.tga
+			texture_internal = 13
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
 		religion="sunni"
 	}
-	used_for_random=no
+	used_for_random = no
 }
+
 8=
 {
 	name="Basarab"
@@ -30859,12 +30879,35 @@
 	name="Gaznin"
 	culture="persian"
 }
-101866=
-{
+#101866=
+#{
+#	name="Khwarezmid"
+#	culture="turkish"
+#	religion="sunni"
+#}
+
+
+101866 = { #Muslim Frame
 	name="Khwarezmid"
 	culture="turkish"
 	religion="sunni"
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 3 #ar_dynasties_muslim.tga
+			texture_internal = 12
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="sunni"
+	}
+	used_for_random = no
 }
+
+
+
 101867=
 {
 	name="Razinid"
