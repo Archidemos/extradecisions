@@ -46,6 +46,9 @@ law_groups = {
 	roman_imperial_laws = {
 		law_type = realm
 	}
+	tsardom_imperial_laws = {
+		law_type = realm	
+	}
 	hre_realm_laws = {
 		law_type = realm
 	}
@@ -127,6 +130,114 @@ laws = {
 			}
 		}
 	}
+
+	tsardom_imperial_laws_0 = {
+		group = tsardom_imperial_laws
+		default = yes
+		allow = {
+			holder_scope = { government = tsardom_government }
+			NOT = { has_law = roman_imperial_laws_2 }
+			has_law = ze_administration_laws_2
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = tsardom_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = { factor = 0 }
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = tsardom_imperial_laws_1
+				revoke_law = tsardom_imperial_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = tsardom_imperial_laws_modifier_1
+				remove_character_modifier = tsardom_imperial_laws_modifier_2
+			}
+		}
+	}
+	tsardom_imperial_laws_1 = {
+		group = tsardom_imperial_laws
+		allow = {
+			holder_scope = { government = tsardom_government }
+			TECH_POPULAR_CUSTOMS >= 4
+			has_law = ze_administration_laws_2
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = tsardom_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = tsardom_imperial_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = tsardom_imperial_laws_0
+				revoke_law = tsardom_imperial_laws_2
+			}
+			holder_scope = {
+				remove_character_modifier = tsardom_imperial_laws_modifier_2
+				add_character_modifier = { name = tsardom_imperial_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		global_tax_modifier = 0.05
+		castle_vassal_tax_modifier = 0.025
+		city_vassal_tax_modifier = 0.05
+		retinuesize_perc = 0.25
+		knights_offensive = 0.05
+		knights_defensive = 0.05
+		demesne_size = 1
+	}
+	tsardom_imperial_laws_2 = {
+		group = tsardom_imperial_laws
+		allow = {
+			holder_scope = { government = tsardom_government }
+			TECH_NOBLE_CUSTOMS >= 5
+			NOT = { has_law = tsardom_imperial_laws_0 }
+			has_law = ze_administration_laws_2
+		}
+		potential = {
+			has_dlc = "Zeus"
+			holder_scope = { government = tsardom_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			holder_scope = {
+				remove_character_modifier = tsardom_imperial_laws_modifier_1
+				add_character_modifier = { name = tsardom_imperial_laws_modifier_2 inherit = yes years = -1 }
+			}
+			hidden_tooltip = {
+				revoke_law = tsardom_imperial_laws_0
+				revoke_law = tsardom_imperial_laws_1
+			}
+		}
+
+		global_tax_modifier = 0.15
+		castle_vassal_tax_modifier = 0.05
+		city_vassal_tax_modifier = 0.10
+		retinuesize_perc = 0.50
+		knights_offensive = 0.15
+		knights_defensive = 0.15
+		demesne_size = 3
+	}
 	
 	roman_imperial_laws_0 = {
 		group = roman_imperial_laws
@@ -201,15 +312,15 @@ laws = {
 	roman_imperial_laws_2 = {
 		group = roman_imperial_laws
 		allow = {
-			NOT = { has_law = roman_imperial_laws_0 }
 			holder_scope = { government = roman_imperial_government }
 			TECH_NOBLE_CUSTOMS >= 5
+			NOT = { has_law = roman_imperial_laws_0 }
 			has_law = ze_administration_laws_2
 		}
 		potential = {
 			has_dlc = "Zeus"
-			NOT = { holder_scope = { is_nomadic = yes } }
 			holder_scope = { government = roman_imperial_government }
+			NOT = { holder_scope = { is_nomadic = yes } }
 		}
 		ai_will_do = {
 			factor = 10
