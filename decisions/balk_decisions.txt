@@ -48,6 +48,19 @@ decisions = {
 					copy_title_history = PREV
 				}
 			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						ROOT = { government = tsardom_government }
+					}
+					ROOT = {
+						e_yugoslavia = {
+							set_title_flag = forced_tsardom_government
+						}
+						set_government_type = tsardom_government
+					}
+				}
+			}
 			k_croatia = { de_jure_liege = e_yugoslavia }
 			k_serbia = { de_jure_liege = e_yugoslavia }
 			k_bulgaria = { de_jure_liege = e_yugoslavia }
@@ -57,7 +70,7 @@ decisions = {
 			add_claim = d_adrianopolis
 			add_claim = d_oltenia
 			add_claim = d_wallachia
-			set_global_flag = yugoslavia_formed				
+			set_global_flag = yugoslavia_formed	
 			ROOT = {
 				any_demesne_title = {
 					limit = { 
