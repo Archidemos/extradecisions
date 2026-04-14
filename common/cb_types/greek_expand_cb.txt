@@ -20,16 +20,67 @@ unify_macedonia = {
 	can_use = {
 		NOT = { has_global_flag = alexander_conquered_persia }
 		ROOT = {
-			has_landed_title = e_macedonia
+			OR = {
+				has_landed_title = e_macedonia
+				has_landed_title = e_selucids
+				has_landed_title = e_ptolemy
+			}
 		}
 	}
 	
 	can_use_title = {
+		#FROM = {
+		#	OR = {
+		#		de_jure_liege = e_arabia
+		#		de_jure_liege = e_macedonia
+		#		de_jure_liege = e_persia
+		#		de_jure_liege = e_selucids
+		#	}
+		#}
+		OR = {
+			empire = {
+				OR = {
+					title = e_byzantium
+					title = e_macedonia
+					title = e_persia
+					title = e_selucids
+				}
+			}
+			title = k_egypt
+			title = k_syria
+			title = k_jerusalem
+			title = k_antioch
+			title = k_aljazira
+		}
+		# Target must have at least 3 counties within the target kingdom
 		FROM = {
-			OR = {
-				de_jure_liege = e_arabia
-				de_jure_liege = e_arabia
-				de_jure_liege = e_macedonia
+			num_of_realm_counties = {
+				value = 3
+				title = PREV
+			}
+		}
+		
+		# The attacker needs at least one county in the target kingdom, or a border
+		any_direct_de_jure_vassal_title = {
+			any_direct_de_jure_vassal_title = {
+				OR = {
+					holder_scope = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+					location = {
+						any_neighbor_province = {
+							owner = {
+								OR = {
+									character = ROOT
+									is_liege_or_above = ROOT
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

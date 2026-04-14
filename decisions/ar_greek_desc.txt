@@ -7,11 +7,16 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			NOR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+				has_landed_title = e_macedonia
+			}
+			NOT = { has_global_flag = diadochi_formed_macedonia }
 			NOT = { has_global_flag = unite_greece }
 			culture_group = byzantine
 		}
 		allow = {
-			independent = yes
 			culture = greek
 			ROOT = { tier = KING }
 			completely_controls = k_thrace
@@ -37,12 +42,14 @@ decisions = {
 					activate_title = { title = k_thrace status = no }
 				}
 			}
+			ROOT = { liege = { save_event_target_as = greek_liege } }
 			primary_title = {
 				k_macedonia = {
 					grant_title = ROOT
 					copy_title_laws = PREV
 				}
 			}
+			set_defacto_liege = event_target:greek_liege
 			hidden_tooltip = {
 				ROOT = {
 					any_demesne_title = {
@@ -94,6 +101,10 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			NOR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+			}
 			NOT = { has_global_flag = alexander_conquered_asia }
 			culture_group = byzantine
 			has_global_flag = unite_greece
@@ -178,6 +189,10 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			NOR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+			}
 			NOT = { has_global_flag = alexander_conquered_egypt }
 			culture = greek
 			has_global_flag = alexander_conquered_asia
@@ -202,7 +217,7 @@ decisions = {
 					k_syria = { de_jure_liege = e_macedonia }
 					k_jerusalem = { de_jure_liege = e_macedonia }
 				}
-			}		
+			}
 			custom_tooltip = {
 				text = "More Men-at-Arms will gather in your capital to fight for the glory of the Macedonian Empire."
 				while = {
@@ -243,6 +258,10 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			NOR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+			}
 			NOT = { has_global_flag = alexander_conquered_persia }
 			culture = greek
 			has_global_flag = alexander_conquered_asia
@@ -293,6 +312,756 @@ decisions = {
 				}
 			}
 			any_player = { narrative_event = { id = GREE.6 days = 2 } }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_selucids = { #Form the Selucid Empire
+		only_playable = yes
+		is_high_prio = yes	
+		ai_check_interval = 6
+
+		potential = {
+			NOR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_macedonia
+			}
+			NOT = { has_global_flag = selucids_formed }
+			culture = greek
+			capital_scope = {
+				OR = {
+					region = world_persia
+					region = world_middle_east_mesopotamia
+				}
+			}
+		}
+		
+		allow = {
+			independent = yes
+			culture = greek
+			prestige = 2000
+			completely_controls = k_mesopotamia
+			completely_controls = k_persia
+			OR = {
+				completely_controls = k_daylam
+				completely_controls = k_sistan
+			}
+		}
+		
+		effect = {
+			set_global_flag = selucids_formed
+			prestige = 2500
+			wealth = 500
+			ROOT = { liege = { save_event_target_as = top_liege } }
+			e_selucids = { grant_title = ROOT }
+
+			activate_title = { title = e_selucids status = yes }
+			k_caucasian_albania = { de_jure_liege = e_null }
+			k_persia = { de_jure_liege = e_selucids }
+			k_sistan = { de_jure_liege = e_selucids }
+			k_khorasan = { de_jure_liege = e_selucids }
+			k_daylam = { de_jure_liege = e_selucids }
+			k_mesopotamia = { de_jure_liege = e_selucids }
+			k_khwarezmia = { de_jure_liege = e_selucids }
+			k_mavarannahr = { de_jure_liege = e_selucids }
+			activate_title = { title = e_persia status = no }
+
+			custom_tooltip = {
+				text = "You will unlock a CB that allows you to reconquer the lost lands of the Empire of Alexander the Great"
+			}
+	
+			create_bloodline = {
+				type = ar_selucid_bloodline
+			}	
+			
+			c_baghdad = {
+				ROOT = { capital = PREV }
+				set_name = "Seleucia"
+				adjective = "Seleucian"
+			}
+			
+			custom_tooltip = {
+				text = "Peasants and Men-at-Arms alike will join your cause and gather in your capital."
+				while = {
+					count = 3
+					capital_scope = {
+						ROOT = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+								home = PREV
+								troops = {
+									archers = { 500 500 }
+									light_infantry = { 1000 1000 }
+									war_elephants = { 250 250 }
+									pikemen = { 500 500 }
+								}
+								attrition = 1.0
+								#maintenance = 0
+							}	
+						}
+					}
+				}
+			}
+			
+			custom_tooltip = {
+				text = "As they hear about the formation of the Selucid Empire, many Greek peasants and noblemen found an interest into moving into Seleucia, formely known as Baghdad. Because of this, the empire will be populated by Greeks all across."
+				hidden_tooltip = {
+					while = {
+						count = 10
+						ROOT = {
+							random_realm_province = {
+								limit = {
+									de_jure_liege_or_above = PREVPREV
+									OR = {
+										NOT = { culture = ROOT }
+										NOT = { religion = ROOT }
+									}
+								}
+								culture = ROOT
+								religion = ROOT
+								add_province_modifier = {
+									name = greek_settlement
+									years = -1
+								}
+								add_holding_slot = 1
+							}
+						}
+					}
+				}
+			}
+			
+			narrative_event = { id = GREE.11 days = 2 }
+			#any_player = { narrative_event = { id = GREE.10 days = 2 } }
+		}
+	}
+
+	form_ptolemy = { #Form the Ptolemaic Empire
+		only_playable = yes
+		is_high_prio = yes	
+		ai_check_interval = 6
+
+		potential = {
+			NOR = { 
+				has_landed_title = e_selucids
+				has_landed_title = e_macedonia
+			}
+			NOT = { has_global_flag = ptolemy_formed }
+			culture = greek
+			capital_scope = {
+				OR = {
+					region = world_africa_north
+					region = world_middle_east_jerusalem
+				}
+			}
+		}
+		
+		allow = {
+			independent = yes
+			culture = greek
+			prestige = 2000
+			completely_controls = k_egypt
+			completely_controls = k_syria
+			completely_controls = k_jerusalem
+		}
+		
+		effect = {
+			set_global_flag = ptolemy_formed
+			prestige = 2500
+			wealth = 500
+			ROOT = { liege = { save_event_target_as = top_liege } }
+			e_ptolemy = { grant_title = ROOT }
+
+			activate_title = { title = e_ptolemy status = yes }
+			k_egypt = { de_jure_liege = e_ptolemy }
+			k_jerusalem = { de_jure_liege = e_ptolemy }
+			k_syria = { de_jure_liege = e_ptolemy }
+			k_antioch = { de_jure_liege = e_ptolemy }
+			#activate_title = { title = e_persia status = no }
+
+			custom_tooltip = {
+				text = "You will unlock a CB that allows you to reconquer the lost lands of the Empire of Alexander the Great"
+			}
+	
+			create_bloodline = {
+				type = ar_ptolemy_bloodline
+			}	
+			
+			c_alexandria = {
+				ROOT = { capital = PREV }
+				set_name = "Alexandria"
+				adjective = "Alexandrian"
+			}
+			
+			custom_tooltip = {
+				text = "Peasants and Men-at-Arms alike will join your cause and gather in your capital."
+				while = {
+					count = 3
+					capital_scope = {
+						ROOT = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+								home = PREV
+								troops = {
+									archers = { 500 500 }
+									light_infantry = { 1000 1000 }
+									light_cavalry = { 250 250 }
+									pikemen = { 500 500 }
+								}
+								attrition = 1.0
+								#maintenance = 0
+							}	
+						}
+					}
+				}
+			}
+			
+			custom_tooltip = {
+				text = "As they hear about the formation of the Selucid Empire, many Greek peasants and noblemen found an interest into moving into Seleucia, formely known as Baghdad. Because of this, the empire will be populated by Greeks all across."
+				hidden_tooltip = {
+					while = {
+						count = 10
+						ROOT = {
+							random_realm_province = {
+								limit = {
+									de_jure_liege_or_above = PREVPREV
+									OR = {
+										NOT = { culture = ROOT }
+										NOT = { religion = ROOT }
+									}
+								}
+								culture = ROOT
+								religion = ROOT
+								add_province_modifier = {
+									name = greek_settlement
+									years = -1
+								}
+								add_holding_slot = 1
+							}
+						}
+					}
+				}
+			}
+			
+			narrative_event = { id = GREE.12 days = 2 }
+			#any_player = { narrative_event = { id = GREE.10 days = 2 } }
+		}
+	}
+
+	form_pergamon = { #Reform the Kingdom of Pergamon
+		only_playable = yes
+		is_high_prio = yes	
+		ai_check_interval = 6
+
+		potential = {
+			NOR = {
+				has_landed_title = e_macedonia
+				has_landed_title = e_selucids
+				has_landed_title = e_ptolemy
+			}
+			NOT = { has_global_flag = pergamon_formed }
+			culture = greek
+			capital_scope = {
+				region = world_asia_minor
+			}
+		}
+		
+		allow = {
+			culture = greek
+			prestige = 500
+			completely_controls = d_anatolia
+			completely_controls = d_cibyrrhaeot
+			completely_controls = d_thracesia
+			completely_controls = d_samos
+			completely_controls = d_opsikon
+		}
+		
+		effect = {
+			set_global_flag = pergamon_formed
+			prestige = 1000
+			wealth = 250
+			ROOT = { liege = { save_event_target_as = top_liege } }
+			k_pergamon = { grant_title = ROOT }
+			set_defacto_liege = event_target:top_liege
+
+			activate_title = { title = k_pergamon status = yes }
+			d_anatolia = { de_jure_liege = k_pergamon }
+			d_cibyrrhaeot = { de_jure_liege = k_pergamon }
+			d_thracesia = { de_jure_liege = k_pergamon }
+			d_samos = { de_jure_liege = k_pergamon }
+			d_opsikon = { de_jure_liege = k_pergamon }
+			k_pergamon = { de_jure_liege = e_byzantium }
+			
+			custom_tooltip = {
+				text = "Peasants and Men-at-Arms alike will join your cause and gather in your capital."
+				while = {
+					count = 2
+					capital_scope = {
+						ROOT = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+								home = PREV
+								troops = {
+									archers = { 500 500 }
+									light_infantry = { 1000 1000 }
+									light_cavalry = { 500 500 }
+									pikemen = { 250 250 }
+								}
+								attrition = 1.0
+								#maintenance = 0
+							}	
+						}
+					}
+				}
+			}
+			
+			any_player = { narrative_event = { id = GREE.9 days = 2 } }
+		}
+	}
+
+	develop_crimea = { #Reform the Bosporan Kingdom
+		only_playable = yes
+		is_high_prio = yes	
+		ai_check_interval = 6
+
+		potential = {
+			NOR = {
+				has_landed_title = e_macedonia
+				has_landed_title = e_selucids
+				has_landed_title = e_ptolemy
+			}
+			NOT = { has_global_flag = bosporan_formed }
+			OR = {
+				culture = greek
+				culture = crimean_gothic
+			}		
+			capital_scope = {
+				region = world_steppe_west
+			}
+		}
+		
+		allow = {
+			NOR = {
+				has_landed_title = e_macedonia
+				has_landed_title = e_selucids
+			}
+			OR = {
+				culture = greek
+				culture = crimean_gothic
+			}
+			prestige = 500
+			completely_controls = c_crimea
+			completely_controls = c_lukomorie
+			completely_controls = c_azov
+			completely_controls = c_tmutarakan
+			completely_controls = c_korchev
+			completely_controls = c_theodosia
+			completely_controls = c_cherson
+			completely_controls = c_theodoro
+		}
+		
+		effect = {
+			set_global_flag = bosporan_formed
+			prestige = 1000
+			wealth = 250
+			ROOT = { liege = { save_event_target_as = crimea_liege } }
+			k_bosporan_kingdom = { grant_title = ROOT }
+			set_defacto_liege = event_target:crimea_liege
+
+			activate_title = { title = k_bosporan_kingdom status = yes }
+			d_crimea = { de_jure_liege = k_bosporan_kingdom }
+			d_cherson = { de_jure_liege = k_bosporan_kingdom }
+			d_tmutarakan = { de_jure_liege = k_bosporan_kingdom }
+			d_azov = { de_jure_liege = k_bosporan_kingdom }
+			k_bosporan_kingdom = { de_jure_liege = e_byzantium }
+			
+			custom_tooltip = {
+				text = "Peasants and Men-at-Arms alike will join your cause and gather in your capital."
+				while = {
+					count = 2
+					capital_scope = {
+						ROOT = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+								home = PREV
+								troops = {
+									archers = { 500 500 }
+									light_infantry = { 1000 1000 }
+									light_cavalry = { 500 500 }
+									pikemen = { 250 250 }
+								}
+								attrition = 1.0
+								#maintenance = 0
+							}	
+						}
+					}
+				}
+			}
+			
+			c_cherson = {
+				location = {
+					add_holding_slot = 1
+					remove_province_modifier = nomad_agitation
+					add_province_modifier = {
+						name = bosporan_market
+						years = -1
+					}
+				}
+			}
+			c_theodosia = {
+				location = {
+					add_holding_slot = 1
+					remove_province_modifier = nomad_agitation
+					add_province_modifier = {
+						name = bosporan_market
+						years = -1
+					}
+				}
+			}
+			c_tmutarakan = {
+				location = {
+					add_holding_slot = 1
+					remove_province_modifier = nomad_agitation
+					add_province_modifier = {
+						name = bosporan_market
+						years = -1
+					}
+				}
+			}
+			
+			custom_tooltip = {
+				text = "Many castles, cities and temples will be built around the Sea of Azov, and the nomads will be expeled from these lands."
+				hidden_tooltip = {
+					c_crimea = {
+						grant_title = ROOT
+						location = { remove_province_modifier = nomad_agitation }
+					}
+					559 = {
+						culture = ROOT
+						religion = ROOT
+						capital_holding = {
+							convert_to = CASTLE
+							add_building = ca_wall_q_1
+							add_building = ca_wall_q_2
+							add_building = ca_wall_1
+							add_building = ca_wall_2
+							add_building = ca_keep_1
+							add_building = ca_keep_2
+							add_building = ca_militia_barracks_1
+							add_building = ca_militia_barracks_2
+							add_building = ca_training_grounds_1
+							add_building = ca_barracks_1
+							add_building = ca_barracks_2
+							add_building = ca_stable_1
+							add_building = ca_town_1
+							add_building = ca_town_2
+						}
+						build_holding = {
+							type = city
+							holder = ROOT
+						}
+						build_holding = {
+							type = temple
+							holder = ROOT
+						}
+					}
+					
+					c_lukomorie = {
+						grant_title = ROOT
+						location = { remove_province_modifier = nomad_agitation }
+					}
+					557 = {
+						capital_holding = {
+							convert_to = CASTLE
+							add_building = ca_wall_q_1
+							add_building = ca_wall_q_2
+							add_building = ca_wall_1
+							add_building = ca_wall_2
+							add_building = ca_keep_1
+							add_building = ca_keep_2
+							add_building = ca_militia_barracks_1
+							add_building = ca_militia_barracks_2
+							add_building = ca_training_grounds_1
+							add_building = ca_barracks_1
+							add_building = ca_barracks_2
+							add_building = ca_stable_1
+							add_building = ca_town_1
+							add_building = ca_town_2
+						}
+					}
+					
+					c_azov = {
+						grant_title = ROOT
+						location = { remove_province_modifier = nomad_agitation }
+					}
+					597 = {
+						culture = ROOT
+						religion = ROOT
+						capital_holding = {
+							convert_to = CASTLE
+							add_building = ca_wall_q_1
+							add_building = ca_wall_q_2
+							add_building = ca_wall_1
+							add_building = ca_wall_2
+							add_building = ca_keep_1
+							add_building = ca_keep_2
+							add_building = ca_militia_barracks_1
+							add_building = ca_militia_barracks_2
+							add_building = ca_training_grounds_1
+							add_building = ca_barracks_1
+							add_building = ca_barracks_2
+							add_building = ca_stable_1
+							add_building = ca_town_1
+							add_building = ca_town_2
+						}
+						build_holding = {
+							type = temple
+							holder = ROOT
+						}
+					}
+					c_theodosia = {
+						location = { remove_province_modifier = nomad_agitation }
+						grant_title = ROOT
+					}
+					598 = {
+						culture = ROOT
+						religion = ROOT
+					}
+					1699 = {
+						culture = ROOT
+						religion = ROOT
+					}
+					c_tmutarakan = {
+						location = { remove_province_modifier = nomad_agitation }
+						grant_title = ROOT
+						culture = ROOT
+						religion = ROOT
+					}
+					598 = {
+						culture = ROOT
+						religion = ROOT
+						capital_holding = {
+							convert_to = CASTLE
+							add_building = ca_wall_q_1
+							add_building = ca_wall_q_2
+							add_building = ca_wall_1
+							add_building = ca_wall_2
+							add_building = ca_keep_1
+							add_building = ca_keep_2
+							add_building = ca_militia_barracks_1
+							add_building = ca_militia_barracks_2
+							add_building = ca_training_grounds_1
+							add_building = ca_barracks_1
+							add_building = ca_barracks_2
+							add_building = ca_stable_1
+							add_building = ca_town_1
+							add_building = ca_town_2
+						}
+						build_holding = {
+							type = city
+							holder = ROOT
+						}
+						build_holding = {
+							type = temple
+							holder = ROOT
+						}
+					}
+					
+					c_korchev = {
+						location = { remove_province_modifier = nomad_agitation }
+						grant_title = ROOT
+						culture = ROOT
+						religion = ROOT
+					}
+					562 = {
+						culture = ROOT
+						religion = ROOT
+						capital_holding = {
+							convert_to = CASTLE
+							add_building = ca_wall_q_1
+							add_building = ca_wall_q_2
+							add_building = ca_wall_1
+							add_building = ca_wall_2
+							add_building = ca_keep_1
+							add_building = ca_keep_2
+							add_building = ca_militia_barracks_1
+							add_building = ca_militia_barracks_2
+							add_building = ca_training_grounds_1
+							add_building = ca_barracks_1
+							add_building = ca_barracks_2
+							add_building = ca_stable_1
+							add_building = ca_town_1
+							add_building = ca_town_2
+						}
+						build_holding = {
+							type = city
+							holder = ROOT
+						}
+						build_holding = {
+							type = temple
+							holder = ROOT
+						}
+					}
+				}
+			}
+			any_player = { narrative_event = { id = GREE.8 days = 2 } }
+		}
+	}
+	
+	form_macedonia_diadochis = { #Form Macedonian Empire as Selucids or Ptolemy
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			OR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+			}
+			culture_group = byzantine
+			NOT = { has_global_flag = diadochi_formed_macedonia }
+		}
+		
+		allow = {
+			independent = yes
+			OR = {
+				has_landed_title = e_ptolemy
+				has_landed_title = e_selucids
+			}
+			has_landed_title = c_byzantion
+			completely_controls = k_thrace
+			completely_controls = k_nikaea
+			completely_controls = k_cilician
+			completely_controls = k_anatolia
+			
+			completely_controls = k_persia
+			completely_controls = k_mesopotamia
+			OR = {
+				completely_controls = k_daylam
+				completely_controls = k_sistan
+			}
+			
+			completely_controls = k_egypt
+			completely_controls = k_syria
+			completely_controls = k_jerusalem
+			prestige = 3500
+		}
+		
+		effect = {
+			set_global_flag = alexander_conquered_asia
+			set_global_flag = alexander_conquered_egypt
+			set_global_flag = alexander_conquered_persia
+			set_global_flag = diadochi_formed_macedonia
+			
+			activate_title = { title = e_macedonia status = yes }
+			ROOT = { gain_title = e_macedonia }
+			hidden_tooltip = {
+				ROOT = {
+					any_demesne_title = {
+						limit = {
+							NOT = { title = e_macedonia }
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
+				e_byzantium = { holder_scope = { save_event_target_as = byz_emperor } }
+				event_target:byz_emperor = {
+					any_demesne_title = {
+						limit = { 
+							title = e_byzantium
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
+			}
+			prestige = 5000
+			piety = 2500
+			give_nickname = nick_the_great
+			create_bloodline = {
+				type = ar_alexander_bloodline
+			}
+			add_trait = great_conquerer
+			
+			any_player = { narrative_event = { id = GREE.14 days = 5 } }
+			
+			custom_tooltip = {
+				text = "The Eastern Roman de-jure will be replaced to Macedonia"
+				hidden_tooltip = {
+					activate_title = { title = e_byzantium status = no }
+					k_epirus = { de_jure_liege = e_macedonia }
+					k_thrace = { de_jure_liege = e_macedonia }
+					k_macedonia = { de_jure_liege = e_macedonia }
+					k_achaea = { de_jure_liege = e_macedonia }
+					k_candia = { de_jure_liege = e_macedonia }
+					k_nikaea = { de_jure_liege = e_macedonia }
+					k_anatolia = { de_jure_liege = e_macedonia }
+					k_cyprus = { de_jure_liege = e_macedonia }
+					k_trebizond = { de_jure_liege = e_macedonia }
+					k_cilician = { de_jure_liege = e_macedonia }
+					k_cilician = { de_jure_liege = e_macedonia }
+					k_serbia = { de_jure_liege = e_carpathia }
+					k_ragusa = { de_jure_liege = e_macedonia }
+					k_aljazira = { de_jure_liege = e_macedonia }
+					k_antioch = { de_jure_liege = e_macedonia }
+					k_bulgaria = { de_jure_liege = e_bulgaria }
+				}
+			}
+			custom_tooltip = {
+				text = "The lands of Ptolemy will be integrated to the Macedonian Empire."
+				hidden_tooltip = {
+					activate_title = { title = e_ptolemy status = no }
+					k_egypt = { de_jure_liege = e_macedonia }
+					k_jerusalem = { de_jure_liege = e_macedonia }
+					k_syria = { de_jure_liege = e_macedonia }
+					k_antioch = { de_jure_liege = e_macedonia }
+				}
+			}
+			custom_tooltip = {
+				text = "The lands of the Selucids will be integrated to the Macedonian Empire."
+				hidden_tooltip = {
+					activate_title = { title = e_selucids status = no }
+					activate_title = { title = e_persia status = no }
+					k_persia = { de_jure_liege = e_macedonia }
+					k_sistan = { de_jure_liege = e_macedonia }
+					k_khorasan = { de_jure_liege = e_macedonia }
+					k_daylam = { de_jure_liege = e_macedonia }
+					k_mesopotamia = { de_jure_liege = e_macedonia }
+					k_khwarezmia = { de_jure_liege = e_macedonia }
+					k_mavarannahr = { de_jure_liege = e_macedonia }
+					k_caucasian_albania = { de_jure_liege = e_null }
+				}
+			}
+			custom_tooltip = {
+				text = "More Men-at-Arms will gather in your capital to fight for the glory of the Macedonian Empire."
+				while = {
+					count = 2
+					capital_scope = {
+						ROOT = {
+							spawn_unit = {
+								owner = ROOT
+								province = PREV
+								home = PREV
+								troops = {
+									archers = { 500 500 }
+									light_infantry = { 1000 1000 }
+									light_cavalry = { 500 500 }
+									pikemen = { 250 250 }
+								}
+								attrition = 1.0
+								#maintenance = 0
+							}	
+						}
+					}
+				}
+			}
 		}
 		revoke_allowed = {
 			always = no

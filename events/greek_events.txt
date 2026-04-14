@@ -3,7 +3,7 @@ namespace = GREE
 narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
 	id = GREE.1
 	title = "Agread's Legacy"
-	desc = "It seems that the Greek States within the Eastern Roman Empire has won a decicive victory against the emperor. With this victory, the greeks have no proclaimed their independence and the dissolution of the Eastern Roman Empire. Instead of the influence of Rome, the Greeks are now going back to their roots and are looking back at Alexander the Great and his dynasty. Perhaps their ambitions is now to reach Persia once more to reform the Empire of Alexander the Great. Time will only tell what their next move will be."
+	desc = GREEDESC.1
 	
 	portrait = event_target:macedonia_emperor
 	picture = "GFX_evt_greek_army"
@@ -49,7 +49,7 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 	}
 	
 	option = { #At last
-		name = "Carefull.."
+		name = "Currious.."
 		ai_chance = { factor = 100 }
 	}
 }
@@ -76,7 +76,7 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 	}
 	
 	option = { #At last
-		name = "Carefull.."
+		name = "They keep expanding..."
 		ai_chance = { factor = 100 }
 	}
 }
@@ -145,7 +145,7 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 
 narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
 	id = GREE.5
-	title = "Macedonian Blood"
+	title = "The Macedonian Blood"
 	desc = "We have united Macedonia under one banner in which our people are happy for. The peasants even call you Agread's heir, but then again you also have your own dynasty to uphold. Perhaps we could proclaim to be the continuation of the Agreads or to glorify your current dynasty. What shall you do?"
 	
 	portrait = event_target:macedonia_emperor
@@ -193,7 +193,7 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 	}
 	
 	option = { #At last
-		name = "Carefull.."
+		name = "Going further and further..."
 		ai_chance = { factor = 100 }
 	}
 }
@@ -220,7 +220,198 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 	}
 	
 	option = { #At last
-		name = "Carefull.."
+		name = "At last in Egypt"
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.8
+	title = "The Bosporan Kingdom"
+	desc = "The County of Cherson has been within the Empire of the Eastern Romans for decades now and has been a hub of trade for the steppes and beyond. It seems however that the ambition of the ruler of these lands in Lower Crimea has conquered and surrounded the Sea of Azov and established the Ancient Kingdom of the Bosporan. This Kingdom has been arround untill the year 300 as a independent Greek Kingdom that was established durring the Greek Colonisation all over the Mediterranean Seas and beyond and has now been reborn into these troubling ages."
+	
+	portrait = event_target:bosporan_king
+	picture = "GFX_evt_greek_alexandria"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		k_bosporan_kingdom = { holder_scope = { save_event_target_as = bosporan_king } }
+	}
+	
+	option = { #At last
+		name = "Interesting.."
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.9
+	title = "The Kingdom of Pergamon"
+	desc = GREEDESC.9
+	
+	portrait = event_target:bosporan_king
+	picture = "GFX_evt_greek_alexandria"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		k_bosporan_kingdom = { holder_scope = { save_event_target_as = bosporan_king } }
+	}
+	
+	option = { #At last
+		name = "Interesting.."
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.10
+	title = "The Selucid Empire"
+	desc = GREEDESC.10
+	
+	portrait = event_target:bosporan_king
+	picture = "GFX_evt_greek_alexandria"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		k_bosporan_kingdom = { holder_scope = { save_event_target_as = bosporan_king } }
+	}
+	
+	option = { #At last
+		name = "Will Greece be safe..?"
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.11
+	title = "The Blood of Selucid"
+	desc = "We have united all of Persia under one banner in which our people are happy for. The peasants even call you the heir of Selucid, but then again you also have your own dynasty to uphold. Perhaps we could proclaim to be the continuation of the Selucids or to glorify your current dynasty. What shall you do?"
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	is_triggered_only = yes
+	
+	
+	option = { #At last
+		name = "We are the Selucids reborn.."
+		ai_chance = { factor = 100 }
+		ROOT = { dynasty = 2000030001 }
+		hidden_tooltip = { any_player = { character_event = { id = GREE.10 days = 1 } } }
+	}
+	
+	option = { #At last
+		name = "We will conquer under our own names!"
+		ai_chance = { factor = 0 }
+		prestige = 500
+		hidden_tooltip = { any_player = { character_event = { id = GREE.10 days = 1 } } }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.12
+	title = "The Blood Ptolemy"
+	desc = "We have united Egypt and the Levant under one banner in which our people are happy for. The peasants even call you the heir of Ptolemy, but then again you also have your own dynasty to uphold. Perhaps we could proclaim to be the continuation of the Ptolemaic dynasty or to glorify your current dynasty. What shall you do?"
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	is_triggered_only = yes
+	
+	
+	option = { #At last
+		name = "We are Ptolemy reborn.."
+		ai_chance = { factor = 100 }
+		ROOT = { dynasty = 2000030002 }
+		hidden_tooltip = { any_player = { character_event = { id = GREE.13 days = 1 } } }
+	}
+	
+	option = { #At last
+		name = "We will conquer under our own names!"
+		ai_chance = { factor = 0 }
+		prestige = 500
+		hidden_tooltip = { any_player = { character_event = { id = GREE.13 days = 1 } } }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.13
+	title = "Ptolemaic Egypt"
+	desc = GREEDESC.13
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_alexandria"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "At last in Egypt"
+		ai_chance = { factor = 100 }
+	}
+}
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = GREE.14
+	title = "Destiny of Makedonia"
+	desc = GREEDESC.14
+	
+	portrait = event_target:macedonia_emperor
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_ambience_city
+	
+	trigger = {
+		NOT = { has_global_flag = byz_shatter_event_fired_5 }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = byz_shatter_event_fired_5
+		e_macedonia = { holder_scope = { save_event_target_as = macedonia_emperor } }
+	}
+	
+	option = { #At last
+		name = "At last in Egypt"
 		ai_chance = { factor = 100 }
 	}
 }

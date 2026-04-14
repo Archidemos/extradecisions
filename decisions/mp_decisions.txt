@@ -459,7 +459,7 @@ decisions = {
 		only_playable = yes
 		
 		potential = {
-			ROOT = { age > 20 }
+			ROOT = { age >= 20 }
 			NOT = { has_character_modifier = changed_education_once }
 		}
 		
@@ -1161,7 +1161,7 @@ decisions = {
 			factor = 1 # decisions with the "is_mercenary" will not be calculated from the script
 		}
 	}
-
+	
 	raise_regement_order = {
 		only_playable = yes
 		is_high_prio = yes
