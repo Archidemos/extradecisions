@@ -7,10 +7,14 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			NOT = { tier = EMPEROR }
 			NOR = {
 				has_landed_title = e_ptolemy
 				has_landed_title = e_selucids
 				has_landed_title = e_macedonia
+				has_landed_title = e_byzantium
+				has_landed_title = e_west_rome
+				has_landed_title = e_roman_empire
 			}
 			NOT = { has_global_flag = diadochi_formed_macedonia }
 			NOT = { has_global_flag = unite_greece }
@@ -101,6 +105,7 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			has_landed_title = k_macedonia
 			NOR = {
 				has_landed_title = e_ptolemy
 				has_landed_title = e_selucids
@@ -189,6 +194,7 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			has_landed_title = e_macedonia
 			NOR = {
 				has_landed_title = e_ptolemy
 				has_landed_title = e_selucids
@@ -199,7 +205,6 @@ decisions = {
 		}
 		allow = {
 			independent = yes
-			has_landed_title = e_macedonia
 			completely_controls = k_egypt
 			completely_controls = k_antioch
 			completely_controls = k_jerusalem
@@ -258,6 +263,7 @@ decisions = {
 		
 		potential = {
 			date >= 760.1.1
+			has_landed_title = e_macedonia
 			NOR = {
 				has_landed_title = e_ptolemy
 				has_landed_title = e_selucids
@@ -268,7 +274,6 @@ decisions = {
 		}
 		allow = {
 			independent = yes
-			has_landed_title = e_macedonia
 			completely_controls = k_persia
 			completely_controls = k_mesopotamia
 			completely_controls = k_aljazira
@@ -330,6 +335,9 @@ decisions = {
 			NOR = {
 				has_landed_title = e_ptolemy
 				has_landed_title = e_macedonia
+				has_landed_title = e_byzantium
+				has_landed_title = e_west_rome
+				has_landed_title = e_roman_empire
 			}
 			NOT = { has_global_flag = selucids_formed }
 			culture = greek
@@ -450,6 +458,9 @@ decisions = {
 			NOR = { 
 				has_landed_title = e_selucids
 				has_landed_title = e_macedonia
+				has_landed_title = e_byzantium
+				has_landed_title = e_west_rome
+				has_landed_title = e_roman_empire
 			}
 			NOT = { has_global_flag = ptolemy_formed }
 			culture = greek
@@ -560,6 +571,7 @@ decisions = {
 		ai_check_interval = 6
 
 		potential = {
+			NOT = { tier = EMPEROR }
 			NOR = {
 				has_landed_title = e_macedonia
 				has_landed_title = e_selucids
@@ -632,6 +644,7 @@ decisions = {
 		ai_check_interval = 6
 
 		potential = {
+			NOT = { tier = EMPEROR }
 			NOR = {
 				has_landed_title = e_macedonia
 				has_landed_title = e_selucids
