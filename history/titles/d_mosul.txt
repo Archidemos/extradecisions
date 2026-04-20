@@ -87,7 +87,8 @@
 }
 1066.1.1 = { #Muslim b. Quraysh "granted" several towns in al-Jazira by Alp Arslan
 	clear_tribute_suzerain = e_persia
-	liege = e_persia
+	#liege = e_persia
+	liege = e_seljuk_turks
 }
 1085.1.1 = {
 	holder = 144016
@@ -129,6 +130,12 @@
 	liege = 0
 	holder = 144029
 }
+1128.1.1 = {
+	set_tribute_suzerain = {
+		who = e_seljuk_turks
+		type = permanent
+	}
+}
 1146.9.14 = {
 	holder = 144030
 }
@@ -140,6 +147,9 @@
 }
 1180.1.1 = {
 	holder = 144042
+}
+1186.1.1 = {
+	clear_tribute_suzerain = e_seljuk_turks
 }
 1186.3.1 = {
 	liege = k_egypt

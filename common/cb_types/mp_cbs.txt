@@ -144,7 +144,7 @@ infamy_cb = { #CB to shatter realm with high Threat
 			prestige = -1000
 			add_character_modifier = {
 				name = coallition_expelled_2
-				years = 2
+				years = 5
 			}
 			transfer_scaled_wealth = {
 				to = FROM
@@ -584,6 +584,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 	can_use = {
 		ROOT = {
 			independent = yes
+			NOT = { has_character_modifier = name = coallition_expelled }
 		}
 		FROM = {
 			#realm_size >= 1200
@@ -602,9 +603,9 @@ overextention_cb = { #CB to shatter realm with a too big realm
 		check_if_crusader_trigger = yes
 		any_player = { NOT = { any_war = { using_cb = overextention_cb } } }
 		any_player = { NOT = { has_character_modifier = coallition_expelled } }
-		#ROOT = {
-		#	prestige = 100
-		#}
+		ROOT = {
+			NOT = { has_character_modifier = coallition_expelled }
+		}
 		FROM = {
 			OR = {
 				tier = EMPEROR
@@ -702,7 +703,7 @@ overextention_cb = { #CB to shatter realm with a too big realm
 			prestige = -1000
 			add_character_modifier = {
 				name = coallition_expelled
-				years = 1
+				years = 5
 			}
 			transfer_scaled_wealth = {
 				to = FROM

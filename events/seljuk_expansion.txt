@@ -1,0 +1,745 @@
+namespace = SELJEX
+
+character_event = {
+	id = SELJEX.1
+
+	hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		log = "SELJEX.1 Triggered"
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_seljuk_turks
+			has_character_flag = seljuk_himself
+			NOT = { completely_controls_region = world_central_persia }
+			NOT = { has_global_flag = world_central_persia_conquered_sel }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = SELJEX.2 days = 2 } }
+		FROM = { character_event = { id = SELJEX.2 days = 2 } }
+		log = "SELJEX.1 Fired"
+	}
+}
+
+character_event = { #Timur being guided to conquer Persia
+	id = SELJEX.2
+	title = "Seljuk Expansion"
+	desc = "Onwards to our next target in Persia"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		log = "SELJEX.2 Fired"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
+		random_province = {
+			log = "SELJEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_central_persia
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = seljuk_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = SELJEX.3
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_seljuk_turks
+			has_character_flag = seljuk_himself
+			NOT = { completely_controls_region = world_middle_east_mesopotamia }
+			NOT = { has_global_flag = world_middle_east_mesopotamia_conquered_sel }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = SELJEX.4 days = 2 } }
+	}
+}
+
+character_event = { #Mongols being guided to conquer Mesopotamia
+	id = SELJEX.4
+	title = "Seljuk Expansion"
+	desc = "Onwards to our next target in Mesopotamia"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
+		random_province = {
+			log = "SELJEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_middle_east_mesopotamia
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = seljuk_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = SELJEX.5
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_seljuk_turks
+			has_character_flag = seljuk_himself
+			NOT = { completely_controls_region = world_asia_minor }
+			NOT = { has_global_flag = world_asia_minor_conquered_sel }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = SELJEX.6 days = 2 } }
+	}
+}
+
+character_event = { #Timur being guided to conquer Asia Minor
+	id = SELJEX.6
+	title = "Seljuk Expansion"
+	desc = "Onwards to our next target in Asia Minor"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
+		random_province = {
+			log = "SELJEX.2 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_asia_minor
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = seljuk_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = SELJEX.8
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_seljuk_turks
+			#has_character_flag = seljuk_himself
+			completely_controls_region = world_central_persia
+		}
+	}
+	
+	immediate = {
+		log = "SELJEX.8 Triggered"
+		FROM = { set_character_flag = seljuk_conqeured_persia }
+		set_global_flag = world_central_persia_conquered_sel
+	}
+}
+
+character_event = {
+	id = SELJEX.9
+
+    is_triggered_only = yes
+	hide_window = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_seljuk_turks
+			#has_character_flag = seljuk_himself
+			completely_controls_region = world_middle_east_mesopotamia
+		}
+	}
+	
+	immediate = {
+		FROM = { set_character_flag = seljuk_conqeured_mesopotamia }
+		set_global_flag = world_middle_east_mesopotamia_conquered_sel
+	}
+}
+
+character_event = {
+	id = SELJEX.10
+	title = "Sultanate of Rum"
+	desc = "My Liege, we have finally consolidated our control in Asia Minor. We should discuss our plans for the fate of these lands."
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		NOT = { has_global_flag = rum_spawned }
+		ROOT = {
+			ai = yes
+			has_landed_title = e_seljuk_turks
+			#has_character_flag = seljuk_himself
+			completely_controls_region = world_asia_minor
+		}
+	}
+	
+	immediate = { set_global_flag = rum_spawned }
+	
+	option = {
+		name = "Im listening.."
+		ROOT = { set_character_flag = seljuk_conqeured_asia }
+		ROOT = { character_event = { id = SELJEX.11 days = 2 } }
+		set_global_flag = world_asia_minor_conquered_sel
+		log = "SELJEX.10 Fired"
+	}
+}
+
+character_event = { #Mongols being guided to conquer Mesopotamia
+	id = SELJEX.11
+	title = "Sultanate of Rum"
+	desc = "As we have expanded our lands in Anatolia, it seems that governing these lands are harder than we tought. Perhaps it would be wise to set up a Seljuk Sultanate in these lands."
+	is_triggered_only = yes
+
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+
+	only_independent = yes
+
+	#trigger = {
+	#	has_landed_title = e_seljuk_turks
+	#	FROM = { title = c_nikaea }
+	#	NOT = { has_global_flag = rum_spawned }
+	#}
+	
+	option = {
+		name = "We will release a Seljuk Sultanate loyal to us!"
+		log = "SELJEX.11 Fired"
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = {
+			text = "A new character will rule over Anatolia under the Sultanate of Rum"
+			hidden_tooltip = {
+				create_character = {
+					name="Suleiman ibn Qutalmish"
+					dynasty=613
+					age = 20
+					attributes = {
+						martial=9
+						diplomacy=8
+						intrigue=5
+						stewardship=7
+					}
+					health = 6
+					fertility = 0.7
+					religion="sunni"
+					culture=turkish
+					trait="brave"
+					trait="ambitious"
+					trait="diligent"
+					trait="cavalry_leader"
+					trait="brilliant_strategist"
+					trait="great_conquerer"
+				}
+				new_character = {
+					set_character_flag = rum_himself
+					set_character_flag = is_special_character
+					gain_settlements_under_title = {
+						title = k_nikaea
+						enemy = ROOT
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_anatolia
+						enemy = ROOT
+						type = invasion
+					}
+					gain_settlements_under_title = {
+						title = k_trebizond
+						enemy = ROOT
+						type = invasion
+					}
+					create_bloodline = {
+						type = seljuk
+					}
+					k_rum = {
+						set_title_landless = { title = THIS status = yes }
+						grant_title = PREV
+						add_law = succ_turkish_succession
+					}
+					set_government_type = muslim_government
+					wealth = 5000
+					prestige = 2500
+					piety = 1500
+					add_claim = d_thrace
+					add_claim = c_byzantion
+					set_character_flag = rum_invader
+					while = {
+						count = 3
+						spawn_unit = {
+							province = 759 # Fes
+							#attrition = 1.0
+							troops = {
+								light_infantry = { 2000 2000 }
+								heavy_infantry = { 500 500 }
+								archers = { 1500 1500 }
+								light_cavalry = { 500 500 }
+								camel_cavalry = { 500 500 }
+							}
+						}
+					}
+					character_event = { id = RUME.101 } # Spawn Temujins generals
+					character_event = { id = RUME.102 } # Spawn courtiers
+				}
+			}
+		}
+		any_player = { narrative_event = { id = SELJEX.12 days = 2 } }
+	}
+
+	option = {
+		name = "We keep these lands under us"
+		ai_chance = { factor = 0 }
+		set_character_flag = spawned_rum
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to Timur in Singleplayer
+	id = SELJEX.12
+	title = "The Sultanate of Rum"
+	desc = EVTDESCRUME
+    is_triggered_only = yes
+	
+	portrait = k_rum
+	picture = GFX_evt_seljuk_army_march
+	border = GFX_event_narrative_frame_war
+
+	sound = ar_arab_army_shout
+	
+	option = {
+		name = "When will this stop.."
+	}
+}
+
+character_event = {
+	id = SELJEX.13
+
+	hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+		log = "SELJEX.1 Triggered"
+		FROM = {
+			ai = yes
+			NOT = { any_war = { count = 5 } }
+			has_landed_title = e_seljuk_turks
+			has_character_flag = seljuk_himself
+			NOT = { completely_controls_region = world_middle_east_jerusalem }
+			NOT = { has_global_flag = world_jerusalem_conquered_sel }
+		}
+	}
+	
+	immediate = {
+		FROM = { character_event = { id = SELJEX.14 days = 2 } }
+		FROM = { character_event = { id = SELJEX.14 days = 2 } }
+		log = "SELJEX.13 Fired"
+	}
+}
+
+character_event = { #Timur being guided to conquer Persia
+	id = SELJEX.14
+	title = "Seljuk Expansion"
+	desc = "Onwards to our next target in Jerusalem"
+
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		name = "Onwards!"
+		log = "SELJEX.14 Fired"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
+		random_province = {
+			log = "SELJEX.14 Option Works"
+            limit = {
+                has_owner = yes
+                region = world_middle_east_jerusalem
+                owner = {
+                    NOR = {
+                        character = ROOT
+                        is_liege_or_above = ROOT
+                    }
+                    top_liege = {
+                        reverse_has_cb = ROOT
+                    }
+                }
+				any_neighbor_province = {
+					owner = {
+						OR = {
+							character = ROOT
+							is_liege_or_above = ROOT
+						}
+					}
+				}
+            }
+			top_liege = {
+				ROOT = {
+					unsafe_war = {
+						casus_belli = seljuk_special_cb
+						target = PREV
+						thirdparty_title = PREVPREV
+						tier = KING
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = SELJEX.15
+
+	hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			ai = yes
+			has_landed_title = e_seljuk_turks
+			#has_character_flag = seljuk_himself
+			completely_controls_region = world_middle_east_jerusalem
+		}
+	}
+	
+	immediate = {
+		log = "SELJEX.15 Triggered"
+		FROM = { set_character_flag = seljuk_conqeured_jerusalem }
+		set_global_flag = world_jerusalem_conquered_sel
+	}
+}
+
+character_event = {
+	id = SELJEX.99
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_seljuk_turks
+			ai = yes
+			NOT = { has_global_flag = timur_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = SELJEX.100 } }
+		set_global_flag = timur_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to Timur in Singleplayer
+	id = SELJEX.100
+	title = "Seljuk's Legacy"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of Seljuk..."
+    is_triggered_only = yes
+	
+	portrait = e_seljuk_turks
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = sejluk_playable }
+	}
+
+	immediate = { e_seljuk_turks = { holder_scope = { save_event_target_as = play_as_seljuk } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_seljuk_turks = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_seljuk
+		set_global_flag = sejluk_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = sejluk_playable
+	}
+}
+
+#narrative_event = {
+#	id = SELJEX.101
+#	title = "Seljuk's defeat"
+#	desc = "After the disastrous defeat we have endured, the Seljuk Empire got shattered and the Qara Qoyunlu have settled in Mesopotamia.... Perhaps there is still hope, maybe one of my sons will rekate my Empire, but who.."
+#	picture = GFX_evt_burning_castle_hf
+#	border = GFX_event_narrative_frame_war
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		ai = no
+#	}
+#	
+#	immediate = {
+#		any_playable_ruler = {
+#			limit = {
+#				has_landed_title = k_daylam
+#			}
+#			save_event_target_as = play_daylam_timur
+#		}
+#		any_playable_ruler = {
+#			limit = {
+#				has_landed_title = k_khorasan
+#			}
+#			save_event_target_as = play_khorasan_timur
+#		}
+#		any_playable_ruler = {
+#			limit = {
+#				has_landed_title = k_sistan
+#			}
+#			save_event_target_as = play_sistan_timur
+#		}
+#		any_playable_ruler = {
+#			limit = {
+#				has_landed_title = k_persia
+#			}
+#			save_event_target_as = play_persia_timur
+#		}
+#	}
+#	
+#	option = {	# Stay as Timur of Daylam
+#		name = "No.. The Empire dies with me.."
+#		hidden_tooltip = {
+#			any_war = {
+#				limit = {
+#					attacker = { character = ROOT }
+#				}
+#				end_war = invalid
+#			}
+#		}
+#		set_global_flag = world_middle_east_mesopotamia_conquered_sel
+#		set_global_flag = world_asia_minor_conquered_sel
+#		set_global_flag = world_central_persia_conquered_sel
+#	}
+#	option = {	# Switch to Jahan of Khorasan
+#		name = "I put my faith on Jahan of Khorasan.."
+#		hidden_tooltip = {
+#			any_war = {
+#				limit = {
+#					attacker = { character = ROOT }
+#				}
+#				end_war = invalid
+#			}
+#		}
+#		set_global_flag = world_middle_east_mesopotamia_conquered_sel
+#		set_global_flag = world_asia_minor_conquered_sel
+#		set_global_flag = world_central_persia_conquered_sel
+#    	custom_tooltip = {
+#    		text = "You will play as Sultan Jahan of Khorasan"
+#    		if = {
+#    			limit = {
+#    				event_target:play_khorasan_timur = {
+#    					is_alive = yes
+#    					ai = yes
+#    					any_demesne_title = {
+#    						tier = COUNT
+#    					}
+#    				}
+#    			}
+#    			set_player_character = event_target:play_khorasan_timur
+#			}
+#    	}
+#	}
+#	option = {	# Switch to Umar of Sistan
+#		name = "I put my faith on Umar of Sistan.."
+#		hidden_tooltip = {
+#			any_war = {
+#				limit = {
+#					attacker = { character = ROOT }
+#				}
+#				end_war = invalid
+#			}
+#		}
+#		set_global_flag = world_middle_east_mesopotamia_conquered_sel
+#		set_global_flag = world_asia_minor_conquered_sel
+#		set_global_flag = world_central_persia_conquered_sel
+#		custom_tooltip = {
+#    		text = "You will play as Sultan Umar of Sistan"
+#    		if = {
+#    			limit = {
+#    				event_target:play_sistan_timur = {
+#    					is_alive = yes
+#    					ai = yes
+#    					any_demesne_title = {
+#    						tier = COUNT
+#    					}
+#    				}
+#    			}
+#    			set_player_character = event_target:play_sistan_timur
+#			}
+#    	}
+#	}
+#	option = {	# Switch to Rukh of Persia
+#		name = "I put my faith on Rukh of Persia.."	
+#		hidden_tooltip = {
+#			any_war = {
+#				limit = {
+#					attacker = { character = ROOT }
+#				}
+#				end_war = invalid
+#			}
+#		}
+#		set_global_flag = world_middle_east_mesopotamia_conquered_sel
+#		set_global_flag = world_asia_minor_conquered_sel
+#		set_global_flag = world_central_persia_conquered_sel
+#		custom_tooltip = {
+#    		text = "You will play as Sultan Rukh of Persia"
+#    		if = {
+#    			limit = {
+#    				event_target:play_persia_timur = {
+#    					is_alive = yes
+#    					ai = yes
+#    					any_demesne_title = {
+#    						tier = COUNT
+#    					}
+#    				}
+#    			}
+#    			set_player_character = event_target:play_persia_timur
+#			}
+#    	}
+#	}
+#}
+
+#narrative_event = { #Event for everyone about the formation
+#	id = SELJEX.200
+#	title = "Timur's Empire Reborn"
+#	desc = "After the dissolution of the Timurid Empire caused by their rivals, the Qara Qoyunlu. Chaos erupted in Persia to assume legitimacy and control over the Timurid Empire, this feud is caused between the sons of Timur that have recieved parts of the Empire. However, news goes arround that one of the Sons have suceeded to reunite lost borders and have re-established the Empire of Khan Timur."
+#
+#	is_triggered_only = yes
+#	
+#	picture = "GFX_evt_eagle_warriors"
+#	border = "GFX_event_narrative_frame_war"
+#	
+#	option = {
+#		name = "Great.. another Timurid on the throne"
+#	}
+#}

@@ -1498,7 +1498,11 @@ title_decisions = {
 				}
 			}
 			FROM = {
-				wealth = -250
+				scaled_wealth = {
+					value = -0.5
+					min = -250
+					max = -1000
+				}
 				add_character_modifier = {
 					name = develop_cooldown
 					months = 6
@@ -1689,7 +1693,11 @@ title_decisions = {
 				}
 			}
 			FROM = {
-				wealth = -250
+				scaled_wealth = {
+					value = -0.5
+					min = -250
+					max = -1000
+				}
 				add_character_modifier = {
 					name = develop_cooldown
 					months = 6

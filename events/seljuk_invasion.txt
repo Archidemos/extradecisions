@@ -50,7 +50,6 @@ narrative_event = {
 				total_years_played <= 1
 			}
 		}
-		NOT = { has_global_flag = seljuk_spawned }
 		NOT = {
 			has_game_rule = {
 				name = seljuk_invasion
@@ -58,60 +57,61 @@ narrative_event = {
 			}
 		}
 		controls_religion = yes # Let it happen for the Pope. He's always around.
+		NOT = { has_global_flag = ar_seljuk_spawned }
+		NOT = { has_global_flag = seljuk_already_exsists }
 	}
 	
 	immediate = {
-		set_global_flag = seljuk_spawned
+		log = "SELJ.100 Triggered"
 		activate_title = { title = e_seljuk_turks status = yes }
 		
-		#if = {
-		#	limit = {
-		#		has_global_flag = seljuk_born
-		#	}
-		#	if = {
-		#		limit = {
-		#			any_independent_ruler = {
-		#				has_character_flag = seljuk_himself
-		#				demesne_size = 1
-		#				ai = yes
-		#			}
-		#		}
-		#		log = "Temujin exists as independent ai"
-		#		random_independent_ruler = {
-		#			limit = {
-		#				has_character_flag = seljuk_himself
-		#				ai = yes
-		#			}
-		#			any_demesne_title = {
-		#				limit = {
-		#					tier = EMPEROR
-		#				}
-		#				set_title_flag = to_be_destroyed
-		#			}
-		#			e_seljuk_turks = {
-		#				grant_title = PREV
-		#				add_law = succ_turkish_succession
-		#			}
-		#			any_demesne_title = {
-		#				limit = {
-		#					has_title_flag = to_be_destroyed
-		#				}
-		#				activate_title = { title = THIS status = no }
-		#				destroy_landed_title = THIS
-		#			}
-		#			wealth = 12000
-		#			prestige = 10000
-		#			set_character_flag = is_special_character
-		#			set_character_flag = seljuk_invader
-		#			character_event = { id = SELJ.103 } # Spawn troops
-		#			character_event = { id = SELJ.104 days = 1 } # Spawn population
-		#			create_bloodline = {
-		#				type = seljuk
-		#			}
-		#		}
-		#		break = yes
-		#	}
-		#}
+		if = {
+			limit = {
+				any_character = {
+					has_character_flag = seljuk_himself
+					#demesne_size = 1
+					ai = yes
+				}
+			}
+			any_character = {
+				limit = {
+					has_character_flag = seljuk_himself
+					#demesne_size = 1
+					ai = yes
+				}
+				save_event_target_as = is_seljuk_ar
+				set_character_flag = ar_is_sejluk_ar
+			}
+			event_target:is_seljuk_ar = {
+				trait="great_conquerer"
+				set_character_flag = is_special_character
+				set_character_flag = seljuk_invader
+				create_bloodline = {
+					type = seljuk
+				}
+				any_demesne_title = {
+					limit = {
+						tier = EMPEROR
+						NOT = { title = e_seljuk_turks }
+					}
+					activate_title = { title = THIS status = no }
+					destroy_landed_title = THIS
+				}
+				e_seljuk_turks = {
+					set_title_landless = { title = THIS status = yes }
+					grant_title = PREV
+					add_law = succ_turkish_succession
+				}
+				wealth = 12000
+				prestige = 10000
+				piety = 5000
+				population = 50000
+				character_event = { id = SELJ.102 } # Spawn courtiers
+				character_event = { id = SELJ.103 } # Spawn troops
+				character_event = { id = SELJ.104 days = 1 } # Spawn population
+				set_global_flag = ar_seljuk_spawned
+			}
+		}
 		if = {
 			limit = {
 				NOT = {
@@ -131,7 +131,7 @@ narrative_event = {
 					intrigue=5
 					stewardship=7
 				}
-				health = 6
+				health = 8
 				fertility = 0.7
 				religion="sunni"
 				culture=turkish
@@ -145,9 +145,9 @@ narrative_event = {
 			new_character = {
 				set_character_flag = seljuk_himself
 				set_character_flag = is_special_character
-				create_bloodline = {
-					type = bloodline_timur
-				}
+				#create_bloodline = {
+				#	type = seljuk
+				#}
 				e_seljuk_turks = {
 					set_title_landless = { title = THIS status = yes }
 					grant_title = PREV
@@ -163,8 +163,10 @@ narrative_event = {
 				character_event = { id = SELJ.102 } # Spawn courtiers
 				character_event = { id = SELJ.103 } # Spawn troops
 				character_event = { id = SELJ.104 days = 1 } # Spawn population
+				set_global_flag = seljuk_spawned
+				set_global_flag = ar_seljuk_spawned
 			}
-		}			
+		}
 		634 = {
 			kingdom = {
 				e_seljuk_turks = {
@@ -236,7 +238,7 @@ character_event = {
 		}
 		create_character = {
 			name="Arslan Yabgu"
-			age = 30
+			age = 20
 			dynasty = 613
 			religion="sunni"
 			culture=turkish
@@ -259,7 +261,7 @@ character_event = {
 		}
 		create_character = {
 			name="Mikail ibn Seljuk" 
-			age = 27
+			age = 18
 			dynasty = 613
 			religion="sunni"
 			culture=turkish
@@ -274,7 +276,7 @@ character_event = {
 		}
 		create_character = {
 			name="Yusuf Inal"
-			age = 24
+			age = 17
 			dynasty = 613
 			religion="sunni"
 			culture=turkish
@@ -288,7 +290,7 @@ character_event = {
 		}
 		create_character = {
 			name="Yûnus"
-			age = 29
+			age = 17
 			dynasty = 613
 			religion="sunni"
 			culture=turkish
@@ -545,6 +547,206 @@ character_event = {
 		}
 		spawn_unit = {
 			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 906 # Tuul
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
+			attrition = 0
+			troops =
+			{
+				light_cavalry = { 2750 2750 }
+				horse_archers = { 2250 2250 }
+				knights = { 500 500 }
+			}
+		}
+		spawn_unit = {
+			province = 635 # Khilok
 			attrition = 0
 			troops =
 			{

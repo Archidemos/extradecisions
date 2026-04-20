@@ -733,6 +733,7 @@ character_event = { #Character Event to delay the Province event to trigger the 
 
 	
 	immediate = {
+		log = "MP.019 Triggered"
 		random_province = {
 			limit = { has_owner = yes }
 			province_event = { id = MP.020 days = 8 }
@@ -752,6 +753,7 @@ province_event = { #Province event that will trigger the Seljuk Invasion
 	}
 	
 	immediate = {
+		log = "MP.020 Triggered"
 		set_global_flag = seljuk_instant_invader_part_2
 		k_papal_state = { holder_scope = { narrative_event = { id = SELJ.100 } } }
 	}
