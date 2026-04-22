@@ -26,7 +26,9 @@ character_event = { #Event to give all Kings/Emperors a Event Target and proceed
 		NOT = { has_landed_title = e_hip }
 		is_nomadic = no
 		is_tribal = no
+		rebel = no
 		
+		NOT = { government = ar_rebel_government }
 		NOT = { government = merchant_republic_government }
 		NOT = { government = ar_confederation_government }
 		#NOT = { government = pirate_republic_government }

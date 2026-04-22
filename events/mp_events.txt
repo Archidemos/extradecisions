@@ -2519,12 +2519,6 @@ character_event = { #Character Event to delay the Province event to trigger the 
 									is_tributary = { type = hre_imperial suzerain = PREV }
 								}
 							}
-							NOT = {
-								is_tributary = {
-									type = hre_free_imp_city
-									suzerain = ROOT
-								}
-							}
 							lower_tier_than = PREV
 						}
 						set_defacto_liege = ROOT
@@ -2564,6 +2558,104 @@ narrative_event = { #The Envoy has been recieved by the defenders of the Holy Wa
 		ai_chance = { factor = 100 }
 	}
 }
+
+
+character_event = { #Character Event to delay the Province event to trigger the Berber Invasion for Instant Game rule
+	id = MP.502
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		start_date >= 992.1.1
+		has_game_rule = {
+			name = shatter_france_rule
+			value = on
+		}
+		NOT = { has_global_flag = shatter_france_event_fired }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		k_france = {
+			holder_scope = {
+				any_vassal = {
+					limit = {
+						higher_tier_than = BARON
+						is_landed = yes
+					}
+					set_defacto_liege = THIS
+					if = {
+						limit = {
+							NOT = { is_republic = yes }
+						}
+						k_france = {
+							holder_scope = {
+								make_tributary = { who = PREVPREV tributary_type = appanage }
+							}
+						}
+					}
+				}
+				any_demesne_title = {
+					limit = {
+						OR = {
+							tier = DUKE
+							tier = KING
+						}
+					}
+					any_de_jure_vassal = {
+						limit = {
+							k_france = {
+								any_tributary = {
+									character = PREVPREVPREV
+									is_tributary = { type = appanage suzerain = PREV }
+								}
+							}
+							lower_tier_than = PREV
+						}
+						set_defacto_liege = ROOT
+					}
+				}
+			}
+		}
+		set_global_flag = shatter_france_event_fired
+		any_player = { narrative_event = { id = MP.503 days = 5 } }
+	}
+}
+
+
+narrative_event = { #The Envoy has been recieved by the defenders of the Holy War
+	id = MP.503
+	title = "The Appanages of France"
+	desc = "As the Kingdom of France consolidated its presence in Western Europe, another dynasty has taken the Kingdom of France from the Carolingians. Because of the collapse of Carolingian authority, many French Dukes have seen this as an oppertunity to seize power to become semi-independent but still tied to the Kingdom of France. These so called semi-independent Dukes are called, Appanages. The King could attempt to restore order and centralise the Kingdom of France, or even make these semi-independent Dukes stronger to use them in times of war. However, this could also go wrong and the Kingdom of France could lose their grip of their Appanages. Time will only tell how this will end."
+	
+	portrait = event_target:france_king
+	picture = "GFX_evt_french_army_march"
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		is_save_game = no
+		NOT = { has_global_flag = france_shatter_event_fired }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = france_shatter_event_fired
+		k_france = { holder_scope = { save_event_target_as = france_king } }
+	}
+	
+	option = { #At last
+		name = "Pour le Roi!"
+		ai_chance = { factor = 100 }
+	}
+}
+
 
 character_event = {
 	id = MP.401
