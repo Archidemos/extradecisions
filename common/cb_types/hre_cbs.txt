@@ -37,11 +37,13 @@ hre_imperial_trib_cb = {
 					region = world_europe_west_germania
 				}
 			}
-			NOR = { 
-				tier = KING
-				tier = EMPEROR
-			}
+			#NOR = { 
+			#	tier = KING
+			#	tier = EMPEROR
+			#}
+			NOT = { tier = EMPEROR }
 			NOT = { is_offmap_governor = yes }
+			rebel = no
 		}
 	}
 
@@ -275,6 +277,9 @@ expand_hre_cb = { # New6
 			#top_liege = {
 			#	religion = ROOT
 			#}
+		}
+		FROM = {
+			rebel = no
 		}
 	}
 	can_use_title = {
