@@ -2223,20 +2223,20 @@ character_event = {
 	}
 }
 
-## Courtier informed he/she won the case and is now new regent.	
+## Courtier informed he/she won the case and is now new regent.
 character_event = {
 	id = 61217
-	desc = EVTDESC61217
+	desc = "You have successfully made your case at court, and will now propose the change of Regent to your liege."
 	picture = GFX_evt_throne_room
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = EVTOPTA61217
-		give_minor_title = title_regent
+		save_event_target_as = ar_won_regency
 		hidden_tooltip = {
 			liege = {
-				character_event = {	id = 61236 }
+				character_event = {	id = 61236 days = 2 }
 			}
 		}
 	}
@@ -3108,14 +3108,29 @@ character_event = {
 ## Ruler informed about the new Regent after intrigue.
 character_event = {
 	id = 61236
-	desc = EVTDESC61236
+	desc = "One of your courtiers came to seek an audiance and has proposed to you that he should be made Regent instead."
 	picture = GFX_evt_shadowy_cabal
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTA4017
+		name = "Very well.."
+		event_target:ar_won_regency = {
+			give_minor_title = title_regent
+		}
+		prestige = -150
 	}
+	option = { #Courtier hates you
+		name = "I have the final say!"
+		event_target:ar_won_regency = {
+			opinion = {
+				who = ROOT
+				years = 5
+				modifier = opinion_hate
+			}
+		}
+	}
+	
 }
 
 ## Courtier informed Regent refuses challenge.
