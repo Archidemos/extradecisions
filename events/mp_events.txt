@@ -806,53 +806,54 @@ province_event = { #Province event that will trigger the Rum Invasion
 	}
 }
 
-###Instantly Golden_Horde Empire Spawn
-#
-#character_event = { #Character Event to delay the Province event to trigger the Golden_Horde Invasion for Instant Game rule
-#	id = MP.027
-#
-#	hide_window = yes
-#	is_triggered_only = yes
-#	
-#	only_playable = yes
-#	religion = catholic
-#
-#	trigger = {
-#		has_game_rule = {
-#			name = gold_horde_invasion
-#			value = test
-#		}
-#		NOT = { has_global_flag = golden_instant_invader_part_1 }
-#		is_save_game = no
-#		controls_religion = yes
-#	}
-#
-#	
-#	immediate = {
-#		random_province = {
-#			limit = { has_owner = yes }
-#			province_event = { id = MP.028 days = 13 }
-#		}
-#		set_global_flag = golden_instant_invader_part_1
-#	}
-#}
-#
-#province_event = { #Province event that will trigger the Golden_Horde Invasion
-#	id = MP.028
-#
-#	hide_window = yes
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		NOT = { has_global_flag = golden_instant_invader_part_2 }
-#	}
-#	
-#	immediate = {
-#		set_global_flag = golden_instant_invader_part_2
-#		k_papal_state = { holder_scope = { narrative_event = { id = GOL.100 } } }
-#	}
-#}
-#
+##Instantly Aztec Empire Spawn
+
+character_event = { #Character Event to delay the Province event to trigger the Aztec Invasion for Instant Game rule
+	id = MP.027
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+	religion = catholic
+
+	trigger = {
+		has_game_rule = {
+			name = aztec_invasion
+			value = test
+		}
+		NOT = { has_global_flag = aztec_instant_invader_part_1 }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		random_province = {
+			limit = { has_owner = yes }
+			province_event = { id = MP.028 days = 13 }
+		}
+		set_global_flag = aztec_instant_invader_part_1
+	}
+}
+
+province_event = { #Province event that will trigger the Aztec Invasion
+	id = MP.028
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = aztec_instant_invader_part_2 }
+	}
+	
+	immediate = {
+		k_papal_state = { holder_scope = { province_event = { id = AZT.96 } } }
+		set_global_flag = aztec_instant_invader_part_2
+		#k_papal_state = { holder_scope = { province_event = { id = SSI.1 } } }
+	}
+}
+
 ##Events for the Golden Horde and the Mongol Empire to not clash with eachother
 
 character_event = { #Event for the Pope to send the Golden Horde tributary proposal to the Mongol Empire
@@ -1833,6 +1834,24 @@ character_event = {
 	}
 }
 
+character_event = {
+    id = MP.111
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		start_date = 867.1.1
+		has_landed_title = c_nantes
+		is_save_game = no
+		NOT = { has_global_flag = haestein_picked_tales }
+    }
+
+    immediate = {
+		set_global_flag = gotland_converted_republic
+		narrative_event = { id = HAES.10 days = 3 }
+    }
+}
 
 character_event = { #Removes the realm nerf modifiers when you get usurped
     id = MP.200

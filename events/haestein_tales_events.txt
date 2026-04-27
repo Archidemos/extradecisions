@@ -1,0 +1,86 @@
+namespace = HAES
+
+character_event = {
+	id = HAES.10
+    hide_window = yes
+    is_triggered_only = yes
+	
+	trigger = {
+		#date >= 1000.1.1
+		is_save_game = no
+		NOT = { has_global_flag = haestein_set }
+	}
+	
+	immediate = {
+		set_global_flag = haestein_set
+		c_nantes = {
+			holder_scope = {
+				narrative_event = { id = HAES.1 days = 4 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HAES.1
+	title = "The Tales of Haesteinn"
+	desc = "You wake up this particular morning and look outside to the sea. You figure that there must be more land out there to conquer instead of staying in France. Now you are stuck with a dilema, you either choose to go out on an adventure or figure that its not worth the effort."
+	
+	is_triggered_only = yes	
+	
+	#trigger = {
+	#	date >= 1000.1.1
+	#	is_save_game = no
+	#}
+	
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	option = { #Haesteinn will stay
+		name = "We stay where we are"
+		ai_chance = { factor = 90 }
+	}
+	
+	option = { #Haesteinn will go on an adventure
+		name = "We go on an adventure!"
+		ai_chance = { factor = 10 }
+		
+		ROOT = {
+			b_nantes = {
+				convert_to = tribal
+			}
+		}
+		
+		set_government_type = tribal_government
+		
+		wealth = 250
+		prestige = 2500
+		piety = 100
+		spawn_fleet = {
+			province = 1788 # Land's End
+			troops = {
+				galleys = { 150 150 }
+			}
+		}
+		while = {
+			count = 15
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 100 100 }
+							light_infantry = { 200 200 }
+							pikemen = { 50 50 }
+							heavy_infantry = { 100 100 }
+							light_cavalry = { 50 50 }
+						}
+						#attrition = 1.0
+						#disband_on_peace = yes
+					}
+				}
+			}
+		}
+	}
+}

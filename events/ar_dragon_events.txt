@@ -195,7 +195,7 @@ narrative_event = { #Cave is found
 		name = "Stay cautious, and move forward."
 		hidden_tooltip = {
 			random_list = {
-				65 = {
+				60 = {
 					narrative_event = { id = DRAG.6 days = 20 } #The Cave is empty
 				}
 				20 = {
@@ -285,10 +285,10 @@ narrative_event = { #Dragon is found
 		prestige = 1000
 		hidden_tooltip = {
 			random_list = {
-				65 = {
+				70 = {
 					narrative_event = { id = DRAG.9 days = 2 } #Dragon defeats you
 				}
-				20 = {
+				30 = {
 					narrative_event = { id = DRAG.11 days = 2 } #Dragon is at your mercy
 				}
 			}
@@ -298,7 +298,7 @@ narrative_event = { #Dragon is found
 		name = "Perhaps it needs gentleness.."
 		piety = 1000
 		trigger = { 
-			learning = 15
+			learning >= 15
 		}
 		tooltip_info = learning
 		
@@ -307,7 +307,26 @@ narrative_event = { #Dragon is found
 				60 = {
 					narrative_event = { id = DRAG.10 days = 2 } #Dragon defeats you
 				}
-				30 = {
+				40 = {
+					narrative_event = { id = DRAG.11 days = 2 } #Dragon is at your mercy
+				}
+			}
+		}
+	}
+	option = { #Tame the dragon in peace
+		name = "Let us be stragetical men, on my mark.."
+		piety = 1000
+		trigger = { 
+			martial >= 15
+		}
+		tooltip_info = martial
+		
+		hidden_tooltip = {
+			random_list = {
+				60 = {
+					narrative_event = { id = DRAG.10 days = 2 } #Dragon defeats you
+				}
+				40 = {
 					narrative_event = { id = DRAG.11 days = 2 } #Dragon is at your mercy
 				}
 			}
@@ -333,6 +352,7 @@ narrative_event = { #Dragon defeats you
 	
 	option = { #Take the bones home
 		name = "God have mercy..."
+		hidden_tooltip = { remove_trait = travelling }
 		random_list = {
 			55 = { #You ride the dragon
 				add_trait = wounded
