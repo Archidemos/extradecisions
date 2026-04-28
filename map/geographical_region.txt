@@ -422,6 +422,40 @@ world_middle_east_arabia = {
         d_sinai
     }
 }
+
+world_india_deccan = {
+	duchies = {
+		#Maharastra
+		d_vidharba d_konkana d_nasikya d_devagiri d_rattapadi
+		#Karnata
+		d_kalyani d_gangavadi d_nulambavadi d_raichur_doab
+		#Tamilakam
+		d_pandya_nadu d_chera_nadu
+		#Telingana
+		d_warangal d_racakonda
+	}
+}
+world_india_rajastan = { # Rajastan
+	duchies = {
+		# Sindh
+		d_sauvira d_bhakkar d_multan
+		# Panchanada
+		d_lahore d_gandhara d_trigarta
+		# Kuru
+		d_kuru d_haritanaka d_mathura
+		# Gujarat
+		d_anartta d_saurashtra d_lata d_gurjara_mandala
+		# Rajputana
+		d_maru d_jangladesh d_stravani d_medapata d_ajmer
+		# Malwa
+		d_dadhipadra d_akara_dasarna d_anupa
+		# Panchala
+		d_kanyakubja d_vodamayutja d_nisada d_saryupara
+		# Cedi
+		d_dahala d_jejakabhukti
+	}
+}
+
 world_central_persia = {
     duchies = {
         d_jebal
@@ -588,6 +622,12 @@ world_middle_east = {
         world_middle_east_jerusalem
 		world_middle_east_mesopotamia
     }
+}
+world_india = { # India
+	regions = {
+		world_india_rajastan 
+		world_india_deccan
+	}
 }
 world_persia = {
     regions = {
