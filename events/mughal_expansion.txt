@@ -1,0 +1,55 @@
+namespace = MUGEX
+
+character_event = {
+	id = MUGEX.99
+	hide_window = yes
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_mughals
+			ai = yes
+			NOT = { has_global_flag = mughals_playable_triggered }
+		}
+	}
+
+	immediate = {
+		any_player = { narrative_event = { id = MUGEX.100 } }
+		set_global_flag = mughals_playable_triggered
+	}
+}
+
+narrative_event = { #Giving the possibility to switch to Timur in Singleplayer
+	id = MUGEX.100
+	title = "Babur's Legacy"
+	desc = "Ever since you have heard about this mighty conquerer that has united their people and are now conquering the world makes you feel inspired. If only that could be you in the boots of the Mughals..."
+    is_triggered_only = yes
+	
+	portrait = e_mughals
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = mughals_playable }
+	}
+
+	immediate = { e_mughals = { holder_scope = { save_event_target_as = play_as_aztec } } }
+	
+	option = {
+		name = "If only it could be me.."
+		
+		trigger = { e_mughals = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_mughals
+		set_global_flag = mughals_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = mughals_playable
+	}
+}

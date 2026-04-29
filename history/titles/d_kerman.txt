@@ -83,16 +83,36 @@
 }
 # 1032-1036 Ghaznavid
 1048.1.1 = {
-	liege = k_khorasan
+	#liege = k_khorasan
+	set_tribute_suzerain = {
+		who = k_khorasan
+		type = permanent
+	}
+	liege = 0
 	holder = 3041
 }
+
+1056.1.1 = {
+	clear_tribute_suzerain = k_khorasan
+	liege = k_kerman
+	holder = 3041
+}
+
 1073.4.17 = {
 	#liege = e_persia
-	liege = e_seljuk_turks
+	#liege = e_seljuk_turks
 	holder = 144025
 }
+1073.4.17 = {
+	set_tribute_suzerain = {
+		who = e_seljuk_turks
+		type = permanent
+	}
+}
+
 1085.1.1 = {
 	holder = 144027
+	liege = k_kerman
 }
 1097.1.1 = {
 	holder = 144028
@@ -112,6 +132,7 @@
 1169.1.1 = {
 	holder = 144037
 }
+
 1174.1.1 = {
 	holder = 144038
 }
@@ -123,6 +144,8 @@
 }
 1187.1.1 = {
 	#historical_nomad = yes
+	clear_tribute_suzerain = e_seljuk_turks
+	liege = e_seljuk_turks
 	holder = 93256
 }
 1193.1.1 = {
@@ -144,6 +167,7 @@
 }
 1209.1.1 = {
 	#historical_nomad = no
+	liege = e_khwarezmia
 	holder = 93246
 }
 1213.1.1 = {
@@ -151,7 +175,7 @@
 	holder = 93054
 }
 1221.1.1 = {
-	liege = 0
+	liege = e_khwarezmia
 	holder = 93258
 }
 1223.1.1 = {
@@ -163,7 +187,11 @@
 1230.1.1 = {
 	liege = e_mongol_empire
 }
-1234.2.10 = {
+1235.1.1 = {
+	liege = e_china_west_governor
+}
+1235.1.1 = {
+	liege = 0
 	set_tribute_suzerain = {
 		who = e_china_west_governor
 		type = offmap

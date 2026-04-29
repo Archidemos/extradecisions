@@ -973,3 +973,290 @@ migration_cb = { #CB to shatter realm with a too big realm
 		#}
 	}
 }
+
+
+hundered_years_war_cb = {
+	name = CB_NAME_HUNDERED_WAR
+	war_name = WAR_NAME_HUNDERED_WAR
+	sprite = 7
+	truce_days = 3650
+	hostile_against_others = yes
+	is_permanent = no
+	can_ask_to_join_war = yes
+
+	infamy_modifier = 1.25
+	
+	sort_priority = 100000
+
+	on_add = {
+		hidden_tooltip = { fire_haruspicy_event_effect = yes }
+		if = {
+			limit = { defender = { is_offmap_governor = offmap_china } }
+			attacker = {  
+				sound_effect = china_angered_emperor
+				detract_grace_super_huge_effect = yes 
+			}
+		}
+	}
+
+	can_use = {
+		always = yes
+	}
+	
+	is_valid = {
+		always = yes
+	}
+	
+	is_valid_title = {
+		FROM = {
+			any_realm_province = {
+				de_jure_liege_or_above = PREVPREV
+			}
+		}
+	}
+
+	on_success = {
+		ROOT = {
+			prestige = 1500
+			show_scope_change = no
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_ambition = obj_strengthen_religion
+					}
+					change_variable = { which = strengthen_religion value = 1 }
+				}
+			}
+			if = {
+				limit = {
+					uses_decadence = yes
+					FROM = { NOT = { uses_decadence = yes } }
+				}
+				participation_scaled_decadence = -20
+			}
+			character_event = { id = HFP.41090 days = 2 }
+		}
+		FROM = {
+			disband_event_forces = yes
+			show_scope_change = no
+			prestige = -200
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 200 
+				if = {
+					limit = {
+						uses_decadence = yes
+						FROM = { NOT = { uses_decadence = yes } }
+					}
+					participation_scaled_decadence = -20
+				}
+				hidden_tooltip = {
+					if = {
+						limit = {
+							has_ambition = obj_strengthen_religion
+						}
+						change_variable = { which = strengthen_religion value = 1 }
+					}
+				}
+			}
+		}
+	}
+	
+	on_success_title = {
+		custom_tooltip = { 
+			text = "You will conquer the Kingdom of France"
+			hidden_tooltip = {
+				ROOT = {
+					gain_settlements_under_title = {
+						title = k_france
+						enemy = FROM
+						type = claim
+					}
+					gain_settlements_under_title = {
+						title = k_aquitaine
+						enemy = FROM
+						type = claim
+					}
+					if = {
+						limit = {
+							OR = {
+								this_has_lame_nickname_trigger = yes
+								has_nickname = no
+							}
+						}
+						random_list = {
+							10 = { give_nickname = nick_the_holy }
+							10 = { give_nickname = nick_the_glorious }
+							10 = { give_nickname = nick_the_lionheart }
+							10 = { give_nickname = nick_the_great }
+							10 = { give_nickname = nick_the_hammer }
+							10 = { give_nickname = nick_the_magnificent }
+						}
+					}
+				}
+			}
+		}
+		usurp_title = { target = ROOT type = claim }
+	}
+
+	on_fail = {
+		ROOT = { disband_event_forces = yes }
+		FROM = {
+			disband_event_forces = yes
+			show_scope_change = no
+			prestige = 100
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 100 }
+		}
+	}
+	
+	
+	on_invalidation = {
+	}
+
+	on_invalidation_title = {
+	}
+
+	on_reverse_demand = {
+		FROM = {
+			disband_event_forces = yes
+			show_scope_change = no
+			gain_settlements_under_title = {
+				title = k_france
+				enemy = ROOT
+				type = claim
+			}
+			gain_settlements_under_title = {
+				title = k_aquitaine
+				enemy = ROOT
+				type = claim
+			}
+			participation_scaled_prestige = 100
+			character_event = { id = HFP.41090 days = 2 }
+		}
+		ROOT = {
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 4.0
+			}
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 200 }
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_ambition = obj_strengthen_religion
+					}
+					change_variable = { which = strengthen_religion value = 1 }
+				}
+			}
+		}
+	}
+	
+	on_reverse_demand_title = {
+	}
+	
+	attacker_ai_victory_worth = {
+		factor = 100
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 150
+	}
+	
+	ai_will_do = { 
+		factor = 1
+		
+		modifier = {
+			factor = 200
+			ROOT = {
+				primary_title = { title = e_il-khanate }
+			}
+			OR = {
+				empire = {
+					OR = {
+						title = e_byzantium
+						title = e_persia
+						title = e_arabia
+					}
+				}
+				title = k_georgia
+				title = k_armenia
+				title = k_sistan
+				title = k_persia
+				title = k_khorasan
+				title = k_kafarestan
+				title = k_mavarannahr
+				title = k_daylam
+				title = k_mesopotamia
+				title = k_aljazira
+				title = k_caucasian_albania
+				title = k_antioch
+			}
+			
+			NOT = { title = k_khorasan }
+			NOT = { title = k_sicily }
+			NOT = { title = k_naples }
+			NOT = { title = k_serbia }
+			NOT = { title = k_epirus }
+			NOT = { title = k_nikaea }
+			NOT = { title = k_achaea }
+			NOT = { title = k_thrace }
+			NOT = { title = k_georgia }
+			NOT = { title = k_daylam }
+		}
+		modifier = {
+			factor = 0
+			FROM = {
+				is_nomadic = yes
+			}
+			ROOT = {
+				is_tribal = yes
+			}
+			NOT = {
+				any_direct_de_jure_vassal_title = {
+					any_direct_de_jure_vassal_title = {
+						OR = {
+							holding_type = castle
+							holding_type = city
+							holding_type = tribal
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				primary_title = { title = e_il-khanate }
+			}
+			OR = {
+				title = k_kashmir
+				title = k_guge
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				has_landed_title = e_il-khanate
+				demesne_size = 1
+			}
+			FROM = {
+				has_landed_title = e_china_west_governor
+			}
+		}
+	}
+}

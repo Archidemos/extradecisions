@@ -4255,19 +4255,39 @@
 		religion="sunni"
 	}
 }
-595=
-{
-	name="Zirid"
+#595=
+#{
+#	name="Zirid"
+#	culture="maghreb_arabic"
+#	religion="shiite"
+#	coat_of_arms=
+#	{
+#		data=
+#		{
+#0 0 0 31 1 2 2 			}
+#		religion="shiite"
+#	}
+#}
+
+595 = {
+	name="Zirid" 
 	culture="maghreb_arabic"
 	religion="shiite"
-	coat_of_arms=
-	{
-		data=
-		{
-0 0 0 31 1 2 2 			}
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 3 #ar_dynasties_muslim.tga
+			texture_internal = 14
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
 		religion="shiite"
 	}
+	used_for_random = no
 }
+
 596=
 {
 	name="Amirid"

@@ -1,26 +1,6 @@
 namespace = ABB
 
 character_event = {
-	id = ABB.10
-    hide_window = yes
-    is_triggered_only = yes
-	
-    trigger = {
-		start_date == 867.1.1
-		is_save_game = no
-		NOT = { has_global_flag = abbasid_player_event_fired }
-    }
-	
-	immediate = {
-		set_global_flag = abbasid_player_event_fired
-		any_player = { narrative_event = { id = ABB.6 days = 5 } }
-		e_arabia = {
-			save_event_target_as = character_abbasid_crisis
-		}
-	}
-}
-
-character_event = {
 	id = ABB.1
     only_playable = yes
     hide_window = yes
@@ -131,25 +111,42 @@ narrative_event = {
 	}
 }
 
+
+character_event = {
+	id = ABB.10
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date == 867.1.1
+		is_save_game = no
+		NOT = { has_global_flag = abbasid_player_event_fired }
+    }
+	
+	immediate = {
+		set_global_flag = abbasid_player_event_fired
+		any_player = { narrative_event = { id = ABB.6 days = 10 } }
+		e_arabia = {
+			save_event_target_as = character_abbasid_crisis
+		}
+	}
+}
+
+
 narrative_event = {
 	id = ABB.6
-	title = UMMNAME6
-	desc = UMMDESC6
-	hide_window = yes
+	title = "The Anarchy at Samarra"
+	desc = "As many successions has passed the Caliphate of the Abbasids, it left them weak and influencial by internal powers that perhaps were the true rulers of the Caliphate. These power struggles and schemes happend all at the court of Samarra, mostly done by the Turkic Guards of the Abbasids. These Turks seem to be the creator of this anarchy and chaos that are perhaps unsolvable for the decades to come... or perhaps there will be a way to resolve it all."
     is_triggered_only = yes
 	
 	portrait = character_abbasid_crisis
 	picture = GFX_evt_mecca_falls_soa
 	sound = ar_arabs_lose
 	
-    trigger = {
-		OR = {
-			start_date == 769.1.1
-			start_date == 867.1.1
-			start_date == 936.1.1
-		}
-		is_save_game = no
-    }
+    #trigger = {
+	#	start_date == 867.1.1
+	#	is_save_game = no
+    #}
 	
 	immediate = {
 		clear_event_target = character_abbasid_crisis
