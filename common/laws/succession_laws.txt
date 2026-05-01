@@ -564,6 +564,7 @@ succession_laws = {
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = ar_theocracy_government }
 				holder_scope = { government = tsardom_government }
+				holder_scope = { government = confucian_bureaucracy }
 			}
 			OR = {
 				has_game_rule = {
@@ -575,12 +576,7 @@ succession_laws = {
 		}
 		
 		allow = {
-			conditional_tooltip = {
-				trigger = {
-					is_patrician = no
-				}
-				TECH_LEGALISM = 5
-			}
+			
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }

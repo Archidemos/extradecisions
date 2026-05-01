@@ -460,11 +460,11 @@ decisions = {
 		only_playable = yes
 		
 		potential = {
-			ROOT = { age >= 20 }
 			NOT = { has_character_modifier = changed_education_once }
 		}
 		
 		allow = {
+			ROOT = { age >= 20 }
 			prestige = 500
 			wealth = 500
 			custom_tooltip = {

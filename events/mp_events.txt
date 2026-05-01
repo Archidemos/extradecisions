@@ -2728,29 +2728,24 @@ character_event = {
     }
 }
 
-#character_event = {
-#    id = MP.403
-#	
-#    #only_playable = yes
-#    #hide_window = yes
-#    #is_triggered_only = yes
-#	
-#	title = "Stable Economy"
-#	desc = "We have successfully spent our overflown gold and have our economy under control."
-#	picture = GFX_evt_leaning_tower
-#	is_triggered_only = yes
-#
-#    trigger = {
-#		government = merchant_republic_government
-#		is_patrician = yes
-#    }
-#
-#    option = {
-#		primary_title = {
-#			add_law = succ_seniority
-#		}
-#    }
-#}
+character_event = {
+    id = MP.403
+    only_playable = yes
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+		tier = COUNT
+		government = merchant_republic_government
+		#is_patrician = yes
+    }
+
+    immediate = {
+		primary_title = {
+			add_law = succ_seniority
+		}
+    }
+}
 
 
 #character_event = {
