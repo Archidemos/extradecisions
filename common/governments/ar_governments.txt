@@ -1,7 +1,7 @@
 feudal_governments = {
 
 	greek_city_government = {
-		preferred_holdings = { CASTLE }
+		preferred_holdings = { CASTLE CITY }
 		allowed_holdings = {
 			CASTLE
 			CITY
@@ -35,7 +35,14 @@ feudal_governments = {
 			NOT = { religion_group = muslim }
 			NOT = { is_government_potential = roman_imperial_government }
 			NOT = { is_government_potential = order_government }
-			culture = greek
+			AND = {
+				culture = greek
+				OR = {
+					religion_group = christian
+					religion = hellenic_pagan
+				}
+				higher_tier_than = BARON
+			}
 			NAND = { 
 				tier = EMPEROR
 				primary_title = { has_title_flag = pretender_chinese_empire }
