@@ -38,6 +38,10 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 		name = "Onwards!"
 		ai_chance = { factor = 100 }
 		log = "ROMRASH.2 Fired"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
 		random_province = {
 			log = "ROMRASH.2 Option Works"
             limit = {
@@ -112,8 +116,8 @@ character_event = {
 			has_landed_title = e_rashudin
 			has_character_flag = rashudin_invader
 			religion_group = muslim
-			NOT = { completely_controls_region = world_africa_egypt }
-			NOT = { has_global_flag = world_africa_egypt_conquered_rash }
+			NOT = { completely_controls_region = world_africa_north }
+			NOT = { has_global_flag = world_africa_north_conquered_rash }
 		}
 		log = "ROMRASH.4 Triggered"
 	}
@@ -137,11 +141,15 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 	option = {
 		name = "Onwards!"
 		log = "ROMRASH.5 Fired"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
 		random_province = {
 			log = "ROMRASH.5 Option Works"
             limit = {
                 has_owner = yes
-                region = world_africa_egypt
+                region = world_africa_north
                 owner = {
                     NOR = {
                         character = ROOT
@@ -186,12 +194,12 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 #		FROM = {
 #			#ai = yes
 #			has_character_flag = rashudin_invader
-#			completely_controls_region = world_africa_egypt
+#			completely_controls_region = world_africa_north
 #		}
 #	}
 #	
 #	immediate = {
-#		set_global_flag = world_africa_egypt_conquered_rash
+#		set_global_flag = world_africa_north_conquered_rash
 #	}
 #}
 
@@ -233,6 +241,10 @@ character_event = { #Mongols being guided to conquer Eastern Europe
 		name = "Onwards!"
 		ai_chance = { factor = 100 }
 		log = "ROMRASH.2 Fired"
+		change_infamy = {
+			value = -30
+			localisation = "Threat Reduced with the Decision"
+		}
 		random_province = {
 			log = "ROMRASH.2 Option Works"
             limit = {

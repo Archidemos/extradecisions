@@ -3359,6 +3359,43 @@ altaic = {
 	graphical_cultures = { turkishgfx mongolgfx muslimgfx }
 	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
 
+	hunnic = { # Hunnics
+		graphical_cultures = { turkishgfx }
+		secondary_event_pictures = bedouin_arabic
+		alternate_start = {
+			OR = {
+				year < 1238
+				has_alternate_start_parameter = { key = culture value = full_random }
+			}
+		}
+		color = { 78 104 115 }
+		male_names = {
+			Çagri Çaka Aksonqor Alkan "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz Aydin
+			Aytekin Böru Bulend Balaban Basbuga Batuhan Baturay Baybars Bayezid Baytas
+			Belek Berkan Berkiyaruk Böri Bozan Bugra Burak Cuneyd Dundar Danishmend Demir Dogan Dogukan
+			Dukak Erdem Ertan Ertekin Ertugrul Gunduz Hizir Ilgazi Inal 
+			Kurboga Kaiqobad Kara Karatay Kaya Kaytun Kiliç Korkut Kutalmish Kutay
+			Kutlug_Kutlug Mursel Menguçek Orhan Porsuk
+			Söbuk Sökmen Sönmez Saim Saltuk Saruca Savtekin Selçuk Sencer
+			Tanrivermis Tekin Timurtash Togay Togtekin Toktamish_Toktamish Tolun Toruntay Tugrul_Toghrul Tunga Turgut Turhan
+			Tutush Uluç Umur Yaman Yinal
+		}
+		female_names = {
+			Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bozçin
+			Canan Ceylan Dunya Dilber Dilek Emine Esin Gulçiçek Gulay Gulbahar Gulfem Gulsum Gumus
+			Gunduz Gundes Gunes Hatice Hayat Huriye Ilkay Ilknur Ipek Ipekel Irge Karacik Lale Mala
+			Merve Mutlu Nagihan Nergis Neslihan Nilufer Nur Peksen Terkhen Samur Sarica Sati Sehnaz Serap Serife
+			Sevilay Sevindik Sirin Sirma Songul Sumru Tekçe Tura Umay Usunbike Vahide Yasar Yeldem
+			Yildiz Zehra Zuhal
+		}
+		from_dynasty_prefix = "ve "
+		male_patronym = "oglu"
+		prefix = no
+		founder_named_dynasties = yes
+		modifier = hunnic_culture_modifier
+		allow_looting = yes
+	}
+
 	turkish = { # Representing the Anatolian Turkish
 		graphical_cultures = { turkishgfx }
 		secondary_event_pictures = bedouin_arabic
