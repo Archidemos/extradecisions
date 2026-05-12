@@ -6,31 +6,33 @@
 
 769.1.1 = {
 	holder = 163125
+	liege = e_arabia
 }
 
 840.1.1 = {
 	holder = 33932
 }
 866.1.1 = {
-	liege = 0
+	liege = e_arabia
 }
 870.1.1 = {
 	holder = 1236080 # Husayn
 }
 926.1.1 = {
 	holder = 1236081 # Muhammad
+	liege = k_egypt
 }
 944.1.1 = { #Muhammad al-Ikhshid granted governorship of Hijaz
-	set_tribute_suzerain = {
-		who = k_egypt
-		type = permanent
-	}
+	#set_tribute_suzerain = {
+	#	who = k_egypt
+	#	type = permanent
+	#}
 }
 953.1.1 = { #sometime between 951-968
 	holder = 1236082 # Ja'far
 }
 969.7.1 = {
-	clear_tribute_suzerain = k_egypt
+	#clear_tribute_suzerain = k_egypt
 }
 972.1.1 = { # joint expedition from Egypt and Medina
 	liege = e_egypt
@@ -55,53 +57,53 @@
 	holder = 1236085 # Muhammad-Sukr
 }
 1061.1.1 = {
-	liege = 0
 	holder = 1236092 # Hamza
 }
 1063.1.1 = {
 	holder = 1236097 # Muhammad
-	set_tribute_suzerain = {
-		who = e_egypt
-		percentage = 0.4
-	}
+	#set_tribute_suzerain = {
+	#	who = e_egypt
+	#	percentage = 0.4
+	#}
 }
 1067.9.25 = {
 	clear_tribute_suzerain = e_egypt
 }
 1069.8.1 = { # khutba read in the name of the Abbasid caliph for 4 years and 5 months
-	set_tribute_suzerain = {
-		who = e_seljuk_turks
-		percentage = 0.4
-	}
+	liege = 0
+	#set_tribute_suzerain = {
+	#	who = e_seljuk_turks
+	#	percentage = 0.4
+	#}
 }
 # 1071-1072, Muhammad b. Ja'far complies with the Abbasid caliph's Sunni-line religious request
 1074.1.1 = {
-	clear_tribute_suzerain = e_seljuk_turks
-	set_tribute_suzerain = {
-		who = e_egypt
-		percentage = 0.4
-	}
+	#clear_tribute_suzerain = e_seljuk_turks
+	#set_tribute_suzerain = {
+	#	who = e_egypt
+	#	percentage = 0.4
+	#}
 }
 1076.8.1 = { # khutba read in the name of the Abbasid caliph again
-	clear_tribute_suzerain = e_egypt
-	set_tribute_suzerain = {
-		who = e_seljuk_turks
-		percentage = 0.4
-	}
+	#clear_tribute_suzerain = e_egypt
+	#set_tribute_suzerain = {
+	#	who = e_seljuk_turks
+	#	percentage = 0.4
+	#}
 }
 1078.1.1 = { # khutba read in the name of the Fatimid caliph again
-	clear_tribute_suzerain = e_persia
+	#clear_tribute_suzerain = e_persia
 	set_tribute_suzerain = {
-		who = e_egypt
+		who = e_seljuk_turks
 		percentage = 0.4
 	}
 }
 1086.1.1 = { # khutba read in the name of the Abbasid caliph again
-	clear_tribute_suzerain = e_egypt
-	set_tribute_suzerain = {
-		who = e_seljuk_turks
-		percentage = 0.4
-	}
+	#clear_tribute_suzerain = e_egypt
+	#set_tribute_suzerain = {
+	#	who = e_seljuk_turks
+	#	percentage = 0.4
+	#}
 }
 1092.11.1 = {
 	clear_tribute_suzerain = e_seljuk_turks

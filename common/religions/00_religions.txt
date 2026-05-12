@@ -2221,30 +2221,56 @@ pagan_group = {
 		evil_god_names = {
 			THE_DARK_SPIRITS
 		}
+		
+		unit_modifier = {
+			levy_size = 0.3
+
+			retinuesize_perc = 0.5
+
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+		}
+		
+		aggression = 1.0
 		crusade_name = GREAT_HOLY_WAR
 		scripture_name = THE_LEGENDS
 		priest_title = PRIEST
+		
 		priests_can_marry = yes
 		female_temple_holders = yes
 		max_consorts = 3
-
+		priests_can_marry = yes
+		allow_looting = yes
+		allow_rivermovement = yes
+		female_temple_holders = yes
 		defensive_attrition = yes
+		peace_prestige_loss = yes # Lose Prestige while at peace
+		allow_viking_invasion = no
+		seafarer = yes
+		raised_vassal_opinion_loss = no
+		max_consorts = 3
+		independence_war_score_bonus = 30 # Overrides define CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP
+		#reformed = germanic_pagan_reformed
+
+		short_reign_opinion_year_mult = 2.5
 
 		religious_clothing_head = 3
 		religious_clothing_priest = 3
 
 		allow_in_ruler_designer = no
 
-		dislike_tribal_organization = yes
-		intermarry = muslim
+		intermarry = norse_pagan_reformed
+		intermarry = baltic_pagan
+		intermarry = slavic_pagan
+		intermarry = finnish_pagan
+			
+		#dynamic_cult = no
+		#secret_religion = no
 		
-		character_modifier = {
-			martial = 1
-		}
-		aggression = 1.0
-		allow_rivermovement = yes		
-		dynamic_cult = no
-		secret_religion = no
+		dislike_tribal_organization = yes
 		can_demand_religious_conversion = no
 	}
 

@@ -1,6 +1,7 @@
 # -*- ck2.history.titles -*-
 769.1.1 = {
 	holder = 188620
+	liege = e_arabia
 }
 841.1.1 = {
 	holder = 1236115 # Tahir Banu Husayni (Placeholder duchy owner)
@@ -10,12 +11,13 @@
 }
 920.1.1 = {
 	holder = 1236113 # al-Qasim Banu Husayni (Placeholder duchy owner)
+	liege = k_egypt
 }
 944.1.1 = { #Muhammad al-Ikhshid granted governorship of Hijaz
-	set_tribute_suzerain = {
-		who = k_egypt
-		type = permanent
-	}
+	#set_tribute_suzerain = {
+	#	who = k_egypt
+	#	type = permanent
+	#}
 }
 954.1.1 = {
 	holder = 1236120 # Muslim Banu Husayni (Placeholder duchy owner)
@@ -24,7 +26,7 @@
 	holder = 1236121 # Tahir Banu Husayni
 }
 969.7.1 = {
-	clear_tribute_suzerain = k_egypt
+	#clear_tribute_suzerain = k_egypt
 }
 970.1.1 = { # ca. 970 (969-974), khutba read in the name of the Fatimid caliph
 	liege = e_egypt
@@ -52,33 +54,29 @@
 }
 1070.1.1 = { # Medina rallies to the Abbasids
 	liege = 0
-	set_tribute_suzerain = {
-		who = e_seljuk_turks
-		percentage = 0.4
-	}
+	#set_tribute_suzerain = {
+	#	who = e_seljuk_turks
+	#	percentage = 0.4
+	#}
 }
 1078.1.1 = {
 	holder = 1236128 # Mansur Banu Husayni
 }
 1079.1.1 = { # khutba read in the name of the Fatimid caliph again, sometime before 1086
-	clear_tribute_suzerain = e_seljuk_turks
-	set_tribute_suzerain = {
-		who = e_egypt
-		percentage = 0.4
-	}
-}
-1086.1.1 = { # khutba read in the name of the Abbasid caliph again
-	clear_tribute_suzerain = e_egypt
+	#clear_tribute_suzerain = e_seljuk_turks
 	set_tribute_suzerain = {
 		who = e_seljuk_turks
 		percentage = 0.4
 	}
 }
-1092.11.1 = {
+#1086.1.1 = { # khutba read in the name of the Abbasid caliph again
+#	clear_tribute_suzerain = e_egypt
+#}
+1093.1.1 = {
 	clear_tribute_suzerain = e_seljuk_turks
 }
 1099.1.1 = {
-	liege = k_egypt
+	#liege = k_egypt
 }
 1103.1.1 = {
 	holder = 1236129 # Qasim Banu Husayni
@@ -91,6 +89,9 @@
 }
 1170.1.1 = {
 	holder = 1236106 # Qasim Banu Husayni
+}
+1175.1.1 = {
+	liege = k_egypt
 }
 1194.1.1 = {
 	holder = 1236130 # Salim Banu Husayni
