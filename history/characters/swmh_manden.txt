@@ -197,11 +197,89 @@
 
 
 #ancestors of the Keita dynasty
+251110 = {
+	name="Lahilatoul"
+	#half-mythical placeholder
+	dynasty=1030002
+	religion="west_african_pagan"
+	culture = "manden"
+	748.1.1={
+		birth = yes
+	}
+	767.1.1={
+		add_spouse=251111
+	}
+	806.1.1={
+		death = yes
+	}
+}
+251111 = {
+	name="Fatoumata"
+	#placeholder
+	female=yes
+	religion="west_african_pagan"
+	culture="manden"
+	749.1.1={
+		birth = yes
+	}
+	767.1.1={
+		add_spouse=251110
+	}
+	812.1.1={
+		death = yes
+	}
+}
+251112 = {
+	name="Tekhaye"
+	#placeholder
+	female=yes
+	dynasty=1030002
+	religion="west_african_pagan"
+	culture="manden"
+	father = 251110
+	mother = 251111
+	768.1.1={
+		birth = yes
+	}
+	830.1.1={
+		death = yes
+	}
+}
+251113 = {
+	name="Demba"
+	#placeholder
+	dynasty=1030002
+	religion="west_african_pagan"
+	culture="manden"
+	father = 251110
+	mother = 251111
+	769.1.1={
+		birth = yes
+	}
+	815.1.1={
+		death = yes
+	}
+}
+251114 = {
+	name="Watara"
+	#placeholder
+	dynasty=1030002
+	religion="west_african_pagan"
+	culture="manden"
+	father = 251113
+	800.1.1={
+		birth = yes
+	}
+	840.1.1={
+		death = yes
+	}
+}
 1144651 = {
 	name="Lawalo Keita" #Lawalo Keita, eponymous semi-mythical founder of the Keita dynasty (mythical ancestor being Bilal Bounama)
 	dynasty=1030002
 	religion="west_african_pagan"
 	culture="manden"
+	father = 251114
 	830.1.1={
 		birth="830.1.1"
 	}
