@@ -5719,8 +5719,8 @@ e_hre = {
             dutch = "Zuid Bohemen"
             bohemian = "Jizni Cechy"
             slovieni = "Jizni Cechy"
-            polish = "Czechy"
-            pommeranian = "Czechy"
+            polish = "Jizni Czechy"
+            pommeranian = "Jizni Czechy"
             greek = "Notia Voimia"
             culture = bohemian
             capital = 2158
@@ -18532,7 +18532,7 @@ e_russia = {
         }
     }
     k_ruthenia = {
-        color = { 131 108 71 }
+        color = { 70 150 90 }
         color2 = { 255 255 255 }
         capital = 547
         culture = russian
@@ -20952,7 +20952,7 @@ e_poland = {
         }
     }
     k_lithuania = {
-        color = { 92 157 103 }
+        color = { 158 51 51 }
         color2 = { 255 255 255 }
         capital = 420
         culture = lithuanian
@@ -23859,6 +23859,7 @@ e_carpathia = {
         color2 = { 255 255 255 }
         capital = 444
         culture = hungarian
+		avar = "Avar Uls"
         old_hungarian = "Moger Uruzag"
         bohemian = "Uhry"
         slovieni = "Uhry"
@@ -44695,9 +44696,22 @@ e_italy = {
                 b_reggio6 = {}
                 b_reggio7 = {}
             }
-            allow = {
-                title_duke_basic_allow = yes
-            }
+			allow = {
+				#OR = {
+				#	religion_group = christian
+				#	FROM = {
+				#		is_de_jure_title = yes
+				#	}
+				#}
+				OR = {
+					has_landed_title = k_south_sicily
+					AND = {
+						completely_controls = d_sicily
+						completely_controls = d_north_sicily
+					}
+				}
+				title_duke_basic_allow = yes
+			}
         }
 	}
     k_south_sicily = {
@@ -45210,6 +45224,7 @@ e_italy = {
         }
     }
     allow = {
+		date = 500.1.1
         trigger_if = {
             limit = {
                 NOT = {
@@ -45824,7 +45839,7 @@ e_france = {
                 b_auray = {}
             }
             c_cornouaille = {
-                color = { 63 62 9 }
+                color = { 160 107 219 }
                 color2 = { 255 255 255 }
                 roman = "Vorgium"
                 greek = "Ouorgion"

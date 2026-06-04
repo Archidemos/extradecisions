@@ -34,7 +34,7 @@ character_event = {
 narrative_event = {
 	id = ROMANFR.99
 	title = "A Fragmenting Rome"
-	desc = "For centuries, the Roman Empire has been standing tall as the beacon of civilization. The Roman Empire endured many crisises and always prevailed, however now it seems the empire is getting to its end. Will the Roman Empire still have hope, or will it meet its end..."
+	desc = EVTDESCROMANFR.99
     is_triggered_only = yes
 	
 	portrait = e_west_rome
@@ -321,7 +321,7 @@ narrative_event = {
 narrative_event = {
 	id = ROMANFR.1007
 	title = "Fall of Rome"
-	desc = "Many have have tried invading this once might empire, however this once might empire has fallen. After many decades of turmoil, a instable army and many barbaric invasions, it seems like the Empire for the Romans cannot handle it any longer. They have recently been defeated and lost their crown capital Rome and with it the Roman Empire. This will be a new age, the age of new kingdoms and new cultures. What could this mean for the future of the world.."
+	desc = EVTDESCROMANFR.1007
 	
 	picture = "GFX_evt_rome_falls"
 	border = GFX_event_narrative_frame_war
@@ -5750,8 +5750,10 @@ character_event = {
 		set_global_flag = roman_america_part_1_triggered
 		
 		any_player = { narrative_event = { id = ROMANFR.1064 days = 5 } }
+		any_player = { narrative_event = { id = ROMANFR.1067 days = 10 } }
 		#e_west_rome = { save_event_target_as = character_rome_crisis }
 		hidden_tooltip = {
+			c_roma = { location = { add_province_modifier = { name = plundered_capital years = 2 } } }
 			e_west_rome = {
 				holder_scope = {
 					remove_claim = e_byzantium
@@ -5863,6 +5865,230 @@ narrative_event = {
 		#	}
 		#	k_croatia = { holder_scope = { e_west_rome = { grant_title = PREV } } }
 		#}
+	}
+}
+
+
+narrative_event = {	#The Ostrogoths invade Italia at arround 490
+	id = ROMANFR.1066
+	title = "The Ostrogoths Invasion"
+	desc = "My Liege, we have gotten a report that the Ostrogoths has raised their army once more and are marching towards our lands in Italia. We must act quickely."
+	
+	picture = "GFX_evt_end_of_days"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+
+    is_triggered_only = yes
+	trigger = {
+		start_date == 476.1.1
+		date = 490.1.1
+		ROOT = {
+			OR = {
+				AND = {
+					has_landed_title = k_sciri
+					OR = {
+						has_landed_title = k_italy
+						has_landed_title = k_sicily
+					}
+				}
+				completely_controls = c_roma
+			}
+			#NOT = { culture = ostrogothic }
+			NOT = { has_global_flag = ostrogoths_invade_part_2 }
+		}
+	}
+	
+	option = {
+		name = "We must defeat the Ostrogoths!"
+		set_global_flag = ostrogoths_invade_part_2
+		if = {
+			limit = {
+				any_playable_ruler = { has_landed_title = k_ostrogoths }
+			}
+			k_ostrogoths = {
+				holder_scope = {
+					remove_tributary = suzerain
+					wealth = 1500
+					prestige = 1000
+					piety = 1000
+					remove_trait = slow
+					remove_trait = imbecile
+					remove_trait = weak
+					remove_trait = feeble
+					#add_claim = d_sardinia
+					#add_claim = d_sicily
+					#add_claim = d_mallorca
+						
+					spawn_unit = {
+						province = 452
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							archers = { 1500 1500 }
+						}
+					}
+					spawn_unit = {
+						province = 452
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							archers = { 1500 1500 }
+						}
+					}
+					spawn_unit = {
+						province = 452
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							archers = { 1500 1500 }
+						}
+					}
+					spawn_unit = {
+						province = 452
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							archers = { 1500 1500 }
+						}
+					}
+					spawn_unit = {
+						province = 452
+						troops = {
+							light_cavalry = { 1000 1000 }
+							light_infantry = { 2500 2500 }
+							archers = { 1500 1500 }
+						}
+					}
+					unsafe_war = {
+						casus_belli = invasion_barbarians_400_ostrogoths_sp
+						target = ROOT
+						thirdparty_title = k_italy
+					}
+					set_global_flag = ostrogothic_invade_italy_2				
+				}
+			}
+		}
+		else = {
+			create_character = {
+				name="Totilos"
+				culture = ostrogothic
+				religion = arian
+				age = 24
+				dynasty = random
+				#add_trait = crusader
+				random_traits = yes
+				attributes = {
+					martial=9
+					diplomacy=8
+					intrigue=5
+					stewardship=7
+				}
+			}
+			new_character = {
+				wealth = 1500
+				prestige = 1000
+				piety = 1000
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = weak
+				remove_trait = feeble
+				#add_claim = d_sardinia
+				#add_claim = d_sicily
+				#add_claim = d_mallorca
+				
+				create_title = {
+					name = "Ostrogothic Horde"
+					#adventurer = yes
+					tier = KING
+					landless = yes
+					temporary = yes
+					#custom_created = yes
+					culture = THIS
+					holder = THIS
+					#base_title = THIS
+				}
+				new_title = {
+					set_preferred_capital = PREV
+					set_random_coa_effect = yes
+					religion = ROOT
+					##set_flag = forced_pirate_government
+					#set_name = "Tribe of [Root.Capital.GetName]"
+					#adjective = [Prev.GetAdjective]
+					make_primary_title = yes
+				}
+				spawn_unit = {
+					province = 452
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						archers = { 1500 1500 }
+					}
+				}
+				spawn_unit = {
+					province = 452
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						archers = { 1500 1500 }
+					}
+				}
+				spawn_unit = {
+					province = 452
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						archers = { 1500 1500 }
+					}
+				}
+				spawn_unit = {
+					province = 452
+					troops = {
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 2500 2500 }
+						archers = { 1500 1500 }
+					}
+				}
+				unsafe_war = {
+					casus_belli = invasion_barbarians_400_ostrogoths_sp
+					target = ROOT
+					thirdparty_title = k_italy
+				}
+				set_global_flag = ostrogothic_invade_italy_2
+			}
+		}
+		any_player = { narrative_event = { id = ROMANFR.1068 days = 5 } }
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1067
+	title = "The Scirian Invasion"
+	desc = EVTDESCROMANFR.1067
+	
+	portrait = k_sciri
+	picture = GFX_evt_barbarian_army
+	
+	sound = ar_army_marching
+	is_triggered_only = yes
+	
+	option = {
+		name = "These barbarians.."
+	}
+}
+
+narrative_event = {
+	id = ROMANFR.1068
+	title = "The Ostrogothic Invasion"
+	desc = "As the Ostrogoths have settled in Ilyria, seeing that Odoacer's hold on Italia has weakened. the Ostrogothic warlords have agreed to invade Italia together to overthrow Odoacer and gain Italia for them selfs. With the warlords in agreement, they have gathered their armies and have start marching towards Italia to confront Odoacer. It will be a matter of time before the defeat of Odoacer... unless he will prevail."
+	
+	portrait = k_ostrogoths
+	picture = GFX_evt_barbarian_army
+	
+	sound = ar_army_marching
+	is_triggered_only = yes
+	
+	option = {
+		name = "More war in Italia.."
 	}
 }
 

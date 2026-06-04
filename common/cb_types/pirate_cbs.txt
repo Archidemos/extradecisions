@@ -39,6 +39,11 @@ pirate_raid_cb = {
 			capital_scope = {
 				add_province_modifier = { name = plundered_capital years = 2 }
 			}
+			capital_scope = {
+				any_province_holding = {
+					add_holding_modifier = { name = looted_modifier years = 3 }
+				}
+			}
 			while = {
 				count = 10
 				random_realm_character = {
@@ -196,6 +201,11 @@ pirate_artifact_raid_cb = {
 			capital_scope = {
 				add_province_modifier = { name = plundered_capital years = 2 }
 			}
+			capital_scope = {
+				any_province_holding = {
+					add_holding_modifier = { name = looted_modifier years = 3 }
+				}
+			}
 			random_artifact = {
 				transfer_artifact = {
 					from = PREV
@@ -351,6 +361,11 @@ pirate_raid_prestige_piety_cb = {
 			}
 			capital_scope = {
 				add_province_modifier = { name = plundered_capital years = 2 }
+			}
+			capital_scope = {
+				any_province_holding = {
+					add_holding_modifier = { name = looted_modifier years = 3 }
+				}
 			}
 			prestige = -500
 			piety = -500

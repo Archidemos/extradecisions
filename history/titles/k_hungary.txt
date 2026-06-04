@@ -14,19 +14,19 @@
 470.1.1 = {
 	holder = 4000005
 	liege = 0
+	name = GEPIDS
+	adjective = GEPIDS_ADJ
 	clear_tribute_suzerain = e_hun_empire
 }
 
 580.1.1 = {
 	# doesn't work with titles having dynamic names
-	# name = AVAR_KHAGANATE
-	# adjective = AVAR_KHAGANATE_ADJ
+	name = AVAR_KHAGANATE
+	adjective = AVAR_KHAGANATE_ADJ
 	effect = { set_coa = k_avaria }
 }
 685.1.1 = {
 	holder = 146154
-	reset_name = yes
-	reset_adjective = yes
 	#law = agnatic_succession
 	#law = succ_seniority
 }
@@ -82,6 +82,8 @@
 	set_global_flag = avar_khaganate_renamed
 	#name = KINGDOM_PANNONIA
 	#adjective = KINGDOM_PANNONIA_ADJ
+	reset_name = yes
+	reset_adjective = yes
 	effect = { reset_coa = THIS }
 }
 814.1.1 = {

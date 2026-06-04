@@ -13,8 +13,9 @@ b_house_tangiers = {
 }
 
 k_soissons = { #Soissons
-	color = { 117 21 21 }
+	color = { 219 22 22 }
 	color2 = { 190 10 0 }
+	capital = 112
 	
 	roman = "Suessionum"
 	roman_gallo = "Suessionum"
@@ -32,33 +33,56 @@ k_soissons = { #Soissons
 	short_name = no
 }
 
+k_nepos = { #Dalmatia
+	color = { 181 36 36 }
+	color2 = { 190 10 0 }
+	capital = 467
+	
+	roman = "Dalmatia"
+	roman_gallo = "Dalmatia"
+	roman_german = "Dalmatia"
+	roman_spain = "Dalmatia"
+	roman_british = "Dalmatia"
+	roman_african = "Dalmatia"
+	roman_mauretanian = "Dalmatia"
+	roman_egyptian = "Dalmatia"
+	roman_greek = "Dalmatia"
+	roman_thraco = "Dalmatia"
+	roman_ilyrian = "Dalmatia"
+	
+	culture = roman_ilyrian
+	short_name = no
+}
+
+
 k_sciri = { #Ostrogothic Kingdom
 	color = { 218 235 223 }
 	color2 = { 190 10 0 }
 	
-	sciri = "Konigreich Odoaker"
-	visigothic = "Konigreich Odoaker"
-	ostrogothic = "Konigreich Odoaker"
-	bavarian = "Konigreich Odoaker"
-	swabian = "Konigreich Odoaker"
-	german = "Konigreich Odoaker"
-	franconian = "Konigreich Odoaker"
-	low_saxon = "Konigreich Odoaker"
-	thuringian = "Konigreich Odoaker"
-	frisian = "Konigreich Odoaker"
-	dutch = "Konigreich Odoaker"
+	sciri = "Odowakrs Kunigthi"
+	visigothic = "Odowakrs Kunigthi"
+	ostrogothic = "Odowakrs Kunigthi"
+	bavarian = "Konigreich Odoacer"
+	swabian = "Odoakers Konigreich"
+	german = "Odoakers Konigreich"
+	franconian = "Odoakers Konigreich"
+	low_saxon = "Odoakers Konigreich"
+	thuringian = "Odoakers Konigreich"
+	frisian = "Odoakers Koninkrijk"
+	dutch = "Odoakers Koninkrijk"
 	
 	culture = sciri
 	short_name = yes
-	landless = yes
+	#landless = yes
 }
 
 
 k_ostrogoths = { #Ostrogoths
 	color = { 22 48 135 }
 	color2 = { 190 10 0 }
+	capital = 452
 	
-	ostrogothic = "Ostgoten"
+	ostrogothic = "Austrogutans"
 	bavarian = "Ostgoten"
 	swabian = "Ostgoten"
 	german = "Ostgoten"
@@ -75,10 +99,11 @@ k_ostrogoths = { #Ostrogoths
 k_anti = { #Anti
 	color = { 71 97 56 }
 	color2 = { 190 10 0 }
+	capital = 512
 	
 	#georgian = "Iberia"
 	
-	culture = ostrogothic
+	culture = russian
 	short_name = no
 }
 
@@ -88,23 +113,25 @@ k_veneti = { #Veneti
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = russian
 	short_name = no
 }
 
 k_alamans = { #Alamans
 	color = { 84 128 113 }
 	color2 = { 190 10 0 }
+	capital = 253
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = swabian
 	short_name = no
 }
 
 k_west_satraps = { #Western Satraps
 	color = { 151 245 56 }
 	color2 = { 190 10 0 }
+	capital = 1603
 
 	saka = "Mahaksatrapa"
 	hindustani = "Mahaksatrapa"
@@ -126,6 +153,7 @@ k_west_satraps = { #Western Satraps
 e_gupta = { #Gupta Empire
 	color = { 214 108 15 }
 	color2 = { 190 10 0 }
+	capital = 1658
 
 	hindustani = "Gupta Samrajya"
 	panjabi = "Gupta Samrajya"
@@ -147,6 +175,7 @@ e_gupta = { #Gupta Empire
 e_hephthalites = { #Hephthalites
 	color = { 201 201 201 }
 	color2 = { 190 10 0 }
+	capital = 1542
 
 	saka = "Sveta Huna"
 	persian = "Sveta Huna"
@@ -169,6 +198,7 @@ e_hephthalites = { #Hephthalites
 k_huna = { #Huna Kingdom
 	color = { 218 219 191 }
 	color2 = { 190 10 0 }
+	capital = 1536
 
 	saka = "Alkhan Huna"
 	hindustani = "Alkhan Huna"
@@ -188,6 +218,7 @@ k_huna = { #Huna Kingdom
 e_vakataka = { #Vakataka Empire
 	color = { 207 198 99 }
 	color2 = { 190 10 0 }
+	capital = 2023
 
 	hindustani = "Vakataka Samrajya"
 	panjabi = "Vakataka Samrajya"
@@ -211,7 +242,7 @@ e_bulgars = { #Onoguria
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = bolghar
 	short_name = no
 }
 
@@ -222,7 +253,7 @@ e_magyar = { #Magyar
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = avar
 	short_name = yes
 }
 
@@ -243,7 +274,7 @@ e_pechenegs = { #Pechenegs
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = pecheneg
 	short_name = no
 }
 
@@ -253,7 +284,7 @@ e_rouran = { #Rouran
 	
 	#georgian = "Veneti"
 	
-	culture = ostrogothic
+	culture = mongol
 	short_name = no
 }
 
@@ -334,17 +365,17 @@ k_suebi = { #Suebi
 	color = { 194 164 141 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
-	#bavarian = "Westgoten"
-	#swabian = "Westgoten"
-	#german = "Westgoten"
-	#franconian = "Westgoten"
-	#low_saxon = "Westgoten"
-	#thuringian = "Westgoten"
-	#frisian = "Visigoten"
-	#dutch = "Visigoten"
+	suebi = "Swebaz"
+	bavarian = "Suebien"
+	swabian = "Suebien"
+	german = "Suebien"
+	franconian = "Suebien"
+	low_saxon = "Suebien"
+	thuringian = "Suebien"
+	frisian = "Suebien"
+	dutch = "Suebien"
 	
-	culture = visigothic
+	culture = suebi
 	short_name = no
 }
 
@@ -363,7 +394,7 @@ k_thuringi = { #Thuringi
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = visigothic
+	culture = thuringian
 	short_name = no
 }
 
@@ -372,16 +403,16 @@ k_franks = { #Franks
 	color2 = { 190 10 0 }
 	
 	old_frankish = "Frankono"
-	#bavarian = "Westgoten"
-	#swabian = "Westgoten"
-	#german = "Westgoten"
-	#franconian = "Westgoten"
-	#low_saxon = "Westgoten"
-	#thuringian = "Westgoten"
-	#frisian = "Visigoten"
-	#dutch = "Visigoten"
+	bavarian = "Franken"
+	swabian = "Franken"
+	german = "Franken"
+	franconian = "Franken"
+	low_saxon = "Franken"
+	thuringian = "Franken"
+	frisian = "Visigoten"
+	dutch = "Visigoten"
 	
-	culture = visigothic
+	culture = old_frankish
 	short_name = no
 }
 
@@ -472,7 +503,7 @@ d_astures = { #Astures
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = visigothic
+	culture = castillan
 	short_name = no
 }
 
@@ -497,6 +528,7 @@ d_bagaudae = { #Bagaudae
 k_rugiland = { #Rugiland
 	color = { 143 137 124 }
 	color2 = { 190 10 0 }
+	capital = 437
 	
 	#visigothic = "Westgoten"
 	#bavarian = "Westgoten"
@@ -508,7 +540,7 @@ k_rugiland = { #Rugiland
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = visigothic
+	culture = pommeranian
 	short_name = no
 }
 
@@ -516,16 +548,16 @@ d_lombards = { #Lombards
 	color = { 204 163 180 }
 	color2 = { 190 10 0 }
 	
-	lombard = "Lombardi"
-	#bavarian = "Westgoten"
-	#swabian = "Westgoten"
-	#german = "Westgoten"
-	#franconian = "Westgoten"
-	#low_saxon = "Westgoten"
-	#thuringian = "Westgoten"
-	#frisian = "Visigoten"
-	#dutch = "Visigoten"
+	lombard = "Langobardoz"
+	bavarian = "Langobarden"
+	swabian = "Langobarden"
+	german = "Langobarden"
+	franconian = "Langobarden"
+	low_saxon = "Langobarden"
+	thuringian = "Langobarden"
+	frisian = "Langobarden"
+	dutch = "Langobarden"
 	
-	culture = visigothic
+	culture = lombard
 	short_name = no
 }

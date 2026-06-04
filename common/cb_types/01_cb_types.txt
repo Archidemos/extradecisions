@@ -5509,6 +5509,10 @@ pepin_religious = {
 				}
 			}
 			character_event = { id = HF.20224 } #Congratulations\ Papal Coronation may proceed if flagged.
+			custom_tooltip = {
+				text = papal_war_event_reward
+				character_event = { id = PAPREW.1 days = 5 }
+			}
 		}
 		any_attacker = {
 			limit = { NOT = { character = ROOT } }
@@ -5532,10 +5536,40 @@ pepin_religious = {
 			}
 		}
 		
-		ROOT = { 
-			participation_scaled_piety = 150
-			participation_scaled_prestige = 75
-
+		FROM = {
+			transfer_scaled_wealth = {
+				to = ROOT
+				value = 1.5
+				min = 250
+			}
+		}
+		
+		ROOT = {
+			participation_scaled_piety = 1500
+			participation_scaled_prestige = 750
+			custom_tooltip = {
+				text = papal_war_units_reward 
+				while = {
+					count = 6
+					spawn_unit = {
+						owner = ROOT
+						province = capital
+						home = ROOT
+			
+						troops = {
+							archers = { 200 200 }
+							light_infantry = { 300 300 }
+							heavy_infantry = { 150 150 }
+							light_cavalry = { 100 100 }
+							knights = { 50 50 }
+						}
+			
+						#attrition = 1.0
+						#disband_on_peace = yes
+						#maintenance_multiplier = 0.5
+					}
+				}
+			}
 			rightful_religious_head_scope = {
 				opinion = {
 					who = ROOT

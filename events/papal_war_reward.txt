@@ -1,0 +1,111 @@
+namespace = PAPREW
+
+character_event = {
+	id = PAPREW.1
+	desc = "After being called in to Rome, you enter the city triumpantly with your whole army like Ceasar and Augustus did in the times of Rome. At the Apostolic Palace, you are warmly recieved by the Pope and the Cardinals."
+	
+	picture = GFX_evt_victory_arch_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	sound = ar_papal_hymn
+	is_triggered_only = yes
+
+	option = {
+		name = "I am greatfull for this warm welcome."
+		add_trait = travelling
+		character_event = { id = PAPREW.2 days = 2 }
+	}
+}
+
+character_event = {
+	id = PAPREW.2
+	desc = "After a few days of resting, you are finally ready to visit the Apostolic Palace again to discuss your reward that the Pope is eager to grant for your recent victory for the Papacy. the Pope is simply asking you what you would wish to recieve."
+	
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+	
+	sound = ar_papal_hymn
+	is_triggered_only = yes
+
+	option = { #Stewardship/money
+		name = "War is costly, i could used some funds."
+		add_character_modifier = {
+			name = papal_reward_stewardship
+			years = 2
+		}
+		wealth = 250
+		character_event = { id = PAPREW.3 days = 2 }
+	}
+	option = { #Learning/health
+		name = "Give me your blessing."
+		add_character_modifier = {
+			name = papal_reward_learning
+			years = 2
+		}
+		random_list = {
+			30 = { add_trait = erudite }
+			70 = {}
+		}
+		prestige = 500
+	}
+	option = { #Diplomacy-Stewardship/stats
+		name = "I would like access to your library undisturbed."
+		add_character_modifier = {
+			name = papal_reward_diplomacy
+			years = 2
+		}
+		piety = 500
+		character_event = { id = PAPREW.3 days = 2 }
+	}
+	option = { #Martial?
+		name = "My realm is left weak, i need additional soldiers."
+		add_character_modifier = {
+			name = papal_reward_martial
+			years = 2
+		}
+		custom_tooltip = {
+			text = "Additional soldiers from the Papacy will be sent to your capital"
+			while = {
+				count = 6
+				spawn_unit = {
+					owner = ROOT
+					province = capital
+					home = ROOT
+		
+					troops = {
+						archers = { 200 200 }
+						light_infantry = { 300 300 }
+						heavy_infantry = { 150 150 }
+						light_cavalry = { 100 100 }
+						knights = { 50 50 }
+					}
+		
+					#attrition = 1.0
+					#disband_on_peace = yes
+					#maintenance_multiplier = 0.5
+				}
+			}
+		}
+		character_event = { id = PAPREW.3 days = 2 }
+	}
+}
+
+character_event = {
+	id = PAPREW.3
+	desc = "As the final points have been discussed. The Pope blesses you happly and wishes you a safe travel back home. You leave the Apostolic Palace and gather the army back together to leave Rome back to home."
+	
+	picture = GFX_evt_victory_arch_byzantine
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "I shall miss Rome.."
+		remove_trait = travelling
+		random_list = {
+			10 = { add_trait = humble }
+			20 = { add_trait = kind }
+			70 = {}
+		}
+	}
+}
