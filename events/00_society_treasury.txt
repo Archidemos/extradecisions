@@ -1,0 +1,33 @@
+namespace = ST
+
+character_event = {
+    id = ST.1
+    hide_window = yes
+    is_triggered_only = yes #on_startup
+
+    trigger = {
+        has_landed_title = k_papacy # Pope Always Exists
+        is_save_game = no
+    }
+
+    immediate = {
+        set_variable = {
+            which = global_benedictine_gold
+            value = 50
+        }
+        set_variable = {
+            which = global_dominican_gold
+            value = 69
+        }
+        set_variable = {
+            which = global_lucifer_gold
+            value = 666
+        }
+        set_variable = {
+            which = global_wolf_gold
+            value = 10
+        }
+
+        log = "Set society treasuries up"
+    }
+}
