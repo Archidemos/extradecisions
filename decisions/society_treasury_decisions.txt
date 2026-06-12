@@ -1,0 +1,48 @@
+# - Decisions:
+#
+# - Targeted Decisions:
+# (self filter target)
+# Embellish Society Funds -> Psuedo-scheme, kinda like stealing artifact?
+# Sponsor Church/Raid/Ritual idk
+# (society members filter target)
+# Aid in mission (e.g. target has build church mission -> money / Raid mission -> small event stack / Devil/assassin mission -> intrigue/plot boost)
+# > Ends effects after mission? timer? only one use per mission/10 years (tbd)?
+# Boost legend bar (every year +x%?)
+
+decisions = {
+
+}
+
+targeted_decisions = {
+    embellish_society_funds = {
+
+        ai_check_interval = 120
+        filter = self
+
+        potential = {
+            has_treasury_access = yes # Special trigger 'has_treasury_access' ?
+        }
+
+        allow = {
+            custom_tooltip = {
+                text = SOCIETY_FUND_TRIGGER
+
+                society = {
+                    check_variable = {
+                        which = society_treasury
+                        value >= 100 # have global game rules? make wealth based on #members?
+                    }
+                }
+            }
+
+            OR = {
+                trait = arbitrary
+                intrigue = 10
+            }
+        }
+
+        effect = {
+
+        }
+    }
+}

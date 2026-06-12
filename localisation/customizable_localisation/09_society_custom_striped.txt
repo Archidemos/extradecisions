@@ -1,0 +1,133 @@
+defined_text = {
+    name = OwnSocietyDefinedString # appears top of list
+    text = {
+        trigger = { is_in_society = yes }
+        localisation_key = OwnSocietyTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+# MONASTIC
+
+defined_text = {
+    name = BenedictineDefinedString
+    text = {
+        trigger = {
+            can_join_society = monastic_order_benedictine # too strict?  show to more?
+            NOT = { society = { is_society =  monastic_order_benedictine } } # hide if current society -> use OwnSociety
+        }
+        localisation_key = BenedictineTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = DominicanDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_dominican }
+        localisation_key = DominicanTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = OrthodoxDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_orthodox }
+        localisation_key = OrthodoxTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = NestorianDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_nestorian }
+        localisation_key = NestorianTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = MonophysiteDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_monophysite }
+        localisation_key = MonophysiteTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = HinduDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_hindu }
+        localisation_key = HinduTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = BuddhistDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_buddhist }
+        localisation_key = BuddhistTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = JainDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_jain }
+        localisation_key = JainTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = StoicDefinedString
+    text = {
+        trigger = { can_join_society = monastic_order_stoics }
+        localisation_key = StoicTextString
+    }
+    fallback_text = { # is this even necessary?
+        localisation_key = ""
+    }
+}
+
+# MISC
+
+# INTRIGUE
+
+# DEVIL
+
+defined_text = {
+    name = LucifersOwnDefinedString
+    text = {
+        trigger = { society_member_of = the_satanists } # different trigger
+        localisation_key = LucifersOwnTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+# MARTIAL

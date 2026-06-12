@@ -1,9 +1,100 @@
-# No way of doing Root's society or some stuff :sigh: or some automatic list stuff, truely pdxScript moment 
+# PET = Persistent Event Target
+
+HiddenString;?;;;;;;;;x # obsolete?
 
 TREASURY_TT;Society Treasuries;x
-TREASURY_TT_delayed;[LucifersOwnText]Benedictine Order: [Root.global_benedictine_gold.GetValue]¤\nDominican Order: [Root.global_dominican_gold.GetValue]¤\nWolf Warriors: [Root.global_wolf_gold.GetValue]¤;;;;;;;;x
+TREASURY_TT_delayed;[OwnSocietyDefinedString][BenedictineDefinedString][DominicanDefinedString][OrthodoxDefinedString][NestorianDefinedString][MonophysiteDefinedString][BuddhistDefinedString][JainDefinedString][StoicDefinedString][][][][][][][][][][LucifersOwnDefinedString];;;;;;;;x
 
-LucifersOwnValueString;[Root.global_lucifer_gold.GetValue];;;;;;;;x
-LucifersOwnValueTextString;Lucifer's Own: [LucifersOwnValue]¤\n;;;;;;;;x
+# MONASTIC
 
-HiddenString;?;;;;;;;;x
+OwnSocietyValueString;[Root.Society.society_treasury.GetValue]¤;;;;;;;;;;x
+OwnSocietyTextString;§Y[Root.Society.GetName]§!: [OwnSocietyValueString]¤;;;;;;;;;;x
+
+BenedictineValueString;[c_roma.BenedictinePET.society_treasury.GetValue]¤;;;;;;;;;;x
+BenedictineTextString;[c_roma.BenedictinePET.GetName]: [BenedictineValueString]\n;;;;;;;;;;x
+
+DominicanValueString;[c_roma.DominicanPET.society_treasury.GetValue]¤;;;;;;;;;;x
+DominicanTextString;[c_roma.DominicanPET.GetName]: [DominicanValueString]\n;;;;;;;;;;x
+
+OrthodoxValueString;[c_roma.OrthodoxPET.society_treasury.GetValue]¤;;;;;;;;;;x
+OrthodoxTextString;[c_roma.OrthodoxPET.GetName]: [OrthodoxValueString]\n;;;;;;;;;;x
+
+NestorianValueString;[c_roma.NestorianPET.society_treasury.GetValue]¤;;;;;;;;;;x
+NestorianTextString;[c_roma.NestorianPET.GetName]: [NestorianValueString]\n;;;;;;;;;;x
+
+MonophysiteValueString;[c_roma.MonophysitePET.society_treasury.GetValue]¤;;;;;;;;;;x
+MonophysiteTextString;[c_roma.MonophysitePET.GetName]: [MonophysiteValueString]\n;;;;;;;;;;x
+
+HinduValueString;[c_roma.HinduPET.society_treasury.GetValue]¤;;;;;;;;;;x
+HinduTextString;[c_roma.HinduPET.GetName]: [HinduValueString]\n;;;;;;;;;;x
+
+BuddhistValueString;[c_roma.BuddhistPET.society_treasury.GetValue]¤;;;;;;;;;;x
+BuddhistTextString;[c_roma.BuddhistPET.GetName]: [BuddhistValueString]\n;;;;;;;;;;x
+
+JainValueString;[c_roma.JainPET.society_treasury.GetValue]¤;;;;;;;;;;x
+JainTextString;[c_roma.JainPET.GetName]: [JainValueString]\n;;;;;;;;;;x
+
+StoicValueString;[c_roma.StoicPET.society_treasury.GetValue]¤;;;;;;;;;;x
+StoicTextString;[c_roma.StoicPET.GetName]: [StoicValueString]\n;;;;;;;;;;x
+
+# MISC
+
+HermeticValueString;[c_roma.HermeticPET.society_treasury.GetValue]¤;;;;;;;;;;x
+HermeticTextString;[c_roma.HermeticPET.GetName]: [HermeticValueString]\n;;;;;;;;;;x
+
+# INTRIGUE
+
+AssassinValueString;[c_roma.AssassinPET.society_treasury.GetValue]¤;;;;;;;;;;x
+AssassinTextString;[c_roma.AssassinPET.GetName]: [AssassinValueString]\n;;;;;;;;;;x
+
+# DEVIL
+
+LucifersOwnValueString;[c_roma.LuciferPET.society_treasury.GetValue]¤;;;;;;;;x
+LucifersOwnTextString;Lucifer's Own: [LucifersOwnValue]¤\n;;;;;;;;x
+
+TrollsValueString;[c_roma.TrollsPET.society_treasury.GetValue]¤;;;;;;;;;;x
+TrollsTextString;[c_roma.TrollsPET.GetName]: [TrollsValueString]\n;;;;;;;;;;x
+
+KaliValueString;[c_roma.KaliPET.society_treasury.GetValue]¤;;;;;;;;;;x
+KaliTextString;[c_roma.KaliPET.GetName]: [KaliValueString]\n;;;;;;;;;;x
+
+ColdOnesValueString;[c_roma.ColdOnesPET.society_treasury.GetValue]¤;;;;;;;;;;x
+ColdOnesTextString;[c_roma.ColdOnesPET.GetName]: [ColdOnesValueString]\n;;;;;;;;;;x
+
+PlagueBringersValueString;[c_roma.PlagueBringersPET.society_treasury.GetValue]¤;;;;;;;;;;x
+PlagueBringersTextString;[c_roma.PlagueBringersPET.GetName]: [PlagueBringersValueString]\n;;;;;;;;;;x
+
+VodounsValueString;[c_roma.VodounsPET.society_treasury.GetValue]¤;;;;;;;;;;x
+VodounsTextString;[c_roma.VodounsPET.GetName]: [VodounsValueString]\n;;;;;;;;;;x
+
+BacchantsValueString;[c_roma.BacchantsPET.society_treasury.GetValue]¤;;;;;;;;;;x
+BacchantsTextString;[c_roma.BacchantsPET.GetName]: [BacchantsValueString]\n;;;;;;;;;;x
+
+# MARTIAL
+
+WarriorNorseValueString;[c_roma.WarriorNorsePET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorNorseTextString;[c_roma.WarriorNorsePET.GetName]: [WarriorNorseValueString]\n;;;;;;;;;;x
+
+WarriorTengriValueString;[c_roma.WarriorTengriPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorTengriTextString;[c_roma.WarriorTengriPET.GetName]: [WarriorTengriValueString]\n;;;;;;;;;;x
+
+WarriorBalticValueString;[c_roma.WarriorBalticPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorBalticTextString;[c_roma.WarriorBalticPET.GetName]: [WarriorBalticValueString]\n;;;;;;;;;;x
+
+WarriorFinnishValueString;[c_roma.WarriorFinnishPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorFinnishTextString;[c_roma.WarriorFinnishPET.GetName]: [WarriorFinnishValueString]\n;;;;;;;;;;x
+
+WarriorSlavicValueString;[c_roma.WarriorSlavicPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorSlavicTextString;[c_roma.WarriorSlavicPET.GetName]: [WarriorSlavicValueString]\n;;;;;;;;;;x
+
+WarriorAfricanValueString;[c_roma.WarriorAfricanPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorAfricanTextString;[c_roma.WarriorAfricanPET.GetName]: [WarriorAfricanValueString]\n;;;;;;;;;;x
+
+WarriorZunValueString;[c_roma.WarriorZunPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorZunTextString;[c_roma.WarriorZunPET.GetName]: [WarriorZunValueString]\n;;;;;;;;;;x
+
+WarriorBonValueString;[c_roma.WarriorBonPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorBonTextString;[c_roma.WarriorBonPET.GetName]: [WarriorBonValueString]\n;;;;;;;;;;x
+
+WarriorHellenicValueString;[c_roma.WarriorHellenicPET.society_treasury.GetValue]¤;;;;;;;;;;x
+WarriorHellenicTextString;[c_roma.WarriorHellenicPET.GetName]: [WarriorHellenicValueString]\n;;;;;;;;;;x

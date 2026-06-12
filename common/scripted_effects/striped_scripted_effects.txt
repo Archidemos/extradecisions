@@ -1,0 +1,32 @@
+# PAIN IN THE ASS
+
+update_treasury_value = {
+    
+}
+
+set_society_treasury_variable = {
+    THIS = {
+        if = {
+            limit = {
+                is_society = THIS # if returns false then its not a society scope!
+            }
+            set_variable = {
+                which = society_treasury
+                value = local_starting_gold
+            }
+        }
+        else = {
+            log = "wrong scope inputed into society treasury? [Root.GetName] [This.GetName]"
+        }
+    }
+}
+
+
+
+add_wealth_to_treasury = {
+
+}
+
+remove_wealth_from_treasury = {
+
+}

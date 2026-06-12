@@ -1,31 +1,172 @@
 namespace = ST
 
+# > Save Persistent Event Targets (used in loc)
+# > Save/Set Variables on Societies
+
+# see 02_striped_loc.csv / 09_societ_custom_striped.txt / striped_scripted_effects.txt / striped_triggers.txt
+
 character_event = {
     id = ST.1
     hide_window = yes
     is_triggered_only = yes #on_startup
 
     trigger = {
-        has_landed_title = k_papacy # Pope Always Exists
+        has_landed_title = c_roma # Pope Always Exists ? 
         is_save_game = no
     }
 
     immediate = {
-        set_variable = {
-            which = global_benedictine_gold
-            value = 50
+        if = {
+            limit = {
+                start_date >= 1000.1.1
+            }
+            set_variable = {
+                which = local_starting_gold
+                value = 100 # can change this value depending on game rule/start date yada yada
+            }
         }
-        set_variable = {
-            which = global_dominican_gold
-            value = 69
+
+        else = {
+            set_variable = {
+                which = local_starting_gold
+                value = 50
+            }
         }
-        set_variable = {
-            which = global_lucifer_gold
-            value = 666
+
+        # Persistent Event Targets (for localisation)
+
+        # monastic
+
+        c_roma = {
+            save_persistent_event_target = {
+                name = BenedictinePET
+                scope = monastic_order_benedictine
+            }
+
+            save_persistent_event_target = {
+                name = DominicanPET
+                scope = monastic_order_dominican
+            }
         }
-        set_variable = {
-            which = global_wolf_gold
-            value = 10
+
+        # SCOPED VARIABLES / vanilla done 
+
+        # monastic
+
+        monastic_order_benedictine = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_dominican = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_orthodox = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_nestorian = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_monophysite = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_hindu = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_buddhist = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_jain = {
+            set_society_treasury_variable = yes
+        }
+
+        monastic_order_stoics = {
+            set_society_treasury_variable = yes
+        }
+
+        #misc
+
+        hermetics = {
+            set_society_treasury_variable = yes
+        }
+
+        # intrigue
+
+        the_assassins = {
+            set_society_treasury_variable = yes
+        }
+
+        #devil worshipper
+
+        the_satanists = {
+            set_society_treasury_variable = yes
+        }
+
+        the_trollcrafters = {
+            set_society_treasury_variable = yes
+        }
+
+        the_cult_of_kali = {
+            set_society_treasury_variable = yes
+        }
+
+        the_cold_ones = {
+            set_society_treasury_variable = yes
+        }
+
+        the_plaguebringers = {
+            set_society_treasury_variable = yes
+        }
+
+        the_vodouns = {
+            set_society_treasury_variable = yes
+        }
+
+        the_bacchants = {
+            set_society_treasury_variable = yes
+        }
+
+        # martial
+
+        warrior_lodge_norse = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_tengri = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_baltic = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_finnish = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_slavic = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_west_african = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_zun = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_bon = {
+            set_society_treasury_variable = yes
+        }
+
+        warrior_lodge_hellenic = {
+            set_society_treasury_variable = yes
         }
 
         log = "Set society treasuries up"
