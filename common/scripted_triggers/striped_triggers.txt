@@ -4,3 +4,51 @@ has_treasury_access = {
         has_character_flag = has_treasury_access_flag
     }
 }
+
+# IN SOCIETY SCOPE (BELOW)
+
+can_see_society_monastic = { # hide if current society -> use OwnSociety  # too strict?  show to more?
+    ROOT = {
+        can_join_society = yes
+        NOT = { society = { is_society = PREVPREV } } # THIS = ROOT_SOCIETY, PREV = ROOT, PREVPREV = SOCIETY
+    }
+    
+    society_is_active = yes
+}
+
+can_see_society_demon = { # hide if current society -> use OwnSociety  # too strict?  show to more?
+    ROOT = {
+        can_join_society = yes
+        NOT = { society = { is_society = PREVPREV } } 
+    }
+    
+    society_is_active = yes
+}
+
+can_see_society_misc = { # hide if current society -> use OwnSociety  # too strict?  show to more?
+    ROOT = {
+        can_join_society = yes
+        NOT = { society = { is_society = PREVPREV } } 
+    }
+    
+    society_is_active = yes
+}
+
+can_see_society_intrigue = { # hide if current society -> use OwnSociety  # too strict?  show to more?
+    ROOT = {
+        can_join_society = yes
+        NOT = { society = { is_society = PREVPREV } } 
+    }
+    
+    society_is_active = yes
+}
+
+can_see_society_martial = { # hide if current society -> use OwnSociety  # too strict?  show to more?
+    ROOT = {
+        can_join_society = yes
+        NOT = { society = { is_society = PREVPREV } } 
+    }
+    
+    society_is_active = yes
+}
+

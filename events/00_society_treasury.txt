@@ -21,14 +21,14 @@ character_event = {
                 start_date >= 1000.1.1
             }
             set_variable = {
-                which = local_starting_gold
+                which = global_starting_gold
                 value = 100 # can change this value depending on game rule/start date yada yada
             }
         }
 
         else = {
             set_variable = {
-                which = local_starting_gold
+                which = global_starting_gold
                 value = 50
             }
         }
@@ -47,6 +47,126 @@ character_event = {
                 name = DominicanPET
                 scope = monastic_order_dominican
             }
+
+            save_persistent_event_target = {
+                name = OrthodoxPET
+                scope = monastic_order_orthodox
+            }
+
+            save_persistent_event_target = {
+                name = MonophysitePET
+                scope = monastic_order_monophysite
+            }
+
+            save_persistent_event_target = {
+                name = HinduPET
+                scope = monastic_order_hindu
+            }
+
+            save_persistent_event_target = {
+                name = BuddhistPET
+                scope = monastic_order_buddhist
+            }
+
+            save_persistent_event_target = {
+                name = JainPET
+                scope = monastic_order_jain
+            }
+
+            save_persistent_event_target = {
+                name = StoicPET
+                scope = monastic_order_stoics
+            }
+
+            save_persistent_event_target = {
+                name = HermeticPET
+                scope = hermetics
+            }
+            
+            save_persistent_event_target = {
+                name = AssassinPET
+                scope = the_assassins
+            }
+
+            save_persistent_event_target = {
+                name = LuciferPET
+                scope = the_satanists
+            }
+
+            save_persistent_event_target = {
+                name = TrollsPET
+                scope = the_trollcrafters
+            }
+
+            save_persistent_event_target = {
+                name = KaliPET
+                scope = the_cult_of_kali
+            }
+
+            save_persistent_event_target = {
+                name = ColdOnesPET
+                scope = the_cold_ones
+            }
+
+            save_persistent_event_target = {
+                name = PlagueBringersPET
+                scope = the_plaguebringers
+            }
+
+            save_persistent_event_target = {
+                name = VodounsPET
+                scope = the_vodouns
+            }
+
+            save_persistent_event_target = {
+                name = BacchantsPET
+                scope = the_bacchants
+            }
+
+            save_persistent_event_target = {
+                name = WarriorNorsePET
+                scope = warrior_lodge_norse
+            }
+
+            save_persistent_event_target = {
+                name = WarriorTengriPET
+                scope = warrior_lodge_tengri
+            }
+
+            save_persistent_event_target = {
+                name = WarriorBalticPET
+                scope = warrior_lodge_baltic
+            }
+
+            save_persistent_event_target = {
+                name = WarriorFinnishPET
+                scope = warrior_lodge_finnish
+            }
+
+            save_persistent_event_target = {
+                name = WarriorSlavicPET
+                scope = warrior_lodge_slavic
+            }
+
+            save_persistent_event_target = {
+                name = WarriorAfricanPET
+                scope = warrior_lodge_west_african
+            }
+
+            save_persistent_event_target = {
+                name = WarriorZunPET
+                scope = warrior_lodge_zun
+            }
+
+            save_persistent_event_target = {
+                name = WarriorBonPET
+                scope = warrior_lodge_bon
+            }
+
+            save_persistent_event_target = {
+                name = WarriorHellenicPET
+                scope = warrior_lodge_hellenic
+            }
         }
 
         # SCOPED VARIABLES / vanilla done 
@@ -54,121 +174,214 @@ character_event = {
         # monastic
 
         monastic_order_benedictine = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_dominican = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_orthodox = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_nestorian = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_monophysite = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_hindu = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_buddhist = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_jain = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         monastic_order_stoics = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         #misc
 
         hermetics = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         # intrigue
 
         the_assassins = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         #devil worshipper
 
         the_satanists = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_trollcrafters = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_cult_of_kali = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_cold_ones = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_plaguebringers = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_vodouns = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         the_bacchants = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         # martial
 
         warrior_lodge_norse = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_tengri = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_baltic = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_finnish = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_slavic = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_west_african = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_zun = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_bon = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         warrior_lodge_hellenic = {
-            set_society_treasury_variable = yes
+            set_variable = {
+                which = society_treasury
+                which = global_starting_gold
+            }
         }
 
         log = "Set society treasuries up"
     }
+
+    after = {
+        set_variable = {
+            which = global_starting_gold
+            value = 0
+        }
+    }
+}
+
+character_event = {
+    id = ST.2
+    title = OwnSocietyTextString
 }

@@ -15,8 +15,7 @@ defined_text = {
     name = BenedictineDefinedString
     text = {
         trigger = {
-            can_join_society = monastic_order_benedictine # too strict?  show to more?
-            NOT = { society = { is_society =  monastic_order_benedictine } } # hide if current society -> use OwnSociety
+            monastic_order_benedictine = { can_see_society_monastic = yes } # striped_triggers.txt
         }
         localisation_key = BenedictineTextString
     }
@@ -28,7 +27,9 @@ defined_text = {
 defined_text = {
     name = DominicanDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_dominican }
+        trigger = {
+            monastic_order_dominican = { can_see_society_monastic = yes }
+        }
         localisation_key = DominicanTextString
     }
     fallback_text = { # is this even necessary?
@@ -39,7 +40,9 @@ defined_text = {
 defined_text = {
     name = OrthodoxDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_orthodox }
+        trigger = {
+            monastic_order_orthodox = { can_see_society_monastic = yes }
+        }
         localisation_key = OrthodoxTextString
     }
     fallback_text = { # is this even necessary?
@@ -50,7 +53,9 @@ defined_text = {
 defined_text = {
     name = NestorianDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_nestorian }
+        trigger = {
+            monastic_order_nestorian = { can_see_society_monastic = yes }
+        }
         localisation_key = NestorianTextString
     }
     fallback_text = { # is this even necessary?
@@ -61,7 +66,9 @@ defined_text = {
 defined_text = {
     name = MonophysiteDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_monophysite }
+        trigger = {
+            monastic_order_monophysite = { can_see_society_monastic = yes }
+        }
         localisation_key = MonophysiteTextString
     }
     fallback_text = { # is this even necessary?
@@ -72,7 +79,9 @@ defined_text = {
 defined_text = {
     name = HinduDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_hindu }
+        trigger = {
+            monastic_order_hindu = { can_see_society_monastic = yes }
+        }
         localisation_key = HinduTextString
     }
     fallback_text = { # is this even necessary?
@@ -83,7 +92,9 @@ defined_text = {
 defined_text = {
     name = BuddhistDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_buddhist }
+        trigger = {
+            monastic_order_buddhist = { can_see_society_monastic = yes }
+        }
         localisation_key = BuddhistTextString
     }
     fallback_text = { # is this even necessary?
@@ -94,7 +105,9 @@ defined_text = {
 defined_text = {
     name = JainDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_jain }
+        trigger = {
+            monastic_order_jain = { can_see_society_monastic = yes }
+        }
         localisation_key = JainTextString
     }
     fallback_text = { # is this even necessary?
@@ -105,7 +118,9 @@ defined_text = {
 defined_text = {
     name = StoicDefinedString
     text = {
-        trigger = { can_join_society = monastic_order_stoics }
+        trigger = {
+            monastic_order_stoics = { can_see_society_monastic = yes }
+        }
         localisation_key = StoicTextString
     }
     fallback_text = { # is this even necessary?
@@ -115,14 +130,42 @@ defined_text = {
 
 # MISC
 
+defined_text = {
+    name = HermeticDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_misc = yes }
+        }
+        localisation_key = HermeticTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
 # INTRIGUE
+
+defined_text = {
+    name = AssassinDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_intrigue = yes }
+        }
+        localisation_key = AssassinTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
 
 # DEVIL
 
 defined_text = {
     name = LucifersOwnDefinedString
     text = {
-        trigger = { society_member_of = the_satanists } # different trigger
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
         localisation_key = LucifersOwnTextString
     }
     fallback_text = {
@@ -130,4 +173,188 @@ defined_text = {
     }
 }
 
+defined_text = {
+    name = TrollsDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = TrollsTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = KaliDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = KaliTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = ColdOnesDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = ColdOnesTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = PlagueBringersDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = PlagueBringersTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = VodounsDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = VodounsTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = BacchantsDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_demon = yes }
+        }
+        localisation_key = BacchantsTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
 # MARTIAL
+
+defined_text = {
+    name = WarriorNorseDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorNorseTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorTengriDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorTengriTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorBalticDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorBalticTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorFinnishDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorFinnishTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorAfricanDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorAfricanTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+v
+
+defined_text = {
+    name = WarriorZunDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorZunTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorBonDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorBonTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
+
+defined_text = {
+    name = WarriorHellenicDefinedString
+    text = {
+        trigger = {
+            the_satanists = { can_see_society_martial = yes }
+        }
+        localisation_key = WarriorHellenicTextString
+    }
+    fallback_text = {
+        localisation_key = ""
+    }
+}
