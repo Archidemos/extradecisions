@@ -1,19 +1,57 @@
 ## PAIN IN THE ASS
-#
-#set_society_treasury_variable = {
-#    log = "[Root.local_starting_gold.GetValue]"
-#
-#    if = {
-#        limit = {
-#            is_society = THIS # if returns false then its not a society scope!
-#        }
-#        set_variable = {
-#            which = society_treasury
-#            value = local_starting_gold
-#        }
-#    }
-#    else = {
-#        log = "wrong scope inputed into society treasury? [Root.GetName] [This.GetName]"
-#    }
-#}
-#
+
+update_gm_treasury = {
+    if = {
+        limit = { is_society = THIS }
+
+
+        any_society_member = {
+            limit = {
+                is_society_grandmaster = yes
+            }
+
+            set_variable = {
+                which = society_treasury
+                which = PREV
+            }
+
+            set_variable = {
+                which = temp_rounding
+                which = society_treasury
+            }
+
+            modulo_variable = {
+                which = temp_rounding
+                value = 1
+            }
+
+            subtract_variable = {
+                which = society_treasury
+                which = temp_rounding
+            }
+
+            if = {
+                limit = {
+                    check_variable = {
+                        which = temp_rounding
+                        value >= 0.5
+                    }
+                }
+
+                change_variable = {
+                    which = society_treasury
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+set_society_treasury_variable = {
+    set_variable = {
+        which = society_treasury
+        which = global_starting_gold
+    }
+
+    update_gm_treasury = yes
+}

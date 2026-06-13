@@ -174,221 +174,140 @@ character_event = {
         # monastic
 
         monastic_order_benedictine = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_dominican = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_orthodox = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_nestorian = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_monophysite = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_hindu = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_buddhist = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_jain = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         monastic_order_stoics = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         #misc
 
         hermetics = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         # intrigue
 
         the_assassins = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         #devil worshipper
 
         the_satanists = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_trollcrafters = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_cult_of_kali = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_cold_ones = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_plaguebringers = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_vodouns = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         the_bacchants = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         # martial
 
         warrior_lodge_norse = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_tengri = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_baltic = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_finnish = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_slavic = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_west_african = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_zun = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_bon = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         warrior_lodge_hellenic = {
-            set_variable = {
-                which = society_treasury
-                which = global_starting_gold
-            }
+            set_society_treasury_variable = yes
         }
 
         log = "Set society treasuries up"
     }
 
-    after = {
-        set_variable = {
-            which = global_starting_gold
-            value = 0
-        }
-    }
+    #after = {
+    #    set_variable = {
+    #        which = global_starting_gold
+    #        value = 0
+    #    }
+    #}
 }
 
 character_event = {
     id = ST.2
     title = OwnSocietyTextString
-    desc = OwnSocietyValueString
+    desc = "[OwnSocietyDefinedString] \n [Root.Society.GrandMaster.GetFirstName]"
 
     is_triggered_only = yes
 
     option = {
-        name = "[OwnSocietyDefinedString]"
+        name = OwnSocietyValueString
     }
 }

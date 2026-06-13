@@ -9,17 +9,7 @@ has_treasury_access = {
 
 can_see_society_monastic = { # hide if current society -> use OwnSociety  # too strict?  show to more?
     ROOT = {
-        OR = {
-            can_join_society = monastic_order_benedictine
-            can_join_society = monastic_order_dominican
-            can_join_society = monastic_order_orthodox
-            can_join_society = monastic_order_nestorian
-            can_join_society = monastic_order_monophysite
-            can_join_society = monastic_order_hindu
-            can_join_society = monastic_order_buddhist
-            can_join_society = monastic_order_jain
-            can_join_society = monastic_order_stoics
-        }
+        can_join_society = PREV
         NOT = { society = { is_society = PREVPREV } } # THIS = ROOT_SOCIETY, PREV = ROOT, PREVPREV = SOCIETY
     }
     society_is_active = yes
@@ -42,9 +32,7 @@ can_see_society_demon = { # hide if current society -> use OwnSociety  # too str
 
 can_see_society_misc = { # hide if current society -> use OwnSociety  # too strict?  show to more?
     ROOT = {
-        OR = {
-            can_join_society = hermetics
-        }
+        can_join_society = PREV
         NOT = { society = { is_society = PREVPREV } } 
     }
     
@@ -64,7 +52,7 @@ can_see_society_intrigue = { # hide if current society -> use OwnSociety  # too 
 
 can_see_society_martial = { # hide if current society -> use OwnSociety  # too strict?  show to more?
     ROOT = {
-        can_join_society = yes
+        #can_join_society = yes
         NOT = { society = { is_society = PREVPREV } } 
     }
     
