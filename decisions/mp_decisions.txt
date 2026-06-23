@@ -334,34 +334,43 @@ targetted_decisions = {
 		
 		effect = {
 			FROM = {
+				set_dynasty_flag = cadet_@FROM
+
 				dynasty = father_bastard
 				recalc_succession = yes
-				father = { # Dynasty of descendants should equal the original dynasty
-					any_child = {
+				#father = { # Dynasty of descendants should equal the original dynasty
+
+				# Also Do If Child Is A Ruler????
+
+				any_child_even_if_dead = { # child
+					limit = {
+						has_dynasty_flag = cadet_@FROM
+						NOT = { trait = bastard }
+					}
+
+					dynasty = FROM
+
+					any_child_even_if_dead = { # grand child
 						limit = {
-							dynasty = PREV
+							has_dynasty_flag = cadet_@FROM
 							NOT = { trait = bastard }
 						}
 
 						dynasty = FROM
 
-						any_child = {
+						any_child_even_if_dead = { # great-grandchild
 							limit = {
-								dynasty = PREVPREV
+								has_dynasty_flag = cadet_@FROM
 								NOT = { trait = bastard }
 							}
-
 							dynasty = FROM
-
-							any_child = {
-								limit = {
-									dynasty = PREVPREVPREV
-									NOT = { trait = bastard }
-								}
-								dynasty = FROM
-							}
 						}
 					}
+				}
+				#}
+
+				father_even_if_dead = { # father should be same dynasty?
+					clr_dynasty_flag = cadet_@FROM
 				}
 			}
 		}
