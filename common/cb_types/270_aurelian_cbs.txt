@@ -1,0 +1,177 @@
+gallic_rome_cb = {
+	name = CB_NAME_GALLIC_ROME
+	war_name = WAR_NAME_GALLIC_ROME
+	sprite = 7
+	truce_days = 3650
+	hostile_against_others = yes
+	is_permanent = no
+	allow_whitepeace = no
+	can_ask_to_join_war = yes
+
+	infamy_modifier = 1.25
+	
+	sort_priority = 100000
+	
+	attacker_ai_victory_worth = { factor = -1 }
+	attacker_ai_defeat_worth = { factor = 100 } 
+	defender_ai_victory_worth = { factor = -1 }
+	defender_ai_defeat_worth = { factor = 100 }
+	
+	battle_warscore_mult = 1.2
+	att_ticking_war_score_multiplier = 0.7
+	def_ticking_war_score_multiplier = 3.0
+	max_attacker_occupation_score = 50
+	max_attacker_battle_score = 75
+	defender_unoccupied_warscore = yes
+
+	is_valid = {
+		always = yes
+	}
+	
+	can_use = {
+		FROM = {
+			has_landed_title = e_roman_empire
+		}
+        ROOT = {
+			has_landed_title = e_gallic_empire
+		}
+	}
+	can_use_title = {
+		ROOT = {
+			has_landed_title = e_gallic_empire
+		}
+	}
+	
+	on_success = {
+		ROOT = {
+			show_scope_change = no
+			prestige = 1000
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = -1000
+		}
+	}
+	
+	on_fail = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -500
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 500
+		}
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -1000
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 1000
+		}
+		FROM = { usurp_title_plus_barony_if_unlanded = { target = e_gallic_empire type = claim } }
+		ROOT = {
+			e_gallic_empire = {
+				show_scope_change = no
+				destroy_landed_title = THIS
+			}
+		}
+		activate_title = {
+			title = e_gallic_empire
+			status = no
+		}
+	}
+}
+
+palmyrene_rome_cb = {
+	name = CB_NAME_GALLIC_ROME
+	war_name = WAR_NAME_GALLIC_ROME
+	sprite = 7
+	truce_days = 3650
+	hostile_against_others = yes
+	is_permanent = no
+	allow_whitepeace = no
+	can_ask_to_join_war = yes
+
+	infamy_modifier = 1.25
+	
+	sort_priority = 100000
+	
+	attacker_ai_victory_worth = { factor = -1 }
+	attacker_ai_defeat_worth = { factor = 100 } 
+	defender_ai_victory_worth = { factor = -1 }
+	defender_ai_defeat_worth = { factor = 100 }
+	
+	battle_warscore_mult = 1.2
+	att_ticking_war_score_multiplier = 0.7
+	def_ticking_war_score_multiplier = 3.0
+	max_attacker_occupation_score = 50
+	max_attacker_battle_score = 75
+	defender_unoccupied_warscore = yes
+
+	is_valid = {
+		always = yes
+	}
+	
+	can_use = {
+		FROM = {
+			has_landed_title = e_roman_empire
+		}
+        ROOT = {
+			has_landed_title = e_palmyrene
+		}
+	}
+	can_use_title = {
+		ROOT = {
+			has_landed_title = e_palmyrene
+		}
+	}
+	
+	on_success = {
+		ROOT = {
+			show_scope_change = no
+			prestige = 1000
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = -1000
+		}
+	}
+	
+	on_fail = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -500
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 500
+		}
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			show_scope_change = no
+			prestige = -1000
+		}
+		FROM = {
+			show_scope_change = no
+			prestige = 1000
+		}
+		FROM = { usurp_title_plus_barony_if_unlanded = { target = e_palmyrene type = claim } }
+		ROOT = {
+			e_palmyrene = {
+				show_scope_change = no
+				destroy_landed_title = THIS
+			}
+		}
+		activate_title = {
+			title = e_palmyrene
+			status = no
+		}
+	}
+}
