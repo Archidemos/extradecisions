@@ -1,0 +1,46 @@
+decisions = {
+	abandon_dacia = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			start_date == 270.5.1
+			has_landed_title = e_roman_empire
+			#NOT = { has_global_flag = roman_crisis_done }
+			NOT = { has_global_flag = left_dacia }
+			NOT = {
+				AND = {
+					has_global_flag = roman_crisis_finished_1
+					has_global_flag = roman_crisis_finished_2
+					has_global_flag = roman_crisis_finished_3
+				}
+			}
+		}
+		allow = {
+			has_landed_title = e_roman_empire
+			NOT = { has_landed_title = k_rome_dacia }
+		}
+		effect = {
+			set_global_flag = left_dacia
+			custom_tooltip = { 
+				text = "the Roman Province of Dacia will be abandoned, this could make the our current sittuations less severe for a little bit." 
+				hidden_tooltip = { character_event = { id = ROMANAUR.101 } }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+}

@@ -2,6 +2,7 @@
 
 100.1.1 = {
 	pentarch = b_roma
+	effect = { set_coa = k_rome_italy }
 }
 
 400.1.1 = {
@@ -15,14 +16,12 @@
 	holder = 4000206
 }
 
-600.1.1 = {
-	vice_royalty = no
-}
 565.1.1 = {
 	liege = 0
 	holder = 190124 # Alboin
 	#name = LOMBARD_KINGDOM # doesn't work with dynamic names
 	#adjective = LOMBARD_KINGDOM_ADJ
+	effect = { reset_coa = THIS }
 	effect = { set_coa = k_lombardy }
 }
 572.1.1 = {
@@ -34,6 +33,11 @@
 590.1.1 = {
 	holder = 190170 # Agilulf
 }
+
+600.1.1 = {
+	vice_royalty = no
+}
+
 616.1.1 = {
 	holder = 190173 # Adaloald
 }

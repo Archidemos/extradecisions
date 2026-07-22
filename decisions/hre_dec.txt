@@ -70,30 +70,24 @@ decisions = {
 						if = {
 							limit = {
 								ROOT = {
-									OR = {
-										AND = {
-											tier = EMPEROR
-											is_nomadic = no
-										}
-										AND = {
-											is_nomadic = yes
-											num_of_count_titles_in_realm > 16
-										}
+									AND = {
+										tier = EMPEROR
+										is_nomadic = no
 									}
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
 									owner = ROOT
 									troops = {
-										light_infantry = { 2000 2000 }
-										archers = { 1500 1500 }
-										heavy_infantry = { 550 550 }
-										knights = { 800 800 }
-										light_cavalry = { 700 700 }
+										light_infantry = { 250 250 }
+										archers = { 500 500 }
+										heavy_infantry = { 150 150 }
+										knights = { 150 150 }
+										light_cavalry = { 200 200 }
 									}
 									attrition = 1.0
 									disband_on_peace = yes
@@ -105,27 +99,24 @@ decisions = {
 						else_if = {
 							limit = {
 								ROOT = {
-									OR = {
+									AND = {
 										tier = KING
-										AND = {
-											is_nomadic = yes
-											num_of_count_titles_in_realm > 12
-										}
+										realm_size > 100
 									}
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
 									owner = ROOT
 									troops = {
-										light_infantry = { 1500 1500 }
-										archers = { 1250 1250 }
-										heavy_infantry = { 500 500 }
-										knights = { 700 700 }
-										light_cavalry = { 750 750 }
+										light_infantry = { 250 250 }
+										archers = { 500 500 }
+										heavy_infantry = { 150 150 }
+										knights = { 150 150 }
+										light_cavalry = { 200 200 }
 									}
 									attrition = 1.0
 									disband_on_peace = yes
@@ -137,30 +128,24 @@ decisions = {
 						else_if = {
 							limit = {
 								ROOT = {
-									OR = {
-										tier = DUKE
-										AND = {
-											is_nomadic = yes
-											AND = {
-												is_nomadic = yes
-												num_of_count_titles_in_realm > 8
-											}
-										}
+									AND = {
+										tier = KING
+										realm_size < 100
 									}
 								}
 							}
 							while = {
-								count = 2
+								count = 1
 								spawn_unit = {
 									province = PREV
 									home = PREV
 									owner = ROOT
 									troops = {
-										light_infantry = { 1000 1000 }
+										light_infantry = { 500 500 }
 										archers = { 1000 1000 }
-										heavy_infantry = { 600 600 }
-										knights = { 500 500 }
-										light_cavalry = { 1000 1000 }
+										heavy_infantry = { 250 250 }
+										knights = { 200 200 }
+										light_cavalry = { 400 400 }
 									}
 									attrition = 1.0
 									disband_on_peace = yes
@@ -169,7 +154,68 @@ decisions = {
 								}
 							}
 						}
-						else = {
+						else_if = {
+							limit = {
+								ROOT = { 
+									AND = {
+										tier = DUKE
+										realm_size > 50
+									}
+								}
+							}
+							while = {
+								count = 1
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = ROOT
+									troops = {
+										light_infantry = { 500 500 }
+										archers = { 1000 1000 }
+										heavy_infantry = { 250 250 }
+										knights = { 200 200 }
+										light_cavalry = { 400 400 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+									maintenance_multiplier = 0.25
+									earmark = hre_regiment
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								ROOT = { 
+									AND = {
+										tier = DUKE
+										realm_size < 50
+									}
+								}
+							}
+							while = {
+								count = 1
+								spawn_unit = {
+									province = PREV
+									home = PREV
+									owner = ROOT
+									troops = {
+										light_infantry = { 5000 5000 }
+										archers = { 1000 1000 }
+										heavy_infantry = { 500 500 }
+										knights = { 250 250 }
+										light_cavalry = { 500 500 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+									maintenance_multiplier = 0.25
+									earmark = hre_regiment
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								ROOT = { tier = COUNT }
+							}
 							while = {
 								count = 3
 								spawn_unit = {
@@ -180,8 +226,8 @@ decisions = {
 										light_infantry = { 1500 1500 }
 										archers = { 1000 1000 }
 										heavy_infantry = { 500 500 }
-										knights = { 500 500 }
-										light_cavalry = { 600 600 }
+										knights = { 250 250 }
+										light_cavalry = { 500 500 }
 									}
 									attrition = 1.0
 									disband_on_peace = yes

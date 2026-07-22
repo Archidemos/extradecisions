@@ -1,0 +1,166 @@
+namespace = ROMANAUR
+
+character_event = {
+	id = ROMANAUR.98
+    hide_window = yes
+    is_triggered_only = yes
+	
+    trigger = {
+		start_date == 270.5.1
+		is_save_game = no
+		NOT = { has_global_flag = west_roman_player_event_fired }
+    }
+	
+	immediate = {
+		set_global_flag = west_roman_player_event_fired
+		set_global_flag = roman_america_part_1_triggered
+		
+		any_player = { narrative_event = { id = ROMANAUR.99 days = 5 } }
+		e_roman_empire = { save_event_target_as = character_rome_crisis }
+	}
+}
+
+narrative_event = {
+	id = ROMANAUR.99
+	title = "Crisis of the Third Century"
+	desc = EVTDESCROMANAUR.99
+    is_triggered_only = yes
+	
+	portrait = e_roman_empire
+	picture = GFX_evt_rome_falls
+	sound = ar_arabs_lose
+	
+    trigger = {
+		start_date == 270.5.1
+		is_save_game = no
+    }
+	
+	immediate = {
+		clear_event_target = character_rome_crisis
+	}	
+	
+	option = {
+		name = "Rome shall recover!"
+		hidden_tooltip = {
+			custom_tooltip = {
+				text = "You will now get decisions to resolve the Roman Crisises"
+				set_global_flag = roman_crisis_1
+				set_global_flag = roman_crisis_2
+				set_global_flag = roman_crisis_3
+			}
+		}
+	}
+}
+
+narrative_event = {
+    id = ROMANAUR.101
+    only_rulers = yes
+	
+	title = "Abandoning Dacia"
+	desc = "Will all thee chaos and instability, it is time for us to abandon Dacia. These lands, despite being rich has been causing us trouble and is therefore too hard to manage. We shall import everything we have there back to the mainland."
+	
+	picture = GFX_evt_depopulated_town
+	border = GFX_event_narrative_frame_war
+    is_triggered_only = yes
+	
+	option = {
+		name = "Vale Dacia.."
+		wealth = 2000
+		prestige = -1000
+		add_character_modifier = {
+			name = rome_crisis_help_270
+			years = 3
+		}
+		e_carpathia = {
+			any_de_jure_vassal = {
+				limit = {
+					has_landed_title = k_rome_dacia
+				}
+				set_defacto_liege = THIS
+			}
+		}
+		hidden_tooltip = {
+			k_rome_dacia = {
+				holder_scope = {
+					character_event = { id = ROMANAUR.102 }
+					save_event_target_as = dacia_ruler_270
+					set_truce = {
+						who = ROOT
+						years = 3
+					}
+				}
+			}
+			ROOT = {
+				set_truce = {
+					who = event_target:dacia_ruler_270
+					years = 3
+				}
+			}
+		}
+		remove_claim = k_rome_dacia
+	}
+}
+
+narrative_event = {
+    id = ROMANAUR.102
+    only_rulers = yes
+	
+	title = "Dacia Abandoned"
+	desc = "Emperor Aurelean has decreed that the Province of Dacia must be abandoned, which is how we have gotten independence from the Roman Empire. Like it or not, we are now on our own and it seems like we wont be helped. We are now alone with our weary Visigothic subjects that will see this as oppertunity."
+	
+	picture = GFX_evt_depopulated_town
+	border = GFX_event_narrative_frame_war
+    is_triggered_only = yes
+	
+	option = {
+		name = "Dacia will be a Roman Stronghold!"
+		wealth = -150
+		prestige = -250
+		add_character_modifier = {
+			name = rome_dacia_abandoned
+			years = 10
+		}
+	}
+}
+
+narrative_event = {
+    id = ROMANAUR.103
+    only_rulers = yes
+	
+	title = "Gallic Empire Deafeated"
+	desc = "As the world is at war, good news can still arise. Word goes across towns and cities that the defected Roman general Tetricus and the break-away Gallic Empire has been defeated. Now the western lands of the Roman Empire is resecured under the rule of the Roman Empire."
+	sound = ar_roman_army_march
+	
+	picture = GFX_evt_victory_arch_byzantine
+	border = GFX_event_narrative_frame_war
+    is_triggered_only = yes
+	
+	option = {
+		name = "Will there be peace.."
+		if = {
+			limit = { has_landed_title = e_roman_empire }
+			prestige = 1000
+		}
+	}
+}
+
+narrative_event = {
+    id = ROMANAUR.104
+    only_rulers = yes
+	
+	title = "Palmyrene Empire Deafeated"
+	desc = "Many battles have been fought and many has fallen, yet there still can be good news. Word goes across towns and cities that the Pagan queen Zenobia and the Palmyrene Empire has been defeated. Now the eastern lands of the Roman Empire is resecured under the rule of the Roman Empire."
+	sound = ar_roman_army_march
+	
+	picture = GFX_evt_victory_arch_byzantine
+	border = GFX_event_narrative_frame_war
+    is_triggered_only = yes
+	
+	option = {
+		name = "Will there be peace.."
+		if = {
+			limit = { has_landed_title = e_roman_empire }
+			prestige = 1000
+		}
+	}
+}

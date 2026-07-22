@@ -464,6 +464,9 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
+			NOT = { any_playable_ruler = { has_landed_title = e_west_rome } }
+			NOT = { any_playable_ruler = { has_landed_title = e_roman_empire } }
+			NOT = { has_landed_title = e_byzantium }
 			OR = {
 				start_date == 400.1.1
 				start_date == 476.1.1
@@ -505,7 +508,7 @@ decisions = {
 		}
 		
 		allow = {
-			NOT = { has_landed_title = e_byzantium }
+			NOT = { any_playable_ruler = { has_landed_title = e_west_rome } }
 			prestige = 1000
 			has_landed_title = c_roma
 			completely_controls = k_italy

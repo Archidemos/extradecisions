@@ -5251,10 +5251,11 @@ new_crusade = {
 									preferred_limit = {
 										has_landed_title = d_trebizond
 									}
+									grant_title_no_opinion = e_trebizond
 									grant_title_no_opinion = k_trebizond
+									grant_title_no_opinion = d_trebizond
 								}
 							}
-
 						}
 					}
 					# Set vassals for Trebizond
@@ -5267,6 +5268,35 @@ new_crusade = {
 											de_jure_liege = k_trebizond
 										}
 										set_defacto_liege = PREVPREVPREV
+									}
+								}
+							}
+							grant_title_no_opinion = c_trapezous
+							if = {
+								limit = {
+									c_chaldea = {
+										owner = {
+											ai = yes
+										}
+									} 
+									c_rizaion = {
+										owner = {
+											ai = yes
+										}
+									}
+								}
+								grant_title_no_opinion = c_chaldea 
+								grant_title_no_opinion = c_rizaion
+							}
+							while = {
+								count = 2
+								spawn_unit = {
+									province = 678
+									troops = {
+										light_infantry = { 1500 1500 }
+										heavy_infantry = { 500 500 }
+										archers = { 250 250 }
+										knights = { 150 150 }
 									}
 								}
 							}
@@ -5348,9 +5378,6 @@ new_crusade = {
 									ai = yes
 								}
 								preferred_limit = {
-									de_jure_liege = k_nikaea
-								}
-								preferred_limit = {
 									de_jure_liege = k_epirus
 								}
 								preferred_limit = {
@@ -5392,9 +5419,10 @@ new_crusade = {
 									primary_title = {
 										title = e_byzantium
 									}
-									has_landed_title = c_nikaea
+									#has_landed_title = c_nikaea
 								}
 								grant_title = e_nicaea
+								grant_title = k_nikaea
 								e_nicaea = {
 									copy_title_laws = e_byzantium
 									copy_title_history = e_byzantium
@@ -5419,41 +5447,41 @@ new_crusade = {
 									set_defacto_liege = PREV
 								}
 							}
-							else_if = {
-								limit = {
-									primary_title = {
-										title = e_byzantium
-									}
-								}
-								capital_scope = {
-									create_title = {
-										tier = EMPEROR
-										landless = no
-										temporary = no
-										name = "fourth_crusade_greek_empire_name"
-										holder = PREV
-										culture = PREV
-										custom_created = yes
-										base_title = THIS
-									}
-								}
-								any_demesne_title = {
-									limit = {
-										tier = EMPEROR
-										is_titular = no
-									}
-									destroy_landed_title = THIS
-								}
-							}
-							any_neighbor_independent_ruler = {
-								limit = {
-									ai = yes
-									culture = PREV
-									religion = PREV
-									lower_tier_than = KING
-								}
-								set_defacto_liege = PREV
-							}
+							#else_if = {
+							#	limit = {
+							#		primary_title = {
+							#			title = e_byzantium
+							#		}
+							#	}
+							#	capital_scope = {
+							#		create_title = {
+							#			tier = EMPEROR
+							#			landless = no
+							#			temporary = no
+							#			name = "fourth_crusade_greek_empire_name"
+							#			holder = PREV
+							#			culture = PREV
+							#			custom_created = yes
+							#			base_title = THIS
+							#		}
+							#	}
+							#	any_demesne_title = {
+							#		limit = {
+							#			tier = EMPEROR
+							#			is_titular = no
+							#		}
+							#		destroy_landed_title = THIS
+							#	}
+							#}
+							#any_neighbor_independent_ruler = {
+							#	limit = {
+							#		ai = yes
+							#		culture = PREV
+							#		religion = PREV
+							#		lower_tier_than = KING
+							#	}
+							#	set_defacto_liege = PREV
+							#}
 						}
 					}
 					# Crete is taken by a Merchant Lord
@@ -5465,6 +5493,11 @@ new_crusade = {
 								}
 							} 
 							c_chandax = {
+								owner = {
+									ai = yes
+								}
+							}
+							c_balii = {
 								owner = {
 									ai = yes
 								}
@@ -5494,6 +5527,7 @@ new_crusade = {
 							grant_title_no_opinion = d_krete 
 							grant_title_no_opinion = c_kaneia
 							grant_title_no_opinion = c_chandax
+							grant_title_no_opinion = c_balii
 						}
 					}
 
@@ -5519,8 +5553,57 @@ new_crusade = {
 					}
 					# Making sure the Byzantine Empire is destroyed
 					e_byzantium = {
+						holder_scope = { save_event_target_as = old_byz_emperor }
 						unsafe_destroy_landed_title = THIS
 					}
+					FROM = { grant_title_no_opinion = c_nikaea }
+					k_nikaea = {
+						owner = {
+							if = {
+								limit = {
+									c_prusa = {
+										owner = {
+											ai = yes
+										}
+									}
+									c_sangarios = {
+										owner = {
+											ai = yes
+										}
+									}
+								}
+								grant_title_no_opinion = c_prusa
+								grant_title_no_opinion = c_sangarios
+							}
+							while = {
+								count = 2
+								spawn_unit = {
+									province = 750
+									troops = {
+										light_infantry = { 1500 1500 }
+										heavy_infantry = { 500 500 }
+										archers = { 250 250 }
+										knights = { 150 150 }
+									}
+								}
+							}
+						}
+						holder_scope = {
+							add_claim = e_byzantium
+							add_claim = c_byzantion 
+						}
+						any_de_jure_vassal = {
+							set_defacto_liege = FROM
+						}
+					}
+					FROM = { grant_title_no_opinion = e_nicaea }
+					k_trebizond = {
+						holder_scope = {
+							add_claim = e_byzantium
+							add_claim = c_byzantion
+						}
+					}
+					any_player = { narrative_event = { id = MP.405 days = 3 } }
 				}
 				# Otherwise
 				else = {
@@ -18139,11 +18222,11 @@ nomad_subjugation = {
 				AND = {
 					is_tribal = yes
 					ROOT = {
-						population = 2500
+						population = 25000
 					}
 				}
 				ROOT = {
-					population = 10000
+					population = 45000
 				}
 				has_opinion_modifier = {
 					modifier = declared_independence_nomad
@@ -18897,16 +18980,20 @@ nomad_expansion = {
 	can_use_gui = {
 		ROOT = {
 			prestige = 300
-			population_factor = 0.5
+			#population_factor = 0.5
+			population_factor = 1
 		}
 		FROM = {
 			OR = {
-				is_nomadic = yes # Nomads no population requirement
+				AND = {
+					is_nomadic = yes # Nomads no population requirement
+					ROOT = { population = 20000 } # Tribals need 10k
+				}
 				AND = {
 					is_tribal = yes
-					ROOT = { population = 5000 } # Tribals need 5k
+					ROOT = { population = 25000 } # Tribals need 15k
 				}
-				ROOT = { population = 15000 } # Everyone else needs 15k
+				ROOT = { population = 30000 } # Everyone else needs 30k
 			}
 		}
 	}

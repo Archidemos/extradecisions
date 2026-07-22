@@ -16,19 +16,20 @@ narrative_event = {
 	id = CM.501
 	desc = EVTDESC_CM_501
 	title = EVTTITLE_CM_501
-	picture = GFX_evt_throne_room
+	picture = GFX_evt_avar_horde
 	border = GFX_event_narrative_frame_war
 	
 	only_playable = yes
+	has_global_flag = game_start_charlemagne
 
 	major = yes
 	
 	trigger = {
 		has_landed_title = k_hungary
-		NOT = { culture = avar }
-		NOT = { culture = hungarian }
+		#NOT = { culture = avar }
+		#NOT = { culture = hungarian }
 		NOT = { has_global_flag = avar_khaganate_renamed }
-		start_date >= 567.1.1
+		start_date == 769.1.1
 	}
 
 	major_trigger = {
@@ -59,6 +60,11 @@ narrative_event = {
 			set_name = "KINGDOM_PANNONIA"
 			adjective = "KINGDOM_PANNONIA_ADJ"
 		}
+		add_character_modifier = {
+			name = fall_avar_modifier
+			years = 30
+			inherit = yes
+		}
 	}
 	option = {
 		name = EVTOPTB_CM_501
@@ -81,7 +87,7 @@ narrative_event = {
 	id = CM.502
 	desc = EVTDESC_CM_502
 	title = EVTTITLE_CM_502
-	picture = GFX_evt_book_carolingian_script
+	picture = GFX_evt_cathedral
 	border = GFX_event_narrative_frame_war
 	
 	only_playable = yes
@@ -123,6 +129,11 @@ narrative_event = {
 			set_name = ""
 			adjective = ""
 			reset_coa = THIS
+		}
+		add_character_modifier = {
+			name = fall_lombardia_modifier
+			years = 25
+			inherit = yes
 		}
 	}
 	option = {

@@ -2747,6 +2747,129 @@ character_event = {
     }
 }
 
+character_event = { #Character Event to delay the Province event to trigger the Mughal Invasion for Instant Game rule
+	id = MP.404
+	hide_window = yes
+	hide_from = yes
+
+	is_triggered_only = yes
+	religion = catholic
+	min_age = 16
+
+	trigger = {
+		has_game_rule = {
+			name = nomads_to_tribal_rule
+			value = on
+		}
+		NOT = { has_global_flag = nomads_set_tribal }
+		is_save_game = no
+		controls_religion = yes
+	}
+
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = {
+				government = nomadic_government
+			}
+			set_government_type = tribal_government
+		}
+		set_global_flag = nomads_set_tribal
+	}
+}
+
+
+narrative_event = { #Giving the possibility to switch to either the Trebizond or Niceaen Empire in Singleplayer
+	id = MP.405
+	title = "The Dream of Power"
+	desc = "Ever since you have heard about the Fourth Crusade and its adventures that happend, two self-proclaimed empires have emerged. The Empire of Trebizond and the Empire of Nicaea are now sittuated in the old lands of the Eastern Roman Empire. Perhaps if you were there, you could do a better job at ruling one of these empires..."
+    is_triggered_only = yes
+	
+	picture = GFX_evt_mongols
+	border = GFX_event_narrative_frame_war
+	
+	trigger = {
+		multiplayer = no
+		ai = no
+		NOT = { has_global_flag = fourth_crusade_playable }
+	}
+
+	immediate = {
+		e_nicaea = { holder_scope = { save_event_target_as = play_as_nicaea } }
+		e_trebizond = { holder_scope = { save_event_target_as = play_as_trebizond } }
+	}
+	
+	option = {
+		name = "If only i were the Emperor of Nicaea..."
+		
+		trigger = { e_nicaea = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_nicaea
+		set_global_flag = fourth_crusade_playable
+	}
+
+	option = {
+		name = "If only i were the Emperor of Trebizond..."
+		
+		trigger = { e_trebizond = { holder_scope = { ai = yes } } }
+		set_player_character = event_target:play_as_trebizond
+		set_global_flag = fourth_crusade_playable
+	}
+	
+	option = {
+		name = "Let's not get distracted!"
+		set_global_flag = fourth_crusade_playable
+	}
+}
+
+#narrative_event = {
+#	id = MP.405
+#	desc = EVTDESC_CM_501
+#	title = EVTTITLE_CM_501
+#    is_triggered_only = yes
+#	
+#	picture = GFX_evt_avar_horde
+#	border = GFX_event_narrative_frame_war
+#	sound = ar_army_sacking
+#	
+#    trigger = {
+#		start_date == 769.1.1
+#		NOR = { 
+#			start_date == 400.1.1
+#			start_date == 476.1.1
+#		}
+#		is_save_game = no
+#    }
+#	
+#	immediate = {
+#		set_global_flag = avar_khaganate_renamed
+#	}	
+#	
+#	option = {
+#		name = EVTOPTA_CM_501
+#		trigger = {
+#			has_landed_title = k_hungary
+#		}
+#		k_hungary = {
+#			set_name = "KINGDOM_PANNONIA"
+#			adjective = "KINGDOM_PANNONIA_ADJ"
+#		}
+#	}
+#	option = {
+#		name = EVTOPTB_CM_501
+#		trigger = {
+#			NOT = { has_landed_title = k_hungary }
+#			culture = avar
+#		}
+#	}
+#	option = {
+#		name = EVTOPTC_CM_501
+#		trigger = {
+#			NOT = { has_landed_title = k_hungary }
+#			NOT = { culture = avar }
+#		}
+#	}
+#}
+
 
 #character_event = {
 #    id = MP.205
