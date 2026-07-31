@@ -979,13 +979,19 @@ e_wendish_empire = { # Wendish Empire
 	pommeranian = "Vendia"
 	carantanian = "Vendia"
 	croatian = "Vendia"
+	old_hungarian = "Wendi Birodalom"
+	hungarian = "Wendi Birodalom"
 	allow = {
-		has_landed_title = k_moravia
-		OR = {
-			has_landed_title = k_poland
-			has_landed_title = k_pomerania
-			has_landed_title = k_bohemia
-			has_landed_title = k_hungary
+		AND = {
+			OR = {
+				has_landed_title = k_moravia
+				has_landed_title = k_bohemia
+			}
+			OR = {
+				has_landed_title = k_poland
+				has_landed_title = k_pomerania
+				has_landed_title = k_hungary
+			}
 		}
 		FROM = { is_de_jure_title = yes }
 		title_emperor_basic_allow = yes

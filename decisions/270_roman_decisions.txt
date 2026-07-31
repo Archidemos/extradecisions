@@ -1,4 +1,41 @@
 decisions = {
+	#claim_roma = {
+	#	only_independent = yes
+	#	is_high_prio = yes
+	#	ai_check_interval = 1
+	#	
+	#	potential = {
+	#		is_nomadic = no
+	#		is_playable = yes
+	#		has_dlc = "Legacy of Rome"
+	#		OR = {
+	#			has_landed_title = e_west_rome
+	#			has_landed_title = e_roman_empire
+	#		}
+	#		NOT = { has_landed_title = c_roma }
+	#		any_realm_lord = { 
+	#			ai = yes
+	#			has_landed_title = c_roma 
+	#		}
+	#	}
+	#	allow = {
+	#		NOT = { has_landed_title = c_roma }
+	#		any_realm_lord = { 
+	#			has_landed_title = c_roma 
+	#		}
+	#	}
+	#	effect = {
+	#		ROOT = {
+	#			c_roma = {
+	#				grant_title = PREV
+	#			}
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
 	abandon_dacia = {
 		only_playable = yes
 		is_high_prio = yes
@@ -41,6 +78,42 @@ decisions = {
 				factor = 0.5
 				trait = cynical
 			}
+		}
+	}
+	hold_triumph_aurelean = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 6
+		
+		potential = {
+			start_date == 270.5.1
+			has_landed_title = e_roman_empire
+			NOT = { has_global_flag = 200_trumph_held }
+		}
+		allow = {
+			ROOT = { war = no }
+			custom_tooltip = {
+				text = "Rome has defeated the Gallic Empire"
+				hidden_tooltip = {
+					has_global_flag = 200_gallic_defeated
+				}
+			}
+			custom_tooltip = {
+				text = "Rome has defeated the Palmyrene Empire"
+				hidden_tooltip = {
+					has_global_flag = 200_palmyrene_defeated
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = "A triumph in your honor will be prepared for the victories against the Gallic Empire and the Palmyrene while fending off the many barbarians."
+				set_global_flag = 200_trumph_held
+				any_player = { character_event = { id = ROMANAUR.105 } }
+			}
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }

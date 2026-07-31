@@ -66,6 +66,50 @@ e_kushan = { #Kushan Empire
 	short_name = no
 }
 
+e_kangju = { #Kangju Khaganate
+	color = { 121 126 209 }
+	color2 = { 190 10 0 }
+	capital = 900
+	
+	sogdian = "Kangju"
+	#roman = "Palmyrenum Imperium"
+	#roman_gallo = "Palmyrenum Imperium"
+	#roman_german = "Palmyrenum Imperium"
+	#roman_spain = "Palmyrenum Imperium"
+	#roman_british = "Palmyrenum Imperium"
+	#roman_african = "Palmyrenum Imperium"
+	#roman_mauretanian = "Palmyrenum Imperium"
+	#roman_egyptian = "Palmyrenum Imperium"
+	#roman_greek = "Palmyrenum Imperium"
+	#roman_thraco = "Palmyrenum Imperium"
+	#roman_ilyrian = "Palmyrenum Imperium"
+	
+	culture = sogdian
+	short_name = no
+}
+
+e_xiongnu = { #Xiongnu Khaganate
+	color = { 224 202 72 }
+	color2 = { 190 10 0 }
+	capital = 900
+	
+	xiongnu = "Xiongnu"
+	#roman = "Palmyrenum Imperium"
+	#roman_gallo = "Palmyrenum Imperium"
+	#roman_german = "Palmyrenum Imperium"
+	#roman_spain = "Palmyrenum Imperium"
+	#roman_british = "Palmyrenum Imperium"
+	#roman_african = "Palmyrenum Imperium"
+	#roman_mauretanian = "Palmyrenum Imperium"
+	#roman_egyptian = "Palmyrenum Imperium"
+	#roman_greek = "Palmyrenum Imperium"
+	#roman_thraco = "Palmyrenum Imperium"
+	#roman_ilyrian = "Palmyrenum Imperium"
+	
+	culture = sogdian
+	short_name = no
+}
+
 k_bosporan_rome = { #Soissons
 	color = { 181 36 36 }
 	color2 = { 190 10 0 }
@@ -109,7 +153,7 @@ d_gepids = { #
 	color = { 143 201 180 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	visigothic = "Gepidi"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -127,7 +171,7 @@ d_capri = { #
 	color = { 235 35 68 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	visigothic = "Capri"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -137,7 +181,7 @@ d_capri = { #
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = old_frankish
+	culture = visigothic
 	short_name = no
 }
 
@@ -145,7 +189,7 @@ d_frisian = { #
 	color = { 181 73 20 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	frisian = "Fresiski"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -163,7 +207,7 @@ e_sarmatians = { #
 	color = { 173 120 33 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	sarmatian = "Sarmata"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -173,7 +217,7 @@ e_sarmatians = { #
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = old_frankish
+	culture = sarmatian
 	short_name = no
 }
 
@@ -181,7 +225,7 @@ d_juthungi = { #
 	color = { 105 72 39 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	swabian = "Juthungi"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -191,7 +235,7 @@ d_juthungi = { #
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = old_frankish
+	culture = swabian
 	short_name = no
 }
 
@@ -199,7 +243,7 @@ d_victuali = { #
 	color = { 176 161 49 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	vandal = "Victuali"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -209,7 +253,7 @@ d_victuali = { #
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = old_frankish
+	culture = vandal
 	short_name = no
 }
 
@@ -217,7 +261,7 @@ d_sciri = { #
 	color = { 117 80 204 }
 	color2 = { 190 10 0 }
 	
-	#visigothic = "Westgoten"
+	sciri = "Skirozi"
 	#bavarian = "Westgoten"
 	#swabian = "Westgoten"
 	#german = "Westgoten"
@@ -227,7 +271,7 @@ d_sciri = { #
 	#frisian = "Visigoten"
 	#dutch = "Visigoten"
 	
-	culture = old_frankish
+	culture = sciri
 	short_name = no
 }
 
@@ -659,6 +703,71 @@ k_rome_italy = {
 }
 
 k_rome_nikaea = {
+	color = { 168 50 70 }
+
+	short_name = yes
+
+	#capital = 32
+
+	allow = {
+		always = no
+	}
+	culture = roman
+}
+
+k_rome_raetia = {
+	color = { 168 50 70 }
+
+	short_name = yes
+
+	#capital = 32
+
+	allow = {
+		always = no
+	}
+	culture = roman
+}
+
+k_rome_bavaria = {
+	color = { 168 50 70 }
+
+	short_name = yes
+
+	#capital = 32
+
+	allow = {
+		always = no
+	}
+	culture = roman
+}
+
+k_rome_france = {
+	color = { 168 50 70 }
+
+	short_name = yes
+
+	#capital = 32
+
+	allow = {
+		always = no
+	}
+	culture = roman
+}
+
+k_rome_upper_loth = {
+	color = { 168 50 70 }
+
+	short_name = yes
+
+	#capital = 32
+
+	allow = {
+		always = no
+	}
+	culture = roman
+}
+
+k_rome_lower_loth = {
 	color = { 168 50 70 }
 
 	short_name = yes

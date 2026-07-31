@@ -12,11 +12,76 @@ character_event = {
     }
 	
 	immediate = {
+		set_global_flag = rome_restored
 		set_global_flag = west_roman_player_event_fired
 		set_global_flag = roman_america_part_1_triggered
 		
 		any_player = { narrative_event = { id = ROMANAUR.99 days = 5 } }
 		e_roman_empire = { save_event_target_as = character_rome_crisis }
+		e_roman_empire = {
+			holder_scope = {
+				if = {
+					limit = {
+						ai = yes
+					}
+					spawn_unit = {
+						province = 1127
+						owner = PREV
+						disband_on_peace = yes
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 500 500 }
+							horse_archers = { 250 250 }
+							light_cavalry = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = 1127
+						owner = PREV
+						disband_on_peace = yes
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 500 500 }
+							horse_archers = { 250 250 }
+							light_cavalry = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = 1127
+						owner = PREV
+						disband_on_peace = yes
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 500 500 }
+							horse_archers = { 250 250 }
+							light_cavalry = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = 1127
+						owner = PREV
+						disband_on_peace = yes
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 500 500 }
+							horse_archers = { 250 250 }
+							light_cavalry = { 500 500 }
+						}
+					}
+					spawn_unit = {
+						province = 1127
+						owner = PREV
+						disband_on_peace = yes
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 500 500 }
+							horse_archers = { 250 250 }
+							light_cavalry = { 500 500 }
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -140,6 +205,7 @@ narrative_event = {
 		if = {
 			limit = { has_landed_title = e_roman_empire }
 			prestige = 1000
+			set_global_flag = 200_gallic_defeated
 		}
 	}
 }
@@ -161,6 +227,217 @@ narrative_event = {
 		if = {
 			limit = { has_landed_title = e_roman_empire }
 			prestige = 1000
+			set_global_flag = 200_palmyrene_defeated
 		}
 	}
 }
+
+
+narrative_event = {
+    id = ROMANAUR.105
+    only_rulers = yes
+	
+	title = "Triumph of the World"
+	desc = "EVTDESCROMANAUR.105"
+	sound = ar_roman_triumph
+	
+	picture = GFX_evt_ar_roman_triumph
+	border = GFX_event_narrative_frame_diplomacy
+    is_triggered_only = yes
+	
+	option = {
+		name = "Ave Imperator!"
+		if = {
+			limit = { has_landed_title = e_roman_empire }
+			prestige = 1000
+			piety = 1000
+			wealth = 1500
+			add_trait = augustus
+			give_nickname = nick_restore_world
+			set_global_flag = 200_rome_restored
+			create_bloodline = { type = restorer_world }
+		}
+	}
+}
+
+character_event = {
+	id = ROMANAUR.106
+	title = "Praetorian Traitors"
+	desc = "As you were marching with your army, suddenly your Praetorian Guard turn to you with their swords in their hands, seemly ready to kill you."
+    is_triggered_only = yes
+	
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_intrigue
+	
+    trigger = {
+		has_global_flag = 200_rome_restored
+		start_date == 270.5.1
+		date = 275.1.1
+		character = c_145250
+    }
+	
+	option = {
+		name = "Sol Invictus.."
+		death = { death_reason = death_murder_unknown }
+		any_player = {
+			ai_chance = { factor = 100 }
+			limit = {
+				OR = {
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+				}
+			}
+			narrative_event = { id = ROMANAUR.107 }
+		}
+	}
+	option = {
+		name = "I shall die fighting!"
+		ai_chance = { factor = 0 }
+		random_list = {
+			75 = {
+				death = { death_reason = death_murder_unknown }
+				any_player = {
+					limit = {
+						OR = {
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+						}
+					}
+					narrative_event = { id = ROMANAUR.107 }
+				}
+			}
+			25 = {
+				add_trait = severely_injured
+				ROOT = { narrative_event = { id = ROMANAUR.108 } }
+			}
+		}
+	}
+	option = {
+		name = "I know how to handle these Guards.."
+		trigger = { 
+			intrigue >= 12
+		}
+		tooltip_info = intrigue
+		ai_chance = { factor = 0 }
+		random_list = {
+			65 = {
+				add_trait = severely_injured
+				ROOT = { narrative_event = { id = ROMANAUR.108 } }
+			}
+			35 = {
+				death = { death_reason = death_murder_unknown }
+				any_player = {
+					limit = {
+						OR = {
+							religion = hellenic_pagan
+							religion = hellenic_pagan_reformed
+						}
+					}
+					narrative_event = { id = ROMANAUR.107 }
+				}
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = ROMANAUR.107
+	title = "Death of the Restorer"
+	desc = "Bad news has arrived from the Roman Legions, word goes that Aurelean has been assassinated by his own Praetorian Guard. The Imperator that has saved the Roman Empire from certain collapse by defeating the Gallic Empire and the Palmyrene Empire along with countless invasion forces from Germania, killed over nothing. This is a dark day and all of Rome mourn in the name of Sol Invictus as we have perhaps lost one of our greatest Imperators to have ever lived."
+    is_triggered_only = yes
+	
+	border = GFX_event_narrative_frame_intrigue
+	portrait = character_aurelean_death
+	picture = GFX_evt_cornered_duel_hf
+	
+	immediate = { 
+		e_roman_empire = {
+			save_event_target_as = character_aurelean_death
+		}
+	}
+	
+	option = {
+		name = "Sol Invictus.."
+	}
+}
+
+character_event = {
+	id = ROMANAUR.108
+	title = "Sol Invictus's Blessing"
+	desc = "It seems that you have reacted quick enough to draw your sword and effortlessly killed all of your Praetorian Guards and survive after all."
+    is_triggered_only = yes
+	
+	border = GFX_event_normal_frame_war
+	portrait = character_aurelean_death
+	picture = GFX_evt_dueling_knights_hf
+	sound = win_battle
+	
+	option = {
+		name = "Rome yet needs me."
+	}
+}
+
+#character_event = {
+#	id = ROMANAUR.999
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#	    start_date == 270.5.1
+#        has_landed_title = d_vandals
+#		is_save_game = no
+#		NOT = { has_global_flag = vandals_triggered_270_part_1 }
+#	}	
+#	
+#	immediate = {
+#		set_global_flag = vandals_triggered_270_part_1
+#		character_event = { id = ROMANAUR.1000 days = 2 }
+#	}
+#}
+#
+#character_event = {
+#	id = ROMANAUR.1000
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#	    start_date == 270.5.1
+#        has_landed_title = d_vandals
+#		is_save_game = no
+#		NOT = { has_global_flag = vandals_triggered_270_part_2 }
+#	}	
+#	
+#	immediate = {
+#		set_global_flag = vandals_triggered_270_part_2
+#		war = {
+#            target = d_osterreich
+#            casus_belli = migration_cb
+#        }
+#	}
+#}
+#
+#character_event = {
+#	id = ROMANAUR.1001
+#	hide_window = yes
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#	    start_date == 270.5.1
+#        has_landed_title = d_quadians
+#		is_save_game = no
+#	}	
+#	
+#	immediate = {
+#		war = {
+#            target = k_hungary
+#            casus_belli = migration_cb
+#        }
+#	}
+#	
+#	option = {
+#		name = OK
+#	}
+#}

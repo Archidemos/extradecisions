@@ -696,6 +696,7 @@
 
 145250 = {
 	name="Aurelian"
+	health = 9
 	# Caesar Lucius Domitius Aurelianus Augustus
 	dynasty=1022204
 	religion="hellenic_pagan"
@@ -712,6 +713,7 @@
 	trait="patient"
 	trait="brave"
 	trait="tall"
+	trait="battle_experienced_15"
 	214.9.9={
 		birth="214.9.9"
 	}
@@ -721,12 +723,93 @@
 		remove_trait="craven"
 		remove_trait="proud"
 	}
-	#270.5.1 = {
-	#	raise_levies = {
-	#		location = 1131
-	#		force_mult = 1.0
-	#	}
-	#}
+	270.5.1 = {
+		change_variable = {
+			which = experienced_commander
+			value = 16
+		}
+		effect = {
+			change_variable = {
+				which = experienced_commander
+				value = 16
+			}
+			spawn_unit = {
+				province = 1127
+				owner = ROOT
+				leader = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 500 500 }
+					horse_archers = { 250 250 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = {
+				province = 1127
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 500 500 }
+					horse_archers = { 250 250 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = {
+				province = 1127
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 500 500 }
+					horse_archers = { 250 250 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = { ###
+				province = 802
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 250 250 }
+					archers = { 500 500 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = {
+				province = 802
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 250 250 }
+					archers = { 500 500 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_unit = {
+				province = 802
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 250 250 }
+					archers = { 500 500 }
+					light_cavalry = { 500 500 }
+				}
+			}
+			spawn_fleet = {
+				province = 1712 # Rouen
+				owner = ROOT
+				disband_on_peace = yes
+				troops = {
+					galleys = { 70 70 }
+				}
+			}
+		}
+	}
 	275.7.1={
 		death="275.7.1"
 	}

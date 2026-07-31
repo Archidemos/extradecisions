@@ -468,6 +468,7 @@ decisions = {
 			NOT = { any_playable_ruler = { has_landed_title = e_roman_empire } }
 			NOT = { has_landed_title = e_byzantium }
 			OR = {
+				start_date == 270.5.1
 				start_date == 400.1.1
 				start_date == 476.1.1
 			}
@@ -560,6 +561,7 @@ decisions = {
 			set_global_flag = west_rome_formed_again
 			set_global_flag = west_rome_formed_normal
 			clr_global_flag = west_rome_revivable
+			clr_global_flag = rome_restored
 		}
 		ai_will_do = {
 			factor = 1
