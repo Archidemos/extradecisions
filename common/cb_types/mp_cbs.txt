@@ -766,6 +766,16 @@ migration_cb = { #CB to shatter realm with a too big realm
 					light_cavalry = { 1000 1000 }
 					light_infantry = { 2500 2500 }
 				}
+				troops = {
+					archers = { 1000 1000 }
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+				}
+				troops = {
+					archers = { 1000 1000 }
+					light_cavalry = { 1000 1000 }
+					light_infantry = { 2500 2500 }
+				}
 			
 				#attrition = 1.0
 				disband_on_peace = yes
@@ -777,14 +787,21 @@ migration_cb = { #CB to shatter realm with a too big realm
 	can_use = {
 		NOT = { year >= 760 }
 		OR = {
-			ai = yes
 			AND = {
-				is_tribal = yes
 				ROOT = {
+					ai = yes
+					is_tribal = yes
+				}
+			}
+			AND = {
+				ROOT = {
+					ai = no
+					is_tribal = yes
 					OR = {
 						religion = tengri_pagan
 						religion = slavic_pagan
 						religion = germanic_pagan
+						religion = norse_pagan
 						culture = alan
 					}
 					independent = yes
@@ -795,7 +812,6 @@ migration_cb = { #CB to shatter realm with a too big realm
 				}
 				FROM = {
 					independent = yes
-					war = no
 				}
 			}
 		}

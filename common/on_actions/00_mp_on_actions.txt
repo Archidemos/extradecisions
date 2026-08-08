@@ -125,6 +125,22 @@ on_war_ended_victory = {
 	}
 }
 
+## From = Attacker, Root = Defender
+#on_war_ended_whitepeace = {
+#	events = {
+#		TETE.1
+#	}
+#}
+
+# From = Attacker, Root = Defender
+on_war_ended_defeat = {
+	events = {
+		MP.201
+		MP.406
+		MP.408
+	}
+}
+
 on_loot_province = {
 	random_events = {
 		100 = 0

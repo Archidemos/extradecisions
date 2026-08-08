@@ -1,5 +1,5 @@
 name="Archi's Vanilla Expansion"
-archive="mod/extradecisions.zip"
+path="mod/extradecisions"
 user_dir="AVE"
 tags=
 {

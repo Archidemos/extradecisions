@@ -1,0 +1,30 @@
+society_decisions = {
+	merchant_league_establish_trade_embassy = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 36
+		
+		potential = {
+			is_league_member_trigger = yes
+			has_quest = quest_merchant_league_establish_trade_embassy
+			NOT = { has_character_modifier = establishing_embassy }
+		}
+
+		allow = {
+		}
+
+		effect = {		
+			custom_tooltip = {
+				text = "You will start the preperations to seek out a distant realm to negociate with."
+				hidden_tooltip = {
+					add_character_modifier = {
+						name = establishing_embassy
+						duration = -1
+						hidden = yes
+					}	
+					character_event = { id = MERMIS.1 } 
+				}
+			}
+		}
+	}
+}

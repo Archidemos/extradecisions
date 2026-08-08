@@ -2778,7 +2778,6 @@ character_event = { #Character Event to delay the Province event to trigger the 
 	}
 }
 
-
 narrative_event = { #Giving the possibility to switch to either the Trebizond or Niceaen Empire in Singleplayer
 	id = MP.405
 	title = "The Dream of Power"
@@ -2820,6 +2819,176 @@ narrative_event = { #Giving the possibility to switch to either the Trebizond or
 		set_global_flag = fourth_crusade_playable
 	}
 }
+
+character_event = {
+	id = MP.406
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+
+	trigger = {
+		FROM = { has_landed_title = k_rum }
+	}
+	
+	immediate = {
+		FROM = { save_event_target_as = rum_holder }
+		event_target:rum_holder = { character_event = { id = MP.407 } }
+	}
+}
+
+character_event = { #Giving the possibility to switch to either the Trebizond or Niceaen Empire in Singleplayer
+	id = MP.407
+	title = "Seljuk's Destiny"
+	desc = "As we have recently lost a war, we have lost many men and resources. Perhaps it is wise to rally up men from our recently conquered lands to muster them up and use them for our cause."
+    is_triggered_only = yes
+	
+	picture = "GFX_evt_seljuk_army_march"
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		ROOT = {
+			has_landed_title = k_rum
+		}
+	}
+	
+	option = {
+		name = "Rally whoever we can!"
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+	}
+	option = {
+		name = "That is not necessary"
+		prestige = 250
+	}
+}
+
+
+character_event = {
+	id = MP.408
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	only_playable = yes
+
+	trigger = {
+		FROM = { has_landed_title = e_seljuk_turks }
+	}
+	
+	immediate = {
+		FROM = { save_event_target_as = seljuk_holder }
+		event_target:seljuk_holder = { character_event = { id = MP.409 } }
+	}
+}
+
+character_event = { #Giving the possibility to switch to either the Trebizond or Niceaen Empire in Singleplayer
+	id = MP.409
+	title = "Seljuk's Destiny"
+	desc = "As we have recently lost a war, we have lost many men and resources. Perhaps it is wise to rally up men from our recently conquered lands to muster them up and use them for our cause."
+    is_triggered_only = yes
+	
+	picture = "GFX_evt_seljuk_army_march"
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		ROOT = {
+			has_landed_title = e_seljuk_turks
+		}
+	}
+	
+	option = {
+		name = "Rally whoever we can!"
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		spawn_unit = {
+			owner = ROOT
+			province = capital
+			home = ROOT
+			troops = {
+				light_infantry = { 1500 1500 }
+				heavy_infantry = { 500 500 }
+				archers = { 250 250 }
+				knights = { 150 150 }
+			}
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+		random_demesne_province = {
+			add_province_modifier = { name = plundered_capital years = 1 }
+		}
+	}
+	option = {
+		name = "That is not necessary"
+		prestige = 250
+	}
+}
+
 
 #narrative_event = {
 #	id = MP.405

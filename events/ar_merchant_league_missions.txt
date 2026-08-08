@@ -1,0 +1,442 @@
+namespace = MERMIS
+
+# You start the quest of the Merchant League to create a Trade Embassy
+character_event = {
+	id = MERMIS.1
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "You have been tasked to create a trade embassy with a prosperous realm and are ready to visit one."
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = "Gather an envoy with a guard."
+		ai_chance = { factor = 1 }
+		save_event_target_as = ruler_on_mission
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.2 } }
+	}
+	
+	option = {
+		name = "Actually, i have other matters to attend."
+		ai_chance = { factor = 0 }
+	}
+}
+
+# How much will you carry to the realm
+character_event = {
+	id = MERMIS.2
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "We now have to decide how big our expedition will be and what we will bring with us"
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = "We go to impress, therefore we carry what we can"
+		set_character_flag = big_investment_embassy
+		wealth = -250
+		hidden_tooltip = {
+			random_independent_ruler = {
+				limit = {
+					ai = yes
+					controls_religion = no
+					is_adult = yes
+					is_within_diplo_range = ROOT
+					mercenary = no
+					holy_order = no
+					primary_title = {
+						is_landless_type_title = no
+					}
+					NOR = {
+						is_rival = ROOT
+						trait = incapable
+						prisoner = yes
+						religion_group = ROOT
+						ROOT = {
+							any_liege = {
+								character = PREVPREV
+							}
+						}
+					}
+				}
+				character_event = { id = MERMIS.4  days = 35 }
+			}
+		}
+	}
+	
+	option = {
+		name = "Lets bring a sizable envoy"
+		set_character_flag = normal_investment_embassy
+		wealth = -100
+		hidden_tooltip = {
+			random_independent_ruler = {
+				limit = {
+					ai = yes
+					controls_religion = no
+					is_adult = yes
+					is_within_diplo_range = ROOT
+					mercenary = no
+					holy_order = no
+					primary_title = {
+						is_landless_type_title = no
+					}
+					NOR = {
+						is_rival = ROOT
+						trait = incapable
+						prisoner = yes
+						religion_group = ROOT
+						ROOT = {
+							any_liege = {
+								character = PREVPREV
+							}
+						}
+					}
+				}
+				character_event = { id = MERMIS.4  days = 35 }
+			}
+		}
+	}
+
+	option = {
+		name = "Let us keep it small"
+		set_character_flag = small_investment_embassy
+		wealth = -50
+		hidden_tooltip = {
+			random_independent_ruler = {
+				limit = {
+					ai = yes
+					controls_religion = no
+					is_adult = yes
+					is_within_diplo_range = ROOT
+					mercenary = no
+					holy_order = no
+					primary_title = {
+						is_landless_type_title = no
+					}
+					NOR = {
+						is_rival = ROOT
+						trait = incapable
+						prisoner = yes
+						religion_group = ROOT
+						ROOT = {
+							any_liege = {
+								character = PREVPREV
+							}
+						}
+					}
+				}
+				character_event = { id = MERMIS.4  days = 35 }
+			}
+		}
+	}
+}
+
+## Someone will be selected randomly
+#character_event = {
+#	id = MERMIS.3
+#	is_triggered_only = yes
+#	hide_window = yes
+#	
+#	immediate = {
+#		random_independent_ruler = {
+#			limit = {
+#				ai = yes
+#				controls_religion = no
+#				is_adult = yes
+#				is_within_diplo_range = ROOT
+#				mercenary = no
+#				holy_order = no
+#				primary_title = {
+#					is_landless_type_title = no
+#				}
+#				NOR = {
+#					is_rival = ROOT
+#					trait = incapable
+#					prisoner = yes
+#					religion_group = ROOT
+#					ROOT = {
+#						any_liege = {
+#							character = PREVPREV
+#						}
+#					}
+#				}
+#			}
+#			character_event = { id = MERMIS.4  days = 35 }
+#		}
+#	}
+#}
+
+# The ruler gets word of the envoy
+character_event = {
+	id = MERMIS.4
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "We have recieved a messenger with the question if an envoy from a far away realm is allowed to come in our lands to have an audiance with us. How will we respond?"
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = "We accept this envoy"
+		save_event_target_as = ruler_trade_embassy
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.5 days = 5 } }
+	}
+	
+	option = {
+		name = "They are not welcome!"
+		ai_chance = { factor = 0 }
+	}
+}
+
+# You present a gift
+character_event = {
+	id = MERMIS.5
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "Your messenger has returned with good news, our envoy is welcomed in their lands. As you eventually reach these lands and are recieved you get a warm welcome and figured that now is the time to present gifts."
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = { 
+		name = { # A dozen of strong horses
+			text = EVTOPTA_WOL_10114_HORSES
+			trigger = { 
+				OR = {
+					religion_group = christian
+					religion_group = zoroastrian_group
+					religion_group = jewish_group
+					religion = taoist
+				}
+			}
+		}
+		name = { # A dozen of sturdy camels
+			text = EVTOPTA_WOL_10114_CAMELS
+			trigger = { religion_group = muslim }
+		}
+		name = { # An elephant
+			text = EVTOPTA_WOL_10114_ELEPHANT
+			trigger = { has_dharmic_religion_trigger = yes }
+		}
+		name = { # A dozen of tough warriors
+			text = EVTOPTA_WOL_10114_WARRIORS
+			trigger = { religion_group = pagan_group }
+		}
+		wealth = -30
+		FROM = {
+			opinion = {
+				modifier = opinion_flattered # +25
+				who = ROOT
+				years = 5
+			}
+		}
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.6 } }
+	}
+	
+	option = {
+		name = EVTOPTB_WOL_10114
+		wealth = -15
+		FROM = {
+			opinion = {
+				modifier = opinion_fine_gift # +10
+				who = ROOT
+				years = 3
+			}
+			hidden_tooltip = {
+				character_event = { id = MERMIS.6 }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTC_WOL_10114
+		wealth = -5
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.6 } }
+	}
+	
+	option = {
+		name = EVTOPTD_WOL_10114
+		FROM = {
+			opinion = {
+				modifier = opinion_mildly_disappointed # -5
+				who = ROOT
+				years = 3
+			}
+		}
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.6 } }
+	}
+}
+
+# We now ask the question
+character_event = {
+	id = MERMIS.6
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "Gifts are recieved and formalities are trough, now is the time to celebarate. Perhaps now is the time to present a proposal to build a trade embassy."
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = "Let us ask"
+		event_target:ruler_trade_embassy = { character_event = { id = MERMIS.7 } }
+	}
+}
+
+# Envoy gets to the point
+character_event = {
+	id = MERMIS.7
+	is_triggered_only = yes
+	title = "Trade Embassy"
+	desc = "My liege, our guests have offered a proposal. They wish to build a trade embassy to keep a steady flow of trade favored by his Merchant League. Do we accept trade from these people?"
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = "We agree to let them build a trade embassy"
+		wealth = -150
+		event_target:ruler_trade_embassy = {
+			capital_scope = {
+				location = {
+					add_province_modifier = {
+						name = leauge_embassy
+						years = 10
+					}
+				}
+			}
+		}
+		event_target:ruler_on_mission = { character_event = { id = MERMIS.9 days = 10 } } }
+	}
+	
+	option = {
+		name = "We refuse."
+	}
+}
+# Successful expedition
+character_event = {
+	id = MERMIS.9
+	is_triggered_only = yes
+	desc = EVTDESC_WOL_10125
+	picture = GFX_evt_relaxed_ruler
+	border = GFX_event_normal_frame_economy
+	
+	option = {
+		name = EVTOPTA_WOL_10125
+		clr_quest = quest_merchant_league_establish_trade_embassy
+		hidden_tooltip = { remove_character_modifier = establishing_embassy }
+		if = {
+			limit = { has_character_flag = small_investment_embassy }
+			wealth = 100
+			prestige = 150
+			add_society_currency_minor_effect = yes
+		}
+		if = {
+			limit = { has_character_flag = normal_investment_embassy }
+			scaled_wealth = 2.5
+			prestige = 250
+			add_society_currency_medium_effect = yes
+		}
+		if = {
+			limit = { has_character_flag = big_investment_embassy }
+			wealth = 500
+			prestige = 500
+			add_society_currency_medium_effect = yes
+		}
+		clr_character_flag = small_investment_embassy
+		clr_character_flag = normal_investment_embassy
+		clr_character_flag = big_investment_embassy
+		capital_scope = {
+			hidden_tooltip = {
+				remove_province_modifier = leauge_embassy
+			}
+			add_province_modifier = {
+				name = leauge_embassy
+				duration = 10950
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						change_variable = { which = prosperity_value value = 3 }
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						trait = architect
+						trait = gardener
+					}
+				}
+			}
+			add_character_modifier = {
+				name = trader
+				duration = -1
+			}
+			hidden_tooltip = {
+				remove_character_modifier = aspiring_trader
+			}
+		}
+		add_character_modifier = {
+			name = business_contacts
+			duration = -1
+		}
+		hidden_tooltip = {
+			character_event = { id = WoL.10126 days = 5 }
+		}
+	}
+}
+## You return home
+#character_event = {
+#	id = MERMIS.10
+#	is_triggered_only = yes
+#	desc = EVTDESC_WOL_10102
+#	picture = GFX_evt_council
+#	border = GFX_event_normal_frame_economy
+#	
+#	option = {
+#		name = "We go to impress, therefore we carry what we can"
+#		wealth = -250
+#		character_event = { id = MERMIS.3 }
+#	}
+#	
+#	option = {
+#		name = "Lets bring a sizable envoy"
+#		wealth = -100
+#	}
+#
+#	option = {
+#		name = "We are keeping it small"
+#		wealth = -50
+#	}
+#}
+
+#QUEST: Do penance/meditate
+society_quest_event = {
+	id = MERMIS.1000
+	border = GFX_event_letter_frame_religion
+	desc = MERMIS.1000DESC
+
+	is_triggered_only = yes
+
+	option = {
+		name = ACCEPT
+		set_quest = quest_merchant_league_establish_trade_embassy
+	}
+
+	option = {
+		name = DECLINE
+		custom_tooltip = { text = decline_quest_tooltip }
+
+		add_character_modifier = {
+			name = quest_cooldown_timer
+			hidden = yes
+			days = 1000
+		}
+
+		ai_chance = { factor = 0 }
+	}
+}
