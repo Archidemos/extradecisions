@@ -105,29 +105,43 @@ technology = {
 	}
 }
 
+technology = {
+	titles = {
+		d_valois
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
 
+	270 = {
+		military = 0.6
+		economy = 0.3
+		culture = 0.5
+		
+		TECH_MELEE = 5.0
+		TECH_CAVALRY = 2.5
+	}
+	
+	1337 = {
+		military = 4.0
+		economy = 4.0
+		culture = 4.0
+		
+		TECH_MELEE = 5.0
+		TECH_CAVALRY = 5.0
+	}
+}
 
-#ITALY
+#NORTH ITALY
 
 technology = {
 	titles = {
-		d_capua
-		d_napoli
-		d_gaeta
-		d_apulia
-		d_benevento
-		d_bari
-		d_venosa
-		d_tarent
-		d_salerno
-		d_atri
-		d_calabria
-		d_sicily
-		d_venice
 		d_verona
 		d_ivrea
 		d_saluzzo
-		d_lombardia
 		d_parma
 		d_modena
 		d_monferrato
@@ -146,9 +160,6 @@ technology = {
 		d_latium
 		d_ravenna
 		d_ferrara
-		d_corsica
-		d_sardinia
-		d_amalfi
 		d_vercelli_republic
 		d_vicenza_republic
 		d_verona_republic
@@ -169,8 +180,80 @@ technology = {
 		d_lucca_republic
 		d_arezzo_republic
 		d_siena_republic
-		d_north_sicily
-		d_malta
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
+
+	270 = {
+		military = 0.7
+		economy = 1.0
+		culture = 1.0
+		
+		TECH_TRADE_PRACTICES = 1.5
+	}
+	
+	400 = {
+		military = 1.0
+		economy = 1.2
+		culture = 1.2
+		
+		TECH_TRADE_PRACTICES = 4.0
+	}
+
+	1337 = {
+		military = 5.0
+		economy = 5.0
+		culture = 5.0
+	}
+}
+
+technology = {
+	titles = {
+		d_venice
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
+
+	270 = {
+		military = 0.7
+		economy = 1.0
+		culture = 1.0
+		
+		TECH_TRADE_PRACTICES = 1.5
+	}
+	
+	400 = {
+		military = 1.2
+		economy = 1.6
+		culture = 1.4
+		
+		TECH_CONSTRUCTION = 1.5
+		TECH_TRADE_PRACTICES = 4.0
+		TECH_NAVAL = 1.5
+	}
+		
+	1337 = {
+		military = 5.0
+		economy = 5.0
+		culture = 5.0
+		
+		TECH_CONSTRUCTION = 5.0
+		TECH_TRADE_PRACTICES = 5.0
+		TECH_NAVAL = 5.0
+	}
+}
+
+technology = {
+	titles = {
+		d_lombardia
 	}
 	
 	100 = {
@@ -186,9 +269,66 @@ technology = {
 	}
 	
 	400 = {
-		military = 1.0
-		economy = 1.2
+		military = 1.6
+		economy = 1.4
 		culture = 1.2
+		
+		TECH_SIEGE_EQUIPMENT = 2.5
+		TECH_RECRUITMENT = 5.0
+		TECH_TRADE_PRACTICES = 2.5
+	}
+		
+	1337 = {
+		military = 5.0
+		economy = 5.0
+		culture = 5.0
+		
+		TECH_SIEGE_EQUIPMENT = 5.0
+		TECH_RECRUITMENT = 5.0
+		TECH_TRADE_PRACTICES = 5.0
+	}
+}
+
+
+#SOUTH ITALY + SARDINIA
+
+technology = {
+	titles = {
+		d_atri
+		d_capua
+		d_gaeta
+		d_napoli
+		d_venosa
+		d_salerno
+		d_apulia
+		d_bari
+		d_tarent
+		d_calabria
+		d_benevento
+		d_sicily
+		d_north_sicily
+		d_malta
+		d_amalfi
+		d_corsica
+		d_sardinia
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
+
+	270 = {
+		military = 0.5
+		economy = 0.8
+		culture = 0.8
+	}
+	
+	400 = {
+		military = 0.8
+		economy = 1.0
+		culture = 1.0
 	}
 		
 	1337 = {
@@ -197,8 +337,6 @@ technology = {
 		culture = 5.0
 	}
 }
-
-
 
 #BRITISH ISLES
 
@@ -299,13 +437,13 @@ technology = {
 	270 = {
 		military = 0.5
 		economy = 0.4
-		culture = 0.2
+		culture = 0.7
 	}
 
 	400 = {
-		military = 0.2
-		economy = 0.5
-		culture = 0.5
+		military = 0.3
+		economy = 0.7
+		culture = 0.7
 	}
 	
 	769 = {
@@ -332,11 +470,73 @@ technology = {
 		d_granada
 		d_murcia
 		d_valencia
-		d_cordoba
-		d_toledo
 		d_badajoz
 		d_beja
 		d_la_mancha
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
+
+	270 = {
+		military = 0.7
+		economy = 0.7
+		culture = 1.1
+	}
+
+	400 = {
+		military = 0.5
+		economy = 1.0
+		culture = 1.0
+	}
+		
+	1337 = {
+		military = 4.5
+		economy = 4.5
+		culture = 4.7
+	}
+}
+
+technology = {
+	titles = {
+		d_toledo
+	}
+	
+	100 = {
+		military = 0.0
+		economy = 0.0
+		culture = 0.0
+	}
+
+	270 = {
+		military = 1.0
+		economy = 0.7
+		culture = 0.7
+	}
+
+	400 = {
+		military = 1.3
+		economy = 1.0
+		culture = 1.1
+		
+		TECH_INFANTRY = 5.0
+	}
+		
+	1337 = {
+		military = 4.5
+		economy = 4.5
+		culture = 4.7
+		
+		TECH_INFANTRY = 5.0
+	}
+}
+
+technology = {
+	titles = {
+		d_cordoba
 	}
 	
 	100 = {
@@ -352,15 +552,23 @@ technology = {
 	}
 
 	400 = {
-		military = 0.5
-		economy = 1.0
-		culture = 1.0
+		military = 1.0
+		economy = 1.3
+		culture = 1.3
+
+		TECH_RELIGIOUS_CUSTOMS = 2.5
+		TECH_CULTURE_FLEX = 5.0
+		TECH_MAJESTY = 2.5
 	}
 		
 	1337 = {
-		military = 4.5
-		economy = 4.5
-		culture = 4.7
+		military = 4.6
+		economy = 4.6
+		culture = 4.8
+		
+		TECH_RELIGIOUS_CUSTOMS = 5.0
+		TECH_CULTURE_FLEX = 5.0
+		TECH_MAJESTY = 5.0
 	}
 }
 

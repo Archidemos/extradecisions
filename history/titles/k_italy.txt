@@ -19,8 +19,9 @@
 565.1.1 = {
 	liege = 0
 	holder = 190124 # Alboin
-	#name = LOMBARD_KINGDOM # doesn't work with dynamic names
-	#adjective = LOMBARD_KINGDOM_ADJ
+	effect = { set_name = "Lombardia" }
+	#effect = { name = LOMBARD_KINGDOM }
+	#effect = { adjective = LOMBARD_KINGDOM_ADJ }
 	effect = { reset_coa = THIS }
 	effect = { set_coa = k_lombardy }
 }
@@ -111,8 +112,8 @@
 	holder = 6392 # Charlemagne
 	law = agnatic_succession
 	set_global_flag = fall_of_lombard_kingdom
-	#reset_name = yes
-	#reset_adjective = yes
+	reset_name = yes
+	reset_adjective = yes
 	effect = { reset_coa = THIS }
 }
 781.1.1 = {

@@ -2207,6 +2207,7 @@ pagan_group = {
 
 	pagan = { # Use for misc other pagans
 		graphical_culture = pagangfx
+		has_coa_on_barony_only = no
 		alternate_start = { always = no }
 
 		icon = 5
@@ -2276,6 +2277,7 @@ pagan_group = {
 
 	germanic_pagan_reformed = {
 		graphical_culture = norsegfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = norse_pagan
 		alternate_start = { always = no }
 
@@ -2336,6 +2338,8 @@ pagan_group = {
 
 	germanic_pagan = {
 		graphical_culture = norsegfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -2403,6 +2407,7 @@ pagan_group = {
 
 	celtic_pagan_reformed = {
 		graphical_culture = norsegfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = norse_pagan
 		alternate_start = { always = no }
 
@@ -2463,6 +2468,8 @@ pagan_group = {
 
 	celtic_pagan = {
 		graphical_culture = norsegfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -2530,6 +2537,7 @@ pagan_group = {
 
 	norse_pagan_reformed = {
 		graphical_culture = norsegfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = norse_pagan
 		alternate_start = { always = no }
 
@@ -2590,6 +2598,8 @@ pagan_group = {
 
 	norse_pagan = {
 		graphical_culture = norsegfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -2657,7 +2667,9 @@ pagan_group = {
 
 	tengri_pagan_reformed = { # Mongols
 		graphical_culture = mongolgfx
+		#has_coa_on_barony_only = no
 		alternate_start = { always = no }
+		has_coa_on_barony_only = no
 
 		secondary_event_pictures = tengri_pagan
 
@@ -2715,8 +2727,8 @@ pagan_group = {
 
 
 	tengri_pagan = { # This tag is used in code to override Nomad religions for purposes of Coats of Arms, etc
-
 		graphical_culture = mongolgfx
+		has_coa_on_barony_only = no
 
 		icon = 28
 		heresy_icon = 30
@@ -2774,6 +2786,7 @@ pagan_group = {
 
 	baltic_pagan_reformed = {
 		graphical_culture = pagangfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = baltic_pagan
 		alternate_start = { always = no }
 
@@ -2843,6 +2856,7 @@ pagan_group = {
 
 	baltic_pagan = {
 		graphical_culture = pagangfx
+		has_coa_on_barony_only = no
 
 		icon = 31
 		heresy_icon = 33
@@ -2913,6 +2927,7 @@ pagan_group = {
 
 	finnish_pagan_reformed = {
 		graphical_culture = pagangfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = finnish_pagan
 		alternate_start = { always = no }
 
@@ -2982,6 +2997,8 @@ pagan_group = {
 
 	finnish_pagan = {
 		graphical_culture = pagangfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -3057,6 +3074,7 @@ pagan_group = {
 
 	aztec_reformed = {
 		graphical_culture = mesoamericangfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = mesoamerican
 		alternate_start = { always = no }
 
@@ -3105,6 +3123,7 @@ pagan_group = {
 
 	aztec = {
 		graphical_culture = mesoamericangfx
+		has_coa_on_barony_only = no
 		secondary_event_pictures = mesoamerican
 		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } has_dlc = "Sunset Invasion" }
 
@@ -3154,6 +3173,7 @@ pagan_group = {
 
 	slavic_pagan_reformed = {
 		graphical_culture = pagangfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = slavic_pagan
 		alternate_start = { always = no }
 
@@ -3223,6 +3243,8 @@ pagan_group = {
 
 	slavic_pagan = {
 		graphical_culture = pagangfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -3302,6 +3324,7 @@ pagan_group = {
 
 	west_african_pagan_reformed = {
 		graphical_culture = africangfx
+		#has_coa_on_barony_only = no
 		interface_skin = { zun_interface zoroastrian_interface muslim_interface }
 		alternate_start = { always = no }
 
@@ -3374,6 +3397,7 @@ pagan_group = {
 
 	west_african_pagan = {
 		graphical_culture = africangfx
+		has_coa_on_barony_only = no
 		interface_skin = { zun_interface zoroastrian_interface muslim_interface }
 		alternate_start = {
 			OR = {
@@ -3451,6 +3475,7 @@ pagan_group = {
 
 	zun_pagan_reformed = {
 		graphical_culture = muslimgfx
+		#has_coa_on_barony_only = no
 		alternate_start = { always = no }
 		interface_skin = { zun_interface zoroastrian_interface muslim_interface }
 
@@ -3507,6 +3532,8 @@ pagan_group = {
 
 	zun_pagan = {
 		graphical_culture = muslimgfx
+		has_coa_on_barony_only = no
+		
 		alternate_start = {
 			OR = {
 				year < 1100
@@ -3567,6 +3594,7 @@ pagan_group = {
 
 	hellenic_pagan_reformed = {
 		graphical_culture = hellenicgfx
+		#has_coa_on_barony_only = no
 		alternate_start = { always = no }
 		interface_skin = { hellenic_interface }
 
@@ -3610,6 +3638,7 @@ pagan_group = {
 
 	hellenic_pagan = {
 		graphical_culture = hellenicgfx
+		#has_coa_on_barony_only = no
 		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } }
 		interface_skin = { hellenic_interface }
 
@@ -3653,6 +3682,7 @@ pagan_group = {
 	
 	bon_reformed = {
 		graphical_culture = mongolgfx
+		#has_coa_on_barony_only = no
 		secondary_event_pictures = tengri_pagan
 		interface_skin = { bon_interface taoist_interface indian_interface muslim_interface }
 
@@ -3732,6 +3762,8 @@ pagan_group = {
 
 	bon = {
 		graphical_culture = mongolgfx
+		has_coa_on_barony_only = no
+		
 		secondary_event_pictures = tengri_pagan
 		interface_skin = { bon_interface taoist_interface indian_interface muslim_interface }
 

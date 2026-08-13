@@ -1,0 +1,40 @@
+# -*- ck2.history.provinces -*-
+
+# 2216 - Pamphylia
+
+# County Title
+title = c_pamphylia
+
+# Settlements
+max_settlements = 5
+
+b_pamphylia1 = castle
+b_pamphylia2 = city
+b_pamphylia3 = castle # Medieval Castle, built by the Byzantines, served as the Western Outpost of the Armenian Kingdom of Cilica and later guarding Caravan routes under Seljukid control
+b_pamphylia4 = castle #Major Fortified site in Kibyrrhaiotai, home of a bishop
+b_pamphylia5 = temple
+
+#b_pamphylia6 = temple
+#b_pamphylia7 = city
+
+# Misc
+culture = greek
+religion = orthodox
+
+# History
+200.1.1 = {
+	religion = nicene_christian
+	culture = roman_greek
+}
+601.1.1 = {
+	religion = orthodox
+	culture = greek
+}
+1000.1.1 = { remove_settlement = b_pamphylia5 }
+1090.1.1 = { b_pamphylia7 = city }
+1210.1.1 = { remove_settlement = b_pamphylia7 }
+1225.1.1 = { culture = turkmen }
+1225.1.1 = { religion = sunni }
+1256.1.1 = { culture = turkish }
+
+

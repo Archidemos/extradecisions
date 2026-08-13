@@ -714,25 +714,17 @@
 	trait="brave"
 	trait="tall"
 	trait="battle_experienced_15"
-	214.9.9={
-		birth="214.9.9"
+	214.9.9 = {
+		birth = yes
 	}
-	255.1.1={
+	255.1.1 = {
 		add_spouse=145249
 		remove_trait="envious"
 		remove_trait="craven"
 		remove_trait="proud"
 	}
 	270.5.1 = {
-		change_variable = {
-			which = experienced_commander
-			value = 16
-		}
 		effect = {
-			change_variable = {
-				which = experienced_commander
-				value = 16
-			}
 			spawn_unit = {
 				province = 1127
 				owner = ROOT
@@ -756,21 +748,14 @@
 					light_cavalry = { 500 500 }
 				}
 			}
-			#spawn_unit = {
-			#	province = 1127
-			#	owner = ROOT
-			#	disband_on_peace = yes
-			#	troops = {
-			#		light_infantry = { 1500 1500 }
-			#		heavy_infantry = { 500 500 }
-			#		horse_archers = { 250 250 }
-			#		light_cavalry = { 500 500 }
-			#	}
-			#}
+			change_variable = {
+				which = experienced_commander
+				value = 16
+			}
 		}
 	}
-	275.7.1={
-		death="275.7.1"
+	275.7.1 = {
+		death = yes
 	}
 }
 

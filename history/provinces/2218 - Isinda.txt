@@ -1,0 +1,39 @@
+# -*- ck2.history.provinces -*-
+
+# 2218 - Isinda
+
+# County Title
+title = c_isinda
+
+# Settlements
+max_settlements = 5
+
+b_isinda1 = castle
+b_isinda2 = city
+b_isinda3 = city
+b_isinda4 = temple #Modern City of Tavas
+b_isinda5 = city #Ruined, nearby city of Kuyucak used for Turks
+#b_isinda6 = castle #Modern Geyre
+#b_isinda7 = temple
+
+# Misc
+culture = greek
+religion = orthodox
+
+# History
+200.1.1 = {
+	religion = hellenic_pagan
+	culture = roman_greek
+}
+601.1.1 = {
+	religion = orthodox
+	culture = greek
+}
+
+1185.1.1 = { remove_settlement = b_isinda3 }
+1185.1.1 = { b_isinda6 = castle }
+1205.1.1 = { culture = turkmen }
+1205.1.1 = { religion = sunni }
+1250.1.1 = { remove_settlement = b_isinda5 } #Seems to have been ruined during Mongol Campaigns in Anatolia
+1250.1.1 = { b_isinda7 = city } #Denizli, replaces Antioch on the Meander
+1256.1.1 = { culture = turkish }

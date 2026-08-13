@@ -1,0 +1,39 @@
+# -*- ck2.history.provinces -*-
+
+# 2215 - Alabanda
+
+# County Title
+title = c_alabanda
+
+# Settlements
+max_settlements = 5
+
+b_alabanda1 = castle
+b_alabanda2 = city
+b_alabanda3 = city
+b_alabanda4 = temple #Modern City of Tavas
+b_alabanda5 = city #Ruined, nearby city of Kuyucak used for Turks
+#b_alabanda6 = castle #Modern Geyre
+#b_alabanda7 = temple
+
+# Misc
+culture = greek
+religion = orthodox
+
+# History
+200.1.1 = {
+	religion = hellenic_pagan
+	culture = roman_greek
+}
+601.1.1 = {
+	religion = orthodox
+	culture = greek
+}
+
+1185.1.1 = { remove_settlement = b_alabanda3 }
+1185.1.1 = { b_alabanda6 = castle }
+1205.1.1 = { culture = turkmen }
+1205.1.1 = { religion = sunni }
+1250.1.1 = { remove_settlement = b_alabanda5 } #Seems to have been ruined during Mongol Campaigns in Anatolia
+1250.1.1 = { b_alabanda7 = city } #Denizli, replaces Antioch on the Meander
+1256.1.1 = { culture = turkish }
