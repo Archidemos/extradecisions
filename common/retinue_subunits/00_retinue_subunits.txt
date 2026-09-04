@@ -832,9 +832,9 @@ RETTYPE_CUL_ARAB =
 	}
 	
 	modifier = {
-		camel_cavalry_offensive = 0.1
+		camel_cavalry_offensive = 0.15
 		camel_cavalry_defensive = 0.1
-		camel_cavalry_morale = 0.2
+		camel_cavalry_morale = 0.25
 	}
 }
 
@@ -849,9 +849,9 @@ RETTYPE_CUL_ANDALUSIAN =
 	}
 
 	modifier = {
-		light_cavalry_defensive = 0.1
+		light_cavalry_defensive = 0.15
 		light_cavalry_offensive = 0.3
-		light_cavalry_morale = 0.3
+		light_cavalry_morale = 0.5
 	}
 }
 
@@ -862,12 +862,16 @@ RETTYPE_CUL_BERBER =
 
 	potential = {
 		is_nomadic = no
-		culture = maghreb_arabic
+		OR = {
+			culture = maghreb_arabic
+			culture = masmuda
+			culture = sanhaja
+		}
 	}
 
 	modifier = {
-		light_cavalry_offensive = 0.2
-		light_cavalry_morale = 0.2
+		light_cavalry_offensive = 0.5
+		light_cavalry_morale = 0.3
 	}
 }
 
@@ -2003,6 +2007,23 @@ RETTYPE_K_PRUSSIA =
 		heavy_infantry_morale = 0.25
 		pikemen_offensive = 0.25
 		pikemen_morale = 0.25
+	}
+}
+
+RETTYPE_E_PLC = 
+{
+	first_type = 4
+	first_amount = 200
+	
+	potential = {
+		ROOT = { has_landed_title = e_plc }
+	}
+	
+	maintenance_multiplier = 2.5
+	
+	modifier = {
+		knights_offensive = 0.50
+		knights_morale = 0.50
 	}
 }
 

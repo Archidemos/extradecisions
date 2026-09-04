@@ -1740,16 +1740,16 @@ narrative_event = { #Event for everyone about the formation of the PLC
 	id = MP.107
 	title = EVTNAMEMP101
 	desc = EVTDESCMP101
-	sound = ar_army_marching
+	sound = ar_crusade_shout
 	
-	picture = "GFX_evt_mongols"
+	picture = "GFX_evt_polish_horde"
 	
 	border = GFX_event_narrative_frame_war
 	
 	is_triggered_only = yes
 	
 	option = { #At last
-		name = "Concerning.."
+		name = "Si Deus nobiscum quis contra nos."
 	}
 }
 
@@ -2989,6 +2989,157 @@ character_event = { #Giving the possibility to switch to either the Trebizond or
 	}
 }
 
+## Arriving at the crusade target
+#character_event = {
+#	id = MP.410
+#	desc = "EVTDESC8305"
+#	picture = "GFX_evt_siege"
+#	border = GFX_event_normal_frame_war
+#
+#	min_age = 16
+#	capable_only = yes
+#	prisoner = no
+#	religion = catholic
+#	in_command = yes
+#	
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		OR = {
+#			any_war = {
+#				OR = {
+#					using_cb = reconquista_leon
+#					using_cb = reconquista_castille
+#					using_cb = reconquista_aragon
+#					using_cb = reconquista_galicia
+#					using_cb = reconquista_beja
+#					using_cb = reconquista_granada
+#					using_cb = reconquista_cordoba
+#					using_cb = reconquista_valencia
+#					using_cb = reconquista_navarra
+#					using_cb = reconquista_balearic
+#				}
+#			}
+#			any_liege = {
+#				any_war = {
+#					OR = {
+#						using_cb = reconquista_leon
+#						using_cb = reconquista_castille
+#						using_cb = reconquista_aragon
+#						using_cb = reconquista_galicia
+#						using_cb = reconquista_beja
+#						using_cb = reconquista_granada
+#						using_cb = reconquista_cordoba
+#						using_cb = reconquista_valencia
+#						using_cb = reconquista_navarra
+#						using_cb = reconquista_balearic
+#					}
+#				}
+#			}
+#		}
+#		NOT = { has_character_flag = arrived_at_reconquista_target }
+#		location = {
+#			holder_scope = {
+#				NOT = { character = ROOT }
+#			}
+#		}
+#	}
+#	
+#	immediate = {
+#		hidden_tooltip = {
+#			set_character_flag = arrived_at_reconquista_target
+#		}
+#	}
+#	
+#	option = {
+#		name = "EXCELLENT"
+#		prestige = 25
+#		piety = 25
+#		add_trait = reconquistador
+#	}
+#}
+
+# Arriving for the crusade
+character_event = {
+	id = MP.410
+	desc = "EVTDESCMP410"
+	picture = "GFX_evt_crusaders"
+	border = GFX_event_normal_frame_war
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	in_command = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = christian
+		NOT = { trait = reconquistador }
+		OR = {
+			AND = {
+				any_war = {
+					OR = {
+						using_cb = reconquista_leon
+						using_cb = reconquista_castille
+						using_cb = reconquista_aragon
+						using_cb = reconquista_galicia
+						using_cb = reconquista_beja
+						using_cb = reconquista_granada
+						using_cb = reconquista_cordoba
+						using_cb = reconquista_valencia
+						using_cb = reconquista_navarra
+						using_cb = reconquista_balearic
+					}
+				}
+				religion_group = christian
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+			any_liege = {
+				religion_group = christian
+				any_war = {
+					OR = {
+						using_cb = reconquista_leon
+						using_cb = reconquista_castille
+						using_cb = reconquista_aragon
+						using_cb = reconquista_galicia
+						using_cb = reconquista_beja
+						using_cb = reconquista_granada
+						using_cb = reconquista_cordoba
+						using_cb = reconquista_valencia
+						using_cb = reconquista_navarra
+						using_cb = reconquista_balearic
+					}
+				}
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+		}
+	}
+
+	immediate = {
+		abdicate_holy_order_if_religion_changes_effect = yes
+	}
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "EVTOPTA8300"
+		add_trait = reconquistador
+	}
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = christian }
+		}
+		name = "GLORY"
+		add_trait = reconquistador
+	}
+}
 
 #narrative_event = {
 #	id = MP.405

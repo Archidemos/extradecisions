@@ -1,0 +1,50 @@
+namespace = ARSM
+
+narrative_event = {
+	id = ARSM.1
+	title = "Founding a new Dynasty"
+	desc = "As we have fended off against our opponents and have proclaimed the Kingdom of Navarra, perhaps we could also reshape our dynasty and create a new one, so that the people may officially and clearly know who will rule these lands and protect them for anyone what wishes harm against us."
+	is_triggered_only = yes
+	
+	picture = "GFX_evt_greek_city"
+	border = GFX_event_narrative_frame_war
+	sound = ar_army_marching
+	
+	trigger = {
+		start_date == 769.1.1
+		has_landed_title = k_navarra
+	}	
+
+	option = {
+		name = "We will create this new dynasty"
+		ROOT = { dynasty = 8617 }
+		hidden_tooltip = { any_player = { character_event = { id = ARSM.2 days = 1 } } }
+	}
+	
+	option = {
+		name = "Our original dynasty will be known!"
+		prestige = 250
+		hidden_tooltip = { any_player = { character_event = { id = ARSM.2 days = 1 } } }
+	}
+}
+
+narrative_event = {
+	id = ARSM.2
+	title = "The Kingdom of Navarra"
+	desc = "Many wars have been fought and many victories have been achieved against the Muslims in Andalusia and in Iberia as a whole. As these conflicts seem to never end, one mighty leader seems to have taken these conflicts to his advantage for his own people. It seems that this ruler has created the Kingdom of Navarra. A Kingdom made for the Basque people, with a mighty ruler on the top that will perhaps partake in the many Reconquistas to come against the Muslim Sultanates."
+	is_triggered_only = yes
+	
+	portrait = k_navarra
+	picture = "GFX_evt_coronation"
+	border = GFX_event_narrative_frame_war
+	sound = ar_crusade_shout
+	
+	trigger = {
+		start_date == 769.1.1
+		has_landed_title = k_navarra
+	}	
+
+	option = {
+		name = "Another contender in the Reconquistas!"
+	}
+}

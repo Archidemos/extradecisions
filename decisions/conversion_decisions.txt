@@ -3186,10 +3186,11 @@ decisions = {
 		
 		potential = {
 			is_playable = yes
-			OR = { 
-				culture = italian 
-				culture = greek
-			}
+			#OR = { 
+			#	culture_group = latin
+			#	culture_group = italian_group
+			#	culture_group = byzantine
+			#}
 			has_dlc = "Holy Fury"
 			has_landed_title = e_roman_empire
 			NOT = { government = chinese_imperial_government }
@@ -3229,11 +3230,21 @@ decisions = {
 						}
 						if = {
 							limit = { 
-								culture = italian
+								culture_group = italian_group
 								NOT = { distance = { where = 333 distance = 100 } } 
 							}
 							random = { 
-								chance = 40 
+								chance = 50
+								culture = roman 
+							}
+						}
+						if = {
+							limit = { 
+								culture_group = byzantine
+								NOT = { distance = { where = 333 distance = 100 } } 
+							}
+							random = { 
+								chance = 50
 								culture = roman 
 							}
 						}
@@ -3243,7 +3254,7 @@ decisions = {
 								NOT = { distance = { where = 333 distance = 200 } } 
 							}
 							random = { 
-								chance = 20 
+								chance = 40
 								culture = roman 
 							}
 						}
@@ -3253,7 +3264,7 @@ decisions = {
 								NOT = { distance = { where = 333 distance = 400 } } 
 							}
 							random = { 
-								chance = 5
+								chance = 10
 								culture = roman 
 							}
 						}
@@ -3274,7 +3285,7 @@ decisions = {
 								NOT = { distance = { where = 333 distance = 100 } } 
 							}
 							random = { 
-								chance = 10 
+								chance = 20
 								religion = ROOT
 							}
 						}
@@ -3284,7 +3295,7 @@ decisions = {
 								NOT = { distance = { where = 333 distance = 200 } } 
 							}
 							random = { 
-								chance = 5 
+								chance = 10
 								religion = ROOT
 							}
 						}
@@ -3296,7 +3307,7 @@ decisions = {
 					limit = { 
 						any_realm_province = { 
 							religion_group = christian
-							count = 10
+							count = 15
 						} 
 					}
 					character_event = { id = HF.23119 days = 150 random = 50 }
@@ -3312,10 +3323,10 @@ decisions = {
 				factor = 3
 				religion = hellenic_pagan_reformed
 			}
-			modifier = {
-				factor = 0.01 #Would consider it a step down.
-				culture = greek
-			}
+			#modifier = {
+			#	factor = 0.01 #Would consider it a step down.
+			#	culture = greek
+			#}
 		}
 	}
 	embrace_roman_culture = {
@@ -3325,10 +3336,11 @@ decisions = {
 		potential = {
 			is_playable = yes
 			NOT = { culture = roman }
-			OR = { 
-				culture_group = latin 
-				culture_group = byzantine
-			}
+			#OR = { 
+			#	culture_group = latin
+			#	culture_group = italian_group
+			#	culture_group = byzantine
+			#}
 			has_dlc = "Holy Fury"
 			NOT = { government = chinese_imperial_government }
 			has_global_flag = flag_started_roman_renaissance
@@ -3339,10 +3351,11 @@ decisions = {
 		}
 		allow = {
 			show_only_failed_conditions = yes
-			OR = { 
-				culture_group = latin 
-				culture_group = byzantine
-			}
+			#OR = { 
+			#	culture_group = latin
+			#	culture_group = italian_group
+			#	culture_group = byzantine
+			#}
 		}
 		effect = {
 			culture = roman
@@ -3439,10 +3452,10 @@ decisions = {
 				factor = 3
 				capital_scope = { culture = roman } 
 			}
-			modifier = {
-				factor = 0.01 #Would consider it a step down.
-				culture = greek
-			}
+			#modifier = {
+			#	factor = 0.01 #Would consider it a step down.
+			#	culture = greek
+			#}
 		}
 	}
 }

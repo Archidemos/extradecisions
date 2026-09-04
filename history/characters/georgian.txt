@@ -735,15 +735,39 @@
 	stewardship=4
 	religion="orthodox"
 	culture="georgian"
-	trait="deceitful"
-	trait="diligent"
+	trait="grey_eminence"
+	trait="socializer"
+	trait="quick"
+	trait="zealous"
+	trait="patient"
 	trait="brave"
-	trait="intricate_webweaver"
-	trait="chaste"
 	father=466501
 	mother=466502
 	1287.1.2={
 		birth="1287.1.2"
+	}
+	1330.1.1 = {
+		remove_claim = k_iberia
+		effect = {
+			while = {
+				count = 3
+				spawn_unit = {
+					province = 1357 # Tblisi
+					owner = ROOT
+					troops = {
+						light_infantry = { 1500 1500 }
+						archers = { 750 750 }
+						knights = { 250 250 }
+						horse_archers = { 500 500 }
+					}
+				}
+				disband_on_peace = yes
+			}
+		}
+	}
+	1337.1.1 = {
+		give_nickname = nick_the_brilliant
+		effect = { disband_event_forces = yes }
 	}
 	1337.1.2={
 		death="1337.1.2"

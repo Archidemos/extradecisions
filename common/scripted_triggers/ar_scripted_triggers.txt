@@ -1,3 +1,22 @@
 is_league_member_trigger = {
 	society_member_of = merchant_leauge
 }
+
+not_reclamation_check_trigger = {
+	NOT = {
+		any_war = {
+			OR = {
+				using_cb = reclamation_leon
+				using_cb = reclamation_castille
+				using_cb = reclamation_aragon
+				using_cb = reclamation_galicia
+				using_cb = reclamation_beja
+				using_cb = reclamation_granada
+				using_cb = reclamation_cordoba
+				using_cb = reclamation_valencia
+				using_cb = reclamation_navarra
+				using_cb = reclamation_balearic
+			}
+		}
+	}
+}

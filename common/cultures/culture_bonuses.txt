@@ -149,6 +149,15 @@ central_germanic = {
 			martial = 1
 		}
 	}
+	sicilian = { 
+		modifier = sicilian_culture_modifier
+		character_modifier = {
+			knights_defensive = 0.15
+			stewardship = 1
+			pikemen_offensive = 0.15
+			monthly_character_piety = 1
+		}
+	}
 	vandal = {
 		modifier = lombard_culture_modifier
 		character_modifier = {
@@ -1066,6 +1075,24 @@ altaic = {
 			horse_archers_morale = 0.1
 		}
 	}
+	xiongnu = {
+		modifier = xiongnu_culture_modifier
+		character_modifier = {
+			combat_rating = 5
+			population_growth = 0.05
+			light_cavalry_offensive = 0.1
+			horse_archers_offensive = 0.1
+		}
+	}
+	wusun = {
+		modifier = wusun_culture_modifier
+		character_modifier = {
+			combat_rating = 5
+			siege_speed = 0.1
+			light_cavalry_defensive = 0.1
+			horse_archers_defensive = 0.1
+		}
+	}
 	mongol = {
 		modifier = mongol_culture_modifier
 		character_modifier = {
@@ -1099,7 +1126,7 @@ altaic = {
 
 arabic = {
 	sicilian_arabic = { 
-		modifier = sicilian_culture_modifier
+		modifier = sicilian_arabic_culture_modifier
 		character_modifier = {
 			camel_cavalry_defensive = 0.15
 			stewardship = 1
@@ -1395,6 +1422,25 @@ iranian = {
 			castle_vassal_min_levy = 0.05
 			castle_vassal_max_levy = 0.05
 			horse_archers_offensive = 0.1
+			siege_defence = 0.05
+		}
+	}
+	sarmatian = {
+		modifier = sarmatian_culture_modifier
+		character_modifier = {
+			population_growth = 0.05
+			siege_speed = 0.05
+			horse_archers_offensive = 0.15
+			siege_defence = 0.05
+		}
+	}
+	scythian = {
+		modifier = sarmatian_culture_modifier
+		character_modifier = {
+			population_growth = 0.05
+			light_cavalry_offensive = 0.1
+			horse_archers_offensive = 0.1
+			horse_archers_offensive = 0.15
 			siege_defence = 0.05
 		}
 	}

@@ -3305,6 +3305,7 @@ tribal_invasion = {
 						has_bloodline_flag = bloodline_great_conquerors
 					}
 				}
+				trait = great_conquerer
 			}
 		}
 		
@@ -20088,10 +20089,10 @@ reconquista_leon = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-
 			any_realm_province = {
+				owner_under_ROOT = yes
 				OR = {
 					AND = {
 						any_neighbor_province = {
@@ -20178,27 +20179,30 @@ reconquista_leon = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_leon
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_leon
+					de_jure_liege_or_above = d_salamanca
+				}
 			}
 			NOT = {
 				religion_group = ROOT
 			}
 		}
 	}
+
 
 	is_valid = {
 		ROOT = {
@@ -20233,7 +20237,7 @@ reconquista_leon = {
 			save_event_target_as = first_duchy_title
 		}
 
-		d_asturias = {
+		d_salamanca = {
 			save_event_target_as = second_duchy_title
 		}
 		if = {
@@ -20311,9 +20315,8 @@ reconquista_castille = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -20401,21 +20404,25 @@ reconquista_castille = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_castille
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_castilla
+					de_jure_liege_or_above = d_toledo
+					de_jure_liege_or_above = d_segovia
+					de_jure_liege_or_above = d_najera
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -20451,13 +20458,17 @@ reconquista_castille = {
 	}
 
 	on_success = {
-
 		d_castilla = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_toledo = {
 			save_event_target_as = second_duchy_title
+		}
+		d_segovia = {
+			save_event_target_as = third_duchy_title
+		}
+		d_najera = {
+			save_event_target_as = fourth_duchy_title
 		}
 		k_castille = {
 			save_event_target_as = reconquista_kingdom_title
@@ -20521,9 +20532,8 @@ reconquista_aragon = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -20611,21 +20621,27 @@ reconquista_aragon = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_aragon
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_catalunya_nova
+					de_jure_liege_or_above = d_barcelona
+					de_jure_liege_or_above = d_zaragoza
+					de_jure_liege_or_above = d_aragon
+					de_jure_liege_or_above = d_urgell
+					de_jure_liege_or_above = d_teruel
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -20661,17 +20677,42 @@ reconquista_aragon = {
 	}
 
 	on_success = {
-
-		d_aragon = {
+		d_catalunya_nova = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_barcelona = {
 			save_event_target_as = second_duchy_title
 		}
-		k_aragon = {
+		d_zaragoza = {
+			save_event_target_as = third_duchy_title
+		}
+		d_aragon = {
+			save_event_target_as = fourth_duchy_title
+		}
+		d_urgell = {
+			save_event_target_as = fifth_duchy_title
+		}
+		d_teruel = {
+			save_event_target_as = sixth_duchy_title
+		}
+		k_valencia = {
 			save_event_target_as = reconquista_kingdom_title
 		}
+		#if = {
+		#	limit = {
+		#		k_aragon = {
+		#			is_titular = no
+		#		}
+		#	}
+		#	k_valencia = {
+		#		save_event_target_as = reconquista_kingdom_title
+		#	}
+		#}
+		#else = {
+		#	k_aragon = {
+		#		save_event_target_as = reconquista_kingdom_title
+		#	}
+		#}
 
 		reconquista_win_effect = yes
 	}
@@ -20730,9 +20771,8 @@ reconquista_galicia = {
 	}
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -20808,7 +20848,6 @@ reconquista_galicia = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -20821,21 +20860,24 @@ reconquista_galicia = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_galicia
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_galicia
+					de_jure_liege_or_above = d_porto
+					de_jure_liege_or_above = d_beira
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -20871,13 +20913,14 @@ reconquista_galicia = {
 	}
 
 	on_success = {
-
 		d_galicia = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_porto = {
 			save_event_target_as = second_duchy_title
+		}
+		d_beira = {
+			save_event_target_as = third_duchy_title
 		}
 		if = {
 			limit = {
@@ -20948,9 +20991,8 @@ reconquista_beja = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
-			not_reconquista_check_trigger = yes
-			
+			has_flag = currently_reconquering_iberia
+			not_reconquista_check_trigger = yes			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -21026,7 +21068,6 @@ reconquista_beja = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -21039,21 +21080,24 @@ reconquista_beja = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_beja
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_beja
+					de_jure_liege_or_above = d_algarve
+					de_jure_liege_or_above = d_ribatejo
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -21093,12 +21137,10 @@ reconquista_beja = {
 		d_beja = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_algarve = {
 			save_event_target_as = second_duchy_title
 		}
-
-		d_balata = {
+		d_ribatejo = {
 			save_event_target_as = third_duchy_title
 		}
 
@@ -21160,9 +21202,8 @@ reconquista_granada = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes	
-
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -21238,7 +21279,6 @@ reconquista_granada = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -21251,21 +21291,23 @@ reconquista_granada = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_granada
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_granada
+					de_jure_liege_or_above = d_sevilla
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -21301,11 +21343,9 @@ reconquista_granada = {
 	}
 
 	on_success = {
-
 		d_granada = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_sevilla = {
 			save_event_target_as = second_duchy_title
 		}
@@ -21368,9 +21408,8 @@ reconquista_cordoba = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
-			not_reconquista_check_trigger = yes
-			
+			has_flag = currently_reconquering_iberia
+			not_reconquista_check_trigger = yes			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -21446,7 +21485,6 @@ reconquista_cordoba = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -21459,28 +21497,31 @@ reconquista_cordoba = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_cordoba
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_cordoba
+					de_jure_liege_or_above = d_badajoz
+					de_jure_liege_or_above = d_la_mancha
+				}
 			}
 			NOT = {
 				religion_group = ROOT
 			}
 		}
 	}
-
+	
 	is_valid = {
 		ROOT = {
 			show_scope_change = no
@@ -21513,11 +21554,12 @@ reconquista_cordoba = {
 		d_cordoba = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_badajoz = {
 			save_event_target_as = second_duchy_title
 		}
-
+		d_la_mancha = {
+			save_event_target_as = second_duchy_title
+		}
 		reconquista_win_effect = yes
 	}
 
@@ -21576,9 +21618,8 @@ reconquista_valencia = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -21654,7 +21695,6 @@ reconquista_valencia = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -21667,21 +21707,23 @@ reconquista_valencia = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_valencia
+				owner_under_PREV = yes
+				OR = {
+					de_jure_liege_or_above = d_valencia
+					de_jure_liege_or_above = d_murcia
+				}
 			}
 			NOT = {
 				religion_group = ROOT
@@ -21717,11 +21759,9 @@ reconquista_valencia = {
 	}
 
 	on_success = {
-
 		d_valencia = {
 			save_event_target_as = first_duchy_title
 		}
-
 		d_murcia = {
 			save_event_target_as = second_duchy_title
 		}
@@ -21784,9 +21824,8 @@ reconquista_navarra = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
+			has_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
-			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -21862,7 +21901,6 @@ reconquista_navarra = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							is_land = yes
 							any_neighbor_province = {
@@ -21875,21 +21913,20 @@ reconquista_navarra = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_navarra
+				owner_under_PREV = yes
+				de_jure_liege_or_above = d_navarra
 			}
 			NOT = {
 				religion_group = ROOT
@@ -21925,7 +21962,6 @@ reconquista_navarra = {
 	}
 
 	on_success = {
-
 		d_navarra = {
 			save_event_target_as = first_duchy_title
 		}
@@ -21991,9 +22027,8 @@ reconquista_balearic = {
 
 	can_use = {
 		ROOT = {
-			has_character_flag = currently_reconquering_iberia
-			not_reconquista_check_trigger = yes
-			
+			has_flag = currently_reconquering_iberia
+			not_reconquista_check_trigger = yes			
 			any_realm_province = {
 				OR = {
 					AND = {
@@ -22066,7 +22101,6 @@ reconquista_balearic = {
 								}
 							}
 						}
-
 						any_neighbor_province = {
 							any_neighbor_province = {
 								any_neighbor_province = {
@@ -22077,21 +22111,20 @@ reconquista_balearic = {
 					}
 				}
 			}
-
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-
 				NOT = {
 					has_character_modifier = reconquista_preparation_duration
 				}
 			}
 		}
-
 		FROM = {
 			any_realm_province = {
 				region = custom_balearic
+				owner_under_PREV = yes
+				de_jure_liege_or_above = d_mallorca
 			}
 			NOT = {
 				religion_group = ROOT
@@ -22127,7 +22160,6 @@ reconquista_balearic = {
 	}
 
 	on_success = {
-
 		d_mallorca = {
 			save_event_target_as = first_duchy_title
 		}

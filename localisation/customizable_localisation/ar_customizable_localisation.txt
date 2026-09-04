@@ -1,0 +1,21 @@
+defined_text = {
+	name = GetIberianMuslimFeatures
+
+	text = {
+		trigger = {
+			has_dlc = "Holy Fury"
+			is_alternate_start = no
+			NOT = {
+				has_game_rule = {
+					name = reconquista
+					value = off
+				}
+			}
+		}
+		localisation_key = string_reclamation_feature
+	}
+
+	fallback_text = {
+		localisation_key = string_no_feature
+	}
+}

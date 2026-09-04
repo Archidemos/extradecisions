@@ -21,6 +21,13 @@ letter_event = {
 			wealth = 10
 			letter_event = { id = CG.3 }
 		}
+		FROM = {
+			opinion = {
+				modifier = opinion_small_gift
+				who = ROOT
+				years = 5
+			}
+		}
 	}
 	
 	option = {
@@ -33,6 +40,13 @@ letter_event = {
 		FROM = {
 			wealth = 20
 			letter_event = { id = CG.3 }
+		}
+		FROM = {
+			opinion = {
+				modifier = opinion_medium_gift
+				who = ROOT
+				years = 5
+			}
 		}
 	}
 	
@@ -47,12 +61,21 @@ letter_event = {
 			wealth = 40
 			letter_event = { id = CG.3 }
 		}
+		FROM = {
+			opinion = {
+				modifier = opinion_large_gift
+				who = ROOT
+				years = 5
+			}
+		}
 	}
 	
 	option = {
-		name = EXIT
+		name = "Actually, i have changed my mind.."
+		custom_tooltip = {
+			text = "You cancel the preperations to send some gold over."
+		}
 	}
-	
 }
 
 letter_event = {
@@ -71,6 +94,13 @@ letter_event = {
 			wealth = 200
 			letter_event = { id = CG.3 }
 		}
+		FROM = {
+			opinion = {
+				modifier = opinion_small_gift
+				who = ROOT
+				years = 5
+			}
+		}
 	}
 	
 	option = {
@@ -83,6 +113,13 @@ letter_event = {
 		FROM = {
 			wealth = 400
 			letter_event = { id = CG.3 }
+		}
+		FROM = {
+			opinion = {
+				modifier = opinion_medium_gift
+				who = ROOT
+				years = 5
+			}
 		}
 	}
 	
@@ -97,10 +134,20 @@ letter_event = {
 			wealth = 1000
 			letter_event = { id = CG.3 }
 		}
+		FROM = {
+			opinion = {
+				modifier = opinion_large_gift
+				who = ROOT
+				years = 5
+			}
+		}
 	}
 	
 	option = {
-		name = EXIT
+		name = "Actually, i have changed my mind.."
+		custom_tooltip = {
+			text = "You cancel the preperations to send some gold over."
+		}
 	}
 }
 

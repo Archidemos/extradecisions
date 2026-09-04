@@ -819,7 +819,7 @@ k_abkhazia = { # Apkhazeti
 	}
 }
 k_imereti = { # Imereti
-	color = { 99 175 4 }
+	color = { 48 122 201 }
 	capital = 601 # Imereti # Imeretia
 	title = MEPE
 	foa = MEPE_FOA
@@ -969,34 +969,30 @@ e_egypt = { # Misr
 		title_emperor_basic_allow = yes
 	}
 } # end e_egypt
-e_wendish_empire = { # Wendish Empire
-	color = { 65 25 125 }
-	capital = 441 # Brno # Boruy
-	short_name = yes
-	bohemian = "Velké Czechy"
-	slovieni = "Velká Morava"
-	polish = "Wiêksza Polska"
-	pommeranian = "Vendia"
-	carantanian = "Vendia"
-	croatian = "Vendia"
-	old_hungarian = "Wendi Birodalom"
-	hungarian = "Wendi Birodalom"
-	allow = {
+e_poland = {
+    color = { 179 0 45 }
+    color2 = { 255 255 255 }
+    culture = polish
+    capital = 527
+    title = EP
+    title_female = EP_F
+    foa = EP_FOA
+    title_prefix = EP_OF
+    allow = {
+        hidden_tooltip = {
+            OR = {
+                ai = no
+                culture = polish
+                culture = lithuanian
+            }
+        }
 		AND = {
-			OR = {
-				has_landed_title = k_moravia
-				has_landed_title = k_bohemia
-			}
-			OR = {
-				has_landed_title = k_poland
-				has_landed_title = k_pomerania
-				has_landed_title = k_hungary
-			}
+			has_landed_title = k_poland
+			has_landed_title = k_lithuania
 		}
-		FROM = { is_de_jure_title = yes }
-		title_emperor_basic_allow = yes
-	}
-} # end e_wendish_empire
+        title_emperor_basic_allow = yes
+    }
+}
 # Ireland
 d_breifne = { # Breifne
 	color = { 54 135 39 }

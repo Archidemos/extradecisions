@@ -3423,6 +3423,9 @@ raid_cb = {
 		ROOT = {
 			government = tribal_government
 		}
+		FROM = {
+			NOT = { government = tribal_government }
+		}
 	}
 
 	is_valid = {
@@ -3433,8 +3436,8 @@ raid_cb = {
 		FROM = {
 			transfer_scaled_wealth = {
 				to = ROOT
-				value = 6.0
-				min = 250
+				value = 3.0
+				min = 100
 			}
 			capital_scope = {
 				add_province_modifier = { name = plundered_capital years = 2 }

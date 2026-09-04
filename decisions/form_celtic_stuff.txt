@@ -6,7 +6,6 @@ decisions = {
 		is_high_prio = yes
 		
 		potential = {
-
 			NOT = { has_landed_title = e_hre }
 			NOT = { has_landed_title = e_byzantium }
 			NOT = { has_landed_title = e_roman_empire }
@@ -25,7 +24,11 @@ decisions = {
 			completely_controls = k_wales
 			completely_controls = k_brittany
 			culture_group = celtic
-			religion_group = christian
+			OR = {
+				religion_group = christian
+				religion = celtic_pagan
+				religion = celtic_pagan_reformed
+			}
 		}
 		
 		effect = {

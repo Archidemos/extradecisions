@@ -2034,7 +2034,7 @@ e_hre = {
     short_name = yes
     bohemian = "Swatá Rzímská Rzísse"
     k_austria = {
-        color = { 188 0 7 }
+        color = { 241 246 190 }
         culture = german
         capital = 449
         title = ADA
@@ -4217,7 +4217,7 @@ e_hre = {
         catholic = 3000
         slavic_pagan_reformed = 50
         d_niederbayern = {
-            color = { 241 246 190 }
+            color = { 110 132 204 }
             color2 = { 255 255 255 }
             capital = 361
             culture = bavarian
@@ -4414,7 +4414,7 @@ e_hre = {
             }
         }
         d_osterreich = {
-            color = { 188 0 7 }
+            color = { 241 246 190 }
             color2 = { 255 255 255 }
             capital = 449
             culture = bavarian
@@ -4485,7 +4485,7 @@ e_hre = {
             }
         }
         d_tyrol = {
-            color = { 126 28 19 }
+            color = { 232 214 211 }
             color2 = { 255 255 255 }
             capital = 316
             culture = bavarian
@@ -7113,9 +7113,17 @@ e_hre = {
             }
         }
         allow = {
-            has_landed_title = d_bohemia
-            has_landed_title = d_moravia
-            title_king_basic_allow = yes
+			ROOT = {
+				AND = {
+					has_landed_title = d_bohemia
+					has_landed_title = d_moravia
+					OR = {
+						diplomacy = 20
+						completely_controls = d_silesia
+					}
+				}
+				title_king_basic_allow = yes
+			}
         }
     }
     k_germany = {
@@ -9581,6 +9589,12 @@ e_byzantium = {
             turkmen = "Atina"
             turkish = "Atina"
             pecheneg = "Atina"
+			catalan = "Atenas"
+			aragonese = "Atenas"
+			castillan = "Atenas"
+			leonese = "Atenas"
+			galician = "Atenas"
+			basque = "Atenas"
 			c_thermopylae = {
 				color={ 209 69 161 }
 				color2={ 255 255 20 }
@@ -10928,12 +10942,19 @@ e_byzantium = {
                 title_duke_basic_allow = yes
             }
         }
+        #allow = {
+        #    # OR = {
+        #        # emf_trigger = yes
+        #        # byzantine_lockout_trigger = yes
+        #    # }
+        #    title_king_basic_allow = yes
+        #}
         allow = {
-            # OR = {
-                # emf_trigger = yes
-                # byzantine_lockout_trigger = yes
-            # }
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 15
+				prestige = 500
+				title_king_basic_allow = yes
+			}
         }
     }
     k_nikaea = {
@@ -13436,12 +13457,18 @@ e_byzantium = {
                 title_duke_basic_allow = yes
             }
         }
+        #allow = {
+        #    # OR = {
+        #        # emf_trigger = yes
+        #        # byzantine_lockout_trigger = yes
+        #    # }
+        #    title_king_basic_allow = yes
+        #}
         allow = {
-            # OR = {
-                # emf_trigger = yes
-                # byzantine_lockout_trigger = yes
-            # }
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 15
+				title_king_basic_allow = yes
+			}
         }
     }
     k_trebizond = {
@@ -19486,15 +19513,18 @@ e_russia = {
         title_emperor_basic_allow = yes
     }
 }
-e_poland = {
-    color = { 179 0 45 }
-    color2 = { 255 255 255 }
-    culture = polish
-    capital = 527
-    title = EP
-    title_female = EP_F
-    foa = EP_FOA
-    title_prefix = EP_OF
+e_wendish_empire = { # Wendish Empire
+	color = { 65 25 125 }
+	capital = 441 # Brno # Boruy
+	short_name = yes
+	bohemian = "Velké Czechy"
+	slovieni = "Velká Morava"
+	polish = "Wiêksza Polska"
+	pommeranian = "Vendia"
+	carantanian = "Vendia"
+	croatian = "Vendia"
+	old_hungarian = "Wendi Birodalom"
+	hungarian = "Wendi Birodalom"
     k_poland = {
         color = { 150 23 23 }
         color2 = { 200 0 0 }
@@ -23123,20 +23153,21 @@ e_poland = {
             title_king_basic_allow = yes
         }
     }
-    allow = {
-        hidden_tooltip = {
-            OR = {
-                ai = no
-                culture = polish
-                culture = lithuanian
-            }
-        }
+	allow = {
 		AND = {
-			has_landed_title = k_poland
-			has_landed_title = k_lithuania
+			OR = {
+				has_landed_title = k_moravia
+				has_landed_title = k_bohemia
+			}
+			OR = {
+				has_landed_title = k_poland
+				has_landed_title = k_pomerania
+				has_landed_title = k_hungary
+			}
 		}
-        title_emperor_basic_allow = yes
-    }
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
 }
 e_carpathia = {
     color = { 150 51 51 }
@@ -24113,6 +24144,7 @@ e_carpathia = {
         bohemian = "Uhry"
         slovieni = "Uhry"
         polish = "Wegry"
+		frankish = "Hongrie"
         german = "Ungarn"
         thuringian = "Ungarn"
         swabian = "Ungarn"
@@ -38401,7 +38433,10 @@ e_britannia = {
             }
         }
         allow = {
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 15
+				title_king_basic_allow = yes
+			}
         }
     }
     k_ireland_titular = {
@@ -44400,6 +44435,22 @@ e_italy = {
             culture = sardinian
             roman = "Sardiniae"
             greek = "Sardo"
+			sardinian = "Sardegna"
+			tuscan = "Sardegna"
+			laziale = "Sardegna"
+			neapolitan = "Sardegna"
+			sicilian = "Sardegna"
+			langobardisch = "Sardegna"
+			italian = "Sardegna"
+			ligurian = "Sardegna"
+			venetian = "Sardegna"
+			umbrian = "Sardegna"
+			catalan = "Cerdena"
+			aragonese = "Cerdena"
+			castillan = "Cerdena"
+			leonese = "Cerdena"
+			galician = "Cerdena"
+			basque = "Cerdena"
             c_logudoro = {
                 color = { 203 15 64 }
                 color2 = { 255 255 255 }
@@ -44514,8 +44565,11 @@ e_italy = {
             }
         }
         allow = {
-            is_republic = no
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 17
+				is_republic = no
+				title_king_basic_allow = yes
+			}
         }
     }
     k_sicily = {
@@ -45693,12 +45747,12 @@ e_italy = {
 				}
 			}
 		}
-
         allow = {
-            title_king_basic_allow = yes
-			AND = {
+			ROOT = {
+				diplomacy = 15
 				completely_controls = d_sicily
 				completely_controls = d_north_sicily
+				title_king_basic_allow = yes
 			}
         }
     }
@@ -46558,14 +46612,21 @@ e_france = {
                 title_duke_basic_allow = yes
             }
         }
+        #allow = {
+        #    hidden_tooltip = {
+        #        OR = {
+        #            ai = no
+        #            culture_group = celtic
+        #        }
+        #    }
+        #    title_king_basic_allow = yes
+        #}
         allow = {
-            hidden_tooltip = {
-                OR = {
-                    ai = no
-                    culture_group = celtic
-                }
-            }
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 17
+				prestige = 500
+				title_king_basic_allow = yes
+			}
         }
     }
     k_france = {
@@ -50184,7 +50245,11 @@ e_spain = {
             }
         }
         allow = {
-            title_king_basic_allow = yes
+			ROOT = {
+				diplomacy = 17
+				prestige = 500
+				title_king_basic_allow = yes
+			}
         }
     }
     k_leon = {
@@ -58024,24 +58089,24 @@ e_spain = {
         }
     }
     gain_effect = {
-        if = {
-            limit = {
-                NOT = {
-                    has_global_flag = reconquista_finished
-                }
-            }
-            any_playable_ruler = {
-                narrative_event = {
-                    id = HF.49451
-                }
-            }
-            ROOT = {
-                narrative_event = {
-                    id = HF.49451
-                }
-            }
-            set_global_flag = reconquista_finished
-        }
+        #if = {
+        #    limit = {
+        #        NOT = {
+        #            has_global_flag = reconquista_finished
+        #        }
+        #    }
+        #    any_playable_ruler = {
+        #        narrative_event = {
+        #            id = HF.49451
+        #        }
+        #    }
+        #    ROOT = {
+        #        narrative_event = {
+        #            id = HF.49451
+        #        }
+        #    }
+        #    set_global_flag = reconquista_finished
+        #}
     }
     allow = {
         hidden_tooltip = {
@@ -58069,15 +58134,15 @@ e_spain = {
                 always = no
             }
         }
-        conditional_tooltip = {
-            trigger = {
-                has_global_flag = active_reconquista
-            }
-            custom_tooltip = {
-                text = active_reconquista_condition_TT
-                always = no
-            }
-        }
+        #conditional_tooltip = {
+        #    trigger = {
+        #        has_global_flag = active_reconquista
+        #    }
+        #    custom_tooltip = {
+        #        text = active_reconquista_condition_TT
+        #        always = no
+        #    }
+        #}
         title_emperor_basic_allow = yes
     }
 }

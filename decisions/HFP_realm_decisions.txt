@@ -1364,6 +1364,7 @@ decisions = {
 			OR = {
 				has_landed_title = d_osterreich
 				has_landed_title = d_styria
+				has_landed_title = d_tyrol
 			}
 			k_austria = {
 				has_holder = no
@@ -1394,10 +1395,10 @@ decisions = {
 			is_adult = yes
 			war = no
 			OR = {
-				prestige = 3000
+				prestige = 750
 				AND = {
 					intrigue = 20
-					prestige = 1000
+					prestige = 150
 				}
 				AND = {
 					custom_tooltip = {
@@ -1409,10 +1410,10 @@ decisions = {
 							}
 						}
 					}
-					prestige = 1000
+					prestige = 150
 				}
 			}
-			wealth = 1000
+			wealth = 250
 			completely_controls = d_osterreich
 			completely_controls = d_styria
 			custom_tooltip = {
@@ -1436,7 +1437,7 @@ decisions = {
 			}
 		}
 		effect = {
-			wealth = -1000
+			wealth = -250
 			custom_tooltip = {
 				text = create_archduchy_of_austria_TT
 			}
@@ -1462,6 +1463,12 @@ decisions = {
 					de_jure_liege = k_austria
 				}
 				d_styria = {
+					de_jure_liege = k_austria
+				}
+				d_tyrol = {
+					de_jure_liege = k_austria
+				}
+				d_carinthia = {
 					de_jure_liege = k_austria
 				}
 				k_austria = {

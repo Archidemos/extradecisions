@@ -1,4 +1,54 @@
 decisions = {
+
+	create_navarra = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			start_date == 769.1.1
+			lower_real_tier_than = KING
+			NOT = { has_global_flag = navarra_formed }
+			culture_group = iberian
+			religion_group = christian
+			any_realm_province = {
+				is_capital = yes
+				de_jure_liege_or_above = e_spain
+			}
+		}
+		
+		allow = {
+			culture_group = iberian
+			religion_group = christian
+			is_adult = yes
+			war = no
+			prisoner = no
+			independent = yes
+			prestige = 500
+			piety = 150
+			diplomacy = 15
+			has_landed_title = d_navarra
+			has_landed_title = d_najera
+		}
+		
+		effect = {
+			prestige = -500
+			activate_title = { title = k_navarra status = yes }
+			grant_title = k_navarra
+			k_navarra = {
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			d_navarra = { de_jure_liege = k_navarra }
+			d_najera = { de_jure_liege = k_navarra }
+			set_global_flag = navarra_formed
+			hidden_tooltip = { character_event = { id = ARSM.1 days = 1 } }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	
 	form_algeria = {
 		is_high_prio = yes
@@ -74,6 +124,7 @@ decisions = {
 			lower_real_tier_than = KING
 			NOT = { start_date = 1077.1.1 }
 			NOT = { has_global_flag = rum_formed }
+			NOT = { has_global_flag = rum_spawned }
 			any_realm_province = {
 				is_capital = yes
 				OR = {
@@ -84,6 +135,8 @@ decisions = {
 		}
 		
 		allow = {
+			culture = turkish
+			prestige = 500
 			wealth = 450
 			num_of_duke_titles = 3
 			independent = yes
@@ -97,17 +150,26 @@ decisions = {
 				save_event_target_as = formable
 			}
 			
-			activate_title = {
-				title = k_rum
-				status = yes
-			}
+			activate_title = { title = k_rum status = yes }
 			
 			k_rum = {
 				show_scope_change = no
 				grant_title = ROOT
 				copy_title_laws = event_target:formable
 			}
+			spawn_unit = {
+				owner = ROOT
+				province = capital
+				home = ROOT
+				troops = {
+					horse_archers = { 500 500 }
+					light_cavalry = { 2000 2000 }
+					knights = { 500 500 }
+				}
+				reinforces = no
+			}
 			set_global_flag = rum_formed
+			set_global_flag = rum_spawned
 		}
 	}
 	
@@ -133,10 +195,10 @@ decisions = {
 		allow = {
 			prestige = 2500
 			wealth = 600
-			has_landed_title = k_poland
-			has_landed_title = k_lithuania
-			has_landed_title = k_ruthenia
+			completely_controls = k_poland
+			completely_controls = k_lithuania
 			has_landed_title = k_galicia
+			#has_landed_title = k_ruthenia
 		}
 		
 		effect = {
@@ -176,7 +238,7 @@ decisions = {
 					k_poland = { de_jure_liege = e_plc }
 					k_lithuania	 = { de_jure_liege = e_plc }
 					k_galicia = { de_jure_liege = e_plc }
-					k_ruthenia = { de_jure_liege = e_plc }
+					#k_ruthenia = { de_jure_liege = e_plc }
 					k_bohemia = { de_jure_liege = e_hre }
 					
 					activate_title = {
@@ -218,7 +280,10 @@ decisions = {
 			
 			528 = { set_name = "Warsaw" }
 			
-			hidden_tooltip = { any_player = { narrative_event = { id = MP.107 } } }
+			custom_tooltip = {
+				text = "You will have access to the Winged Hussars retinue"
+				hidden_tooltip = { any_player = { narrative_event = { id = MP.107 days = 1 } } }
+			}
 		}
 	}
 	

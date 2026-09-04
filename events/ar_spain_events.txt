@@ -1,0 +1,1950 @@
+namespace = ARESP
+
+character_event = {
+	id = ARESP.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = reconquista_conflict_launched }
+		start_date >= 718.1.1
+		is_save_game = no
+	}
+	
+	immediate = {
+		set_global_flag = reconquista_conflict_launched
+		any_player = { narrative_event = { id = ARESP.2 days = 5 } }
+	}
+}
+
+narrative_event = {
+	id = ARESP.2
+	title = "The Reconquista"
+	desc = EVTDESCARESP2
+    is_triggered_only = yes
+	
+	picture = GFX_evt_reconquista_army
+	border = GFX_event_narrative_frame_war
+	portrait = event_target:random_spanish_king
+	sound = crusade_start_01
+	
+    trigger = {
+		NOT = { has_global_flag = reconquista_conflict_started }
+		start_date >= 718.1.1
+		is_save_game = no
+    }
+	
+	immediate = {
+		random_independent_ruler = {
+			limit = {
+				OR = {
+					has_landed_title = k_leon
+					has_landed_title = k_castile
+					has_landed_title = k_asturias
+					has_landed_title = k_aragon
+					has_landed_title = k_spanish_galicia
+					has_landed_title = k_navarra
+					has_landed_title = k_valencia
+				}
+			}
+			save_event_target_as = random_spanish_king
+		}
+		set_global_flag = reconquista_conflict_started
+	}	
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "Deus nobis victoriam det!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "May Allah safeguard us..."
+	}
+	option = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		name = "Currious development.."
+	}
+}
+
+## Monthly / Bi-monthly Reconquista Preparations Events ## 
+# Tombola
+character_event = {
+    id = ARESP.100
+    hide_window = yes
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    	has_character_modifier = reclamation_preparation_duration
+		not_reclamation_check_trigger = yes
+    	has_global_flag = active_reclamation
+    }
+	
+    immediate = {
+    	random_list = {
+    		# Gain troops
+    		5 = {
+    			character_event = { id = ARESP.101 }
+    		}
+    		# Ask the Pope for money / help
+    		4 = {
+    			trigger = {
+    				NOR = {
+    					has_character_modifier = reconquista_pope_aid_event_cooldown
+    					has_character_flag = reconquista_adventurer
+    				}
+    				rightful_religious_head_scope = {
+    					always = yes
+    				}
+    			}
+    			character_event = { id = ARESP.102 }
+    		}
+    		# Come across a great Commander to lead your troops
+    		2 = {
+    			trigger = {
+    				NOT = {
+    					has_character_modifier = reconquista_commander_event_cooldown
+    				}
+    			}
+    			character_event = { id = ARESP.103 }
+    		}
+    		# Boats
+    		2 = {
+    			trigger = {
+    				NOT = {
+    					has_character_modifier = reconquista_boat_event_cooldown
+    				}
+    			}
+    			character_event = { id = ARESP.104 }
+    		}
+    		# Boats
+    		2 = {
+    			trigger = {
+    				NOT = {
+    					has_character_modifier = reconquista_ally_event_cooldown
+    				}
+    			}
+    			character_event = { id = ARESP.104 }
+    		}
+    	}
+    }
+
+    after = {
+    	character_event = { id = ARESP.100 days = 25 }
+    }
+}
+
+# Reconquista Preparation Event - Gain troops
+character_event = {
+    id = ARESP.101
+    desc = "There will probably be men showing up to fight for the faith in the upcoming wars for Iberia, but I could invest some money into spreading the message far and wide to attract more well trained troops."
+    picture = GFX_evt_large_army
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+
+    # Invest some gold 
+    option = {      
+        name = EVTOPTA_HF_49241
+        trigger = {
+    		NOT = {
+    			has_character_flag = reconquista_adventurer
+    		}
+        }
+        scaled_wealth = { value = -0.25 min = -25 max = -250 }
+        custom_tooltip = {
+        	text = poorly_trained_troops_TT
+
+	        if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 900
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 300 300 }
+	                    archers = { 100 100 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1000
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 400 400 }
+	                    archers = { 150 150 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1100
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 500 500 }
+	                    archers = { 200 200 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1200
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 600 600 }
+	                    archers = { 250 250 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1300
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 700 700 }
+	                    archers = { 300 300 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1400
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 800 800 }
+	                    archers = { 350 350 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else = {
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 900 900 }
+	                    archers = { 400 400 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+        }
+    }
+    # Invest quite a lot of gold
+    option = {      
+        name = EVTOPTB_HF_49241
+        if = {
+        	limit = {
+        		NOT = {
+	    			has_character_flag = reconquista_adventurer
+	    		} 
+        	}
+        	scaled_wealth = { value = -0.5 min = -50 max = -500 }
+        }
+        custom_tooltip = {
+        	text = trained_troops_TT
+
+        	if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 900
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 300 300 }
+	                    heavy_infantry = { 200 200 }
+	                    archers = { 100 100 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1000
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 350 350 }
+	                    heavy_infantry = { 250 250 }
+	                    archers = { 150 150 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1100
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 400 400 }
+	                    heavy_infantry = { 300 300 }
+	                    archers = { 200 200 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1200
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 450 450 }
+	                    heavy_infantry = { 350 350 }
+	                    archers = { 250 250 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1300
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 500 500 }
+	                    heavy_infantry = { 400 400 }
+	                    archers = { 300 300 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1400
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 550 550 }
+	                    heavy_infantry = { 450 450 }
+	                    archers = { 350 350 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else = {
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 600 600 }
+	                    heavy_infantry = { 500 500 }
+	                    archers = { 400 400 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+        }
+    }
+    # Invest a crazy amount of gold
+    option = {
+    	name = EVTOPTC_HF_49241
+    	trigger = {
+    		NOT = {
+    			has_character_flag = reconquista_adventurer
+    		} 
+    	}
+    	scaled_wealth = { value = -1 min = -100 max = -1000 }
+    	custom_tooltip = {
+    		text = well_trained_troops_TT
+
+    		if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 900
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 200 200 }
+	                    pikemen = { 200 200 }
+	                    light_cavalry = { 150 150 }
+	                    archers = { 100 100 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1000
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 250 250 }
+	                    pikemen = { 250 250 }
+	                    light_cavalry = { 200 200 }
+	                    archers = { 150 150 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1100
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 300 300 }
+	                    pikemen = { 300 300 }
+	                    light_cavalry = { 250 250 }
+	                    archers = { 200 200 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1200
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 350 350 }
+	                    pikemen = { 350 350 }
+	                    light_cavalry = { 300 300 }
+	                    archers = { 250 250 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1300
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 400 400 }
+	                    pikemen = { 400 400 }
+	                    light_cavalry = { 350 350 }
+	                    archers = { 300 300 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1400
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 450 450 }
+	                    pikemen = { 450 450 }
+	                    light_cavalry = { 400 400 }
+	                    archers = { 350 350 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else = {
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    heavy_infantry = { 500 500 }
+	                    pikemen = { 500 500 }
+	                    light_cavalry = { 450 450 }
+	                    archers = { 400 400 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+    	}
+    }
+    # Invest no gold and hope things work out
+    option = {
+    	name = EVTOPTD_HF_49241
+    	trigger = {
+    		NOT = {
+    			has_character_flag = reconquista_adventurer
+    		}
+    	}
+    	prestige = -50
+    	custom_tooltip = {
+    		text = peasant_rabble_TT
+
+    		if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 900
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 300 300 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1000
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 400 400 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1100
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 500 500 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1200
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 600 600 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1300
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 700 700 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1400
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 800 800 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else = {
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 900 900 }
+	                }
+	                earmark = reclamation_event_troops_rabble
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+    	}
+    }
+}
+
+# Reconquista Preparation Event - Ask the Pope for aid
+character_event = {
+    id = ARESP.102
+    desc = EVTDESC_HF_49242
+    picture = GFX_evt_throne_room_arabic
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+
+    option = {      
+        name = EVTOPTA_HF_49242
+        piety = -100
+        scaled_wealth = { value = 0.5 min = 50 max = 500 }
+    }
+    option = {      
+        name = EVTOPTB_HF_49242
+        piety = -300
+        scaled_wealth = { value = 1 min = 100 max = 1000 }
+    }
+    option = {
+    	name = EVTOPTC_HF_49242
+    	piety = 50
+    	if = {
+    		limit = {
+    			NOT = {
+    				trait = humble
+    			}
+    		}
+    		add_trait = humble
+    	}
+    }
+    after = {
+    	add_character_modifier = {
+    		name = reconquista_pope_aid_event_cooldown
+    		hidden = yes
+    		months = 3
+    	}
+    }
+}
+
+# Reconquista Preparation Event - Great Commander ahoy!
+character_event = {
+    id = ARESP.103
+    desc = EVTDESC_HF_49243
+    picture = GFX_evt_assassination
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+
+    immediate = {
+    	hidden_tooltip = {
+    		create_character = {
+    			dynasty = random
+    			culture = andalusian_arabic
+    			religion = ROOT
+    			health = 5
+    			attributes = {
+    				martial = 4
+    				diplomacy = 0
+    				stewardship = 2
+    				intrigue = 0
+    				learning = 0
+    			}
+    		}
+
+    		new_character = {
+    			save_event_target_as = new_commander
+    			opinion = {
+    				modifier = opinion_loyal_servant
+    				who = ROOT
+    			}
+
+    			add_trait = brilliant_strategist
+    			# Randomize Culture
+    			random_list = {
+    				# Keep Catalan
+    				3 = {
+    				}
+    				# Other Iberian Cultures
+    				3 = {
+    					culture = maghreb_arabic
+    				}
+    				3 = {
+    					culture = egyptian_arabic
+    				}
+    				3 = {
+    					culture = bedouin_arabic
+    				}
+    				3 = {
+    					culture = levantine_arabic
+    				}
+    				# Other close by (normally Catholic) cultures
+    				3 = {
+    					culture = persian
+    				}
+    				2 = {
+    					culture = khorasani
+    				}
+    				1 = {
+    					culture = kurdish
+    				}
+    				1 = {
+    					culture = hijazi
+    				}
+    				1 = {
+    					culture = somali
+    				}
+    				1 = {
+    					culture = yemeni
+    				}
+    				2 = {
+    					culture = masmuda
+    				}
+    				2 = {
+    					culture = adhari
+    				}
+    			}
+    			# Some sort of huge
+    			random_list = {
+    				1 = {
+    					add_trait = strong
+    				}
+    				1 = {
+    					add_trait = robust
+    				}
+    			}
+    			# Some sort of lifestyle
+    			random_list = {
+    				1 = {
+    					add_trait = strategist
+    				}
+    				1 = {
+    					add_trait = duelist
+    				}
+    				1 = {
+    					add_trait = hunter
+    				}
+    			}
+    			# Some sort of good trait
+    			random_list = {
+    				1 = {
+    					add_trait = patient
+    				}
+    				1 = {
+    					add_trait = diligent 
+    				}
+    			}
+    			# Some sort of bad trait 
+    			random_list = {
+    				1 = {
+    					add_trait = proud
+    				}
+    				1 = {
+    					add_trait = envious
+    				}
+    			}
+    			# Some potential traits
+    			random = {
+    				chance = 40
+    				add_trait = ambitious
+    			}
+    			random = {
+    				chance = 40
+    				add_trait = brave
+    			}
+    			random = {
+    				chance = 40 
+    				add_trait = zealous
+    			}
+    			# One Commander trait 
+    			add_random_commander_trait_effect = yes
+    		}
+    	}
+    }
+
+    option = {      
+        name = EVTOPTA_HF_49243
+    }
+    option = {     
+        name = EVTOPTB_HF_49243
+
+        trigger = {
+			OR = { 
+				NOT = { ROOT = { has_law = succ_byzantine_elective } }  #Either not Imperial...
+				NOT = { #...Or there are no valid vassal candidates that can be commanders.
+					any_vassal = { 
+						higher_real_tier_than = BARON
+						NOT = { 
+							primary_title = { temporary = yes } 
+						}
+						OR = {
+							AND = {
+								OR = {
+									male_can_hold_minor_title_trigger = yes
+									female_can_hold_minor_commander_title_trigger = yes
+								}
+								OR = {
+									NOT = { religion = hindu }
+									trait = kshatriya
+								}
+								is_adult = yes
+							}
+							has_character_flag = special_marshal
+						}
+				
+						prisoner = no
+						NOT = { trait = incapable }
+						NOT = { is_inaccessible_trigger = yes }
+						NOT = { has_character_flag = guru }
+						NOT = { has_character_modifier = refusing_to_lead }
+						NOR = {
+							has_job_title = job_chancellor
+							has_job_title = job_marshal
+							has_job_title = job_treasurer
+							has_job_title = job_spymaster
+							has_job_title = job_spiritual
+							has_minor_title = title_commander
+						}
+					} 
+				}
+			}
+        	OR = {
+				AND = {
+					tier = COUNT
+					NOT = {
+						any_realm_character = {
+							count = 2
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+				AND = {
+					tier = DUKE
+					NOT = {
+						any_realm_character = {
+							count = 4
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+				AND = {
+					tier = KING
+					is_nomadic = no
+					NOT = {
+						any_realm_character = {
+							count = 6
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+				AND = {
+					tier = EMPEROR
+					is_nomadic = no
+					NOT = {
+						any_realm_character = {
+							count = 8
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+				AND = {
+					tier = KING
+					is_nomadic = yes
+					NOT = {
+						any_realm_character = {
+							count = 2
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+				AND = {
+					tier = EMPEROR
+					is_nomadic = yes
+					NOT = {
+						any_realm_character = {
+							count = 4
+							liege = { character = ROOT }
+							has_minor_title = title_commander
+						}
+					}
+				}
+			}
+        }
+
+        event_target:new_commander = {
+        	give_minor_title = title_commander
+        }
+    }
+}
+
+# Reconquista Preparation Event - Boats!?
+character_event = {
+    id = ARESP.104
+    desc = EVTDESC_HF_49244
+    picture = GFX_evt_ship_voyage_hf
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+
+    option = {      
+        name = EVTOPTA_HF_49244
+        if = {
+        	limit = {
+        		NOT = {
+        			has_character_flag = reconquista_adventurer
+        		}
+        	}
+        	scaled_wealth = { value = -0.3 min = -30 max = -300 }
+        }
+        if = {
+        	limit = {
+        		NOT = {
+        			year = 850
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 10 10 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 950
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 20 20 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1050
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 30 30 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year =1150
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 40 40 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1250
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 50 50 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1350
+        		}
+        	}
+        	spawn_fleet = {
+        		province = closest
+        		owner = ROOT
+        		earmark = conscripted_reconquista_ships
+        		troops = {
+        			galleys = { 60 60 }
+        		}
+        	}
+        }
+        else = {
+        	spawn_fleet = {
+        		province = closest
+        		owner = ROOT
+        		earmark = conscripted_reconquista_ships
+        		troops = {
+        			galleys = { 70 70 }
+        		}
+        	}
+        }
+    }
+    option = {      
+        name = EVTOPTB_HF_49244
+        if = {
+        	limit = {
+        		NOT = {
+        			has_character_flag = reconquista_adventurer
+        		}
+        	}
+        	scaled_wealth = { value = -1 min = -100 max = -1000 }
+        }
+        prestige = 100
+        if = {
+        	limit = {
+        		NOT = {
+        			year = 850
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 20 20 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 950
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 40 40 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1050
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 60 60 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year =1150
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 80 80 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1250
+        		}
+        	}
+        	spawn_fleet = {
+	        	province = closest
+	        	owner = ROOT
+	        	earmark = conscripted_reconquista_ships
+	        	troops = {
+	        		galleys = { 100 100 }
+	        	}
+	        }
+        }
+        else_if = {
+        	limit = {
+        		NOT = {
+        			year = 1350
+        		}
+        	}
+        	spawn_fleet = {
+        		province = closest
+        		owner = ROOT
+        		earmark = conscripted_reconquista_ships
+        		troops = {
+        			galleys = { 120 120 }
+        		}
+        	}
+        }
+        else = {
+        	spawn_fleet = {
+        		province = closest
+        		owner = ROOT
+        		earmark = conscripted_reconquista_ships
+        		troops = {
+        			galleys = { 140 140 }
+        		}
+        	}
+        }
+    }
+    option = {
+    	name = EVTOPTC_HF_49244
+    	trigger = {
+    		NOT = {
+    			has_character_flag = reconquista_adventurer
+    		}
+    	}
+    }
+
+    after = {
+    	if = {
+    		limit = {
+    			has_character_flag = reconquista_adventurer
+    		}
+    		add_character_modifier = {
+    			name = reconquista_boat_event_cooldown
+    			hidden = yes
+    			months = 1
+    		}
+    	}
+    	else = {
+    		add_character_modifier = {
+    		name = reconquista_boat_event_cooldown
+	    		hidden = yes
+	    		months = 11
+	    	}
+    	}
+    }
+}
+
+# Letter event asking the ruler to back the adventurer's Reconquista campaign
+character_event = {
+	id = ARESP.105
+	name = "Istirdad Campagin"
+	desc = EVTDESC_HF_49462
+	picture = GFX_evt_meeting_hf
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	has_dlc = "Holy Fury"
+
+	option = {
+		name = EVTOPTA_HF_49462
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				NOT = { religion_group = christian }
+			}
+		}
+		
+		piety = 50
+		if = {
+			limit = {
+				NOT = {
+					trait = ambitious
+				}
+			}
+			add_trait = ambitious
+		}
+		set_character_flag = promised_reclamation_ally
+		set_character_flag = reclamation_sponsor
+		
+		character_event = { id = ARESP.106 days = 10 }
+		FROMFROM = { character_event = { id = ARESP.109 days = 2 } }
+	}
+
+	option = {
+		name = EVTOPTB_HF_49462
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.2
+				religion_group = christian
+			}
+		}
+		
+		piety = -50
+		FROMFROM = { character_event = { id = ARESP.108 days = 2 } }
+	}
+}
+
+# Sponsor event
+character_event = {
+    id = ARESP.106
+    desc = EVTDESC_ARESP_106
+    picture = GFX_evt_council
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    trigger = {
+    	has_character_flag = reclamation_sponsor
+    }
+
+    immediate = {
+    	clr_character_flag = reclamation_sponsor
+    }
+
+    option = {      
+        name = EVTOPTA_HF_49463
+        trigger_switch = {
+        	on_trigger = tier
+        	baron = { prestige = -50 }
+        	count = { prestige = -100 }
+        	duke = { prestige = -200 }
+        	king = { prestige = -300 }
+        	emperor = { prestige = -500 }
+        }
+        custom_tooltip = {
+        	text = reconquista_renowned_sponsor_TT
+
+	        FROMFROM = {
+	        	show_scope_change = no
+	        	add_character_modifier = {
+	        		name = renowned_sponsor
+	        		years = 2
+	        	}
+	        }
+        }
+    }
+    option = {      
+        name = EVTOPTB_HF_49463
+        trigger_switch = {
+        	on_trigger = tier
+        	baron = { piety = -25 }
+        	count = { piety = -50 }
+        	duke = { piety = -100 }
+        	king = { piety = -200 }
+        	emperor = { piety = -300 }
+        }
+        custom_tooltip = {
+        	text = reconquista_pious_sponsor_TT
+
+	        FROMFROM = {
+	        	show_scope_change = no
+	        	add_character_modifier = {
+	        		name = pious_sponsor
+	        		years = 2
+	        	}
+	        }
+        }
+    }
+    option = {
+    	name = EVTOPTC_HF_49463
+    	scaled_wealth = { value = -1 min = -100 max = -1000 }
+    	custom_tooltip = {
+    		text = reconquista_wealthy_sponsor_TT
+
+    		FROMFROM = {
+	    		show_scope_change = no
+	    		add_character_modifier = {
+	    			name = wealthy_sponsor
+	    			years = 2
+	    		}
+	    	}
+    	}
+    }
+    option = {
+    	name = EVTOPTD_HF_49463
+    }
+}
+
+# Letter event asking the ruler to back the adventurer's Reconquista campaign
+character_event = {
+	id = ARESP.108
+	name = "Istirdad Campagin"
+	desc = "Unfortunatly, as we have sent our recent envoy to ask for our aid in our Istirdad campagin. We got told that they have declined our offer."
+	picture = GFX_evt_meeting_hf
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	has_dlc = "Holy Fury"
+
+	option = {
+		name = "Too bad..."
+	}
+}
+
+# Letter event asking the ruler to back the adventurer's Reconquista campaign
+character_event = {
+	id = ARESP.109
+	name = "Istirdad Campagin"
+	desc = "The envoy we sent has returned with good news, it seems that the realm we have requested for help has agreed to help us in our upcoming war."
+	picture = GFX_evt_meeting_hf
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	has_dlc = "Holy Fury"
+
+	option = {
+		name = "Another ally to our cause!"
+		custom_tooltip = {
+			text = "This realm will be called into the Istirdad war the moment we declare it"
+		}
+	}
+}
+
+### Allies Events ###
+# Adding allies to the Reconquista
+character_event = {
+    id = ARESP.110
+    hide_window = yes
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+
+    immediate = {
+    	hidden_tooltip = {
+    		remove_character_modifier = reclamation_preparation_left
+    	}
+
+    	any_war = {
+			limit = {
+				OR = {
+					using_cb = reclamation_leon
+					using_cb = reclamation_castille
+					using_cb = reclamation_aragon
+					using_cb = reclamation_galicia
+					using_cb = reclamation_beja
+					using_cb = reclamation_granada
+					using_cb = reclamation_cordoba
+					using_cb = reclamation_navarra
+					using_cb = reclamation_valencia
+					using_cb = reclamation_balearic
+				}
+			}
+			any_playable_ruler = {
+				limit = {
+					has_character_flag = promised_reclamation_ally
+				}
+				letter_event = { id = ARESP.111 }
+				join_attacker_wars = PREV
+			}
+		}
+    }
+}
+
+# Sending letters to promised allies, that the wars starts
+letter_event = {
+	id = ARESP.111
+	desc = EVTDESC_ARESP_111
+	is_triggered_only = yes
+	trigger = {
+		has_character_flag = promised_reclamation_ally
+	}
+
+	immediate = {
+		clr_character_flag = promised_reclamation_ally
+	}
+
+	option = {
+		name = EVTOPTA_HF_49213
+	}
+}
+
+narrative_event = {
+	id = ARESP.112
+	title = "Cultural Integration"
+	desc = "As we have united Hispania under our banners. It is time for us to assert our cultue and faith to our subjects. Perhaps, we could also try to co-exsist with eachother to have many culture within our lands."
+	
+    picture = GFX_evt_mass_crusade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "All in Iberia shall follow my faith and my culture!"
+		add_character_modifier = {
+			name = spain_mass_convert
+			years = 20
+		}
+		piety = -500
+		custom_tooltip = {
+			text = "Envoys will be sent to all of your subjects to submit to your faith and culture."
+			any_playable_ruler = {
+				limit = { 
+					vassal_of = FROM 
+					is_ruler = yes
+					NOT = { religion = ROOT }
+				}
+				narrative_event = { id = ARESP.113 }	
+			}
+		}
+	}
+	option = {
+		name = "Let there be true peace now.."
+		add_character_modifier = {
+			name = spain_coexsist
+			years = 20
+		}
+		piety = 500
+		wealth = 1000
+		ai_chance = { factor = 10 }
+	}
+}
+
+# Convert
+narrative_event = {
+	id = ARESP.113
+	title = "Hispanian Submission"
+	desc = "As our liege has united Hispania, he has went ahead to send envoys to all the subjects to this realm, including to us. We have been instructed to convert to the customs and faith of our liege or to face consequences."
+	
+    picture = GFX_evt_mass_crusade
+	
+	is_triggered_only = yes
+	
+	option = { # Yes
+		name = "We will remember this.."
+		ai_chance = { factor = 90 }
+		
+		religion = FROM
+		culture = FROM
+		any_courtier = {
+			limit = {
+				religion = FROM
+				culture = FROM
+				liege = { character = FROM }
+			}
+			religion = FROM
+			culture = FROM
+		}
+		capital_scope = {
+			religion = FROM
+			culture = FROM
+		}
+	}
+	option = { # Yes
+		name = "He wont force us!"
+		ai_chance = { factor = 10 }
+		
+		prestige = 250
+	}
+}
+
+narrative_event = {
+    id = ARESP.114
+    title = "The Iberian Istridad"
+    desc = EVTDESCARESP114
+    picture = GFX_evt_large_army
+    border = GFX_event_narrative_frame_war
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    	is_alternate_start = no
+    }
+
+    immediate = {
+
+    }
+
+    option = {
+        name = "The Christian rabble does not belong here"
+        trigger = {
+        	religion_group = muslim
+        }
+    }
+
+    option = {
+    	name = "Iberia belongs to Christianity"
+    	trigger = {	
+			religion_group = christian
+    	}
+    }
+
+    option = {
+    	name = "Iberia at war once more.."
+    	trigger = {
+    		NOR = {
+    			religion_group = muslim
+				religion_group = christian
+    		}
+    	}
+    }
+}
+
+# Clean up event if you don't wage a war in 2 years after starting preparations
+character_event = {
+	id = ARESP.200
+	desc = EVTDESC_HF_49207
+	picture = GFX_evt_bad_news
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	has_dlc = "Holy Fury"
+	trigger = {
+		has_character_modifier = reclamation_preparation_left
+	}
+
+	immediate = {
+		remove_character_modifier = reclamation_preparation_left
+		disband_event_forces = reclamation_event_troops
+	}
+
+	option = {
+		name = EVTOPTA_HF_49207
+	}
+}
+
+
+# Reconquista Preparation Event - Preparations Finished
+character_event = {
+    id = ARESP.201
+    desc = EVTDESC_HF_49249
+    picture = GFX_evt_islam_army_march
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+
+    trigger = {
+    	not_reclamation_check_trigger = yes
+    	has_global_flag = active_reclamation
+    }
+
+    option = {      
+        name = EVTOPTA_HF_49249
+    }
+
+}
+
+
+# Arriving for the crusade
+character_event = {
+	id = ARESP.202
+	desc = "EVTDESCMP410"
+	picture = "GFX_evt_crusaders"
+	border = GFX_event_normal_frame_war
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	in_command = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = christian
+		NOT = { trait = reconquistador }
+		OR = {
+			AND = {
+				any_war = {
+					OR = {
+						using_cb = reconquista_leon
+						using_cb = reconquista_castille
+						using_cb = reconquista_aragon
+						using_cb = reconquista_galicia
+						using_cb = reconquista_beja
+						using_cb = reconquista_granada
+						using_cb = reconquista_cordoba
+						using_cb = reconquista_valencia
+						using_cb = reconquista_navarra
+						using_cb = reconquista_balearic
+					}
+				}
+				religion_group = christian
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+			any_liege = {
+				religion_group = christian
+				any_war = {
+					OR = {
+						using_cb = reconquista_leon
+						using_cb = reconquista_castille
+						using_cb = reconquista_aragon
+						using_cb = reconquista_galicia
+						using_cb = reconquista_beja
+						using_cb = reconquista_granada
+						using_cb = reconquista_cordoba
+						using_cb = reconquista_valencia
+						using_cb = reconquista_navarra
+						using_cb = reconquista_balearic
+					}
+				}
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+		}
+	}
+
+	immediate = {
+		abdicate_holy_order_if_religion_changes_effect = yes
+	}
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "EVTOPTA8300"
+		add_trait = reconquistador
+	}
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = christian }
+		}
+		name = "GLORY"
+		add_trait = reconquistador
+	}
+}
+
+
+# Arriving for the crusade
+character_event = {
+	id = ARESP.203
+	desc = "EVTDESCMP410"
+	picture = "GFX_evt_crusaders"
+	border = GFX_event_normal_frame_war
+	
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	in_command = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion_group = muslim
+		NOT = { trait = reconquistador }
+		OR = {
+			AND = {
+				any_war = {
+					OR = {
+						using_cb = reclamation_leon
+						using_cb = reclamation_castille
+						using_cb = reclamation_aragon
+						using_cb = reclamation_galicia
+						using_cb = reclamation_beja
+						using_cb = reclamation_granada
+						using_cb = reclamation_cordoba
+						using_cb = reclamation_valencia
+						using_cb = reclamation_navarra
+						using_cb = reclamation_balearic
+					}
+				}
+				religion_group = muslim
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+			any_liege = {
+				religion_group = muslim
+				any_war = {
+					OR = {
+						using_cb = reclamation_leon
+						using_cb = reclamation_castille
+						using_cb = reclamation_aragon
+						using_cb = reclamation_galicia
+						using_cb = reclamation_beja
+						using_cb = reclamation_granada
+						using_cb = reclamation_cordoba
+						using_cb = reclamation_valencia
+						using_cb = reclamation_navarra
+						using_cb = reclamation_balearic
+					}
+				}
+				#location = {
+				#	region = custom_aragon
+				#}
+			}
+		}
+	}
+
+	immediate = {
+		abdicate_holy_order_if_religion_changes_effect = yes
+	}
+	
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "EVTOPTA8300"
+		add_trait = mujahid
+	}
+	
+	option = {
+		trigger = {
+			NOT = { religion_group = muslim }
+		}
+		name = "GLORY"
+		add_trait = reconquistador
+	}
+}
+
+
+narrative_event = {
+	id = ARESP.1000
+	title = "La Reconquista Completada"
+	desc = EVTDESCARESP1000
+    is_triggered_only = yes
+	
+	picture = GFX_evt_reconquista_army
+	border = GFX_event_narrative_frame_war
+	portrait = ROOT
+	sound = crusade_start_01
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "Deus vult!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "Ya Allah.. we lost Qurtubah.."
+	}
+	option = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		name = "This is none of our concern.."
+	}
+}
+
+narrative_event = {
+	id = ARESP.1001
+	title = "Al-Andalus Al-Mu ad Tawhiduha"
+	desc = EVTDESCARESP1001
+    is_triggered_only = yes
+	
+	picture = GFX_evt_islam_army_march
+	border = GFX_event_narrative_frame_war
+	portrait = ROOT
+	sound = ar_arab_army_shout
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "O Deus..."
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "Allah Akbar!"
+	}
+	option = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		name = "This is none of our concern.."
+	}
+}

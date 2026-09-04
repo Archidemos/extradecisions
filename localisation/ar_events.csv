@@ -1,11 +1,21 @@
 OPTROMANFR.10411_DESC;§GThis character will be allowed to use the Imperial Reconquest CB§!;;;;;;;;;x;;;;
 
+#EVTDESCMP410;I finally stand before the destination of the reconquista. With sword in hand I am ready to storm the walls of [Root.Location.GetName]!;J'ai enfin atteint la destination de notre reconquista. Mon épée à la main, je suis prêt[Root.Get_E] à donner l'assaut contre les remparts de [Root.Location.GetName] !;Endlich stehe ich am Ziel des Reconquista. Mit meinem Schwert in der Hand bin ich nun bereit, die Mauern von [Root.Location.GetName] zu erstürmen!;;Por fin vislumbro el destino de la reconquista. ¡Con la espada empuñada me dispongo a asaltar los muros de [Root.Location.GetName]!;;;;;;;;;x
+EVTDESCMP410;Our armies now stand poised to take part in the Reconquista for the [Root.Location.Kingdom.GetFullBaseName].;Nos armées, assurées de la victoire, sont prêtes à prendre part à la Reconquista pour [Root.Location.Kingdom.GetFullBaseName]'.;Unsere Armeen stehen bereit, um sich am Reconquista vom [Root.Location.Kingdom.GetFullBaseName] zu beteiligen.;;Nuestros ejercitos se encuentran preparados para formar parte en la Reconquista por [Root.Location.Kingdom.GetFullBaseName].;;;;;;;;;x
+
+EVTDESCARESP2;In the year 633, the First Muslim Caliphates have taken over all of the Middle East, Egypt, North Africa and eventually Hispania defeating the Visigothic Kingdom of Hispania. However the Kingdom of Asturias remained and have been a beacon of Spanish Christianity for many decades. However as time passed, the Umayyad Caliphate of Hispania has been weakend because of internal struggles and left exposed to their enemies.\n\nWith the battle of Covadonga, the Reconquista has started and many christian realms in Northen Hispania has started their expansion towards the south slowly but surely. Hispania will be met with many wars to come from the Muslim side as well as the side of the self-proclaimed Reconquerors of Hispania. Only time will tell who will emerge victorious..;;;;;;;;;x;;;;
+
 hre_regiment_ARMY;Imperial Knights;;;;;;;;;x;;;;
 hre_regiment_ARMY_OF;Imperial Army of the Holy Roman Empire;;;;;;;;;x;;;;
 
 MERMIS.1000DESC;Greetings, [Root.GetSocietyRank] [Root.GetFirstName]\n\nWe need to expand our influence troughout most of the realms we can - Hence why i want to task you to approach a ruler and set up a Trade Embassy there.\n\n[Root.GetMOFarewell]\nSigned by the Grand Merchant.;;;;;;;;;x;;;;
 quest_merchant_league_establish_trade_embassy;Establish Trade Embassy;;;;;;;;;x;;;;
 quest_merchant_league_establish_trade_embassy_desc;You have been tasked to Establish a Trade Embassy in a forgein realm that will benifit the Leauge, you and the target ruler. To start the quest, simply check your decisions.;;;;;;;;;x;;;;
+
+start_preparing_reconquista_TT;Start preparing for a §YIstirdad§!;Préparer une §Yguerre de reconquête§!;Bereitet Euch auf einen §YRückeroberungskrieg§! vor;;Empieza a preparar una §Yguerra de reconquista§!;;;;;x
+
+EVTDESC_ARESP_111;[Root.GetTitledName]\n\nI have declared a Istirdad on [FromFromFrom.GetTitledName], and I am looking forward to see you on the battlefield.\n\nSigned,\nYour ally, [From.GetTitledName];;;;;;x
+EVTDESC_ARESP_106;As the sponsor of the upcoming Istirdad campaign, I have a prime opportunity to aid [FromFrom.GetDynName]. But in what manner will I help [FromFrom.GetHerHim]?;;;;;;x
 
 warning_nerf_succ;Either your §GLegalism§! level is at §G5§! or it is passed the year 1000.;;;;;;;;;x;;;;
 EVTDESCRUME;From the eastern plains, the Seljuk Sultanate of Rum have begun their advance into the lands once ruled by the Romans. Scouts and raiding bands ride ahead of the main host, testing the strength of the frontier fortresses and seeking rich plunder. Villages burn, and rumors spread of greater armies gathering beyond the mountains.\n\n The Sultanate of Rum speaks of spreading faith and forging a new realm, one that may rise where empires have fallen. Yet for now, their grip is uncertain. The fate of Anatolia hangs in the balance, as the first seeds of the Sultanate of Rum are sown in blood and dust.;;;;;;;;;x;;;;
@@ -408,14 +418,20 @@ UMMNAME7;Christian Invasion on the Umayyads;;;;;;;;;;;;;x
 UMMDESC7;Horrible news my liege! It seems that a Crusader army has arrived in our lands from the south. While we were solving our internal matters, they took the opportunity to invade our lands. However, we will not stand for this, we shall defeat them!;;;;;;;;;;;;;x
 EVTOPUMM.7;Just a bunch of Crusaders!;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
-UMMNAME6;The Crisis of Muslim Spain;;;;;;;;;;;;;x
-UMMDESC6;For a while now, the Umayyad Caliphate is on a decline in Spain ever since their Golden Age ended. While the Spanish take good advantage of the sittuation in the Calipahte. Perhaps there is hope and this crisis can be averted, but time will only tell what the rulers of the Dynasty will do;;;;;;;;;;;;;x
+EVTDESCARESP114;As the last in a long line of attempts to try to reconquer the Iberian Peninsula, [From.GetTitledName] has begun preparing [From.GetHerHis] troops and looking for allies for a new Iberian campaign. Trying to restore parts of the peninsula to Islam, [From.GetTitledFirstName] has spent a noticeable amount of resources and sent out a call to gather troops from all around the region.\n\nWith the Muslims planning for war, the other faiths have started assembling their troops to defend themselves. It is only a matter of months, or maybe a year, before the two sides will clash together once more, desperately trying to claw their way to more land in Iberia.;;;;;;x
+;;;;;;;;;;;;;;
+EVTDESCARESP1000;Many have fought and many have died, yet it seems that one side emerged victorious. At last, the Reconquistadors of Hispania amerged victorious after expelling the final Muslims out of Hispania. After many deaths, Christians can now live in peace under the many Christian banners of Hispania.\n\nWith this glorious victory, the Catholic World cheer on this victory and praise these Warriors of Faith for at last restoring order in Hispania. Will this be the end of the Reconquistadors, or will they look on to conquer further more towards the Maghreb towards perhaps the Middle East...;;;;;;;;;;;;;x
+EVTDESCARESP1001;Many have fought and many have died, yet it seems that one side emerged victorious. One muslim realm in Hispania has defeated the many Reconquistadors that have tried to commit many harms towards their people and at las united Hispania under one banner, the banner of Allah.\n\nThis ruler has done what the many Umayyad Caliphs could not have and has gotten many praises from within Hispania and even troughout the Muslim World. It seems that perhaps peace and even coexsistence between the many cultures and faith within Hispania can become reality one day..;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;
+UMMNAME6;The Fitna of Al-Andalus;;;;;;;;;;;;;x
+UMMDESC6;Ever since the usurpation of the Rashudin Caliphate by the Umayyads in the year 660, they expanded into Hispania, stretching their borders from Hispania to India. However, as the Abbasids have usurped the Umayyad Caliphate, they still held their domain in Hispania and setting their presence their permanently by proclaiming the Caliphate of Cordoba.\n\nThis proved not to be the end as man saw the decline of the Umayyad Caliphate as weakness and tried to exploit it by causing havoic and chaos within the land. Now the Umayyads are on the brink of destruction in the near future... unless it can be prevented in time.;;;;;;;;;;;;;x
 EVTOPUMM.6;We shall watch on;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
 UMMNAME5;The Hope for Islam;;;;;;;;;;;;;x
 UMMDESC5;This is unbelivable, it seems that the Umayyad Dynasty has mediated their internal crisis and are now standing stronger than ever. This could be a big problem for the Spannish Christians that always exploited the internal problems that the Umayyads had before. Who knows what the Umayyads will do next, now that they are united and strong;;;;;;;;;;;;;x
 EVTOPUMM.5;Concerning...;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
+UMMDESC31;For a while, the Umayyad Caliphate of Cordoba has been a stronghold for the muslims that live in Hispania, but this is merly just a facade. Word goes that the Umayyad Caliphate of Cordoba has not been able to stabilize its realm. Therefore, it has shattered its title internaly because of many factors such as rebelious vassals, pressure from the Christian Reconquistadors and many other factor. Now the muslim relams in Hispania are exposed from the northen Christian realms that perhaps seek to conquer their way south.;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
 NO_REQUEST_POPE_LAND;This land belongs to the Holy See;;;;;;;;;;;x;;
 NO_THEOCRATS_AND_REPUBLICS;The Holy See denies requests from Republics, Theocrats and Confederats;;;;;;;;;;;x;;
@@ -693,23 +709,23 @@ OPTA_INV3;Thank you for your gift!;;;;;;;;;;;;;x
 OPTB_INV3;You are welcome to stay.;;;;;;;;;;;;;x
 OPTC_INV3;Get this trash out of my sight!;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
-custom_gift;Custom Gift;;;;;;;;;;;;;x
-custom_gift_desc;[Root.GetBestName] Give a Custom sum of money to other lords around Europe, Asia and the Middle East.;;;;;;;;;;;;;x
-DESC_Custom_gift;[From.GetBestName] Give a Custom sum of money to other lords around Europe, Asia and the Middle East.;;;;;;;;;;;;;x
+custom_gift;Send Specific Gift;;;;;;;;;;;;;x
+custom_gift_desc;Send a more specific gift to §Y[This.GetTitledFirstName]§! to simply improve their opinion of us or to perhaps even help them our in their dire times.;;;;;;;;;;;;;x
+DESC_Custom_gift;As the caravans are getting prepared within the castle walls to be loaded with gold, we now need to decide how much we will send to [Root.GetBestName].;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
-big_custom_gift;Big Custom Gift;;;;;;;;;;;;;x
-big_custom_gift_desc;[Root.GetBestName] Give a Big Custom sum of money to other lords around Europe, Asia and the Middle East.;;;;;;;;;;;;;x
+big_custom_gift;Send Larger Gift;;;;;;;;;;;;;x
+big_custom_gift_desc;Send a more large gift to §Y[This.GetTitledFirstName]§! to simply improve their opinion of us or to perhaps even help them our in their dire times.;;;;;;;;;;;;;x
 ;;;;;;;;;;;;;;
-OPTA_CG1;Gift 10 Gold;;;;;;;;;;;;;x
-OPTB_CG1;Gift 20 Gold;;;;;;;;;;;;;x
-OPTC_CG1;Gift 40 Gold;;;;;;;;;;;;;x
-OPTA_CG2;Gift 200 Gold;;;;;;;;;;;;;x
-OPTB_CG2;Gift 400 Gold;;;;;;;;;;;;;x
-OPTC_CG2;Gift 1000 Gold;;;;;;;;;;;;;x
+OPTA_CG1;Load 10 Gold into the Caravan;;;;;;;;;;;;;x
+OPTB_CG1;Load 20 Gold into the Caravan;;;;;;;;;;;;;x
+OPTC_CG1;Load 40 Gold into the Caravan;;;;;;;;;;;;;x
+OPTA_CG2;Load 200 Gold into the Caravan;;;;;;;;;;;;;x
+OPTB_CG2;Load 400 Gold into the Caravan;;;;;;;;;;;;;x
+OPTC_CG2;Load 1000 Gold into the Caravan;;;;;;;;;;;;;x
 EXIT;Exit;;;;;;;;;;;;;x
 NEXT;Next;;;;;;;;;;;;;x
 BACK;Back;;;;;;;;;;;;;x
-DESC_Custom_gift_received;[From.GetBestName] has graciously decided to sent us a sum of [From.cg_var.GetValue]Â¤ out of their own treasury.;;;;;;;;;;;;;x
+DESC_Custom_gift_received;[From.GetBestName] has graciously decided to sent caravans towards us. These caravans contain [From.cg_var.GetValue]Â¤ out of their own treasury.;;;;;;;;;;;;;x
 RECEIVED;We thank them for their donation.;;;;;;;;;;;;;x
 DESC_MUSLIM3;Alhamdullilah my friend! We at the order would love for you to join our order. May you find yourself in Allah's wisdom.;;;;;;;;;;;;;x
 A_MUSLIM3;Welcome!;;;;;;;;;;;;;x

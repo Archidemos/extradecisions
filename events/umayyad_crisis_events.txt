@@ -6,6 +6,11 @@ character_event = {
     is_triggered_only = yes
 	
     trigger = {
+		NOR = {
+			start_date == 276.5.1
+			start_date == 400.1.1
+			start_date == 476.1.1
+		}
 		start_date <= 936.8.7
 		is_save_game = no
 		NOT = { has_global_flag = umayyad_player_event_fired }
@@ -62,6 +67,7 @@ character_event = {
 		religion_group = muslim
 		has_global_flag = umayyad_crisis_1
 		independent = yes
+		NOT = { has_global_flag = umayyad_crisis_done }
     }
 
     immediate = {
@@ -92,6 +98,7 @@ character_event = {
 		religion_group = muslim
 		has_global_flag = umayyad_crisis_2
 		independent = yes
+		NOT = { has_global_flag = umayyad_crisis_done }
     }
 
     immediate = {
@@ -122,6 +129,7 @@ character_event = {
 		religion_group = muslim
 		has_global_flag = umayyad_crisis_3
 		independent = yes
+		NOT = { has_global_flag = umayyad_crisis_done }
     }
 
     immediate = {
@@ -158,8 +166,9 @@ narrative_event = {
 	desc = UMMDESC6
     is_triggered_only = yes
 	
-	portrait = character_umayyad_crisis
-	picture = GFX_evt_mecca_falls_soa
+	border = GFX_event_narrative_frame_war
+	portrait = k_andalusia
+	picture = GFX_evt_islam_army_march
 	sound = ar_arabs_lose
 	
     trigger = {
@@ -170,14 +179,33 @@ narrative_event = {
 			start_date == 476.1.1
 		}
 		is_save_game = no
+		NOT = { has_global_flag = umayyad_announcement_sent }
     }
 	
 	immediate = {
-		clear_event_target = character_umayyad_crisis
+		set_global_flag = umayyad_announcement_sent
 	}	
 	
 	option = {
-		name = EVTOPUMM.6
+		trigger = {
+			religion_group = christian
+		}
+		name = "May God grant the Reconquistador victory!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "Ya Allah, ihfaz Qurtubah.."
+	}
+	option = {
+		trigger = {
+			NOR = {
+				religion_group = muslim
+				religion_group = christian
+			}
+		}
+		name = "We shall watch on."
 	}
 }
 
@@ -309,4 +337,91 @@ character_event = {
 		remove_character_modifier = umayyad_curse_2
 		remove_character_modifier = umayyad_curse_3
     }
+}
+
+narrative_event = {
+	id = UMM.30
+	title = "Collapse of the Caliphate"
+	desc = "Time passed and we havent been able to stabilize the Umayyad Caliphate of Cordoba. Because of this, many of our vassals see this rapid decline as oppertunity to break away from the Caliphate of Cordoba to become independent. All hope is lost in a united Islamic Spain and will leave the muslim realms exposed to possible Christian expansion."	
+    is_triggered_only = yes
+	
+	portrait = character_umayyad_crisis
+	border = GFX_event_narrative_frame_war
+	picture = GFX_evt_mecca_falls_soa
+	
+    trigger = {
+		dynasty = 597
+		OR = {
+			has_landed_title = k_andalusia
+			has_landed_title = e_cordoba
+		}
+		religion_group = muslim
+		start_date <= 1000.1.1
+		date >= 1000.1.1
+		OR = {
+			has_global_flag = umayyad_crisis_1
+			has_global_flag = umayyad_crisis_2
+			has_global_flag = umayyad_crisis_3 
+		}
+		NOT = { has_global_flag = umayyad_crisis_done }
+    }
+	
+	option = {
+		name = "Ya Allah.."
+		set_global_flag = umayyad_crisis_done
+		custom_tooltip = {
+			text = "Because you were not able to resolve all the issues within the Umayyad Caliphate of Cordoba before the year 1000. All of your higher tier titles will get destroyed."
+			hidden_tooltip = {
+				ROOT = {
+					remove_character_modifier = umayyad_curse_1
+					remove_character_modifier = umayyad_curse_2
+					remove_character_modifier = umayyad_curse_3
+					any_demesne_title = {
+						limit = { 
+							OR = {
+								tier = KING
+								tier = EMPEROR
+							}
+						}
+						unsafe_destroy_landed_title = THIS
+					}
+				}
+			}
+		}
+		any_player = {
+			limit = { NOT = { character = ROOT }
+			narrative_event = { id = UMM.31 days = 1 } 
+		}
+	}
+}
+
+narrative_event = {
+	id = UMM.31
+	title = "Collapse of the Caliphate"
+	desc = UMMDESC31	
+    is_triggered_only = yes
+	
+	portrait = character_umayyad_crisis
+	border = GFX_event_narrative_frame_war
+	picture = GFX_evt_mecca_falls_soa
+	sound = ar_arabs_lose
+	
+    trigger = {
+		start_date <= 1000.1.1
+		date >= 1000.1.1
+    }
+	
+	option = {
+		name = "God wills it!"
+		trigger = {
+			religion_group = christian
+		}
+	}
+	option = {
+		name = "Ya Allah.."
+		trigger = {
+			NOT = { dynasty = 597 }
+			religion_group = muslim
+		}
+	}
 }

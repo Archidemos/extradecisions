@@ -923,8 +923,8 @@ fair = {
 		ugly
 	}
 	
-	diplomacy = 4
-	intrigue = 3
+	diplomacy = 2
+	intrigue = 2
 	general_opinion = 15
 	
 	female_compliment = COMPL_BEAUTY
@@ -1397,7 +1397,7 @@ lustful = {
 	
 	fertility = 0.2
 	
-	intrigue = 2
+	intrigue = 1
 	learning = -2
 	health = -0.25
 	
@@ -1434,8 +1434,8 @@ chaste = {
 	fertility = -0.15
 	
 	learning = 2
-	intrigue = -1
-	health = 0.5
+	intrigue = -2
+	health = 0.25
 	
 	christian_church_opinion = 5
 	opposite_opinion = -5
@@ -1491,8 +1491,8 @@ temperate = {
 	opposite_opinion = -5
 	same_opinion = 5
 	
-	stewardship = 2
-	learning = 2
+	stewardship = 1
+	learning = 1
 	health = 0.25
 	
 	ai_greed = -20
@@ -1513,9 +1513,8 @@ greedy = {
 	vice = yes
 	
 	global_tax_modifier = 0.1
-	stewardship = 2
+	stewardship = 1
 	diplomacy = -2
-	learning = 1
 	health = -0.25
 	
 	ai_honor = -10
@@ -1537,6 +1536,7 @@ charitable = {
 	stewardship = -2
 	diplomacy = 3
 	learning = 1
+	global_tax_modifier = -0.05
 	
 	church_opinion = 5
 	opposite_opinion = -5
@@ -1594,9 +1594,7 @@ diligent = {
 	same_opinion = 5
 	
 	diplomacy = 1
-	intrigue = 1
 	stewardship = 2
-	martial = 1
 	learning = 2
 	
 	ai_greed = -10
@@ -1614,7 +1612,6 @@ envious = {
 	vice = yes
 	
 	intrigue = 2
-	martial = 1
 	diplomacy = -2
 	combat_rating = 5 #new value!
 	health = -0.25
@@ -1636,8 +1633,8 @@ kind = {
 	virtue = yes
 	
 	intrigue = -2
-	martial = -1
-	diplomacy = 2
+	martial = -2
+	diplomacy = 1
 	learning = 1
 	combat_rating = -5 #new value!
 	
@@ -1661,7 +1658,7 @@ wroth = {
 	
 	diplomacy = -2
 	intrigue = -1
-	martial = 3
+	martial = 2
 	combat_rating = 10 #new value!
 	health = -0.25
 	
@@ -1681,16 +1678,15 @@ patient = {
 	virtue = yes
 	
 	diplomacy = 2
-	intrigue = 1
 	stewardship = 1
-	learning = 2
+	learning = 1
 	opposite_opinion = -5
 	combat_rating = 5 #new value!
 	
 	ai_rationality = 10
 	
 	command_modifier = {
-		defence = 0.2
+		defence = 0.1
 	}
 	
 	male_insult = INSULT_SPIDER
@@ -1725,8 +1721,8 @@ humble = {
 	virtue = yes
 	
 	monthly_character_piety = 1
-	learning = 2
-	diplomacy = 3
+	learning = 1
+	diplomacy = 2
 	
 	opposite_opinion = -5
 	same_opinion = 5
@@ -1748,7 +1744,7 @@ deceitful = {
 		honest
 	}
 	
-	intrigue = 3
+	intrigue = 2
 	learning = -2
 	diplomacy = -2
 	combat_rating = 5 #new value!
@@ -1768,7 +1764,7 @@ honest = {
 	}
 	
 	intrigue = -2
-	diplomacy = 3
+	diplomacy = 2
 	combat_rating = -5 #new value!
 	
 	opposite_opinion = -5
@@ -1848,7 +1844,7 @@ gregarious = {
 	
 	vassal_opinion = 5
 	
-	diplomacy = 2
+	diplomacy = 1
 	learning = 1
 	
 	male_compliment = COMPL_WIT
@@ -1889,8 +1885,9 @@ content = {
 	}
 	
 	intrigue = -2
+	martial = -1
 	learning = 2
-	health = 0.5
+	global_tax_modifier = -0.05
 	
 	liege_opinion = 25
 	
@@ -1938,7 +1935,6 @@ just = {
 	}
 	
 	stewardship = 2
-	martial = 1
 	learning = 1
 	
 	vassal_opinion = 5
@@ -1959,8 +1955,8 @@ cynical = {
 		zealous
 	}
 	
-	intrigue = 2
-	diplomacy = -2
+	intrigue = 1
+	learning = -2
 	
 	church_opinion = -5
 	opposite_opinion = -5
@@ -1990,7 +1986,7 @@ zealous = {
 		sympathy_indian
 	}
 	
-	martial = 2
+	martial = 1
 	learning = 1
 	
 	church_opinion = 5
@@ -2129,8 +2125,8 @@ organizer = {
 	leader = yes
 	
 	command_modifier = {
-		speed = 0.3
-		retreat = 0.15
+		speed = 0.25
+		retreat = 0.2
 		terrain = plains
 	}
 }

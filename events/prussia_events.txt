@@ -3,30 +3,32 @@ namespace = PRUS
 narrative_event = { #Event for everyone about the formation of the Order of Prussia
 	id = PRUS.100
 	title = "The Order of Prussia"
-	desc = "Concerning news, the newly formed Prussian Kingdom has instead chosen the way of Knighthood and formed a Military Order instead. This is concerning as these brutal Military Orders are unpredictable with their way of ruling and conquering, as well as their dangerously disiplined army that are feared all across Europe. Who knows what they will do next.."
+	desc = "As the many mighty and feared Prussian and Baltic tribes have been clashing at eachother, it seems that one of the many Prussian tribes stands tall and victorious, finally ending their conflicts and wars to reorganise and civilize their lands. However, it seems that instead the conquerer of these lands has instead chosen the way of Knighthood and transfer its power over to the army. Therefore, a Military Order of Prussia has been proclaimed instead. This is concerning as these brutal Military Orders are unpredictable with their way of ruling and conquering, as well as their dangerously disiplined army that could become a major threat."
 	sound = ar_army_marching
 	
 	picture = GFX_evt_camaraderie
+	border = GFX_event_narrative_frame_war
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "We beware of this threat.."
+		name = "Let us watch closely.."
 	}
 }
 
 narrative_event = { #Event for everyone about the Kingdom of Prussia
 	id = PRUS.101
 	title = "The Kingdom of Prussia"
-	desc = "At last, it seems that the Prussians finally ended their conflicts and wars and have united under one banner. These Prussians are no joke, as their quallity of men are feared all across Europe. Only time will tell what they will do next."
+	desc = "As the many mighty and feared Prussian and Baltic tribes have been clashing at eachother, it seems that one of the many Prussian tribes stands tall and victorious, finally ending their conflicts and wars to reorganise and civilize their lands to then proclaim a King of Prussia. With their Teutonic Knights and their soldiers alike, they seem to already be preparing for who knows what..."
 	sound = ar_army_marching
 	
 	picture = GFX_evt_crusaders
+	border = GFX_event_narrative_frame_war
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "Peace at last!"
+		name = "Order restored!"
 	}
 }
 
@@ -38,6 +40,7 @@ narrative_event = {
 	is_triggered_only = yes	
 	
 	picture = GFX_evt_crusaders
+	border = GFX_event_narrative_frame_war
 	
 	option = { #Become a Prussian Order
 		name = "May the army lead us!"
@@ -68,10 +71,10 @@ narrative_event = {
 		k_prussia = { de_jure_liege = e_null }
 		k_prussia = {
 			add_law = succ_open_elective
-			set_title_landless = { title = THIS status = yes }
+			#set_title_landless = { title = THIS status = yes }
 			set_flag = forced_warrior_order
 		}
-		any_demesne_title = { gender_succ = true_cognatic }
+		hidden_tooltip = { any_demesne_title = { gender_succ = true_cognatic } }
 		set_government_type = warrior_order_government
 		add_trait = order_vet
 		piety = -100
@@ -86,10 +89,10 @@ narrative_event = {
 			}
 		}
 		custom_tooltip = {
-			text = "You will unlock two new Retinue type, special to the Military Order and to the Title of Prussia"
+			text = "You will unlock the Veteran Order Knights retinue as well as the Teutonic Knights retinue."
 		}
 		custom_tooltip = {
-			text = "As Prussia, you are able to create a specialized Guard ready for your service"
+			text = "As the Order of Prussia, you will be raise the Prussian Guard to arms."
 			activate_title = { title = d_prussia_guard status = yes }
 			hidden_tooltip = {
 				create_character = {
@@ -230,10 +233,10 @@ narrative_event = {
 			}
 		}
 		custom_tooltip = {
-			text = "You will unlock a new Retinue type, special to the Title of Prussia"
+			text = "You will unlock the Teutonic Knight retinue as King of Prussia."
 		}
 		custom_tooltip = {
-			text = "As Prussia, you are able to create a specialized Guard ready for your service"
+			text = "As the Kingdom of Prussia, you will be raise the Prussian Guard to arms."
 			activate_title = { title = d_prussia_guard status = yes }
 			hidden_tooltip = {
 				create_character = {

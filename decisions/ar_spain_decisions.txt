@@ -1,0 +1,623 @@
+decisions = {
+	prepare_reclamation = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 36
+
+		potential = {
+			has_dlc = "Holy Fury"
+			is_landed = yes
+			NOT = {
+				has_game_rule = {
+					name = reconquista
+					value = off
+				}
+			}
+			independent = yes
+			any_demesne_title = {
+				higher_tier_than = COUNT
+				region = world_europe_west_iberia
+			}
+			OR = {
+				culture_group = iberian
+				culture_group = arabic
+			}
+			religion_group = muslim
+			any_neighbor_independent_ruler = {
+				any_realm_province = {
+					region = world_europe_west_iberia
+				}
+				NOT = {
+					religion_group = muslim
+				}
+			}
+			NOT = { has_character_flag = ex_istirdad }
+			NOT = {
+				e_spain = {
+					owner = {
+						always = yes
+					}
+				}
+			}
+			NOT = { has_global_flag = reconquista_finished }
+
+			NOT = { is_alternate_start = yes }
+		}
+
+		allow = {
+			is_adult = yes
+			war = no
+			prisoner = no
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = cheap_reconquista
+						}
+					}
+					ai = no
+					tier = DUKE
+				}
+				prestige = 300
+				piety = 150
+				wealth = 100
+			}
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = cheap_reconquista
+						}
+					}
+					ai = no
+					tier = KING
+				}
+				prestige = 500
+				piety = 250
+				wealth = 200
+			}
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = cheap_reconquista
+						}
+					}
+					ai = no
+					tier = EMPEROR
+				}
+				prestige = 1000
+				piety = 500
+				wealth = 300
+			}
+			conditional_tooltip = {
+				trigger = {
+					ai = no
+					any_owned_bloodline = {
+						has_bloodline_flag = cheap_reconquista
+					}
+					tier = DUKE
+				}
+				prestige = 150
+				piety = 100
+				wealth = 75
+			}
+			conditional_tooltip = {
+				trigger = {
+					ai = no
+					any_owned_bloodline = {
+						has_bloodline_flag = cheap_reconquista
+					}
+					tier = KING
+				}
+				prestige = 250
+				piety = 200
+				wealth = 150
+			}
+			conditional_tooltip = {
+				trigger = {
+					ai = no
+					any_owned_bloodline = {
+						has_bloodline_flag = cheap_reconquista
+					}
+					tier = EMPEROR
+				}
+				prestige = 500
+				piety = 300
+				wealth = 200
+			}
+			conditional_tooltip = {
+				trigger = {
+					ai = yes
+				}
+				prestige = 300
+				piety = 100
+				wealth = 100
+			}
+
+			custom_tooltip = {
+				text = active_reconquista_condition_TT
+
+				NOT = {
+					has_global_flag = active_reclamation
+				}
+			}
+		}
+
+		effect  = {
+			#if = {
+			#	limit = {
+			#		ai = yes
+			#	}
+			#	character_event = { id = HF.49480 }
+			#}
+			if = {
+				limit = {
+					any_owned_bloodline = {
+						has_bloodline_flag = cheap_reconquista
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+						tier = DUKE
+					}
+					prestige = -150
+					piety = -100
+					wealth = -75
+				}
+				if = {
+					limit = {
+						ai = no
+						tier = KING
+					}
+					prestige = -250
+					piety = -200
+					wealth = -150
+				}
+				if = {
+					limit = {
+						ai = no
+						tier = EMPEROR
+					}
+					prestige = -500
+					piety = -300
+					wealth = -200
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					prestige = -300
+					piety = -100
+					wealth = -100
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						ai = no
+						tier = DUKE
+					}
+					prestige = -300
+					piety = -150
+					wealth = -100
+				}
+				if = {
+					limit = {
+						ai = no
+						tier = KING
+					}
+					prestige = -500
+					piety = -250
+					wealth = -200
+				}
+				if = {
+					limit = {
+						ai = no
+						tier = EMPEROR
+					}
+					prestige = -1000
+					piety = -500
+					wealth = -300
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					prestige = -300
+					piety = -100
+					wealth = -100
+				}
+			}
+
+			custom_tooltip = {
+				text = "You will prepare to declare a Istirdad by gathering recourses. You will also be able to ask rulers to potentially support you by joining the war once you declare it"
+
+				if = {
+					limit = {
+						NOT = { has_character_flag = ex_istirdad }
+					}
+					set_character_flag = ex_istirdad
+				}
+				set_character_flag = currently_reclaiming_iberia
+				set_global_flag = active_reclamation
+
+				add_character_modifier = {
+					name = reclamation_preparation_duration
+					hidden = yes
+					years = 1
+				}
+				add_character_modifier = {
+					name = reclamation_preparation_left
+					hidden = yes
+					years = 2
+				}
+				character_event = { id = ARESP.201 days = 365 }
+				character_event = { id = ARESP.200 days = 730 }
+
+				#character_event = { id = HF.49240 days = 10 random = 10 }
+				ROOT = {
+					narrative_event = { id = ARESP.114 }
+				}
+				any_playable_ruler = {
+					limit = {
+						is_landed = yes
+						any_demesne_title = {
+							higher_tier_than = BARON
+							region = world_europe_west_iberia
+						}
+					}
+					narrative_event = { id = ARESP.114 }
+				}
+			}
+
+			if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 800
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 250 250 }
+	                    heavy_infantry = { 150 150 }
+	                    archers = { 50 50 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 900
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 300 300 }
+	                    heavy_infantry = { 200 200 }
+	                    archers = { 100 100 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1000
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 350 350 }
+	                    heavy_infantry = { 250 250 }
+	                    archers = { 150 150 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1100
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 400 400 }
+	                    heavy_infantry = { 300 300 }
+	                    archers = { 200 200 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1200
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 450 450 }
+	                    heavy_infantry = { 350 350 }
+	                    archers = { 250 250 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1300
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 500 500 }
+	                    heavy_infantry = { 400 400 }
+	                    archers = { 300 300 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else_if = {
+	        	limit = {
+	        		NOT = {
+	        			year = 1400
+	        		}
+	        	}
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 550 550 }
+	                    heavy_infantry = { 450 450 }
+	                    archers = { 350 350 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+	        else = {
+	        	spawn_unit = {
+	                province = capital_scope
+	                home = capital_scope
+	                owner = ROOT
+	                troops = {
+	                    light_infantry = { 600 600 }
+	                    heavy_infantry = { 500 500 }
+	                    archers = { 400 400 }
+	                }
+	                earmark = reclamation_event_troops
+	                attrition = 1
+	                maintenance_multiplier = 0
+	                reinforces = no
+	            }
+	        }
+			character_event = { id = ARESP.100 days = 25 }
+		}
+	}
+
+	finish_reconquistas_christian = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			religion_group = christian
+			capital_scope = { region = world_europe_west_iberia }
+			has_global_flag = reconquista_conflict_started
+			NOT = { has_global_flag = finishd_reconquistas_christian }
+			NOT = { has_global_flag = reconquista_finished }
+		}
+		allow = {
+			ROOT = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			independent = yes
+			war = no
+			prisoner = no
+			is_tributary = no
+			wealth = 1000
+			prestige = 500
+			completely_controls_region = world_europe_west_iberia
+		}
+		effect = {
+			prestige = 2500
+			piety = 2500
+			add_trait = great_conquerer
+			add_claim = d_sicily
+			add_claim = d_north_sicily
+			add_claim = d_tangiers
+			custom_tooltip = {
+				text = "You will reorganize the faith of Hispania and send out envoys to your subject to submit to your faith"
+				hidden_tooltip = {
+					ROOT = { narrative_event = { id = ARESP.112 days = 2 } }
+				}
+			}
+			set_global_flag = finished_reclamation_muslim
+			set_global_flag = finishd_reconquistas_christian
+			set_global_flag = reconquista_finished
+			any_player = { narrative_event = { id = ARESP.1000 days = 1 } }
+		}
+	}
+	
+	finish_reclamation_muslim = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 1
+
+		potential = {
+			religion_group = muslim
+			capital_scope = { region = world_europe_west_iberia }
+			has_global_flag = reconquista_conflict_started
+			NOT = { has_global_flag = finished_reclamation_muslim }
+			NOT = { has_global_flag = reconquista_finished }
+		}
+		allow = {
+			ROOT = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			wealth = 1000
+			prestige = 500
+			completely_controls_region = world_europe_west_iberia
+		}
+		effect = {
+			prestige = 2500
+			piety = 2500
+			add_trait = great_conquerer
+			add_claim = d_gascogne
+			add_claim = d_foix
+			add_claim = d_aquitaine
+			add_claim = d_toulouse
+			add_claim = d_poitou
+			custom_tooltip = {
+				text = "You will reorganize the faith of Hispania and send out envoys to your subject to submit to your faith"
+				hidden_tooltip = {
+					ROOT = { narrative_event = { id = ARESP.112 days = 2 } }
+				}
+			}
+			set_global_flag = finished_reclamation_muslim
+			set_global_flag = finishd_reconquistas_christian
+			set_global_flag = reconquista_finished
+			any_player = { narrative_event = { id = ARESP.1001 days = 1 } }
+		}		
+	}
+}
+
+targetted_decisions = {
+	ask_join_reclamation = {
+		diplomacy_icon = GFX_trait_reconquistador
+		ai_check_interval = 5
+
+		from_potential = {
+			capital_scope = { region = world_europe_west_iberia }
+			has_character_flag = currently_reclaiming_iberia
+			is_landed = yes
+			independent = yes
+		}
+
+		potential = {
+			has_global_flag = reconquista_conflict_launched
+			ROOT = {
+				NOT = { is_vassal_or_below_of = FROM }
+				NOT = { has_character_flag = promised_reclamation_ally }
+				capital_scope = { region = world_europe_west_iberia }
+				is_landed = yes
+				independent = yes
+			}
+		}
+
+		allow = {
+			NOT = { has_truce = FROM }
+			FROM = {
+				conditional_tooltip = {
+					trigger = { tier = DUKE }
+					prestige = 150
+					wealth = 50
+				}
+				conditional_tooltip = {
+					trigger = { tier = KING }
+					prestige = 250
+					wealth = 100
+				}
+				conditional_tooltip = {
+					trigger = { tier = EMPEROR }
+					prestige = 500
+					wealth = 250
+				}
+				war = no
+			}
+			ROOT = {
+				custom_tooltip = {
+					text = "Was not already asked to join your Istirdad"
+					NOT = { has_character_modifier = asked_join_reclamation }
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				if = {
+					limit = { tier = DUKE }
+					prestige = -150
+					wealth = -50
+				}
+				if = {
+					limit = { tier = KING }
+					prestige = -250
+					wealth = -100
+				}
+				if = {
+					limit = { tier = EMPEROR }
+					prestige = -500
+					wealth = -250
+				}
+			}
+			ROOT = {
+				custom_tooltip = {
+					text = "This character will be asked to join your Istirdad" 
+					hidden_tooltip = {
+						character_event = { id = ARESP.105 days = 2 }
+						add_character_modifier = {
+							name = asked_join_reclamation
+							hidden = yes
+							years = 2
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
