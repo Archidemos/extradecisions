@@ -843,8 +843,10 @@ laws = {
 		pass_effect = { }
 		effect = {
 			hidden_tooltip = {
+				revoke_law = realm_nerf_laws_0
 				revoke_law = realm_nerf_laws_1
 				revoke_law = realm_nerf_laws_2
+				revoke_law = realm_nerf_laws_3
 			}
 			holder_scope = {
 				remove_character_modifier = realm_nerf_laws_modifier_1
@@ -858,14 +860,20 @@ laws = {
 			OR = {
 				AND = {
 					holder_scope = { government = hre_realm_government }
-					TECH_NOBLE_CUSTOMS >= 5
+					holder_scope = { 
+						diplomacy = 12
+						prestige = 250
+					}
+					TECH_NOBLE_CUSTOMS >= 4
 					TECH_LEGALISM >= 3
 					TECH_MAJESTY >= 3
-					has_law = ze_administration_laws_1
+					#has_law = ze_administration_laws_1
 				}
 				AND = {
 					NOT = { holder_scope = { government = hre_realm_government } }
 					holder_scope = {
+						diplomacy = 12
+						prestige = 250
 						OR = {
 							has_character_modifier = realm_nerf_5
 							has_character_modifier = realm_nerf_6
@@ -873,10 +881,10 @@ laws = {
 							has_character_modifier = realm_nerf_8
 						}
 					}
-					TECH_LEGALISM = 4
-					TECH_CULTURE_FLEX = 3
-					TECH_MAJESTY = 3
-					has_law = ze_administration_laws_1
+					TECH_LEGALISM >= 3
+					TECH_CULTURE_FLEX >= 3
+					TECH_MAJESTY >= 3
+					#has_law = ze_administration_laws_1
 				}
 			}
 		}
@@ -910,7 +918,99 @@ laws = {
 		effect = {
 			hidden_tooltip = {
 				revoke_law = realm_nerf_laws_0
+				revoke_law = realm_nerf_laws_1
 				revoke_law = realm_nerf_laws_2
+				revoke_law = realm_nerf_laws_3
+			}
+			holder_scope = {
+				remove_character_modifier = realm_nerf_laws_modifier_2
+				add_character_modifier = { name = realm_nerf_laws_modifier_1 inherit = yes years = -1 }
+			}
+		}
+		
+		castle_vassal_max_levy = 0.05
+		castle_vassal_min_levy = 0.05
+		city_vassal_max_levy = 0.05
+		city_vassal_min_levy = 0.05
+		temple_vassal_max_levy = 0.05
+		temple_vassal_min_levy = 0.05
+		castle_vassal_tax_modifier = 0.025
+		city_vassal_tax_modifier = 0.025
+		temple_vassal_tax_modifier = 0.025
+	}
+	realm_nerf_laws_2 = {
+		group = realm_nerf_laws
+		allow = {
+			OR = {
+				AND = {
+					holder_scope = { government = hre_realm_government }
+					holder_scope = { 
+						diplomacy = 15
+						prestige = 500
+					}
+					TECH_NOBLE_CUSTOMS >= 5
+					TECH_LEGALISM >= 3
+					TECH_MAJESTY >= 3
+					OR = {
+						has_law = ze_administration_laws_1
+						has_law = ze_administration_laws_2
+					}
+				}
+				AND = {
+					NOT = { holder_scope = { government = hre_realm_government } }
+					holder_scope = {
+						diplomacy = 15
+						prestige = 500
+						OR = {
+							has_character_modifier = realm_nerf_5
+							has_character_modifier = realm_nerf_6
+							has_character_modifier = realm_nerf_7
+							has_character_modifier = realm_nerf_8
+						}
+					}
+					TECH_LEGALISM >= 4
+					TECH_CULTURE_FLEX >= 3
+					TECH_MAJESTY >= 3
+					OR = {
+						has_law = ze_administration_laws_1
+						has_law = ze_administration_laws_2
+					}
+				}
+			}
+		}
+		potential = {
+			has_dlc = "Zeus"
+			OR = {
+				has_game_rule = {
+					name = nerf_realm_rule
+					value = player_only
+				}
+				has_game_rule = {
+					name = nerf_realm_rule
+					value = on
+				}
+			}
+			NOT = { holder_scope = { is_nomadic = yes } }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.2
+				always = yes
+			}
+			modifier = {
+				factor = 0
+				has_law = realm_nerf_laws_2
+			}
+		}
+		ai_will_revoke = { factor = 0 }
+		pass_effect = { }
+		effect = {
+			hidden_tooltip = {
+				revoke_law = realm_nerf_laws_0
+				revoke_law = realm_nerf_laws_1
+				revoke_law = realm_nerf_laws_2
+				revoke_law = realm_nerf_laws_3
 			}
 			holder_scope = {
 				remove_character_modifier = realm_nerf_laws_modifier_2
@@ -928,12 +1028,16 @@ laws = {
 		city_vassal_tax_modifier = 0.05
 		temple_vassal_tax_modifier = 0.05
 	}
-	realm_nerf_laws_2 = {
+	realm_nerf_laws_3 = {
 		group = realm_nerf_laws
 		allow = {
 			OR = {
 				AND = {
 					holder_scope = { government = hre_realm_government }
+					holder_scope = { 
+						diplomacy = 17
+						prestige = 1500
+					}
 					TECH_NOBLE_CUSTOMS >= 5
 					TECH_LEGALISM >= 4
 					TECH_MAJESTY >= 4
@@ -942,6 +1046,8 @@ laws = {
 				AND = {
 					NOT = { holder_scope = { government = hre_realm_government } }
 					holder_scope = {
+						diplomacy = 17
+						prestige = 1500
 						OR = {
 							has_character_modifier = realm_nerf_5
 							has_character_modifier = realm_nerf_6
@@ -979,6 +1085,8 @@ laws = {
 			hidden_tooltip = {
 				revoke_law = realm_nerf_laws_0
 				revoke_law = realm_nerf_laws_1
+				revoke_law = realm_nerf_laws_2
+				revoke_law = realm_nerf_laws_3
 			}
 			holder_scope = {
 				remove_character_modifier = realm_nerf_laws_modifier_1

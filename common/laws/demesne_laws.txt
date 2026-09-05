@@ -389,6 +389,10 @@ laws = {
 		group = hre_realm_laws
 		allow = {
 			holder_scope = { government = hre_realm_government }
+			holder_scope = {
+				diplomacy = 15
+				prestige = 1000
+			}
 			TECH_POPULAR_CUSTOMS >= 4
 			#has_law = ze_administration_laws_2
 		}
@@ -444,6 +448,10 @@ laws = {
 		allow = {
 			NOT = { has_law = hre_realm_laws_0 }
 			holder_scope = { government = hre_realm_government }
+			holder_scope = {
+				diplomacy = 17
+				prestige = 2000
+			}
 			TECH_NOBLE_CUSTOMS >= 5
 			has_law = ze_administration_laws_2
 		}

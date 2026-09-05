@@ -71,7 +71,7 @@ narrative_event = {
 					}
 				}
 			}
-			log = "Spawning Temujin for invasion"
+			log = "Spawning Timur for invasion"
 			create_character = {
 				name="Timur"
 				dynasty=800
@@ -98,20 +98,27 @@ narrative_event = {
 			new_character = {
 				set_character_flag = timur_himself
 				set_character_flag = is_special_character
-				
+				save_event_target_as = is_timur
 				if = {
 					limit = {
 						has_dlc = "Holy Fury"
-						NOT = {
-							any_owned_bloodline = {
-								has_bloodline_flag = genghis_khan_line
-							}
+						any_bloodline = {
+							has_bloodline_flag = genghis_khan_line
 						}
 					}
-					create_bloodline = {
-						type = genghis_khan
+					random_bloodline = {
+						limit = {
+							has_bloodline_flag = genghis_khan_line
+						}
+						add_bloodline_member = event_target:is_timur
 					}
 				}
+				else = {
+					create_bloodline = {
+						type = bloodline_timur
+					}
+				}
+				clear_event_target = is_timur
 				e_timurids = {
 					set_title_landless = { title = THIS status = yes }
 					grant_title = PREV
@@ -813,6 +820,7 @@ narrative_event = { #Event for the Timurids when they conquer Esfahan to either 
 		narrative_event = { id = MP.100 days = 1 }
 		character_event = { id = HFP.41090 days = 1 }
 		character_event = { id = TIME.107 days = 100 }
+		create_bloodline = { type = bloodline_timur }
 		any_player = { narrative_event = { id = TIME.106 days = 1 } }
 	}
 	
@@ -1002,19 +1010,6 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 					set_character_flag = qara_yusuf_invader
 					character_event = { id = TIME.109 } # Spawn troops
 					character_event = { id = TIME.104 days = 1 } # Spawn population
-					if = {
-						limit = {
-							has_dlc = "Holy Fury"
-							NOT = {
-								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_timur_line
-								}
-							}
-						}
-						create_bloodline = {
-							type = bloodline_timur
-						}
-					}
 				}
 				break = yes
 			}
@@ -1045,19 +1040,6 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 					trait = brave
 				}
 				new_character = {
-					if = {
-						limit = {
-							has_dlc = "Holy Fury"
-							NOT = {
-								any_owned_bloodline = {
-									has_bloodline_flag = bloodline_timur_line
-								}
-							}
-						}
-						create_bloodline = {
-							type = bloodline_timur
-						}
-					}
 					e_qara_qoyunlu = {
 						set_title_landless = { title = THIS status = yes }
 						set_title_flag = temporary_landless_title
@@ -1118,19 +1100,6 @@ narrative_event = { #Event for the Timurids when they reach the peak of Iraq and
 			new_character = {
 				set_character_flag = qara_yusuf_born
 				set_character_flag = is_special_character
-				if = {
-					limit = {
-						has_dlc = "Holy Fury"
-						NOT = {
-							any_owned_bloodline = {
-								has_bloodline_flag = bloodline_timur_line #qara
-							}
-						}
-					}
-					create_bloodline = {
-						type = bloodline_timur #qara
-					}
-				}
 				e_qara_qoyunlu = {
 					set_title_landless = { title = THIS status = yes }
 					grant_title = PREV

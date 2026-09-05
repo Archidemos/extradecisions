@@ -392,6 +392,7 @@ character_event = {
 	                    light_infantry = { 450 450 }
 	                    heavy_infantry = { 350 350 }
 	                    archers = { 250 250 }
+						camel_cavalry = { 50 50 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -413,6 +414,7 @@ character_event = {
 	                    light_infantry = { 500 500 }
 	                    heavy_infantry = { 400 400 }
 	                    archers = { 300 300 }
+						camel_cavalry = { 100 100 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -434,6 +436,7 @@ character_event = {
 	                    light_infantry = { 550 550 }
 	                    heavy_infantry = { 450 450 }
 	                    archers = { 350 350 }
+						camel_cavalry = { 150 150 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -450,6 +453,7 @@ character_event = {
 	                    light_infantry = { 600 600 }
 	                    heavy_infantry = { 500 500 }
 	                    archers = { 400 400 }
+						camel_cavalry = { 200 200 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -483,9 +487,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 200 200 }
-	                    pikemen = { 200 200 }
+	                    pikemen = { 100 100 }
 	                    light_cavalry = { 150 150 }
 	                    archers = { 100 100 }
+						camel_cavalry = { 100 100 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -505,9 +510,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 250 250 }
-	                    pikemen = { 250 250 }
+	                    pikemen = { 100 100 }
 	                    light_cavalry = { 200 200 }
 	                    archers = { 150 150 }
+						camel_cavalry = { 100 100 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -527,9 +533,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 300 300 }
-	                    pikemen = { 300 300 }
+	                    pikemen = { 150 150 }
 	                    light_cavalry = { 250 250 }
 	                    archers = { 200 200 }
+						camel_cavalry = { 150 150 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -549,9 +556,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 350 350 }
-	                    pikemen = { 350 350 }
+	                    pikemen = { 150 150 }
 	                    light_cavalry = { 300 300 }
 	                    archers = { 250 250 }
+						camel_cavalry = { 150 150 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -571,9 +579,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 400 400 }
-	                    pikemen = { 400 400 }
+	                    pikemen = { 200 200 }
 	                    light_cavalry = { 350 350 }
 	                    archers = { 300 300 }
+						camel_cavalry = { 200 200 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -593,9 +602,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 450 450 }
-	                    pikemen = { 450 450 }
+	                    pikemen = { 250 250 }
 	                    light_cavalry = { 400 400 }
 	                    archers = { 350 350 }
+						camel_cavalry = { 250 250 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -610,9 +620,10 @@ character_event = {
 	                owner = ROOT
 	                troops = {
 	                    heavy_infantry = { 500 500 }
-	                    pikemen = { 500 500 }
+	                    pikemen = { 350 350 }
 	                    light_cavalry = { 450 450 }
 	                    archers = { 400 400 }
+						camel_cavalry = { 350 350 }
 	                }
 	                earmark = reclamation_event_troops
 	                attrition = 1
@@ -1801,8 +1812,8 @@ character_event = {
 # Arriving for the crusade
 character_event = {
 	id = ARESP.203
-	desc = "EVTDESCMP410"
-	picture = "GFX_evt_crusaders"
+	desc = "EVTDESCARESP203"
+	picture = "GFX_evt_moors"
 	border = GFX_event_normal_frame_war
 	
 	min_age = 16
@@ -1815,6 +1826,7 @@ character_event = {
 	trigger = {
 		religion_group = muslim
 		NOT = { trait = reconquistador }
+		NOT = { trait = mujahid }
 		OR = {
 			AND = {
 				any_war = {
@@ -1867,7 +1879,7 @@ character_event = {
 		trigger = {
 			religion_group = muslim
 		}
-		name = "EVTOPTA8300"
+		name = "Allah Akbar!"
 		add_trait = mujahid
 	}
 	
@@ -1875,8 +1887,8 @@ character_event = {
 		trigger = {
 			NOT = { religion_group = muslim }
 		}
-		name = "GLORY"
-		add_trait = reconquistador
+		name = "For glory!"
+		add_trait = mujahid
 	}
 }
 
@@ -1946,5 +1958,44 @@ narrative_event = {
 			}
 		}
 		name = "This is none of our concern.."
+	}
+}
+
+## Reconquista cooldown events for AI
+# Cooldown timer
+character_event = {
+    id = ARESP.1002
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+    	set_global_flag = reclamation_ai_cooldown
+    	333 = {
+    		province_event = { id = ARESP.1002 }
+    	}
+    }
+}
+
+# Ping province
+province_event = {
+	id = ARESP.1003
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		333 = {
+			province_event = { id = ARESP.1003 days = 5475 }
+		}
+	}
+}
+
+# Cooldown finished
+province_event = {
+	id = ARESP.1004
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		clr_global_flag = reclamation_ai_cooldown
 	}
 }
