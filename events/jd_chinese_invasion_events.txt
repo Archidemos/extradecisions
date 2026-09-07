@@ -2859,7 +2859,7 @@ character_event = {
 			set_character_flag = is_rebel_general
 			save_event_target_as = rebel_general
 			save_event_target_as = the_chinese_invader #loc based on what flag this target has
-			wealth = 200
+			wealth = 2000
 			log = "China Logging:"
 			log = "[This.GetFullName] ID [This.GetID] is the Rebel General"
 			character_event = { id = JD.60201 } #Create title and pick target to notify
@@ -3245,12 +3245,12 @@ character_event = {
 			}
 			set_variable = {
 				which = china_war_target_match_mult
-				value = 3
+				value = 25
 				# 1
 			}
 			set_variable = {
 				which = china_war_troop_quality
-				value = 3
+				value = 4
 				# Value between 1-7
 			}
 			set_variable = {
