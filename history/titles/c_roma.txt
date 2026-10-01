@@ -107,17 +107,6 @@
 #	liege = e_west_rome
 #}
 
-400.1.1 = {
-	liege = e_west_rome
-	holder = 145227
-}
-
-476.1.1 = {
-	holder = 4000007
-	liege = e_west_rome
-}
-
-
 335.12.31 = {
 	holder = 7783
 }
@@ -135,6 +124,10 @@
 }
 399.11.26 = {
 	holder = 7778
+}
+400.1.1 = {
+	liege = e_west_rome
+	holder = 145227
 }
 401.11.27 = {
 	holder = 7777
@@ -160,6 +153,20 @@
 }
 468.2.28 = {
 	holder = 7770
+}
+472.1.1 = {
+	effect = {
+		location = {
+			add_province_modifier = {
+				name = plundered_capital
+				years = 2
+			}
+		}
+	}
+}
+476.1.1 = {
+	holder = 4000007
+	liege = e_west_rome
 }
 483.3.10 = {
 	holder = 7769
@@ -211,6 +218,13 @@
 }
 590.1.1 = {
 	holder = 7893
+}
+601.1.1 = {
+	effect = {
+		location = {
+			remove_province_modifier = plundered_capital
+		}
+	}
 }
 604.3.15 = {
 	holder = 7892
