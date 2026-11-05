@@ -1,0 +1,51 @@
+# -*- ck2.history.provinces -*-
+
+# 2126 - Drayton
+
+# County Title
+title = c_drayton
+
+# Settlements
+max_settlements = 5
+
+b_drayton1 = castle
+b_drayton2 = temple
+b_drayton3 = city
+#b_drayton4 = city
+#b_drayton5 = castle
+#b_drayton6 = temple
+b_drayton7 = city # Danes
+
+
+# Misc
+culture = saxon
+religion = catholic
+terrain = farmlands
+
+# History
+200.1.1 = {
+	religion = celtic_pagan
+	culture = roman_british
+}
+
+470.1.1 = {
+	religion = nicene_christian
+	culture = welsh
+}
+
+601.1.1 = {
+	religion = catholic
+	culture = saxon
+}
+
+880.1.1 = { culture = norse } # Danes settle down
+880.1.1 = { religion = norse_pagan } # Danes settle down
+918.1.1 = { 
+	religion = catholic
+	culture = anglonorse	
+}
+1071.1.1 = { b_drayton2 = temple }
+1100.11.11 = { culture = english }
+1130.1.1 = { remove_settlement = b_drayton7 } # gradually lost importance since 1066
+1130.1.1 = { b_drayton4 = city } # newfounded city quickly became extremely wealthy
+1220.1.1 = { b_drayton5 = castle }

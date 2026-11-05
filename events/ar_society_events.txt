@@ -298,8 +298,8 @@ character_event = { #You head back home
 			months = 6
 		}
 		remove_trait = travelling
-		trigger_if = {
-			ROOT = { society = zoro_fire_society }
+		if = {
+			limit = { ROOT = { society = zoro_fire_society } }
 			change_society_currency = 250
 		}
 	}
@@ -312,8 +312,8 @@ character_event = { #You head back home
 		}
 		remove_trait = travelling
 		clr_character_flag = do_not_disturb
-		trigger_if = {
-			ROOT = { society = zoro_fire_society }
+		if = {
+			limit = { ROOT = { society = zoro_fire_society } }
 			change_society_currency = 250
 		}
 	}

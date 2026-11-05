@@ -244,7 +244,7 @@ varangian = {
 	learning = 1
 	
 	combat_rating = 15 #old value: 2
-	
+	indomitable_trait_description = 1
 	same_opinion = 10
 	
 	customizer = no
@@ -1032,6 +1032,7 @@ reincarnation = {
 	diplomacy = 2
 	stewardship = 2
 	learning = 2
+	health = 3
 }
 
 war_elephant_leader = {
@@ -1179,7 +1180,7 @@ strategist = {
 	
 	same_opinion = 10
 	
-	martial = 2
+	martial = 3
 	stewardship = 1
 	learning = 1
 	
@@ -1269,16 +1270,25 @@ gamer = {
 
 adventurer = {
 
+	same_opinion = 10
+	ai_ambition = 40
+
 	martial = 2
-	diplomacy = -1
-	combat_rating = 10 #old value: 1
+	health = 0.5
+	combat_rating = 10
 	global_levy_size = 0.2
 	max_manpower_mult = 0.1
-	
-	same_opinion = 10
 
-	ai_ambition = 40
-	
+	retinue_maintenence_cost = -0.15
+	defensive_plot_power_modifier = 0.7
+
+	command_modifier = {
+		morale_offence = 0.05
+		morale_defence = 0.05
+	}
+	indomitable_trait_description = 1
+	same_religion_opinion = 15
+
 	customizer = no
 	random = no
 
@@ -2148,6 +2158,7 @@ valhalla_bound  = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	pagan_group_opinion = 5
 	same_opinion_if_same_religion = 15
@@ -2262,6 +2273,7 @@ shieldmaiden  = {
 	martial = 3
 	diplomacy = 1
 	combat_rating = 25 #new value!
+	indomitable_trait_description = 1
 
 	ai_zeal = 10
 	
@@ -2395,6 +2407,7 @@ eagle_warrior = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2429,6 +2442,7 @@ sun_warrior = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2463,6 +2477,7 @@ ukkos_shield = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2497,6 +2512,7 @@ nyames_shield = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2531,6 +2547,7 @@ peruns_chosen = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2565,6 +2582,7 @@ romuvas_own = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2599,6 +2617,7 @@ ares_own = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2633,6 +2652,7 @@ tengri_warrior = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2667,6 +2687,7 @@ shaddai = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -2701,6 +2722,7 @@ gondi_shahansha = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -7082,6 +7104,7 @@ pagan_branch_3 = {
 	command_modifier = {
 		religious_enemy = 0.10
 	}
+	indomitable_trait_description = 1
 	
 	ai_ambition = 20
 	
@@ -7661,6 +7684,7 @@ crusader_king = {
 	martial = 3
 	global_levy_size = 0.2
 	combat_rating = 15
+	indomitable_trait_description = 1
 	
 	command_modifier = {
 		religious_enemy = 0.3
@@ -7696,6 +7720,7 @@ crusader_queen = {
 	martial = 3
 	global_levy_size = 0.2
 	combat_rating = 15
+	indomitable_trait_description = 1
 	
 	command_modifier = {
 		religious_enemy = 0.3
@@ -7810,6 +7835,7 @@ bloodthirsty_gods_2 = { #50 burned_hearts_points
 	health = 0.5
 	combat_rating = 25
 	global_levy_size = 0.10
+	indomitable_trait_description = 1
 
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC
@@ -7854,6 +7880,7 @@ bloodthirsty_gods_3 = { #100 burned_hearts_points
 	health = 1
 	combat_rating = 35
 	global_levy_size = 0.15
+	indomitable_trait_description = 1
 
 	male_insult = INSULT_FANATIC
 	female_insult = INSULT_FANATIC

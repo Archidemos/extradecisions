@@ -212,8 +212,6 @@ narrative_event = { #The Event about the nahuatl Fleet invading Britania
 				set_character_flag = aztec_invader
 				character_event = { id = AZT.101 } # Spawn Temujins generals
 				character_event = { id = AZT.102 } # Spawn courtiers
-				character_event = { id = AZT.103 } # Spawn troops
-				#character_event = { id = AZT.104 days = 1 } # Spawn population
 				while = {
 					count = 45
 					spawn_unit = {
@@ -568,6 +566,8 @@ character_event = { #The Conquest of Britanny
 	title = "Aztec Conquest of England"
 	desc = "As our forces secured England, it is time to launch our seccond invasion towards Britanny."
 	sound = ar_army_marching
+	
+	is_triggered_only = yes
 	
 	picture = GFX_evt_aztec_arrival
 	

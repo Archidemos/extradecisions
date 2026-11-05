@@ -829,10 +829,6 @@ character_event = { #You command your dragon to breathe fire
 
 			modifier = { 
 				factor = 4
-				trait = ruthless
-			}
-			modifier = { 
-				factor = 3
 				trait = wroth
 			}
 			modifier = { 
@@ -849,7 +845,7 @@ character_event = { #You command your dragon to breathe fire
 			}
 			modifier = { 
 				factor = 0.25
-				trait = honorable
+				trait = just
 			}
 			modifier = { 
 				factor = 0.33
@@ -879,7 +875,6 @@ character_event = { #You command your dragon to breathe fire
 					at_location = ROOT
 					in_command = yes
 					prisoner = no
-					NOT = { can_use_dragon_abilities_trigger = yes }
 				}
 				if = {
 					limit = { 
@@ -965,7 +960,6 @@ character_event = { #You command your dragon to breathe fire
 						at_location = ROOT
 						in_command = yes
 						prisoner = no
-						NOT = { can_use_dragon_abilities_trigger = yes }
 						NOT = { has_character_flag = dragon_fof_event }
 					}
 					if = {
@@ -1063,7 +1057,6 @@ character_event = { #You command your dragon to breathe fire
 					at_location = ROOT
 					in_command = yes
 					prisoner = no
-					NOT = { can_use_dragon_abilities_trigger = yes }
 					NOT = { has_character_flag = dragon_fof_event }
 				}
 				if = {
@@ -1150,7 +1143,6 @@ character_event = { #You command your dragon to breathe fire
 						at_location = ROOT
 						in_command = yes
 						prisoner = no
-						NOT = { can_use_dragon_abilities_trigger = yes }
 						NOT = { has_character_flag = dragon_fof_event }
 					}
 					if = {

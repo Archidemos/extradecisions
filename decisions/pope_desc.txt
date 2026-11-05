@@ -26,7 +26,7 @@ decisions = {
 			set_global_flag = god_kingdom_formed
 			set_global_flag = end_schism_enacted
 			set_character_flag = preparing_orhodox_schism_war
-
+			activate_title = { title = e_god_kingdom status = yes }
 			primary_title = {
 				e_god_kingdom = {
 					grant_title = ROOT
@@ -119,11 +119,39 @@ decisions = {
 }
 
 targetted_decisions = {
-
+	#rename_pope = {
+	#	diplomacy_icon = GFX_trait_holy_see
+	#	filter = self
+	#	ai = no
+	#	
+	#	potential = {
+	#		has_landed_title = k_papal_state
+	#	}
+	#	
+	#	allow = {
+	#		#NOT = { has_character_modifier = pope_changed_name }
+	#	}
+	#	
+	#	effect = {
+	#		ROOT = {
+	#			add_character_modifier = {
+	#				name = pope_changed_name
+	#				years = -1
+	#				hidden = yes
+	#			}
+	#			prompt_name = {
+	#				player = ROOT
+	#				type = BAPTISM
+	#				name_list = religion
+	#			}
+	#		}
+	#	}
+	#}
 	pope_ask_investure = {
 		ai = no
 		only_rulers = yes	
         is_high_prio = yes
+		diplomacy_icon = GFX_trait_holy_see
 		
 		potential = {
 			is_landed = yes
@@ -153,6 +181,7 @@ targetted_decisions = {
 	pope_blessing = {
 		ai = no		
         is_high_prio = yes
+		diplomacy_icon = GFX_trait_holy_see
 
 		potential = {
 			is_adult = yes
@@ -184,7 +213,8 @@ targetted_decisions = {
 	appoint_cardinal = {
 		filter = realm
 		ai = no
-		only_rulers = yes	
+		only_rulers = yes
+		diplomacy_icon = GFX_trait_holy_see
 		
 		from_potential = {
 			has_landed_title = k_papal_state
@@ -220,6 +250,7 @@ targetted_decisions = {
 		ai_target_filter = independent_rulers
 		third_party_filter = realm
         third_party = ROOT
+		diplomacy_icon = GFX_trait_holy_see
 		
         third_party_potential = {
             FROMFROM = {

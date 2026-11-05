@@ -6,7 +6,7 @@ targetted_decisions = {
 		
 		from_potential = {
 			ROOT = {
-				NOT = { culture = dragon }
+				NOT = { culture = dragon_culture }
 				is_ruler = yes
 				NOT = { trait = dragon_rider } 
 			}
@@ -44,7 +44,7 @@ targetted_decisions = {
 		}
 		from_potential = {
 			ROOT = {
-				NOT = { culture = dragon }
+				NOT = { culture = dragon_culture }
 				is_ruler = yes
 			}
 			is_alternate_start = no
@@ -67,7 +67,7 @@ decisions = {
 		ai_check_interval = 36
 		
 		potential = {
-			NOT = { culture = dragon }
+			NOT = { culture = dragon_culture }
 			is_playable = yes
 			has_character_modifier = dragon_remains
 			trait = dragon_slayer

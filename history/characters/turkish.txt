@@ -3299,6 +3299,22 @@
 	mother=71844
 	1281.1.1={
 		birth="1281.1.1"
+		effect = {
+			while = {
+				count = 4
+				spawn_unit = {
+					province = capital
+					owner = ROOT
+					troops = {
+						horse_archers = { 1500 1500 }
+						light_cavalry = { 1000 1000 }
+						light_infantry = { 350 350 }
+						heavy_infantry = { 250 250 }
+						knights = { 50 50 }
+					}
+				}
+			}
+		}
 	}
 	1325.1.1={
 		add_spouse=71852

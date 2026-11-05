@@ -268,44 +268,44 @@ narrative_event = {
 }
 
 #Poland (Boleslaw blood)
-narrative_event = {
-	id = FORM.107
-	title = TITLE_FORM107
-	desc = DESC_FORM107
-	picture = GFX_evt_book_carolingian_script
-	is_triggered_only = yes 
-	
-	trigger = {
-		NOT = { start_date == 400.1.1 }
-		NOT = { start_date == 476.1.1 }
-		start_date < 1066.1.1
-		culture = polish
-		k_poland = { is_primary_holder_title = yes }
-		NOT = { has_global_flag = poland_blood_fired }
-		has_game_rule = { name = title_bloodlines_rule value = enabled }
-	}
-	
-	option = {
-		name = A_FORM107
-		prestige = 500
-		add_trait = brave
-		give_nickname = nick_the_brave
-		if = {
-			limit = { is_female = yes }
-			create_bloodline = {
-				type = boleslaw_the_brave
-				inheritance = matrilineal
-			}
-		}
-		else = {
-			create_bloodline = {
-				type = boleslaw_the_brave
-				inheritance = patrilineal
-			}
-		}
-		set_global_flag = poland_blood_fired
-	}
-}
+#narrative_event = {
+#	id = FORM.107
+#	title = TITLE_FORM107
+#	desc = DESC_FORM107
+#	picture = GFX_evt_book_carolingian_script
+#	is_triggered_only = yes 
+#	
+#	trigger = {
+#		NOT = { start_date == 400.1.1 }
+#		NOT = { start_date == 476.1.1 }
+#		start_date < 1066.1.1
+#		culture = polish
+#		k_poland = { is_primary_holder_title = yes }
+#		NOT = { has_global_flag = poland_blood_fired }
+#		has_game_rule = { name = title_bloodlines_rule value = enabled }
+#	}
+#	
+#	option = {
+#		name = A_FORM107
+#		prestige = 500
+#		add_trait = brave
+#		give_nickname = nick_the_brave
+#		if = {
+#			limit = { is_female = yes }
+#			create_bloodline = {
+#				type = boleslaw_the_brave
+#				inheritance = matrilineal
+#			}
+#		}
+#		else = {
+#			create_bloodline = {
+#				type = boleslaw_the_brave
+#				inheritance = patrilineal
+#			}
+#		}
+#		set_global_flag = poland_blood_fired
+#	}
+#}
 
 ##Scotland Brave and Free (William Wallace blood)
 

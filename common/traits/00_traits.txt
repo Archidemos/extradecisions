@@ -97,6 +97,8 @@ underhanded_rogue = {
 	diplomacy = 3
 	martial = -1
 	fertility = 0.05
+	threat_decay_speed = 0.1
+	general_opinion = 5
 
 	male_insult_adj = INSULT_TWOFACED
 	female_insult_adj = INSULT_TWOFACED
@@ -111,6 +113,9 @@ charismatic_negotiator = {
 	stewardship = 1
 	martial = -1
 	fertility = 0.05
+	threat_decay_speed = 0.2
+	general_opinion = 15
+	demesne_size = 1
 	
 	health = 0.25
 
@@ -130,6 +135,9 @@ grey_eminence = {
 	stewardship = 2
 	martial = -1
 	fertility = 0.1
+	threat_decay_speed = 0.3
+	general_opinion = 20
+	demesne_size = 2
 
 	health = 0.5
 
@@ -720,6 +728,7 @@ crusader = {
 	
 	martial = 2
 	combat_rating = 10 #old value: 1
+	indomitable_trait_description = 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -1122,6 +1131,7 @@ strong = {
 	diplomacy = 2
 	learning = 1
 	martial = 3
+	indomitable_trait_description = 1
 	
 	health = 1
 	fertility = 0.1
@@ -1317,11 +1327,12 @@ impaler = {
 duelist = {
 	lifestyle = yes
 	
-	martial = 3
+	martial = 2
 	combat_rating = 30 #old value: 5
 	command_modifier = {
 		morale_offence = 0.05
 	}
+	indomitable_trait_description = 1
 	
 	same_opinion = 10
 	

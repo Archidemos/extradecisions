@@ -13,7 +13,7 @@ namespace = emf_empires
 character_event = {
 	id = emf_empires.0
 	desc = emf_empires.0.desc
-	picture = GFX_evt_bad_news
+	picture = GFX_evt_died_executed_hanging
 	border = GFX_event_normal_frame_war
 
 	only_independent = yes
@@ -27,6 +27,7 @@ character_event = {
 			emf_empires_aed_valid_title = yes
 		}
 		has_random_dejure = no
+		has_game_rule = { name = destroy_empires value = on }
 	}
 
 	mean_time_to_happen = {

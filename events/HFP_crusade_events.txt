@@ -2779,9 +2779,12 @@ character_event = {
     }
 
     immediate = {
-    	any_playable_ruler = {
-    		narrative_event = { id = HFP.41009 }
-    	}
+		if = {
+			limit = { ROOT = { religion_group = christian } }
+			any_playable_ruler = {
+				narrative_event = { id = HFP.41009 }
+			}
+		}
 
         any_war = {
             limit = {

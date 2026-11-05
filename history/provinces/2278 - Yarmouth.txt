@@ -1,0 +1,56 @@
+# -*- ck2.history.provinces -*-
+
+# 2278 - Yarmouth
+
+# County Title
+title = c_yarmouth
+
+# Settlements
+max_settlements = 5
+
+b_yarmouth1 = castle
+#b_yarmouth2 = city
+b_yarmouth3 = city
+b_yarmouth4 = temple
+#b_yarmouth5 = castle
+#b_yarmouth6 = castle
+#b_yarmouth7 = castle
+
+# Misc
+culture = saxon
+religion = catholic
+terrain = marsh
+
+# History
+200.1.1 = {
+	religion = celtic_pagan
+	culture = roman_british
+}
+450.1.1 = {
+	b_yarmouth1 = tribal
+	remove_settlement = b_yarmouth3
+	remove_settlement = b_yarmouth4
+}
+600.1.1 = {
+	b_yarmouth1 = castle
+	b_yarmouth3 = city
+	b_yarmouth4 = temple
+}
+
+470.1.1 = {
+	religion = norse_pagan
+	culture = saxon
+}
+
+601.1.1 = {
+	religion = catholic
+	culture = saxon
+}
+
+869.1.1 = { culture = norse } # Fall of East Anglia
+869.1.1 = { religion = norse_pagan } # Fall of East Anglia
+879.1.1 = { religion = catholic } # Guthrum becomes Æþelstan
+918.1.1 = { culture = anglonorse }
+950.1.1 = { b_lynn = city }
+1100.11.11 = { culture = english }
+ 

@@ -404,7 +404,7 @@ society_decisions = {
 			}
 			custom_tooltip = {
 				text = "Has not already celebrated the Gahs recently"
-				NOT = { has_character_modifier = preform_gahs }
+				NOT = { has_character_modifier = preformed_gahs }
 			}
 			month = 5
 		}
@@ -776,7 +776,7 @@ society_decisions = {
 						add_trait = gardener
 					}
 					5 = {
-						change_steward = 4
+						change_stewardship = 4
 					}
 					5 = {
 						add_trait = diligent
@@ -1198,7 +1198,7 @@ targeted_decisions = {
 		effect = {
 			ROOT = { character_event = { id = ZOROSOC.212 } }
 			detract_society_currency_major_effect = yes
-			add_global_flag = zoro_book_created
+			set_global_flag = zoro_book_created
 			sound_effect = generic_click_01
 		}
 

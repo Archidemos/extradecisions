@@ -209,8 +209,7 @@ severe_winter = {
 	max_attrition = 0.2
 }
 
-out_of_supply =
-{
+out_of_supply = {
 	max_attrition = 0.1
 }
 
@@ -271,6 +270,9 @@ county_heresy = {
 # Multiplied by the number counties held above the required proportion (see define MIN_CLAN_LAND_PROPORTION)
 nomad_ruling_clan_too_powerful = {
 	local_revolt_risk = 0.04
+    population_growth = -2.0
+    manpower_growth = -0.03
+	land_morale = -0.1
 }
 
 # Isolated county
@@ -286,6 +288,7 @@ county_isolated = {
 new_administration = {
 	levy_reinforce_rate = -0.7
 	local_tax_modifier = -0.3
+	levy_size = -0.05
 	icon = 19
 }
 
@@ -293,13 +296,14 @@ recently_conquered = {
 	levy_size = -2
 	levy_reinforce_rate = -1
 	local_tax_modifier = -1
+	local_revolt_risk = 0.02
 	icon = 19
 }
 
 occupied = {
 	levy_size = -2
-	levy_reinforce_rate = -1
-	local_tax_modifier = -1.5
+	levy_reinforce_rate = -1.5
+	local_tax_modifier = -2.5
 	icon = 19
 }
 
@@ -333,7 +337,8 @@ occupied_different_religiongroup = {
 
 looted_modifier = {
 	local_tax_modifier = -0.25
-
+	levy_size = -0.025
+	local_revolt_risk = 0.01
 	icon = 24
 }
 
@@ -693,6 +698,7 @@ base_values = {
 
 war = {
 	global_tax_modifier = -0.2
+	local_revolt_risk = 0.02
 }
 
 peace = {

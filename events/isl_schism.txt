@@ -38,14 +38,14 @@ narrative_event = {
 		set_global_flag = isl_schism_mended
 		give_nickname = nick_the_saint
 		any_playable_ruler = {
-				if = {
-					limit = { religion = sunni }
-					narrative_event = { id = Isls.006 }	
-				}
-				if = {
-					limit = { religion = ibadi }
-					narrative_event = { id = Isls.006 }	
-				}
+			if = {
+				limit = { religion = sunni }
+				narrative_event = { id = Isls.006 }	
+			}
+			if = {
+				limit = { religion = ibadi }
+				narrative_event = { id = Isls.006 }	
+			}
 		}
 	}
 }

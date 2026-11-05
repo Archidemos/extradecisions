@@ -258,6 +258,38 @@ north_germanic = {
 		seafarer = yes
 	}
 
+	crimean_gothic = {
+		graphical_cultures = { byzantinegfx }
+		color = { 0.7 0.4 0.8 }
+		male_names = {
+			Agilas Aligernos Amalaphridos Amalarichos Andreas_Andrew Atalarichos Ataoulph_Adolf Athanachildos
+			Athanarichos Bessas Chintilas Erarichos Eutharichos Georgios_George Gibal Gotthos Gregorios_Gregory
+			Goundoulph Iakobos_Jacob Ildibados Indoulph Ioannes_John Ioseph_Joseph Isaakios
+			Konstantinos_Constantine Kyrillos_Cyril Laurentios_Laurence Leon_Leo Loukas Markos_Marcus
+			Matthaios_Matthew Michael_Michael Niketas Nikolaos_Nicholas Ouitiges Oulphilas Paulos_Paul
+			Petros_Peter Philippos_Philip Phreiderichos_Frederick Prokopios_Procopius Ragnaris_Ragnar
+			Richaridos_Richard Roderichos_Rurik Sabbas Samouel_Samuel Sergios Souintilas Skipouar
+			Stephanos_Stephen Symeon_Simon Teias Theodatos Theodemir Theodorichos_Thierry Theudis Theudiselos
+			Thomas_Thomas Thourismoundos Totilas Toulgas
+		}
+		female_names = {
+			Alla Amalaberga Amalaphrida Amalasountha Anna_Anna Anemais Brounchilde Erelieua Eusebia Galsountha
+			Gottha Hadriana Larissa Maria_Maria Martha_Martha Matasountha Photine Sophia_Sophia Theodegottha
+		}
+		from_dynasty_prefix = "of "
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 50
+		mat_grf_name_chance = 50
+		father_name_chance = 0
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 50
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+		disinherit_from_blinding = yes
+		modifier = greek_culture_modifier
+		allow_looting = no
+	}
+
 	frisian = {
 		graphical_cultures = { englishgfx saxongfx }
 		color = { 0.8 0.4 0.0 }
@@ -1896,9 +1928,9 @@ iberian = {
 		allow_looting = yes
 	}
 
-	andalusian_arabic = {
-		graphical_cultures = { andalusiangfx berbergfx muslimgfx }
-		color = { 0.4 0.6 0.1 }
+	andalusian = {
+		graphical_cultures = { andalusiangfx berbergfx southerngfx }
+		color = { 158 201 71 }
 		male_names = {
 			Aban Abbad Abbas_Abbas Abd-al-Aziz Abd-al-Basir Abd-al-Ghafur Abd-al-Hakam Abd-al-Haqq Abd-al-Hasan Abdul-Hazm
 			Abd-al-Jabbar Abd-al-Jalil Abd-al-Kabir Abd-al-Karim Abd-al-Majid Abd-al-Malik Abd-al-Mun'im Abd-al-Qadir Abd-ar-Rahim
@@ -1931,7 +1963,7 @@ iberian = {
 		prefix = yes
 		dynasty_title_names = yes
 		founder_named_dynasties = yes
-		modifier = andalusian_arabic_culture_modifier
+		modifier = andalusian_culture_modifier
 		pat_grf_name_chance = 60
 		mat_grf_name_chance = 20
 		father_name_chance = 10
@@ -2255,33 +2287,6 @@ byzantine = {
 	graphical_cultures = { easterngfx }
 	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
 
-	armenian = {
-		graphical_cultures = { byzantinegfx }
-		color = { 0.5 0.2 0.5 }
-		male_names = {
-			Abas Abirad Aboughamr Aboulgharib Aleksandr_Alexander Artashes Artashir_Ardeshir Artavazd Arsen
-			Arshak Ashot_Ashot Athom Atrnerseh_Atrnerseh Avag Avedis Bagour_Bagour Bagrat Bedros_Peter
-			Boghos_Paul Davit_David Eshkhan Gagik_Gagik Gevorg_George Ghazar_Lazarus Gosdantin_Constantine Grigor_Gregory
-			Gurgen_Ulf Hagop Hamazasp Hethum Hovhannes_John Hovsep_Joseph Ishkhan_Ishkhan Ivane Kapriel_Gabriel
-			Khachik Khosrov_Khosrow Levon_Leo Malkhas_Malkhas Mamigon Manuel_Manuel Margos_Marcus Melek
-			Mihrdat_Mithridates Mikayel_Michael Mleh Mushegh Mushel Mzhezh Nerseh_Narses Oshin Roupen_Reuben
-			Sahag_Isaac Sarkis_Sergius Sevag Shahanshah_Shahanshah Smbat_Smbat Stepanos_Stephen Tachat
-			Taniel_Daniel Tatoul Tigran Tornik_Tornik Tovmas_Thomas Thoros_Theodore Trdat Vache Vachagan
-			Vagharshak Vahag Vahan Vahram Vakhtank Varazdat Vartan Vassak Vesd Vrtanes Zakare Zarmihr
-		}
-		female_names = {
-			Aghavni Alitz_Adelaide Almasd Anahid Anna_Anna Anoush Arda Arevig Arin Baydzar Berjanoush Berjouhi
-			Datevig Dalita Eliz_Eloise Gadar Gorandoukht_Gorandukht Hasmig Houri Hranoush Hripsimeh Keghanoush
-			Keran Khorishah Kohar Latavri Leyli Lousin Mara_Mara Margarid_Margaret Maria_Maria Mariyam_Mariam
-			Meghranoush Nane Nazani Ovsanna Pounig Razmouhi Rita_Rita Satenik_Satinik Seta Siran Sirvart Srpouhi
-			Shoushanig Takouhi Tamar_Tamar Vartanoush Vartouhi Vosgi Yeva Zabel_Elisabeth Zmroukhd
-		}
-		from_dynasty_prefix = "ve "
-		disinherit_from_blinding = yes
-		modifier = armenian_culture_modifier
-		allow_looting = no
-	}
-
 	greek = {
 		graphical_cultures = { byzantinegfx }
 		color = { 0.8 0.3 0.8 }
@@ -2341,38 +2346,6 @@ byzantine = {
 		allow_looting = no
 	}
 
-	crimean_gothic = {
-		graphical_cultures = { byzantinegfx }
-		color = { 0.7 0.4 0.8 }
-		male_names = {
-			Agilas Aligernos Amalaphridos Amalarichos Andreas_Andrew Atalarichos Ataoulph_Adolf Athanachildos
-			Athanarichos Bessas Chintilas Erarichos Eutharichos Georgios_George Gibal Gotthos Gregorios_Gregory
-			Goundoulph Iakobos_Jacob Ildibados Indoulph Ioannes_John Ioseph_Joseph Isaakios
-			Konstantinos_Constantine Kyrillos_Cyril Laurentios_Laurence Leon_Leo Loukas Markos_Marcus
-			Matthaios_Matthew Michael_Michael Niketas Nikolaos_Nicholas Ouitiges Oulphilas Paulos_Paul
-			Petros_Peter Philippos_Philip Phreiderichos_Frederick Prokopios_Procopius Ragnaris_Ragnar
-			Richaridos_Richard Roderichos_Rurik Sabbas Samouel_Samuel Sergios Souintilas Skipouar
-			Stephanos_Stephen Symeon_Simon Teias Theodatos Theodemir Theodorichos_Thierry Theudis Theudiselos
-			Thomas_Thomas Thourismoundos Totilas Toulgas
-		}
-		female_names = {
-			Alla Amalaberga Amalaphrida Amalasountha Anna_Anna Anemais Brounchilde Erelieua Eusebia Galsountha
-			Gottha Hadriana Larissa Maria_Maria Martha_Martha Matasountha Photine Sophia_Sophia Theodegottha
-		}
-		from_dynasty_prefix = "of "
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 50
-		mat_grf_name_chance = 50
-		father_name_chance = 0
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 50
-		mat_grm_name_chance = 50
-		mother_name_chance = 0
-		disinherit_from_blinding = yes
-		modifier = greek_culture_modifier
-		allow_looting = no
-	}
-
 	romanian = {
 		graphical_cultures = { serbsouthslavicgfx }
 		color = { 0.25 0.45 0.7 }
@@ -2412,84 +2385,6 @@ byzantine = {
 		mother_name_chance = 5
 		modifier = romanian_culture_modifier
 		allow_looting = no
-	}
-
-	alan = {
-		graphical_cultures = { easternslavicgfx easterngfx }
-		color = { 0.7 0.5 0.7 }
-		male_names = {
-			Ælbeg Æmbalan Aghsartan Alatey Akhsar Anbal Anbazuk Aravat Arsen Askhkadar Ashot_Ashot Aslan Aspar
-			Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler Ber Biræg Boz-Uruz Buürgur Buriberdi
-			Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel Dzæræs Gætæg Georgy_George Girgon Gokhar
-			Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak Kandz Kavtia Kaur Khankhusy Khætag
-			Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Pulad Respendial Rosmag Safrak Sakhir
-			Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Taymuraz_Teimuraz Taus Totraz Urdure Uruzma Uturku
-			Yasynya Zaur
-		}
-		female_names = {
-			Adadza Alda_Alduara Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda Elene_Helen
-			Eliso Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara Lashin Lela
-			Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia Tamari_Tamar
-			Tinatini Tsiala Vardo Vedokha Yeran
-		}
-		from_dynasty_prefix = "ve "
-		male_patronym = "y fyrt"
-		female_patronym = "y chyzg"
-		prefix = no
-		disinherit_from_blinding = yes
-		modifier = alan_culture_modifier
-		allow_looting = no
-	}
-
-	udi = {
-		graphical_cultures = { byzantinegfx easterngfx }
-		color = { 0.5 0.8 0.7 }
-		male_names = {
-			Adamar Aga Avel_Abel Avraam_Abraham Bilzi Bixo Bokawon Bocoken Bul Burxmux Danil_Daniel David_David Ek Elem Grigori_Gregory
-			Hel Iakovi_Jacob Ieremi_Jeremy Ili_Elias Ioan_John Is Isaak_Isaac Iskapos Iusus_Jesus Jora_George Kaban Karlen Kiro Kul Manak Marakesun
-			Mesrob Movses_Moses Murad Namoc Nawasardun Oleg Oroezes Palang Pascag Patvakan Rustam Serbaown Shudok Stepan_Stephen Tavar Tulen Urnayr Vahan Vacagan Vace 
-			Viroy Voroshil Xod Zaxari_Zacariah Zem Zober Zor Zoren Zorru
-		}
-		female_names = {
-			Arelin Bawga Basinda Beg Bias Biyay Bondoke Borzun Bowqana Busin Calag Caxowli Cay Chee Cile Cubux Curesun Daria
-			Dešik Egele Eit Eka Enenevi Esva Exnay Fericte Gokarxe Hawke Hez Ihal Ingen Karavano Ke Kebin Kici
-			Majrami_Maria Maral Mare Meresimleri Muca Naiow Nana Nedun Nikar Nisanlu Nora Ocaq Olia Ot Orayin
-			Qehbelug Quš Reqs Rita_Rita Sas Šavat Šeir Ses Ssengi Tosol Toy Tur Usena Uš Vede Xac Xibna Xunc Zhora
-		}
-    		from_dynasty_suffix = "un"
-
-   		male_patronym = "gar "
-    		female_patronym = "xiner "
-		disinherit_from_blinding = yes
-		modifier = armenian_culture_modifier
-		allow_looting = no
-	}
-
-	caucasian_avar = {
-		graphical_cultures = { easternslavicgfx easterngfx }
-		color = { 0.75 0.3 0.7 }
-		male_names = {
-			Abukhisro Akhsuvar Alp Avaz Awach'i Badr Bukht-Yisho Firudzha Alatey Akhsar Anbal Anbazuk Aravat
-			Arsen Askhkadar Ashot_Ashot Aslan Aspar Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler
-			Ber Biræg Boz-Uruz Buürgur Buriberdi Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel
-			Dzæræs Gætæg Georgy_George Girgon Gokhar Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak
-			Kandz Kavtia Kaur Khankhusy Khætag Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Piruz
-			Pulad Respendial Rosmag Safrak Sakban Sakhir Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Takho
-			Taymuraz_Teimuraz Taus Totraz Urdure Uruzma Uturku Yasynya Zaur
-		}
-		female_names = {
-			Tsiala Sarah Adadza Alda Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda
-			Elene_Helen Eliso Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara
-			Lashin Lela Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia
-			Tamari_Tamar Tinatini Vardo Vedokha Yeran
-		}
-		from_dynasty_prefix = "ve "
-		male_patronym = "y fyrt"
-		female_patronym = "y chyzg"
-		prefix = no
-		disinherit_from_blinding = yes
-		modifier = alan_culture_modifier
-		allow_looting = yes
 	}
 
 	arberian = {
@@ -2533,6 +2428,11 @@ byzantine = {
         modifier = ilyrian_culture_modifier
         allow_looting = no
     }
+}
+
+caucasian = {
+	graphical_cultures = { westerngfx }
+	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
 
 	georgian = {
 		graphical_cultures = { byzantinegfx }
@@ -2560,6 +2460,180 @@ byzantine = {
 		disinherit_from_blinding = yes
 		modifier = georgian_culture_modifier
 		allow_looting = no
+	}
+
+	udi = {
+		graphical_cultures = { byzantinegfx easterngfx }
+		color = { 0.5 0.8 0.7 }
+		male_names = {
+			Adamar Aga Avel_Abel Avraam_Abraham Bilzi Bixo Bokawon Bocoken Bul Burxmux Danil_Daniel David_David Ek Elem Grigori_Gregory
+			Hel Iakovi_Jacob Ieremi_Jeremy Ili_Elias Ioan_John Is Isaak_Isaac Iskapos Iusus_Jesus Jora_George Kaban Karlen Kiro Kul Manak Marakesun
+			Mesrob Movses_Moses Murad Namoc Nawasardun Oleg Oroezes Palang Pascag Patvakan Rustam Serbaown Shudok Stepan_Stephen Tavar Tulen Urnayr Vahan Vacagan Vace 
+			Viroy Voroshil Xod Zaxari_Zacariah Zem Zober Zor Zoren Zorru
+		}
+		female_names = {
+			Arelin Bawga Basinda Beg Bias Biyay Bondoke Borzun Bowqana Busin Calag Caxowli Cay Chee Cile Cubux Curesun Daria
+			Dešik Egele Eit Eka Enenevi Esva Exnay Fericte Gokarxe Hawke Hez Ihal Ingen Karavano Ke Kebin Kici
+			Majrami_Maria Maral Mare Meresimleri Muca Naiow Nana Nedun Nikar Nisanlu Nora Ocaq Olia Ot Orayin
+			Qehbelug Quš Reqs Rita_Rita Sas Šavat Šeir Ses Ssengi Tosol Toy Tur Usena Uš Vede Xac Xibna Xunc Zhora
+		}
+    		from_dynasty_suffix = "un"
+
+   		male_patronym = "gar "
+    		female_patronym = "xiner "
+		disinherit_from_blinding = yes
+		modifier = armenian_culture_modifier
+		allow_looting = no
+	}
+
+	armenian = {
+		graphical_cultures = { byzantinegfx }
+		color = { 0.5 0.2 0.5 }
+		male_names = {
+			Abas Abirad Aboughamr Aboulgharib Aleksandr_Alexander Artashes Artashir_Ardeshir Artavazd Arsen
+			Arshak Ashot_Ashot Athom Atrnerseh_Atrnerseh Avag Avedis Bagour_Bagour Bagrat Bedros_Peter
+			Boghos_Paul Davit_David Eshkhan Gagik_Gagik Gevorg_George Ghazar_Lazarus Gosdantin_Constantine Grigor_Gregory
+			Gurgen_Ulf Hagop Hamazasp Hethum Hovhannes_John Hovsep_Joseph Ishkhan_Ishkhan Ivane Kapriel_Gabriel
+			Khachik Khosrov_Khosrow Levon_Leo Malkhas_Malkhas Mamigon Manuel_Manuel Margos_Marcus Melek
+			Mihrdat_Mithridates Mikayel_Michael Mleh Mushegh Mushel Mzhezh Nerseh_Narses Oshin Roupen_Reuben
+			Sahag_Isaac Sarkis_Sergius Sevag Shahanshah_Shahanshah Smbat_Smbat Stepanos_Stephen Tachat
+			Taniel_Daniel Tatoul Tigran Tornik_Tornik Tovmas_Thomas Thoros_Theodore Trdat Vache Vachagan
+			Vagharshak Vahag Vahan Vahram Vakhtank Varazdat Vartan Vassak Vesd Vrtanes Zakare Zarmihr
+		}
+		female_names = {
+			Aghavni Alitz_Adelaide Almasd Anahid Anna_Anna Anoush Arda Arevig Arin Baydzar Berjanoush Berjouhi
+			Datevig Dalita Eliz_Eloise Gadar Gorandoukht_Gorandukht Hasmig Houri Hranoush Hripsimeh Keghanoush
+			Keran Khorishah Kohar Latavri Leyli Lousin Mara_Mara Margarid_Margaret Maria_Maria Mariyam_Mariam
+			Meghranoush Nane Nazani Ovsanna Pounig Razmouhi Rita_Rita Satenik_Satinik Seta Siran Sirvart Srpouhi
+			Shoushanig Takouhi Tamar_Tamar Vartanoush Vartouhi Vosgi Yeva Zabel_Elisabeth Zmroukhd
+		}
+		from_dynasty_prefix = "ve "
+		disinherit_from_blinding = yes
+		modifier = armenian_culture_modifier
+		allow_looting = no
+	}
+
+	caucasian_avar = {
+		graphical_cultures = { easternslavicgfx easterngfx }
+		color = { 0.75 0.3 0.7 }
+		male_names = {
+			Abukhisro Akhsuvar Alp Avaz Awach'i Badr Bukht-Yisho Firudzha Alatey Akhsar Anbal Anbazuk Aravat
+			Arsen Askhkadar Ashot_Ashot Aslan Aspar Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler
+			Ber Biræg Boz-Uruz Buürgur Buriberdi Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel
+			Dzæræs Gætæg Georgy_George Girgon Gokhar Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak
+			Kandz Kavtia Kaur Khankhusy Khætag Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Piruz
+			Pulad Respendial Rosmag Safrak Sakban Sakhir Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Takho
+			Taymuraz_Teimuraz Taus Totraz Urdure Uruzma Uturku Yasynya Zaur
+		}
+		female_names = {
+			Tsiala Sarah Adadza Alda Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda
+			Elene_Helen Eliso Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara
+			Lashin Lela Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia
+			Tamari_Tamar Tinatini Vardo Vedokha Yeran
+		}
+		from_dynasty_prefix = "ve "
+		male_patronym = "y fyrt"
+		female_patronym = "y chyzg"
+		prefix = no
+		disinherit_from_blinding = yes
+		modifier = alan_culture_modifier
+		allow_looting = yes
+	}
+
+	kasogi = {
+		graphical_cultures = { turkishgfx easterngfx }
+		secondary_event_pictures = bedouin_arabic
+		color = { 0.55 0.2 0.1 }
+		male_names = {
+			Ælbeg Æmbalan Aghsartan Alatey Akhsar Anbal Anbazuk Aravat Arsen Askhkadar Ashot_Ashot Aslan Aspar
+			Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler Ber Biræg Boz-Uruz Buürgur Buriberdi
+			Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel Dzæræs Gætæg Georgy_George Girgon Gokhar
+			Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak Kandz Kavtia Kaur Khankhusy Khætag
+			Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Pulad Rededya Respendial Rosmag Safrak
+			Sakhir Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Taymuraz_Teimuraz Taus Totraz Urdure Uruzma
+			Uturku Yasynya Zaur
+		}
+		female_names = {
+			Adadza Alda Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda Elene_Helen Eliso
+			Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara Lashin Lela
+			Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia Tamari_Tamar
+			Tinatini Tsiala Vardo Vedokha Yeran
+		}
+		from_dynasty_prefix = "ve "
+		male_patronym = "y fyrt"
+		female_patronym = "y chyzg"
+		prefix = no
+		disinherit_from_blinding = yes
+		modifier = alan_culture_modifier
+		allow_looting = yes
+	}
+
+	alan = {
+		graphical_cultures = { easternslavicgfx easterngfx }
+		color = { 0.7 0.5 0.7 }
+		male_names = {
+			Ælbeg Æmbalan Aghsartan Alatey Akhsar Anbal Anbazuk Aravat Arsen Askhkadar Ashot_Ashot Aslan Aspar
+			Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler Ber Biræg Boz-Uruz Buürgur Buriberdi
+			Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel Dzæræs Gætæg Georgy_George Girgon Gokhar
+			Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak Kandz Kavtia Kaur Khankhusy Khætag
+			Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Pulad Respendial Rosmag Safrak Sakhir
+			Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Taymuraz_Teimuraz Taus Totraz Urdure Uruzma Uturku
+			Yasynya Zaur
+		}
+		female_names = {
+			Adadza Alda_Alduara Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda Elene_Helen
+			Eliso Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara Lashin Lela
+			Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia Tamari_Tamar
+			Tinatini Tsiala Vardo Vedokha Yeran
+		}
+		from_dynasty_prefix = "ve "
+		male_patronym = "y fyrt"
+		female_patronym = "y chyzg"
+		prefix = no
+		disinherit_from_blinding = yes
+		modifier = alan_culture_modifier
+		allow_looting = no
+	}
+
+
+	adhari = {
+		graphical_cultures = { persiangfx }
+		secondary_event_pictures = bedouin_arabic
+		color = { 0.15 0.4 0.25 }
+		male_names = {
+			Abbas Abolhassan Afshar_Afshar Ahmad_Ahmad Akbar_Akbar Ali Allahyar Amin Anushirvan_Anushirvan Aram
+			Ardahan_Ardahan Ardavan_Ardavan Ardeshir_Ardeshir Assad Asvar_Aswar Aurang Avshin_Afshin Ayeshah Babak_Babak Bahman
+			Bahram_Bahram Bakhtiar_Bakhtiar Behrad Behrouz Bozorg Danush_Danush Darab Dariush_Darius Davud_David
+			Jamasp Ebrahim_Abraham Ehsan Esfandiar_Esfandiar Eskander_Alexander Esma'il_Ismail Faramarz_Faramarz
+			Faraz_Faraz Fareed_Farid Farhad_Farhad Fariborz_Fariborz Farroukh_Farroukh Farrukhzad_Farrukhzad
+			Farzad_Farzad Fath Ferdows_Ferdows Fereedun_Feridun Ghobad Godarz Vishtasb_Goshtasb Hafez
+			Hassan_Hasan Hazarasp_Hazarasp Hedayat Hooshyar_Hooshyar Hormazd_Hormazd Hormoz_Hormoz Hossein_Hossein
+			Humayun Jahandar_Jahandar Jahangir_Jahangir Jahanshah_Jahanshah Jamshid_Jamshid Javeed_Javeed Kambiz
+			Kamran Kavoos_Kavoos Keyghobad Keykhosrau_Keykhosrau Kharmandar_Kharmandar Khashayar_Khashayar Kavadh
+			Khodadad_Khodadad Khosrau_Khosrau Khudayar_Khudayar Khurshid_Khurshid Kurush_Cyrus Mahmud
+			Manuchihr_Manuchihr Manushihr_Manushihr Marzuban_Marzuban Mashad_Mashad Maziar_Maziar Mehrab Mehrzad
+			Mohammed_Muhammad Morad_Morad Morteza Mozaffar Nard Naveed Nawid Nezam Parviz Pashang_Pashang
+			Peroz_Peroz Pujman Reza Rostam_Rostam Sadri Salman Shahab_Shahab Shahbaz_Shahbaz
+			Shahin_Shahin Shahram_Shahram Shahrokh_Sharokh Shahruz_Shahruz Shahryar_Shahryar Shapur_Shapur
+			Shayan_Shayan Sina Tahmasb_Tahmasb Vandad_Vandad Varshasb_Varshasb
+			Yazdegerd Yusof_Joseph Zahak Zakaria_Zachariah Zand Zartosht_Zartosht Zia
+		}
+		female_names = {
+			Afsaneh Ahu Arghavan Azarmidokht Asa Azadeh Bahar Banafsheh Behnaz Burandokht Darya Delaram Delbar
+			Dinah Donya Elham Elnaz Farah Fareedeh Farnaz Farrin Farva Furuzan Ghamze Ghazal Ghoncheh_Ghoncheh
+			Golbahar_Golbahar Golnaz_Golnaz Golpari Golshan Hamdam Hurmat Irandokht Jamileh Javaneh Leila
+			Mahdokht Mahtab Mariam_Mariam Navvaba Nazgol_Nazgol Nazilla Noor Parvaneh_Parvaneh Parvin Pertevniyal
+			Pourandokht_Pourandokht Roshanora Roxana Salomeh Shahrzad Shahzadeh Shirin Soraya Touran Tourandokht
+			Yasaman Yekta Zarrindokht Zeynab_Zainab Zohreh
+		}
+		from_dynasty_suffix = "í"
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+		male_patronym = "zade"
+		female_patronym = "dokht"
+		prefix = no
+		modifier = persian_culture_modifier
+		allow_looting = yes
 	}
 }
 
@@ -3852,34 +3926,6 @@ altaic = {
 		allow_looting = yes
 	}
 
-	kasogi = {
-		graphical_cultures = { turkishgfx easterngfx }
-		secondary_event_pictures = bedouin_arabic
-		color = { 0.55 0.2 0.1 }
-		male_names = {
-			Ælbeg Æmbalan Aghsartan Alatey Akhsar Anbal Anbazuk Aravat Arsen Askhkadar Ashot_Ashot Aslan Aspar
-			Athom Balambar Balsag Barlah Bæqætar Basil_Basil Bazuk Beler Ber Biræg Boz-Uruz Buürgur Buriberdi
-			Burikhan Candak Chelakhsartag Davit_David Djadaron Durgulel Dzæræs Gætæg Georgy_George Girgon Gokhar
-			Gubaz Guram_Guaram Hasqar Huddan Istor Itaz Iveri Kandak Kandz Kavtia Kaur Khankhusy Khætag
-			Konstantin_Constantine Kubal Kuddana Kul Kuluk Lak Levan_Leo Pulad Rededya Respendial Rosmag Safrak
-			Sakhir Sangipan Saros Sathis Savkudz Soslan Suarn Syrdon Taymuraz_Teimuraz Taus Totraz Urdure Uruzma
-			Uturku Yasynya Zaur
-		}
-		female_names = {
-			Adadza Alda Altun Ana_Anna Atsyrukhs Baia Bedisa Borena Btsenon Burudukan Duda Elene_Helen Eliso
-			Gergana Gulchara Guranduht_Gorandukht Kera Keratsa Ketevan_Catherine Koser Lamara Lashin Lela
-			Mariami_Mariam Natia Nino Rusudan Sanatha Satinik_Satinik Shatana Shorena Shukhia Tamari_Tamar
-			Tinatini Tsiala Vardo Vedokha Yeran
-		}
-		from_dynasty_prefix = "ve "
-		male_patronym = "y fyrt"
-		female_patronym = "y chyzg"
-		prefix = no
-		disinherit_from_blinding = yes
-		modifier = alan_culture_modifier
-		allow_looting = yes
-	}
-
 	kirghiz = {
 		graphical_cultures = { cumangfx turkishgfx }
 		secondary_event_pictures = bedouin_arabic
@@ -4377,6 +4423,51 @@ arabic = {
 		dynasty_title_names = yes
 		founder_named_dynasties = yes
 		modifier = arab_culture_modifier
+		allow_looting = yes
+	}
+
+	andalusian_arabic = {
+		graphical_cultures = { andalusiangfx berbergfx muslimgfx }
+		color = { 0.4 0.6 0.1 }
+		male_names = {
+			Aban Abbad Abbas_Abbas Abd-al-Aziz Abd-al-Basir Abd-al-Ghafur Abd-al-Hakam Abd-al-Haqq Abd-al-Hasan Abdul-Hazm
+			Abd-al-Jabbar Abd-al-Jalil Abd-al-Kabir Abd-al-Karim Abd-al-Majid Abd-al-Malik Abd-al-Mun'im Abd-al-Qadir Abd-ar-Rahim
+			Abd-ar-Rahman Abdul-Razzaq Abd-as-Salam Abd-as-Samad Abd-al-Wahhab Abd-al-Wahid Abd-al-Warit Abdu'llah_Abdullah Abu-Bakr_Abu-Bakr
+			Adfuns_Alphonse Affan Aflah Ahmad_Ahmad A'id Ali_Ali Amir Amira Amr Asad Asbag Asbat Asim Aslam Atiq Atta' Attab Attiya Ayman Ayshun
+			Ayyub_Job Badr Bakr Balashk_Vasco Baqi Bilal Darras Da'ud_David Fadl Faris Farraj Fath Galib Galind_Galindo Garsiyya_Garcia Hafs Hajib Hajj
+			Hajja Hajjaj Hakam_Hakam Hamdin Hamdun Hamid Hammad Hani Harith Harun_Aaron Hasan_Hasan Hatim Hayyan Hazm Hilal Hisham Humam Husain_Hussayn Ibrahim_Abraham
+			Idris Isa Ishaq_Isaac Isma'il_Ismail Jabir Ja'far Jahhaf Jasib Jawar Jahwar Jyad Khalaf Khalid Khattab Lubb_Ulf Mahbub Majlad Makki Malik
+			Ma'n Mansur_Mansur Marwan_Marwan Marzuq Masarra Maslama Mas'ud Mawhab Maymun Miswar Mu'awiya Mubashir Mufarrij Mufawwiz Muhammad Muharib Mujahid
+			Mundir Musa_Moses Mus'ab Mutarrif Mujahid Najah Najih Nasr Nizar Nuh Nusayr Qasim Qays Rabi Raf Rahhu Rashid Rasiq Razin Ridwan
+			Rushd Sabah Sa'd Sa'dan Sa'dun Safwan Sahl Sahr Sa'id Sajr Salama Salih Salim Sanjo_Sancho Sawwar Sayyid Shakir Shanjulo Shamir
+			Shu'ayb Shurayh Siddray Siraj Sufyan Sulaiman_Solomon Sumayl Tabit Tahir Talha Tamim Tammam Tariq Tawd Tayyib
+			Ubada Ubaid "Ubaid-Allah" Ufayr Ulaym Umar_Umar Umayya Usama Utba Utman_Uthman Wadah Wahb Walid Wannaqo_Inigo Wasil Wasim
+			Yahya_Yahya Ya'ish Ya'qub_Jacob Yazid Yunus Yusuf_Joseph Zakarriyya' Zayd Ziyad Ziyadatallah Zuhayr Zuhr
+		}
+		female_names = {
+			Abbasa Abda 'Abla 'A'isha Amat Amat-al-'Aziz Amat-al-'Izz Amat-al-Khaliq Amat-al-Malik Amat-ar-Rahim Amat-ar-Rahman
+			Amat-ar-Rabb Amat-al-Wahhab Amina Asma' as-Sura Awriya Ayluh 'Ayshuna Aziza Bana Banuja Baraka Bazzu Butayna
+			Daniya Dhuna Dima Elvira Fahra Fahriya Fatima Gamila Ghada Hababa Habiba Hadija Hafsa Hakima Halima Hamama Hamda
+			Hamduna Hasana Hawwa Hind Huda Hulla Ibtisam Ishraq Jaida Jamila Jariya Jawla Judur Jumana Juml Juwayriyya Karima
+			Kera Khadija_Khadijah Khalida_Khalidah Kitman Layla Lubaba Lubna Maha Mahabba Mahja Malika Maryam_Mariam Maymuna_Maymunah Munya_Munia Muzayna Muzna
+			Nadia Naila Najat Najm Nur Nuzha Rafiqa Rima Rahat Raisa Randa Safiyya_Safiyyah Safya Salma Sama Sara Sayyida Shakira Shams Sitt
+			Sitt-al-'Arab Su'a' Subh Sukayna Suna Suraya Sut Tahira Tahr Tamu Tarifa Ta'zunt Thashim 'Ubayda 'Ulla Umayna Umm Urraka
+			Urtatim Urtatlim Usayma 'Utayqa Wahida Wajid Wallada Yamina Yanduza Yasmin Zabiba Zannu Zahida Zahra Zarru Zaynab_Zainab 
+			Zubayda_Zubaidah Zulaikha Zummurrud
+		}
+		from_dynasty_suffix = "í"
+		male_patronym = "ibn "
+		female_patronym = "bint "
+		prefix = yes
+		dynasty_title_names = yes
+		founder_named_dynasties = yes
+		modifier = andalusian_arabic_culture_modifier
+		pat_grf_name_chance = 60
+		mat_grf_name_chance = 20
+		father_name_chance = 10
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 20
+		mother_name_chance = 30
 		allow_looting = yes
 	}
 
@@ -5337,46 +5428,6 @@ iranian = {
 			Afsaneh Ahu Arghavan Azarmidokht Asa Azadeh Bahar Banafsheh Behnaz Burandokht Darya Delaram Delbar
 			Dinah Donya Elham Elnaz Farah Fareedeh Farnaz Farrin Farva Furuzan Ghamze Ghazal Ghoncheh_Ghoncheh
 			Golbahar_Golbahar Golnaz_Golnaz Golpari Golshan Hamdam Hurmat Irandokht Jamileh Javaneh Kama Kharasuya Leila
-			Mahdokht Mahtab Mariam_Mariam Navvaba Nazgol_Nazgol Nazilla Noor Parvaneh_Parvaneh Parvin Pertevniyal
-			Pourandokht_Pourandokht Roshanora Roxana Salomeh Shahrzad Shahzadeh Shirin Soraya Touran Tourandokht
-			Yasaman Yekta Zarrindokht Zeynab_Zainab Zohreh
-		}
-		from_dynasty_suffix = "í"
-		dynasty_title_names = yes
-		founder_named_dynasties = yes
-		male_patronym = "zade"
-		female_patronym = "dokht"
-		prefix = no
-		modifier = persian_culture_modifier
-		allow_looting = yes
-	}
-
-	adhari = {
-		graphical_cultures = { persiangfx }
-		secondary_event_pictures = bedouin_arabic
-		color = { 0.15 0.4 0.25 }
-		male_names = {
-			Abbas Abolhassan Afshar_Afshar Ahmad_Ahmad Akbar_Akbar Ali Allahyar Amin Anushirvan_Anushirvan Aram
-			Ardahan_Ardahan Ardavan_Ardavan Ardeshir_Ardeshir Assad Asvar_Aswar Aurang Avshin_Afshin Ayeshah Babak_Babak Bahman
-			Bahram_Bahram Bakhtiar_Bakhtiar Behrad Behrouz Bozorg Danush_Danush Darab Dariush_Darius Davud_David
-			Jamasp Ebrahim_Abraham Ehsan Esfandiar_Esfandiar Eskander_Alexander Esma'il_Ismail Faramarz_Faramarz
-			Faraz_Faraz Fareed_Farid Farhad_Farhad Fariborz_Fariborz Farroukh_Farroukh Farrukhzad_Farrukhzad
-			Farzad_Farzad Fath Ferdows_Ferdows Fereedun_Feridun Ghobad Godarz Vishtasb_Goshtasb Hafez
-			Hassan_Hasan Hazarasp_Hazarasp Hedayat Hooshyar_Hooshyar Hormazd_Hormazd Hormoz_Hormoz Hossein_Hossein
-			Humayun Jahandar_Jahandar Jahangir_Jahangir Jahanshah_Jahanshah Jamshid_Jamshid Javeed_Javeed Kambiz
-			Kamran Kavoos_Kavoos Keyghobad Keykhosrau_Keykhosrau Kharmandar_Kharmandar Khashayar_Khashayar Kavadh
-			Khodadad_Khodadad Khosrau_Khosrau Khudayar_Khudayar Khurshid_Khurshid Kurush_Cyrus Mahmud
-			Manuchihr_Manuchihr Manushihr_Manushihr Marzuban_Marzuban Mashad_Mashad Maziar_Maziar Mehrab Mehrzad
-			Mohammed_Muhammad Morad_Morad Morteza Mozaffar Nard Naveed Nawid Nezam Parviz Pashang_Pashang
-			Peroz_Peroz Pujman Reza Rostam_Rostam Sadri Salman Shahab_Shahab Shahbaz_Shahbaz
-			Shahin_Shahin Shahram_Shahram Shahrokh_Sharokh Shahruz_Shahruz Shahryar_Shahryar Shapur_Shapur
-			Shayan_Shayan Sina Tahmasb_Tahmasb Vandad_Vandad Varshasb_Varshasb
-			Yazdegerd Yusof_Joseph Zahak Zakaria_Zachariah Zand Zartosht_Zartosht Zia
-		}
-		female_names = {
-			Afsaneh Ahu Arghavan Azarmidokht Asa Azadeh Bahar Banafsheh Behnaz Burandokht Darya Delaram Delbar
-			Dinah Donya Elham Elnaz Farah Fareedeh Farnaz Farrin Farva Furuzan Ghamze Ghazal Ghoncheh_Ghoncheh
-			Golbahar_Golbahar Golnaz_Golnaz Golpari Golshan Hamdam Hurmat Irandokht Jamileh Javaneh Leila
 			Mahdokht Mahtab Mariam_Mariam Navvaba Nazgol_Nazgol Nazilla Noor Parvaneh_Parvaneh Parvin Pertevniyal
 			Pourandokht_Pourandokht Roshanora Roxana Salomeh Shahrzad Shahzadeh Shirin Soraya Touran Tourandokht
 			Yasaman Yekta Zarrindokht Zeynab_Zainab Zohreh

@@ -1,5 +1,9 @@
 # -*- ck2.history.titles -*-
 
+20.1.1 = {
+	effect = { set_coa = c_antiocheia }
+}
+
 400.1.1 = {
 	holder = 3000504
 	#historical_nomad = yes
@@ -95,10 +99,11 @@
 835.1.1 = {
 	holder = 0
 }
-#895.1.1 = {
-#	reset_name = yes
-#	reset_adjective = yes
-#}
+895.1.1 = {
+	#reset_name = yes
+	#reset_adjective = yes
+	effect = { set_coa = k_hungary_old }
+}
 907.7.4 = { # Date when the owner of k_magyar historically controls the territory required to use create_hungary
 	holder = 159135
 	effect = { insert_title_history = k_magyar }
@@ -125,6 +130,7 @@
 1000.12.25 = {
 	#law = agnatic_succession
 	#law = succ_seniority
+	effect = { reset_coa = THIS }
 }
 1038.8.15 = {
 	holder = 497

@@ -1,0 +1,40 @@
+# -*- ck2.history.provinces -*-
+
+# 2287 - Lochaber
+
+# County Title
+title = c_lochaber
+
+# Settlements
+max_settlements = 4
+b_lochaber1 = tribal
+b_lochaber2 = city
+#b_lochaber3 = temple
+#b_lochaber4 = castle
+#b_lochaber5 = city
+#b_lochaber6 = temple
+#b_lochaber7 = castle
+
+
+# Misc
+culture = scottish
+religion = catholic
+terrain = mountain
+
+# History
+200.1.1 = {
+	religion = celtic_pagan
+}
+100.1.1 = {
+	b_lochaber1 = tribal
+	remove_settlement = b_lochaber2
+}
+600.1.1 = {
+	b_lochaber1 = tribal
+	b_lochaber2 = city
+}
+601.1.1 = {
+	religion = catholic
+}
+
+1146.1.1 = { b_lochaber1 = castle } 

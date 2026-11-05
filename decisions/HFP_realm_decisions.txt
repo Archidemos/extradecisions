@@ -2296,15 +2296,15 @@ decisions = {
 				}
 			}
 			tier = DUKE
-			completely_controls = c_bremen
-			completely_controls = c_celle 
+			#completely_controls = c_bremen
+			#completely_controls = c_celle 
 			completely_controls = c_verden
 			completely_controls = c_luneburg
 			completely_controls = c_braunschweig
 			completely_controls = c_altmark
 			completely_controls = c_magdeburg
 			completely_controls = c_oldenburg
-			completely_controls = c_minden
+			#completely_controls = c_minden
 			completely_controls = c_osnabruck
 			completely_controls = c_gottingen
 			completely_controls = c_munster
@@ -2513,9 +2513,9 @@ decisions = {
 				}
 			}
 			tier = DUKE
-			completely_controls = c_ulm
-			completely_controls = c_kempten
-			completely_controls = c_schwaben
+			#completely_controls = c_ulm
+			#completely_controls = c_kempten
+			#completely_controls = c_schwaben
 			completely_controls = c_wurttemberg
 			completely_controls = c_furstenberg
 			completely_controls = c_baden
@@ -2738,6 +2738,7 @@ decisions = {
 		}
 		
 		allow = {
+			ROOT = { realm_size >= 110 }
 			wealth = 700
 			war = no
 			is_adult = yes
@@ -2747,7 +2748,7 @@ decisions = {
 			completely_controls = k_novgorod
 			completely_controls = k_polotsk
 			completely_controls = k_vladimir
-			completely_controls = k_alania
+			completely_controls = k_khazaria
 		}
 		
 		effect = {

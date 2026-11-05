@@ -34,6 +34,7 @@ character_event = {
 	option = {
 		custom_tooltip = { text = "It shall be done" }
 		ai_chance = { factor = 100 }
+		set_government = hre_realm_government
 		any_playable_ruler = { 
 			limit = {
 				AND = {
@@ -42,9 +43,6 @@ character_event = {
 				}
 			}
 			character_event = { id = HREF.3 }
-		}
-		hidden_tooltip = {
-			set_government = hre_realm_government
 		}
 	}
 }
@@ -80,7 +78,7 @@ character_event = { #France gets event to send to appanages still tied to old ov
 	is_triggered_only = yes
 	
     trigger = {
-		has_landed_title = e_her
+		has_landed_title = e_hre
     }
 
     immediate = {

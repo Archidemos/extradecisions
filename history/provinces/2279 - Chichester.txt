@@ -1,0 +1,47 @@
+# -*- ck2.history.provinces -*-
+
+# 2279 - Chichester
+
+# County Title
+title = c_chichester
+
+# Settlements
+max_settlements = 5
+b_chichester1 = castle
+b_chichester2 = city
+b_chichester3 = temple
+#b_chichester4 = castle
+#b_chichester5 = castle 
+#b_chichester6 = castle 
+#b_chichester7 = castle
+
+
+
+# Misc
+culture = saxon
+religion = catholic
+terrain = farmlands
+
+# History
+200.1.1 = {
+	religion = celtic_pagan
+	culture = roman_british
+}
+450.1.1 = {
+	b_chichester1 = tribal
+	remove_settlement = b_chichester2
+	remove_settlement = b_chichester3
+}
+600.1.1 = {
+	b_chichester1 = castle
+	b_chichester2 = city
+	b_chichester3 = temple
+}
+601.1.1 = {
+	religion = catholic
+	culture = saxon
+}
+1067.11.11 = { b_chichester5 = castle } 
+1069.11.11 = { b_chichester4 = castle } 
+1069.11.11 = { capital = b_chichester4 } 
+1100.11.11 = { culture = english } 

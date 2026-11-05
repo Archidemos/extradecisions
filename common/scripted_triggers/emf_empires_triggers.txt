@@ -30,6 +30,8 @@ emf_empires_aed_valid_title = {
 		}
 		title = e_mexikha
 		title = e_hre
+		title = e_trebizond
+		title = e_nicaea
 		#title = e_il-khanate
 		#title = e_golden_horde
 	}
@@ -64,7 +66,7 @@ emf_empires_aed_valid_title = {
 			}
 			trigger_if = {
 				limit = { emf_has_swmh = yes }
-				NOT = { owner = { realm_size = 250 } }
+				NOT = { owner = { realm_size = 250 } } #If less than this realm size, you get to be destroyed
 			}
 			trigger_else = {
 				NOT = { owner = { realm_size = 200 } }
@@ -76,17 +78,77 @@ emf_empires_aed_valid_title = {
 			}
 			trigger_if = {
 				limit = { emf_has_swmh = yes }
-				NOT = { owner = { realm_size = 400 } }
+				NOT = { owner = { realm_size = 400 } } #If less than this realm size, you get to be destroyed
 			}
 			trigger_else = {
 				NOT = { owner = { realm_size = 300 } }
 			}
 		}
+		trigger_else_if = {
+			limit = {
+				title = e_plc
+			}
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				NOT = { owner = { realm_size = 85 } } #If less than this realm size, you get to be destroyed
+			}
+			trigger_else = {
+				NOT = { owner = { realm_size = 75 } }
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				title = e_yugoslavia
+			}
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				NOT = { owner = { realm_size = 140 } } #If less than this realm size, you get to be destroyed
+			}
+			trigger_else = {
+				NOT = { owner = { realm_size = 150 } }
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				title = e_north_sea
+			}
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				NOT = { owner = { realm_size = 140 } } #If less than this realm size, you get to be destroyed
+			}
+			trigger_else = {
+				NOT = { owner = { realm_size = 150 } }
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				title = e_varingian
+			}
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				NOT = { owner = { realm_size = 140 } } #If less than this realm size, you get to be destroyed
+			}
+			trigger_else = {
+				NOT = { owner = { realm_size = 150 } }
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				title = e_russian_empire
+			}
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				NOT = { owner = { realm_size = 110 } } #If less than this realm size, you get to be destroyed
+			}
+			trigger_else = {
+				NOT = { owner = { realm_size = 100 } }
+			}
+		}
 		trigger_else = {
-			NOT = { owner = { realm_size = 200 } }
+			NOT = { owner = { realm_size = 200 } } #Your realm is less than 100
 		}
 	}
 	trigger_else = {
-		NOT = { owner = { realm_size = 100 } }
+		NOT = { owner = { realm_size = 100 } } #Your realm is less than 100
 	}
 }

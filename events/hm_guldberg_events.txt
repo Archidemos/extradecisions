@@ -41,7 +41,7 @@ character_event = {
 
     option = {
         name = EVTOPTA_GULDBERG_1
-        add_prestige = 15
+        prestige = 15
         if = {
             limit = { martial = 10 }
             add_character_modifier = {
@@ -52,7 +52,7 @@ character_event = {
     }
     option = {
         name = EVTOPTB_GULDBERG_1
-        add_prestige = 5
+        prestige = 5
         if = {
             limit = { NOT = { trait = proud } }
             add_trait = proud
@@ -66,13 +66,13 @@ character_event = {
 character_event = {
     id = guldberg.2
     desc = EVTDESC_GULDBERG_2
-    picture = GFX_evt_court
+    picture = GFX_evt_courtiers_talking
 
     is_triggered_only = yes
 
     option = {
         name = EVTOPTA_GULDBERG_2
-        add_prestige = -10
+        prestige = -10
         add_character_modifier = {
             name = guldberg_mild_embarrassment
             duration = 365
@@ -80,7 +80,7 @@ character_event = {
     }
     option = {
         name = EVTOPTB_GULDBERG_2
-        add_prestige = 10
+        prestige = 10
         if = {
             limit = { NOT = { trait = brave } }
             add_trait = brave
@@ -94,27 +94,27 @@ character_event = {
 character_event = {
     id = guldberg.3
     desc = EVTDESC_GULDBERG_3
-    picture = GFX_evt_tournament
+    picture = GFX_evt_joust
 
     is_triggered_only = yes
 
     option = {
         name = EVTOPTA_GULDBERG_3
         random_list = {
-            33 = { diplomacy = 1 }
-            34 = { martial = 1 }
-            33 = { stewardship = 1 }
+            33 = { change_diplomacy = 1 }
+            34 = { change_martial = 1 }
+            33 = { change_stewardship = 1 }
         }
-        add_prestige = 20
+        prestige = 20
     }
     option = {
         name = EVTOPTB_GULDBERG_3
         random_list = {
-            33 = { diplomacy = -1 }
-            34 = { martial = -1 }
-            33 = { stewardship = -1 }
+            33 = { change_diplomacy = -1 }
+            34 = { change_martial = -1 }
+            33 = { change_stewardship = -1 }
         }
-        add_prestige = 5
+        prestige = 5
     }
 }
 
@@ -124,7 +124,7 @@ character_event = {
 character_event = {
     id = guldberg.20
     desc = EVTDESC_GULDBERG_20
-    picture = GFX_evt_angry_council
+    picture = GFX_evt_leaving_table_angrily
 
     is_triggered_only = yes
 
@@ -139,7 +139,7 @@ character_event = {
     option = {
         name = EVTOPTA_GULDBERG_20
         add_rival = 690006
-        add_prestige = 10
+        prestige = 10
         hidden_tooltip = {
             690006 = {
                 add_rival = 690001
@@ -161,7 +161,7 @@ character_event = {
 character_event = {
     id = guldberg.21
     desc = EVTDESC_GULDBERG_21
-    picture = GFX_evt_spy
+    picture = GFX_evt_spymaster
 
     is_triggered_only = yes
 
@@ -187,8 +187,8 @@ character_event = {
     }
     option = {
         name = EVTOPTB_GULDBERG_21
-        intrigue = 1
-        add_prestige = -10
+        change_intrigue = 1
+        prestige = -10
     }
 }
 
@@ -198,7 +198,7 @@ character_event = {
 character_event = {
     id = guldberg.22
     desc = EVTDESC_GULDBERG_22
-    picture = GFX_evt_intrigue
+    picture = GFX_evt_spymaster
 
     is_triggered_only = yes
 
@@ -208,7 +208,7 @@ character_event = {
 
     option = {
         name = EVTOPTA_GULDBERG_22
-        690004 = { intrigue = 1 }
+        690004 = { change_intrigue = 1 }
         690001 = {
             opinion = {
                 who = 690004
@@ -225,7 +225,7 @@ character_event = {
                 add_trait = deceitful
             }
         }
-        690001 = { add_prestige = -15 }
+        690001 = { prestige = -15 }
     }
 }
 
@@ -250,7 +250,7 @@ character_event = {
     option = {
         name = EVTOPTA_GULDBERG_30
         set_character_flag = guldberg_rise_begun
-        add_prestige = 100
+        prestige = 100
         if = {
             limit = { NOT = { trait = ambitious } }
             add_trait = ambitious
@@ -263,7 +263,7 @@ character_event = {
     option = {
         name = EVTOPTB_GULDBERG_30
         set_character_flag = guldberg_rise_begun
-        add_piety = 50
+        piety = 50
         if = {
             limit = { trait = ambitious }
             remove_trait = ambitious

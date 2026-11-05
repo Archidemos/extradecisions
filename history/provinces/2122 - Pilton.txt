@@ -1,0 +1,46 @@
+# -*- ck2.history.provinces -*-
+
+# 2122 - Pilton
+
+# County Title
+title = c_pilton
+
+# Settlements
+max_settlements = 5
+
+b_pilton1 = castle
+b_pilton2 = city
+b_pilton3 = temple
+b_pilton4 = city
+#b_pilton5 = castle
+
+b_pilton6 = temple
+b_pilton7 = city
+
+# Misc
+culture = cornish
+religion = catholic
+
+# History
+200.1.1 = {
+	b_pilton1 = tribal
+	religion = celtic_pagan
+	culture = cornish
+	remove_settlement = b_pilton2
+	remove_settlement = b_pilton3
+	remove_settlement = b_pilton4
+}
+601.1.1 = {
+	religion = catholic
+	culture = cornish
+	b_pilton1 = castle
+	b_pilton2 = city
+	b_pilton3 = temple
+	b_pilton4 = city
+}
+
+1050.1.1 = { remove_settlement = b_pilton3 } # bishop seat(909-1050) moved to Exeter and the town wasn't otherwise important.
+1050.1.1={ b_pilton2 = temple }
+1068.1.1 = { remove_settlement = b_pilton4 } # Lydford sacked and the population moved
+1068.1.1={ b_pilton5 = castle }
+1200.1.1={ culture = english }

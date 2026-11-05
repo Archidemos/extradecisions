@@ -826,7 +826,10 @@ RETTYPE_CUL_ARAB =
 	
 	potential = {
 		is_nomadic = no
-		culture_group = arabic
+		OR = {
+			culture_group = arabic
+			culture = andalusian
+		}
 		NOT = { culture = andalusian_arabic }
 		NOT = { culture = maghreb_arabic }
 	}
@@ -845,7 +848,10 @@ RETTYPE_CUL_ANDALUSIAN =
 
 	potential = {
 		is_nomadic = no
-		culture = andalusian_arabic
+		OR = {
+			culture = andalusian_arabic
+			culture = andalusian
+		}
 	}
 
 	modifier = {

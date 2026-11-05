@@ -5407,6 +5407,7 @@ new_crusade = {
 						}
 					}
 					# All Byzantine vassals go independent except those neighboring the old Emperor, and he/she gets an inferior Empire title while the Byzantine title is broken
+					activate_title = { title = e_nicaea status = yes }
 					e_byzantium = {
 						owner = {
 							any_vassal = {
@@ -5593,7 +5594,7 @@ new_crusade = {
 							add_claim = e_byzantium
 							add_claim = c_byzantion 
 						}
-						any_de_jure_vassal = {
+						any_vassal = {
 							set_defacto_liege = FROM
 						}
 					}
@@ -18088,6 +18089,15 @@ cb_minor_clan_revolt = {
 		}
 	}
 
+	on_success = {
+		FROM = {
+			save_event_target_as = horde_lost_end_wars
+			any_war = {
+				limit = { defender = { character = event_target:horde_lost_end_wars } }
+				end_war = invalid
+			}		
+		}
+	}
 	on_success_title = {
 		usurp_title_plus_barony_if_unlanded = { target = ROOT type = revolt }
 	

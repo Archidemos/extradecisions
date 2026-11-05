@@ -1789,7 +1789,7 @@ narrative_event = {
 	id = 320
 	title = "EVTNAME200"
 	desc = "EVTDESC320"
-	picture = GFX_evt_battle
+	picture = GFX_evt_islam_army_march
 	border = GFX_event_narrative_frame_war
 	sound = ar_arab_army_shout
 	
@@ -1809,6 +1809,8 @@ narrative_event = {
 	option = {
 		name = "EVTOPTA320" # Allahu Akhbar!
 		trigger = { religion = ROOT }
+		custom_tooltip = { text = EVTOPTA_MP_411 }
+		piety = 100
 	}
 	option = {
 		name = "EVTOPTB200" # No concern of ours

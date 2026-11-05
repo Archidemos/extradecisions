@@ -249,7 +249,7 @@ succession_laws = {
 	
 		potential = {
 			NOT = { year = 1 }
-			NAND = { 
+			NAND = {
 				has_law = succ_byzantine_elective 
 				OR = { 
 					title = e_byzantium
@@ -300,6 +300,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			diplomacy = 10
 			conditional_tooltip = {
 				trigger = {
 					has_dlc = "Conclave"
@@ -431,6 +432,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			diplomacy = 10
 			conditional_tooltip = {
 				trigger = {
 					has_dlc = "Holy Fury"
@@ -576,7 +578,7 @@ succession_laws = {
 		}
 		
 		allow = {
-			
+			diplomacy = 13
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }
@@ -735,6 +737,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			diplomacy = 17
 			TECH_LEGALISM = 5
 			conditional_tooltip = {
 				trigger = {
@@ -889,6 +892,7 @@ succession_laws = {
 					ROOT = {
 						has_title_flag = alternate_hre
 					}
+					has_landed_title = e_bulgaria
 				}
 				OR = {
 					independent = yes
@@ -923,7 +927,7 @@ succession_laws = {
 				holder_scope = { government = chinese_government }
 				holder_scope = { government = chinese_imperial_government }
 				holder_scope = { government = ar_theocracy_government }
-				holder_scope = { government = tsardom_government }
+				#holder_scope = { government = tsardom_government }
 			}
 			NOR = {  #Special Elective.
 				title = e_hre 
@@ -935,6 +939,7 @@ succession_laws = {
 			}
 		}
 		allow = {
+			diplomacy = 12
 			#custom_tooltip = {
 			#	text = warning_nerf_succ
 			#	OR = {
@@ -1234,6 +1239,7 @@ succession_laws = {
 
 		}
 		allow = {
+			diplomacy = 14
 			TECH_LEGALISM = 5
 			OR = {
 				holder_scope = { is_feudal = yes }
@@ -1387,6 +1393,7 @@ succession_laws = {
 		}
 		allow = {
 			TECH_LEGALISM = 5
+			diplomacy = 15
 			conditional_tooltip = {
 				trigger = {
 					has_dlc = "Conclave"
@@ -2177,6 +2184,7 @@ gender_laws = {
 			is_primary_type_title = no
 		}
 		allow = {
+			diplomacy = 17
 			OR = {
 				holder_scope = {
 					OR = {
@@ -2263,7 +2271,7 @@ gender_laws = {
 			}
 		}
 		allow = {
-			
+			diplomacy = 15
 		}
 		effect = {
 			gender_succ = enatic_cognatic

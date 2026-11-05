@@ -15,10 +15,24 @@
 #	}
 # }
 
+destroy_empires = {
+	name = "DESTROY_EMPIRES"
+	group = "AR_DIFFICULT_GROUP"
+	option = {
+		name = off
+		text = "Off"
+		desc = "Empires that have too few realm size will not be destroyed."
+	}
+	option = {
+		name = on
+		text = "On"
+		desc = "If an Empire's realm size is too small, it gets shattered."
+	}
+}
+
 nomads_to_tribal_rule = {
 	name = "NOMADS_TO_TRIBAL"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = off
 		text = "Off"
@@ -34,11 +48,10 @@ nomads_to_tribal_rule = {
 shatter_hre_rule = {
 	name = "RULE_SHATTER_HRE"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = on
 		text = "On"
-		desc = "An event will fire to shatter the Holy Roman Empire and release tributaries. (This option only works on startdates after 993, when the Holy Roman Empire already exsists)"
+		desc = "An event will fire to shatter the Holy Roman Empire and release tributaries. (This option only works on startdates after 993) NOTE: THIS SETTING CAN CREATE UNSTABLE GAMEPLAY"
 	}
 	option = {
 		name = off
@@ -54,7 +67,7 @@ shatter_france_rule = {
 	option = {
 		name = on
 		text = "On"
-		desc = "An event will fire to shatter the Kingdom of France and release tributaries. (This option only works on startdates after 867, when the Kingdom of France isnt ruled by a Karling)"
+		desc = "An event will fire to shatter the Kingdom of France and release tributaries. (This option only works on startdates after 867) NOTE: THIS SETTING CAN CREATE UNSTABLE GAMEPLAY"
 	}
 	option = {
 		name = off
@@ -125,7 +138,6 @@ nerf_holy_war_rule = {
 dissolution_faction_rule = {
 	name = "RULE_DISSOLUTION_FACTION"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = on
 		text = "RULE_OPTION_ON"
@@ -141,7 +153,6 @@ dissolution_faction_rule = {
 nerf_tainted_touch_rule = {
 	name = "RULE_TAINTED_TOUCH"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = on
 		text = "RULE_OPTION_ON"
@@ -201,7 +212,6 @@ nerf_nomad_rule = {
 nerf_realm_rule = {
 	name = "RULE_NERF_REALM"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = player_only
 		text = "RULE_OPTION_PLAYER"
@@ -261,7 +271,6 @@ normal_great_conqueres = {
 crusade_nerf = {
 	name = "RULE_CRUSADE_NERF"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = enabled
 		text = "RULE_OPTION_ON"
@@ -278,7 +287,6 @@ crusade_nerf = {
 request_claim_nerf = {
 	name = "RULE_REQUEST_NERF"
 	group = "AR_DIFFICULT_GROUP"
-	alt_start_default = off
 	option = {
 		name = enabled
 		text = "RULE_OPTION_ON"

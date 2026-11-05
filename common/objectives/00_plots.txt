@@ -751,6 +751,8 @@ plot_kill_character = {
 	player_allow = {
 		NOT = { is_child_of = FROM } # Not my own children
 		NOT = { trait = dragon }
+		NOT = { trait = great_conquerer }
+		NOT = { has_character_modifier = unkillable_ai }
 		is_within_diplo_range = FROM
 		NOT = { has_blood_oath_with = FROM }
 		assassination_interaction_trigger = yes

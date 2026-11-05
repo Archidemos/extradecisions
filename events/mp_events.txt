@@ -29,6 +29,15 @@ narrative_event = {
 		c_ikhmin = { location = { add_province_modifier = { name = river_nile years = -1 } } }
 		c_qus = { location = { add_province_modifier = { name = river_nile years = -1 } } }
 
+		c_saka = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_sharuna = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_mallawi = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_hermopolis = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_amarna = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_akhmim = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_luxor = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+		c_qus = { location = { add_province_modifier = { name = river_nile years = -1 } } }
+
 		c_aswan = { location = { add_province_modifier = { name = river_nile years = -1 } } }
 		c_qurta = { location = { add_province_modifier = { name = river_nile years = -1 } } }
 		c_qasribrim = { location = { add_province_modifier = { name = river_nile years = -1 } } }
@@ -231,6 +240,17 @@ narrative_event = {
 		
 		c_kermanshah = { location = { add_province_modifier = { name = kurdish_heart_world years = -1 } } }
 		c_byzantion = { location = { add_province_modifier = { name = nerf_constantinople years = -1 } } }
+		any_province = {
+			limit = {
+				has_trade_post = yes
+				trade_route = trans_saharan_trade_route
+			}
+	
+			add_to_extra_holding = {
+				type = trade_post
+				building = tr_gold_mine_1
+			}
+		}	
 	}
 }
 
@@ -2363,7 +2383,7 @@ character_event = {
 	desc = "You have been studying a few books and got a broader view of what you are missing out on and will now change your profession."
 
 	picture = GFX_evt_library
-	border = GFX_event_normal_frame_learning
+	border = GFX_event_normal_frame_religion
 	is_triggered_only = yes
 
 	option = {
@@ -2411,7 +2431,7 @@ character_event = {
 	desc = "You have been studying a few books and got a broader view of what you are missing out on and will now change your profession."
 
 	picture = GFX_evt_library
-	border = GFX_event_normal_frame_learning
+	border = GFX_event_normal_frame_religion
 	is_triggered_only = yes
 
 	option = {
@@ -3139,6 +3159,156 @@ character_event = {
 		name = "GLORY"
 		add_trait = reconquistador
 	}
+}
+
+# Jihad Launch announcement event
+narrative_event = {
+    id = MP.411
+    desc = EVTDESC_MP_411
+    title = EVTTITLE_MP_411
+    border = GFX_event_narrative_frame_religion
+    picture = GFX_evt_kaaba
+    is_triggered_only = yes
+	
+	picture = { 
+		trigger = { 
+			religion_group = muslim
+		} 
+		picture = GFX_evt_kaaba
+	}
+	
+	picture = { 
+		trigger = { 
+			religion_group = christian
+		} 
+		picture = GFX_evt_mass_crusade
+	}
+	
+	picture = { 
+		trigger = { 
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		} 
+		picture = GFX_evt_viking_battle_oldgods
+	}
+	
+    trigger = {
+    	FROM = {
+    		is_preparing_crusade = yes
+    	}
+    }
+
+
+
+    immediate = {
+		
+		random_list = {
+			10 = {
+				sound_effect = crusade_start_01
+			}
+			10 = {
+				sound_effect = crusade_start_02
+			}
+		}
+		
+    	FROM = {
+	    	crusade_target_title = {
+	    		save_event_target_as = crusade_title
+	    	}
+	    	crusade_target_char = {
+	    		save_event_target_as = crusade_character
+	    	}
+    	}
+
+    	if = {
+    		limit = {
+    			OR = {
+    				event_target:crusade_title = {
+    					region = world_europe_west
+    				}
+    				event_target:crusade_title = {
+    					region = world_europe_south
+    				}
+    				event_target:crusade_title = {
+    					region = world_middle_east_jerusalem
+    				}
+    				event_target:crusade_title = {
+    					region = world_africa_north
+    				}
+    			}
+    		}
+    		event_target:crusade_title = {
+    			set_title_flag = crusade_inherently_christian
+    		}
+    	}
+    	if = {
+    		limit = {
+    			OR = {
+    				event_target:crusade_title = {
+    					region = world_europe_north
+    				}
+    				event_target:crusade_title = {
+    					region = world_europe_east
+    				}
+    			}
+    		}
+            event_target:crusade_title = {
+                set_title_flag = crusade_fringe_christian
+            }
+    	}
+
+    	if = { 
+    		limit = {
+    			NOT = {
+    				event_target:crusade_title = {
+    					has_title_flag = crusade_inherently_christian
+    				}
+    				event_target:crusade_title = {
+    					has_title_flag = crusade_fringe_christian
+    				}
+    			}
+    		}
+    		event_target:crusade_title = {
+    			set_title_flag = crusade_outside_christian
+    		}
+    	}
+    }
+
+    option = {      
+        name = EVTOPTA_HFP_41009
+        custom_tooltip = { text = EVTOPTA_HFP_41009_TT }
+
+        trigger = {
+        	religion_group = christian
+        }
+        if = {
+        	limit = {
+				religion = FROM
+        		has_pledged_crusade_participation = yes
+        	}
+        	piety = 100
+        }
+    }
+
+    option = {
+    	name = EVTOPTB_HFP_41009
+    	custom_tooltip = { text = EVTOPTA_HFP_41009_TT }
+    	
+    	trigger = {
+    		NOT = {
+    			religion_group = christian
+    		}
+    	}
+    }
+
+    after = {
+        crusade_target_title = {
+        	set_title_flag = crusaded_against_before
+        }
+        clr_character_flag = asked_to_pledge
+    }
 }
 
 #narrative_event = {

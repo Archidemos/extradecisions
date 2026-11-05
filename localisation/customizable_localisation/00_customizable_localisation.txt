@@ -19243,6 +19243,42 @@ defined_text = {
 		localisation_key = string_reconquista_feature
 	}
 
+	text = {
+		trigger = {
+			has_dlc = "Holy Fury"
+			is_alternate_start = no
+			NOT = {
+				has_game_rule = {
+					name = reconquista
+					value = off
+				}
+			}
+		}
+		localisation_key = ar_string_frontier_feature
+	}
+
+	fallback_text = {
+		localisation_key = string_no_feature
+	}
+}
+
+defined_text = {
+	name = GetIberianFeatures2
+	
+	text = {
+		trigger = {
+			has_dlc = "Holy Fury"
+			is_alternate_start = no
+			NOT = {
+				has_game_rule = {
+					name = reconquista
+					value = off
+				}
+			}
+		}
+		localisation_key = ar_string_frontier_feature
+	}
+
 	fallback_text = {
 		localisation_key = string_no_feature
 	}

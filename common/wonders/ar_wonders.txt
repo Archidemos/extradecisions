@@ -130,6 +130,138 @@ wonder_mosque_cordoba = {
 	}
 }
 
+wonder_church_cordoba = {
+		picture = GFX_wonder_strip_cathedral
+		model = wonder_mosque
+		allow_construction = no
+		show_model = yes
+		background_overrides = {
+			jungle = fields
+			forest = jungle
+			}
+		potential = {
+			religion_group = christian
+		}
+		active = {
+			ROOT = {
+				religion_group = christian
+			}
+		}
+		available_upgrades = {
+			# UNIQUE:
+			upgrade_minaret
+			upgrade_open_courtyard
+			upgrade_dome
+			upgrade_lamps_hanging
+			upgrade_soup_kitchen
+			upgrade_school_mosque
+			upgrade_hostel
+			upgrade_custodian_of_the_mosque
+			upgrade_mosque_cordoba_tower
+			upgrade_mosque_cordoba_fountain
+
+			# OTHER:
+			upgrade_roads
+			upgrade_watchtower_network
+			upgrade_spikes
+			upgrade_tower
+			upgrade_hypocausts
+			upgrade_heating_pipes
+			upgrade_retinue
+			upgrade_road_tolls
+		}
+		flags = {
+			holy_building
+			inspires_piety
+			is_destructible
+			cost_medium
+			is_historical
+		}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 2500
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 6
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		owner_modifier = {
+			monthly_character_prestige = 0.05
+			monthly_character_piety = 0.1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+			trade_route_value = 5
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.1
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 375
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+			trade_route_value = 5
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.1
+			monthly_character_piety = 0.2
+			build_time_modifier = -0.05
+			learning = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 325
+		gold_cost_flat = 1000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.05
+			trade_route_value = 10
+		}
+		owner_modifier = {
+			monthly_character_prestige = 0.2
+			monthly_character_piety = 0.2
+			build_cost_modifier = -0.05
+			global_tax_modifier = 0.025
+			learning = 1
+			stewardship = 1
+		}
+	}
+}
+
 wonder_winter_palace = {
 		picture = GFX_wonder_strip_royalpalace
 		allow_construction = no
@@ -511,47 +643,47 @@ wonder_florence_cathedral = {
 }
 
 wonder_walls_ragusa = {
-		picture = GFX_wonder_strip_grand_walls
-		allow_construction = no
-		show_model = yes
-		model = wonder_wall
-		potential = {
+	picture = GFX_wonder_strip_grand_walls
+	allow_construction = no
+	show_model = yes
+	model = wonder_wall
+	potential = {
+		religion = orthodox
+	}
+	active = {
+		ROOT = {
 			religion = orthodox
 		}
-		active = {
-			ROOT = {
-				religion = orthodox
-			}
-		}
-		available_upgrades = {
-			# UNIQUE:
-			upgrade_cothon
-			upgrade_piers
-			upgrade_office_harbor
-			upgrade_lighthouse
-			upgrade_military_wharf
-			upgrade_master_of_tides
-			upgrade_walls_ragusa_armory
-			upgrade_walls_ragusa_toll
+	}
+	available_upgrades = {
+		# UNIQUE:
+		upgrade_cothon
+		upgrade_piers
+		upgrade_office_harbor
+		upgrade_lighthouse
+		upgrade_military_wharf
+		upgrade_master_of_tides
+		upgrade_walls_ragusa_armory
+		upgrade_walls_ragusa_toll
 
-			# OTHER:
-			upgrade_roads
-			upgrade_watchtower_network
-			upgrade_spikes
-			upgrade_tower
-			upgrade_hypocausts
-			upgrade_heating_pipes
-			upgrade_retinue
-			upgrade_road_tolls
-			upgrade_tavern
-		}
-		flags = {
-			holy_building
-			inspires_piety
-			is_destructible
-			cost_medium
-			is_historical
-		}
+		# OTHER:
+		upgrade_roads
+		upgrade_watchtower_network
+		upgrade_spikes
+		upgrade_tower
+		upgrade_hypocausts
+		upgrade_heating_pipes
+		upgrade_retinue
+		upgrade_road_tolls
+		upgrade_tavern
+	}
+	flags = {
+		holy_building
+		inspires_piety
+		is_destructible
+		cost_medium
+		is_historical
+	}
 	stage = {
 		allow = {
 		}
@@ -564,6 +696,7 @@ wonder_walls_ragusa = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			fort_level = 1
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.05
@@ -581,6 +714,8 @@ wonder_walls_ragusa = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
+			levy_size = 0.025
+			fort_level = 0.25
 		}
 		owner_modifier = {
 			monthly_character_prestige = 0.1
@@ -598,7 +733,9 @@ wonder_walls_ragusa = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			fort_level = 1
+			local_tax_modifier = 0.05
+			levy_size = 0.025
+			fort_level = 0.25
 			trade_route_value = 5
 			trade_route_wealth = 5
 		}
@@ -618,7 +755,9 @@ wonder_walls_ragusa = {
 		restore_cost_ticking = 2
 		upgrade_slots = 2
 		local_modifier = {
-			fort_level = 1
+			local_tax_modifier = 0.05
+			levy_size = 0.025
+			fort_level = 0.25
 			trade_route_value = 5
 			trade_route_wealth = 5
 		}
@@ -3086,7 +3225,6 @@ wonder_london_bridge = {
 		allow_construction = no
 		show_model = yes
 		is_in_water = yes
-		model = wonder_wall
 		potential = {
 			religion_group = christian
 		}

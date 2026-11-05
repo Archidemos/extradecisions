@@ -1,0 +1,46 @@
+# -*- ck2.history.provinces -*-
+
+# 2123 - Exeter
+
+# County Title
+title = c_exeter
+
+# Settlements
+max_settlements = 5
+
+b_exeter1 = castle
+b_exeter2 = city
+b_exeter3 = temple
+b_exeter4 = city
+#b_exeter5 = castle
+
+b_exeter6 = temple
+b_exeter7 = city
+
+# Misc
+culture = cornish
+religion = catholic
+
+# History
+200.1.1 = {
+	b_exeter1 = tribal
+	religion = celtic_pagan
+	culture = cornish
+	remove_settlement = b_exeter2
+	remove_settlement = b_exeter3
+	remove_settlement = b_exeter4
+}
+601.1.1 = {
+	religion = catholic
+	culture = cornish
+	b_exeter1 = castle
+	b_exeter2 = city
+	b_exeter3 = temple
+	b_exeter4 = city
+}
+
+1050.1.1 = { remove_settlement = b_exeter3 } # bishop seat(909-1050) moved to Exeter and the town wasn't otherwise important.
+1050.1.1={ b_exeter2 = temple }
+1068.1.1 = { remove_settlement = b_exeter4 } # Lydford sacked and the population moved
+1068.1.1={ b_exeter5 = castle }
+1200.1.1={ culture = english }

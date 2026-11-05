@@ -154,4 +154,159 @@ castle = {
 		
 		extra_tech_building_start = 0.8
 	}
+	
+	ca_culture_iberian_1 = {
+		desc = ca_culture_iberian_1_desc
+		potential = {
+			OR = {
+				culture_group = iberian
+				culture = andalusian
+				has_building = ca_culture_iberian_1
+			}
+		}
+		is_active_trigger = {
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 1
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		knights = 10
+		heavy_infantry = 10
+		heavy_infantry_morale = 0.1
+		knights_morale = 0.1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_iberian_2 = {
+		desc = ca_culture_iberian_1_desc
+		potential = {
+			OR = {
+				culture_group = iberian
+				culture = andalusian
+				has_building = ca_culture_iberian_1
+				has_building = ca_culture_iberian_2
+			}
+		}
+		is_active_trigger = {
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 2
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		upgrades_from = ca_culture_iberian_1
+		gold_cost = 300
+		build_time = 1095
+		knights = 20
+		heavy_infantry = 30
+		heavy_infantry_morale = 0.15
+		knights_morale = 0.15
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_iberian_3 = {
+		desc = ca_culture_iberian_1_desc
+		potential = {
+			OR = {
+				culture_group = iberian
+				culture = andalusian
+				has_building = ca_culture_iberian_1
+				has_building = ca_culture_iberian_2
+				has_building = ca_culture_iberian_3
+			}
+		}
+		is_active_trigger = {
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 4
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		upgrades_from = ca_culture_iberian_2
+		gold_cost = 400
+		build_time = 2190
+		knights = 30
+		heavy_infantry = 50
+		heavy_infantry_morale = 0.2
+		knights_morale = 0.2
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_iberian_4 = {
+		desc = ca_culture_iberian_1_desc
+		potential = {
+			OR = {
+				culture_group = iberian
+				culture = andalusian
+				has_building = ca_culture_iberian_1
+				has_building = ca_culture_iberian_2
+				has_building = ca_culture_iberian_3
+				has_building = ca_culture_iberian_4
+			}
+		}
+		is_active_trigger = {
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 5
+			ROOT = {
+				OR = {
+					culture_group = iberian
+					culture = andalusian
+				}
+			}
+		}
+		upgrades_from = ca_culture_iberian_3
+		gold_cost = 500
+		build_time = 2190
+		knights = 40
+		heavy_infantry = 60
+		heavy_infantry_morale = 0.25
+		light_infantry_morale = 0.25
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
 }

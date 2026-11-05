@@ -62,6 +62,12 @@ culture =
 		noOfFrames = 64
 	}
 
+	emblem = {
+		file = "gfx\\coats_of_arms\\Arko_emblem_cust.tga"
+		noOfFrames = 48
+		random = no
+	}
+
 	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
 	textures = {
 		texture = { #0
@@ -228,6 +234,12 @@ culture =
 		noOfFrames = 64
 	}
 
+	emblem = {
+		file = "gfx\\coats_of_arms\\Arko_emblem_cust.tga"
+		noOfFrames = 48
+		random = no
+	}
+
 	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
 	textures = {
 		texture = { #0
@@ -382,6 +394,21 @@ culture =
 		file = "gfx\\coats_of_arms\\emblem_muslim.dds"
 		noOfFrames = 1
 	}
+	emblem = {
+		file = "gfx\\coats_of_arms\\Arko_emblem_cust_MUSLIM.dds"
+		noOfFrames = 18
+		random = no
+	}
+	emblem = {
+		file = "gfx\\coats_of_arms\\Arko_emblem_cust_MUSLIM_metal.dds"
+		noOfFrames = 12
+		random = yes
+	}
+	emblem = {
+		file = "gfx\\coats_of_arms\\Arko_emblem_cust_MUSLIM_black.dds" #have to merge it on first set when save break release comes. !!attached code in dynasties
+		noOfFrames = 6
+		random = no
+	}
 
 	# WHEN ADDING NEW, ALWAYS ADD AT THE END
 	textures = {
@@ -496,6 +523,13 @@ culture = {
 
 	# WHEN ADDING NEW, ALWAYS ADD AT THE END
 	textures = {
+		texture = { #0
+			file = "gfx\\coats_of_arms\\Arkopack_norrois.tga"
+			size = { x = 10 y = 4 }
+			noOfFrames = 40
+			emblem = no
+			color = 3
+		}
 		texture = { #0
 			file = "gfx\\coats_of_arms\\solo_nordic_pagan.tga"
 			size = { x = 10 y = 10 }
@@ -1472,14 +1506,30 @@ culture =
 			color = 2
 			emblem = no
 		}		
-		texture = { #1
-			file = "gfx\\coats_of_arms\\solo_pagan_generic.tga"
-			size = { x = 10 y = 10 }
-			noOfFrames = 50
+		#texture = { #1
+		#	file = "gfx\\coats_of_arms\\solo_pagan_generic.tga"
+		#	size = { x = 10 y = 10 }
+		#	noOfFrames = 50
+		#	color = 2
+		#	emblem = yes			
+		#	random = yes			
+		#}
+		texture = { #texture = 1
+			file = "gfx\\coats_of_arms\\ARKOpack_hellenic_pattern2.tga"
+			size = { x = 10 y = 5 }
+			noOfFrames = 49
+			emblem = yes
+			emblem_chance = 30 #default is 50
 			color = 2
-			emblem = yes			
-			random = yes			
-		}	
+		}
+		texture = { #texture = 2
+			file = "gfx\\coats_of_arms\\ARKOpack_hellenic_titles.tga"
+			size = { x = 5 y = 5 }
+			noOfFrames = 25
+			emblem = no
+			color = 0
+			random = no # Do not use for random CoAs
+		}
 		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
 	}
 }
@@ -1787,6 +1837,14 @@ culture = {
 			noOfFrames = 26
 			color = 3
 			emblem = no
+		}
+		texture = { #texture = 2
+			file = "gfx\\coats_of_arms\\Arkopack_china_dyn.tga"
+			size = { x = 10 y = 10 }
+			noOfFrames = 50
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
 		}
 	}
 }

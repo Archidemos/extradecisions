@@ -1,0 +1,40 @@
+# -*- ck2.history.provinces -*-
+
+# 2285 - Mackay
+
+# County Title
+title = c_mackay
+
+# Settlements
+max_settlements = 4
+
+b_mackay1 = tribal
+b_mackay2 = temple
+#b_mackay3 = castle
+#b_mackay4 = city
+#b_mackay5 = temple
+#b_mackay6 = castle
+#b_mackay7 = city
+
+# Misc
+culture = scottish
+religion = catholic
+terrain = hills
+
+# History
+200.1.1 = {
+	religion = celtic_pagan
+}
+100.1.1 = {
+	b_mackay1 = tribal
+	remove_settlement = b_mackay2
+}
+600.1.1 = {
+	b_mackay1 = tribal
+	b_mackay2 = temple
+}
+601.1.1 = {
+	religion = catholic
+}
+
+1146.1.1 = { b_mackay1 = castle } 

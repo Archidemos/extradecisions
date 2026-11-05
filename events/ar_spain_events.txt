@@ -40,7 +40,7 @@ narrative_event = {
 			limit = {
 				OR = {
 					has_landed_title = k_leon
-					has_landed_title = k_castile
+					has_landed_title = k_castille
 					has_landed_title = k_asturias
 					has_landed_title = k_aragon
 					has_landed_title = k_spanish_galicia
@@ -75,6 +75,247 @@ narrative_event = {
 		name = "Currious development.."
 	}
 }
+
+# Frontier Event
+character_event = {
+    id = ARESP.3
+    desc = "As you arrive in this province that you have recently conquered from the heretics, you must now decide what policy to enact on this province to further reinforce this frontier."
+	picture = GFX_evt_crusaders
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+
+    option = {      
+        name = "Let us grant holding rights to a Holy Order."
+		FROM = {
+			location = {
+				add_province_modifier = {
+					name = spain_frontier_order_province
+					years = 10
+				}
+			}
+		}
+        piety = -100
+	    spawn_unit = {
+	        province = FROM
+	        home = FROM
+	        owner = FROM
+	        troops = {
+	            light_infantry = { 1000 1000 }
+	            heavy_infantry = { 400 400 }
+	            light_cavalry = { 300 300 }
+				knights = { 150 150 }
+	        }
+	        earmark = reconquista_event_troops
+	        attrition = 1
+	        maintenance_multiplier = 0
+	        reinforces = no
+	    }
+    }
+    option = {      
+        name = "Let us send the peasants here to populate and arm them."
+		FROM = {
+			location = {
+				add_province_modifier = {
+					name = spain_frontier_populate_province
+					years = 10
+				}
+			}
+		}
+	    spawn_unit = {
+	        province = FROM
+	        home = FROM
+	        owner = FROM
+	        troops = {
+	            light_infantry = { 500 500 }
+	            light_cavalry = { 150 150 }
+				horse_archers = { 50 50 }
+	        }
+	        earmark = reconquista_event_troops
+	        attrition = 1
+	        maintenance_multiplier = 0
+	        reinforces = no
+	    }
+        prestige = -150
+        scaled_wealth = { value = 1 min = 100 max = 1000 }
+    }
+	
+    option = {
+    	name = "Assert our faith or deal with the remaining Muslims"
+		FROM = { location = { religion = ROOT } }
+    	piety = -150
+    }
+	
+    option = {
+		name = "Let us let them be.."
+		wealth = 300
+		piety = 100
+		FROM = {
+			location = {
+				add_province_modifier = {
+					name = spain_frontier_peacefull_province
+					years = 10
+				}
+			}
+		}
+    	#if = {
+    	#	limit = {
+    	#		ROOT = { NOT = { has_character_modifier = spain_frontier_peacefull } }
+    	#	}
+		#	ROOT = {
+		#		add_character_modifier = {
+		#			name = spain_frontier_peacefull
+		#			years = 5
+		#		}
+		#	}
+    	#}
+    }
+}
+
+
+narrative_event = {
+	id = ARESP.4
+	title = "Cathedral of Cordoba"
+	desc = EVTDESCARESP4
+    is_triggered_only = yes
+	
+	picture = GFX_evt_reconquista_army
+	border = GFX_event_narrative_frame_war
+	portrait = ROOT
+	sound = crusade_start_01
+	
+    #trigger = {
+	#	NOT = { has_global_flag = reconquista_conflict_started }
+	#	start_date >= 718.1.1
+	#	is_save_game = no
+    #}
+	
+	option = {
+		trigger = {
+			religion_group = christian
+		}
+		name = "Gone with that mosque!"
+	}
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		name = "Ya Allah.."
+	}
+	option = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		name = "Currious development.."
+	}
+}
+
+character_event = {
+    id = ARESP.5
+    desc = "As our recent conquest of Cordoba, you stand in front of the Great Mosque of Cordoba. While the inhabitants and your soldiers watch on, they all wait for you to decide the fate of the Mosque."
+	picture = GFX_evt_hagia_sofia_muslim
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+	
+	immediate = {
+		set_global_flag = cordoba_destroyed
+    	random_realm_wonder = {
+    		limit = {
+    			has_wonder = wonder_mosque_cordoba
+    		}
+    		save_event_target_as = target_wonder
+    	}
+	}
+		
+    option = {
+        name = "Convert it to a Cathedral."
+		custom_tooltip = {
+			text = "The Great Mosque of Qurtubah will be destroyed and the Cathedral of Cordoba will be built in its stead."
+			hidden_tooltip = {
+				c_cordoba = {
+					location = {
+						destroy_wonder = yes
+						add_wonder = wonder_church_cordoba
+					} 
+				}
+			}
+		}
+		piety = 250
+		any_player = { narrative_event = { id = ARESP.4 days = 1 } }
+    }
+
+    option = {
+        name = "Destroy that heretic temple!"
+		c_cordoba = {
+			location = {
+				destroy_wonder = yes
+			} 
+		}
+		wealth = 1000
+		piety = -250
+	    spawn_unit = {
+	        province = 181
+	        home = ROOT
+	        owner = ROOT
+	        troops = {
+	            light_infantry = { 1000 1000 }
+	            heavy_infantry = { 400 400 }
+	            light_cavalry = { 300 300 }
+				knights = { 150 150 }
+	        }
+	        earmark = reconquista_event_troops
+	        attrition = 1
+	        maintenance_multiplier = 0
+	        reinforces = no
+	    }		
+		any_player = { narrative_event = { id = ARESP.4 days = 1 } }
+    }
+	
+    option = {
+		name = "Surely, that mosque is harmless.."
+		wealth = 250
+		prestige = 500
+		piety = 500
+		c_cordoba = {
+			location = {
+				add_province_modifier = { modifier = religious_tolerance years = 10 }
+			}
+		}
+		any_player = { narrative_event = { id = ARESP.4 days = 1 } }
+    }
+}
+
+
+character_event = {
+	id = ARESP.6
+	desc = "My Liege, we should not forget to ask rulers if they perhaps want to join our conflict. Their soldiers are greatly needed in such campagins.."
+    is_triggered_only = yes
+	
+	picture = GFX_evt_reconquista_army
+	border = GFX_event_normal_frame_war
+	
+	option = {
+		trigger = {
+			religion_group = muslim
+		}
+		prestige = 100
+		custom_tooltip = {
+			text = "In order to try asking rulers to join your Istirdad, go to a independent ruler in Iberia, right click on the charactrer and click the Ask to join Istirdad button."
+		}
+		name = "We will see."
+	}
+}
+
 
 ## Monthly / Bi-monthly Reconquista Preparations Events ## 
 # Tombola
@@ -122,15 +363,6 @@ character_event = {
     			trigger = {
     				NOT = {
     					has_character_modifier = reconquista_boat_event_cooldown
-    				}
-    			}
-    			character_event = { id = ARESP.104 }
-    		}
-    		# Boats
-    		2 = {
-    			trigger = {
-    				NOT = {
-    					has_character_modifier = reconquista_ally_event_cooldown
     				}
     			}
     			character_event = { id = ARESP.104 }
@@ -1643,7 +1875,7 @@ narrative_event = {
 
 narrative_event = {
     id = ARESP.114
-    title = "The Iberian Istridad"
+    title = "The Iberian Istirdad"
     desc = EVTDESCARESP114
     picture = GFX_evt_large_army
     border = GFX_event_narrative_frame_war
@@ -1892,6 +2124,422 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = ARESP.401
+	desc = "As you gather your courtiers and vassals alike, you begin the discussion. What topic will be spoken about this hearing."
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+
+	option = { ## MARTIAL
+		name = "Let's discuss the matter of our army"
+		character_event = { id = ARESP.402 days = 1 }
+	}
+
+	option = { ## ECONOMY
+		name = "We have to discuss about our economy"
+		set_character_flag = court_spain_stewardship
+		character_event = { id = ARESP.404 days = 1 }
+	}
+
+	option = { ## DIPLOMACY
+		name = "How about we talk about our current diplomacy"
+		set_character_flag = court_spain_diplomacy
+		character_event = { id = ARESP.406 days = 1 }
+	}
+}
+
+## MARTIAL
+
+character_event = {
+	id = ARESP.402
+	desc = "The dicussion starts about the army and there are indeed things to be looked at, but the matter of the army is complex and we have to choose a specific matter."
+	picture = GFX_evt_council
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "We need funds for a bigger army"
+		set_character_flag = court_spain_martial_1
+		character_event = { id = ARESP.403 days = 1 }
+	}
+
+	option = {
+		name = "Our army needs an inspection"
+		set_character_flag = court_spain_martial_2
+		character_event = { id = ARESP.403 days = 1 }
+	}
+}
+
+character_event = {
+	id = ARESP.403
+	desc = "The discussion is going rough and our subjects are not as convinced yet. We have convince them somehow.."
+	picture = GFX_evt_council
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "My Subjects, now is not the time for uncertainty.."
+		trigger = { 
+			diplomacy >= 15
+		}
+
+		tooltip_info = diplomacy
+		
+		hidden_tooltip = {
+			random_list = {
+				80 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				20 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "Warn them about our threatning neigbours"
+		hidden_tooltip = {
+			random_list = {
+				60 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				40 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "Perhaps a promise of gold will convince them.."
+		scaled_wealth = {
+			value = -0.5
+			min = -100
+		}
+		hidden_tooltip = {
+			random_list = {
+				70 = {
+					narrative_event = { id = ARESP.408 days = 2 } #We convince the court
+				}
+				30 = {
+					narrative_event = { id = ARESP.409 days = 2 } #We fail to convince the court
+				}
+			}
+		}
+	}
+}
+
+## ECONOMY
+
+character_event = {
+	id = ARESP.404
+	desc = "The dicussion starts about the army and there are indeed things to be looked at, but the matter of the army is complex and we have to choose a specific matter."
+	picture = GFX_evt_council
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "We need more taxation"
+		set_character_flag = court_spain_stewardship_1
+		character_event = { id = ARESP.405 days = 1 }
+	}
+	option = {
+		name = "My land needs to prosper"
+		set_character_flag = court_spain_stewardship_2
+		character_event = { id = ARESP.405 days = 1 }
+	}
+}
+
+character_event = {
+	id = ARESP.405
+	desc = "The discussion is going rough and our subjects are not as convinced yet. We have convince them somehow about our suggestions.."
+	picture = GFX_evt_council
+	
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "My loyal subjects, for the good of the realm..."
+		trigger = { 
+			diplomacy >= 15
+		}
+
+		tooltip_info = diplomacy
+		
+		hidden_tooltip = {
+			random_list = {
+				80 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				20 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "Insist uppon the need of this suggestion."
+		hidden_tooltip = {
+			random_list = {
+				60 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				40 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "Perhaps a promise of gold will convince them.."
+		scaled_wealth = {
+			value = -0.5
+			min = -100
+		}
+		hidden_tooltip = {
+			random_list = {
+				70 = {
+					narrative_event = { id = ARESP.408 days = 2 } #We convince the court
+				}
+				30 = {
+					narrative_event = { id = ARESP.409 days = 2 } #We fail to convince the court
+				}
+			}
+		}
+	}
+}
+
+## DIPLOMACY
+
+character_event = {
+	id = ARESP.406
+	desc = "The dicussion starts about the army and there are indeed things to be looked at, but the matter of the army is complex and we have to choose a specific matter."
+	picture = GFX_evt_council
+	
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "I need more centralization"
+		set_character_flag = court_spain_diplomacy_1
+		character_event = { id = ARESP.407 days = 1 }
+	}
+	option = {
+		name = "We need to apease our neighbours"
+		set_character_flag = court_spain_diplomacy_2
+		character_event = { id = ARESP.407 days = 1 }
+	}
+}
+
+character_event = {
+	id = ARESP.407
+	desc = "The discussion is going rough and our subjects are not as convinced yet. We have convince them somehow.."
+	picture = GFX_evt_council_quarrelling
+	
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "My Subjects, now is not the time for uncertainty.."
+		trigger = { 
+			diplomacy >= 15
+		}
+
+		tooltip_info = diplomacy
+		
+		hidden_tooltip = {
+			random_list = {
+				80 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				20 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "Warn them about our threatning neigbours"
+		hidden_tooltip = {
+			random_list = {
+				60 = {
+					character_event = { id = ARESP.408 days = 1 } #We convince the court
+				}
+				40 = {
+					character_event = { id = ARESP.409 days = 1 } #We fail to convince the court
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "Perhaps a promise of gold will convince them.."
+		scaled_wealth = {
+			value = -0.5
+			min = -100
+		}
+		hidden_tooltip = {
+			random_list = {
+				70 = {
+					narrative_event = { id = ARESP.408 days = 2 } #We convince the court
+				}
+				30 = {
+					narrative_event = { id = ARESP.409 days = 2 } #We fail to convince the court
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = ARESP.408
+	desc = "Success, it seems like our subjects are convinced enough and will start away with your proposed plans"
+	picture = GFX_evt_council_agreement
+	
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "A good ruler is a convincing ruler!"
+		wealth = 500
+		
+		## MARTIAL
+		if = {
+			limit = { ROOT = { has_character_flag = court_spain_martial_1 } }
+			ROOT = {
+				any_realm_province = {
+					add_province_modifier = {
+						name = court_success_martial_1
+						years = 2
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_character_flag = court_spain_martial_2 } }
+			ROOT = {
+				add_character_modifier = {
+					name = court_success_martial_2
+					years = 2
+				}
+			}
+		}
+		
+		## ECONOMY
+		else_if = {
+			limit = { ROOT = { has_character_flag = court_spain_stewardship_1 } }
+			ROOT = {
+				any_realm_province = {
+					add_province_modifier = {
+						name = court_success_stewardship_1
+						years = 2
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_character_flag = court_spain_stewardship_2 } }
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 14 }
+					}
+				}
+			}
+		}
+		
+		## DIPLOMACY
+		else_if = {
+			prestige = 150
+			limit = { ROOT = { has_character_flag = court_spain_diplomacy_1 } }
+			ROOT = {
+				add_character_modifier = {
+					name = court_success_diplomacy_1
+					years = 2
+				}
+			}
+		}
+		else_if = {
+			prestige = 150
+			limit = { ROOT = { has_character_flag = court_spain_diplomacy_2 } }
+			ROOT = {
+				add_character_modifier = {
+					name = court_success_diplomacy_2
+					years = 2
+				}
+			}
+		}
+		
+		custom_tooltip = {
+			text = "You end the court dicussion"
+			#hidden_tooltip = {
+			#	add_character_modifier = {
+			#		name = court_cooldown
+			#		years = 2
+			#		hidden = yes
+			#	}
+			#}
+		}
+		clr_character_flag = do_not_disturb
+		
+		clr_character_flag = court_spain_martial_1
+		clr_character_flag = court_spain_martial_2
+		clr_character_flag = court_spain_stewardship_1
+		clr_character_flag = court_spain_stewardship_2
+		clr_character_flag = court_spain_diplomacy_1
+		clr_character_flag = court_spain_diplomacy_2
+	}
+}
+
+character_event = {
+	id = ARESP.409
+	desc = "Failure, we were not able to convince our subjects. Perhaps we can use this time to properly plan a speech next time.."
+	picture = GFX_evt_leaving_table_angrily
+	
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "At last.."
+		prestige = -100
+		custom_tooltip = {
+			text = "You end the court dicussion"
+			#hidden_tooltip = {
+			#	add_character_modifier = {
+			#		name = court_cooldown
+			#		years = 2
+			#		hidden = yes
+			#	}
+			#}
+		}
+		clr_character_flag = do_not_disturb
+		
+		clr_character_flag = court_spain_martial_1
+		clr_character_flag = court_spain_martial_2
+		clr_character_flag = court_spain_stewardship_1
+		clr_character_flag = court_spain_stewardship_2
+		clr_character_flag = court_spain_diplomacy_1
+		clr_character_flag = court_spain_diplomacy_2
+	}
+}
 
 narrative_event = {
 	id = ARESP.1000

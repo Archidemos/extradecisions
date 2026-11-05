@@ -40,29 +40,25 @@ decisions = {
 		}
 		
 		allow = {
-			prestige = 2000
-			wealth = 700
-			has_landed_title = e_italy
+			prestige = 1500
+			wealth = 500
 			has_landed_title = c_roma
-			completely_controls = k_italy
-			completely_controls = k_valencia
-			completely_controls = k_aragon
-			completely_controls = k_carinthia
-			completely_controls = d_tunis
-			trigger_if = {
-				limit = { k_romagna = { is_titular = no } }
-				completely_controls = k_romagna
-			}
-			trigger_if = {
-				limit = { k_papacy = { is_titular = no } }
-				completely_controls = k_papacy
-			}
+			completely_controls = d_latium
+			completely_controls = d_apulia
+			completely_controls = d_sicily
+			completely_controls = d_north_sicily
+			completely_controls = d_venice
+			completely_controls = d_valencia
+			completely_controls = d_genoa
+			completely_controls = d_malta
+			completely_controls = d_valois
+			completely_controls = d_septimania
+			completely_controls = d_granada
+			
 			OR = {
 				religion_group = christian
 				religion = hellenic_pagan
 			}
-			completely_controls = k_sicily
-			completely_controls = k_sardinia
 			OR = {
 				#culture = greek
 				culture_group = latin
