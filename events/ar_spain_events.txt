@@ -2545,7 +2545,7 @@ narrative_event = {
 	id = ARESP.1000
 	title = "La Reconquista Completada"
 	desc = EVTDESCARESP1000
-    is_triggered_only = yes
+	is_triggered_only = yes
 	
 	picture = GFX_evt_reconquista_army
 	border = GFX_event_narrative_frame_war
@@ -2619,7 +2619,7 @@ character_event = {
     immediate = {
     	set_global_flag = reclamation_ai_cooldown
     	333 = {
-    		province_event = { id = ARESP.1002 }
+    		province_event = { id = ARESP.1003 }
     	}
     }
 }
@@ -2632,7 +2632,7 @@ province_event = {
 
 	immediate = {
 		333 = {
-			province_event = { id = ARESP.1003 days = 5475 }
+			province_event = { id = ARESP.1004 days = 5475 }
 		}
 	}
 }

@@ -95,7 +95,7 @@ decisions = {
 			is_feudal = yes
 			is_landed = yes
 			NOT = { government = warrior_order_government }
-			ROOT = { OR = { tier = DUKE tier = KING } }
+			lower_tier_than = KING
 			NOT = { has_global_flag = prussia_formed }
 			OR = {
 				capital_scope = { region = custom_eastern_baltic }
