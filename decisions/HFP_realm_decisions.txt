@@ -1412,9 +1412,9 @@ decisions = {
 				has_landed_title = d_oberbayern
 			}
 			OR = {
-				prestige = 750
+				prestige = 550
 				AND = {
-					intrigue = 20
+					diplomacy = 15
 					prestige = 150
 				}
 				AND = {
@@ -1427,7 +1427,7 @@ decisions = {
 							}
 						}
 					}
-					prestige = 150
+					prestige = 250
 				}
 			}
 			wealth = 250
@@ -1456,6 +1456,12 @@ decisions = {
 		effect = {
 			wealth = -250
 			prestige = 1000
+			create_bloodline = {
+				type = ar_austria_bloodline
+			}
+			add_claim = k_hungary
+			add_claim = k_bohemia
+			add_claim = k_croatia
 			set_global_flag = created_archduchy_of_austria
 			custom_tooltip = {
 				text = create_archduchy_of_austria_TT
