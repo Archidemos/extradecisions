@@ -1867,15 +1867,8 @@ decisions = {
 		potential = {
 			religion_group = christian
 			lower_tier_than = KING
-			NOT = { tier = KING }
-			OR = {
-				de_jure_vassal_or_below = k_burgundy
-				de_jure_vassal_or_below = k_schwaben
-				de_jure_vassal_or_below = k_upper_lorraine
-				de_jure_vassal_or_below = d_burgundy
-				de_jure_vassal_or_below = d_bourbon
-				#capital_scope = { region = world_europe_west_germania }
-				#capital_scope = { region = world_europe_west_francia }
+			top_liege = {
+				has_landed_title = e_hre
 			}
 			OR = {
 				culture_group = latin
@@ -1909,17 +1902,12 @@ decisions = {
 			war = no
 			is_adult = yes
 			prisoner = no
-			prestige = 3000
-			wealth = 500
+			prestige = 500
+			wealth = 250
 			OR = {
-				culture = swabian
-				culture = franconian
-				culture = old_frankish
-				culture = frankish
-				culture = occitan
-				culture = italian
-				culture = lombard
-				culture = arpitan
+				culture_group = latin
+				culture_group = central_germanic
+				culture_group = italian_group
 			}
 			has_landed_title = d_zahringen
 			has_landed_title = d_ratien
@@ -1938,172 +1926,177 @@ decisions = {
 
 		effect = {
 			wealth = -500
-			custom_tooltip = { text = custom_create_switzerland_tooltip }
-			hidden_tooltip = {
-				d_upper_burgundy = {
-					de_jure_liege = k_switzerland
-				}
-				k_switzerland = {
-					de_jure_liege = e_hre
-				}
-				e_hre = {
-					owner = {
-						k_switzerland = {
-							grant_title = PREV
-						}
-					}
-				}
-				primary_title = {
-					k_switzerland = {
-						copy_title_laws = PREV
-						set_flag = forced_confed_government
-					}
-				}
-				k_switzerland = {
-					grant_title_no_opinion = ROOT
-				}
-				set_government_type = ar_confederation_government
-				ROOT = {
-					add_law = law_voting_power_1
-					add_law = war_voting_power_1
-				}
-				destroy_landed_title = d_ratien
-				grant_title_no_opinion = d_swiss
-				d_ratien = {
-					any_direct_de_jure_vassal_title = {
-						de_jure_liege = d_swiss
-					}
-				}
-				d_swiss = {
-					de_jure_liege = k_switzerland
-				}
-				ROOT = {
-					any_demesne_title = {
-						limit = {
-							NOT = { title = k_switzerland }
-							NOT = { title = d_swiss }
-						}
-						unsafe_destroy_landed_title = THIS
-					}
-				}
-				e_hre = {
-					owner = {
-						any_realm_character = {
-							narrative_event = { id = HFP.40012}
-						}
-					}
-				}
-				set_defacto_liege = THIS
-				narrative_event = { id = HFP.40010 }
+			custom_tooltip = { 
+				text = "The preperations of the new governance will begin.."
+				ROOT = { narrative_event = { id = MP.1000 } }
 			}
-			custom_tooltip = {
-				text = making_swiss_guard
-				activate_title = { title = d_swiss_guard status = yes }
-				hidden_tooltip = {
-					create_character = {
-						random_traits = no
-						dynasty = random
-						religion = ROOT
-						culture = german
-						female = no
-						age = 33
-						trait = brilliant_strategist
-						trait = zealous
-						trait = humble
-						trait = ambitious
-						trait = strategist
-						trait = mountain_terrain_leader
-					}
-					new_character = {
-						wealth = 500
-						d_swiss_guard = {
-							grant_title = PREV
-							add_law = {
-								law = succ_open_elective
-								opinion_effect = no
-							}							
-						}
-						set_government_type = feudal_government
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 16
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 18
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 18
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 20
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 25
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 26
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = no
-							age = 28
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = yes
-							age = 16
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = random
-							religion = ROOT
-							culture = german
-							female = yes
-							age = 17
-						}
-					}
-					d_swiss_guard = {
-						holder_scope = {
-							set_defacto_liege = ROOT
-						}
-					}
-				}
-			}
+			#wealth = -500
+			#custom_tooltip = { text = custom_create_switzerland_tooltip }
+			#hidden_tooltip = {
+			#	d_upper_burgundy = {
+			#		de_jure_liege = k_switzerland
+			#	}
+			#	k_switzerland = {
+			#		de_jure_liege = e_hre
+			#	}
+			#	e_hre = {
+			#		owner = {
+			#			k_switzerland = {
+			#				grant_title = PREV
+			#			}
+			#		}
+			#	}
+			#	primary_title = {
+			#		k_switzerland = {
+			#			copy_title_laws = PREV
+			#			set_flag = forced_confed_government
+			#		}
+			#	}
+			#	k_switzerland = {
+			#		grant_title_no_opinion = ROOT
+			#	}
+			#	set_government_type = ar_confederation_government
+			#	ROOT = {
+			#		add_law = law_voting_power_1
+			#		add_law = war_voting_power_1
+			#	}
+			#	destroy_landed_title = d_ratien
+			#	grant_title_no_opinion = d_swiss
+			#	d_ratien = {
+			#		any_direct_de_jure_vassal_title = {
+			#			de_jure_liege = d_swiss
+			#		}
+			#	}
+			#	d_swiss = {
+			#		de_jure_liege = k_switzerland
+			#	}
+			#	ROOT = {
+			#		any_demesne_title = {
+			#			limit = {
+			#				NOT = { title = k_switzerland }
+			#				NOT = { title = d_swiss }
+			#			}
+			#			unsafe_destroy_landed_title = THIS
+			#		}
+			#	}
+			#	e_hre = {
+			#		owner = {
+			#			any_realm_character = {
+			#				narrative_event = { id = HFP.40012 }
+			#			}
+			#		}
+			#	}
+			#	set_defacto_liege = THIS
+			#	narrative_event = { id = HFP.40010 }
+			#}
+			#custom_tooltip = {
+			#	text = making_swiss_guard
+			#	activate_title = { title = d_swiss_guard status = yes }
+			#	#hidden_tooltip = {
+			#	#	create_character = {
+			#	#		random_traits = no
+			#	#		dynasty = random
+			#	#		religion = ROOT
+			#	#		culture = german
+			#	#		female = no
+			#	#		age = 33
+			#	#		trait = brilliant_strategist
+			#	#		trait = zealous
+			#	#		trait = humble
+			#	#		trait = ambitious
+			#	#		trait = strategist
+			#	#		trait = mountain_terrain_leader
+			#	#	}
+			#	#	new_character = {
+			#	#		wealth = 500
+			#	#		d_swiss_guard = {
+			#	#			grant_title = PREV
+			#	#			add_law = {
+			#	#				law = succ_open_elective
+			#	#				opinion_effect = no
+			#	#			}							
+			#	#		}
+			#	#		set_government_type = feudal_government
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 16
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 18
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 18
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 20
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 25
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 26
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = no
+			#	#			age = 28
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = yes
+			#	#			age = 16
+			#	#		}
+			#	#		create_character = {
+			#	#			random_traits = yes
+			#	#			dynasty = random
+			#	#			religion = ROOT
+			#	#			culture = german
+			#	#			female = yes
+			#	#			age = 17
+			#	#		}
+			#	#	}
+			#	#	d_swiss_guard = {
+			#	#		holder_scope = {
+			#	#			set_defacto_liege = ROOT
+			#	#		}
+			#	#	}
+			#	#}
+			#}
 		}
 	}
 	
