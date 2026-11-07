@@ -3311,366 +3311,366 @@ narrative_event = {
     }
 }
 
-#narrative_event = { #Event to choose between Imperial or Republic
-#	id = MP.1000
-#	title = "The Final Preperation"
-#	desc = "After liberating our people from squabbling imperial prince politics, we must make a decision, Do we want a protector, or a king?"
-#	sound = ar_army_marching
-#	
-#	picture = GFX_evt_elder_council
-#	
-#	border = GFX_event_narrative_frame_war
-#	
-#	is_triggered_only = yes
-#	
-#	option = {
-#		name = "I shall remain ruler"
-#		ai_chance = { factor = 90 }
-#		custom_tooltip = { text = custom_create_switzerland_tooltip }
-#		hidden_tooltip = {
-#			e_hre = {
-#				owner = {
-#					k_switzerland = {
-#						grant_title = PREV
-#					}
-#				}
-#			}
-#			k_switzerland = {
-#				grant_title_no_opinion = ROOT
-#			}
-#			destroy_landed_title = d_ratien
-#			grant_title_no_opinion = d_swiss
-#			d_ratien = {
-#				any_direct_de_jure_vassal_title = {
-#					de_jure_liege = d_swiss
-#				}
-#			}
-#			e_hre = {
-#				owner = {
-#					ROOT = {
-#						set_defacto_liege = PREV
-#					}
-#				}
-#			}
-#			d_zahringen = {
-#				de_jure_liege = k_switzerland
-#			}
-#			d_swiss = {
-#				de_jure_liege = k_switzerland
-#			}
-#			k_switzerland = {
-#				de_jure_liege = e_hre
-#			}
-#			ROOT = {
-#				any_demesne_title = {
-#					limit = {
-#						NOT = { title = k_switzerland }
-#						NOT = { title = d_swiss }
-#					}
-#					unsafe_destroy_landed_title = THIS
-#				}
-#			}
-#			e_hre = {
-#				owner = {
-#					any_realm_character = {
-#						narrative_event = { id = HFP.40012 }
-#					}
-#				}
-#			}
-#			#narrative_event = { id = HFP.40010 }
-#		}
-#		custom_tooltip = {
-#			text = making_swiss_guard
-#			activate_title = { title = d_swiss_guard status = yes }
-#			hidden_tooltip = {
-#				create_character = {
-#					random_traits = no
-#					dynasty = random
-#					religion = ROOT
-#					culture = german
-#					female = no
-#					age = 33
-#					trait = brilliant_strategist
-#					trait = zealous
-#					trait = humble
-#					trait = ambitious
-#					trait = strategist
-#					trait = mountain_terrain_leader
-#				}
-#				new_character = {
-#					wealth = 500
-#					d_swiss_guard = {
-#						grant_title = PREV
-#						add_law = {
-#							law = succ_open_elective
-#							opinion_effect = no
-#						}							
-#					}
-#					set_government_type = feudal_government
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 16
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 18
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 18
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 20
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 25
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 26
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 28
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = yes
-#						age = 16
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = yes
-#						age = 17
-#					}
-#				}
-#				d_swiss_guard = {
-#					holder_scope = {
-#						set_defacto_liege = ROOT
-#					}
-#				}
-#			}
-#		}
-#	}
-#
-#	option = {
-#		name = "We shall establish a Federation"
-#		ai_chance = { factor = 10 }
-#		custom_tooltip = { text = custom_create_switzerland_tooltip }
-#		hidden_tooltip = {
-#			e_hre = {
-#				owner = {
-#					k_switzerland = {
-#						grant_title = PREV
-#					}
-#				}
-#			}
-#			primary_title = {
-#				k_switzerland = {
-#					copy_title_laws = PREV
-#					set_flag = forced_confed_government
-#				}
-#			}
-#			k_switzerland = {
-#				grant_title_no_opinion = ROOT
-#			}
-#			set_government_type = ar_confederation_government
-#			ROOT = {
-#				add_law = law_voting_power_1
-#				add_law = war_voting_power_1
-#			}
-#			destroy_landed_title = d_ratien
-#			grant_title_no_opinion = d_swiss
-#			d_ratien = {
-#				any_direct_de_jure_vassal_title = {
-#					de_jure_liege = d_swiss
-#				}
-#			}
-#			e_hre = {
-#				owner = {
-#					ROOT = {
-#						set_defacto_liege = PREV
-#					}
-#				}
-#			}
-#			d_ratien = {
-#				any_direct_de_jure_vassal_title = {
-#					de_jure_liege = d_swiss
-#				}
-#			}
-#			d_zahringen = {
-#				de_jure_liege = k_switzerland
-#			}
-#			d_swiss = {
-#				de_jure_liege = k_switzerland
-#			}
-#			k_switzerland = {
-#				de_jure_liege = e_hre
-#			}
-#			ROOT = {
-#				any_demesne_title = {
-#					limit = {
-#						NOT = { title = k_switzerland }
-#						NOT = { title = d_swiss }
-#					}
-#					unsafe_destroy_landed_title = THIS
-#				}
-#			}
-#			e_hre = {
-#				owner = {
-#					any_realm_character = {
-#						narrative_event = { id = HFP.40012 }
-#					}
-#				}
-#			}
-#			#narrative_event = { id = HFP.40010 }
-#		}
-#		custom_tooltip = {
-#			text = making_swiss_guard
-#			activate_title = { title = d_swiss_guard status = yes }
-#			hidden_tooltip = {
-#				create_character = {
-#					random_traits = no
-#					dynasty = random
-#					religion = ROOT
-#					culture = german
-#					female = no
-#					age = 33
-#					trait = brilliant_strategist
-#					trait = zealous
-#					trait = humble
-#					trait = ambitious
-#					trait = strategist
-#					trait = mountain_terrain_leader
-#				}
-#				new_character = {
-#					wealth = 500
-#					d_swiss_guard = {
-#						grant_title = PREV
-#						add_law = {
-#							law = succ_open_elective
-#							opinion_effect = no
-#						}							
-#					}
-#					set_government_type = feudal_government
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 16
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 18
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 18
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 20
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 25
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 26
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = no
-#						age = 28
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = yes
-#						age = 16
-#					}
-#					create_character = {
-#						random_traits = yes
-#						dynasty = random
-#						religion = ROOT
-#						culture = german
-#						female = yes
-#						age = 17
-#					}
-#				}
-#				d_swiss_guard = {
-#					holder_scope = {
-#						set_defacto_liege = ROOT
-#					}
-#				}
-#			}
-#		}
-#	}
-#}
+narrative_event = { #Event to choose between Imperial or Republic
+	id = MP.1000
+	title = "The Final Preperation"
+	desc = "After liberating our people from squabbling imperial prince politics, we must make a decision, Do we want a protector, or a king?"
+	sound = ar_army_marching
+	
+	picture = GFX_evt_elder_council
+	
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "I shall remain ruler"
+		ai_chance = { factor = 90 }
+		custom_tooltip = { text = custom_create_switzerland_tooltip }
+		hidden_tooltip = {
+			e_hre = {
+				owner = {
+					k_switzerland = {
+						grant_title = PREV
+					}
+				}
+			}
+			k_switzerland = {
+				grant_title_no_opinion = ROOT
+			}
+			destroy_landed_title = d_ratien
+			grant_title_no_opinion = d_swiss
+			d_ratien = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = d_swiss
+				}
+			}
+			e_hre = {
+				owner = {
+					ROOT = {
+						set_defacto_liege = PREV
+					}
+				}
+			}
+			d_zahringen = {
+				de_jure_liege = k_switzerland
+			}
+			d_swiss = {
+				de_jure_liege = k_switzerland
+			}
+			k_switzerland = {
+				de_jure_liege = e_hre
+			}
+			ROOT = {
+				any_demesne_title = {
+					limit = {
+						NOT = { title = k_switzerland }
+						NOT = { title = d_swiss }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			e_hre = {
+				owner = {
+					any_realm_character = {
+						narrative_event = { id = HFP.40012 }
+					}
+				}
+			}
+			#narrative_event = { id = HFP.40010 }
+		}
+		custom_tooltip = {
+			text = making_swiss_guard
+			activate_title = { title = d_swiss_guard status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					religion = ROOT
+					culture = german
+					female = no
+					age = 33
+					trait = brilliant_strategist
+					trait = zealous
+					trait = humble
+					trait = ambitious
+					trait = strategist
+					trait = mountain_terrain_leader
+				}
+				new_character = {
+					wealth = 500
+					d_swiss_guard = {
+						grant_title = PREV
+						add_law = {
+							law = succ_open_elective
+							opinion_effect = no
+						}							
+					}
+					set_government_type = feudal_government
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 20
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 25
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 26
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 28
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 17
+					}
+				}
+				d_swiss_guard = {
+					holder_scope = {
+						set_defacto_liege = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "We shall establish a Federation"
+		ai_chance = { factor = 10 }
+		custom_tooltip = { text = custom_create_switzerland_tooltip }
+		hidden_tooltip = {
+			e_hre = {
+				owner = {
+					k_switzerland = {
+						grant_title = PREV
+					}
+				}
+			}
+			primary_title = {
+				k_switzerland = {
+					copy_title_laws = PREV
+					set_flag = forced_confed_government
+				}
+			}
+			k_switzerland = {
+				grant_title_no_opinion = ROOT
+			}
+			set_government_type = ar_confederation_government
+			ROOT = {
+				add_law = law_voting_power_1
+				add_law = war_voting_power_1
+			}
+			destroy_landed_title = d_ratien
+			grant_title_no_opinion = d_swiss
+			d_ratien = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = d_swiss
+				}
+			}
+			e_hre = {
+				owner = {
+					ROOT = {
+						set_defacto_liege = PREV
+					}
+				}
+			}
+			d_ratien = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = d_swiss
+				}
+			}
+			d_zahringen = {
+				de_jure_liege = k_switzerland
+			}
+			d_swiss = {
+				de_jure_liege = k_switzerland
+			}
+			k_switzerland = {
+				de_jure_liege = e_hre
+			}
+			ROOT = {
+				any_demesne_title = {
+					limit = {
+						NOT = { title = k_switzerland }
+						NOT = { title = d_swiss }
+					}
+					unsafe_destroy_landed_title = THIS
+				}
+			}
+			e_hre = {
+				owner = {
+					any_realm_character = {
+						narrative_event = { id = HFP.40012 }
+					}
+				}
+			}
+			#narrative_event = { id = HFP.40010 }
+		}
+		custom_tooltip = {
+			text = making_swiss_guard
+			activate_title = { title = d_swiss_guard status = yes }
+			hidden_tooltip = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					religion = ROOT
+					culture = german
+					female = no
+					age = 33
+					trait = brilliant_strategist
+					trait = zealous
+					trait = humble
+					trait = ambitious
+					trait = strategist
+					trait = mountain_terrain_leader
+				}
+				new_character = {
+					wealth = 500
+					d_swiss_guard = {
+						grant_title = PREV
+						add_law = {
+							law = succ_open_elective
+							opinion_effect = no
+						}							
+					}
+					set_government_type = feudal_government
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 18
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 20
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 25
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 26
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = no
+						age = 28
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 16
+					}
+					create_character = {
+						random_traits = yes
+						dynasty = random
+						religion = ROOT
+						culture = german
+						female = yes
+						age = 17
+					}
+				}
+				d_swiss_guard = {
+					holder_scope = {
+						set_defacto_liege = ROOT
+					}
+				}
+			}
+		}
+	}
+}
 
 #narrative_event = {
 #	id = MP.405

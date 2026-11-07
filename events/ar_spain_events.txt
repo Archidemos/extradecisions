@@ -1929,10 +1929,12 @@ character_event = {
 	immediate = {
 		remove_character_modifier = reclamation_preparation_left
 		disband_event_forces = reclamation_event_troops
+		clr_global_flag = active_reclamation
 	}
 
 	option = {
 		name = EVTOPTA_HF_49207
+		clr_character_flag = currently_reclaiming_iberia
 	}
 }
 
@@ -1951,10 +1953,812 @@ character_event = {
     	has_global_flag = active_reclamation
     }
 
-    option = {      
+    option = {   
         name = EVTOPTA_HF_49249
     }
 
+    after = {
+    	# Find suitable target for Reconquista Adventurers
+    	if = {
+    		limit = {
+				AND = {
+					ai = yes
+					has_character_flag = currently_reclaiming_iberia
+				}
+    		}
+    		hidden_tooltip = {
+    			# Navarra or Aragon is held by a Muslim
+    			if = {
+    				limit = {
+    					any_province = {
+    						county = {
+	    						OR = {
+	    							region = custom_aragon
+	    							region = custom_navarra
+	    						}
+    						}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}    						
+							}
+    					}
+    				}
+    				random_list = {
+    					# Aragon
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_aragon
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_aragon
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_aragon
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_aragon
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    					# Navarra
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_navarra
+    								}
+    								owner = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    									OR = {
+    										independent = yes
+    										NOT = {
+	    										top_liege = {
+	    											religion_group = muslim
+	    										}
+	    									}
+    									}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_navarra
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_navarra
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_navarra
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    			# Leon, Galicia or Castille is held by a Muslim
+    			else_if = {
+    				limit = {
+    					any_province = {
+    						county = {
+	    						OR = {
+	    							region = custom_leon
+	    							region = custom_galicia
+	    							region = custom_castille
+	    						}
+    						}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    				random_list = {
+    					# Leon
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_leon
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_leon
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_leon
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_leon
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    					# Galicia
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_galicia
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_galicia
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_galicia
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_galicia
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    					# Castille
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_castille
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_castille
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_castille
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_castille
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    			# Beja or Valencia is held by a Muslim
+    			else_if = {
+    				limit = {
+    					any_province = {
+    						county = {
+    							OR = {
+    								region = custom_beja
+    								region = custom_valencia
+    							}
+    						}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    				random_list = {
+    					# Beja
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_beja
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_beja
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_beja
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_beja
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    					# Valencia
+    					1 = {
+    						trigger = {
+    							any_province = {
+    								county = {
+    									region = custom_valencia
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    						}
+    						random_province = {
+    							limit = {
+    								county = {
+    									region = custom_valencia
+    								}
+    								owner = {
+    									OR = {
+		    								AND = {
+		    									independent = yes
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    								top_liege = {
+		    									NOT = {
+		    										religion_group = muslim
+		    									}
+		    								}
+		    							}
+    								}
+    							}
+    							owner = {
+    								if = {
+    									limit = {
+    										independent = yes
+    									}
+    									ROOT = {
+    										unsafe_war = {
+    											target = PREV
+    											casus_belli = reclamation_valencia
+    										}
+    									}
+    								}
+    								else = {
+    									top_liege = {
+    										ROOT = {
+    											unsafe_war = {
+    												target = PREV
+    												casus_belli = reclamation_valencia
+    											}
+    										}
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    			}
+    			# Cordoba is held by a Muslim
+    			else_if = {
+    				limit = {
+    					any_province = {
+    						county = {
+    							region = custom_cordoba
+    						}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+    				random_province = {
+						limit = {
+							county = {
+								region = custom_cordoba
+							}
+							owner = {
+								OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+							}
+						}
+						owner = {
+							if = {
+								limit = {
+									independent = yes
+								}
+								ROOT = {
+									unsafe_war = {
+										target = PREV
+										casus_belli = reclamation_cordoba
+									}
+								}
+							}
+							else = {
+								top_liege = {
+									ROOT = {
+										unsafe_war = {
+											target = PREV
+											casus_belli = reclamation_cordoba
+										}
+									}
+								}
+							}
+						}
+					}
+    			}
+    			# Granada is held by a Muslim
+    			else_if = {
+    				limit = {
+    					any_province = {
+    						county = {
+								region = custom_granada
+							}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+					random_province = {
+						limit = {
+							county = {
+								region = custom_granada
+							}
+							owner = {
+								OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+							}
+						}
+						owner = {
+							if = {
+								limit = {
+									independent = yes
+								}
+								ROOT = {
+									unsafe_war = {
+										target = PREV
+										casus_belli = reclamation_granada
+									}
+								}
+							}
+							else = {
+								top_liege = {
+									ROOT = {
+										unsafe_war = {
+											target = PREV
+											casus_belli = reclamation_granada
+										}
+									}
+								}
+							}
+						}
+					}
+    			}
+    			# Balearic Islands is held by a Muslim
+    			else_if = {
+    				limit = {
+    					any_province = {
+    						county = {
+								region = custom_balearic
+							}
+    						owner = {
+    							OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+    						}
+    					}
+    				}
+					random_province = {
+						limit = {
+							county = {
+								region = custom_balearic
+							}
+							owner = {
+								OR = {
+    								AND = {
+    									independent = yes
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    								top_liege = {
+    									NOT = {
+    										religion_group = muslim
+    									}
+    								}
+    							}
+							}
+						}
+						owner = {
+							if = {
+								limit = {
+									independent = yes
+								}
+								ROOT = {
+									unsafe_war = {
+										target = PREV
+										casus_belli = reclamation_balearic
+									}
+								}
+							}
+							else = {
+								top_liege = {
+									ROOT = {
+										unsafe_war = {
+											target = PREV
+											casus_belli = reclamation_balearic
+										}
+									}
+								}
+							}
+						}
+					}
+    			}
+    		}
+    	}
+    }
 }
 
 
