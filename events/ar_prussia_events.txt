@@ -51,11 +51,44 @@ narrative_event = {
 		#	years = -1
 		#}		
 		activate_title = { title = k_prussia status = yes }
+		if = {
+			limit = { top_liege = { has_landed_title = e_hre } }
+			e_hre = {
+				owner = {
+					k_prussia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { top_liege = { has_landed_title = e_wendish_empire } }
+			e_wendish_empire = {
+				owner = {
+					k_prussia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
 		primary_title = {
 			k_prussia = {
 				grant_title = ROOT
 				copy_title_laws = PREV
 				copy_title_history = PREV
+			}
+		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = { top_liege = { has_landed_title = e_hre } }
+				e_hre = {
+					owner = {
+						ROOT = {
+							set_defacto_liege = PREV
+						}
+					}
+				}
 			}
 		}
 		hidden_tooltip = {
@@ -68,7 +101,19 @@ narrative_event = {
 		d_pomeralia = { de_jure_liege = k_prussia }
 		d_pommerania = { de_jure_liege = k_prussia }
 		d_lubusz = { de_jure_liege = k_prussia }
-		k_prussia = { de_jure_liege = e_null }
+		
+		if = {
+			limit = { top_liege = { has_landed_title = e_hre } }
+			k_prussia = { de_jure_liege = e_hre }
+		}
+		else_if = {
+			limit = { top_liege = { has_landed_title = e_wendish_empire } }
+			k_prussia = { de_jure_liege = e_wendish_empire }
+		}
+		else = {
+			k_prussia = { de_jure_liege = e_null }
+		}
+		
 		k_prussia = {
 			add_law = succ_open_elective
 			#set_title_landless = { title = THIS status = yes }
@@ -88,6 +133,20 @@ narrative_event = {
 				unsafe_destroy_landed_title = THIS
 			}
 		}
+
+		hidden_tooltip = {
+			if = {
+				limit = { top_liege = { has_landed_title = e_hre } }
+				e_hre = {
+					owner = {
+						ROOT = {
+							set_defacto_liege = PREV
+						}
+					}
+				}
+			}
+		}
+
 		custom_tooltip = {
 			text = "You will unlock the Veteran Order Knights retinue as well as the Teutonic Knights retinue."
 		}
@@ -211,6 +270,26 @@ narrative_event = {
 		ai_chance = { factor = 50 }
 		
 		activate_title = { title = k_prussia status = yes }
+		if = {
+			limit = { top_liege = { has_landed_title = e_hre } }
+			e_hre = {
+				owner = {
+					k_prussia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { top_liege = { has_landed_title = e_wendish_empire } }
+			e_wendish_empire = {
+				owner = {
+					k_prussia = {
+						grant_title = PREV
+					}
+				}
+			}
+		}
 		primary_title = {
 			k_prussia = {
 				grant_title = ROOT
@@ -218,11 +297,36 @@ narrative_event = {
 				copy_title_history = PREV
 			}
 		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = { top_liege = { has_landed_title = e_hre } }
+				e_hre = {
+					owner = {
+						ROOT = {
+							set_defacto_liege = PREV
+						}
+					}
+				}
+			}
+		}
+
 		d_prussia = { de_jure_liege = k_prussia }
 		d_pomeralia = { de_jure_liege = k_prussia }
 		d_pommerania = { de_jure_liege = k_prussia }
 		d_lubusz = { de_jure_liege = k_prussia }
-		k_prussia = { de_jure_liege = e_null }
+		if = {
+			limit = { top_liege = { has_landed_title = e_hre } }
+			k_prussia = { de_jure_liege = e_hre }
+		}
+		else_if = {
+			limit = { top_liege = { has_landed_title = e_wendish_empire } }
+			k_prussia = { de_jure_liege = e_wendish_empire }
+		}
+		else = {
+			k_prussia = { de_jure_liege = e_null }
+		}
+		
 		ROOT = {
 			any_demesne_title = {
 				limit = { 

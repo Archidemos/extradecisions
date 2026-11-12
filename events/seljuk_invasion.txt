@@ -32,7 +32,7 @@ narrative_event = {
 					name = seljuk_invasion
 					value = delayed_random
 				}
-				year >= 1120
+				year >= 1030
 				total_years_played = 50
 			}
 			AND = {
@@ -40,7 +40,7 @@ narrative_event = {
 					name = seljuk_invasion
 					value = historical
 				}
-				year = 1120
+				year = 1030
 			}
 			AND = {
 				has_game_rule = {
@@ -57,7 +57,10 @@ narrative_event = {
 			}
 		}
 		controls_religion = yes # Let it happen for the Pope. He's always around.
-		NOT = { has_global_flag = ar_seljuk_spawned }
+		custom_tooltip = {
+			text = "The Seljuks has not already spawned"
+			NOT = { has_global_flag = ar_seljuk_spawned }
+		}
 		NOT = { has_global_flag = seljuk_already_exsists }
 	}
 	
@@ -68,19 +71,24 @@ narrative_event = {
 		if = {
 			limit = {
 				any_character = {
-					has_character_flag = seljuk_himself
-					#demesne_size = 1
+					OR = {
+						has_character_flag = seljuk_himself_beg
+						has_character_flag = seljuk_himself_alp
+					}
+					demesne_size = 1
 					ai = yes
 				}
 			}
 			any_character = {
 				limit = {
-					has_character_flag = seljuk_himself
-					#demesne_size = 1
+					OR = {
+						has_character_flag = seljuk_himself_beg
+						has_character_flag = seljuk_himself_alp
+					}
+					demesne_size = 1
 					ai = yes
 				}
 				save_event_target_as = is_seljuk_ar
-				set_character_flag = ar_is_sejluk_ar
 			}
 			event_target:is_seljuk_ar = {
 				add_trait = great_conquerer

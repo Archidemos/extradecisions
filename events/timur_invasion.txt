@@ -50,7 +50,10 @@ narrative_event = {
 				total_years_played <= 1
 			}
 		}
-		NOT = { has_global_flag = timur_spawned }
+		custom_tooltip = {
+			text = "Timur has not already spawned"
+			NOT = { has_global_flag = timur_spawned }
+		}
 		NOT = {
 			has_game_rule = {
 				name = timur_invasion

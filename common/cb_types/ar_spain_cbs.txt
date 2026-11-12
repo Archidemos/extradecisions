@@ -204,22 +204,22 @@ reclamation_leon = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -439,22 +439,22 @@ reclamation_castille = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -697,22 +697,22 @@ reclamation_aragon = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -934,22 +934,22 @@ reclamation_galicia = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -1162,16 +1162,16 @@ reclamation_beja = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -1380,22 +1380,22 @@ reclamation_granada = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -1609,22 +1609,22 @@ reclamation_cordoba = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -1833,22 +1833,22 @@ reclamation_valencia = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -2054,22 +2054,22 @@ reclamation_navarra = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 
@@ -2267,22 +2267,22 @@ reclamation_balearic = {
 			}
 			clr_character_flag = promised_reclamation_ally 
 		}
-		reconquista_win_effect = yes
+		reclamation_win_effect = yes
 	}
 
 	on_fail = {
-		clr_global_flag = active_reclamation
+		ROOT = {
+			character_event = { id = ARESP.1005 }
+		}
 	}
 	
 	on_reverse_demand = {
-		reconquista_lose_effect = yes
-		clr_global_flag = active_reclamation
+		reclamation_lose_effect = yes
 	}
 
 	on_invalidation = {
-		clr_global_flag = active_reclamation
 		ROOT = {
-			character_event = { id = HF.49200 }
+			character_event = { id = ARESP.1005 }
 		}
 	}
 

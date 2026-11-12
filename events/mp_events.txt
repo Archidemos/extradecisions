@@ -240,6 +240,31 @@ narrative_event = {
 		
 		c_kermanshah = { location = { add_province_modifier = { name = kurdish_heart_world years = -1 } } }
 		c_byzantion = { location = { add_province_modifier = { name = nerf_constantinople years = -1 } } }
+		#if = {
+        #    limit = { date = 1085.1.1 }
+        #    set_global_flag = umayyads_invades
+		#}
+		if = {
+            limit = { date = 1056.1.1 }
+            set_global_flag = ar_seljuk_spawned
+		}
+		if = {
+            limit = { date = 1220.1.1 }
+            set_global_flag = mongol_empire_arrival
+		}
+		if = {
+            limit = { date = 1077.1.1 }
+            set_global_flag = rum_spawned
+		}
+		if = {
+            limit = { date = 1310.1.1 }
+            set_global_flag = timur_spawned
+		}
+		#if = {
+        #    limit = { date = 1360.1.1 }
+        #    set_global_flag = mughal_invades
+		#	 any_independent_ruler = { wealth = 5000 }
+		#}
 		any_province = {
 			limit = {
 				has_trade_post = yes

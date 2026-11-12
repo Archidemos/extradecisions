@@ -84,66 +84,6 @@ decisions = {
 			factor = 1
 		}
 	}
-
-	form_kingdom_prussia = {
-		is_high_prio = yes
-		only_playable = yes
-		only_independent = yes
-		ai_check_interval = 240
-		
-		potential = {
-			is_feudal = yes
-			is_landed = yes
-			NOT = { government = warrior_order_government }
-			lower_tier_than = KING
-			NOT = { has_global_flag = prussia_formed }
-			OR = {
-				capital_scope = { region = custom_eastern_baltic }
-				any_realm_province = {
-					is_capital = yes
-					OR = {
-						de_jure_liege_or_above = k_pomerania
-						de_jure_liege_or_above = k_saxony
-						de_jure_liege_or_above = k_poland
-					}
-				}
-				dynasty = 12476
-			}
-			OR = {
-				culture_group = north_germanic
-				culture_group = central_germanic
-				culture_group = west_slavic
-				culture_group = baltic
-			}
-		}
-
-		allow = {
-			is_adult = yes
-			ROOT = { OR = { tier = DUKE tier = KING } }
-			religion_group = christian
-			completely_controls = d_prussia
-			completely_controls = d_pomeralia
-			completely_controls = d_pommerania
-			completely_controls = c_brandenburg
-			wealth = 400
-			prestige = 300
-			martial = 12
-			independent = yes
-		}
-		
-		effect = {
-			custom_tooltip = {
-				text = "You will get the option to decide to become a Military Order or a Kingdom"
-				set_global_flag = prussia_formed
-				hidden_tooltip = {
-					ROOT = { narrative_event = { id = PRUS.102 } }
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 }
 
 targetted_decisions = {

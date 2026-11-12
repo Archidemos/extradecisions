@@ -547,13 +547,13 @@ character_event = {
 		FROM = {
 			has_landed_title = e_seljuk_turks
 			ai = yes
-			NOT = { has_global_flag = timur_playable_triggered }
+			NOT = { has_global_flag = seljuk_playable_triggered }
 		}
 	}
 
 	immediate = {
 		any_player = { narrative_event = { id = SELJEX.100 } }
-		set_global_flag = timur_playable_triggered
+		set_global_flag = seljuk_playable_triggered
 	}
 }
 

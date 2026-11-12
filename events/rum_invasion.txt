@@ -32,7 +32,7 @@ narrative_event = {
 					name = rum_invasion
 					value = delayed_random
 				}
-				year >= 1200
+				year >= 1070
 				total_years_played = 50
 			}
 			AND = {
@@ -40,7 +40,7 @@ narrative_event = {
 					name = rum_invasion
 					value = historical
 				}
-				year = 1200
+				year = 1070
 			}
 			AND = {
 				has_game_rule = {
@@ -50,7 +50,10 @@ narrative_event = {
 				total_years_played <= 1
 			}
 		}
-		NOT = { has_global_flag = rum_spawned }
+		custom_tooltip = {
+			text = "Rum has not already spawned"
+			NOT = { has_global_flag = rum_spawned }
+		}
 		NOT = {
 			has_game_rule = {
 				name = rum_invasion

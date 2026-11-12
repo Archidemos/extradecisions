@@ -1338,7 +1338,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 10 10 }
 	        	}
@@ -1353,7 +1353,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 20 20 }
 	        	}
@@ -1368,7 +1368,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 30 30 }
 	        	}
@@ -1383,7 +1383,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 40 40 }
 	        	}
@@ -1398,7 +1398,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 50 50 }
 	        	}
@@ -1413,7 +1413,7 @@ character_event = {
         	spawn_fleet = {
         		province = closest
         		owner = ROOT
-        		earmark = conscripted_reconquista_ships
+        		earmark = conscripted_reclamation_ships
         		troops = {
         			galleys = { 60 60 }
         		}
@@ -1423,7 +1423,7 @@ character_event = {
         	spawn_fleet = {
         		province = closest
         		owner = ROOT
-        		earmark = conscripted_reconquista_ships
+        		earmark = conscripted_reclamation_ships
         		troops = {
         			galleys = { 70 70 }
         		}
@@ -1450,7 +1450,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 20 20 }
 	        	}
@@ -1465,7 +1465,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 40 40 }
 	        	}
@@ -1480,7 +1480,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 60 60 }
 	        	}
@@ -1495,7 +1495,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 80 80 }
 	        	}
@@ -1510,7 +1510,7 @@ character_event = {
         	spawn_fleet = {
 	        	province = closest
 	        	owner = ROOT
-	        	earmark = conscripted_reconquista_ships
+	        	earmark = conscripted_reclamation_ships
 	        	troops = {
 	        		galleys = { 100 100 }
 	        	}
@@ -1525,7 +1525,7 @@ character_event = {
         	spawn_fleet = {
         		province = closest
         		owner = ROOT
-        		earmark = conscripted_reconquista_ships
+        		earmark = conscripted_reclamation_ships
         		troops = {
         			galleys = { 120 120 }
         		}
@@ -1535,7 +1535,7 @@ character_event = {
         	spawn_fleet = {
         		province = closest
         		owner = ROOT
-        		earmark = conscripted_reconquista_ships
+        		earmark = conscripted_reclamation_ships
         		troops = {
         			galleys = { 140 140 }
         		}
@@ -3450,4 +3450,54 @@ province_event = {
 	immediate = {
 		clr_global_flag = reclamation_ai_cooldown
 	}
+}
+
+# Clean up event for death in the Reconquista
+character_event = {
+    id = ARESP.1004
+    hide_window = yes
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    	OR = {
+    		has_character_flag = currently_reclaiming_iberia
+    		has_character_flag = ex_istirdad
+    	}
+    }
+
+    immediate = {
+    	disband_event_forces = reconquista_event_troops
+    	disband_event_forces = reconquista_event_troops_rabble
+    	character_event = { id = ARESP.1005 }
+    }
+}
+
+# Clean up event post-Reconquista
+character_event = {
+    id = ARESP.1005
+   	hide_window = yes
+    is_triggered_only = yes
+    has_dlc = "Holy Fury"
+    trigger = {
+    
+    }
+
+    immediate = {
+    	clr_character_flag = currently_reclaiming_iberia
+    	clr_global_flag = active_reclamation
+    	any_character = {
+    		limit = {
+    			has_character_flag = promised_reclamation_ally
+    		}
+    		clr_character_flag = promised_reclamation_ally
+    	}
+    	any_character = {
+    		limit = {
+    			has_character_flag = reclamation_sponsor
+    		}
+    		clr_character_flag = reclamation_sponsor
+    	}
+    	disband_event_forces = conscripted_reclamation_ships
+    	disband_event_forces = reclamation_event_troops_rabble
+    }
 }

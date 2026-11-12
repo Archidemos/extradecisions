@@ -1,52 +1,90 @@
 decisions = {
 
-	create_navarra = {
-		only_playable = yes
+	form_grand_franconia = {
 		is_high_prio = yes
-		ai_check_interval = 12
+		only_rulers = yes
+		ai_check_interval = 24
 		
 		potential = {
-			start_date == 769.1.1
-			lower_real_tier_than = KING
-			NOT = { has_global_flag = navarra_formed }
-			culture_group = iberian
+			is_feudal = yes
+			is_landed = yes
+			capital_scope = { region = world_europe_west_germania }
 			religion_group = christian
-			any_realm_province = {
-				is_capital = yes
-				de_jure_liege_or_above = e_spain
+			top_liege = {
+				has_landed_title = e_hre
 			}
+			culture = franconian
+			NOT = { has_global_flag = created_grand_franconia }
 		}
 		
 		allow = {
-			culture_group = iberian
-			religion_group = christian
+			tier = KING
 			is_adult = yes
 			war = no
-			prisoner = no
-			independent = yes
-			prestige = 500
-			piety = 150
-			diplomacy = 15
-			has_landed_title = d_navarra
-			has_landed_title = d_najera
+			religion_group = christian
+			has_landed_title = k_franconia
+			stewardship = 15
+			prestige = 1000
+			wealth = 450
+			completely_controls = d_pfalz
+			completely_controls = d_meissen
+			completely_controls = d_saxewittenberg
+			custom_tooltip = {
+				text = emperor_has_hre
+
+				liege = {
+					has_landed_title = e_hre
+				}
+			}
+			custom_tooltip = {
+				text = emperor_likes_you_quite_a_lot_TT 
+
+				e_hre = {
+					owner = {
+						opinion = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+			}
 		}
 		
 		effect = {
-			prestige = -500
-			activate_title = { title = k_navarra status = yes }
-			grant_title = k_navarra
-			k_navarra = {
-				copy_title_laws = PREV
-				copy_title_history = PREV
+			wealth = -450
+			prestige = -1000
+			create_bloodline = {
+				type = ar_franconia_bloodline
 			}
-			d_navarra = { de_jure_liege = k_navarra }
-			d_najera = { de_jure_liege = k_navarra }
-			set_global_flag = navarra_formed
-			hidden_tooltip = { character_event = { id = ARSM.1 days = 1 } }
-		}
-
-		ai_will_do = {
-			factor = 1
+			set_global_flag = created_grand_franconia
+			d_pfalz = {
+				de_jure_liege = k_franconia
+			}
+			d_meissen = {
+				de_jure_liege = k_franconia
+			}
+			d_saxewittenberg = {
+				de_jure_liege = k_franconia
+			}
+			
+			hidden_effect = {
+				k_franconia = {
+					set_coa = k_grand_franconia
+					set_name = "Grosfranken"
+				}
+			}
+			ROOT = { narrative_event = { id = HFP.40038 } }
+			any_playable_ruler = {
+				limit = {
+					OR = {
+						has_landed_title = e_hre
+						top_liege = {
+							has_landed_title = e_hre
+						}
+					}
+				}
+				narrative_event = { id = HFP.40038 }
+			}
 		}
 	}
 	

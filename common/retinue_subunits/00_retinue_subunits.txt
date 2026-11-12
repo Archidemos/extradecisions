@@ -2001,8 +2001,10 @@ RETTYPE_K_PRUSSIA =
 	
 	potential = {
 		is_nomadic = no
-		AND = {
+		OR = {
 			ROOT = { has_landed_title = k_prussia }
+			ROOT = { has_landed_title = d_teutonic_order }
+			ROOT = { has_landed_title = k_teutonic_state }
 		}
 	}
 	

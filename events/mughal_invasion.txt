@@ -50,7 +50,10 @@ narrative_event = {
 				year = 769
 			}
 		}
-		NOT = { has_global_flag = mughal_invades }
+		custom_tooltip = {
+			text = "The Mughals has not already spawned"
+			NOT = { has_global_flag = mughal_invades }
+		}
 		NOT = {
 			has_game_rule = {
 				name = mughal_invasion

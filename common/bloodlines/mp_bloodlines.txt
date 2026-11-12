@@ -28,6 +28,31 @@ ar_austria_bloodline = {
 	flags = { created_bloodline bloodline_princely_elective_bonus }
 }
 
+ar_prussia_bloodline = {
+	picture = GFX_bloodlines_symbol_teutonic
+	allow_bastards = yes
+	martial = 2
+	heavy_infantry_morale = 0.15
+	levy_reinforce_rate = 0.15
+	pikemen_offensive = 0.15
+	monthly_character_prestige = 0.5
+	bloodline_effect_drill = 1
+	inheritance = patrilineal
+	flags = { created_bloodline bloodline_drill }
+}
+
+ar_franconia_bloodline = {
+	picture = GFX_bloodlines_symbol_lion
+	allow_bastards = yes
+	stewardship = 2
+	demesne_size = 1
+	build_cost_modifier = -0.10
+	global_tax_modifier = 0.05
+	vassal_opinion = 5
+	inheritance = patrilineal
+	flags = { created_bloodline }
+}
+
 ibadi_leader_bloodline = {
 	monthly_character_prestige = 0.25
 	ibadi_opinion = 5

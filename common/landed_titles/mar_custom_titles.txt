@@ -5,26 +5,21 @@ d_legion_italia = {
 	
 	capital = 333 # Rome
 
+	culture = greek
+	religion = orthodox
+
+	mercenary = yes
+
 	title = "CAPTAIN"
 	foa = "CAPTAIN_FOA"
 
-	mercenary = yes
-	
+	# Always exists
 	landless = yes
 	
-	allow = {
-		has_landed_title = e_west_rome
-	}
-	
-	mercenary_type = legion_italia_composition
-	
-	culture = greek
-	
-	religion = orthodox
-
 	# Cannot be held as a secondary title
 	primary = yes
 
+	mercenary_type = legion_italia_composition
 	monthly_income = 10
 }
 
@@ -107,61 +102,53 @@ e_nikaea = {
 
 d_swiss_guard = {
 	color={ 207 56 45 }
+	color2={ 255 255 255 }
 
 	graphical_culture = holygfx
 	
 	capital = 244 # Bern
+	
+	culture = german
+	religion = catholic
+
+	mercenary = yes
 
 	title = "CAPTAIN"
 	foa = "CAPTAIN_FOA"
 
-	mercenary = yes
-	
+	# Always exists
 	landless = yes
 	
-	allow = {
-		has_landed_title = k_switzerland
-	}
-	
-	mercenary_type = papal_guard_composition
-	
-	culture = german
-	
-	religion = catholic
-
 	# Cannot be held as a secondary title
 	primary = yes
 
+	mercenary_type = papal_guard_composition
 	monthly_income = 10
 }
 
 d_prussia_guard = {
 	color={ 207 56 45 }
+	color2={ 255 255 255 }
 
 	graphical_culture = holygfx
 	
 	capital = 371 # Bern
 
+	culture = german
+	religion = catholic
+
+	mercenary = yes
+
 	title = "CAPTAIN"
 	foa = "CAPTAIN_FOA"
 
-	mercenary = yes
-	
+	# Always exists
 	landless = yes
 	
-	allow = {
-		has_landed_title = k_prussia
-	}
-	
-	mercenary_type = papal_guard_composition
-	
-	culture = german
-	
-	religion = catholic
-
 	# Cannot be held as a secondary title
 	primary = yes
 
+	mercenary_type = papal_guard_composition
 	monthly_income = 10
 }
 
@@ -380,7 +367,7 @@ e_north_sea = {
 }
 
 k_prussia = {
-	color={ 40 40 15 }
+	color={ 31 31 31 }
 	
 	#short_name = yes
 	
@@ -944,6 +931,29 @@ d_husseyin = {
 	mercenary_type = ghilman_composition
 }
 
+k_grand_franconia = {
+	color = { 173 94 144 }
+	color2 = { 220 220 20 }
+	capital = 122
+	culture = franconian
+	roman = "Germania Inferior"
+	roman_gallo = "Germania Inferior"
+	roman_german = "Germania Inferior"
+	roman_spain = "Germania Inferior"
+	roman_british = "Germania Inferior"
+	roman_african = "Germania Inferior"
+	roman_mauretanian = "Germania Inferior"
+	roman_egyptian = "Germania Inferior"
+	roman_greek = "Germania Inferior"
+	roman_thraco = "Germania Inferior"
+	roman_ilyrian = "Germania Inferior"
+	name_tier = duke
+	catholic = 4000
+
+	allow = {
+		always = no
+	}
+}
 k_hungary_old = {
 	color = { 187 70 70 }
 	color2 = { 255 255 255 }

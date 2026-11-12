@@ -1,4 +1,54 @@
 decisions = {
+	create_navarra = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		
+		potential = {
+			start_date == 769.1.1
+			lower_real_tier_than = KING
+			NOT = { has_global_flag = navarra_formed }
+			culture_group = iberian
+			religion_group = christian
+			any_realm_province = {
+				is_capital = yes
+				de_jure_liege_or_above = e_spain
+			}
+		}
+		
+		allow = {
+			culture_group = iberian
+			religion_group = christian
+			is_adult = yes
+			war = no
+			prisoner = no
+			independent = yes
+			prestige = 500
+			piety = 150
+			diplomacy = 15
+			has_landed_title = d_navarra
+			has_landed_title = d_najera
+		}
+		
+		effect = {
+			prestige = -500
+			activate_title = { title = k_navarra status = yes }
+			grant_title = k_navarra
+			k_navarra = {
+				copy_title_laws = PREV
+				copy_title_history = PREV
+			}
+			d_navarra = { de_jure_liege = k_navarra }
+			d_najera = { de_jure_liege = k_navarra }
+			set_global_flag = navarra_formed
+			hidden_tooltip = { character_event = { id = ARSM.1 days = 1 } }
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	prepare_reclamation = {
 		is_high_prio = yes
 		only_playable = yes
