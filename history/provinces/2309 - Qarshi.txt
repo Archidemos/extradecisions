@@ -1,0 +1,61 @@
+# -*- ck2.history.provinces -*-
+
+# 2309 - Qarshi
+
+# County Title
+title = c_qarshi
+
+# Settlements
+max_settlements = 7
+b_qarshi1 = castle
+b_qarshi2 = castle
+b_qarshi3 = temple
+b_qarshi4 =  city
+b_qarshi5 = city
+b_qarshi6 = city
+#b_qarshi7 = castle
+
+
+# Misc
+culture = sogdian
+religion = zoroastrian
+terrain = steppe
+
+# History
+100.1.1 = {
+	b_qarshi1 = tribal
+	remove_settlement = b_qarshi2
+	remove_settlement = b_qarshi3
+	remove_settlement = b_qarshi4
+	remove_settlement = b_qarshi5
+	remove_settlement = b_qarshi6
+}
+
+470.1.1 = {
+	religion = tengri_pagan
+	culture = saka
+}
+
+600.1.1 = {
+	b_qarshi1 = castle
+	b_qarshi2 = castle
+	b_qarshi3 = temple
+	b_qarshi4 = city
+	b_qarshi5 = city
+	b_qarshi6 = city
+}
+
+601.1.1 = {
+	religion = zoroastrian
+	culture = afghan
+}
+
+1000.1.1 = { culture = tajik } 
+1000.1.1 = { religion = sunni }
+
+#1100.1.1 = { culture = turkmen } 
+
+#1220.10.10 = {
+#      remove_settlement = b_qarshi5
+#	  remove_settlement = b_qarshi1
+#}

@@ -1,0 +1,39 @@
+# -*- ck2.history.provinces -*-
+
+# 1550 - Kábul
+
+# County Title
+title = c_jaguda
+
+# Settlements
+max_settlements = 6
+b_jaguda1 = castle
+b_jaguda2 = temple
+b_jaguda3 = castle
+b_jaguda4 = city
+#b_jaguda5 = city
+b_jaguda6 = temple
+#b_jaguda7 = temple
+
+# Misc
+culture = afghan
+religion = buddhist
+
+# History
+100.1.1 = {
+	b_jaguda1 = tribal
+	remove_settlement = b_jaguda2
+	remove_settlement = b_jaguda3
+	remove_settlement = b_jaguda4
+	remove_settlement = b_jaguda6
+}
+600.1.1 = {
+	religion = zun_pagan
+	b_jaguda1 = castle
+	b_jaguda2 = temple
+	b_jaguda3 = castle
+	b_jaguda4 = city
+	b_jaguda6 = temple
+}
+987.1.1 = { religion = sunni }
+#1007.1.1 = {	culture = afghan }

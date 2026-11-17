@@ -105,25 +105,15 @@ decisions = {
 			prisoner = no
 			conditional_tooltip = {
 				trigger = {
-					NOT = {
-						any_owned_bloodline = {
-							has_bloodline_flag = cheap_reconquista
-						}
-					}
 					ai = no
 					tier = DUKE
 				}
-				prestige = 300
-				piety = 150
+				prestige = 400
+				piety = 200
 				wealth = 100
 			}
 			conditional_tooltip = {
 				trigger = {
-					NOT = {
-						any_owned_bloodline = {
-							has_bloodline_flag = cheap_reconquista
-						}
-					}
 					ai = no
 					tier = KING
 				}
@@ -133,60 +123,19 @@ decisions = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					NOT = {
-						any_owned_bloodline = {
-							has_bloodline_flag = cheap_reconquista
-						}
-					}
 					ai = no
 					tier = EMPEROR
 				}
-				prestige = 1000
-				piety = 500
+				prestige = 650
+				piety = 450
 				wealth = 300
-			}
-			conditional_tooltip = {
-				trigger = {
-					ai = no
-					any_owned_bloodline = {
-						has_bloodline_flag = cheap_reconquista
-					}
-					tier = DUKE
-				}
-				prestige = 150
-				piety = 100
-				wealth = 75
-			}
-			conditional_tooltip = {
-				trigger = {
-					ai = no
-					any_owned_bloodline = {
-						has_bloodline_flag = cheap_reconquista
-					}
-					tier = KING
-				}
-				prestige = 250
-				piety = 200
-				wealth = 150
-			}
-			conditional_tooltip = {
-				trigger = {
-					ai = no
-					any_owned_bloodline = {
-						has_bloodline_flag = cheap_reconquista
-					}
-					tier = EMPEROR
-				}
-				prestige = 500
-				piety = 300
-				wealth = 200
 			}
 			conditional_tooltip = {
 				trigger = {
 					ai = yes
 				}
-				prestige = 300
-				piety = 100
+				prestige = 500
+				piety = 300
 				wealth = 100
 			}
 
@@ -778,6 +727,8 @@ decisions = {
 			capital_scope = { region = world_europe_west_iberia }
 			has_global_flag = reconquista_conflict_started
 			NOT = { has_global_flag = cordoba_destroyed }
+			NOT = { has_global_flag = finished_reclamation_muslim }
+			NOT = { has_global_flag = reconquista_finished }
 		}
 		allow = {
 			independent = yes
@@ -874,11 +825,6 @@ decisions = {
 			prestige = 2500
 			piety = 2500
 			add_trait = great_conquerer
-			add_claim = d_gascogne
-			add_claim = d_foix
-			add_claim = d_aquitaine
-			add_claim = d_toulouse
-			add_claim = d_poitou
 			custom_tooltip = {
 				text = "You will reorganize the faith of Hispania and send out envoys to your subject to submit to your faith"
 				hidden_tooltip = {
@@ -888,8 +834,221 @@ decisions = {
 			set_global_flag = finished_reclamation_muslim
 			set_global_flag = finishd_reconquistas_christian
 			set_global_flag = reconquista_finished
-			any_player = { narrative_event = { id = ARESP.1001 days = 1 } }
+			custom_tooltip = {
+				text = "You will decide the fate of the Hispanian identity and perhaps form a Caliphate"
+				ROOT = { narrative_event = { id = ARESP.2003 } }
+			}
 		}		
+	}
+
+	merge_castille_leon = {
+		only_independent = yes
+		is_high_prio = yes
+		ai_check_interval = 60
+
+		potential = {
+			religion_group = christian
+			capital_scope = { region = world_europe_west_iberia }
+			OR = {
+				has_landed_title = k_castille
+				has_landed_title = k_leon
+			}
+			NOT = { has_global_flag = castille_leon_merged }
+		}
+		allow = {
+			diplomacy = 15
+			tier = KING
+			independent = yes
+			war = no
+			prisoner = no
+			is_tributary = no
+			wealth = 250
+			prestige = 500
+			trigger_if = {
+				limit = { k_castille = { is_titular = no } }
+				has_landed_title = k_castille
+			}
+			has_landed_title = k_leon
+			trigger_if = {
+				limit = { k_spanish_galicia = { is_titular = no } }
+				has_landed_title = k_spanish_galicia
+			}
+			OR = {
+				has_landed_title = c_leon
+				has_landed_title = c_burgos
+				has_landed_title = c_santiago
+			}
+		}
+		effect = {
+			activate_title = { title = k_castille_leon status = yes }
+			prestige = 1000
+			grant_title_no_opinion = k_castille_leon
+			destroy_landed_title = k_castille
+			destroy_landed_title = k_leon
+			destroy_landed_title = k_spanish_galicia
+			k_castille_leon = { add_law = succ_primogeniture }
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
+			custom_tooltip = {
+				text = "The De-jure of both Kingdoms of Leon and Castille will be merged"
+				hidden_tooltip = {
+					activate_title = { title = k_castille status = no }
+					activate_title = { title = k_leon status = no }
+					activate_title = { title = k_spanish_galicia status = no }
+					d_salamanca = { de_jure_liege = k_castille_leon }
+					d_leon = { de_jure_liege = k_castille_leon }
+					d_castilla = { de_jure_liege = k_castille_leon }
+					d_najera = { de_jure_liege = k_castille_leon }
+					d_segovia = { de_jure_liege = k_castille_leon }
+					d_porto = { de_jure_liege = k_castille_leon }
+					d_beira = { de_jure_liege = k_castille_leon }
+					d_ribatejo = { de_jure_liege = k_castille_leon }
+					d_galicia = { de_jure_liege = k_castille_leon }
+					k_castille_leon = { de_jure_liege = e_spain }
+				}
+			}
+			custom_tooltip = {
+				text = "The fate of your current capital will be decided"
+				ROOT = { character_event = { id = ARESP.2000 } }
+			}
+			set_global_flag = castille_leon_merged
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	change_coa_sicily = {
+		only_independent = yes
+		ai_check_interval = 24
+
+		potential = {
+			religion_group = christian
+			OR = {
+				has_landed_title = k_castille
+				has_landed_title = k_valencia
+				has_landed_title = k_leon
+				has_landed_title = k_navarra
+				has_landed_title = k_aragon
+				has_landed_title = e_spain
+			}
+			completely_controls = k_south_sicily
+			NOT = { has_global_flag = coa_sicily_spain_changed }
+		}
+		allow = {
+			ROOT = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			independent = yes
+			war = no
+			prisoner = no
+			is_tributary = no
+			prestige = 500
+		}
+		effect = {
+			custom_tooltip = {
+				text = "The stripes of Aragon will be added onto the flag of Sicily"
+				hidden_effect = {
+					k_south_sicily = {
+						set_coa = k_south_sicily_spain
+					}
+				}
+			}
+			set_global_flag = coa_sicily_spain_changed
+		}
+	}
+
+	change_coa_naples = {
+		only_independent = yes
+		ai_check_interval = 24
+
+		potential = {
+			religion_group = christian
+			OR = {
+				has_landed_title = k_castille
+				has_landed_title = k_valencia
+				has_landed_title = k_leon
+				has_landed_title = k_navarra
+				has_landed_title = k_aragon
+				has_landed_title = e_spain
+			}
+			completely_controls = k_sicily
+			NOT = { has_global_flag = coa_naples_spain_changed }
+		}
+		allow = {
+			ROOT = {
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			independent = yes
+			war = no
+			prisoner = no
+			is_tributary = no
+			prestige = 500
+		}
+		effect = {
+			custom_tooltip = {
+				text = "The stripes of Aragon will be added onto the flag of Naples"
+				hidden_effect = {
+					k_sicily = {
+						set_coa = k_sicily_spain
+					}
+				}
+			}
+			set_global_flag = coa_naples_spain_changed
+		}
 	}
 }
 

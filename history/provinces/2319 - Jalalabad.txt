@@ -1,0 +1,39 @@
+# -*- ck2.history.provinces -*-
+
+# 2319 - Jalalabad
+
+# County Title
+title = c_jalalabad
+
+# Settlements
+max_settlements = 6
+b_jalalabad1 = castle
+b_jalalabad2 = temple
+b_jalalabad3 = castle
+b_jalalabad4 = city
+#b_jalalabad5 = city
+b_jalalabad6 = temple
+#b_jalalabad7 = temple
+
+# Misc
+culture = afghan
+religion = buddhist
+
+# History
+100.1.1 = {
+	b_jalalabad1 = tribal
+	remove_settlement = b_jalalabad2
+	remove_settlement = b_jalalabad3
+	remove_settlement = b_jalalabad4
+	remove_settlement = b_jalalabad6
+}
+600.1.1 = {
+	religion = zun_pagan
+	b_jalalabad1 = castle
+	b_jalalabad2 = temple
+	b_jalalabad3 = castle
+	b_jalalabad4 = city
+	b_jalalabad6 = temple
+}
+987.1.1 = { religion = sunni }
+#1007.1.1 = {	culture = afghan }

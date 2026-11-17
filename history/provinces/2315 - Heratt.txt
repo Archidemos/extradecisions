@@ -1,0 +1,54 @@
+# -*- ck2.history.provinces -*-
+
+# 2315 - Heratt
+
+# County Title
+title = c_heratt
+
+# Settlements
+max_settlements = 6
+b_herat1 = tribal
+#b_herat2 = castle
+#b_herat3 = temple
+#b_herat4 = city
+#b_herat5 = city
+#b_herat6 = castle
+
+#b_herat7 = city
+
+# Misc
+culture = khorasani
+religion = buddhist
+
+# History
+200.1.1 = {
+	religion = zoroastrian
+	culture = old_parthian
+}
+
+470.1.1 = {
+	religion = zoroastrian
+	culture = saka
+}
+
+601.1.1 = {
+	religion = buddhist
+	culture = khorasani
+}
+#1000.1.1 = { culture = tajik }
+1060.1.1 = {	religion = sunni } #was 987
+1105.1.1 = { #was 1172
+	b_herat1 = castle
+	b_herat3 = temple
+	b_herat4 = city
+}
+1149.1.1 = {
+	b_herat2 = castle
+	capital = b_herat2
+}
+1222.1.1 = {
+	remove_settlement = b_herat2
+	remove_settlement = b_herat1
+	b_herat6 = castle
+	capital = b_herat6
+}
