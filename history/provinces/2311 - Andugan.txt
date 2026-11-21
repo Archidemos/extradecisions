@@ -1,0 +1,51 @@
+# -*- ck2.history.provinces -*-
+
+# 2311 - Andugan
+
+# County Title
+title = c_andugan
+
+# Settlements
+max_settlements = 5
+b_andugan1 = castle
+b_andugan2 = city
+b_andugan3 = temple
+#b_andugan4 = castle
+
+#b_andugan5 = castle
+#b_andugan6 = city
+#b_andugan7 = temple
+
+# Misc
+culture = sogdian
+religion = buddhist
+
+# History
+100.1.1 = {
+	b_andugan1 = tribal
+	remove_settlement = b_andugan2
+	remove_settlement = b_andugan3
+}
+
+470.1.1 = {
+	religion = tengri_pagan
+	culture = saka
+}
+
+600.1.1 = {
+	b_andugan1 = castle
+	b_andugan2 = city
+	b_andugan3 = temple
+}
+
+601.1.1 = {
+	religion = zoroastrian
+	culture = sogdian
+}
+
+980.1.1 = {	culture = karluk }
+1005.1.1 = {	religion = sunni }
+1030.1.1 = { b_andugan4 = castle }
+1221.1.1 = { remove_settlement = b_andugan4 } #major destruction caused by the Mongol invasion
+1280.1.1 = { b_andugan4 = castle } #rebuilt by Du'a and Kaidu
+1295.1.1 = { capital = b_andugan4 } #during Kaidu's reign

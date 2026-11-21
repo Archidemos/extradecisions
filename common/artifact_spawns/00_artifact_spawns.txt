@@ -1,6 +1,37 @@
 ####################
 #### QUALITY 5  ####
 ####################
+ar_excalibur = {
+    max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Holy Fury" }
+		}
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			capital_scope = { region = world_europe_west_brittania }
+			is_landed = yes
+		}
+	}
+    artifacts = {
+        ar_excalibur = {
+            value = 1
+        }
+    }
+}
+
 lamassu_statue = {
 	max_amount = 2
 	spawn_date = -1.1.1

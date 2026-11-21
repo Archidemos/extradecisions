@@ -237,36 +237,43 @@
 	holder = 217739
 }
 
-1234.2.9 = {
-	holder = 217740
+#1234.2.9 = {
+#	holder = 217740
+#}
+
+1234.1.1 = {
+	holder = 60000001
 }
 
-1234.2.10 = {
-	holder = 172005 # Ögedei Khan 
-	name = "mongol_china"
-	clr_offmap_flag = china_mongol_invasion
-	status = china_unrest #Southern Song still in power
-	policy = china_expansionist
-	set_offmap_flag = china_had_unrest
-}
-1241.12.11 = {
-	holder = 172007 # Güyük Khan 
-	# Actual coronation 1246.8.24
-}
-1248.4.20 = {
-	holder = 217265 # Möngke Khan 
-	# Actual coronation 1251.7.1
-}
+#1234.2.10 = {
+#	holder = 172005 # Ögedei Khan 
+#	name = "mongol_china"
+#	clr_offmap_flag = china_mongol_invasion
+#	status = china_unrest #Southern Song still in power
+#	policy = china_expansionist
+#	set_offmap_flag = china_had_unrest
+#}
+#1241.12.11 = {
+#	holder = 172007 # Güyük Khan 
+#	# Actual coronation 1246.8.24
+#}
+#1248.4.20 = {
+#	holder = 217265 # Möngke Khan 
+#	# Actual coronation 1251.7.1
+#}
+
 1259.8.11 = {
 	holder = 125526
 	policy = china_open
-	#set_offmap_flag = china_civil_war #civil war between Ariq Boke and Kublai
+	status = china_unrest
 }
-1264.8.21 = { #Ariq Boke surrenders to Kublai
+1260.1.1 = {
+	set_offmap_flag = china_civil_war #civil war between Ariq Boke and Kublai
+}
+1270.1.1 = { #Ariq Boke surrenders to Kublai
 	holder = 217266 # Kublai Khan
 	name = "yuan_china"
-	#status = china_stable
-	#clr_offmap_flag = china_civil_war
+	clr_offmap_flag = china_civil_war
 }
 1279.3.19 = {
 	status = china_stable #End of Southern Song

@@ -6,7 +6,7 @@ character_event = {
     is_triggered_only = yes
 	
 	trigger = {
-		date >= 1000.1.1
+		date >= 1020.1.1
 		is_save_game = no
 		NOT = { has_global_flag = gotland_set }
 	}
@@ -54,9 +54,9 @@ narrative_event = {
 
 		set_government_type = pirate_republic_government
 
-		set_defacto_liege = ROOT
+		#set_defacto_liege = ROOT
 		
-		k_sweden = { holder_scope = { add_claim = c_gotland } }
+		#k_sweden = { holder_scope = { add_claim = c_gotland } }
 
 		hidden_tooltip = {
 			ROOT = {
@@ -86,6 +86,13 @@ narrative_event = {
 				light_cavalry = { 500 500 }
 			}
 		}
+        spawn_fleet = {
+	       	province = closest
+	       	owner = ROOT
+	       	troops = {
+	       		galleys = { 100 100 }
+	       	}
+	    }
 		opinion = {
 			name = in_non_aggression_pact
 			years = 10

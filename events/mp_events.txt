@@ -1628,6 +1628,26 @@ narrative_event = { #Event for everyone about the formation
 }
 
 character_event = {
+	id = MP.054
+	hide_window = yes
+
+	is_triggered_only = yes
+	offmap = only
+
+	trigger = {
+		NOT = { has_global_flag = chinese_government_fixed }
+		is_offmap_tag = offmap_china
+		is_save_game = no
+	}
+	
+	immediate = {
+		set_global_flag = chinese_government_fixed
+		set_government_type = chinese_government
+		offmap_china = { set_government_type = chinese_government }
+	}
+}
+
+character_event = {
     id = MP.099
     hide_window = yes
     is_triggered_only = yes

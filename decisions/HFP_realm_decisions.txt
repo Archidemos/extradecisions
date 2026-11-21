@@ -28,6 +28,8 @@ decisions = {
 		allow = {
 			is_adult = yes
 			war = no
+			ruled_years = 15
+			prestige = 250
 			NOT = { trait = incapable }
 			primary_title = { title = k_asturias }
 			completely_controls = d_leon
@@ -35,6 +37,31 @@ decisions = {
 			is_vice_royalty = no
 		}
 		effect = {
+			prestige = 250
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
+			spawn_unit = {
+				province = capital_scope
+				home = capital_scope
+				owner = ROOT
+				troops = {
+					light_infantry = { 1000 1000 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 300 300 }
+					knights = { 150 150 }
+				}
+				attrition = 0.5
+			}
 			activate_title = { title = k_leon status = yes }
 			k_asturias = {
 				show_scope_change = no

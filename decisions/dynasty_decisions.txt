@@ -135,84 +135,108 @@ targetted_decisions = {
 			}
 		}
 		effect = {
-			dynasty = FROM
-			remove_trait = bastard
-			add_trait = legit_bastard
-			recalc_succession = yes
-			FROM = { 
-				show_scope_change = no
-				if = {
-					limit = {
-						NOT = {
-							any_owned_bloodline = {
-								has_bloodline_flag = bloodline_legitimize
+			prestige = 350
+			custom_tooltip = {
+				text = "This character will become legitimized and joins your dynasty, along with their children."
+				hidden_tooltip = {
+					ROOT = { #Targeted Character
+						dynasty = FROM #Yourself
+						remove_trait = bastard
+						add_trait = legit_bastard
+						recalc_succession = yes
+						set_dynasty_flag = cadet_@FROM
+		
+						any_child_even_if_dead = { # child
+							limit = {
+								#has_dynasty_flag = cadet_@FROM
+								NOT = { trait = bastard }
+							}
+		
+							dynasty = FROM
+		
+							any_child_even_if_dead = { # grand child
+								limit = {
+									#has_dynasty_flag = cadet_@FROM
+									NOT = { trait = bastard }
+								}
+		
+								dynasty = FROM
+		
+								any_child_even_if_dead = { # great-grandchild
+									limit = {
+										#has_dynasty_flag = cadet_@FROM
+										NOT = { trait = bastard }
+									}
+									dynasty = FROM
+								}
+							}
+						}
+		
+						father_even_if_dead = { # father should be same dynasty?
+							clr_dynasty_flag = cadet_@FROM
+						}
+					}
+					if = {
+						limit = {
+							prisoner = yes
+							host = { character = FROM }
+						}
+						imprison = no
+					}
+					
+					if = {
+						limit = { FROM = { is_female = no } }
+						mother = {
+							show_scope_change = no
+							opinion = {
+								who = FROM
+								modifier = legitimized_child
+								years = 10
 							}
 						}
 					}
 					FROM = {
-						piety = -20
-					}
-				}
-			}
-			if = {
-				limit = {
-					prisoner = yes
-					host = { character = FROM }
-				}
-				imprison = no
-			}
-			
-			if = {
-				limit = { FROM = { is_female = no } }
-				mother = {
-					show_scope_change = no
-					opinion = {
-						who = FROM
-						modifier = legitimized_child
-						years = 10
-					}
-				}
-			}
-			FROM = {
-				show_scope_change = no
-				spouse = {
-					show_scope_change = no
-					if = {
-						limit = {
-							NOT = {
-								any_child = {
-									character = ROOT
-								}	
-							}
-						}
-						opinion = {
-							who = ROOT_FROM
-							modifier = legitimized_bastard
-							years = 20
-						}
-					}
-				}
-				if = {
-					limit = {
-						any_child = {
-							dynasty = ROOT_FROM
-							NOT = { character = ROOT }
-							NOT = { trait = bastard }
-						}
-					}
-					custom_tooltip = {
-						text = any_child_gets_angry_tt
-						any_child = {
+						show_scope_change = no
+						spouse = {
 							show_scope_change = no
-							limit = {
-								NOT = { character = ROOT }
-								dynasty = ROOT_FROM
-								NOT = { trait = bastard }
+							if = {
+								limit = {
+									NOT = {
+										any_child = {
+											character = ROOT
+										}	
+									}
+								}
+								opinion = {
+									who = ROOT_FROM
+									modifier = legitimized_bastard
+									years = 20
+								}
 							}
-							opinion = {
-								who = ROOT_FROM
-								modifier = legitimized_bastard
-								months = 12
+						}
+						if = {
+							limit = {
+								any_child = {
+									dynasty = ROOT_FROM
+									NOT = { character = ROOT }
+									NOT = { trait = bastard }
+								}
+							}
+							custom_tooltip = {
+								text = any_child_gets_angry_tt
+								any_child = {
+									show_scope_change = no
+									limit = {
+										NOT = { character = ROOT }
+										dynasty = ROOT_FROM
+										NOT = { trait = bastard }
+									}
+									opinion = {
+										who = ROOT_FROM
+										modifier = legitimized_bastard
+										months = 12
+									}
+								}
 							}
 						}
 					}

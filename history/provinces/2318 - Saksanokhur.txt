@@ -1,0 +1,45 @@
+# -*- ck2.history.provinces -*-
+
+# 2318 - Saksanokhur
+
+# County Title
+title = c_saksanokhur
+
+# Settlements
+max_settlements = 5
+b_saksanokhur1 = castle
+b_saksanokhur2 = city
+b_saksanokhur3 = temple
+#b_saksanokhur4 = castle
+
+b_saksanokhur5 = castle #Vakhan
+#b_saksanokhur6 = temple #Vakhan
+
+#b_saksanokhur7 = city #Vakhan
+
+# Misc
+culture = sogdian
+religion = buddhist
+
+# History
+100.1.1 = {
+	b_saksanokhur1 = tribal
+	remove_settlement = b_saksanokhur2
+	remove_settlement = b_saksanokhur3
+	remove_settlement = b_saksanokhur5
+}
+600.1.1 = {
+	b_saksanokhur1 = castle
+	b_saksanokhur2 = city
+	b_saksanokhur3 = temple
+	b_saksanokhur5 = castle
+}
+
+601.1.1 = {
+	religion = buddhist
+	culture = afghan
+}
+
+987.1.1 = {	religion = sunni }
+1007.1.1 = {	culture = tajik }
+1090.1.1 = { religion = ismaili }

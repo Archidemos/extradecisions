@@ -3576,12 +3576,13 @@ leauge_raid_cb = {
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
+		ROOT = { NOT = { has_character_modifier = war_cooldown } }
 	}
 
 	can_use = {
 		ROOT = {
 			society_member_of = merchant_leauge
-			society_currency = 300
+			society_currency = 600
 			society_rank >= 3
 		}
 	}
@@ -3591,13 +3592,21 @@ leauge_raid_cb = {
 	}
 
 	on_add = {
-		ROOT = { change_society_currency = -300 }
+		ROOT = {
+			change_society_currency = -600
+			add_character_modifier = {
+				name = war_cooldown
+				years = 2
+				#hidden = yes
+				inherit = yes
+			}
+		}
 	}
 	on_success = {
 		FROM = {
 			transfer_scaled_wealth = {
 				to = ROOT
-				value = 6.0
+				value = 3.0
 				min = 150
 			}
 			capital_scope = {
@@ -3658,7 +3667,7 @@ leauge_raid_cb = {
 			prestige = -200
 			transfer_scaled_wealth = {
 				to = FROM
-				value = 4.0
+				value = 3.0
 			}
 		}
 		FROM = {

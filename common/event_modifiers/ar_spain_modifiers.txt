@@ -12,8 +12,21 @@ spain_coexsist = {
 
 spain_mass_convert = {
 	martial = 1
-	muslim_opinion = -15
-	same_religion_opinion = 5
+	muslim_opinion = -20
+	christian_opinion = 5
+	monthly_character_prestige = 0.05
+	global_revolt_risk = -0.15
+	castle_vassal_tax_modifier = -0.1
+	city_vassal_tax_modifier = -0.1
+	castle_vassal_max_levy = -0.1
+	castle_vassal_min_levy = -0.1
+	icon = 26 
+}
+
+spain_mass_convert_muslim = {
+	martial = 1
+	christian_opinion = -20
+	muslim_opinion = 5
 	monthly_character_prestige = 0.05
 	global_revolt_risk = -0.15
 	castle_vassal_tax_modifier = -0.1
@@ -28,6 +41,37 @@ spain_mass_convert = {
 #	muslim_opinion = 5
 #	icon = 8
 #}
+
+stewardship_taifa = {
+	city_tax_modifier = 0.10
+	global_tax_modifier = 0.05
+	build_time_modifier = -0.05
+	stewardship = 1
+	icon = 99
+}
+
+martial_taifa = {
+	land_morale = 0.10
+	global_levy_size = 0.05
+	martial = 1
+	icon = 99
+}
+
+learning_taifa = {
+	health = 0.25
+	global_revolt_risk = -0.05
+	monthly_character_piety = 0.5
+	learning = 1
+	icon = 99
+}
+
+diplomacy_taifa = {
+	vassal_opinion = 5
+	demesne_size = 2
+	diplomacy = 1
+	threat_decay_speed = 0.10
+	icon = 99
+}
 
 spain_frontier_peacefull_province = {
 	city_tax_modifier = 0.05
@@ -56,4 +100,11 @@ spain_frontier_order_province = {
 	temple_tax_modifier = -0.05
 	tribal_tax_modifier = -0.05
 	icon = 19
+}
+
+spain_capital_bliss = {
+	local_tax_modifier = 0.05
+	local_revolt_risk = 0.15
+	local_build_cost_modifier = -0.05
+	icon = 8
 }

@@ -276,7 +276,7 @@ e_timurids = { # Timurids
 	kurdish = "Emperatori Timor"
 }
 e_qara_qoyunlu = {
-	color = { 50 168 164 }
+	color = { 36 69 214 }
 	color2 = { 0 250 250 }
 	
 	short_name = yes
@@ -14493,6 +14493,7 @@ e_byzantium = {
         allow = {
 			ROOT = {
 				diplomacy = 15
+				religion_group = christian
 				title_king_basic_allow = yes
 			}
         }
@@ -35202,7 +35203,7 @@ e_britannia = {
     k_england = {
         color = { 237 33 33 }
         color2 = { 255 255 255 }
-        capital = 26
+        capital = 32
         creation_requires_capital = no
         dignity = 10
         frankish = "Angleterre"
@@ -51166,101 +51167,101 @@ e_spain = {
                 title_duke_basic_allow = yes
             }
         }
-        d_alba_de_tormes = {
-            color = { 255 224 94 }
-            color2 = { 255 255 255 }
-            capital = 192
-            dignity = 15
-            allow = {
-                culture_group = iberian
-                religion_group = christian
-                OR = {
-                    has_landed_title = e_spain
-                    has_landed_title = k_castille
-                    has_landed_title = k_leon
-                }
-                c_salamanca = {
-                    owner_under_ROOT = yes
-                }
-                title_duke_basic_allow = yes
-            }
-        }
-        d_medina_sidonia = {
-            color = { 255 224 94 }
-            color2 = { 255 255 255 }
-            capital = 165
-            dignity = 15
-            allow = {
-                culture_group = iberian
-                religion_group = christian
-                OR = {
-                    has_landed_title = e_spain
-                    has_landed_title = k_castille
-                    has_landed_title = k_leon
-                }
-                c_cadiz = {
-                    owner_under_ROOT = yes
-                }
-                title_duke_basic_allow = yes
-            }
-        }
-        d_alburquerque = {
-            color = { 255 224 94 }
-            color2 = { 255 255 255 }
-            capital = 193
-            dignity = 15
-            allow = {
-                culture_group = iberian
-                religion_group = christian
-                OR = {
-                    has_landed_title = e_spain
-                    has_landed_title = k_castille
-                    has_landed_title = k_leon
-                }
-                c_alcantara = {
-                    owner_under_ROOT = yes
-                }
-                title_duke_basic_allow = yes
-            }
-        }
-        d_medinaceli = {
-            color = { 255 224 94 }
-            color2 = { 255 255 255 }
-            capital = 200
-            dignity = 15
-            allow = {
-                culture_group = iberian
-                religion_group = christian
-                OR = {
-                    has_landed_title = e_spain
-                    has_landed_title = k_castille
-                    has_landed_title = k_leon
-                }
-                c_soria = {
-                    owner_under_ROOT = yes
-                }
-                title_duke_basic_allow = yes
-            }
-        }
-        d_infantado = {
-            color = { 255 224 94 }
-            color2 = { 255 255 255 }
-            capital = 1196
-            dignity = 15
-            allow = {
-                culture_group = iberian
-                religion_group = christian
-                OR = {
-                    has_landed_title = e_spain
-                    has_landed_title = k_castille
-                    has_landed_title = k_leon
-                }
-                c_palencia = {
-                    owner_under_ROOT = yes
-                }
-                title_duke_basic_allow = yes
-            }
-        }
+        #d_alba_de_tormes = {
+        #    color = { 255 224 94 }
+        #    color2 = { 255 255 255 }
+        #    capital = 192
+        #    dignity = 15
+        #    allow = {
+        #        culture_group = iberian
+        #        religion_group = christian
+        #        OR = {
+        #            has_landed_title = e_spain
+        #            has_landed_title = k_castille
+        #            has_landed_title = k_leon
+        #        }
+        #        c_salamanca = {
+        #            owner_under_ROOT = yes
+        #        }
+        #        title_duke_basic_allow = yes
+        #    }
+        #}
+        #d_medina_sidonia = {
+        #    color = { 255 224 94 }
+        #    color2 = { 255 255 255 }
+        #    capital = 165
+        #    dignity = 15
+        #    allow = {
+        #        culture_group = iberian
+        #        religion_group = christian
+        #        OR = {
+        #            has_landed_title = e_spain
+        #            has_landed_title = k_castille
+        #            has_landed_title = k_leon
+        #        }
+        #        c_cadiz = {
+        #            owner_under_ROOT = yes
+        #        }
+        #        title_duke_basic_allow = yes
+        #    }
+        #}
+        #d_alburquerque = {
+        #    color = { 255 224 94 }
+        #    color2 = { 255 255 255 }
+        #    capital = 193
+        #    dignity = 15
+        #    allow = {
+        #        culture_group = iberian
+        #        religion_group = christian
+        #        OR = {
+        #            has_landed_title = e_spain
+        #            has_landed_title = k_castille
+        #            has_landed_title = k_leon
+        #        }
+        #        c_alcantara = {
+        #            owner_under_ROOT = yes
+        #        }
+        #        title_duke_basic_allow = yes
+        #    }
+        #}
+        #d_medinaceli = {
+        #    color = { 255 224 94 }
+        #    color2 = { 255 255 255 }
+        #    capital = 200
+        #    dignity = 15
+        #    allow = {
+        #        culture_group = iberian
+        #        religion_group = christian
+        #        OR = {
+        #            has_landed_title = e_spain
+        #            has_landed_title = k_castille
+        #            has_landed_title = k_leon
+        #        }
+        #        c_soria = {
+        #            owner_under_ROOT = yes
+        #        }
+        #        title_duke_basic_allow = yes
+        #    }
+        #}
+        #d_infantado = {
+        #    color = { 255 224 94 }
+        #    color2 = { 255 255 255 }
+        #    capital = 1196
+        #    dignity = 15
+        #    allow = {
+        #        culture_group = iberian
+        #        religion_group = christian
+        #        OR = {
+        #            has_landed_title = e_spain
+        #            has_landed_title = k_castille
+        #            has_landed_title = k_leon
+        #        }
+        #        c_palencia = {
+        #            owner_under_ROOT = yes
+        #        }
+        #        title_duke_basic_allow = yes
+        #    }
+        #}
         allow = {
             OR = {
                 AND = {
@@ -58489,7 +58490,7 @@ e_spain = {
             }
         }
         d_mallorca = {
-            color = { 163 126 118 }
+            color = { 236 143 31 }
             color2 = { 255 255 255 }
             capital = 827
             bedouin_arabic = "Mayúrqa"
@@ -61605,6 +61606,17 @@ e_persia = {
                 b_abada = {}
                 b_sarvistan = {}
             }
+            c_surmaq = {
+                color = { 40 190 189 }
+                color2 = { 255 255 255 }
+                b_surmaq1 = {}
+                b_surmaq2 = {}
+                b_surmaq3 = {}
+                b_surmaq4 = {}
+                b_surmaq5 = {}
+                b_surmaq6 = {}
+                b_surmaq7 = {}
+            }
             c_qom = {
                 color = { 60 240 215 }
                 color2 = { 255 255 255 }
@@ -61638,6 +61650,17 @@ e_persia = {
                 b_darguzin = {}
                 b_saruk = {}
                 b_hamadan7 = {}
+            }
+            c_bijar = {
+                color = { 50 245 215 }
+                color2 = { 255 255 255 }
+                b_bijar1 = {}
+                b_bijar2 = {}
+                b_bijar3 = {}
+                b_bijar4 = {}
+                b_bijar5 = {}
+                b_bijar6 = {}
+                b_bijar7 = {}
             }
             c_igharayn = {
                 color = { 55 235 205 }
@@ -61684,6 +61707,28 @@ e_persia = {
                 b_damavand = {}
                 b_khuvar = {}
             }
+            c_tehran = {
+                color = { 10 225 165 }
+                color2 = { 255 255 255 }
+                b_tehran1 = {}
+                b_tehran2 = {}
+                b_tehran3 = {}
+                b_tehran4 = {}
+                b_tehran5 = {}
+                b_tehran6 = {}
+                b_tehran7 = {}
+            }
+            c_saveh = {
+                color = { 10 225 165 }
+                color2 = { 255 255 255 }
+                b_saveh1 = {}
+                b_saveh2 = {}
+                b_saveh3 = {}
+                b_saveh4 = {}
+                b_saveh5 = {}
+                b_saveh6 = {}
+                b_saveh7 = {}
+            }
             c_qazwin = {
                 color = { 70 107 176 }
                 color2 = { 255 255 255 }
@@ -61714,6 +61759,17 @@ e_persia = {
                 b_khunaj = {}
                 b_aba = {}
             }
+            c_miyaneh = {
+                color = { 64 89 136 }
+                color2 = { 255 255 255 }
+                b_miyaneh1 = {}
+                b_miyaneh2 = {}
+                b_miyaneh3 = {}
+                b_miyaneh4 = {}
+                b_miyaneh5 = {}
+                b_miyaneh6 = {}
+                b_miyaneh7 = {}
+            }
             allow = {
                 title_duke_basic_allow = yes
             }
@@ -61735,6 +61791,17 @@ e_persia = {
                 b_khubdhan = {}
                 b_khabr = {}
                 b_shiraz7 = {}
+            }
+            c_ardakan = {
+                color = { 30 190 180 }
+                color2 = { 255 255 255 }
+                b_ardakan1 = {}
+                b_ardakan2 = {}
+                b_ardakan3 = {}
+                b_ardakan4 = {}
+                b_ardakan5 = {}
+                b_ardakan6 = {}
+                b_ardakan7 = {}
             }
             c_istakhr = {
                 color = { 40 190 189 }
@@ -61760,6 +61827,17 @@ e_persia = {
                 b_hisn-ibn-umara = {}
                 b_laghir = {}
             }
+            c_lamerd = {
+                color = { 30 200 185 }
+                color2 = { 255 255 255 }
+                b_lamerd1 = {}
+                b_lamerd2 = {}
+                b_lamerd3 = {}
+                b_lamerd4 = {}
+                b_lamerd5 = {}
+                b_lamerd6 = {}
+                b_lamerd7 = {}
+            }
             c_mandistan = {
                 color = { 35 200 195 }
                 color2 = { 255 255 255 }
@@ -61770,6 +61848,17 @@ e_persia = {
                 b_ghundidjan = {}
                 b_mandistan6 = {}
                 b_mandistan7 = {}
+            }
+            c_rishahr = {
+                color = { 35 200 195 }
+                color2 = { 255 255 255 }
+                b_rishahr1 = {}
+                b_rishahr2 = {}
+                b_rishahr3 = {}
+                b_rishahr4 = {}
+                b_rishahr5 = {}
+                b_rishahr6 = {}
+                b_rishahr7 = {}
             }
             c_arrajan = {
                 color = { 35 195 180 }
@@ -61818,6 +61907,17 @@ e_persia = {
                 b_nain = {}
                 b_bafq = {}
                 b_yazd7 = {}
+            }
+            c_anar = {
+                color = { 65 240 215 }
+                color2 = { 255 255 255 }
+                b_anar1 = {}
+                b_anar2 = {}
+                b_anar3 = {}
+                b_anar4 = {}
+                b_anar5 = {}
+                b_anar6 = {}
+                b_anar7 = {}
             }
             allow = {
                 title_duke_basic_allow = yes
@@ -62144,6 +62244,17 @@ e_persia = {
                 b_gurgan6 = {}
                 b_gurgan7 = {}
             }
+            c_jorjan = {
+                color = { 38 148 250 }
+                color2 = { 255 255 255 }
+                b_jorjan1 = {}
+                b_jorjan2 = {}
+                b_jorjan3 = {}
+                b_jorjan4 = {}
+                b_jorjan5 = {}
+                b_jorjan6 = {}
+                b_jorjan7 = {}
+            }
             c_dihistan = {
                 color = { 30 135 255 }
                 color2 = { 255 255 255 }
@@ -62186,6 +62297,17 @@ e_persia = {
                 b_dakharraqan = {}
                 b_babak = {}
             }
+            c_maranda = {
+                color = { 92 125 198 }
+                color2 = { 255 255 255 }
+                b_maranda1 = {}
+                b_maranda2 = {}
+                b_maranda3 = {}
+                b_maranda4 = {}
+                b_maranda5 = {}
+                b_maranda6 = {}
+                b_maranda7 = {}
+            }
             c_maragheh = {
                 color = { 67 92 138 }
                 color2 = { 255 255 255 }
@@ -62198,6 +62320,28 @@ e_persia = {
                 b_maragheh5 = {}
                 b_maragheh6 = {}
                 b_maragheh7 = {}
+            }
+            c_bukan = {
+                color = { 67 92 138 }
+                color2 = { 255 255 255 }
+                b_bukan1 = {}
+                b_bukan2 = {}
+                b_bukan3 = {}
+                b_bukan4 = {}
+                b_bukan5 = {}
+                b_bukan6 = {}
+                b_bukan7 = {}
+            }
+            c_pasveh = {
+                color = { 67 92 138 }
+                color2 = { 255 255 255 }
+                b_pasveh1 = {}
+                b_pasveh2 = {}
+                b_pasveh3 = {}
+                b_pasveh4 = {}
+                b_pasveh5 = {}
+                b_pasveh6 = {}
+                b_pasveh7 = {}
             }
             c_oromieh = {
                 color = { 123 145 36 }
@@ -62318,6 +62462,17 @@ e_persia = {
                 b_muqan6 = {}
                 b_muqan7 = {}
             }
+            c_hasilly = {
+                color = { 134 194 67 }
+                color2 = { 255 255 255 }
+                b_hasilly1 = {}
+                b_hasilly2 = {}
+                b_hasilly3 = {}
+                b_hasilly4 = {}
+                b_hasilly5 = {}
+                b_hasilly6 = {}
+                b_hasilly7 = {}
+            }
             allow = {
                 title_duke_basic_allow = yes
             }
@@ -62341,6 +62496,17 @@ e_persia = {
                 b_simnan = {}
                 b_shalamba = {}
                 b_kumis7 = {}
+            }
+            c_sangesar = {
+                color = { 38 148 250 }
+                color2 = { 255 255 255 }
+                b_sangesar1 = {}
+                b_sangesar2 = {}
+                b_sangesar3 = {}
+                b_sangesar4 = {}
+                b_sangesar5 = {}
+                b_sangesar6 = {}
+                b_sangesar7 = {}
             }
             c_biyar = {
                 color = { 10 225 165 }
@@ -62568,6 +62734,17 @@ e_persia = {
                 b_khaysar = {}
                 b_kharkhiz = {}
             }
+            c_heratt = {
+                color = { 215 200 85 }
+                color2 = { 255 255 255 }
+                b_herat1 = {}
+                b_herat2 = {}
+                b_herat3 = {}
+                b_herat4 = {}
+                b_herat5 = {}
+                b_herat6 = {}
+                b_herat7 = {}
+            }
             c_ganj-rustaq = {
                 color = { 220 215 75 }
                 color2 = { 255 255 255 }
@@ -62653,6 +62830,17 @@ e_persia = {
                 b_tokharestan6 = {}
                 b_tokharestan7 = {}
             }
+            c_aybak = {
+                color = { 225 250 125 }
+                color2 = { 255 255 255 }
+                b_aybak1 = {}
+                b_aybak2 = {}
+                b_aybak3 = {}
+                b_aybak4 = {}
+                b_aybak5 = {}
+                b_aybak6 = {}
+                b_aybak7 = {}
+            }
             c_talekan = {
                 color = { 18 3 10 }
                 color2 = { 255 255 255 }
@@ -62663,6 +62851,17 @@ e_persia = {
                 b_rustaq = {}
                 b_talekan6 = {}
                 b_talekan7 = {}
+            }
+            c_drapsaka = {
+                color = { 18 3 10 }
+                color2 = { 255 255 255 }
+                b_drapsaka1 = {}
+                b_drapsaka2 = {}
+                b_drapsaka3 = {}
+                b_drapsaka4 = {}
+                b_drapsaka5 = {}
+                b_drapsaka6 = {}
+                b_drapsaka7 = {}
             }
             allow = {
                 title_duke_basic_allow = yes
@@ -62744,6 +62943,28 @@ e_persia = {
                 b_kushaniya = {}
                 b_nur = {}
             }
+            c_kermine = {
+                color = { 162 240 37 }
+                color2 = { 255 255 255 }
+                b_kermine1 = {}
+                b_kermine2 = {}
+                b_kermine3 = {}
+                b_kermine4 = {}
+                b_kermine5 = {}
+                b_kermine6 = {}
+                b_kermine7 = {}
+            }
+            c_qarshi = {
+                color = { 162 240 37 }
+                color2 = { 255 255 255 }
+                b_qarshi1 = {}
+                b_qarshi2 = {}
+                b_qarshi3 = {}
+                b_qarshi4 = {}
+                b_qarshi5 = {}
+                b_qarshi6 = {}
+                b_qarshi7 = {}
+            }
             c_nakhshab = {
                 color = { 165 243 30 }
                 color2 = { 255 255 255 }
@@ -62809,6 +63030,17 @@ e_persia = {
                 b_khojand6 = {}
                 b_khojand7 = {}
             }
+            c_kathh = {
+                color = { 100 122 2 }
+                color2 = { 255 255 255 }
+                b_kathh1 = {}
+                b_kathh2 = {}
+                b_kathh3 = {}
+                b_kathh4 = {}
+                b_kathh5 = {}
+                b_kathh6 = {}
+                b_kathh7 = {}
+            }
             c_nasya = {
                 color = { 95 125 0 }
                 color2 = { 255 255 255 }
@@ -62855,6 +63087,17 @@ e_persia = {
                 b_naqad = {}
                 b_ferghana6 = {}
                 b_ferghana7 = {}
+            }
+            c_andugan = {
+                color = { 98 115 8 }
+                color2 = { 255 255 255 }
+                b_andugan1 = {}
+                b_andugan2 = {}
+                b_andugan3 = {}
+                b_andugan4 = {}
+                b_andugan5 = {}
+                b_andugan6 = {}
+                b_andugan7 = {}
             }
             allow = {
                 title_duke_basic_allow = yes
@@ -62991,6 +63234,17 @@ e_persia = {
                 b_sanglich = {}
                 b_ishkashim = {}
                 b_khandud = {}
+            }
+            c_saksanokhur = {
+                color = { 18 2 170 }
+                color2 = { 255 255 255 }
+                b_saksanokhur1 = {}
+                b_saksanokhur2 = {}
+                b_saksanokhur3 = {}
+                b_saksanokhur4 = {}
+                b_saksanokhur5 = {}
+                b_saksanokhur6 = {}
+                b_saksanokhur7 = {}
             }
             c_khuttal = {
                 color = { 18 23 10 }
@@ -63946,6 +64200,17 @@ e_persia = {
                 b_rukhadj6 = {}
                 b_rukhadj7 = {}
             }
+            c_kandahar = {
+                color = { 148 170 89 }
+                color2 = { 255 255 255 }
+                b_kandahar1 = {}
+                b_kandahar2 = {}
+                b_kandahar3 = {}
+                b_kandahar4 = {}
+                b_kandahar5 = {}
+                b_kandahar6 = {}
+                b_kandahar7 = {}
+            }
             allow = {
                 title_duke_basic_allow = yes
             }
@@ -64031,6 +64296,17 @@ e_persia = {
                 b_wana5 = {}
                 b_wana6 = {}
                 b_wana7 = {}
+            }
+            c_zhob = {
+                color = { 244 80 5 }
+                color2 = { 255 255 255 }
+                b_zhob1 = {}
+                b_zhob2 = {}
+                b_zhob3 = {}
+                b_zhob4 = {}
+                b_zhob5 = {}
+                b_zhob6 = {}
+                b_zhob7 = {}
             }
             c_sibi = {
                 color = { 200 145 18 }
@@ -72449,6 +72725,17 @@ e_null = {
                 b_arus-al-falak = {}
                 b_nay = {}
             }
+            c_paktika = {
+                color = { 15 215 155 }
+                color2 = { 255 255 255 }
+                b_paktika1 = {}
+                b_paktika2 = {}
+                b_paktika3 = {}
+                b_paktika4 = {}
+                b_paktika5 = {}
+                b_paktika6 = {}
+                b_paktika7 = {}
+            }
             c_bamiyan = {
                 color = { 30 185 165 }
                 color2 = { 15 140 198 }
@@ -72484,6 +72771,28 @@ e_null = {
                 b_mundjan = {}
                 b_jarbaya = {}
                 b_kabul7 = {}
+            }
+            c_jaguda = {
+                color = { 10 225 165 }
+                color2 = { 255 255 255 }
+                b_jaguda1 = {}
+                b_jaguda2 = {}
+                b_jaguda3 = {}
+                b_jaguda4 = {}
+                b_jaguda5 = {}
+                b_jaguda6 = {}
+                b_jaguda7 = {}
+            }
+            c_jalalabad = {
+                color = { 10 225 165 }
+                color2 = { 255 255 255 }
+                b_jalalabad1 = {}
+                b_jalalabad2 = {}
+                b_jalalabad3 = {}
+                b_jalalabad4 = {}
+                b_jalalabad5 = {}
+                b_jalalabad6 = {}
+                b_jalalabad7 = {}
             }
             c_lamghan = {
                 color = { 12 215 165 }
