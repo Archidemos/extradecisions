@@ -1575,7 +1575,7 @@ character_event = {
 # Letter event asking the ruler to back the adventurer's Reconquista campaign
 character_event = {
 	id = ARESP.105
-	name = "Istirdad Campagin"
+	title = "Istirdad Campagin"
 	desc = EVTDESC_HF_49462
 	picture = GFX_evt_meeting_hf
 	border = GFX_event_normal_frame_religion
@@ -1705,7 +1705,7 @@ character_event = {
 # Letter event asking the ruler to back the adventurer's Reconquista campaign
 character_event = {
 	id = ARESP.108
-	name = "Istirdad Campagin"
+	title = "Istirdad Campagin"
 	desc = "Unfortunatly, as we have sent our recent envoy to ask for our aid in our Istirdad campagin. We got told that they have declined our offer."
 	picture = GFX_evt_meeting_hf
 	border = GFX_event_normal_frame_religion
@@ -1720,7 +1720,7 @@ character_event = {
 # Letter event asking the ruler to back the adventurer's Reconquista campaign
 character_event = {
 	id = ARESP.109
-	name = "Istirdad Campagin"
+	title = "Istirdad Campagin"
 	desc = "The envoy we sent has returned with good news, it seems that the realm we have requested for help has agreed to help us in our upcoming war."
 	picture = GFX_evt_meeting_hf
 	border = GFX_event_normal_frame_religion
@@ -3525,14 +3525,14 @@ province_event = {
 
 	immediate = {
 		333 = {
-			province_event = { id = ARESP.1004 days = 5475 }
+			province_event = { id = ARESP.1006 days = 5475 }
 		}
 	}
 }
 
 # Cooldown finished
 province_event = {
-	id = ARESP.1004
+	id = ARESP.1006
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -3590,6 +3590,7 @@ character_event = {
     	disband_event_forces = reclamation_event_troops_rabble
     }
 }
+#aresp.1006 in use above
 
 character_event = {
 	id = ARESP.2000
